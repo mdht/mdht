@@ -44,13 +44,10 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityProcedure() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getPlanOfCareActivityProcedure();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getPlanOfCareActivityProcedure();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -59,13 +56,10 @@ target.getPlanOfCareActivityProcedure();
 	@Test
 	public void testGetPlanOfCareActivitySubstanceAdministration() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getPlanOfCareActivitySubstanceAdministration();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getPlanOfCareActivitySubstanceAdministration();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -74,13 +68,10 @@ target.getPlanOfCareActivitySubstanceAdministration();
 	@Test
 	public void testGetPlanOfCareActivitySupply() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getPlanOfCareActivitySupply();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getPlanOfCareActivitySupply();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -89,27 +80,22 @@ target.getPlanOfCareActivitySupply();
 	@Test
 	public void testGetProblemObservation() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getProblemObservation();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getProblemObservation();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			AssessmentAndPlanSectionOperations {
+	private static class OperationsForOCL extends AssessmentAndPlanSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -121,9 +107,8 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AssessmentAndPlanSection> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<AssessmentAndPlanSection> {
+
 		public AssessmentAndPlanSection create() {
 			return Mu2consolFactory.eINSTANCE.createAssessmentAndPlanSection();
 		}
@@ -146,8 +131,7 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			AssessmentAndPlanSectionOperations {
+	private static class ConstructorTestClass extends AssessmentAndPlanSectionOperations {
 	};
 
 	/**
@@ -157,17 +141,18 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AssessmentAndPlanSectionOperations

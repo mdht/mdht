@@ -46,67 +46,33 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolInstructionsSectionInstructions() {
-      OperationsTestCase<InstructionsSection> validateMu2consolInstructionsSectionInstructionsTestCase = new OperationsTestCase<InstructionsSection>(
-      "validateMu2consolInstructionsSectionInstructions",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_INSTRUCTIONS_SECTION_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateMu2consolInstructionsSectionInstructionsTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateMu2consolInstructionsSectionInstructions",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_INSTRUCTIONS_SECTION_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InstructionsSection target) {
+			@Override
+			protected void updateToFail(InstructionsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InstructionsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return InstructionsSectionOperations.validateMu2consolInstructionsSectionInstructions(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InstructionsSectionOperations.validateMu2consolInstructionsSectionInstructions(
-          (InstructionsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMu2consolInstructionsSectionInstructionsTestCase.doValidationTest();
-}
+		validateMu2consolInstructionsSectionInstructionsTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -115,13 +81,10 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolInstructionss() {
 
+		InstructionsSection target = objectFactory.create();
+		target.getmu2consolInstructionss();
 
-InstructionsSection target = objectFactory.create();
-target.getmu2consolInstructionss();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -129,67 +92,33 @@ target.getmu2consolInstructionss();
 	 */
 	@Test
 	public void testValidateInstructionsSectionTemplateId() {
-      OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
-      "validateInstructionsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InstructionsSection target) {
+			@Override
+			protected void updateToFail(InstructionsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InstructionsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return InstructionsSectionOperations.validateInstructionsSectionTemplateId(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InstructionsSectionOperations.validateInstructionsSectionTemplateId(
-          (InstructionsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateInstructionsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateInstructionsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -201,8 +130,7 @@ target.getmu2consolInstructionss();
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -214,9 +142,8 @@ target.getmu2consolInstructionss();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<InstructionsSection> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<InstructionsSection> {
+
 		public InstructionsSection create() {
 			return Mu2consolFactory.eINSTANCE.createInstructionsSection();
 		}
@@ -239,8 +166,7 @@ target.getmu2consolInstructionss();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			InstructionsSectionOperations {
+	private static class ConstructorTestClass extends InstructionsSectionOperations {
 	};
 
 	/**
@@ -250,17 +176,18 @@ target.getmu2consolInstructionss();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // InstructionsSectionOperations

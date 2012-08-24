@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
-
 
 import java.util.Map;
 
@@ -23,7 +21,6 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.operations.SocialHistorySectio
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
  * <!-- begin-user-doc -->
  * A static utility class that provides operations related to '<em><b>Social History Section</b></em>' model objects.
@@ -39,112 +36,59 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *
  * @generated
  */
- 
-public class SocialHistorySectionTest extends  CDAValidationTest {
 
+public class SocialHistorySectionTest extends CDAValidationTest {
 
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMu2consolSocialHistorySectionSmokingStatusObservation() {
+		OperationsTestCase<SocialHistorySection> validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<SocialHistorySection>(
+			"validateMu2consolSocialHistorySectionSmokingStatusObservation",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-/**
-*
-* @generated
-*/
-@Test
+			@Override
+			protected void updateToFail(SocialHistorySection target) {
 
- 
-									
-public void testValidateMu2consolSocialHistorySectionSmokingStatusObservation() {
-      OperationsTestCase<SocialHistorySection> validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<SocialHistorySection>(
-      "validateMu2consolSocialHistorySectionSmokingStatusObservation",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			}
 
-      @Override
-      protected void updateToFail(SocialHistorySection target) {
+			@Override
+			protected void updateToPass(SocialHistorySection target) {
+				target.init();
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SocialHistorySection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-        
-        
+				return SocialHistorySectionOperations.validateMu2consolSocialHistorySectionSmokingStatusObservation(
+					(SocialHistorySection) objectToTest, diagnostician, map);
+			}
 
-  
-      
+		};
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
+	}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SocialHistorySectionOperations.validateMu2consolSocialHistorySectionSmokingStatusObservation(
-          (SocialHistorySection) objectToTest, diagnostician, map);
-      }
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetmu2consolSmokingStatusObservations() {
 
-    };
+		SocialHistorySection target = objectFactory.create();
+		target.getmu2consolSmokingStatusObservations();
 
-    validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
-}		
+	}
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetmu2consolSmokingStatusObservations() {
-
-
-SocialHistorySection target = objectFactory.create();
-target.getmu2consolSmokingStatusObservations();
-
-
-
-}
-
-
-
-
-/**
-*
-* @generated
-*/
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends SocialHistorySectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -158,61 +102,55 @@ target.getmu2consolSmokingStatusObservations();
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	*
+	* @generated
+	*/
 	private static class ObjectFactory implements TestObjectFactory<SocialHistorySection> {
-		@Override
-		public SocialHistorySection create() {		
+
+		public SocialHistorySection create() {
 			return Mu2consolFactory.eINSTANCE.createSocialHistorySection();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	*
+	* @generated
+	*/
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	*
+	* @generated
+	*/
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends SocialHistorySectionOperations {};
-	
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
-	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
-	
-	
-	
 	/**
-*
-* @generated
-*/
-	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
-	
-	
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends SocialHistorySectionOperations {
+	};
 
-	
-	
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
+
+	/**
+	*
+	* @generated
+	*/
+
+	@Override
+	protected EObject getObjectToTest() {
+		return null;
+	}
+
 } // SocialHistorySectionOperations
