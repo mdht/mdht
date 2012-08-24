@@ -43,33 +43,67 @@ public class ObservationRequestEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateObservationRequestEntryTemplateId() {
-		OperationsTestCase<ObservationRequestEntry> validateObservationRequestEntryTemplateIdTestCase = new OperationsTestCase<ObservationRequestEntry>(
-			"validateObservationRequestEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ObservationRequestEntry> validateObservationRequestEntryTemplateIdTestCase = new OperationsTestCase<ObservationRequestEntry>(
+      "validateObservationRequestEntryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ObservationRequestEntry target) {
+      @Override
+      protected void updateToFail(ObservationRequestEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ObservationRequestEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ObservationRequestEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ObservationRequestEntryOperations.validateObservationRequestEntryTemplateId(
-					(ObservationRequestEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ObservationRequestEntryOperations.validateObservationRequestEntryTemplateId(
+          (ObservationRequestEntry) objectToTest, diagnostician, map);
+      }
 
-		validateObservationRequestEntryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateObservationRequestEntryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,9 +159,9 @@ public class ObservationRequestEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -135,8 +169,8 @@ public class ObservationRequestEntryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ObservationRequestEntryOperations

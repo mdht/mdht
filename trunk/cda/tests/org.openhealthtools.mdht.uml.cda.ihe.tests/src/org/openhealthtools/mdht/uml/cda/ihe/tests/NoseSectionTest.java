@@ -46,33 +46,67 @@ public class NoseSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNoseSectionTemplateId() {
-		OperationsTestCase<NoseSection> validateNoseSectionTemplateIdTestCase = new OperationsTestCase<NoseSection>(
-			"validateNoseSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_NOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<NoseSection> validateNoseSectionTemplateIdTestCase = new OperationsTestCase<NoseSection>(
+      "validateNoseSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_NOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(NoseSection target) {
+      @Override
+      protected void updateToFail(NoseSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(NoseSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(NoseSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return NoseSectionOperations.validateNoseSectionTemplateId(
-					(NoseSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return NoseSectionOperations.validateNoseSectionTemplateId(
+          (NoseSection) objectToTest, diagnostician, map);
+      }
 
-		validateNoseSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateNoseSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,31 +114,67 @@ public class NoseSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNoseSectionCode() {
-		OperationsTestCase<NoseSection> validateNoseSectionCodeTestCase = new OperationsTestCase<NoseSection>(
-			"validateNoseSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_NOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<NoseSection> validateNoseSectionCodeTestCase = new OperationsTestCase<NoseSection>(
+      "validateNoseSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_NOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(NoseSection target) {
+      @Override
+      protected void updateToFail(NoseSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(NoseSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(NoseSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return NoseSectionOperations.validateNoseSectionCode((NoseSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return NoseSectionOperations.validateNoseSectionCode(
+          (NoseSection) objectToTest, diagnostician, map);
+      }
 
-		validateNoseSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateNoseSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -147,10 +217,13 @@ public class NoseSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		NoseSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+NoseSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -205,17 +278,17 @@ public class NoseSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // NoseSectionOperations

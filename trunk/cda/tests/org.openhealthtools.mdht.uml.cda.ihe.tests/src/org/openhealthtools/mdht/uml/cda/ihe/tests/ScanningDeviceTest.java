@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.ScanningDeviceOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SC;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
@@ -315,33 +316,67 @@ public class ScanningDeviceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScanningDeviceTemplateId() {
-		OperationsTestCase<ScanningDevice> validateScanningDeviceTemplateIdTestCase = new OperationsTestCase<ScanningDevice>(
-			"validateScanningDeviceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ScanningDevice> validateScanningDeviceTemplateIdTestCase = new OperationsTestCase<ScanningDevice>(
+      "validateScanningDeviceTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ScanningDevice target) {
+      @Override
+      protected void updateToFail(ScanningDevice target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ScanningDevice target) {
-				target.init();
+      @Override
+      protected void updateToPass(ScanningDevice target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ScanningDeviceOperations.validateScanningDeviceTemplateId(
-					(ScanningDevice) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ScanningDeviceOperations.validateScanningDeviceTemplateId(
+          (ScanningDevice) objectToTest, diagnostician, map);
+      }
 
-		validateScanningDeviceTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateScanningDeviceTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -397,9 +432,9 @@ public class ScanningDeviceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -407,8 +442,8 @@ public class ScanningDeviceTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ScanningDeviceOperations

@@ -46,33 +46,67 @@ public class EyesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEyesSectionTemplateId() {
-		OperationsTestCase<EyesSection> validateEyesSectionTemplateIdTestCase = new OperationsTestCase<EyesSection>(
-			"validateEyesSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EYES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EyesSection> validateEyesSectionTemplateIdTestCase = new OperationsTestCase<EyesSection>(
+      "validateEyesSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EYES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EyesSection target) {
+      @Override
+      protected void updateToFail(EyesSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EyesSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(EyesSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EyesSectionOperations.validateEyesSectionTemplateId(
-					(EyesSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EyesSectionOperations.validateEyesSectionTemplateId(
+          (EyesSection) objectToTest, diagnostician, map);
+      }
 
-		validateEyesSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateEyesSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,31 +114,67 @@ public class EyesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEyesSectionCode() {
-		OperationsTestCase<EyesSection> validateEyesSectionCodeTestCase = new OperationsTestCase<EyesSection>(
-			"validateEyesSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EYES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<EyesSection> validateEyesSectionCodeTestCase = new OperationsTestCase<EyesSection>(
+      "validateEyesSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EYES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EyesSection target) {
+      @Override
+      protected void updateToFail(EyesSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EyesSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(EyesSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EyesSectionOperations.validateEyesSectionCode((EyesSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EyesSectionOperations.validateEyesSectionCode(
+          (EyesSection) objectToTest, diagnostician, map);
+      }
 
-		validateEyesSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateEyesSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -147,10 +217,13 @@ public class EyesSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		EyesSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+EyesSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -205,17 +278,17 @@ public class EyesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // EyesSectionOperations

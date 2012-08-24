@@ -43,33 +43,67 @@ public class FamilyMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyMedicalHistorySectionTemplateId() {
-		OperationsTestCase<FamilyMedicalHistorySection> validateFamilyMedicalHistorySectionTemplateIdTestCase = new OperationsTestCase<FamilyMedicalHistorySection>(
-			"validateFamilyMedicalHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_MEDICAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyMedicalHistorySection> validateFamilyMedicalHistorySectionTemplateIdTestCase = new OperationsTestCase<FamilyMedicalHistorySection>(
+      "validateFamilyMedicalHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_MEDICAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(FamilyMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyMedicalHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyMedicalHistorySectionOperations.validateFamilyMedicalHistorySectionTemplateId(
-					(FamilyMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyMedicalHistorySectionOperations.validateFamilyMedicalHistorySectionTemplateId(
+          (FamilyMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateFamilyMedicalHistorySectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateFamilyMedicalHistorySectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,9 +159,9 @@ public class FamilyMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -135,8 +169,8 @@ public class FamilyMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FamilyMedicalHistorySectionOperations

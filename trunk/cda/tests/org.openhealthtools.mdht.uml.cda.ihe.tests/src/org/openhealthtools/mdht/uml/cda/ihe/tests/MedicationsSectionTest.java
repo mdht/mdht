@@ -46,33 +46,67 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIHEMedicationsSectionTemplateId() {
-		OperationsTestCase<MedicationsSection> validateIHEMedicationsSectionTemplateIdTestCase = new OperationsTestCase<MedicationsSection>(
-			"validateIHEMedicationsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_IHE_MEDICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationsSection> validateIHEMedicationsSectionTemplateIdTestCase = new OperationsTestCase<MedicationsSection>(
+      "validateIHEMedicationsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_IHE_MEDICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationsSection target) {
+      @Override
+      protected void updateToFail(MedicationsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationsSectionOperations.validateIHEMedicationsSectionTemplateId(
-					(MedicationsSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationsSectionOperations.validateIHEMedicationsSectionTemplateId(
+          (MedicationsSection) objectToTest, diagnostician, map);
+      }
 
-		validateIHEMedicationsSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateIHEMedicationsSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -115,10 +149,13 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMedications() {
 
-		MedicationsSection target = objectFactory.create();
-		target.getMedications();
 
-	}
+MedicationsSection target = objectFactory.create();
+target.getMedications();
+
+
+
+}
 
 	/**
 	*
@@ -174,9 +211,9 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -184,8 +221,8 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicationsSectionOperations

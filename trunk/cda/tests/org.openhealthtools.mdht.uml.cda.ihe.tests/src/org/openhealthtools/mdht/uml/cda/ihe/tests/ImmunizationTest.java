@@ -91,33 +91,67 @@ public class ImmunizationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationTemplateId() {
-		OperationsTestCase<Immunization> validateImmunizationTemplateIdTestCase = new OperationsTestCase<Immunization>(
-			"validateImmunizationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Immunization> validateImmunizationTemplateIdTestCase = new OperationsTestCase<Immunization>(
+      "validateImmunizationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Immunization target) {
+      @Override
+      protected void updateToFail(Immunization target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Immunization target) {
-				target.init();
+      @Override
+      protected void updateToPass(Immunization target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ImmunizationOperations.validateImmunizationTemplateId(
-					(Immunization) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ImmunizationOperations.validateImmunizationTemplateId(
+          (Immunization) objectToTest, diagnostician, map);
+      }
 
-		validateImmunizationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateImmunizationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,31 +159,67 @@ public class ImmunizationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationCode() {
-		OperationsTestCase<Immunization> validateImmunizationCodeTestCase = new OperationsTestCase<Immunization>(
-			"validateImmunizationCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<Immunization> validateImmunizationCodeTestCase = new OperationsTestCase<Immunization>(
+      "validateImmunizationCode",
+      operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Immunization target) {
+      @Override
+      protected void updateToFail(Immunization target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Immunization target) {
-				target.init();
+      @Override
+      protected void updateToPass(Immunization target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ImmunizationOperations.validateImmunizationCode((Immunization) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ImmunizationOperations.validateImmunizationCode(
+          (Immunization) objectToTest, diagnostician, map);
+      }
 
-		validateImmunizationCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateImmunizationCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -157,36 +227,70 @@ public class ImmunizationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationStatusCode() {
-		OperationsTestCase<Immunization> validateImmunizationStatusCodeTestCase = new OperationsTestCase<Immunization>(
-			"validateImmunizationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Immunization> validateImmunizationStatusCodeTestCase = new OperationsTestCase<Immunization>(
+      "validateImmunizationStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Immunization target) {
+      @Override
+      protected void updateToFail(Immunization target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Immunization target) {
-				target.init();
+      @Override
+      protected void updateToPass(Immunization target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ImmunizationOperations.validateImmunizationStatusCode(
-					(Immunization) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ImmunizationOperations.validateImmunizationStatusCode(
+          (Immunization) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateImmunizationStatusCodeTestCase.doValidationTest();
-	}
+    validateImmunizationStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -194,33 +298,67 @@ public class ImmunizationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationMoodCode() {
-		OperationsTestCase<Immunization> validateImmunizationMoodCodeTestCase = new OperationsTestCase<Immunization>(
-			"validateImmunizationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Immunization> validateImmunizationMoodCodeTestCase = new OperationsTestCase<Immunization>(
+      "validateImmunizationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Immunization target) {
+      @Override
+      protected void updateToFail(Immunization target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Immunization target) {
-				target.init();
+      @Override
+      protected void updateToPass(Immunization target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ImmunizationOperations.validateImmunizationMoodCode(
-					(Immunization) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ImmunizationOperations.validateImmunizationMoodCode(
+          (Immunization) objectToTest, diagnostician, map);
+      }
 
-		validateImmunizationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateImmunizationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -313,9 +451,9 @@ public class ImmunizationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -323,8 +461,8 @@ public class ImmunizationTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ImmunizationOperations

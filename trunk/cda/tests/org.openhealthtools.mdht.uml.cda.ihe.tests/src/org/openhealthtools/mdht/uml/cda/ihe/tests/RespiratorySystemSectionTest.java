@@ -46,33 +46,67 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateRespiratorySystemSectionTemplateId() {
-		OperationsTestCase<RespiratorySystemSection> validateRespiratorySystemSectionTemplateIdTestCase = new OperationsTestCase<RespiratorySystemSection>(
-			"validateRespiratorySystemSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<RespiratorySystemSection> validateRespiratorySystemSectionTemplateIdTestCase = new OperationsTestCase<RespiratorySystemSection>(
+      "validateRespiratorySystemSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(RespiratorySystemSection target) {
+      @Override
+      protected void updateToFail(RespiratorySystemSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(RespiratorySystemSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(RespiratorySystemSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return RespiratorySystemSectionOperations.validateRespiratorySystemSectionTemplateId(
-					(RespiratorySystemSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return RespiratorySystemSectionOperations.validateRespiratorySystemSectionTemplateId(
+          (RespiratorySystemSection) objectToTest, diagnostician, map);
+      }
 
-		validateRespiratorySystemSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateRespiratorySystemSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,33 +114,67 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateRespiratorySystemSectionCode() {
-		OperationsTestCase<RespiratorySystemSection> validateRespiratorySystemSectionCodeTestCase = new OperationsTestCase<RespiratorySystemSection>(
-			"validateRespiratorySystemSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<RespiratorySystemSection> validateRespiratorySystemSectionCodeTestCase = new OperationsTestCase<RespiratorySystemSection>(
+      "validateRespiratorySystemSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(RespiratorySystemSection target) {
+      @Override
+      protected void updateToFail(RespiratorySystemSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(RespiratorySystemSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(RespiratorySystemSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return RespiratorySystemSectionOperations.validateRespiratorySystemSectionCode(
-					(RespiratorySystemSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return RespiratorySystemSectionOperations.validateRespiratorySystemSectionCode(
+          (RespiratorySystemSection) objectToTest, diagnostician, map);
+      }
 
-		validateRespiratorySystemSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateRespiratorySystemSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -149,10 +217,13 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		RespiratorySystemSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+RespiratorySystemSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -207,17 +278,17 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // RespiratorySystemSectionOperations

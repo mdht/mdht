@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemStatusObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
@@ -35,7 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation#validateIHEProblemStatusObservationHasTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Problem Status Observation Has Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation#validateIHEProblemStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Problem Status Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation#validateIHEProblemStatusObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Problem Status Observation Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation#validateStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation#validateIHEProblemStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Problem Status Observation Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,33 +88,67 @@ public class ProblemStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIHEProblemStatusObservationTemplateId() {
-		OperationsTestCase<ProblemStatusObservation> validateIHEProblemStatusObservationTemplateIdTestCase = new OperationsTestCase<ProblemStatusObservation>(
-			"validateIHEProblemStatusObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProblemStatusObservation> validateIHEProblemStatusObservationTemplateIdTestCase = new OperationsTestCase<ProblemStatusObservation>(
+      "validateIHEProblemStatusObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProblemStatusObservation target) {
+      @Override
+      protected void updateToFail(ProblemStatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProblemStatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProblemStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProblemStatusObservationOperations.validateIHEProblemStatusObservationTemplateId(
-					(ProblemStatusObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProblemStatusObservationOperations.validateIHEProblemStatusObservationTemplateId(
+          (ProblemStatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateIHEProblemStatusObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateIHEProblemStatusObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -150,6 +185,80 @@ public class ProblemStatusObservationTest extends CDAValidationTest {
 	}
 
 	/**
+*
+* @generated
+*/
+@Test
+
+ 
+                  
+public void testValidateIHEProblemStatusObservationValue() {
+      OperationsTestCase<ProblemStatusObservation> validateIHEProblemStatusObservationValueTestCase = new OperationsTestCase<ProblemStatusObservation>(
+      "validateIHEProblemStatusObservationValue",
+      operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
+
+      @Override
+      protected void updateToFail(ProblemStatusObservation target) {
+
+      }
+
+      @Override
+      protected void updateToPass(ProblemStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
+
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
+
+  
+      
+
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
+
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProblemStatusObservationOperations.validateIHEProblemStatusObservationValue(
+          (ProblemStatusObservation) objectToTest, diagnostician, map);
+      }
+
+    };
+
+    validateIHEProblemStatusObservationValueTestCase.doValidationTest();
+}
+
+  /**
 	*
 	* @generated NOT
 	*/
@@ -238,9 +347,9 @@ public class ProblemStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -248,8 +357,8 @@ public class ProblemStatusObservationTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProblemStatusObservationOperations

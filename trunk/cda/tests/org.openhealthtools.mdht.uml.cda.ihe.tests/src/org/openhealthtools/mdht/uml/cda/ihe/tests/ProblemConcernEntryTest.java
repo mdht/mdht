@@ -48,33 +48,67 @@ public class ProblemConcernEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemConcernEntryTemplateId() {
-		OperationsTestCase<ProblemConcernEntry> validateProblemConcernEntryTemplateIdTestCase = new OperationsTestCase<ProblemConcernEntry>(
-			"validateProblemConcernEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProblemConcernEntry> validateProblemConcernEntryTemplateIdTestCase = new OperationsTestCase<ProblemConcernEntry>(
+      "validateProblemConcernEntryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PROBLEM_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProblemConcernEntry target) {
+      @Override
+      protected void updateToFail(ProblemConcernEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProblemConcernEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProblemConcernEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProblemConcernEntryOperations.validateProblemConcernEntryTemplateId(
-					(ProblemConcernEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProblemConcernEntryOperations.validateProblemConcernEntryTemplateId(
+          (ProblemConcernEntry) objectToTest, diagnostician, map);
+      }
 
-		validateProblemConcernEntryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateProblemConcernEntryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -123,10 +157,13 @@ public class ProblemConcernEntryTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntries() {
 
-		ProblemConcernEntry target = objectFactory.create();
-		target.getProblemEntries();
 
-	}
+ProblemConcernEntry target = objectFactory.create();
+target.getProblemEntries();
+
+
+
+}
 
 	/**
 	*
@@ -182,9 +219,9 @@ public class ProblemConcernEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -192,8 +229,8 @@ public class ProblemConcernEntryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProblemConcernEntryOperations

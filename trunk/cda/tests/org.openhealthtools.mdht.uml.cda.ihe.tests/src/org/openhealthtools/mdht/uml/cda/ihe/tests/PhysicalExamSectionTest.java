@@ -118,33 +118,67 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionTemplateId() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionTemplateIdTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionTemplateIdTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionTemplateId(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionTemplateId(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-		validatePhysicalExamSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePhysicalExamSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -152,40 +186,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionVitalSignsSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionVitalSignsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionVitalSignsSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionVitalSignsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionVitalSignsSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* VitalSignsSection */
-				VitalSignsSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createVitalSignsSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* VitalSignsSection */ 
+        VitalSignsSection section =
+        
+        IHEFactory.eINSTANCE.createVitalSignsSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionVitalSignsSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionVitalSignsSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionVitalSignsSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionVitalSignsSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -193,40 +263,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionGeneralAppearanceSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionGeneralAppearanceSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionGeneralAppearanceSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_GENERAL_APPEARANCE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionGeneralAppearanceSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionGeneralAppearanceSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_GENERAL_APPEARANCE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* GeneralAppearanceSection */
-				GeneralAppearanceSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createGeneralAppearanceSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* GeneralAppearanceSection */ 
+        GeneralAppearanceSection section =
+        
+        IHEFactory.eINSTANCE.createGeneralAppearanceSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionGeneralAppearanceSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionGeneralAppearanceSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionGeneralAppearanceSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionGeneralAppearanceSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -234,40 +340,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionVisibleImplantedMedicalDevicesSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionVisibleImplantedMedicalDevicesSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionVisibleImplantedMedicalDevicesSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_VISIBLE_IMPLANTED_MEDICAL_DEVICES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionVisibleImplantedMedicalDevicesSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionVisibleImplantedMedicalDevicesSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_VISIBLE_IMPLANTED_MEDICAL_DEVICES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* VisibleImplantedMedicalDevicesSection */
-				VisibleImplantedMedicalDevicesSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createVisibleImplantedMedicalDevicesSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* VisibleImplantedMedicalDevicesSection */ 
+        VisibleImplantedMedicalDevicesSection section =
+        
+        IHEFactory.eINSTANCE.createVisibleImplantedMedicalDevicesSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionVisibleImplantedMedicalDevicesSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionVisibleImplantedMedicalDevicesSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionVisibleImplantedMedicalDevicesSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionVisibleImplantedMedicalDevicesSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -275,40 +417,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionIntegumentarySystemSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionIntegumentarySystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionIntegumentarySystemSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_INTEGUMENTARY_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionIntegumentarySystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionIntegumentarySystemSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_INTEGUMENTARY_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* IntegumentarySystemSection */
-				IntegumentarySystemSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createIntegumentarySystemSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* IntegumentarySystemSection */ 
+        IntegumentarySystemSection section =
+        
+        IHEFactory.eINSTANCE.createIntegumentarySystemSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionIntegumentarySystemSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionIntegumentarySystemSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionIntegumentarySystemSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionIntegumentarySystemSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -316,40 +494,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionHeadSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionHeadSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionHeadSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_HEAD_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionHeadSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionHeadSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_HEAD_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* HeadSection */
-				HeadSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createHeadSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* HeadSection */ 
+        HeadSection section =
+        
+        IHEFactory.eINSTANCE.createHeadSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionHeadSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionHeadSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionHeadSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionHeadSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -357,40 +571,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionEyesSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEyesSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionEyesSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EYES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEyesSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionEyesSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EYES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* EyesSection */
-				EyesSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createEyesSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* EyesSection */ 
+        EyesSection section =
+        
+        IHEFactory.eINSTANCE.createEyesSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionEyesSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionEyesSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionEyesSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionEyesSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -398,40 +648,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionEarsNoseMouthThroatSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEarsNoseMouthThroatSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionEarsNoseMouthThroatSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EARS_NOSE_MOUTH_THROAT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEarsNoseMouthThroatSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionEarsNoseMouthThroatSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EARS_NOSE_MOUTH_THROAT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* EarsNoseMouthThroatSection */
-				EarsNoseMouthThroatSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createEarsNoseMouthThroatSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* EarsNoseMouthThroatSection */ 
+        EarsNoseMouthThroatSection section =
+        
+        IHEFactory.eINSTANCE.createEarsNoseMouthThroatSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionEarsNoseMouthThroatSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionEarsNoseMouthThroatSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionEarsNoseMouthThroatSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionEarsNoseMouthThroatSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -439,40 +725,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionEarsSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEarsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionEarsSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EARS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEarsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionEarsSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EARS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* EarsSection */
-				EarsSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createEarsSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* EarsSection */ 
+        EarsSection section =
+        
+        IHEFactory.eINSTANCE.createEarsSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionEarsSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionEarsSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionEarsSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionEarsSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -480,40 +802,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionNoseSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionNoseSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionNoseSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_NOSE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionNoseSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionNoseSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_NOSE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* NoseSection */
-				NoseSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createNoseSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* NoseSection */ 
+        NoseSection section =
+        
+        IHEFactory.eINSTANCE.createNoseSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionNoseSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionNoseSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionNoseSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionNoseSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -521,40 +879,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionMouthThroatTeethSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionMouthThroatTeethSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionMouthThroatTeethSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_MOUTH_THROAT_TEETH_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionMouthThroatTeethSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionMouthThroatTeethSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_MOUTH_THROAT_TEETH_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* MouthThroatTeethSection */
-				MouthThroatTeethSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createMouthThroatTeethSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* MouthThroatTeethSection */ 
+        MouthThroatTeethSection section =
+        
+        IHEFactory.eINSTANCE.createMouthThroatTeethSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionMouthThroatTeethSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionMouthThroatTeethSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionMouthThroatTeethSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionMouthThroatTeethSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -562,40 +956,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionNeckSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionNeckSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionNeckSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_NECK_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionNeckSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionNeckSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_NECK_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* NeckSection */
-				NeckSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createNeckSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* NeckSection */ 
+        NeckSection section =
+        
+        IHEFactory.eINSTANCE.createNeckSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionNeckSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionNeckSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionNeckSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionNeckSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -603,40 +1033,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionEndocrineSystemSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEndocrineSystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionEndocrineSystemSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_ENDOCRINE_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionEndocrineSystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionEndocrineSystemSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_ENDOCRINE_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* EndocrineSystemSection */
-				EndocrineSystemSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createEndocrineSystemSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* EndocrineSystemSection */ 
+        EndocrineSystemSection section =
+        
+        IHEFactory.eINSTANCE.createEndocrineSystemSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionEndocrineSystemSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionEndocrineSystemSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionEndocrineSystemSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionEndocrineSystemSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -644,40 +1110,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionThoraxLungsSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionThoraxLungsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionThoraxLungsSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_THORAX_LUNGS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionThoraxLungsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionThoraxLungsSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_THORAX_LUNGS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* ThoraxLungsSection */
-				ThoraxLungsSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createThoraxLungsSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* ThoraxLungsSection */ 
+        ThoraxLungsSection section =
+        
+        IHEFactory.eINSTANCE.createThoraxLungsSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionThoraxLungsSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionThoraxLungsSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionThoraxLungsSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionThoraxLungsSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -685,40 +1187,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionChestWallSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionChestWallSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionChestWallSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_CHEST_WALL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionChestWallSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionChestWallSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_CHEST_WALL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* ChestWallSection */
-				ChestWallSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createChestWallSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* ChestWallSection */ 
+        ChestWallSection section =
+        
+        IHEFactory.eINSTANCE.createChestWallSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionChestWallSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionChestWallSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionChestWallSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionChestWallSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -726,40 +1264,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionBreastSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionBreastSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionBreastSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_BREAST_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionBreastSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionBreastSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_BREAST_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* BreastSection */
-				BreastSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createBreastSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* BreastSection */ 
+        BreastSection section =
+        
+        IHEFactory.eINSTANCE.createBreastSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionBreastSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionBreastSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionBreastSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionBreastSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -767,40 +1341,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionHeartSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionHeartSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionHeartSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_HEART_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionHeartSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionHeartSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_HEART_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* HeartSection */
-				HeartSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createHeartSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* HeartSection */ 
+        HeartSection section =
+        
+        IHEFactory.eINSTANCE.createHeartSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionHeartSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionHeartSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionHeartSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionHeartSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -808,40 +1418,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionRespiratorySystemSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionRespiratorySystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionRespiratorySystemSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_RESPIRATORY_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionRespiratorySystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionRespiratorySystemSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_RESPIRATORY_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* RespiratorySystemSection */
-				RespiratorySystemSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createRespiratorySystemSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* RespiratorySystemSection */ 
+        RespiratorySystemSection section =
+        
+        IHEFactory.eINSTANCE.createRespiratorySystemSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionRespiratorySystemSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionRespiratorySystemSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionRespiratorySystemSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionRespiratorySystemSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -849,40 +1495,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionAbdomenSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionAbdomenSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionAbdomenSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_ABDOMEN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionAbdomenSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionAbdomenSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_ABDOMEN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* AbdomenSection */
-				AbdomenSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createAbdomenSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* AbdomenSection */ 
+        AbdomenSection section =
+        
+        IHEFactory.eINSTANCE.createAbdomenSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionAbdomenSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionAbdomenSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionAbdomenSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionAbdomenSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -890,40 +1572,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionLymphaticSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionLymphaticSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionLymphaticSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_LYMPHATIC_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionLymphaticSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionLymphaticSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_LYMPHATIC_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* LymphaticSection */
-				LymphaticSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createLymphaticSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* LymphaticSection */ 
+        LymphaticSection section =
+        
+        IHEFactory.eINSTANCE.createLymphaticSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionLymphaticSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionLymphaticSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionLymphaticSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionLymphaticSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -931,40 +1649,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionVesselsSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionVesselsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionVesselsSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_VESSELS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionVesselsSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionVesselsSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_VESSELS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* VesselsSection */
-				VesselsSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createVesselsSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* VesselsSection */ 
+        VesselsSection section =
+        
+        IHEFactory.eINSTANCE.createVesselsSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionVesselsSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionVesselsSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionVesselsSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionVesselsSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -972,40 +1726,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionMusculoskeletalSystemSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionMusculoskeletalSystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionMusculoskeletalSystemSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_MUSCULOSKELETAL_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionMusculoskeletalSystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionMusculoskeletalSystemSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_MUSCULOSKELETAL_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* MusculoskeletalSystemSection */
-				MusculoskeletalSystemSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createMusculoskeletalSystemSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* MusculoskeletalSystemSection */ 
+        MusculoskeletalSystemSection section =
+        
+        IHEFactory.eINSTANCE.createMusculoskeletalSystemSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionMusculoskeletalSystemSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionMusculoskeletalSystemSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionMusculoskeletalSystemSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionMusculoskeletalSystemSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1013,40 +1803,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionNeurologicSystemSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionNeurologicSystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionNeurologicSystemSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_NEUROLOGIC_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionNeurologicSystemSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionNeurologicSystemSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_NEUROLOGIC_SYSTEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* NeurologicSystemSection */
-				NeurologicSystemSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createNeurologicSystemSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* NeurologicSystemSection */ 
+        NeurologicSystemSection section =
+        
+        IHEFactory.eINSTANCE.createNeurologicSystemSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionNeurologicSystemSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionNeurologicSystemSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionNeurologicSystemSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionNeurologicSystemSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1054,40 +1880,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionGenitaliaSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionGenitaliaSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionGenitaliaSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_GENITALIA_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionGenitaliaSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionGenitaliaSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_GENITALIA_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* GenitaliaSection */
-				GenitaliaSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createGenitaliaSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* GenitaliaSection */ 
+        GenitaliaSection section =
+        
+        IHEFactory.eINSTANCE.createGenitaliaSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionGenitaliaSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionGenitaliaSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionGenitaliaSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionGenitaliaSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1095,40 +1957,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionRectumSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionRectumSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionRectumSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_RECTUM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionRectumSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionRectumSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_RECTUM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* RectumSection */
-				RectumSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createRectumSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* RectumSection */ 
+        RectumSection section =
+        
+        IHEFactory.eINSTANCE.createRectumSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionRectumSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionRectumSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionRectumSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionRectumSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1136,40 +2034,76 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionExtremitiesSection() {
-		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionExtremitiesSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validatePhysicalExamSectionExtremitiesSection",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EXTREMITIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionExtremitiesSectionTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validatePhysicalExamSectionExtremitiesSection",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_EXTREMITIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* ExtremitiesSection */
-				ExtremitiesSection section =
+        
+        
 
-				IHEFactory.eINSTANCE.createExtremitiesSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* ExtremitiesSection */ 
+        ExtremitiesSection section =
+        
+        IHEFactory.eINSTANCE.createExtremitiesSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validatePhysicalExamSectionExtremitiesSection(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return PhysicalExamSectionOperations.validatePhysicalExamSectionExtremitiesSection(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePhysicalExamSectionExtremitiesSectionTestCase.doValidationTest();
-	}
+    validatePhysicalExamSectionExtremitiesSectionTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1178,10 +2112,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetVitalSignsSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getVitalSignsSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getVitalSignsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1190,10 +2127,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetGeneralAppearanceSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getGeneralAppearanceSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getGeneralAppearanceSection();
+
+
+
+}
 
 	/**
 	*
@@ -1202,10 +2142,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetVisibleImplantedMedicalDevicesSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getVisibleImplantedMedicalDevicesSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getVisibleImplantedMedicalDevicesSection();
+
+
+
+}
 
 	/**
 	*
@@ -1214,10 +2157,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetIntegumentarySystemSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getIntegumentarySystemSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getIntegumentarySystemSection();
+
+
+
+}
 
 	/**
 	*
@@ -1226,10 +2172,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetHeadSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getHeadSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getHeadSection();
+
+
+
+}
 
 	/**
 	*
@@ -1238,10 +2187,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetEyesSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getEyesSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getEyesSection();
+
+
+
+}
 
 	/**
 	*
@@ -1250,10 +2202,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetEarsNoseMouthThroatSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getEarsNoseMouthThroatSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getEarsNoseMouthThroatSection();
+
+
+
+}
 
 	/**
 	*
@@ -1262,10 +2217,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetEarsSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getEarsSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getEarsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1274,10 +2232,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetNoseSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getNoseSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getNoseSection();
+
+
+
+}
 
 	/**
 	*
@@ -1286,10 +2247,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMouthThroatTeethSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getMouthThroatTeethSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getMouthThroatTeethSection();
+
+
+
+}
 
 	/**
 	*
@@ -1298,10 +2262,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetNeckSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getNeckSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getNeckSection();
+
+
+
+}
 
 	/**
 	*
@@ -1310,10 +2277,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetEndocrineSystemSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getEndocrineSystemSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getEndocrineSystemSection();
+
+
+
+}
 
 	/**
 	*
@@ -1322,10 +2292,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetThoraxLungsSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getThoraxLungsSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getThoraxLungsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1334,10 +2307,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetChestWallSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getChestWallSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getChestWallSection();
+
+
+
+}
 
 	/**
 	*
@@ -1346,10 +2322,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetBreastSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getBreastSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getBreastSection();
+
+
+
+}
 
 	/**
 	*
@@ -1358,10 +2337,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetHeartSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getHeartSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getHeartSection();
+
+
+
+}
 
 	/**
 	*
@@ -1370,10 +2352,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetRespiratorySystemSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getRespiratorySystemSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getRespiratorySystemSection();
+
+
+
+}
 
 	/**
 	*
@@ -1382,10 +2367,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetAbdomenSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getAbdomenSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getAbdomenSection();
+
+
+
+}
 
 	/**
 	*
@@ -1394,10 +2382,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetLymphaticSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getLymphaticSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getLymphaticSection();
+
+
+
+}
 
 	/**
 	*
@@ -1406,10 +2397,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetVesselsSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getVesselsSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getVesselsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1418,10 +2412,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMusculoskeletalSystemSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getMusculoskeletalSystemSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getMusculoskeletalSystemSection();
+
+
+
+}
 
 	/**
 	*
@@ -1430,10 +2427,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetNeurologicSystemSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getNeurologicSystemSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getNeurologicSystemSection();
+
+
+
+}
 
 	/**
 	*
@@ -1442,10 +2442,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetGenitaliaSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getGenitaliaSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getGenitaliaSection();
+
+
+
+}
 
 	/**
 	*
@@ -1454,10 +2457,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetRectumSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getRectumSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getRectumSection();
+
+
+
+}
 
 	/**
 	*
@@ -1466,10 +2472,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetExtremitiesSection() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getExtremitiesSection();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getExtremitiesSection();
+
+
+
+}
 
 	/**
 	*
@@ -1525,9 +2534,9 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -1535,8 +2544,8 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PhysicalExamSectionOperations

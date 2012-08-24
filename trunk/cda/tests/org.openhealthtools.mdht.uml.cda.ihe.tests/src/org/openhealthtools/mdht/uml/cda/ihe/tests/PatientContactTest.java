@@ -31,7 +31,7 @@ public class PatientContactTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testNoOperations() {
-	}
+  }
 
 	/**
 	*
@@ -39,8 +39,8 @@ public class PatientContactTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PatientContactOperations

@@ -48,33 +48,67 @@ public class InternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInternalReferenceTemplateId() {
-		OperationsTestCase<InternalReference> validateInternalReferenceTemplateIdTestCase = new OperationsTestCase<InternalReference>(
-			"validateInternalReferenceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<InternalReference> validateInternalReferenceTemplateIdTestCase = new OperationsTestCase<InternalReference>(
+      "validateInternalReferenceTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(InternalReference target) {
+      @Override
+      protected void updateToFail(InternalReference target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(InternalReference target) {
-				target.init();
+      @Override
+      protected void updateToPass(InternalReference target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return InternalReferenceOperations.validateInternalReferenceTemplateId(
-					(InternalReference) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return InternalReferenceOperations.validateInternalReferenceTemplateId(
+          (InternalReference) objectToTest, diagnostician, map);
+      }
 
-		validateInternalReferenceTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateInternalReferenceTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -200,9 +234,9 @@ public class InternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -210,8 +244,8 @@ public class InternalReferenceTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // InternalReferenceOperations

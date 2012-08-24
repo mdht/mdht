@@ -43,33 +43,67 @@ public class EncounterActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncountersActivityTemplateId() {
-		OperationsTestCase<EncounterActivity> validateEncountersActivityTemplateIdTestCase = new OperationsTestCase<EncounterActivity>(
-			"validateEncountersActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterActivity> validateEncountersActivityTemplateIdTestCase = new OperationsTestCase<EncounterActivity>(
+      "validateEncountersActivityTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterActivity target) {
+      @Override
+      protected void updateToFail(EncounterActivity target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterActivity target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterActivity target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterActivityOperations.validateEncountersActivityTemplateId(
-					(EncounterActivity) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterActivityOperations.validateEncountersActivityTemplateId(
+          (EncounterActivity) objectToTest, diagnostician, map);
+      }
 
-		validateEncountersActivityTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateEncountersActivityTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,9 +159,9 @@ public class EncounterActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -135,8 +169,8 @@ public class EncounterActivityTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // EncounterActivityOperations

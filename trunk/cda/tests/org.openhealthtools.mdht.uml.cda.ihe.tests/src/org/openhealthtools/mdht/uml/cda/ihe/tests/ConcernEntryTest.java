@@ -212,33 +212,67 @@ public class ConcernEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConcernEntryTemplateId() {
-		OperationsTestCase<ConcernEntry> validateConcernEntryTemplateIdTestCase = new OperationsTestCase<ConcernEntry>(
-			"validateConcernEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ConcernEntry> validateConcernEntryTemplateIdTestCase = new OperationsTestCase<ConcernEntry>(
+      "validateConcernEntryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ConcernEntry target) {
+      @Override
+      protected void updateToFail(ConcernEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ConcernEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ConcernEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ConcernEntryOperations.validateConcernEntryTemplateId(
-					(ConcernEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ConcernEntryOperations.validateConcernEntryTemplateId(
+          (ConcernEntry) objectToTest, diagnostician, map);
+      }
 
-		validateConcernEntryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateConcernEntryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -330,9 +364,9 @@ public class ConcernEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -340,8 +374,8 @@ public class ConcernEntryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ConcernEntryOperations

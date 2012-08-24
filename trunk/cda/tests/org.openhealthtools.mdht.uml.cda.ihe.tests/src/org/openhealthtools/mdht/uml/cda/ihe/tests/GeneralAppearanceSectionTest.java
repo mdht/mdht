@@ -47,33 +47,67 @@ public class GeneralAppearanceSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralAppearanceSectionTemplateId() {
-		OperationsTestCase<GeneralAppearanceSection> validateGeneralAppearanceSectionTemplateIdTestCase = new OperationsTestCase<GeneralAppearanceSection>(
-			"validateGeneralAppearanceSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_APPEARANCE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GeneralAppearanceSection> validateGeneralAppearanceSectionTemplateIdTestCase = new OperationsTestCase<GeneralAppearanceSection>(
+      "validateGeneralAppearanceSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_APPEARANCE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralAppearanceSection target) {
+      @Override
+      protected void updateToFail(GeneralAppearanceSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralAppearanceSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralAppearanceSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GeneralAppearanceSectionOperations.validateGeneralAppearanceSectionTemplateId(
-					(GeneralAppearanceSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralAppearanceSectionOperations.validateGeneralAppearanceSectionTemplateId(
+          (GeneralAppearanceSection) objectToTest, diagnostician, map);
+      }
 
-		validateGeneralAppearanceSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateGeneralAppearanceSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -81,33 +115,67 @@ public class GeneralAppearanceSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralAppearanceSectionCode() {
-		OperationsTestCase<GeneralAppearanceSection> validateGeneralAppearanceSectionCodeTestCase = new OperationsTestCase<GeneralAppearanceSection>(
-			"validateGeneralAppearanceSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_APPEARANCE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GeneralAppearanceSection> validateGeneralAppearanceSectionCodeTestCase = new OperationsTestCase<GeneralAppearanceSection>(
+      "validateGeneralAppearanceSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_APPEARANCE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralAppearanceSection target) {
+      @Override
+      protected void updateToFail(GeneralAppearanceSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralAppearanceSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralAppearanceSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GeneralAppearanceSectionOperations.validateGeneralAppearanceSectionCode(
-					(GeneralAppearanceSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralAppearanceSectionOperations.validateGeneralAppearanceSectionCode(
+          (GeneralAppearanceSection) objectToTest, diagnostician, map);
+      }
 
-		validateGeneralAppearanceSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateGeneralAppearanceSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -152,10 +220,13 @@ public class GeneralAppearanceSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		GeneralAppearanceSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+GeneralAppearanceSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -210,17 +281,17 @@ public class GeneralAppearanceSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // GeneralAppearanceSectionOperations

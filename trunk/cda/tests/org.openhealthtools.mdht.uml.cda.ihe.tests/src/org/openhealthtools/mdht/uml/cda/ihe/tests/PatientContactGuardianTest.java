@@ -50,33 +50,67 @@ public class PatientContactGuardianTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePatientContactGuardianTemplateId() {
-		OperationsTestCase<PatientContactGuardian> validatePatientContactGuardianTemplateIdTestCase = new OperationsTestCase<PatientContactGuardian>(
-			"validatePatientContactGuardianTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_GUARDIAN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PatientContactGuardian> validatePatientContactGuardianTemplateIdTestCase = new OperationsTestCase<PatientContactGuardian>(
+      "validatePatientContactGuardianTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_GUARDIAN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PatientContactGuardian target) {
+      @Override
+      protected void updateToFail(PatientContactGuardian target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PatientContactGuardian target) {
-				target.init();
+      @Override
+      protected void updateToPass(PatientContactGuardian target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PatientContactGuardianOperations.validatePatientContactGuardianTemplateId(
-					(PatientContactGuardian) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PatientContactGuardianOperations.validatePatientContactGuardianTemplateId(
+          (PatientContactGuardian) objectToTest, diagnostician, map);
+      }
 
-		validatePatientContactGuardianTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePatientContactGuardianTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -118,33 +152,67 @@ public class PatientContactGuardianTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePatientContactGuardianClassCode() {
-		OperationsTestCase<PatientContactGuardian> validatePatientContactGuardianClassCodeTestCase = new OperationsTestCase<PatientContactGuardian>(
-			"validatePatientContactGuardianClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_GUARDIAN_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PatientContactGuardian> validatePatientContactGuardianClassCodeTestCase = new OperationsTestCase<PatientContactGuardian>(
+      "validatePatientContactGuardianClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_GUARDIAN_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PatientContactGuardian target) {
+      @Override
+      protected void updateToFail(PatientContactGuardian target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PatientContactGuardian target) {
-				target.init();
+      @Override
+      protected void updateToPass(PatientContactGuardian target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PatientContactGuardianOperations.validatePatientContactGuardianClassCode(
-					(PatientContactGuardian) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PatientContactGuardianOperations.validatePatientContactGuardianClassCode(
+          (PatientContactGuardian) objectToTest, diagnostician, map);
+      }
 
-		validatePatientContactGuardianClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePatientContactGuardianClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -152,33 +220,67 @@ public class PatientContactGuardianTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePatientContactGuardianCode() {
-		OperationsTestCase<PatientContactGuardian> validatePatientContactGuardianCodeTestCase = new OperationsTestCase<PatientContactGuardian>(
-			"validatePatientContactGuardianCode",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_GUARDIAN_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PatientContactGuardian> validatePatientContactGuardianCodeTestCase = new OperationsTestCase<PatientContactGuardian>(
+      "validatePatientContactGuardianCode",
+      operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_GUARDIAN_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PatientContactGuardian target) {
+      @Override
+      protected void updateToFail(PatientContactGuardian target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PatientContactGuardian target) {
-				target.init();
+      @Override
+      protected void updateToPass(PatientContactGuardian target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PatientContactGuardianOperations.validatePatientContactGuardianCode(
-					(PatientContactGuardian) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PatientContactGuardianOperations.validatePatientContactGuardianCode(
+          (PatientContactGuardian) objectToTest, diagnostician, map);
+      }
 
-		validatePatientContactGuardianCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePatientContactGuardianCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -268,9 +370,9 @@ public class PatientContactGuardianTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -278,8 +380,8 @@ public class PatientContactGuardianTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PatientContactGuardianOperations

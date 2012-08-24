@@ -46,33 +46,67 @@ public class EncounterHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterHistorySectionTemplateId() {
-		OperationsTestCase<EncounterHistorySection> validateEncounterHistorySectionTemplateIdTestCase = new OperationsTestCase<EncounterHistorySection>(
-			"validateEncounterHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterHistorySection> validateEncounterHistorySectionTemplateIdTestCase = new OperationsTestCase<EncounterHistorySection>(
+      "validateEncounterHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterHistorySection target) {
+      @Override
+      protected void updateToFail(EncounterHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterHistorySectionOperations.validateEncounterHistorySectionTemplateId(
-					(EncounterHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterHistorySectionOperations.validateEncounterHistorySectionTemplateId(
+          (EncounterHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterHistorySectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterHistorySectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -117,10 +151,13 @@ public class EncounterHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testGetEncounterEntries() {
 
-		EncounterHistorySection target = objectFactory.create();
-		target.getEncounterEntries();
 
-	}
+EncounterHistorySection target = objectFactory.create();
+target.getEncounterEntries();
+
+
+
+}
 
 	/**
 	*
@@ -176,9 +213,9 @@ public class EncounterHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -186,8 +223,8 @@ public class EncounterHistorySectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // EncounterHistorySectionOperations

@@ -81,33 +81,67 @@ public class ConditionalDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConditionalDoseTemplateId() {
-		OperationsTestCase<ConditionalDose> validateConditionalDoseTemplateIdTestCase = new OperationsTestCase<ConditionalDose>(
-			"validateConditionalDoseTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ConditionalDose> validateConditionalDoseTemplateIdTestCase = new OperationsTestCase<ConditionalDose>(
+      "validateConditionalDoseTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ConditionalDose target) {
+      @Override
+      protected void updateToFail(ConditionalDose target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ConditionalDose target) {
-				target.init();
+      @Override
+      protected void updateToPass(ConditionalDose target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ConditionalDoseOperations.validateConditionalDoseTemplateId(
-					(ConditionalDose) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ConditionalDoseOperations.validateConditionalDoseTemplateId(
+          (ConditionalDose) objectToTest, diagnostician, map);
+      }
 
-		validateConditionalDoseTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateConditionalDoseTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -163,9 +197,9 @@ public class ConditionalDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -173,8 +207,8 @@ public class ConditionalDoseTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ConditionalDoseOperations

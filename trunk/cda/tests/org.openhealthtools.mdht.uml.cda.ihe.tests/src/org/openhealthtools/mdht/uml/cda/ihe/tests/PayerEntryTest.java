@@ -43,33 +43,67 @@ public class PayerEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePolicyActivityTemplateId() {
-		OperationsTestCase<PayerEntry> validatePolicyActivityTemplateIdTestCase = new OperationsTestCase<PayerEntry>(
-			"validatePolicyActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PayerEntry> validatePolicyActivityTemplateIdTestCase = new OperationsTestCase<PayerEntry>(
+      "validatePolicyActivityTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PayerEntry target) {
+      @Override
+      protected void updateToFail(PayerEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PayerEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(PayerEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PayerEntryOperations.validatePolicyActivityTemplateId(
-					(PayerEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PayerEntryOperations.validatePolicyActivityTemplateId(
+          (PayerEntry) objectToTest, diagnostician, map);
+      }
 
-		validatePolicyActivityTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePolicyActivityTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,9 +159,9 @@ public class PayerEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -135,8 +169,8 @@ public class PayerEntryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PayerEntryOperations

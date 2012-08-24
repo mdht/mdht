@@ -46,33 +46,67 @@ public class EarsNoseMouthThroatSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEarsNoseMouthThroatSectionTemplateId() {
-		OperationsTestCase<EarsNoseMouthThroatSection> validateEarsNoseMouthThroatSectionTemplateIdTestCase = new OperationsTestCase<EarsNoseMouthThroatSection>(
-			"validateEarsNoseMouthThroatSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EARS_NOSE_MOUTH_THROAT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EarsNoseMouthThroatSection> validateEarsNoseMouthThroatSectionTemplateIdTestCase = new OperationsTestCase<EarsNoseMouthThroatSection>(
+      "validateEarsNoseMouthThroatSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EARS_NOSE_MOUTH_THROAT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EarsNoseMouthThroatSection target) {
+      @Override
+      protected void updateToFail(EarsNoseMouthThroatSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EarsNoseMouthThroatSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(EarsNoseMouthThroatSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EarsNoseMouthThroatSectionOperations.validateEarsNoseMouthThroatSectionTemplateId(
-					(EarsNoseMouthThroatSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EarsNoseMouthThroatSectionOperations.validateEarsNoseMouthThroatSectionTemplateId(
+          (EarsNoseMouthThroatSection) objectToTest, diagnostician, map);
+      }
 
-		validateEarsNoseMouthThroatSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateEarsNoseMouthThroatSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,33 +114,67 @@ public class EarsNoseMouthThroatSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEarsNoseMouthThroatSectionCode() {
-		OperationsTestCase<EarsNoseMouthThroatSection> validateEarsNoseMouthThroatSectionCodeTestCase = new OperationsTestCase<EarsNoseMouthThroatSection>(
-			"validateEarsNoseMouthThroatSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EARS_NOSE_MOUTH_THROAT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EarsNoseMouthThroatSection> validateEarsNoseMouthThroatSectionCodeTestCase = new OperationsTestCase<EarsNoseMouthThroatSection>(
+      "validateEarsNoseMouthThroatSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EARS_NOSE_MOUTH_THROAT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EarsNoseMouthThroatSection target) {
+      @Override
+      protected void updateToFail(EarsNoseMouthThroatSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EarsNoseMouthThroatSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(EarsNoseMouthThroatSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EarsNoseMouthThroatSectionOperations.validateEarsNoseMouthThroatSectionCode(
-					(EarsNoseMouthThroatSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EarsNoseMouthThroatSectionOperations.validateEarsNoseMouthThroatSectionCode(
+          (EarsNoseMouthThroatSection) objectToTest, diagnostician, map);
+      }
 
-		validateEarsNoseMouthThroatSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateEarsNoseMouthThroatSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -149,10 +217,13 @@ public class EarsNoseMouthThroatSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		EarsNoseMouthThroatSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+EarsNoseMouthThroatSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -207,17 +278,17 @@ public class EarsNoseMouthThroatSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // EarsNoseMouthThroatSectionOperations
