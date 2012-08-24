@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.SupplyEntryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
@@ -598,33 +599,67 @@ public class SupplyEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSupplyEntryTemplateId() {
-		OperationsTestCase<SupplyEntry> validateSupplyEntryTemplateIdTestCase = new OperationsTestCase<SupplyEntry>(
-			"validateSupplyEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SupplyEntry> validateSupplyEntryTemplateIdTestCase = new OperationsTestCase<SupplyEntry>(
+      "validateSupplyEntryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SupplyEntry target) {
+      @Override
+      protected void updateToFail(SupplyEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SupplyEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(SupplyEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SupplyEntryOperations.validateSupplyEntryTemplateId(
-					(SupplyEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SupplyEntryOperations.validateSupplyEntryTemplateId(
+          (SupplyEntry) objectToTest, diagnostician, map);
+      }
 
-		validateSupplyEntryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateSupplyEntryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -743,10 +778,13 @@ public class SupplyEntryTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationFullfillmentInstructions() {
 
-		SupplyEntry target = objectFactory.create();
-		target.getMedicationFullfillmentInstructions();
 
-	}
+SupplyEntry target = objectFactory.create();
+target.getMedicationFullfillmentInstructions();
+
+
+
+}
 
 	/**
 	*
@@ -802,9 +840,9 @@ public class SupplyEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -812,8 +850,8 @@ public class SupplyEntryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // SupplyEntryOperations

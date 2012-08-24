@@ -137,33 +137,67 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScanOriginalAuthorTemplateId() {
-		OperationsTestCase<ScanOriginalAuthor> validateScanOriginalAuthorTemplateIdTestCase = new OperationsTestCase<ScanOriginalAuthor>(
-			"validateScanOriginalAuthorTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SCAN_ORIGINAL_AUTHOR_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ScanOriginalAuthor> validateScanOriginalAuthorTemplateIdTestCase = new OperationsTestCase<ScanOriginalAuthor>(
+      "validateScanOriginalAuthorTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SCAN_ORIGINAL_AUTHOR_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ScanOriginalAuthor target) {
+      @Override
+      protected void updateToFail(ScanOriginalAuthor target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ScanOriginalAuthor target) {
-				target.init();
+      @Override
+      protected void updateToPass(ScanOriginalAuthor target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ScanOriginalAuthorOperations.validateScanOriginalAuthorTemplateId(
-					(ScanOriginalAuthor) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ScanOriginalAuthorOperations.validateScanOriginalAuthorTemplateId(
+          (ScanOriginalAuthor) objectToTest, diagnostician, map);
+      }
 
-		validateScanOriginalAuthorTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateScanOriginalAuthorTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -219,9 +253,9 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -229,8 +263,8 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ScanOriginalAuthorOperations

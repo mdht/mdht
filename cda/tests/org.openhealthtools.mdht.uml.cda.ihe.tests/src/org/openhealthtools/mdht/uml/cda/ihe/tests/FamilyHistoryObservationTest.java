@@ -47,33 +47,67 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSimpleObservationTemplateId() {
-		OperationsTestCase<FamilyHistoryObservation> validateSimpleObservationTemplateIdTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-			"validateSimpleObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistoryObservation> validateSimpleObservationTemplateIdTestCase = new OperationsTestCase<FamilyHistoryObservation>(
+      "validateSimpleObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistoryObservation target) {
+      @Override
+      protected void updateToFail(FamilyHistoryObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistoryObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistoryObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistoryObservationOperations.validateSimpleObservationTemplateId(
-					(FamilyHistoryObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistoryObservationOperations.validateSimpleObservationTemplateId(
+          (FamilyHistoryObservation) objectToTest, diagnostician, map);
+      }
 
-		validateSimpleObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateSimpleObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -120,36 +154,70 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIHEFamilyHistoryObservationValue() {
-		OperationsTestCase<FamilyHistoryObservation> validateIHEFamilyHistoryObservationValueTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-			"validateIHEFamilyHistoryObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_IHE_FAMILY_HISTORY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistoryObservation> validateIHEFamilyHistoryObservationValueTestCase = new OperationsTestCase<FamilyHistoryObservation>(
+      "validateIHEFamilyHistoryObservationValue",
+      operationsForOCL.getOCLValue("VALIDATE_IHE_FAMILY_HISTORY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistoryObservation target) {
+      @Override
+      protected void updateToFail(FamilyHistoryObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistoryObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistoryObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return FamilyHistoryObservationOperations.validateIHEFamilyHistoryObservationValue(
-					(FamilyHistoryObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistoryObservationOperations.validateIHEFamilyHistoryObservationValue(
+          (FamilyHistoryObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateIHEFamilyHistoryObservationValueTestCase.doValidationTest();
-	}
+    validateIHEFamilyHistoryObservationValueTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -204,17 +272,17 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FamilyHistoryObservationOperations

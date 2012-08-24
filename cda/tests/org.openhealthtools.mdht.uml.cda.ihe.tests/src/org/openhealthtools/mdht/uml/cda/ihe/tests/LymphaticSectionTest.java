@@ -46,33 +46,67 @@ public class LymphaticSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateLymphaticSectionTemplateId() {
-		OperationsTestCase<LymphaticSection> validateLymphaticSectionTemplateIdTestCase = new OperationsTestCase<LymphaticSection>(
-			"validateLymphaticSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_LYMPHATIC_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<LymphaticSection> validateLymphaticSectionTemplateIdTestCase = new OperationsTestCase<LymphaticSection>(
+      "validateLymphaticSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_LYMPHATIC_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(LymphaticSection target) {
+      @Override
+      protected void updateToFail(LymphaticSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(LymphaticSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(LymphaticSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return LymphaticSectionOperations.validateLymphaticSectionTemplateId(
-					(LymphaticSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return LymphaticSectionOperations.validateLymphaticSectionTemplateId(
+          (LymphaticSection) objectToTest, diagnostician, map);
+      }
 
-		validateLymphaticSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateLymphaticSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,33 +114,67 @@ public class LymphaticSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateLymphaticSectionCode() {
-		OperationsTestCase<LymphaticSection> validateLymphaticSectionCodeTestCase = new OperationsTestCase<LymphaticSection>(
-			"validateLymphaticSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_LYMPHATIC_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<LymphaticSection> validateLymphaticSectionCodeTestCase = new OperationsTestCase<LymphaticSection>(
+      "validateLymphaticSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_LYMPHATIC_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(LymphaticSection target) {
+      @Override
+      protected void updateToFail(LymphaticSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(LymphaticSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(LymphaticSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return LymphaticSectionOperations.validateLymphaticSectionCode(
-					(LymphaticSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return LymphaticSectionOperations.validateLymphaticSectionCode(
+          (LymphaticSection) objectToTest, diagnostician, map);
+      }
 
-		validateLymphaticSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateLymphaticSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -149,10 +217,13 @@ public class LymphaticSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		LymphaticSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+LymphaticSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -207,17 +278,17 @@ public class LymphaticSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // LymphaticSectionOperations

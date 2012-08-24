@@ -46,33 +46,67 @@ public class VesselsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVesselsSectionTemplateId() {
-		OperationsTestCase<VesselsSection> validateVesselsSectionTemplateIdTestCase = new OperationsTestCase<VesselsSection>(
-			"validateVesselsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VESSELS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VesselsSection> validateVesselsSectionTemplateIdTestCase = new OperationsTestCase<VesselsSection>(
+      "validateVesselsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_VESSELS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VesselsSection target) {
+      @Override
+      protected void updateToFail(VesselsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VesselsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(VesselsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return VesselsSectionOperations.validateVesselsSectionTemplateId(
-					(VesselsSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VesselsSectionOperations.validateVesselsSectionTemplateId(
+          (VesselsSection) objectToTest, diagnostician, map);
+      }
 
-		validateVesselsSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateVesselsSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,33 +114,67 @@ public class VesselsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVesselsSectionCode() {
-		OperationsTestCase<VesselsSection> validateVesselsSectionCodeTestCase = new OperationsTestCase<VesselsSection>(
-			"validateVesselsSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_VESSELS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VesselsSection> validateVesselsSectionCodeTestCase = new OperationsTestCase<VesselsSection>(
+      "validateVesselsSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_VESSELS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VesselsSection target) {
+      @Override
+      protected void updateToFail(VesselsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VesselsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(VesselsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return VesselsSectionOperations.validateVesselsSectionCode(
-					(VesselsSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VesselsSectionOperations.validateVesselsSectionCode(
+          (VesselsSection) objectToTest, diagnostician, map);
+      }
 
-		validateVesselsSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateVesselsSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -149,10 +217,13 @@ public class VesselsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		VesselsSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+VesselsSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -207,17 +278,17 @@ public class VesselsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // VesselsSectionOperations

@@ -46,33 +46,67 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGenitaliaSectionTemplateId() {
-		OperationsTestCase<GenitaliaSection> validateGenitaliaSectionTemplateIdTestCase = new OperationsTestCase<GenitaliaSection>(
-			"validateGenitaliaSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENITALIA_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GenitaliaSection> validateGenitaliaSectionTemplateIdTestCase = new OperationsTestCase<GenitaliaSection>(
+      "validateGenitaliaSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_GENITALIA_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GenitaliaSection target) {
+      @Override
+      protected void updateToFail(GenitaliaSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GenitaliaSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GenitaliaSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GenitaliaSectionOperations.validateGenitaliaSectionTemplateId(
-					(GenitaliaSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GenitaliaSectionOperations.validateGenitaliaSectionTemplateId(
+          (GenitaliaSection) objectToTest, diagnostician, map);
+      }
 
-		validateGenitaliaSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateGenitaliaSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,33 +114,67 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGenitaliaSectionCode() {
-		OperationsTestCase<GenitaliaSection> validateGenitaliaSectionCodeTestCase = new OperationsTestCase<GenitaliaSection>(
-			"validateGenitaliaSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENITALIA_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GenitaliaSection> validateGenitaliaSectionCodeTestCase = new OperationsTestCase<GenitaliaSection>(
+      "validateGenitaliaSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_GENITALIA_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GenitaliaSection target) {
+      @Override
+      protected void updateToFail(GenitaliaSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GenitaliaSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GenitaliaSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GenitaliaSectionOperations.validateGenitaliaSectionCode(
-					(GenitaliaSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GenitaliaSectionOperations.validateGenitaliaSectionCode(
+          (GenitaliaSection) objectToTest, diagnostician, map);
+      }
 
-		validateGenitaliaSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateGenitaliaSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -149,10 +217,13 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		GenitaliaSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+GenitaliaSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -207,17 +278,17 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // GenitaliaSectionOperations

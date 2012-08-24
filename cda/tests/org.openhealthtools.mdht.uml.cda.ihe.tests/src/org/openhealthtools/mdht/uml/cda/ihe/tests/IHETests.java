@@ -65,12 +65,12 @@ import org.junit.runners.Suite;
 public class IHETests {
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(IHETests.class);
-	}
+    return new JUnit4TestAdapter( IHETests.class);
+  }
 
 } // IHETests

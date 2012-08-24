@@ -50,33 +50,67 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsTemplateId() {
-		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsTemplateIdTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
-			"validateMedicationFullfillmentInstructionsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsTemplateIdTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+      "validateMedicationFullfillmentInstructionsTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationFullfillmentInstructions target) {
+      @Override
+      protected void updateToFail(MedicationFullfillmentInstructions target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationFullfillmentInstructions target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationFullfillmentInstructions target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsTemplateId(
-					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsTemplateId(
+          (MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationFullfillmentInstructionsTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationFullfillmentInstructionsTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -84,33 +118,67 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsCodeP() {
-		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsCodePTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
-			"validateMedicationFullfillmentInstructionsCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsCodePTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+      "validateMedicationFullfillmentInstructionsCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationFullfillmentInstructions target) {
+      @Override
+      protected void updateToFail(MedicationFullfillmentInstructions target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationFullfillmentInstructions target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationFullfillmentInstructions target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsCodeP(
-					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsCodeP(
+          (MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationFullfillmentInstructionsCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationFullfillmentInstructionsCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -118,33 +186,67 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsCode() {
-		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
-			"validateMedicationFullfillmentInstructionsCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+      "validateMedicationFullfillmentInstructionsCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationFullfillmentInstructions target) {
+      @Override
+      protected void updateToFail(MedicationFullfillmentInstructions target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationFullfillmentInstructions target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationFullfillmentInstructions target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsCode(
-					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsCode(
+          (MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationFullfillmentInstructionsCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationFullfillmentInstructionsCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -152,36 +254,70 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsStatusCode() {
-		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsStatusCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
-			"validateMedicationFullfillmentInstructionsStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsStatusCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+      "validateMedicationFullfillmentInstructionsStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationFullfillmentInstructions target) {
+      @Override
+      protected void updateToFail(MedicationFullfillmentInstructions target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationFullfillmentInstructions target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationFullfillmentInstructions target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsStatusCode(
-					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsStatusCode(
+          (MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicationFullfillmentInstructionsStatusCodeTestCase.doValidationTest();
-	}
+    validateMedicationFullfillmentInstructionsStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -272,9 +408,9 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -282,8 +418,8 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicationFullfillmentInstructionsOperations

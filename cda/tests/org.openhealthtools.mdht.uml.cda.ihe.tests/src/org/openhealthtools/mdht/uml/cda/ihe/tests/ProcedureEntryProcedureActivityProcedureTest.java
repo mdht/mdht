@@ -33,15 +33,15 @@ public class ProcedureEntryProcedureActivityProcedureTest extends CDAValidationT
 	*/
 	@Test
 	public void testNoOperations() {
-	}
+  }
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProcedureEntryProcedureActivityProcedureOperations

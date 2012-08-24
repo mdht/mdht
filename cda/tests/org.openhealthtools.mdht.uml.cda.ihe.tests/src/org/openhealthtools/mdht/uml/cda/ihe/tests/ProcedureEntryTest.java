@@ -61,33 +61,67 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEntryMoodCode() {
-		OperationsTestCase<ProcedureEntry> validateProcedureEntryMoodCodeTestCase = new OperationsTestCase<ProcedureEntry>(
-			"validateProcedureEntryMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureEntry> validateProcedureEntryMoodCodeTestCase = new OperationsTestCase<ProcedureEntry>(
+      "validateProcedureEntryMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureEntry target) {
+      @Override
+      protected void updateToFail(ProcedureEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureEntryOperations.validateProcedureEntryMoodCode(
-					(ProcedureEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureEntryOperations.validateProcedureEntryMoodCode(
+          (ProcedureEntry) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureEntryMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureEntryMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -95,33 +129,67 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEntryHasTextReference() {
-		OperationsTestCase<ProcedureEntry> validateProcedureEntryHasTextReferenceTestCase = new OperationsTestCase<ProcedureEntry>(
-			"validateProcedureEntryHasTextReference",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureEntry> validateProcedureEntryHasTextReferenceTestCase = new OperationsTestCase<ProcedureEntry>(
+      "validateProcedureEntryHasTextReference",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureEntry target) {
+      @Override
+      protected void updateToFail(ProcedureEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureEntryOperations.validateProcedureEntryHasTextReference(
-					(ProcedureEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureEntryOperations.validateProcedureEntryHasTextReference(
+          (ProcedureEntry) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureEntryHasTextReferenceTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureEntryHasTextReferenceTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -210,33 +278,67 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEntryTemplateId() {
-		OperationsTestCase<ProcedureEntry> validateProcedureEntryTemplateIdTestCase = new OperationsTestCase<ProcedureEntry>(
-			"validateProcedureEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureEntry> validateProcedureEntryTemplateIdTestCase = new OperationsTestCase<ProcedureEntry>(
+      "validateProcedureEntryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureEntry target) {
+      @Override
+      protected void updateToFail(ProcedureEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureEntryOperations.validateProcedureEntryTemplateId(
-					(ProcedureEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureEntryOperations.validateProcedureEntryTemplateId(
+          (ProcedureEntry) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureEntryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureEntryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -244,33 +346,67 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEntryClassCode() {
-		OperationsTestCase<ProcedureEntry> validateProcedureEntryClassCodeTestCase = new OperationsTestCase<ProcedureEntry>(
-			"validateProcedureEntryClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureEntry> validateProcedureEntryClassCodeTestCase = new OperationsTestCase<ProcedureEntry>(
+      "validateProcedureEntryClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureEntry target) {
+      @Override
+      protected void updateToFail(ProcedureEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureEntryOperations.validateProcedureEntryClassCode(
-					(ProcedureEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureEntryOperations.validateProcedureEntryClassCode(
+          (ProcedureEntry) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureEntryClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureEntryClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -278,36 +414,69 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEntryText() {
-		OperationsTestCase<ProcedureEntry> validateProcedureEntryTextTestCase = new OperationsTestCase<ProcedureEntry>(
-			"validateProcedureEntryText",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureEntry> validateProcedureEntryTextTestCase = new OperationsTestCase<ProcedureEntry>(
+      "validateProcedureEntryText",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureEntry target) {
+      @Override
+      protected void updateToFail(ProcedureEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+    ED text = DatatypesFactory.eINSTANCE.createED();
+    target.setText(text );	
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ProcedureEntryOperations.validateProcedureEntryText(
-					(ProcedureEntry) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureEntryOperations.validateProcedureEntryText(
+          (ProcedureEntry) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateProcedureEntryTextTestCase.doValidationTest();
-	}
+    validateProcedureEntryTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -315,33 +484,67 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEntryApproachSiteCode() {
-		OperationsTestCase<ProcedureEntry> validateProcedureEntryApproachSiteCodeTestCase = new OperationsTestCase<ProcedureEntry>(
-			"validateProcedureEntryApproachSiteCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureEntry> validateProcedureEntryApproachSiteCodeTestCase = new OperationsTestCase<ProcedureEntry>(
+      "validateProcedureEntryApproachSiteCode",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureEntry target) {
+      @Override
+      protected void updateToFail(ProcedureEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureEntryOperations.validateProcedureEntryApproachSiteCode(
-					(ProcedureEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureEntryOperations.validateProcedureEntryApproachSiteCode(
+          (ProcedureEntry) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureEntryApproachSiteCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureEntryApproachSiteCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -428,10 +631,13 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	@Test
 	public void testGetInternalReference() {
 
-		ProcedureEntry target = objectFactory.create();
-		target.getInternalReference();
 
-	}
+ProcedureEntry target = objectFactory.create();
+target.getInternalReference();
+
+
+
+}
 
 	/**
 	*
@@ -440,10 +646,13 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	@Test
 	public void testGetInternalReferenceReasons() {
 
-		ProcedureEntry target = objectFactory.create();
-		target.getInternalReferenceReasons();
 
-	}
+ProcedureEntry target = objectFactory.create();
+target.getInternalReferenceReasons();
+
+
+
+}
 
 	/**
 	*
@@ -498,9 +707,9 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -508,8 +717,8 @@ public class ProcedureEntryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProcedureEntryOperations

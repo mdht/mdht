@@ -827,33 +827,67 @@ public class ScannedDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScannedDocumentTemplateId() {
-		OperationsTestCase<ScannedDocument> validateScannedDocumentTemplateIdTestCase = new OperationsTestCase<ScannedDocument>(
-			"validateScannedDocumentTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ScannedDocument> validateScannedDocumentTemplateIdTestCase = new OperationsTestCase<ScannedDocument>(
+      "validateScannedDocumentTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ScannedDocument target) {
+      @Override
+      protected void updateToFail(ScannedDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ScannedDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(ScannedDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ScannedDocumentOperations.validateScannedDocumentTemplateId(
-					(ScannedDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ScannedDocumentOperations.validateScannedDocumentTemplateId(
+          (ScannedDocument) objectToTest, diagnostician, map);
+      }
 
-		validateScannedDocumentTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateScannedDocumentTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -931,36 +965,70 @@ public class ScannedDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScannedDocumentEffectiveTime() {
-		OperationsTestCase<ScannedDocument> validateScannedDocumentEffectiveTimeTestCase = new OperationsTestCase<ScannedDocument>(
-			"validateScannedDocumentEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ScannedDocument> validateScannedDocumentEffectiveTimeTestCase = new OperationsTestCase<ScannedDocument>(
+      "validateScannedDocumentEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ScannedDocument target) {
+      @Override
+      protected void updateToFail(ScannedDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ScannedDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(ScannedDocument target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ScannedDocumentOperations.validateScannedDocumentEffectiveTime(
-					(ScannedDocument) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ScannedDocumentOperations.validateScannedDocumentEffectiveTime(
+          (ScannedDocument) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateScannedDocumentEffectiveTimeTestCase.doValidationTest();
-	}
+    validateScannedDocumentEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1325,9 +1393,9 @@ public class ScannedDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -1335,8 +1403,8 @@ public class ScannedDocumentTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ScannedDocumentOperations

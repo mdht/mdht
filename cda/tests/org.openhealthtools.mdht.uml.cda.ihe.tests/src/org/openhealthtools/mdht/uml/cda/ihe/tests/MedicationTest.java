@@ -158,33 +158,67 @@ public class MedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationHasDescriptionNoMedNotKnown() {
-		OperationsTestCase<Medication> validateMedicationHasDescriptionNoMedNotKnownTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationHasDescriptionNoMedNotKnown",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_DESCRIPTION_NO_MED_NOT_KNOWN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Medication> validateMedicationHasDescriptionNoMedNotKnownTestCase = new OperationsTestCase<Medication>(
+      "validateMedicationHasDescriptionNoMedNotKnown",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_DESCRIPTION_NO_MED_NOT_KNOWN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Medication target) {
+      @Override
+      protected void updateToFail(Medication target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
+      @Override
+      protected void updateToPass(Medication target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationOperations.validateMedicationHasDescriptionNoMedNotKnown(
-					(Medication) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationOperations.validateMedicationHasDescriptionNoMedNotKnown(
+          (Medication) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationHasDescriptionNoMedNotKnownTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationHasDescriptionNoMedNotKnownTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -192,33 +226,67 @@ public class MedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationReasonClassMood() {
-		OperationsTestCase<Medication> validateMedicationReasonClassMoodTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationReasonClassMood",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_REASON_CLASS_MOOD__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Medication> validateMedicationReasonClassMoodTestCase = new OperationsTestCase<Medication>(
+      "validateMedicationReasonClassMood",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_REASON_CLASS_MOOD__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Medication target) {
+      @Override
+      protected void updateToFail(Medication target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
+      @Override
+      protected void updateToPass(Medication target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationOperations.validateMedicationReasonClassMood(
-					(Medication) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationOperations.validateMedicationReasonClassMood(
+          (Medication) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationReasonClassMoodTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationReasonClassMoodTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -525,32 +593,67 @@ public class MedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationTemplateId() {
-		OperationsTestCase<Medication> validateMedicationTemplateIdTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Medication> validateMedicationTemplateIdTestCase = new OperationsTestCase<Medication>(
+      "validateMedicationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Medication target) {
+      @Override
+      protected void updateToFail(Medication target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
+      @Override
+      protected void updateToPass(Medication target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationOperations.validateMedicationTemplateId((Medication) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationOperations.validateMedicationTemplateId(
+          (Medication) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -664,31 +767,67 @@ public class MedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationCode() {
-		OperationsTestCase<Medication> validateMedicationCodeTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<Medication> validateMedicationCodeTestCase = new OperationsTestCase<Medication>(
+      "validateMedicationCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Medication target) {
+      @Override
+      protected void updateToFail(Medication target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
+      @Override
+      protected void updateToPass(Medication target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationOperations.validateMedicationCode((Medication) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationOperations.validateMedicationCode(
+          (Medication) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -770,10 +909,13 @@ public class MedicationTest extends CDAValidationTest {
 	@Test
 	public void testGetInternalReferences() {
 
-		Medication target = objectFactory.create();
-		target.getInternalReferences();
 
-	}
+Medication target = objectFactory.create();
+target.getInternalReferences();
+
+
+
+}
 
 	/**
 	*
@@ -782,10 +924,13 @@ public class MedicationTest extends CDAValidationTest {
 	@Test
 	public void testGetPatientMedicalInstructionss() {
 
-		Medication target = objectFactory.create();
-		target.getPatientMedicalInstructionss();
 
-	}
+Medication target = objectFactory.create();
+target.getPatientMedicalInstructionss();
+
+
+
+}
 
 	/**
 	*
@@ -794,10 +939,13 @@ public class MedicationTest extends CDAValidationTest {
 	@Test
 	public void testGetSupplyEntry() {
 
-		Medication target = objectFactory.create();
-		target.getSupplyEntry();
 
-	}
+Medication target = objectFactory.create();
+target.getSupplyEntry();
+
+
+
+}
 
 	/**
 	*
@@ -853,9 +1001,9 @@ public class MedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -863,8 +1011,8 @@ public class MedicationTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicationOperations

@@ -47,33 +47,67 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePregnancyHistorySectionTemplateId() {
-		OperationsTestCase<PregnancyHistorySection> validatePregnancyHistorySectionTemplateIdTestCase = new OperationsTestCase<PregnancyHistorySection>(
-			"validatePregnancyHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PregnancyHistorySection> validatePregnancyHistorySectionTemplateIdTestCase = new OperationsTestCase<PregnancyHistorySection>(
+      "validatePregnancyHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PregnancyHistorySection target) {
+      @Override
+      protected void updateToFail(PregnancyHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PregnancyHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PregnancyHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PregnancyHistorySectionOperations.validatePregnancyHistorySectionTemplateId(
-					(PregnancyHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PregnancyHistorySectionOperations.validatePregnancyHistorySectionTemplateId(
+          (PregnancyHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validatePregnancyHistorySectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePregnancyHistorySectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -81,33 +115,67 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePregnancyHistorySectionCode() {
-		OperationsTestCase<PregnancyHistorySection> validatePregnancyHistorySectionCodeTestCase = new OperationsTestCase<PregnancyHistorySection>(
-			"validatePregnancyHistorySectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PregnancyHistorySection> validatePregnancyHistorySectionCodeTestCase = new OperationsTestCase<PregnancyHistorySection>(
+      "validatePregnancyHistorySectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PregnancyHistorySection target) {
+      @Override
+      protected void updateToFail(PregnancyHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PregnancyHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PregnancyHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PregnancyHistorySectionOperations.validatePregnancyHistorySectionCode(
-					(PregnancyHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PregnancyHistorySectionOperations.validatePregnancyHistorySectionCode(
+          (PregnancyHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validatePregnancyHistorySectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePregnancyHistorySectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -151,10 +219,13 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPregnancyObservations() {
 
-		PregnancyHistorySection target = objectFactory.create();
-		target.getPregnancyObservations();
 
-	}
+PregnancyHistorySection target = objectFactory.create();
+target.getPregnancyObservations();
+
+
+
+}
 
 	/**
 	*
@@ -210,9 +281,9 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -220,8 +291,8 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PregnancyHistorySectionOperations

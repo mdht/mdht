@@ -47,33 +47,67 @@ public class PatientContactParticipantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePatientContactParticipantTemplateId() {
-		OperationsTestCase<PatientContactParticipant> validatePatientContactParticipantTemplateIdTestCase = new OperationsTestCase<PatientContactParticipant>(
-			"validatePatientContactParticipantTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_PARTICIPANT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PatientContactParticipant> validatePatientContactParticipantTemplateIdTestCase = new OperationsTestCase<PatientContactParticipant>(
+      "validatePatientContactParticipantTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_PARTICIPANT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PatientContactParticipant target) {
+      @Override
+      protected void updateToFail(PatientContactParticipant target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PatientContactParticipant target) {
-				target.init();
+      @Override
+      protected void updateToPass(PatientContactParticipant target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PatientContactParticipantOperations.validatePatientContactParticipantTemplateId(
-					(PatientContactParticipant) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PatientContactParticipantOperations.validatePatientContactParticipantTemplateId(
+          (PatientContactParticipant) objectToTest, diagnostician, map);
+      }
 
-		validatePatientContactParticipantTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePatientContactParticipantTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -115,33 +149,67 @@ public class PatientContactParticipantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePatientContactParticipantTypeCode() {
-		OperationsTestCase<PatientContactParticipant> validatePatientContactParticipantTypeCodeTestCase = new OperationsTestCase<PatientContactParticipant>(
-			"validatePatientContactParticipantTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PatientContactParticipant> validatePatientContactParticipantTypeCodeTestCase = new OperationsTestCase<PatientContactParticipant>(
+      "validatePatientContactParticipantTypeCode",
+      operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PatientContactParticipant target) {
+      @Override
+      protected void updateToFail(PatientContactParticipant target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PatientContactParticipant target) {
-				target.init();
+      @Override
+      protected void updateToPass(PatientContactParticipant target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PatientContactParticipantOperations.validatePatientContactParticipantTypeCode(
-					(PatientContactParticipant) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PatientContactParticipantOperations.validatePatientContactParticipantTypeCode(
+          (PatientContactParticipant) objectToTest, diagnostician, map);
+      }
 
-		validatePatientContactParticipantTypeCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePatientContactParticipantTypeCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -197,9 +265,9 @@ public class PatientContactParticipantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -207,8 +275,8 @@ public class PatientContactParticipantTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PatientContactParticipantOperations

@@ -37,7 +37,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryAllergyConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Allergy Concern Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryMedications(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Medications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -164,69 +164,140 @@ public class MedicalSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalSummaryTemplateId() {
-		OperationsTestCase<MedicalSummary> validateMedicalSummaryTemplateIdTestCase = new OperationsTestCase<MedicalSummary>(
-			"validateMedicalSummaryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalSummary> validateMedicalSummaryTemplateIdTestCase = new OperationsTestCase<MedicalSummary>(
+      "validateMedicalSummaryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalSummary target) {
+      @Override
+      protected void updateToFail(MedicalSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalSummary target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicalSummaryOperations.validateMedicalSummaryTemplateId(
-					(MedicalSummary) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalSummaryOperations.validateMedicalSummaryTemplateId(
+          (MedicalSummary) objectToTest, diagnostician, map);
+      }
 
-		validateMedicalSummaryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicalSummaryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsCode() {
-		OperationsTestCase<MedicalSummary> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<MedicalSummary>(
-			"validateGeneralHeaderConstraintsCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+*
+* @generated
+*/
+@Test
 
-			@Override
-			protected void updateToFail(MedicalSummary target) {
+ 
+                  
+public void testValidateMedicalSummaryCode() {
+      OperationsTestCase<MedicalSummary> validateMedicalSummaryCodeTestCase = new OperationsTestCase<MedicalSummary>(
+      "validateMedicalSummaryCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			}
+      @Override
+      protected void updateToFail(MedicalSummary target) {
 
-			@Override
-			protected void updateToPass(MedicalSummary target) {
-				target.init();
+      }
 
-			}
+      @Override
+      protected void updateToPass(MedicalSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+        
+        
 
-				return MedicalSummaryOperations.validateGeneralHeaderConstraintsCode(
-					(MedicalSummary) objectToTest, diagnostician, map);
-			}
+  
+      
 
-		};
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
-	}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalSummaryOperations.validateMedicalSummaryCode(
+          (MedicalSummary) objectToTest, diagnostician, map);
+      }
 
-	/**
+    };
+
+    validateMedicalSummaryCodeTestCase.doValidationTest();
+}
+
+  /**
 	*
 	* @generated
 	*/
@@ -280,9 +351,9 @@ public class MedicalSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -290,8 +361,8 @@ public class MedicalSummaryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicalSummaryOperations

@@ -43,33 +43,67 @@ public class ProcedureEntryPlanOfCareActivityProcedureTest extends CDAValidation
 	*/
 	@Test
 	public void testValidateProcedureEntryPlanOfCareActivityProcedureMoodCode() {
-		OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure> validateProcedureEntryPlanOfCareActivityProcedureMoodCodeTestCase = new OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure>(
-			"validateProcedureEntryPlanOfCareActivityProcedureMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure> validateProcedureEntryPlanOfCareActivityProcedureMoodCodeTestCase = new OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure>(
+      "validateProcedureEntryPlanOfCareActivityProcedureMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureEntryPlanOfCareActivityProcedure target) {
+      @Override
+      protected void updateToFail(ProcedureEntryPlanOfCareActivityProcedure target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureEntryPlanOfCareActivityProcedure target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureEntryPlanOfCareActivityProcedure target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureEntryPlanOfCareActivityProcedureOperations.validateProcedureEntryPlanOfCareActivityProcedureMoodCode(
-					(ProcedureEntryPlanOfCareActivityProcedure) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureEntryPlanOfCareActivityProcedureOperations.validateProcedureEntryPlanOfCareActivityProcedureMoodCode(
+          (ProcedureEntryPlanOfCareActivityProcedure) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureEntryPlanOfCareActivityProcedureMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureEntryPlanOfCareActivityProcedureMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,9 +159,9 @@ public class ProcedureEntryPlanOfCareActivityProcedureTest extends CDAValidation
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -135,8 +169,8 @@ public class ProcedureEntryPlanOfCareActivityProcedureTest extends CDAValidation
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProcedureEntryPlanOfCareActivityProcedureOperations

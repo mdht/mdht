@@ -24,32 +24,32 @@ import junit.textui.TestRunner;
 public class IHEAllTests extends TestSuite {
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
+    TestRunner.run(suite());
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static Test suite() {
-		TestSuite suite = new IHEAllTests("IHE Tests");
-		suite.addTest(IHETests.suite());
-		return suite;
-	}
+    TestSuite suite = new IHEAllTests("IHE Tests");
+    suite.addTest(IHETests.suite());
+    return suite;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public IHEAllTests(String name) {
-		super(name);
-	}
+    super(name);
+  }
 
 } // IHEAllTests

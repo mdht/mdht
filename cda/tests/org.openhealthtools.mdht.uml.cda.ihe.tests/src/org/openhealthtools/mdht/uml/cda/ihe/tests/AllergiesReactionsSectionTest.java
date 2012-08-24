@@ -46,33 +46,67 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergiesReactionsSectionTemplateId() {
-		OperationsTestCase<AllergiesReactionsSection> validateAllergiesReactionsSectionTemplateIdTestCase = new OperationsTestCase<AllergiesReactionsSection>(
-			"validateAllergiesReactionsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AllergiesReactionsSection> validateAllergiesReactionsSectionTemplateIdTestCase = new OperationsTestCase<AllergiesReactionsSection>(
+      "validateAllergiesReactionsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AllergiesReactionsSection target) {
+      @Override
+      protected void updateToFail(AllergiesReactionsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AllergiesReactionsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(AllergiesReactionsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AllergiesReactionsSectionOperations.validateAllergiesReactionsSectionTemplateId(
-					(AllergiesReactionsSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AllergiesReactionsSectionOperations.validateAllergiesReactionsSectionTemplateId(
+          (AllergiesReactionsSection) objectToTest, diagnostician, map);
+      }
 
-		validateAllergiesReactionsSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAllergiesReactionsSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -116,10 +150,13 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergyIntoleranceConcerns() {
 
-		AllergiesReactionsSection target = objectFactory.create();
-		target.getAllergyIntoleranceConcerns();
 
-	}
+AllergiesReactionsSection target = objectFactory.create();
+target.getAllergyIntoleranceConcerns();
+
+
+
+}
 
 	/**
 	*
@@ -175,9 +212,9 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -185,8 +222,8 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AllergiesReactionsSectionOperations

@@ -43,33 +43,67 @@ public class HealthcareProvidersPharmaciesTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHealthcareProvidersPharmaciesTemplateId() {
-		OperationsTestCase<HealthcareProvidersPharmacies> validateHealthcareProvidersPharmaciesTemplateIdTestCase = new OperationsTestCase<HealthcareProvidersPharmacies>(
-			"validateHealthcareProvidersPharmaciesTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HealthcareProvidersPharmacies> validateHealthcareProvidersPharmaciesTemplateIdTestCase = new OperationsTestCase<HealthcareProvidersPharmacies>(
+      "validateHealthcareProvidersPharmaciesTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HealthcareProvidersPharmacies target) {
+      @Override
+      protected void updateToFail(HealthcareProvidersPharmacies target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HealthcareProvidersPharmacies target) {
-				target.init();
+      @Override
+      protected void updateToPass(HealthcareProvidersPharmacies target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HealthcareProvidersPharmaciesOperations.validateHealthcareProvidersPharmaciesTemplateId(
-					(HealthcareProvidersPharmacies) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HealthcareProvidersPharmaciesOperations.validateHealthcareProvidersPharmaciesTemplateId(
+          (HealthcareProvidersPharmacies) objectToTest, diagnostician, map);
+      }
 
-		validateHealthcareProvidersPharmaciesTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHealthcareProvidersPharmaciesTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,9 +159,9 @@ public class HealthcareProvidersPharmaciesTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -135,8 +169,8 @@ public class HealthcareProvidersPharmaciesTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // HealthcareProvidersPharmaciesOperations

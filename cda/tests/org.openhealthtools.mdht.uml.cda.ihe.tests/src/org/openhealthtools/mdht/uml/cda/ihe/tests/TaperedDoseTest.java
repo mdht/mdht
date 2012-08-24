@@ -81,33 +81,67 @@ public class TaperedDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTaperedDoseTemplateId() {
-		OperationsTestCase<TaperedDose> validateTaperedDoseTemplateIdTestCase = new OperationsTestCase<TaperedDose>(
-			"validateTaperedDoseTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_TAPERED_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<TaperedDose> validateTaperedDoseTemplateIdTestCase = new OperationsTestCase<TaperedDose>(
+      "validateTaperedDoseTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_TAPERED_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(TaperedDose target) {
+      @Override
+      protected void updateToFail(TaperedDose target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(TaperedDose target) {
-				target.init();
+      @Override
+      protected void updateToPass(TaperedDose target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return TaperedDoseOperations.validateTaperedDoseTemplateId(
-					(TaperedDose) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return TaperedDoseOperations.validateTaperedDoseTemplateId(
+          (TaperedDose) objectToTest, diagnostician, map);
+      }
 
-		validateTaperedDoseTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateTaperedDoseTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -163,9 +197,9 @@ public class TaperedDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -173,8 +207,8 @@ public class TaperedDoseTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // TaperedDoseOperations

@@ -46,33 +46,67 @@ public class EarsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEarsSectionTemplateId() {
-		OperationsTestCase<EarsSection> validateEarsSectionTemplateIdTestCase = new OperationsTestCase<EarsSection>(
-			"validateEarsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EARS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EarsSection> validateEarsSectionTemplateIdTestCase = new OperationsTestCase<EarsSection>(
+      "validateEarsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EARS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EarsSection target) {
+      @Override
+      protected void updateToFail(EarsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EarsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(EarsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EarsSectionOperations.validateEarsSectionTemplateId(
-					(EarsSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EarsSectionOperations.validateEarsSectionTemplateId(
+          (EarsSection) objectToTest, diagnostician, map);
+      }
 
-		validateEarsSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateEarsSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,31 +114,67 @@ public class EarsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEarsSectionCode() {
-		OperationsTestCase<EarsSection> validateEarsSectionCodeTestCase = new OperationsTestCase<EarsSection>(
-			"validateEarsSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EARS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<EarsSection> validateEarsSectionCodeTestCase = new OperationsTestCase<EarsSection>(
+      "validateEarsSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EARS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EarsSection target) {
+      @Override
+      protected void updateToFail(EarsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EarsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(EarsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EarsSectionOperations.validateEarsSectionCode((EarsSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EarsSectionOperations.validateEarsSectionCode(
+          (EarsSection) objectToTest, diagnostician, map);
+      }
 
-		validateEarsSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateEarsSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -147,10 +217,13 @@ public class EarsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		EarsSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+EarsSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -205,17 +278,17 @@ public class EarsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // EarsSectionOperations

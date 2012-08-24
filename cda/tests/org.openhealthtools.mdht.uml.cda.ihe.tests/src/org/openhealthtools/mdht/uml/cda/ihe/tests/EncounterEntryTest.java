@@ -51,33 +51,67 @@ public class EncounterEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterEntryTemplateId() {
-		OperationsTestCase<EncounterEntry> validateEncounterEntryTemplateIdTestCase = new OperationsTestCase<EncounterEntry>(
-			"validateEncounterEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterEntry> validateEncounterEntryTemplateIdTestCase = new OperationsTestCase<EncounterEntry>(
+      "validateEncounterEntryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterEntry target) {
+      @Override
+      protected void updateToFail(EncounterEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterEntryOperations.validateEncounterEntryTemplateId(
-					(EncounterEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterEntryOperations.validateEncounterEntryTemplateId(
+          (EncounterEntry) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterEntryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterEntryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -85,33 +119,67 @@ public class EncounterEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterEntryClassCode() {
-		OperationsTestCase<EncounterEntry> validateEncounterEntryClassCodeTestCase = new OperationsTestCase<EncounterEntry>(
-			"validateEncounterEntryClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterEntry> validateEncounterEntryClassCodeTestCase = new OperationsTestCase<EncounterEntry>(
+      "validateEncounterEntryClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterEntry target) {
+      @Override
+      protected void updateToFail(EncounterEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterEntryOperations.validateEncounterEntryClassCode(
-					(EncounterEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterEntryOperations.validateEncounterEntryClassCode(
+          (EncounterEntry) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterEntryClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterEntryClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -119,33 +187,67 @@ public class EncounterEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterEntryCode() {
-		OperationsTestCase<EncounterEntry> validateEncounterEntryCodeTestCase = new OperationsTestCase<EncounterEntry>(
-			"validateEncounterEntryCode",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterEntry> validateEncounterEntryCodeTestCase = new OperationsTestCase<EncounterEntry>(
+      "validateEncounterEntryCode",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterEntry target) {
+      @Override
+      protected void updateToFail(EncounterEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterEntryOperations.validateEncounterEntryCode(
-					(EncounterEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterEntryOperations.validateEncounterEntryCode(
+          (EncounterEntry) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterEntryCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterEntryCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -153,33 +255,67 @@ public class EncounterEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterEntryCodeP() {
-		OperationsTestCase<EncounterEntry> validateEncounterEntryCodePTestCase = new OperationsTestCase<EncounterEntry>(
-			"validateEncounterEntryCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterEntry> validateEncounterEntryCodePTestCase = new OperationsTestCase<EncounterEntry>(
+      "validateEncounterEntryCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterEntry target) {
+      @Override
+      protected void updateToFail(EncounterEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterEntry target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterEntryOperations.validateEncounterEntryCodeP(
-					(EncounterEntry) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterEntryOperations.validateEncounterEntryCodeP(
+          (EncounterEntry) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterEntryCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterEntryCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -304,9 +440,9 @@ public class EncounterEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -314,8 +450,8 @@ public class EncounterEntryTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // EncounterEntryOperations

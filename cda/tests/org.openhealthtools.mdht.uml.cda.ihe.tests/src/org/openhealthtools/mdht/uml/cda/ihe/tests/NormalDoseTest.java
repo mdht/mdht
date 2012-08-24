@@ -84,32 +84,67 @@ public class NormalDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNormalDoseTemplateId() {
-		OperationsTestCase<NormalDose> validateNormalDoseTemplateIdTestCase = new OperationsTestCase<NormalDose>(
-			"validateNormalDoseTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_NORMAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<NormalDose> validateNormalDoseTemplateIdTestCase = new OperationsTestCase<NormalDose>(
+      "validateNormalDoseTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_NORMAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(NormalDose target) {
+      @Override
+      protected void updateToFail(NormalDose target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(NormalDose target) {
-				target.init();
+      @Override
+      protected void updateToPass(NormalDose target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return NormalDoseOperations.validateNormalDoseTemplateId((NormalDose) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return NormalDoseOperations.validateNormalDoseTemplateId(
+          (NormalDose) objectToTest, diagnostician, map);
+      }
 
-		validateNormalDoseTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateNormalDoseTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -165,9 +200,9 @@ public class NormalDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -175,8 +210,8 @@ public class NormalDoseTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // NormalDoseOperations

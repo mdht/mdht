@@ -43,33 +43,67 @@ public class LanguageCommunicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIHELanguageCommunicationTemplateId() {
-		OperationsTestCase<LanguageCommunication> validateIHELanguageCommunicationTemplateIdTestCase = new OperationsTestCase<LanguageCommunication>(
-			"validateIHELanguageCommunicationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_IHE_LANGUAGE_COMMUNICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<LanguageCommunication> validateIHELanguageCommunicationTemplateIdTestCase = new OperationsTestCase<LanguageCommunication>(
+      "validateIHELanguageCommunicationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_IHE_LANGUAGE_COMMUNICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(LanguageCommunication target) {
+      @Override
+      protected void updateToFail(LanguageCommunication target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(LanguageCommunication target) {
-				target.init();
+      @Override
+      protected void updateToPass(LanguageCommunication target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return LanguageCommunicationOperations.validateIHELanguageCommunicationTemplateId(
-					(LanguageCommunication) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return LanguageCommunicationOperations.validateIHELanguageCommunicationTemplateId(
+          (LanguageCommunication) objectToTest, diagnostician, map);
+      }
 
-		validateIHELanguageCommunicationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateIHELanguageCommunicationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -125,9 +159,9 @@ public class LanguageCommunicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -135,8 +169,8 @@ public class LanguageCommunicationTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // LanguageCommunicationOperations

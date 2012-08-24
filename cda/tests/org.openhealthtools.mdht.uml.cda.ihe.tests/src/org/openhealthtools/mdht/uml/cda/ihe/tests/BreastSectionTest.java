@@ -44,33 +44,67 @@ public class BreastSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBreastSectionTemplateId() {
-		OperationsTestCase<BreastSection> validateBreastSectionTemplateIdTestCase = new OperationsTestCase<BreastSection>(
-			"validateBreastSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_BREAST_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<BreastSection> validateBreastSectionTemplateIdTestCase = new OperationsTestCase<BreastSection>(
+      "validateBreastSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_BREAST_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(BreastSection target) {
+      @Override
+      protected void updateToFail(BreastSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(BreastSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(BreastSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return BreastSectionOperations.validateBreastSectionTemplateId(
-					(BreastSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return BreastSectionOperations.validateBreastSectionTemplateId(
+          (BreastSection) objectToTest, diagnostician, map);
+      }
 
-		validateBreastSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateBreastSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -78,32 +112,67 @@ public class BreastSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBreastSectionCode() {
-		OperationsTestCase<BreastSection> validateBreastSectionCodeTestCase = new OperationsTestCase<BreastSection>(
-			"validateBreastSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_BREAST_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<BreastSection> validateBreastSectionCodeTestCase = new OperationsTestCase<BreastSection>(
+      "validateBreastSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_BREAST_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(BreastSection target) {
+      @Override
+      protected void updateToFail(BreastSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(BreastSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(BreastSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return BreastSectionOperations.validateBreastSectionCode(
-					(BreastSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return BreastSectionOperations.validateBreastSectionCode(
+          (BreastSection) objectToTest, diagnostician, map);
+      }
 
-		validateBreastSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateBreastSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -158,17 +227,17 @@ public class BreastSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // BreastSectionOperations

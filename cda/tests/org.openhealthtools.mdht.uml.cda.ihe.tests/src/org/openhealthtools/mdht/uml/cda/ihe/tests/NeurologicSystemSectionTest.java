@@ -46,33 +46,67 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNeurologicSystemSectionTemplateId() {
-		OperationsTestCase<NeurologicSystemSection> validateNeurologicSystemSectionTemplateIdTestCase = new OperationsTestCase<NeurologicSystemSection>(
-			"validateNeurologicSystemSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_NEUROLOGIC_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<NeurologicSystemSection> validateNeurologicSystemSectionTemplateIdTestCase = new OperationsTestCase<NeurologicSystemSection>(
+      "validateNeurologicSystemSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_NEUROLOGIC_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(NeurologicSystemSection target) {
+      @Override
+      protected void updateToFail(NeurologicSystemSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(NeurologicSystemSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(NeurologicSystemSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return NeurologicSystemSectionOperations.validateNeurologicSystemSectionTemplateId(
-					(NeurologicSystemSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return NeurologicSystemSectionOperations.validateNeurologicSystemSectionTemplateId(
+          (NeurologicSystemSection) objectToTest, diagnostician, map);
+      }
 
-		validateNeurologicSystemSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateNeurologicSystemSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,33 +114,67 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNeurologicSystemSectionCode() {
-		OperationsTestCase<NeurologicSystemSection> validateNeurologicSystemSectionCodeTestCase = new OperationsTestCase<NeurologicSystemSection>(
-			"validateNeurologicSystemSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_NEUROLOGIC_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<NeurologicSystemSection> validateNeurologicSystemSectionCodeTestCase = new OperationsTestCase<NeurologicSystemSection>(
+      "validateNeurologicSystemSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_NEUROLOGIC_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(NeurologicSystemSection target) {
+      @Override
+      protected void updateToFail(NeurologicSystemSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(NeurologicSystemSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(NeurologicSystemSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return NeurologicSystemSectionOperations.validateNeurologicSystemSectionCode(
-					(NeurologicSystemSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return NeurologicSystemSectionOperations.validateNeurologicSystemSectionCode(
+          (NeurologicSystemSection) objectToTest, diagnostician, map);
+      }
 
-		validateNeurologicSystemSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateNeurologicSystemSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -149,10 +217,13 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
-		NeurologicSystemSection target = objectFactory.create();
-		target.getProblemEntry();
 
-	}
+NeurologicSystemSection target = objectFactory.create();
+target.getProblemEntry();
+
+
+
+}
 
 	/**
 	*
@@ -207,17 +278,17 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // NeurologicSystemSectionOperations
