@@ -55,66 +55,66 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateEMSAllergiesAndAdverseReactionsSectionTemplateId() {
-			OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionTemplateIdTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
-			"validateEMSAllergiesAndAdverseReactionsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionTemplateIdTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
+      "validateEMSAllergiesAndAdverseReactionsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
+      @Override
+      protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionTemplateId(
-					(EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionTemplateId(
+          (EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAllergiesAndAdverseReactionsSectionTemplateIdTestCase.doValidationTest();
+    validateEMSAllergiesAndAdverseReactionsSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -123,66 +123,66 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateEMSAllergiesAndAdverseReactionsSectionCode() {
-			OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionCodeTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
-			"validateEMSAllergiesAndAdverseReactionsSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionCodeTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
+      "validateEMSAllergiesAndAdverseReactionsSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
+      @Override
+      protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionCode(
-					(EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionCode(
+          (EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAllergiesAndAdverseReactionsSectionCodeTestCase.doValidationTest();
+    validateEMSAllergiesAndAdverseReactionsSectionCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -191,69 +191,69 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateEMSAllergiesAndAdverseReactionsSectionTitle() {
-			OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionTitleTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
-			"validateEMSAllergiesAndAdverseReactionsSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionTitleTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
+      "validateEMSAllergiesAndAdverseReactionsSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
+      @Override
+      protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionTitle(
-					(EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionTitle(
+          (EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAllergiesAndAdverseReactionsSectionTitleTestCase.doValidationTest();
+    validateEMSAllergiesAndAdverseReactionsSectionTitleTestCase.doValidationTest();
 }
 
 	/**
@@ -262,69 +262,69 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateEMSAllergiesAndAdverseReactionsSectionText() {
-			OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionTextTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
-			"validateEMSAllergiesAndAdverseReactionsSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionTextTestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
+      "validateEMSAllergiesAndAdverseReactionsSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
+      @Override
+      protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionText(
-					(EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionText(
+          (EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAllergiesAndAdverseReactionsSectionTextTestCase.doValidationTest();
+    validateEMSAllergiesAndAdverseReactionsSectionTextTestCase.doValidationTest();
 }
 
 	/**
@@ -333,66 +333,66 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateEMSAllergiesAndAdverseReactionsSectionEntry1() {
-			OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionEntry1TestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
-			"validateEMSAllergiesAndAdverseReactionsSectionEntry1",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionEntry1TestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
+      "validateEMSAllergiesAndAdverseReactionsSectionEntry1",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
+      @Override
+      protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionEntry1(
-					(EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionEntry1(
+          (EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAllergiesAndAdverseReactionsSectionEntry1TestCase.doValidationTest();
+    validateEMSAllergiesAndAdverseReactionsSectionEntry1TestCase.doValidationTest();
 }
 
 	/**
@@ -401,66 +401,66 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateEMSAllergiesAndAdverseReactionsSectionEntry2() {
-			OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionEntry2TestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
-			"validateEMSAllergiesAndAdverseReactionsSectionEntry2",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_ENTRY2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAllergiesAndAdverseReactionsSection> validateEMSAllergiesAndAdverseReactionsSectionEntry2TestCase = new OperationsTestCase<EMSAllergiesAndAdverseReactionsSection>(
+      "validateEMSAllergiesAndAdverseReactionsSectionEntry2",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION_ENTRY2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
+      @Override
+      protected void updateToFail(EMSAllergiesAndAdverseReactionsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAllergiesAndAdverseReactionsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionEntry2(
-					(EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAllergiesAndAdverseReactionsSectionOperations.validateEMSAllergiesAndAdverseReactionsSectionEntry2(
+          (EMSAllergiesAndAdverseReactionsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAllergiesAndAdverseReactionsSectionEntry2TestCase.doValidationTest();
+    validateEMSAllergiesAndAdverseReactionsSectionEntry2TestCase.doValidationTest();
 }
 
 	/**
@@ -516,9 +516,9 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -526,7 +526,7 @@ public class EMSAllergiesAndAdverseReactionsSectionTest extends CDAValidationTes
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // EMSAllergiesAndAdverseReactionsSectionOperations

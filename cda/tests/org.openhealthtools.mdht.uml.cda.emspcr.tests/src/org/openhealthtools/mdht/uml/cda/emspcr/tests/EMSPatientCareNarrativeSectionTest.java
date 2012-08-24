@@ -54,66 +54,66 @@ public class EMSPatientCareNarrativeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPatientCareNarrativeSectionTemplateId() {
-			OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionTemplateIdTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
-			"validateEMSPatientCareNarrativeSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionTemplateIdTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
+      "validateEMSPatientCareNarrativeSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPatientCareNarrativeSection target) {
+      @Override
+      protected void updateToFail(EMSPatientCareNarrativeSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPatientCareNarrativeSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPatientCareNarrativeSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionTemplateId(
-					(EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionTemplateId(
+          (EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPatientCareNarrativeSectionTemplateIdTestCase.doValidationTest();
+    validateEMSPatientCareNarrativeSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -122,66 +122,66 @@ public class EMSPatientCareNarrativeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPatientCareNarrativeSectionCode() {
-			OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionCodeTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
-			"validateEMSPatientCareNarrativeSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionCodeTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
+      "validateEMSPatientCareNarrativeSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPatientCareNarrativeSection target) {
+      @Override
+      protected void updateToFail(EMSPatientCareNarrativeSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPatientCareNarrativeSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPatientCareNarrativeSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionCode(
-					(EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionCode(
+          (EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPatientCareNarrativeSectionCodeTestCase.doValidationTest();
+    validateEMSPatientCareNarrativeSectionCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -190,66 +190,66 @@ public class EMSPatientCareNarrativeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPatientCareNarrativeSectionCodeP() {
-			OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionCodePTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
-			"validateEMSPatientCareNarrativeSectionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionCodePTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
+      "validateEMSPatientCareNarrativeSectionCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPatientCareNarrativeSection target) {
+      @Override
+      protected void updateToFail(EMSPatientCareNarrativeSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPatientCareNarrativeSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPatientCareNarrativeSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionCodeP(
-					(EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionCodeP(
+          (EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPatientCareNarrativeSectionCodePTestCase.doValidationTest();
+    validateEMSPatientCareNarrativeSectionCodePTestCase.doValidationTest();
 }
 
 	/**
@@ -258,69 +258,69 @@ public class EMSPatientCareNarrativeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPatientCareNarrativeSectionTitle() {
-			OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionTitleTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
-			"validateEMSPatientCareNarrativeSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionTitleTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
+      "validateEMSPatientCareNarrativeSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPatientCareNarrativeSection target) {
+      @Override
+      protected void updateToFail(EMSPatientCareNarrativeSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPatientCareNarrativeSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPatientCareNarrativeSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionTitle(
-					(EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionTitle(
+          (EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPatientCareNarrativeSectionTitleTestCase.doValidationTest();
+    validateEMSPatientCareNarrativeSectionTitleTestCase.doValidationTest();
 }
 
 	/**
@@ -329,69 +329,69 @@ public class EMSPatientCareNarrativeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPatientCareNarrativeSectionText() {
-			OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionTextTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
-			"validateEMSPatientCareNarrativeSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPatientCareNarrativeSection> validateEMSPatientCareNarrativeSectionTextTestCase = new OperationsTestCase<EMSPatientCareNarrativeSection>(
+      "validateEMSPatientCareNarrativeSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PATIENT_CARE_NARRATIVE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPatientCareNarrativeSection target) {
+      @Override
+      protected void updateToFail(EMSPatientCareNarrativeSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPatientCareNarrativeSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPatientCareNarrativeSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionText(
-					(EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPatientCareNarrativeSectionOperations.validateEMSPatientCareNarrativeSectionText(
+          (EMSPatientCareNarrativeSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPatientCareNarrativeSectionTextTestCase.doValidationTest();
+    validateEMSPatientCareNarrativeSectionTextTestCase.doValidationTest();
 }
 
 	/**
@@ -447,9 +447,9 @@ public class EMSPatientCareNarrativeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -457,7 +457,7 @@ public class EMSPatientCareNarrativeSectionTest extends CDAValidationTest {
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // EMSPatientCareNarrativeSectionOperations

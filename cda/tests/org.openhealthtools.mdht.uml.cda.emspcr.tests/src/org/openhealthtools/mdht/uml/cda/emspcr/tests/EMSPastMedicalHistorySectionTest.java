@@ -56,66 +56,66 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPastMedicalHistorySectionTemplateId() {
-			OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionTemplateIdTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
-			"validateEMSPastMedicalHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionTemplateIdTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
+      "validateEMSPastMedicalHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPastMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(EMSPastMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPastMedicalHistorySection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPastMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionTemplateId(
-					(EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionTemplateId(
+          (EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPastMedicalHistorySectionTemplateIdTestCase.doValidationTest();
+    validateEMSPastMedicalHistorySectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -124,66 +124,66 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPastMedicalHistorySectionCode() {
-			OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionCodeTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
-			"validateEMSPastMedicalHistorySectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionCodeTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
+      "validateEMSPastMedicalHistorySectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPastMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(EMSPastMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPastMedicalHistorySection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPastMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionCode(
-					(EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionCode(
+          (EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPastMedicalHistorySectionCodeTestCase.doValidationTest();
+    validateEMSPastMedicalHistorySectionCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -192,66 +192,66 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPastMedicalHistorySectionCodeP() {
-			OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionCodePTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
-			"validateEMSPastMedicalHistorySectionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionCodePTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
+      "validateEMSPastMedicalHistorySectionCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPastMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(EMSPastMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPastMedicalHistorySection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPastMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionCodeP(
-					(EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionCodeP(
+          (EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPastMedicalHistorySectionCodePTestCase.doValidationTest();
+    validateEMSPastMedicalHistorySectionCodePTestCase.doValidationTest();
 }
 
 	/**
@@ -260,69 +260,69 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPastMedicalHistorySectionTitle() {
-			OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionTitleTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
-			"validateEMSPastMedicalHistorySectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionTitleTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
+      "validateEMSPastMedicalHistorySectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPastMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(EMSPastMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPastMedicalHistorySection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPastMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionTitle(
-					(EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionTitle(
+          (EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPastMedicalHistorySectionTitleTestCase.doValidationTest();
+    validateEMSPastMedicalHistorySectionTitleTestCase.doValidationTest();
 }
 
 	/**
@@ -331,69 +331,69 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPastMedicalHistorySectionText() {
-			OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionTextTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
-			"validateEMSPastMedicalHistorySectionText",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionTextTestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
+      "validateEMSPastMedicalHistorySectionText",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPastMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(EMSPastMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPastMedicalHistorySection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPastMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionText(
-					(EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionText(
+          (EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPastMedicalHistorySectionTextTestCase.doValidationTest();
+    validateEMSPastMedicalHistorySectionTextTestCase.doValidationTest();
 }
 
 	/**
@@ -402,66 +402,66 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPastMedicalHistorySectionEntry1() {
-			OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionEntry1TestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
-			"validateEMSPastMedicalHistorySectionEntry1",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionEntry1TestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
+      "validateEMSPastMedicalHistorySectionEntry1",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPastMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(EMSPastMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPastMedicalHistorySection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPastMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionEntry1(
-					(EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionEntry1(
+          (EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPastMedicalHistorySectionEntry1TestCase.doValidationTest();
+    validateEMSPastMedicalHistorySectionEntry1TestCase.doValidationTest();
 }
 
 	/**
@@ -470,66 +470,66 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSPastMedicalHistorySectionEntry2() {
-			OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionEntry2TestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
-			"validateEMSPastMedicalHistorySectionEntry2",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_ENTRY2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSPastMedicalHistorySection> validateEMSPastMedicalHistorySectionEntry2TestCase = new OperationsTestCase<EMSPastMedicalHistorySection>(
+      "validateEMSPastMedicalHistorySectionEntry2",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_PAST_MEDICAL_HISTORY_SECTION_ENTRY2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSPastMedicalHistorySection target) {
+      @Override
+      protected void updateToFail(EMSPastMedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSPastMedicalHistorySection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSPastMedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionEntry2(
-					(EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSPastMedicalHistorySectionOperations.validateEMSPastMedicalHistorySectionEntry2(
+          (EMSPastMedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSPastMedicalHistorySectionEntry2TestCase.doValidationTest();
+    validateEMSPastMedicalHistorySectionEntry2TestCase.doValidationTest();
 }
 
 	/**
@@ -585,9 +585,9 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -595,7 +595,7 @@ public class EMSPastMedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // EMSPastMedicalHistorySectionOperations
