@@ -54,66 +54,66 @@ public class EMSCardiacArrestEventSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCardiacArrestEventSectionTemplateId() {
-			OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionTemplateIdTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
-			"validateEMSCardiacArrestEventSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionTemplateIdTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
+      "validateEMSCardiacArrestEventSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCardiacArrestEventSection target) {
+      @Override
+      protected void updateToFail(EMSCardiacArrestEventSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCardiacArrestEventSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCardiacArrestEventSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionTemplateId(
-					(EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionTemplateId(
+          (EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCardiacArrestEventSectionTemplateIdTestCase.doValidationTest();
+    validateEMSCardiacArrestEventSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -122,66 +122,66 @@ public class EMSCardiacArrestEventSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCardiacArrestEventSectionCode() {
-			OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionCodeTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
-			"validateEMSCardiacArrestEventSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionCodeTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
+      "validateEMSCardiacArrestEventSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCardiacArrestEventSection target) {
+      @Override
+      protected void updateToFail(EMSCardiacArrestEventSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCardiacArrestEventSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCardiacArrestEventSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionCode(
-					(EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionCode(
+          (EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCardiacArrestEventSectionCodeTestCase.doValidationTest();
+    validateEMSCardiacArrestEventSectionCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -190,69 +190,69 @@ public class EMSCardiacArrestEventSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCardiacArrestEventSectionTitle() {
-			OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionTitleTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
-			"validateEMSCardiacArrestEventSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionTitleTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
+      "validateEMSCardiacArrestEventSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCardiacArrestEventSection target) {
+      @Override
+      protected void updateToFail(EMSCardiacArrestEventSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCardiacArrestEventSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCardiacArrestEventSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionTitle(
-					(EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionTitle(
+          (EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCardiacArrestEventSectionTitleTestCase.doValidationTest();
+    validateEMSCardiacArrestEventSectionTitleTestCase.doValidationTest();
 }
 
 	/**
@@ -261,69 +261,69 @@ public class EMSCardiacArrestEventSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCardiacArrestEventSectionText() {
-			OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionTextTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
-			"validateEMSCardiacArrestEventSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionTextTestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
+      "validateEMSCardiacArrestEventSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCardiacArrestEventSection target) {
+      @Override
+      protected void updateToFail(EMSCardiacArrestEventSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCardiacArrestEventSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCardiacArrestEventSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionText(
-					(EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionText(
+          (EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCardiacArrestEventSectionTextTestCase.doValidationTest();
+    validateEMSCardiacArrestEventSectionTextTestCase.doValidationTest();
 }
 
 	/**
@@ -332,66 +332,66 @@ public class EMSCardiacArrestEventSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCardiacArrestEventSectionEntry1() {
-			OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionEntry1TestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
-			"validateEMSCardiacArrestEventSectionEntry1",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCardiacArrestEventSection> validateEMSCardiacArrestEventSectionEntry1TestCase = new OperationsTestCase<EMSCardiacArrestEventSection>(
+      "validateEMSCardiacArrestEventSectionEntry1",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CARDIAC_ARREST_EVENT_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCardiacArrestEventSection target) {
+      @Override
+      protected void updateToFail(EMSCardiacArrestEventSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCardiacArrestEventSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCardiacArrestEventSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionEntry1(
-					(EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCardiacArrestEventSectionOperations.validateEMSCardiacArrestEventSectionEntry1(
+          (EMSCardiacArrestEventSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCardiacArrestEventSectionEntry1TestCase.doValidationTest();
+    validateEMSCardiacArrestEventSectionEntry1TestCase.doValidationTest();
 }
 
 	/**
@@ -447,9 +447,9 @@ public class EMSCardiacArrestEventSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -457,7 +457,7 @@ public class EMSCardiacArrestEventSectionTest extends CDAValidationTest {
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // EMSCardiacArrestEventSectionOperations

@@ -54,66 +54,66 @@ public class EMSVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSVitalSignsSectionTemplateId() {
-			OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionTemplateIdTestCase = new OperationsTestCase<EMSVitalSignsSection>(
-			"validateEMSVitalSignsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionTemplateIdTestCase = new OperationsTestCase<EMSVitalSignsSection>(
+      "validateEMSVitalSignsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSVitalSignsSection target) {
+      @Override
+      protected void updateToFail(EMSVitalSignsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSVitalSignsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSVitalSignsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionTemplateId(
-					(EMSVitalSignsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionTemplateId(
+          (EMSVitalSignsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSVitalSignsSectionTemplateIdTestCase.doValidationTest();
+    validateEMSVitalSignsSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -122,66 +122,66 @@ public class EMSVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSVitalSignsSectionCode() {
-			OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionCodeTestCase = new OperationsTestCase<EMSVitalSignsSection>(
-			"validateEMSVitalSignsSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionCodeTestCase = new OperationsTestCase<EMSVitalSignsSection>(
+      "validateEMSVitalSignsSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSVitalSignsSection target) {
+      @Override
+      protected void updateToFail(EMSVitalSignsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSVitalSignsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSVitalSignsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionCode(
-					(EMSVitalSignsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionCode(
+          (EMSVitalSignsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSVitalSignsSectionCodeTestCase.doValidationTest();
+    validateEMSVitalSignsSectionCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -190,69 +190,69 @@ public class EMSVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSVitalSignsSectionTitle() {
-			OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionTitleTestCase = new OperationsTestCase<EMSVitalSignsSection>(
-			"validateEMSVitalSignsSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionTitleTestCase = new OperationsTestCase<EMSVitalSignsSection>(
+      "validateEMSVitalSignsSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSVitalSignsSection target) {
+      @Override
+      protected void updateToFail(EMSVitalSignsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSVitalSignsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSVitalSignsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionTitle(
-					(EMSVitalSignsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionTitle(
+          (EMSVitalSignsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSVitalSignsSectionTitleTestCase.doValidationTest();
+    validateEMSVitalSignsSectionTitleTestCase.doValidationTest();
 }
 
 	/**
@@ -261,69 +261,69 @@ public class EMSVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSVitalSignsSectionText() {
-			OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionTextTestCase = new OperationsTestCase<EMSVitalSignsSection>(
-			"validateEMSVitalSignsSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionTextTestCase = new OperationsTestCase<EMSVitalSignsSection>(
+      "validateEMSVitalSignsSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSVitalSignsSection target) {
+      @Override
+      protected void updateToFail(EMSVitalSignsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSVitalSignsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSVitalSignsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionText(
-					(EMSVitalSignsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionText(
+          (EMSVitalSignsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSVitalSignsSectionTextTestCase.doValidationTest();
+    validateEMSVitalSignsSectionTextTestCase.doValidationTest();
 }
 
 	/**
@@ -332,66 +332,66 @@ public class EMSVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSVitalSignsSectionEntry1() {
-			OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionEntry1TestCase = new OperationsTestCase<EMSVitalSignsSection>(
-			"validateEMSVitalSignsSectionEntry1",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSVitalSignsSection> validateEMSVitalSignsSectionEntry1TestCase = new OperationsTestCase<EMSVitalSignsSection>(
+      "validateEMSVitalSignsSectionEntry1",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_VITAL_SIGNS_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSVitalSignsSection target) {
+      @Override
+      protected void updateToFail(EMSVitalSignsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSVitalSignsSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSVitalSignsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionEntry1(
-					(EMSVitalSignsSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSVitalSignsSectionOperations.validateEMSVitalSignsSectionEntry1(
+          (EMSVitalSignsSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSVitalSignsSectionEntry1TestCase.doValidationTest();
+    validateEMSVitalSignsSectionEntry1TestCase.doValidationTest();
 }
 
 	/**
@@ -447,9 +447,9 @@ public class EMSVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -457,7 +457,7 @@ public class EMSVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // EMSVitalSignsSectionOperations

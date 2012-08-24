@@ -56,66 +56,66 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCurrentMedicationSectionTemplateId() {
-			OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionTemplateIdTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
-			"validateEMSCurrentMedicationSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionTemplateIdTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
+      "validateEMSCurrentMedicationSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCurrentMedicationSection target) {
+      @Override
+      protected void updateToFail(EMSCurrentMedicationSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCurrentMedicationSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCurrentMedicationSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionTemplateId(
-					(EMSCurrentMedicationSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionTemplateId(
+          (EMSCurrentMedicationSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCurrentMedicationSectionTemplateIdTestCase.doValidationTest();
+    validateEMSCurrentMedicationSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -124,66 +124,66 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCurrentMedicationSectionCode() {
-			OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionCodeTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
-			"validateEMSCurrentMedicationSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionCodeTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
+      "validateEMSCurrentMedicationSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCurrentMedicationSection target) {
+      @Override
+      protected void updateToFail(EMSCurrentMedicationSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCurrentMedicationSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCurrentMedicationSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionCode(
-					(EMSCurrentMedicationSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionCode(
+          (EMSCurrentMedicationSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCurrentMedicationSectionCodeTestCase.doValidationTest();
+    validateEMSCurrentMedicationSectionCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -192,69 +192,69 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCurrentMedicationSectionTitle() {
-			OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionTitleTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
-			"validateEMSCurrentMedicationSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionTitleTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
+      "validateEMSCurrentMedicationSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCurrentMedicationSection target) {
+      @Override
+      protected void updateToFail(EMSCurrentMedicationSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCurrentMedicationSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCurrentMedicationSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionTitle(
-					(EMSCurrentMedicationSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionTitle(
+          (EMSCurrentMedicationSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCurrentMedicationSectionTitleTestCase.doValidationTest();
+    validateEMSCurrentMedicationSectionTitleTestCase.doValidationTest();
 }
 
 	/**
@@ -263,69 +263,69 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCurrentMedicationSectionText() {
-			OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionTextTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
-			"validateEMSCurrentMedicationSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionTextTestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
+      "validateEMSCurrentMedicationSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCurrentMedicationSection target) {
+      @Override
+      protected void updateToFail(EMSCurrentMedicationSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCurrentMedicationSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCurrentMedicationSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionText(
-					(EMSCurrentMedicationSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionText(
+          (EMSCurrentMedicationSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCurrentMedicationSectionTextTestCase.doValidationTest();
+    validateEMSCurrentMedicationSectionTextTestCase.doValidationTest();
 }
 
 	/**
@@ -334,66 +334,66 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCurrentMedicationSectionEntry1() {
-			OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionEntry1TestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
-			"validateEMSCurrentMedicationSectionEntry1",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionEntry1TestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
+      "validateEMSCurrentMedicationSectionEntry1",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCurrentMedicationSection target) {
+      @Override
+      protected void updateToFail(EMSCurrentMedicationSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCurrentMedicationSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCurrentMedicationSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionEntry1(
-					(EMSCurrentMedicationSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionEntry1(
+          (EMSCurrentMedicationSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCurrentMedicationSectionEntry1TestCase.doValidationTest();
+    validateEMSCurrentMedicationSectionEntry1TestCase.doValidationTest();
 }
 
 	/**
@@ -402,66 +402,66 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCurrentMedicationSectionEntry2() {
-			OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionEntry2TestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
-			"validateEMSCurrentMedicationSectionEntry2",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_ENTRY2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionEntry2TestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
+      "validateEMSCurrentMedicationSectionEntry2",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_ENTRY2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCurrentMedicationSection target) {
+      @Override
+      protected void updateToFail(EMSCurrentMedicationSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCurrentMedicationSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCurrentMedicationSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionEntry2(
-					(EMSCurrentMedicationSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionEntry2(
+          (EMSCurrentMedicationSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCurrentMedicationSectionEntry2TestCase.doValidationTest();
+    validateEMSCurrentMedicationSectionEntry2TestCase.doValidationTest();
 }
 
 	/**
@@ -470,66 +470,66 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSCurrentMedicationSectionEntry3() {
-			OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionEntry3TestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
-			"validateEMSCurrentMedicationSectionEntry3",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_ENTRY3__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSCurrentMedicationSection> validateEMSCurrentMedicationSectionEntry3TestCase = new OperationsTestCase<EMSCurrentMedicationSection>(
+      "validateEMSCurrentMedicationSectionEntry3",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_CURRENT_MEDICATION_SECTION_ENTRY3__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSCurrentMedicationSection target) {
+      @Override
+      protected void updateToFail(EMSCurrentMedicationSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSCurrentMedicationSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSCurrentMedicationSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionEntry3(
-					(EMSCurrentMedicationSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSCurrentMedicationSectionOperations.validateEMSCurrentMedicationSectionEntry3(
+          (EMSCurrentMedicationSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSCurrentMedicationSectionEntry3TestCase.doValidationTest();
+    validateEMSCurrentMedicationSectionEntry3TestCase.doValidationTest();
 }
 
 	/**
@@ -585,9 +585,9 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -595,7 +595,7 @@ public class EMSCurrentMedicationSectionTest extends CDAValidationTest {
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // EMSCurrentMedicationSectionOperations

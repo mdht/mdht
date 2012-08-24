@@ -54,66 +54,66 @@ public class EMSAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSAdvanceDirectivesSectionTemplateId() {
-			OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionTemplateIdTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
-			"validateEMSAdvanceDirectivesSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionTemplateIdTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
+      "validateEMSAdvanceDirectivesSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAdvanceDirectivesSection target) {
+      @Override
+      protected void updateToFail(EMSAdvanceDirectivesSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAdvanceDirectivesSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAdvanceDirectivesSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionTemplateId(
-					(EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionTemplateId(
+          (EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAdvanceDirectivesSectionTemplateIdTestCase.doValidationTest();
+    validateEMSAdvanceDirectivesSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -122,66 +122,66 @@ public class EMSAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSAdvanceDirectivesSectionCode() {
-			OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionCodeTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
-			"validateEMSAdvanceDirectivesSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionCodeTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
+      "validateEMSAdvanceDirectivesSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAdvanceDirectivesSection target) {
+      @Override
+      protected void updateToFail(EMSAdvanceDirectivesSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAdvanceDirectivesSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAdvanceDirectivesSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionCode(
-					(EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionCode(
+          (EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAdvanceDirectivesSectionCodeTestCase.doValidationTest();
+    validateEMSAdvanceDirectivesSectionCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -190,69 +190,69 @@ public class EMSAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSAdvanceDirectivesSectionTitle() {
-			OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionTitleTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
-			"validateEMSAdvanceDirectivesSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionTitleTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
+      "validateEMSAdvanceDirectivesSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAdvanceDirectivesSection target) {
+      @Override
+      protected void updateToFail(EMSAdvanceDirectivesSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAdvanceDirectivesSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAdvanceDirectivesSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionTitle(
-					(EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionTitle(
+          (EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAdvanceDirectivesSectionTitleTestCase.doValidationTest();
+    validateEMSAdvanceDirectivesSectionTitleTestCase.doValidationTest();
 }
 
 	/**
@@ -261,69 +261,69 @@ public class EMSAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSAdvanceDirectivesSectionText() {
-			OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionTextTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
-			"validateEMSAdvanceDirectivesSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionTextTestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
+      "validateEMSAdvanceDirectivesSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAdvanceDirectivesSection target) {
+      @Override
+      protected void updateToFail(EMSAdvanceDirectivesSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAdvanceDirectivesSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAdvanceDirectivesSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionText(
-					(EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionText(
+          (EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAdvanceDirectivesSectionTextTestCase.doValidationTest();
+    validateEMSAdvanceDirectivesSectionTextTestCase.doValidationTest();
 }
 
 	/**
@@ -332,66 +332,66 @@ public class EMSAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEMSAdvanceDirectivesSectionEntry1() {
-			OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionEntry1TestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
-			"validateEMSAdvanceDirectivesSectionEntry1",
-			operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<EMSAdvanceDirectivesSection> validateEMSAdvanceDirectivesSectionEntry1TestCase = new OperationsTestCase<EMSAdvanceDirectivesSection>(
+      "validateEMSAdvanceDirectivesSectionEntry1",
+      operationsForOCL.getOCLValue("VALIDATE_EMS_ADVANCE_DIRECTIVES_SECTION_ENTRY1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EMSAdvanceDirectivesSection target) {
+      @Override
+      protected void updateToFail(EMSAdvanceDirectivesSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EMSAdvanceDirectivesSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(EMSAdvanceDirectivesSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionEntry1(
-					(EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EMSAdvanceDirectivesSectionOperations.validateEMSAdvanceDirectivesSectionEntry1(
+          (EMSAdvanceDirectivesSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateEMSAdvanceDirectivesSectionEntry1TestCase.doValidationTest();
+    validateEMSAdvanceDirectivesSectionEntry1TestCase.doValidationTest();
 }
 
 	/**
@@ -447,9 +447,9 @@ public class EMSAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -457,7 +457,7 @@ public class EMSAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // EMSAdvanceDirectivesSectionOperations

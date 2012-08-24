@@ -45,66 +45,66 @@ public class DerivedEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDerivedEntryTemplateId() {
-			OperationsTestCase<DerivedEntry> validateDerivedEntryTemplateIdTestCase = new OperationsTestCase<DerivedEntry>(
-			"validateDerivedEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_DERIVED_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<DerivedEntry> validateDerivedEntryTemplateIdTestCase = new OperationsTestCase<DerivedEntry>(
+      "validateDerivedEntryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_DERIVED_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(DerivedEntry target) {
+      @Override
+      protected void updateToFail(DerivedEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(DerivedEntry target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(DerivedEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return DerivedEntryOperations.validateDerivedEntryTemplateId(
-					(DerivedEntry) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return DerivedEntryOperations.validateDerivedEntryTemplateId(
+          (DerivedEntry) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateDerivedEntryTemplateIdTestCase.doValidationTest();
+    validateDerivedEntryTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -113,66 +113,66 @@ public class DerivedEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDerivedEntryTypeCode() {
-			OperationsTestCase<DerivedEntry> validateDerivedEntryTypeCodeTestCase = new OperationsTestCase<DerivedEntry>(
-			"validateDerivedEntryTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_DERIVED_ENTRY_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<DerivedEntry> validateDerivedEntryTypeCodeTestCase = new OperationsTestCase<DerivedEntry>(
+      "validateDerivedEntryTypeCode",
+      operationsForOCL.getOCLValue("VALIDATE_DERIVED_ENTRY_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(DerivedEntry target) {
+      @Override
+      protected void updateToFail(DerivedEntry target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(DerivedEntry target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(DerivedEntry target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return DerivedEntryOperations.validateDerivedEntryTypeCode(
-					(DerivedEntry) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return DerivedEntryOperations.validateDerivedEntryTypeCode(
+          (DerivedEntry) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateDerivedEntryTypeCodeTestCase.doValidationTest();
+    validateDerivedEntryTypeCodeTestCase.doValidationTest();
 }
 
 	/**
@@ -228,9 +228,9 @@ public class DerivedEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
@@ -238,7 +238,7 @@ public class DerivedEntryTest extends CDAValidationTest {
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // DerivedEntryOperations
