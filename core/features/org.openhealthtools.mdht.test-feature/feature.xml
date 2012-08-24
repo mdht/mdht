@@ -115,16 +115,131 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-<!-- 
-  drop mu2 from runtime build until refactor to remove uml validation dependency
+
    <plugin
          id="org.openhealthtools.mdht.uml.cda.mu2consol.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
--->
-         
-         
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.anthrax.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.cocci.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.hepb.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.pertussis.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.salmonellosis.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.silicosis.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.streppneumo.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.tss.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.tuberculosis.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.tularemia.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.wnv.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.phmr.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.qrda.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.sdtm.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.vsbr.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.vsdr.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
