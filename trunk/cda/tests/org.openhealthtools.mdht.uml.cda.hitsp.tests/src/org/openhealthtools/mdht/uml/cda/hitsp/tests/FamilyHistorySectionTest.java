@@ -46,33 +46,67 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPFamilyHistorySectionTemplateId() {
-		OperationsTestCase<FamilyHistorySection> validateHITSPFamilyHistorySectionTemplateIdTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateHITSPFamilyHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_FAMILY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistorySection> validateHITSPFamilyHistorySectionTemplateIdTestCase = new OperationsTestCase<FamilyHistorySection>(
+      "validateHITSPFamilyHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_FAMILY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
+      @Override
+      protected void updateToFail(FamilyHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistorySectionOperations.validateHITSPFamilyHistorySectionTemplateId(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistorySectionOperations.validateHITSPFamilyHistorySectionTemplateId(
+          (FamilyHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPFamilyHistorySectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPFamilyHistorySectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -118,10 +152,13 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testGetFamilyHistories() {
 
-		FamilyHistorySection target = objectFactory.create();
-		target.getFamilyHistories();
 
-	}
+FamilyHistorySection target = objectFactory.create();
+target.getFamilyHistories();
+
+
+
+}
 
 	/**
 	 * 
@@ -179,9 +216,9 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -189,8 +226,8 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FamilyHistorySectionOperations

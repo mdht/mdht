@@ -43,33 +43,67 @@ public class HospitalCourseSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPHospitalCourseSectionTemplateId() {
-		OperationsTestCase<HospitalCourseSection> validateHITSPHospitalCourseSectionTemplateIdTestCase = new OperationsTestCase<HospitalCourseSection>(
-			"validateHITSPHospitalCourseSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_COURSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HospitalCourseSection> validateHITSPHospitalCourseSectionTemplateIdTestCase = new OperationsTestCase<HospitalCourseSection>(
+      "validateHITSPHospitalCourseSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_COURSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HospitalCourseSection target) {
+      @Override
+      protected void updateToFail(HospitalCourseSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HospitalCourseSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(HospitalCourseSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HospitalCourseSectionOperations.validateHITSPHospitalCourseSectionTemplateId(
-					(HospitalCourseSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HospitalCourseSectionOperations.validateHITSPHospitalCourseSectionTemplateId(
+          (HospitalCourseSection) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPHospitalCourseSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPHospitalCourseSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -127,9 +161,9 @@ public class HospitalCourseSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -137,8 +171,8 @@ public class HospitalCourseSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // HospitalCourseSectionOperations

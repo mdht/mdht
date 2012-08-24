@@ -22,29 +22,29 @@ import junit.textui.TestRunner;
 public class CDTAllTests extends TestSuite {
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
+    TestRunner.run(suite());
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public static Test suite() {
-		TestSuite suite = new CDTAllTests("CDT Tests");
-		suite.addTest(CDTTests.suite());
-		return suite;
-	}
+    TestSuite suite = new CDTAllTests("CDT Tests");
+    suite.addTest(CDTTests.suite());
+    return suite;
+  }
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public CDTAllTests(String name) {
-		super(name);
-	}
+    super(name);
+  }
 
 } // CDTAllTests

@@ -30,8 +30,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation#validateProblemHealthStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Health Status Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation#validateStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,38 +41,146 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 
 	/**
+*
+* @generated
+*/
+@Test
+
+ 
+                  
+public void testValidateProblemHealthStatusObservationCode() {
+      OperationsTestCase<ProblemHealthStatusObservation> validateProblemHealthStatusObservationCodeTestCase = new OperationsTestCase<ProblemHealthStatusObservation>(
+      "validateProblemHealthStatusObservationCode",
+      operationsForOCL.getOCLValue("VALIDATE_PROBLEM_HEALTH_STATUS_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
+
+      @Override
+      protected void updateToFail(ProblemHealthStatusObservation target) {
+
+      }
+
+      @Override
+      protected void updateToPass(ProblemHealthStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
+
+        
+        
+
+  
+      
+
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+      
+        CD cd  = DatatypesFactory.eINSTANCE.createCD();
+        target.setCode(cd);
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
+
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProblemHealthStatusObservationOperations.validateProblemHealthStatusObservationCode(
+          (ProblemHealthStatusObservation) objectToTest, diagnostician, map);
+      }
+
+    };
+
+    validateProblemHealthStatusObservationCodeTestCase.doValidationTest();
+}
+
+  /**
 	 * 
 	 * @generated
 	 */
 	@Test
 	public void testValidateStatusObservationTemplateId() {
-		OperationsTestCase<ProblemHealthStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<ProblemHealthStatusObservation>(
-			"validateStatusObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProblemHealthStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<ProblemHealthStatusObservation>(
+      "validateStatusObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProblemHealthStatusObservation target) {
+      @Override
+      protected void updateToFail(ProblemHealthStatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProblemHealthStatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProblemHealthStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProblemHealthStatusObservationOperations.validateStatusObservationTemplateId(
-					(ProblemHealthStatusObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProblemHealthStatusObservationOperations.validateStatusObservationTemplateId(
+          (ProblemHealthStatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateStatusObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateStatusObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -166,17 +274,17 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProblemHealthStatusObservationOperations

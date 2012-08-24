@@ -46,33 +46,67 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPPhysicalExamSectionTemplateId() {
-		OperationsTestCase<PhysicalExamSection> validateHITSPPhysicalExamSectionTemplateIdTestCase = new OperationsTestCase<PhysicalExamSection>(
-			"validateHITSPPhysicalExamSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_PHYSICAL_EXAM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicalExamSection> validateHITSPPhysicalExamSectionTemplateIdTestCase = new OperationsTestCase<PhysicalExamSection>(
+      "validateHITSPPhysicalExamSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_PHYSICAL_EXAM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicalExamSection target) {
+      @Override
+      protected void updateToFail(PhysicalExamSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicalExamSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicalExamSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PhysicalExamSectionOperations.validateHITSPPhysicalExamSectionTemplateId(
-					(PhysicalExamSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicalExamSectionOperations.validateHITSPPhysicalExamSectionTemplateId(
+          (PhysicalExamSection) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPPhysicalExamSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPPhysicalExamSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -118,10 +152,13 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetConditions() {
 
-		PhysicalExamSection target = objectFactory.create();
-		target.getConditions();
 
-	}
+PhysicalExamSection target = objectFactory.create();
+target.getConditions();
+
+
+
+}
 
 	/**
 	 * 
@@ -179,9 +216,9 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -189,8 +226,8 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PhysicalExamSectionOperations

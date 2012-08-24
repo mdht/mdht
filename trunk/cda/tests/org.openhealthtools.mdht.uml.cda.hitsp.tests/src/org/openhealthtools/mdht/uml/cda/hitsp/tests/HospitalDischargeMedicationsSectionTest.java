@@ -46,33 +46,67 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPHospitalDischargeMedicationsSectionTemplateId() {
-		OperationsTestCase<HospitalDischargeMedicationsSection> validateHITSPHospitalDischargeMedicationsSectionTemplateIdTestCase = new OperationsTestCase<HospitalDischargeMedicationsSection>(
-			"validateHITSPHospitalDischargeMedicationsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HospitalDischargeMedicationsSection> validateHITSPHospitalDischargeMedicationsSectionTemplateIdTestCase = new OperationsTestCase<HospitalDischargeMedicationsSection>(
+      "validateHITSPHospitalDischargeMedicationsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HospitalDischargeMedicationsSection target) {
+      @Override
+      protected void updateToFail(HospitalDischargeMedicationsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HospitalDischargeMedicationsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(HospitalDischargeMedicationsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HospitalDischargeMedicationsSectionOperations.validateHITSPHospitalDischargeMedicationsSectionTemplateId(
-					(HospitalDischargeMedicationsSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HospitalDischargeMedicationsSectionOperations.validateHITSPHospitalDischargeMedicationsSectionTemplateId(
+          (HospitalDischargeMedicationsSection) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPHospitalDischargeMedicationsSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPHospitalDischargeMedicationsSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -118,10 +152,13 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetHITSPMedication() {
 
-		HospitalDischargeMedicationsSection target = objectFactory.create();
-		target.getHITSPMedication();
 
-	}
+HospitalDischargeMedicationsSection target = objectFactory.create();
+target.getHITSPMedication();
+
+
+
+}
 
 	/**
 	 * 
@@ -179,9 +216,9 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -189,8 +226,8 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // HospitalDischargeMedicationsSectionOperations

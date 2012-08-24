@@ -44,33 +44,67 @@ public class ReviewOfSystemsSectionIHETest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReviewOfSystemsSectionIHETemplateId() {
-		OperationsTestCase<ReviewOfSystemsSectionIHE> validateReviewOfSystemsSectionIHETemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSectionIHE>(
-			"validateReviewOfSystemsSectionIHETemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_IHE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReviewOfSystemsSectionIHE> validateReviewOfSystemsSectionIHETemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSectionIHE>(
+      "validateReviewOfSystemsSectionIHETemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_IHE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReviewOfSystemsSectionIHE target) {
+      @Override
+      protected void updateToFail(ReviewOfSystemsSectionIHE target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReviewOfSystemsSectionIHE target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReviewOfSystemsSectionIHE target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ReviewOfSystemsSectionIHEOperations.validateReviewOfSystemsSectionIHETemplateId(
-					(ReviewOfSystemsSectionIHE) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReviewOfSystemsSectionIHEOperations.validateReviewOfSystemsSectionIHETemplateId(
+          (ReviewOfSystemsSectionIHE) objectToTest, diagnostician, map);
+      }
 
-		validateReviewOfSystemsSectionIHETemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateReviewOfSystemsSectionIHETemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -78,33 +112,67 @@ public class ReviewOfSystemsSectionIHETest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReviewOfSystemsSectionIHECode() {
-		OperationsTestCase<ReviewOfSystemsSectionIHE> validateReviewOfSystemsSectionIHECodeTestCase = new OperationsTestCase<ReviewOfSystemsSectionIHE>(
-			"validateReviewOfSystemsSectionIHECode",
-			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_IHE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReviewOfSystemsSectionIHE> validateReviewOfSystemsSectionIHECodeTestCase = new OperationsTestCase<ReviewOfSystemsSectionIHE>(
+      "validateReviewOfSystemsSectionIHECode",
+      operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_IHE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReviewOfSystemsSectionIHE target) {
+      @Override
+      protected void updateToFail(ReviewOfSystemsSectionIHE target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReviewOfSystemsSectionIHE target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReviewOfSystemsSectionIHE target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ReviewOfSystemsSectionIHEOperations.validateReviewOfSystemsSectionIHECode(
-					(ReviewOfSystemsSectionIHE) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReviewOfSystemsSectionIHEOperations.validateReviewOfSystemsSectionIHECode(
+          (ReviewOfSystemsSectionIHE) objectToTest, diagnostician, map);
+      }
 
-		validateReviewOfSystemsSectionIHECodeTestCase.doValidationTest();
-	}
+    };
+
+    validateReviewOfSystemsSectionIHECodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -162,9 +230,9 @@ public class ReviewOfSystemsSectionIHETest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -172,8 +240,8 @@ public class ReviewOfSystemsSectionIHETest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ReviewOfSystemsSectionIHEOperations

@@ -83,33 +83,67 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySupplyTemplateId() {
-		OperationsTestCase<PlanOfCareActivitySupply> validatePlanOfCareActivitySupplyTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivitySupply>(
-			"validatePlanOfCareActivitySupplyTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUPPLY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PlanOfCareActivitySupply> validatePlanOfCareActivitySupplyTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivitySupply>(
+      "validatePlanOfCareActivitySupplyTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUPPLY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PlanOfCareActivitySupply target) {
+      @Override
+      protected void updateToFail(PlanOfCareActivitySupply target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PlanOfCareActivitySupply target) {
-				target.init();
+      @Override
+      protected void updateToPass(PlanOfCareActivitySupply target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyTemplateId(
-					(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyTemplateId(
+          (PlanOfCareActivitySupply) objectToTest, diagnostician, map);
+      }
 
-		validatePlanOfCareActivitySupplyTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePlanOfCareActivitySupplyTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -233,17 +267,17 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PlanOfCareActivitySupplyOperations

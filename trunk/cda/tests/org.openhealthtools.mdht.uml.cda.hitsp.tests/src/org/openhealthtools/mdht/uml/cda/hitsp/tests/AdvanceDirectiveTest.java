@@ -47,8 +47,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective#validateAdvanceDirectiveHasTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Has Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective#validateAdvanceDirectiveHasNameOfAgent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Has Name Of Agent</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective#validateAdvanceDirectiveTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective#validateAdvanceDirectiveCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective#validateAdvanceDirectiveEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective#validateAdvanceDirectiveObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -372,70 +372,209 @@ public class AdvanceDirectiveTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveTemplateId() {
-		OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveTemplateIdTestCase = new OperationsTestCase<AdvanceDirective>(
-			"validateAdvanceDirectiveTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveTemplateIdTestCase = new OperationsTestCase<AdvanceDirective>(
+      "validateAdvanceDirectiveTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirective target) {
+      @Override
+      protected void updateToFail(AdvanceDirective target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirective target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirective target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AdvanceDirectiveOperations.validateAdvanceDirectiveTemplateId(
-					(AdvanceDirective) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectiveOperations.validateAdvanceDirectiveTemplateId(
+          (AdvanceDirective) objectToTest, diagnostician, map);
+      }
 
-		validateAdvanceDirectiveTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAdvanceDirectiveTemplateIdTestCase.doValidationTest();
+}
 
 	/**
+*
+* @generated
+*/
+@Test
+
+ 
+                  
+public void testValidateAdvanceDirectiveCode() {
+      OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveCodeTestCase = new OperationsTestCase<AdvanceDirective>(
+      "validateAdvanceDirectiveCode",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
+
+      @Override
+      protected void updateToFail(AdvanceDirective target) {
+
+      }
+
+      @Override
+      protected void updateToPass(AdvanceDirective target) {
+        target.init();
+        
+        
+        
+        
+        
+
+        
+        
+
+  
+      
+
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
+
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectiveOperations.validateAdvanceDirectiveCode(
+          (AdvanceDirective) objectToTest, diagnostician, map);
+      }
+
+    };
+
+    validateAdvanceDirectiveCodeTestCase.doValidationTest();
+}
+
+  /**
 	*
 	* @generated
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveEffectiveTime() {
-		OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveEffectiveTimeTestCase = new OperationsTestCase<AdvanceDirective>(
-			"validateAdvanceDirectiveEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveEffectiveTimeTestCase = new OperationsTestCase<AdvanceDirective>(
+      "validateAdvanceDirectiveEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirective target) {
+      @Override
+      protected void updateToFail(AdvanceDirective target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirective target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirective target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return AdvanceDirectiveOperations.validateAdvanceDirectiveEffectiveTime(
-					(AdvanceDirective) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectiveOperations.validateAdvanceDirectiveEffectiveTime(
+          (AdvanceDirective) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAdvanceDirectiveEffectiveTimeTestCase.doValidationTest();
-	}
+    validateAdvanceDirectiveEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -529,17 +668,17 @@ public class AdvanceDirectiveTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AdvanceDirectiveOperations

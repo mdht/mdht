@@ -179,33 +179,67 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveReferenceTemplateId() {
-		OperationsTestCase<AdvanceDirectiveReference> validateAdvanceDirectiveReferenceTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveReference>(
-			"validateAdvanceDirectiveReferenceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectiveReference> validateAdvanceDirectiveReferenceTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveReference>(
+      "validateAdvanceDirectiveReferenceTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectiveReference target) {
+      @Override
+      protected void updateToFail(AdvanceDirectiveReference target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectiveReference target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectiveReference target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AdvanceDirectiveReferenceOperations.validateAdvanceDirectiveReferenceTemplateId(
-					(AdvanceDirectiveReference) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectiveReferenceOperations.validateAdvanceDirectiveReferenceTemplateId(
+          (AdvanceDirectiveReference) objectToTest, diagnostician, map);
+      }
 
-		validateAdvanceDirectiveReferenceTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAdvanceDirectiveReferenceTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -213,33 +247,67 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveReferenceTypeCode() {
-		OperationsTestCase<AdvanceDirectiveReference> validateAdvanceDirectiveReferenceTypeCodeTestCase = new OperationsTestCase<AdvanceDirectiveReference>(
-			"validateAdvanceDirectiveReferenceTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_REFERENCE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectiveReference> validateAdvanceDirectiveReferenceTypeCodeTestCase = new OperationsTestCase<AdvanceDirectiveReference>(
+      "validateAdvanceDirectiveReferenceTypeCode",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_REFERENCE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectiveReference target) {
+      @Override
+      protected void updateToFail(AdvanceDirectiveReference target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectiveReference target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectiveReference target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AdvanceDirectiveReferenceOperations.validateAdvanceDirectiveReferenceTypeCode(
-					(AdvanceDirectiveReference) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectiveReferenceOperations.validateAdvanceDirectiveReferenceTypeCode(
+          (AdvanceDirectiveReference) objectToTest, diagnostician, map);
+      }
 
-		validateAdvanceDirectiveReferenceTypeCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateAdvanceDirectiveReferenceTypeCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -327,17 +395,17 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AdvanceDirectiveReferenceOperations

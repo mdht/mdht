@@ -88,33 +88,67 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateLanguageSpokenTemplateId() {
-		OperationsTestCase<LanguageSpoken> validateLanguageSpokenTemplateIdTestCase = new OperationsTestCase<LanguageSpoken>(
-			"validateLanguageSpokenTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<LanguageSpoken> validateLanguageSpokenTemplateIdTestCase = new OperationsTestCase<LanguageSpoken>(
+      "validateLanguageSpokenTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(LanguageSpoken target) {
+      @Override
+      protected void updateToFail(LanguageSpoken target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(LanguageSpoken target) {
-				target.init();
+      @Override
+      protected void updateToPass(LanguageSpoken target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return LanguageSpokenOperations.validateLanguageSpokenTemplateId(
-					(LanguageSpoken) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return LanguageSpokenOperations.validateLanguageSpokenTemplateId(
+          (LanguageSpoken) objectToTest, diagnostician, map);
+      }
 
-		validateLanguageSpokenTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateLanguageSpokenTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -210,9 +244,9 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -220,8 +254,8 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // LanguageSpokenOperations

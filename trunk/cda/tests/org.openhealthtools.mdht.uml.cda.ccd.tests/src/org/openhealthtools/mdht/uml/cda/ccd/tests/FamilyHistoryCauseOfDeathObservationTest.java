@@ -87,10 +87,13 @@ public class FamilyHistoryCauseOfDeathObservationTest extends CDAValidationTest 
 	@Test
 	public void testGetCauseOfDeathObservations() {
 
-		FamilyHistoryCauseOfDeathObservation target = objectFactory.create();
-		target.getCauseOfDeathObservations();
 
-	}
+FamilyHistoryCauseOfDeathObservation target = objectFactory.create();
+target.getCauseOfDeathObservations();
+
+
+
+}
 
 	/**
 	*
@@ -98,33 +101,67 @@ public class FamilyHistoryCauseOfDeathObservationTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testValidateFamilyHistoryObservationTemplateId() {
-		OperationsTestCase<FamilyHistoryCauseOfDeathObservation> validateFamilyHistoryObservationTemplateIdTestCase = new OperationsTestCase<FamilyHistoryCauseOfDeathObservation>(
-			"validateFamilyHistoryObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistoryCauseOfDeathObservation> validateFamilyHistoryObservationTemplateIdTestCase = new OperationsTestCase<FamilyHistoryCauseOfDeathObservation>(
+      "validateFamilyHistoryObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistoryCauseOfDeathObservation target) {
+      @Override
+      protected void updateToFail(FamilyHistoryCauseOfDeathObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistoryCauseOfDeathObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistoryCauseOfDeathObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistoryCauseOfDeathObservationOperations.validateFamilyHistoryObservationTemplateId(
-					(FamilyHistoryCauseOfDeathObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistoryCauseOfDeathObservationOperations.validateFamilyHistoryObservationTemplateId(
+          (FamilyHistoryCauseOfDeathObservation) objectToTest, diagnostician, map);
+      }
 
-		validateFamilyHistoryObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateFamilyHistoryObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -179,17 +216,17 @@ public class FamilyHistoryCauseOfDeathObservationTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FamilyHistoryCauseOfDeathObservationOperations

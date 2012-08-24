@@ -21,6 +21,8 @@ import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.PastMedicalHistorySectionConsultOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -47,33 +49,67 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePastMedicalHistorySectionConsultTemplateId() {
-		OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultTemplateIdTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
-			"validatePastMedicalHistorySectionConsultTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultTemplateIdTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
+      "validatePastMedicalHistorySectionConsultTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PastMedicalHistorySectionConsult target) {
+      @Override
+      protected void updateToFail(PastMedicalHistorySectionConsult target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PastMedicalHistorySectionConsult target) {
-				target.init();
+      @Override
+      protected void updateToPass(PastMedicalHistorySectionConsult target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PastMedicalHistorySectionConsultOperations.validatePastMedicalHistorySectionConsultTemplateId(
-					(PastMedicalHistorySectionConsult) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PastMedicalHistorySectionConsultOperations.validatePastMedicalHistorySectionConsultTemplateId(
+          (PastMedicalHistorySectionConsult) objectToTest, diagnostician, map);
+      }
 
-		validatePastMedicalHistorySectionConsultTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePastMedicalHistorySectionConsultTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -81,33 +117,67 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePastMedicalHistorySectionConsultCode() {
-		OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultCodeTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
-			"validatePastMedicalHistorySectionConsultCode",
-			operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultCodeTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
+      "validatePastMedicalHistorySectionConsultCode",
+      operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PastMedicalHistorySectionConsult target) {
+      @Override
+      protected void updateToFail(PastMedicalHistorySectionConsult target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PastMedicalHistorySectionConsult target) {
-				target.init();
+      @Override
+      protected void updateToPass(PastMedicalHistorySectionConsult target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PastMedicalHistorySectionConsultOperations.validatePastMedicalHistorySectionConsultCode(
-					(PastMedicalHistorySectionConsult) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PastMedicalHistorySectionConsultOperations.validatePastMedicalHistorySectionConsultCode(
+          (PastMedicalHistorySectionConsult) objectToTest, diagnostician, map);
+      }
 
-		validatePastMedicalHistorySectionConsultCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePastMedicalHistorySectionConsultCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -202,9 +272,9 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -212,8 +282,8 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PastMedicalHistorySectionConsultOperations

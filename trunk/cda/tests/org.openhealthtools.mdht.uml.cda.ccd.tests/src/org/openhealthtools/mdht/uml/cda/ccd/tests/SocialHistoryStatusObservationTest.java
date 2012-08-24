@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.SocialHistoryStatusObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -30,8 +31,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryStatusObservation#validateSocialHistoryStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Status Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryStatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryStatusObservation#validateStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,38 +42,146 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 
 	/**
+*
+* @generated
+*/
+@Test
+
+ 
+                  
+public void testValidateSocialHistoryStatusObservationValue() {
+      OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationValueTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+      "validateSocialHistoryStatusObservationValue",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
+
+      @Override
+      protected void updateToFail(SocialHistoryStatusObservation target) {
+
+      }
+
+      @Override
+      protected void updateToPass(SocialHistoryStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
+
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
+
+  
+      
+
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
+
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationValue(
+          (SocialHistoryStatusObservation) objectToTest, diagnostician, map);
+      }
+
+    };
+
+    validateSocialHistoryStatusObservationValueTestCase.doValidationTest();
+}
+
+  /**
 	*
 	* @generated
 	*/
 	@Test
 	public void testValidateStatusObservationTemplateId() {
-		OperationsTestCase<SocialHistoryStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
-			"validateStatusObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistoryStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+      "validateStatusObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistoryStatusObservation target) {
+      @Override
+      protected void updateToFail(SocialHistoryStatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistoryStatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistoryStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SocialHistoryStatusObservationOperations.validateStatusObservationTemplateId(
-					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistoryStatusObservationOperations.validateStatusObservationTemplateId(
+          (SocialHistoryStatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateStatusObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateStatusObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -168,17 +277,17 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // SocialHistoryStatusObservationOperations

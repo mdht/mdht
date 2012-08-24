@@ -21,6 +21,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.SocialHistoryOperations
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
@@ -50,33 +51,67 @@ public class SocialHistoryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryTemplateId() {
-		OperationsTestCase<SocialHistory> validateSocialHistoryTemplateIdTestCase = new OperationsTestCase<SocialHistory>(
-			"validateSocialHistoryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistory> validateSocialHistoryTemplateIdTestCase = new OperationsTestCase<SocialHistory>(
+      "validateSocialHistoryTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistory target) {
+      @Override
+      protected void updateToFail(SocialHistory target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistory target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistory target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SocialHistoryOperations.validateSocialHistoryTemplateId(
-					(SocialHistory) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistoryOperations.validateSocialHistoryTemplateId(
+          (SocialHistory) objectToTest, diagnostician, map);
+      }
 
-		validateSocialHistoryTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateSocialHistoryTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -84,33 +119,67 @@ public class SocialHistoryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryCodeP() {
-		OperationsTestCase<SocialHistory> validateSocialHistoryCodePTestCase = new OperationsTestCase<SocialHistory>(
-			"validateSocialHistoryCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistory> validateSocialHistoryCodePTestCase = new OperationsTestCase<SocialHistory>(
+      "validateSocialHistoryCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistory target) {
+      @Override
+      protected void updateToFail(SocialHistory target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistory target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistory target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SocialHistoryOperations.validateSocialHistoryCodeP(
-					(SocialHistory) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistoryOperations.validateSocialHistoryCodeP(
+          (SocialHistory) objectToTest, diagnostician, map);
+      }
 
-		validateSocialHistoryCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateSocialHistoryCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -154,36 +223,70 @@ public class SocialHistoryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryEffectiveTime() {
-		OperationsTestCase<SocialHistory> validateSocialHistoryEffectiveTimeTestCase = new OperationsTestCase<SocialHistory>(
-			"validateSocialHistoryEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistory> validateSocialHistoryEffectiveTimeTestCase = new OperationsTestCase<SocialHistory>(
+      "validateSocialHistoryEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistory target) {
+      @Override
+      protected void updateToFail(SocialHistory target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistory target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistory target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return SocialHistoryOperations.validateSocialHistoryEffectiveTime(
-					(SocialHistory) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistoryOperations.validateSocialHistoryEffectiveTime(
+          (SocialHistory) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateSocialHistoryEffectiveTimeTestCase.doValidationTest();
-	}
+    validateSocialHistoryEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -271,17 +374,17 @@ public class SocialHistoryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // SocialHistoryOperations

@@ -62,33 +62,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentPatientRoleHasId() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentPatientRoleHasIdTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentPatientRoleHasId",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_PATIENT_ROLE_HAS_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentPatientRoleHasIdTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentPatientRoleHasId",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_PATIENT_ROLE_HAS_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentPatientRoleHasId(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentPatientRoleHasId(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentPatientRoleHasIdTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentPatientRoleHasIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -96,33 +130,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentAssignedAuthorHasAddr() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentAssignedAuthorHasAddrTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentAssignedAuthorHasAddr",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_ASSIGNED_AUTHOR_HAS_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentAssignedAuthorHasAddrTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentAssignedAuthorHasAddr",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_ASSIGNED_AUTHOR_HAS_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentAssignedAuthorHasAddr(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentAssignedAuthorHasAddr(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentAssignedAuthorHasAddrTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentAssignedAuthorHasAddrTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -130,33 +198,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentAssignedAuthorHasTelecom() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentAssignedAuthorHasTelecomTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentAssignedAuthorHasTelecom",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_ASSIGNED_AUTHOR_HAS_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentAssignedAuthorHasTelecomTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentAssignedAuthorHasTelecom",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_ASSIGNED_AUTHOR_HAS_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentAssignedAuthorHasTelecom(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentAssignedAuthorHasTelecom(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentAssignedAuthorHasTelecomTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentAssignedAuthorHasTelecomTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -164,33 +266,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasRepresentedCustodianOrganization() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentHasRepresentedCustodianOrganization",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentHasRepresentedCustodianOrganization",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganization(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganization(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentHasRepresentedCustodianOrganizationTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentHasRepresentedCustodianOrganizationTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -198,33 +334,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasRepresentedCustodianOrganizationId() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationIdTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentHasRepresentedCustodianOrganizationId",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationIdTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentHasRepresentedCustodianOrganizationId",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationId(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationId(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentHasRepresentedCustodianOrganizationIdTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentHasRepresentedCustodianOrganizationIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -232,33 +402,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasRepresentedCustodianOrganizationName() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationNameTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentHasRepresentedCustodianOrganizationName",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationNameTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentHasRepresentedCustodianOrganizationName",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationName(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationName(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentHasRepresentedCustodianOrganizationNameTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentHasRepresentedCustodianOrganizationNameTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -266,33 +470,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecom() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecomTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecom",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecomTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecom",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecom(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecom(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecomTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentHasRepresentedCustodianOrganizationTelecomTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -300,33 +538,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasRepresentedCustodianOrganizationAddr() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddrTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddr",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddrTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddr",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_REPRESENTED_CUSTODIAN_ORGANIZATION_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddr(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddr(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddrTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentHasRepresentedCustodianOrganizationAddrTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -376,33 +648,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasTextReferenceOrRepresentation() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasTextReferenceOrRepresentationTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentHasTextReferenceOrRepresentation",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_TEXT_REFERENCE_OR_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasTextReferenceOrRepresentationTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentHasTextReferenceOrRepresentation",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_TEXT_REFERENCE_OR_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentHasTextReferenceOrRepresentation(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentHasTextReferenceOrRepresentation(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentHasTextReferenceOrRepresentationTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentHasTextReferenceOrRepresentationTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -410,33 +716,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasTextMediaTypeValueSet() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasTextMediaTypeValueSetTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentHasTextMediaTypeValueSet",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_TEXT_MEDIA_TYPE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentHasTextMediaTypeValueSetTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentHasTextMediaTypeValueSet",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_HAS_TEXT_MEDIA_TYPE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentHasTextMediaTypeValueSet(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentHasTextMediaTypeValueSet(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentHasTextMediaTypeValueSetTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentHasTextMediaTypeValueSetTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -444,36 +784,70 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentEffectiveTime() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentEffectiveTimeTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentEffectiveTimeTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentEffectiveTime(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentEffectiveTime(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateUnstructuredDocumentEffectiveTimeTestCase.doValidationTest();
-	}
+    validateUnstructuredDocumentEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -481,33 +855,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentCustodian() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentCustodianTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentCustodian",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_CUSTODIAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentCustodianTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentCustodian",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_CUSTODIAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentCustodian(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentCustodian(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentCustodianTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentCustodianTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -515,33 +923,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		OperationsTestCase<UnstructuredDocument> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateGeneralHeaderConstraintsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateGeneralHeaderConstraintsTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateGeneralHeaderConstraintsTemplateId(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateGeneralHeaderConstraintsTemplateId(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -596,17 +1038,17 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // UnstructuredDocumentOperations

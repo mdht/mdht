@@ -302,33 +302,67 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateSocialHistorySectionTemplateId() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<SocialHistorySection>(
+      "validateSocialHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
+      @Override
+      protected void updateToFail(SocialHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SocialHistorySectionOperations.validateSocialHistorySectionTemplateId(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistorySectionOperations.validateSocialHistorySectionTemplateId(
+          (SocialHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateSocialHistorySectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateSocialHistorySectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -336,33 +370,67 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateSocialHistorySectionCode() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionCodeTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistorySection> validateSocialHistorySectionCodeTestCase = new OperationsTestCase<SocialHistorySection>(
+      "validateSocialHistorySectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
+      @Override
+      protected void updateToFail(SocialHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SocialHistorySectionOperations.validateSocialHistorySectionCode(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistorySectionOperations.validateSocialHistorySectionCode(
+          (SocialHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateSocialHistorySectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateSocialHistorySectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -370,36 +438,70 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateSocialHistorySectionTitle() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTitleTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTitleTestCase = new OperationsTestCase<SocialHistorySection>(
+      "validateSocialHistorySectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
+      @Override
+      protected void updateToFail(SocialHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+        
+        
 
-			}
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return SocialHistorySectionOperations.validateSocialHistorySectionTitle(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistorySectionOperations.validateSocialHistorySectionTitle(
+          (SocialHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateSocialHistorySectionTitleTestCase.doValidationTest();
-	}
+    validateSocialHistorySectionTitleTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -407,36 +509,70 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistorySectionText() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTextTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionText",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTextTestCase = new OperationsTestCase<SocialHistorySection>(
+      "validateSocialHistorySectionText",
+      operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
+      @Override
+      protected void updateToFail(SocialHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(SocialHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return SocialHistorySectionOperations.validateSocialHistorySectionText(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SocialHistorySectionOperations.validateSocialHistorySectionText(
+          (SocialHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateSocialHistorySectionTextTestCase.doValidationTest();
-	}
+    validateSocialHistorySectionTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -479,10 +615,13 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testGetSocialHistoryObservations() {
 
-		SocialHistorySection target = objectFactory.create();
-		target.getSocialHistoryObservations();
 
-	}
+SocialHistorySection target = objectFactory.create();
+target.getSocialHistoryObservations();
+
+
+
+}
 
 	/**
 	 * 
@@ -537,17 +676,17 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // SocialHistorySectionOperations

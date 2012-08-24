@@ -141,33 +141,67 @@ public class ProcedureTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHITSPProcedureTemplateId() {
-		OperationsTestCase<Procedure> validateHITSPProcedureTemplateIdTestCase = new OperationsTestCase<Procedure>(
-			"validateHITSPProcedureTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Procedure> validateHITSPProcedureTemplateIdTestCase = new OperationsTestCase<Procedure>(
+      "validateHITSPProcedureTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Procedure target) {
+      @Override
+      protected void updateToFail(Procedure target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Procedure target) {
-				target.init();
+      @Override
+      protected void updateToPass(Procedure target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureOperations.validateHITSPProcedureTemplateId(
-					(Procedure) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureOperations.validateHITSPProcedureTemplateId(
+          (Procedure) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPProcedureTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPProcedureTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -290,17 +324,17 @@ public class ProcedureTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProcedureOperations

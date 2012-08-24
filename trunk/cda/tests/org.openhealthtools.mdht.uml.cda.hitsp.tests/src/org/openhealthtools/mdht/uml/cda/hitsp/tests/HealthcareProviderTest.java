@@ -43,33 +43,67 @@ public class HealthcareProviderTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHealthcareProviderTemplateId() {
-		OperationsTestCase<HealthcareProvider> validateHealthcareProviderTemplateIdTestCase = new OperationsTestCase<HealthcareProvider>(
-			"validateHealthcareProviderTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HealthcareProvider> validateHealthcareProviderTemplateIdTestCase = new OperationsTestCase<HealthcareProvider>(
+      "validateHealthcareProviderTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HealthcareProvider target) {
+      @Override
+      protected void updateToFail(HealthcareProvider target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HealthcareProvider target) {
-				target.init();
+      @Override
+      protected void updateToPass(HealthcareProvider target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HealthcareProviderOperations.validateHealthcareProviderTemplateId(
-					(HealthcareProvider) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HealthcareProviderOperations.validateHealthcareProviderTemplateId(
+          (HealthcareProvider) objectToTest, diagnostician, map);
+      }
 
-		validateHealthcareProviderTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHealthcareProviderTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -127,9 +161,9 @@ public class HealthcareProviderTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -137,8 +171,8 @@ public class HealthcareProviderTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // HealthcareProviderOperations

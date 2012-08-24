@@ -171,33 +171,67 @@ public class StatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateStatusObservationTemplateId() {
-		OperationsTestCase<StatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<StatusObservation>(
-			"validateStatusObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<StatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<StatusObservation>(
+      "validateStatusObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(StatusObservation target) {
+      @Override
+      protected void updateToFail(StatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(StatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(StatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return StatusObservationOperations.validateStatusObservationTemplateId(
-					(StatusObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return StatusObservationOperations.validateStatusObservationTemplateId(
+          (StatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateStatusObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateStatusObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -205,33 +239,67 @@ public class StatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateStatusObservationClassCode() {
-		OperationsTestCase<StatusObservation> validateStatusObservationClassCodeTestCase = new OperationsTestCase<StatusObservation>(
-			"validateStatusObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<StatusObservation> validateStatusObservationClassCodeTestCase = new OperationsTestCase<StatusObservation>(
+      "validateStatusObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(StatusObservation target) {
+      @Override
+      protected void updateToFail(StatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(StatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(StatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return StatusObservationOperations.validateStatusObservationClassCode(
-					(StatusObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return StatusObservationOperations.validateStatusObservationClassCode(
+          (StatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateStatusObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateStatusObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -239,33 +307,67 @@ public class StatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateStatusObservationMoodCode() {
-		OperationsTestCase<StatusObservation> validateStatusObservationMoodCodeTestCase = new OperationsTestCase<StatusObservation>(
-			"validateStatusObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<StatusObservation> validateStatusObservationMoodCodeTestCase = new OperationsTestCase<StatusObservation>(
+      "validateStatusObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(StatusObservation target) {
+      @Override
+      protected void updateToFail(StatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(StatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(StatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return StatusObservationOperations.validateStatusObservationMoodCode(
-					(StatusObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return StatusObservationOperations.validateStatusObservationMoodCode(
+          (StatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateStatusObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateStatusObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -312,36 +414,70 @@ public class StatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateStatusObservationStatusCode() {
-		OperationsTestCase<StatusObservation> validateStatusObservationStatusCodeTestCase = new OperationsTestCase<StatusObservation>(
-			"validateStatusObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<StatusObservation> validateStatusObservationStatusCodeTestCase = new OperationsTestCase<StatusObservation>(
+      "validateStatusObservationStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(StatusObservation target) {
+      @Override
+      protected void updateToFail(StatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(StatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(StatusObservation target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return StatusObservationOperations.validateStatusObservationStatusCode(
-					(StatusObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return StatusObservationOperations.validateStatusObservationStatusCode(
+          (StatusObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateStatusObservationStatusCodeTestCase.doValidationTest();
-	}
+    validateStatusObservationStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -471,17 +607,17 @@ public class StatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // StatusObservationOperations

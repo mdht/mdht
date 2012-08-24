@@ -43,33 +43,67 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPFunctionalStatusSectionTemplateId() {
-		OperationsTestCase<FunctionalStatusSection> validateHITSPFunctionalStatusSectionTemplateIdTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateHITSPFunctionalStatusSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FunctionalStatusSection> validateHITSPFunctionalStatusSectionTemplateIdTestCase = new OperationsTestCase<FunctionalStatusSection>(
+      "validateHITSPFunctionalStatusSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
+      @Override
+      protected void updateToFail(FunctionalStatusSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(FunctionalStatusSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FunctionalStatusSectionOperations.validateHITSPFunctionalStatusSectionTemplateId(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FunctionalStatusSectionOperations.validateHITSPFunctionalStatusSectionTemplateId(
+          (FunctionalStatusSection) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPFunctionalStatusSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPFunctionalStatusSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -127,9 +161,9 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -137,8 +171,8 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FunctionalStatusSectionOperations

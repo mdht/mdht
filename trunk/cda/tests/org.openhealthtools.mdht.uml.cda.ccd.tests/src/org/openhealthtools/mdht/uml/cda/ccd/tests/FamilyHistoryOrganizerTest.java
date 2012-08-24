@@ -466,33 +466,67 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateFamilyHistoryOrganizerTemplateId() {
-		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerTemplateIdTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
-			"validateFamilyHistoryOrganizerTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerTemplateIdTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+      "validateFamilyHistoryOrganizerTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistoryOrganizer target) {
+      @Override
+      protected void updateToFail(FamilyHistoryOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistoryOrganizer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerTemplateId(
-					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerTemplateId(
+          (FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+      }
 
-		validateFamilyHistoryOrganizerTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateFamilyHistoryOrganizerTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -500,36 +534,70 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateFamilyHistoryOrganizerStatusCode() {
-		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerStatusCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
-			"validateFamilyHistoryOrganizerStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerStatusCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+      "validateFamilyHistoryOrganizerStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistoryOrganizer target) {
+      @Override
+      protected void updateToFail(FamilyHistoryOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistoryOrganizer target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerStatusCode(
-					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerStatusCode(
+          (FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateFamilyHistoryOrganizerStatusCodeTestCase.doValidationTest();
-	}
+    validateFamilyHistoryOrganizerStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -537,33 +605,67 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistoryOrganizerClassCode() {
-		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerClassCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
-			"validateFamilyHistoryOrganizerClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerClassCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+      "validateFamilyHistoryOrganizerClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistoryOrganizer target) {
+      @Override
+      protected void updateToFail(FamilyHistoryOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistoryOrganizer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerClassCode(
-					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerClassCode(
+          (FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+      }
 
-		validateFamilyHistoryOrganizerClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateFamilyHistoryOrganizerClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -571,33 +673,67 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistoryOrganizerMoodCode() {
-		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerMoodCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
-			"validateFamilyHistoryOrganizerMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerMoodCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+      "validateFamilyHistoryOrganizerMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistoryOrganizer target) {
+      @Override
+      protected void updateToFail(FamilyHistoryOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistoryOrganizer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerMoodCode(
-					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerMoodCode(
+          (FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+      }
 
-		validateFamilyHistoryOrganizerMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateFamilyHistoryOrganizerMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -641,10 +777,13 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testGetFamilyHistoryObservations() {
 
-		FamilyHistoryOrganizer target = objectFactory.create();
-		target.getFamilyHistoryObservations();
 
-	}
+FamilyHistoryOrganizer target = objectFactory.create();
+target.getFamilyHistoryObservations();
+
+
+
+}
 
 	/**
 	 * 
@@ -699,17 +838,17 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FamilyHistoryOrganizerOperations
