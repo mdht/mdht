@@ -93,66 +93,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryResponsibleParty() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryResponsiblePartyTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryResponsibleParty",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryResponsiblePartyTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryResponsibleParty",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryResponsibleParty(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryResponsibleParty(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryResponsiblePartyTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryResponsiblePartyTestCase.doValidationTest();
 }
 
 	/**
@@ -161,66 +161,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryLocation() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryLocationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryLocation",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryLocationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryLocation",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryLocation(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryLocation(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryLocationTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryLocationTestCase.doValidationTest();
 }
 
 	/**
@@ -229,66 +229,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryMedicationList() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryMedicationListTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryMedicationList",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_MEDICATION_LIST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryMedicationListTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryMedicationList",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_MEDICATION_LIST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryMedicationList(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryMedicationList(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryMedicationListTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryMedicationListTestCase.doValidationTest();
 }
 
 	/**
@@ -297,66 +297,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryMedicationAllergy() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryMedicationAllergyTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryMedicationAllergy",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_MEDICATION_ALLERGY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryMedicationAllergyTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryMedicationAllergy",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_MEDICATION_ALLERGY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryMedicationAllergy(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryMedicationAllergy(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryMedicationAllergyTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryMedicationAllergyTestCase.doValidationTest();
 }
 
 	/**
@@ -365,66 +365,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryVitalSigns() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryVitalSignsTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryVitalSigns",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryVitalSignsTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryVitalSigns",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryVitalSigns(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryVitalSigns(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryVitalSignsTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryVitalSignsTestCase.doValidationTest();
 }
 
 	/**
@@ -433,66 +433,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryReasonForOfficeVisit() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryReasonForOfficeVisitTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryReasonForOfficeVisit",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_REASON_FOR_OFFICE_VISIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryReasonForOfficeVisitTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryReasonForOfficeVisit",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_REASON_FOR_OFFICE_VISIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryReasonForOfficeVisit(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryReasonForOfficeVisit(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryReasonForOfficeVisitTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryReasonForOfficeVisitTestCase.doValidationTest();
 }
 
 	/**
@@ -501,66 +501,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryCarePlanning() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryCarePlanningTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryCarePlanning",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_CARE_PLANNING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryCarePlanningTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryCarePlanning",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_CARE_PLANNING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryCarePlanning(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryCarePlanning(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryCarePlanningTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryCarePlanningTestCase.doValidationTest();
 }
 
 	/**
@@ -569,75 +569,75 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarySocialHistorySection() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarySocialHistorySectionTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummarySocialHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarySocialHistorySectionTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummarySocialHistorySection",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* SocialHistorySection */ 
-				SocialHistorySection section =
-				
-				Mu2consolFactory.eINSTANCE.createSocialHistorySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* SocialHistorySection */ 
+        SocialHistorySection section =
+        
+        Mu2consolFactory.eINSTANCE.createSocialHistorySection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarySocialHistorySection(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarySocialHistorySection(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummarySocialHistorySectionTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummarySocialHistorySectionTestCase.doValidationTest();
 }
 
 	/**
@@ -738,75 +738,75 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryPlanOfCareSection() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryPlanOfCareSectionTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryPlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryPlanOfCareSectionTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryPlanOfCareSection",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PlanOfCareSection */ 
-				PlanOfCareSection section =
-				
-				Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* PlanOfCareSection */ 
+        PlanOfCareSection section =
+        
+        Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryPlanOfCareSection(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryPlanOfCareSection(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryPlanOfCareSectionTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryPlanOfCareSectionTestCase.doValidationTest();
 }
 
 	/**
@@ -954,66 +954,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
 }
 
 	/**
@@ -1022,66 +1022,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_ADMISSION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_ADMISSION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummarymu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase.doValidationTest();
 }
 
 	/**
@@ -1090,66 +1090,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemAct() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemAct",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_ALLERGIES_SECTION_ENTRIES_OPTIONAL_ALLERGY_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemAct",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_ALLERGIES_SECTION_ENTRIES_OPTIONAL_ALLERGY_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemAct(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemAct(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummarymu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase.doValidationTest();
 }
 
 	/**
@@ -1158,66 +1158,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
 }
 
 	/**
@@ -1226,66 +1226,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivity() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivity",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivity",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivity(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivity(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
 }
 
 	/**
@@ -1294,66 +1294,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryInstructionsSectionTemplateId() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryInstructionsSectionTemplateIdTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryInstructionsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryInstructionsSectionTemplateIdTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummaryInstructionsSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryInstructionsSectionTemplateId(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryInstructionsSectionTemplateId(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummaryInstructionsSectionTemplateIdTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummaryInstructionsSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -1362,66 +1362,66 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructions() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructionsTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructions",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_INSTRUCTIONS_SECTION_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructionsTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructions",
+      operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_INSTRUCTIONS_SECTION_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructions(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructions(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructionsTestCase.doValidationTest();
+    validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructionsTestCase.doValidationTest();
 }
 
 	/**
@@ -1730,66 +1730,66 @@ target.getInterventionsSection();
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-			OperationsTestCase<ClinicalOfficeVisitSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateGeneralHeaderConstraintsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<ClinicalOfficeVisitSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+      "validateGeneralHeaderConstraintsTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+      @Override
+      protected void updateToFail(ClinicalOfficeVisitSummary target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(ClinicalOfficeVisitSummary target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ClinicalOfficeVisitSummaryOperations.validateGeneralHeaderConstraintsTemplateId(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ClinicalOfficeVisitSummaryOperations.validateGeneralHeaderConstraintsTemplateId(
+          (ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
+    validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -1853,9 +1853,9 @@ target.getInterventionsSection();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -1863,7 +1863,7 @@ target.getInterventionsSection();
 	 */
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // ClinicalOfficeVisitSummaryOperations

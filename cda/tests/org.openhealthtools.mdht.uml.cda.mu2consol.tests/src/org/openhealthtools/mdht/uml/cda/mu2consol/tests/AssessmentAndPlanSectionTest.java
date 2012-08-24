@@ -157,9 +157,9 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -167,7 +167,7 @@ target.getProblemObservation();
 	 */
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // AssessmentAndPlanSectionOperations

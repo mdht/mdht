@@ -45,66 +45,66 @@ public class AssessmentAndPlanForCarePlanningTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry() {
-			OperationsTestCase<AssessmentAndPlanForCarePlanning> validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase = new OperationsTestCase<AssessmentAndPlanForCarePlanning>(
-			"validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CARE_PLANNING_ONE_OF_PLAN_OF_CARE_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<AssessmentAndPlanForCarePlanning> validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase = new OperationsTestCase<AssessmentAndPlanForCarePlanning>(
+      "validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CARE_PLANNING_ONE_OF_PLAN_OF_CARE_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentAndPlanForCarePlanning target) {
+      @Override
+      protected void updateToFail(AssessmentAndPlanForCarePlanning target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentAndPlanForCarePlanning target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(AssessmentAndPlanForCarePlanning target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return AssessmentAndPlanForCarePlanningOperations.validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry(
-					(AssessmentAndPlanForCarePlanning) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentAndPlanForCarePlanningOperations.validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry(
+          (AssessmentAndPlanForCarePlanning) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase.doValidationTest();
+    validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase.doValidationTest();
 }
 
 	/**
@@ -213,9 +213,9 @@ target.getPlanOfCareActivitySupply();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -223,7 +223,7 @@ target.getPlanOfCareActivitySupply();
 	 */
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // AssessmentAndPlanForCarePlanningOperations

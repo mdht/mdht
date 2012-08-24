@@ -45,66 +45,66 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolMedicationsAdministeredSectionMedicationActivity() {
-			OperationsTestCase<MedicationsAdministeredSection> validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
-			"validateMu2consolMedicationsAdministeredSectionMedicationActivity",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+      OperationsTestCase<MedicationsAdministeredSection> validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+      "validateMu2consolMedicationsAdministeredSectionMedicationActivity",
+      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationsAdministeredSection target) {
+      @Override
+      protected void updateToFail(MedicationsAdministeredSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationsAdministeredSection target) {
-				target.init();
-				
-				
-				
-				
-				
+      @Override
+      protected void updateToPass(MedicationsAdministeredSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				
-				
+        
+        
 
-	
-			
+  
+      
 
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return MedicationsAdministeredSectionOperations.validateMu2consolMedicationsAdministeredSectionMedicationActivity(
-					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationsAdministeredSectionOperations.validateMu2consolMedicationsAdministeredSectionMedicationActivity(
+          (MedicationsAdministeredSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
+    validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
 }
 
 	/**
@@ -183,9 +183,9 @@ target.getmu2consolMedicationActivities();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -193,7 +193,7 @@ target.getmu2consolMedicationActivities();
 	 */
 	@Override
 	protected EObject getObjectToTest() {		
-		return null;
-	}
+    return null;
+  }
 
 } // MedicationsAdministeredSectionOperations
