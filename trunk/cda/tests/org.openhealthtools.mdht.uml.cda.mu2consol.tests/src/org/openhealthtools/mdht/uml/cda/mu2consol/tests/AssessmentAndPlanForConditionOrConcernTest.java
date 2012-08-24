@@ -35,8 +35,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * @generated
  */
 
-public class AssessmentAndPlanForConditionOrConcernTest extends
-		CDAValidationTest {
+public class AssessmentAndPlanForConditionOrConcernTest extends CDAValidationTest {
 
 	/**
 	 * 
@@ -44,67 +43,33 @@ public class AssessmentAndPlanForConditionOrConcernTest extends
 	 */
 	@Test
 	public void testValidateAssessmentAndPlanForConditionOrConcernProblemObservation() {
-      OperationsTestCase<AssessmentAndPlanForConditionOrConcern> validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase = new OperationsTestCase<AssessmentAndPlanForConditionOrConcern>(
-      "validateAssessmentAndPlanForConditionOrConcernProblemObservation",
-      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CONDITION_OR_CONCERN_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AssessmentAndPlanForConditionOrConcern> validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase = new OperationsTestCase<AssessmentAndPlanForConditionOrConcern>(
+			"validateAssessmentAndPlanForConditionOrConcernProblemObservation",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CONDITION_OR_CONCERN_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AssessmentAndPlanForConditionOrConcern target) {
+			@Override
+			protected void updateToFail(AssessmentAndPlanForConditionOrConcern target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AssessmentAndPlanForConditionOrConcern target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AssessmentAndPlanForConditionOrConcern target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AssessmentAndPlanForConditionOrConcernOperations.validateAssessmentAndPlanForConditionOrConcernProblemObservation(
+					(AssessmentAndPlanForConditionOrConcern) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AssessmentAndPlanForConditionOrConcernOperations.validateAssessmentAndPlanForConditionOrConcernProblemObservation(
-          (AssessmentAndPlanForConditionOrConcern) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase.doValidationTest();
-}
+		validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -113,27 +78,22 @@ public class AssessmentAndPlanForConditionOrConcernTest extends
 	@Test
 	public void testGetProblemObservation() {
 
+		AssessmentAndPlanForConditionOrConcern target = objectFactory.create();
+		target.getProblemObservation();
 
-AssessmentAndPlanForConditionOrConcern target = objectFactory.create();
-target.getProblemObservation();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			AssessmentAndPlanForConditionOrConcernOperations {
+	private static class OperationsForOCL extends AssessmentAndPlanForConditionOrConcernOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -145,12 +105,10 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AssessmentAndPlanForConditionOrConcern> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<AssessmentAndPlanForConditionOrConcern> {
+
 		public AssessmentAndPlanForConditionOrConcern create() {
-			return Mu2consolFactory.eINSTANCE
-					.createAssessmentAndPlanForConditionOrConcern();
+			return Mu2consolFactory.eINSTANCE.createAssessmentAndPlanForConditionOrConcern();
 		}
 	}
 
@@ -171,8 +129,7 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			AssessmentAndPlanForConditionOrConcernOperations {
+	private static class ConstructorTestClass extends AssessmentAndPlanForConditionOrConcernOperations {
 	};
 
 	/**
@@ -182,17 +139,18 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AssessmentAndPlanForConditionOrConcernOperations

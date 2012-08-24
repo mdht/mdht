@@ -45,67 +45,33 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
-      OperationsTestCase<HospitalAdmissionDiagnosisSection> validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
-      "validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HospitalAdmissionDiagnosisSection> validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+			"validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
+			@Override
+			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HospitalAdmissionDiagnosisSectionOperations.validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
+					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalAdmissionDiagnosisSectionOperations.validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
-          (HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase.doValidationTest();
-}
+		validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -114,27 +80,22 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolHospitalAdmissionDiagnosis() {
 
+		HospitalAdmissionDiagnosisSection target = objectFactory.create();
+		target.getmu2consolHospitalAdmissionDiagnosis();
 
-HospitalAdmissionDiagnosisSection target = objectFactory.create();
-target.getmu2consolHospitalAdmissionDiagnosis();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			HospitalAdmissionDiagnosisSectionOperations {
+	private static class OperationsForOCL extends HospitalAdmissionDiagnosisSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -146,12 +107,10 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<HospitalAdmissionDiagnosisSection> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<HospitalAdmissionDiagnosisSection> {
+
 		public HospitalAdmissionDiagnosisSection create() {
-			return Mu2consolFactory.eINSTANCE
-					.createHospitalAdmissionDiagnosisSection();
+			return Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection();
 		}
 	}
 
@@ -172,8 +131,7 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			HospitalAdmissionDiagnosisSectionOperations {
+	private static class ConstructorTestClass extends HospitalAdmissionDiagnosisSectionOperations {
 	};
 
 	/**
@@ -183,17 +141,18 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HospitalAdmissionDiagnosisSectionOperations

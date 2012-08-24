@@ -45,67 +45,33 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolAllergiesSectionEntriesOptionalAllergyProblemAct() {
-      OperationsTestCase<AllergiesSectionEntriesOptional> validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase = new OperationsTestCase<AllergiesSectionEntriesOptional>(
-      "validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemAct",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_ALLERGIES_SECTION_ENTRIES_OPTIONAL_ALLERGY_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AllergiesSectionEntriesOptional> validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase = new OperationsTestCase<AllergiesSectionEntriesOptional>(
+			"validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemAct",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_ALLERGIES_SECTION_ENTRIES_OPTIONAL_ALLERGY_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AllergiesSectionEntriesOptional target) {
+			@Override
+			protected void updateToFail(AllergiesSectionEntriesOptional target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AllergiesSectionEntriesOptional target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AllergiesSectionEntriesOptional target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AllergiesSectionEntriesOptionalOperations.validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemAct(
+					(AllergiesSectionEntriesOptional) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AllergiesSectionEntriesOptionalOperations.validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemAct(
-          (AllergiesSectionEntriesOptional) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase.doValidationTest();
-}
+		validateMu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -114,27 +80,22 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolAllergyProblemAct() {
 
+		AllergiesSectionEntriesOptional target = objectFactory.create();
+		target.getmu2consolAllergyProblemAct();
 
-AllergiesSectionEntriesOptional target = objectFactory.create();
-target.getmu2consolAllergyProblemAct();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			AllergiesSectionEntriesOptionalOperations {
+	private static class OperationsForOCL extends AllergiesSectionEntriesOptionalOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -146,12 +107,10 @@ target.getmu2consolAllergyProblemAct();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AllergiesSectionEntriesOptional> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<AllergiesSectionEntriesOptional> {
+
 		public AllergiesSectionEntriesOptional create() {
-			return Mu2consolFactory.eINSTANCE
-					.createAllergiesSectionEntriesOptional();
+			return Mu2consolFactory.eINSTANCE.createAllergiesSectionEntriesOptional();
 		}
 	}
 
@@ -172,8 +131,7 @@ target.getmu2consolAllergyProblemAct();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			AllergiesSectionEntriesOptionalOperations {
+	private static class ConstructorTestClass extends AllergiesSectionEntriesOptionalOperations {
 	};
 
 	/**
@@ -183,17 +141,18 @@ target.getmu2consolAllergyProblemAct();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AllergiesSectionEntriesOptionalOperations

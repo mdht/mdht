@@ -45,67 +45,33 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis() {
-      OperationsTestCase<PreoperativeDiagnosisSection> validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase = new OperationsTestCase<PreoperativeDiagnosisSection>(
-      "validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PREOPERATIVE_DIAGNOSIS_SECTION_PREOPERATIVE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PreoperativeDiagnosisSection> validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase = new OperationsTestCase<PreoperativeDiagnosisSection>(
+			"validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PREOPERATIVE_DIAGNOSIS_SECTION_PREOPERATIVE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PreoperativeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PreoperativeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PreoperativeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PreoperativeDiagnosisSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PreoperativeDiagnosisSectionOperations.validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis(
+					(PreoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PreoperativeDiagnosisSectionOperations.validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis(
-          (PreoperativeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase.doValidationTest();
-}
+		validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -114,27 +80,22 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolPreoperativeDiagnosis() {
 
+		PreoperativeDiagnosisSection target = objectFactory.create();
+		target.getmu2consolPreoperativeDiagnosis();
 
-PreoperativeDiagnosisSection target = objectFactory.create();
-target.getmu2consolPreoperativeDiagnosis();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			PreoperativeDiagnosisSectionOperations {
+	private static class OperationsForOCL extends PreoperativeDiagnosisSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -146,12 +107,10 @@ target.getmu2consolPreoperativeDiagnosis();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<PreoperativeDiagnosisSection> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<PreoperativeDiagnosisSection> {
+
 		public PreoperativeDiagnosisSection create() {
-			return Mu2consolFactory.eINSTANCE
-					.createPreoperativeDiagnosisSection();
+			return Mu2consolFactory.eINSTANCE.createPreoperativeDiagnosisSection();
 		}
 	}
 
@@ -172,8 +131,7 @@ target.getmu2consolPreoperativeDiagnosis();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			PreoperativeDiagnosisSectionOperations {
+	private static class ConstructorTestClass extends PreoperativeDiagnosisSectionOperations {
 	};
 
 	/**
@@ -183,17 +141,18 @@ target.getmu2consolPreoperativeDiagnosis();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PreoperativeDiagnosisSectionOperations
