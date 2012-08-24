@@ -119,16 +119,18 @@ plugin@org.openhealthtools.mdht.uml.cda.emspcr=SVN,trunk,https://www.projects.op
 
 
 plugin@org.openhealthtools.mdht.uml.cda.phmr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.phmr,force
-
 plugin@org.openhealthtools.mdht.uml.cda.qrda=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.qrda,force
-
 plugin@org.openhealthtools.mdht.uml.cda.sdtm=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.sdtm,force
-
 plugin@org.openhealthtools.mdht.uml.cda.vsbr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.vsbr,force
-
 plugin@org.openhealthtools.mdht.uml.cda.vsdr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.vsdr,force
-
 plugin@org.openhealthtools.mdht.uml.cda.mu2consol=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.mu2consol,force
+
+plugin@org.openhealthtools.mdht.uml.cda.phmr.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,tests/org.openhealthtools.mdht.uml.cda.phmr.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.qrda.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,tests/org.openhealthtools.mdht.uml.cda.qrda.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.sdtm.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,tests/org.openhealthtools.mdht.uml.cda.sdtm.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.vsbr.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,tests/org.openhealthtools.mdht.uml.cda.vsbr.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.vsdr.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,tests/org.openhealthtools.mdht.uml.cda.vsdr.tests,force
+
 
 !***************  PublicHealthCaseReporting  ********************************************** 
 plugin@org.openhealthtools.mdht.uml.cda.phcr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr,force
@@ -144,6 +146,20 @@ plugin@org.openhealthtools.mdht.uml.cda.phcr.tss=SVN,trunk,https://www.projects.
 plugin@org.openhealthtools.mdht.uml.cda.phcr.tuberculosis=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.tuberculosis,force
 plugin@org.openhealthtools.mdht.uml.cda.phcr.tularemia=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.tularemia,force
 plugin@org.openhealthtools.mdht.uml.cda.phcr.wnv=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.wnv,force
+
+plugin@org.openhealthtools.mdht.uml.cda.phcr.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.anthrax.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.anthrax.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.cocci.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.cocci.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.hepb.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.hepb.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.pertussis.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.pertussis.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.salmonellosis.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.salmonellosis.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.silicosis.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.silicosis.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.streppneumo.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.streppneumo.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.tss.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.tss.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.tuberculosis.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.tuberculosis.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.tularemia.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.tularemia.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.wnv.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/tests/org.openhealthtools.mdht.uml.cda.phcr.wnv.tests,force
 
 !***************  MDHT Feature for CDA Runtime for Application Development - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.source-feature,force
@@ -245,6 +261,8 @@ fragment@org.openhealthtools.mdht.uml.hl7.vocab.test=SVN,trunk,https://www.proje
 plugin@org.openhealthtools.mdht.uml.cda.hitsp.test=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.hitsp.test,force
 
 plugin@org.openhealthtools.mdht.uml.cda.consol.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.consol.tests,force
+
+plugin@org.openhealthtools.mdht.uml.cda.mu2consol.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.mu2consol.tests,force
 
 plugin@org.openhealthtools.mdht.uml.cda.hitsp.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.hitsp.tests,force
 
