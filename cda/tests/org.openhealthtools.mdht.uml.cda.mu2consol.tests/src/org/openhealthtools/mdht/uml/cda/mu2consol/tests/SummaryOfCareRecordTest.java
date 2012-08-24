@@ -13,6 +13,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSe
 import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
+import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
@@ -79,6 +80,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Record Problem Section</em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordImmunizationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Summary Of Care Record Immunizations Section</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMedicationsAdministeredSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Record Medications Administered Section</em>}</li>
  * <li>
@@ -90,6 +94,10 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Record Procedures Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordmu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Summary Of Care Recordmu2consol Social History Section Smoking
+ * Status Observation</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordmu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Recordmu2consol Hospital Admission Medications
@@ -760,6 +768,52 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
+	public void testValidateSummaryOfCareRecordImmunizationsSection() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordImmunizationsSectionTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordImmunizationsSection",
+				operationsForOCL
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_IMMUNIZATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(SummaryOfCareRecord target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SummaryOfCareRecord target) {
+				target.init();
+
+				/* ImmunizationsSection */
+				ImmunizationsSection section =
+
+				ConsolFactory.eINSTANCE.createImmunizationsSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SummaryOfCareRecordOperations
+						.validateSummaryOfCareRecordImmunizationsSection(
+								(SummaryOfCareRecord) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateSummaryOfCareRecordImmunizationsSectionTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated NOT
+	 */
+	@Test
 	public void testValidateSummaryOfCareRecordMedicationsAdministeredSection() {
 		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordMedicationsAdministeredSectionTestCase = new OperationsTestCase<SummaryOfCareRecord>(
 				"validateSummaryOfCareRecordMedicationsAdministeredSection",
@@ -936,6 +990,45 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 		};
 
 		validateSummaryOfCareRecordProceduresSectionTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateSummaryOfCareRecordmu2consolSocialHistorySectionSmokingStatusObservation() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordmu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordmu2consolSocialHistorySectionSmokingStatusObservation",
+				operationsForOCL
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORDMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(SummaryOfCareRecord target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SummaryOfCareRecord target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SummaryOfCareRecordOperations
+						.validateSummaryOfCareRecordmu2consolSocialHistorySectionSmokingStatusObservation(
+								(SummaryOfCareRecord) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateSummaryOfCareRecordmu2consolSocialHistorySectionSmokingStatusObservationTestCase
+				.doValidationTest();
 	}
 
 	/**
