@@ -270,8 +270,6 @@ plugin@org.openhealthtools.mdht.uml.cda.emspcr.tests=SVN,trunk,https://www.proje
 
 plugin@org.openhealthtools.mdht.uml.cda.mu2consol.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.mu2consol.tests,force
 
-plugin@org.openhealthtools.mdht.uml.cda.phcr.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.phcr.tests,force
-
 plugin@org.openhealthtools.mdht.uml.cda.ihe.test=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.ihe.test,force
 
 plugin@org.openhealthtools.mdht.uml.cda.ihe.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.ihe.tests,force
