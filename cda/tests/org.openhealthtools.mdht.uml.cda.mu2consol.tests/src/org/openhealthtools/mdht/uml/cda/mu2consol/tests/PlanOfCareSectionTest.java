@@ -23,33 +23,67 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
-		OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<PlanOfCareSection>(
-			"validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<PlanOfCareSection>(
+      "validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
+      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PlanOfCareSection target) {
+      @Override
+      protected void updateToFail(PlanOfCareSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PlanOfCareSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PlanOfCareSectionOperations.validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
-					(PlanOfCareSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PlanOfCareSectionOperations.validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
+          (PlanOfCareSection) objectToTest, diagnostician, map);
+      }
 
-		validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
-	}
+    };
+
+    validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -58,10 +92,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolPlanOfCareActivityAct() {
 
-		PlanOfCareSection target = objectFactory.create();
-		target.getmu2consolPlanOfCareActivityAct();
 
-	}
+PlanOfCareSection target = objectFactory.create();
+target.getmu2consolPlanOfCareActivityAct();
+
+
+
+}
 
 	/**
 	 * 
@@ -70,10 +107,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolPlanOfCareActivityEncounter() {
 
-		PlanOfCareSection target = objectFactory.create();
-		target.getmu2consolPlanOfCareActivityEncounter();
 
-	}
+PlanOfCareSection target = objectFactory.create();
+target.getmu2consolPlanOfCareActivityEncounter();
+
+
+
+}
 
 	/**
 	 * 
@@ -82,10 +122,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolPlanOfCareActivityObservation() {
 
-		PlanOfCareSection target = objectFactory.create();
-		target.getmu2consolPlanOfCareActivityObservation();
 
-	}
+PlanOfCareSection target = objectFactory.create();
+target.getmu2consolPlanOfCareActivityObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -143,9 +186,9 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -153,8 +196,8 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PlanOfCareSectionOperations

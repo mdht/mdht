@@ -44,10 +44,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityProcedure() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getPlanOfCareActivityProcedure();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getPlanOfCareActivityProcedure();
+
+
+
+}
 
 	/**
 	 * 
@@ -56,10 +59,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivitySubstanceAdministration() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getPlanOfCareActivitySubstanceAdministration();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getPlanOfCareActivitySubstanceAdministration();
+
+
+
+}
 
 	/**
 	 * 
@@ -68,10 +74,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivitySupply() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getPlanOfCareActivitySupply();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getPlanOfCareActivitySupply();
+
+
+
+}
 
 	/**
 	 * 
@@ -80,10 +89,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservation() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getProblemObservation();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getProblemObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -141,9 +153,9 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -151,8 +163,8 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AssessmentAndPlanSectionOperations

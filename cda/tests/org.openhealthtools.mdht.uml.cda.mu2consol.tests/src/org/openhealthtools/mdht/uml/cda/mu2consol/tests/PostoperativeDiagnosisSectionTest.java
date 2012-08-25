@@ -45,33 +45,67 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolPostoperativeDiagnosisSectionProblemObservation() {
-		OperationsTestCase<PostoperativeDiagnosisSection> validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-			"validateMu2consolPostoperativeDiagnosisSectionProblemObservation",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_POSTOPERATIVE_DIAGNOSIS_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PostoperativeDiagnosisSection> validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+      "validateMu2consolPostoperativeDiagnosisSectionProblemObservation",
+      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_POSTOPERATIVE_DIAGNOSIS_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PostoperativeDiagnosisSection target) {
+      @Override
+      protected void updateToFail(PostoperativeDiagnosisSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PostoperativeDiagnosisSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PostoperativeDiagnosisSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PostoperativeDiagnosisSectionOperations.validateMu2consolPostoperativeDiagnosisSectionProblemObservation(
-					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PostoperativeDiagnosisSectionOperations.validateMu2consolPostoperativeDiagnosisSectionProblemObservation(
+          (PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+      }
 
-		validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase.doValidationTest();
-	}
+    };
+
+    validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -80,10 +114,13 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservation() {
 
-		PostoperativeDiagnosisSection target = objectFactory.create();
-		target.getProblemObservation();
 
-	}
+PostoperativeDiagnosisSection target = objectFactory.create();
+target.getProblemObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -141,9 +178,9 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -151,8 +188,8 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PostoperativeDiagnosisSectionOperations
