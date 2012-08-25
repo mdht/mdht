@@ -43,33 +43,67 @@ public class AssessmentAndPlanForConditionOrConcernTest extends CDAValidationTes
 	 */
 	@Test
 	public void testValidateAssessmentAndPlanForConditionOrConcernProblemObservation() {
-		OperationsTestCase<AssessmentAndPlanForConditionOrConcern> validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase = new OperationsTestCase<AssessmentAndPlanForConditionOrConcern>(
-			"validateAssessmentAndPlanForConditionOrConcernProblemObservation",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CONDITION_OR_CONCERN_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentAndPlanForConditionOrConcern> validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase = new OperationsTestCase<AssessmentAndPlanForConditionOrConcern>(
+      "validateAssessmentAndPlanForConditionOrConcernProblemObservation",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CONDITION_OR_CONCERN_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentAndPlanForConditionOrConcern target) {
+      @Override
+      protected void updateToFail(AssessmentAndPlanForConditionOrConcern target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentAndPlanForConditionOrConcern target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentAndPlanForConditionOrConcern target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AssessmentAndPlanForConditionOrConcernOperations.validateAssessmentAndPlanForConditionOrConcernProblemObservation(
-					(AssessmentAndPlanForConditionOrConcern) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentAndPlanForConditionOrConcernOperations.validateAssessmentAndPlanForConditionOrConcernProblemObservation(
+          (AssessmentAndPlanForConditionOrConcern) objectToTest, diagnostician, map);
+      }
 
-		validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase.doValidationTest();
-	}
+    };
+
+    validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -78,10 +112,13 @@ public class AssessmentAndPlanForConditionOrConcernTest extends CDAValidationTes
 	@Test
 	public void testGetProblemObservation() {
 
-		AssessmentAndPlanForConditionOrConcern target = objectFactory.create();
-		target.getProblemObservation();
 
-	}
+AssessmentAndPlanForConditionOrConcern target = objectFactory.create();
+target.getProblemObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -139,9 +176,9 @@ public class AssessmentAndPlanForConditionOrConcernTest extends CDAValidationTes
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -149,8 +186,8 @@ public class AssessmentAndPlanForConditionOrConcernTest extends CDAValidationTes
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AssessmentAndPlanForConditionOrConcernOperations
