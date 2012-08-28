@@ -45,10 +45,6 @@ public class EcoreTransformationBuilder extends TransformationBuilder {
 			.rule(adapt(TransformTemplateIdentifier.class)) //
 			.done() // customizing main transformation phase
 
-			.getPhase(IEcoreTransformIDs.TRANSFORM_INLINE_ASSOCATIONS_PHASE) //
-			.rule(adapt(TransformCDAInlineProperties.class)) //
-			.done()
-
 			.build()); //
 
 		return result;
