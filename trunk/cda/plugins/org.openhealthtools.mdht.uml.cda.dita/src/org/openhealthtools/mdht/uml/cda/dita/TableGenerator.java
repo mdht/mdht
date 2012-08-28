@@ -423,7 +423,7 @@ public class TableGenerator {
 		Collections.sort(elementlist, elementSorter);
 
 		for (Element element : elementlist) {
-			if (element instanceof NamedElement) {
+			if (element instanceof NamedElement && CDAModelUtil.hasValidationSupport(element)) {
 				addRow(tableBuffer, element, eClass, eObject);
 			}
 
