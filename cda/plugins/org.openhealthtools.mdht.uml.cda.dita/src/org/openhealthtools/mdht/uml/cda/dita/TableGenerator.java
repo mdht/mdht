@@ -52,6 +52,7 @@ import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
@@ -423,10 +424,10 @@ public class TableGenerator {
 		Collections.sort(elementlist, elementSorter);
 
 		for (Element element : elementlist) {
-			if (element instanceof NamedElement && CDAModelUtil.hasValidationSupport(element)) {
+
+			if (element instanceof NamedElement) {
 				addRow(tableBuffer, element, eClass, eObject);
 			}
-
 		}
 
 		tableBuffer.append("</tbody></tgroup></table></p></section>");
@@ -604,27 +605,19 @@ public class TableGenerator {
 	}
 
 	void getTableRows(Class umlClass, Hashtable<String, Element> elements) {
-
-		for (Property property : umlClass.getAttributes()) {
-
-			if (!elements.containsKey(property.getName())) {
+		for (Property property : umlClass.getOwnedAttributes()) {
+			if (CDAProfileUtil.getValidation(property) != null && !elements.containsKey(property.getName())) {
 				elements.put(property.getName(), property);
 			}
 		}
 
 		for (Association association : umlClass.getAssociations()) {
-
-			if (association.getName() != null && !elements.containsKey(association.getName())) {
-				elements.put(association.getName(), association);
+			for (Property property : association.getMemberEnds()) {
+				if (property.getName() != null && !elements.containsKey(property.getName())) {
+					elements.put(property.getName(), property);
+				}
 			}
 		}
-
-		for (Generalization generalization : umlClass.getGeneralizations()) {
-			if (generalization.getGeneral() instanceof Class) {
-				getTableRows((Class) generalization.getGeneral(), elements);
-			}
-		}
-
 		return;
 
 	}
