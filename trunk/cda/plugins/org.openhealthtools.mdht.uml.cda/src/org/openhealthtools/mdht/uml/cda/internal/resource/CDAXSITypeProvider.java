@@ -10,6 +10,7 @@
  *     Sean Muir (JKM Software) - updated registry to support threading
  *     Dave Carlson (XMLmodeling.com) - added document class registry
  *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
+ *     Rama Ramakrishnan - If a template class has already been loaded, ignore further occurences (artf3397)
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
@@ -208,7 +209,10 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 							}
 							String templateId = EcoreUtil.getAnnotation(
 								eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
-							if (templateId != null) {
+
+							// Fix for artf3397 : Check if the templateId has already been resolved to an EClass
+							// If already exists in classes map, do not add to the map
+							if ((templateId != null) && (!(classes.keySet().contains(templateId)))) {
 								String contextDependent = EcoreUtil.getAnnotation(
 									eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
 								if ("true".equals(contextDependent)) {
