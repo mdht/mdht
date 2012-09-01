@@ -6,6 +6,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
@@ -29,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySubstanceAdministration() <em>Get Plan Of Care Activity Substance Administration</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySupply() <em>Get Plan Of Care Activity Supply</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getProblemObservation() <em>Get Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#validateAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,6 +101,74 @@ target.getProblemObservation();
 }
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAssessmentAndPlanSectionTemplateId() {
+			OperationsTestCase<AssessmentAndPlanSection> validateAssessmentAndPlanSectionTemplateIdTestCase = new OperationsTestCase<AssessmentAndPlanSection>(
+			"validateAssessmentAndPlanSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(AssessmentAndPlanSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AssessmentAndPlanSection target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionTemplateId(
+					(AssessmentAndPlanSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAssessmentAndPlanSectionTemplateIdTestCase.doValidationTest();
+}
+
+	/**
 	 * 
 	 * @generated
 	 */
@@ -153,9 +224,9 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
 
 	/**
 	 * 
@@ -164,7 +235,7 @@ target.getProblemObservation();
 
 	@Override
 	protected EObject getObjectToTest() {		
-    return null;
-  }
+		return null;
+	}
 
 } // AssessmentAndPlanSectionOperations

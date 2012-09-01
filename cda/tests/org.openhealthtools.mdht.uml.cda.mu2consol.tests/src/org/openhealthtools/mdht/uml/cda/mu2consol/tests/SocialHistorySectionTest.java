@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#validateMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Social History Section Smoking Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#getmu2consolSmokingStatusObservations() <em>Getmu2consol Smoking Status Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#validateSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,66 +46,66 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMu2consolSocialHistorySectionSmokingStatusObservation() {
-      OperationsTestCase<SocialHistorySection> validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<SocialHistorySection>(
-      "validateMu2consolSocialHistorySectionSmokingStatusObservation",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<SocialHistorySection> validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<SocialHistorySection>(
+			"validateMu2consolSocialHistorySectionSmokingStatusObservation",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(SocialHistorySection target) {
+			@Override
+			protected void updateToFail(SocialHistorySection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SocialHistorySection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SocialHistorySection target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SocialHistorySectionOperations.validateMu2consolSocialHistorySectionSmokingStatusObservation(
-          (SocialHistorySection) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return SocialHistorySectionOperations.validateMu2consolSocialHistorySectionSmokingStatusObservation(
+					(SocialHistorySection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
+		validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
 }
 
 	/**
@@ -120,6 +121,74 @@ target.getmu2consolSmokingStatusObservations();
 
 
 
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSocialHistorySectionTemplateId() {
+			OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<SocialHistorySection>(
+			"validateSocialHistorySectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(SocialHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SocialHistorySection target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return SocialHistorySectionOperations.validateSocialHistorySectionTemplateId(
+					(SocialHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSocialHistorySectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -176,9 +245,9 @@ target.getmu2consolSmokingStatusObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
 
 	/**
 	*
@@ -187,7 +256,7 @@ target.getmu2consolSmokingStatusObservations();
 
 	@Override
 	protected EObject getObjectToTest() {		
-    return null;
-  }
+		return null;
+	}
 
 } // SocialHistorySectionOperations

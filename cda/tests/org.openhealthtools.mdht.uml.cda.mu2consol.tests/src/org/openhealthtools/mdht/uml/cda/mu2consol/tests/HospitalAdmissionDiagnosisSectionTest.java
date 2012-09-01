@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Hospital Admission Diagnosis Section Hospital Admission Diagnosis</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#getmu2consolHospitalAdmissionDiagnosis() <em>Getmu2consol Hospital Admission Diagnosis</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#validateHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Admission Diagnosis Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,66 +46,66 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
-      OperationsTestCase<HospitalAdmissionDiagnosisSection> validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
-      "validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<HospitalAdmissionDiagnosisSection> validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+			"validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
+			@Override
+			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalAdmissionDiagnosisSectionOperations.validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
-          (HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return HospitalAdmissionDiagnosisSectionOperations.validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
+					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase.doValidationTest();
+		validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase.doValidationTest();
 }
 
 	/**
@@ -120,6 +121,74 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 
 
 
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalAdmissionDiagnosisSectionTemplateId() {
+			OperationsTestCase<HospitalAdmissionDiagnosisSection> validateHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+			"validateHospitalAdmissionDiagnosisSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return HospitalAdmissionDiagnosisSectionOperations.validateHospitalAdmissionDiagnosisSectionTemplateId(
+					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalAdmissionDiagnosisSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -178,9 +247,9 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
 
 	/**
 	 * 
@@ -189,7 +258,7 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 
 	@Override
 	protected EObject getObjectToTest() {		
-    return null;
-  }
+		return null;
+	}
 
 } // HospitalAdmissionDiagnosisSectionOperations
