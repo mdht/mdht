@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Postprocedure Diagnosis Section Postprocedure Diagnosis</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#getmu2consolPostprocedureDiagnosis() <em>Getmu2consol Postprocedure Diagnosis</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#validatePostprocedureDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Postprocedure Diagnosis Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,66 +46,66 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis() {
-      OperationsTestCase<PostprocedureDiagnosisSection> validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
-      "validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_POSTPROCEDURE_DIAGNOSIS_SECTION_POSTPROCEDURE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<PostprocedureDiagnosisSection> validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
+			"validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_POSTPROCEDURE_DIAGNOSIS_SECTION_POSTPROCEDURE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(PostprocedureDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PostprocedureDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PostprocedureDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PostprocedureDiagnosisSection target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PostprocedureDiagnosisSectionOperations.validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis(
-          (PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return PostprocedureDiagnosisSectionOperations.validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis(
+					(PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase.doValidationTest();
+		validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase.doValidationTest();
 }
 
 	/**
@@ -120,6 +121,74 @@ target.getmu2consolPostprocedureDiagnosis();
 
 
 
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePostprocedureDiagnosisSectionTemplateId() {
+			OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
+			"validatePostprocedureDiagnosisSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(PostprocedureDiagnosisSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PostprocedureDiagnosisSection target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return PostprocedureDiagnosisSectionOperations.validatePostprocedureDiagnosisSectionTemplateId(
+					(PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePostprocedureDiagnosisSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -178,9 +247,9 @@ target.getmu2consolPostprocedureDiagnosis();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
 
 	/**
 	 * 
@@ -189,7 +258,7 @@ target.getmu2consolPostprocedureDiagnosis();
 
 	@Override
 	protected EObject getObjectToTest() {		
-    return null;
-  }
+		return null;
+	}
 
 } // PostprocedureDiagnosisSectionOperations

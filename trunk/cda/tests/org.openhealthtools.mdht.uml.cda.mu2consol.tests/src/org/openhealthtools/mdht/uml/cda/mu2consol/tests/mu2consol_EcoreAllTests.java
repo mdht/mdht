@@ -19,29 +19,29 @@ import junit.textui.TestRunner;
 public class mu2consol_EcoreAllTests extends TestSuite {
 
 	/**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
 	public static void main(String[] args) {
-    TestRunner.run(suite());
-  }
+		TestRunner.run(suite());
+	}
 
 	/**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
 	public static Test suite() {
-    TestSuite suite = new mu2consol_EcoreAllTests("mu2consol_Ecore Tests");
-    suite.addTest(Mu2consolTests.suite());
-    return suite;
-  }
+		TestSuite suite = new mu2consol_EcoreAllTests("mu2consol_Ecore Tests");
+		suite.addTest(Mu2consolTests.suite());
+		return suite;
+	}
 
 	/**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
 	public mu2consol_EcoreAllTests(String name) {
-    super(name);
-  }
+		super(name);
+	}
 
 } // mu2consol_EcoreAllTests

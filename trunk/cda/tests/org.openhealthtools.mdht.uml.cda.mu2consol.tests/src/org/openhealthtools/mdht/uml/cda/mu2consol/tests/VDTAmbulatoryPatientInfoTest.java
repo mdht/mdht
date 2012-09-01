@@ -43,10 +43,13 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfoPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Info Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfoProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Info Procedures Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfoHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Info Hospital Discharge Instructions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfoSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Info Social History Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Infomu2consol Social History Section Smoking Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfoHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Info Hospital Admission Medications Section Entries Optional Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Infomu2consol Hospital Admission Medications Section Entries Optional Admission Medication</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfomu2consolAllergiesSectionEntriesOptionalAllergyProblemAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Infomu2consol Allergies Section Entries Optional Allergy Problem Act</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Infomu2consol Plan Of Care Section Care Planning For Plan Of Care</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfoPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Info Plan Of Care Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfoHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Info Hospital Admission Diagnosis Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Patient Infomu2consol Hospital Admission Diagnosis Section Hospital Admission Diagnosis</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#getSocialHistorySection() <em>Get Social History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatoryPatientInfo#getProblemSection() <em>Get Problem Section</em>}</li>
@@ -81,66 +84,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfoMedicationList() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoMedicationListTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfoMedicationList",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_MEDICATION_LIST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoMedicationListTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoMedicationList",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_MEDICATION_LIST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoMedicationList(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoMedicationList(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfoMedicationListTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfoMedicationListTestCase.doValidationTest();
 }
 
 	/**
@@ -149,66 +152,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfoMedicationAllergy() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoMedicationAllergyTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfoMedicationAllergy",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_MEDICATION_ALLERGY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoMedicationAllergyTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoMedicationAllergy",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_MEDICATION_ALLERGY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoMedicationAllergy(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoMedicationAllergy(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfoMedicationAllergyTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfoMedicationAllergyTestCase.doValidationTest();
 }
 
 	/**
@@ -217,66 +220,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntry() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntryTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntry",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_CAN_HAVE_EITHER_VITAL_SIGNS_REQUIED_OR_OPTIONAL_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntryTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntry",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_CAN_HAVE_EITHER_VITAL_SIGNS_REQUIED_OR_OPTIONAL_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntry(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntry(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntryTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfoCanHaveEitherVitalSignsRequiedOrOptionalEntryTestCase.doValidationTest();
 }
 
 	/**
@@ -285,66 +288,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntry() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntryTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntry",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_CAN_HAVE_EITHER_ALLERGY_REQUIRED_OR_OPTIONAL_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntryTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntry",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_CAN_HAVE_EITHER_ALLERGY_REQUIRED_OR_OPTIONAL_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntry(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntry(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntryTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfoCanHaveEitherAllergyRequiredOrOptionalEntryTestCase.doValidationTest();
 }
 
 	/**
@@ -353,66 +356,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntry() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntryTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntry",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_CAN_HAVE_EITHER_ENCOUNTERS_REQUIRED_OR_OPTIONAL_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntryTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntry",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_CAN_HAVE_EITHER_ENCOUNTERS_REQUIRED_OR_OPTIONAL_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntry(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntry(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntryTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfoCanHaveEitherEncountersRequiredOrOptionalEntryTestCase.doValidationTest();
 }
 
 	/**
@@ -421,66 +424,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfoReasonForHospitalization() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoReasonForHospitalizationTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfoReasonForHospitalization",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_REASON_FOR_HOSPITALIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoReasonForHospitalizationTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoReasonForHospitalization",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_REASON_FOR_HOSPITALIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoReasonForHospitalization(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoReasonForHospitalization(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfoReasonForHospitalizationTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfoReasonForHospitalizationTestCase.doValidationTest();
 }
 
 	/**
@@ -489,75 +492,75 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfoSocialHistorySection() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoSocialHistorySectionTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfoSocialHistorySection",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoSocialHistorySectionTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoSocialHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* SocialHistorySection */ 
-        SocialHistorySection section =
-        
-        Mu2consolFactory.eINSTANCE.createSocialHistorySection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* SocialHistorySection */ 
+				SocialHistorySection section =
+				
+				Mu2consolFactory.eINSTANCE.createSocialHistorySection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoSocialHistorySection(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoSocialHistorySection(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfoSocialHistorySectionTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfoSocialHistorySectionTestCase.doValidationTest();
 }
 
 	/**
@@ -770,67 +773,203 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateVDTAmbulatoryPatientInfoSocialHistorySectionTemplateId() {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoSocialHistorySectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoSocialHistorySectionTemplateId(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTAmbulatoryPatientInfoSocialHistorySectionTemplateIdTestCase.doValidationTest();
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservation() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservation",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservation",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservation(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservation(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfomu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVDTAmbulatoryPatientInfoHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId() {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTAmbulatoryPatientInfoHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -839,134 +978,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_ADMISSION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_ADMISSION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase.doValidationTest();
-}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVDTAmbulatoryPatientInfomu2consolAllergiesSectionEntriesOptionalAllergyProblemAct() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfomu2consolAllergiesSectionEntriesOptionalAllergyProblemAct",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_ALLERGIES_SECTION_ENTRIES_OPTIONAL_ALLERGY_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
-
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
-
-      }
-
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
-
-        
-        
-
-  
-      
-
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
-
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolAllergiesSectionEntriesOptionalAllergyProblemAct(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
-
-    };
-
-    validateVDTAmbulatoryPatientInfomu2consolAllergiesSectionEntriesOptionalAllergyProblemActTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase.doValidationTest();
 }
 
 	/**
@@ -975,66 +1046,202 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVDTAmbulatoryPatientInfoPlanOfCareSectionTemplateId() {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoPlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoPlanOfCareSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoPlanOfCareSectionTemplateId(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTAmbulatoryPatientInfoPlanOfCareSectionTemplateIdTestCase.doValidationTest();
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVDTAmbulatoryPatientInfoHospitalAdmissionDiagnosisSectionTemplateId() {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfoHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfoHospitalAdmissionDiagnosisSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFO_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfoHospitalAdmissionDiagnosisSectionTemplateId(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTAmbulatoryPatientInfoHospitalAdmissionDiagnosisSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -1043,66 +1250,66 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
-      OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
-      "validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
-      operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<VDTAmbulatoryPatientInfo> validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<VDTAmbulatoryPatientInfo>(
+			"validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_PATIENT_INFOMU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(VDTAmbulatoryPatientInfo target) {
+			@Override
+			protected void updateToFail(VDTAmbulatoryPatientInfo target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VDTAmbulatoryPatientInfo target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VDTAmbulatoryPatientInfo target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
-          (VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return VDTAmbulatoryPatientInfoOperations.validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
+					(VDTAmbulatoryPatientInfo) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase.doValidationTest();
+		validateVDTAmbulatoryPatientInfomu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase.doValidationTest();
 }
 
 	/**
@@ -1443,9 +1650,9 @@ target.getChiefComplaintAndReasonForVisitSection();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
 
 	/**
 	*
@@ -1453,7 +1660,7 @@ target.getChiefComplaintAndReasonForVisitSection();
 	*/
 	@Override
 	protected EObject getObjectToTest() {		
-    return null;
-  }
+		return null;
+	}
 
 } // VDTAmbulatoryPatientInfoOperations

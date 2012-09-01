@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PreoperativeDiagnosisSection#validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Preoperative Diagnosis Section Preoperative Diagnosis</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PreoperativeDiagnosisSection#getmu2consolPreoperativeDiagnosis() <em>Getmu2consol Preoperative Diagnosis</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PreoperativeDiagnosisSection#validatePreoperativeDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Preoperative Diagnosis Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,66 +46,66 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis() {
-      OperationsTestCase<PreoperativeDiagnosisSection> validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase = new OperationsTestCase<PreoperativeDiagnosisSection>(
-      "validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PREOPERATIVE_DIAGNOSIS_SECTION_PREOPERATIVE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			OperationsTestCase<PreoperativeDiagnosisSection> validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase = new OperationsTestCase<PreoperativeDiagnosisSection>(
+			"validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PREOPERATIVE_DIAGNOSIS_SECTION_PREOPERATIVE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
-      @Override
-      protected void updateToFail(PreoperativeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PreoperativeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PreoperativeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PreoperativeDiagnosisSection target) {
+				target.init();
+				
+				
+				
+				
+				
 
-        
-        
+				
+				
 
-  
-      
+	
+			
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PreoperativeDiagnosisSectionOperations.validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis(
-          (PreoperativeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return PreoperativeDiagnosisSectionOperations.validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosis(
+					(PreoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase.doValidationTest();
+		validateMu2consolPreoperativeDiagnosisSectionPreoperativeDiagnosisTestCase.doValidationTest();
 }
 
 	/**
@@ -120,6 +121,74 @@ target.getmu2consolPreoperativeDiagnosis();
 
 
 
+}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePreoperativeDiagnosisSectionTemplateId() {
+			OperationsTestCase<PreoperativeDiagnosisSection> validatePreoperativeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PreoperativeDiagnosisSection>(
+			"validatePreoperativeDiagnosisSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(PreoperativeDiagnosisSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PreoperativeDiagnosisSection target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return PreoperativeDiagnosisSectionOperations.validatePreoperativeDiagnosisSectionTemplateId(
+					(PreoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePreoperativeDiagnosisSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**
@@ -178,9 +247,9 @@ target.getmu2consolPreoperativeDiagnosis();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
 
 	/**
 	 * 
@@ -189,7 +258,7 @@ target.getmu2consolPreoperativeDiagnosis();
 
 	@Override
 	protected EObject getObjectToTest() {		
-    return null;
-  }
+		return null;
+	}
 
 } // PreoperativeDiagnosisSectionOperations
