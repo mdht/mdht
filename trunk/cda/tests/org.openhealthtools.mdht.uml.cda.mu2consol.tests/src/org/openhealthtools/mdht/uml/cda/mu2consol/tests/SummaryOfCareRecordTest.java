@@ -14,6 +14,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.consol.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
@@ -1091,7 +1092,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolMedicationsAdministeredSectionMedicationActivity() {
@@ -1102,13 +1103,17 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				target.init();
+				MedicationsAdministeredSection aSection = Mu2consolFactory.eINSTANCE.createMedicationsAdministeredSection().init();
+				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
 				target.init();
-
+				MedicationsAdministeredSection mSection = target.getMedicationsAdministeredSection();
+				MedicationActivity mAct = ConsolFactory.eINSTANCE.createMedicationActivity().init();
+				mSection.addSubstanceAdministration(mAct);
 			}
 
 			@Override
