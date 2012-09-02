@@ -18,7 +18,7 @@ import org.junit.runners.Suite;
  * @generated
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ GeneralHeaderConstraintsTest.class, SummaryOfCareRecordTest.class })
+@Suite.SuiteClasses({SummaryOfCareRecordTest.class})
 public class Mu2consolTests {
 
 	/**
