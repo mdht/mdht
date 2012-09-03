@@ -25,16 +25,23 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Hospital Admission Diagnosis Section</b></em>' model
  * objects. <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Hospital Admission Diagnosis Section Hospital Admission Diagnosis</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#getmu2consolHospitalAdmissionDiagnosis() <em>Getmu2consol Hospital Admission Diagnosis</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#validateHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Admission Diagnosis Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Mu2consol Hospital Admission Diagnosis Section Hospital
+ * Admission Diagnosis</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#getmu2consolHospitalAdmissionDiagnosis()
+ * <em>Getmu2consol Hospital Admission Diagnosis</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection#validateHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Hospital Admission Diagnosis Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
@@ -46,10 +53,11 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
-			OperationsTestCase<HospitalAdmissionDiagnosisSection> validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
-			"validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<HospitalAdmissionDiagnosisSection> validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+				"validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
@@ -59,54 +67,24 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return HospitalAdmissionDiagnosisSectionOperations.validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
-					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalAdmissionDiagnosisSectionOperations
+						.validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
+								(HospitalAdmissionDiagnosisSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase.doValidationTest();
-}
+		validateMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -115,24 +93,22 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolHospitalAdmissionDiagnosis() {
 
+		HospitalAdmissionDiagnosisSection target = objectFactory.create();
+		target.getmu2consolHospitalAdmissionDiagnosis();
 
-HospitalAdmissionDiagnosisSection target = objectFactory.create();
-target.getmu2consolHospitalAdmissionDiagnosis();
-
-
-
-}
+	}
 
 	/**
-	*
-	* @generated
-	*/
+	 * 
+	 * @generated
+	 */
 	@Test
 	public void testValidateHospitalAdmissionDiagnosisSectionTemplateId() {
-			OperationsTestCase<HospitalAdmissionDiagnosisSection> validateHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
-			"validateHospitalAdmissionDiagnosisSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<HospitalAdmissionDiagnosisSection> validateHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+				"validateHospitalAdmissionDiagnosisSectionTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
@@ -142,66 +118,38 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 			@Override
 			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return HospitalAdmissionDiagnosisSectionOperations.validateHospitalAdmissionDiagnosisSectionTemplateId(
-					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalAdmissionDiagnosisSectionOperations
+						.validateHospitalAdmissionDiagnosisSectionTemplateId(
+								(HospitalAdmissionDiagnosisSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateHospitalAdmissionDiagnosisSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHospitalAdmissionDiagnosisSectionTemplateIdTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends HospitalAdmissionDiagnosisSectionOperations {
+	private static class OperationsForOCL extends
+			HospitalAdmissionDiagnosisSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -213,10 +161,12 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements TestObjectFactory<HospitalAdmissionDiagnosisSection> {
+	private static class ObjectFactory implements
+			TestObjectFactory<HospitalAdmissionDiagnosisSection> {
 
 		public HospitalAdmissionDiagnosisSection create() {
-			return Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection();
+			return Mu2consolFactory.eINSTANCE
+					.createHospitalAdmissionDiagnosisSection();
 		}
 	}
 
@@ -237,7 +187,8 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends HospitalAdmissionDiagnosisSectionOperations {
+	private static class ConstructorTestClass extends
+			HospitalAdmissionDiagnosisSectionOperations {
 	};
 
 	/**
@@ -247,8 +198,8 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -257,7 +208,7 @@ target.getmu2consolHospitalAdmissionDiagnosis();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

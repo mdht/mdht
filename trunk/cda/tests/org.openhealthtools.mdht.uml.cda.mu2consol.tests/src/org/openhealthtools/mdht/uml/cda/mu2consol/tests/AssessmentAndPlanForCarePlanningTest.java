@@ -23,17 +23,26 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Assessment And Plan For Care Planning</b></em>' model
  * objects. <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan For Care Planning One Of Plan Of Care Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#getPlanOfCareActivityProcedure() <em>Get Plan Of Care Activity Procedure</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#getPlanOfCareActivitySubstanceAdministration() <em>Get Plan Of Care Activity Substance Administration</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#getPlanOfCareActivitySupply() <em>Get Plan Of Care Activity Supply</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Assessment And Plan For Care Planning One Of Plan Of Care Entry
+ * </em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#getPlanOfCareActivityProcedure()
+ * <em>Get Plan Of Care Activity Procedure</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#getPlanOfCareActivitySubstanceAdministration()
+ * <em>Get Plan Of Care Activity Substance Administration</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForCarePlanning#getPlanOfCareActivitySupply()
+ * <em>Get Plan Of Care Activity Supply</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
@@ -45,10 +54,11 @@ public class AssessmentAndPlanForCarePlanningTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry() {
-			OperationsTestCase<AssessmentAndPlanForCarePlanning> validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase = new OperationsTestCase<AssessmentAndPlanForCarePlanning>(
-			"validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CARE_PLANNING_ONE_OF_PLAN_OF_CARE_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<AssessmentAndPlanForCarePlanning> validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase = new OperationsTestCase<AssessmentAndPlanForCarePlanning>(
+				"validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry",
+				operationsForOCL
+						.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CARE_PLANNING_ONE_OF_PLAN_OF_CARE_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(AssessmentAndPlanForCarePlanning target) {
@@ -58,54 +68,24 @@ public class AssessmentAndPlanForCarePlanningTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AssessmentAndPlanForCarePlanning target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return AssessmentAndPlanForCarePlanningOperations.validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry(
-					(AssessmentAndPlanForCarePlanning) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AssessmentAndPlanForCarePlanningOperations
+						.validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry(
+								(AssessmentAndPlanForCarePlanning) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase.doValidationTest();
-}
+		validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -114,13 +94,10 @@ public class AssessmentAndPlanForCarePlanningTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityProcedure() {
 
+		AssessmentAndPlanForCarePlanning target = objectFactory.create();
+		target.getPlanOfCareActivityProcedure();
 
-AssessmentAndPlanForCarePlanning target = objectFactory.create();
-target.getPlanOfCareActivityProcedure();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -129,13 +106,10 @@ target.getPlanOfCareActivityProcedure();
 	@Test
 	public void testGetPlanOfCareActivitySubstanceAdministration() {
 
+		AssessmentAndPlanForCarePlanning target = objectFactory.create();
+		target.getPlanOfCareActivitySubstanceAdministration();
 
-AssessmentAndPlanForCarePlanning target = objectFactory.create();
-target.getPlanOfCareActivitySubstanceAdministration();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -144,25 +118,24 @@ target.getPlanOfCareActivitySubstanceAdministration();
 	@Test
 	public void testGetPlanOfCareActivitySupply() {
 
+		AssessmentAndPlanForCarePlanning target = objectFactory.create();
+		target.getPlanOfCareActivitySupply();
 
-AssessmentAndPlanForCarePlanning target = objectFactory.create();
-target.getPlanOfCareActivitySupply();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends AssessmentAndPlanForCarePlanningOperations {
+	private static class OperationsForOCL extends
+			AssessmentAndPlanForCarePlanningOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -174,10 +147,12 @@ target.getPlanOfCareActivitySupply();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements TestObjectFactory<AssessmentAndPlanForCarePlanning> {
+	private static class ObjectFactory implements
+			TestObjectFactory<AssessmentAndPlanForCarePlanning> {
 
 		public AssessmentAndPlanForCarePlanning create() {
-			return Mu2consolFactory.eINSTANCE.createAssessmentAndPlanForCarePlanning();
+			return Mu2consolFactory.eINSTANCE
+					.createAssessmentAndPlanForCarePlanning();
 		}
 	}
 
@@ -198,7 +173,8 @@ target.getPlanOfCareActivitySupply();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends AssessmentAndPlanForCarePlanningOperations {
+	private static class ConstructorTestClass extends
+			AssessmentAndPlanForCarePlanningOperations {
 	};
 
 	/**
@@ -208,8 +184,8 @@ target.getPlanOfCareActivitySupply();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -218,7 +194,7 @@ target.getPlanOfCareActivitySupply();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

@@ -23,18 +23,28 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Assessment And Plan Section</b></em>' model objects. <!--
  * end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivityProcedure() <em>Get Plan Of Care Activity Procedure</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySubstanceAdministration() <em>Get Plan Of Care Activity Substance Administration</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySupply() <em>Get Plan Of Care Activity Supply</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getProblemObservation() <em>Get Problem Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#validateAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivityProcedure()
+ * <em>Get Plan Of Care Activity Procedure</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySubstanceAdministration()
+ * <em>Get Plan Of Care Activity Substance Administration</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySupply()
+ * <em>Get Plan Of Care Activity Supply</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getProblemObservation()
+ * <em>Get Problem Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#validateAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Assessment And Plan Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
@@ -47,13 +57,10 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityProcedure() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getPlanOfCareActivityProcedure();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getPlanOfCareActivityProcedure();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -62,13 +69,10 @@ target.getPlanOfCareActivityProcedure();
 	@Test
 	public void testGetPlanOfCareActivitySubstanceAdministration() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getPlanOfCareActivitySubstanceAdministration();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getPlanOfCareActivitySubstanceAdministration();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -77,13 +81,10 @@ target.getPlanOfCareActivitySubstanceAdministration();
 	@Test
 	public void testGetPlanOfCareActivitySupply() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getPlanOfCareActivitySupply();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getPlanOfCareActivitySupply();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -92,24 +93,22 @@ target.getPlanOfCareActivitySupply();
 	@Test
 	public void testGetProblemObservation() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getProblemObservation();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getProblemObservation();
-
-
-
-}
+	}
 
 	/**
-	*
-	* @generated
-	*/
+	 * 
+	 * @generated
+	 */
 	@Test
 	public void testValidateAssessmentAndPlanSectionTemplateId() {
-			OperationsTestCase<AssessmentAndPlanSection> validateAssessmentAndPlanSectionTemplateIdTestCase = new OperationsTestCase<AssessmentAndPlanSection>(
-			"validateAssessmentAndPlanSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<AssessmentAndPlanSection> validateAssessmentAndPlanSectionTemplateIdTestCase = new OperationsTestCase<AssessmentAndPlanSection>(
+				"validateAssessmentAndPlanSectionTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(AssessmentAndPlanSection target) {
@@ -119,66 +118,37 @@ target.getProblemObservation();
 			@Override
 			protected void updateToPass(AssessmentAndPlanSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionTemplateId(
-					(AssessmentAndPlanSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AssessmentAndPlanSectionOperations
+						.validateAssessmentAndPlanSectionTemplateId(
+								(AssessmentAndPlanSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
 		validateAssessmentAndPlanSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends AssessmentAndPlanSectionOperations {
+	private static class OperationsForOCL extends
+			AssessmentAndPlanSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -190,7 +160,8 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements TestObjectFactory<AssessmentAndPlanSection> {
+	private static class ObjectFactory implements
+			TestObjectFactory<AssessmentAndPlanSection> {
 
 		public AssessmentAndPlanSection create() {
 			return Mu2consolFactory.eINSTANCE.createAssessmentAndPlanSection();
@@ -214,7 +185,8 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends AssessmentAndPlanSectionOperations {
+	private static class ConstructorTestClass extends
+			AssessmentAndPlanSectionOperations {
 	};
 
 	/**
@@ -224,8 +196,8 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -234,7 +206,7 @@ target.getProblemObservation();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
