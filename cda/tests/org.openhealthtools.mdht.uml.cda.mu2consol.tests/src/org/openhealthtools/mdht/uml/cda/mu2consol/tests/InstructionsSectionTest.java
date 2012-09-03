@@ -25,16 +25,22 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Instructions Section</b></em>' model objects. <!--
  * end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateMu2consolInstructionsSectionInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Instructions Section Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#getmu2consolInstructionss() <em>Getmu2consol Instructionss</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateInstructionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateMu2consolInstructionsSectionInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Mu2consol Instructions Section Instructions</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#getmu2consolInstructionss()
+ * <em>Getmu2consol Instructionss</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateInstructionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Instructions Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
@@ -46,10 +52,11 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolInstructionsSectionInstructions() {
-			OperationsTestCase<InstructionsSection> validateMu2consolInstructionsSectionInstructionsTestCase = new OperationsTestCase<InstructionsSection>(
-			"validateMu2consolInstructionsSectionInstructions",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_INSTRUCTIONS_SECTION_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateMu2consolInstructionsSectionInstructionsTestCase = new OperationsTestCase<InstructionsSection>(
+				"validateMu2consolInstructionsSectionInstructions",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MU2CONSOL_INSTRUCTIONS_SECTION_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(InstructionsSection target) {
@@ -59,54 +66,24 @@ public class InstructionsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InstructionsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return InstructionsSectionOperations.validateMu2consolInstructionsSectionInstructions(
-					(InstructionsSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InstructionsSectionOperations
+						.validateMu2consolInstructionsSectionInstructions(
+								(InstructionsSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolInstructionsSectionInstructionsTestCase.doValidationTest();
-}
+		validateMu2consolInstructionsSectionInstructionsTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -115,13 +92,10 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolInstructionss() {
 
+		InstructionsSection target = objectFactory.create();
+		target.getmu2consolInstructionss();
 
-InstructionsSection target = objectFactory.create();
-target.getmu2consolInstructionss();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -129,10 +103,11 @@ target.getmu2consolInstructionss();
 	 */
 	@Test
 	public void testValidateInstructionsSectionTemplateId() {
-			OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
-			"validateInstructionsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
+				"validateInstructionsSectionTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(InstructionsSection target) {
@@ -142,54 +117,23 @@ target.getmu2consolInstructionss();
 			@Override
 			protected void updateToPass(InstructionsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return InstructionsSectionOperations.validateInstructionsSectionTemplateId(
-					(InstructionsSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InstructionsSectionOperations
+						.validateInstructionsSectionTemplateId(
+								(InstructionsSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
 		validateInstructionsSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -201,7 +145,8 @@ target.getmu2consolInstructionss();
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -213,7 +158,8 @@ target.getmu2consolInstructionss();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements TestObjectFactory<InstructionsSection> {
+	private static class ObjectFactory implements
+			TestObjectFactory<InstructionsSection> {
 
 		public InstructionsSection create() {
 			return Mu2consolFactory.eINSTANCE.createInstructionsSection();
@@ -237,7 +183,8 @@ target.getmu2consolInstructionss();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends InstructionsSectionOperations {
+	private static class ConstructorTestClass extends
+			InstructionsSectionOperations {
 	};
 
 	/**
@@ -247,8 +194,8 @@ target.getmu2consolInstructionss();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -257,7 +204,7 @@ target.getmu2consolInstructionss();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

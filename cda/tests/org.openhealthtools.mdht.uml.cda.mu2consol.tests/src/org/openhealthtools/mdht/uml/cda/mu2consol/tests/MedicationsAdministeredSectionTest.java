@@ -25,16 +25,23 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Medications Administered Section</b></em>' model objects.
  * <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMu2consolMedicationsAdministeredSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Medications Administered Section Medication Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#getmu2consolMedicationActivities() <em>Getmu2consol Medication Activities</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMu2consolMedicationsAdministeredSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Mu2consol Medications Administered Section Medication Activity
+ * </em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#getmu2consolMedicationActivities()
+ * <em>Getmu2consol Medication Activities</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Administered Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
@@ -46,10 +53,11 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolMedicationsAdministeredSectionMedicationActivity() {
-			OperationsTestCase<MedicationsAdministeredSection> validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
-			"validateMu2consolMedicationsAdministeredSectionMedicationActivity",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<MedicationsAdministeredSection> validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+				"validateMu2consolMedicationsAdministeredSectionMedicationActivity",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MU2CONSOL_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationsAdministeredSection target) {
@@ -59,54 +67,24 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsAdministeredSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return MedicationsAdministeredSectionOperations.validateMu2consolMedicationsAdministeredSectionMedicationActivity(
-					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsAdministeredSectionOperations
+						.validateMu2consolMedicationsAdministeredSectionMedicationActivity(
+								(MedicationsAdministeredSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
-}
+		validateMu2consolMedicationsAdministeredSectionMedicationActivityTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -115,24 +93,22 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolMedicationActivities() {
 
+		MedicationsAdministeredSection target = objectFactory.create();
+		target.getmu2consolMedicationActivities();
 
-MedicationsAdministeredSection target = objectFactory.create();
-target.getmu2consolMedicationActivities();
-
-
-
-}
+	}
 
 	/**
-	*
-	* @generated
-	*/
+	 * 
+	 * @generated
+	 */
 	@Test
 	public void testValidateMedicationsAdministeredSectionTemplateId() {
-			OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionTemplateIdTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
-			"validateMedicationsAdministeredSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionTemplateIdTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+				"validateMedicationsAdministeredSectionTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationsAdministeredSection target) {
@@ -142,66 +118,38 @@ target.getmu2consolMedicationActivities();
 			@Override
 			protected void updateToPass(MedicationsAdministeredSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionTemplateId(
-					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsAdministeredSectionOperations
+						.validateMedicationsAdministeredSectionTemplateId(
+								(MedicationsAdministeredSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateMedicationsAdministeredSectionTemplateIdTestCase.doValidationTest();
-}
+		validateMedicationsAdministeredSectionTemplateIdTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends MedicationsAdministeredSectionOperations {
+	private static class OperationsForOCL extends
+			MedicationsAdministeredSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -213,10 +161,12 @@ target.getmu2consolMedicationActivities();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements TestObjectFactory<MedicationsAdministeredSection> {
+	private static class ObjectFactory implements
+			TestObjectFactory<MedicationsAdministeredSection> {
 
 		public MedicationsAdministeredSection create() {
-			return Mu2consolFactory.eINSTANCE.createMedicationsAdministeredSection();
+			return Mu2consolFactory.eINSTANCE
+					.createMedicationsAdministeredSection();
 		}
 	}
 
@@ -237,7 +187,8 @@ target.getmu2consolMedicationActivities();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends MedicationsAdministeredSectionOperations {
+	private static class ConstructorTestClass extends
+			MedicationsAdministeredSectionOperations {
 	};
 
 	/**
@@ -247,8 +198,8 @@ target.getmu2consolMedicationActivities();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -257,7 +208,7 @@ target.getmu2consolMedicationActivities();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

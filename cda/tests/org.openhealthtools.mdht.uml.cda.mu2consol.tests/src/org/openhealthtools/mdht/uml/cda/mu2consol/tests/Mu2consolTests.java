@@ -13,20 +13,21 @@ import org.junit.runners.Suite;
 /**
  * <!-- begin-user-doc --> A test suite for the '<em><b>mu2consol</b></em>'
  * package. <!-- end-user-doc -->
- * 		
-
+ * 
+ * 
  * @generated
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({SummaryOfCareRecordTest.class})
+@Suite.SuiteClasses({ SummaryOfCareRecordTest.class, AllergiesSectionEntriesOptionalTest.class })
 public class Mu2consolTests {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter( Mu2consolTests.class);
+		return new JUnit4TestAdapter(Mu2consolTests.class);
 	}
 
 } // Mu2consolTests

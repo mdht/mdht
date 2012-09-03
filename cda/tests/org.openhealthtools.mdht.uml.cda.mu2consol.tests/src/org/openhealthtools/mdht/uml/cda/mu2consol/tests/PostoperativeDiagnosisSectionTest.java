@@ -25,16 +25,23 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Postoperative Diagnosis Section</b></em>' model objects.
  * <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostoperativeDiagnosisSection#validateMu2consolPostoperativeDiagnosisSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Postoperative Diagnosis Section Problem Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostoperativeDiagnosisSection#getProblemObservation() <em>Get Problem Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostoperativeDiagnosisSection#validatePostoperativeDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Postoperative Diagnosis Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostoperativeDiagnosisSection#validateMu2consolPostoperativeDiagnosisSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Mu2consol Postoperative Diagnosis Section Problem Observation
+ * </em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostoperativeDiagnosisSection#getProblemObservation()
+ * <em>Get Problem Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostoperativeDiagnosisSection#validatePostoperativeDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Postoperative Diagnosis Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
@@ -46,10 +53,11 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolPostoperativeDiagnosisSectionProblemObservation() {
-			OperationsTestCase<PostoperativeDiagnosisSection> validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-			"validateMu2consolPostoperativeDiagnosisSectionProblemObservation",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_POSTOPERATIVE_DIAGNOSIS_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<PostoperativeDiagnosisSection> validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+				"validateMu2consolPostoperativeDiagnosisSectionProblemObservation",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MU2CONSOL_POSTOPERATIVE_DIAGNOSIS_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(PostoperativeDiagnosisSection target) {
@@ -59,54 +67,24 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostoperativeDiagnosisSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return PostoperativeDiagnosisSectionOperations.validateMu2consolPostoperativeDiagnosisSectionProblemObservation(
-					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PostoperativeDiagnosisSectionOperations
+						.validateMu2consolPostoperativeDiagnosisSectionProblemObservation(
+								(PostoperativeDiagnosisSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase.doValidationTest();
-}
+		validateMu2consolPostoperativeDiagnosisSectionProblemObservationTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -115,24 +93,22 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservation() {
 
+		PostoperativeDiagnosisSection target = objectFactory.create();
+		target.getProblemObservation();
 
-PostoperativeDiagnosisSection target = objectFactory.create();
-target.getProblemObservation();
-
-
-
-}
+	}
 
 	/**
-	*
-	* @generated
-	*/
+	 * 
+	 * @generated
+	 */
 	@Test
 	public void testValidatePostoperativeDiagnosisSectionTemplateId() {
-			OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-			"validatePostoperativeDiagnosisSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+				"validatePostoperativeDiagnosisSectionTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(PostoperativeDiagnosisSection target) {
@@ -142,66 +118,38 @@ target.getProblemObservation();
 			@Override
 			protected void updateToPass(PostoperativeDiagnosisSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionTemplateId(
-					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PostoperativeDiagnosisSectionOperations
+						.validatePostoperativeDiagnosisSectionTemplateId(
+								(PostoperativeDiagnosisSection) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validatePostoperativeDiagnosisSectionTemplateIdTestCase.doValidationTest();
-}
+		validatePostoperativeDiagnosisSectionTemplateIdTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends PostoperativeDiagnosisSectionOperations {
+	private static class OperationsForOCL extends
+			PostoperativeDiagnosisSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -213,10 +161,12 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements TestObjectFactory<PostoperativeDiagnosisSection> {
+	private static class ObjectFactory implements
+			TestObjectFactory<PostoperativeDiagnosisSection> {
 
 		public PostoperativeDiagnosisSection create() {
-			return Mu2consolFactory.eINSTANCE.createPostoperativeDiagnosisSection();
+			return Mu2consolFactory.eINSTANCE
+					.createPostoperativeDiagnosisSection();
 		}
 	}
 
@@ -237,7 +187,8 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends PostoperativeDiagnosisSectionOperations {
+	private static class ConstructorTestClass extends
+			PostoperativeDiagnosisSectionOperations {
 	};
 
 	/**
@@ -247,8 +198,8 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -257,7 +208,7 @@ target.getProblemObservation();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

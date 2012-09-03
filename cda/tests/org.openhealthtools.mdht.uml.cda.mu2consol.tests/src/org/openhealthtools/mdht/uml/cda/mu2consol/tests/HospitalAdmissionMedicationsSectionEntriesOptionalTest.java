@@ -26,20 +26,29 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * related to '
  * <em><b>Hospital Admission Medications Section Entries Optional</b></em>'
  * model objects. <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Hospital Admission Medications Section Entries Optional Admission Medication</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#getmu2consolAdmissionMedications() <em>Getmu2consol Admission Medications</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Admission Medications Section Entries Optional Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Mu2consol Hospital Admission Medications Section Entries
+ * Optional Admission Medication</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#getmu2consolAdmissionMedications()
+ * <em>Getmu2consol Admission Medications</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Hospital Admission Medications Section Entries Optional Template
+ * Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
-public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAValidationTest {
+public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends
+		CDAValidationTest {
 
 	/**
 	 * 
@@ -47,67 +56,40 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	 */
 	@Test
 	public void testValidateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication() {
-			OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
-			"validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_ADMISSION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+		OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
+				"validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_ADMISSION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
-			protected void updateToFail(HospitalAdmissionMedicationsSectionEntriesOptional target) {
+			protected void updateToFail(
+					HospitalAdmissionMedicationsSectionEntriesOptional target) {
 
 			}
 
 			@Override
-			protected void updateToPass(HospitalAdmissionMedicationsSectionEntriesOptional target) {
+			protected void updateToPass(
+					HospitalAdmissionMedicationsSectionEntriesOptional target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations.validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(
-					(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations
+						.validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication(
+								(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest,
+								diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase.doValidationTest();
-}
+		validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase
+				.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -116,93 +98,66 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	@Test
 	public void testGetmu2consolAdmissionMedications() {
 
+		HospitalAdmissionMedicationsSectionEntriesOptional target = objectFactory
+				.create();
+		target.getmu2consolAdmissionMedications();
 
-HospitalAdmissionMedicationsSectionEntriesOptional target = objectFactory.create();
-target.getmu2consolAdmissionMedications();
-
-
-
-}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId() {
-			OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
-			"validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
-
-			@Override
-			protected void updateToFail(HospitalAdmissionMedicationsSectionEntriesOptional target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HospitalAdmissionMedicationsSectionEntriesOptional target) {
-				target.init();
-				
-				
-				
-				
-				
-
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations.validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(
-					(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends HospitalAdmissionMedicationsSectionEntriesOptionalOperations {
+	@Test
+	public void testValidateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId() {
+		OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
+				"validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(
+					HospitalAdmissionMedicationsSectionEntriesOptional target) {
+
+			}
+
+			@Override
+			protected void updateToPass(
+					HospitalAdmissionMedicationsSectionEntriesOptional target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations
+						.validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(
+								(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	private static class OperationsForOCL extends
+			HospitalAdmissionMedicationsSectionEntriesOptionalOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -214,10 +169,13 @@ target.getmu2consolAdmissionMedications();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements TestObjectFactory<HospitalAdmissionMedicationsSectionEntriesOptional> {
+	private static class ObjectFactory
+			implements
+			TestObjectFactory<HospitalAdmissionMedicationsSectionEntriesOptional> {
 
 		public HospitalAdmissionMedicationsSectionEntriesOptional create() {
-			return Mu2consolFactory.eINSTANCE.createHospitalAdmissionMedicationsSectionEntriesOptional();
+			return Mu2consolFactory.eINSTANCE
+					.createHospitalAdmissionMedicationsSectionEntriesOptional();
 		}
 	}
 
@@ -238,7 +196,8 @@ target.getmu2consolAdmissionMedications();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends HospitalAdmissionMedicationsSectionEntriesOptionalOperations {
+	private static class ConstructorTestClass extends
+			HospitalAdmissionMedicationsSectionEntriesOptionalOperations {
 	};
 
 	/**
@@ -248,8 +207,8 @@ target.getmu2consolAdmissionMedications();
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -258,7 +217,7 @@ target.getmu2consolAdmissionMedications();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
