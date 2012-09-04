@@ -454,7 +454,7 @@ public class TableGenerator {
 
 	private void addRow(StringBuffer tableBuffer, Element element, EClass eClass, EObject eObject) {
 
-		if (element instanceof Property) {
+		if (element instanceof Property && element.getOwner() instanceof Class) {
 
 			Property property = (Property) element;
 
