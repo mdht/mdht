@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.uml2.uml.Association;
@@ -302,22 +303,90 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 	 */
 	private String getRelativeOCL(Constraint constraint, String replaceSelfString) {
 
+		String retVal = null;
 		if (constraint.getSpecification() instanceof OpaqueExpression) {
 			OpaqueExpression oe = (OpaqueExpression) constraint.getSpecification();
 			int index = 0;
 			for (String language : oe.getLanguages()) {
 				if ("OCL".equals(language)) {
 					if (null == replaceSelfString) {
-						return oe.getBodies().get(index).replaceAll("self.", "");
+						retVal = oe.getBodies().get(index).replaceAll("self.", "");
+						break;
 					} else {
-						return oe.getBodies().get(index).replaceAll("self.", replaceSelfString + ".");
+						retVal = oe.getBodies().get(index).replaceAll("self.", replaceSelfString + ".");
+						break;
 					}
 
 				}
 				index++;
 			}
 		}
-		return null;
+
+		// Check and strip nested level inline paths
+		retVal = updateMultipleLevelInlinePath(retVal);
+		return retVal;
 	}
 
+	/**
+	 * Returns the relative paths in the OCL String
+	 * Most of the nested paths occur in the oclKindOf function call
+	 * 
+	 * @param relativeOcl
+	 * @return
+	 */
+	private List<String> getRelativePaths(String relativeOcl) {
+		List<String> retVal = new ArrayList<String>();
+
+		if (null != relativeOcl && (relativeOcl.length() > 0)) {
+			int strLength = relativeOcl.length();
+			int i = 0;
+
+			while (i < strLength) {
+				if (relativeOcl.indexOf("oclIsKindOf(", i) != -1) {
+					int intStart = relativeOcl.indexOf("oclIsKindOf(", i);
+					int intEnd = relativeOcl.indexOf(")", intStart);
+					String str = relativeOcl.substring(intStart + 12, intEnd);
+					retVal.add(str);
+					i = intEnd;
+
+				} else {
+					i = strLength;
+				}
+			}
+		}
+
+		return retVal;
+	}
+
+	/**
+	 * Updates the relative OCL by modifying the multiple level of nesting
+	 * with the appropriate base type
+	 * 
+	 * e.g. consol::GeneralHeaderConstraints::RecordTarget::PatientRole needs to be
+	 * modified to cda::PatientRole
+	 * 
+	 * This method needs to be refactored to insert this logic in the CDA Association
+	 * transformation, so that the OCL generated in the inline class removes the nested
+	 * dependency
+	 * 
+	 * @param relativeOcl
+	 * @return
+	 */
+	private String updateMultipleLevelInlinePath(String relativeOcl) {
+		String retVal = null;
+		if (null != relativeOcl) {
+			retVal = relativeOcl;
+			List<String> arrList = getRelativePaths(relativeOcl);
+			for (String itemStr : arrList) {
+				String[] arrStr = itemStr.split("::");
+				if (arrStr.length > 2) {
+					String updateStr = "cda::" + arrStr[arrStr.length - 1];
+
+					// Update the relativeOCL
+					retVal = retVal.replaceFirst(itemStr, updateStr);
+				}
+			}
+		}
+		return retVal;
+	}
 }
