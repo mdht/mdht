@@ -11,6 +11,9 @@
  *                       - spurious constraint-name substring matches for severity (artf3185)
  *                       - implement terminology constraint dependencies (artf3030)
  *                       - support nested datatype subclasses (artf3350)
+ *    Rama Ramakrishnan  - Made some operations public for access by sub classes
+ *    					 - Also updated appendInlinedOCLConstraint to not create multiple constraints, when a constraint
+ *    					   already exists for a  Property                   
  * $Id$
  */
 package org.openhealthtools.mdht.uml.transform.ecore;
@@ -50,10 +53,21 @@ public class TransformInlinedProperties extends TransformAbstract {
 	public Constraint appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName,
 			ValidationSeverityKind severity, String validationMessage, String oclConstraint) {
 
-		int ctr = 1;
-		while (classToBeConstrained.getOwnedRule(constraintName) != null) {
-			constraintName += constraintName + ctr++;
+		// Avoiding to duplicate the owned rule and returning the constraint.
+		// Causes some situations to create multiple constraints..
+		// If a case of inline Section -> Encounter -> AssignedEntity association,
+		// duplicate constraints get generated for the Document having associations to Section.
+		// e.g TestDocumentTestAllergySectionTestEncounterAssignedEntity &
+		// TestDocumentTestAllergySectionTestEncounterAssignedEntityTestDocumentTestAllergySectionTestEncounterAssignedEntity1
+
+		// int ctr = 1;
+		// while (classToBeConstrained.getOwnedRule(constraintName) != null) {
+		// constraintName += constraintName + ctr++;
+		// }
+		if (classToBeConstrained.getOwnedRule(constraintName) != null) {
+			return classToBeConstrained.getOwnedRule(constraintName);
 		}
+
 		Constraint inlinedConstraint = classToBeConstrained.createOwnedRule(
 			constraintName, UMLPackage.eINSTANCE.getConstraint());
 
