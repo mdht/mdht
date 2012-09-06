@@ -173,6 +173,7 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends
 			implements
 			TestObjectFactory<HospitalAdmissionMedicationsSectionEntriesOptional> {
 
+		@Override
 		public HospitalAdmissionMedicationsSectionEntriesOptional create() {
 			return Mu2consolFactory.eINSTANCE
 					.createHospitalAdmissionMedicationsSectionEntriesOptional();

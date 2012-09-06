@@ -156,6 +156,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<PlanOfCareSection> {
 
+		@Override
 		public PlanOfCareSection create() {
 			return Mu2consolFactory.eINSTANCE.createPlanOfCareSection();
 		}

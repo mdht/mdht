@@ -150,6 +150,7 @@ public class AssessmentAndPlanForCarePlanningTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<AssessmentAndPlanForCarePlanning> {
 
+		@Override
 		public AssessmentAndPlanForCarePlanning create() {
 			return Mu2consolFactory.eINSTANCE
 					.createAssessmentAndPlanForCarePlanning();

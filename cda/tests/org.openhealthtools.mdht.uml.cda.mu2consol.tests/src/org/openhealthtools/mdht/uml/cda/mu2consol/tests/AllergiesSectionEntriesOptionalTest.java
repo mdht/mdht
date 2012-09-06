@@ -69,7 +69,8 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSectionEntriesOptional target) {
 				target.init();
-				AllergyProblemAct  act =  ConsolFactory.eINSTANCE.createAllergyProblemAct().init();
+				AllergyProblemAct act = ConsolFactory.eINSTANCE
+						.createAllergyProblemAct().init();
 				target.addAct(act);
 			}
 
@@ -167,6 +168,7 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<AllergiesSectionEntriesOptional> {
 
+		@Override
 		public AllergiesSectionEntriesOptional create() {
 			return Mu2consolFactory.eINSTANCE
 					.createAllergiesSectionEntriesOptional();

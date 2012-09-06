@@ -1245,6 +1245,7 @@ public class VDTAmbulatoryPatientInfoTest extends CDAValidationTest {
 	 */
 	private static class ObjectFactory implements
 			TestObjectFactory<VDTAmbulatoryPatientInfo> {
+		@Override
 		public VDTAmbulatoryPatientInfo create() {
 			return Mu2consolFactory.eINSTANCE.createVDTAmbulatoryPatientInfo();
 		}

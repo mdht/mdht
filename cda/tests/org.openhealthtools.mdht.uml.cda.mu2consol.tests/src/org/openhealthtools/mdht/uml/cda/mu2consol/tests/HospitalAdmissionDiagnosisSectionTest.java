@@ -164,6 +164,7 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<HospitalAdmissionDiagnosisSection> {
 
+		@Override
 		public HospitalAdmissionDiagnosisSection create() {
 			return Mu2consolFactory.eINSTANCE
 					.createHospitalAdmissionDiagnosisSection();
