@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLSaveImpl;
 import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLResourceImpl;
 
@@ -34,6 +35,11 @@ public class CDAResourceImpl extends FleXMLResourceImpl implements CDAResource {
 	 */
 	public CDAResourceImpl(URI uri) {
 		super(uri);
+	}
+
+	@Override
+	protected XMLLoadImpl createXMLLoad() {
+		return new CDALoadImpl(createXMLHelper());
 	}
 
 	@Override
