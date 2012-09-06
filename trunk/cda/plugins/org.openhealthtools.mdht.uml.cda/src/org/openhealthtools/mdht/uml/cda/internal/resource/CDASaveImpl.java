@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.XMLSaveImpl;
+import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLSaveImpl;
 import org.w3c.dom.Element;
 
-public class CDASaveImpl extends XMLSaveImpl {
+public class CDASaveImpl extends FleXMLSaveImpl {
 	public CDASaveImpl(XMLHelper helper) {
 		super(helper);
 	}

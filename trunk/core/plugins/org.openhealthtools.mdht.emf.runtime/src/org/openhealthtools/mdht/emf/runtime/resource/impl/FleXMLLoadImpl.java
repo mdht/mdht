@@ -176,14 +176,7 @@ public class FleXMLLoadImpl extends XMLLoadImpl {
 		}
 	}
 
-	private boolean shouldThrow(Exception exception) {
-		Throwable cause = exception.getCause();
-		if (cause != null) {
-			String message = cause.getMessage();
-			if (message != null && message.contains("is not a valid enumerator of")) {
-				return false;
-			}
-		}
+	protected boolean shouldThrow(Exception exception) {
 		return true;
 	}
 }
