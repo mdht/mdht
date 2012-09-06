@@ -164,6 +164,7 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<PostprocedureDiagnosisSection> {
 
+		@Override
 		public PostprocedureDiagnosisSection create() {
 			return Mu2consolFactory.eINSTANCE
 					.createPostprocedureDiagnosisSection();

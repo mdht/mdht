@@ -163,6 +163,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<SocialHistorySection> {
 
+		@Override
 		public SocialHistorySection create() {
 			return Mu2consolFactory.eINSTANCE.createSocialHistorySection();
 		}

@@ -42,29 +42,21 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate General Header Constraints Documentation Of Service Event</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Language Communication Language Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Name</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Administrative Gender Code</em>}</li>
- * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate General Header Constraints Record Target Patient Role Patient
  * Ethnic Group Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate General Header Constraints Record Target Patient Role Patient
+ * Ethnic Group Code P</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate General Header Constraints Record Target Patient Role Patient
  * Race Code</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Birth Time</em>}</li>
+ * Race Code P</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate General Header Constraints Record Target Patient Role Patient
@@ -284,123 +276,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION_LANGUAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientName() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientNameTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientName",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientName(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientNameTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCode() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_ADMINISTRATIVE_GENDER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCode(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCodeTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
 				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode",
@@ -432,6 +307,45 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodePTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP",
+				operationsForOCL
+						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_ETHNIC_GROUP_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations
+						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(
+								(GeneralHeaderConstraints) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodePTestCase
 				.doValidationTest();
 	}
 
@@ -479,11 +393,11 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTime() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTime",
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodePTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP",
 				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_BIRTH_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_RACE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 				objectFactory) {
 
 			@Override
@@ -502,14 +416,14 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTime(
+						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP(
 								(GeneralHeaderConstraints) objectToTest,
 								diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimeTestCase
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodePTestCase
 				.doValidationTest();
 	}
 
@@ -657,6 +571,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<GeneralHeaderConstraints> {
 
+		@Override
 		public GeneralHeaderConstraints create() {
 			return Mu2consolFactory.eINSTANCE.createGeneralHeaderConstraints();
 		}

@@ -163,6 +163,7 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<AssessmentAndPlanSection> {
 
+		@Override
 		public AssessmentAndPlanSection create() {
 			return Mu2consolFactory.eINSTANCE.createAssessmentAndPlanSection();
 		}

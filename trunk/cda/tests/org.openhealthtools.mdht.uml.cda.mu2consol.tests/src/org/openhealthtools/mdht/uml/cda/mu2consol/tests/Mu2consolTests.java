@@ -18,7 +18,11 @@ import org.junit.runners.Suite;
  * @generated
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ SummaryOfCareRecordTest.class, AllergiesSectionEntriesOptionalTest.class })
+@Suite.SuiteClasses({ SummaryOfCareRecordTest.class,
+		VDTAmbulatoryPatientInfoTest.class, VDTInpatientPatientInfoTest.class,
+		ClinicalOfficeVisitSummaryTest.class,
+		TransitionOfCareAmbulatorySummaryTest.class,
+		TransitionOfCareInpatientSummaryTest.class })
 public class Mu2consolTests {
 
 	/**

@@ -1522,6 +1522,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	private static class ObjectFactory implements
 			TestObjectFactory<ClinicalOfficeVisitSummary> {
 
+		@Override
 		public ClinicalOfficeVisitSummary create() {
 			return Mu2consolFactory.eINSTANCE
 					.createClinicalOfficeVisitSummary();

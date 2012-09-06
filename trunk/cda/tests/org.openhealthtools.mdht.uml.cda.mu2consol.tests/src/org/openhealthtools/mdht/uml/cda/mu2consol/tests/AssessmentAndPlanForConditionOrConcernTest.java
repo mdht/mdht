@@ -123,6 +123,7 @@ public class AssessmentAndPlanForConditionOrConcernTest extends
 	private static class ObjectFactory implements
 			TestObjectFactory<AssessmentAndPlanForConditionOrConcern> {
 
+		@Override
 		public AssessmentAndPlanForConditionOrConcern create() {
 			return Mu2consolFactory.eINSTANCE
 					.createAssessmentAndPlanForConditionOrConcern();
