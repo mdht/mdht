@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Consumable;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
@@ -91,11 +92,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityPrecondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityDrugVehicle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Drug Vehicle</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityConsumable(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Consumable</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getMedicationSupplyOrders() <em>Get Medication Supply Orders</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityConsumableMedicationInformation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Consumable Medication Information</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getMedicationSupplyOrder() <em>Get Medication Supply Order</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getReactionObservation() <em>Get Reaction Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getInstructions() <em>Get Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getIndications() <em>Get Indications</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getMedicationDispense() <em>Get Medication Dispense</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getMedicationDispenses() <em>Get Medication Dispenses</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getDrugVehicles() <em>Get Drug Vehicles</em>}</li>
  * </ul>
  * </p>
@@ -1324,6 +1326,55 @@ public class MedicationActivityTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateMedicationActivityConsumableMedicationInformation() {
+		OperationsTestCase<MedicationActivity> validateMedicationActivityConsumableMedicationInformationTestCase = new OperationsTestCase<MedicationActivity>(
+			"validateMedicationActivityConsumableMedicationInformation",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_CONSUMABLE_MEDICATION_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationActivity target) {
+				target.init();
+				target.setConsumable(CDAFactory.eINSTANCE.createConsumable());
+			}
+
+			@Override
+			protected void updateToPass(MedicationActivity target) {
+				Consumable con = CDAFactory.eINSTANCE.createConsumable();
+				con.setManufacturedProduct(ConsolFactory.eINSTANCE.createMedicationInformation());
+				target.setConsumable(con);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationActivityOperations.validateMedicationActivityConsumableMedicationInformation(
+					(MedicationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationActivityConsumableMedicationInformationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationSupplyOrder() {
+
+		MedicationActivity target = objectFactory.create();
+		target.getMedicationSupplyOrder();
+
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateMedicationActivityPerformer() {
 		OperationsTestCase<MedicationActivity> validateMedicationActivityPerformerTestCase = new OperationsTestCase<MedicationActivity>(
 			"validateMedicationActivityPerformer",
@@ -1554,18 +1605,6 @@ public class MedicationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetMedicationSupplyOrders() {
-
-		MedicationActivity target = objectFactory.create();
-		target.getMedicationSupplyOrders();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testGetReactionObservation() {
 
 		MedicationActivity target = objectFactory.create();
@@ -1602,10 +1641,10 @@ public class MedicationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetMedicationDispense() {
+	public void testGetMedicationDispenses() {
 
 		MedicationActivity target = objectFactory.create();
-		target.getMedicationDispense();
+		target.getMedicationDispenses();
 
 	}
 

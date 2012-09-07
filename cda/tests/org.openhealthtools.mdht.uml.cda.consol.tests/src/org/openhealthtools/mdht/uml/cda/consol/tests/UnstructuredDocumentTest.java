@@ -44,12 +44,15 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentComponent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentCustodian(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentRecordTargetPatientRole2Id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Record Target Patient Role2 Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentRecordTargetPatientRole2(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Record Target Patient Role2</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentAuthorAssignedAuthor2Addr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Author Assigned Author2 Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentAuthorAssignedAuthor2Telecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Author Assigned Author2 Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentAuthorAssignedAuthor2(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Author Assigned Author2</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganizationAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian Assigned Custodian3 Custodian Organization Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganizationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian Assigned Custodian3 Custodian Organization Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganizationName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian Assigned Custodian3 Custodian Organization Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganizationTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian Assigned Custodian3 Custodian Organization Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian Assigned Custodian3 Custodian Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredDocument#validateUnstructuredDocumentCustodianAssignedCustodian2(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian Assigned Custodian2</em>}</li>
  * </ul>
  * </p>
@@ -284,6 +287,47 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateUnstructuredDocumentRecordTargetPatientRole2() {
+		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentRecordTargetPatientRole2TestCase = new OperationsTestCase<UnstructuredDocument>(
+			"validateUnstructuredDocumentRecordTargetPatientRole2",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_RECORD_TARGET_PATIENT_ROLE2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredDocument target) {
+				target.init();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				target.getRecordTargets().add(rt);
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredDocument target) {
+				target.getRecordTargets().clear();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				pr.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				rt.setPatientRole(pr);
+				target.getRecordTargets().add(rt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredDocumentOperations.validateUnstructuredDocumentRecordTargetPatientRole2(
+					(UnstructuredDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredDocumentRecordTargetPatientRole2TestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateUnstructuredDocumentAuthorAssignedAuthor2Addr() {
 		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentAuthorAssignedAuthor2AddrTestCase = new OperationsTestCase<UnstructuredDocument>(
 			"validateUnstructuredDocumentAuthorAssignedAuthor2Addr",
@@ -365,6 +409,46 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 		};
 
 		validateUnstructuredDocumentAuthorAssignedAuthor2TelecomTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateUnstructuredDocumentAuthorAssignedAuthor2() {
+		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentAuthorAssignedAuthor2TestCase = new OperationsTestCase<UnstructuredDocument>(
+			"validateUnstructuredDocumentAuthorAssignedAuthor2",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_AUTHOR_ASSIGNED_AUTHOR2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredDocument target) {
+				target.init();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				target.getAuthors().add(author);
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredDocument target) {
+				target.getAuthors().clear();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				author.setAssignedAuthor(aa);
+				target.getAuthors().add(author);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredDocumentOperations.validateUnstructuredDocumentAuthorAssignedAuthor2(
+					(UnstructuredDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredDocumentAuthorAssignedAuthor2TestCase.doValidationTest();
 	}
 
 	/**
@@ -529,6 +613,50 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 		};
 
 		validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganizationTelecomTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganization() {
+		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganizationTestCase = new OperationsTestCase<UnstructuredDocument>(
+			"validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_CUSTODIAN_ASSIGNED_CUSTODIAN3_CUSTODIAN_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredDocument target) {
+				target.init();
+				Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+				AssignedCustodian ac = CDAFactory.eINSTANCE.createAssignedCustodian();
+
+				custodian.setAssignedCustodian(ac);
+				target.setCustodian(custodian);
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredDocument target) {
+				Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+				AssignedCustodian ac = CDAFactory.eINSTANCE.createAssignedCustodian();
+				CustodianOrganization co = CDAFactory.eINSTANCE.createCustodianOrganization();
+				ac.setRepresentedCustodianOrganization(co);
+				custodian.setAssignedCustodian(ac);
+				target.setCustodian(custodian);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredDocumentOperations.validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganization(
+					(UnstructuredDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredDocumentCustodianAssignedCustodian3CustodianOrganizationTestCase.doValidationTest();
 	}
 
 	/**
