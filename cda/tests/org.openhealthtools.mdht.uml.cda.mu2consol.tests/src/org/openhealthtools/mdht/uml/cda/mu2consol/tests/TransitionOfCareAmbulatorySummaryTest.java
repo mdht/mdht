@@ -15,11 +15,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Component1;
 import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
 import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
@@ -45,8 +43,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Transition Of Care Ambulatory Summary Reason For Referral
  * Section</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#getmu2consolReasonForReferralSection()
- * <em>Getmu2consol Reason For Referral Section</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#getReasonForReferralSection()
+ * <em>Get Reason For Referral Section</em>}</li>
  * </ul>
  * </p>
  * 
@@ -71,7 +69,8 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 			protected void updateToFail(TransitionOfCareAmbulatorySummary target) {
 
 				Component1 compOf = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
 				compOf.setEncompassingEncounter(eEncounter);
 				target.setComponentOf(compOf);
 				System.out.println(compOf);
@@ -80,8 +79,10 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(TransitionOfCareAmbulatorySummary target) {
 
-				ResponsibleParty party = CDAFactory.eINSTANCE.createResponsibleParty();
-				target.getComponentOf().getEncompassingEncounter().setResponsibleParty(party);
+				ResponsibleParty party = CDAFactory.eINSTANCE
+						.createResponsibleParty();
+				target.getComponentOf().getEncompassingEncounter()
+						.setResponsibleParty(party);
 			}
 
 			@Override
@@ -122,9 +123,8 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 				target.init();
 
 				/* ReasonForReferralSection */
-				ReasonForReferralSection section =
-				ConsolFactory.eINSTANCE.createReasonForReferralSection()
-						.init();
+				ReasonForReferralSection section = ConsolFactory.eINSTANCE
+						.createReasonForReferralSection().init();
 
 				target.addSection(section);
 
@@ -151,10 +151,10 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolReasonForReferralSection() {
+	public void testGetReasonForReferralSection() {
 
 		TransitionOfCareAmbulatorySummary target = objectFactory.create();
-		target.getmu2consolReasonForReferralSection();
+		target.getReasonForReferralSection();
 
 	}
 
