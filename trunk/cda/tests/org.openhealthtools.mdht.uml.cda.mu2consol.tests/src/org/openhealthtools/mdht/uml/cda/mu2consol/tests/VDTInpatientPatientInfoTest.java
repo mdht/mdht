@@ -80,6 +80,10 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate VDT Inpatient Patient Infomu2consol Plan Of Care Section Care
  * Planning For Plan Of Care</em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientPatientInfo#validateVDTInpatientPatientInfomu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate VDT Inpatient Patient Infomu2consol Plan Of Care Section
+ * Mu2consol Plan Of Care Section Plan Of Care Activity Observation</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientPatientInfo#validateVDTInpatientPatientInfoPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate VDT Inpatient Patient Info Plan Of Care Section Template Id
  * </em>}</li>
@@ -705,6 +709,45 @@ public class VDTInpatientPatientInfoTest extends CDAValidationTest {
 		};
 
 		validateVDTInpatientPatientInfomu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateVDTInpatientPatientInfomu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
+		OperationsTestCase<VDTInpatientPatientInfo> validateVDTInpatientPatientInfomu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase = new OperationsTestCase<VDTInpatientPatientInfo>(
+				"validateVDTInpatientPatientInfomu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation",
+				operationsForOCL
+						.getOCLValue("VALIDATE_VDT_INPATIENT_PATIENT_INFOMU2CONSOL_PLAN_OF_CARE_SECTION_MU2CONSOL_PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientPatientInfo target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientPatientInfo target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientPatientInfoOperations
+						.validateVDTInpatientPatientInfomu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation(
+								(VDTInpatientPatientInfo) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientPatientInfomu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase
 				.doValidationTest();
 	}
 

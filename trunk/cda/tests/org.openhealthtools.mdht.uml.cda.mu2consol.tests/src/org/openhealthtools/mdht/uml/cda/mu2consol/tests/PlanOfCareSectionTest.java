@@ -61,6 +61,45 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
+	public void testValidateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
+		OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase = new OperationsTestCase<PlanOfCareSection>(
+				"validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_MU2CONSOL_PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlanOfCareSectionOperations
+						.validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation(
+								(PlanOfCareSection) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testGetmu2consolPlanOfCareActivityAct() {
 
 		PlanOfCareSection target = objectFactory.create();
