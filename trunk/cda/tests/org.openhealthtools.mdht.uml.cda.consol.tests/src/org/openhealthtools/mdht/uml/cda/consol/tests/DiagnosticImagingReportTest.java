@@ -15,17 +15,30 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.AssociatedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.DocumentationOf;
+import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.Participant1;
+import org.openhealthtools.mdht.uml.cda.Person;
+import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.DICOMObjectCatalogSection;
 import org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport;
 import org.openhealthtools.mdht.uml.cda.consol.FindingsSection;
+import org.openhealthtools.mdht.uml.cda.consol.PhysicianReadingStudyPerformer;
+import org.openhealthtools.mdht.uml.cda.consol.PhysicianofRecordParticipant;
 import org.openhealthtools.mdht.uml.cda.consol.operations.DiagnosticImagingReportOperations;
 import org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,6 +52,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportAllSectionsHaveTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report All Sections Have Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportSectionsHaveText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Sections Have Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportInformant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Informant</em>}</li>
@@ -49,7 +63,24 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportRelatedDocument(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Related Document</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportFindingsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Findings Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportDICOMObjectCatalogSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report DICOM Object Catalog Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportParticipantAssociatedEntityPersonName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Participant Associated Entity Person Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportParticipantAssociatedEntityAssociatedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Participant Associated Entity Associated Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportParticipantAssociatedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Participant Associated Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportDocumentationOfServiceEvent4ClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Documentation Of Service Event4 Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportDocumentationOfServiceEvent4Code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Documentation Of Service Event4 Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportDocumentationOfServiceEvent4Id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Documentation Of Service Event4 Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportDocumentationOfServiceEvent4PhysicianReadingStudyPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Documentation Of Service Event4 Physician Reading Study Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportDocumentationOfServiceEvent3(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Documentation Of Service Event3</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityHasAssignPersonOrRepresentedOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter7 Responsible Party Assigned Entity Has Assign Person Or Represented Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter7 Responsible Party Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter7EffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter7 Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter7Id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter7 Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter7PhysicianofRecordParticipant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter7 Physicianof Record Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsibleParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter7 Responsible Party</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#getFindingsSection() <em>Get Findings Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#getDICOMObjectCatalogSection() <em>Get DICOM Object Catalog Section</em>}</li>
  * </ul>
  * </p>
  *
@@ -211,6 +242,40 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateDiagnosticImagingReportCodeP() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportCodePTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportCodeP(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateDiagnosticImagingReportCode() {
 		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportCodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportCode",
@@ -225,7 +290,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override
@@ -557,6 +622,709 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportDICOMObjectCatalogSection() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDICOMObjectCatalogSectionTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportDICOMObjectCatalogSection",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DICOM_OBJECT_CATALOG_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.init();
+
+				/* DICOMObjectCatalogSection */
+				DICOMObjectCatalogSection section =
+
+				ConsolFactory.eINSTANCE.createDICOMObjectCatalogSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportDICOMObjectCatalogSection(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportDICOMObjectCatalogSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportParticipantAssociatedEntityPersonName() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportParticipantAssociatedEntityPersonNameTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportParticipantAssociatedEntityPersonName",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_PARTICIPANT_ASSOCIATED_ENTITY_PERSON_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				Person ap = CDAFactory.eINSTANCE.createPerson();
+				ae.setAssociatedPerson(ap);
+				par.setAssociatedEntity(ae);
+				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+
+				target.getParticipants().clear();
+				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				Person ap = CDAFactory.eINSTANCE.createPerson();
+				ap.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				ae.setAssociatedPerson(ap);
+				par.setAssociatedEntity(ae);
+				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportParticipantAssociatedEntityPersonName(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportParticipantAssociatedEntityPersonNameTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportParticipantAssociatedEntityAssociatedPerson() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportParticipantAssociatedEntityAssociatedPersonTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportParticipantAssociatedEntityAssociatedPerson",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_PARTICIPANT_ASSOCIATED_ENTITY_ASSOCIATED_PERSON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				par.setAssociatedEntity(ae);
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.getParticipants().clear();
+				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				Person ap = CDAFactory.eINSTANCE.createPerson();
+				ae.setAssociatedPerson(ap);
+				par.setAssociatedEntity(ae);
+				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportParticipantAssociatedEntityAssociatedPerson(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportParticipantAssociatedEntityAssociatedPersonTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportParticipantAssociatedEntity() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportParticipantAssociatedEntityTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportParticipantAssociatedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_PARTICIPANT_ASSOCIATED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				target.getParticipants().add(CDAFactory.eINSTANCE.createParticipant1());
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.getParticipants().clear();
+				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				par.setAssociatedEntity(ae);
+				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportParticipantAssociatedEntity(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportParticipantAssociatedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportDocumentationOfServiceEvent4ClassCode() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDocumentationOfServiceEvent4ClassCodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportDocumentationOfServiceEvent4ClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DOCUMENTATION_OF_SERVICE_EVENT4_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				se.setClassCode(ActClassRoot.ACT);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportDocumentationOfServiceEvent4ClassCode(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportDocumentationOfServiceEvent4ClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportDocumentationOfServiceEvent4Code() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDocumentationOfServiceEvent4CodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportDocumentationOfServiceEvent4Code",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DOCUMENTATION_OF_SERVICE_EVENT4_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				se.setCode(DatatypesFactory.eINSTANCE.createCE());
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportDocumentationOfServiceEvent4Code(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportDocumentationOfServiceEvent4CodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportDocumentationOfServiceEvent4Id() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDocumentationOfServiceEvent4IdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportDocumentationOfServiceEvent4Id",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DOCUMENTATION_OF_SERVICE_EVENT4_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				se.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportDocumentationOfServiceEvent4Id(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportDocumentationOfServiceEvent4IdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportDocumentationOfServiceEvent4PhysicianReadingStudyPerformer() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDocumentationOfServiceEvent4PhysicianReadingStudyPerformerTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportDocumentationOfServiceEvent4PhysicianReadingStudyPerformer",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DOCUMENTATION_OF_SERVICE_EVENT4_PHYSICIAN_READING_STUDY_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				PhysicianReadingStudyPerformer phy = ConsolFactory.eINSTANCE.createPhysicianReadingStudyPerformer();
+				se.getPerformers().add(phy);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportDocumentationOfServiceEvent4PhysicianReadingStudyPerformer(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportDocumentationOfServiceEvent4PhysicianReadingStudyPerformerTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportDocumentationOfServiceEvent3() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDocumentationOfServiceEvent3TestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportDocumentationOfServiceEvent3",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DOCUMENTATION_OF_SERVICE_EVENT3__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				target.getDocumentationOfs().add(CDAFactory.eINSTANCE.createDocumentationOf());
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportDocumentationOfServiceEvent3(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportDocumentationOfServiceEvent3TestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityHasAssignPersonOrRepresentedOrganization() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityHasAssignPersonOrRepresentedOrganizationTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityHasAssignPersonOrRepresentedOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF_ENCOMPASSING_ENCOUNTER7_RESPONSIBLE_PARTY_ASSIGNED_ENTITY_HAS_ASSIGN_PERSON_OR_REPRESENTED_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+				rp.setAssignedEntity(ae);
+				ee.setResponsibleParty(rp);
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+				rp.setAssignedEntity(ae);
+				ee.setResponsibleParty(rp);
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityHasAssignPersonOrRepresentedOrganization(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityHasAssignPersonOrRepresentedOrganizationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntity() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF_ENCOMPASSING_ENCOUNTER7_RESPONSIBLE_PARTY_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				ee.setResponsibleParty(rp);
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				rp.setAssignedEntity(ae);
+				ee.setResponsibleParty(rp);
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntity(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyAssignedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportComponentOfEncompassingEncounter7EffectiveTime() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfEncompassingEncounter7EffectiveTimeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportComponentOfEncompassingEncounter7EffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF_ENCOMPASSING_ENCOUNTER7_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ee.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOfEncompassingEncounter7EffectiveTime(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportComponentOfEncompassingEncounter7EffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportComponentOfEncompassingEncounter7Id() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfEncompassingEncounter7IdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportComponentOfEncompassingEncounter7Id",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF_ENCOMPASSING_ENCOUNTER7_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ee.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOfEncompassingEncounter7Id(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportComponentOfEncompassingEncounter7IdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportComponentOfEncompassingEncounter7PhysicianofRecordParticipant() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfEncompassingEncounter7PhysicianofRecordParticipantTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportComponentOfEncompassingEncounter7PhysicianofRecordParticipant",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF_ENCOMPASSING_ENCOUNTER7_PHYSICIANOF_RECORD_PARTICIPANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				PhysicianofRecordParticipant rp = ConsolFactory.eINSTANCE.createPhysicianofRecordParticipant();
+				ee.getEncounterParticipants().add(rp);
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOfEncompassingEncounter7PhysicianofRecordParticipant(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportComponentOfEncompassingEncounter7PhysicianofRecordParticipantTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsibleParty() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsibleParty",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF_ENCOMPASSING_ENCOUNTER7_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				ee.setResponsibleParty(rp);
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsibleParty(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportComponentOfEncompassingEncounter7ResponsiblePartyTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportComponentOfEncompassingEncounter() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfEncompassingEncounterTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportComponentOfEncompassingEncounter",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF_ENCOMPASSING_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				target.setComponentOf(CDAFactory.eINSTANCE.createComponent1());
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				comp.setEncompassingEncounter(ee);
+				target.setComponentOf(comp);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOfEncompassingEncounter(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportComponentOfEncompassingEncounterTestCase.doValidationTest();
+	}
+
+	/**
+	*
 	* @generated
 	*/
 	@Test
@@ -564,6 +1332,18 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 		DiagnosticImagingReport target = objectFactory.create();
 		target.getFindingsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetDICOMObjectCatalogSection() {
+
+		DiagnosticImagingReport target = objectFactory.create();
+		target.getDICOMObjectCatalogSection();
 
 	}
 

@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.DocumentationOf;
 import org.openhealthtools.mdht.uml.cda.Performer1;
@@ -55,6 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteAnesthesiaSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Anesthesia Section</em>}</li>
@@ -73,8 +75,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteProcedureDispositionSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Procedure Disposition Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteProcedureIndicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Procedure Indications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteSurgicalDrainsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Surgical Drains Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerFunctionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Primary Performer Function Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Primary Performer Assigned Entity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Primary Performer Assigned Entity Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Primary Performer Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Primary Performer Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventProcedureCodes(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Procedure Codes</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventEffectiveTimeHasLow(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Effective Time Has Low</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventEffectiveTimeHasHighWhenNoWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Effective Time Has High When No Width</em>}</li>
@@ -82,6 +86,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventAnyAssistantsAsSecondary(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Any Assistants As Secondary</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEventPrimaryPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event Primary Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOfServiceEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of Service Event</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#getAnesthesiaSection() <em>Get Anesthesia Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#getComplicationsSection() <em>Get Complications Section</em>}</li>
@@ -146,6 +151,40 @@ public class OperativeNoteTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateOperativeNoteCodeP() {
+		OperationsTestCase<OperativeNote> validateOperativeNoteCodePTestCase = new OperationsTestCase<OperativeNote>(
+			"validateOperativeNoteCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(OperativeNote target) {
+
+			}
+
+			@Override
+			protected void updateToPass(OperativeNote target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return OperativeNoteOperations.validateOperativeNoteCodeP(
+					(OperativeNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateOperativeNoteCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateOperativeNoteCode() {
 		OperationsTestCase<OperativeNote> validateOperativeNoteCodeTestCase = new OperationsTestCase<OperativeNote>(
 			"validateOperativeNoteCode",
@@ -159,7 +198,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(OperativeNote target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override
@@ -870,10 +909,10 @@ public class OperativeNoteTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateOperativeNoteDocumentationOfServiceEventPrimaryPerformerFunctionCode() {
-		OperationsTestCase<OperativeNote> validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerFunctionCodeTestCase = new OperationsTestCase<OperativeNote>(
-			"validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerFunctionCode",
-			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_DOCUMENTATION_OF_SERVICE_EVENT_PRIMARY_PERFORMER_FUNCTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCode() {
+		OperationsTestCase<OperativeNote> validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodeTestCase = new OperationsTestCase<OperativeNote>(
+			"validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCode",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_DOCUMENTATION_OF_SERVICE_EVENT_PRIMARY_PERFORMER_ASSIGNED_ENTITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -883,6 +922,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
 				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
 				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				perf.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
 				se.getPerformers().add(perf);
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);
@@ -890,15 +930,15 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(OperativeNote target) {
-
 				target.getDocumentationOfs().clear();
 				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
 				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
 				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
-				perf.setFunctionCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.101"));
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.101"));
+				perf.setAssignedEntity(ae);
 				se.getPerformers().add(perf);
-
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);
 
@@ -907,13 +947,65 @@ public class OperativeNoteTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return OperativeNoteOperations.validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerFunctionCode(
+				return OperativeNoteOperations.validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCode(
 					(OperativeNote) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerFunctionCodeTestCase.doValidationTest();
+		validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodeP() {
+		OperationsTestCase<OperativeNote> validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodePTestCase = new OperationsTestCase<OperativeNote>(
+			"validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_DOCUMENTATION_OF_SERVICE_EVENT_PRIMARY_PERFORMER_ASSIGNED_ENTITY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(OperativeNote target) {
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				perf.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(OperativeNote target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.101"));
+				perf.setAssignedEntity(ae);
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return OperativeNoteOperations.validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodeP(
+					(OperativeNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -967,6 +1059,55 @@ public class OperativeNoteTest extends CDAValidationTest {
 		};
 
 		validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntity() {
+		OperationsTestCase<OperativeNote> validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityTestCase = new OperationsTestCase<OperativeNote>(
+			"validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_DOCUMENTATION_OF_SERVICE_EVENT_PRIMARY_PERFORMER_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(OperativeNote target) {
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(OperativeNote target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				perf.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return OperativeNoteOperations.validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntity(
+					(OperativeNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerAssignedEntityTestCase.doValidationTest();
 	}
 
 	/**
@@ -1361,6 +1502,52 @@ public class OperativeNoteTest extends CDAValidationTest {
 		};
 
 		validateOperativeNoteDocumentationOfServiceEventEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateOperativeNoteDocumentationOfServiceEventPrimaryPerformer() {
+		OperationsTestCase<OperativeNote> validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerTestCase = new OperationsTestCase<OperativeNote>(
+			"validateOperativeNoteDocumentationOfServiceEventPrimaryPerformer",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_DOCUMENTATION_OF_SERVICE_EVENT_PRIMARY_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(OperativeNote target) {
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(OperativeNote target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return OperativeNoteOperations.validateOperativeNoteDocumentationOfServiceEventPrimaryPerformer(
+					(OperativeNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateOperativeNoteDocumentationOfServiceEventPrimaryPerformerTestCase.doValidationTest();
 	}
 
 	/**

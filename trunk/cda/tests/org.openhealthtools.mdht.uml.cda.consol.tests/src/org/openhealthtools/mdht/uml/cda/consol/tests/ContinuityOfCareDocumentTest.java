@@ -54,6 +54,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of</em>}</li>
@@ -109,6 +110,40 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  */
 
 public class ContinuityOfCareDocumentTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateContinuityOfCareDocumentCodeP() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentCodePTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ContinuityOfCareDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ContinuityOfCareDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentCodeP(
+					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateContinuityOfCareDocumentCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -939,6 +974,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 				target.init();
 				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				se.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS());
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);
 
@@ -983,6 +1019,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 				target.init();
 				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				se.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS());
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);
 

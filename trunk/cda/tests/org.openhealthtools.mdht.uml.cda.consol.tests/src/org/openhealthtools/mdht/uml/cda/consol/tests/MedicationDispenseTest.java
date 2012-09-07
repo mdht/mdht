@@ -25,11 +25,13 @@ import org.openhealthtools.mdht.uml.cda.consol.MedicationDispense;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder;
 import org.openhealthtools.mdht.uml.cda.consol.operations.MedicationDispenseOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
+import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
@@ -53,6 +55,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Product</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseProductContainsMedicationOrImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Product Contains Medication Or Immunization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Street</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address City</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCountry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Country</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressPostalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Postal Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressState(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address State</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetAddressLine(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Street Address Line</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUseP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Use P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Use</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#getMedicationSupplyOrder() <em>Get Medication Supply Order</em>}</li>
@@ -455,6 +465,397 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreet() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreet",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_STREET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(MedicationDispense target) {
+						target.init();
+						Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						AD ad = DatatypesFactory.eINSTANCE.createAD();
+						ad.addStreetAddressLine("123");
+						ad.addStreetAddressLine("123");
+						ad.addStreetAddressLine("123");
+						ad.addStreetAddressLine("123");
+						ad.addStreetAddressLine("123");
+
+						ae.getAddrs().add(ad);
+						per.setAssignedEntity(ae);
+						target.getPerformers().add(per);
+
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(MedicationDispense target) {
+						target.init();
+						Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						AD ad = DatatypesFactory.eINSTANCE.createAD();
+
+						ae.getAddrs().add(ad);
+						per.setAssignedEntity(ae);
+						target.getPerformers().add(per);
+					}
+				});
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreet(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCity() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCityTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+
+				ae.getAddrs().add(ad);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCity(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCountry() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCountryTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCountry",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+
+				ae.getAddrs().add(ad);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCountry(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCountryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressPostalCode() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressPostalCodeTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressPostalCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+
+				ae.getAddrs().add(ad);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressPostalCode(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressPostalCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressState() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStateTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressState",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+
+				ae.getAddrs().add(ad);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressState(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStateTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetAddressLine() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetAddressLineTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetAddressLine",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+
+				ae.getAddrs().add(ad);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetAddressLine(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreetAddressLineTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUseP() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUsePTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUseP",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_USE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+
+				ae.getAddrs().add(ad);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUseP(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUsePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUse() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUseTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUse",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_US_REALM_ADDRESS_USE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+				ad.getUses().add(null);
+
+				ae.getAddrs().add(ad);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(createUSRealmAddress());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUse(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressUseTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityAddr() {
 		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddrTestCase = new OperationsTestCase<MedicationDispense>(
 			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddr",
@@ -645,6 +1046,19 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	@Override
 	protected EObject getObjectToTest() {
 		return null;
+	}
+
+	private AD createUSRealmAddress() {
+		AD addr = DatatypesFactory.eINSTANCE.createAD();
+		addr.getUses().add(PostalAddressUse.HP);
+		addr.addStreetAddressLine("123 Main Street");
+		addr.addCity("Boston");
+		addr.addState("MA");
+		addr.addCountry("US");
+		addr.addPostalCode("01001");
+
+		return addr;
+
 	}
 
 } // MedicationDispenseOperations

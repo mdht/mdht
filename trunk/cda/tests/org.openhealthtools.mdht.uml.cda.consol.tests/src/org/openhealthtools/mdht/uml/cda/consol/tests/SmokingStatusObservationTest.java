@@ -189,7 +189,7 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSmokingStatusObservationCode() {
@@ -207,7 +207,7 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(SmokingStatusObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				CD cd = DatatypesFactory.eINSTANCE.createCD("ASSERTION", "2.16.840.1.113883.5.4", "", "");
 				target.setCode(cd);
 
 			}
@@ -334,7 +334,7 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSmokingStatusObservationValueP() {
@@ -352,6 +352,9 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(SmokingStatusObservation target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD("449868002", "2.16.840.1.113883.6.96", "", "");
+				target.getValues().add(value);
+
 			}
 
 			@Override
@@ -368,7 +371,7 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSmokingStatusObservationValue() {
@@ -386,7 +389,7 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(SmokingStatusObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				CD value = DatatypesFactory.eINSTANCE.createCD("449868002", "2.16.840.1.113883.6.96", "", "");
 				target.getValues().add(value);
 
 			}

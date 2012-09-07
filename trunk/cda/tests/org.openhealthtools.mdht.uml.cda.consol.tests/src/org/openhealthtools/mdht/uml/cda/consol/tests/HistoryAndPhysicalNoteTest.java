@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote;
 import org.openhealthtools.mdht.uml.cda.consol.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.consol.HistoryOfPresentIllnessSection;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSectionEntriesOptional;
+import org.openhealthtools.mdht.uml.cda.consol.InstructionsSection;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection;
@@ -63,6 +64,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteHasChiefComplaintAndReasonForVisitChiefComplaintOrReasonForVisit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Has Chief Complaint And Reason For Visit Chief Complaint Or Reason For Visit</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Does Not Have Chief Complaint And Reason For Visit With Chief Complaint Section Or Reason Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteInFulfillmentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note In Fulfillment Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Component Of</em>}</li>
@@ -86,6 +88,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteProblemSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Problem Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteProceduresSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Procedures Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteVitalSignsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Vital Signs Section Entries Optional</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Instructions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteComponentOfEncompassingEncounter4ResponsiblePartyAssignedEntityHasPersonOrOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Component Of Encompassing Encounter4 Responsible Party Assigned Entity Has Person Or Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteComponentOfEncompassingEncounter4ResponsiblePartyAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Component Of Encompassing Encounter4 Responsible Party Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteComponentOfEncompassingEncounter4EncounterParticipantAssignedEntityHasPersonOrOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Component Of Encompassing Encounter4 Encounter Participant Assigned Entity Has Person Or Organization</em>}</li>
@@ -116,6 +119,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#getProblemSectionEntriesOptional() <em>Get Problem Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#getProceduresSectionEntriesOptional() <em>Get Procedures Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#getVitalSignsSectionEntriesOptional() <em>Get Vital Signs Section Entries Optional</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#getInstructionsSection() <em>Get Instructions Section</em>}</li>
  * </ul>
  * </p>
  *
@@ -497,6 +501,40 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateHistoryAndPhysicalNoteCodeP() {
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteCodePTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+			"validateHistoryAndPhysicalNoteCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HistoryAndPhysicalNote target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HistoryAndPhysicalNote target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteCodeP(
+					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHistoryAndPhysicalNoteCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateHistoryAndPhysicalNoteCode() {
 		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteCodeTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteCode",
@@ -511,7 +549,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override
@@ -1419,6 +1457,45 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateHistoryAndPhysicalNoteInstructionsSection() {
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteInstructionsSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+			"validateHistoryAndPhysicalNoteInstructionsSection",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_INSTRUCTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HistoryAndPhysicalNote target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HistoryAndPhysicalNote target) {
+				target.init();
+
+				/* InstructionsSection */
+				InstructionsSection section = ConsolFactory.eINSTANCE.createInstructionsSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteInstructionsSection(
+					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHistoryAndPhysicalNoteInstructionsSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateHistoryAndPhysicalNoteComponentOfEncompassingEncounter4ResponsiblePartyAssignedEntityHasPersonOrOrganization() {
 		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteComponentOfEncompassingEncounter4ResponsiblePartyAssignedEntityHasPersonOrOrganizationTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteComponentOfEncompassingEncounter4ResponsiblePartyAssignedEntityHasPersonOrOrganization",
@@ -2109,6 +2186,18 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 
 		HistoryAndPhysicalNote target = objectFactory.create();
 		target.getVitalSignsSectionEntriesOptional();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetInstructionsSection() {
+
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getInstructionsSection();
 
 	}
 

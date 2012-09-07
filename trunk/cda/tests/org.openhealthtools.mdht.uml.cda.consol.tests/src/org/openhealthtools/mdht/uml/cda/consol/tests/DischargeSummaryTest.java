@@ -22,8 +22,7 @@ import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
-import org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSection;
-import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
+import org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
@@ -43,15 +42,13 @@ import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSecti
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargePhysicalSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeStudiesSummarySection;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSectionEntriesOptional;
-import org.openhealthtools.mdht.uml.cda.consol.MedicalEquipmentSection;
-import org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection;
-import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.operations.DischargeSummaryOperations;
 import org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -67,22 +64,18 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Does Not Have Chief Complaint And Reason For Visit With Chief Complaint Section Or Reason Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHospitalAdmissionMedicationsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Hospital Admission Medications Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHospitalAdmissionDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Hospital Admission Diagnosis Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryAdvanceDirectivesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Advance Directives Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Allergies Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHospitalDischargeDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Hospital Discharge Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryDischargeDietSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Discharge Diet Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Hospital Discharge Medications Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryFunctionalStatusSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Functional Status Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHistoryOfPresentIllnessSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary History Of Present Illness Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHospitalCourseSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Hospital Course Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryMedicalEquipmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Medical Equipment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryPhysicalExamSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Physical Exam Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHistoryOfPastIllnessSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary History Of Past Illness Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Vital Signs Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryChiefComplaintAndReasonForVisitSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Chief Complaint And Reason For Visit Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryChiefComplaintSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Chief Complaint Section</em>}</li>
@@ -97,6 +90,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryReasonForVisitSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Reason For Visit Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryReviewOfSystemsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Review Of Systems Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummarySocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryAllergiesSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Allergies Section Entries Optional</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryVitalSignsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Vital Signs Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3ResponsiblePartyAssignedEntityHasPersonOrOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Responsible Party Assigned Entity Has Person Or Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3ResponsiblePartyAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Responsible Party Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3EncounterParticipantAssignedEntityHasPersonOrOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Encounter Participant Assigned Entity Has Person Or Organization</em>}</li>
@@ -110,19 +105,14 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHospitalAdmissionMedicationsSectionEntriesOptional() <em>Get Hospital Admission Medications Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHospitalAdmissionDiagnosisSection() <em>Get Hospital Admission Diagnosis Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getAdvanceDirectivesSection() <em>Get Advance Directives Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getAllergiesSection() <em>Get Allergies Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHospitalDischargeDiagnosisSection() <em>Get Hospital Discharge Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getDischargeDietSection() <em>Get Discharge Diet Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHospitalDischargeMedicationsSectionEntriesOptional() <em>Get Hospital Discharge Medications Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getFunctionalStatusSection() <em>Get Functional Status Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHistoryOfPresentIllnessSection() <em>Get History Of Present Illness Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHospitalCourseSection() <em>Get Hospital Course Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getMedicalEquipmentSection() <em>Get Medical Equipment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getPhysicalExamSection() <em>Get Physical Exam Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHistoryOfPastIllnessSection() <em>Get History Of Past Illness Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getVitalSignsSection() <em>Get Vital Signs Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getChiefComplaintAndReasonForVisitSection() <em>Get Chief Complaint And Reason For Visit Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getChiefComplaintSection() <em>Get Chief Complaint Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getFamilyHistorySection() <em>Get Family History Section</em>}</li>
@@ -136,6 +126,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getReasonForVisitSection() <em>Get Reason For Visit Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getReviewOfSystemsSection() <em>Get Review Of Systems Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getSocialHistorySection() <em>Get Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getAllergiesSectionEntriesOptional() <em>Get Allergies Section Entries Optional</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getVitalSignsSectionEntriesOptional() <em>Get Vital Signs Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  * </ul>
  * </p>
@@ -231,6 +223,40 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateDischargeSummaryCodeP() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryCodePTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeSummary target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations.validateDischargeSummaryCodeP(
+					(DischargeSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDischargeSummaryCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateDischargeSummaryCode() {
 		OperationsTestCase<DischargeSummary> validateDischargeSummaryCodeTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryCode",
@@ -245,7 +271,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override
@@ -340,88 +366,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalAdmissionDiagnosisSectionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated 
-	*/
-	@Test
-	public void testValidateDischargeSummaryAdvanceDirectivesSection() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryAdvanceDirectivesSectionTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryAdvanceDirectivesSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ADVANCE_DIRECTIVES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-				/* AdvanceDirectivesSection */
-				AdvanceDirectivesSection section =
-
-				ConsolFactory.eINSTANCE.createAdvanceDirectivesSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryAdvanceDirectivesSection(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryAdvanceDirectivesSectionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDischargeSummaryAllergiesSection() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryAllergiesSectionTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryAllergiesSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ALLERGIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-				/* AllergiesSection */
-				AllergiesSection section =
-
-				ConsolFactory.eINSTANCE.createAllergiesSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryAllergiesSection(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryAllergiesSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -675,88 +619,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateDischargeSummaryMedicalEquipmentSection() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryMedicalEquipmentSectionTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryMedicalEquipmentSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-				/* MedicalEquipmentSection */
-				MedicalEquipmentSection section =
-
-				ConsolFactory.eINSTANCE.createMedicalEquipmentSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryMedicalEquipmentSection(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryMedicalEquipmentSectionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDischargeSummaryPhysicalExamSection() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryPhysicalExamSectionTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryPhysicalExamSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-				/* PhysicalExamSection */
-				PhysicalExamSection section =
-
-				ConsolFactory.eINSTANCE.createPhysicalExamSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryPhysicalExamSection(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryPhysicalExamSectionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidateDischargeSummaryPlanOfCareSection() {
 		OperationsTestCase<DischargeSummary> validateDischargeSummaryPlanOfCareSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryPlanOfCareSection",
@@ -873,47 +735,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryReviewOfSystemsSectionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDischargeSummaryVitalSignsSection() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryVitalSignsSectionTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryVitalSignsSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-				/* VitalSignsSection */
-				VitalSignsSection section =
-
-				ConsolFactory.eINSTANCE.createVitalSignsSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryVitalSignsSection(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryVitalSignsSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -1443,6 +1264,88 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummarySocialHistorySectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDischargeSummaryAllergiesSectionEntriesOptional() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryAllergiesSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeSummary target) {
+				target.init();
+
+				/* AllergiesSectionEntriesOptional */
+				AllergiesSectionEntriesOptional section =
+
+				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations.validateDischargeSummaryAllergiesSectionEntriesOptional(
+					(DischargeSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDischargeSummaryAllergiesSectionEntriesOptionalTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDischargeSummaryVitalSignsSectionEntriesOptional() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryVitalSignsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeSummary target) {
+				target.init();
+
+				/* VitalSignsSectionEntriesOptional */
+				VitalSignsSectionEntriesOptional section =
+
+				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations.validateDischargeSummaryVitalSignsSectionEntriesOptional(
+					(DischargeSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDischargeSummaryVitalSignsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -1984,30 +1887,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetAdvanceDirectivesSection() {
-
-		DischargeSummary target = objectFactory.create();
-		target.getAdvanceDirectivesSection();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetAllergiesSection() {
-
-		DischargeSummary target = objectFactory.create();
-		target.getAllergiesSection();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testGetHospitalDischargeDiagnosisSection() {
 
 		DischargeSummary target = objectFactory.create();
@@ -2080,30 +1959,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetMedicalEquipmentSection() {
-
-		DischargeSummary target = objectFactory.create();
-		target.getMedicalEquipmentSection();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetPhysicalExamSection() {
-
-		DischargeSummary target = objectFactory.create();
-		target.getPhysicalExamSection();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testGetPlanOfCareSection() {
 
 		DischargeSummary target = objectFactory.create();
@@ -2132,18 +1987,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 		DischargeSummary target = objectFactory.create();
 		target.getReviewOfSystemsSection();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetVitalSignsSection() {
-
-		DischargeSummary target = objectFactory.create();
-		target.getVitalSignsSection();
 
 	}
 
@@ -2288,6 +2131,30 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 		DischargeSummary target = objectFactory.create();
 		target.getSocialHistorySection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAllergiesSectionEntriesOptional() {
+
+		DischargeSummary target = objectFactory.create();
+		target.getAllergiesSectionEntriesOptional();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetVitalSignsSectionEntriesOptional() {
+
+		DischargeSummary target = objectFactory.create();
+		target.getVitalSignsSectionEntriesOptional();
 
 	}
 
