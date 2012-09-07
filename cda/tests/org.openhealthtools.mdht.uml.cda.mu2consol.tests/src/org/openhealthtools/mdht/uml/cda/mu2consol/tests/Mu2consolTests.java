@@ -19,10 +19,11 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ SummaryOfCareRecordTest.class,
-		VDTAmbulatoryPatientInfoTest.class, VDTInpatientPatientInfoTest.class,
 		ClinicalOfficeVisitSummaryTest.class,
 		TransitionOfCareAmbulatorySummaryTest.class,
-		TransitionOfCareInpatientSummaryTest.class })
+		TransitionOfCareInpatientSummaryTest.class,
+		ViewDownloadTransmitSummaryTest.class, VDTAmbulatorySummaryTest.class,
+		VDTInpatientSummaryTest.class })
 public class Mu2consolTests {
 
 	/**
