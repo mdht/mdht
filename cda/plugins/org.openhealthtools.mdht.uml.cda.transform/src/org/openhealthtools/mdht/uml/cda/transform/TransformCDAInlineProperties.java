@@ -44,6 +44,9 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 
 	PluginPropertiesUtil properties = null;
 
+	static ArrayList<String> rimObjects = new ArrayList<String>(Arrays.asList(
+		"ActRelationship", "InfrastructureRoot", "Participation", "Role", "RoleLink"));
+
 	/**
 	 * @param options
 	 * @param baseModelReflection
@@ -256,7 +259,6 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 		if (property != null) {
 			return property.getName();
 		}
-
 		// Handle special CDA processings.
 
 		return handleSpecialAssociation(baseSourceClass, targetClass, sourceProperty);
@@ -365,9 +367,12 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 	 * e.g. consol::GeneralHeaderConstraints::RecordTarget::PatientRole needs to be
 	 * modified to cda::PatientRole
 	 * 
+	 * Added check for rim objects.
+	 * 
 	 * This method needs to be refactored to insert this logic in the CDA Association
 	 * transformation, so that the OCL generated in the inline class removes the nested
 	 * dependency
+	 * 
 	 * 
 	 * @param relativeOcl
 	 * @return
@@ -380,7 +385,11 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 			for (String itemStr : arrList) {
 				String[] arrStr = itemStr.split("::");
 				if (arrStr.length > 2) {
-					String updateStr = "cda::" + arrStr[arrStr.length - 1];
+					String prefix = "cda::";
+					if (rimObjects.contains(arrStr[arrStr.length - 1])) {
+						prefix = "rim::";
+					}
+					String updateStr = prefix + arrStr[arrStr.length - 1];
 
 					// Update the relativeOCL
 					retVal = retVal.replaceFirst(itemStr, updateStr);
