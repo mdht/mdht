@@ -9,6 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
  *                        - support local datatype subclasses (artf3350)
+ *     Rama Ramakrishnan  - Getting the correct qualified anme for multiple level inline nested clasees (artf3410)                   
  *
  * $Id$
  */
@@ -120,7 +121,9 @@ public abstract class TransformAssociation extends TransformAbstract {
 		String baseTargetLowerName = baseTargetName.substring(0, 1).toLowerCase() + baseTargetName.substring(1);
 		String baseTargetQName = baseTargetClass.getQualifiedName();
 
-		String constraintTargetQName = constraintTarget.getQualifiedName();
+		// Get the qualified name of the targetClass. If nested to more than 2 levels get the
+		// qualified name of the base class.
+		String constraintTargetQName = getConstraintTargetQualifiedName(constraintTarget);
 
 		StringBuilder constraintBody = new StringBuilder();
 		StringBuilder operationBody = new StringBuilder();
@@ -327,5 +330,28 @@ public abstract class TransformAssociation extends TransformAbstract {
 			String associationEnd, Class sourceClass, Class targetClass) {
 
 		return false;
+	}
+
+	/**
+	 * Get the qualified name for the class. In cases where the association end class
+	 * can be nested multiple levels deep. In such cases, the OCL's should reference the
+	 * base class. This method would return the qualified name of the base class, if the
+	 * nesting is more than 2 levels deep.
+	 * 
+	 * e.g : A class with a qualified name
+	 * consol::GeneralHeaderConstraints::RecordTarget::PatientRole should
+	 * be referenced as cda::PatientRole
+	 * 
+	 * @param constraintTarget
+	 * @return
+	 */
+	public String getConstraintTargetQualifiedName(Class constraintTarget) {
+		String retVal = constraintTarget.getQualifiedName();
+
+		String[] arrStr = retVal.split("::");
+		if (arrStr.length > 2) {
+			retVal = getBaseClass(constraintTarget).getQualifiedName();
+		}
+		return retVal;
 	}
 }
