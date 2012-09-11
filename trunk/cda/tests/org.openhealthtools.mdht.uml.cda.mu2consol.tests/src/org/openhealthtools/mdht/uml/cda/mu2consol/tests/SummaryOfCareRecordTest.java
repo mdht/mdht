@@ -7,20 +7,26 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.AdmissionMedication;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
+import org.openhealthtools.mdht.uml.cda.consol.CognitiveStatusProblemObservation;
+import org.openhealthtools.mdht.uml.cda.consol.CognitiveStatusResultObservation;
+import org.openhealthtools.mdht.uml.cda.consol.CognitiveStatusResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusProblemObservation;
+import org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation;
+import org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.PostprocedureDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.consol.ResultsSection;
-import org.openhealthtools.mdht.uml.cda.consol.SmokingStatusObservation;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection;
@@ -36,6 +42,7 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PostoperativeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PreoperativeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.SummaryOfCareRecordOperations;
@@ -1042,7 +1049,6 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-				target.init();
 				SocialHistorySection section = Mu2consolFactory.eINSTANCE
 						.createSocialHistorySection().init();
 				target.addSection(section);
@@ -1050,11 +1056,8 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-				SocialHistorySection section = target.getSocialHistorySection();
-				SmokingStatusObservation ssObs = ConsolFactory.eINSTANCE
-						.createSmokingStatusObservation().init();
-				section.addObservation(ssObs);
+				SmokingStatusObservation sObs  = Mu2consolFactory.eINSTANCE.createSmokingStatusObservation().init();
+				target.getSocialHistorySection().addObservation(sObs);
 
 			}
 
@@ -1222,7 +1225,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
@@ -1234,13 +1237,16 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+				.createPlanOfCareSection().init();
+		target.addSection(pSection);
 
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				PlanOfCareActivityObservation  pObs = ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init();
+				target.getPlanOfCareSection().addObservation(pObs);
 			}
 
 			@Override
@@ -2039,7 +2045,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionCognitiveStatus() {
@@ -2051,13 +2057,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				CognitiveStatusResultOrganizer cOrganizer = ConsolFactory.eINSTANCE.createCognitiveStatusResultOrganizer().init();
+				target.getFunctionalStatusSection().addOrganizer(cOrganizer);
 			}
 
 			@Override
@@ -2078,7 +2085,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionFunctionalStatus() {
@@ -2090,13 +2097,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				FunctionalStatusResultObservation fObs = ConsolFactory.eINSTANCE.createFunctionalStatusResultObservation().init();
+				target.getFunctionalStatusSection().addObservation(fObs);
 			}
 
 			@Override
@@ -2117,7 +2125,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordFunctionalStatusSectionTemplateId() {
@@ -2129,13 +2137,21 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				for(II ii : fSection.getTemplateIds()){
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				II iiTemp = fSection.getTemplateIds().get(0);
+				
+				for(II ii : target.getFunctionalStatusSection().getTemplateIds()){
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
@@ -2156,7 +2172,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionCognitiveStatusProblemObservation() {
@@ -2168,13 +2184,15 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				CognitiveStatusProblemObservation cObs = ConsolFactory.eINSTANCE.createCognitiveStatusProblemObservation().init();
+				target.getFunctionalStatusSection().addObservation(cObs);
+				
 			}
 
 			@Override
@@ -2195,7 +2213,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionCognitiveStatusResultObservation() {
@@ -2207,13 +2225,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				CognitiveStatusResultObservation cObs = ConsolFactory.eINSTANCE.createCognitiveStatusResultObservation().init();
+				target.getFunctionalStatusSection().addObservation(cObs);
 			}
 
 			@Override
@@ -2234,7 +2253,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionCognitiveStatusResultOrganizer() {
@@ -2246,13 +2265,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				CognitiveStatusResultOrganizer cOrg = ConsolFactory.eINSTANCE.createCognitiveStatusResultOrganizer().init();
+				target.getFunctionalStatusSection().addOrganizer(cOrg);
 			}
 
 			@Override
@@ -2273,7 +2293,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionFunctionalStatusProblemObservation() {
@@ -2285,13 +2305,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				FunctionalStatusProblemObservation fObs = ConsolFactory.eINSTANCE.createFunctionalStatusProblemObservation().init();
+				target.getFunctionalStatusSection().addObservation(fObs);
 			}
 
 			@Override
@@ -2312,7 +2333,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionFunctionalStatusResultObservation() {
@@ -2324,13 +2345,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				FunctionalStatusResultObservation fObs = ConsolFactory.eINSTANCE.createFunctionalStatusResultObservation().init();
+				target.getFunctionalStatusSection().addObservation(fObs);
 			}
 
 			@Override
@@ -2351,7 +2373,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolFunctionalStatusSectionFunctionalStatusResultOrganizer() {
@@ -2363,13 +2385,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				FunctionalStatusSection fSection = Mu2consolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				target.addSection(fSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
+				FunctionalStatusResultOrganizer fOrg = ConsolFactory.eINSTANCE.createFunctionalStatusResultOrganizer().init();
+				target.getFunctionalStatusSection().addOrganizer(fOrg);
 			}
 
 			@Override
