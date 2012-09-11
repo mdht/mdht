@@ -940,84 +940,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateClinicalOfficeVisitSummarySocialHistorySectionTemplateId() {
-		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarySocialHistorySectionTemplateIdTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-				"validateClinicalOfficeVisitSummarySocialHistorySectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ClinicalOfficeVisitSummaryOperations
-						.validateClinicalOfficeVisitSummarySocialHistorySectionTemplateId(
-								(ClinicalOfficeVisitSummary) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateClinicalOfficeVisitSummarySocialHistorySectionTemplateIdTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation() {
-		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-				"validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ClinicalOfficeVisitSummaryOperations
-						.validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation(
-								(ClinicalOfficeVisitSummary) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
 		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
 				"validateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
@@ -1322,6 +1244,84 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 		};
 
 		validateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructionsTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateClinicalOfficeVisitSummarySocialHistorySectionTemplateId() {
+		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarySocialHistorySectionTemplateIdTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+				"validateClinicalOfficeVisitSummarySocialHistorySectionTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ClinicalOfficeVisitSummary target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ClinicalOfficeVisitSummaryOperations
+						.validateClinicalOfficeVisitSummarySocialHistorySectionTemplateId(
+								(ClinicalOfficeVisitSummary) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateClinicalOfficeVisitSummarySocialHistorySectionTemplateIdTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation() {
+		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+				"validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation",
+				operationsForOCL
+						.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARYMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ClinicalOfficeVisitSummary target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ClinicalOfficeVisitSummaryOperations
+						.validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation(
+								(ClinicalOfficeVisitSummary) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase
 				.doValidationTest();
 	}
 
