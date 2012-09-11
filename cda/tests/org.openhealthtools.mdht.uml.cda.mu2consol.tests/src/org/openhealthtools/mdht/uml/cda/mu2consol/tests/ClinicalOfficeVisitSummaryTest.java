@@ -14,12 +14,22 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.Location;
+import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityEncounter;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary;
@@ -33,6 +43,7 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ClinicalOfficeVisit
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
@@ -194,7 +205,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryResponsibleParty() {
@@ -206,13 +217,17 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				target.init();
+				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				comp1.setEncompassingEncounter(encounter);
+				target.setComponentOf(comp1);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				ResponsibleParty party = CDAFactory.eINSTANCE.createResponsibleParty();
+				target.getComponentOf().getEncompassingEncounter().setResponsibleParty(party);
 			}
 
 			@Override
@@ -233,7 +248,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryLocation() {
@@ -245,13 +260,16 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				comp1.setEncompassingEncounter(encounter);
+				target.setComponentOf(comp1);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				Location locn = CDAFactory.eINSTANCE.createLocation();
+				target.getComponentOf().getEncompassingEncounter().setLocation(locn);
 			}
 
 			@Override
@@ -271,7 +289,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryPlanOfCareActOrEncounter() {
@@ -283,13 +301,23 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+//				AssessmentSection a = Mu2consolFactory.eINSTANCE.createAssessmentSection().init();
+//				target.addSection(a);
+//				target.init();
+//				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+//				target.addSection(pSection);
+//				PlanOfCareSection pSection1 = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+//				target.addSection(pSection1);
+
+//				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
+//				target.getPlanOfCareSection().addEncounter(encounter);
 
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
+				target.getPlanOfCareSection().addEncounter(encounter);
 			}
 
 			@Override
@@ -310,7 +338,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryReasonForOfficeVisit() {
@@ -327,7 +355,13 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				ChiefComplaintSection cSection = ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+				ReasonForVisitSection rSection = ConsolFactory.eINSTANCE.createReasonForVisitSection();
+				target.addSection(cSection);
+				target.addSection(rSection);
+//				ChiefComplaintAndReasonForVisitSection ccSection = ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
+//				target.addSection(ccSection);
+				
 
 			}
 
@@ -349,7 +383,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryCarePlanning() {
@@ -366,8 +400,8 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				PlanOfCareSection section = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				target.addSection(section);
 			}
 
 			@Override
@@ -388,7 +422,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryEffectiveTime() {
@@ -400,16 +434,18 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				Component1 compOf = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter enCounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				compOf.setEncompassingEncounter(enCounter);
+				target.setComponentOf(compOf);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				IVL_TS effTime = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.getComponentOf().getEncompassingEncounter().setEffectiveTime(effTime);
 				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
 				target.setEffectiveTime(ts);
-
 			}
 
 			@Override
@@ -937,7 +973,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
@@ -949,13 +985,19 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+				PlanOfCareSection section = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				target.addSection(section);
 
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				PlanOfCareActivityAct act = ConsolFactory.eINSTANCE.createPlanOfCareActivityAct().init();
+				target.getPlanOfCareSection().addAct(act);
+				PlanOfCareActivityObservation obs =  ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init();
+				target.getPlanOfCareSection().addObservation(obs);
+				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
+				target.getPlanOfCareSection().addEncounter(encounter);
 			}
 
 			@Override
@@ -976,7 +1018,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
@@ -988,13 +1030,14 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				target.addSection(pSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				PlanOfCareActivityObservation obs = ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init();
+				target.getPlanOfCareSection().addObservation(obs);
 			}
 
 			@Override
@@ -1027,13 +1070,21 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				for(II ii : pSection.getTemplateIds()){
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
+				target.addSection(pSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				II iiTemp = pSection.getTemplateIds().get(0);
+				
+				for(II ii : target.getPlanOfCareSection().getTemplateIds()){
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
