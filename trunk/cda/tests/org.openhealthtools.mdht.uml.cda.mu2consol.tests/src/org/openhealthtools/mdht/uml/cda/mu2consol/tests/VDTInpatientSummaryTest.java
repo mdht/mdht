@@ -14,8 +14,17 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.Component2;
+import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.Location;
+import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection;
+import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
+import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary;
@@ -25,6 +34,7 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.operations.VDTInpatientSummary
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
@@ -85,7 +95,7 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVDTInpatientSummaryEffectiveTime() {
@@ -97,15 +107,19 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
+				Component1 compOf = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter enCounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
+				compOf.setEncompassingEncounter(enCounter);
+				target.setComponentOf(compOf);
 
 			}
 
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
-				target.init();
-
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+				IVL_TS effTime = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.getComponentOf().getEncompassingEncounter()
+						.setEffectiveTime(effTime);
 
 			}
 
@@ -126,7 +140,7 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVDTInpatientSummaryLocation() {
@@ -138,12 +152,18 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
-
+				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
+				comp1.setEncompassingEncounter(encounter);
+				target.setComponentOf(comp1);
 			}
 
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
-				target.init();
+				Location locn = CDAFactory.eINSTANCE.createLocation();
+				target.getComponentOf().getEncompassingEncounter()
+						.setLocation(locn);
 
 			}
 
@@ -164,7 +184,7 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVDTInpatientSummaryChiefComplaintOrReasonForVisit() {
@@ -176,12 +196,28 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
-
+				target.init();
+				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE
+						.createChiefComplaintSection().init();
+				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE
+						.createReasonForVisitSection().init();
+				ChiefComplaintAndReasonForVisitSection ccRvsSection = ConsolFactory.eINSTANCE
+						.createChiefComplaintAndReasonForVisitSection().init();
+				target.addSection(ccRvsSection);
+				target.addSection(rvsSection);
+				target.addSection(ccSection);
 			}
 
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
-				target.init();
+				Component2 comp2 = CDAFactory.eINSTANCE.createComponent2();
+				target.setComponent(comp2);
+				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE
+						.createChiefComplaintSection().init();
+				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE
+						.createReasonForVisitSection().init();
+				target.addSection(rvsSection);
+				target.addSection(ccSection);
 
 			}
 
@@ -297,7 +333,7 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId() {
@@ -309,13 +345,24 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
-
+				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
+				target.addSection(hSection);
+				for (II ii : hSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
 			}
 
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
-				target.init();
+				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
+				II iiTemp = hSection.getTemplateIds().get(0);
 
+				for (II ii : target.getHospitalAdmissionDiagnosisSection()
+						.getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
@@ -336,7 +383,7 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
@@ -348,13 +395,17 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
-
+				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
+				target.addSection(hSection);
 			}
 
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
-				target.init();
-
+				HospitalAdmissionDiagnosis hDiagnosis = ConsolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosis().init();
+				target.getHospitalAdmissionDiagnosisSection()
+						.addAct(hDiagnosis);
 			}
 
 			@Override

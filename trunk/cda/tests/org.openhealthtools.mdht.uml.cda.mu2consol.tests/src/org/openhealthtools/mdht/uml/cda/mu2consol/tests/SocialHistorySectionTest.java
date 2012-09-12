@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
+import org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection;
 
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.SocialHistorySectionOperations;
@@ -49,7 +50,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMu2consolSocialHistorySectionSmokingStatusObservation() {
@@ -66,7 +67,9 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
-				target.init();
+				SmokingStatusObservation sObs = Mu2consolFactory.eINSTANCE
+						.createSmokingStatusObservation().init();
+				target.addObservation(sObs);
 
 			}
 

@@ -14,6 +14,10 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatorySummary;
 
@@ -42,7 +46,7 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVDTAmbulatorySummaryResponsibleParty() {
@@ -54,12 +58,20 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VDTAmbulatorySummary target) {
-
+				target.init();
+				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
+				comp1.setEncompassingEncounter(encounter);
+				target.setComponentOf(comp1);
 			}
 
 			@Override
 			protected void updateToPass(VDTAmbulatorySummary target) {
-				target.init();
+				ResponsibleParty party = CDAFactory.eINSTANCE
+				.createResponsibleParty();
+		target.getComponentOf().getEncompassingEncounter()
+				.setResponsibleParty(party);
 
 			}
 
