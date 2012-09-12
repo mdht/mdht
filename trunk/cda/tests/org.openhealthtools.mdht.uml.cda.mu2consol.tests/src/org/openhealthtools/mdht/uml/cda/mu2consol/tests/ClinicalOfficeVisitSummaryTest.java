@@ -1095,23 +1095,13 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
-						.createPlanOfCareSection().init();
-				for (II ii : pSection.getTemplateIds()) {
-					ii.setRoot(BAD_TEMPLATE_ID);
-				}
-				target.addSection(pSection);
+
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
-						.createPlanOfCareSection().init();
-				II iiTemp = pSection.getTemplateIds().get(0);
+				target.init();
 
-				for (II ii : target.getPlanOfCareSection().getTemplateIds()) {
-					ii.setRoot(iiTemp.getRoot());
-				}
 			}
 
 			@Override
