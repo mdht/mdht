@@ -1083,7 +1083,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryPlanOfCareSectionTemplateId() {
@@ -1095,12 +1095,23 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				target.addSection(pSection);
+				for (II ii : pSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				II iiTemp = pSection.getTemplateIds().get(0);
+
+				for (II ii : target.getPlanOfCareSection().getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 
 			}
 
