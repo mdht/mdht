@@ -23,6 +23,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.consol.Instructions;
+import org.openhealthtools.mdht.uml.cda.consol.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityEncounter;
@@ -32,11 +34,13 @@ import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary;
 import org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection;
 
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ClinicalOfficeVisitSummaryOperations;
@@ -219,15 +223,18 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
 				target.init();
 				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter encounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
 				comp1.setEncompassingEncounter(encounter);
 				target.setComponentOf(comp1);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				ResponsibleParty party = CDAFactory.eINSTANCE.createResponsibleParty();
-				target.getComponentOf().getEncompassingEncounter().setResponsibleParty(party);
+				ResponsibleParty party = CDAFactory.eINSTANCE
+						.createResponsibleParty();
+				target.getComponentOf().getEncompassingEncounter()
+						.setResponsibleParty(party);
 			}
 
 			@Override
@@ -261,7 +268,8 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
 				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter encounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
 				comp1.setEncompassingEncounter(encounter);
 				target.setComponentOf(comp1);
 			}
@@ -269,7 +277,8 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
 				Location locn = CDAFactory.eINSTANCE.createLocation();
-				target.getComponentOf().getEncompassingEncounter().setLocation(locn);
+				target.getComponentOf().getEncompassingEncounter()
+						.setLocation(locn);
 			}
 
 			@Override
@@ -301,22 +310,27 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-//				AssessmentSection a = Mu2consolFactory.eINSTANCE.createAssessmentSection().init();
-//				target.addSection(a);
-//				target.init();
-//				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-//				target.addSection(pSection);
-//				PlanOfCareSection pSection1 = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-//				target.addSection(pSection1);
+				// AssessmentSection a =
+				// Mu2consolFactory.eINSTANCE.createAssessmentSection().init();
+				// target.addSection(a);
+				// target.init();
+				// PlanOfCareSection pSection =
+				// Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				// target.addSection(pSection);
+				// PlanOfCareSection pSection1 =
+				// Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				// target.addSection(pSection1);
 
-//				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
-//				target.getPlanOfCareSection().addEncounter(encounter);
+				// PlanOfCareActivityEncounter encounter =
+				// ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
+				// target.getPlanOfCareSection().addEncounter(encounter);
 
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
+				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityEncounter().init();
 				target.getPlanOfCareSection().addEncounter(encounter);
 			}
 
@@ -355,13 +369,15 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				ChiefComplaintSection cSection = ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
-				ReasonForVisitSection rSection = ConsolFactory.eINSTANCE.createReasonForVisitSection();
+				ChiefComplaintSection cSection = ConsolFactory.eINSTANCE
+						.createChiefComplaintSection().init();
+				ReasonForVisitSection rSection = ConsolFactory.eINSTANCE
+						.createReasonForVisitSection();
 				target.addSection(cSection);
 				target.addSection(rSection);
-//				ChiefComplaintAndReasonForVisitSection ccSection = ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
-//				target.addSection(ccSection);
-				
+				// ChiefComplaintAndReasonForVisitSection ccSection =
+				// ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
+				// target.addSection(ccSection);
 
 			}
 
@@ -400,7 +416,8 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				PlanOfCareSection section = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				PlanOfCareSection section = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
 				target.addSection(section);
 			}
 
@@ -435,7 +452,8 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
 				Component1 compOf = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter enCounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				EncompassingEncounter enCounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
 				compOf.setEncompassingEncounter(enCounter);
 				target.setComponentOf(compOf);
 			}
@@ -443,7 +461,8 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
 				IVL_TS effTime = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.getComponentOf().getEncompassingEncounter().setEffectiveTime(effTime);
+				target.getComponentOf().getEncompassingEncounter()
+						.setEffectiveTime(effTime);
 				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
 				target.setEffectiveTime(ts);
 			}
@@ -985,18 +1004,22 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-				PlanOfCareSection section = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				PlanOfCareSection section = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
 				target.addSection(section);
 
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				PlanOfCareActivityAct act = ConsolFactory.eINSTANCE.createPlanOfCareActivityAct().init();
+				PlanOfCareActivityAct act = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityAct().init();
 				target.getPlanOfCareSection().addAct(act);
-				PlanOfCareActivityObservation obs =  ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init();
+				PlanOfCareActivityObservation obs = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityObservation().init();
 				target.getPlanOfCareSection().addObservation(obs);
-				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
+				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityEncounter().init();
 				target.getPlanOfCareSection().addEncounter(encounter);
 			}
 
@@ -1030,13 +1053,15 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
 				target.addSection(pSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				PlanOfCareActivityObservation obs = ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init();
+				PlanOfCareActivityObservation obs = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityObservation().init();
 				target.getPlanOfCareSection().addObservation(obs);
 			}
 
@@ -1070,8 +1095,9 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-				for(II ii : pSection.getTemplateIds()){
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				for (II ii : pSection.getTemplateIds()) {
 					ii.setRoot(BAD_TEMPLATE_ID);
 				}
 				target.addSection(pSection);
@@ -1079,10 +1105,11 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
 				II iiTemp = pSection.getTemplateIds().get(0);
-				
-				for(II ii : target.getPlanOfCareSection().getTemplateIds()){
+
+				for (II ii : target.getPlanOfCareSection().getTemplateIds()) {
 					ii.setRoot(iiTemp.getRoot());
 				}
 			}
@@ -1105,7 +1132,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryMedicationsAdministeredSectionTemplateId() {
@@ -1117,13 +1144,24 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				MedicationsAdministeredSection mSection = Mu2consolFactory.eINSTANCE
+						.createMedicationsAdministeredSection().init();
+				for (II ii : mSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
+				target.addSection(mSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				MedicationsAdministeredSection mSection = Mu2consolFactory.eINSTANCE
+						.createMedicationsAdministeredSection().init();
+				II iiTemp = mSection.getTemplateIds().get(0);
 
+				for (II ii : target.getMedicationsAdministeredSection()
+						.getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
@@ -1144,7 +1182,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolMedicationsAdministeredSectionMedicationActivity() {
@@ -1156,13 +1194,18 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+				MedicationsAdministeredSection mSection = Mu2consolFactory.eINSTANCE
+						.createMedicationsAdministeredSection().init();
+				target.addSection(mSection);
 
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
+				MedicationActivity mAct = ConsolFactory.eINSTANCE
+						.createMedicationActivity().init();
+				target.getMedicationsAdministeredSection()
+						.addSubstanceAdministration(mAct);
 			}
 
 			@Override
@@ -1183,7 +1226,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryAssessmentAndPlanSectionTemplateId() {
@@ -1195,13 +1238,25 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
+				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentAndPlanSection().init();
+				target.addSection(aSection);
+				for (II ii : aSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
 
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentAndPlanSection().init();
+				II iiTemp = aSection.getTemplateIds().get(0);
 
+				for (II ii : target.getAssessmentAndPlanSection()
+						.getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
@@ -1222,7 +1277,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryInstructionsSectionTemplateId() {
@@ -1234,12 +1289,23 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				InstructionsSection iSection = Mu2consolFactory.eINSTANCE
+						.createInstructionsSection().init();
+				target.addSection(iSection);
+				for (II ii : iSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				InstructionsSection iSection = Mu2consolFactory.eINSTANCE
+						.createInstructionsSection().init();
+				II iiTemp = iSection.getTemplateIds().get(0);
+
+				for (II ii : target.getInstructionsSection().getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 
 			}
 
@@ -1261,7 +1327,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolInstructionsSectionInstructions() {
@@ -1273,12 +1339,16 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				InstructionsSection iSection = Mu2consolFactory.eINSTANCE
+						.createInstructionsSection().init();
+				target.addSection(iSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				Instructions iAct = ConsolFactory.eINSTANCE
+						.createInstructions().init();
+				target.getInstructionsSection().addAct(iAct);
 
 			}
 
@@ -1300,7 +1370,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarySocialHistorySectionTemplateId() {
@@ -1312,12 +1382,22 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE
+						.createSocialHistorySection().init();
+				target.addSection(sSection);
+				for (II ii : sSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE
+						.createSocialHistorySection().init();
+				II iiTemp = sSection.getTemplateIds().get(0);
+				for (II ii : target.getSocialHistorySection().getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 
 			}
 
@@ -1339,7 +1419,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateClinicalOfficeVisitSummarymu2consolSocialHistorySectionSmokingStatusObservation() {
@@ -1351,12 +1431,16 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
+				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE
+						.createSocialHistorySection().init();
+				target.addSection(sSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
+				SmokingStatusObservation sObs = Mu2consolFactory.eINSTANCE
+						.createSmokingStatusObservation().init();
+				target.getSocialHistorySection().addObservation(sObs);
 
 			}
 
