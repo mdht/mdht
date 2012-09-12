@@ -18,18 +18,23 @@ import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary;
 
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ViewDownloadTransmitSummaryOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -39,9 +44,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMedicationAllergy(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Medication Allergy</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryCarePlanFields(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate View Download Transmit Summary Care Plan Fields</em>}</li>
@@ -137,46 +139,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateViewDownloadTransmitSummaryMedicationAllergy() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryMedicationAllergyTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-				"validateViewDownloadTransmitSummaryMedicationAllergy",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_MEDICATION_ALLERGY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations
-						.validateViewDownloadTransmitSummaryMedicationAllergy(
-								(ViewDownloadTransmitSummary) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryMedicationAllergyTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateViewDownloadTransmitSummaryCarePlanFields() {
@@ -194,6 +157,9 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ViewDownloadTransmitSummary target) {
 				target.init();
+				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentAndPlanSection().init();
+				target.addSection(aSection);
 
 			}
 
@@ -630,7 +596,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateId() {
@@ -642,13 +608,24 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
+				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentAndPlanSection().init();
+				for (II ii : aSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
+				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
+				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentAndPlanSection().init();
+				II iiTemp = aSection.getTemplateIds().get(0);
 
+				for (II ii : target.getAssessmentAndPlanSection()
+						.getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
@@ -669,7 +646,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateViewDownloadTransmitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
@@ -681,13 +658,16 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
+				PlanOfCareSection aSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
+				PlanOfCareActivityAct pAct = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityAct().init();
+				target.getPlanOfCareSection().addAct(pAct);
 			}
 
 			@Override
@@ -708,7 +688,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateViewDownloadTransmitSummarymu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
@@ -720,13 +700,16 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				target.addSection(pSection);
 			}
 
 			@Override
 			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
+				PlanOfCareActivityObservation pObs = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityObservation().init();
+				target.getPlanOfCareSection().addObservation(pObs);
 			}
 
 			@Override
@@ -747,7 +730,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId() {
@@ -759,13 +742,22 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				target.addSection(pSection);
+				for (II ii : pSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
 			}
 
 			@Override
 			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
+				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				II iiTemp = pSection.getTemplateIds().get(0);
+				for (II ii : target.getPlanOfCareSection().getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
@@ -786,7 +778,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateViewDownloadTransmitSummarySocialHistorySectionTemplateId() {
@@ -798,13 +790,23 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
+				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE
+						.createSocialHistorySection().init();
+				target.addSection(sSection);
+				for (II ii : sSection.getTemplateIds()) {
+					ii.setRoot(BAD_TEMPLATE_ID);
+				}
 			}
 
 			@Override
 			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
+				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE
+						.createSocialHistorySection().init();
+				II iiTemp = sSection.getTemplateIds().get(0);
 
+				for (II ii : target.getSocialHistorySection().getTemplateIds()) {
+					ii.setRoot(iiTemp.getRoot());
+				}
 			}
 
 			@Override
@@ -825,7 +827,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservation() {
@@ -837,13 +839,16 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
+				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE
+						.createSocialHistorySection().init();
+				target.addSection(sSection);
 			}
 
 			@Override
 			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
+				SmokingStatusObservation sObs = Mu2consolFactory.eINSTANCE
+						.createSmokingStatusObservation().init();
+				target.getSocialHistorySection().addObservation(sObs);
 			}
 
 			@Override
