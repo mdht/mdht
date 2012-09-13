@@ -43,6 +43,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate General Header Constraints Component1 Encompassing Encounter
  * </em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate General Header Constraints Template Id</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate General Header Constraints Record Target Patient Role Patient
  * Ethnic Group Code</em>}</li>
@@ -398,6 +401,44 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 		validateGeneralHeaderConstraintsComponent1EncompassingEncounterTestCase
 				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateGeneralHeaderConstraintsTemplateId() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+				"validateGeneralHeaderConstraintsTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations
+						.validateGeneralHeaderConstraintsTemplateId(
+								(GeneralHeaderConstraints) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

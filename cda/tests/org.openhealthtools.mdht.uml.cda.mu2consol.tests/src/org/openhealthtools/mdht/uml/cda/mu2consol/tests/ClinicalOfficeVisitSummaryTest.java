@@ -199,9 +199,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#getSocialHistorySection()
  * <em>Get Social History Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Template Id</em>}</li>
  * </ul>
  * </p>
  * 
@@ -1634,44 +1631,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 		ClinicalOfficeVisitSummary target = objectFactory.create();
 		target.getInstructionsSection();
 
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		OperationsTestCase<ClinicalOfficeVisitSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-				"validateGeneralHeaderConstraintsTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ClinicalOfficeVisitSummaryOperations
-						.validateGeneralHeaderConstraintsTemplateId(
-								(ClinicalOfficeVisitSummary) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

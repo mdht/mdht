@@ -294,9 +294,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getFunctionalStatusSection()
  * <em>Get Functional Status Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Template Id</em>}</li>
  * </ul>
  * </p>
  * 
@@ -2706,44 +2703,6 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 		SummaryOfCareRecord target = objectFactory.create();
 		target.getFunctionalStatusSection();
 
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		OperationsTestCase<SummaryOfCareRecord> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<SummaryOfCareRecord>(
-				"validateGeneralHeaderConstraintsTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(SummaryOfCareRecord target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SummaryOfCareRecordOperations
-						.validateGeneralHeaderConstraintsTemplateId(
-								(SummaryOfCareRecord) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
 	}
 
 	/**
