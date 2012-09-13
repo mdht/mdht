@@ -152,6 +152,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <em>Validate Clinical Office Visit Summarymu2consol Social History Section
  * Smoking Status Observation</em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#retrievePlanOfCareSection()
+ * <em>Retrieve Plan Of Care Section</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#getProblemSection()
  * <em>Get Problem Section</em>}</li>
  * <li>
@@ -310,20 +313,9 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-				// AssessmentSection a =
-				// Mu2consolFactory.eINSTANCE.createAssessmentSection().init();
-				// target.addSection(a);
-				// target.init();
-				// PlanOfCareSection pSection =
-				// Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-				// target.addSection(pSection);
-				// PlanOfCareSection pSection1 =
-				// Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-				// target.addSection(pSection1);
-
-				// PlanOfCareActivityEncounter encounter =
-				// ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
-				// target.getPlanOfCareSection().addEncounter(encounter);
+				PlanOfCareSection section = Mu2consolFactory.eINSTANCE
+						.createPlanOfCareSection().init();
+				target.addSection(section);
 
 			}
 
@@ -332,6 +324,9 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 				PlanOfCareActivityEncounter encounter = ConsolFactory.eINSTANCE
 						.createPlanOfCareActivityEncounter().init();
 				target.getPlanOfCareSection().addEncounter(encounter);
+				PlanOfCareActivityObservation pObs = ConsolFactory.eINSTANCE
+						.createPlanOfCareActivityObservation().init();
+				target.getPlanOfCareSection().addObservation(pObs);
 			}
 
 			@Override
