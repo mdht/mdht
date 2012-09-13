@@ -69,9 +69,9 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VDTAmbulatorySummary target) {
 				ResponsibleParty party = CDAFactory.eINSTANCE
-				.createResponsibleParty();
-		target.getComponentOf().getEncompassingEncounter()
-				.setResponsibleParty(party);
+						.createResponsibleParty();
+				target.getComponentOf().getEncompassingEncounter()
+						.setResponsibleParty(party);
 
 			}
 
