@@ -36,10 +36,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#validateMu2consolFunctionalStatusSectionFunctionalStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Mu2consol Functional Status Section Functional Status</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#validateMu2consolFunctionalStatusSectionCognitiveStatusProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Functional Status Section Cognitive Status Problem
- * Observation</em>}</li>
- * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#validateMu2consolFunctionalStatusSectionCognitiveStatusResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Mu2consol Functional Status Section Cognitive Status Result
  * Observation</em>}</li>
@@ -163,45 +159,6 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateMu2consolFunctionalStatusSectionFunctionalStatusTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateMu2consolFunctionalStatusSectionCognitiveStatusProblemObservation() {
-		OperationsTestCase<FunctionalStatusSection> validateMu2consolFunctionalStatusSectionCognitiveStatusProblemObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
-				"validateMu2consolFunctionalStatusSectionCognitiveStatusProblemObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_FUNCTIONAL_STATUS_SECTION_COGNITIVE_STATUS_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations
-						.validateMu2consolFunctionalStatusSectionCognitiveStatusProblemObservation(
-								(FunctionalStatusSection) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolFunctionalStatusSectionCognitiveStatusProblemObservationTestCase
 				.doValidationTest();
 	}
 
