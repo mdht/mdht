@@ -80,13 +80,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <em>Validate View Download Transmit Summary Assessment And Plan Section
  * Template Id</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summarymu2consol Plan Of Care Section
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate View Download Transmit Summary Mu2consol Plan Of Care Section
  * Care Planning For Plan Of Care</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summarymu2consol Plan Of Care Section
- * Mu2consol Plan Of Care Section Plan Of Care Activity Observation</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionPlanOfCareActivityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate View Download Transmit Summary Mu2consol Plan Of Care Section
+ * Plan Of Care Activity Observation</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate View Download Transmit Summary Plan Of Care Section Template Id
@@ -96,8 +96,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <em>Validate View Download Transmit Summary Social History Section Template
  * Id</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summarymu2consol Social History Section
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate View Download Transmit Summary Mu2consol Social History Section
  * Smoking Status Observation</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAllergiesSection()
@@ -644,12 +644,14 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
+
+
 	/**
 	 * 
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateViewDownloadTransmitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
+	public void testValidateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
 		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
 				"validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
 				operationsForOCL
@@ -675,7 +677,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ViewDownloadTransmitSummaryOperations
-						.validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
+						.validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
 								(ViewDownloadTransmitSummary) objectToTest,
 								diagnostician, map);
 			}
@@ -691,7 +693,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateViewDownloadTransmitSummarymu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
+	public void testValidateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
 		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
 				"validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation",
 				operationsForOCL
@@ -717,7 +719,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ViewDownloadTransmitSummaryOperations
-						.validateViewDownloadTransmitSummarymu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation(
+						.validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionPlanOfCareActivityObservation(
 								(ViewDownloadTransmitSummary) objectToTest,
 								diagnostician, map);
 			}
@@ -825,12 +827,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
+
 	/**
 	 * 
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservation() {
+	public void testValidateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation() {
 		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
 				"validateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservation",
 				operationsForOCL
@@ -856,7 +859,7 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ViewDownloadTransmitSummaryOperations
-						.validateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservation(
+						.validateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation(
 								(ViewDownloadTransmitSummary) objectToTest,
 								diagnostician, map);
 			}

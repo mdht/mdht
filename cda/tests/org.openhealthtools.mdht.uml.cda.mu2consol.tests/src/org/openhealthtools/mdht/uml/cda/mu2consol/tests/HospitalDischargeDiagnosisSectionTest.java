@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Mu2consol Hospital Discharge Diagnosis Section Hospital
  * Discharge Diagnosis</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalDischargeDiagnosisSection#getmu2consolHospitalDischargeDiagnosis()
- * <em>Getmu2consol Hospital Discharge Diagnosis</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalDischargeDiagnosisSection#getMu2consolHospitalDischargeDiagnosis()
+ * <em>Get Mu2consol Hospital Discharge Diagnosis</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalDischargeDiagnosisSection#validateHospitalDischargeDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Hospital Discharge Diagnosis Section Template Id</em>}</li>
@@ -91,10 +91,10 @@ public class HospitalDischargeDiagnosisSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolHospitalDischargeDiagnosis() {
+	public void testGetMu2consolHospitalDischargeDiagnosis() {
 
 		HospitalDischargeDiagnosisSection target = objectFactory.create();
-		target.getmu2consolHospitalDischargeDiagnosis();
+		target.getMu2consolHospitalDischargeDiagnosis();
 
 	}
 

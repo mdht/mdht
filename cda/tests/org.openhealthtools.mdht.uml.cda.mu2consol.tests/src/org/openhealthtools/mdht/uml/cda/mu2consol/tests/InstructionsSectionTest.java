@@ -33,8 +33,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateMu2consolInstructionsSectionInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Mu2consol Instructions Section Instructions</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#getmu2consolInstructionss()
- * <em>Getmu2consol Instructionss</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#getMu2consolInstructionss()
+ * <em>Get Mu2consol Instructionss</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateInstructionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Instructions Section Template Id</em>}</li>
@@ -90,10 +90,10 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolInstructionss() {
+	public void testGetMu2consolInstructionss() {
 
 		InstructionsSection target = objectFactory.create();
-		target.getmu2consolInstructionss();
+		target.getMu2consolInstructionss();
 
 	}
 

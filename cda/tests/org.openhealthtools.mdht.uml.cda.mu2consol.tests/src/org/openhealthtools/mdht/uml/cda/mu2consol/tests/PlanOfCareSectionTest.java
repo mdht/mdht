@@ -61,11 +61,11 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
-		OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase = new OperationsTestCase<PlanOfCareSection>(
-				"validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation",
+	public void testValidateMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
+		OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase = new OperationsTestCase<PlanOfCareSection>(
+				"validateMu2consolPlanOfCareSectionPlanOfCareActivityObservation",
 				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_MU2CONSOL_PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+						.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 				objectFactory) {
 
 			@Override
@@ -84,14 +84,14 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PlanOfCareSectionOperations
-						.validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservation(
+						.validateMu2consolPlanOfCareSectionPlanOfCareActivityObservation(
 								(PlanOfCareSection) objectToTest,
 								diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolPlanOfCareSectionMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase
+		validateMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase
 				.doValidationTest();
 	}
 
@@ -100,10 +100,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolPlanOfCareActivityAct() {
+	public void testGetMu2consolPlanOfCareActivityAct() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getmu2consolPlanOfCareActivityAct();
+		target.getMu2consolPlanOfCareActivityAct();
 
 	}
 
@@ -112,10 +112,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolPlanOfCareActivityEncounter() {
+	public void testGetMu2consolPlanOfCareActivityEncounter() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getmu2consolPlanOfCareActivityEncounter();
+		target.getMu2consolPlanOfCareActivityEncounter();
 
 	}
 
@@ -124,10 +124,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolPlanOfCareActivityObservation() {
+	public void testGetMu2consolPlanOfCareActivityObservation() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getmu2consolPlanOfCareActivityObservation();
+		target.getMu2consolPlanOfCareActivityObservation();
 
 	}
 

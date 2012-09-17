@@ -35,8 +35,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Mu2consol Hospital Admission Medications Section Entries
  * Optional Admission Medication</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#getmu2consolAdmissionMedications()
- * <em>Getmu2consol Admission Medications</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#getMu2consolAdmissionMedications()
+ * <em>Get Mu2consol Admission Medications</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional#validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Hospital Admission Medications Section Entries Optional Template
@@ -96,11 +96,11 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolAdmissionMedications() {
+	public void testGetMu2consolAdmissionMedications() {
 
 		HospitalAdmissionMedicationsSectionEntriesOptional target = objectFactory
 				.create();
-		target.getmu2consolAdmissionMedications();
+		target.getMu2consolAdmissionMedications();
 
 	}
 

@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Mu2consol Postprocedure Diagnosis Section Postprocedure
  * Diagnosis</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#getmu2consolPostprocedureDiagnosis()
- * <em>Getmu2consol Postprocedure Diagnosis</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#getMu2consolPostprocedureDiagnosis()
+ * <em>Get Mu2consol Postprocedure Diagnosis</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#validatePostprocedureDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Postprocedure Diagnosis Section Template Id</em>}</li>
@@ -91,10 +91,10 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolPostprocedureDiagnosis() {
+	public void testGetMu2consolPostprocedureDiagnosis() {
 
 		PostprocedureDiagnosisSection target = objectFactory.create();
-		target.getmu2consolPostprocedureDiagnosis();
+		target.getMu2consolPostprocedureDiagnosis();
 
 	}
 

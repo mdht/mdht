@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Mu2consol Preoperative Diagnosis Section Preoperative Diagnosis
  * </em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PreoperativeDiagnosisSection#getmu2consolPreoperativeDiagnosis()
- * <em>Getmu2consol Preoperative Diagnosis</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PreoperativeDiagnosisSection#getMu2consolPreoperativeDiagnosis()
+ * <em>Get Mu2consol Preoperative Diagnosis</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PreoperativeDiagnosisSection#validatePreoperativeDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Preoperative Diagnosis Section Template Id</em>}</li>
@@ -91,10 +91,10 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolPreoperativeDiagnosis() {
+	public void testGetMu2consolPreoperativeDiagnosis() {
 
 		PreoperativeDiagnosisSection target = objectFactory.create();
-		target.getmu2consolPreoperativeDiagnosis();
+		target.getMu2consolPreoperativeDiagnosis();
 
 	}
 
