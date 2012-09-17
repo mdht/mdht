@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Mu2consol Medications Administered Section Medication Activity
  * </em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#getmu2consolMedicationActivities()
- * <em>Getmu2consol Medication Activities</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#getMu2consolMedicationActivities()
+ * <em>Get Mu2consol Medication Activities</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Medications Administered Section Template Id</em>}</li>
@@ -91,10 +91,10 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolMedicationActivities() {
+	public void testGetMu2consolMedicationActivities() {
 
 		MedicationsAdministeredSection target = objectFactory.create();
-		target.getmu2consolMedicationActivities();
+		target.getMu2consolMedicationActivities();
 
 	}
 

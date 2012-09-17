@@ -67,8 +67,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Section
  * Template Id</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summarymu2consol Hospital Admission Diagnosis
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate VDT Inpatient Summary Mu2consol Hospital Admission Diagnosis
  * Section Hospital Admission Diagnosis</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeInstructionsSection()
@@ -381,12 +381,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
+
 	/**
 	 * 
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
+	public void testValidateVDTInpatientSummaryMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<VDTInpatientSummary>(
 				"validateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
 				operationsForOCL
@@ -413,7 +414,7 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
+						.validateVDTInpatientSummaryMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
 								(VDTInpatientSummary) objectToTest,
 								diagnostician, map);
 			}

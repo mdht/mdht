@@ -36,23 +36,23 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#validateMu2consolFunctionalStatusSectionFunctionalStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Mu2consol Functional Status Section Functional Status</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getmu2consolCognitiveStatusProblemObservations()
- * <em>Getmu2consol Cognitive Status Problem Observations</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getMu2consolCognitiveStatusProblemObservations()
+ * <em>Get Mu2consol Cognitive Status Problem Observations</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getmu2consolCognitiveStatusResultObservations()
- * <em>Getmu2consol Cognitive Status Result Observations</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getMu2consolCognitiveStatusResultObservations()
+ * <em>Get Mu2consol Cognitive Status Result Observations</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getmu2consolCognitiveStatusResultOrganizers()
- * <em>Getmu2consol Cognitive Status Result Organizers</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getMu2consolCognitiveStatusResultOrganizers()
+ * <em>Get Mu2consol Cognitive Status Result Organizers</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getmu2consolFunctionalStatusProblemObservations()
- * <em>Getmu2consol Functional Status Problem Observations</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getMu2consolFunctionalStatusProblemObservations()
+ * <em>Get Mu2consol Functional Status Problem Observations</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getmu2consolFunctionalStatusResultObservations()
- * <em>Getmu2consol Functional Status Result Observations</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getMu2consolFunctionalStatusResultObservations()
+ * <em>Get Mu2consol Functional Status Result Observations</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getmu2consolFunctionalStatusResultOrganizers()
- * <em>Getmu2consol Functional Status Result Organizers</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getMu2consolFunctionalStatusResultOrganizers()
+ * <em>Get Mu2consol Functional Status Result Organizers</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#validateFunctionalStatusSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Functional Status Section Template Id</em>}</li>
@@ -147,10 +147,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolCognitiveStatusProblemObservations() {
+	public void testGetMu2consolCognitiveStatusProblemObservations() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getmu2consolCognitiveStatusProblemObservations();
+		target.getMu2consolCognitiveStatusProblemObservations();
 
 	}
 
@@ -159,10 +159,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolCognitiveStatusResultObservations() {
+	public void testGetMu2consolCognitiveStatusResultObservations() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getmu2consolCognitiveStatusResultObservations();
+		target.getMu2consolCognitiveStatusResultObservations();
 
 	}
 
@@ -171,10 +171,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolCognitiveStatusResultOrganizers() {
+	public void testGetMu2consolCognitiveStatusResultOrganizers() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getmu2consolCognitiveStatusResultOrganizers();
+		target.getMu2consolCognitiveStatusResultOrganizers();
 
 	}
 
@@ -183,10 +183,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolFunctionalStatusProblemObservations() {
+	public void testGetMu2consolFunctionalStatusProblemObservations() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getmu2consolFunctionalStatusProblemObservations();
+		target.getMu2consolFunctionalStatusProblemObservations();
 
 	}
 
@@ -195,10 +195,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolFunctionalStatusResultObservations() {
+	public void testGetMu2consolFunctionalStatusResultObservations() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getmu2consolFunctionalStatusResultObservations();
+		target.getMu2consolFunctionalStatusResultObservations();
 
 	}
 
@@ -207,10 +207,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolFunctionalStatusResultOrganizers() {
+	public void testGetMu2consolFunctionalStatusResultOrganizers() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getmu2consolFunctionalStatusResultOrganizers();
+		target.getMu2consolFunctionalStatusResultOrganizers();
 
 	}
 

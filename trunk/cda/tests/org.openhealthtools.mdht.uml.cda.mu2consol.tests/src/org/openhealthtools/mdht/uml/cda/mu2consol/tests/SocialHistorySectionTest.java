@@ -35,8 +35,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Mu2consol Social History Section Smoking Status Observation
  * </em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#getmu2consolSmokingStatusObservations()
- * <em>Getmu2consol Smoking Status Observations</em>}</li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#getMu2consolSmokingStatusObservations()
+ * <em>Get Mu2consol Smoking Status Observations</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#validateSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Social History Section Template Id</em>}</li>
@@ -94,10 +94,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetmu2consolSmokingStatusObservations() {
+	public void testGetMu2consolSmokingStatusObservations() {
 
 		SocialHistorySection target = objectFactory.create();
-		target.getmu2consolSmokingStatusObservations();
+		target.getMu2consolSmokingStatusObservations();
 
 	}
 
