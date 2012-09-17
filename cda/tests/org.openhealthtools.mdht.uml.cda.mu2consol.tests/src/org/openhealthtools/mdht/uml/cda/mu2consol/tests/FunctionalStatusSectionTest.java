@@ -36,10 +36,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#validateMu2consolFunctionalStatusSectionFunctionalStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Mu2consol Functional Status Section Functional Status</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#validateMu2consolFunctionalStatusSectionFunctionalStatusProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Functional Status Section Functional Status Problem
- * Observation</em>}</li>
- * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.FunctionalStatusSection#getmu2consolCognitiveStatusProblemObservations()
  * <em>Getmu2consol Cognitive Status Problem Observations</em>}</li>
  * <li>
@@ -143,45 +139,6 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateMu2consolFunctionalStatusSectionFunctionalStatusTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateMu2consolFunctionalStatusSectionFunctionalStatusProblemObservation() {
-		OperationsTestCase<FunctionalStatusSection> validateMu2consolFunctionalStatusSectionFunctionalStatusProblemObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
-				"validateMu2consolFunctionalStatusSectionFunctionalStatusProblemObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_FUNCTIONAL_STATUS_SECTION_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations
-						.validateMu2consolFunctionalStatusSectionFunctionalStatusProblemObservation(
-								(FunctionalStatusSection) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolFunctionalStatusSectionFunctionalStatusProblemObservationTestCase
 				.doValidationTest();
 	}
 
