@@ -521,8 +521,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
-
-
 	/**
 	 * 
 	 * @generated NOT
@@ -1175,7 +1173,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
-
 	/**
 	 * 
 	 * @generated NOT
@@ -1321,7 +1318,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
-
 	/**
 	 * 
 	 * @generated NOT
@@ -1413,7 +1409,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 		validateClinicalOfficeVisitSummarySocialHistorySectionTemplateIdTestCase
 				.doValidationTest();
 	}
-
 
 	/**
 	 * 

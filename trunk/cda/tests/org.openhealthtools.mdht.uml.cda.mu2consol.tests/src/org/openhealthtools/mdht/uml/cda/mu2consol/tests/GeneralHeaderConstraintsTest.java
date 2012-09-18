@@ -11,10 +11,25 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.DocumentationOf;
+import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
+import org.openhealthtools.mdht.uml.cda.LanguageCommunication;
+import org.openhealthtools.mdht.uml.cda.Patient;
+import org.openhealthtools.mdht.uml.cda.PatientRole;
+import org.openhealthtools.mdht.uml.cda.Performer1;
+import org.openhealthtools.mdht.uml.cda.Person;
+import org.openhealthtools.mdht.uml.cda.RecordTarget;
+import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -93,7 +108,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMu2consolGeneralHeaderConstraintsRecordTarget() {
@@ -111,6 +126,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				RecordTarget rTarget = CDAFactory.eINSTANCE
+						.createRecordTarget();
+				target.getRecordTargets().add(rTarget);
 
 			}
 
@@ -132,7 +150,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMu2consolGeneralHeaderConstraintsDocumentationOf() {
@@ -150,6 +168,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				DocumentationOf dOf = CDAFactory.eINSTANCE
+						.createDocumentationOf();
+				target.getDocumentationOfs().add(dOf);
 
 			}
 
@@ -171,7 +192,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson() {
@@ -183,12 +204,25 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				DocumentationOf dOf = CDAFactory.eINSTANCE
+						.createDocumentationOf();
+				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
+				AssignedEntity aE = CDAFactory.eINSTANCE.createAssignedEntity();
+				dOf.setServiceEvent(sEvent);
+				sEvent.getPerformers().add(performer);
+				performer.setAssignedEntity(aE);
+				target.getDocumentationOfs().add(dOf);
 
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				Person aPerson = CDAFactory.eINSTANCE.createPerson();
+				target.getDocumentationOfs().get(0).getServiceEvent()
+						.getPerformers().get(0).getAssignedEntity()
+						.setAssignedPerson(aPerson);
 
 			}
 
@@ -210,7 +244,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity() {
@@ -222,12 +256,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				DocumentationOf dOf = CDAFactory.eINSTANCE
+						.createDocumentationOf();
+				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
+				dOf.setServiceEvent(sEvent);
+				sEvent.getPerformers().add(performer);
+				target.getDocumentationOfs().add(dOf);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				AssignedEntity aE = CDAFactory.eINSTANCE.createAssignedEntity();
+				target.getDocumentationOfs().get(0).getServiceEvent()
+						.getPerformers().get(0).setAssignedEntity(aE);
 
 			}
 
@@ -249,7 +291,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer() {
@@ -261,12 +303,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				DocumentationOf dOf = CDAFactory.eINSTANCE
+						.createDocumentationOf();
+				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
+				dOf.setServiceEvent(sEvent);
+				target.getDocumentationOfs().add(dOf);
 
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
+				target.getDocumentationOfs().get(0).getServiceEvent()
+						.getPerformers().add(performer);
 
 			}
 
@@ -288,7 +338,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEvent() {
@@ -300,12 +350,16 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				DocumentationOf dOf = CDAFactory.eINSTANCE
+						.createDocumentationOf();
+				target.getDocumentationOfs().add(dOf);
 
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
+				target.getDocumentationOfs().get(0).setServiceEvent(sEvent);
 
 			}
 
@@ -327,7 +381,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant() {
@@ -339,12 +393,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
+				comp1.setEncompassingEncounter(eEncounter);
+				target.setComponentOf(comp1);
 
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				EncounterParticipant participant = CDAFactory.eINSTANCE
+						.createEncounterParticipant();
+				target.getComponentOf().getEncompassingEncounter()
+						.getEncounterParticipants().add(participant);
 
 			}
 
@@ -366,7 +429,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsComponent1EncompassingEncounter() {
@@ -378,12 +441,17 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				Component1 compObj = CDAFactory.eINSTANCE.createComponent1();
+				target.setComponentOf(compObj);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE
+						.createEncompassingEncounter();
+				target.getComponentOf().setEncompassingEncounter(eEncounter);
 
 			}
 
@@ -443,7 +511,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode() {
@@ -455,12 +523,22 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				RecordTarget rT = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				target.getRecordTargets().add(rT);
+				rT.setPatientRole(pRole);
+				pRole.setPatient(patient);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCode("2135-2");
+				ce.setCodeSystem("2.16.840.1.113883.6.238");
+				target.getRecordTargets().get(0).getPatientRole().getPatient()
+						.setEthnicGroupCode(ce);
 
 			}
 
@@ -482,7 +560,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP() {
@@ -494,13 +572,22 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				RecordTarget rT = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				target.getRecordTargets().add(rT);
+				rT.setPatientRole(pRole);
+				pRole.setPatient(patient);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCode("2135-2");
+				ce.setCodeSystem("2.16.840.1.113883.6.238");
+				target.getRecordTargets().get(0).getPatientRole().getPatient()
+						.setEthnicGroupCode(ce);
 			}
 
 			@Override
@@ -521,7 +608,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode() {
@@ -533,12 +620,22 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				RecordTarget rT = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				target.getRecordTargets().add(rT);
+				rT.setPatientRole(pRole);
+				pRole.setPatient(patient);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.6.238");
+				ce.setCode("1111111111");
+				target.getRecordTargets().get(0).getPatientRole().getPatient()
+						.setRaceCode(ce);
 
 			}
 
@@ -560,7 +657,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP() {
@@ -572,12 +669,22 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				RecordTarget rT = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				target.getRecordTargets().add(rT);
+				rT.setPatientRole(pRole);
+				pRole.setPatient(patient);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.6.238");
+				ce.setCode("1111111111");
+				target.getRecordTargets().get(0).getPatientRole().getPatient()
+						.setRaceCode(ce);
 
 			}
 
@@ -599,7 +706,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication() {
@@ -611,12 +718,22 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget rT = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				target.getRecordTargets().add(rT);
+				rT.setPatientRole(pRole);
+				pRole.setPatient(patient);
 
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				LanguageCommunication lComm = CDAFactory.eINSTANCE
+						.createLanguageCommunication();
+				target.getRecordTargets().get(0).getPatientRole().getPatient()
+						.getLanguageCommunications().add(lComm);
 
 			}
 
@@ -638,7 +755,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatient() {
@@ -650,13 +767,19 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget rT = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				target.getRecordTargets().add(rT);
+				rT.setPatientRole(pRole);
 
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				target.getRecordTargets().get(0).getPatientRole()
+						.setPatient(patient);
 			}
 
 			@Override
@@ -677,7 +800,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRole() {
@@ -689,12 +812,15 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				RecordTarget rT = CDAFactory.eINSTANCE.createRecordTarget();
+				target.getRecordTargets().add(rT);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				target.getRecordTargets().get(0).setPatientRole(pRole);
 
 			}
 

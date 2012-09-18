@@ -1667,7 +1667,6 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
-
 	/**
 	 * 
 	 * @generated NOT

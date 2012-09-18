@@ -23,7 +23,8 @@ import org.junit.runners.Suite;
 		TransitionOfCareAmbulatorySummaryTest.class,
 		TransitionOfCareInpatientSummaryTest.class,
 		ViewDownloadTransmitSummaryTest.class, VDTAmbulatorySummaryTest.class,
-		VDTInpatientSummaryTest.class })
+		VDTInpatientSummaryTest.class, SmokingStatusObservationTest.class,
+		AssessmentSectionTest.class, GeneralHeaderConstraintsTest.class })
 public class Mu2consolTests {
 
 	/**

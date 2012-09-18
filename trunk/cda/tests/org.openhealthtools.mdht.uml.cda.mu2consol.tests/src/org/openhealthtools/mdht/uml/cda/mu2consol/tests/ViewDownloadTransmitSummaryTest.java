@@ -644,8 +644,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
-
-
 	/**
 	 * 
 	 * @generated NOT
@@ -826,7 +824,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 		validateViewDownloadTransmitSummarySocialHistorySectionTemplateIdTestCase
 				.doValidationTest();
 	}
-
 
 	/**
 	 * 
