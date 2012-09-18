@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 
@@ -48,7 +50,7 @@ public class AssessmentSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMu2consolAssessmentSectionProblemObservation() {
@@ -65,8 +67,9 @@ public class AssessmentSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(AssessmentSection target) {
-				target.init();
-
+				ProblemObservation pObs = ConsolFactory.eINSTANCE
+						.createProblemObservation().init();
+				target.addObservation(pObs);
 			}
 
 			@Override

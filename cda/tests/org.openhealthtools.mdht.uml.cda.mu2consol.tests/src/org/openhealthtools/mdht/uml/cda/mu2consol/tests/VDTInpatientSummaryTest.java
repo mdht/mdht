@@ -381,7 +381,6 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 				.doValidationTest();
 	}
 
-
 	/**
 	 * 
 	 * @generated NOT
