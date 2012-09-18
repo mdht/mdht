@@ -549,7 +549,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("34117-2", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override

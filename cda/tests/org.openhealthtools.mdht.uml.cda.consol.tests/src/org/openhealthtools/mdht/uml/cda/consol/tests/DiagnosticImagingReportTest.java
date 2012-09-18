@@ -290,7 +290,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("11522-0", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override

@@ -148,12 +148,15 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
 
+				target.setCode(code);
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+
 				CD code = DatatypesFactory.eINSTANCE.createCD();
 				code.setOriginalText(DatatypesFactory.eINSTANCE.createED());
 				target.setCode(code);
@@ -733,7 +736,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-				CE pc = DatatypesFactory.eINSTANCE.createCE("aaa", "2.16.840.1.113883.5.7");
+				CE pc = DatatypesFactory.eINSTANCE.createCE("A", "2.16.840.1.113883.5.7");
 				target.setPriorityCode(pc);
 			}
 

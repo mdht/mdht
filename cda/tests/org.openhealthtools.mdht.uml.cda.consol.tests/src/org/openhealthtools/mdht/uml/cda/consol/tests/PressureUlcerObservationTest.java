@@ -844,7 +844,7 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 				target.init();
 				target.getTargetSiteCodes().clear();
 				target.getTargetSiteCodes().add(
-					DatatypesFactory.eINSTANCE.createCD("test", "2.16.840.1.113883.6.96", "", ""));
+					DatatypesFactory.eINSTANCE.createCD("79951008", "2.16.840.1.113883.6.96", "", ""));
 			}
 
 			@Override

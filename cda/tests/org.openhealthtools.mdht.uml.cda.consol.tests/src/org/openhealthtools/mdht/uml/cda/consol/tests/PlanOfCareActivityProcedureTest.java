@@ -21,6 +21,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.PlanOfCareActivityProc
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,7 +143,7 @@ public class PlanOfCareActivityProcedureTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareActivityProcedure target) {
 				target.init();
-
+				target.setMoodCode(x_DocumentProcedureMood.INT);
 			}
 
 			@Override
