@@ -61,7 +61,10 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SmokingStatusObservation target) {
+				target.init();
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
 
+				target.setEffectiveTime(ts);
 			}
 
 			@Override

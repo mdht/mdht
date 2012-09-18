@@ -60,15 +60,15 @@ public class TobaccoUseTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(TobaccoUse target) {
-
+				target.init();
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 			}
 
 			@Override
 			protected void updateToPass(TobaccoUse target) {
-				target.init();
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				IVL_TS ts = target.getEffectiveTime();
 				ts.setLow(DatatypesFactory.eINSTANCE.createIVXB_TS());
-				target.setEffectiveTime(ts);
 			}
 
 			@Override

@@ -21,6 +21,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.PlanOfCareActivityObse
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,6 +145,7 @@ public class PlanOfCareActivityObservationTest extends CDAValidationTest {
 			protected void updateToPass(PlanOfCareActivityObservation target) {
 				target.init();
 
+				target.setMoodCode(x_ActMoodDocumentObservation.INT);
 			}
 
 			@Override

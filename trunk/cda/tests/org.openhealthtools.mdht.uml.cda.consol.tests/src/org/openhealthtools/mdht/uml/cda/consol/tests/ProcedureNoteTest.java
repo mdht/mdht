@@ -549,7 +549,7 @@ public class ProcedureNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureNote target) {
 				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("28577-5", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override

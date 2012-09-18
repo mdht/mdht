@@ -271,7 +271,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("11490-0", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override

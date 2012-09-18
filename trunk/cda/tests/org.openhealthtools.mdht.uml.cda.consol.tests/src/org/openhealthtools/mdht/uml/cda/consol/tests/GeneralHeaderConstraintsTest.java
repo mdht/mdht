@@ -756,7 +756,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 
-				target.setConfidentialityCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.5.25"));
+				target.setConfidentialityCode(DatatypesFactory.eINSTANCE.createCE("V", "2.16.840.1.113883.5.25"));
 
 			}
 
@@ -8437,7 +8437,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setEthnicGroupCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.238"));
+				patient.setEthnicGroupCode(DatatypesFactory.eINSTANCE.createCE("2135-2", "2.16.840.1.113883.6.238"));
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
@@ -12312,6 +12312,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
 				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
 				se.getPerformers().add(perf);
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);
@@ -12323,7 +12324,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
 				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
-				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				perf.setTypeCode(x_ServiceEventPerformer.PRF);
 				se.getPerformers().add(perf);
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);

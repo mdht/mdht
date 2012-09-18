@@ -82,12 +82,15 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterActivities target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
 
+				target.setCode(code);
 			}
 
 			@Override
 			protected void updateToPass(EncounterActivities target) {
-				target.init();
+
 				CD code = DatatypesFactory.eINSTANCE.createCD();
 				code.setOriginalText(DatatypesFactory.eINSTANCE.createED());
 				target.setCode(code);

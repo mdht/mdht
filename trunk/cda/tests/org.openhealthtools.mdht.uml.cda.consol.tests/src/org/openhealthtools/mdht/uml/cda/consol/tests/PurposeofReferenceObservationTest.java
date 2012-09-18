@@ -243,7 +243,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeofReferenceObservation target) {
 				target.init();
-				CD value = DatatypesFactory.eINSTANCE.createCD("", "1.2.840.10008.2.16.4", "", "");
+				CD value = DatatypesFactory.eINSTANCE.createCD("121079", "1.2.840.10008.2.16.4", "", "");
 				target.getValues().add(value);
 			}
 
