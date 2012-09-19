@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
-import org.openhealthtools.mdht.uml.cda.consol.ResultsSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary;
@@ -683,7 +683,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 				/* ResultsSection */
 				ResultsSection section =
 
-				ConsolFactory.eINSTANCE.createResultsSection().init();
+				Mu2consolFactory.eINSTANCE.createResultsSection().init();
 
 				target.addSection(section);
 
