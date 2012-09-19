@@ -20,7 +20,7 @@ import org.openhealthtools.mdht.uml.cda.consol.PostprocedureDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
-import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection;
@@ -777,7 +777,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 				/* ProceduresSection */
 				ProceduresSection section =
 
-				ConsolFactory.eINSTANCE.createProceduresSection().init();
+				Mu2consolFactory.eINSTANCE.createProceduresSection().init();
 
 				target.addSection(section);
 
