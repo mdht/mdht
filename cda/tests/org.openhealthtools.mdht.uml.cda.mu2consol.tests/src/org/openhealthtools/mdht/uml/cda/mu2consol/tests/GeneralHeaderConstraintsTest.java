@@ -535,7 +535,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCode("2135-2");
+				ce.setCode("2058-6");
 				ce.setCodeSystem("2.16.840.1.113883.6.238");
 				target.getRecordTargets().get(0).getPatientRole().getPatient()
 						.setEthnicGroupCode(ce);
@@ -633,7 +633,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				ce.setCodeSystem("2.16.840.1.113883.6.238");
-				ce.setCode("1111111111");
+				ce.setCode("2135-2");
 				target.getRecordTargets().get(0).getPatientRole().getPatient()
 						.setRaceCode(ce);
 
