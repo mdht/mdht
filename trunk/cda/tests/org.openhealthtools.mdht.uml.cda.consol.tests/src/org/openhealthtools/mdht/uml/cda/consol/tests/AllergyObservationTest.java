@@ -56,6 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationAllergyStatusInversionIndicator(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Allergy Status Inversion Indicator</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationReactionInversionIndicator(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Reaction Inversion Indicator</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationSeverityInversionIndicator(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Severity Inversion Indicator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationAllergyPlayingEntityCodeSystems(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Allergy Playing Entity Code Systems</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Mood Code</em>}</li>
@@ -437,6 +438,164 @@ public class AllergyObservationTest extends CDAValidationTest {
 		};
 
 		validateAllergyObservationSeverityInversionIndicatorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateAllergyObservationAllergyPlayingEntityCodeSystems() {
+		OperationsTestCase<AllergyObservation> validateAllergyObservationAllergyPlayingEntityCodeSystemsTestCase = new OperationsTestCase<AllergyObservation>(
+			"validateAllergyObservationAllergyPlayingEntityCodeSystems",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_ALLERGY_PLAYING_ENTITY_CODE_SYSTEMS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(AllergyObservation target) {
+						target.init();
+						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("419511003", "1.2.3.4", "", ""));
+
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+						CE code = DatatypesFactory.eINSTANCE.createCE();
+						pe.setCode(code);
+						pr.setPlayingEntity(pe);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(AllergyObservation target) {
+						target.init();
+						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("123456", "1.2.3.4", "", ""));
+
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+						CE code = DatatypesFactory.eINSTANCE.createCE();
+						pe.setCode(code);
+						pr.setPlayingEntity(pe);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(AllergyObservation target) {
+						target.init();
+						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("12345", "1.2.3.4", "", ""));
+
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+						CE code = DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.88");
+						pe.setCode(code);
+						pr.setPlayingEntity(pe);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(AllergyObservation target) {
+						target.init();
+						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("419511003", "1.2.3.4", "", ""));
+
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+						CE code = DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.4.9");
+						pe.setCode(code);
+						pr.setPlayingEntity(pe);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(AllergyObservation target) {
+						target.init();
+						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("419511003", "1.2.3.4", "", ""));
+
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+						CE code = DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.88");
+						pe.setCode(code);
+						pr.setPlayingEntity(pe);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(AllergyObservation target) {
+						target.init();
+						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("419511003", "1.2.3.4", "", ""));
+
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+						CE code = DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.3.26.1.5");
+						pe.setCode(code);
+						pr.setPlayingEntity(pe);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(AllergyObservation target) {
+						target.init();
+						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("12345", "1.2.3.4", "", ""));
+
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+						CE code = DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.4.9");
+						pe.setCode(code);
+						pr.setPlayingEntity(pe);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyObservationOperations.validateAllergyObservationAllergyPlayingEntityCodeSystems(
+					(AllergyObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyObservationAllergyPlayingEntityCodeSystemsTestCase.doValidationTest();
 	}
 
 	/**
