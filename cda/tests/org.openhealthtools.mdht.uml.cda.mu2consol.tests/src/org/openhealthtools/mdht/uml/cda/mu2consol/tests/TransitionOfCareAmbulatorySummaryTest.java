@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary;
 
@@ -38,6 +39,10 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryResponsibleParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Transition Of Care Ambulatory Summary Responsible Party</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Transition Of Care Ambulatory Summary Ambulatory Encounter
+ * Diagnoses</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryReasonForReferralSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Transition Of Care Ambulatory Summary Reason For Referral
@@ -98,6 +103,47 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 		};
 
 		validateTransitionOfCareAmbulatorySummaryResponsiblePartyTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated NOT
+	 */
+	@Test
+	public void testValidateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses() {
+		OperationsTestCase<TransitionOfCareAmbulatorySummary> validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnosesTestCase = new OperationsTestCase<TransitionOfCareAmbulatorySummary>(
+				"validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses",
+				operationsForOCL
+						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_AMBULATORY_ENCOUNTER_DIAGNOSES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(TransitionOfCareAmbulatorySummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TransitionOfCareAmbulatorySummary target) {
+				target.init();
+				AssessmentSection aSection = Mu2consolFactory.eINSTANCE.createAssessmentSection().init();
+				target.addSection(aSection);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransitionOfCareAmbulatorySummaryOperations
+						.validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses(
+								(TransitionOfCareAmbulatorySummary) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnosesTestCase
 				.doValidationTest();
 	}
 

@@ -17,7 +17,6 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
-import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
@@ -53,10 +52,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate View Download Transmit Summary Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Hospital Discharge Medications
- * Section</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate View Download Transmit Summary Problem Section</em>}</li>
@@ -105,9 +100,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getMedicationsSection()
  * <em>Get Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getHospitalDischargeMedicationsSection()
- * <em>Get Hospital Discharge Medications Section</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getProblemSection()
  * <em>Get Problem Section</em>}</li>
@@ -268,53 +260,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 		};
 
 		validateViewDownloadTransmitSummaryMedicationsSectionTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateViewDownloadTransmitSummaryHospitalDischargeMedicationsSection() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryHospitalDischargeMedicationsSectionTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-				"validateViewDownloadTransmitSummaryHospitalDischargeMedicationsSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
-				/* HospitalDischargeMedicationsSection */
-				HospitalDischargeMedicationsSection section =
-
-				ConsolFactory.eINSTANCE
-						.createHospitalDischargeMedicationsSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations
-						.validateViewDownloadTransmitSummaryHospitalDischargeMedicationsSection(
-								(ViewDownloadTransmitSummary) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryHospitalDischargeMedicationsSectionTestCase
 				.doValidationTest();
 	}
 
@@ -888,18 +833,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 		ViewDownloadTransmitSummary target = objectFactory.create();
 		target.getMedicationsSection();
-
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testGetHospitalDischargeMedicationsSection() {
-
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getHospitalDischargeMedicationsSection();
 
 	}
 

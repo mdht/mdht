@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
@@ -63,6 +64,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Section</em>}
  * </li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate VDT Inpatient Summary Hospital Discharge Medications Section
+ * </em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Section
  * Template Id</em>}</li>
@@ -85,6 +90,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getChiefComplaintAndReasonForVisitSection()
  * <em>Get Chief Complaint And Reason For Visit Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeMedicationsSection()
+ * <em>Get Hospital Discharge Medications Section</em>}</li>
  * </ul>
  * </p>
  * 
@@ -336,6 +344,53 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
+	public void testValidateVDTInpatientSummaryHospitalDischargeMedicationsSection() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalDischargeMedicationsSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
+				"validateVDTInpatientSummaryHospitalDischargeMedicationsSection",
+				operationsForOCL
+						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				target.init();
+
+				/* HospitalDischargeMedicationsSection */
+				HospitalDischargeMedicationsSection section =
+
+				ConsolFactory.eINSTANCE
+						.createHospitalDischargeMedicationsSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations
+						.validateVDTInpatientSummaryHospitalDischargeMedicationsSection(
+								(VDTInpatientSummary) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryHospitalDischargeMedicationsSectionTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated NOT
+	 */
+	@Test
 	public void testValidateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<VDTInpatientSummary>(
 				"validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId",
@@ -481,6 +536,18 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 		VDTInpatientSummary target = objectFactory.create();
 		target.getChiefComplaintAndReasonForVisitSection();
+
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalDischargeMedicationsSection() {
+
+		VDTInpatientSummary target = objectFactory.create();
+		target.getHospitalDischargeMedicationsSection();
 
 	}
 
