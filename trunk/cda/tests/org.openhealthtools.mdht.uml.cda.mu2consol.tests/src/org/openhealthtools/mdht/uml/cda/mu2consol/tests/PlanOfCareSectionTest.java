@@ -100,10 +100,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetMu2consolPlanOfCareActivityAct() {
+	public void testGetMu2consolPlanOfCareActivityActs() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getMu2consolPlanOfCareActivityAct();
+		target.getMu2consolPlanOfCareActivityActs();
 
 	}
 
@@ -112,10 +112,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetMu2consolPlanOfCareActivityEncounter() {
+	public void testGetMu2consolPlanOfCareActivityEncounters() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getMu2consolPlanOfCareActivityEncounter();
+		target.getMu2consolPlanOfCareActivityEncounters();
 
 	}
 
@@ -124,10 +124,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetMu2consolPlanOfCareActivityObservation() {
+	public void testGetMu2consolPlanOfCareActivityObservations() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getMu2consolPlanOfCareActivityObservation();
+		target.getMu2consolPlanOfCareActivityObservations();
 
 	}
 
