@@ -87,7 +87,7 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses() {
@@ -105,9 +105,8 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
 				target.init();
-				HospitalAdmissionDiagnosisSection aSection  = Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
-				target.addSection(aSection);
-
+				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+				target.addSection(hSection);
 			}
 
 			@Override
@@ -234,8 +233,9 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
-				HospitalAdmissionDiagnosisSection aSection = Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
-				for(II ii : aSection.getTemplateIds()){
+				HospitalAdmissionDiagnosisSection aSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
+				for (II ii : aSection.getTemplateIds()) {
 					ii.setRoot(BAD_TEMPLATE_ID);
 				}
 				target.addSection(aSection);
@@ -243,9 +243,11 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				HospitalAdmissionDiagnosisSection aSection = Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+				HospitalAdmissionDiagnosisSection aSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
 				II iiTemp = aSection.getTemplateIds().get(0);
-				for(II ii : target.getHospitalAdmissionDiagnosisSection().getTemplateIds()){
+				for (II ii : target.getHospitalAdmissionDiagnosisSection()
+						.getTemplateIds()) {
 					ii.setRoot(iiTemp.getRoot());
 				}
 			}
@@ -280,13 +282,15 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
-				HospitalAdmissionDiagnosisSection aSection = Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+				HospitalAdmissionDiagnosisSection aSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				HospitalAdmissionDiagnosis act = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosis().init();
+				HospitalAdmissionDiagnosis act = ConsolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosis().init();
 				target.getHospitalAdmissionDiagnosisSection().addAct(act);
 			}
 
@@ -320,8 +324,9 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
-				HospitalDischargeDiagnosisSection aSection = Mu2consolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
-				for(II ii : aSection.getTemplateIds()){
+				HospitalDischargeDiagnosisSection aSection = Mu2consolFactory.eINSTANCE
+						.createHospitalDischargeDiagnosisSection().init();
+				for (II ii : aSection.getTemplateIds()) {
 					ii.setRoot(BAD_TEMPLATE_ID);
 				}
 				target.addSection(aSection);
@@ -329,10 +334,12 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				HospitalDischargeDiagnosisSection aSection = Mu2consolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+				HospitalDischargeDiagnosisSection aSection = Mu2consolFactory.eINSTANCE
+						.createHospitalDischargeDiagnosisSection().init();
 				II iiTemp = aSection.getTemplateIds().get(0);
-				
-				for(II ii: target.getHospitalDischargeDiagnosisSection().getTemplateIds()){
+
+				for (II ii : target.getHospitalDischargeDiagnosisSection()
+						.getTemplateIds()) {
 					ii.setRoot(iiTemp.getRoot());
 				}
 
@@ -368,13 +375,15 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
-				HospitalDischargeDiagnosisSection aSection = Mu2consolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+				HospitalDischargeDiagnosisSection aSection = Mu2consolFactory.eINSTANCE
+						.createHospitalDischargeDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				HospitalDischargeDiagnosis act = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosis().init();
+				HospitalDischargeDiagnosis act = ConsolFactory.eINSTANCE
+						.createHospitalDischargeDiagnosis().init();
 				target.getHospitalDischargeDiagnosisSection().addAct(act);
 
 			}

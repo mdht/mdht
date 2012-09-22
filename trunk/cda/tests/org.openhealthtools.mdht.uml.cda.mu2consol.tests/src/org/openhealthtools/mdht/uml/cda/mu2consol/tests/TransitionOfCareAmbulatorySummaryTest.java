@@ -126,7 +126,8 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(TransitionOfCareAmbulatorySummary target) {
 				target.init();
-				AssessmentSection aSection = Mu2consolFactory.eINSTANCE.createAssessmentSection().init();
+				AssessmentSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentSection().init();
 				target.addSection(aSection);
 
 			}
