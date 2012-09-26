@@ -9,18 +9,13 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Rama Ramakrishnan  - 1/27/2012 - Added check for CS data type
  *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
- *     Rama Ramakrishnan  - 9/26/2012 - Literal checks for CS data type and inclusion of all /
- *     						subset of literal values, based on the property comment value (artf3432)
  *    
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
 
-import static org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil.getAllEnumerations;
 import static org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil.getSmallEnumeration;
 import static org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil.isCSType;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
@@ -36,69 +31,11 @@ public class ValueSetConstraintUtil {
 
 		if (property.getType() instanceof Enumeration) {
 			result = getOCLForEnumeration(property);
-		} else if (isCSType(property)) {
-			result = getOCLForCS(property);
 		} else {
 			result = getOCLForCD(property);
 		}
 
 		return result;
-	}
-
-	/**
-	 * Method for creating OCL String for CS data type
-	 * 
-	 * @param property
-	 * @return
-	 */
-	private static String getOCLForCS(Property property) {
-		System.out.println("getOCLForCS for Property : " + property);
-
-		StringBuffer body = new StringBuffer();
-		boolean needsAnd = false;
-
-		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
-		if (valueSetConstraint == null) {
-			return null;
-		}
-
-		if (valueSetConstraint.getReference() != null) {
-
-			Enumeration referenceBaseEnum = valueSetConstraint.getReference().getBase_Enumeration();
-			Iterable<EnumerationLiteral> literals = referenceBaseEnum != null
-					? (isAllEnumGenerationRequired(property)
-							? getAllEnumerations(referenceBaseEnum)
-							: getSmallEnumeration(referenceBaseEnum))
-					: null;
-			if (literals != null) {
-				if (needsAnd) {
-					body.append(" and (");
-				}
-				boolean firstCode = true;
-				for (EnumerationLiteral literal : literals) {
-					if (firstCode) {
-						firstCode = false;
-					} else {
-						body.append(" or ");
-					}
-					body.append("value.code = '");
-					body.append(literal.getName());
-					body.append("'");
-				}
-				if (needsAnd) {
-					body.append(")");
-				}
-
-			} else {
-				if (needsAnd) {
-					body.append(" and ");
-				}
-				body.append("not value.code.oclIsUndefined()");
-			}
-
-		}
-
-		return body.toString();
 	}
 
 	private static String getOCLForCD(Property property) {
@@ -215,26 +152,5 @@ public class ValueSetConstraintUtil {
 		return (result == null)
 				? null
 				: result.toString();
-	}
-
-	/**
-	 * Returns true if all the literal values need to be specified in the OCL string
-	 * 
-	 * @param property
-	 * @return
-	 */
-	private static boolean isAllEnumGenerationRequired(Property property) {
-		boolean retVal = false;
-		EList<Comment> comments = property.getOwnedComments();
-		for (Comment c : comments) {
-			if ((null != c) && (c.getBody().trim().length() > 0)) {
-				if (c.getBody().trim().equalsIgnoreCase("ALLVALUES")) {
-					retVal = true;
-					break;
-				}
-			}
-		}
-		return retVal;
-
 	}
 }
