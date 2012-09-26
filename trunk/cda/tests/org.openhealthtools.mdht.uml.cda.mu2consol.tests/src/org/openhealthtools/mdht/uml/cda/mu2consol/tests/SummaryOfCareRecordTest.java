@@ -273,8 +273,8 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				 CognitiveStatusProblemObservation obs1 =
-				 ConsolFactory.eINSTANCE.createCognitiveStatusProblemObservation().init();
+				CognitiveStatusProblemObservation obs1 = ConsolFactory.eINSTANCE
+						.createCognitiveStatusProblemObservation().init();
 				FunctionalStatusProblemObservation obs2 = ConsolFactory.eINSTANCE
 						.createFunctionalStatusProblemObservation().init();
 				target.getFunctionalStatusSection().addObservation(obs1);
@@ -312,15 +312,18 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
 				target.init();
-				FunctionalStatusSection sSection = ConsolFactory.eINSTANCE.createFunctionalStatusSection().init();
+				FunctionalStatusSection sSection = ConsolFactory.eINSTANCE
+						.createFunctionalStatusSection().init();
 				target.addSection(sSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				CognitiveStatusProblemObservation cObs = ConsolFactory.eINSTANCE.createCognitiveStatusProblemObservation().init();
+				CognitiveStatusProblemObservation cObs = ConsolFactory.eINSTANCE
+						.createCognitiveStatusProblemObservation().init();
 				target.getFunctionalStatusSection().addObservation(cObs);
-				FunctionalStatusResultOrganizer fOrg = ConsolFactory.eINSTANCE.createFunctionalStatusResultOrganizer().init();
+				FunctionalStatusResultOrganizer fOrg = ConsolFactory.eINSTANCE
+						.createFunctionalStatusResultOrganizer().init();
 				target.getFunctionalStatusSection().addOrganizer(fOrg);
 
 			}
