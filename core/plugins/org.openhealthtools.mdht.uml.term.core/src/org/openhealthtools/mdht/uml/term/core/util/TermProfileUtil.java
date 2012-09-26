@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
+ *     Rama Ramakrishnan  - 9/26/2012 - Added method getAllEnumerations (part of artf3432)
  *     
  * $Id$
  *******************************************************************************/
@@ -193,4 +194,19 @@ public class TermProfileUtil {
 				? literals
 				: null;
 	}
+
+	/**
+	 * Return all literals for the enumeration
+	 * 
+	 * @param enumeration
+	 * @return
+	 */
+	static Iterable<EnumerationLiteral> getAllEnumerations(Enumeration enumeration) {
+		List<EnumerationLiteral> literals = enumeration.getOwnedLiterals();
+
+		return (literals.size() > 0)
+				? literals
+				: null;
+	}
+
 }
