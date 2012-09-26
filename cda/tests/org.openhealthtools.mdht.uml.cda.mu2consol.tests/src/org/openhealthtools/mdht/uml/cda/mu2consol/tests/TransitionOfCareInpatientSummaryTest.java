@@ -105,7 +105,8 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
 				target.init();
-				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
 				target.addSection(hSection);
 			}
 
