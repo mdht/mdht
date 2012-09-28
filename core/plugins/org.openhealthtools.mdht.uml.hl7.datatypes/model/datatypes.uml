@@ -31,7 +31,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_uM-fwEBUEeCRlaE1u__gPQ" name="isDefined">
+      <ownedOperation xmi:id="_uM-fwEBUEeCRlaE1u__gPQ" name="isDefined" isQuery="true">
         <ownedParameter xmi:id="_07oJEEBUEeCRlaE1u__gPQ" name="featureName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
