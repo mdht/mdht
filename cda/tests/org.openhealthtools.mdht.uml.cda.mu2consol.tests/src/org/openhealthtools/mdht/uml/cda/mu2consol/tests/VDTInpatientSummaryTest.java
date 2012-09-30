@@ -26,7 +26,7 @@ import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
-import org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary;
 
@@ -35,7 +35,6 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.operations.VDTInpatientSummary
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
@@ -56,6 +55,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryChiefComplaintOrReasonForVisit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate VDT Inpatient Summary Chief Complaint Or Reason For Visit</em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Entry</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate VDT Inpatient Summary Hospital Discharge Instructions Section
  * </em>}</li>
@@ -67,14 +69,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate VDT Inpatient Summary Hospital Discharge Medications Section
  * </em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Section
- * Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Mu2consol Hospital Admission Diagnosis
- * Section Hospital Admission Diagnosis</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeInstructionsSection()
  * <em>Get Hospital Discharge Instructions Section</em>}</li>
@@ -250,6 +244,48 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
+	public void testValidateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase = new OperationsTestCase<VDTInpatientSummary>(
+				"validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry",
+				operationsForOCL
+						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+				HospitalAdmissionDiagnosisSection aSection = ConsolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosisSection().init();
+				target.addSection(aSection);
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				HospitalAdmissionDiagnosis act = ConsolFactory.eINSTANCE
+						.createHospitalAdmissionDiagnosis().init();
+				target.getHospitalAdmissionDiagnosisSection().addAct(act);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations
+						.validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry(
+								(VDTInpatientSummary) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated NOT
+	 */
+	@Test
 	public void testValidateVDTInpatientSummaryHospitalDischargeInstructionsSection() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalDischargeInstructionsSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
 				"validateVDTInpatientSummaryHospitalDischargeInstructionsSection",
@@ -316,7 +352,7 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 				/* HospitalAdmissionDiagnosisSection */
 				HospitalAdmissionDiagnosisSection section =
 
-				Mu2consolFactory.eINSTANCE
+				ConsolFactory.eINSTANCE
 						.createHospitalAdmissionDiagnosisSection().init();
 
 				target.addSection(section);
@@ -383,99 +419,6 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 		};
 
 		validateVDTInpatientSummaryHospitalDischargeMedicationsSectionTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId() {
-		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(VDTInpatientSummary target) {
-				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosisSection().init();
-				target.addSection(hSection);
-				for (II ii : hSection.getTemplateIds()) {
-					ii.setRoot(BAD_TEMPLATE_ID);
-				}
-			}
-
-			@Override
-			protected void updateToPass(VDTInpatientSummary target) {
-				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosisSection().init();
-				II iiTemp = hSection.getTemplateIds().get(0);
-
-				for (II ii : target.getHospitalAdmissionDiagnosisSection()
-						.getTemplateIds()) {
-					ii.setRoot(iiTemp.getRoot());
-				}
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateId(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTemplateIdTestCase
-				.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateVDTInpatientSummaryMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis() {
-		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARYMU2CONSOL_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_HOSPITAL_ADMISSION_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
-
-			@Override
-			protected void updateToFail(VDTInpatientSummary target) {
-				HospitalAdmissionDiagnosisSection hSection = Mu2consolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosisSection().init();
-				target.addSection(hSection);
-			}
-
-			@Override
-			protected void updateToPass(VDTInpatientSummary target) {
-				HospitalAdmissionDiagnosis hDiagnosis = ConsolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosis().init();
-				target.getHospitalAdmissionDiagnosisSection()
-						.addAct(hDiagnosis);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryMu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosis(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateVDTInpatientSummarymu2consolHospitalAdmissionDiagnosisSectionHospitalAdmissionDiagnosisTestCase
 				.doValidationTest();
 	}
 

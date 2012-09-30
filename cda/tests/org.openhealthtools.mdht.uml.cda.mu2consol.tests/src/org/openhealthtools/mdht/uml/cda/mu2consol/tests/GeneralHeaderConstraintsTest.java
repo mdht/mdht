@@ -59,6 +59,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <em>Validate General Header Constraints Component1 Encompassing Encounter
  * </em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#retrieveHospitalAdmissionDiagnosisSection()
+ * <em>Retrieve Hospital Admission Diagnosis Section</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate General Header Constraints Template Id</em>}</li>
  * <li>
