@@ -353,13 +353,15 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-				InstructionsSection aSection = ConsolFactory.eINSTANCE.createInstructionsSection().init();
+				InstructionsSection aSection = ConsolFactory.eINSTANCE
+						.createInstructionsSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				Instructions act = ConsolFactory.eINSTANCE.createInstructions().init();
+				Instructions act = ConsolFactory.eINSTANCE.createInstructions()
+						.init();
 				target.getInstructionsSection().addAct(act);
 			}
 
@@ -393,14 +395,17 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-				MedicationsAdministeredSection mSection = ConsolFactory.eINSTANCE.createMedicationsAdministeredSection().init();
+				MedicationsAdministeredSection mSection = ConsolFactory.eINSTANCE
+						.createMedicationsAdministeredSection().init();
 				target.addSection(mSection);
 			}
 
 			@Override
 			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				MedicationActivity mActivity = ConsolFactory.eINSTANCE.createMedicationActivity().init();
-				target.getMedicationsAdministeredSection().addSubstanceAdministration(mActivity);
+				MedicationActivity mActivity = ConsolFactory.eINSTANCE
+						.createMedicationActivity().init();
+				target.getMedicationsAdministeredSection()
+						.addSubstanceAdministration(mActivity);
 			}
 
 			@Override
