@@ -25,6 +25,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis;
+import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
@@ -58,6 +60,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Entry</em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryPreoperativeDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate VDT Inpatient Summary Preoperative Diagnosis Entry</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate VDT Inpatient Summary Hospital Discharge Instructions Section
  * </em>}</li>
@@ -87,6 +92,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeMedicationsSection()
  * <em>Get Hospital Discharge Medications Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getPreoperativeDiagnosisSection()
+ * <em>Get Preoperative Diagnosis Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalAdmissionMedicationsSectionEntriesOptional()
+ * <em>Get Hospital Admission Medications Section Entries Optional</em>}</li>
  * </ul>
  * </p>
  * 
@@ -278,6 +289,48 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 		};
 
 		validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated NOT
+	 */
+	@Test
+	public void testValidateVDTInpatientSummaryPreoperativeDiagnosisEntry() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryPreoperativeDiagnosisEntryTestCase = new OperationsTestCase<VDTInpatientSummary>(
+				"validateVDTInpatientSummaryPreoperativeDiagnosisEntry",
+				operationsForOCL
+						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_PREOPERATIVE_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+				PreoperativeDiagnosisSection aSection = ConsolFactory.eINSTANCE
+						.createPreoperativeDiagnosisSection().init();
+				target.addSection(aSection);
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				PreoperativeDiagnosis act = ConsolFactory.eINSTANCE
+						.createPreoperativeDiagnosis().init();
+				target.getPreoperativeDiagnosisSection().addAct(act);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations
+						.validateVDTInpatientSummaryPreoperativeDiagnosisEntry(
+								(VDTInpatientSummary) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryPreoperativeDiagnosisEntryTestCase
 				.doValidationTest();
 	}
 
@@ -491,6 +544,30 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 
 		VDTInpatientSummary target = objectFactory.create();
 		target.getHospitalDischargeMedicationsSection();
+
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetPreoperativeDiagnosisSection() {
+
+		VDTInpatientSummary target = objectFactory.create();
+		target.getPreoperativeDiagnosisSection();
+
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalAdmissionMedicationsSectionEntriesOptional() {
+
+		VDTInpatientSummary target = objectFactory.create();
+		target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 
 	}
 
