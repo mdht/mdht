@@ -95,6 +95,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <em>Validate View Download Transmit Summary Mu2consol Social History Section
  * Smoking Status Observation</em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#retrievePreoperativeDiagnosisSection()
+ * <em>Retrieve Preoperative Diagnosis Section</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAllergiesSection()
  * <em>Get Allergies Section</em>}</li>
  * <li>

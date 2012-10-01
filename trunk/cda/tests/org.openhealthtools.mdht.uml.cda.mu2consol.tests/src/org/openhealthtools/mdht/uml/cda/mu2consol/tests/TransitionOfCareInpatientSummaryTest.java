@@ -22,7 +22,6 @@ import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSect
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.PostoperativeDiagnosisSection;
-import org.openhealthtools.mdht.uml.cda.consol.PostprocedureDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.PostprocedureDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
@@ -80,6 +79,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeDiagnosisSection()
  * <em>Get Hospital Discharge Diagnosis Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalAdmissionMedicationsSectionEntriesOptional()
+ * <em>Get Hospital Admission Medications Section Entries Optional</em>}</li>
  * </ul>
  * </p>
  * 
@@ -234,13 +236,15 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
 				target.init();
-				PostoperativeDiagnosisSection aSection = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+				PostoperativeDiagnosisSection aSection = ConsolFactory.eINSTANCE
+						.createPostoperativeDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				ProblemObservation obs = ConsolFactory.eINSTANCE.createProblemObservation().init();
+				ProblemObservation obs = ConsolFactory.eINSTANCE
+						.createProblemObservation().init();
 				target.getPostoperativeDiagnosisSection().addObservation(obs);
 
 			}
@@ -276,13 +280,15 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
 				target.init();
-				PostprocedureDiagnosisSection aSection = ConsolFactory.eINSTANCE.createPostprocedureDiagnosisSection().init();
+				PostprocedureDiagnosisSection aSection = ConsolFactory.eINSTANCE
+						.createPostprocedureDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				ProblemObservation pObs = ConsolFactory.eINSTANCE.createProblemObservation().init();
+				ProblemObservation pObs = ConsolFactory.eINSTANCE
+						.createProblemObservation().init();
 				target.getPostprocedureDiagnosisSection().addObservation(pObs);
 
 			}
@@ -442,6 +448,18 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 		TransitionOfCareInpatientSummary target = objectFactory.create();
 		target.getHospitalDischargeDiagnosisSection();
+
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalAdmissionMedicationsSectionEntriesOptional() {
+
+		TransitionOfCareInpatientSummary target = objectFactory.create();
+		target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 
 	}
 
