@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
+ *     Rama Ramakrishnan - Increased the maximum limit of allowable enumerations to 400
  *     
  * $Id$
  *******************************************************************************/
@@ -186,10 +187,18 @@ public class TermProfileUtil {
 		return false;
 	}
 
+	/**
+	 * This method returns enumerations only if the enumerations are less than 400.
+	 * A discussion on this number is available at
+	 * https://www.projects.openhealthtools.org/sf/discussion/do/listPosts/projects.mdht/discussion.forum1118.topc12096
+	 * 
+	 * @param enumeration
+	 * @return
+	 */
 	static Iterable<EnumerationLiteral> getSmallEnumeration(Enumeration enumeration) {
 		List<EnumerationLiteral> literals = enumeration.getOwnedLiterals();
 
-		return ((literals.size() > 0) && (literals.size() < 20))
+		return ((literals.size() > 0) && (literals.size() < 400))
 				? literals
 				: null;
 	}
