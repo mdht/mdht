@@ -607,7 +607,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				CS csType = DatatypesFactory.eINSTANCE.createCS();
-				csType.setCode("amh");
+				csType.setCode("slo");
 				target.getRecordTargets().get(0).getPatientRole().getPatient()
 						.getLanguageCommunications().get(0)
 						.setLanguageCode(csType);
