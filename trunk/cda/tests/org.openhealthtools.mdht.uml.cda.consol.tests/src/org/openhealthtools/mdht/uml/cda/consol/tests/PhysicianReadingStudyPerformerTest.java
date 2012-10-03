@@ -56,33 +56,67 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicianReadingStudyPerformerTemplateId() {
-		OperationsTestCase<PhysicianReadingStudyPerformer> validatePhysicianReadingStudyPerformerTemplateIdTestCase = new OperationsTestCase<PhysicianReadingStudyPerformer>(
-			"validatePhysicianReadingStudyPerformerTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PHYSICIAN_READING_STUDY_PERFORMER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PhysicianReadingStudyPerformer> validatePhysicianReadingStudyPerformerTemplateIdTestCase = new OperationsTestCase<PhysicianReadingStudyPerformer>(
+      "validatePhysicianReadingStudyPerformerTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PHYSICIAN_READING_STUDY_PERFORMER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PhysicianReadingStudyPerformer target) {
+      @Override
+      protected void updateToFail(PhysicianReadingStudyPerformer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PhysicianReadingStudyPerformer target) {
-				target.init();
+      @Override
+      protected void updateToPass(PhysicianReadingStudyPerformer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PhysicianReadingStudyPerformerOperations.validatePhysicianReadingStudyPerformerTemplateId(
-					(PhysicianReadingStudyPerformer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PhysicianReadingStudyPerformerOperations.validatePhysicianReadingStudyPerformerTemplateId(
+          (PhysicianReadingStudyPerformer) objectToTest, diagnostician, map);
+      }
 
-		validatePhysicianReadingStudyPerformerTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePhysicianReadingStudyPerformerTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -437,17 +471,17 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PhysicianReadingStudyPerformerOperations

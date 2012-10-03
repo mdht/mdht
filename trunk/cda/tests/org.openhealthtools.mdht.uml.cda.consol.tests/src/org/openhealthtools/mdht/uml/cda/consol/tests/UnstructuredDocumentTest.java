@@ -68,33 +68,67 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentTemplateId() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentTemplateIdTestCase = new OperationsTestCase<UnstructuredDocument>(
-			"validateUnstructuredDocumentTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentTemplateIdTestCase = new OperationsTestCase<UnstructuredDocument>(
+      "validateUnstructuredDocumentTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(UnstructuredDocument target) {
+      @Override
+      protected void updateToFail(UnstructuredDocument target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+      @Override
+      protected void updateToPass(UnstructuredDocument target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return UnstructuredDocumentOperations.validateUnstructuredDocumentTemplateId(
-					(UnstructuredDocument) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return UnstructuredDocumentOperations.validateUnstructuredDocumentTemplateId(
+          (UnstructuredDocument) objectToTest, diagnostician, map);
+      }
 
-		validateUnstructuredDocumentTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateUnstructuredDocumentTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -751,17 +785,17 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // UnstructuredDocumentOperations

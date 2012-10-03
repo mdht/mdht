@@ -96,33 +96,67 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCaregiverCharacteristicsTemplateId() {
-		OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsTemplateIdTestCase = new OperationsTestCase<CaregiverCharacteristics>(
-			"validateCaregiverCharacteristicsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsTemplateIdTestCase = new OperationsTestCase<CaregiverCharacteristics>(
+      "validateCaregiverCharacteristicsTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CaregiverCharacteristics target) {
+      @Override
+      protected void updateToFail(CaregiverCharacteristics target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CaregiverCharacteristics target) {
-				target.init();
+      @Override
+      protected void updateToPass(CaregiverCharacteristics target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsTemplateId(
-					(CaregiverCharacteristics) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsTemplateId(
+          (CaregiverCharacteristics) objectToTest, diagnostician, map);
+      }
 
-		validateCaregiverCharacteristicsTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateCaregiverCharacteristicsTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -130,33 +164,67 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCaregiverCharacteristicsClassCode() {
-		OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsClassCodeTestCase = new OperationsTestCase<CaregiverCharacteristics>(
-			"validateCaregiverCharacteristicsClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsClassCodeTestCase = new OperationsTestCase<CaregiverCharacteristics>(
+      "validateCaregiverCharacteristicsClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CaregiverCharacteristics target) {
+      @Override
+      protected void updateToFail(CaregiverCharacteristics target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CaregiverCharacteristics target) {
-				target.init();
+      @Override
+      protected void updateToPass(CaregiverCharacteristics target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsClassCode(
-					(CaregiverCharacteristics) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsClassCode(
+          (CaregiverCharacteristics) objectToTest, diagnostician, map);
+      }
 
-		validateCaregiverCharacteristicsClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateCaregiverCharacteristicsClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -164,33 +232,67 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCaregiverCharacteristicsMoodCode() {
-		OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsMoodCodeTestCase = new OperationsTestCase<CaregiverCharacteristics>(
-			"validateCaregiverCharacteristicsMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsMoodCodeTestCase = new OperationsTestCase<CaregiverCharacteristics>(
+      "validateCaregiverCharacteristicsMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CaregiverCharacteristics target) {
+      @Override
+      protected void updateToFail(CaregiverCharacteristics target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CaregiverCharacteristics target) {
-				target.init();
+      @Override
+      protected void updateToPass(CaregiverCharacteristics target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsMoodCode(
-					(CaregiverCharacteristics) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsMoodCode(
+          (CaregiverCharacteristics) objectToTest, diagnostician, map);
+      }
 
-		validateCaregiverCharacteristicsMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateCaregiverCharacteristicsMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -266,36 +368,70 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCaregiverCharacteristicsStatusCode() {
-		OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsStatusCodeTestCase = new OperationsTestCase<CaregiverCharacteristics>(
-			"validateCaregiverCharacteristicsStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsStatusCodeTestCase = new OperationsTestCase<CaregiverCharacteristics>(
+      "validateCaregiverCharacteristicsStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CaregiverCharacteristics target) {
+      @Override
+      protected void updateToFail(CaregiverCharacteristics target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CaregiverCharacteristics target) {
-				target.init();
+      @Override
+      protected void updateToPass(CaregiverCharacteristics target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsStatusCode(
-					(CaregiverCharacteristics) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsStatusCode(
+          (CaregiverCharacteristics) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateCaregiverCharacteristicsStatusCodeTestCase.doValidationTest();
-	}
+    validateCaregiverCharacteristicsStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -303,33 +439,67 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCaregiverCharacteristicsStatusCodeP() {
-		OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsStatusCodePTestCase = new OperationsTestCase<CaregiverCharacteristics>(
-			"validateCaregiverCharacteristicsStatusCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsStatusCodePTestCase = new OperationsTestCase<CaregiverCharacteristics>(
+      "validateCaregiverCharacteristicsStatusCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CaregiverCharacteristics target) {
+      @Override
+      protected void updateToFail(CaregiverCharacteristics target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CaregiverCharacteristics target) {
-				target.init();
+      @Override
+      protected void updateToPass(CaregiverCharacteristics target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsStatusCodeP(
-					(CaregiverCharacteristics) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsStatusCodeP(
+          (CaregiverCharacteristics) objectToTest, diagnostician, map);
+      }
 
-		validateCaregiverCharacteristicsStatusCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateCaregiverCharacteristicsStatusCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -337,36 +507,70 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCaregiverCharacteristicsValue() {
-		OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsValueTestCase = new OperationsTestCase<CaregiverCharacteristics>(
-			"validateCaregiverCharacteristicsValue",
-			operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsValueTestCase = new OperationsTestCase<CaregiverCharacteristics>(
+      "validateCaregiverCharacteristicsValue",
+      operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CaregiverCharacteristics target) {
+      @Override
+      protected void updateToFail(CaregiverCharacteristics target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CaregiverCharacteristics target) {
-				target.init();
+      @Override
+      protected void updateToPass(CaregiverCharacteristics target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsValue(
-					(CaregiverCharacteristics) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsValue(
+          (CaregiverCharacteristics) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateCaregiverCharacteristicsValueTestCase.doValidationTest();
-	}
+    validateCaregiverCharacteristicsValueTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -656,17 +860,17 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // CaregiverCharacteristicsOperations

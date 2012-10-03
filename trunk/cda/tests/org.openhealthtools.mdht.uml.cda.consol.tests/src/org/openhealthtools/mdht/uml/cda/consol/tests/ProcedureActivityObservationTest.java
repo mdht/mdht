@@ -485,33 +485,67 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityObservationTemplateId() {
-		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationTemplateIdTestCase = new OperationsTestCase<ProcedureActivityObservation>(
-			"validateProcedureActivityObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationTemplateIdTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+      "validateProcedureActivityObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
+      @Override
+      protected void updateToFail(ProcedureActivityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureActivityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureActivityObservationOperations.validateProcedureActivityObservationTemplateId(
-					(ProcedureActivityObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureActivityObservationOperations.validateProcedureActivityObservationTemplateId(
+          (ProcedureActivityObservation) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureActivityObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureActivityObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -519,33 +553,67 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityObservationClassCode() {
-		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationClassCodeTestCase = new OperationsTestCase<ProcedureActivityObservation>(
-			"validateProcedureActivityObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationClassCodeTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+      "validateProcedureActivityObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
+      @Override
+      protected void updateToFail(ProcedureActivityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureActivityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureActivityObservationOperations.validateProcedureActivityObservationClassCode(
-					(ProcedureActivityObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureActivityObservationOperations.validateProcedureActivityObservationClassCode(
+          (ProcedureActivityObservation) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureActivityObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureActivityObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -587,36 +655,70 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityObservationId() {
-		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationIdTestCase = new OperationsTestCase<ProcedureActivityObservation>(
-			"validateProcedureActivityObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationIdTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+      "validateProcedureActivityObservationId",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
+      @Override
+      protected void updateToFail(ProcedureActivityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureActivityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        II ii  = DatatypesFactory.eINSTANCE.createII();
+        target.getIds().add(ii);				
+        
+      
+      
+          
+      
+        
+      }
 
-				return ProcedureActivityObservationOperations.validateProcedureActivityObservationId(
-					(ProcedureActivityObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureActivityObservationOperations.validateProcedureActivityObservationId(
+          (ProcedureActivityObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateProcedureActivityObservationIdTestCase.doValidationTest();
-	}
+    validateProcedureActivityObservationIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -699,36 +801,70 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityObservationValue() {
-		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationValueTestCase = new OperationsTestCase<ProcedureActivityObservation>(
-			"validateProcedureActivityObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationValueTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+      "validateProcedureActivityObservationValue",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
+      @Override
+      protected void updateToFail(ProcedureActivityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureActivityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ProcedureActivityObservationOperations.validateProcedureActivityObservationValue(
-					(ProcedureActivityObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureActivityObservationOperations.validateProcedureActivityObservationValue(
+          (ProcedureActivityObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateProcedureActivityObservationValueTestCase.doValidationTest();
-	}
+    validateProcedureActivityObservationValueTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -736,36 +872,70 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityObservationEffectiveTime() {
-		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEffectiveTimeTestCase = new OperationsTestCase<ProcedureActivityObservation>(
-			"validateProcedureActivityObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEffectiveTimeTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+      "validateProcedureActivityObservationEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
+      @Override
+      protected void updateToFail(ProcedureActivityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureActivityObservation target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEffectiveTime(
-					(ProcedureActivityObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureActivityObservationOperations.validateProcedureActivityObservationEffectiveTime(
+          (ProcedureActivityObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateProcedureActivityObservationEffectiveTimeTestCase.doValidationTest();
-	}
+    validateProcedureActivityObservationEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -916,33 +1086,67 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityObservationTargetSiteCodeP() {
-		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationTargetSiteCodePTestCase = new OperationsTestCase<ProcedureActivityObservation>(
-			"validateProcedureActivityObservationTargetSiteCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_TARGET_SITE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationTargetSiteCodePTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+      "validateProcedureActivityObservationTargetSiteCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_TARGET_SITE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
+      @Override
+      protected void updateToFail(ProcedureActivityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureActivityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureActivityObservationOperations.validateProcedureActivityObservationTargetSiteCodeP(
-					(ProcedureActivityObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureActivityObservationOperations.validateProcedureActivityObservationTargetSiteCodeP(
+          (ProcedureActivityObservation) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureActivityObservationTargetSiteCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureActivityObservationTargetSiteCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1821,10 +2025,13 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetServiceDeliveryLocations() {
 
-		ProcedureActivityObservation target = objectFactory.create();
-		target.getServiceDeliveryLocations();
 
-	}
+ProcedureActivityObservation target = objectFactory.create();
+target.getServiceDeliveryLocations();
+
+
+
+}
 
 	/**
 	*
@@ -1833,10 +2040,13 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetInstructions() {
 
-		ProcedureActivityObservation target = objectFactory.create();
-		target.getInstructions();
 
-	}
+ProcedureActivityObservation target = objectFactory.create();
+target.getInstructions();
+
+
+
+}
 
 	/**
 	*
@@ -1845,10 +2055,13 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetIndications() {
 
-		ProcedureActivityObservation target = objectFactory.create();
-		target.getIndications();
 
-	}
+ProcedureActivityObservation target = objectFactory.create();
+target.getIndications();
+
+
+
+}
 
 	/**
 	*
@@ -1857,10 +2070,13 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationActivity() {
 
-		ProcedureActivityObservation target = objectFactory.create();
-		target.getMedicationActivity();
 
-	}
+ProcedureActivityObservation target = objectFactory.create();
+target.getMedicationActivity();
+
+
+
+}
 
 	/**
 	*
@@ -1915,17 +2131,17 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProcedureActivityObservationOperations

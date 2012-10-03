@@ -183,33 +183,67 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownTemplateId() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownTemplateIdTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownTemplateIdTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownTemplateId(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownTemplateId(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationUseNoneKnownTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationUseNoneKnownTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -217,33 +251,67 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownClassCode() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownClassCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownClassCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownClassCode(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownClassCode(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationUseNoneKnownClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationUseNoneKnownClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -251,33 +319,67 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownMoodCode() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownMoodCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownMoodCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownMoodCode(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownMoodCode(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationUseNoneKnownMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationUseNoneKnownMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -319,33 +421,67 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownCodeP() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownCodePTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownCodePTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownCodeP(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownCodeP(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationUseNoneKnownCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationUseNoneKnownCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -353,33 +489,67 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownCode() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownCode(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownCode(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationUseNoneKnownCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationUseNoneKnownCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -387,36 +557,70 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownEffectiveTime() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownEffectiveTimeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownEffectiveTimeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownEffectiveTime(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownEffectiveTime(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicationUseNoneKnownEffectiveTimeTestCase.doValidationTest();
-	}
+    validateMedicationUseNoneKnownEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -424,36 +628,70 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownStatusCode() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownStatusCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownStatusCodeTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownStatusCode(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownStatusCode(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicationUseNoneKnownStatusCodeTestCase.doValidationTest();
-	}
+    validateMedicationUseNoneKnownStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -461,33 +699,67 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownStatusCodeP() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownStatusCodePTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownStatusCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownStatusCodePTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownStatusCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownStatusCodeP(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownStatusCodeP(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationUseNoneKnownStatusCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationUseNoneKnownStatusCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -495,36 +767,69 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownText() {
-		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownTextTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
-			"validateMedicationUseNoneKnownText",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownTextTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+      "validateMedicationUseNoneKnownText",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationUseNoneKnown target) {
+      @Override
+      protected void updateToFail(MedicationUseNoneKnown target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationUseNoneKnown target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationUseNoneKnown target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+    ED text = DatatypesFactory.eINSTANCE.createED();
+    target.setText(text );	
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownText(
-					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownText(
+          (MedicationUseNoneKnown) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicationUseNoneKnownTextTestCase.doValidationTest();
-	}
+    validateMedicationUseNoneKnownTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -616,17 +921,17 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicationUseNoneKnownOperations

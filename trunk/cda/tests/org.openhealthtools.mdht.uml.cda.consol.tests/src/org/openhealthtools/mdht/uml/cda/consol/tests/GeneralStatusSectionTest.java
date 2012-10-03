@@ -51,33 +51,67 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralStatusSectionTemplateId() {
-		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTemplateIdTestCase = new OperationsTestCase<GeneralStatusSection>(
-			"validateGeneralStatusSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTemplateIdTestCase = new OperationsTestCase<GeneralStatusSection>(
+      "validateGeneralStatusSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralStatusSection target) {
+      @Override
+      protected void updateToFail(GeneralStatusSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralStatusSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralStatusSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GeneralStatusSectionOperations.validateGeneralStatusSectionTemplateId(
-					(GeneralStatusSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralStatusSectionOperations.validateGeneralStatusSectionTemplateId(
+          (GeneralStatusSection) objectToTest, diagnostician, map);
+      }
 
-		validateGeneralStatusSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateGeneralStatusSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -85,33 +119,67 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralStatusSectionCode() {
-		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionCodeTestCase = new OperationsTestCase<GeneralStatusSection>(
-			"validateGeneralStatusSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionCodeTestCase = new OperationsTestCase<GeneralStatusSection>(
+      "validateGeneralStatusSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralStatusSection target) {
+      @Override
+      protected void updateToFail(GeneralStatusSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralStatusSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralStatusSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GeneralStatusSectionOperations.validateGeneralStatusSectionCode(
-					(GeneralStatusSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralStatusSectionOperations.validateGeneralStatusSectionCode(
+          (GeneralStatusSection) objectToTest, diagnostician, map);
+      }
 
-		validateGeneralStatusSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateGeneralStatusSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -119,33 +187,67 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralStatusSectionCodeP() {
-		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionCodePTestCase = new OperationsTestCase<GeneralStatusSection>(
-			"validateGeneralStatusSectionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionCodePTestCase = new OperationsTestCase<GeneralStatusSection>(
+      "validateGeneralStatusSectionCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralStatusSection target) {
+      @Override
+      protected void updateToFail(GeneralStatusSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralStatusSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralStatusSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GeneralStatusSectionOperations.validateGeneralStatusSectionCodeP(
-					(GeneralStatusSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralStatusSectionOperations.validateGeneralStatusSectionCodeP(
+          (GeneralStatusSection) objectToTest, diagnostician, map);
+      }
 
-		validateGeneralStatusSectionCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateGeneralStatusSectionCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -153,36 +255,70 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralStatusSectionTitle() {
-		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTitleTestCase = new OperationsTestCase<GeneralStatusSection>(
-			"validateGeneralStatusSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTitleTestCase = new OperationsTestCase<GeneralStatusSection>(
+      "validateGeneralStatusSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralStatusSection target) {
+      @Override
+      protected void updateToFail(GeneralStatusSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralStatusSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralStatusSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+        
+        
 
-			}
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return GeneralStatusSectionOperations.validateGeneralStatusSectionTitle(
-					(GeneralStatusSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralStatusSectionOperations.validateGeneralStatusSectionTitle(
+          (GeneralStatusSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateGeneralStatusSectionTitleTestCase.doValidationTest();
-	}
+    validateGeneralStatusSectionTitleTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -190,36 +326,70 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralStatusSectionText() {
-		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTextTestCase = new OperationsTestCase<GeneralStatusSection>(
-			"validateGeneralStatusSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTextTestCase = new OperationsTestCase<GeneralStatusSection>(
+      "validateGeneralStatusSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralStatusSection target) {
+      @Override
+      protected void updateToFail(GeneralStatusSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralStatusSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralStatusSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return GeneralStatusSectionOperations.validateGeneralStatusSectionText(
-					(GeneralStatusSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralStatusSectionOperations.validateGeneralStatusSectionText(
+          (GeneralStatusSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateGeneralStatusSectionTextTestCase.doValidationTest();
-	}
+    validateGeneralStatusSectionTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -274,17 +444,17 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // GeneralStatusSectionOperations

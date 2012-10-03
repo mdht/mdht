@@ -183,33 +183,67 @@ public class SeverityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeverityObservationTemplateId() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationTemplateIdTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SeverityObservation> validateSeverityObservationTemplateIdTestCase = new OperationsTestCase<SeverityObservation>(
+      "validateSeverityObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SeverityObservation target) {
+      @Override
+      protected void updateToFail(SeverityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(SeverityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SeverityObservationOperations.validateSeverityObservationTemplateId(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SeverityObservationOperations.validateSeverityObservationTemplateId(
+          (SeverityObservation) objectToTest, diagnostician, map);
+      }
 
-		validateSeverityObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateSeverityObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -217,33 +251,67 @@ public class SeverityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeverityObservationClassCode() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationClassCodeTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SeverityObservation> validateSeverityObservationClassCodeTestCase = new OperationsTestCase<SeverityObservation>(
+      "validateSeverityObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SeverityObservation target) {
+      @Override
+      protected void updateToFail(SeverityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(SeverityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SeverityObservationOperations.validateSeverityObservationClassCode(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SeverityObservationOperations.validateSeverityObservationClassCode(
+          (SeverityObservation) objectToTest, diagnostician, map);
+      }
 
-		validateSeverityObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateSeverityObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -251,33 +319,67 @@ public class SeverityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeverityObservationMoodCode() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationMoodCodeTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SeverityObservation> validateSeverityObservationMoodCodeTestCase = new OperationsTestCase<SeverityObservation>(
+      "validateSeverityObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SeverityObservation target) {
+      @Override
+      protected void updateToFail(SeverityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(SeverityObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SeverityObservationOperations.validateSeverityObservationMoodCode(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SeverityObservationOperations.validateSeverityObservationMoodCode(
+          (SeverityObservation) objectToTest, diagnostician, map);
+      }
 
-		validateSeverityObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateSeverityObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -357,36 +459,70 @@ public class SeverityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeverityObservationStatusCode() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationStatusCodeTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<SeverityObservation> validateSeverityObservationStatusCodeTestCase = new OperationsTestCase<SeverityObservation>(
+      "validateSeverityObservationStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SeverityObservation target) {
+      @Override
+      protected void updateToFail(SeverityObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(SeverityObservation target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return SeverityObservationOperations.validateSeverityObservationStatusCode(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SeverityObservationOperations.validateSeverityObservationStatusCode(
+          (SeverityObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateSeverityObservationStatusCodeTestCase.doValidationTest();
-	}
+    validateSeverityObservationStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -518,17 +654,17 @@ public class SeverityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // SeverityObservationOperations

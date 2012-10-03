@@ -146,33 +146,67 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationTemplateId() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationTemplateIdTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationTemplateIdTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationTemplateId(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationTemplateId(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		validateAssessmentScaleObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAssessmentScaleObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -180,33 +214,67 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationClassCode() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationClassCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationClassCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationClassCode(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationClassCode(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		validateAssessmentScaleObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateAssessmentScaleObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -214,33 +282,67 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationMoodCode() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationMoodCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationMoodCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationMoodCode(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationMoodCode(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		validateAssessmentScaleObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateAssessmentScaleObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -248,36 +350,70 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationCode() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationCode",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
-				target.setCode(cd);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+      
+        CD cd  = DatatypesFactory.eINSTANCE.createCD();
+        target.setCode(cd);
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationCode(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationCode(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAssessmentScaleObservationCodeTestCase.doValidationTest();
-	}
+    validateAssessmentScaleObservationCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -319,36 +455,70 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationEffectiveTime() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationEffectiveTimeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationEffectiveTimeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationEffectiveTime(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationEffectiveTime(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAssessmentScaleObservationEffectiveTimeTestCase.doValidationTest();
-	}
+    validateAssessmentScaleObservationEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -356,36 +526,70 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationId() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationIdTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationIdTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationId",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        II ii  = DatatypesFactory.eINSTANCE.createII();
+        target.getIds().add(ii);				
+        
+      
+      
+          
+      
+        
+      }
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationId(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationId(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAssessmentScaleObservationIdTestCase.doValidationTest();
-	}
+    validateAssessmentScaleObservationIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -427,36 +631,70 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationStatusCode() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationStatusCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationStatusCodeTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationStatusCode(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationStatusCode(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAssessmentScaleObservationStatusCodeTestCase.doValidationTest();
-	}
+    validateAssessmentScaleObservationStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -464,33 +702,67 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationStatusCodeP() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationStatusCodePTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationStatusCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationStatusCodePTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationStatusCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationStatusCodeP(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationStatusCodeP(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		validateAssessmentScaleObservationStatusCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateAssessmentScaleObservationStatusCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -498,36 +770,70 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAssessmentScaleObservationValue() {
-		OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationValueTestCase = new OperationsTestCase<AssessmentScaleObservation>(
-			"validateAssessmentScaleObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AssessmentScaleObservation> validateAssessmentScaleObservationValueTestCase = new OperationsTestCase<AssessmentScaleObservation>(
+      "validateAssessmentScaleObservationValue",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SCALE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentScaleObservation target) {
+      @Override
+      protected void updateToFail(AssessmentScaleObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentScaleObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentScaleObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return AssessmentScaleObservationOperations.validateAssessmentScaleObservationValue(
-					(AssessmentScaleObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentScaleObservationOperations.validateAssessmentScaleObservationValue(
+          (AssessmentScaleObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAssessmentScaleObservationValueTestCase.doValidationTest();
-	}
+    validateAssessmentScaleObservationValueTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -873,10 +1179,13 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentScaleSupportingObservations() {
 
-		AssessmentScaleObservation target = objectFactory.create();
-		target.getAssessmentScaleSupportingObservations();
 
-	}
+AssessmentScaleObservation target = objectFactory.create();
+target.getAssessmentScaleSupportingObservations();
+
+
+
+}
 
 	/**
 	*
@@ -931,17 +1240,17 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AssessmentScaleObservationOperations

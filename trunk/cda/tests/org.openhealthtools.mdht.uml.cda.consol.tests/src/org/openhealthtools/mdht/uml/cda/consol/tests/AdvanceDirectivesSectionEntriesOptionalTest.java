@@ -53,33 +53,67 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	*/
 	@Test
 	public void testValidateAdvanceDirectivesSectionEntriesOptionalTemplateId() {
-		OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
-			"validateAdvanceDirectivesSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
+      "validateAdvanceDirectivesSectionEntriesOptionalTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
+      @Override
+      protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalTemplateId(
-					(AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalTemplateId(
+          (AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
+      }
 
-		validateAdvanceDirectivesSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAdvanceDirectivesSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -87,33 +121,67 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	*/
 	@Test
 	public void testValidateAdvanceDirectivesSectionEntriesOptionalCode() {
-		OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalCodeTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
-			"validateAdvanceDirectivesSectionEntriesOptionalCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalCodeTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
+      "validateAdvanceDirectivesSectionEntriesOptionalCode",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
+      @Override
+      protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalCode(
-					(AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalCode(
+          (AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
+      }
 
-		validateAdvanceDirectivesSectionEntriesOptionalCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateAdvanceDirectivesSectionEntriesOptionalCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -121,33 +189,67 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	*/
 	@Test
 	public void testValidateAdvanceDirectivesSectionEntriesOptionalCodeP() {
-		OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalCodePTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
-			"validateAdvanceDirectivesSectionEntriesOptionalCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalCodePTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
+      "validateAdvanceDirectivesSectionEntriesOptionalCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
+      @Override
+      protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalCodeP(
-					(AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalCodeP(
+          (AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
+      }
 
-		validateAdvanceDirectivesSectionEntriesOptionalCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateAdvanceDirectivesSectionEntriesOptionalCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -155,36 +257,70 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	*/
 	@Test
 	public void testValidateAdvanceDirectivesSectionEntriesOptionalTitle() {
-		OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalTitleTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
-			"validateAdvanceDirectivesSectionEntriesOptionalTitle",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalTitleTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
+      "validateAdvanceDirectivesSectionEntriesOptionalTitle",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
+      @Override
+      protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+        
+        
 
-			}
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalTitle(
-					(AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalTitle(
+          (AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAdvanceDirectivesSectionEntriesOptionalTitleTestCase.doValidationTest();
-	}
+    validateAdvanceDirectivesSectionEntriesOptionalTitleTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -192,36 +328,70 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	*/
 	@Test
 	public void testValidateAdvanceDirectivesSectionEntriesOptionalText() {
-		OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalTextTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
-			"validateAdvanceDirectivesSectionEntriesOptionalText",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalTextTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
+      "validateAdvanceDirectivesSectionEntriesOptionalText",
+      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
+      @Override
+      protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalText(
-					(AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalText(
+          (AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateAdvanceDirectivesSectionEntriesOptionalTextTestCase.doValidationTest();
-	}
+    validateAdvanceDirectivesSectionEntriesOptionalTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -265,10 +435,13 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	@Test
 	public void testGetAdvanceDirectiveObservations() {
 
-		AdvanceDirectivesSectionEntriesOptional target = objectFactory.create();
-		target.getAdvanceDirectiveObservations();
 
-	}
+AdvanceDirectivesSectionEntriesOptional target = objectFactory.create();
+target.getAdvanceDirectiveObservations();
+
+
+
+}
 
 	/**
 	*
@@ -323,17 +496,17 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AdvanceDirectivesSectionEntriesOptionalOperations

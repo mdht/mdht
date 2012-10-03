@@ -56,33 +56,67 @@ public class ProcedureSpecimensTakenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureSpecimensTakenSectionTemplateId() {
-		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTemplateIdTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
-			"validateProcedureSpecimensTakenSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTemplateIdTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+      "validateProcedureSpecimensTakenSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+      @Override
+      protected void updateToFail(ProcedureSpecimensTakenSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureSpecimensTakenSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureSpecimensTakenSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionTemplateId(
-					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionTemplateId(
+          (ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureSpecimensTakenSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureSpecimensTakenSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -90,33 +124,67 @@ public class ProcedureSpecimensTakenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureSpecimensTakenSectionCode() {
-		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionCodeTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
-			"validateProcedureSpecimensTakenSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionCodeTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+      "validateProcedureSpecimensTakenSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+      @Override
+      protected void updateToFail(ProcedureSpecimensTakenSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureSpecimensTakenSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureSpecimensTakenSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionCode(
-					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionCode(
+          (ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureSpecimensTakenSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureSpecimensTakenSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -124,33 +192,67 @@ public class ProcedureSpecimensTakenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureSpecimensTakenSectionCodeP() {
-		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionCodePTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
-			"validateProcedureSpecimensTakenSectionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionCodePTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+      "validateProcedureSpecimensTakenSectionCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+      @Override
+      protected void updateToFail(ProcedureSpecimensTakenSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureSpecimensTakenSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureSpecimensTakenSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionCodeP(
-					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionCodeP(
+          (ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureSpecimensTakenSectionCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureSpecimensTakenSectionCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -158,36 +260,70 @@ public class ProcedureSpecimensTakenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureSpecimensTakenSectionText() {
-		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTextTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
-			"validateProcedureSpecimensTakenSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTextTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+      "validateProcedureSpecimensTakenSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+      @Override
+      protected void updateToFail(ProcedureSpecimensTakenSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureSpecimensTakenSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureSpecimensTakenSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionText(
-					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionText(
+          (ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateProcedureSpecimensTakenSectionTextTestCase.doValidationTest();
-	}
+    validateProcedureSpecimensTakenSectionTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -195,36 +331,70 @@ public class ProcedureSpecimensTakenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureSpecimensTakenSectionTitle() {
-		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTitleTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
-			"validateProcedureSpecimensTakenSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTitleTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+      "validateProcedureSpecimensTakenSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+      @Override
+      protected void updateToFail(ProcedureSpecimensTakenSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureSpecimensTakenSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureSpecimensTakenSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+        
+        
 
-			}
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionTitle(
-					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionTitle(
+          (ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateProcedureSpecimensTakenSectionTitleTestCase.doValidationTest();
-	}
+    validateProcedureSpecimensTakenSectionTitleTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -279,17 +449,17 @@ public class ProcedureSpecimensTakenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProcedureSpecimensTakenSectionOperations

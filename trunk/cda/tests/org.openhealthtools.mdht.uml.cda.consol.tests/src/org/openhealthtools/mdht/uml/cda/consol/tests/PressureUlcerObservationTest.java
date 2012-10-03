@@ -477,33 +477,67 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePressureUlcerObservationTemplateId() {
-		OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationTemplateIdTestCase = new OperationsTestCase<PressureUlcerObservation>(
-			"validatePressureUlcerObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationTemplateIdTestCase = new OperationsTestCase<PressureUlcerObservation>(
+      "validatePressureUlcerObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PressureUlcerObservation target) {
+      @Override
+      protected void updateToFail(PressureUlcerObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PressureUlcerObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(PressureUlcerObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PressureUlcerObservationOperations.validatePressureUlcerObservationTemplateId(
-					(PressureUlcerObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PressureUlcerObservationOperations.validatePressureUlcerObservationTemplateId(
+          (PressureUlcerObservation) objectToTest, diagnostician, map);
+      }
 
-		validatePressureUlcerObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePressureUlcerObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -511,33 +545,67 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePressureUlcerObservationClassCode() {
-		OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationClassCodeTestCase = new OperationsTestCase<PressureUlcerObservation>(
-			"validatePressureUlcerObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationClassCodeTestCase = new OperationsTestCase<PressureUlcerObservation>(
+      "validatePressureUlcerObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PressureUlcerObservation target) {
+      @Override
+      protected void updateToFail(PressureUlcerObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PressureUlcerObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(PressureUlcerObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PressureUlcerObservationOperations.validatePressureUlcerObservationClassCode(
-					(PressureUlcerObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PressureUlcerObservationOperations.validatePressureUlcerObservationClassCode(
+          (PressureUlcerObservation) objectToTest, diagnostician, map);
+      }
 
-		validatePressureUlcerObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePressureUlcerObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -545,33 +613,67 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePressureUlcerObservationMoodCode() {
-		OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationMoodCodeTestCase = new OperationsTestCase<PressureUlcerObservation>(
-			"validatePressureUlcerObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationMoodCodeTestCase = new OperationsTestCase<PressureUlcerObservation>(
+      "validatePressureUlcerObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PressureUlcerObservation target) {
+      @Override
+      protected void updateToFail(PressureUlcerObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PressureUlcerObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(PressureUlcerObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PressureUlcerObservationOperations.validatePressureUlcerObservationMoodCode(
-					(PressureUlcerObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PressureUlcerObservationOperations.validatePressureUlcerObservationMoodCode(
+          (PressureUlcerObservation) objectToTest, diagnostician, map);
+      }
 
-		validatePressureUlcerObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePressureUlcerObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -613,36 +715,70 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePressureUlcerObservationId() {
-		OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationIdTestCase = new OperationsTestCase<PressureUlcerObservation>(
-			"validatePressureUlcerObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationIdTestCase = new OperationsTestCase<PressureUlcerObservation>(
+      "validatePressureUlcerObservationId",
+      operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PressureUlcerObservation target) {
+      @Override
+      protected void updateToFail(PressureUlcerObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PressureUlcerObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(PressureUlcerObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        II ii  = DatatypesFactory.eINSTANCE.createII();
+        target.getIds().add(ii);				
+        
+      
+      
+          
+      
+        
+      }
 
-				return PressureUlcerObservationOperations.validatePressureUlcerObservationId(
-					(PressureUlcerObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PressureUlcerObservationOperations.validatePressureUlcerObservationId(
+          (PressureUlcerObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validatePressureUlcerObservationIdTestCase.doValidationTest();
-	}
+    validatePressureUlcerObservationIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -650,33 +786,67 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePressureUlcerObservationCodeP() {
-		OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationCodePTestCase = new OperationsTestCase<PressureUlcerObservation>(
-			"validatePressureUlcerObservationCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationCodePTestCase = new OperationsTestCase<PressureUlcerObservation>(
+      "validatePressureUlcerObservationCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PressureUlcerObservation target) {
+      @Override
+      protected void updateToFail(PressureUlcerObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PressureUlcerObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(PressureUlcerObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PressureUlcerObservationOperations.validatePressureUlcerObservationCodeP(
-					(PressureUlcerObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PressureUlcerObservationOperations.validatePressureUlcerObservationCodeP(
+          (PressureUlcerObservation) objectToTest, diagnostician, map);
+      }
 
-		validatePressureUlcerObservationCodePTestCase.doValidationTest();
-	}
+    };
+
+    validatePressureUlcerObservationCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -721,36 +891,69 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePressureUlcerObservationText() {
-		OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationTextTestCase = new OperationsTestCase<PressureUlcerObservation>(
-			"validatePressureUlcerObservationText",
-			operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationTextTestCase = new OperationsTestCase<PressureUlcerObservation>(
+      "validatePressureUlcerObservationText",
+      operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PressureUlcerObservation target) {
+      @Override
+      protected void updateToFail(PressureUlcerObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PressureUlcerObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(PressureUlcerObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+    ED text = DatatypesFactory.eINSTANCE.createED();
+    target.setText(text );	
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return PressureUlcerObservationOperations.validatePressureUlcerObservationText(
-					(PressureUlcerObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PressureUlcerObservationOperations.validatePressureUlcerObservationText(
+          (PressureUlcerObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validatePressureUlcerObservationTextTestCase.doValidationTest();
-	}
+    validatePressureUlcerObservationTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -865,33 +1068,67 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePressureUlcerObservationTargetSiteCodeP() {
-		OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationTargetSiteCodePTestCase = new OperationsTestCase<PressureUlcerObservation>(
-			"validatePressureUlcerObservationTargetSiteCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_TARGET_SITE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PressureUlcerObservation> validatePressureUlcerObservationTargetSiteCodePTestCase = new OperationsTestCase<PressureUlcerObservation>(
+      "validatePressureUlcerObservationTargetSiteCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_PRESSURE_ULCER_OBSERVATION_TARGET_SITE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PressureUlcerObservation target) {
+      @Override
+      protected void updateToFail(PressureUlcerObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PressureUlcerObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(PressureUlcerObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PressureUlcerObservationOperations.validatePressureUlcerObservationTargetSiteCodeP(
-					(PressureUlcerObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PressureUlcerObservationOperations.validatePressureUlcerObservationTargetSiteCodeP(
+          (PressureUlcerObservation) objectToTest, diagnostician, map);
+      }
 
-		validatePressureUlcerObservationTargetSiteCodePTestCase.doValidationTest();
-	}
+    };
+
+    validatePressureUlcerObservationTargetSiteCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -2080,17 +2317,17 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PressureUlcerObservationOperations

@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.NonMedicinalSupplyActi
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
@@ -141,33 +142,67 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNonMedicinalSupplyActivityTemplateId() {
-		OperationsTestCase<NonMedicinalSupplyActivity> validateNonMedicinalSupplyActivityTemplateIdTestCase = new OperationsTestCase<NonMedicinalSupplyActivity>(
-			"validateNonMedicinalSupplyActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<NonMedicinalSupplyActivity> validateNonMedicinalSupplyActivityTemplateIdTestCase = new OperationsTestCase<NonMedicinalSupplyActivity>(
+      "validateNonMedicinalSupplyActivityTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(NonMedicinalSupplyActivity target) {
+      @Override
+      protected void updateToFail(NonMedicinalSupplyActivity target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(NonMedicinalSupplyActivity target) {
-				target.init();
+      @Override
+      protected void updateToPass(NonMedicinalSupplyActivity target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityTemplateId(
-					(NonMedicinalSupplyActivity) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityTemplateId(
+          (NonMedicinalSupplyActivity) objectToTest, diagnostician, map);
+      }
 
-		validateNonMedicinalSupplyActivityTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateNonMedicinalSupplyActivityTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -287,36 +322,70 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNonMedicinalSupplyActivityStatusCode() {
-		OperationsTestCase<NonMedicinalSupplyActivity> validateNonMedicinalSupplyActivityStatusCodeTestCase = new OperationsTestCase<NonMedicinalSupplyActivity>(
-			"validateNonMedicinalSupplyActivityStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<NonMedicinalSupplyActivity> validateNonMedicinalSupplyActivityStatusCodeTestCase = new OperationsTestCase<NonMedicinalSupplyActivity>(
+      "validateNonMedicinalSupplyActivityStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(NonMedicinalSupplyActivity target) {
+      @Override
+      protected void updateToFail(NonMedicinalSupplyActivity target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(NonMedicinalSupplyActivity target) {
-				target.init();
+      @Override
+      protected void updateToPass(NonMedicinalSupplyActivity target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityStatusCode(
-					(NonMedicinalSupplyActivity) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityStatusCode(
+          (NonMedicinalSupplyActivity) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateNonMedicinalSupplyActivityStatusCodeTestCase.doValidationTest();
-	}
+    validateNonMedicinalSupplyActivityStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -432,10 +501,13 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testGetProductInstance() {
 
-		NonMedicinalSupplyActivity target = objectFactory.create();
-		target.getProductInstance();
 
-	}
+NonMedicinalSupplyActivity target = objectFactory.create();
+target.getProductInstance();
+
+
+
+}
 
 	/**
 	*
@@ -490,17 +562,17 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // NonMedicinalSupplyActivityOperations

@@ -200,33 +200,67 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationClassCode() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationClassCodeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationClassCodeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationClassCode(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationClassCode(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		validateCognitiveStatusResultObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateCognitiveStatusResultObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -234,33 +268,67 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationMoodCode() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationMoodCodeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationMoodCodeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationMoodCode(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationMoodCode(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		validateCognitiveStatusResultObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateCognitiveStatusResultObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -268,36 +336,70 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationId() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationIdTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationIdTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationId",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        II ii  = DatatypesFactory.eINSTANCE.createII();
+        target.getIds().add(ii);				
+        
+      
+      
+          
+      
+        
+      }
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationId(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationId(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateCognitiveStatusResultObservationIdTestCase.doValidationTest();
-	}
+    validateCognitiveStatusResultObservationIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -305,33 +407,67 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationCodeP() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationCodePTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationCodePTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationCodeP(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationCodeP(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		validateCognitiveStatusResultObservationCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateCognitiveStatusResultObservationCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -376,36 +512,69 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationText() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationTextTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationText",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationTextTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationText",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+    ED text = DatatypesFactory.eINSTANCE.createED();
+    target.setText(text );	
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationText(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationText(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateCognitiveStatusResultObservationTextTestCase.doValidationTest();
-	}
+    validateCognitiveStatusResultObservationTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -413,33 +582,67 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationStatusCodeP() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationStatusCodePTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationStatusCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationStatusCodePTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationStatusCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationStatusCodeP(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationStatusCodeP(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		validateCognitiveStatusResultObservationStatusCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateCognitiveStatusResultObservationStatusCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -447,36 +650,70 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationStatusCode() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationStatusCodeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationStatusCodeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationStatusCode(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationStatusCode(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateCognitiveStatusResultObservationStatusCodeTestCase.doValidationTest();
-	}
+    validateCognitiveStatusResultObservationStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -484,36 +721,70 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationEffectiveTime() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationEffectiveTimeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationEffectiveTimeTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationEffectiveTime(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationEffectiveTime(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateCognitiveStatusResultObservationEffectiveTimeTestCase.doValidationTest();
-	}
+    validateCognitiveStatusResultObservationEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -521,36 +792,70 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCognitiveStatusResultObservationValue() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationValueTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateCognitiveStatusResultObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateCognitiveStatusResultObservationValueTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateCognitiveStatusResultObservationValue",
+      operationsForOCL.getOCLValue("VALIDATE_COGNITIVE_STATUS_RESULT_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationValue(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateCognitiveStatusResultObservationValue(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateCognitiveStatusResultObservationValueTestCase.doValidationTest();
-	}
+    validateCognitiveStatusResultObservationValueTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -929,10 +1234,13 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetNonMedicinalSupplyActivities() {
 
-		CognitiveStatusResultObservation target = objectFactory.create();
-		target.getNonMedicinalSupplyActivities();
 
-	}
+CognitiveStatusResultObservation target = objectFactory.create();
+target.getNonMedicinalSupplyActivities();
+
+
+
+}
 
 	/**
 	*
@@ -941,10 +1249,13 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetCaregiverCharacteristicss() {
 
-		CognitiveStatusResultObservation target = objectFactory.create();
-		target.getCaregiverCharacteristicss();
 
-	}
+CognitiveStatusResultObservation target = objectFactory.create();
+target.getCaregiverCharacteristicss();
+
+
+
+}
 
 	/**
 	*
@@ -953,10 +1264,13 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentScaleObservations() {
 
-		CognitiveStatusResultObservation target = objectFactory.create();
-		target.getAssessmentScaleObservations();
 
-	}
+CognitiveStatusResultObservation target = objectFactory.create();
+target.getAssessmentScaleObservations();
+
+
+
+}
 
 	/**
 	*
@@ -964,33 +1278,67 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateResultObservationTemplateId() {
-		OperationsTestCase<CognitiveStatusResultObservation> validateResultObservationTemplateIdTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
-			"validateResultObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<CognitiveStatusResultObservation> validateResultObservationTemplateIdTestCase = new OperationsTestCase<CognitiveStatusResultObservation>(
+      "validateResultObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(CognitiveStatusResultObservation target) {
+      @Override
+      protected void updateToFail(CognitiveStatusResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(CognitiveStatusResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(CognitiveStatusResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return CognitiveStatusResultObservationOperations.validateResultObservationTemplateId(
-					(CognitiveStatusResultObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return CognitiveStatusResultObservationOperations.validateResultObservationTemplateId(
+          (CognitiveStatusResultObservation) objectToTest, diagnostician, map);
+      }
 
-		validateResultObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateResultObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -1045,17 +1393,17 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // CognitiveStatusResultObservationOperations
