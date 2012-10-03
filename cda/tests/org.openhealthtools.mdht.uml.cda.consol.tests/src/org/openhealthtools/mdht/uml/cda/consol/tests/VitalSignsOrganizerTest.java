@@ -56,33 +56,67 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignsOrganizerTemplateId() {
-		OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerTemplateIdTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"validateVitalSignsOrganizerTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerTemplateIdTestCase = new OperationsTestCase<VitalSignsOrganizer>(
+      "validateVitalSignsOrganizerTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VitalSignsOrganizer target) {
+      @Override
+      protected void updateToFail(VitalSignsOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(VitalSignsOrganizer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return VitalSignsOrganizerOperations.validateVitalSignsOrganizerTemplateId(
-					(VitalSignsOrganizer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VitalSignsOrganizerOperations.validateVitalSignsOrganizerTemplateId(
+          (VitalSignsOrganizer) objectToTest, diagnostician, map);
+      }
 
-		validateVitalSignsOrganizerTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateVitalSignsOrganizerTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -90,33 +124,67 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignsOrganizerClassCode() {
-		OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerClassCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"validateVitalSignsOrganizerClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerClassCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
+      "validateVitalSignsOrganizerClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VitalSignsOrganizer target) {
+      @Override
+      protected void updateToFail(VitalSignsOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(VitalSignsOrganizer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return VitalSignsOrganizerOperations.validateVitalSignsOrganizerClassCode(
-					(VitalSignsOrganizer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VitalSignsOrganizerOperations.validateVitalSignsOrganizerClassCode(
+          (VitalSignsOrganizer) objectToTest, diagnostician, map);
+      }
 
-		validateVitalSignsOrganizerClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateVitalSignsOrganizerClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -124,33 +192,67 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignsOrganizerMoodCode() {
-		OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerMoodCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"validateVitalSignsOrganizerMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerMoodCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
+      "validateVitalSignsOrganizerMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VitalSignsOrganizer target) {
+      @Override
+      protected void updateToFail(VitalSignsOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(VitalSignsOrganizer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return VitalSignsOrganizerOperations.validateVitalSignsOrganizerMoodCode(
-					(VitalSignsOrganizer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VitalSignsOrganizerOperations.validateVitalSignsOrganizerMoodCode(
+          (VitalSignsOrganizer) objectToTest, diagnostician, map);
+      }
 
-		validateVitalSignsOrganizerMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateVitalSignsOrganizerMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -195,33 +297,67 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignsOrganizerCode() {
-		OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"validateVitalSignsOrganizerCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
+      "validateVitalSignsOrganizerCode",
+      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VitalSignsOrganizer target) {
+      @Override
+      protected void updateToFail(VitalSignsOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(VitalSignsOrganizer target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return VitalSignsOrganizerOperations.validateVitalSignsOrganizerCode(
-					(VitalSignsOrganizer) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VitalSignsOrganizerOperations.validateVitalSignsOrganizerCode(
+          (VitalSignsOrganizer) objectToTest, diagnostician, map);
+      }
 
-		validateVitalSignsOrganizerCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateVitalSignsOrganizerCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -229,36 +365,70 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignsOrganizerStatusCode() {
-		OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerStatusCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"validateVitalSignsOrganizerStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerStatusCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
+      "validateVitalSignsOrganizerStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VitalSignsOrganizer target) {
+      @Override
+      protected void updateToFail(VitalSignsOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(VitalSignsOrganizer target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return VitalSignsOrganizerOperations.validateVitalSignsOrganizerStatusCode(
-					(VitalSignsOrganizer) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VitalSignsOrganizerOperations.validateVitalSignsOrganizerStatusCode(
+          (VitalSignsOrganizer) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateVitalSignsOrganizerStatusCodeTestCase.doValidationTest();
-	}
+    validateVitalSignsOrganizerStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -266,36 +436,70 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignsOrganizerEffectiveTime() {
-		OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerEffectiveTimeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"validateVitalSignsOrganizerEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerEffectiveTimeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
+      "validateVitalSignsOrganizerEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(VitalSignsOrganizer target) {
+      @Override
+      protected void updateToFail(VitalSignsOrganizer target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+      @Override
+      protected void updateToPass(VitalSignsOrganizer target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return VitalSignsOrganizerOperations.validateVitalSignsOrganizerEffectiveTime(
-					(VitalSignsOrganizer) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return VitalSignsOrganizerOperations.validateVitalSignsOrganizerEffectiveTime(
+          (VitalSignsOrganizer) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateVitalSignsOrganizerEffectiveTimeTestCase.doValidationTest();
-	}
+    validateVitalSignsOrganizerEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -341,10 +545,13 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testGetVitalSignObservations() {
 
-		VitalSignsOrganizer target = objectFactory.create();
-		target.getVitalSignObservations();
 
-	}
+VitalSignsOrganizer target = objectFactory.create();
+target.getVitalSignObservations();
+
+
+
+}
 
 	/**
 	*
@@ -399,17 +606,17 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // VitalSignsOrganizerOperations

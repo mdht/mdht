@@ -31,8 +31,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#validateEncounterDiagnosisTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Diagnosis Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#validateEncounterDiagnosisClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Diagnosis Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#validateEncounterDiagnosisMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Diagnosis Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#validateEncounterDiagnosisCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Diagnosis Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#validateEncounterDiagnosisCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Diagnosis Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#validateEncounterDiagnosisCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Diagnosis Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#validateEncounterDiagnosisProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Diagnosis Problem Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis#getProblemObservations() <em>Get Problem Observations</em>}</li>
  * </ul>
@@ -49,33 +49,67 @@ public class EncounterDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterDiagnosisTemplateId() {
-		OperationsTestCase<EncounterDiagnosis> validateEncounterDiagnosisTemplateIdTestCase = new OperationsTestCase<EncounterDiagnosis>(
-			"validateEncounterDiagnosisTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterDiagnosis> validateEncounterDiagnosisTemplateIdTestCase = new OperationsTestCase<EncounterDiagnosis>(
+      "validateEncounterDiagnosisTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterDiagnosis target) {
+      @Override
+      protected void updateToFail(EncounterDiagnosis target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterDiagnosis target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterDiagnosis target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterDiagnosisOperations.validateEncounterDiagnosisTemplateId(
-					(EncounterDiagnosis) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterDiagnosisOperations.validateEncounterDiagnosisTemplateId(
+          (EncounterDiagnosis) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterDiagnosisTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterDiagnosisTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -83,33 +117,67 @@ public class EncounterDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterDiagnosisClassCode() {
-		OperationsTestCase<EncounterDiagnosis> validateEncounterDiagnosisClassCodeTestCase = new OperationsTestCase<EncounterDiagnosis>(
-			"validateEncounterDiagnosisClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterDiagnosis> validateEncounterDiagnosisClassCodeTestCase = new OperationsTestCase<EncounterDiagnosis>(
+      "validateEncounterDiagnosisClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterDiagnosis target) {
+      @Override
+      protected void updateToFail(EncounterDiagnosis target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterDiagnosis target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterDiagnosis target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterDiagnosisOperations.validateEncounterDiagnosisClassCode(
-					(EncounterDiagnosis) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterDiagnosisOperations.validateEncounterDiagnosisClassCode(
+          (EncounterDiagnosis) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterDiagnosisClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterDiagnosisClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -117,33 +185,67 @@ public class EncounterDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEncounterDiagnosisMoodCode() {
-		OperationsTestCase<EncounterDiagnosis> validateEncounterDiagnosisMoodCodeTestCase = new OperationsTestCase<EncounterDiagnosis>(
-			"validateEncounterDiagnosisMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<EncounterDiagnosis> validateEncounterDiagnosisMoodCodeTestCase = new OperationsTestCase<EncounterDiagnosis>(
+      "validateEncounterDiagnosisMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(EncounterDiagnosis target) {
+      @Override
+      protected void updateToFail(EncounterDiagnosis target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(EncounterDiagnosis target) {
-				target.init();
+      @Override
+      protected void updateToPass(EncounterDiagnosis target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return EncounterDiagnosisOperations.validateEncounterDiagnosisMoodCode(
-					(EncounterDiagnosis) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return EncounterDiagnosisOperations.validateEncounterDiagnosisMoodCode(
+          (EncounterDiagnosis) objectToTest, diagnostician, map);
+      }
 
-		validateEncounterDiagnosisMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateEncounterDiagnosisMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -257,10 +359,13 @@ public class EncounterDiagnosisTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservations() {
 
-		EncounterDiagnosis target = objectFactory.create();
-		target.getProblemObservations();
 
-	}
+EncounterDiagnosis target = objectFactory.create();
+target.getProblemObservations();
+
+
+
+}
 
 	/**
 	*
@@ -315,17 +420,17 @@ public class EncounterDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // EncounterDiagnosisOperations

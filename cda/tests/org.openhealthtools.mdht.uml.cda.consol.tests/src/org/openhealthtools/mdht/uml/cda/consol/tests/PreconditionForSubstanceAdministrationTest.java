@@ -165,33 +165,67 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidatePreconditionForSubstanceAdministrationTemplateId() {
-		OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationTemplateIdTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
-			"validatePreconditionForSubstanceAdministrationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationTemplateIdTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
+      "validatePreconditionForSubstanceAdministrationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PreconditionForSubstanceAdministration target) {
+      @Override
+      protected void updateToFail(PreconditionForSubstanceAdministration target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PreconditionForSubstanceAdministration target) {
-				target.init();
+      @Override
+      protected void updateToPass(PreconditionForSubstanceAdministration target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PreconditionForSubstanceAdministrationOperations.validatePreconditionForSubstanceAdministrationTemplateId(
-					(PreconditionForSubstanceAdministration) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PreconditionForSubstanceAdministrationOperations.validatePreconditionForSubstanceAdministrationTemplateId(
+          (PreconditionForSubstanceAdministration) objectToTest, diagnostician, map);
+      }
 
-		validatePreconditionForSubstanceAdministrationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePreconditionForSubstanceAdministrationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -280,17 +314,17 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PreconditionForSubstanceAdministrationOperations

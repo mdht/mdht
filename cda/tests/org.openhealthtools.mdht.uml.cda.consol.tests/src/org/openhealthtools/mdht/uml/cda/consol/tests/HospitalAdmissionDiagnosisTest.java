@@ -50,33 +50,67 @@ public class HospitalAdmissionDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalAdmissionDiagnosisTemplateId() {
-		OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
-			"validateHospitalAdmissionDiagnosisTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
+      "validateHospitalAdmissionDiagnosisTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HospitalAdmissionDiagnosis target) {
+      @Override
+      protected void updateToFail(HospitalAdmissionDiagnosis target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HospitalAdmissionDiagnosis target) {
-				target.init();
+      @Override
+      protected void updateToPass(HospitalAdmissionDiagnosis target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisTemplateId(
-					(HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisTemplateId(
+          (HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
+      }
 
-		validateHospitalAdmissionDiagnosisTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHospitalAdmissionDiagnosisTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -84,33 +118,67 @@ public class HospitalAdmissionDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalAdmissionDiagnosisClassCode() {
-		OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisClassCodeTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
-			"validateHospitalAdmissionDiagnosisClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisClassCodeTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
+      "validateHospitalAdmissionDiagnosisClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HospitalAdmissionDiagnosis target) {
+      @Override
+      protected void updateToFail(HospitalAdmissionDiagnosis target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HospitalAdmissionDiagnosis target) {
-				target.init();
+      @Override
+      protected void updateToPass(HospitalAdmissionDiagnosis target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisClassCode(
-					(HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisClassCode(
+          (HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
+      }
 
-		validateHospitalAdmissionDiagnosisClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateHospitalAdmissionDiagnosisClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -118,33 +186,67 @@ public class HospitalAdmissionDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalAdmissionDiagnosisCode() {
-		OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisCodeTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
-			"validateHospitalAdmissionDiagnosisCode",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisCodeTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
+      "validateHospitalAdmissionDiagnosisCode",
+      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HospitalAdmissionDiagnosis target) {
+      @Override
+      protected void updateToFail(HospitalAdmissionDiagnosis target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HospitalAdmissionDiagnosis target) {
-				target.init();
+      @Override
+      protected void updateToPass(HospitalAdmissionDiagnosis target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisCode(
-					(HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisCode(
+          (HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
+      }
 
-		validateHospitalAdmissionDiagnosisCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateHospitalAdmissionDiagnosisCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -152,33 +254,67 @@ public class HospitalAdmissionDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalAdmissionDiagnosisMoodCode() {
-		OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisMoodCodeTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
-			"validateHospitalAdmissionDiagnosisMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HospitalAdmissionDiagnosis> validateHospitalAdmissionDiagnosisMoodCodeTestCase = new OperationsTestCase<HospitalAdmissionDiagnosis>(
+      "validateHospitalAdmissionDiagnosisMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HospitalAdmissionDiagnosis target) {
+      @Override
+      protected void updateToFail(HospitalAdmissionDiagnosis target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HospitalAdmissionDiagnosis target) {
-				target.init();
+      @Override
+      protected void updateToPass(HospitalAdmissionDiagnosis target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisMoodCode(
-					(HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HospitalAdmissionDiagnosisOperations.validateHospitalAdmissionDiagnosisMoodCode(
+          (HospitalAdmissionDiagnosis) objectToTest, diagnostician, map);
+      }
 
-		validateHospitalAdmissionDiagnosisMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateHospitalAdmissionDiagnosisMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -227,10 +363,13 @@ public class HospitalAdmissionDiagnosisTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservations() {
 
-		HospitalAdmissionDiagnosis target = objectFactory.create();
-		target.getProblemObservations();
 
-	}
+HospitalAdmissionDiagnosis target = objectFactory.create();
+target.getProblemObservations();
+
+
+
+}
 
 	/**
 	*
@@ -285,17 +424,17 @@ public class HospitalAdmissionDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // HospitalAdmissionDiagnosisOperations

@@ -56,33 +56,67 @@ public class MedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalHistorySectionTemplateId() {
-		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTemplateIdTestCase = new OperationsTestCase<MedicalHistorySection>(
-			"validateMedicalHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTemplateIdTestCase = new OperationsTestCase<MedicalHistorySection>(
+      "validateMedicalHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalHistorySection target) {
+      @Override
+      protected void updateToFail(MedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicalHistorySectionOperations.validateMedicalHistorySectionTemplateId(
-					(MedicalHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalHistorySectionOperations.validateMedicalHistorySectionTemplateId(
+          (MedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateMedicalHistorySectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicalHistorySectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -90,33 +124,67 @@ public class MedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalHistorySectionCode() {
-		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionCodeTestCase = new OperationsTestCase<MedicalHistorySection>(
-			"validateMedicalHistorySectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionCodeTestCase = new OperationsTestCase<MedicalHistorySection>(
+      "validateMedicalHistorySectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalHistorySection target) {
+      @Override
+      protected void updateToFail(MedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicalHistorySectionOperations.validateMedicalHistorySectionCode(
-					(MedicalHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalHistorySectionOperations.validateMedicalHistorySectionCode(
+          (MedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateMedicalHistorySectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicalHistorySectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -124,33 +192,67 @@ public class MedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalHistorySectionCodeP() {
-		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionCodePTestCase = new OperationsTestCase<MedicalHistorySection>(
-			"validateMedicalHistorySectionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionCodePTestCase = new OperationsTestCase<MedicalHistorySection>(
+      "validateMedicalHistorySectionCodeP",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalHistorySection target) {
+      @Override
+      protected void updateToFail(MedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicalHistorySectionOperations.validateMedicalHistorySectionCodeP(
-					(MedicalHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalHistorySectionOperations.validateMedicalHistorySectionCodeP(
+          (MedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateMedicalHistorySectionCodePTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicalHistorySectionCodePTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -158,36 +260,70 @@ public class MedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalHistorySectionText() {
-		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTextTestCase = new OperationsTestCase<MedicalHistorySection>(
-			"validateMedicalHistorySectionText",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTextTestCase = new OperationsTestCase<MedicalHistorySection>(
+      "validateMedicalHistorySectionText",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalHistorySection target) {
+      @Override
+      protected void updateToFail(MedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicalHistorySectionOperations.validateMedicalHistorySectionText(
-					(MedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalHistorySectionOperations.validateMedicalHistorySectionText(
+          (MedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicalHistorySectionTextTestCase.doValidationTest();
-	}
+    validateMedicalHistorySectionTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -195,36 +331,70 @@ public class MedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalHistorySectionTitle() {
-		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTitleTestCase = new OperationsTestCase<MedicalHistorySection>(
-			"validateMedicalHistorySectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTitleTestCase = new OperationsTestCase<MedicalHistorySection>(
+      "validateMedicalHistorySectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalHistorySection target) {
+      @Override
+      protected void updateToFail(MedicalHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+        
+        
 
-			}
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicalHistorySectionOperations.validateMedicalHistorySectionTitle(
-					(MedicalHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalHistorySectionOperations.validateMedicalHistorySectionTitle(
+          (MedicalHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicalHistorySectionTitleTestCase.doValidationTest();
-	}
+    validateMedicalHistorySectionTitleTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -279,17 +449,17 @@ public class MedicalHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicalHistorySectionOperations

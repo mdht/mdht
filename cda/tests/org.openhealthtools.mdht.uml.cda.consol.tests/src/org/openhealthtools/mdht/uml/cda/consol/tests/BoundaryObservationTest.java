@@ -49,33 +49,67 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationTemplateId() {
-		OperationsTestCase<BoundaryObservation> validateBoundaryObservationTemplateIdTestCase = new OperationsTestCase<BoundaryObservation>(
-			"validateBoundaryObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<BoundaryObservation> validateBoundaryObservationTemplateIdTestCase = new OperationsTestCase<BoundaryObservation>(
+      "validateBoundaryObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(BoundaryObservation target) {
+      @Override
+      protected void updateToFail(BoundaryObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(BoundaryObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(BoundaryObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return BoundaryObservationOperations.validateBoundaryObservationTemplateId(
-					(BoundaryObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return BoundaryObservationOperations.validateBoundaryObservationTemplateId(
+          (BoundaryObservation) objectToTest, diagnostician, map);
+      }
 
-		validateBoundaryObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateBoundaryObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -83,33 +117,67 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationClassCode() {
-		OperationsTestCase<BoundaryObservation> validateBoundaryObservationClassCodeTestCase = new OperationsTestCase<BoundaryObservation>(
-			"validateBoundaryObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<BoundaryObservation> validateBoundaryObservationClassCodeTestCase = new OperationsTestCase<BoundaryObservation>(
+      "validateBoundaryObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(BoundaryObservation target) {
+      @Override
+      protected void updateToFail(BoundaryObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(BoundaryObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(BoundaryObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return BoundaryObservationOperations.validateBoundaryObservationClassCode(
-					(BoundaryObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return BoundaryObservationOperations.validateBoundaryObservationClassCode(
+          (BoundaryObservation) objectToTest, diagnostician, map);
+      }
 
-		validateBoundaryObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateBoundaryObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -154,33 +222,67 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationMoodCode() {
-		OperationsTestCase<BoundaryObservation> validateBoundaryObservationMoodCodeTestCase = new OperationsTestCase<BoundaryObservation>(
-			"validateBoundaryObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<BoundaryObservation> validateBoundaryObservationMoodCodeTestCase = new OperationsTestCase<BoundaryObservation>(
+      "validateBoundaryObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(BoundaryObservation target) {
+      @Override
+      protected void updateToFail(BoundaryObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(BoundaryObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(BoundaryObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return BoundaryObservationOperations.validateBoundaryObservationMoodCode(
-					(BoundaryObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return BoundaryObservationOperations.validateBoundaryObservationMoodCode(
+          (BoundaryObservation) objectToTest, diagnostician, map);
+      }
 
-		validateBoundaryObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateBoundaryObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -270,17 +372,17 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // BoundaryObservationOperations

@@ -69,33 +69,67 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAuthorizationActivityTemplateId() {
-		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityTemplateIdTestCase = new OperationsTestCase<AuthorizationActivity>(
-			"validateAuthorizationActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityTemplateIdTestCase = new OperationsTestCase<AuthorizationActivity>(
+      "validateAuthorizationActivityTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AuthorizationActivity target) {
+      @Override
+      protected void updateToFail(AuthorizationActivity target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AuthorizationActivity target) {
-				target.init();
+      @Override
+      protected void updateToPass(AuthorizationActivity target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AuthorizationActivityOperations.validateAuthorizationActivityTemplateId(
-					(AuthorizationActivity) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AuthorizationActivityOperations.validateAuthorizationActivityTemplateId(
+          (AuthorizationActivity) objectToTest, diagnostician, map);
+      }
 
-		validateAuthorizationActivityTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAuthorizationActivityTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -103,33 +137,67 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAuthorizationActivityClassCode() {
-		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityClassCodeTestCase = new OperationsTestCase<AuthorizationActivity>(
-			"validateAuthorizationActivityClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityClassCodeTestCase = new OperationsTestCase<AuthorizationActivity>(
+      "validateAuthorizationActivityClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AuthorizationActivity target) {
+      @Override
+      protected void updateToFail(AuthorizationActivity target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AuthorizationActivity target) {
-				target.init();
+      @Override
+      protected void updateToPass(AuthorizationActivity target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AuthorizationActivityOperations.validateAuthorizationActivityClassCode(
-					(AuthorizationActivity) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AuthorizationActivityOperations.validateAuthorizationActivityClassCode(
+          (AuthorizationActivity) objectToTest, diagnostician, map);
+      }
 
-		validateAuthorizationActivityClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateAuthorizationActivityClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -171,33 +239,67 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAuthorizationActivityMoodCode() {
-		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityMoodCodeTestCase = new OperationsTestCase<AuthorizationActivity>(
-			"validateAuthorizationActivityMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityMoodCodeTestCase = new OperationsTestCase<AuthorizationActivity>(
+      "validateAuthorizationActivityMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AuthorizationActivity target) {
+      @Override
+      protected void updateToFail(AuthorizationActivity target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AuthorizationActivity target) {
-				target.init();
+      @Override
+      protected void updateToPass(AuthorizationActivity target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AuthorizationActivityOperations.validateAuthorizationActivityMoodCode(
-					(AuthorizationActivity) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AuthorizationActivityOperations.validateAuthorizationActivityMoodCode(
+          (AuthorizationActivity) objectToTest, diagnostician, map);
+      }
 
-		validateAuthorizationActivityMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateAuthorizationActivityMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -954,17 +1056,17 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AuthorizationActivityOperations

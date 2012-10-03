@@ -128,33 +128,67 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateQuantityMeasurementObservationTemplateId() {
-		OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationTemplateIdTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
-			"validateQuantityMeasurementObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationTemplateIdTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
+      "validateQuantityMeasurementObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(QuantityMeasurementObservation target) {
+      @Override
+      protected void updateToFail(QuantityMeasurementObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(QuantityMeasurementObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(QuantityMeasurementObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationTemplateId(
-					(QuantityMeasurementObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationTemplateId(
+          (QuantityMeasurementObservation) objectToTest, diagnostician, map);
+      }
 
-		validateQuantityMeasurementObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateQuantityMeasurementObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -162,33 +196,67 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateQuantityMeasurementObservationClassCode() {
-		OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationClassCodeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
-			"validateQuantityMeasurementObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationClassCodeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
+      "validateQuantityMeasurementObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(QuantityMeasurementObservation target) {
+      @Override
+      protected void updateToFail(QuantityMeasurementObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(QuantityMeasurementObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(QuantityMeasurementObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationClassCode(
-					(QuantityMeasurementObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationClassCode(
+          (QuantityMeasurementObservation) objectToTest, diagnostician, map);
+      }
 
-		validateQuantityMeasurementObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateQuantityMeasurementObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -196,33 +264,67 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateQuantityMeasurementObservationMoodCode() {
-		OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationMoodCodeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
-			"validateQuantityMeasurementObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationMoodCodeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
+      "validateQuantityMeasurementObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(QuantityMeasurementObservation target) {
+      @Override
+      protected void updateToFail(QuantityMeasurementObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(QuantityMeasurementObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(QuantityMeasurementObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationMoodCode(
-					(QuantityMeasurementObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationMoodCode(
+          (QuantityMeasurementObservation) objectToTest, diagnostician, map);
+      }
 
-		validateQuantityMeasurementObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateQuantityMeasurementObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -230,36 +332,70 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateQuantityMeasurementObservationCode() {
-		OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationCodeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
-			"validateQuantityMeasurementObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationCodeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
+      "validateQuantityMeasurementObservationCode",
+      operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(QuantityMeasurementObservation target) {
+      @Override
+      protected void updateToFail(QuantityMeasurementObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(QuantityMeasurementObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(QuantityMeasurementObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
-				target.setCode(cd);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+      
+        CD cd  = DatatypesFactory.eINSTANCE.createCD();
+        target.setCode(cd);
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationCode(
-					(QuantityMeasurementObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationCode(
+          (QuantityMeasurementObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateQuantityMeasurementObservationCodeTestCase.doValidationTest();
-	}
+    validateQuantityMeasurementObservationCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -267,36 +403,70 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateQuantityMeasurementObservationEffectiveTime() {
-		OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationEffectiveTimeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
-			"validateQuantityMeasurementObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationEffectiveTimeTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
+      "validateQuantityMeasurementObservationEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(QuantityMeasurementObservation target) {
+      @Override
+      protected void updateToFail(QuantityMeasurementObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(QuantityMeasurementObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(QuantityMeasurementObservation target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationEffectiveTime(
-					(QuantityMeasurementObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationEffectiveTime(
+          (QuantityMeasurementObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateQuantityMeasurementObservationEffectiveTimeTestCase.doValidationTest();
-	}
+    validateQuantityMeasurementObservationEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -380,10 +550,13 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetSOPInstanceObservations() {
 
-		QuantityMeasurementObservation target = objectFactory.create();
-		target.getSOPInstanceObservations();
 
-	}
+QuantityMeasurementObservation target = objectFactory.create();
+target.getSOPInstanceObservations();
+
+
+
+}
 
 	/**
 	*
@@ -438,17 +611,17 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // QuantityMeasurementObservationOperations

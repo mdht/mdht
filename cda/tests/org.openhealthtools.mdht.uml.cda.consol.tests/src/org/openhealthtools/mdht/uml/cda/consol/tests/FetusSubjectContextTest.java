@@ -46,33 +46,67 @@ public class FetusSubjectContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFetusSubjectContextTemplateId() {
-		OperationsTestCase<FetusSubjectContext> validateFetusSubjectContextTemplateIdTestCase = new OperationsTestCase<FetusSubjectContext>(
-			"validateFetusSubjectContextTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_FETUS_SUBJECT_CONTEXT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FetusSubjectContext> validateFetusSubjectContextTemplateIdTestCase = new OperationsTestCase<FetusSubjectContext>(
+      "validateFetusSubjectContextTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_FETUS_SUBJECT_CONTEXT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FetusSubjectContext target) {
+      @Override
+      protected void updateToFail(FetusSubjectContext target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FetusSubjectContext target) {
-				target.init();
+      @Override
+      protected void updateToPass(FetusSubjectContext target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FetusSubjectContextOperations.validateFetusSubjectContextTemplateId(
-					(FetusSubjectContext) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FetusSubjectContextOperations.validateFetusSubjectContextTemplateId(
+          (FetusSubjectContext) objectToTest, diagnostician, map);
+      }
 
-		validateFetusSubjectContextTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateFetusSubjectContextTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -80,33 +114,67 @@ public class FetusSubjectContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFetusSubjectContextCode() {
-		OperationsTestCase<FetusSubjectContext> validateFetusSubjectContextCodeTestCase = new OperationsTestCase<FetusSubjectContext>(
-			"validateFetusSubjectContextCode",
-			operationsForOCL.getOCLValue("VALIDATE_FETUS_SUBJECT_CONTEXT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FetusSubjectContext> validateFetusSubjectContextCodeTestCase = new OperationsTestCase<FetusSubjectContext>(
+      "validateFetusSubjectContextCode",
+      operationsForOCL.getOCLValue("VALIDATE_FETUS_SUBJECT_CONTEXT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FetusSubjectContext target) {
+      @Override
+      protected void updateToFail(FetusSubjectContext target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FetusSubjectContext target) {
-				target.init();
+      @Override
+      protected void updateToPass(FetusSubjectContext target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FetusSubjectContextOperations.validateFetusSubjectContextCode(
-					(FetusSubjectContext) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FetusSubjectContextOperations.validateFetusSubjectContextCode(
+          (FetusSubjectContext) objectToTest, diagnostician, map);
+      }
 
-		validateFetusSubjectContextCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateFetusSubjectContextCodeTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -114,33 +182,67 @@ public class FetusSubjectContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFetusSubjectContextSubject() {
-		OperationsTestCase<FetusSubjectContext> validateFetusSubjectContextSubjectTestCase = new OperationsTestCase<FetusSubjectContext>(
-			"validateFetusSubjectContextSubject",
-			operationsForOCL.getOCLValue("VALIDATE_FETUS_SUBJECT_CONTEXT_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FetusSubjectContext> validateFetusSubjectContextSubjectTestCase = new OperationsTestCase<FetusSubjectContext>(
+      "validateFetusSubjectContextSubject",
+      operationsForOCL.getOCLValue("VALIDATE_FETUS_SUBJECT_CONTEXT_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FetusSubjectContext target) {
+      @Override
+      protected void updateToFail(FetusSubjectContext target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FetusSubjectContext target) {
-				target.init();
+      @Override
+      protected void updateToPass(FetusSubjectContext target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FetusSubjectContextOperations.validateFetusSubjectContextSubject(
-					(FetusSubjectContext) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FetusSubjectContextOperations.validateFetusSubjectContextSubject(
+          (FetusSubjectContext) objectToTest, diagnostician, map);
+      }
 
-		validateFetusSubjectContextSubjectTestCase.doValidationTest();
-	}
+    };
+
+    validateFetusSubjectContextSubjectTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -195,17 +297,17 @@ public class FetusSubjectContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FetusSubjectContextOperations
