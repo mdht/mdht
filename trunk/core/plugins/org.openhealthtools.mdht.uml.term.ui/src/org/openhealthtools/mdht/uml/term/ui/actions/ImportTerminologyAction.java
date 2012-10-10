@@ -33,7 +33,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -180,7 +179,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 	ResourceSet resourceSet = null;
 
 	// Needs to be a preference at some point
-	static final int MAXCODES = 50;
+	static final int MAXCODES = 400;
 
 	int codeSystemsCreated;
 
@@ -619,7 +618,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 				final TableItem valueSetsAboveMax = new TableItem(table, SWT.NONE);
 				valueSetsAboveMax.setText(new String[] {
-						"Value Sets Codes to Large", String.valueOf(valueSetsAboveMaxCode) });
+						"Value Sets Codes too Large", String.valueOf(valueSetsAboveMaxCode) });
 
 				final TableItem codeSystemsCreatedItem = new TableItem(table, SWT.NONE);
 				codeSystemsCreatedItem.setText(new String[] {
