@@ -47,67 +47,33 @@ public class HighestPressureUlcerStageTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHighestPressureUlcerStageTemplateId() {
-      OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageTemplateIdTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
-      "validateHighestPressureUlcerStageTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageTemplateIdTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
+			"validateHighestPressureUlcerStageTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HighestPressureUlcerStage target) {
+			@Override
+			protected void updateToFail(HighestPressureUlcerStage target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HighestPressureUlcerStage target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HighestPressureUlcerStage target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageTemplateId(
+					(HighestPressureUlcerStage) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageTemplateId(
-          (HighestPressureUlcerStage) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHighestPressureUlcerStageTemplateIdTestCase.doValidationTest();
-}
+		validateHighestPressureUlcerStageTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -115,67 +81,33 @@ public class HighestPressureUlcerStageTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHighestPressureUlcerStageClassCode() {
-      OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageClassCodeTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
-      "validateHighestPressureUlcerStageClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageClassCodeTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
+			"validateHighestPressureUlcerStageClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HighestPressureUlcerStage target) {
+			@Override
+			protected void updateToFail(HighestPressureUlcerStage target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HighestPressureUlcerStage target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HighestPressureUlcerStage target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageClassCode(
+					(HighestPressureUlcerStage) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageClassCode(
-          (HighestPressureUlcerStage) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHighestPressureUlcerStageClassCodeTestCase.doValidationTest();
-}
+		validateHighestPressureUlcerStageClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -183,67 +115,33 @@ public class HighestPressureUlcerStageTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHighestPressureUlcerStageMoodCode() {
-      OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageMoodCodeTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
-      "validateHighestPressureUlcerStageMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageMoodCodeTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
+			"validateHighestPressureUlcerStageMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HighestPressureUlcerStage target) {
+			@Override
+			protected void updateToFail(HighestPressureUlcerStage target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HighestPressureUlcerStage target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HighestPressureUlcerStage target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageMoodCode(
+					(HighestPressureUlcerStage) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageMoodCode(
-          (HighestPressureUlcerStage) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHighestPressureUlcerStageMoodCodeTestCase.doValidationTest();
-}
+		validateHighestPressureUlcerStageMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -285,67 +183,33 @@ public class HighestPressureUlcerStageTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHighestPressureUlcerStageCodeP() {
-      OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageCodePTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
-      "validateHighestPressureUlcerStageCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageCodePTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
+			"validateHighestPressureUlcerStageCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HighestPressureUlcerStage target) {
+			@Override
+			protected void updateToFail(HighestPressureUlcerStage target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HighestPressureUlcerStage target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HighestPressureUlcerStage target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageCodeP(
+					(HighestPressureUlcerStage) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageCodeP(
-          (HighestPressureUlcerStage) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHighestPressureUlcerStageCodePTestCase.doValidationTest();
-}
+		validateHighestPressureUlcerStageCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -353,67 +217,33 @@ public class HighestPressureUlcerStageTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHighestPressureUlcerStageCode() {
-      OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageCodeTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
-      "validateHighestPressureUlcerStageCode",
-      operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageCodeTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
+			"validateHighestPressureUlcerStageCode",
+			operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HighestPressureUlcerStage target) {
+			@Override
+			protected void updateToFail(HighestPressureUlcerStage target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HighestPressureUlcerStage target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HighestPressureUlcerStage target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageCode(
+					(HighestPressureUlcerStage) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageCode(
-          (HighestPressureUlcerStage) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHighestPressureUlcerStageCodeTestCase.doValidationTest();
-}
+		validateHighestPressureUlcerStageCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -421,70 +251,36 @@ public class HighestPressureUlcerStageTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHighestPressureUlcerStageValue() {
-      OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageValueTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
-      "validateHighestPressureUlcerStageValue",
-      operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HighestPressureUlcerStage> validateHighestPressureUlcerStageValueTestCase = new OperationsTestCase<HighestPressureUlcerStage>(
+			"validateHighestPressureUlcerStageValue",
+			operationsForOCL.getOCLValue("VALIDATE_HIGHEST_PRESSURE_ULCER_STAGE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HighestPressureUlcerStage target) {
+			@Override
+			protected void updateToFail(HighestPressureUlcerStage target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HighestPressureUlcerStage target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HighestPressureUlcerStage target) {
+				target.init();
 
-        
-      
-        CD value = DatatypesFactory.eINSTANCE.createCD();
-        target.getValues().add(value);
-        
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageValue(
-          (HighestPressureUlcerStage) objectToTest, diagnostician, map);
-      }
+				return HighestPressureUlcerStageOperations.validateHighestPressureUlcerStageValue(
+					(HighestPressureUlcerStage) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateHighestPressureUlcerStageValueTestCase.doValidationTest();
-}
+		validateHighestPressureUlcerStageValueTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -539,17 +335,17 @@ public class HighestPressureUlcerStageTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HighestPressureUlcerStageOperations

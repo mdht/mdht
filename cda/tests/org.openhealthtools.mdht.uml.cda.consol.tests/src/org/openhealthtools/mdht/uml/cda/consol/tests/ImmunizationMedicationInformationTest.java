@@ -21,7 +21,6 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationMedicationInformationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
@@ -60,67 +59,33 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationTemplateId() {
-      OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationTemplateIdTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
-      "validateImmunizationMedicationInformationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationTemplateIdTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ImmunizationMedicationInformation target) {
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ImmunizationMedicationInformation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationTemplateId(
+					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationTemplateId(
-          (ImmunizationMedicationInformation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateImmunizationMedicationInformationTemplateIdTestCase.doValidationTest();
-}
+		validateImmunizationMedicationInformationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -128,67 +93,33 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationClassCode() {
-      OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationClassCodeTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
-      "validateImmunizationMedicationInformationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationClassCodeTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ImmunizationMedicationInformation target) {
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ImmunizationMedicationInformation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationClassCode(
+					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationClassCode(
-          (ImmunizationMedicationInformation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateImmunizationMedicationInformationClassCodeTestCase.doValidationTest();
-}
+		validateImmunizationMedicationInformationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -495,7 +426,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(ImmunizationMedicationInformation target) {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 
-				mm.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.59"));
+				mm.setCode(DatatypesFactory.eINSTANCE.createCE("143", "2.16.840.1.113883.6.59"));
 				target.setManufacturedMaterial(mm);
 			}
 
@@ -603,17 +534,17 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ImmunizationMedicationInformationOperations

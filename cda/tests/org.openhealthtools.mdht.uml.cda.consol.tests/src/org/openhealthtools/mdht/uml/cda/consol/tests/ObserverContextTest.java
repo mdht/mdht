@@ -45,67 +45,33 @@ public class ObserverContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateObserverContextTemplateId() {
-      OperationsTestCase<ObserverContext> validateObserverContextTemplateIdTestCase = new OperationsTestCase<ObserverContext>(
-      "validateObserverContextTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_OBSERVER_CONTEXT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ObserverContext> validateObserverContextTemplateIdTestCase = new OperationsTestCase<ObserverContext>(
+			"validateObserverContextTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_OBSERVER_CONTEXT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ObserverContext target) {
+			@Override
+			protected void updateToFail(ObserverContext target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ObserverContext target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ObserverContext target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ObserverContextOperations.validateObserverContextTemplateId(
+					(ObserverContext) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ObserverContextOperations.validateObserverContextTemplateId(
-          (ObserverContext) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateObserverContextTemplateIdTestCase.doValidationTest();
-}
+		validateObserverContextTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -113,67 +79,33 @@ public class ObserverContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateObserverContextAssignedAuthor() {
-      OperationsTestCase<ObserverContext> validateObserverContextAssignedAuthorTestCase = new OperationsTestCase<ObserverContext>(
-      "validateObserverContextAssignedAuthor",
-      operationsForOCL.getOCLValue("VALIDATE_OBSERVER_CONTEXT_ASSIGNED_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ObserverContext> validateObserverContextAssignedAuthorTestCase = new OperationsTestCase<ObserverContext>(
+			"validateObserverContextAssignedAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_OBSERVER_CONTEXT_ASSIGNED_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ObserverContext target) {
+			@Override
+			protected void updateToFail(ObserverContext target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ObserverContext target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ObserverContext target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ObserverContextOperations.validateObserverContextAssignedAuthor(
+					(ObserverContext) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ObserverContextOperations.validateObserverContextAssignedAuthor(
-          (ObserverContext) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateObserverContextAssignedAuthorTestCase.doValidationTest();
-}
+		validateObserverContextAssignedAuthorTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -228,17 +160,17 @@ public class ObserverContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ObserverContextOperations

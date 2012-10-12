@@ -56,67 +56,33 @@ public class OperativeNoteSurgicalProcedureSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testValidateOperativeNoteSurgicalProcedureSectionTemplateId() {
-      OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionTemplateIdTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
-      "validateOperativeNoteSurgicalProcedureSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionTemplateIdTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
+			"validateOperativeNoteSurgicalProcedureSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
+			@Override
+			protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionTemplateId(
+					(OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionTemplateId(
-          (OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateOperativeNoteSurgicalProcedureSectionTemplateIdTestCase.doValidationTest();
-}
+		validateOperativeNoteSurgicalProcedureSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -124,67 +90,33 @@ public class OperativeNoteSurgicalProcedureSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testValidateOperativeNoteSurgicalProcedureSectionCode() {
-      OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionCodeTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
-      "validateOperativeNoteSurgicalProcedureSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionCodeTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
+			"validateOperativeNoteSurgicalProcedureSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
+			@Override
+			protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionCode(
+					(OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionCode(
-          (OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateOperativeNoteSurgicalProcedureSectionCodeTestCase.doValidationTest();
-}
+		validateOperativeNoteSurgicalProcedureSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -192,67 +124,33 @@ public class OperativeNoteSurgicalProcedureSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testValidateOperativeNoteSurgicalProcedureSectionCodeP() {
-      OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionCodePTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
-      "validateOperativeNoteSurgicalProcedureSectionCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionCodePTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
+			"validateOperativeNoteSurgicalProcedureSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
+			@Override
+			protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionCodeP(
+					(OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionCodeP(
-          (OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateOperativeNoteSurgicalProcedureSectionCodePTestCase.doValidationTest();
-}
+		validateOperativeNoteSurgicalProcedureSectionCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -260,70 +158,36 @@ public class OperativeNoteSurgicalProcedureSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testValidateOperativeNoteSurgicalProcedureSectionText() {
-      OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionTextTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
-      "validateOperativeNoteSurgicalProcedureSectionText",
-      operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionTextTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
+			"validateOperativeNoteSurgicalProcedureSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
+			@Override
+			protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
+				target.init();
 
-        
-        
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-        target.setText(text );
-      
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionText(
-          (OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
-      }
+				return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionText(
+					(OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateOperativeNoteSurgicalProcedureSectionTextTestCase.doValidationTest();
-}
+		validateOperativeNoteSurgicalProcedureSectionTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -331,70 +195,36 @@ public class OperativeNoteSurgicalProcedureSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testValidateOperativeNoteSurgicalProcedureSectionTitle() {
-      OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionTitleTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
-      "validateOperativeNoteSurgicalProcedureSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionTitleTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
+			"validateOperativeNoteSurgicalProcedureSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
+			@Override
+			protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionTitle(
-          (OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
-      }
+				return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionTitle(
+					(OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateOperativeNoteSurgicalProcedureSectionTitleTestCase.doValidationTest();
-}
+		validateOperativeNoteSurgicalProcedureSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -449,17 +279,17 @@ public class OperativeNoteSurgicalProcedureSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // OperativeNoteSurgicalProcedureSectionOperations

@@ -296,67 +296,33 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationTemplateId() {
-      OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationTemplateIdTestCase = new OperationsTestCase<SOPInstanceObservation>(
-      "validateSOPInstanceObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationTemplateIdTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SOPInstanceObservation target) {
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SOPInstanceObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationTemplateId(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SOPInstanceObservationOperations.validateSOPInstanceObservationTemplateId(
-          (SOPInstanceObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSOPInstanceObservationTemplateIdTestCase.doValidationTest();
-}
+		validateSOPInstanceObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -364,67 +330,33 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationClassCode() {
-      OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationClassCodeTestCase = new OperationsTestCase<SOPInstanceObservation>(
-      "validateSOPInstanceObservationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationClassCodeTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SOPInstanceObservation target) {
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SOPInstanceObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationClassCode(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SOPInstanceObservationOperations.validateSOPInstanceObservationClassCode(
-          (SOPInstanceObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSOPInstanceObservationClassCodeTestCase.doValidationTest();
-}
+		validateSOPInstanceObservationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -432,70 +364,36 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationEffectiveTime() {
-      OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationEffectiveTimeTestCase = new OperationsTestCase<SOPInstanceObservation>(
-      "validateSOPInstanceObservationEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationEffectiveTimeTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SOPInstanceObservation target) {
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SOPInstanceObservation target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SOPInstanceObservationOperations.validateSOPInstanceObservationEffectiveTime(
-          (SOPInstanceObservation) objectToTest, diagnostician, map);
-      }
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationEffectiveTime(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateSOPInstanceObservationEffectiveTimeTestCase.doValidationTest();
-}
+		validateSOPInstanceObservationEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -503,70 +401,36 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationId() {
-      OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationIdTestCase = new OperationsTestCase<SOPInstanceObservation>(
-      "validateSOPInstanceObservationId",
-      operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationIdTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SOPInstanceObservation target) {
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SOPInstanceObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
 
-        
-        
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-      
-        II ii  = DatatypesFactory.eINSTANCE.createII();
-        target.getIds().add(ii);				
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SOPInstanceObservationOperations.validateSOPInstanceObservationId(
-          (SOPInstanceObservation) objectToTest, diagnostician, map);
-      }
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationId(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateSOPInstanceObservationIdTestCase.doValidationTest();
-}
+		validateSOPInstanceObservationIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -574,67 +438,33 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationMoodCode() {
-      OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationMoodCodeTestCase = new OperationsTestCase<SOPInstanceObservation>(
-      "validateSOPInstanceObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationMoodCodeTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SOPInstanceObservation target) {
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SOPInstanceObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationMoodCode(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SOPInstanceObservationOperations.validateSOPInstanceObservationMoodCode(
-          (SOPInstanceObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSOPInstanceObservationMoodCodeTestCase.doValidationTest();
-}
+		validateSOPInstanceObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -642,69 +472,36 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationText() {
-      OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationTextTestCase = new OperationsTestCase<SOPInstanceObservation>(
-      "validateSOPInstanceObservationText",
-      operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationTextTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationText",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SOPInstanceObservation target) {
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SOPInstanceObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
 
-        
-        
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-    
-      
-    ED text = DatatypesFactory.eINSTANCE.createED();
-    target.setText(text );	
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SOPInstanceObservationOperations.validateSOPInstanceObservationText(
-          (SOPInstanceObservation) objectToTest, diagnostician, map);
-      }
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationText(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateSOPInstanceObservationTextTestCase.doValidationTest();
-}
+		validateSOPInstanceObservationTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -712,67 +509,33 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationCodeP() {
-      OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationCodePTestCase = new OperationsTestCase<SOPInstanceObservation>(
-      "validateSOPInstanceObservationCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationCodePTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SOPInstanceObservation target) {
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SOPInstanceObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationCodeP(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SOPInstanceObservationOperations.validateSOPInstanceObservationCodeP(
-          (SOPInstanceObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSOPInstanceObservationCodePTestCase.doValidationTest();
-}
+		validateSOPInstanceObservationCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -933,13 +696,10 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetSOPInstanceObservations() {
 
+		SOPInstanceObservation target = objectFactory.create();
+		target.getSOPInstanceObservations();
 
-SOPInstanceObservation target = objectFactory.create();
-target.getSOPInstanceObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -948,13 +708,10 @@ target.getSOPInstanceObservations();
 	@Test
 	public void testGetPurposeofReferenceObservations() {
 
+		SOPInstanceObservation target = objectFactory.create();
+		target.getPurposeofReferenceObservations();
 
-SOPInstanceObservation target = objectFactory.create();
-target.getPurposeofReferenceObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -963,13 +720,10 @@ target.getPurposeofReferenceObservations();
 	@Test
 	public void testGetReferencedFramesObservations() {
 
+		SOPInstanceObservation target = objectFactory.create();
+		target.getReferencedFramesObservations();
 
-SOPInstanceObservation target = objectFactory.create();
-target.getReferencedFramesObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1024,17 +778,17 @@ target.getReferencedFramesObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SOPInstanceObservationOperations

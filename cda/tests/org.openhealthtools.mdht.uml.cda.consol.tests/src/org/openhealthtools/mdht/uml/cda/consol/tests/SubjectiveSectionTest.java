@@ -56,67 +56,33 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSubjectiveSectionTemplateId() {
-      OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTemplateIdTestCase = new OperationsTestCase<SubjectiveSection>(
-      "validateSubjectiveSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTemplateIdTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SubjectiveSection target) {
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SubjectiveSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SubjectiveSectionOperations.validateSubjectiveSectionTemplateId(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SubjectiveSectionOperations.validateSubjectiveSectionTemplateId(
-          (SubjectiveSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSubjectiveSectionTemplateIdTestCase.doValidationTest();
-}
+		validateSubjectiveSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -124,67 +90,33 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSubjectiveSectionCode() {
-      OperationsTestCase<SubjectiveSection> validateSubjectiveSectionCodeTestCase = new OperationsTestCase<SubjectiveSection>(
-      "validateSubjectiveSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionCodeTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SubjectiveSection target) {
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SubjectiveSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SubjectiveSectionOperations.validateSubjectiveSectionCode(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SubjectiveSectionOperations.validateSubjectiveSectionCode(
-          (SubjectiveSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSubjectiveSectionCodeTestCase.doValidationTest();
-}
+		validateSubjectiveSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -192,67 +124,33 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSubjectiveSectionCodeP() {
-      OperationsTestCase<SubjectiveSection> validateSubjectiveSectionCodePTestCase = new OperationsTestCase<SubjectiveSection>(
-      "validateSubjectiveSectionCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionCodePTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SubjectiveSection target) {
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SubjectiveSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SubjectiveSectionOperations.validateSubjectiveSectionCodeP(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SubjectiveSectionOperations.validateSubjectiveSectionCodeP(
-          (SubjectiveSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSubjectiveSectionCodePTestCase.doValidationTest();
-}
+		validateSubjectiveSectionCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -260,70 +158,36 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSubjectiveSectionText() {
-      OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTextTestCase = new OperationsTestCase<SubjectiveSection>(
-      "validateSubjectiveSectionText",
-      operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTextTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SubjectiveSection target) {
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SubjectiveSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
 
-        
-        
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-        target.setText(text );
-      
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SubjectiveSectionOperations.validateSubjectiveSectionText(
-          (SubjectiveSection) objectToTest, diagnostician, map);
-      }
+				return SubjectiveSectionOperations.validateSubjectiveSectionText(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateSubjectiveSectionTextTestCase.doValidationTest();
-}
+		validateSubjectiveSectionTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -331,70 +195,36 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSubjectiveSectionTitle() {
-      OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTitleTestCase = new OperationsTestCase<SubjectiveSection>(
-      "validateSubjectiveSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTitleTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SubjectiveSection target) {
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SubjectiveSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SubjectiveSectionOperations.validateSubjectiveSectionTitle(
-          (SubjectiveSection) objectToTest, diagnostician, map);
-      }
+				return SubjectiveSectionOperations.validateSubjectiveSectionTitle(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateSubjectiveSectionTitleTestCase.doValidationTest();
-}
+		validateSubjectiveSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -449,17 +279,17 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SubjectiveSectionOperations

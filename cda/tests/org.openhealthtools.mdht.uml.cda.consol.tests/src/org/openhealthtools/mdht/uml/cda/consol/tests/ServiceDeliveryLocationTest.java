@@ -166,67 +166,33 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationTemplateId() {
-      OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTemplateIdTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
-      "validateServiceDeliveryLocationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTemplateIdTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+			"validateServiceDeliveryLocationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ServiceDeliveryLocation target) {
+			@Override
+			protected void updateToFail(ServiceDeliveryLocation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ServiceDeliveryLocation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ServiceDeliveryLocation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationTemplateId(
+					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationTemplateId(
-          (ServiceDeliveryLocation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateServiceDeliveryLocationTemplateIdTestCase.doValidationTest();
-}
+		validateServiceDeliveryLocationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -423,17 +389,17 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ServiceDeliveryLocationOperations

@@ -48,67 +48,33 @@ public class FindingsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFindingsSectionTemplateId() {
-      OperationsTestCase<FindingsSection> validateFindingsSectionTemplateIdTestCase = new OperationsTestCase<FindingsSection>(
-      "validateFindingsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_FINDINGS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FindingsSection> validateFindingsSectionTemplateIdTestCase = new OperationsTestCase<FindingsSection>(
+			"validateFindingsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FINDINGS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FindingsSection target) {
+			@Override
+			protected void updateToFail(FindingsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FindingsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FindingsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FindingsSectionOperations.validateFindingsSectionTemplateId(
+					(FindingsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FindingsSectionOperations.validateFindingsSectionTemplateId(
-          (FindingsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFindingsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateFindingsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -163,17 +129,17 @@ public class FindingsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // FindingsSectionOperations

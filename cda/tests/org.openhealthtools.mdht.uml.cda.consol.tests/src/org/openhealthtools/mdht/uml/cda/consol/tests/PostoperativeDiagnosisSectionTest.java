@@ -56,67 +56,33 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostoperativeDiagnosisSectionTemplateId() {
-      OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-      "validatePostoperativeDiagnosisSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+			"validatePostoperativeDiagnosisSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PostoperativeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PostoperativeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PostoperativeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PostoperativeDiagnosisSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionTemplateId(
+					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionTemplateId(
-          (PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePostoperativeDiagnosisSectionTemplateIdTestCase.doValidationTest();
-}
+		validatePostoperativeDiagnosisSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -124,67 +90,33 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostoperativeDiagnosisSectionCode() {
-      OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionCodeTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-      "validatePostoperativeDiagnosisSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionCodeTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+			"validatePostoperativeDiagnosisSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PostoperativeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PostoperativeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PostoperativeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PostoperativeDiagnosisSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionCode(
+					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionCode(
-          (PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePostoperativeDiagnosisSectionCodeTestCase.doValidationTest();
-}
+		validatePostoperativeDiagnosisSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -192,67 +124,33 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostoperativeDiagnosisSectionCodeP() {
-      OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionCodePTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-      "validatePostoperativeDiagnosisSectionCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionCodePTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+			"validatePostoperativeDiagnosisSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PostoperativeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PostoperativeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PostoperativeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PostoperativeDiagnosisSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionCodeP(
+					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionCodeP(
-          (PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePostoperativeDiagnosisSectionCodePTestCase.doValidationTest();
-}
+		validatePostoperativeDiagnosisSectionCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -260,70 +158,36 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostoperativeDiagnosisSectionText() {
-      OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTextTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-      "validatePostoperativeDiagnosisSectionText",
-      operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTextTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+			"validatePostoperativeDiagnosisSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PostoperativeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PostoperativeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PostoperativeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PostoperativeDiagnosisSection target) {
+				target.init();
 
-        
-        
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-        target.setText(text );
-      
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionText(
-          (PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+				return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionText(
+					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validatePostoperativeDiagnosisSectionTextTestCase.doValidationTest();
-}
+		validatePostoperativeDiagnosisSectionTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -331,70 +195,36 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostoperativeDiagnosisSectionTitle() {
-      OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTitleTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
-      "validatePostoperativeDiagnosisSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PostoperativeDiagnosisSection> validatePostoperativeDiagnosisSectionTitleTestCase = new OperationsTestCase<PostoperativeDiagnosisSection>(
+			"validatePostoperativeDiagnosisSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_POSTOPERATIVE_DIAGNOSIS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PostoperativeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(PostoperativeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PostoperativeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PostoperativeDiagnosisSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionTitle(
-          (PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+				return PostoperativeDiagnosisSectionOperations.validatePostoperativeDiagnosisSectionTitle(
+					(PostoperativeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validatePostoperativeDiagnosisSectionTitleTestCase.doValidationTest();
-}
+		validatePostoperativeDiagnosisSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -449,17 +279,17 @@ public class PostoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PostoperativeDiagnosisSectionOperations

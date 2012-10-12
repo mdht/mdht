@@ -51,67 +51,33 @@ public class HospitalDischargePhysicalSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalDischargePhysicalSectionTemplateId() {
-      OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionTemplateIdTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
-      "validateHospitalDischargePhysicalSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionTemplateIdTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
+			"validateHospitalDischargePhysicalSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalDischargePhysicalSection target) {
+			@Override
+			protected void updateToFail(HospitalDischargePhysicalSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalDischargePhysicalSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalDischargePhysicalSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionTemplateId(
+					(HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionTemplateId(
-          (HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHospitalDischargePhysicalSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHospitalDischargePhysicalSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -119,67 +85,33 @@ public class HospitalDischargePhysicalSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalDischargePhysicalSectionCode() {
-      OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionCodeTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
-      "validateHospitalDischargePhysicalSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionCodeTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
+			"validateHospitalDischargePhysicalSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalDischargePhysicalSection target) {
+			@Override
+			protected void updateToFail(HospitalDischargePhysicalSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalDischargePhysicalSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalDischargePhysicalSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionCode(
+					(HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionCode(
-          (HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHospitalDischargePhysicalSectionCodeTestCase.doValidationTest();
-}
+		validateHospitalDischargePhysicalSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -187,67 +119,33 @@ public class HospitalDischargePhysicalSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalDischargePhysicalSectionCodeP() {
-      OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionCodePTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
-      "validateHospitalDischargePhysicalSectionCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionCodePTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
+			"validateHospitalDischargePhysicalSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalDischargePhysicalSection target) {
+			@Override
+			protected void updateToFail(HospitalDischargePhysicalSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalDischargePhysicalSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalDischargePhysicalSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionCodeP(
+					(HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionCodeP(
-          (HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHospitalDischargePhysicalSectionCodePTestCase.doValidationTest();
-}
+		validateHospitalDischargePhysicalSectionCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -255,70 +153,36 @@ public class HospitalDischargePhysicalSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalDischargePhysicalSectionTitle() {
-      OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionTitleTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
-      "validateHospitalDischargePhysicalSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionTitleTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
+			"validateHospitalDischargePhysicalSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalDischargePhysicalSection target) {
+			@Override
+			protected void updateToFail(HospitalDischargePhysicalSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalDischargePhysicalSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalDischargePhysicalSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionTitle(
-          (HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
-      }
+				return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionTitle(
+					(HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateHospitalDischargePhysicalSectionTitleTestCase.doValidationTest();
-}
+		validateHospitalDischargePhysicalSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -326,70 +190,36 @@ public class HospitalDischargePhysicalSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHospitalDischargePhysicalSectionText() {
-      OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionTextTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
-      "validateHospitalDischargePhysicalSectionText",
-      operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionTextTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
+			"validateHospitalDischargePhysicalSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalDischargePhysicalSection target) {
+			@Override
+			protected void updateToFail(HospitalDischargePhysicalSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalDischargePhysicalSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalDischargePhysicalSection target) {
+				target.init();
 
-        
-        
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-        target.setText(text );
-      
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionText(
-          (HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
-      }
+				return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionText(
+					(HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateHospitalDischargePhysicalSectionTextTestCase.doValidationTest();
-}
+		validateHospitalDischargePhysicalSectionTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -444,17 +274,17 @@ public class HospitalDischargePhysicalSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HospitalDischargePhysicalSectionOperations
