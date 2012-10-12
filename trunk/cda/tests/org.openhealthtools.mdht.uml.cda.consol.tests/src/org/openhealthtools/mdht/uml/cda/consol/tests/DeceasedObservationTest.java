@@ -96,67 +96,33 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationTemplateId() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationTemplateIdTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationTemplateIdTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationTemplateId(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationTemplateId(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateDeceasedObservationTemplateIdTestCase.doValidationTest();
-}
+		validateDeceasedObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -164,67 +130,33 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationClassCode() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationClassCodeTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationClassCodeTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationClassCode(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationClassCode(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateDeceasedObservationClassCodeTestCase.doValidationTest();
-}
+		validateDeceasedObservationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -232,67 +164,33 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationMoodCode() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationMoodCodeTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationMoodCodeTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationMoodCode(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationMoodCode(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateDeceasedObservationMoodCodeTestCase.doValidationTest();
-}
+		validateDeceasedObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -300,70 +198,36 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationId() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationIdTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationId",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationIdTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-      
-        II ii  = DatatypesFactory.eINSTANCE.createII();
-        target.getIds().add(ii);				
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationId(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationId(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateDeceasedObservationIdTestCase.doValidationTest();
-}
+		validateDeceasedObservationIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -371,67 +235,33 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationCodeP() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationCodePTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationCodePTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationCodeP(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationCodeP(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateDeceasedObservationCodePTestCase.doValidationTest();
-}
+		validateDeceasedObservationCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -476,70 +306,36 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationStatusCode() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationStatusCodeTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationStatusCodeTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationStatusCode(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationStatusCode(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateDeceasedObservationStatusCodeTestCase.doValidationTest();
-}
+		validateDeceasedObservationStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -547,67 +343,33 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationStatusCodeP() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationStatusCodePTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationStatusCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationStatusCodePTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationStatusCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationStatusCodeP(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationStatusCodeP(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateDeceasedObservationStatusCodePTestCase.doValidationTest();
-}
+		validateDeceasedObservationStatusCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -615,70 +377,36 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDeceasedObservationEffectiveTime() {
-      OperationsTestCase<DeceasedObservation> validateDeceasedObservationEffectiveTimeTestCase = new OperationsTestCase<DeceasedObservation>(
-      "validateDeceasedObservationEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DeceasedObservation> validateDeceasedObservationEffectiveTimeTestCase = new OperationsTestCase<DeceasedObservation>(
+			"validateDeceasedObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_DECEASED_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DeceasedObservation target) {
+			@Override
+			protected void updateToFail(DeceasedObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DeceasedObservation target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DeceasedObservation target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DeceasedObservationOperations.validateDeceasedObservationEffectiveTime(
-          (DeceasedObservation) objectToTest, diagnostician, map);
-      }
+				return DeceasedObservationOperations.validateDeceasedObservationEffectiveTime(
+					(DeceasedObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateDeceasedObservationEffectiveTimeTestCase.doValidationTest();
-}
+		validateDeceasedObservationEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -798,13 +526,10 @@ public class DeceasedObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservation() {
 
+		DeceasedObservation target = objectFactory.create();
+		target.getProblemObservation();
 
-DeceasedObservation target = objectFactory.create();
-target.getProblemObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -859,17 +584,17 @@ target.getProblemObservation();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // DeceasedObservationOperations

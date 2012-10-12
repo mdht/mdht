@@ -186,67 +186,33 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHealthStatusObservationTemplateId() {
-      OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationTemplateIdTestCase = new OperationsTestCase<HealthStatusObservation>(
-      "validateHealthStatusObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationTemplateIdTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HealthStatusObservation target) {
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HealthStatusObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HealthStatusObservationOperations.validateHealthStatusObservationTemplateId(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HealthStatusObservationOperations.validateHealthStatusObservationTemplateId(
-          (HealthStatusObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHealthStatusObservationTemplateIdTestCase.doValidationTest();
-}
+		validateHealthStatusObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -254,67 +220,33 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHealthStatusObservationClassCode() {
-      OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationClassCodeTestCase = new OperationsTestCase<HealthStatusObservation>(
-      "validateHealthStatusObservationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationClassCodeTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HealthStatusObservation target) {
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HealthStatusObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HealthStatusObservationOperations.validateHealthStatusObservationClassCode(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HealthStatusObservationOperations.validateHealthStatusObservationClassCode(
-          (HealthStatusObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHealthStatusObservationClassCodeTestCase.doValidationTest();
-}
+		validateHealthStatusObservationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -322,67 +254,33 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHealthStatusObservationMoodCode() {
-      OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationMoodCodeTestCase = new OperationsTestCase<HealthStatusObservation>(
-      "validateHealthStatusObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationMoodCodeTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HealthStatusObservation target) {
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HealthStatusObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HealthStatusObservationOperations.validateHealthStatusObservationMoodCode(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HealthStatusObservationOperations.validateHealthStatusObservationMoodCode(
-          (HealthStatusObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHealthStatusObservationMoodCodeTestCase.doValidationTest();
-}
+		validateHealthStatusObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -429,69 +327,36 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHealthStatusObservationText() {
-      OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationTextTestCase = new OperationsTestCase<HealthStatusObservation>(
-      "validateHealthStatusObservationText",
-      operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationTextTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationText",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HealthStatusObservation target) {
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HealthStatusObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				target.init();
 
-        
-        
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-    
-      
-    ED text = DatatypesFactory.eINSTANCE.createED();
-    target.setText(text );	
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HealthStatusObservationOperations.validateHealthStatusObservationText(
-          (HealthStatusObservation) objectToTest, diagnostician, map);
-      }
+				return HealthStatusObservationOperations.validateHealthStatusObservationText(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateHealthStatusObservationTextTestCase.doValidationTest();
-}
+		validateHealthStatusObservationTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -499,70 +364,36 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHealthStatusObservationStatusCode() {
-      OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationStatusCodeTestCase = new OperationsTestCase<HealthStatusObservation>(
-      "validateHealthStatusObservationStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationStatusCodeTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HealthStatusObservation target) {
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HealthStatusObservation target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HealthStatusObservationOperations.validateHealthStatusObservationStatusCode(
-          (HealthStatusObservation) objectToTest, diagnostician, map);
-      }
+				return HealthStatusObservationOperations.validateHealthStatusObservationStatusCode(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateHealthStatusObservationStatusCodeTestCase.doValidationTest();
-}
+		validateHealthStatusObservationStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -694,17 +525,17 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HealthStatusObservationOperations

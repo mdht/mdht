@@ -306,67 +306,32 @@ public class SeriesActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeriesActTemplateId() {
-      OperationsTestCase<SeriesAct> validateSeriesActTemplateIdTestCase = new OperationsTestCase<SeriesAct>(
-      "validateSeriesActTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SeriesAct> validateSeriesActTemplateIdTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SeriesAct target) {
+			@Override
+			protected void updateToFail(SeriesAct target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SeriesAct target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SeriesActOperations.validateSeriesActTemplateId((SeriesAct) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SeriesActOperations.validateSeriesActTemplateId(
-          (SeriesAct) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSeriesActTemplateIdTestCase.doValidationTest();
-}
+		validateSeriesActTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -374,67 +339,32 @@ public class SeriesActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeriesActClassCode() {
-      OperationsTestCase<SeriesAct> validateSeriesActClassCodeTestCase = new OperationsTestCase<SeriesAct>(
-      "validateSeriesActClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SeriesAct> validateSeriesActClassCodeTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SeriesAct target) {
+			@Override
+			protected void updateToFail(SeriesAct target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SeriesAct target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SeriesActOperations.validateSeriesActClassCode((SeriesAct) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SeriesActOperations.validateSeriesActClassCode(
-          (SeriesAct) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSeriesActClassCodeTestCase.doValidationTest();
-}
+		validateSeriesActClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -442,67 +372,32 @@ public class SeriesActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeriesActMoodCode() {
-      OperationsTestCase<SeriesAct> validateSeriesActMoodCodeTestCase = new OperationsTestCase<SeriesAct>(
-      "validateSeriesActMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SeriesAct> validateSeriesActMoodCodeTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SeriesAct target) {
+			@Override
+			protected void updateToFail(SeriesAct target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SeriesAct target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SeriesActOperations.validateSeriesActMoodCode((SeriesAct) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SeriesActOperations.validateSeriesActMoodCode(
-          (SeriesAct) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSeriesActMoodCodeTestCase.doValidationTest();
-}
+		validateSeriesActMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -542,70 +437,35 @@ public class SeriesActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeriesActEffectiveTime() {
-      OperationsTestCase<SeriesAct> validateSeriesActEffectiveTimeTestCase = new OperationsTestCase<SeriesAct>(
-      "validateSeriesActEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SeriesAct> validateSeriesActEffectiveTimeTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SeriesAct target) {
+			@Override
+			protected void updateToFail(SeriesAct target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SeriesAct target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SeriesActOperations.validateSeriesActEffectiveTime(
-          (SeriesAct) objectToTest, diagnostician, map);
-      }
+				return SeriesActOperations.validateSeriesActEffectiveTime((SeriesAct) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateSeriesActEffectiveTimeTestCase.doValidationTest();
-}
+		validateSeriesActEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -645,69 +505,34 @@ public class SeriesActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeriesActText() {
-      OperationsTestCase<SeriesAct> validateSeriesActTextTestCase = new OperationsTestCase<SeriesAct>(
-      "validateSeriesActText",
-      operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SeriesAct> validateSeriesActTextTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActText",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(SeriesAct target) {
+			@Override
+			protected void updateToFail(SeriesAct target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SeriesAct target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
 
-        
-        
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-    
-      
-    ED text = DatatypesFactory.eINSTANCE.createED();
-    target.setText(text );	
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SeriesActOperations.validateSeriesActText(
-          (SeriesAct) objectToTest, diagnostician, map);
-      }
+				return SeriesActOperations.validateSeriesActText((SeriesAct) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateSeriesActTextTestCase.doValidationTest();
-}
+		validateSeriesActTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -754,13 +579,10 @@ public class SeriesActTest extends CDAValidationTest {
 	@Test
 	public void testGetSOPInstanceObservations() {
 
+		SeriesAct target = objectFactory.create();
+		target.getSOPInstanceObservations();
 
-SeriesAct target = objectFactory.create();
-target.getSOPInstanceObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -815,17 +637,17 @@ target.getSOPInstanceObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SeriesActOperations

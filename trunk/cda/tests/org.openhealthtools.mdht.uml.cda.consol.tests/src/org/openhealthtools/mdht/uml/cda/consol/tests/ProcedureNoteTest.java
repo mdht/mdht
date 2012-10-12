@@ -468,67 +468,33 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteTemplateId() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteTemplateIdTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteTemplateIdTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProcedureNoteOperations.validateProcedureNoteTemplateId(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteTemplateId(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProcedureNoteTemplateIdTestCase.doValidationTest();
-}
+		validateProcedureNoteTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -536,67 +502,33 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteCodeP() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteCodePTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteCodePTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProcedureNoteOperations.validateProcedureNoteCodeP(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteCodeP(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProcedureNoteCodePTestCase.doValidationTest();
-}
+		validateProcedureNoteCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -708,76 +640,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteAssessmentSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteAssessmentSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteAssessmentSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteAssessmentSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteAssessmentSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* AssessmentSection */
+				AssessmentSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createAssessmentSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* AssessmentSection */ 
-        AssessmentSection section =
-        
-        ConsolFactory.eINSTANCE.createAssessmentSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteAssessmentSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteAssessmentSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteAssessmentSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteAssessmentSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -785,76 +681,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNotePlanOfCareSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNotePlanOfCareSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNotePlanOfCareSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNotePlanOfCareSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNotePlanOfCareSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* PlanOfCareSection */
+				PlanOfCareSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createPlanOfCareSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* PlanOfCareSection */ 
-        PlanOfCareSection section =
-        
-        ConsolFactory.eINSTANCE.createPlanOfCareSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNotePlanOfCareSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNotePlanOfCareSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNotePlanOfCareSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNotePlanOfCareSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -862,76 +722,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteAssessmentAndPlanSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteAssessmentAndPlanSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteAssessmentAndPlanSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* AssessmentAndPlanSection */
+				AssessmentAndPlanSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* AssessmentAndPlanSection */ 
-        AssessmentAndPlanSection section =
-        
-        ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteAssessmentAndPlanSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteAssessmentAndPlanSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteAssessmentAndPlanSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteAssessmentAndPlanSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -939,76 +763,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteComplicationsSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteComplicationsSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteComplicationsSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_COMPLICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteComplicationsSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteComplicationsSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_COMPLICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ComplicationsSection */
+				ComplicationsSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createComplicationsSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ComplicationsSection */ 
-        ComplicationsSection section =
-        
-        ConsolFactory.eINSTANCE.createComplicationsSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteComplicationsSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteComplicationsSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteComplicationsSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteComplicationsSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1016,76 +804,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNotePostprocedureDiagnosisSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNotePostprocedureDiagnosisSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNotePostprocedureDiagnosisSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_POSTPROCEDURE_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNotePostprocedureDiagnosisSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNotePostprocedureDiagnosisSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_POSTPROCEDURE_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* PostprocedureDiagnosisSection */
+				PostprocedureDiagnosisSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createPostprocedureDiagnosisSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* PostprocedureDiagnosisSection */ 
-        PostprocedureDiagnosisSection section =
-        
-        ConsolFactory.eINSTANCE.createPostprocedureDiagnosisSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNotePostprocedureDiagnosisSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNotePostprocedureDiagnosisSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNotePostprocedureDiagnosisSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNotePostprocedureDiagnosisSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1093,76 +845,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProcedureDescriptionSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureDescriptionSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProcedureDescriptionSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_DESCRIPTION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureDescriptionSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProcedureDescriptionSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_DESCRIPTION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProcedureDescriptionSection */
+				ProcedureDescriptionSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProcedureDescriptionSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProcedureDescriptionSection */ 
-        ProcedureDescriptionSection section =
-        
-        ConsolFactory.eINSTANCE.createProcedureDescriptionSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProcedureDescriptionSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProcedureDescriptionSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProcedureDescriptionSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProcedureDescriptionSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1170,76 +886,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProcedureIndicationsSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureIndicationsSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProcedureIndicationsSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_INDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureIndicationsSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProcedureIndicationsSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_INDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProcedureIndicationsSection */
+				ProcedureIndicationsSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProcedureIndicationsSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProcedureIndicationsSection */ 
-        ProcedureIndicationsSection section =
-        
-        ConsolFactory.eINSTANCE.createProcedureIndicationsSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProcedureIndicationsSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProcedureIndicationsSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProcedureIndicationsSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProcedureIndicationsSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1247,76 +927,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteAllergiesSectionEntriesOptional() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteAllergiesSectionEntriesOptional",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteAllergiesSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* AllergiesSectionEntriesOptional */
+				AllergiesSectionEntriesOptional section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* AllergiesSectionEntriesOptional */ 
-        AllergiesSectionEntriesOptional section =
-        
-        ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteAllergiesSectionEntriesOptional(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteAllergiesSectionEntriesOptionalTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteAllergiesSectionEntriesOptional(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteAllergiesSectionEntriesOptionalTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1324,76 +968,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteAnesthesiaSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteAnesthesiaSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteAnesthesiaSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ANESTHESIA_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteAnesthesiaSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteAnesthesiaSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_ANESTHESIA_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* AnesthesiaSection */
+				AnesthesiaSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createAnesthesiaSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* AnesthesiaSection */ 
-        AnesthesiaSection section =
-        
-        ConsolFactory.eINSTANCE.createAnesthesiaSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteAnesthesiaSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteAnesthesiaSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteAnesthesiaSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteAnesthesiaSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1401,76 +1009,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteChiefComplaintSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteChiefComplaintSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteChiefComplaintSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteChiefComplaintSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteChiefComplaintSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ChiefComplaintSection */
+				ChiefComplaintSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ChiefComplaintSection */ 
-        ChiefComplaintSection section =
-        
-        ConsolFactory.eINSTANCE.createChiefComplaintSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteChiefComplaintSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteChiefComplaintSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteChiefComplaintSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteChiefComplaintSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1478,76 +1050,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteChiefComplaintAndReasonForVisitSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteChiefComplaintAndReasonForVisitSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteChiefComplaintAndReasonForVisitSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ChiefComplaintAndReasonForVisitSection */
+				ChiefComplaintAndReasonForVisitSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ChiefComplaintAndReasonForVisitSection */ 
-        ChiefComplaintAndReasonForVisitSection section =
-        
-        ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteChiefComplaintAndReasonForVisitSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteChiefComplaintAndReasonForVisitSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteChiefComplaintAndReasonForVisitSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteChiefComplaintAndReasonForVisitSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1555,76 +1091,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteFamilyHistorySection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteFamilyHistorySectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteFamilyHistorySection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteFamilyHistorySectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteFamilyHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* FamilyHistorySection */
+				FamilyHistorySection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createFamilyHistorySection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* FamilyHistorySection */ 
-        FamilyHistorySection section =
-        
-        ConsolFactory.eINSTANCE.createFamilyHistorySection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteFamilyHistorySection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteFamilyHistorySectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteFamilyHistorySection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteFamilyHistorySectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1632,76 +1132,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteHistoryOfPastIllnessSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteHistoryOfPastIllnessSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteHistoryOfPastIllnessSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* HistoryOfPastIllnessSection */
+				HistoryOfPastIllnessSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* HistoryOfPastIllnessSection */ 
-        HistoryOfPastIllnessSection section =
-        
-        ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteHistoryOfPastIllnessSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteHistoryOfPastIllnessSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteHistoryOfPastIllnessSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteHistoryOfPastIllnessSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1709,76 +1173,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteHistoryOfPresentIllnessSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteHistoryOfPresentIllnessSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteHistoryOfPresentIllnessSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_HISTORY_OF_PRESENT_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteHistoryOfPresentIllnessSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteHistoryOfPresentIllnessSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_HISTORY_OF_PRESENT_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* HistoryOfPresentIllnessSection */
+				HistoryOfPresentIllnessSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createHistoryOfPresentIllnessSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* HistoryOfPresentIllnessSection */ 
-        HistoryOfPresentIllnessSection section =
-        
-        ConsolFactory.eINSTANCE.createHistoryOfPresentIllnessSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteHistoryOfPresentIllnessSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteHistoryOfPresentIllnessSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteHistoryOfPresentIllnessSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteHistoryOfPresentIllnessSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1786,76 +1214,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteMedicalHistorySection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteMedicalHistorySectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteMedicalHistorySection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteMedicalHistorySectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteMedicalHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* MedicalHistorySection */
+				MedicalHistorySection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createMedicalHistorySection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* MedicalHistorySection */ 
-        MedicalHistorySection section =
-        
-        ConsolFactory.eINSTANCE.createMedicalHistorySection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteMedicalHistorySection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteMedicalHistorySectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteMedicalHistorySection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteMedicalHistorySectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1863,76 +1255,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteMedicationsSectionEntriesOptional() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteMedicationsSectionEntriesOptional",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteMedicationsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* MedicationsSectionEntriesOptional */
+				MedicationsSectionEntriesOptional section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* MedicationsSectionEntriesOptional */ 
-        MedicationsSectionEntriesOptional section =
-        
-        ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteMedicationsSectionEntriesOptional(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteMedicationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteMedicationsSectionEntriesOptional(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteMedicationsSectionEntriesOptionalTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1940,76 +1296,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteMedicationsAdministeredSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteMedicationsAdministeredSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteMedicationsAdministeredSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_MEDICATIONS_ADMINISTERED_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteMedicationsAdministeredSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteMedicationsAdministeredSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_MEDICATIONS_ADMINISTERED_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* MedicationsAdministeredSection */
+				MedicationsAdministeredSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createMedicationsAdministeredSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* MedicationsAdministeredSection */ 
-        MedicationsAdministeredSection section =
-        
-        ConsolFactory.eINSTANCE.createMedicationsAdministeredSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteMedicationsAdministeredSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteMedicationsAdministeredSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteMedicationsAdministeredSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteMedicationsAdministeredSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2017,76 +1337,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNotePhysicalExamSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNotePhysicalExamSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNotePhysicalExamSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNotePhysicalExamSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNotePhysicalExamSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* PhysicalExamSection */
+				PhysicalExamSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createPhysicalExamSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* PhysicalExamSection */ 
-        PhysicalExamSection section =
-        
-        ConsolFactory.eINSTANCE.createPhysicalExamSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNotePhysicalExamSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNotePhysicalExamSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNotePhysicalExamSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNotePhysicalExamSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2094,76 +1378,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNotePlannedProcedureSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNotePlannedProcedureSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNotePlannedProcedureSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PLANNED_PROCEDURE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNotePlannedProcedureSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNotePlannedProcedureSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PLANNED_PROCEDURE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* PlannedProcedureSection */
+				PlannedProcedureSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createPlannedProcedureSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* PlannedProcedureSection */ 
-        PlannedProcedureSection section =
-        
-        ConsolFactory.eINSTANCE.createPlannedProcedureSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNotePlannedProcedureSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNotePlannedProcedureSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNotePlannedProcedureSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNotePlannedProcedureSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2171,76 +1419,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProcedureDispositionSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureDispositionSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProcedureDispositionSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_DISPOSITION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureDispositionSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProcedureDispositionSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_DISPOSITION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProcedureDispositionSection */
+				ProcedureDispositionSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProcedureDispositionSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProcedureDispositionSection */ 
-        ProcedureDispositionSection section =
-        
-        ConsolFactory.eINSTANCE.createProcedureDispositionSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProcedureDispositionSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProcedureDispositionSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProcedureDispositionSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProcedureDispositionSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2248,76 +1460,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProcedureEstimatedBloodLossSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureEstimatedBloodLossSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProcedureEstimatedBloodLossSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureEstimatedBloodLossSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProcedureEstimatedBloodLossSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProcedureEstimatedBloodLossSection */
+				ProcedureEstimatedBloodLossSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProcedureEstimatedBloodLossSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProcedureEstimatedBloodLossSection */ 
-        ProcedureEstimatedBloodLossSection section =
-        
-        ConsolFactory.eINSTANCE.createProcedureEstimatedBloodLossSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProcedureEstimatedBloodLossSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProcedureEstimatedBloodLossSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProcedureEstimatedBloodLossSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProcedureEstimatedBloodLossSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2325,76 +1501,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProcedureFindingsSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureFindingsSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProcedureFindingsSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_FINDINGS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureFindingsSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProcedureFindingsSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_FINDINGS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProcedureFindingsSection */
+				ProcedureFindingsSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProcedureFindingsSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProcedureFindingsSection */ 
-        ProcedureFindingsSection section =
-        
-        ConsolFactory.eINSTANCE.createProcedureFindingsSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProcedureFindingsSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProcedureFindingsSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProcedureFindingsSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProcedureFindingsSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2402,76 +1542,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProcedureImplantsSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureImplantsSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProcedureImplantsSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_IMPLANTS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureImplantsSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProcedureImplantsSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_IMPLANTS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProcedureImplantsSection */
+				ProcedureImplantsSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProcedureImplantsSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProcedureImplantsSection */ 
-        ProcedureImplantsSection section =
-        
-        ConsolFactory.eINSTANCE.createProcedureImplantsSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProcedureImplantsSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProcedureImplantsSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProcedureImplantsSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProcedureImplantsSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2479,76 +1583,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProcedureSpecimensTakenSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureSpecimensTakenSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProcedureSpecimensTakenSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_SPECIMENS_TAKEN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProcedureSpecimensTakenSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProcedureSpecimensTakenSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURE_SPECIMENS_TAKEN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProcedureSpecimensTakenSection */
+				ProcedureSpecimensTakenSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProcedureSpecimensTakenSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProcedureSpecimensTakenSection */ 
-        ProcedureSpecimensTakenSection section =
-        
-        ConsolFactory.eINSTANCE.createProcedureSpecimensTakenSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProcedureSpecimensTakenSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProcedureSpecimensTakenSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProcedureSpecimensTakenSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProcedureSpecimensTakenSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2556,76 +1624,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteProceduresSectionEntriesOptional() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteProceduresSectionEntriesOptional",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteProceduresSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ProceduresSectionEntriesOptional */
+				ProceduresSectionEntriesOptional section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ProceduresSectionEntriesOptional */ 
-        ProceduresSectionEntriesOptional section =
-        
-        ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteProceduresSectionEntriesOptional(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteProceduresSectionEntriesOptionalTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteProceduresSectionEntriesOptional(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteProceduresSectionEntriesOptionalTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2633,76 +1665,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteReasonForVisitSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteReasonForVisitSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteReasonForVisitSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteReasonForVisitSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteReasonForVisitSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ReasonForVisitSection */
+				ReasonForVisitSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createReasonForVisitSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ReasonForVisitSection */ 
-        ReasonForVisitSection section =
-        
-        ConsolFactory.eINSTANCE.createReasonForVisitSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteReasonForVisitSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteReasonForVisitSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteReasonForVisitSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteReasonForVisitSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2710,76 +1706,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteReviewOfSystemsSection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteReviewOfSystemsSection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteReviewOfSystemsSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* ReviewOfSystemsSection */
+				ReviewOfSystemsSection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* ReviewOfSystemsSection */ 
-        ReviewOfSystemsSection section =
-        
-        ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteReviewOfSystemsSection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteReviewOfSystemsSectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteReviewOfSystemsSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteReviewOfSystemsSectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -2787,76 +1747,40 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureNoteSocialHistorySection() {
-      OperationsTestCase<ProcedureNote> validateProcedureNoteSocialHistorySectionTestCase = new OperationsTestCase<ProcedureNote>(
-      "validateProcedureNoteSocialHistorySection",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteSocialHistorySectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteSocialHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureNote target) {
+			@Override
+			protected void updateToFail(ProcedureNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureNote target) {
+				target.init();
 
-        
-        
+				/* SocialHistorySection */
+				SocialHistorySection section =
 
-  
-      
+				ConsolFactory.eINSTANCE.createSocialHistorySection().init();
 
-  
-    
-    
-      
-        
-    
-      
-      
-        
-        /* SocialHistorySection */ 
-        SocialHistorySection section =
-        
-        ConsolFactory.eINSTANCE.createSocialHistorySection().init(); 
-          
-      
-      target.addSection(section);
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				target.addSection(section);
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureNoteOperations.validateProcedureNoteSocialHistorySection(
-          (ProcedureNote) objectToTest, diagnostician, map);
-      }
+			}
 
-    };
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-    validateProcedureNoteSocialHistorySectionTestCase.doValidationTest();
-}
+				return ProcedureNoteOperations.validateProcedureNoteSocialHistorySection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteSocialHistorySectionTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -4096,13 +3020,10 @@ public class ProcedureNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getAssessmentSection();
 
-ProcedureNote target = objectFactory.create();
-target.getAssessmentSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4111,13 +3032,10 @@ target.getAssessmentSection();
 	@Test
 	public void testGetPlanOfCareSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getPlanOfCareSection();
 
-ProcedureNote target = objectFactory.create();
-target.getPlanOfCareSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4126,13 +3044,10 @@ target.getPlanOfCareSection();
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getAssessmentAndPlanSection();
 
-ProcedureNote target = objectFactory.create();
-target.getAssessmentAndPlanSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4141,13 +3056,10 @@ target.getAssessmentAndPlanSection();
 	@Test
 	public void testGetComplicationsSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getComplicationsSection();
 
-ProcedureNote target = objectFactory.create();
-target.getComplicationsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4156,13 +3068,10 @@ target.getComplicationsSection();
 	@Test
 	public void testGetPostprocedureDiagnosisSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getPostprocedureDiagnosisSection();
 
-ProcedureNote target = objectFactory.create();
-target.getPostprocedureDiagnosisSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4171,13 +3080,10 @@ target.getPostprocedureDiagnosisSection();
 	@Test
 	public void testGetProcedureDescriptionSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProcedureDescriptionSection();
 
-ProcedureNote target = objectFactory.create();
-target.getProcedureDescriptionSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4186,13 +3092,10 @@ target.getProcedureDescriptionSection();
 	@Test
 	public void testGetProcedureIndicationsSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProcedureIndicationsSection();
 
-ProcedureNote target = objectFactory.create();
-target.getProcedureIndicationsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4201,13 +3104,10 @@ target.getProcedureIndicationsSection();
 	@Test
 	public void testGetAllergiesSectionEntriesOptional() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getAllergiesSectionEntriesOptional();
 
-ProcedureNote target = objectFactory.create();
-target.getAllergiesSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4216,13 +3116,10 @@ target.getAllergiesSectionEntriesOptional();
 	@Test
 	public void testGetAnesthesiaSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getAnesthesiaSection();
 
-ProcedureNote target = objectFactory.create();
-target.getAnesthesiaSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4231,13 +3128,10 @@ target.getAnesthesiaSection();
 	@Test
 	public void testGetChiefComplaintSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getChiefComplaintSection();
 
-ProcedureNote target = objectFactory.create();
-target.getChiefComplaintSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4246,13 +3140,10 @@ target.getChiefComplaintSection();
 	@Test
 	public void testGetChiefComplaintAndReasonForVisitSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getChiefComplaintAndReasonForVisitSection();
 
-ProcedureNote target = objectFactory.create();
-target.getChiefComplaintAndReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4261,13 +3152,10 @@ target.getChiefComplaintAndReasonForVisitSection();
 	@Test
 	public void testGetFamilyHistorySection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getFamilyHistorySection();
 
-ProcedureNote target = objectFactory.create();
-target.getFamilyHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4276,13 +3164,10 @@ target.getFamilyHistorySection();
 	@Test
 	public void testGetHistoryOfPastIllnessSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getHistoryOfPastIllnessSection();
 
-ProcedureNote target = objectFactory.create();
-target.getHistoryOfPastIllnessSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4291,13 +3176,10 @@ target.getHistoryOfPastIllnessSection();
 	@Test
 	public void testGetHistoryOfPresentIllnessSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getHistoryOfPresentIllnessSection();
 
-ProcedureNote target = objectFactory.create();
-target.getHistoryOfPresentIllnessSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4306,13 +3188,10 @@ target.getHistoryOfPresentIllnessSection();
 	@Test
 	public void testGetMedicalHistorySection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getMedicalHistorySection();
 
-ProcedureNote target = objectFactory.create();
-target.getMedicalHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4321,13 +3200,10 @@ target.getMedicalHistorySection();
 	@Test
 	public void testGetMedicationsSectionEntriesOptional() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getMedicationsSectionEntriesOptional();
 
-ProcedureNote target = objectFactory.create();
-target.getMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4336,13 +3212,10 @@ target.getMedicationsSectionEntriesOptional();
 	@Test
 	public void testGetMedicationsAdministeredSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getMedicationsAdministeredSection();
 
-ProcedureNote target = objectFactory.create();
-target.getMedicationsAdministeredSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4351,13 +3224,10 @@ target.getMedicationsAdministeredSection();
 	@Test
 	public void testGetPhysicalExamSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getPhysicalExamSection();
 
-ProcedureNote target = objectFactory.create();
-target.getPhysicalExamSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4366,13 +3236,10 @@ target.getPhysicalExamSection();
 	@Test
 	public void testGetPlannedProcedureSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getPlannedProcedureSection();
 
-ProcedureNote target = objectFactory.create();
-target.getPlannedProcedureSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4381,13 +3248,10 @@ target.getPlannedProcedureSection();
 	@Test
 	public void testGetProcedureDispositionSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProcedureDispositionSection();
 
-ProcedureNote target = objectFactory.create();
-target.getProcedureDispositionSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4396,13 +3260,10 @@ target.getProcedureDispositionSection();
 	@Test
 	public void testGetProcedureEstimatedBloodLossSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProcedureEstimatedBloodLossSection();
 
-ProcedureNote target = objectFactory.create();
-target.getProcedureEstimatedBloodLossSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4411,13 +3272,10 @@ target.getProcedureEstimatedBloodLossSection();
 	@Test
 	public void testGetProcedureFindingsSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProcedureFindingsSection();
 
-ProcedureNote target = objectFactory.create();
-target.getProcedureFindingsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4426,13 +3284,10 @@ target.getProcedureFindingsSection();
 	@Test
 	public void testGetProcedureImplantsSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProcedureImplantsSection();
 
-ProcedureNote target = objectFactory.create();
-target.getProcedureImplantsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4441,13 +3296,10 @@ target.getProcedureImplantsSection();
 	@Test
 	public void testGetProcedureSpecimensTakenSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProcedureSpecimensTakenSection();
 
-ProcedureNote target = objectFactory.create();
-target.getProcedureSpecimensTakenSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4456,13 +3308,10 @@ target.getProcedureSpecimensTakenSection();
 	@Test
 	public void testGetProceduresSectionEntriesOptional() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getProceduresSectionEntriesOptional();
 
-ProcedureNote target = objectFactory.create();
-target.getProceduresSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4471,13 +3320,10 @@ target.getProceduresSectionEntriesOptional();
 	@Test
 	public void testGetReasonForVisitSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getReasonForVisitSection();
 
-ProcedureNote target = objectFactory.create();
-target.getReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4486,13 +3332,10 @@ target.getReasonForVisitSection();
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getReviewOfSystemsSection();
 
-ProcedureNote target = objectFactory.create();
-target.getReviewOfSystemsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4501,13 +3344,10 @@ target.getReviewOfSystemsSection();
 	@Test
 	public void testGetSocialHistorySection() {
 
+		ProcedureNote target = objectFactory.create();
+		target.getSocialHistorySection();
 
-ProcedureNote target = objectFactory.create();
-target.getSocialHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -4596,17 +3436,17 @@ target.getSocialHistorySection();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProcedureNoteOperations

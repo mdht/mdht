@@ -53,67 +53,33 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInstructionsSectionTemplateId() {
-      OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
-      "validateInstructionsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InstructionsSection target) {
+			@Override
+			protected void updateToFail(InstructionsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InstructionsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return InstructionsSectionOperations.validateInstructionsSectionTemplateId(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InstructionsSectionOperations.validateInstructionsSectionTemplateId(
-          (InstructionsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateInstructionsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateInstructionsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -121,67 +87,33 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInstructionsSectionCode() {
-      OperationsTestCase<InstructionsSection> validateInstructionsSectionCodeTestCase = new OperationsTestCase<InstructionsSection>(
-      "validateInstructionsSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionCodeTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InstructionsSection target) {
+			@Override
+			protected void updateToFail(InstructionsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InstructionsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return InstructionsSectionOperations.validateInstructionsSectionCode(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InstructionsSectionOperations.validateInstructionsSectionCode(
-          (InstructionsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateInstructionsSectionCodeTestCase.doValidationTest();
-}
+		validateInstructionsSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -189,67 +121,33 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInstructionsSectionCodeP() {
-      OperationsTestCase<InstructionsSection> validateInstructionsSectionCodePTestCase = new OperationsTestCase<InstructionsSection>(
-      "validateInstructionsSectionCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionCodePTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InstructionsSection target) {
+			@Override
+			protected void updateToFail(InstructionsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InstructionsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return InstructionsSectionOperations.validateInstructionsSectionCodeP(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InstructionsSectionOperations.validateInstructionsSectionCodeP(
-          (InstructionsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateInstructionsSectionCodePTestCase.doValidationTest();
-}
+		validateInstructionsSectionCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -257,70 +155,36 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInstructionsSectionText() {
-      OperationsTestCase<InstructionsSection> validateInstructionsSectionTextTestCase = new OperationsTestCase<InstructionsSection>(
-      "validateInstructionsSectionText",
-      operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionTextTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InstructionsSection target) {
+			@Override
+			protected void updateToFail(InstructionsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InstructionsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
 
-        
-        
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-        target.setText(text );
-      
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InstructionsSectionOperations.validateInstructionsSectionText(
-          (InstructionsSection) objectToTest, diagnostician, map);
-      }
+				return InstructionsSectionOperations.validateInstructionsSectionText(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateInstructionsSectionTextTestCase.doValidationTest();
-}
+		validateInstructionsSectionTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -328,70 +192,36 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInstructionsSectionTitle() {
-      OperationsTestCase<InstructionsSection> validateInstructionsSectionTitleTestCase = new OperationsTestCase<InstructionsSection>(
-      "validateInstructionsSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionTitleTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InstructionsSection target) {
+			@Override
+			protected void updateToFail(InstructionsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InstructionsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InstructionsSectionOperations.validateInstructionsSectionTitle(
-          (InstructionsSection) objectToTest, diagnostician, map);
-      }
+				return InstructionsSectionOperations.validateInstructionsSectionTitle(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateInstructionsSectionTitleTestCase.doValidationTest();
-}
+		validateInstructionsSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -433,13 +263,10 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetInstructionss() {
 
+		InstructionsSection target = objectFactory.create();
+		target.getInstructionss();
 
-InstructionsSection target = objectFactory.create();
-target.getInstructionss();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -494,17 +321,17 @@ target.getInstructionss();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // InstructionsSectionOperations

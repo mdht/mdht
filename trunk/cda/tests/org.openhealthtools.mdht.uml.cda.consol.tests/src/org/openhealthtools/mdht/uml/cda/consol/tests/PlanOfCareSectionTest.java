@@ -71,67 +71,33 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionTemplateId() {
-      OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<PlanOfCareSection>(
-      "validatePlanOfCareSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanOfCareSection target) {
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanOfCareSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionTemplateId(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanOfCareSectionOperations.validatePlanOfCareSectionTemplateId(
-          (PlanOfCareSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanOfCareSectionTemplateIdTestCase.doValidationTest();
-}
+		validatePlanOfCareSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -139,67 +105,33 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionCode() {
-      OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionCodeTestCase = new OperationsTestCase<PlanOfCareSection>(
-      "validatePlanOfCareSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionCodeTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanOfCareSection target) {
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanOfCareSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionCode(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanOfCareSectionOperations.validatePlanOfCareSectionCode(
-          (PlanOfCareSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanOfCareSectionCodeTestCase.doValidationTest();
-}
+		validatePlanOfCareSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -207,67 +139,33 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionCodeP() {
-      OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionCodePTestCase = new OperationsTestCase<PlanOfCareSection>(
-      "validatePlanOfCareSectionCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionCodePTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanOfCareSection target) {
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanOfCareSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionCodeP(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanOfCareSectionOperations.validatePlanOfCareSectionCodeP(
-          (PlanOfCareSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanOfCareSectionCodePTestCase.doValidationTest();
-}
+		validatePlanOfCareSectionCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -275,70 +173,36 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionTitle() {
-      OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTitleTestCase = new OperationsTestCase<PlanOfCareSection>(
-      "validatePlanOfCareSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTitleTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanOfCareSection target) {
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanOfCareSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanOfCareSectionOperations.validatePlanOfCareSectionTitle(
-          (PlanOfCareSection) objectToTest, diagnostician, map);
-      }
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionTitle(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validatePlanOfCareSectionTitleTestCase.doValidationTest();
-}
+		validatePlanOfCareSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -629,13 +493,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityActs() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityActs();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityActs();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -644,13 +505,10 @@ target.getPlanOfCareActivityActs();
 	@Test
 	public void testGetPlanOfCareActivityEncounters() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityEncounters();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityEncounters();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -659,13 +517,10 @@ target.getPlanOfCareActivityEncounters();
 	@Test
 	public void testGetPlanOfCareActivityObservations() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityObservations();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -674,13 +529,10 @@ target.getPlanOfCareActivityObservations();
 	@Test
 	public void testGetPlanOfCareActivityProcedures() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityProcedures();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityProcedures();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -689,13 +541,10 @@ target.getPlanOfCareActivityProcedures();
 	@Test
 	public void testGetPlanOfCareActivitySubstanceAdministrations() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivitySubstanceAdministrations();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivitySubstanceAdministrations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -704,13 +553,10 @@ target.getPlanOfCareActivitySubstanceAdministrations();
 	@Test
 	public void testGetPlanOfCareActivitySupplies() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivitySupplies();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivitySupplies();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -719,13 +565,10 @@ target.getPlanOfCareActivitySupplies();
 	@Test
 	public void testGetInstructionss() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getInstructionss();
 
-PlanOfCareSection target = objectFactory.create();
-target.getInstructionss();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -780,17 +623,17 @@ target.getInstructionss();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PlanOfCareSectionOperations

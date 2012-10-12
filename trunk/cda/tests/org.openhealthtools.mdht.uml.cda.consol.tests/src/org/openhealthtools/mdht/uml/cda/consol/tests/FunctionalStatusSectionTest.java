@@ -74,67 +74,33 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionTemplateId() {
-      OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTemplateIdTestCase = new OperationsTestCase<FunctionalStatusSection>(
-      "validateFunctionalStatusSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTemplateIdTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusSection target) {
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTemplateId(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTemplateId(
-          (FunctionalStatusSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusSectionTemplateIdTestCase.doValidationTest();
-}
+		validateFunctionalStatusSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -142,67 +108,33 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionCode() {
-      OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCodeTestCase = new OperationsTestCase<FunctionalStatusSection>(
-      "validateFunctionalStatusSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCodeTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusSection target) {
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCode(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCode(
-          (FunctionalStatusSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusSectionCodeTestCase.doValidationTest();
-}
+		validateFunctionalStatusSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -210,70 +142,36 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionTitle() {
-      OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTitleTestCase = new OperationsTestCase<FunctionalStatusSection>(
-      "validateFunctionalStatusSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTitleTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusSection target) {
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTitle(
-          (FunctionalStatusSection) objectToTest, diagnostician, map);
-      }
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTitle(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFunctionalStatusSectionTitleTestCase.doValidationTest();
-}
+		validateFunctionalStatusSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -281,70 +179,36 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionText() {
-      OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTextTestCase = new OperationsTestCase<FunctionalStatusSection>(
-      "validateFunctionalStatusSectionText",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTextTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusSection target) {
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
 
-        
-        
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-        target.setText(text );
-      
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusSectionOperations.validateFunctionalStatusSectionText(
-          (FunctionalStatusSection) objectToTest, diagnostician, map);
-      }
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionText(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFunctionalStatusSectionTextTestCase.doValidationTest();
-}
+		validateFunctionalStatusSectionTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -761,13 +625,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetFunctionalStatusResultOrganizers() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getFunctionalStatusResultOrganizers();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getFunctionalStatusResultOrganizers();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -776,13 +637,10 @@ target.getFunctionalStatusResultOrganizers();
 	@Test
 	public void testGetCognitiveStatusResultOrganizers() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getCognitiveStatusResultOrganizers();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getCognitiveStatusResultOrganizers();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -791,13 +649,10 @@ target.getCognitiveStatusResultOrganizers();
 	@Test
 	public void testGetFunctionalStatusResultObservations() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getFunctionalStatusResultObservations();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getFunctionalStatusResultObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -806,13 +661,10 @@ target.getFunctionalStatusResultObservations();
 	@Test
 	public void testGetCognitiveStatusResultObservations() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getCognitiveStatusResultObservations();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getCognitiveStatusResultObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -821,13 +673,10 @@ target.getCognitiveStatusResultObservations();
 	@Test
 	public void testGetFunctionalStatusProblemObservations() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getFunctionalStatusProblemObservations();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getFunctionalStatusProblemObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -836,13 +685,10 @@ target.getFunctionalStatusProblemObservations();
 	@Test
 	public void testGetCognitiveStatusProblemObservations() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getCognitiveStatusProblemObservations();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getCognitiveStatusProblemObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -851,13 +697,10 @@ target.getCognitiveStatusProblemObservations();
 	@Test
 	public void testGetCaregiverCharacteristicss() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getCaregiverCharacteristicss();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getCaregiverCharacteristicss();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -866,13 +709,10 @@ target.getCaregiverCharacteristicss();
 	@Test
 	public void testGetAssessmentScaleObservations() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getAssessmentScaleObservations();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getAssessmentScaleObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -881,13 +721,10 @@ target.getAssessmentScaleObservations();
 	@Test
 	public void testGetNonMedicinalSupplyActivities() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getNonMedicinalSupplyActivities();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getNonMedicinalSupplyActivities();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -896,13 +733,10 @@ target.getNonMedicinalSupplyActivities();
 	@Test
 	public void testGetPressureUlcerObservations() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getPressureUlcerObservations();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getPressureUlcerObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -911,13 +745,10 @@ target.getPressureUlcerObservations();
 	@Test
 	public void testGetNumberOfPressureUlcersObservations() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getNumberOfPressureUlcersObservations();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getNumberOfPressureUlcersObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -926,13 +757,10 @@ target.getNumberOfPressureUlcersObservations();
 	@Test
 	public void testGetHighestPressureUlcerStages() {
 
+		FunctionalStatusSection target = objectFactory.create();
+		target.getHighestPressureUlcerStages();
 
-FunctionalStatusSection target = objectFactory.create();
-target.getHighestPressureUlcerStages();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -987,17 +815,17 @@ target.getHighestPressureUlcerStages();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // FunctionalStatusSectionOperations

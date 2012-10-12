@@ -23,7 +23,6 @@ import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.TextObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.TextObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
@@ -191,67 +190,33 @@ public class TextObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTextObservationTemplateId() {
-      OperationsTestCase<TextObservation> validateTextObservationTemplateIdTestCase = new OperationsTestCase<TextObservation>(
-      "validateTextObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TextObservation> validateTextObservationTemplateIdTestCase = new OperationsTestCase<TextObservation>(
+			"validateTextObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TextObservation target) {
+			@Override
+			protected void updateToFail(TextObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TextObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TextObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TextObservationOperations.validateTextObservationTemplateId(
+					(TextObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TextObservationOperations.validateTextObservationTemplateId(
-          (TextObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTextObservationTemplateIdTestCase.doValidationTest();
-}
+		validateTextObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -259,67 +224,33 @@ public class TextObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTextObservationClassCode() {
-      OperationsTestCase<TextObservation> validateTextObservationClassCodeTestCase = new OperationsTestCase<TextObservation>(
-      "validateTextObservationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TextObservation> validateTextObservationClassCodeTestCase = new OperationsTestCase<TextObservation>(
+			"validateTextObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TextObservation target) {
+			@Override
+			protected void updateToFail(TextObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TextObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TextObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TextObservationOperations.validateTextObservationClassCode(
+					(TextObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TextObservationOperations.validateTextObservationClassCode(
-          (TextObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTextObservationClassCodeTestCase.doValidationTest();
-}
+		validateTextObservationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -327,67 +258,33 @@ public class TextObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTextObservationMoodCode() {
-      OperationsTestCase<TextObservation> validateTextObservationMoodCodeTestCase = new OperationsTestCase<TextObservation>(
-      "validateTextObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TextObservation> validateTextObservationMoodCodeTestCase = new OperationsTestCase<TextObservation>(
+			"validateTextObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TextObservation target) {
+			@Override
+			protected void updateToFail(TextObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TextObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TextObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TextObservationOperations.validateTextObservationMoodCode(
+					(TextObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TextObservationOperations.validateTextObservationMoodCode(
-          (TextObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTextObservationMoodCodeTestCase.doValidationTest();
-}
+		validateTextObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -432,70 +329,36 @@ public class TextObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTextObservationEffectiveTime() {
-      OperationsTestCase<TextObservation> validateTextObservationEffectiveTimeTestCase = new OperationsTestCase<TextObservation>(
-      "validateTextObservationEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TextObservation> validateTextObservationEffectiveTimeTestCase = new OperationsTestCase<TextObservation>(
+			"validateTextObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TextObservation target) {
+			@Override
+			protected void updateToFail(TextObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TextObservation target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TextObservation target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TextObservationOperations.validateTextObservationEffectiveTime(
-          (TextObservation) objectToTest, diagnostician, map);
-      }
+				return TextObservationOperations.validateTextObservationEffectiveTime(
+					(TextObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateTextObservationEffectiveTimeTestCase.doValidationTest();
-}
+		validateTextObservationEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -503,69 +366,36 @@ public class TextObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTextObservationText() {
-      OperationsTestCase<TextObservation> validateTextObservationTextTestCase = new OperationsTestCase<TextObservation>(
-      "validateTextObservationText",
-      operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TextObservation> validateTextObservationTextTestCase = new OperationsTestCase<TextObservation>(
+			"validateTextObservationText",
+			operationsForOCL.getOCLValue("VALIDATE_TEXT_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TextObservation target) {
+			@Override
+			protected void updateToFail(TextObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TextObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TextObservation target) {
+				target.init();
 
-        
-        
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-    
-      
-    ED text = DatatypesFactory.eINSTANCE.createED();
-    target.setText(text );	
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TextObservationOperations.validateTextObservationText(
-          (TextObservation) objectToTest, diagnostician, map);
-      }
+				return TextObservationOperations.validateTextObservationText(
+					(TextObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateTextObservationTextTestCase.doValidationTest();
-}
+		validateTextObservationTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -687,13 +517,10 @@ public class TextObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetSOPInstanceObservations() {
 
+		TextObservation target = objectFactory.create();
+		target.getSOPInstanceObservations();
 
-TextObservation target = objectFactory.create();
-target.getSOPInstanceObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -702,13 +529,10 @@ target.getSOPInstanceObservations();
 	@Test
 	public void testGetQuantityMeasurementObservations() {
 
+		TextObservation target = objectFactory.create();
+		target.getQuantityMeasurementObservations();
 
-TextObservation target = objectFactory.create();
-target.getQuantityMeasurementObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -763,17 +587,17 @@ target.getQuantityMeasurementObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // TextObservationOperations

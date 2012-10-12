@@ -51,67 +51,33 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistoryDeathObservationTemplateId() {
-      OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationTemplateIdTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
-      "validateFamilyHistoryDeathObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationTemplateIdTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
+			"validateFamilyHistoryDeathObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FamilyHistoryDeathObservation target) {
+			@Override
+			protected void updateToFail(FamilyHistoryDeathObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FamilyHistoryDeathObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FamilyHistoryDeathObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationTemplateId(
+					(FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationTemplateId(
-          (FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFamilyHistoryDeathObservationTemplateIdTestCase.doValidationTest();
-}
+		validateFamilyHistoryDeathObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -119,67 +85,33 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistoryDeathObservationClassCode() {
-      OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationClassCodeTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
-      "validateFamilyHistoryDeathObservationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationClassCodeTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
+			"validateFamilyHistoryDeathObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FamilyHistoryDeathObservation target) {
+			@Override
+			protected void updateToFail(FamilyHistoryDeathObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FamilyHistoryDeathObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FamilyHistoryDeathObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationClassCode(
+					(FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationClassCode(
-          (FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFamilyHistoryDeathObservationClassCodeTestCase.doValidationTest();
-}
+		validateFamilyHistoryDeathObservationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -187,67 +119,33 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistoryDeathObservationMoodCode() {
-      OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationMoodCodeTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
-      "validateFamilyHistoryDeathObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationMoodCodeTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
+			"validateFamilyHistoryDeathObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FamilyHistoryDeathObservation target) {
+			@Override
+			protected void updateToFail(FamilyHistoryDeathObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FamilyHistoryDeathObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FamilyHistoryDeathObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationMoodCode(
+					(FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationMoodCode(
-          (FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFamilyHistoryDeathObservationMoodCodeTestCase.doValidationTest();
-}
+		validateFamilyHistoryDeathObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -294,70 +192,36 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistoryDeathObservationStatusCode() {
-      OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationStatusCodeTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
-      "validateFamilyHistoryDeathObservationStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationStatusCodeTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
+			"validateFamilyHistoryDeathObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FamilyHistoryDeathObservation target) {
+			@Override
+			protected void updateToFail(FamilyHistoryDeathObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FamilyHistoryDeathObservation target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(FamilyHistoryDeathObservation target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationStatusCode(
-          (FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
-      }
+				return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationStatusCode(
+					(FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFamilyHistoryDeathObservationStatusCodeTestCase.doValidationTest();
-}
+		validateFamilyHistoryDeathObservationStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -451,17 +315,17 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // FamilyHistoryDeathObservationOperations

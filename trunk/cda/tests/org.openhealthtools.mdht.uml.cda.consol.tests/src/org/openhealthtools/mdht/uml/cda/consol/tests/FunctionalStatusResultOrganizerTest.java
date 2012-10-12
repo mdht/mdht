@@ -84,67 +84,33 @@ public class FunctionalStatusResultOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusResultOrganizerClassCode() {
-      OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerClassCodeTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
-      "validateFunctionalStatusResultOrganizerClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerClassCodeTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
+			"validateFunctionalStatusResultOrganizerClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusResultOrganizer target) {
+			@Override
+			protected void updateToFail(FunctionalStatusResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerClassCode(
+					(FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerClassCode(
-          (FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusResultOrganizerClassCodeTestCase.doValidationTest();
-}
+		validateFunctionalStatusResultOrganizerClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -152,67 +118,33 @@ public class FunctionalStatusResultOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusResultOrganizerMoodCode() {
-      OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerMoodCodeTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
-      "validateFunctionalStatusResultOrganizerMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerMoodCodeTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
+			"validateFunctionalStatusResultOrganizerMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusResultOrganizer target) {
+			@Override
+			protected void updateToFail(FunctionalStatusResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerMoodCode(
+					(FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerMoodCode(
-          (FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusResultOrganizerMoodCodeTestCase.doValidationTest();
-}
+		validateFunctionalStatusResultOrganizerMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -288,67 +220,33 @@ public class FunctionalStatusResultOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusResultOrganizerStatusCodeP() {
-      OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerStatusCodePTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
-      "validateFunctionalStatusResultOrganizerStatusCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerStatusCodePTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
+			"validateFunctionalStatusResultOrganizerStatusCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusResultOrganizer target) {
+			@Override
+			protected void updateToFail(FunctionalStatusResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerStatusCodeP(
+					(FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerStatusCodeP(
-          (FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusResultOrganizerStatusCodePTestCase.doValidationTest();
-}
+		validateFunctionalStatusResultOrganizerStatusCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -356,70 +254,36 @@ public class FunctionalStatusResultOrganizerTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusResultOrganizerStatusCode() {
-      OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerStatusCodeTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
-      "validateFunctionalStatusResultOrganizerStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusResultOrganizer> validateFunctionalStatusResultOrganizerStatusCodeTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
+			"validateFunctionalStatusResultOrganizerStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusResultOrganizer target) {
+			@Override
+			protected void updateToFail(FunctionalStatusResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(FunctionalStatusResultOrganizer target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerStatusCode(
-          (FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
-      }
+				return FunctionalStatusResultOrganizerOperations.validateFunctionalStatusResultOrganizerStatusCode(
+					(FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFunctionalStatusResultOrganizerStatusCodeTestCase.doValidationTest();
-}
+		validateFunctionalStatusResultOrganizerStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -462,13 +326,10 @@ public class FunctionalStatusResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testGetFunctionalStatusResultObservations() {
 
+		FunctionalStatusResultOrganizer target = objectFactory.create();
+		target.getFunctionalStatusResultObservations();
 
-FunctionalStatusResultOrganizer target = objectFactory.create();
-target.getFunctionalStatusResultObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -476,67 +337,33 @@ target.getFunctionalStatusResultObservations();
 	*/
 	@Test
 	public void testValidateResultOrganizerTemplateId() {
-      OperationsTestCase<FunctionalStatusResultOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
-      "validateResultOrganizerTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusResultOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<FunctionalStatusResultOrganizer>(
+			"validateResultOrganizerTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusResultOrganizer target) {
+			@Override
+			protected void updateToFail(FunctionalStatusResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusResultOrganizerOperations.validateResultOrganizerTemplateId(
+					(FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusResultOrganizerOperations.validateResultOrganizerTemplateId(
-          (FunctionalStatusResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateResultOrganizerTemplateIdTestCase.doValidationTest();
-}
+		validateResultOrganizerTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -591,17 +418,17 @@ target.getFunctionalStatusResultObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // FunctionalStatusResultOrganizerOperations

@@ -24,32 +24,32 @@ import junit.textui.TestRunner;
 public class ConsolAllTests extends TestSuite {
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public static void main(String[] args) {
-    TestRunner.run(suite());
-  }
+		TestRunner.run(suite());
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public static Test suite() {
-    TestSuite suite = new ConsolAllTests("Consol Tests");
-    suite.addTest(ConsolTests.suite());
-    return suite;
-  }
+		TestSuite suite = new ConsolAllTests("Consol Tests");
+		suite.addTest(ConsolTests.suite());
+		return suite;
+	}
 
 	/**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
 	public ConsolAllTests(String name) {
-    super(name);
-  }
+		super(name);
+	}
 
 } // ConsolAllTests

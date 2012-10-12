@@ -56,67 +56,33 @@ public class ProcedureDispositionSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureDispositionSectionTemplateId() {
-      OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTemplateIdTestCase = new OperationsTestCase<ProcedureDispositionSection>(
-      "validateProcedureDispositionSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTemplateIdTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureDispositionSection target) {
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureDispositionSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionTemplateId(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionTemplateId(
-          (ProcedureDispositionSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProcedureDispositionSectionTemplateIdTestCase.doValidationTest();
-}
+		validateProcedureDispositionSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -124,67 +90,33 @@ public class ProcedureDispositionSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureDispositionSectionCode() {
-      OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionCodeTestCase = new OperationsTestCase<ProcedureDispositionSection>(
-      "validateProcedureDispositionSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionCodeTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureDispositionSection target) {
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureDispositionSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionCode(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionCode(
-          (ProcedureDispositionSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProcedureDispositionSectionCodeTestCase.doValidationTest();
-}
+		validateProcedureDispositionSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -192,67 +124,33 @@ public class ProcedureDispositionSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureDispositionSectionCodeP() {
-      OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionCodePTestCase = new OperationsTestCase<ProcedureDispositionSection>(
-      "validateProcedureDispositionSectionCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionCodePTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureDispositionSection target) {
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureDispositionSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionCodeP(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionCodeP(
-          (ProcedureDispositionSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProcedureDispositionSectionCodePTestCase.doValidationTest();
-}
+		validateProcedureDispositionSectionCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -260,70 +158,36 @@ public class ProcedureDispositionSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureDispositionSectionText() {
-      OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTextTestCase = new OperationsTestCase<ProcedureDispositionSection>(
-      "validateProcedureDispositionSectionText",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTextTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureDispositionSection target) {
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureDispositionSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
 
-        
-        
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-        target.setText(text );
-      
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionText(
-          (ProcedureDispositionSection) objectToTest, diagnostician, map);
-      }
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionText(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateProcedureDispositionSectionTextTestCase.doValidationTest();
-}
+		validateProcedureDispositionSectionTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -331,70 +195,36 @@ public class ProcedureDispositionSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureDispositionSectionTitle() {
-      OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTitleTestCase = new OperationsTestCase<ProcedureDispositionSection>(
-      "validateProcedureDispositionSectionTitle",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTitleTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureDispositionSection target) {
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureDispositionSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
 
-        
-        
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-  
-    
-        ST  title = DatatypesFactory.eINSTANCE.createST("title");
-        target.setTitle(title );
-        
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionTitle(
-          (ProcedureDispositionSection) objectToTest, diagnostician, map);
-      }
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionTitle(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateProcedureDispositionSectionTitleTestCase.doValidationTest();
-}
+		validateProcedureDispositionSectionTitleTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -449,17 +279,17 @@ public class ProcedureDispositionSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProcedureDispositionSectionOperations

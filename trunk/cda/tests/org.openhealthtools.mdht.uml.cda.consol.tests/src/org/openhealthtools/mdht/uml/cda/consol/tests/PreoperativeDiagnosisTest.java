@@ -51,67 +51,33 @@ public class PreoperativeDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePreoperativeDiagnosisTemplateId() {
-      OperationsTestCase<PreoperativeDiagnosis> validatePreoperativeDiagnosisTemplateIdTestCase = new OperationsTestCase<PreoperativeDiagnosis>(
-      "validatePreoperativeDiagnosisTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PreoperativeDiagnosis> validatePreoperativeDiagnosisTemplateIdTestCase = new OperationsTestCase<PreoperativeDiagnosis>(
+			"validatePreoperativeDiagnosisTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PreoperativeDiagnosis target) {
+			@Override
+			protected void updateToFail(PreoperativeDiagnosis target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PreoperativeDiagnosis target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PreoperativeDiagnosis target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PreoperativeDiagnosisOperations.validatePreoperativeDiagnosisTemplateId(
+					(PreoperativeDiagnosis) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PreoperativeDiagnosisOperations.validatePreoperativeDiagnosisTemplateId(
-          (PreoperativeDiagnosis) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePreoperativeDiagnosisTemplateIdTestCase.doValidationTest();
-}
+		validatePreoperativeDiagnosisTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -119,67 +85,33 @@ public class PreoperativeDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePreoperativeDiagnosisClassCode() {
-      OperationsTestCase<PreoperativeDiagnosis> validatePreoperativeDiagnosisClassCodeTestCase = new OperationsTestCase<PreoperativeDiagnosis>(
-      "validatePreoperativeDiagnosisClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PreoperativeDiagnosis> validatePreoperativeDiagnosisClassCodeTestCase = new OperationsTestCase<PreoperativeDiagnosis>(
+			"validatePreoperativeDiagnosisClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PreoperativeDiagnosis target) {
+			@Override
+			protected void updateToFail(PreoperativeDiagnosis target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PreoperativeDiagnosis target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PreoperativeDiagnosis target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PreoperativeDiagnosisOperations.validatePreoperativeDiagnosisClassCode(
+					(PreoperativeDiagnosis) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PreoperativeDiagnosisOperations.validatePreoperativeDiagnosisClassCode(
-          (PreoperativeDiagnosis) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePreoperativeDiagnosisClassCodeTestCase.doValidationTest();
-}
+		validatePreoperativeDiagnosisClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -221,67 +153,33 @@ public class PreoperativeDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePreoperativeDiagnosisMoodCode() {
-      OperationsTestCase<PreoperativeDiagnosis> validatePreoperativeDiagnosisMoodCodeTestCase = new OperationsTestCase<PreoperativeDiagnosis>(
-      "validatePreoperativeDiagnosisMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PreoperativeDiagnosis> validatePreoperativeDiagnosisMoodCodeTestCase = new OperationsTestCase<PreoperativeDiagnosis>(
+			"validatePreoperativeDiagnosisMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PreoperativeDiagnosis target) {
+			@Override
+			protected void updateToFail(PreoperativeDiagnosis target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PreoperativeDiagnosis target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PreoperativeDiagnosis target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PreoperativeDiagnosisOperations.validatePreoperativeDiagnosisMoodCode(
+					(PreoperativeDiagnosis) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PreoperativeDiagnosisOperations.validatePreoperativeDiagnosisMoodCode(
-          (PreoperativeDiagnosis) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePreoperativeDiagnosisMoodCodeTestCase.doValidationTest();
-}
+		validatePreoperativeDiagnosisMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -328,13 +226,10 @@ public class PreoperativeDiagnosisTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservations() {
 
+		PreoperativeDiagnosis target = objectFactory.create();
+		target.getProblemObservations();
 
-PreoperativeDiagnosis target = objectFactory.create();
-target.getProblemObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -389,17 +284,17 @@ target.getProblemObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PreoperativeDiagnosisOperations

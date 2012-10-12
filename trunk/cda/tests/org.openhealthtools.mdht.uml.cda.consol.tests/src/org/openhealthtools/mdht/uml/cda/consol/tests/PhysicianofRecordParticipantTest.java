@@ -56,67 +56,33 @@ public class PhysicianofRecordParticipantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicianofRecordParticipantTemplateId() {
-      OperationsTestCase<PhysicianofRecordParticipant> validatePhysicianofRecordParticipantTemplateIdTestCase = new OperationsTestCase<PhysicianofRecordParticipant>(
-      "validatePhysicianofRecordParticipantTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PHYSICIANOF_RECORD_PARTICIPANT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PhysicianofRecordParticipant> validatePhysicianofRecordParticipantTemplateIdTestCase = new OperationsTestCase<PhysicianofRecordParticipant>(
+			"validatePhysicianofRecordParticipantTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PHYSICIANOF_RECORD_PARTICIPANT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PhysicianofRecordParticipant target) {
+			@Override
+			protected void updateToFail(PhysicianofRecordParticipant target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PhysicianofRecordParticipant target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PhysicianofRecordParticipant target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PhysicianofRecordParticipantOperations.validatePhysicianofRecordParticipantTemplateId(
+					(PhysicianofRecordParticipant) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PhysicianofRecordParticipantOperations.validatePhysicianofRecordParticipantTemplateId(
-          (PhysicianofRecordParticipant) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePhysicianofRecordParticipantTemplateIdTestCase.doValidationTest();
-}
+		validatePhysicianofRecordParticipantTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -124,67 +90,33 @@ public class PhysicianofRecordParticipantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePhysicianofRecordParticipantTypeCode() {
-      OperationsTestCase<PhysicianofRecordParticipant> validatePhysicianofRecordParticipantTypeCodeTestCase = new OperationsTestCase<PhysicianofRecordParticipant>(
-      "validatePhysicianofRecordParticipantTypeCode",
-      operationsForOCL.getOCLValue("VALIDATE_PHYSICIANOF_RECORD_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PhysicianofRecordParticipant> validatePhysicianofRecordParticipantTypeCodeTestCase = new OperationsTestCase<PhysicianofRecordParticipant>(
+			"validatePhysicianofRecordParticipantTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_PHYSICIANOF_RECORD_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PhysicianofRecordParticipant target) {
+			@Override
+			protected void updateToFail(PhysicianofRecordParticipant target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PhysicianofRecordParticipant target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PhysicianofRecordParticipant target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PhysicianofRecordParticipantOperations.validatePhysicianofRecordParticipantTypeCode(
+					(PhysicianofRecordParticipant) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PhysicianofRecordParticipantOperations.validatePhysicianofRecordParticipantTypeCode(
-          (PhysicianofRecordParticipant) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePhysicianofRecordParticipantTypeCodeTestCase.doValidationTest();
-}
+		validatePhysicianofRecordParticipantTypeCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -509,17 +441,17 @@ public class PhysicianofRecordParticipantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PhysicianofRecordParticipantOperations

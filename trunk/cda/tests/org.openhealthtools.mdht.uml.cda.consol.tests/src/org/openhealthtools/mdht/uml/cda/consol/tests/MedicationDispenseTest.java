@@ -25,10 +25,8 @@ import org.openhealthtools.mdht.uml.cda.consol.MedicationDispense;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder;
 import org.openhealthtools.mdht.uml.cda.consol.operations.MedicationDispenseOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
@@ -82,67 +80,33 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationDispenseTemplateId() {
-      OperationsTestCase<MedicationDispense> validateMedicationDispenseTemplateIdTestCase = new OperationsTestCase<MedicationDispense>(
-      "validateMedicationDispenseTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MedicationDispense> validateMedicationDispenseTemplateIdTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispenseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MedicationDispense target) {
+			@Override
+			protected void updateToFail(MedicationDispense target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MedicationDispense target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MedicationDispenseOperations.validateMedicationDispenseTemplateId(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicationDispenseOperations.validateMedicationDispenseTemplateId(
-          (MedicationDispense) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMedicationDispenseTemplateIdTestCase.doValidationTest();
-}
+		validateMedicationDispenseTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1013,13 +977,10 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationSupplyOrder() {
 
+		MedicationDispense target = objectFactory.create();
+		target.getMedicationSupplyOrder();
 
-MedicationDispense target = objectFactory.create();
-target.getMedicationSupplyOrder();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1074,18 +1035,18 @@ target.getMedicationSupplyOrder();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 	private AD createUSRealmAddress() {
 		AD addr = DatatypesFactory.eINSTANCE.createAD();

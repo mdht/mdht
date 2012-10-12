@@ -94,67 +94,33 @@ public class CoverageActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCoverageActivityTemplateId() {
-      OperationsTestCase<CoverageActivity> validateCoverageActivityTemplateIdTestCase = new OperationsTestCase<CoverageActivity>(
-      "validateCoverageActivityTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityTemplateIdTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CoverageActivity target) {
+			@Override
+			protected void updateToFail(CoverageActivity target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CoverageActivity target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CoverageActivityOperations.validateCoverageActivityTemplateId(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CoverageActivityOperations.validateCoverageActivityTemplateId(
-          (CoverageActivity) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCoverageActivityTemplateIdTestCase.doValidationTest();
-}
+		validateCoverageActivityTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -162,67 +128,33 @@ public class CoverageActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCoverageActivityClassCode() {
-      OperationsTestCase<CoverageActivity> validateCoverageActivityClassCodeTestCase = new OperationsTestCase<CoverageActivity>(
-      "validateCoverageActivityClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityClassCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CoverageActivity target) {
+			@Override
+			protected void updateToFail(CoverageActivity target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CoverageActivity target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CoverageActivityOperations.validateCoverageActivityClassCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CoverageActivityOperations.validateCoverageActivityClassCode(
-          (CoverageActivity) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCoverageActivityClassCodeTestCase.doValidationTest();
-}
+		validateCoverageActivityClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -298,67 +230,33 @@ public class CoverageActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCoverageActivityMoodCode() {
-      OperationsTestCase<CoverageActivity> validateCoverageActivityMoodCodeTestCase = new OperationsTestCase<CoverageActivity>(
-      "validateCoverageActivityMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityMoodCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CoverageActivity target) {
+			@Override
+			protected void updateToFail(CoverageActivity target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CoverageActivity target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CoverageActivityOperations.validateCoverageActivityMoodCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CoverageActivityOperations.validateCoverageActivityMoodCode(
-          (CoverageActivity) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCoverageActivityMoodCodeTestCase.doValidationTest();
-}
+		validateCoverageActivityMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -366,70 +264,36 @@ public class CoverageActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCoverageActivityStatusCode() {
-      OperationsTestCase<CoverageActivity> validateCoverageActivityStatusCodeTestCase = new OperationsTestCase<CoverageActivity>(
-      "validateCoverageActivityStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityStatusCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CoverageActivity target) {
+			@Override
+			protected void updateToFail(CoverageActivity target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CoverageActivity target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CoverageActivityOperations.validateCoverageActivityStatusCode(
-          (CoverageActivity) objectToTest, diagnostician, map);
-      }
+				return CoverageActivityOperations.validateCoverageActivityStatusCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateCoverageActivityStatusCodeTestCase.doValidationTest();
-}
+		validateCoverageActivityStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -475,13 +339,10 @@ public class CoverageActivityTest extends CDAValidationTest {
 	@Test
 	public void testGetPolicyActivities() {
 
+		CoverageActivity target = objectFactory.create();
+		target.getPolicyActivities();
 
-CoverageActivity target = objectFactory.create();
-target.getPolicyActivities();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -536,17 +397,17 @@ target.getPolicyActivities();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CoverageActivityOperations

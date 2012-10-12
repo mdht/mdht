@@ -60,67 +60,33 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePregnancyObservationTemplateId() {
-      OperationsTestCase<PregnancyObservation> validatePregnancyObservationTemplateIdTestCase = new OperationsTestCase<PregnancyObservation>(
-      "validatePregnancyObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PregnancyObservation> validatePregnancyObservationTemplateIdTestCase = new OperationsTestCase<PregnancyObservation>(
+			"validatePregnancyObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PregnancyObservation target) {
+			@Override
+			protected void updateToFail(PregnancyObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PregnancyObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PregnancyObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PregnancyObservationOperations.validatePregnancyObservationTemplateId(
+					(PregnancyObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PregnancyObservationOperations.validatePregnancyObservationTemplateId(
-          (PregnancyObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePregnancyObservationTemplateIdTestCase.doValidationTest();
-}
+		validatePregnancyObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -128,67 +94,33 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePregnancyObservationClassCode() {
-      OperationsTestCase<PregnancyObservation> validatePregnancyObservationClassCodeTestCase = new OperationsTestCase<PregnancyObservation>(
-      "validatePregnancyObservationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PregnancyObservation> validatePregnancyObservationClassCodeTestCase = new OperationsTestCase<PregnancyObservation>(
+			"validatePregnancyObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PregnancyObservation target) {
+			@Override
+			protected void updateToFail(PregnancyObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PregnancyObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PregnancyObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PregnancyObservationOperations.validatePregnancyObservationClassCode(
+					(PregnancyObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PregnancyObservationOperations.validatePregnancyObservationClassCode(
-          (PregnancyObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePregnancyObservationClassCodeTestCase.doValidationTest();
-}
+		validatePregnancyObservationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -196,67 +128,33 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePregnancyObservationMoodCode() {
-      OperationsTestCase<PregnancyObservation> validatePregnancyObservationMoodCodeTestCase = new OperationsTestCase<PregnancyObservation>(
-      "validatePregnancyObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PregnancyObservation> validatePregnancyObservationMoodCodeTestCase = new OperationsTestCase<PregnancyObservation>(
+			"validatePregnancyObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PregnancyObservation target) {
+			@Override
+			protected void updateToFail(PregnancyObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PregnancyObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PregnancyObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PregnancyObservationOperations.validatePregnancyObservationMoodCode(
+					(PregnancyObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PregnancyObservationOperations.validatePregnancyObservationMoodCode(
-          (PregnancyObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePregnancyObservationMoodCodeTestCase.doValidationTest();
-}
+		validatePregnancyObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -337,70 +235,36 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePregnancyObservationStatusCode() {
-      OperationsTestCase<PregnancyObservation> validatePregnancyObservationStatusCodeTestCase = new OperationsTestCase<PregnancyObservation>(
-      "validatePregnancyObservationStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PregnancyObservation> validatePregnancyObservationStatusCodeTestCase = new OperationsTestCase<PregnancyObservation>(
+			"validatePregnancyObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PregnancyObservation target) {
+			@Override
+			protected void updateToFail(PregnancyObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PregnancyObservation target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(PregnancyObservation target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PregnancyObservationOperations.validatePregnancyObservationStatusCode(
-          (PregnancyObservation) objectToTest, diagnostician, map);
-      }
+				return PregnancyObservationOperations.validatePregnancyObservationStatusCode(
+					(PregnancyObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validatePregnancyObservationStatusCodeTestCase.doValidationTest();
-}
+		validatePregnancyObservationStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -447,70 +311,36 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePregnancyObservationEffectiveTime() {
-      OperationsTestCase<PregnancyObservation> validatePregnancyObservationEffectiveTimeTestCase = new OperationsTestCase<PregnancyObservation>(
-      "validatePregnancyObservationEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PregnancyObservation> validatePregnancyObservationEffectiveTimeTestCase = new OperationsTestCase<PregnancyObservation>(
+			"validatePregnancyObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PregnancyObservation target) {
+			@Override
+			protected void updateToFail(PregnancyObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PregnancyObservation target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PregnancyObservation target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PregnancyObservationOperations.validatePregnancyObservationEffectiveTime(
-          (PregnancyObservation) objectToTest, diagnostician, map);
-      }
+				return PregnancyObservationOperations.validatePregnancyObservationEffectiveTime(
+					(PregnancyObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validatePregnancyObservationEffectiveTimeTestCase.doValidationTest();
-}
+		validatePregnancyObservationEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -558,13 +388,10 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetEstimatedDateOfDelivery() {
 
+		PregnancyObservation target = objectFactory.create();
+		target.getEstimatedDateOfDelivery();
 
-PregnancyObservation target = objectFactory.create();
-target.getEstimatedDateOfDelivery();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -619,17 +446,17 @@ target.getEstimatedDateOfDelivery();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PregnancyObservationOperations

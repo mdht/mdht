@@ -19,7 +19,6 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureContext;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureContextOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -84,67 +83,33 @@ public class ProcedureContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureContextTemplateId() {
-      OperationsTestCase<ProcedureContext> validateProcedureContextTemplateIdTestCase = new OperationsTestCase<ProcedureContext>(
-      "validateProcedureContextTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_CONTEXT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureContext> validateProcedureContextTemplateIdTestCase = new OperationsTestCase<ProcedureContext>(
+			"validateProcedureContextTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_CONTEXT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureContext target) {
+			@Override
+			protected void updateToFail(ProcedureContext target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureContext target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureContext target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProcedureContextOperations.validateProcedureContextTemplateId(
+					(ProcedureContext) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureContextOperations.validateProcedureContextTemplateId(
-          (ProcedureContext) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProcedureContextTemplateIdTestCase.doValidationTest();
-}
+		validateProcedureContextTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -186,70 +151,36 @@ public class ProcedureContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureContextEffectiveTime() {
-      OperationsTestCase<ProcedureContext> validateProcedureContextEffectiveTimeTestCase = new OperationsTestCase<ProcedureContext>(
-      "validateProcedureContextEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_CONTEXT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureContext> validateProcedureContextEffectiveTimeTestCase = new OperationsTestCase<ProcedureContext>(
+			"validateProcedureContextEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_CONTEXT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureContext target) {
+			@Override
+			protected void updateToFail(ProcedureContext target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureContext target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureContext target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureContextOperations.validateProcedureContextEffectiveTime(
-          (ProcedureContext) objectToTest, diagnostician, map);
-      }
+				return ProcedureContextOperations.validateProcedureContextEffectiveTime(
+					(ProcedureContext) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateProcedureContextEffectiveTimeTestCase.doValidationTest();
-}
+		validateProcedureContextEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -304,17 +235,17 @@ public class ProcedureContextTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProcedureContextOperations

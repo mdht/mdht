@@ -303,67 +303,33 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusProblemObservationClassCode() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationClassCodeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateFunctionalStatusProblemObservationClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationClassCodeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateFunctionalStatusProblemObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationClassCode(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationClassCode(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusProblemObservationClassCodeTestCase.doValidationTest();
-}
+		validateFunctionalStatusProblemObservationClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -371,67 +337,33 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusProblemObservationMoodCode() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationMoodCodeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateFunctionalStatusProblemObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationMoodCodeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateFunctionalStatusProblemObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationMoodCode(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationMoodCode(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusProblemObservationMoodCodeTestCase.doValidationTest();
-}
+		validateFunctionalStatusProblemObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -473,70 +405,36 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusProblemObservationId() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationIdTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateFunctionalStatusProblemObservationId",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationIdTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateFunctionalStatusProblemObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-      
-        II ii  = DatatypesFactory.eINSTANCE.createII();
-        target.getIds().add(ii);				
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationId(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+				return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationId(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFunctionalStatusProblemObservationIdTestCase.doValidationTest();
-}
+		validateFunctionalStatusProblemObservationIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -544,67 +442,33 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusProblemObservationCodeP() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationCodePTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateFunctionalStatusProblemObservationCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationCodePTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateFunctionalStatusProblemObservationCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationCodeP(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationCodeP(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFunctionalStatusProblemObservationCodePTestCase.doValidationTest();
-}
+		validateFunctionalStatusProblemObservationCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -649,69 +513,36 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusProblemObservationText() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationTextTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateFunctionalStatusProblemObservationText",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationTextTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateFunctionalStatusProblemObservationText",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-  
-      
+			}
 
-  
-    
-    
-      
-    ED text = DatatypesFactory.eINSTANCE.createED();
-    target.setText(text );	
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationText(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+				return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationText(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFunctionalStatusProblemObservationTextTestCase.doValidationTest();
-}
+		validateFunctionalStatusProblemObservationTextTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -719,70 +550,36 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusProblemObservationStatusCode() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationStatusCodeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateFunctionalStatusProblemObservationStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationStatusCodeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateFunctionalStatusProblemObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationStatusCode(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+				return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationStatusCode(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFunctionalStatusProblemObservationStatusCodeTestCase.doValidationTest();
-}
+		validateFunctionalStatusProblemObservationStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -790,70 +587,36 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusProblemObservationEffectiveTime() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationEffectiveTimeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateFunctionalStatusProblemObservationEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateFunctionalStatusProblemObservationEffectiveTimeTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateFunctionalStatusProblemObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationEffectiveTime(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+				return FunctionalStatusProblemObservationOperations.validateFunctionalStatusProblemObservationEffectiveTime(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateFunctionalStatusProblemObservationEffectiveTimeTestCase.doValidationTest();
-}
+		validateFunctionalStatusProblemObservationEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1084,13 +847,10 @@ public class FunctionalStatusProblemObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetNonMedicinalSupplyActivities() {
 
+		FunctionalStatusProblemObservation target = objectFactory.create();
+		target.getNonMedicinalSupplyActivities();
 
-FunctionalStatusProblemObservation target = objectFactory.create();
-target.getNonMedicinalSupplyActivities();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1099,13 +859,10 @@ target.getNonMedicinalSupplyActivities();
 	@Test
 	public void testGetCaregiverCharacteristicss() {
 
+		FunctionalStatusProblemObservation target = objectFactory.create();
+		target.getCaregiverCharacteristicss();
 
-FunctionalStatusProblemObservation target = objectFactory.create();
-target.getCaregiverCharacteristicss();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1114,13 +871,10 @@ target.getCaregiverCharacteristicss();
 	@Test
 	public void testGetAssessmentScaleObservations() {
 
+		FunctionalStatusProblemObservation target = objectFactory.create();
+		target.getAssessmentScaleObservations();
 
-FunctionalStatusProblemObservation target = objectFactory.create();
-target.getAssessmentScaleObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1128,67 +882,33 @@ target.getAssessmentScaleObservations();
 	*/
 	@Test
 	public void testValidateProblemObservationTemplateId() {
-      OperationsTestCase<FunctionalStatusProblemObservation> validateProblemObservationTemplateIdTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
-      "validateProblemObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FunctionalStatusProblemObservation> validateProblemObservationTemplateIdTestCase = new OperationsTestCase<FunctionalStatusProblemObservation>(
+			"validateProblemObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FunctionalStatusProblemObservation target) {
+			@Override
+			protected void updateToFail(FunctionalStatusProblemObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FunctionalStatusProblemObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FunctionalStatusProblemObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FunctionalStatusProblemObservationOperations.validateProblemObservationTemplateId(
+					(FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FunctionalStatusProblemObservationOperations.validateProblemObservationTemplateId(
-          (FunctionalStatusProblemObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProblemObservationTemplateIdTestCase.doValidationTest();
-}
+		validateProblemObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -1243,17 +963,17 @@ target.getAssessmentScaleObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // FunctionalStatusProblemObservationOperations

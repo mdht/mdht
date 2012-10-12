@@ -89,67 +89,32 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseTemplateId() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseTemplateIdTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseTemplateIdTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TobaccoUseOperations.validateTobaccoUseTemplateId((TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseTemplateId(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTobaccoUseTemplateIdTestCase.doValidationTest();
-}
+		validateTobaccoUseTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -157,67 +122,32 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseClassCode() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseClassCodeTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseClassCodeTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TobaccoUseOperations.validateTobaccoUseClassCode((TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseClassCode(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTobaccoUseClassCodeTestCase.doValidationTest();
-}
+		validateTobaccoUseClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -225,67 +155,32 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseMoodCode() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseMoodCodeTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseMoodCodeTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TobaccoUseOperations.validateTobaccoUseMoodCode((TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseMoodCode(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTobaccoUseMoodCodeTestCase.doValidationTest();
-}
+		validateTobaccoUseMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -293,67 +188,31 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseCodeP() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseCodePTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseCodePTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TobaccoUseOperations.validateTobaccoUseCodeP((TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseCodeP(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTobaccoUseCodePTestCase.doValidationTest();
-}
+		validateTobaccoUseCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -361,67 +220,31 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseCode() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseCodeTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseCode",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseCodeTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseCode",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TobaccoUseOperations.validateTobaccoUseCode((TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseCode(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTobaccoUseCodeTestCase.doValidationTest();
-}
+		validateTobaccoUseCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -429,70 +252,36 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseEffectiveTime() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseEffectiveTimeTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseEffectiveTimeTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseEffectiveTime(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+				return TobaccoUseOperations.validateTobaccoUseEffectiveTime(
+					(TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateTobaccoUseEffectiveTimeTestCase.doValidationTest();
-}
+		validateTobaccoUseEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -500,70 +289,35 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseStatusCode() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseStatusCodeTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseStatusCodeTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseStatusCode(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+				return TobaccoUseOperations.validateTobaccoUseStatusCode((TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateTobaccoUseStatusCodeTestCase.doValidationTest();
-}
+		validateTobaccoUseStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -571,67 +325,32 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateTobaccoUseStatusCodeP() {
-      OperationsTestCase<TobaccoUse> validateTobaccoUseStatusCodePTestCase = new OperationsTestCase<TobaccoUse>(
-      "validateTobaccoUseStatusCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<TobaccoUse> validateTobaccoUseStatusCodePTestCase = new OperationsTestCase<TobaccoUse>(
+			"validateTobaccoUseStatusCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(TobaccoUse target) {
+			@Override
+			protected void updateToFail(TobaccoUse target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(TobaccoUse target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(TobaccoUse target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return TobaccoUseOperations.validateTobaccoUseStatusCodeP((TobaccoUse) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return TobaccoUseOperations.validateTobaccoUseStatusCodeP(
-          (TobaccoUse) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTobaccoUseStatusCodePTestCase.doValidationTest();
-}
+		validateTobaccoUseStatusCodePTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -755,17 +474,17 @@ public class TobaccoUseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // TobaccoUseOperations
