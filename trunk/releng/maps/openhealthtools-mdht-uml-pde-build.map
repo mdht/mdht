@@ -167,6 +167,9 @@ feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://www.pro
 !***************  MDHT Feature for JUnit Tests - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.test.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.test.source-feature,force
 
+!***************  MDHT CDA Feature for Implementation Guide Modeling  
+feature@org.openhealthtools.mdht.uml.cda.tooling=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.tooling-feature,force
+
 
 !***************  MDHT CDA Feature for Implementation Guide Modeling  
 feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature,force
