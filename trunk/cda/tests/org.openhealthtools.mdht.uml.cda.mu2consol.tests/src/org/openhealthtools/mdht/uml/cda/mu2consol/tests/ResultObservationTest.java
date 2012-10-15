@@ -52,7 +52,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMu2consolResultObservationResultObservationCodeValue() {
@@ -72,7 +72,9 @@ public class ResultObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+				target.setCode(value);
+				value.setCodeSystem("2.16.840.1.113883.6.1");
+				value.setCode("testValue");
 
 			}
 
@@ -94,7 +96,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMu2consolResultObservationCode() {

@@ -71,6 +71,8 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCode("testCode");
+				value.setCodeSystem("2.16.840.1.113883.6.96");
 				target.setCode(value);
 
 			}
@@ -93,7 +95,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMu2consolProcedureActivityProcedureCode() {
@@ -111,6 +113,8 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityProcedure target) {
 				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
 
 			}
 
