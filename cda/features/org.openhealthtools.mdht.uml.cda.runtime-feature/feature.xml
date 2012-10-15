@@ -25,40 +25,9 @@
          id="org.openhealthtools.mdht.uml.cda.models.source"
          version="0.0.0"/>
 
- <plugin
-         id="org.openhealthtools.mdht.emf.runtime"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-         
-   <plugin
-         id="org.openhealthtools.mdht.uml.hl7.rim"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.hl7.datatypes"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.hl7.vocab"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.cda"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <requires>
+      <import feature="org.openhealthtools.mdht.uml.cda" version="1.1.0.qualifier"/>
+   </requires>
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.cdt"
@@ -123,94 +92,89 @@
          version="0.0.0"
          unpack="false"/>
 
-
-
-  <plugin
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.anthrax"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.cocci"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.hepb"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.pertussis"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.salmonellosis"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.silicosis"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.streppneumo"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.tss"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.tuberculosis"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.tularemia"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.phcr.wnv"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-
-
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.phmr"
@@ -247,7 +211,7 @@
          version="0.0.0"
          unpack="false"/>
 
-  <plugin
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.mu2consol"
          download-size="0"
          install-size="0"
