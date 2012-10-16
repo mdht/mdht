@@ -208,9 +208,15 @@ public class CDAProjectUtil {
 								URI foo = URI.createPlatformPluginURI(
 									extension.getContributor().getName() + umlFileURL.getPath(), false);
 
-								PackageableElement foo2 = (PackageableElement) EcoreUtil.getObjectByType(
-									resourceSet.getResource(foo, true).getContents(),
-									UMLPackage.eINSTANCE.getPackageableElement());
+								PackageableElement foo2 = null;
+
+								try {
+									foo2 = (PackageableElement) EcoreUtil.getObjectByType(
+										resourceSet.getResource(foo, true).getContents(),
+										UMLPackage.eINSTANCE.getPackageableElement());
+								} catch (Throwable t) {
+									
+								}
 
 								if (foo2 instanceof Package) {
 
