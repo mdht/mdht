@@ -305,5 +305,52 @@
             project="true">
       </wizard>
    </extension>
+   
+      <extension
+         point="org.eclipse.ui.views">
+          <category
+            name="CDA Analysis"
+            id="cdaanalysis">
+      </category>
+      <view
+            name="Section Entries"
+            icon="icons/analyzer/analysis.ico"
+            category="cdaanalysis"
+            class="org.openhealthtools.mdht.uml.cda.ui.views.EntriesView"
+            id="org.openhealthtools.mdht.uml.cda.ui.views.entriesview">
+            
+      </view>
+      
+         <view
+            name="Section Narrative"
+            icon="icons/analyzer/analysis.ico"
+            category="cdaanalysis"
+            class="org.openhealthtools.mdht.uml.cda.ui.views.NarrativeView"
+            id="org.openhealthtools.mdht.uml.cda.ui.views.narrativeview">
+      </view>
+      
+       <view
+            name="Section Issues"
+            icon="icons/analyzer/analysis.ico"
+            category="cdaanalysis"
+            class="org.openhealthtools.mdht.uml.cda.ui.views.ValidationsView"
+            id="org.openhealthtools.mdht.uml.cda.ui.views.validationsview">
+      </view>
+
+   </extension>
+   
+   
+ 
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xml"
+            icon="icons/analyzer/sample.gif"
+            id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
+            name="CDA Analyzer">
+      </editor>
+   </extension>
             
 </plugin>
