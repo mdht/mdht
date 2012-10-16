@@ -75,12 +75,16 @@ public class DocumentClassDialog {
 	};
 
 	public String selectDocumentClass() {
+
 		CDAProjectUtil projectUtil = new CDAProjectUtil();
 		projectUtil.loadCDAModelsfromWorkspace();
 		Map<String, Type> cdaDocuments = projectUtil.getCDADocuments();
-
 		if (cdaDocuments.keySet().isEmpty()) {
-			return null;
+			projectUtil.loadCDAModelsfromPlugins();
+			cdaDocuments = projectUtil.getCDADocuments();
+			if (cdaDocuments.keySet().isEmpty()) {
+				return null;
+			}
 		}
 
 		final List<String> qnames = new ArrayList<String>(cdaDocuments.keySet());
