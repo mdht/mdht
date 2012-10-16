@@ -85,6 +85,8 @@ public class Validator extends AbstractNestedValidator {
 
 			}
 
+			br.close();
+
 		}
 
 		catch (Exception e)
