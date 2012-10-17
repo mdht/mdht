@@ -106,7 +106,9 @@ public class ValidationsView extends ViewPart {
 			public void handleEvent(Event event) {
 				if (event.item.getData() instanceof Section) {
 					Section section = (Section) event.item.getData();
-					Map<String, CDADiagnosticCounter> resultMap = new HashMap<String, CDADiagnosticCounter>();
+					Map<String, CDADiagnosticCounter> errorsResultMap = new HashMap<String, CDADiagnosticCounter>();
+					Map<String, CDADiagnosticCounter> warningsResultMap = new HashMap<String, CDADiagnosticCounter>();
+					Map<String, CDADiagnosticCounter> informationResultMap = new HashMap<String, CDADiagnosticCounter>();
 
 					Diagnostic diagnostic = Diagnostician.INSTANCE.validate(section);
 
@@ -122,11 +124,11 @@ public class ValidationsView extends ViewPart {
 
 						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
 						System.out.println(key);
-						if (!resultMap.containsKey(key)) {
+						if (!errorsResultMap.containsKey(key)) {
 							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
-							resultMap.put(key, cdaDiagnosticCounter);
+							errorsResultMap.put(key, cdaDiagnosticCounter);
 						}
-						resultMap.get(key).incrementCount();
+						errorsResultMap.get(key).incrementCount();
 
 					}
 
@@ -134,30 +136,26 @@ public class ValidationsView extends ViewPart {
 
 						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
 						System.out.println(key);
-						if (!resultMap.containsKey(key)) {
+						if (!warningsResultMap.containsKey(key)) {
 							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
-							resultMap.put(key, cdaDiagnosticCounter);
+							warningsResultMap.put(key, cdaDiagnosticCounter);
 						}
-						resultMap.get(key).incrementCount();
+						warningsResultMap.get(key).incrementCount();
 
 					}
 
 					for (Diagnostic dq : vr.getInfoDiagnostics()) {
 
 						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
-						if (!resultMap.containsKey(key)) {
+						if (!informationResultMap.containsKey(key)) {
 							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
-							resultMap.put(key, cdaDiagnosticCounter);
+							informationResultMap.put(key, cdaDiagnosticCounter);
 						}
-						resultMap.get(key).incrementCount();
+						informationResultMap.get(key).incrementCount();
 
 					}
 
-					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">ERRORS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
-
-					List<CDADiagnosticCounter> mapValues = new ArrayList<CDADiagnosticCounter>(resultMap.values());
-
-					Collections.sort(mapValues, new Comparator<CDADiagnosticCounter>() {
+					final Comparator<CDADiagnosticCounter> comparator = new Comparator<CDADiagnosticCounter>() {
 						public int compare(CDADiagnosticCounter o1, CDADiagnosticCounter o2) {
 							if (o1.getCount() > o2.getCount())
 								return -1;
@@ -166,33 +164,61 @@ public class ValidationsView extends ViewPart {
 							else
 								return 0;
 						}
-					});
+					};
 
-					for (CDADiagnosticCounter cdc : mapValues) {
-						if (cdc.getCdaDiagnosticq().isError()) {
+					sb.append("<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">ERRORS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
+
+					if (!errorsResultMap.isEmpty()) {
+
+						List<CDADiagnosticCounter> errorsMapValues = new ArrayList<CDADiagnosticCounter>(
+							errorsResultMap.values());
+
+						Collections.sort(errorsMapValues, comparator);
+
+						for (CDADiagnosticCounter cdc : errorsMapValues) {
 							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
-									cdc.getCdaDiagnosticq().getMessage() + "</small></td>");
+									cdc.getCdaDiagnosticq().getMessage() + "</small></td></tr>");
 						}
+					} else {
+						sb.append("<tr><td colspan='10'>NO ERRORS</td><tr>");
 					}
+
 					sb.append("</table>");
 
-					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">WARNINGS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
+					sb.append("<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">WARNINGS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
-					for (CDADiagnosticCounter cdc : mapValues) {
-						if (cdc.getCdaDiagnosticq().isWarning()) {
+					if (!warningsResultMap.isEmpty()) {
+
+						List<CDADiagnosticCounter> mapValues = new ArrayList<CDADiagnosticCounter>(
+							warningsResultMap.values());
+
+						Collections.sort(mapValues, comparator);
+
+						for (CDADiagnosticCounter cdc : mapValues) {
 							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
-									cdc.getCdaDiagnosticq().getMessage() + "</small></td>");
+									cdc.getCdaDiagnosticq().getMessage() + "</small></td><tr>");
 						}
+					} else {
+						sb.append("<tr><td colspan='10'>NO WARNINGS</td></tr>");
 					}
+
 					sb.append("</table>");
 
-					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">INFORMATIONAL</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
+					sb.append("<table width=\"100%\" border=\"1\"><thead><tr><th colspan=\"2\">INFORMATIONAL</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
-					for (CDADiagnosticCounter cdc : mapValues) {
-						if (cdc.getCdaDiagnosticq().isInfo()) {
+					if (!informationResultMap.isEmpty()) {
+
+						List<CDADiagnosticCounter> mapValues = new ArrayList<CDADiagnosticCounter>(
+							informationResultMap.values());
+
+						Collections.sort(mapValues, comparator);
+
+						for (CDADiagnosticCounter cdc : mapValues) {
 							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
-									cdc.getCdaDiagnosticq().getMessage() + "</small></td>");
+									cdc.getCdaDiagnosticq().getMessage() + "</small></td></tr>");
 						}
+					} else {
+						sb.append("<tr><td colspan='10'>NO INFORMATIONAL</td></tr>");
 					}
 					sb.append("</table>");
 
