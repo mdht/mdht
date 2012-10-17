@@ -322,7 +322,7 @@ public class EntriesView extends ViewPart {
 
 		substanceAdministration.getConsumable().getManufacturedProduct();
 
-		substanceAdministration.getConsumable().getAct();
+		// substanceAdministration.getConsumable().getAct();
 
 		// substanceAdministration.getConsumable()
 		// result.append("<tr><td colspan=\"30\" >").append(
