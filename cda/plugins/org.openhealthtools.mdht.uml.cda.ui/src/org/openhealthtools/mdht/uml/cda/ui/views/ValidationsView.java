@@ -119,26 +119,7 @@ public class ValidationsView extends ViewPart {
 
 					for (Diagnostic dq : vr.getErrorDiagnostics()) {
 
-						System.out.println(dq.getCode());
-						System.out.println(dq.getMessage());
-
-						// CDADiagnostic cdaDiagnosticq = new CDADiagnostic(dq);
-						//
-						// cdaDiagnosticq.getSource();
-						// cdaDiagnosticq.getChildren();
-						//
-						String key = String.format("%s::%d", dq.getSource(), dq.getCode()); // cdaDiagnosticq.getMessage(); //
-																							// cdaDiagnosticq.getSource() + "." +
-																							// cdaDiagnosticq.getCode();
-						// System.out.println(key);
-						// System.out.println(cdaDiagnosticq.getMessage());
-						// System.out.println(cdaDiagnosticq.getCode());
-						// for (Object o : cdaDiagnosticq.getData()) {
-						// System.out.println("aaaaaaaaaaaaaa" + o);
-						// }
-						//
-						// System.out.println(key);
-						// System.out.println(cdaDiagnosticq.getMessage());
+						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
 						System.out.println(key);
 						if (!resultMap.containsKey(key)) {
 							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
@@ -148,33 +129,28 @@ public class ValidationsView extends ViewPart {
 
 					}
 
-					// for (Diagnostic dq : vr.getWarningDiagnostics()) {
-					// CDADiagnostic cdaDiagnosticq = new CDADiagnostic(dq);
-					//
-					// String key = cdaDiagnosticq.getMessage(); // cdaDiagnosticq.getSource() + "." + cdaDiagnosticq.getCode();
-					// System.out.println(key);
-					// System.out.println(cdaDiagnosticq.getMessage());
-					// if (!resultMap.containsKey(key)) {
-					// CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(cdaDiagnosticq);
-					// resultMap.put(key, cdaDiagnosticCounter);
-					// }
-					// resultMap.get(key).incrementCount();
-					//
-					// }
-					//
-					// for (Diagnostic dq : vr.getInfoDiagnostics()) {
-					// CDADiagnostic cdaDiagnosticq = new CDADiagnostic(dq);
-					//
-					// String key = cdaDiagnosticq.getMessage(); // cdaDiagnosticq.getSource() + "." + cdaDiagnosticq.getCode();
-					// System.out.println(key);
-					// System.out.println(cdaDiagnosticq.getMessage());
-					// if (!resultMap.containsKey(key)) {
-					// CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(cdaDiagnosticq);
-					// resultMap.put(key, cdaDiagnosticCounter);
-					// }
-					// resultMap.get(key).incrementCount();
-					//
-					// }
+					for (Diagnostic dq : vr.getWarningDiagnostics()) {
+
+						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
+						System.out.println(key);
+						if (!resultMap.containsKey(key)) {
+							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
+							resultMap.put(key, cdaDiagnosticCounter);
+						}
+						resultMap.get(key).incrementCount();
+
+					}
+
+					for (Diagnostic dq : vr.getInfoDiagnostics()) {
+
+						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
+						if (!resultMap.containsKey(key)) {
+							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
+							resultMap.put(key, cdaDiagnosticCounter);
+						}
+						resultMap.get(key).incrementCount();
+
+					}
 
 					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">ERRORS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
@@ -199,7 +175,7 @@ public class ValidationsView extends ViewPart {
 					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">INFORMATIONAL</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
 					for (CDADiagnosticCounter cdc : resultMap.values()) {
-						if (cdc.getCdaDiagnosticq().isWarning()) {
+						if (cdc.getCdaDiagnosticq().isInfo()) {
 							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
 									cdc.getCdaDiagnosticq().getMessage() + "</small></td>");
 						}
