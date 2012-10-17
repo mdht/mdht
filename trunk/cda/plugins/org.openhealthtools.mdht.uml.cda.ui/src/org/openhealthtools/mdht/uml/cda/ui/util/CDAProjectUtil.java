@@ -12,8 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
-import java.net.URL;
-import java.util.Enumeration;
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,24 +24,26 @@ import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.osgi.util.ManifestElement;
 import org.eclipse.pde.ui.templates.PluginReference;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleException;
-import org.osgi.framework.Constants;
 
 public class CDAProjectUtil {
 
@@ -191,86 +192,40 @@ public class CDAProjectUtil {
 
 				Bundle bundle = Platform.getBundle(extension.getContributor().getName());
 
-				if (bundle != null) {
+				try {
+					for (IConfigurationElement ice : extension.getConfigurationElements()) {
+						String packageClassName = ice.getAttribute("class");
+						System.out.println(packageClassName);
+						if (packageClassName != null) {
+							Class<?> packageClass;
+							// c = Class.forName(packageClass);
+							packageClass = bundle.loadClass(packageClassName);
+							if (packageClass != null) {
+								Field eInstance = packageClass.getDeclaredField("eINSTANCE");
+								Field ePrefix = packageClass.getDeclaredField("eNS_PREFIX");
 
-					// Get the uml files with the bundle
-					Enumeration<URL> umlFiles = bundle.findEntries("model", "*.uml", true);
+								EPackage ePackage = (EPackage) eInstance.get(null);
+								String prefix = (String) ePrefix.get(null);
 
-					if (umlFiles != null) {
-
-						while (umlFiles.hasMoreElements()) {
-
-							java.net.URL umlFileURL = umlFiles.nextElement();
-
-							// filter out cda uml_ecore models
-							if (!umlFileURL.getFile().contains("_Ecore")) {
-
-								URI foo = URI.createPlatformPluginURI(
-									extension.getContributor().getName() + umlFileURL.getPath(), false);
-
-								PackageableElement foo2 = null;
-
-								try {
-									foo2 = (PackageableElement) EcoreUtil.getObjectByType(
-										resourceSet.getResource(foo, true).getContents(),
-										UMLPackage.eINSTANCE.getPackageableElement());
-								} catch (Throwable t) {
-									
-								}
-
-								if (foo2 instanceof Package) {
-
-									Package p = (Package) foo2;
-									// bit of hack checking to see if the
-									// package is call cda or CDA Profile
-									// applied
-									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {
-
-										cdaPackages.put(p.getQualifiedName(), p);
-
-										// Add model plugin to required bundles
-										references.put(
-											bundle.getSymbolicName(), new PluginReference(
-												bundle.getSymbolicName(), null, 0));
-
-										references.put("org.openhealthtools.mdht.builder.cda", new PluginReference(
-											"org.openhealthtools.mdht.builder.cda", null, 0));
-
-										// Add model plugin required bundles to
-										// the plugin
-										Object header = bundle.getHeaders().get(Constants.REQUIRE_BUNDLE);
-										try {
-											for (ManifestElement manifestElement : ManifestElement.parseHeader(
-												Constants.REQUIRE_BUNDLE, (String) header)) {
-												references.put(manifestElement.getValue(), new PluginReference(
-													manifestElement.getValue(), null, 0));
-											}
-										} catch (BundleException e1) {
-
-											e1.printStackTrace();
+								System.out.println(ePackage.getName());
+								for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+									if (eClassifier instanceof EClass) {
+										if (CDAPackage.eINSTANCE.getClinicalDocument().isSuperTypeOf(
+											(EClass) eClassifier)) {
+											cdaDocuments.put(prefix + "::" + eClassifier.getName(), null);
 										}
 									}
 								}
+
 							}
 						}
 					}
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
+
 			}
 		}
 
-		Package cdaPackage = cdaPackages.get("cda");
-
-		// make sure the package is available
-		if (cdaPackage != null) {
-			clinicalDocument = cdaPackage.getOwnedType("ClinicalDocument");
-			for (Package ps : cdaPackages.values()) {
-
-				for (Type type : ps.getOwnedTypes()) {
-					if (type.conformsTo(clinicalDocument)) {
-						cdaDocuments.put(type.getQualifiedName(), type);
-					}
-				}
-			}
-		}
 	}
 }
