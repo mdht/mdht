@@ -11,8 +11,12 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.views;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
@@ -102,9 +106,6 @@ public class ValidationsView extends ViewPart {
 			public void handleEvent(Event event) {
 				if (event.item.getData() instanceof Section) {
 					Section section = (Section) event.item.getData();
-
-					System.out.println(section.getClass().getCanonicalName());
-
 					Map<String, CDADiagnosticCounter> resultMap = new HashMap<String, CDADiagnosticCounter>();
 
 					Diagnostic diagnostic = Diagnostician.INSTANCE.validate(section);
@@ -154,7 +155,20 @@ public class ValidationsView extends ViewPart {
 
 					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">ERRORS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
-					for (CDADiagnosticCounter cdc : resultMap.values()) {
+					List<CDADiagnosticCounter> mapValues = new ArrayList<CDADiagnosticCounter>(resultMap.values());
+
+					Collections.sort(mapValues, new Comparator<CDADiagnosticCounter>() {
+						public int compare(CDADiagnosticCounter o1, CDADiagnosticCounter o2) {
+							if (o1.getCount() > o2.getCount())
+								return -1;
+							else if (o1.getCount() < o2.getCount())
+								return 1;
+							else
+								return 0;
+						}
+					});
+
+					for (CDADiagnosticCounter cdc : mapValues) {
 						if (cdc.getCdaDiagnosticq().isError()) {
 							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
 									cdc.getCdaDiagnosticq().getMessage() + "</small></td>");
@@ -164,7 +178,7 @@ public class ValidationsView extends ViewPart {
 
 					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">WARNINGS</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
-					for (CDADiagnosticCounter cdc : resultMap.values()) {
+					for (CDADiagnosticCounter cdc : mapValues) {
 						if (cdc.getCdaDiagnosticq().isWarning()) {
 							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
 									cdc.getCdaDiagnosticq().getMessage() + "</small></td>");
@@ -174,7 +188,7 @@ public class ValidationsView extends ViewPart {
 
 					sb.append("<table border=\"1\"><thead><tr><th colspan=\"2\">INFORMATIONAL</th></tr><tr><th>Count</th><th>Description</th></tr></thead>");
 
-					for (CDADiagnosticCounter cdc : resultMap.values()) {
+					for (CDADiagnosticCounter cdc : mapValues) {
 						if (cdc.getCdaDiagnosticq().isInfo()) {
 							sb.append("<tr><td>" + cdc.getCount() + "</td><td><small>" +
 									cdc.getCdaDiagnosticq().getMessage() + "</small></td>");
