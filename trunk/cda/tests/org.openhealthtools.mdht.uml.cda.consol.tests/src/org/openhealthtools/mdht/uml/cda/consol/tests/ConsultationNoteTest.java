@@ -511,7 +511,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.1"));
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("11488-4", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override
