@@ -3,7 +3,7 @@
 
 	<property file="dita.properties" />
 
-	<property name="modelProject" value = "${basedir}/../org.openhealthtools.mdht.uml.cda.${projectName}.model" />
+	<property name="modelProject" value = "${basedir}/../${basePackage}.${projectName}.model" />
 	<property name="modelPath.uml" value = "${modelProject}/model/${modelName}.uml" />
 	<property name="vocabPath.uml" value = "${modelProject}/model/${modelName}-vocab.uml" />
 	
