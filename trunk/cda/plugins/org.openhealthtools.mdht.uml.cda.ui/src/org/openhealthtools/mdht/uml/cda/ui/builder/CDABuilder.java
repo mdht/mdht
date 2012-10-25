@@ -49,7 +49,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
-import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
@@ -109,7 +108,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 	private static final String TEMPLATESDIR = "/org.openhealthtools.mdht.uml.cda/templates";
 
-	private static final String CDABASE = "org.openhealthtools.mdht.uml.cda";
+	// private static final String CDABASE = "org.openhealthtools.mdht.uml.cda";
 
 	private static boolean checkBuildStatus(IProject modelProject, IProject project) {
 		long modelModification = IResource.NULL_STAMP;
@@ -165,6 +164,16 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		org.eclipse.uml2.uml.Package pe = (org.eclipse.uml2.uml.Package) EcoreUtil.getObjectByType(
 			resourceSet.getResource(umlEcoreModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackage());
 
+		String basePackage = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "basePackage");
+
+		// String packageName = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "packageName");
+
+		String nsPrefix = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "nsPrefix");
+
+		String nsURI = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "nsURI");
+
+		// String prefix = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "prefix");
+
 		String modelName = pe.getName();
 
 		IPath filePath = new Path(String.format("model/%s.genmodel", modelName));
@@ -184,7 +193,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		genmodel.setModelName(String.format("%s_Ecore", modelName));
 		genmodel.setModelDirectory(String.format("%s/src", project.getName()));
 		genmodel.setModelPluginClass(modelName.substring(0, 1).toUpperCase() + modelName.substring(1) + "Plugin");
-		genmodel.setModelPluginID(CDABASE + "." + modelName);
+		genmodel.setModelPluginID(basePackage + "." + modelName);
 		genmodel.setImporterID(ECOREIMPORTER);
 		genmodel.setInvariantPrefix(VALIDATEPREFIX);
 		genmodel.setCopyrightFields(false);
@@ -231,14 +240,14 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		genPackage.setDisposableProviderFactory(true);
 
-		genPackage.setBasePackage(CDABASE);
+		genPackage.setBasePackage(basePackage);
 
-		genPackage.setOperationsPackage(String.format("org.openhealthtools.mdht.uml.cda.%s.operations", modelName));
+		genPackage.setOperationsPackage(String.format("%s.%s.operations", basePackage, modelName));
 
 		EPackage value = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEPackage();
 		value.setName(modelName);
-		value.setNsPrefix(modelName);
-		value.setNsURI(String.format("http://www.openhealthtools.org/mdht/uml/cda/%s", modelName));
+		value.setNsPrefix(nsPrefix);
+		value.setNsURI(nsURI);
 
 		IPath epackageFilePath = new Path(String.format("model/%s.ecore", modelName));
 
@@ -451,15 +460,6 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 			String launchMemento = String.format("%s.%s", project.getName(), antFileName);
 
-			try {
-				ILaunchConfiguration oldLaunchConfiguration = launchManager.getLaunchConfiguration(launchMemento);
-				if (oldLaunchConfiguration != null) {
-					oldLaunchConfiguration.delete();
-				}
-			} catch (CoreException ce) {
-				// Ignore exception, keep going
-			}
-
 			ArrayList<IAntClasspathEntry> classpathEntries = new ArrayList<IAntClasspathEntry>();
 
 			IAntClasspathEntry[] additionalClassPathEntries = AntCorePlugin.getPlugin().getPreferences().getAdditionalClasspathEntries();
@@ -499,14 +499,16 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(IAntLaunchConstants.ID_ANT_LAUNCH_CONFIGURATION_TYPE);
 
 			IFile transformxml = project.getFile(antFileName);
-			String name = launchManager.generateLaunchConfigurationName(launchMemento);
+			String name = launchMemento; // launchManager.generateLaunchConfigurationName(launchMemento);
 			ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, name);
+
 			workingCopy.setAttribute(
 				"org.eclipse.ui.externaltools.ATTR_LOCATION", transformxml.getLocation().toOSString());
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, project.getName());
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
 			workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, false);
 			workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, false);
+			workingCopy.setAttribute(IDebugUIConstants.PREF_BUILD_BEFORE_LAUNCH, false);
 			ILaunch launch = workingCopy.launch(ILaunchManager.RUN_MODE, monitor);
 
 			boolean terminated = false;
@@ -518,9 +520,10 @@ public class CDABuilder extends IncrementalProjectBuilder {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					terminated = true;
+
 				}
 			}
-
+			workingCopy.delete();
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
