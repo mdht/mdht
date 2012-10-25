@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+	<prop att="audience" val="standards" action="include" />
+	<prop att="audience" val="developer" action="exclude" />	
+	<!--
+	Use the following configuration to create the developer version 
+		<prop att="audience" val="standards" action="exclude" />
+		<prop att="audience" val="developer" action="include" />
+	 -->
+</val>
