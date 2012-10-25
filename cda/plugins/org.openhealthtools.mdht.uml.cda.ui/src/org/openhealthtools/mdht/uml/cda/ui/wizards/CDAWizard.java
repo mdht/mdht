@@ -255,7 +255,7 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 		fPluginData.setTargetVersion("3.5");
 		fPluginData.setExecutionEnvironment("J2SE-1.5");
 
-		fPluginData.setVersion("0.7.0.qualifier");
+		fPluginData.setVersion("0.1.0.qualifier");
 
 		fProjectProvider = new IProjectProvider() {
 
@@ -397,7 +397,6 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 
 	}
 
-	@SuppressWarnings("unchecked")
 	void loadCDAModelsfromPlugins() {
 		ResourceSet resourceSet = new ResourceSetImpl();
 

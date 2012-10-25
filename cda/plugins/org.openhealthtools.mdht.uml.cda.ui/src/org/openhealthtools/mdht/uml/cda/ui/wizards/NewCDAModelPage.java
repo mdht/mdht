@@ -55,8 +55,12 @@ public class NewCDAModelPage extends WizardPage {
 		return modelName.getText();
 	}
 
-	public String getProjectName() {
-		return String.format("org.openhealthtools.mdht.uml.cda.%s.model", modelName.getText().trim().toLowerCase());
+	public String getBasePackage() {
+		return basePackage.getText();
+	}
+
+	public String getNamespaceURI() {
+		return nsURI.getText();
 	}
 
 	public String getCDADocumentName() {
@@ -162,22 +166,24 @@ public class NewCDAModelPage extends WizardPage {
 		ModifyListener listener = new ModifyListener() {
 
 			public void modifyText(ModifyEvent e) {
-
-				basePackage.setText("org.openhealthtools.mdht.cda");
-
 				packageName.setText(cdaDocumentName.getText().toLowerCase());
 
 				nsPrefix.setText(modelName.getText().toLowerCase());
 
 				prefix.setText(modelName.getText().toUpperCase());
 
-				nsURI.setText("http://www.openhealthtools.org/mdht/uml/cda/" + modelName.getText().toLowerCase());
+				nsURI.setText(generateNSURI(basePackage.getText(), modelName.getText().toLowerCase()));
 
-				// reset project name
-				// newProjectPage.setInitialProjectName(null);
-				// newProjectPage.setInitialProjectName(String.format("org.openhealthtools.mdht.uml.cda.%s.model",modelName.getText().toLowerCase()));
+				// try {
+				// Make sure the input results in valid URI
+				setPageComplete(false);
+				// URI.create(nsURI.getText());
+				setPageComplete(basePackage.getText().matches("[A-Za-z0-9\\.]*") && modelName.getText().length() > 0 &&
+						cdaDocumentName.getText().length() > 0);
+				// } catch (Throwable throwable) {
+				//
+				// }
 
-				setPageComplete(modelName.getText().length() > 0 && cdaDocumentName.getText().length() > 0);
 			}
 
 		};
@@ -186,12 +192,17 @@ public class NewCDAModelPage extends WizardPage {
 		cdaDocumentName.addModifyListener(listener);
 
 		new Label(composite, SWT.NONE).setText("Document Base Package");
-
-		basePackage = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
-
+		basePackage = new Text(composite, SWT.NONE);
+		basePackage.setText("org.openhealthtools.mdht.uml.cda");
 		basePackage.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
-		// "http://www.openhealthtools.org/mdht/uml/cda/"
+		basePackage.addModifyListener(listener);
+
+		// basePackage = new Text(composite, SWT.COLOR_GRAY);
+		//
+		// basePackage.setText("org.openhealthtools.mdht.cda");
+		//
+		// basePackage.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		new Label(composite, SWT.NONE).setText("Namespace URI");
 		nsURI = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
@@ -218,6 +229,24 @@ public class NewCDAModelPage extends WizardPage {
 		prefix = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
 		prefix.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
+		setPageComplete(false);
 	}
 
+	private static String generateNSURI(String basepackage, String modelName) {
+
+		StringBuffer sb = new StringBuffer();
+		sb.append("http://www.");
+		String[] segments = basepackage.split("\\.");
+		sb.append(segments.length > 2
+				? segments[1]
+				: "").append(".");
+		sb.append(segments.length > 1
+				? segments[0]
+				: "");
+		for (int segmentCtr = 2; segmentCtr < segments.length; segmentCtr++) {
+			sb.append("/").append(segments[segmentCtr]);
+		}
+		sb.append("/").append(modelName);
+		return sb.toString();
+	}
 }
