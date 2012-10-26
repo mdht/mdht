@@ -57,12 +57,25 @@ public class DeleteUMLAction extends CommandActionHandler {
 			if (object instanceof Element && ((Element) object).getOwner() != null) {
 				if (object instanceof Class) {
 					Class umlClass = (Class) object;
+					// delete associations for owned attributes
 					for (Property property : umlClass.getOwnedAttributes()) {
 						if (property.getAssociation() != null) {
+							elements.addAll(property.getAssociation().getMemberEnds());
 							elements.add(property.getAssociation());
 						}
 					}
+
+					// delete associations when umlClass is the target
+					// List<DirectedRelationship> specializations = umlClass.getTargetDirectedRelationships(UMLPackage.Literals.ASSOCIATION);
+					// for (DirectedRelationship relationship : specializations) {
+					for (Association association : umlClass.getAssociations()) {
+						elements.addAll(association.getMemberEnds());
+						elements.add(association);
+					}
+
+					// delete the class
 					elements.add(umlClass);
+
 				} else if (object instanceof Association) {
 					Association association = (Association) object;
 					elements.addAll(association.getMemberEnds());
