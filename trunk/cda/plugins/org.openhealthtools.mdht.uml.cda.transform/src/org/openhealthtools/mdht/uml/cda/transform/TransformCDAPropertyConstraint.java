@@ -32,10 +32,12 @@ import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.transform.ecore.TransformPropertyTerminologyConstraint;
+import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.transform.ecore.AnnotationsUtil;
@@ -344,7 +346,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 					}
 					if (propertyType instanceof Enumeration) {
 						body.append(selfName + "=" + templateTypeQName + "::" + property.getDefault());
-					} else if (UMLUtil.isTypeString(propertyType)) {
+					} else if (isTypeString(propertyType)) {
 						body.append(selfName + "='" + property.getDefault() + "'");
 					} else {
 						body.append(selfName + "=" + property.getDefault());
@@ -444,5 +446,16 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 
 			return result;
 		}
+	}
+
+	private boolean isTypeString(Type type) {
+		Stereotype eDataType = EcoreTransformUtil.getEcoreStereotype(
+			type, org.eclipse.uml2.uml.util.UMLUtil.STEREOTYPE__E_DATA_TYPE);
+		String instanceClassName = null;
+		if (type.isStereotypeApplied(eDataType)) {
+			instanceClassName = (String) type.getValue(
+				eDataType, org.eclipse.uml2.uml.util.UMLUtil.TAG_DEFINITION__INSTANCE_CLASS_NAME);
+		}
+		return UMLUtil.isTypeString(type) || "java.lang.String".equals(instanceClassName);
 	}
 }
