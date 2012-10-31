@@ -186,7 +186,7 @@ public class DitaUtil {
 		antProperties.put("ditaMapFile", ditaMapFile.getLocation().toOSString());
 
 		if (ditaValFile != null) {
-			antProperties.put("dita.input.valfile", ditaValFile.getLocation().toOSString());
+			antProperties.put("args.filter", ditaValFile.getLocation().toOSString());
 
 		}
 

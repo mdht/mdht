@@ -76,9 +76,31 @@
  
      <extension point="org.eclipse.ui.menus">   
 
-    <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+
+      
+
+   <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
     
-     <menu label="Publish As">
+
+      <command commandId="org.dita.dost.commands.publishaspdf" label="Publish As PDF" id="org.dita.dost.menu.publishaspdf" mnemonic="S">
+      	<parameter name="org.dita.dost.parameter.target" value="pdf" />
+      	<visibleWhen>
+               <with variable="selection">
+                  <iterate>
+                     <adapt type="org.eclipse.core.resources.IResource">
+                     	<test property="org.eclipse.core.resources.extension" value="ditamap" />
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>         
+      </command>    
+      
+    </menuContribution>  
+      
+      
+    <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=org.dita.dost.menu.publishaspdf">
+    
+     <menu label="Publish As...">
 
             <visibleWhen>
                <with variable="selection">

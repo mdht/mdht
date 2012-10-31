@@ -30,7 +30,7 @@
 			<property name="dita.temp.dir" location="${tempFilePath}" />
 			<property name="clean.temp" value="true" />
 			<property name="output.dir" value="${dita.output}" />			
-			<property name="dita.extname" value=".dita" />
+			<property name="dita.ext" value=".dita" />
 			<property name="dita.temp.dir" location="temp" />
 			<property name="clean.temp" value="true" />
 			<property name="args.csspath" value="css" />
@@ -50,7 +50,7 @@
 			<property name="dita.temp.dir" location="${tempFilePath}" />
 			<property name="clean.temp" value="true" />
 			<property name="output.dir" value="${dita.output}" />			
-			<property name="dita.extname" value=".dita" />
+			<property name="dita.ext" value=".dita" />
 			<property name="dita.temp.dir" location="temp" />
 			<property name="clean.temp" value="true" />
 			<property name="args.csspath" value="css" />
@@ -69,7 +69,7 @@
 			<property name="dita.temp.dir" location="${tempFilePath}" />
 			<property name="clean.temp" value="true" />
 			<property name="output.dir" value="${dita.output}" />			
-			<property name="dita.extname" value=".dita" />
+			<property name="dita.ext" value=".dita" />
 			<property name="dita.temp.dir" location="temp" />
 			<property name="clean.temp" value="true" />
 			<property name="args.csspath" value="css" />
@@ -88,7 +88,7 @@
 			<property name="dita.temp.dir" location="${tempFilePath}" />
 			<property name="clean.temp" value="true" />
 			<property name="output.dir" value="${dita.output}" />			
-			<property name="dita.extname" value=".dita" />
+			<property name="dita.ext" value=".dita" />
 			<property name="dita.temp.dir" location="temp" />
 			<property name="clean.temp" value="true" />
 			<property name="args.csspath" value="css" />
@@ -107,7 +107,7 @@
 			<property name="dita.temp.dir" location="${tempFilePath}" />
 			<property name="clean.temp" value="true" />
 			<property name="output.dir" value="${dita.output}" />			
-			<property name="dita.extname" value=".dita" />
+			<property name="dita.ext" value=".dita" />
 			<property name="dita.temp.dir" location="temp" />
 			<property name="clean.temp" value="true" />
 			<property name="args.csspath" value="css" />
