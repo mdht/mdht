@@ -1,0 +1,50 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package org.openhealthtools.mdht.cts2.core;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Entity Reference List</b></em>'.
+ * <!-- end-user-doc -->
+ * 
+ * <!-- begin-model-doc -->
+ * A list (set) of zero or more entity references
+ * <!-- end-model-doc -->
+ * 
+ * <p>
+ * The following features are supported:
+ * <ul>
+ * <li>{@link org.openhealthtools.mdht.cts2.core.EntityReferenceList#getEntry <em>Entry</em>}</li>
+ * </ul>
+ * </p>
+ * 
+ * @see org.openhealthtools.mdht.cts2.core.CorePackage#getEntityReferenceList()
+ * @model extendedMetaData="name='EntityReferenceList' kind='elementOnly'"
+ * @generated
+ */
+public interface EntityReferenceList extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Entry</b></em>' containment reference list.
+	 * The list contents are of type {@link org.openhealthtools.mdht.cts2.core.EntityReference}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entry</em>' containment reference list isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Entry</em>' containment reference list.
+	 * @see org.openhealthtools.mdht.cts2.core.CorePackage#getEntityReferenceList_Entry()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='entry' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<EntityReference> getEntry();
+
+} // EntityReferenceList
