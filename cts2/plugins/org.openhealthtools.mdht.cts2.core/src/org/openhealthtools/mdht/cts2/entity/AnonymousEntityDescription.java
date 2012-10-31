@@ -1,0 +1,24 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package org.openhealthtools.mdht.cts2.entity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Anonymous Entity Description</b></em>'.
+ * <!-- end-user-doc -->
+ * 
+ * <!-- begin-model-doc -->
+ * An entity description that is local to a given code system version. Anonymous entity descriptions are not changeable and have no external URI
+ * <!-- end-model-doc -->
+ * 
+ * 
+ * @see org.openhealthtools.mdht.cts2.entity.EntityPackage#getAnonymousEntityDescription()
+ * @model extendedMetaData="name='AnonymousEntityDescription' kind='elementOnly'"
+ * @generated
+ */
+public interface AnonymousEntityDescription extends EntityDescriptionBase {
+} // AnonymousEntityDescription
