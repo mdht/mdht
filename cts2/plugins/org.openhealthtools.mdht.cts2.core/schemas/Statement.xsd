@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:stmt="http://schema.omg.org/spec/CTS2/1.0/Statement" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core" xmlns="http://schema.omg.org/spec/CTS2/1.0/Statement"
+	targetNamespace="http://schema.omg.org/spec/CTS2/1.0/Statement" elementFormDefault="qualified">
+
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+
+	<xs:element name="Statement" type="Statement">
+		<xs:annotation>
+			<xs:documentation>An assertion about a CTS<sub>2</sub> model element. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Statement">
+		<xs:annotation>
+			<xs:documentation>An assertion about a CTS<sub>2</sub> model element. </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Changeable">
+				<xs:sequence>
+					<xs:element name="statementURI" type="core:URI" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The unique statement identifier.  Must be globally unique if information is to be exchanged and updated on the statement leve.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subject" type="StatementSubject" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the subject of the statement - either a resource or a reference to a terminological entity. <i>subject</i> may reference a specific <i>Association</i>, <i>CodeSystem</i>,
+									<i>CodeSystemVersion</i>, <i>Map</i>, <i>MapEntry</i>, <i>MapVersion</i>, <i>EntityDescription,</i>
+								<i>ValueSet</i>, <i>ValueSetDefinition</i>, <i>ConceptDomain</i>, <i>ConceptDomainBinding</i>, </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="predicate" type="core:URIAndEntityName" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the predicate of the statement. Note that this is type <i>URIAndEntityName </i>as, while it serves as a predicate in the statement itself it is not necessary that it be formally recognized as a
+								predicate by the CTS<sub>2</sub> service - it may have been translated or transformed by the load process.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="target" type="core:StatementTarget" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="associatedAttribute" type="core:ModelAttributeReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the identifier and name of the CTS<sub>2</sub> attribute or element that renders this statement, if any</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="source" type="core:SourceAndRoleReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>the source(s) of the statement and the role(s) they played</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assertedBy" type="core:CodeSystemVersionReference" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the code system version that is asserting this particular statement. In the case of ontologies that import other ontologies, this is the outermost importing ontology.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assertedIn" type="core:CodeSystemVersionReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the code system version (ontology) that actually makes this statement. In the case of ontologies, this is the innermost imported ontology.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="qualifier" type="StatementQualifier" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="StatementSubject">
+		<xs:annotation>
+			<xs:documentation>The subject of a statement, which may either be a resource URI or an entity reference, which includes both the URI and the namespace/name.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="resource" type="core:ExternalURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A non-entity statement subject such as the URI of a <i>CodeSystem</i>, <i>CodeSystemVersion</i>, <i>ValueSet</i>, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="entity" type="core:URIAndEntityName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The subject of a statement about a class, role or individual.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+
+	<xs:complexType name="StatementQualifier">
+		<xs:annotation>
+			<xs:documentation>Metadata about a statement including provenance, external identity, validity, etc. The subject of a qualifier is the statement itself, not the statement subject.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="qualifierPredicate" type="core:URIAndEntityName" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A reference to the statement qualifier predicate. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="associatedAttribute" type="core:ModelAttributeReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The CTS<sub>2</sub> model attribute that represents this particular statement qualifier</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="target" type="core:StatementTarget" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="StatementMsg" type="StatementMsg"/>
+	<xs:complexType name="StatementMsg">
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="statement" type="Statement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:element name="StatementDirectory" type="StatementDirectory"/>
+	<xs:complexType name="StatementDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory of <i>Statement</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="StatementDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="StatementDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A synopsis of a <i>Statement</i> along with information about how to access the complete resource.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Statement">
+				<xs:group ref="core:DirectoryEntryElementGroup"/>
+				<xs:attributeGroup ref="core:DirectoryEntryAttributeGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="StatementList" type="StatementList"/>
+	<xs:complexType name="StatementList">
+		<xs:annotation>
+			<xs:documentation>A collection of complete <i>Statement </i>resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="StatementListEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="StatementListEntry">
+		<xs:annotation>
+			<xs:documentation>An instance of <i>Statement </i>that meets a specified filter criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="entry" type="Statement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

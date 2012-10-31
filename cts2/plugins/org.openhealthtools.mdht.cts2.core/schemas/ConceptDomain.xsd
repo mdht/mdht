@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.omg.org/spec/CTS2/1.0/ConceptDomain" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core" targetNamespace="http://schema.omg.org/spec/CTS2/1.0/ConceptDomain"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+
+	<!-- ====================================================
+        ConceptDomainCatalogEntry
+        ======================================================-->
+	<xs:element name="ConceptDomainCatalogEntry" type="ConceptDomainCatalogEntry">
+		<xs:annotation>
+			<xs:documentation>Metadata about what, in ISO-11179, is called a "Data Element Concept" - "a <b>concept </b>that can be expressed in the form of a <b>data element</b>, described independently of any particularrepresentation."The
+				HL7 SFM defines a <i>ConceptDomain</i> as "A named category of like concepts (a semantic type) that will be bound to one or more attributes in a static model whose datatypes are coded. Concept Domains exist to constrain the
+				intent of the coded element while deferring the association of the element to a specific coded terminology until later in the model development process. Thus, Concept Domains are independent of any specific vocabulary or
+				codesystem.Concept Domains represents an abstract conceptual space such as 'countries of the world', 'the gender of a person used for administrative purposes', 'languages of the world', etc."</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConceptDomainCatalogEntry">
+		<xs:annotation>
+			<xs:documentation>Metadata about what, in ISO-11179, is called a "Data Element Concept" - "a <b>concept </b>that can be expressed in the form of a <b>data element</b>, described independently of any particularrepresentation."The
+				HL7 SFM defines a <i>ConceptDomain</i> as "A named category of like concepts (a semantic type) that will be bound to one or more attributes in a static model whose datatypes are coded. Concept Domains exist to constrain the
+				intent of the coded element while deferring the association of the element to a specific coded terminology until later in the model development process. Thus, Concept Domains are independent of any specific vocabulary or
+				codesystem.Concept Domains represents an abstract conceptual space such as 'countries of the world', 'the gender of a person used for administrative purposes', 'languages of the world', etc."</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:AbstractResourceDescription">
+				<xs:sequence>
+					<xs:element name="definingEntity" type="core:URIAndEntityName" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the name and URI of an <i>EntityDescription</i> that describes the domain and scope of meaning for the <i>ConceptDomain</i>. If present, this association is equivalent to the
+								data_element_concept_domain association in section 11.2.3.2 of ISO 11179-3. <i>entityrReference</i> provides a definition for the <i>ConceptDomain</i> and potentially describes its relationship with other
+									<i>ConceptDomains</i> as well as providing a semantic link to the possible value meanings available to domain bindings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bindings" type="core:ConceptDomainBindingDirectoryURI" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a URI that resolves to the known bindings (aka. Data Elements) of the referenced <i>ConceptDomain</i></xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="conceptDomainName" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>the name by which the concept domain is known within the context of the CTS<sub>2</sub> service instance. <i>conceptDomainName </i>must uniquely designate a single, abstract <i>ConceptDomain</i>
+							within the context of all concept domains known to the instance of the service. Note that <i>conceptDomainName </i>is not necessarily globally unique and the <i>about</i> URI should be used whenever communication
+							information about the <i>ConceptDomain </i>across time or service instances.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================
+        ConceptDomainCatalogEntry PSM
+        ======================================================-->
+	<xs:element name="ConceptDomainCatalogEntryMsg" type="ConceptDomainCatalogEntryMsg"/>
+	<xs:complexType name="ConceptDomainCatalogEntryMsg">
+		<xs:annotation>
+			<xs:documentation>A <i>ConceptDomainCatalogEntry</i> read from a service instance.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="conceptDomainCatalogEntry" type="ConceptDomainCatalogEntry"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<!-- ====================================================
+        ConceptDomainCatalog
+        ======================================================-->
+	<xs:element name="ConceptDomainCatalogEntryDirectory" type="ConceptDomainCatalogEntryDirectory"/>
+	<xs:complexType name="ConceptDomainCatalogEntryDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory of <i>ConceptDomain</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="ConceptDomainCatalogEntrySummary" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ConceptDomainCatalogEntrySummary">
+		<xs:annotation>
+			<xs:documentation>a synopsis of a <i>ConceptDomain</i> along with information about how to access the complete resource</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:AbstractResourceDescriptionDirectoryEntry">
+				<xs:sequence>
+					<xs:element name="definingEntity" type="core:NamedEntityReference" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a reference to an <i>EntityDescription</i> that describes the domain and scope of meaning for the <i>ConceptDomain</i>. If present, this association is equivalent to the
+								data_element_concept_domain association in section 11.2.3.2 of ISO 11179-3. <i>entityrReference</i> provides a definition for the <i>ConceptDomain</i> and potentially describes its relationship with other
+									<i>ConceptDomains</i> as well as providing a semantic link to the possible value meanings available to domain bindings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bindings" type="core:ConceptDomainBindingDirectoryURI" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a URI that resolves to the known bindings (aka. Data Elements) of the referenced <i>ConceptDomain</i></xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="conceptDomainName" type="core:ConceptDomainName" use="required">
+					<xs:annotation>
+						<xs:documentation>the name by which the concept domain is known within the context of the CTS<sub>2</sub> service instance. <i>conceptDomainName </i>must uniquely designate a single, abstract <i>ConceptDomain</i>
+							within the context of all concept domains known to the instance of the service. Note that <i>conceptDomainName </i>is not necessarily globally unique and the <i>about</i> URI should be used whenever communication
+							information about the <i>ConceptDomain </i>across time or service instances.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ConceptDomainCatalogEntryList" type="ConceptDomainCatalogEntryList"/>
+	<xs:complexType name="ConceptDomainCatalogEntryList">
+		<xs:annotation>
+			<xs:documentation>A collection of complete <i>ConceptDomain</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+			<xs:complexContent>
+				<xs:extension base="core:Directory">
+					<xs:sequence>
+						<xs:element name="entry" type="ConceptDomainCatalogEntryListEntry" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ConceptDomainCatalogEntryListEntry">
+		<xs:annotation>
+			<xs:documentation>An instance of <i>ConceptDomain</i> that meets a specified filter criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="entry" type="ConceptDomainCatalogEntry"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+
+</xs:schema>

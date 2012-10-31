@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core" xmlns="http://schema.omg.org/spec/CTS2/1.0/Entity" targetNamespace="http://schema.omg.org/spec/CTS2/1.0/Entity"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+
+	<!-- ====================================================
+		EntityDescription
+		======================================================-->
+	<xs:element name="EntityDescription" type="EntityDescription">
+		<xs:annotation>
+			<xs:documentation>A choice of the possible types of entity description</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="EntityDescription">
+		<xs:annotation>
+			<xs:documentation>A choice of the possible types of entity description</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:choice minOccurs="1">
+			<xs:element name="namedEntity" type="NamedEntityDescription"/>
+			<xs:element name="anonymousEntity" type="AnonymousEntityDescription"/>
+			<xs:element name="classDescription" type="ClassDescription"/>
+			<xs:element name="dataTypeDescription" type="DataTypeDescription"/>
+			<xs:element name="predicateDescription" type="PredicateDescription"/>
+			<xs:element name="objectPropertyDescription" type="ObjectPropertyDescription"/>
+			<xs:element name="dataPropertyDescription" type="DataPropertyDescription"/>
+			<xs:element name="annotationPropertyDescription" type="AnnotationPropertyDescription"/>
+			<xs:element name="namedIndividual" type="NamedIndividualDescription"/>
+			<xs:element name="anonymousIndividual" type="AnonymousIndividualDescription"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="EntityDescriptionBase" abstract="true">
+		<xs:annotation>
+			<xs:documentation>The attributes common to both named and anonymous entity descriptions. <i>EntityDescriptionBase </i>is an abstract class and cannot be directly instantiated.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="entityID" type="core:ScopedEntityName" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the local namespace name and entity name that, together, uniquely name this referenced within the context of a CTS<sub>2</sub> service instance. As an example, a service instance may choose to designate
+						the entity referenced by the <i>about</i> URI of http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon with the <i>namespaceName</i> "wine" and the <i>name</i> "CabernetSauvignon".The <i>name</i>
+						portion of ScopedEntityName must uniquely name the particular entity within the context of the code system version. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="alternateEntityID" type="core:ScopedEntityName" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>alternative unique identifiers that reference the <i>about</i> entity in the context of describing code system version. The <i>namespace</i> names the context from which the name (or code) is derived.
+						Note that it is possible for the <i>entityId name</i> and/or one more <i>alternateEntityId</i>
+						<i>names</i> to be represented in the <i>designation</i> attribute as well. This would occur when the <i>name</i> serves a dual role of unique identifier and human readable label. An example of
+							<i>alternateEntityId</i> would be the SNOMED-CT fully specified name, which serves as a unique identifier in human readable form. This might or might not also be considered a designation depending on the context
+						and use case. Similarly, the SNOMED-CT Clinical Terms V3 Identifier (CTV3) and SNOMED-3 identifiers would appear here as well, as would the HL7's case sensitive and case insensitive unit of measure
+						identifiers.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="describingCodeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a reference to the version of an ontology or code system that makes the set of assertions contained in this description. Note that this references the "asserting", not the "containing" code system
+						version. As an example, the Wine Ontology imports the Food Ontology, which, in turn contains descriptions of PotableLiquid. A service that represented a (version of) the Wine Ontology would contain an entity
+						description <i>about</i> "http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid" (namespaceName: food, name: PotableLiquid). The describingCodeSystemVersion, however, would be
+						"http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#" even though this entity was described in the food ontology. Note also that it both the food and wine ontology were represented in a service, the service would
+						contain two entity descriptions - one from the food ontology perspective and one from the wine ontology perspective.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="designation" type="Designation" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a <a href="//http://www.w3.org/TR/2009/CR-skos-reference-20090317/#labels">"string of (UNICODE) characters ... in a given natural language, such as English or Japanese."</a> A designation provides the
+						strongest clues as to the meaning of a class, predicate or individual. While designations are not mandatory in an entity description, as all that may be available to a service is a code, service implementers are
+						strongly encouraged to provide at least one preferred or alternate designation to make the description visible to text search engines.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="definition" type="core:Definition" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>an explanation of the intended meaning of a concept. An <i>EntityDescription</i> may have multiple <i>definitions</i>, each derived from a different source, represented in a different language or having
+						a different purpose. Definitions apply only to classes and predicates, not individuals.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="example" type="core:Example" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>an example of an instance or instances of the referenced entity, typically written for human consumption. Examples apply only to classes and predicates, not individuals.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="note" type="core:Comment" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a note or comment about the history, status, use or other descriptions about the <i>EntityDescription</i>. Observe that <i>note</i>, as used in the CTS<sub>2</sub> specification, does include examples
+						or definitions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="property" type="core:Property" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>additional "non-semantic" (annotation) assertions about the entity being described that do not fit into the <i>designation, definition</i>, <i>note</i>, or <i>example</i> or <i>entityId</i>
+						categories.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sourceStatements" type="core:StatementDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a <i>DirectoryURI</i> that resolves to the list of <i>statements</i> that were used in the assembly of this description. <i>Statements</i> need only be present in service instances that support the
+							<b>Statement</b> profile, and serves as a bridge between atomic structure contained in the source resource and the CTS<sub>2</sub> rendering.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subjectOf" type="core:AssociationDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>an <i>AssociationDirectoryURI</i> that resolves to a list of active associations ("semantic" assertions) in which the <i>about</i> entity appears as a subject and that are <i>assertedBy</i> the
+							<i>describingCodeSystemVersion</i>. <i>subjectOf</i> is only included in an <i>EntityDescription </i>when resolution would yield at least one result. This attribute will only be present in CTS<sub>2</sub> service
+						implementations that support the <b>ASSOCIATION QUERY</b> profile.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="predicateOf" type="core:AssociationDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a <i>DirectoryURI</i> that resolves to the list of active associations ("semantic" assertions) in which the <i>about</i> entity appears as a predicate and that are <i>assertedBy</i> the
+							<i>describingCodeSystemVersion</i>. <i>predicateOf </i>is only included in an <i>EntityDescription </i>when resolution would yield at least one result. This attribute will only be present in CTS<sub>2</sub>
+						service implementations that support the <b>ASSOCIATION QUERY</b> profile.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="targetOf" type="core:AssociationDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a <i>DirectoryURI</i> that resolves to the list of active associations ("semantic" assertions) in which the <i>about</i> entity appears as either a direct target or the target of a contained BNode and
+						that are <i>assertedBy</i> the <i>describingCodeSystemVersion</i>. <i>targetOf </i>is only included in an <i>EntityDescription </i>when resolution would yield at least one result. This attribute will only be present
+						in CTS<sub>2</sub> service implementations that support the <b>ASSOCIATION QUERY</b> profile.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="parent" type="core:URIAndEntityName" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>the set of direct "parents" asserted by <i>describingCodeSystemVersion</i>. It is the responsibility of the service to determine what predicate(s) represent "parent/child" relationships. Typically
+						"parent" is associated with "rdfs:subClassOf" in the OWL/RDF world and skos:broader/skos:narrower in the SKOS environment. It is possible, however for some code systems to have other relationships as well. As an
+						example, some of the Open Biomedical Ontologies (OBO) use a mixture of subClassOf and partOf relationships. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ancestors" type="core:EntityDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a <i>DirectoryURI</i> that resolves to the transitive closure of the "parents" relationship(s). The primary purpose for this attribute is to provide a handle for subsumption queries. As an example, to
+						determine whether Class X was a subclass of Class Y, one would query whether the <i>EntityReference </i>to Y was a member of X.ancestors.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="children" type="core:EntityDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a <i>DirectoryURI</i> that resolves to the list of direct "children" asserted by <i>describingCodeSystemVersion</i>. As with <i>parent</i>, it is the responsibility of the service to determine what
+						predicate(s) represent "parent/child" relationships. <i>children</i> may also include entity references that appear in the target of bnodes if they are determined to be such by the service.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="descendants" type="core:EntityDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a <i>DirectoryURI</i> that resolves to the transitive closure of the "children" relationship(s). The primary purpose for this attribute is to provide a handle for subsumption queries. As an example, a
+						second way to determine whether Class X was a subclass of Class Y, one would query whether the <i>EntityReference </i>to X was a member of Y.<i>descendants</i>.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="entityType" type="core:URIAndEntityName" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>the set of type(s) which the entityReference is an instance of. Because this is a terminology service, <i>entityType</i> must include one of owl:class, owl:individual, rdf:predicate or skos:concept,
+						although it may carry many other types as well.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="instances" type="core:EntityDirectoryURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a <i>DirectoryURI</i> that resolves to the list of entities that asserted to be instances of the type represented by <i>about</i> URI. This element is present only if resolution will return a non-empty
+						set.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="equivalentEntity" type="core:URIAndEntityName" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>an entity that has been determined to be equivalent to the <i>about</i> entity in the context of the assertions made by <i>describingCodeSystemVersion</i>.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="about" type="core:URI" use="required">
+			<xs:annotation>
+				<xs:documentation>the URI that represents the entity (class, predicate and/or individual) referenced by this <i>EntityDescription</i>
+					<i>about</i> is a <i>PersistentURI</i> when <i>entityDescriptionType</i> is <i>NAMED_ENTITY_DESCRIPTION</i> and <i>LocalURI</i> when <i>entityDescriptionType</i> is <i>ANONYMOUS_ENTITY_DESCRIPTION</i></xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="NamedEntityDescription">
+		<xs:annotation>
+			<xs:documentation>An entity description that is referenced by a globally unique external URI</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityDescriptionBase">
+				<xs:group ref="core:ChangeableElementGroup"/>
+				<xs:attributeGroup ref="core:ChangeableAttributeGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AnonymousEntityDescription">
+		<xs:annotation>
+			<xs:documentation>An entity description that is local to a given code system version. Anonymous entity descriptions are not changeable and have no external URI</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityDescriptionBase"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+
+	<!-- ====================================================
+		Designation
+		======================================================-->
+	<xs:complexType name="Designation">
+		<xs:annotation>
+			<xs:documentation>A <i>Designation</i> is identical to a <a href="//http://www.w3.org/TR/skos-reference/#labels">Lexical Label</a> as defined in <a href="//http://www.w3.org/2004/02/skos/intro">SKOS</a>. It is a "string of
+				(UNICODE) characters ... in a given natural language, such as English or Japanese." "These labels provide the strongest clues as to the meaning of a (SKOS concept)". The CTS<sub>2</sub> specification generalizes the label
+				use to include not only SKOS concepts but any class, predicate or individual - collectively referred to as <i>Entity</i>. Note that <i>Designation</i> is intended only for identifiers that are interpreted by human beings.
+				Numeric codes and other machine readable identifiers should be recorded as <i>ScopedEntityName</i>s.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:EntryDescription">
+				<xs:sequence>					
+					<xs:element name="usageContext" type="core:ContextReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>the context(s) in which this designation is applicable</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="designationType" type="core:DesignationTypeReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the type of designation (e.g. abbreviation, eponym, short name, long name, etc.) of the given designation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseSignificance" type="core:CaseSignificanceReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>identifies the significance that case plays in the value of this particular designation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="degreeOfFidelity" type="core:DesignationFidelityReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a measure of how closely this designation actually matches the intended meaning of the target entity. Typical values might represent "exact", "approximate", "broader", "narrower",
+								etc.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="designationRole" type="DesignationRole" default="ALTERNATIVE">
+					<xs:annotation>
+						<xs:documentation>an indicator that determines the particular role that this designation plays</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="assertedInCodeSystemVersion" type="core:CodeSystemVersionName" use="optional">
+					<xs:annotation>
+						<xs:documentation>the code system version that contains the assertion(s) represented in the <i>Note</i></xs:documentation>
+					</xs:annotation>
+				</xs:attribute>			
+				<xs:attribute name="externalIdentifier" type="core:String" use="optional">
+					<xs:annotation>
+						<xs:documentation>an identifier that is assigned to this designation / entity pair by the authoring body. As an example this would carry the SCTID for SNOMED-CT concepts.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="correspondingStatement" type="core:RenderingURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>a URI that, when de-referenced, provides the equivalent <i>Statement</i> that forms this designation. This is only present when the <b>Statement</b> profile is supported by the implementing
+							service.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="DesignationRole">
+		<xs:annotation>
+			<xs:documentation>The role that a designation plays in respect to the referenced <i>Entity</i>. <i>DesignationRole</i> is intended to convey the same semantics as the three types of <a
+					href="//http://www.w3.org/TR/skos-reference/#labels">SKOS Label</a> - skos:prefLabel (<i>PREFERRED</i>), skos:altLabel (<i>ALTERNATIVE</i>) and skos:hiddenLabel (<i>HIDDEN</i>). The SKOS consistency rules with respect to
+				preferred labels also apply to designation with two exceptions:(1) There can be more than one preferred label for the same language if the <i>usageContext</i> is different(2) If the service implementation supports structured
+				data, it is possible to have more than one preferred label for the same language and context as long as each has a different <i>format</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PREFERRED">
+				<xs:annotation>
+					<xs:documentation>The preferred human-readable representation of the entity in a given language, context (aka. domain in SKOS terms) and format. <i>PREFERRED</i> is equivalent to skos:prefLabel.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ALTERNATIVE">
+				<xs:annotation>
+					<xs:documentation>The acceptable alternative human-readable representation of the entity in a given language, context (aka. domain in SKOS terms) and format. The term "synonym" is often used to indicate an alternate
+						designation although strictly speaking, "synonym" is a term-term relationship. <i>ALTERNATIVE</i> is equivalent to skos:altLabel</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="HIDDEN">
+				<xs:annotation>
+					<xs:documentation>The designation may be used to represent the entity under certain circumstances, but it is not normally displayed. Hidden designations are used primarily for search terms and typically represent common
+						misspellings or deprecated usages. <i>HIDDEN</i> is equivalent to skos:hiddenLabel</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ====================================================
+		EntityDescriptionTypes
+		======================================================-->
+	<xs:complexType name="ClassDescription">
+		<xs:annotation>
+			<xs:documentation>the description of an entity that is a Class, Type or "Concept". <a href="//http://www.w3.org/TR/2009/REC-owl2-syntax-20091027/#Classes">"Classes can be understood as sets of
+				individuals"</a>.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NamedEntityDescription">
+				<xs:attribute name="descriptionType" type="ClassDescriptionType" use="optional">
+					<xs:annotation>
+						<xs:documentation>the specific role that the class description plays, if known.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="descriptionState" type="ClassDescriptionState" use="optional">
+					<xs:annotation>
+						<xs:documentation>an indicator that states whether the class description contains only necessary assertions <i>(PRIMITIVE)</i> or is considered to be both necessary and sufficient assertions
+							<i>(FULLY_DEFINED)</i>.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="ClassDescriptionType">
+		<xs:annotation>
+			<xs:documentation>the type, from a description logic perspective, of a class description</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A">
+				<xs:annotation>
+					<xs:documentation>an atomic class description</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="C">
+				<xs:annotation>
+					<xs:documentation>a complex class description</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TOP">
+				<xs:annotation>
+					<xs:documentation>a class that represents the set of all individuals in the domain of discourse represented by the containing code system or ontology</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BOTTOM">
+				<xs:annotation>
+					<xs:documentation>a class that represents the set that contains no individuals in the context of the containing domain or ontology</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ClassDescriptionState">
+		<xs:annotation>
+			<xs:documentation>determines whether a class description is considered to consist of necessary or necessary and sufficient definitions of the member individuals</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PRIMITIVE">
+				<xs:annotation>
+					<xs:documentation>The defining assertions of the class description are necessary for all individuals that are members of the class. If an individual is asserted to be a member of the class, it can be asserted that it
+						possesses all of the defining characteristics.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FULLY_DEFINED">
+				<xs:annotation>
+					<xs:documentation>The defining assertions of the class description are both necessary and sufficient. If an individual is asserted to be a member of the class, it can be asserted that it possesses all of the defining
+						characteristics and, if an individual is determined to possess all of the defining characteristics in the class definition, it can be asserted to be a member of the class.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="NamedIndividualDescription">
+		<xs:annotation>
+			<xs:documentation>a description of an individual that has identity</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NamedEntityDescription"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AnonymousIndividualDescription">
+		<xs:annotation>
+			<xs:documentation>an "intensional" description of an individual that describes the individual by its characteristics without supplying its identity. As an example, the description "The sole occupant of 773 Main Street in Sioux
+				City, South Dakota" would reference an anonymous individual."If an individual is not expected to be used outside a particular ontology, one can use an anonymous individual, which is identified by a local node ID rather than
+				a global IRI. Anonymous individuals are analogous to blank nodes in RDF" <i><sub>http://www.w3.org/TR/owl2-syntax/#Anonymous_Individuals</sub></i></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NamedEntityDescription"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DataTypeDescription">
+		<xs:annotation>
+			<xs:documentation>ahe description of a data type, which, in this context, represents a constraint on the set of possible values in a text or literal field. <a
+					href="//http://www.w3.org/TR/2009/REC-owl2-syntax-20091027/#Datatypes">"Datatypes are entities that refer to sets of data values."</a></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AnonymousEntityDescription"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PredicateDescription">
+		<xs:annotation>
+			<xs:documentation><i>PredicateDescription</i> covers the spectrum of entities deemed "Role" in description logic, "Relation" in predicate logic, "Property" in RDF and OWL, and "Association" in Ontylog DL. It describes the nature
+				and the purpose of the role, not the individual elements.Note that section 2.4.2.11 of the HL7 SFM calls for an attribute called "associationKind". While we are not absolutely certain what this was intended to represent, we
+				believe that its intent is probably subsumed under the various individual types as well as the transitivity attribute. <i>forwardName</i> and <i>reverseName </i>are called for in the SFM. The way that they are represented in
+				this model lacks the ability to represent them in a multi-lingual environment which may cause difficulties down the line. Service implementers who are concerned about this aspect are encouraged to extend the service to allow
+				forward and reverse Name to be returned in the language appropriate to the service viewer.The <i>directed</i> attribute is actually more of a characteristic of the type of logic being used than the individual properties, but
+				returning it as an attribute of a property seems sufficient.The HL7 SFM ruleSetId construct is not supported in this specification.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NamedEntityDescription">
+				<xs:sequence>
+					<xs:element name="forwardName" type="core:String" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the name assigned to the predicate when applied in the source to target direction. The primary purpose of this attribute is to provide some notion of "directional" semantics, as predicates named
+								"part" or "broader term" often lack sufficient information to understand where the whole or broader component goes. Implementers will note that, as opposed to official designations, <i>forwardName</i> and
+									<i>reverseName</i> are not keyed by language. Implementers are encouraged to develop designations and use the <i>forwardName</i> and <i>reverseName</i> tags if a richer model is
+								desired.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reverseName" type="core:String" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the name assigned to the predicate when applied in the target to source direction. The primary purpose of this attribute is to provide some notion of "directional" semantics, as predicates named
+								"part" or "broader term" often lack sufficient information to understand where the whole or broader component goes. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AnnotationPropertyDescription">
+		<xs:annotation>
+			<xs:documentation>A <i>PredicateDescription</i> that describes a predicate used for "lexical" annotation of an entity or other resource. Annotation properties are "semantically weak" (see below) in the sense that they are not
+				inherited through subclass associations."For annotations properties note that annotations are not 'semantic-free' under the OWL 2 RDF-Based Semantics. Just like every other triple or set of triples occurring in an RDF graph,
+				an annotation is assigned a truth value by any given OWL 2 RDF-Based interpretation. Hence, although annotations are meant to be 'semantically weak', i.e., their formal meaning does not significantly exceed that originating
+				from the RDF Semantics specification, adding an annotation may still change the meaning of an ontology."
+				<i><sub>http://www.w3.org/TR/2009/REC-owl2-rdf-based-semantics-20091027/#Introduction_.28Informative.29</sub></i></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PredicateDescription"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DataPropertyDescription">
+		<xs:annotation>
+			<xs:documentation>A <i>PredicateDescription </i>whose domain is a set of literals."Data properties connect individuals with literals. In some knowledge representation systems, functional data properties are called attributes."
+						<i><sub>http://www.w3.org/TR/owl2-syntax/#Data_Properties</sub></i></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PredicateDescription"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ObjectPropertyDescription">
+		<xs:annotation>
+			<xs:documentation>the description of a "semantic" predicate. <a href="//http://www.w3.org/TR/2009/REC-owl2-syntax-20091027/#Object_Properties"><i>"</i>Object properties connect pairs of individuals."</a></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PredicateDescription">
+				<xs:attribute name="directed" type="ObjectPropertyDirectionality" use="optional">
+					<xs:annotation>
+						<xs:documentation>an indicator that states whether the object property is unidirectional (i.e. requires an inverse to be explicitly declared) or is bidirectional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="transitivity" type="Transitivity" use="optional">
+					<xs:annotation>
+						<xs:documentation>transitivity characteristics of the property. If not supplied, transitivity characteristics are either unknown or not applicable (i.e. $domain \cup range = \emptyset$)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="Transitivity">
+		<xs:annotation>
+			<xs:documentation>an indicator that determines whether an object property is considered to be transitive</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TRANSITIVE">
+				<xs:annotation>
+					<xs:documentation>asserts $\forall a, b, c : C @ p(a,b) \land p(b, c) \implies p(a,c)$</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INTRANSITIVE">
+				<xs:annotation>
+					<xs:documentation>asserts $\forall a, b, c : C @ \lnot(p(a,b) \land p(b, c) \implies p(a,c))$</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ANTITRANSITIVE">
+				<xs:annotation>
+					<xs:documentation>asserts $\forall a, b, c : C @ p(a,b) \land p(b, c) \implies \lnot p(a,c)$</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ObjectPropertyDirectionality">
+		<xs:annotation>
+			<xs:documentation>indicates whether the semantics of an object property are unidirectional (i.e. $\lnot r(a,b) \implies r(b,a)$ or bidirectional ($r(a,b) \implies r(b,a)$). </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="UNIDIRECTIONAL">
+				<xs:annotation>
+					<xs:documentation>$\lnot r(a,b) \implies r(b,a)$</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BIDIRECTIONAL">
+				<xs:annotation>
+					<xs:documentation>$r(a,b) \implies r(b,a)$</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ====================================================
+		EntityDescription PSM
+		======================================================-->
+	<xs:element name="EntityDescriptionMsg" type="EntityDescriptionMsg"/>
+	<xs:complexType name="EntityDescriptionMsg">
+		<xs:annotation>
+			<xs:documentation>An <i>EntityDescription</i> as returned from a service</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element ref="EntityDescription" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="EntityReferenceMsg" type="EntityReferenceMsg"/>
+	<xs:complexType name="EntityReferenceMsg">
+		<xs:annotation>
+			<xs:documentation>An <i>EntityReference</i> as returned from a service</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="entityReference" type="core:EntityReference" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ==============================================
+		EntityDirectory
+		=============================================== -->
+	<xs:element name="EntityDirectory" type="EntityDirectory"/>
+	<xs:complexType name="EntityDirectory">
+		<xs:annotation>
+			<xs:documentation>a directory of <i>Entity</i> resources that meet a specified criteria</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="EntityDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EntityDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A synopsis of an <i>Entity</i> along with information about how to access the complete resource.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:EntityReference">
+				<xs:sequence>
+					<xs:group ref="core:DirectoryEntryElementGroup"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="core:DirectoryEntryAttributeGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="EntityList" type="EntityList"/>
+	<xs:complexType name="EntityList">
+		<xs:annotation>
+			<xs:documentation>a collection of complete <i>Entity</i> resources that meet a specified criteria</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="EntityListEntry" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EntityListEntry">
+		<xs:annotation>
+			<xs:documentation>An instance of <i>Entity</i> that meets a specified filter criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="entry" type="EntityDescription"> </xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
