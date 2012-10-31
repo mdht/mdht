@@ -338,29 +338,13 @@ public class CDAModelUtil {
 	}
 
 	public static String computeConformanceMessage(Class template, boolean markup) {
-		StringBuffer message = new StringBuffer();
 
-		String templateId = getTemplateId(template);
-		if (templateId != null) {
-			String ruleId = getConformanceRuleIds(template);
-			if (ruleId.length() > 0) {
-				message.append(markup
-						? "<b>"
-						: "");
-				message.append(ruleId + ": ");
-				message.append(markup
-						? "</b>"
-						: "");
-			}
-
-			if (!markup) {
-				message.append(getPrefixedSplitName(template)).append(" ");
-			}
-
-			message.append("SHALL contain the template identifier ").append(templateId);
-		}
-
-		return message.toString();
+		String templateConstraint = markup
+				? CDAConstraints.CDATemplateIdConstraintMarkup
+				: CDAConstraints.CDATemplateIdConstraint;
+		templateConstraint = templateConstraint.replaceAll("%templateId%", getTemplateId(template));
+		templateConstraint = templateConstraint.replaceAll("%ruleId%", getConformanceRuleIds(template));
+		return templateConstraint;
 	}
 
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
