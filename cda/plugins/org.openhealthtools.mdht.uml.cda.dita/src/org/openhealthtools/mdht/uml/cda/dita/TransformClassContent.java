@@ -325,6 +325,8 @@ public class TransformClassContent extends TransformAbstract {
 	private void appendConformanceRules(PrintWriter writer, Class umlClass) {
 		writer.println("<ol id=\"conformance\">");
 
+		writer.println("<li>" + CDAModelUtil.computeConformanceMessage(umlClass, true) + "</li>");
+
 		boolean hasRules = false;
 		for (Generalization generalization : umlClass.getGeneralizations()) {
 			Classifier general = generalization.getGeneral();
