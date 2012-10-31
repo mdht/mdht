@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core" xmlns="http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition"
+	targetNamespace="http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition" elementFormDefault="qualified">
+
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+	<!-- ====================================================
+      ValueSetDefinition
+      ======================================================-->
+	<xs:element name="ValueSetDefinition" type="ValueSetDefinition"> </xs:element>
+	<xs:complexType name="ValueSetDefinition">
+		<xs:complexContent>
+			<xs:extension base="core:ResourceVersionDescription">
+				<xs:sequence>
+					<xs:element name="definedValueSet" type="core:ValueSetReference" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a reference to the value set being defined</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="versionTag" type="core:VersionTagReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a version tag assigned to this definition by the implementing service</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="entry" type="ValueSetDefinitionEntry" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================
+      ValueSetDefinitionEntry
+      ======================================================-->
+	<xs:element name="ValueSetDefinitionEntry" type="ValueSetDefinitionEntry">
+		<xs:annotation>
+			<xs:documentation>An element of a value set definition that, when resolved yields a set of entity references that are to be included in, excluded from or intersected with the set of elements that represent the full resolution of
+				the definition.Note that only <i>ACTIVE</i> entity references are included. <i>INACTIVE</i> entity references may never be considered for inclusion or exclusion in the resolution of a value set definition.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ValueSetDefinitionEntry">
+		<xs:annotation>
+			<xs:documentation>An element of a value set definition that, when resolved yields a set of entity references that are to be included in, excluded from or intersected with the set of elements that represent the full resolution of
+				the definition.Note that only <i>ACTIVE</i> entity references are included. <i>INACTIVE</i> entity references may never be considered for inclusion or exclusion in the resolution of a value set definition.</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="1" maxOccurs="1">
+			<xs:element name="associatedEntities" type="AssociatedEntitiesReference"/>
+			<xs:element name="completeCodeSystem" type="CompleteCodeSystemReference"/>
+			<xs:element name="completeValueSet" type="CompleteValueSetReference"/>
+			<xs:element name="externalValueSetDefinition" type="ExternalValueSetDefinition"/>
+			<xs:element name="propertyQuery" type="PropertyQueryReference"/>
+			<xs:element name="entityList" type="SpecificEntityList"/>
+		</xs:choice>
+		<xs:attribute name="operator" type="core:SetOperator" use="required">
+			<xs:annotation>
+				<xs:documentation>instructions for how the results of the entry evaluation will be applied to the set of entities in the base definition. Results can be added to the set (<i>UNION</i>), intersected with members already in
+					the set (<i>INTERSECT</i>) or be removed from the set (<i>DIFFERENCE</i>)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="core:Ordered"/>
+	</xs:complexType>
+
+	<xs:simpleType name="SetOperator">
+		<xs:annotation>
+			<xs:documentation>General set operators that specify set union, difference or intersection in various contexts</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="core:Enumeration">
+			<xs:enumeration value="UNION">
+				<xs:annotation>
+					<xs:documentation>Include all members of both sets in the result</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INTERSECT">
+				<xs:annotation>
+					<xs:documentation>include only members common to both sets in the result</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SUBTRACT">
+				<xs:annotation>
+					<xs:documentation>remove all members in the second set from the first set</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="AssociatedEntitiesReference">
+		<xs:annotation>
+			<xs:documentation>The description of a set of entities that are associated with a referenced entity. This description names a reference entity and an association predicate, which identifies a set of entities that are related to
+				the reference entity according to a given code system. The description can reference the direct targets of the association (children), the direct sources of the association (parents), the transitive closure of the
+				association targets (descendants), the transitive closure of the association sources (ancestors) and can state whether all intermediate nodes are included in the closure or just the leaf nodes.Note that the terms "parent"
+				and "children" are asserted in reference to the predicate itself. As an example, in the association "<i>arm subClassOf bodyPart</i>", the "parent" is <i>arm</i> and the "child" is <i>bodyPart</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="referencedEntity" type="core:URIAndEntityName" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the entity reference that is the root of the association description. <i>referencedEntity</i> is not considered to be part of the resolution of <i>AssociatedEntitiesReference</i>. If it is to be
+						included in the final set, it must be explicitly named in a second <i>SpecificEntityList</i> construct.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="codeSystem" type="core:CodeSystemReference" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the code system that makes the association assertions</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="codeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the version of the code system that makes the association assertions. If present, \\<i>codeSystemVersion</i> must be a version of <i>codeSystem</i>. If this attribute is present, the referenced version
+						of the code system will always be used to resolve the associations. If absent, the specific version of the code system to be used in resolution is determined in the resolve value set definition call
+						itself.</xs:documentation>
+				</xs:annotation>
+
+			</xs:element>
+			<xs:element name="predicate" type="core:PredicateReference" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the association predicate to be used in resolving the definition entry.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="direction" type="core:AssociationDirection" use="required">
+			<xs:annotation>
+				<xs:documentation>an indicator that determines whether the <i>referencedEntity</i> serves in the source (<i>SOURCE_TO_TARGET</i>) or target (<i>TARGET_TO_SOURCE</i>) role.</xs:documentation>
+			</xs:annotation>
+
+		</xs:attribute>
+		<xs:attribute name="leafOnly" type="LeafOrAll" use="optional" default="ALL_INTERMEDIATE_NODES">
+			<xs:annotation>
+				<xs:documentation>an indicator that determines whether all nodes in the transitive closure are to be included in the resulting set or only the nodes that terminate the closure. This indicator is ignored if
+						<i>transitivity</i> is not <i>TRANSITIVE_CLOSURE</i>. Note that nodes that participate in cycles are not included if <i>leafOnly</i> is set to <i>LEAF_ONLY</i>.</xs:documentation>
+			</xs:annotation>
+
+		</xs:attribute>
+		<xs:attribute name="transitivity" type="TransitiveClosure" use="optional" default="DIRECTLY_ASSOCIATED">
+			<xs:annotation>
+				<xs:documentation>an indicator that determines whether only entity references that participate in a direct association with the <i>referencedEntity</i> are considered to be a part of the definition or whether all entity
+					references that appear on the transitive closure of entity reference are to be included. Note that <i>leafOnly</i> further qualifies this result.</xs:documentation>
+			</xs:annotation>
+
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:simpleType name="LeafOrAll">
+		<xs:annotation>
+			<xs:documentation>Indicates whether intermediate nodes in a transitive closure are to be included in the result or only the "leaf" nodes.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="core:Enumeration">
+			<xs:enumeration value="LEAF_ONLY">
+				<xs:annotation>
+					<xs:documentation>only nodes who can be inferred to participate as a source but not a target of an association if <i>direction </i>is <i>SOURCE_TO_TARGET</i>, or a target but not a source if <i>direction</i> is
+							<i>TARGET_TO_SOURCE</i>, are included in the set of entity references.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ALL_INTERMEDIATE_NODES">
+				<xs:annotation>
+					<xs:documentation>all (active) nodes are to be included in the transitive closure. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="TransitiveClosure">
+		<xs:annotation>
+			<xs:documentation>Indicates whether only directly associated nodes or the transitive closure over the supplied predicate is to be used in the resolution of an entity reference and predicate. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="core:Enumeration">
+			<xs:enumeration value="DIRECTLY_ASSOCIATED">
+				<xs:annotation>
+					<xs:documentation>oOnly entity references that are explicitly assert to be directly associated with the source entity are included. Associations whose <i>derivation</i> is <i>INFERRED</i> are not considered when this
+						setting is used.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TRANSITIVE_CLOSURE">
+				<xs:annotation>
+					<xs:documentation>both entity references that are explicitly asserted to be directly associated with the source entity are included and entities that can be inferred to participate in the association named by
+							<i>predicate</i> are included as candidates for the set, although the final resolution may depend on other factors such as a <i>LeafOrAll</i> setting.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="CompleteCodeSystemReference">
+		<xs:annotation>
+			<xs:documentation>An entry that, when resolved, returns all of the active entity references in a given code system. This includes all entity references that appear as the source of one or more statements in the code system,
+				whether the assertions are made directly by a version of the code system or indirectly by a version of a different code system that is imported. Note that targets are not included to prevent codes from rdf, rdfs, owl, etc
+				being included in this resolution set.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="codeSystem" type="core:CodeSystemReference" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A reference to the code system whose codes are to be included.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="codeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A reference to the specific version of the code system to include. If not supplied, the specific version of the code system is determined in the resolution call itself.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="CompleteValueSetReference">
+		<xs:annotation>
+			<xs:documentation>A reference to a value set that, when resolved, results in a set of entity references that are included in this entry. An entry of this type can just name a value set, meaning that the specific definition is
+				determined in the resolve value set call, can name both a value set and value set definition, meaning that the specific definition is always used in the resolution. It can also specify one or more code system versions to be
+				used in the resolution of the named value set.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="valueSet" type="core:ValueSetReference" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a reference to the value set whose definition supplies a set of entity references.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="valueSetDefinition" type="core:ValueSetReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a reference to a particular definition of <i>valueSet</i> that is to be used in resolving this reference. If absent, the specific definition is determined by the resolve value set call. If present,
+							<i>valueSetDefinition</i> must be a definition of <i>valueSet</i> and will always be used to resolve this entity set.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="referenceCodeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a reference to a <i>CodeSystemVersion</i> that will be used to resolve this call. <i>referenceCodeSystemVersion</i> will only be used if one or more components of the resolution of <i>valueSet</i>
+						identify a code system without specifying a specific version. At most, only one version of a given code system may appear in the <i>referenceCodeSystemVersion</i> list. While CTS<sub>2</sub> service implementations
+						must resolve resolution calls for definitions that carry unused <i>referenceCodeSystemVersion</i> entries, they may choose to issue a warning at the time the definition is created or loaded.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="ExternalValueSetDefinition">
+		<xs:annotation>
+			<xs:documentation>A definition of a value set whose format and semantics is specified outside of the core CTS<sub>2</sub> specification. If a given CTS<sub>2</sub> service recognizes the syntax and semantics of this definition,
+				it may call the appropriate process to resolve it. If the definition is not recognized, a CTS<sub>2</sub> service implementation must not process the containing value set definition and, instead, return an
+				error.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:OpaqueData"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PropertyQueryReference">
+		<xs:annotation>
+			<xs:documentation>A description of a set of entity references that are determined by applying a filter to the attribute(s) or property(s) that appear in an <i>EntityDescription</i> in a specified code system.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="codeSystem" type="core:CodeSystemReference" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The code system that contains the assertions that form the attributes or properties to be tested.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="codeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The version of the code system that makes the assertions. If present, <i>codeSystemVersion</i> must be a version of <i>codeSystem</i>. If this attribute is present, the referenced version of the code
+						system will always be used to resolve the attributes or properties. If absent, the specific version of the code system to be used in resolution is determined in the resolve value set definition call
+						itself.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="filter" type="core:FilterComponent" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The filter to be applied to entities in the referenced code system. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="SpecificEntityList">
+		<xs:annotation>
+			<xs:documentation>a list of specific entity references that are to be included in the definition. When specified in this form, the service must include all entities in this list whether they are known to the service or not, and
+				whether they are currently <i>ACTIVE</i> or not.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="referencedEntity" type="core:URIAndEntityName" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>the namespace / name or URI of an entity to be included</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- ====================================================
+      ValueSetDefinition PSM
+      ======================================================-->
+	<xs:element name="ValueSetDefinitionMsg" type="ValueSetDefinitionMsg"/>
+	<xs:complexType name="ValueSetDefinitionMsg">
+		<xs:annotation>
+			<xs:documentation>A <i>ValueSetDefinition</i> read from a service instance.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="valueSetDefinition" type="ValueSetDefinition"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ====================================================
+      ValueSetDefinitionDirectory
+      ======================================================-->
+	<xs:element name="ValueSetDefinitionDirectory" type="ValueSetDefinitionDirectory"/>
+	<xs:complexType name="ValueSetDefinitionDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory of <i>ValueSetDefinition</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="ValueSetDefinitionDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="ValueSetDefinitionDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A synopsis of a <i>ValueSetDefinition</i> along with information about how to access the complete resource.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:ResourceVersionDescriptionDirectoryEntry">
+				<xs:sequence>
+					<xs:element name="definedValueSet" type="core:ValueSetReference" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the value set that this definition applies to</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="versionTag" type="core:VersionTagReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a version tag assigned to this entry by the service instance</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ValueSetDefinitionList" type="ValueSetDefinitionList"></xs:element>
+	<xs:complexType name="ValueSetDefinitionList">
+		<xs:annotation>
+			<xs:documentation>A collection of complete <i>ValueSetDefinition </i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="ValueSetDefinitionListEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ValueSetDefinitionListEntry">
+		<xs:annotation>
+			<xs:documentation>An instance of <i>ValueSetDefinition </i>that meets a specified filter criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="entry" type="ValueSetDefinition" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+
+
+
+	<!-- ====================================================
+      ResolvedValueSet
+      ======================================================-->
+
+	<xs:complexType name="ResolvedValueSetHeader">
+		<xs:annotation>
+			<xs:documentation>The information required to completely resolve a value set definition. </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="resolutionOf" type="core:ValueSetDefinitionReference" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the specific value set definition that was resolved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resolvedUsingCodeSystem" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a reference to a code system version that was used in the resolution of this value set definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="includesResolvedValueSet" type="ResolvedValueSetHeader" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>If the value set includes other value sets, this contains the resolution information used to resolve the inner value sets.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="ResolvedValueSet" type="ResolvedValueSet">
+		<xs:annotation>
+			<xs:documentation>The result of resolving a specific value set definition against a known set of code system versions. <i>ResolvedValueSet</i> consists of a header that carries sufficient information that the resolution
+				operation would be repeatable and the result of the resolution, which consists of set of EntityReferences.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ResolvedValueSet">
+		<xs:annotation>
+			<xs:documentation>The result of resolving a specific value set definition against a known set of code system versions. <i>ResolvedValueSet</i> consists of a header that carries sufficient information that the resolution
+				operation would be repeatable and the result of the resolution, which consists of set of EntityReferences.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="resolutionInfo" type="ResolvedValueSetHeader" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the set of parameters that were used in the resolution of this set. <i>resolutionInfo</i> provides all the information necessary to recreate the actual <i>resolution</i> when presented to a
+							CTS<sub>2</sub> service instance that contains all of the necessary definitions and code system versions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="member" type="core:EntitySynopsis" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a synopsis of the <i>EntityDescription</i> that has been determined to be a member of the value set named in <i>resolutionInfo</i> according to the stated criteria or "bindings"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- ==============================================
+	IteratableResolvedValueSet
+	=============================================== -->
+	<xs:element name="IteratableResolvedValueSet" type="IteratableResolvedValueSet"/>
+	<xs:complexType name="IteratableResolvedValueSet">
+		<xs:annotation>
+			<xs:documentation>A ResolvedValueSet whose contents are available as a set of directory entries that allows iteration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="resolutionInfo" type="ResolvedValueSetHeader" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the set of parameters that were used in the resolution of this set. <i>resolutionInfo</i> provides all the information necessary to recreate the actual <i>resolution</i> when presented to a
+									CTS<sub>2</sub> service instance that contains all of the necessary definitions and code system versions.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="entry" type="core:EntitySynopsis" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a synopsis of the <i>EntityDescription</i> that has been determined to be a member of the value set named in <i>resolutionInfo</i> according to the stated criteria or "bindings"</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ResolvedValueSetSummary" type="ResolvedValueSetSummary"/>
+	<xs:complexType name="ResolvedValueSetSummary">
+		<xs:sequence>	
+			<xs:element name="resolvedHeader" type="ResolvedValueSetHeader" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="resolvedValueSetURI" type="core:LocalURI" use="required"/>
+	</xs:complexType>
+	
+	<xs:element name="ResolvedValueSetDirectory" type="ResolvedValueSetDirectory"/>
+	<xs:complexType name="ResolvedValueSetDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory of resolved value sets.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="ResolvedValueSetDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ResolvedValueSetDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>An entry in a <i>ResolvedValueSetDirectory</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResolvedValueSetSummary">
+				<xs:sequence>
+					<xs:group ref="core:DirectoryEntryElementGroup"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="core:DirectoryEntryAttributeGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<!-- ====================================================
+      ResolvedValueSet - PSM 
+      ======================================================-->
+	<xs:element name="ResolvedValueSetMsg" type="ResolvedValueSetMsg"/>
+	<xs:complexType name="ResolvedValueSetMsg">
+		<xs:annotation>
+			<xs:documentation>A <i>ResolvedValueSet</i> read from a service instance.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="resolvedValueSet" type="ResolvedValueSet"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>
