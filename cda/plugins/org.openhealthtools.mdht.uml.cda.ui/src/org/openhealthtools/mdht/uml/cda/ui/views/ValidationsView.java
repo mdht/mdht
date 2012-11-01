@@ -123,7 +123,6 @@ public class ValidationsView extends ViewPart {
 					for (Diagnostic dq : vr.getErrorDiagnostics()) {
 
 						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
-						System.out.println(key);
 						if (!errorsResultMap.containsKey(key)) {
 							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
 							errorsResultMap.put(key, cdaDiagnosticCounter);
@@ -135,7 +134,6 @@ public class ValidationsView extends ViewPart {
 					for (Diagnostic dq : vr.getWarningDiagnostics()) {
 
 						String key = String.format("%s::%d", dq.getSource(), dq.getCode());
-						System.out.println(key);
 						if (!warningsResultMap.containsKey(key)) {
 							CDADiagnosticCounter cdaDiagnosticCounter = new CDADiagnosticCounter(new CDADiagnostic(dq));
 							warningsResultMap.put(key, cdaDiagnosticCounter);
@@ -157,12 +155,13 @@ public class ValidationsView extends ViewPart {
 
 					final Comparator<CDADiagnosticCounter> comparator = new Comparator<CDADiagnosticCounter>() {
 						public int compare(CDADiagnosticCounter o1, CDADiagnosticCounter o2) {
-							if (o1.getCount() > o2.getCount())
+							if (o1.getCount() > o2.getCount()) {
 								return -1;
-							else if (o1.getCount() < o2.getCount())
+							} else if (o1.getCount() < o2.getCount()) {
 								return 1;
-							else
+							} else {
 								return 0;
+							}
 						}
 					};
 
