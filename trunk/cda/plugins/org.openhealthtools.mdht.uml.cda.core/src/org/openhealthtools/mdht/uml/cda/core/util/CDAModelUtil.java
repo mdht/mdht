@@ -342,8 +342,14 @@ public class CDAModelUtil {
 		String templateConstraint = markup
 				? CDAConstraints.CDATemplateIdConstraintMarkup
 				: CDAConstraints.CDATemplateIdConstraint;
-		templateConstraint = templateConstraint.replaceAll("%templateId%", getTemplateId(template));
-		templateConstraint = templateConstraint.replaceAll("%ruleId%", getConformanceRuleIds(template));
+		String templateId = getTemplateId(template);
+		String ruleIds = getConformanceRuleIds(template);
+		templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
+				? templateId
+				: ""));
+		templateConstraint = templateConstraint.replaceAll("%ruleId%", (ruleIds != null
+				? ruleIds
+				: ""));
 		return templateConstraint;
 	}
 
