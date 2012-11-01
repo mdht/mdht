@@ -166,13 +166,11 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		String basePackage = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "basePackage");
 
-		// String packageName = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "packageName");
-
 		String nsPrefix = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "nsPrefix");
 
 		String nsURI = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "nsURI");
 
-		// String prefix = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "prefix");
+		String prefix = (String) pe.getValue(pe.getAppliedStereotype("Ecore::EPackage"), "prefix");
 
 		String modelName = pe.getName();
 
@@ -192,7 +190,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		genmodel.setModelName(String.format("%s_Ecore", modelName));
 		genmodel.setModelDirectory(String.format("%s/src", project.getName()));
-		genmodel.setModelPluginClass(modelName.substring(0, 1).toUpperCase() + modelName.substring(1) + "Plugin");
+		genmodel.setModelPluginClass(prefix + "Plugin");
 		genmodel.setModelPluginID(basePackage + "." + modelName);
 		genmodel.setImporterID(ECOREIMPORTER);
 		genmodel.setInvariantPrefix(VALIDATEPREFIX);
@@ -243,6 +241,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		genPackage.setBasePackage(basePackage);
 
 		genPackage.setOperationsPackage(String.format("%s.%s.operations", basePackage, modelName));
+
+		genPackage.setPrefix(prefix);
 
 		EPackage value = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEPackage();
 		value.setName(modelName);
