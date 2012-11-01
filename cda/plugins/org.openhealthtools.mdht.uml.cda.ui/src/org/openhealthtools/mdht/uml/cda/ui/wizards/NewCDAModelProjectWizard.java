@@ -449,11 +449,11 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		codegenSupport.setNsURI(namespaceURI);
 
-		codegenSupport.setNsPrefix(modelName.toLowerCase());
+		codegenSupport.setNsPrefix(newCDATemplatePage.getNsPrefix()); // modelName.toLowerCase());
 
 		codegenSupport.setPackageName(modelName.toLowerCase());
 
-		codegenSupport.setPrefix(modelName.substring(0, 1).toUpperCase() + modelName.substring(1));
+		codegenSupport.setPrefix(newCDATemplatePage.getPrefix()); // modelName.substring(0, 1).toUpperCase() + modelName.substring(1));
 
 		Class cdaClass = templatePackage.createOwnedClass(newCDATemplatePage.getCDADocumentName(), false);
 
