@@ -328,8 +328,9 @@ public class ActRelationshipSection extends WrapperAwareModelerPropertySection {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && association.eResource() != null)
+					if (!isDisposed() && association.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

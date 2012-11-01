@@ -48,8 +48,8 @@ import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.common.ui.search.ModelSearch;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class UpdateProfileVersionAction implements IObjectActionDelegate {
 	private NamedElement namedElement;
