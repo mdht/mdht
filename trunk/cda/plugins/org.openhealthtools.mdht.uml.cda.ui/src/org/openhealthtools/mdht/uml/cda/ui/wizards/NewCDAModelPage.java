@@ -73,6 +73,27 @@ public class NewCDAModelPage extends WizardPage {
 		return templateID.getText();
 	}
 
+	/**
+	 * @return the nsPrefix
+	 */
+	public String getNsPrefix() {
+		return nsPrefix.getText();
+	}
+
+	/**
+	 * @return the nsURI
+	 */
+	public String getNsURI() {
+		return nsURI.getText();
+	}
+
+	/**
+	 * @return the prefix
+	 */
+	public String getPrefix() {
+		return prefix.getText();
+	}
+
 	public String getTemplateAssigningAuthority() {
 
 		return assigningAuthority.getText();
@@ -226,7 +247,7 @@ public class NewCDAModelPage extends WizardPage {
 
 		new Label(composite, SWT.NONE).setText("Prefix ");
 
-		prefix = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
+		prefix = new Text(composite, SWT.NONE);
 		prefix.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		setPageComplete(false);
