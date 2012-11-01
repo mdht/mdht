@@ -20,14 +20,15 @@ import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
  * Selects an object if it is an association applicable to <<ActRelationship>> stereotype.
  */
 public class ActRelationshipFilter extends CDAFilter {
-	
+
+	@Override
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
+
 		if (element instanceof Association && RIMModelUtil.isActRelationship((Association) element)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 }

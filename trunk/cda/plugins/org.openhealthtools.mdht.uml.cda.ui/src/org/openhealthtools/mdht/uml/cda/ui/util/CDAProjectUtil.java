@@ -179,7 +179,7 @@ public class CDAProjectUtil {
 
 	@SuppressWarnings("unchecked")
 	public void loadCDAModelsfromPlugins() {
-		ResourceSet resourceSet = new ResourceSetImpl();
+		new ResourceSetImpl();
 
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 
