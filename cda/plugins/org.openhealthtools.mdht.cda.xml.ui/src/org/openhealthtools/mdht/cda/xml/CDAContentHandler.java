@@ -17,25 +17,11 @@ import java.io.InputStream;
 
 import org.eclipse.core.runtime.content.IContentDescription;
 import org.eclipse.core.runtime.content.XMLContentDescriber;
-import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 public class CDAContentHandler extends XMLContentDescriber {
 
 	@Override
 	public int describe(InputStream input, IContentDescription description) throws IOException {
-
-		int result = INVALID;
-
-		if (super.describe(input, description) == VALID) {
-			try {
-				@SuppressWarnings("unused")
-				ClinicalDocument clinicalDocument = CDAUtil.load(input);
-				result = VALID;
-			} catch (Exception e) {
-			}
-		}
-		return result;
-
+		return INDETERMINATE;
 	}
 }
