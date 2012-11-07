@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
@@ -571,7 +572,9 @@ public class AllergyObservationTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(AllergyObservation target) {
 						target.init();
-						target.getValues().add(DatatypesFactory.eINSTANCE.createCD("12345", "1.2.3.4", "", ""));
+						CD val = DatatypesFactory.eINSTANCE.createCD();
+						val.setNullFlavor(NullFlavor.NA);
+						target.getValues().add(val);
 
 						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
 						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
