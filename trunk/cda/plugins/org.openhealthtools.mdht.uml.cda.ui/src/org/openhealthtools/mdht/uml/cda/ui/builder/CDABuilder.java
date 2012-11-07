@@ -47,6 +47,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfigurationType;
@@ -81,20 +82,19 @@ import org.xml.sax.SAXException;
 
 public class CDABuilder extends IncrementalProjectBuilder {
 
+	private static final QualifiedName cleanStatus = new QualifiedName(
+		"org.openhealthtools.mdht.uml.cda.ui.builder", "status");
+
 	class CheckForModelChanged implements IResourceDeltaVisitor {
+
 		public boolean hasModelChanged = false;
 
 		public boolean visit(IResourceDelta delta) throws CoreException {
-
 			IResource resource = delta.getResource();
-
 			if (delta.getKind() == IResourceDelta.CHANGED && resource.getName().endsWith(".uml")) {
-
 				hasModelChanged = true;
 			}
-
 			return true;
-
 		}
 	}
 
@@ -108,16 +108,21 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 	private static final String TEMPLATESDIR = "/org.openhealthtools.mdht.uml.cda/templates";
 
-	// private static final String CDABASE = "org.openhealthtools.mdht.uml.cda";
-
 	private static boolean checkBuildStatus(IProject modelProject, IProject project) {
 		long modelModification = IResource.NULL_STAMP;
 
 		long lastGenerated = IResource.NULL_STAMP;
 		try {
+
+			Boolean projectStatus = (Boolean) project.getSessionProperty(cleanStatus);
+
+			if (projectStatus != null && projectStatus.equals(Boolean.TRUE)) {
+				project.setSessionProperty(cleanStatus, Boolean.FALSE);
+				return true;
+			}
+
 			for (IResource umlResources : modelProject.getFolder(new Path("model")).members()) {
 				if (umlResources.getName().endsWith(".uml")) {
-
 					if (umlResources.getLocalTimeStamp() > modelModification) {
 						modelModification = umlResources.getLocalTimeStamp();
 					}
@@ -131,7 +136,6 @@ public class CDABuilder extends IncrementalProjectBuilder {
 						if (pdfResources.getLocalTimeStamp() > lastGenerated) {
 							lastGenerated = pdfResources.getLocalTimeStamp();
 						}
-
 					}
 				}
 			} else {
@@ -140,13 +144,12 @@ public class CDABuilder extends IncrementalProjectBuilder {
 						if (ecoreUMLResources.getLocalTimeStamp() > lastGenerated) {
 							lastGenerated = ecoreUMLResources.getLocalTimeStamp();
 						}
-
 					}
 				}
 			}
 
 		} catch (CoreException e) {
-
+			return true;
 		}
 
 		return modelModification > lastGenerated;
@@ -442,7 +445,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		IFile ditaMapFile = CDAUIUtil.getProjectFile(project, CDAUIUtil.DITA_PATH, "book.ditamap");
 
 		if (ditaMapFile != null) {
-			DitaUtil.publish(ditaMapFile, "pdf");
+			DitaUtil.publish(ditaMapFile, "pdf,eclipsehelp");
 		}
 	}
 
@@ -533,7 +536,6 @@ public class CDABuilder extends IncrementalProjectBuilder {
 	@Override
 	@SuppressWarnings("rawtypes")
 	protected IProject[] build(int kind, Map args, IProgressMonitor monitor) throws CoreException {
-
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
 		String modelProjectName = null;
@@ -565,8 +567,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 	@Override
 	protected void clean(IProgressMonitor monitor) throws CoreException {
-		runTransformation(getProject(), monitor);
-		runGenerate(true, getProject(), monitor);
+		getProject().setSessionProperty(cleanStatus, Boolean.TRUE);
 	}
 
 }
