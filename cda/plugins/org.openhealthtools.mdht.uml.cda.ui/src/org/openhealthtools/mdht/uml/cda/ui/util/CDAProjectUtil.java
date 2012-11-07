@@ -189,25 +189,18 @@ public class CDAProjectUtil {
 		if (point != null) {
 
 			for (IExtension extension : point.getExtensions()) {
-
 				Bundle bundle = Platform.getBundle(extension.getContributor().getName());
-
-				try {
-					for (IConfigurationElement ice : extension.getConfigurationElements()) {
-						String packageClassName = ice.getAttribute("class");
-						System.out.println(packageClassName);
-						if (packageClassName != null) {
+				for (IConfigurationElement ice : extension.getConfigurationElements()) {
+					String packageClassName = ice.getAttribute("class");
+					if (packageClassName != null) {
+						try {
 							Class<?> packageClass;
-							// c = Class.forName(packageClass);
 							packageClass = bundle.loadClass(packageClassName);
 							if (packageClass != null) {
 								Field eInstance = packageClass.getDeclaredField("eINSTANCE");
 								Field ePrefix = packageClass.getDeclaredField("eNS_PREFIX");
-
 								EPackage ePackage = (EPackage) eInstance.get(null);
 								String prefix = (String) ePrefix.get(null);
-
-								System.out.println(ePackage.getName());
 								for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 									if (eClassifier instanceof EClass) {
 										if (CDAPackage.eINSTANCE.getClinicalDocument().isSuperTypeOf(
@@ -216,12 +209,10 @@ public class CDAProjectUtil {
 										}
 									}
 								}
-
 							}
+						} catch (Exception e) {
 						}
 					}
-				} catch (Exception e) {
-					e.printStackTrace();
 				}
 
 			}
