@@ -8,7 +8,7 @@
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.internal.validate;
+package org.openhealthtools.mdht.uml.cda.validate;
 
 import java.util.ArrayList;
 import java.util.HashMap;

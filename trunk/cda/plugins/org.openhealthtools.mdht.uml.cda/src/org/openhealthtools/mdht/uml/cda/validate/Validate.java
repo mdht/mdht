@@ -11,7 +11,7 @@
  *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.internal.validate;
+package org.openhealthtools.mdht.uml.cda.validate;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
