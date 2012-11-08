@@ -28,8 +28,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.part.ViewPart;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer;
 import org.openhealthtools.mdht.uml.cda.util.CDADiagnostic;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil.ValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.ValidationResult;
@@ -233,13 +235,28 @@ public class ValidationsView extends ViewPart {
 	public ValidationsView() {
 	}
 
+	public void clearView() {
+		browser.setText("");
+	}
+
 	@Override
 	public void createPartControl(Composite parent) {
 		browser = new Browser(parent, SWT.BORDER);
+		if (getSite().getPage().getPerspective() != null) {
+			for (IEditorReference editorReference : getSite().getPage().getEditorReferences()) {
+				if ("org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer".equals(editorReference.getId())) {
+					CDAAnalyzer analyzer = (CDAAnalyzer) editorReference.getEditor(false);
+					if (analyzer != null) {
+						this.addTableListener(analyzer.getTable());
+					}
+				}
+			}
+		}
 	}
 
 	@Override
 	public void setFocus() {
+
 	}
 
 }

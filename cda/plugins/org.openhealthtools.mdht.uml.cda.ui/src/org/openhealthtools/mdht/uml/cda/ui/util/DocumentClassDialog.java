@@ -31,6 +31,13 @@ import org.eclipse.uml2.uml.Type;
  * 
  */
 public class DocumentClassDialog {
+
+	boolean workspaceMode = true;
+
+	public boolean isWorkspaceMode() {
+		return workspaceMode;
+	}
+
 	private String documentClassQName = null;
 
 	public String getDocumentClassQName() {
@@ -85,6 +92,7 @@ public class DocumentClassDialog {
 			if (cdaDocuments.keySet().isEmpty()) {
 				return null;
 			}
+			workspaceMode = false;
 		}
 
 		final List<String> qnames = new ArrayList<String>(cdaDocuments.keySet());

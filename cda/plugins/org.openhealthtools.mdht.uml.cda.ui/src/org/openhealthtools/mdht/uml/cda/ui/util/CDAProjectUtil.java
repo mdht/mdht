@@ -177,7 +177,6 @@ public class CDAProjectUtil {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public void loadCDAModelsfromPlugins() {
 		new ResourceSetImpl();
 
