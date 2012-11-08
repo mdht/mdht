@@ -44,6 +44,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
@@ -72,6 +74,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.cda.ui.views.EntriesView;
 import org.openhealthtools.mdht.uml.cda.ui.views.NarrativeView;
 import org.openhealthtools.mdht.uml.cda.ui.views.ValidationsView;
@@ -85,6 +88,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch;
 
 public class CDAAnalyzer extends EditorPart {
+
+	/**
+	 * @return the table
+	 */
+	public Table getTable() {
+		return table;
+	}
 
 	private static void handleDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		switch (diagnostic.getSeverity()) {
@@ -331,6 +341,7 @@ public class CDAAnalyzer extends EditorPart {
 		table = new Table(parent, style);
 
 		viewer = new TableViewer(table);
+
 		viewer.setUseHashlookup(true);
 
 		viewer.setColumnProperties(columnNames);
@@ -417,22 +428,34 @@ public class CDAAnalyzer extends EditorPart {
 		// viewer.setSorter(new NameSorter());
 		viewer.setInput(getSite());
 
-		NarrativeView narrativeView = (NarrativeView) getSite().getPage().findView(
-			"org.openhealthtools.mdht.uml.cda.ui.views.narrativeview");
-		if (narrativeView != null) {
-			narrativeView.addTableListener(table);
-		}
+		try {
 
-		EntriesView entriesView = (EntriesView) getSite().getPage().findView(
-			"org.openhealthtools.mdht.uml.cda.ui.views.entriesview");
-		if (entriesView != null) {
-			entriesView.addTableListener(table);
-		}
+			if (getSite().getPage().getPerspective() != null) {
 
-		ValidationsView validationsView = (ValidationsView) getSite().getPage().findView(
-			"org.openhealthtools.mdht.uml.cda.ui.views.validationsview");
-		if (validationsView != null) {
-			validationsView.addTableListener(table);
+				EntriesView entriesView = (EntriesView) getSite().getPage().showView(
+					"org.openhealthtools.mdht.uml.cda.ui.views.entriesview");
+
+				if (entriesView != null) {
+					entriesView.addTableListener(table);
+				}
+
+				ValidationsView validationsView = (ValidationsView) getSite().getPage().showView(
+					"org.openhealthtools.mdht.uml.cda.ui.views.validationsview");
+				if (validationsView != null) {
+					validationsView.addTableListener(table);
+				}
+
+				NarrativeView narrativeView;
+
+				narrativeView = (NarrativeView) getSite().getPage().showView(
+					"org.openhealthtools.mdht.uml.cda.ui.views.narrativeview");
+				if (narrativeView != null) {
+					narrativeView.addTableListener(table);
+				}
+			}
+
+		} catch (PartInitException e) {
+			Logger.logException(e);
 		}
 
 	}
@@ -443,6 +466,16 @@ public class CDAAnalyzer extends EditorPart {
 	@Override
 	public void setFocus() {
 		viewer.getControl().setFocus();
+
+		if (table.getSelectionIndex() > -1) {
+			for (Listener listener : table.getListeners(SWT.Selection)) {
+				Event event = new Event();
+				event.type = SWT.Selection;
+				event.item = table.getItem(table.getSelectionIndex());
+				event.widget = table;
+				listener.handleEvent(event);
+			}
+		}
 	}
 
 	@Override
@@ -466,14 +499,8 @@ public class CDAAnalyzer extends EditorPart {
 
 			try {
 				if (cd == null) {
-
 					cd = CDAUtil.load(new FileInputStream(fileInput.getFile().getLocation().toOSString()));
-
 					setPartName(String.format("Analysis of %s", fileInput.getName()));
-
-					// PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(fileInput,
-					// "org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart");
-
 				}
 			} catch (FileNotFoundException e) {
 
@@ -654,8 +681,37 @@ public class CDAAnalyzer extends EditorPart {
 
 	@Override
 	public void dispose() {
-
 		super.dispose();
+
+		EntriesView entriesView = (EntriesView) getSite().getPage().findView(
+			"org.openhealthtools.mdht.uml.cda.ui.views.entriesview");
+
+		if (entriesView != null) {
+			entriesView.clearView();
+		}
+
+		ValidationsView validationsView = (ValidationsView) getSite().getPage().findView(
+			"org.openhealthtools.mdht.uml.cda.ui.views.validationsview");
+		if (validationsView != null) {
+			validationsView.clearView();
+		}
+
+		NarrativeView narrativeView;
+
+		narrativeView = (NarrativeView) getSite().getPage().findView(
+			"org.openhealthtools.mdht.uml.cda.ui.views.narrativeview");
+		if (narrativeView != null) {
+			narrativeView.clearView();
+		}
+
+		if (PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
+			if (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage() != null) {
+				if (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor() != null) {
+					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor().setFocus();
+				}
+			}
+		}
+
 	}
 
 	public class DataTypeHasChildren extends DatatypesSwitch<Boolean> {
