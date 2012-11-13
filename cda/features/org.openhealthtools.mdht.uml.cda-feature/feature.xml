@@ -25,6 +25,12 @@
          id="org.openhealthtools.mdht"
          version="0.0.0"/>
 
+
+  <includes
+         id="org.openhealthtools.mdht.uml.cda.source"
+         version="0.0.0"/>
+
+
    <requires>
       <import feature="org.eclipse.platform" version="3.5.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.uml2" version="3.0.0" match="greaterOrEqual"/>
