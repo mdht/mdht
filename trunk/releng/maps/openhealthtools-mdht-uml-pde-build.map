@@ -167,6 +167,7 @@ plugin@org.openhealthtools.mdht.uml.cda.phcr.wnv.tests=SVN,trunk,https://www.pro
 
 !***************  MDHT Feature for CDA Runtime for Application Development - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.source-feature,force
+feature@org.openhealthtools.mdht.uml.cda.runtime.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.runtime.source-feature,force
 
 !***************  MDHT Feature for JUnit Tests - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.test.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.test.source-feature,force
