@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.FindingsSection;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.FindingsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
