@@ -43,7 +43,7 @@ public class ResultsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated not
 	 */
 	@Test
 	public void testValidateMu2consolResultsSectionResultOrganizer() {
@@ -54,12 +54,12 @@ public class ResultsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ResultsSection target) {
-				target.init();
+				target.addOrganizer(Mu2consolFactory.eINSTANCE.createResultOrganizer().init());
 
 			}
 
