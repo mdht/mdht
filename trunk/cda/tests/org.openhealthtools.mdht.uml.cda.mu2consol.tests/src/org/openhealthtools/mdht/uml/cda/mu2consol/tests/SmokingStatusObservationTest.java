@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.SmokingStatusObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -28,22 +22,16 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Smoking Status Observation</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateSmokingStatusObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Smoking Status Observation Value P</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateSmokingStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Smoking Status Observation Value</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateTobaccoUseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Tobacco Use Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateSmokingStatusObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Smoking Status Observation Value P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateSmokingStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Smoking Status Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateTobaccoUseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Tobacco Use Template Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -138,37 +126,67 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateTobaccoUseTemplateId() {
-		OperationsTestCase<SmokingStatusObservation> validateTobaccoUseTemplateIdTestCase = new OperationsTestCase<SmokingStatusObservation>(
-				"validateTobaccoUseTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TOBACCO_USE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<SmokingStatusObservation> validateTobaccoUseTemplateIdTestCase = new OperationsTestCase<SmokingStatusObservation>(
+      "validateTobaccoUseTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SmokingStatusObservation target) {
+      @Override
+      protected void updateToFail(SmokingStatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SmokingStatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(SmokingStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return SmokingStatusObservationOperations
-						.validateTobaccoUseTemplateId(
-								(SmokingStatusObservation) objectToTest,
-								diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SmokingStatusObservationOperations.validateTobaccoUseTemplateId(
+          (SmokingStatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateTobaccoUseTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateTobaccoUseTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -230,17 +248,17 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // SmokingStatusObservationOperations

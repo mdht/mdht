@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ResultsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -52,38 +47,67 @@ public class ResultsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolResultsSectionResultOrganizer() {
-		OperationsTestCase<ResultsSection> validateMu2consolResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
-				"validateMu2consolResultsSectionResultOrganizer",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<ResultsSection> validateMu2consolResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
+      "validateMu2consolResultsSectionResultOrganizer",
+      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ResultsSection target) {
+      @Override
+      protected void updateToFail(ResultsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ResultsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(ResultsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ResultsSectionOperations
-						.validateMu2consolResultsSectionResultOrganizer(
-								(ResultsSection) objectToTest, diagnostician,
-								map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ResultsSectionOperations.validateMu2consolResultsSectionResultOrganizer(
+          (ResultsSection) objectToTest, diagnostician, map);
+      }
 
-		validateMu2consolResultsSectionResultOrganizerTestCase
-				.doValidationTest();
-	}
+    };
+
+    validateMu2consolResultsSectionResultOrganizerTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -92,10 +116,13 @@ public class ResultsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMu2consolResultOrganizers() {
 
-		ResultsSection target = objectFactory.create();
-		target.getMu2consolResultOrganizers();
 
-	}
+ResultsSection target = objectFactory.create();
+target.getMu2consolResultOrganizers();
+
+
+
+}
 
 	/**
 	 * 
@@ -103,38 +130,67 @@ public class ResultsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultsSectionEntriesOptionalTemplateId() {
-		OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ResultsSection>(
-				"validateResultsSectionEntriesOptionalTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ResultsSection>(
+      "validateResultsSectionEntriesOptionalTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ResultsSection target) {
+      @Override
+      protected void updateToFail(ResultsSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ResultsSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(ResultsSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ResultsSectionOperations
-						.validateResultsSectionEntriesOptionalTemplateId(
-								(ResultsSection) objectToTest, diagnostician,
-								map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ResultsSectionOperations.validateResultsSectionEntriesOptionalTemplateId(
+          (ResultsSection) objectToTest, diagnostician, map);
+      }
 
-		validateResultsSectionEntriesOptionalTemplateIdTestCase
-				.doValidationTest();
-	}
+    };
+
+    validateResultsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -194,17 +250,17 @@ public class ResultsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ResultsSectionOperations

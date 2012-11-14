@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ResultObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -28,23 +22,16 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Result Observation</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateMu2consolResultObservationResultObservationCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Result Observation Result Observation Code Value</em>}
- * </li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateMu2consolResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Result Observation Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateMu2consolResultObservationResultObservationCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Result Observation Result Observation Code Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateMu2consolResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Result Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -141,37 +128,67 @@ public class ResultObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultObservationTemplateId() {
-		OperationsTestCase<ResultObservation> validateResultObservationTemplateIdTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<ResultObservation> validateResultObservationTemplateIdTestCase = new OperationsTestCase<ResultObservation>(
+      "validateResultObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ResultObservation target) {
+      @Override
+      protected void updateToFail(ResultObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ResultObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ResultObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ResultObservationOperations
-						.validateResultObservationTemplateId(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ResultObservationOperations.validateResultObservationTemplateId(
+          (ResultObservation) objectToTest, diagnostician, map);
+      }
 
-		validateResultObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateResultObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -232,17 +249,17 @@ public class ResultObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ResultObservationOperations

@@ -36,83 +36,32 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>General Header Constraints</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol General Header Constraints Record Target</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol General Header Constraints Documentation Of</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Documentation Of Service Event
- * Performer1 Assigned Entity Assigned Person</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Component1 Encompassing Encounter
- * Encounter Participant</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsComponent1EncompassingEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Component1 Encompassing Encounter
- * </em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#retrieveHospitalAdmissionDiagnosisSection()
- * <em>Retrieve Hospital Admission Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Language Communication Language Code P</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Language Communication Language Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Ethnic Group Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Ethnic Group Code P</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Race Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Race Code P</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * Language Communication</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role Patient
- * </em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Record Target Patient Role</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Documentation Of Service Event
- * Performer1 Assigned Entity</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Documentation Of Service Event
- * Performer</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate General Header Constraints Documentation Of Service Event</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol General Header Constraints Record Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol General Header Constraints Documentation Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event Performer1 Assigned Entity Assigned Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Component1 Encompassing Encounter Encounter Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsComponent1EncompassingEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Component1 Encompassing Encounter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#retrieveHospitalAdmissionDiagnosisSection() <em>Retrieve Hospital Admission Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Ethnic Group Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Ethnic Group Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Race Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Race Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event Performer1 Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -489,37 +438,67 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+      "validateGeneralHeaderConstraintsTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
+      @Override
+      protected void updateToFail(GeneralHeaderConstraints target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+      @Override
+      protected void updateToPass(GeneralHeaderConstraints target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsTemplateId(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTemplateId(
+          (GeneralHeaderConstraints) objectToTest, diagnostician, map);
+      }
 
-		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -1022,9 +1001,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -1032,9 +1011,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 	/**
 	 * 

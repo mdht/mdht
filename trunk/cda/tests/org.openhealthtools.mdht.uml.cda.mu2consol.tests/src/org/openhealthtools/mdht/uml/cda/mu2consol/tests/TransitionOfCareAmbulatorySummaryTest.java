@@ -9,50 +9,35 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.TransitionOfCareAmbulatorySummaryOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Transition Of Care Ambulatory Summary</b></em>' model
  * objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryResponsibleParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Ambulatory Summary Responsible Party</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Ambulatory Summary Ambulatory Encounter
- * Diagnoses</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryReasonForReferralSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Ambulatory Summary Reason For Referral
- * Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#getReasonForReferralSection()
- * <em>Get Reason For Referral Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryResponsibleParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Ambulatory Summary Responsible Party</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Ambulatory Summary Ambulatory Encounter Diagnoses</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryReasonForReferralSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Ambulatory Summary Reason For Referral Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#getReasonForReferralSection() <em>Get Reason For Referral Section</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -200,10 +185,13 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetReasonForReferralSection() {
 
-		TransitionOfCareAmbulatorySummary target = objectFactory.create();
-		target.getReasonForReferralSection();
 
-	}
+TransitionOfCareAmbulatorySummary target = objectFactory.create();
+target.getReasonForReferralSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -266,17 +254,17 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // TransitionOfCareAmbulatorySummaryOperations
