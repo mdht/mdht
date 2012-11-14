@@ -44,67 +44,33 @@ public class AssessmentAndPlanSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAssessmentAndPlanSectionProcNoteTemplateId() {
-      OperationsTestCase<AssessmentAndPlanSectionProcNote> validateAssessmentAndPlanSectionProcNoteTemplateIdTestCase = new OperationsTestCase<AssessmentAndPlanSectionProcNote>(
-      "validateAssessmentAndPlanSectionProcNoteTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AssessmentAndPlanSectionProcNote> validateAssessmentAndPlanSectionProcNoteTemplateIdTestCase = new OperationsTestCase<AssessmentAndPlanSectionProcNote>(
+			"validateAssessmentAndPlanSectionProcNoteTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AssessmentAndPlanSectionProcNote target) {
+			@Override
+			protected void updateToFail(AssessmentAndPlanSectionProcNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AssessmentAndPlanSectionProcNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AssessmentAndPlanSectionProcNote target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AssessmentAndPlanSectionProcNoteOperations.validateAssessmentAndPlanSectionProcNoteTemplateId(
+					(AssessmentAndPlanSectionProcNote) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AssessmentAndPlanSectionProcNoteOperations.validateAssessmentAndPlanSectionProcNoteTemplateId(
-          (AssessmentAndPlanSectionProcNote) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAssessmentAndPlanSectionProcNoteTemplateIdTestCase.doValidationTest();
-}
+		validateAssessmentAndPlanSectionProcNoteTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -112,67 +78,33 @@ public class AssessmentAndPlanSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAssessmentAndPlanSectionProcNoteCode() {
-      OperationsTestCase<AssessmentAndPlanSectionProcNote> validateAssessmentAndPlanSectionProcNoteCodeTestCase = new OperationsTestCase<AssessmentAndPlanSectionProcNote>(
-      "validateAssessmentAndPlanSectionProcNoteCode",
-      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AssessmentAndPlanSectionProcNote> validateAssessmentAndPlanSectionProcNoteCodeTestCase = new OperationsTestCase<AssessmentAndPlanSectionProcNote>(
+			"validateAssessmentAndPlanSectionProcNoteCode",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AssessmentAndPlanSectionProcNote target) {
+			@Override
+			protected void updateToFail(AssessmentAndPlanSectionProcNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AssessmentAndPlanSectionProcNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AssessmentAndPlanSectionProcNote target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AssessmentAndPlanSectionProcNoteOperations.validateAssessmentAndPlanSectionProcNoteCode(
+					(AssessmentAndPlanSectionProcNote) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AssessmentAndPlanSectionProcNoteOperations.validateAssessmentAndPlanSectionProcNoteCode(
-          (AssessmentAndPlanSectionProcNote) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAssessmentAndPlanSectionProcNoteCodeTestCase.doValidationTest();
-}
+		validateAssessmentAndPlanSectionProcNoteCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -230,9 +162,9 @@ public class AssessmentAndPlanSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -240,8 +172,8 @@ public class AssessmentAndPlanSectionProcNoteTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AssessmentAndPlanSectionProcNoteOperations

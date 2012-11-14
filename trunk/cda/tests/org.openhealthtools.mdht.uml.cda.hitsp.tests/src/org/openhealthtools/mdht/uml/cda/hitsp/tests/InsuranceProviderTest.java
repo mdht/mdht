@@ -1012,140 +1012,69 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateInsuranceProviderTemplateId() {
-      OperationsTestCase<InsuranceProvider> validateInsuranceProviderTemplateIdTestCase = new OperationsTestCase<InsuranceProvider>(
-      "validateInsuranceProviderTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderTemplateIdTestCase = new OperationsTestCase<InsuranceProvider>(
+			"validateInsuranceProviderTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(InsuranceProvider target) {
+			@Override
+			protected void updateToFail(InsuranceProvider target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(InsuranceProvider target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(InsuranceProvider target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return InsuranceProviderOperations.validateInsuranceProviderTemplateId(
+					(InsuranceProvider) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InsuranceProviderOperations.validateInsuranceProviderTemplateId(
-          (InsuranceProvider) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateInsuranceProviderTemplateIdTestCase.doValidationTest();
-}
+		validateInsuranceProviderTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateInsuranceProviderCode() {
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderCodeTestCase = new OperationsTestCase<InsuranceProvider>(
+			"validateInsuranceProviderCode",
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
- 
-                  
-public void testValidateInsuranceProviderCode() {
-      OperationsTestCase<InsuranceProvider> validateInsuranceProviderCodeTestCase = new OperationsTestCase<InsuranceProvider>(
-      "validateInsuranceProviderCode",
-      operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(InsuranceProvider target) {
 
-      @Override
-      protected void updateToFail(InsuranceProvider target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(InsuranceProvider target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(InsuranceProvider target) {
-        target.init();
-        
-        
-        
-        
-        
+			}
 
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-      
+				return InsuranceProviderOperations.validateInsuranceProviderCode(
+					(InsuranceProvider) objectToTest, diagnostician, map);
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		};
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return InsuranceProviderOperations.validateInsuranceProviderCode(
-          (InsuranceProvider) objectToTest, diagnostician, map);
-      }
+		validateInsuranceProviderCodeTestCase.doValidationTest();
+	}
 
-    };
-
-    validateInsuranceProviderCodeTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	 * 
 	 * @generated
 	 */
@@ -1201,9 +1130,9 @@ public void testValidateInsuranceProviderCode() {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -1211,8 +1140,8 @@ public void testValidateInsuranceProviderCode() {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // InsuranceProviderOperations

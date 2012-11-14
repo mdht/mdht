@@ -43,67 +43,33 @@ public class MedicalDevicesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalDevicesSectionTemplateId() {
-      OperationsTestCase<MedicalDevicesSection> validateMedicalDevicesSectionTemplateIdTestCase = new OperationsTestCase<MedicalDevicesSection>(
-      "validateMedicalDevicesSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MedicalDevicesSection> validateMedicalDevicesSectionTemplateIdTestCase = new OperationsTestCase<MedicalDevicesSection>(
+			"validateMedicalDevicesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MedicalDevicesSection target) {
+			@Override
+			protected void updateToFail(MedicalDevicesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MedicalDevicesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MedicalDevicesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MedicalDevicesSectionOperations.validateMedicalDevicesSectionTemplateId(
+					(MedicalDevicesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicalDevicesSectionOperations.validateMedicalDevicesSectionTemplateId(
-          (MedicalDevicesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMedicalDevicesSectionTemplateIdTestCase.doValidationTest();
-}
+		validateMedicalDevicesSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -159,9 +125,9 @@ public class MedicalDevicesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -169,8 +135,8 @@ public class MedicalDevicesSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // MedicalDevicesSectionOperations

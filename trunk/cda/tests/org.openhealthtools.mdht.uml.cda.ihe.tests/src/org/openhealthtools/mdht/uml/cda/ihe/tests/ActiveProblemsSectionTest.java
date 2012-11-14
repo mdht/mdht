@@ -45,67 +45,33 @@ public class ActiveProblemsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateActiveProblemsSectionTemplateId() {
-      OperationsTestCase<ActiveProblemsSection> validateActiveProblemsSectionTemplateIdTestCase = new OperationsTestCase<ActiveProblemsSection>(
-      "validateActiveProblemsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ActiveProblemsSection> validateActiveProblemsSectionTemplateIdTestCase = new OperationsTestCase<ActiveProblemsSection>(
+			"validateActiveProblemsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ActiveProblemsSection target) {
+			@Override
+			protected void updateToFail(ActiveProblemsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ActiveProblemsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ActiveProblemsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ActiveProblemsSectionOperations.validateActiveProblemsSectionTemplateId(
+					(ActiveProblemsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ActiveProblemsSectionOperations.validateActiveProblemsSectionTemplateId(
-          (ActiveProblemsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateActiveProblemsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateActiveProblemsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -149,13 +115,10 @@ public class ActiveProblemsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemConcernEntries() {
 
+		ActiveProblemsSection target = objectFactory.create();
+		target.getProblemConcernEntries();
 
-ActiveProblemsSection target = objectFactory.create();
-target.getProblemConcernEntries();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -212,9 +175,9 @@ target.getProblemConcernEntries();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -222,8 +185,8 @@ target.getProblemConcernEntries();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ActiveProblemsSectionOperations

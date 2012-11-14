@@ -46,140 +46,66 @@ public class VitalSignTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateVitalSignTemplateId() {
-      OperationsTestCase<VitalSign> validateVitalSignTemplateIdTestCase = new OperationsTestCase<VitalSign>(
-      "validateVitalSignTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<VitalSign> validateVitalSignTemplateIdTestCase = new OperationsTestCase<VitalSign>(
+			"validateVitalSignTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(VitalSign target) {
+			@Override
+			protected void updateToFail(VitalSign target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VitalSign target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VitalSign target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return VitalSignOperations.validateVitalSignTemplateId((VitalSign) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VitalSignOperations.validateVitalSignTemplateId(
-          (VitalSign) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateVitalSignTemplateIdTestCase.doValidationTest();
-}
+		validateVitalSignTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVitalSignCode() {
+		OperationsTestCase<VitalSign> validateVitalSignCodeTestCase = new OperationsTestCase<VitalSign>(
+			"validateVitalSignCode",
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
- 
-                  
-public void testValidateVitalSignCode() {
-      OperationsTestCase<VitalSign> validateVitalSignCodeTestCase = new OperationsTestCase<VitalSign>(
-      "validateVitalSignCode",
-      operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(VitalSign target) {
 
-      @Override
-      protected void updateToFail(VitalSign target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(VitalSign target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(VitalSign target) {
-        target.init();
-        
-        
-        
-        
-        
+			}
 
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-      
+				return VitalSignOperations.validateVitalSignCode((VitalSign) objectToTest, diagnostician, map);
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		};
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VitalSignOperations.validateVitalSignCode(
-          (VitalSign) objectToTest, diagnostician, map);
-      }
+		validateVitalSignCodeTestCase.doValidationTest();
+	}
 
-    };
-
-    validateVitalSignCodeTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	 * 
 	 * @generated NOT
 	 */
@@ -274,9 +200,9 @@ public void testValidateVitalSignCode() {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -284,8 +210,8 @@ public void testValidateVitalSignCode() {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // VitalSignOperations

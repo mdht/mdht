@@ -46,67 +46,33 @@ public class ProblemListSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateProblemListSectionTemplateId() {
-      OperationsTestCase<ProblemListSection> validateProblemListSectionTemplateIdTestCase = new OperationsTestCase<ProblemListSection>(
-      "validateProblemListSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PROBLEM_LIST_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProblemListSection> validateProblemListSectionTemplateIdTestCase = new OperationsTestCase<ProblemListSection>(
+			"validateProblemListSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_LIST_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProblemListSection target) {
+			@Override
+			protected void updateToFail(ProblemListSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProblemListSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProblemListSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProblemListSectionOperations.validateProblemListSectionTemplateId(
+					(ProblemListSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProblemListSectionOperations.validateProblemListSectionTemplateId(
-          (ProblemListSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProblemListSectionTemplateIdTestCase.doValidationTest();
-}
+		validateProblemListSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -151,13 +117,10 @@ public class ProblemListSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetConditions() {
 
+		ProblemListSection target = objectFactory.create();
+		target.getConditions();
 
-ProblemListSection target = objectFactory.create();
-target.getConditions();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -215,9 +178,9 @@ target.getConditions();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -225,8 +188,8 @@ target.getConditions();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProblemListSectionOperations

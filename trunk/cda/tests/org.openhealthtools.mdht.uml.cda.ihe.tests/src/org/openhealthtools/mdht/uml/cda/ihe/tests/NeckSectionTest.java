@@ -46,67 +46,33 @@ public class NeckSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNeckSectionTemplateId() {
-      OperationsTestCase<NeckSection> validateNeckSectionTemplateIdTestCase = new OperationsTestCase<NeckSection>(
-      "validateNeckSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_NECK_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<NeckSection> validateNeckSectionTemplateIdTestCase = new OperationsTestCase<NeckSection>(
+			"validateNeckSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_NECK_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(NeckSection target) {
+			@Override
+			protected void updateToFail(NeckSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(NeckSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(NeckSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return NeckSectionOperations.validateNeckSectionTemplateId(
+					(NeckSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return NeckSectionOperations.validateNeckSectionTemplateId(
-          (NeckSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateNeckSectionTemplateIdTestCase.doValidationTest();
-}
+		validateNeckSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,31 @@ public class NeckSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateNeckSectionCode() {
-      OperationsTestCase<NeckSection> validateNeckSectionCodeTestCase = new OperationsTestCase<NeckSection>(
-      "validateNeckSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_NECK_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<NeckSection> validateNeckSectionCodeTestCase = new OperationsTestCase<NeckSection>(
+			"validateNeckSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_NECK_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(NeckSection target) {
+			@Override
+			protected void updateToFail(NeckSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(NeckSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(NeckSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return NeckSectionOperations.validateNeckSectionCode((NeckSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return NeckSectionOperations.validateNeckSectionCode(
-          (NeckSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateNeckSectionCodeTestCase.doValidationTest();
-}
+		validateNeckSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +147,10 @@ public class NeckSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		NeckSection target = objectFactory.create();
+		target.getProblemEntry();
 
-NeckSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +205,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // NeckSectionOperations

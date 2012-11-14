@@ -46,67 +46,33 @@ public class AbdomenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAbdomenSectionTemplateId() {
-      OperationsTestCase<AbdomenSection> validateAbdomenSectionTemplateIdTestCase = new OperationsTestCase<AbdomenSection>(
-      "validateAbdomenSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ABDOMEN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AbdomenSection> validateAbdomenSectionTemplateIdTestCase = new OperationsTestCase<AbdomenSection>(
+			"validateAbdomenSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ABDOMEN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AbdomenSection target) {
+			@Override
+			protected void updateToFail(AbdomenSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AbdomenSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AbdomenSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AbdomenSectionOperations.validateAbdomenSectionTemplateId(
+					(AbdomenSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AbdomenSectionOperations.validateAbdomenSectionTemplateId(
-          (AbdomenSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAbdomenSectionTemplateIdTestCase.doValidationTest();
-}
+		validateAbdomenSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class AbdomenSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAbdomenSectionCode() {
-      OperationsTestCase<AbdomenSection> validateAbdomenSectionCodeTestCase = new OperationsTestCase<AbdomenSection>(
-      "validateAbdomenSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_ABDOMEN_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AbdomenSection> validateAbdomenSectionCodeTestCase = new OperationsTestCase<AbdomenSection>(
+			"validateAbdomenSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_ABDOMEN_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AbdomenSection target) {
+			@Override
+			protected void updateToFail(AbdomenSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AbdomenSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AbdomenSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AbdomenSectionOperations.validateAbdomenSectionCode(
+					(AbdomenSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AbdomenSectionOperations.validateAbdomenSectionCode(
-          (AbdomenSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAbdomenSectionCodeTestCase.doValidationTest();
-}
+		validateAbdomenSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +149,10 @@ public class AbdomenSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		AbdomenSection target = objectFactory.create();
+		target.getProblemEntry();
 
-AbdomenSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +207,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AbdomenSectionOperations

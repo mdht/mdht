@@ -46,67 +46,33 @@ public class HeartSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHeartSectionTemplateId() {
-      OperationsTestCase<HeartSection> validateHeartSectionTemplateIdTestCase = new OperationsTestCase<HeartSection>(
-      "validateHeartSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HEART_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HeartSection> validateHeartSectionTemplateIdTestCase = new OperationsTestCase<HeartSection>(
+			"validateHeartSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HEART_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HeartSection target) {
+			@Override
+			protected void updateToFail(HeartSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HeartSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HeartSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HeartSectionOperations.validateHeartSectionTemplateId(
+					(HeartSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HeartSectionOperations.validateHeartSectionTemplateId(
-          (HeartSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHeartSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHeartSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,31 @@ public class HeartSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHeartSectionCode() {
-      OperationsTestCase<HeartSection> validateHeartSectionCodeTestCase = new OperationsTestCase<HeartSection>(
-      "validateHeartSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_HEART_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HeartSection> validateHeartSectionCodeTestCase = new OperationsTestCase<HeartSection>(
+			"validateHeartSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_HEART_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(HeartSection target) {
+			@Override
+			protected void updateToFail(HeartSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HeartSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HeartSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HeartSectionOperations.validateHeartSectionCode((HeartSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HeartSectionOperations.validateHeartSectionCode(
-          (HeartSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHeartSectionCodeTestCase.doValidationTest();
-}
+		validateHeartSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -216,13 +146,10 @@ public class HeartSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		HeartSection target = objectFactory.create();
+		target.getProblemEntry();
 
-HeartSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -277,17 +204,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HeartSectionOperations

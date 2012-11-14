@@ -48,67 +48,33 @@ public class PlanSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePlanSectionTemplateId() {
-      OperationsTestCase<PlanSection> validatePlanSectionTemplateIdTestCase = new OperationsTestCase<PlanSection>(
-      "validatePlanSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanSection> validatePlanSectionTemplateIdTestCase = new OperationsTestCase<PlanSection>(
+			"validatePlanSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanSection target) {
+			@Override
+			protected void updateToFail(PlanSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PlanSectionOperations.validatePlanSectionTemplateId(
+					(PlanSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanSectionOperations.validatePlanSectionTemplateId(
-          (PlanSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanSectionTemplateIdTestCase.doValidationTest();
-}
+		validatePlanSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -116,67 +82,31 @@ public class PlanSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePlanSectionCode() {
-      OperationsTestCase<PlanSection> validatePlanSectionCodeTestCase = new OperationsTestCase<PlanSection>(
-      "validatePlanSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanSection> validatePlanSectionCodeTestCase = new OperationsTestCase<PlanSection>(
+			"validatePlanSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanSection target) {
+			@Override
+			protected void updateToFail(PlanSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PlanSectionOperations.validatePlanSectionCode((PlanSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanSectionOperations.validatePlanSectionCode(
-          (PlanSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanSectionCodeTestCase.doValidationTest();
-}
+		validatePlanSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -234,9 +164,9 @@ public class PlanSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -244,8 +174,8 @@ public class PlanSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PlanSectionOperations

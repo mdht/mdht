@@ -32,7 +32,7 @@ public class MedicationNormalDoseTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testNoOperations() {
-  }
+	}
 
 	/**
 	 * 
@@ -40,8 +40,8 @@ public class MedicationNormalDoseTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // MedicationNormalDoseOperations

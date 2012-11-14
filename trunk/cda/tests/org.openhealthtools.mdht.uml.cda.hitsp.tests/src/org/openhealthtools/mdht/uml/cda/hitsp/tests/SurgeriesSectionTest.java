@@ -45,67 +45,33 @@ public class SurgeriesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHITSPSurgeriesSectionTemplateId() {
-      OperationsTestCase<SurgeriesSection> validateHITSPSurgeriesSectionTemplateIdTestCase = new OperationsTestCase<SurgeriesSection>(
-      "validateHITSPSurgeriesSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_SURGERIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SurgeriesSection> validateHITSPSurgeriesSectionTemplateIdTestCase = new OperationsTestCase<SurgeriesSection>(
+			"validateHITSPSurgeriesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_SURGERIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SurgeriesSection target) {
+			@Override
+			protected void updateToFail(SurgeriesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SurgeriesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SurgeriesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SurgeriesSectionOperations.validateHITSPSurgeriesSectionTemplateId(
+					(SurgeriesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SurgeriesSectionOperations.validateHITSPSurgeriesSectionTemplateId(
-          (SurgeriesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPSurgeriesSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPSurgeriesSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -147,13 +113,10 @@ public class SurgeriesSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProcedureActivities() {
 
+		SurgeriesSection target = objectFactory.create();
+		target.getProcedureActivities();
 
-SurgeriesSection target = objectFactory.create();
-target.getProcedureActivities();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -208,17 +171,17 @@ target.getProcedureActivities();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SurgeriesSectionOperations

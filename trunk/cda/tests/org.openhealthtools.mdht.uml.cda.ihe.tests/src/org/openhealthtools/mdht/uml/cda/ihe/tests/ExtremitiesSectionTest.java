@@ -46,67 +46,33 @@ public class ExtremitiesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExtremitiesSectionTemplateId() {
-      OperationsTestCase<ExtremitiesSection> validateExtremitiesSectionTemplateIdTestCase = new OperationsTestCase<ExtremitiesSection>(
-      "validateExtremitiesSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ExtremitiesSection> validateExtremitiesSectionTemplateIdTestCase = new OperationsTestCase<ExtremitiesSection>(
+			"validateExtremitiesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ExtremitiesSection target) {
+			@Override
+			protected void updateToFail(ExtremitiesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ExtremitiesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ExtremitiesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ExtremitiesSectionOperations.validateExtremitiesSectionTemplateId(
+					(ExtremitiesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ExtremitiesSectionOperations.validateExtremitiesSectionTemplateId(
-          (ExtremitiesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateExtremitiesSectionTemplateIdTestCase.doValidationTest();
-}
+		validateExtremitiesSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class ExtremitiesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExtremitiesSectionCode() {
-      OperationsTestCase<ExtremitiesSection> validateExtremitiesSectionCodeTestCase = new OperationsTestCase<ExtremitiesSection>(
-      "validateExtremitiesSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ExtremitiesSection> validateExtremitiesSectionCodeTestCase = new OperationsTestCase<ExtremitiesSection>(
+			"validateExtremitiesSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ExtremitiesSection target) {
+			@Override
+			protected void updateToFail(ExtremitiesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ExtremitiesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ExtremitiesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ExtremitiesSectionOperations.validateExtremitiesSectionCode(
+					(ExtremitiesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ExtremitiesSectionOperations.validateExtremitiesSectionCode(
-          (ExtremitiesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateExtremitiesSectionCodeTestCase.doValidationTest();
-}
+		validateExtremitiesSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +149,10 @@ public class ExtremitiesSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		ExtremitiesSection target = objectFactory.create();
+		target.getProblemEntry();
 
-ExtremitiesSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +207,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ExtremitiesSectionOperations

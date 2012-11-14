@@ -398,67 +398,33 @@ public class AlertObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAlertObservationTemplateId() {
-      OperationsTestCase<AlertObservation> validateAlertObservationTemplateIdTestCase = new OperationsTestCase<AlertObservation>(
-      "validateAlertObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AlertObservation> validateAlertObservationTemplateIdTestCase = new OperationsTestCase<AlertObservation>(
+			"validateAlertObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AlertObservation target) {
+			@Override
+			protected void updateToFail(AlertObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AlertObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AlertObservationOperations.validateAlertObservationTemplateId(
+					(AlertObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AlertObservationOperations.validateAlertObservationTemplateId(
-          (AlertObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAlertObservationTemplateIdTestCase.doValidationTest();
-}
+		validateAlertObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -466,67 +432,33 @@ public class AlertObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAlertObservationMoodCode() {
-      OperationsTestCase<AlertObservation> validateAlertObservationMoodCodeTestCase = new OperationsTestCase<AlertObservation>(
-      "validateAlertObservationMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AlertObservation> validateAlertObservationMoodCodeTestCase = new OperationsTestCase<AlertObservation>(
+			"validateAlertObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AlertObservation target) {
+			@Override
+			protected void updateToFail(AlertObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AlertObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AlertObservationOperations.validateAlertObservationMoodCode(
+					(AlertObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AlertObservationOperations.validateAlertObservationMoodCode(
-          (AlertObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAlertObservationMoodCodeTestCase.doValidationTest();
-}
+		validateAlertObservationMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -534,70 +466,36 @@ public class AlertObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAlertObservationStatusCode() {
-      OperationsTestCase<AlertObservation> validateAlertObservationStatusCodeTestCase = new OperationsTestCase<AlertObservation>(
-      "validateAlertObservationStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AlertObservation> validateAlertObservationStatusCodeTestCase = new OperationsTestCase<AlertObservation>(
+			"validateAlertObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AlertObservation target) {
+			@Override
+			protected void updateToFail(AlertObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AlertObservation target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AlertObservationOperations.validateAlertObservationStatusCode(
-          (AlertObservation) objectToTest, diagnostician, map);
-      }
+				return AlertObservationOperations.validateAlertObservationStatusCode(
+					(AlertObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateAlertObservationStatusCodeTestCase.doValidationTest();
-}
+		validateAlertObservationStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -605,70 +503,36 @@ public class AlertObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAlertObservationEffectiveTime() {
-      OperationsTestCase<AlertObservation> validateAlertObservationEffectiveTimeTestCase = new OperationsTestCase<AlertObservation>(
-      "validateAlertObservationEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AlertObservation> validateAlertObservationEffectiveTimeTestCase = new OperationsTestCase<AlertObservation>(
+			"validateAlertObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_ALERT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AlertObservation target) {
+			@Override
+			protected void updateToFail(AlertObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AlertObservation target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AlertObservationOperations.validateAlertObservationEffectiveTime(
-          (AlertObservation) objectToTest, diagnostician, map);
-      }
+				return AlertObservationOperations.validateAlertObservationEffectiveTime(
+					(AlertObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateAlertObservationEffectiveTimeTestCase.doValidationTest();
-}
+		validateAlertObservationEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -754,13 +618,10 @@ public class AlertObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetAlertStatusObservation() {
 
+		AlertObservation target = objectFactory.create();
+		target.getAlertStatusObservation();
 
-AlertObservation target = objectFactory.create();
-target.getAlertStatusObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -769,13 +630,10 @@ target.getAlertStatusObservation();
 	@Test
 	public void testGetReactionObservations() {
 
+		AlertObservation target = objectFactory.create();
+		target.getReactionObservations();
 
-AlertObservation target = objectFactory.create();
-target.getReactionObservations();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -830,17 +688,17 @@ target.getReactionObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AlertObservationOperations

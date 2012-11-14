@@ -50,67 +50,33 @@ public class CoverageEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCoverageEntryTemplateId() {
-      OperationsTestCase<CoverageEntry> validateCoverageEntryTemplateIdTestCase = new OperationsTestCase<CoverageEntry>(
-      "validateCoverageEntryTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CoverageEntry> validateCoverageEntryTemplateIdTestCase = new OperationsTestCase<CoverageEntry>(
+			"validateCoverageEntryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CoverageEntry target) {
+			@Override
+			protected void updateToFail(CoverageEntry target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CoverageEntry target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CoverageEntry target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CoverageEntryOperations.validateCoverageEntryTemplateId(
+					(CoverageEntry) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CoverageEntryOperations.validateCoverageEntryTemplateId(
-          (CoverageEntry) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCoverageEntryTemplateIdTestCase.doValidationTest();
-}
+		validateCoverageEntryTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -190,13 +156,10 @@ public class CoverageEntryTest extends CDAValidationTest {
 	@Test
 	public void testGetPayerEntries() {
 
+		CoverageEntry target = objectFactory.create();
+		target.getPayerEntries();
 
-CoverageEntry target = objectFactory.create();
-target.getPayerEntries();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -252,9 +215,9 @@ target.getPayerEntries();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -262,8 +225,8 @@ target.getPayerEntries();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CoverageEntryOperations

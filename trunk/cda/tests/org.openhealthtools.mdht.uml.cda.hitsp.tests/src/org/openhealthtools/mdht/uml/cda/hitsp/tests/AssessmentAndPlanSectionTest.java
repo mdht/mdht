@@ -51,67 +51,33 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHITSPAssessmentAndPlanSectionTemplateId() {
-      OperationsTestCase<AssessmentAndPlanSection> validateHITSPAssessmentAndPlanSectionTemplateIdTestCase = new OperationsTestCase<AssessmentAndPlanSection>(
-      "validateHITSPAssessmentAndPlanSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AssessmentAndPlanSection> validateHITSPAssessmentAndPlanSectionTemplateIdTestCase = new OperationsTestCase<AssessmentAndPlanSection>(
+			"validateHITSPAssessmentAndPlanSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AssessmentAndPlanSection target) {
+			@Override
+			protected void updateToFail(AssessmentAndPlanSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AssessmentAndPlanSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AssessmentAndPlanSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AssessmentAndPlanSectionOperations.validateHITSPAssessmentAndPlanSectionTemplateId(
+					(AssessmentAndPlanSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AssessmentAndPlanSectionOperations.validateHITSPAssessmentAndPlanSectionTemplateId(
-          (AssessmentAndPlanSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPAssessmentAndPlanSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPAssessmentAndPlanSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -256,13 +222,10 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMedications() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getMedications();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getMedications();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -271,13 +234,10 @@ target.getMedications();
 	@Test
 	public void testGetImmunizations() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getImmunizations();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getImmunizations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -286,13 +246,10 @@ target.getImmunizations();
 	@Test
 	public void testGetEncounterEntries() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getEncounterEntries();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getEncounterEntries();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -301,13 +258,10 @@ target.getEncounterEntries();
 	@Test
 	public void testGetProcedureEntries() {
 
+		AssessmentAndPlanSection target = objectFactory.create();
+		target.getProcedureEntries();
 
-AssessmentAndPlanSection target = objectFactory.create();
-target.getProcedureEntries();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -362,17 +316,17 @@ target.getProcedureEntries();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AssessmentAndPlanSectionOperations

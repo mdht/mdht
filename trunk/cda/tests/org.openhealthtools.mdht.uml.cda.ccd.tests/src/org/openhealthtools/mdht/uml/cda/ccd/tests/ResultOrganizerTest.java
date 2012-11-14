@@ -169,67 +169,33 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultOrganizerTemplateId() {
-      OperationsTestCase<ResultOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<ResultOrganizer>(
-      "validateResultOrganizerTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<ResultOrganizer>(
+			"validateResultOrganizerTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultOrganizer target) {
+			@Override
+			protected void updateToFail(ResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ResultOrganizerOperations.validateResultOrganizerTemplateId(
+					(ResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultOrganizerOperations.validateResultOrganizerTemplateId(
-          (ResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateResultOrganizerTemplateIdTestCase.doValidationTest();
-}
+		validateResultOrganizerTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -237,67 +203,33 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultOrganizerMoodCode() {
-      OperationsTestCase<ResultOrganizer> validateResultOrganizerMoodCodeTestCase = new OperationsTestCase<ResultOrganizer>(
-      "validateResultOrganizerMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultOrganizer> validateResultOrganizerMoodCodeTestCase = new OperationsTestCase<ResultOrganizer>(
+			"validateResultOrganizerMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultOrganizer target) {
+			@Override
+			protected void updateToFail(ResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ResultOrganizerOperations.validateResultOrganizerMoodCode(
+					(ResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultOrganizerOperations.validateResultOrganizerMoodCode(
-          (ResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateResultOrganizerMoodCodeTestCase.doValidationTest();
-}
+		validateResultOrganizerMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -376,70 +308,36 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultOrganizerStatusCode() {
-      OperationsTestCase<ResultOrganizer> validateResultOrganizerStatusCodeTestCase = new OperationsTestCase<ResultOrganizer>(
-      "validateResultOrganizerStatusCode",
-      operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultOrganizer> validateResultOrganizerStatusCodeTestCase = new OperationsTestCase<ResultOrganizer>(
+			"validateResultOrganizerStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultOrganizer target) {
+			@Override
+			protected void updateToFail(ResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-      
-        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-        target.setStatusCode(cs);
-        
+			@Override
+			protected void updateToPass(ResultOrganizer target) {
+				target.init();
 
-        
-        
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultOrganizerOperations.validateResultOrganizerStatusCode(
-          (ResultOrganizer) objectToTest, diagnostician, map);
-      }
+				return ResultOrganizerOperations.validateResultOrganizerStatusCode(
+					(ResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateResultOrganizerStatusCodeTestCase.doValidationTest();
-}
+		validateResultOrganizerStatusCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -519,13 +417,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testGetResultObservations() {
 
+		ResultOrganizer target = objectFactory.create();
+		target.getResultObservations();
 
-ResultOrganizer target = objectFactory.create();
-target.getResultObservations();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -580,17 +475,17 @@ target.getResultObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ResultOrganizerOperations

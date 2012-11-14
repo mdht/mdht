@@ -43,67 +43,33 @@ public class MedicationTaperedDoseTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPMedicationTemplateId() {
-      OperationsTestCase<MedicationTaperedDose> validateHITSPMedicationTemplateIdTestCase = new OperationsTestCase<MedicationTaperedDose>(
-      "validateHITSPMedicationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MedicationTaperedDose> validateHITSPMedicationTemplateIdTestCase = new OperationsTestCase<MedicationTaperedDose>(
+			"validateHITSPMedicationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MedicationTaperedDose target) {
+			@Override
+			protected void updateToFail(MedicationTaperedDose target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MedicationTaperedDose target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MedicationTaperedDose target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MedicationTaperedDoseOperations.validateHITSPMedicationTemplateId(
+					(MedicationTaperedDose) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicationTaperedDoseOperations.validateHITSPMedicationTemplateId(
-          (MedicationTaperedDose) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPMedicationTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPMedicationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -161,9 +127,9 @@ public class MedicationTaperedDoseTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -171,8 +137,8 @@ public class MedicationTaperedDoseTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // MedicationTaperedDoseOperations

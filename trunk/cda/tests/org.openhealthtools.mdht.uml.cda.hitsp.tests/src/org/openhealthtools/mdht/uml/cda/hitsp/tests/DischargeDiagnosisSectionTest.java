@@ -46,67 +46,33 @@ public class DischargeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPDischargeDiagnosisSectionTemplateId() {
-      OperationsTestCase<DischargeDiagnosisSection> validateHITSPDischargeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<DischargeDiagnosisSection>(
-      "validateHITSPDischargeDiagnosisSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DischargeDiagnosisSection> validateHITSPDischargeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<DischargeDiagnosisSection>(
+			"validateHITSPDischargeDiagnosisSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DischargeDiagnosisSection target) {
+			@Override
+			protected void updateToFail(DischargeDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DischargeDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DischargeDiagnosisSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DischargeDiagnosisSectionOperations.validateHITSPDischargeDiagnosisSectionTemplateId(
+					(DischargeDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DischargeDiagnosisSectionOperations.validateHITSPDischargeDiagnosisSectionTemplateId(
-          (DischargeDiagnosisSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPDischargeDiagnosisSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPDischargeDiagnosisSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -152,13 +118,10 @@ public class DischargeDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetCondition() {
 
+		DischargeDiagnosisSection target = objectFactory.create();
+		target.getCondition();
 
-DischargeDiagnosisSection target = objectFactory.create();
-target.getCondition();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -216,9 +179,9 @@ target.getCondition();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -226,8 +189,8 @@ target.getCondition();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // DischargeDiagnosisSectionOperations

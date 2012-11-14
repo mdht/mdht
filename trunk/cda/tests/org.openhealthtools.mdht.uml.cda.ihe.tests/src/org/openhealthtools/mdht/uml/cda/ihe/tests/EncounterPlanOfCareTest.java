@@ -45,67 +45,33 @@ public class EncounterPlanOfCareTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareActivityEncounterTemplateId() {
-      OperationsTestCase<EncounterPlanOfCare> validatePlanOfCareActivityEncounterTemplateIdTestCase = new OperationsTestCase<EncounterPlanOfCare>(
-      "validatePlanOfCareActivityEncounterTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EncounterPlanOfCare> validatePlanOfCareActivityEncounterTemplateIdTestCase = new OperationsTestCase<EncounterPlanOfCare>(
+			"validatePlanOfCareActivityEncounterTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EncounterPlanOfCare target) {
+			@Override
+			protected void updateToFail(EncounterPlanOfCare target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EncounterPlanOfCare target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EncounterPlanOfCare target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncounterPlanOfCareOperations.validatePlanOfCareActivityEncounterTemplateId(
+					(EncounterPlanOfCare) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncounterPlanOfCareOperations.validatePlanOfCareActivityEncounterTemplateId(
-          (EncounterPlanOfCare) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanOfCareActivityEncounterTemplateIdTestCase.doValidationTest();
-}
+		validatePlanOfCareActivityEncounterTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -224,9 +190,9 @@ public class EncounterPlanOfCareTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -234,8 +200,8 @@ public class EncounterPlanOfCareTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // EncounterPlanOfCareOperations

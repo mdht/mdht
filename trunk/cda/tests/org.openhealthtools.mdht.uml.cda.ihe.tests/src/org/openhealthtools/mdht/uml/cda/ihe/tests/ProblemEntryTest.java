@@ -149,67 +149,33 @@ public class ProblemEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemEntryTemplateId() {
-      OperationsTestCase<ProblemEntry> validateProblemEntryTemplateIdTestCase = new OperationsTestCase<ProblemEntry>(
-      "validateProblemEntryTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProblemEntry> validateProblemEntryTemplateIdTestCase = new OperationsTestCase<ProblemEntry>(
+			"validateProblemEntryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProblemEntry target) {
+			@Override
+			protected void updateToFail(ProblemEntry target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProblemEntry target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProblemEntry target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProblemEntryOperations.validateProblemEntryTemplateId(
+					(ProblemEntry) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProblemEntryOperations.validateProblemEntryTemplateId(
-          (ProblemEntry) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProblemEntryTemplateIdTestCase.doValidationTest();
-}
+		validateProblemEntryTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -287,70 +253,36 @@ public class ProblemEntryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemEntryEffectiveTime() {
-      OperationsTestCase<ProblemEntry> validateProblemEntryEffectiveTimeTestCase = new OperationsTestCase<ProblemEntry>(
-      "validateProblemEntryEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProblemEntry> validateProblemEntryEffectiveTimeTestCase = new OperationsTestCase<ProblemEntry>(
+			"validateProblemEntryEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProblemEntry target) {
+			@Override
+			protected void updateToFail(ProblemEntry target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProblemEntry target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProblemEntry target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProblemEntryOperations.validateProblemEntryEffectiveTime(
-          (ProblemEntry) objectToTest, diagnostician, map);
-      }
+				return ProblemEntryOperations.validateProblemEntryEffectiveTime(
+					(ProblemEntry) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateProblemEntryEffectiveTimeTestCase.doValidationTest();
-}
+		validateProblemEntryEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -616,13 +548,10 @@ public class ProblemEntryTest extends CDAValidationTest {
 	@Test
 	public void testGetSeverity() {
 
+		ProblemEntry target = objectFactory.create();
+		target.getSeverity();
 
-ProblemEntry target = objectFactory.create();
-target.getSeverity();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -631,13 +560,10 @@ target.getSeverity();
 	@Test
 	public void testGetProblemStatusObservation() {
 
+		ProblemEntry target = objectFactory.create();
+		target.getProblemStatusObservation();
 
-ProblemEntry target = objectFactory.create();
-target.getProblemStatusObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -646,13 +572,10 @@ target.getProblemStatusObservation();
 	@Test
 	public void testGetHealthStatusObservation() {
 
+		ProblemEntry target = objectFactory.create();
+		target.getHealthStatusObservation();
 
-ProblemEntry target = objectFactory.create();
-target.getHealthStatusObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -661,13 +584,10 @@ target.getHealthStatusObservation();
 	@Test
 	public void testGetComments() {
 
+		ProblemEntry target = objectFactory.create();
+		target.getComments();
 
-ProblemEntry target = objectFactory.create();
-target.getComments();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -723,9 +643,9 @@ target.getComments();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -733,8 +653,8 @@ target.getComments();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProblemEntryOperations

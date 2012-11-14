@@ -336,67 +336,33 @@ public class MedicationInformationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMedicationInformationTemplateId() {
-      OperationsTestCase<MedicationInformation> validateMedicationInformationTemplateIdTestCase = new OperationsTestCase<MedicationInformation>(
-      "validateMedicationInformationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationTemplateIdTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MedicationInformation target) {
+			@Override
+			protected void updateToFail(MedicationInformation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MedicationInformation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MedicationInformation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MedicationInformationOperations.validateMedicationInformationTemplateId(
+					(MedicationInformation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicationInformationOperations.validateMedicationInformationTemplateId(
-          (MedicationInformation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMedicationInformationTemplateIdTestCase.doValidationTest();
-}
+		validateMedicationInformationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -454,9 +420,9 @@ public class MedicationInformationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -464,8 +430,8 @@ public class MedicationInformationTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // MedicationInformationOperations

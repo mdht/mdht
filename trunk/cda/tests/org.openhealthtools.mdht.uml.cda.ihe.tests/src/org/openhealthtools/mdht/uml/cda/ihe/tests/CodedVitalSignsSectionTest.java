@@ -46,67 +46,33 @@ public class CodedVitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCodedVitalSignsSectionTemplateId() {
-      OperationsTestCase<CodedVitalSignsSection> validateCodedVitalSignsSectionTemplateIdTestCase = new OperationsTestCase<CodedVitalSignsSection>(
-      "validateCodedVitalSignsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CodedVitalSignsSection> validateCodedVitalSignsSectionTemplateIdTestCase = new OperationsTestCase<CodedVitalSignsSection>(
+			"validateCodedVitalSignsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CodedVitalSignsSection target) {
+			@Override
+			protected void updateToFail(CodedVitalSignsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CodedVitalSignsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CodedVitalSignsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionTemplateId(
+					(CodedVitalSignsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionTemplateId(
-          (CodedVitalSignsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCodedVitalSignsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateCodedVitalSignsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -151,13 +117,10 @@ public class CodedVitalSignsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetIHEVitalSignsOrganizers() {
 
+		CodedVitalSignsSection target = objectFactory.create();
+		target.getIHEVitalSignsOrganizers();
 
-CodedVitalSignsSection target = objectFactory.create();
-target.getIHEVitalSignsOrganizers();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -213,9 +176,9 @@ target.getIHEVitalSignsOrganizers();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -223,8 +186,8 @@ target.getIHEVitalSignsOrganizers();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CodedVitalSignsSectionOperations

@@ -23,7 +23,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.operations.ProductOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -303,67 +302,31 @@ public class ProductTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateProductTemplateId() {
-      OperationsTestCase<Product> validateProductTemplateIdTestCase = new OperationsTestCase<Product>(
-      "validateProductTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Product> validateProductTemplateIdTestCase = new OperationsTestCase<Product>(
+			"validateProductTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(Product target) {
+			@Override
+			protected void updateToFail(Product target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Product target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Product target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProductOperations.validateProductTemplateId((Product) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProductOperations.validateProductTemplateId(
-          (Product) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProductTemplateIdTestCase.doValidationTest();
-}
+		validateProductTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -450,17 +413,17 @@ public class ProductTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProductOperations

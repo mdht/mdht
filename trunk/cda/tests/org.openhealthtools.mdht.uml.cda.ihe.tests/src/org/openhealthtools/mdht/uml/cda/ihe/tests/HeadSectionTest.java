@@ -46,67 +46,33 @@ public class HeadSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHeadSectionTemplateId() {
-      OperationsTestCase<HeadSection> validateHeadSectionTemplateIdTestCase = new OperationsTestCase<HeadSection>(
-      "validateHeadSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HEAD_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HeadSection> validateHeadSectionTemplateIdTestCase = new OperationsTestCase<HeadSection>(
+			"validateHeadSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HEAD_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HeadSection target) {
+			@Override
+			protected void updateToFail(HeadSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HeadSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HeadSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HeadSectionOperations.validateHeadSectionTemplateId(
+					(HeadSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HeadSectionOperations.validateHeadSectionTemplateId(
-          (HeadSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHeadSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHeadSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,31 @@ public class HeadSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHeadSectionCode() {
-      OperationsTestCase<HeadSection> validateHeadSectionCodeTestCase = new OperationsTestCase<HeadSection>(
-      "validateHeadSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_HEAD_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HeadSection> validateHeadSectionCodeTestCase = new OperationsTestCase<HeadSection>(
+			"validateHeadSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_HEAD_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(HeadSection target) {
+			@Override
+			protected void updateToFail(HeadSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HeadSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HeadSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HeadSectionOperations.validateHeadSectionCode((HeadSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HeadSectionOperations.validateHeadSectionCode(
-          (HeadSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHeadSectionCodeTestCase.doValidationTest();
-}
+		validateHeadSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +147,10 @@ public class HeadSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		HeadSection target = objectFactory.create();
+		target.getProblemEntry();
 
-HeadSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +205,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HeadSectionOperations

@@ -164,140 +164,69 @@ public class MedicalSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalSummaryTemplateId() {
-      OperationsTestCase<MedicalSummary> validateMedicalSummaryTemplateIdTestCase = new OperationsTestCase<MedicalSummary>(
-      "validateMedicalSummaryTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MedicalSummary> validateMedicalSummaryTemplateIdTestCase = new OperationsTestCase<MedicalSummary>(
+			"validateMedicalSummaryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MedicalSummary target) {
+			@Override
+			protected void updateToFail(MedicalSummary target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MedicalSummary target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MedicalSummary target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MedicalSummaryOperations.validateMedicalSummaryTemplateId(
+					(MedicalSummary) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicalSummaryOperations.validateMedicalSummaryTemplateId(
-          (MedicalSummary) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMedicalSummaryTemplateIdTestCase.doValidationTest();
-}
+		validateMedicalSummaryTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicalSummaryCode() {
+		OperationsTestCase<MedicalSummary> validateMedicalSummaryCodeTestCase = new OperationsTestCase<MedicalSummary>(
+			"validateMedicalSummaryCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
- 
-                  
-public void testValidateMedicalSummaryCode() {
-      OperationsTestCase<MedicalSummary> validateMedicalSummaryCodeTestCase = new OperationsTestCase<MedicalSummary>(
-      "validateMedicalSummaryCode",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(MedicalSummary target) {
 
-      @Override
-      protected void updateToFail(MedicalSummary target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(MedicalSummary target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(MedicalSummary target) {
-        target.init();
-        
-        
-        
-        
-        
+			}
 
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-      
+				return MedicalSummaryOperations.validateMedicalSummaryCode(
+					(MedicalSummary) objectToTest, diagnostician, map);
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		};
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicalSummaryOperations.validateMedicalSummaryCode(
-          (MedicalSummary) objectToTest, diagnostician, map);
-      }
+		validateMedicalSummaryCodeTestCase.doValidationTest();
+	}
 
-    };
-
-    validateMedicalSummaryCodeTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	*
 	* @generated
 	*/
@@ -351,9 +280,9 @@ public void testValidateMedicalSummaryCode() {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -361,8 +290,8 @@ public void testValidateMedicalSummaryCode() {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // MedicalSummaryOperations

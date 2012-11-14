@@ -52,67 +52,33 @@ public class CodedResultsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCodedResultsSectionTemplateId() {
-      OperationsTestCase<CodedResultsSection> validateCodedResultsSectionTemplateIdTestCase = new OperationsTestCase<CodedResultsSection>(
-      "validateCodedResultsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CodedResultsSection> validateCodedResultsSectionTemplateIdTestCase = new OperationsTestCase<CodedResultsSection>(
+			"validateCodedResultsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CodedResultsSection target) {
+			@Override
+			protected void updateToFail(CodedResultsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CodedResultsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CodedResultsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CodedResultsSectionOperations.validateCodedResultsSectionTemplateId(
+					(CodedResultsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CodedResultsSectionOperations.validateCodedResultsSectionTemplateId(
-          (CodedResultsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCodedResultsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateCodedResultsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -120,67 +86,33 @@ public class CodedResultsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCodedResultsSectionCode() {
-      OperationsTestCase<CodedResultsSection> validateCodedResultsSectionCodeTestCase = new OperationsTestCase<CodedResultsSection>(
-      "validateCodedResultsSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CodedResultsSection> validateCodedResultsSectionCodeTestCase = new OperationsTestCase<CodedResultsSection>(
+			"validateCodedResultsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CodedResultsSection target) {
+			@Override
+			protected void updateToFail(CodedResultsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CodedResultsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CodedResultsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CodedResultsSectionOperations.validateCodedResultsSectionCode(
+					(CodedResultsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CodedResultsSectionOperations.validateCodedResultsSectionCode(
-          (CodedResultsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCodedResultsSectionCodeTestCase.doValidationTest();
-}
+		validateCodedResultsSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -293,13 +225,10 @@ public class CodedResultsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProcedureEntries() {
 
+		CodedResultsSection target = objectFactory.create();
+		target.getProcedureEntries();
 
-CodedResultsSection target = objectFactory.create();
-target.getProcedureEntries();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -308,13 +237,10 @@ target.getProcedureEntries();
 	@Test
 	public void testGetExternalReferences() {
 
+		CodedResultsSection target = objectFactory.create();
+		target.getExternalReferences();
 
-CodedResultsSection target = objectFactory.create();
-target.getExternalReferences();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -323,13 +249,10 @@ target.getExternalReferences();
 	@Test
 	public void testGetSimpleObservations() {
 
+		CodedResultsSection target = objectFactory.create();
+		target.getSimpleObservations();
 
-CodedResultsSection target = objectFactory.create();
-target.getSimpleObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -385,9 +308,9 @@ target.getSimpleObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -395,8 +318,8 @@ target.getSimpleObservations();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CodedResultsSectionOperations

@@ -79,13 +79,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testGetResults() {
 
+		ResultOrganizer target = objectFactory.create();
+		target.getResults();
 
-ResultOrganizer target = objectFactory.create();
-target.getResults();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -140,17 +137,17 @@ target.getResults();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ResultOrganizerOperations

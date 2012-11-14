@@ -44,67 +44,33 @@ public class DischargeDietTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeDietTemplateId() {
-      OperationsTestCase<DischargeDiet> validateDischargeDietTemplateIdTestCase = new OperationsTestCase<DischargeDiet>(
-      "validateDischargeDietTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DischargeDiet> validateDischargeDietTemplateIdTestCase = new OperationsTestCase<DischargeDiet>(
+			"validateDischargeDietTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(DischargeDiet target) {
+			@Override
+			protected void updateToFail(DischargeDiet target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DischargeDiet target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DischargeDiet target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DischargeDietOperations.validateDischargeDietTemplateId(
+					(DischargeDiet) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DischargeDietOperations.validateDischargeDietTemplateId(
-          (DischargeDiet) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateDischargeDietTemplateIdTestCase.doValidationTest();
-}
+		validateDischargeDietTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -112,67 +78,32 @@ public class DischargeDietTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeDietCode() {
-      OperationsTestCase<DischargeDiet> validateDischargeDietCodeTestCase = new OperationsTestCase<DischargeDiet>(
-      "validateDischargeDietCode",
-      operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<DischargeDiet> validateDischargeDietCodeTestCase = new OperationsTestCase<DischargeDiet>(
+			"validateDischargeDietCode",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(DischargeDiet target) {
+			@Override
+			protected void updateToFail(DischargeDiet target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(DischargeDiet target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(DischargeDiet target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return DischargeDietOperations.validateDischargeDietCode(
+					(DischargeDiet) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return DischargeDietOperations.validateDischargeDietCode(
-          (DischargeDiet) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateDischargeDietCodeTestCase.doValidationTest();
-}
+		validateDischargeDietCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -227,17 +158,17 @@ public class DischargeDietTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // DischargeDietOperations

@@ -46,67 +46,33 @@ public class ChestWallSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateChestWallSectionTemplateId() {
-      OperationsTestCase<ChestWallSection> validateChestWallSectionTemplateIdTestCase = new OperationsTestCase<ChestWallSection>(
-      "validateChestWallSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CHEST_WALL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ChestWallSection> validateChestWallSectionTemplateIdTestCase = new OperationsTestCase<ChestWallSection>(
+			"validateChestWallSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CHEST_WALL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ChestWallSection target) {
+			@Override
+			protected void updateToFail(ChestWallSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ChestWallSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ChestWallSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ChestWallSectionOperations.validateChestWallSectionTemplateId(
+					(ChestWallSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ChestWallSectionOperations.validateChestWallSectionTemplateId(
-          (ChestWallSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateChestWallSectionTemplateIdTestCase.doValidationTest();
-}
+		validateChestWallSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class ChestWallSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateChestWallSectionCode() {
-      OperationsTestCase<ChestWallSection> validateChestWallSectionCodeTestCase = new OperationsTestCase<ChestWallSection>(
-      "validateChestWallSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_CHEST_WALL_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ChestWallSection> validateChestWallSectionCodeTestCase = new OperationsTestCase<ChestWallSection>(
+			"validateChestWallSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_CHEST_WALL_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ChestWallSection target) {
+			@Override
+			protected void updateToFail(ChestWallSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ChestWallSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ChestWallSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ChestWallSectionOperations.validateChestWallSectionCode(
+					(ChestWallSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ChestWallSectionOperations.validateChestWallSectionCode(
-          (ChestWallSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateChestWallSectionCodeTestCase.doValidationTest();
-}
+		validateChestWallSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +149,10 @@ public class ChestWallSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		ChestWallSection target = objectFactory.create();
+		target.getProblemEntry();
 
-ChestWallSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +207,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ChestWallSectionOperations

@@ -46,67 +46,33 @@ public class IntegumentarySystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIntegumentarySystemSectionTemplateId() {
-      OperationsTestCase<IntegumentarySystemSection> validateIntegumentarySystemSectionTemplateIdTestCase = new OperationsTestCase<IntegumentarySystemSection>(
-      "validateIntegumentarySystemSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_INTEGUMENTARY_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<IntegumentarySystemSection> validateIntegumentarySystemSectionTemplateIdTestCase = new OperationsTestCase<IntegumentarySystemSection>(
+			"validateIntegumentarySystemSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INTEGUMENTARY_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(IntegumentarySystemSection target) {
+			@Override
+			protected void updateToFail(IntegumentarySystemSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(IntegumentarySystemSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(IntegumentarySystemSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return IntegumentarySystemSectionOperations.validateIntegumentarySystemSectionTemplateId(
+					(IntegumentarySystemSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return IntegumentarySystemSectionOperations.validateIntegumentarySystemSectionTemplateId(
-          (IntegumentarySystemSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateIntegumentarySystemSectionTemplateIdTestCase.doValidationTest();
-}
+		validateIntegumentarySystemSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class IntegumentarySystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIntegumentarySystemSectionCode() {
-      OperationsTestCase<IntegumentarySystemSection> validateIntegumentarySystemSectionCodeTestCase = new OperationsTestCase<IntegumentarySystemSection>(
-      "validateIntegumentarySystemSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_INTEGUMENTARY_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<IntegumentarySystemSection> validateIntegumentarySystemSectionCodeTestCase = new OperationsTestCase<IntegumentarySystemSection>(
+			"validateIntegumentarySystemSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_INTEGUMENTARY_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(IntegumentarySystemSection target) {
+			@Override
+			protected void updateToFail(IntegumentarySystemSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(IntegumentarySystemSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(IntegumentarySystemSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return IntegumentarySystemSectionOperations.validateIntegumentarySystemSectionCode(
+					(IntegumentarySystemSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return IntegumentarySystemSectionOperations.validateIntegumentarySystemSectionCode(
-          (IntegumentarySystemSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateIntegumentarySystemSectionCodeTestCase.doValidationTest();
-}
+		validateIntegumentarySystemSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -216,13 +148,10 @@ public class IntegumentarySystemSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		IntegumentarySystemSection target = objectFactory.create();
+		target.getProblemEntry();
 
-IntegumentarySystemSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -277,17 +206,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // IntegumentarySystemSectionOperations
