@@ -37,7 +37,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated not
 	 */
 	@Test
 	public void testValidateMu2consolResultOrganizerResultObservation() {
@@ -48,12 +48,12 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
-				target.init();
+				target.addObservation(Mu2consolFactory.eINSTANCE.createResultObservation().init());
 
 			}
 

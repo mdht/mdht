@@ -57,6 +57,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.3");
 				target.setCode(value);
 
 			}

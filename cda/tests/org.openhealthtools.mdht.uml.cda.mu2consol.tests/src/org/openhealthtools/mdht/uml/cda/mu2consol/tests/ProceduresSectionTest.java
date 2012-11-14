@@ -37,7 +37,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated not
 	 */
 	@Test
 	public void testValidateMu2consolProceduresSectionProcedureActivityProcedure() {
@@ -48,12 +48,14 @@ public class ProceduresSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProceduresSection target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(ProceduresSection target) {
-				target.init();
+
+				target.addProcedure(Mu2consolFactory.eINSTANCE.createProcedureActivityProcedure().init());
 
 			}
 
