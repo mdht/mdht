@@ -35,141 +35,54 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Summary Of Care Record</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordCarePlanning(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Care Planning</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordCognitiveStatusEntries(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Cognitive Status Entries</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordFunctionalStatusEntries(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Functional Status Entries</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Plan Of Care Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Problem Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Allergies Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordImmunizationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Immunizations Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordSocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Social History Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Results Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Vital Signs Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Procedures Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Social History Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Mu2consol Social History Section Smoking
- * Status Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Mu2consol Plan Of Care Section Care
- * Planning For Plan Of Care</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolPlanOfCareSectionPlanOfCareActivityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Mu2consol Plan Of Care Section Plan Of
- * Care Activity Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Plan Of Care Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Assessment And Plan Section Template Id
- * </em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordAssessmentSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Assessment Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolAssessmentSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Summary Of Care Record Mu2consol Assessment Section Problem
- * Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrieveFunctionalStatusSection()
- * <em>Retrieve Functional Status Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrieveHospitalDischargeDiagnosisSection()
- * <em>Retrieve Hospital Discharge Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrievePostoperativeDiagnosisSection()
- * <em>Retrieve Postoperative Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrievePostprocedureDiagnosisSection()
- * <em>Retrieve Postprocedure Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getEncountersSection()
- * <em>Get Encounters Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPlanOfCareSection()
- * <em>Get Plan Of Care Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getAssessmentAndPlanSection()
- * <em>Get Assessment And Plan Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getAssessmentSection()
- * <em>Get Assessment Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPostoperativeDiagnosisSection()
- * <em>Get Postoperative Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getProblemSection()
- * <em>Get Problem Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getAllergiesSection()
- * <em>Get Allergies Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getHistoryOfPastIllnessSection()
- * <em>Get History Of Past Illness Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPreoperativeDiagnosisSection()
- * <em>Get Preoperative Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getImmunizationsSection()
- * <em>Get Immunizations Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getMedicationsSection()
- * <em>Get Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getSocialHistorySection()
- * <em>Get Social History Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getResultsSection()
- * <em>Get Results Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getVitalSignsSection()
- * <em>Get Vital Signs Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getProceduresSection()
- * <em>Get Procedures Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPostprocedureDiagnosisSection()
- * <em>Get Postprocedure Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getFunctionalStatusSection()
- * <em>Get Functional Status Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordCarePlanning(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Care Planning</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordCognitiveStatusEntries(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Cognitive Status Entries</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordFunctionalStatusEntries(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Functional Status Entries</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Plan Of Care Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Problem Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Allergies Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordImmunizationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Immunizations Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordSocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Results Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Vital Signs Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Procedures Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Social History Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Mu2consol Social History Section Smoking Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Mu2consol Plan Of Care Section Care Planning For Plan Of Care</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolPlanOfCareSectionPlanOfCareActivityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Mu2consol Plan Of Care Section Plan Of Care Activity Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Plan Of Care Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Assessment And Plan Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordAssessmentSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Assessment Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMu2consolAssessmentSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Summary Of Care Record Mu2consol Assessment Section Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrieveFunctionalStatusSection() <em>Retrieve Functional Status Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrieveHospitalDischargeDiagnosisSection() <em>Retrieve Hospital Discharge Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrievePostoperativeDiagnosisSection() <em>Retrieve Postoperative Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#retrievePostprocedureDiagnosisSection() <em>Retrieve Postprocedure Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getEncountersSection() <em>Get Encounters Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getAssessmentAndPlanSection() <em>Get Assessment And Plan Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getAssessmentSection() <em>Get Assessment Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPostoperativeDiagnosisSection() <em>Get Postoperative Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getProblemSection() <em>Get Problem Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getAllergiesSection() <em>Get Allergies Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getHistoryOfPastIllnessSection() <em>Get History Of Past Illness Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPreoperativeDiagnosisSection() <em>Get Preoperative Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getImmunizationsSection() <em>Get Immunizations Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getMedicationsSection() <em>Get Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getSocialHistorySection() <em>Get Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getResultsSection() <em>Get Results Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getVitalSignsSection() <em>Get Vital Signs Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getProceduresSection() <em>Get Procedures Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getPostprocedureDiagnosisSection() <em>Get Postprocedure Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#getFunctionalStatusSection() <em>Get Functional Status Section</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -317,44 +230,76 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordPlanOfCareSection() {
-		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordPlanOfCareSectionTestCase = new OperationsTestCase<SummaryOfCareRecord>(
-				"validateSummaryOfCareRecordPlanOfCareSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordPlanOfCareSectionTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+      "validateSummaryOfCareRecordPlanOfCareSection",
+      operationsForOCL.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(SummaryOfCareRecord target) {
+      @Override
+      protected void updateToFail(SummaryOfCareRecord target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
+      @Override
+      protected void updateToPass(SummaryOfCareRecord target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				/* PlanOfCareSection */
-				PlanOfCareSection section =
+        
+        
 
-				Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
+  
+      
 
-				target.addSection(section);
+  
+    
+    
+      
+        
+    
+      
+      
+        
+        /* PlanOfCareSection */ 
+        PlanOfCareSection section =
+        
+        Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init(); 
+          
+      
+      target.addSection(section);
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return SummaryOfCareRecordOperations.validateSummaryOfCareRecordPlanOfCareSection(
+          (SummaryOfCareRecord) objectToTest, diagnostician, map);
+      }
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+    };
 
-				return SummaryOfCareRecordOperations
-						.validateSummaryOfCareRecordPlanOfCareSection(
-								(SummaryOfCareRecord) objectToTest,
-								diagnostician, map);
-			}
-
-		};
-
-		validateSummaryOfCareRecordPlanOfCareSectionTestCase.doValidationTest();
-	}
+    validateSummaryOfCareRecordPlanOfCareSectionTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -1106,10 +1051,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetEncountersSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getEncountersSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getEncountersSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1118,10 +1066,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getPlanOfCareSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getPlanOfCareSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1130,10 +1081,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getAssessmentAndPlanSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getAssessmentAndPlanSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1142,10 +1096,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getAssessmentSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getAssessmentSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1154,10 +1111,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetPostoperativeDiagnosisSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getPostoperativeDiagnosisSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getPostoperativeDiagnosisSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1166,10 +1126,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getProblemSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getProblemSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1178,10 +1141,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergiesSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getAllergiesSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getAllergiesSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1190,10 +1156,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetHistoryOfPastIllnessSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getHistoryOfPastIllnessSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getHistoryOfPastIllnessSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1202,10 +1171,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetPreoperativeDiagnosisSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getPreoperativeDiagnosisSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getPreoperativeDiagnosisSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1214,10 +1186,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetImmunizationsSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getImmunizationsSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getImmunizationsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1226,10 +1201,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationsSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getMedicationsSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getMedicationsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1238,10 +1216,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetSocialHistorySection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getSocialHistorySection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getSocialHistorySection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1250,10 +1231,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetResultsSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getResultsSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getResultsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1262,10 +1246,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetVitalSignsSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getVitalSignsSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getVitalSignsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1274,10 +1261,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetProceduresSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getProceduresSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getProceduresSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1286,10 +1276,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetPostprocedureDiagnosisSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getPostprocedureDiagnosisSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getPostprocedureDiagnosisSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1298,10 +1291,13 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	@Test
 	public void testGetFunctionalStatusSection() {
 
-		SummaryOfCareRecord target = objectFactory.create();
-		target.getFunctionalStatusSection();
 
-	}
+SummaryOfCareRecord target = objectFactory.create();
+target.getFunctionalStatusSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1363,9 +1359,9 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -1373,8 +1369,8 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // SummaryOfCareRecordOperations

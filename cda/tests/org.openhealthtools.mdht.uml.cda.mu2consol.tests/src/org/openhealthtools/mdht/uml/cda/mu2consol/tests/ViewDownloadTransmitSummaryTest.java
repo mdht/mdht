@@ -9,29 +9,24 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
-import org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection;
-import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ViewDownloadTransmitSummaryOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
@@ -39,94 +34,38 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>View Download Transmit Summary</b></em>' model objects.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryCarePlanFields(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Care Plan Fields</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Allergies Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Problem Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Procedures Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Vital Signs Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Results Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Plan Of Care Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarySocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Social History Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Assessment And Plan Section
- * Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Mu2consol Plan Of Care Section
- * Care Planning For Plan Of Care</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionPlanOfCareActivityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Mu2consol Plan Of Care Section
- * Plan Of Care Activity Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Plan Of Care Section Template Id
- * </em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarySocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Social History Section Template
- * Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate View Download Transmit Summary Mu2consol Social History Section
- * Smoking Status Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#retrievePreoperativeDiagnosisSection()
- * <em>Retrieve Preoperative Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAllergiesSection()
- * <em>Get Allergies Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getMedicationsSection()
- * <em>Get Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getProblemSection()
- * <em>Get Problem Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getProceduresSection()
- * <em>Get Procedures Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getVitalSignsSection()
- * <em>Get Vital Signs Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getResultsSection()
- * <em>Get Results Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAssessmentAndPlanSection()
- * <em>Get Assessment And Plan Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getPlanOfCareSection()
- * <em>Get Plan Of Care Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getSocialHistorySection()
- * <em>Get Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryCarePlanFields(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Care Plan Fields</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Allergies Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Problem Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Procedures Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Vital Signs Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Results Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Plan Of Care Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarySocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Assessment And Plan Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Mu2consol Plan Of Care Section Care Planning For Plan Of Care</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolPlanOfCareSectionPlanOfCareActivityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Mu2consol Plan Of Care Section Plan Of Care Activity Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Plan Of Care Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarySocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Social History Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Mu2consol Social History Section Smoking Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#retrievePreoperativeDiagnosisSection() <em>Retrieve Preoperative Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAllergiesSection() <em>Get Allergies Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getMedicationsSection() <em>Get Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getProblemSection() <em>Get Problem Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getProceduresSection() <em>Get Procedures Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getVitalSignsSection() <em>Get Vital Signs Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getResultsSection() <em>Get Results Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAssessmentAndPlanSection() <em>Get Assessment And Plan Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getSocialHistorySection() <em>Get Social History Section</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -822,10 +761,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergiesSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getAllergiesSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getAllergiesSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -834,10 +776,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationsSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getMedicationsSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getMedicationsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -846,10 +791,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getProblemSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getProblemSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -858,10 +806,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetProceduresSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getProceduresSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getProceduresSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -870,10 +821,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetVitalSignsSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getVitalSignsSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getVitalSignsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -882,10 +836,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetResultsSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getResultsSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getResultsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -894,10 +851,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getAssessmentAndPlanSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getAssessmentAndPlanSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -906,10 +866,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareSection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getPlanOfCareSection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getPlanOfCareSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -918,10 +881,13 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetSocialHistorySection() {
 
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getSocialHistorySection();
 
-	}
+ViewDownloadTransmitSummary target = objectFactory.create();
+target.getSocialHistorySection();
+
+
+
+}
 
 	/**
 	 * 
@@ -984,17 +950,17 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ViewDownloadTransmitSummaryOperations

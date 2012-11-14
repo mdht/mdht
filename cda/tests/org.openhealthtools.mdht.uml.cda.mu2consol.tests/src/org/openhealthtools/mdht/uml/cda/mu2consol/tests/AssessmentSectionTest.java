@@ -9,40 +9,29 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.AssessmentSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Assessment Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection#validateMu2consolAssessmentSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Assessment Section Problem Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection#getProblemObservation()
- * <em>Get Problem Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection#validateAssessmentSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Assessment Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection#validateMu2consolAssessmentSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Assessment Section Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection#getProblemObservation() <em>Get Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection#validateAssessmentSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment Section Template Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -95,10 +84,13 @@ public class AssessmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservation() {
 
-		AssessmentSection target = objectFactory.create();
-		target.getProblemObservation();
 
-	}
+AssessmentSection target = objectFactory.create();
+target.getProblemObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -106,37 +98,67 @@ public class AssessmentSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAssessmentSectionTemplateId() {
-		OperationsTestCase<AssessmentSection> validateAssessmentSectionTemplateIdTestCase = new OperationsTestCase<AssessmentSection>(
-				"validateAssessmentSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ASSESSMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<AssessmentSection> validateAssessmentSectionTemplateIdTestCase = new OperationsTestCase<AssessmentSection>(
+      "validateAssessmentSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AssessmentSection target) {
+      @Override
+      protected void updateToFail(AssessmentSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AssessmentSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(AssessmentSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AssessmentSectionOperations
-						.validateAssessmentSectionTemplateId(
-								(AssessmentSection) objectToTest,
-								diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AssessmentSectionOperations.validateAssessmentSectionTemplateId(
+          (AssessmentSection) objectToTest, diagnostician, map);
+      }
 
-		validateAssessmentSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAssessmentSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -198,9 +220,9 @@ public class AssessmentSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -208,8 +230,8 @@ public class AssessmentSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AssessmentSectionOperations

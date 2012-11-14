@@ -9,82 +9,46 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
-import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.PostoperativeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.PostprocedureDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.TransitionOfCareInpatientSummaryOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Transition Of Care Inpatient Summary</b></em>' model
  * objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Inpatient Summary Inpatient Encounter
- * Diagnoses</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Inpatient Summary Hospital Admission
- * Diagnosis Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Inpatient Summary Hospital Discharge
- * Diagnoses Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Inpatient Summary Postoperative Diagnosis
- * Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Inpatient Summary Postprocedure Diagnosis
- * Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Inpatient Summary Hospital Discharge
- * Instructions Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Transition Of Care Inpatient Summary Hospital Discharge
- * Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeInstructionsSection()
- * <em>Get Hospital Discharge Instructions Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeMedicationsSection()
- * <em>Get Hospital Discharge Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalAdmissionDiagnosisSection()
- * <em>Get Hospital Admission Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeDiagnosisSection()
- * <em>Get Hospital Discharge Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalAdmissionMedicationsSectionEntriesOptional()
- * <em>Get Hospital Admission Medications Section Entries Optional</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Inpatient Encounter Diagnoses</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Admission Diagnosis Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Discharge Diagnoses Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Postoperative Diagnosis Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Postprocedure Diagnosis Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Discharge Instructions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Discharge Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeInstructionsSection() <em>Get Hospital Discharge Instructions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeMedicationsSection() <em>Get Hospital Discharge Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalAdmissionDiagnosisSection() <em>Get Hospital Admission Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeDiagnosisSection() <em>Get Hospital Discharge Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalAdmissionMedicationsSectionEntriesOptional() <em>Get Hospital Admission Medications Section Entries Optional</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -410,10 +374,13 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalDischargeInstructionsSection() {
 
-		TransitionOfCareInpatientSummary target = objectFactory.create();
-		target.getHospitalDischargeInstructionsSection();
 
-	}
+TransitionOfCareInpatientSummary target = objectFactory.create();
+target.getHospitalDischargeInstructionsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -422,10 +389,13 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalDischargeMedicationsSection() {
 
-		TransitionOfCareInpatientSummary target = objectFactory.create();
-		target.getHospitalDischargeMedicationsSection();
 
-	}
+TransitionOfCareInpatientSummary target = objectFactory.create();
+target.getHospitalDischargeMedicationsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -434,10 +404,13 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalAdmissionDiagnosisSection() {
 
-		TransitionOfCareInpatientSummary target = objectFactory.create();
-		target.getHospitalAdmissionDiagnosisSection();
 
-	}
+TransitionOfCareInpatientSummary target = objectFactory.create();
+target.getHospitalAdmissionDiagnosisSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -446,10 +419,13 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalDischargeDiagnosisSection() {
 
-		TransitionOfCareInpatientSummary target = objectFactory.create();
-		target.getHospitalDischargeDiagnosisSection();
 
-	}
+TransitionOfCareInpatientSummary target = objectFactory.create();
+target.getHospitalDischargeDiagnosisSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -458,10 +434,13 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalAdmissionMedicationsSectionEntriesOptional() {
 
-		TransitionOfCareInpatientSummary target = objectFactory.create();
-		target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 
-	}
+TransitionOfCareInpatientSummary target = objectFactory.create();
+target.getHospitalAdmissionMedicationsSectionEntriesOptional();
+
+
+
+}
 
 	/**
 	 * 
@@ -524,17 +503,17 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // TransitionOfCareInpatientSummaryOperations

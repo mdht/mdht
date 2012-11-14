@@ -9,11 +9,8 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Component1;
 import org.openhealthtools.mdht.uml.cda.Component2;
@@ -23,19 +20,16 @@ import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSe
 import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
-import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.VDTInpatientSummaryOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -43,64 +37,29 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>VDT Inpatient Summary</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Effective Time</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Location</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryChiefComplaintOrReasonForVisit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Chief Complaint Or Reason For Visit</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryPreoperativeDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Preoperative Diagnosis Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Hospital Discharge Instructions Section
- * </em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Section</em>}
- * </li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate VDT Inpatient Summary Hospital Discharge Medications Section
- * </em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeInstructionsSection()
- * <em>Get Hospital Discharge Instructions Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalAdmissionDiagnosisSection()
- * <em>Get Hospital Admission Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getChiefComplaintSection()
- * <em>Get Chief Complaint Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getReasonForVisitSection()
- * <em>Get Reason For Visit Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getChiefComplaintAndReasonForVisitSection()
- * <em>Get Chief Complaint And Reason For Visit Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeMedicationsSection()
- * <em>Get Hospital Discharge Medications Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getPreoperativeDiagnosisSection()
- * <em>Get Preoperative Diagnosis Section</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalAdmissionMedicationsSectionEntriesOptional()
- * <em>Get Hospital Admission Medications Section Entries Optional</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Location</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryChiefComplaintOrReasonForVisit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Chief Complaint Or Reason For Visit</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryPreoperativeDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Preoperative Diagnosis Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Discharge Instructions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Discharge Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeInstructionsSection() <em>Get Hospital Discharge Instructions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalAdmissionDiagnosisSection() <em>Get Hospital Admission Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getChiefComplaintSection() <em>Get Chief Complaint Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getReasonForVisitSection() <em>Get Reason For Visit Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getChiefComplaintAndReasonForVisitSection() <em>Get Chief Complaint And Reason For Visit Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeMedicationsSection() <em>Get Hospital Discharge Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getPreoperativeDiagnosisSection() <em>Get Preoperative Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalAdmissionMedicationsSectionEntriesOptional() <em>Get Hospital Admission Medications Section Entries Optional</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -482,10 +441,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalDischargeInstructionsSection() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getHospitalDischargeInstructionsSection();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getHospitalDischargeInstructionsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -494,10 +456,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalAdmissionDiagnosisSection() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getHospitalAdmissionDiagnosisSection();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getHospitalAdmissionDiagnosisSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -506,10 +471,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetChiefComplaintSection() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getChiefComplaintSection();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getChiefComplaintSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -518,10 +486,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetReasonForVisitSection() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getReasonForVisitSection();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getReasonForVisitSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -530,10 +501,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetChiefComplaintAndReasonForVisitSection() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getChiefComplaintAndReasonForVisitSection();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getChiefComplaintAndReasonForVisitSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -542,10 +516,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalDischargeMedicationsSection() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getHospitalDischargeMedicationsSection();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getHospitalDischargeMedicationsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -554,10 +531,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetPreoperativeDiagnosisSection() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getPreoperativeDiagnosisSection();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getPreoperativeDiagnosisSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -566,10 +546,13 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalAdmissionMedicationsSectionEntriesOptional() {
 
-		VDTInpatientSummary target = objectFactory.create();
-		target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 
-	}
+VDTInpatientSummary target = objectFactory.create();
+target.getHospitalAdmissionMedicationsSectionEntriesOptional();
+
+
+
+}
 
 	/**
 	 * 
@@ -630,17 +613,17 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // VDTInpatientSummaryOperations

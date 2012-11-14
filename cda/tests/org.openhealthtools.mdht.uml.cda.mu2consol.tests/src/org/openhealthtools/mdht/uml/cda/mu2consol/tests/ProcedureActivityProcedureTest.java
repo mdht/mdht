@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ProcedureActivityProcedure;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ProcedureActivityProcedureOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -28,22 +22,16 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Procedure Activity Procedure</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ProcedureActivityProcedure#validateMu2consolProcedureActivityProcedureCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Procedure Activity Procedure Code Value</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ProcedureActivityProcedure#validateMu2consolProcedureActivityProcedureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Procedure Activity Procedure Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.ProcedureActivityProcedure#validateProcedureActivityProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Procedure Activity Procedure Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ProcedureActivityProcedure#validateMu2consolProcedureActivityProcedureCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Procedure Activity Procedure Code Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ProcedureActivityProcedure#validateMu2consolProcedureActivityProcedureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Procedure Activity Procedure Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ProcedureActivityProcedure#validateProcedureActivityProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Template Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -140,37 +128,67 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateProcedureActivityProcedureTemplateId() {
-		OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureTemplateIdTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
-				"validateProcedureActivityProcedureTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+      OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureTemplateIdTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
+      "validateProcedureActivityProcedureTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ProcedureActivityProcedure target) {
+      @Override
+      protected void updateToFail(ProcedureActivityProcedure target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ProcedureActivityProcedure target) {
-				target.init();
+      @Override
+      protected void updateToPass(ProcedureActivityProcedure target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ProcedureActivityProcedureOperations
-						.validateProcedureActivityProcedureTemplateId(
-								(ProcedureActivityProcedure) objectToTest,
-								diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ProcedureActivityProcedureOperations.validateProcedureActivityProcedureTemplateId(
+          (ProcedureActivityProcedure) objectToTest, diagnostician, map);
+      }
 
-		validateProcedureActivityProcedureTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateProcedureActivityProcedureTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -233,17 +251,17 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ProcedureActivityProcedureOperations
