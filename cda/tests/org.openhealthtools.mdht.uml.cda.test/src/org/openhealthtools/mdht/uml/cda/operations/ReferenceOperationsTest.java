@@ -37,7 +37,7 @@ public class ReferenceOperationsTest extends CDAValidationTest {
 	 * (and then unSet) to test that they invalidate the test.
 	 */
 	public static final Set<String> MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES = new HashSet<String>(Arrays.asList(
-		/* "externalAct", */"externalDocument", "externalObservation", "externalProcedure"));
+	/* "externalAct", */"externalDocument", "externalObservation", "externalProcedure"));
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
