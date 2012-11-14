@@ -11,9 +11,7 @@
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**

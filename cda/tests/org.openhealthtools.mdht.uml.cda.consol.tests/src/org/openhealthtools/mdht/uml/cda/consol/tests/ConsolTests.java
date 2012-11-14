@@ -7,6 +7,7 @@
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

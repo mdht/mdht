@@ -9,16 +9,12 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.FetusSubjectContext;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.FetusSubjectContextOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -110,7 +106,7 @@ public class FetusSubjectContextTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateFetusSubjectContextSubject() {
@@ -121,13 +117,12 @@ public class FetusSubjectContextTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FetusSubjectContext target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(FetusSubjectContext target) {
-				target.init();
-
+				target.setSubject(CDAFactory.eINSTANCE.createSubjectPerson());
 			}
 
 			@Override
