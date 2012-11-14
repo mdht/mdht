@@ -37,7 +37,7 @@ public class EncountersSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated not
 	 */
 	@Test
 	public void testValidateMu2consolEncountersSectionEncounterActivities() {
@@ -48,12 +48,12 @@ public class EncountersSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncountersSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncountersSection target) {
-				target.init();
+				target.addEncounter(Mu2consolFactory.eINSTANCE.createEncounterActivities().init());
 
 			}
 

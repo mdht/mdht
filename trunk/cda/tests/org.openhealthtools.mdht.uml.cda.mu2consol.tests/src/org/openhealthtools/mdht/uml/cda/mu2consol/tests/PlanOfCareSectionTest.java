@@ -11,6 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.PlanOfCareSectionOperations;
@@ -20,7 +21,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated not
 	 */
 	@Test
 	public void testValidateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
@@ -31,12 +32,12 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init());
 
 			}
 
@@ -54,7 +55,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated not
 	 */
 	@Test
 	public void testValidateMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
@@ -65,12 +66,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
+
+				target.addObservation(ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init());
 
 			}
 
