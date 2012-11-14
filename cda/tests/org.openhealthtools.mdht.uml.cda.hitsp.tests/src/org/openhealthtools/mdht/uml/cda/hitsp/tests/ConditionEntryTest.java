@@ -173,77 +173,40 @@ public class ConditionEntryTest extends CDAValidationTest {
 	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateConditionEntryCodeP() {
+		OperationsTestCase<ConditionEntry> validateConditionEntryCodePTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateConditionEntryCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
- 
-                  
-public void testValidateConditionEntryCodeP() {
-      OperationsTestCase<ConditionEntry> validateConditionEntryCodePTestCase = new OperationsTestCase<ConditionEntry>(
-      "validateConditionEntryCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(ConditionEntry target) {
 
-      @Override
-      protected void updateToFail(ConditionEntry target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(ConditionEntry target) {
-        target.init();
-        
-        
-        
-        
-        
+			}
 
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-      
+				return ConditionEntryOperations.validateConditionEntryCodeP(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		};
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ConditionEntryOperations.validateConditionEntryCodeP(
-          (ConditionEntry) objectToTest, diagnostician, map);
-      }
+		validateConditionEntryCodePTestCase.doValidationTest();
+	}
 
-    };
-
-    validateConditionEntryCodePTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	*
 	* @generated NOT
 	*/
@@ -315,80 +278,43 @@ public void testValidateConditionEntryCodeP() {
 	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateConditionEntryValue() {
+		OperationsTestCase<ConditionEntry> validateConditionEntryValueTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateConditionEntryValue",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
- 
-                  
-public void testValidateConditionEntryValue() {
-      OperationsTestCase<ConditionEntry> validateConditionEntryValueTestCase = new OperationsTestCase<ConditionEntry>(
-      "validateConditionEntryValue",
-      operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(ConditionEntry target) {
 
-      @Override
-      protected void updateToFail(ConditionEntry target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(ConditionEntry target) {
-        target.init();
-        
-        
-        
-        
-        
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
 
-        
-      
-        CD value = DatatypesFactory.eINSTANCE.createCD();
-        target.getValues().add(value);
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ConditionEntryOperations.validateConditionEntryValue(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ConditionEntryOperations.validateConditionEntryValue(
-          (ConditionEntry) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
+		validateConditionEntryValueTestCase.doValidationTest();
+	}
 
-    validateConditionEntryValueTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	*
 	* @generated NOT
 	*/
@@ -516,13 +442,10 @@ public void testValidateConditionEntryValue() {
 	@Test
 	public void testGetHITSPAgeObservation() {
 
+		ConditionEntry target = objectFactory.create();
+		target.getHITSPAgeObservation();
 
-ConditionEntry target = objectFactory.create();
-target.getHITSPAgeObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -531,13 +454,10 @@ target.getHITSPAgeObservation();
 	@Test
 	public void testGetHITSPProblemStatusObservation() {
 
+		ConditionEntry target = objectFactory.create();
+		target.getHITSPProblemStatusObservation();
 
-ConditionEntry target = objectFactory.create();
-target.getHITSPProblemStatusObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -546,13 +466,10 @@ target.getHITSPProblemStatusObservation();
 	@Test
 	public void testGetCauseOfDeathObservation() {
 
+		ConditionEntry target = objectFactory.create();
+		target.getCauseOfDeathObservation();
 
-ConditionEntry target = objectFactory.create();
-target.getCauseOfDeathObservation();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -648,9 +565,9 @@ target.getCauseOfDeathObservation();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -658,8 +575,8 @@ target.getCauseOfDeathObservation();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ConditionEntryOperations

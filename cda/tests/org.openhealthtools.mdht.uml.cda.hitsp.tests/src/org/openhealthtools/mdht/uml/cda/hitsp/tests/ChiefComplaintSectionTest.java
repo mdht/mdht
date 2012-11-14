@@ -46,67 +46,33 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPChiefComplaintSectionTemplateId() {
-      OperationsTestCase<ChiefComplaintSection> validateHITSPChiefComplaintSectionTemplateIdTestCase = new OperationsTestCase<ChiefComplaintSection>(
-      "validateHITSPChiefComplaintSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ChiefComplaintSection> validateHITSPChiefComplaintSectionTemplateIdTestCase = new OperationsTestCase<ChiefComplaintSection>(
+			"validateHITSPChiefComplaintSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ChiefComplaintSection target) {
+			@Override
+			protected void updateToFail(ChiefComplaintSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ChiefComplaintSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ChiefComplaintSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ChiefComplaintSectionOperations.validateHITSPChiefComplaintSectionTemplateId(
+					(ChiefComplaintSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ChiefComplaintSectionOperations.validateHITSPChiefComplaintSectionTemplateId(
-          (ChiefComplaintSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPChiefComplaintSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPChiefComplaintSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -153,13 +119,10 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetCondition() {
 
+		ChiefComplaintSection target = objectFactory.create();
+		target.getCondition();
 
-ChiefComplaintSection target = objectFactory.create();
-target.getCondition();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -217,9 +180,9 @@ target.getCondition();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -227,8 +190,8 @@ target.getCondition();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ChiefComplaintSectionOperations

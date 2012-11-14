@@ -46,67 +46,33 @@ public class EncountersSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPEncountersSectionTemplateId() {
-      OperationsTestCase<EncountersSection> validateHITSPEncountersSectionTemplateIdTestCase = new OperationsTestCase<EncountersSection>(
-      "validateHITSPEncountersSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EncountersSection> validateHITSPEncountersSectionTemplateIdTestCase = new OperationsTestCase<EncountersSection>(
+			"validateHITSPEncountersSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EncountersSection target) {
+			@Override
+			protected void updateToFail(EncountersSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EncountersSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EncountersSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncountersSectionOperations.validateHITSPEncountersSectionTemplateId(
+					(EncountersSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncountersSectionOperations.validateHITSPEncountersSectionTemplateId(
-          (EncountersSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPEncountersSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPEncountersSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -151,13 +117,10 @@ public class EncountersSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetHITSPEncounterEntries() {
 
+		EncountersSection target = objectFactory.create();
+		target.getHITSPEncounterEntries();
 
-EncountersSection target = objectFactory.create();
-target.getHITSPEncounterEntries();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -215,9 +178,9 @@ target.getHITSPEncounterEntries();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -225,8 +188,8 @@ target.getHITSPEncounterEntries();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // EncountersSectionOperations

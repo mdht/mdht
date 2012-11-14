@@ -46,67 +46,33 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateThoraxLungsSectionTemplateId() {
-      OperationsTestCase<ThoraxLungsSection> validateThoraxLungsSectionTemplateIdTestCase = new OperationsTestCase<ThoraxLungsSection>(
-      "validateThoraxLungsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_THORAX_LUNGS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ThoraxLungsSection> validateThoraxLungsSectionTemplateIdTestCase = new OperationsTestCase<ThoraxLungsSection>(
+			"validateThoraxLungsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_THORAX_LUNGS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ThoraxLungsSection target) {
+			@Override
+			protected void updateToFail(ThoraxLungsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ThoraxLungsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ThoraxLungsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ThoraxLungsSectionOperations.validateThoraxLungsSectionTemplateId(
+					(ThoraxLungsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ThoraxLungsSectionOperations.validateThoraxLungsSectionTemplateId(
-          (ThoraxLungsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateThoraxLungsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateThoraxLungsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateThoraxLungsSectionCode() {
-      OperationsTestCase<ThoraxLungsSection> validateThoraxLungsSectionCodeTestCase = new OperationsTestCase<ThoraxLungsSection>(
-      "validateThoraxLungsSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_THORAX_LUNGS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ThoraxLungsSection> validateThoraxLungsSectionCodeTestCase = new OperationsTestCase<ThoraxLungsSection>(
+			"validateThoraxLungsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_THORAX_LUNGS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ThoraxLungsSection target) {
+			@Override
+			protected void updateToFail(ThoraxLungsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ThoraxLungsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ThoraxLungsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ThoraxLungsSectionOperations.validateThoraxLungsSectionCode(
+					(ThoraxLungsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ThoraxLungsSectionOperations.validateThoraxLungsSectionCode(
-          (ThoraxLungsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateThoraxLungsSectionCodeTestCase.doValidationTest();
-}
+		validateThoraxLungsSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +149,10 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		ThoraxLungsSection target = objectFactory.create();
+		target.getProblemEntry();
 
-ThoraxLungsSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +207,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ThoraxLungsSectionOperations

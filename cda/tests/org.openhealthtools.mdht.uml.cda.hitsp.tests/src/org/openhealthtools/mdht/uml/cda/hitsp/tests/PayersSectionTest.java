@@ -46,67 +46,33 @@ public class PayersSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPPayersSectionTemplateId() {
-      OperationsTestCase<PayersSection> validateHITSPPayersSectionTemplateIdTestCase = new OperationsTestCase<PayersSection>(
-      "validateHITSPPayersSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_PAYERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PayersSection> validateHITSPPayersSectionTemplateIdTestCase = new OperationsTestCase<PayersSection>(
+			"validateHITSPPayersSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_PAYERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PayersSection target) {
+			@Override
+			protected void updateToFail(PayersSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PayersSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PayersSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PayersSectionOperations.validateHITSPPayersSectionTemplateId(
+					(PayersSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PayersSectionOperations.validateHITSPPayersSectionTemplateId(
-          (PayersSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPPayersSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPPayersSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -152,13 +118,10 @@ public class PayersSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetInsuranceProviders() {
 
+		PayersSection target = objectFactory.create();
+		target.getInsuranceProviders();
 
-PayersSection target = objectFactory.create();
-target.getInsuranceProviders();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -216,9 +179,9 @@ target.getInsuranceProviders();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -226,8 +189,8 @@ target.getInsuranceProviders();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PayersSectionOperations

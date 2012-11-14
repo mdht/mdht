@@ -43,67 +43,33 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalSummaryTemplateId() {
-      OperationsTestCase<ReferralSummary> validateMedicalSummaryTemplateIdTestCase = new OperationsTestCase<ReferralSummary>(
-      "validateMedicalSummaryTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ReferralSummary> validateMedicalSummaryTemplateIdTestCase = new OperationsTestCase<ReferralSummary>(
+			"validateMedicalSummaryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ReferralSummary target) {
+			@Override
+			protected void updateToFail(ReferralSummary target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ReferralSummary target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ReferralSummary target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ReferralSummaryOperations.validateMedicalSummaryTemplateId(
+					(ReferralSummary) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ReferralSummaryOperations.validateMedicalSummaryTemplateId(
-          (ReferralSummary) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMedicalSummaryTemplateIdTestCase.doValidationTest();
-}
+		validateMedicalSummaryTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -158,17 +124,17 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ReferralSummaryOperations

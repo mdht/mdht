@@ -43,67 +43,33 @@ public class SupportParticipantTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPSupportParticipantTemplateId() {
-      OperationsTestCase<SupportParticipant> validateHITSPSupportParticipantTemplateIdTestCase = new OperationsTestCase<SupportParticipant>(
-      "validateHITSPSupportParticipantTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_SUPPORT_PARTICIPANT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SupportParticipant> validateHITSPSupportParticipantTemplateIdTestCase = new OperationsTestCase<SupportParticipant>(
+			"validateHITSPSupportParticipantTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_SUPPORT_PARTICIPANT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SupportParticipant target) {
+			@Override
+			protected void updateToFail(SupportParticipant target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SupportParticipant target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SupportParticipant target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SupportParticipantOperations.validateHITSPSupportParticipantTemplateId(
+					(SupportParticipant) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SupportParticipantOperations.validateHITSPSupportParticipantTemplateId(
-          (SupportParticipant) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPSupportParticipantTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPSupportParticipantTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -161,9 +127,9 @@ public class SupportParticipantTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -171,8 +137,8 @@ public class SupportParticipantTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SupportParticipantOperations

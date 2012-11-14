@@ -171,67 +171,32 @@ public class ConditionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateConditionTemplateId() {
-      OperationsTestCase<Condition> validateConditionTemplateIdTestCase = new OperationsTestCase<Condition>(
-      "validateConditionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Condition> validateConditionTemplateIdTestCase = new OperationsTestCase<Condition>(
+			"validateConditionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(Condition target) {
+			@Override
+			protected void updateToFail(Condition target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Condition target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Condition target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ConditionOperations.validateConditionTemplateId((Condition) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ConditionOperations.validateConditionTemplateId(
-          (Condition) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateConditionTemplateIdTestCase.doValidationTest();
-}
+		validateConditionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -285,13 +250,10 @@ public class ConditionTest extends CDAValidationTest {
 	@Test
 	public void testGetConditionEntries() {
 
+		Condition target = objectFactory.create();
+		target.getConditionEntries();
 
-Condition target = objectFactory.create();
-target.getConditionEntries();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -349,9 +311,9 @@ target.getConditionEntries();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -359,8 +321,8 @@ target.getConditionEntries();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ConditionOperations

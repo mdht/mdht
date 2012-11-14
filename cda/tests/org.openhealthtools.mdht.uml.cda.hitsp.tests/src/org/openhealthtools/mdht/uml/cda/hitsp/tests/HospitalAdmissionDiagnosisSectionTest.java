@@ -46,67 +46,33 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPHospitalAdmissionDiagnosisSectionTemplateId() {
-      OperationsTestCase<HospitalAdmissionDiagnosisSection> validateHITSPHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
-      "validateHITSPHospitalAdmissionDiagnosisSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HospitalAdmissionDiagnosisSection> validateHITSPHospitalAdmissionDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+			"validateHITSPHospitalAdmissionDiagnosisSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
+			@Override
+			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HospitalAdmissionDiagnosisSectionOperations.validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(
+					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HospitalAdmissionDiagnosisSectionOperations.validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(
-          (HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPHospitalAdmissionDiagnosisSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPHospitalAdmissionDiagnosisSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -151,13 +117,10 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetCondition() {
 
+		HospitalAdmissionDiagnosisSection target = objectFactory.create();
+		target.getCondition();
 
-HospitalAdmissionDiagnosisSection target = objectFactory.create();
-target.getCondition();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -215,9 +178,9 @@ target.getCondition();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -225,8 +188,8 @@ target.getCondition();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HospitalAdmissionDiagnosisSectionOperations

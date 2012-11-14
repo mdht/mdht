@@ -46,67 +46,33 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testValidateVisibleImplantedMedicalDevicesSectionTemplateId() {
-      OperationsTestCase<VisibleImplantedMedicalDevicesSection> validateVisibleImplantedMedicalDevicesSectionTemplateIdTestCase = new OperationsTestCase<VisibleImplantedMedicalDevicesSection>(
-      "validateVisibleImplantedMedicalDevicesSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_VISIBLE_IMPLANTED_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<VisibleImplantedMedicalDevicesSection> validateVisibleImplantedMedicalDevicesSectionTemplateIdTestCase = new OperationsTestCase<VisibleImplantedMedicalDevicesSection>(
+			"validateVisibleImplantedMedicalDevicesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_VISIBLE_IMPLANTED_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(VisibleImplantedMedicalDevicesSection target) {
+			@Override
+			protected void updateToFail(VisibleImplantedMedicalDevicesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VisibleImplantedMedicalDevicesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VisibleImplantedMedicalDevicesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return VisibleImplantedMedicalDevicesSectionOperations.validateVisibleImplantedMedicalDevicesSectionTemplateId(
+					(VisibleImplantedMedicalDevicesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VisibleImplantedMedicalDevicesSectionOperations.validateVisibleImplantedMedicalDevicesSectionTemplateId(
-          (VisibleImplantedMedicalDevicesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateVisibleImplantedMedicalDevicesSectionTemplateIdTestCase.doValidationTest();
-}
+		validateVisibleImplantedMedicalDevicesSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 	*/
 	@Test
 	public void testValidateVisibleImplantedMedicalDevicesSectionCode() {
-      OperationsTestCase<VisibleImplantedMedicalDevicesSection> validateVisibleImplantedMedicalDevicesSectionCodeTestCase = new OperationsTestCase<VisibleImplantedMedicalDevicesSection>(
-      "validateVisibleImplantedMedicalDevicesSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_VISIBLE_IMPLANTED_MEDICAL_DEVICES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<VisibleImplantedMedicalDevicesSection> validateVisibleImplantedMedicalDevicesSectionCodeTestCase = new OperationsTestCase<VisibleImplantedMedicalDevicesSection>(
+			"validateVisibleImplantedMedicalDevicesSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_VISIBLE_IMPLANTED_MEDICAL_DEVICES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(VisibleImplantedMedicalDevicesSection target) {
+			@Override
+			protected void updateToFail(VisibleImplantedMedicalDevicesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VisibleImplantedMedicalDevicesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VisibleImplantedMedicalDevicesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return VisibleImplantedMedicalDevicesSectionOperations.validateVisibleImplantedMedicalDevicesSectionCode(
+					(VisibleImplantedMedicalDevicesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VisibleImplantedMedicalDevicesSectionOperations.validateVisibleImplantedMedicalDevicesSectionCode(
-          (VisibleImplantedMedicalDevicesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateVisibleImplantedMedicalDevicesSectionCodeTestCase.doValidationTest();
-}
+		validateVisibleImplantedMedicalDevicesSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +149,10 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 	@Test
 	public void testGetProblemEntry() {
 
+		VisibleImplantedMedicalDevicesSection target = objectFactory.create();
+		target.getProblemEntry();
 
-VisibleImplantedMedicalDevicesSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +207,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // VisibleImplantedMedicalDevicesSectionOperations

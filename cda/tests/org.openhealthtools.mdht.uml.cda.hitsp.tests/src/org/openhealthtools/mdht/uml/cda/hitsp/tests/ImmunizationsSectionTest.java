@@ -46,67 +46,33 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPImmunizationsSectionTemplateId() {
-      OperationsTestCase<ImmunizationsSection> validateHITSPImmunizationsSectionTemplateIdTestCase = new OperationsTestCase<ImmunizationsSection>(
-      "validateHITSPImmunizationsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ImmunizationsSection> validateHITSPImmunizationsSectionTemplateIdTestCase = new OperationsTestCase<ImmunizationsSection>(
+			"validateHITSPImmunizationsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ImmunizationsSection target) {
+			@Override
+			protected void updateToFail(ImmunizationsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ImmunizationsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ImmunizationsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ImmunizationsSectionOperations.validateHITSPImmunizationsSectionTemplateId(
+					(ImmunizationsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ImmunizationsSectionOperations.validateHITSPImmunizationsSectionTemplateId(
-          (ImmunizationsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPImmunizationsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPImmunizationsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -151,13 +117,10 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetHITSPImmunizations() {
 
+		ImmunizationsSection target = objectFactory.create();
+		target.getHITSPImmunizations();
 
-ImmunizationsSection target = objectFactory.create();
-target.getHITSPImmunizations();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -215,9 +178,9 @@ target.getHITSPImmunizations();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -225,8 +188,8 @@ target.getHITSPImmunizations();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ImmunizationsSectionOperations

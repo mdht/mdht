@@ -102,67 +102,33 @@ public class EncounterTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPEncounterTemplateId() {
-      OperationsTestCase<Encounter> validateHITSPEncounterTemplateIdTestCase = new OperationsTestCase<Encounter>(
-      "validateHITSPEncounterTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Encounter> validateHITSPEncounterTemplateIdTestCase = new OperationsTestCase<Encounter>(
+			"validateHITSPEncounterTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(Encounter target) {
+			@Override
+			protected void updateToFail(Encounter target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Encounter target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Encounter target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncounterOperations.validateHITSPEncounterTemplateId(
+					(Encounter) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncounterOperations.validateHITSPEncounterTemplateId(
-          (Encounter) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPEncounterTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPEncounterTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -254,9 +220,9 @@ public class EncounterTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -264,8 +230,8 @@ public class EncounterTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // EncounterOperations

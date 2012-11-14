@@ -288,67 +288,33 @@ public class EncounterLocationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateEncounterLocationTemplateId() {
-      OperationsTestCase<EncounterLocation> validateEncounterLocationTemplateIdTestCase = new OperationsTestCase<EncounterLocation>(
-      "validateEncounterLocationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EncounterLocation> validateEncounterLocationTemplateIdTestCase = new OperationsTestCase<EncounterLocation>(
+			"validateEncounterLocationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EncounterLocation target) {
+			@Override
+			protected void updateToFail(EncounterLocation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EncounterLocation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EncounterLocation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncounterLocationOperations.validateEncounterLocationTemplateId(
+					(EncounterLocation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncounterLocationOperations.validateEncounterLocationTemplateId(
-          (EncounterLocation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateEncounterLocationTemplateIdTestCase.doValidationTest();
-}
+		validateEncounterLocationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -356,67 +322,33 @@ public class EncounterLocationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateEncounterLocationTypeCode() {
-      OperationsTestCase<EncounterLocation> validateEncounterLocationTypeCodeTestCase = new OperationsTestCase<EncounterLocation>(
-      "validateEncounterLocationTypeCode",
-      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EncounterLocation> validateEncounterLocationTypeCodeTestCase = new OperationsTestCase<EncounterLocation>(
+			"validateEncounterLocationTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EncounterLocation target) {
+			@Override
+			protected void updateToFail(EncounterLocation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EncounterLocation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EncounterLocation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncounterLocationOperations.validateEncounterLocationTypeCode(
+					(EncounterLocation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncounterLocationOperations.validateEncounterLocationTypeCode(
-          (EncounterLocation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateEncounterLocationTypeCodeTestCase.doValidationTest();
-}
+		validateEncounterLocationTypeCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -471,17 +403,17 @@ public class EncounterLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // EncounterLocationOperations

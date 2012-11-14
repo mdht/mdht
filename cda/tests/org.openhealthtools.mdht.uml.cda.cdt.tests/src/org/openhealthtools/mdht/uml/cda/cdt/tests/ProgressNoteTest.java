@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.ProgressNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
 import org.openhealthtools.mdht.uml.cda.cdt.SubjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.cdt.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.ProgressNoteOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -574,77 +575,38 @@ public class ProgressNoteTest extends CDAValidationTest {
 	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProgressNoteCode() {
+		OperationsTestCase<ProgressNote> validateProgressNoteCodeTestCase = new OperationsTestCase<ProgressNote>(
+			"validateProgressNoteCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
- 
-                  
-public void testValidateProgressNoteCode() {
-      OperationsTestCase<ProgressNote> validateProgressNoteCodeTestCase = new OperationsTestCase<ProgressNote>(
-      "validateProgressNoteCode",
-      operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(ProgressNote target) {
 
-      @Override
-      protected void updateToFail(ProgressNote target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(ProgressNote target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(ProgressNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			}
 
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-      
+				return ProgressNoteOperations.validateProgressNoteCode((ProgressNote) objectToTest, diagnostician, map);
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		};
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProgressNoteOperations.validateProgressNoteCode(
-          (ProgressNote) objectToTest, diagnostician, map);
-      }
+		validateProgressNoteCodeTestCase.doValidationTest();
+	}
 
-    };
-
-    validateProgressNoteCodeTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	 * 
 	 * @generated NOT
 	 */
@@ -1011,13 +973,10 @@ public void testValidateProgressNoteCode() {
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getAssessmentAndPlanSection();
 
-ProgressNote target = objectFactory.create();
-target.getAssessmentAndPlanSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1026,13 +985,10 @@ target.getAssessmentAndPlanSection();
 	@Test
 	public void testGetAssessmentSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getAssessmentSection();
 
-ProgressNote target = objectFactory.create();
-target.getAssessmentSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1041,13 +997,10 @@ target.getAssessmentSection();
 	@Test
 	public void testGetPlanSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getPlanSection();
 
-ProgressNote target = objectFactory.create();
-target.getPlanSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1056,13 +1009,10 @@ target.getPlanSection();
 	@Test
 	public void testGetAlertsSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getAlertsSection();
 
-ProgressNote target = objectFactory.create();
-target.getAlertsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1071,13 +1021,10 @@ target.getAlertsSection();
 	@Test
 	public void testGetChiefComplaintSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getChiefComplaintSection();
 
-ProgressNote target = objectFactory.create();
-target.getChiefComplaintSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1086,13 +1033,10 @@ target.getChiefComplaintSection();
 	@Test
 	public void testGetMedicationsSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getMedicationsSection();
 
-ProgressNote target = objectFactory.create();
-target.getMedicationsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1101,13 +1045,10 @@ target.getMedicationsSection();
 	@Test
 	public void testGetObjectiveSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getObjectiveSection();
 
-ProgressNote target = objectFactory.create();
-target.getObjectiveSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1116,13 +1057,10 @@ target.getObjectiveSection();
 	@Test
 	public void testGetPhysicalExaminationSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getPhysicalExaminationSection();
 
-ProgressNote target = objectFactory.create();
-target.getPhysicalExaminationSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1131,13 +1069,10 @@ target.getPhysicalExaminationSection();
 	@Test
 	public void testGetProblemSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getProblemSection();
 
-ProgressNote target = objectFactory.create();
-target.getProblemSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1146,13 +1081,10 @@ target.getProblemSection();
 	@Test
 	public void testGetResultsSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getResultsSection();
 
-ProgressNote target = objectFactory.create();
-target.getResultsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1161,13 +1093,10 @@ target.getResultsSection();
 	@Test
 	public void testGetVitalSignsSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getVitalSignsSection();
 
-ProgressNote target = objectFactory.create();
-target.getVitalSignsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1176,13 +1105,10 @@ target.getVitalSignsSection();
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getReviewOfSystemsSection();
 
-ProgressNote target = objectFactory.create();
-target.getReviewOfSystemsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1191,13 +1117,10 @@ target.getReviewOfSystemsSection();
 	@Test
 	public void testGetSubjectiveSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getSubjectiveSection();
 
-ProgressNote target = objectFactory.create();
-target.getSubjectiveSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -1205,67 +1128,33 @@ target.getSubjectiveSection();
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-      OperationsTestCase<ProgressNote> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ProgressNote>(
-      "validateGeneralHeaderConstraintsTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProgressNote> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ProgressNote>(
+			"validateGeneralHeaderConstraintsTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProgressNote target) {
+			@Override
+			protected void updateToFail(ProgressNote target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProgressNote target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProgressNote target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProgressNoteOperations.validateGeneralHeaderConstraintsTemplateId(
+					(ProgressNote) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProgressNoteOperations.validateGeneralHeaderConstraintsTemplateId(
-          (ProgressNote) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-}
+		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -1297,7 +1186,7 @@ target.getSubjectiveSection();
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProgressNoteOperations.validateGeneralHeaderConstraintsCode(
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsCode(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
 
@@ -1362,9 +1251,9 @@ target.getSubjectiveSection();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -1372,8 +1261,8 @@ target.getSubjectiveSection();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProgressNoteOperations

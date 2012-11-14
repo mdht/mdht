@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -7,13 +6,9 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.tests;
 
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -23,32 +18,24 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *
  * @generated
  */
- 
-public class AAAAATest extends  CDAValidationTest
-{
 
+public class AAAAATest extends CDAValidationTest {
 
-    /**
-* No Operations Test
-* @generated
-*/	
-    @Test
-  public void testNoOperations() {
-  }
-  
-  
-  
-  /**
-*
-* @generated
-*/
-  @Override
-  protected EObject getObjectToTest() {		
-    return null;
-  }
-  
-  
+	/**
+	* No Operations Test
+	* @generated
+	*/
+	@Test
+	public void testNoOperations() {
+	}
 
-  
-  
+	/**
+	*
+	* @generated
+	*/
+	@Override
+	protected EObject getObjectToTest() {
+		return null;
+	}
+
 } // AAAAAOperations

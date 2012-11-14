@@ -44,67 +44,33 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHistoryOfPresentIllnessTemplateId() {
-      OperationsTestCase<HistoryOfPresentIllness> validateHistoryOfPresentIllnessTemplateIdTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
-      "validateHistoryOfPresentIllnessTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HistoryOfPresentIllness> validateHistoryOfPresentIllnessTemplateIdTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
+			"validateHistoryOfPresentIllnessTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HistoryOfPresentIllness target) {
+			@Override
+			protected void updateToFail(HistoryOfPresentIllness target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HistoryOfPresentIllness target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HistoryOfPresentIllness target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTemplateId(
+					(HistoryOfPresentIllness) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTemplateId(
-          (HistoryOfPresentIllness) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHistoryOfPresentIllnessTemplateIdTestCase.doValidationTest();
-}
+		validateHistoryOfPresentIllnessTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -112,67 +78,33 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHistoryOfPresentIllnessCode() {
-      OperationsTestCase<HistoryOfPresentIllness> validateHistoryOfPresentIllnessCodeTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
-      "validateHistoryOfPresentIllnessCode",
-      operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_PRESENT_ILLNESS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<HistoryOfPresentIllness> validateHistoryOfPresentIllnessCodeTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
+			"validateHistoryOfPresentIllnessCode",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_PRESENT_ILLNESS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(HistoryOfPresentIllness target) {
+			@Override
+			protected void updateToFail(HistoryOfPresentIllness target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(HistoryOfPresentIllness target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(HistoryOfPresentIllness target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessCode(
+					(HistoryOfPresentIllness) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessCode(
-          (HistoryOfPresentIllness) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHistoryOfPresentIllnessCodeTestCase.doValidationTest();
-}
+		validateHistoryOfPresentIllnessCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -230,9 +162,9 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -240,8 +172,8 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // HistoryOfPresentIllnessOperations

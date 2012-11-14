@@ -11,6 +11,7 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -47,12 +48,12 @@ import org.junit.runners.Suite;
 public class HITSPTests {
 
 	/**
-   * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-   * @generated
-   */
+	* @generated
+	*/
 	public static junit.framework.Test suite() {
-    return new JUnit4TestAdapter( HITSPTests.class);
-  }
+		return new JUnit4TestAdapter(HITSPTests.class);
+	}
 
 } // HITSPTests

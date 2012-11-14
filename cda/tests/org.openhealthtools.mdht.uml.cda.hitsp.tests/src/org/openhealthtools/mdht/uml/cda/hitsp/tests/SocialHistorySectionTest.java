@@ -46,67 +46,33 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPSocialHistorySectionTemplateId() {
-      OperationsTestCase<SocialHistorySection> validateHITSPSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<SocialHistorySection>(
-      "validateHITSPSocialHistorySectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SocialHistorySection> validateHITSPSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<SocialHistorySection>(
+			"validateHITSPSocialHistorySectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SocialHistorySection target) {
+			@Override
+			protected void updateToFail(SocialHistorySection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SocialHistorySection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SocialHistorySection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SocialHistorySectionOperations.validateHITSPSocialHistorySectionTemplateId(
+					(SocialHistorySection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SocialHistorySectionOperations.validateHITSPSocialHistorySectionTemplateId(
-          (SocialHistorySection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPSocialHistorySectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPSocialHistorySectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -156,13 +122,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testGetSocialHistories() {
 
+		SocialHistorySection target = objectFactory.create();
+		target.getSocialHistories();
 
-SocialHistorySection target = objectFactory.create();
-target.getSocialHistories();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -220,9 +183,9 @@ target.getSocialHistories();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -230,8 +193,8 @@ target.getSocialHistories();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SocialHistorySectionOperations

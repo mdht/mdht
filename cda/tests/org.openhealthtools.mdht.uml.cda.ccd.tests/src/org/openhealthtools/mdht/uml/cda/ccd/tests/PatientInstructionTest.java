@@ -44,67 +44,33 @@ public class PatientInstructionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePatientInstructionTemplateId() {
-      OperationsTestCase<PatientInstruction> validatePatientInstructionTemplateIdTestCase = new OperationsTestCase<PatientInstruction>(
-      "validatePatientInstructionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PatientInstruction> validatePatientInstructionTemplateIdTestCase = new OperationsTestCase<PatientInstruction>(
+			"validatePatientInstructionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PatientInstruction target) {
+			@Override
+			protected void updateToFail(PatientInstruction target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PatientInstruction target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PatientInstruction target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PatientInstructionOperations.validatePatientInstructionTemplateId(
+					(PatientInstruction) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PatientInstructionOperations.validatePatientInstructionTemplateId(
-          (PatientInstruction) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePatientInstructionTemplateIdTestCase.doValidationTest();
-}
+		validatePatientInstructionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -112,67 +78,33 @@ public class PatientInstructionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePatientInstructionMoodCode() {
-      OperationsTestCase<PatientInstruction> validatePatientInstructionMoodCodeTestCase = new OperationsTestCase<PatientInstruction>(
-      "validatePatientInstructionMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PatientInstruction> validatePatientInstructionMoodCodeTestCase = new OperationsTestCase<PatientInstruction>(
+			"validatePatientInstructionMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PatientInstruction target) {
+			@Override
+			protected void updateToFail(PatientInstruction target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PatientInstruction target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PatientInstruction target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PatientInstructionOperations.validatePatientInstructionMoodCode(
+					(PatientInstruction) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PatientInstructionOperations.validatePatientInstructionMoodCode(
-          (PatientInstruction) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePatientInstructionMoodCodeTestCase.doValidationTest();
-}
+		validatePatientInstructionMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -227,17 +159,17 @@ public class PatientInstructionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PatientInstructionOperations

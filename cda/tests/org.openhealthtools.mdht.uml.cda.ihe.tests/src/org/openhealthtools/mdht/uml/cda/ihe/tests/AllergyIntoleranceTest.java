@@ -482,206 +482,101 @@ public class AllergyIntoleranceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyIntoleranceTemplateId() {
-      OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceTemplateIdTestCase = new OperationsTestCase<AllergyIntolerance>(
-      "validateAllergyIntoleranceTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceTemplateIdTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AllergyIntolerance target) {
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AllergyIntolerance target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceTemplateId(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AllergyIntoleranceOperations.validateAllergyIntoleranceTemplateId(
-          (AllergyIntolerance) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAllergyIntoleranceTemplateIdTestCase.doValidationTest();
-}
+		validateAllergyIntoleranceTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceCodeP() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceCodePTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
- 
-                  
-public void testValidateAllergyIntoleranceCodeP() {
-      OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceCodePTestCase = new OperationsTestCase<AllergyIntolerance>(
-      "validateAllergyIntoleranceCodeP",
-      operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
 
-      @Override
-      protected void updateToFail(AllergyIntolerance target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(AllergyIntolerance target) {
-        target.init();
-        
-        
-        
-        
-        
+			}
 
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-      
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceCodeP(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		};
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AllergyIntoleranceOperations.validateAllergyIntoleranceCodeP(
-          (AllergyIntolerance) objectToTest, diagnostician, map);
-      }
+		validateAllergyIntoleranceCodePTestCase.doValidationTest();
+	}
 
-    };
-
-    validateAllergyIntoleranceCodePTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	*
 	* @generated
 	*/
 	@Test
 	public void testValidateAllergyIntoleranceCode() {
-      OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceCodeTestCase = new OperationsTestCase<AllergyIntolerance>(
-      "validateAllergyIntoleranceCode",
-      operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceCodeTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AllergyIntolerance target) {
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AllergyIntolerance target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceCode(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AllergyIntoleranceOperations.validateAllergyIntoleranceCode(
-          (AllergyIntolerance) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAllergyIntoleranceCodeTestCase.doValidationTest();
-}
+		validateAllergyIntoleranceCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -689,70 +584,36 @@ public void testValidateAllergyIntoleranceCodeP() {
 	*/
 	@Test
 	public void testValidateAllergyIntoleranceValue() {
-      OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceValueTestCase = new OperationsTestCase<AllergyIntolerance>(
-      "validateAllergyIntoleranceValue",
-      operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceValueTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceValue",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AllergyIntolerance target) {
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AllergyIntolerance target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
 
-        
-      
-        CD value = DatatypesFactory.eINSTANCE.createCD();
-        target.getValues().add(value);
-        
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AllergyIntoleranceOperations.validateAllergyIntoleranceValue(
-          (AllergyIntolerance) objectToTest, diagnostician, map);
-      }
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceValue(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateAllergyIntoleranceValueTestCase.doValidationTest();
-}
+		validateAllergyIntoleranceValueTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -917,13 +778,10 @@ public void testValidateAllergyIntoleranceCodeP() {
 	@Test
 	public void testGetProblemEntryReactionObservationContainers() {
 
+		AllergyIntolerance target = objectFactory.create();
+		target.getProblemEntryReactionObservationContainers();
 
-AllergyIntolerance target = objectFactory.create();
-target.getProblemEntryReactionObservationContainers();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -932,13 +790,10 @@ target.getProblemEntryReactionObservationContainers();
 	@Test
 	public void testGetIHESeverity() {
 
+		AllergyIntolerance target = objectFactory.create();
+		target.getIHESeverity();
 
-AllergyIntolerance target = objectFactory.create();
-target.getIHESeverity();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -947,13 +802,10 @@ target.getIHESeverity();
 	@Test
 	public void testGetIHEProblemStatusObservation() {
 
+		AllergyIntolerance target = objectFactory.create();
+		target.getIHEProblemStatusObservation();
 
-AllergyIntolerance target = objectFactory.create();
-target.getIHEProblemStatusObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -962,13 +814,10 @@ target.getIHEProblemStatusObservation();
 	@Test
 	public void testGetIHEComments() {
 
+		AllergyIntolerance target = objectFactory.create();
+		target.getIHEComments();
 
-AllergyIntolerance target = objectFactory.create();
-target.getIHEComments();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1024,9 +873,9 @@ target.getIHEComments();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -1034,8 +883,8 @@ target.getIHEComments();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AllergyIntoleranceOperations

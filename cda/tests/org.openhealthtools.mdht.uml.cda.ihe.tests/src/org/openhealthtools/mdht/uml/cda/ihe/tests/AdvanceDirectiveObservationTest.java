@@ -87,143 +87,72 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIHEAdvanceDirectiveObservationTemplateId() {
-      OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-      "validateIHEAdvanceDirectiveObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateIHEAdvanceDirectiveObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AdvanceDirectiveObservation target) {
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AdvanceDirectiveObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationTemplateId(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationTemplateId(
-          (AdvanceDirectiveObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateIHEAdvanceDirectiveObservationTemplateIdTestCase.doValidationTest();
-}
+		validateIHEAdvanceDirectiveObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIHEAdvanceDirectiveObservationCode() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateIHEAdvanceDirectiveObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
- 
-                  
-public void testValidateIHEAdvanceDirectiveObservationCode() {
-      OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-      "validateIHEAdvanceDirectiveObservationCode",
-      operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
 
-      @Override
-      protected void updateToFail(AdvanceDirectiveObservation target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(AdvanceDirectiveObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-      
-        CD cd  = DatatypesFactory.eINSTANCE.createCD();
-        target.setCode(cd);
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationCode(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationCode(
-          (AdvanceDirectiveObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
+		validateIHEAdvanceDirectiveObservationCodeTestCase.doValidationTest();
+	}
 
-    validateIHEAdvanceDirectiveObservationCodeTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	*
 	* @generated not
 	*/
@@ -353,7 +282,7 @@ public void testValidateIHEAdvanceDirectiveObservationCode() {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationCode(
+				return org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationCode(
 					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
 
@@ -415,17 +344,17 @@ public void testValidateIHEAdvanceDirectiveObservationCode() {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AdvanceDirectiveObservationOperations

@@ -48,67 +48,33 @@ public class AllergyIntoleranceConcernTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyIntoleranceConcernTemplateId() {
-      OperationsTestCase<AllergyIntoleranceConcern> validateAllergyIntoleranceConcernTemplateIdTestCase = new OperationsTestCase<AllergyIntoleranceConcern>(
-      "validateAllergyIntoleranceConcernTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AllergyIntoleranceConcern> validateAllergyIntoleranceConcernTemplateIdTestCase = new OperationsTestCase<AllergyIntoleranceConcern>(
+			"validateAllergyIntoleranceConcernTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AllergyIntoleranceConcern target) {
+			@Override
+			protected void updateToFail(AllergyIntoleranceConcern target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AllergyIntoleranceConcern target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AllergyIntoleranceConcern target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AllergyIntoleranceConcernOperations.validateAllergyIntoleranceConcernTemplateId(
+					(AllergyIntoleranceConcern) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AllergyIntoleranceConcernOperations.validateAllergyIntoleranceConcernTemplateId(
-          (AllergyIntoleranceConcern) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAllergyIntoleranceConcernTemplateIdTestCase.doValidationTest();
-}
+		validateAllergyIntoleranceConcernTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -157,13 +123,10 @@ public class AllergyIntoleranceConcernTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergyIntolerances() {
 
+		AllergyIntoleranceConcern target = objectFactory.create();
+		target.getAllergyIntolerances();
 
-AllergyIntoleranceConcern target = objectFactory.create();
-target.getAllergyIntolerances();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -219,9 +182,9 @@ target.getAllergyIntolerances();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -229,8 +192,8 @@ target.getAllergyIntolerances();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AllergyIntoleranceConcernOperations

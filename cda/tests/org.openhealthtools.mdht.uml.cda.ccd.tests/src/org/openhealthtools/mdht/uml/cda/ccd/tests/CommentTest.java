@@ -45,67 +45,31 @@ public class CommentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateCommentTemplateId() {
-      OperationsTestCase<Comment> validateCommentTemplateIdTestCase = new OperationsTestCase<Comment>(
-      "validateCommentTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_COMMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Comment> validateCommentTemplateIdTestCase = new OperationsTestCase<Comment>(
+			"validateCommentTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(Comment target) {
+			@Override
+			protected void updateToFail(Comment target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Comment target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Comment target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CommentOperations.validateCommentTemplateId((Comment) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CommentOperations.validateCommentTemplateId(
-          (Comment) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCommentTemplateIdTestCase.doValidationTest();
-}
+		validateCommentTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -113,67 +77,31 @@ public class CommentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateCommentClassCode() {
-      OperationsTestCase<Comment> validateCommentClassCodeTestCase = new OperationsTestCase<Comment>(
-      "validateCommentClassCode",
-      operationsForOCL.getOCLValue("VALIDATE_COMMENT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Comment> validateCommentClassCodeTestCase = new OperationsTestCase<Comment>(
+			"validateCommentClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(Comment target) {
+			@Override
+			protected void updateToFail(Comment target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Comment target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Comment target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CommentOperations.validateCommentClassCode((Comment) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CommentOperations.validateCommentClassCode(
-          (Comment) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCommentClassCodeTestCase.doValidationTest();
-}
+		validateCommentClassCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -181,67 +109,31 @@ public class CommentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateCommentMoodCode() {
-      OperationsTestCase<Comment> validateCommentMoodCodeTestCase = new OperationsTestCase<Comment>(
-      "validateCommentMoodCode",
-      operationsForOCL.getOCLValue("VALIDATE_COMMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Comment> validateCommentMoodCodeTestCase = new OperationsTestCase<Comment>(
+			"validateCommentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(Comment target) {
+			@Override
+			protected void updateToFail(Comment target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Comment target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Comment target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CommentOperations.validateCommentMoodCode((Comment) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CommentOperations.validateCommentMoodCode(
-          (Comment) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCommentMoodCodeTestCase.doValidationTest();
-}
+		validateCommentMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -249,67 +141,31 @@ public class CommentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateCommentCode() {
-      OperationsTestCase<Comment> validateCommentCodeTestCase = new OperationsTestCase<Comment>(
-      "validateCommentCode",
-      operationsForOCL.getOCLValue("VALIDATE_COMMENT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Comment> validateCommentCodeTestCase = new OperationsTestCase<Comment>(
+			"validateCommentCode",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(Comment target) {
+			@Override
+			protected void updateToFail(Comment target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Comment target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Comment target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CommentOperations.validateCommentCode((Comment) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CommentOperations.validateCommentCode(
-          (Comment) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCommentCodeTestCase.doValidationTest();
-}
+		validateCommentCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -364,17 +220,17 @@ public class CommentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CommentOperations

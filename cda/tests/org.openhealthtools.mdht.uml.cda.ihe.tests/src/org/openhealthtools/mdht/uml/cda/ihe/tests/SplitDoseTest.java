@@ -81,67 +81,32 @@ public class SplitDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSplitDoseTemplateId() {
-      OperationsTestCase<SplitDose> validateSplitDoseTemplateIdTestCase = new OperationsTestCase<SplitDose>(
-      "validateSplitDoseTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_SPLIT_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SplitDose> validateSplitDoseTemplateIdTestCase = new OperationsTestCase<SplitDose>(
+			"validateSplitDoseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SPLIT_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SplitDose target) {
+			@Override
+			protected void updateToFail(SplitDose target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SplitDose target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SplitDose target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SplitDoseOperations.validateSplitDoseTemplateId((SplitDose) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SplitDoseOperations.validateSplitDoseTemplateId(
-          (SplitDose) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSplitDoseTemplateIdTestCase.doValidationTest();
-}
+		validateSplitDoseTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -197,9 +162,9 @@ public class SplitDoseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -207,8 +172,8 @@ public class SplitDoseTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SplitDoseOperations

@@ -84,67 +84,33 @@ public class PlanOfCareActivityObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePlanOfCareActivityObservationTemplateId() {
-      OperationsTestCase<PlanOfCareActivityObservation> validatePlanOfCareActivityObservationTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivityObservation>(
-      "validatePlanOfCareActivityObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanOfCareActivityObservation> validatePlanOfCareActivityObservationTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivityObservation>(
+			"validatePlanOfCareActivityObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanOfCareActivityObservation target) {
+			@Override
+			protected void updateToFail(PlanOfCareActivityObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanOfCareActivityObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanOfCareActivityObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PlanOfCareActivityObservationOperations.validatePlanOfCareActivityObservationTemplateId(
+					(PlanOfCareActivityObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanOfCareActivityObservationOperations.validatePlanOfCareActivityObservationTemplateId(
-          (PlanOfCareActivityObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanOfCareActivityObservationTemplateIdTestCase.doValidationTest();
-}
+		validatePlanOfCareActivityObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -152,70 +118,36 @@ public class PlanOfCareActivityObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePlanOfCareActivityObservationId() {
-      OperationsTestCase<PlanOfCareActivityObservation> validatePlanOfCareActivityObservationIdTestCase = new OperationsTestCase<PlanOfCareActivityObservation>(
-      "validatePlanOfCareActivityObservationId",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanOfCareActivityObservation> validatePlanOfCareActivityObservationIdTestCase = new OperationsTestCase<PlanOfCareActivityObservation>(
+			"validatePlanOfCareActivityObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanOfCareActivityObservation target) {
+			@Override
+			protected void updateToFail(PlanOfCareActivityObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanOfCareActivityObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanOfCareActivityObservation target) {
+				target.init();
 
-        
-        
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-      
-        II ii  = DatatypesFactory.eINSTANCE.createII();
-        target.getIds().add(ii);				
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanOfCareActivityObservationOperations.validatePlanOfCareActivityObservationId(
-          (PlanOfCareActivityObservation) objectToTest, diagnostician, map);
-      }
+				return PlanOfCareActivityObservationOperations.validatePlanOfCareActivityObservationId(
+					(PlanOfCareActivityObservation) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validatePlanOfCareActivityObservationIdTestCase.doValidationTest();
-}
+		validatePlanOfCareActivityObservationIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -305,17 +237,17 @@ public class PlanOfCareActivityObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PlanOfCareActivityObservationOperations

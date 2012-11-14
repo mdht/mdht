@@ -43,67 +43,33 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateLevelOneConformanceTemplateId() {
-      OperationsTestCase<LevelThreeConformance> validateLevelOneConformanceTemplateIdTestCase = new OperationsTestCase<LevelThreeConformance>(
-      "validateLevelOneConformanceTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_LEVEL_ONE_CONFORMANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<LevelThreeConformance> validateLevelOneConformanceTemplateIdTestCase = new OperationsTestCase<LevelThreeConformance>(
+			"validateLevelOneConformanceTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_LEVEL_ONE_CONFORMANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(LevelThreeConformance target) {
+			@Override
+			protected void updateToFail(LevelThreeConformance target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(LevelThreeConformance target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(LevelThreeConformance target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return LevelThreeConformanceOperations.validateLevelOneConformanceTemplateId(
+					(LevelThreeConformance) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return LevelThreeConformanceOperations.validateLevelOneConformanceTemplateId(
-          (LevelThreeConformance) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateLevelOneConformanceTemplateIdTestCase.doValidationTest();
-}
+		validateLevelOneConformanceTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -161,9 +127,9 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -171,8 +137,8 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // LevelThreeConformanceOperations

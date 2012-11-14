@@ -11,9 +11,7 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -33,15 +31,15 @@ public class PlannedProcedureTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testNoOperations() {
-  }
+	}
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PlannedProcedureOperations

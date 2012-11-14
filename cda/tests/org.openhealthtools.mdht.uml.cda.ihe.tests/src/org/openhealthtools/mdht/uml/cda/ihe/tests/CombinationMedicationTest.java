@@ -81,67 +81,33 @@ public class CombinationMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCombinationMedicationTemplateId() {
-      OperationsTestCase<CombinationMedication> validateCombinationMedicationTemplateIdTestCase = new OperationsTestCase<CombinationMedication>(
-      "validateCombinationMedicationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_COMBINATION_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CombinationMedication> validateCombinationMedicationTemplateIdTestCase = new OperationsTestCase<CombinationMedication>(
+			"validateCombinationMedicationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_COMBINATION_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CombinationMedication target) {
+			@Override
+			protected void updateToFail(CombinationMedication target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CombinationMedication target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CombinationMedication target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CombinationMedicationOperations.validateCombinationMedicationTemplateId(
+					(CombinationMedication) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CombinationMedicationOperations.validateCombinationMedicationTemplateId(
-          (CombinationMedication) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCombinationMedicationTemplateIdTestCase.doValidationTest();
-}
+		validateCombinationMedicationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -197,9 +163,9 @@ public class CombinationMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -207,8 +173,8 @@ public class CombinationMedicationTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CombinationMedicationOperations

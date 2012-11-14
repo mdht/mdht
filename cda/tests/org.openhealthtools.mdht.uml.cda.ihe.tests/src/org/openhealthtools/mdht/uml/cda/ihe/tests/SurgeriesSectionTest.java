@@ -43,67 +43,33 @@ public class SurgeriesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSurgeriesSectionTemplateId() {
-      OperationsTestCase<SurgeriesSection> validateSurgeriesSectionTemplateIdTestCase = new OperationsTestCase<SurgeriesSection>(
-      "validateSurgeriesSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_SURGERIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SurgeriesSection> validateSurgeriesSectionTemplateIdTestCase = new OperationsTestCase<SurgeriesSection>(
+			"validateSurgeriesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SURGERIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SurgeriesSection target) {
+			@Override
+			protected void updateToFail(SurgeriesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SurgeriesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SurgeriesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SurgeriesSectionOperations.validateSurgeriesSectionTemplateId(
+					(SurgeriesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SurgeriesSectionOperations.validateSurgeriesSectionTemplateId(
-          (SurgeriesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSurgeriesSectionTemplateIdTestCase.doValidationTest();
-}
+		validateSurgeriesSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -159,9 +125,9 @@ public class SurgeriesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -169,8 +135,8 @@ public class SurgeriesSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SurgeriesSectionOperations

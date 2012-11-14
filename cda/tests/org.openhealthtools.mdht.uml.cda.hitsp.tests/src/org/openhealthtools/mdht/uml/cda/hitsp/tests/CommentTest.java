@@ -44,67 +44,32 @@ public class CommentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPCommentTemplateId() {
-      OperationsTestCase<Comment> validateHITSPCommentTemplateIdTestCase = new OperationsTestCase<Comment>(
-      "validateHITSPCommentTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_COMMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Comment> validateHITSPCommentTemplateIdTestCase = new OperationsTestCase<Comment>(
+			"validateHITSPCommentTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_COMMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(Comment target) {
+			@Override
+			protected void updateToFail(Comment target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Comment target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Comment target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CommentOperations.validateHITSPCommentTemplateId((Comment) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CommentOperations.validateHITSPCommentTemplateId(
-          (Comment) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPCommentTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPCommentTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -195,9 +160,9 @@ public class CommentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -205,8 +170,8 @@ public class CommentTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CommentOperations

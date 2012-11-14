@@ -43,67 +43,33 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIHEVitalSignsSectionTemplateId() {
-      OperationsTestCase<VitalSignsSection> validateIHEVitalSignsSectionTemplateIdTestCase = new OperationsTestCase<VitalSignsSection>(
-      "validateIHEVitalSignsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_IHE_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<VitalSignsSection> validateIHEVitalSignsSectionTemplateIdTestCase = new OperationsTestCase<VitalSignsSection>(
+			"validateIHEVitalSignsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(VitalSignsSection target) {
+			@Override
+			protected void updateToFail(VitalSignsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(VitalSignsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(VitalSignsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return VitalSignsSectionOperations.validateIHEVitalSignsSectionTemplateId(
+					(VitalSignsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return VitalSignsSectionOperations.validateIHEVitalSignsSectionTemplateId(
-          (VitalSignsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateIHEVitalSignsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateIHEVitalSignsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -159,9 +125,9 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -169,8 +135,8 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // VitalSignsSectionOperations

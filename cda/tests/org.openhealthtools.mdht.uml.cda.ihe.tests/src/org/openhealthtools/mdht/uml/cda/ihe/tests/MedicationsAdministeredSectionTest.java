@@ -44,67 +44,33 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationsAdministeredSectionTemplateId() {
-      OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionTemplateIdTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
-      "validateMedicationsAdministeredSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionTemplateIdTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+			"validateMedicationsAdministeredSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MedicationsAdministeredSection target) {
+			@Override
+			protected void updateToFail(MedicationsAdministeredSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MedicationsAdministeredSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MedicationsAdministeredSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionTemplateId(
+					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionTemplateId(
-          (MedicationsAdministeredSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMedicationsAdministeredSectionTemplateIdTestCase.doValidationTest();
-}
+		validateMedicationsAdministeredSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -112,67 +78,33 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationsAdministeredSectionCode() {
-      OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionCodeTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
-      "validateMedicationsAdministeredSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionCodeTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+			"validateMedicationsAdministeredSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MedicationsAdministeredSection target) {
+			@Override
+			protected void updateToFail(MedicationsAdministeredSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MedicationsAdministeredSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MedicationsAdministeredSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionCode(
+					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionCode(
-          (MedicationsAdministeredSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMedicationsAdministeredSectionCodeTestCase.doValidationTest();
-}
+		validateMedicationsAdministeredSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -228,9 +160,9 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -238,8 +170,8 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // MedicationsAdministeredSectionOperations

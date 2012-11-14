@@ -633,67 +633,33 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentTemplateId() {
-      OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentTemplateIdTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-      "validateContinuityOfCareDocumentTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentTemplateIdTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ContinuityOfCareDocument target) {
+			@Override
+			protected void updateToFail(ContinuityOfCareDocument target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ContinuityOfCareDocument target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ContinuityOfCareDocument target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentTemplateId(
+					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentTemplateId(
-          (ContinuityOfCareDocument) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateContinuityOfCareDocumentTemplateIdTestCase.doValidationTest();
-}
+		validateContinuityOfCareDocumentTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -701,67 +667,33 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentCode() {
-      OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-      "validateContinuityOfCareDocumentCode",
-      operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentCode",
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ContinuityOfCareDocument target) {
+			@Override
+			protected void updateToFail(ContinuityOfCareDocument target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ContinuityOfCareDocument target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ContinuityOfCareDocument target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentCode(
+					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentCode(
-          (ContinuityOfCareDocument) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateContinuityOfCareDocumentCodeTestCase.doValidationTest();
-}
+		validateContinuityOfCareDocumentCodeTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -1460,13 +1392,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getProblemSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getProblemSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1475,13 +1404,10 @@ target.getProblemSection();
 	@Test
 	public void testGetFamilyHistorySection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getFamilyHistorySection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getFamilyHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1490,13 +1416,10 @@ target.getFamilyHistorySection();
 	@Test
 	public void testGetSocialHistorySection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getSocialHistorySection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getSocialHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1505,13 +1428,10 @@ target.getSocialHistorySection();
 	@Test
 	public void testGetAlertsSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getAlertsSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getAlertsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1520,13 +1440,10 @@ target.getAlertsSection();
 	@Test
 	public void testGetMedicationsSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getMedicationsSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getMedicationsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1535,13 +1452,10 @@ target.getMedicationsSection();
 	@Test
 	public void testGetResultsSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getResultsSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getResultsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1550,13 +1464,10 @@ target.getResultsSection();
 	@Test
 	public void testGetProceduresSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getProceduresSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getProceduresSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1565,13 +1476,10 @@ target.getProceduresSection();
 	@Test
 	public void testGetEncountersSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getEncountersSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getEncountersSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1580,13 +1488,10 @@ target.getEncountersSection();
 	@Test
 	public void testGetPlanOfCareSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getPlanOfCareSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getPlanOfCareSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1595,13 +1500,10 @@ target.getPlanOfCareSection();
 	@Test
 	public void testGetImmunizationsSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getImmunizationsSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getImmunizationsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1610,13 +1512,10 @@ target.getImmunizationsSection();
 	@Test
 	public void testGetVitalSignsSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getVitalSignsSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getVitalSignsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1625,13 +1524,10 @@ target.getVitalSignsSection();
 	@Test
 	public void testGetMedicalEquipmentSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getMedicalEquipmentSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getMedicalEquipmentSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1640,13 +1536,10 @@ target.getMedicalEquipmentSection();
 	@Test
 	public void testGetFunctionalStatusSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getFunctionalStatusSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getFunctionalStatusSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1655,13 +1548,10 @@ target.getFunctionalStatusSection();
 	@Test
 	public void testGetAdvanceDirectivesSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getAdvanceDirectivesSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getAdvanceDirectivesSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1670,13 +1560,10 @@ target.getAdvanceDirectivesSection();
 	@Test
 	public void testGetPayersSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getPayersSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getPayersSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1685,13 +1572,10 @@ target.getPayersSection();
 	@Test
 	public void testGetPurposeSection() {
 
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getPurposeSection();
 
-ContinuityOfCareDocument target = objectFactory.create();
-target.getPurposeSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -1746,17 +1630,17 @@ target.getPurposeSection();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ContinuityOfCareDocumentOperations

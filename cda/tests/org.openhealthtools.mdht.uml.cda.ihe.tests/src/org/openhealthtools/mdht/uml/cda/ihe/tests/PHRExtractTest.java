@@ -43,67 +43,32 @@ public class PHRExtractTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePHRExtractTemplateId() {
-      OperationsTestCase<PHRExtract> validatePHRExtractTemplateIdTestCase = new OperationsTestCase<PHRExtract>(
-      "validatePHRExtractTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PHR_EXTRACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PHRExtract> validatePHRExtractTemplateIdTestCase = new OperationsTestCase<PHRExtract>(
+			"validatePHRExtractTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PHR_EXTRACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PHRExtract target) {
+			@Override
+			protected void updateToFail(PHRExtract target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PHRExtract target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PHRExtract target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PHRExtractOperations.validatePHRExtractTemplateId((PHRExtract) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PHRExtractOperations.validatePHRExtractTemplateId(
-          (PHRExtract) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePHRExtractTemplateIdTestCase.doValidationTest();
-}
+		validatePHRExtractTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -159,9 +124,9 @@ public class PHRExtractTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -169,8 +134,8 @@ public class PHRExtractTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PHRExtractOperations

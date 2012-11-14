@@ -46,67 +46,33 @@ public class MusculoskeletalSystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMusculoskeletalSystemSectionTemplateId() {
-      OperationsTestCase<MusculoskeletalSystemSection> validateMusculoskeletalSystemSectionTemplateIdTestCase = new OperationsTestCase<MusculoskeletalSystemSection>(
-      "validateMusculoskeletalSystemSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_MUSCULOSKELETAL_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MusculoskeletalSystemSection> validateMusculoskeletalSystemSectionTemplateIdTestCase = new OperationsTestCase<MusculoskeletalSystemSection>(
+			"validateMusculoskeletalSystemSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MUSCULOSKELETAL_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MusculoskeletalSystemSection target) {
+			@Override
+			protected void updateToFail(MusculoskeletalSystemSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MusculoskeletalSystemSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MusculoskeletalSystemSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MusculoskeletalSystemSectionOperations.validateMusculoskeletalSystemSectionTemplateId(
+					(MusculoskeletalSystemSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MusculoskeletalSystemSectionOperations.validateMusculoskeletalSystemSectionTemplateId(
-          (MusculoskeletalSystemSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMusculoskeletalSystemSectionTemplateIdTestCase.doValidationTest();
-}
+		validateMusculoskeletalSystemSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class MusculoskeletalSystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMusculoskeletalSystemSectionCode() {
-      OperationsTestCase<MusculoskeletalSystemSection> validateMusculoskeletalSystemSectionCodeTestCase = new OperationsTestCase<MusculoskeletalSystemSection>(
-      "validateMusculoskeletalSystemSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_MUSCULOSKELETAL_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<MusculoskeletalSystemSection> validateMusculoskeletalSystemSectionCodeTestCase = new OperationsTestCase<MusculoskeletalSystemSection>(
+			"validateMusculoskeletalSystemSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_MUSCULOSKELETAL_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(MusculoskeletalSystemSection target) {
+			@Override
+			protected void updateToFail(MusculoskeletalSystemSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(MusculoskeletalSystemSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(MusculoskeletalSystemSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return MusculoskeletalSystemSectionOperations.validateMusculoskeletalSystemSectionCode(
+					(MusculoskeletalSystemSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return MusculoskeletalSystemSectionOperations.validateMusculoskeletalSystemSectionCode(
-          (MusculoskeletalSystemSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMusculoskeletalSystemSectionCodeTestCase.doValidationTest();
-}
+		validateMusculoskeletalSystemSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +149,10 @@ public class MusculoskeletalSystemSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		MusculoskeletalSystemSection target = objectFactory.create();
+		target.getProblemEntry();
 
-MusculoskeletalSystemSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +207,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // MusculoskeletalSystemSectionOperations

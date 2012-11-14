@@ -265,67 +265,33 @@ public class FamilyHistoryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistoryTemplateId() {
-      OperationsTestCase<FamilyHistory> validateFamilyHistoryTemplateIdTestCase = new OperationsTestCase<FamilyHistory>(
-      "validateFamilyHistoryTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<FamilyHistory> validateFamilyHistoryTemplateIdTestCase = new OperationsTestCase<FamilyHistory>(
+			"validateFamilyHistoryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(FamilyHistory target) {
+			@Override
+			protected void updateToFail(FamilyHistory target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(FamilyHistory target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(FamilyHistory target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return FamilyHistoryOperations.validateFamilyHistoryTemplateId(
+					(FamilyHistory) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return FamilyHistoryOperations.validateFamilyHistoryTemplateId(
-          (FamilyHistory) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateFamilyHistoryTemplateIdTestCase.doValidationTest();
-}
+		validateFamilyHistoryTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -368,13 +334,10 @@ public class FamilyHistoryTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemStatusObservations() {
 
+		FamilyHistory target = objectFactory.create();
+		target.getProblemStatusObservations();
 
-FamilyHistory target = objectFactory.create();
-target.getProblemStatusObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -429,17 +392,17 @@ target.getProblemStatusObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // FamilyHistoryOperations

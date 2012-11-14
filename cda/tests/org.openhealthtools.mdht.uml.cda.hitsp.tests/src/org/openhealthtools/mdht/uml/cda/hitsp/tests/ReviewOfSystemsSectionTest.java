@@ -43,67 +43,33 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
-      OperationsTestCase<ReviewOfSystemsSection> validateHITSPReviewOfSystemsSectionTemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
-      "validateHITSPReviewOfSystemsSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ReviewOfSystemsSection> validateHITSPReviewOfSystemsSectionTemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
+			"validateHITSPReviewOfSystemsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ReviewOfSystemsSection target) {
+			@Override
+			protected void updateToFail(ReviewOfSystemsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ReviewOfSystemsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ReviewOfSystemsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ReviewOfSystemsSectionOperations.validateHITSPReviewOfSystemsSectionTemplateId(
+					(ReviewOfSystemsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ReviewOfSystemsSectionOperations.validateHITSPReviewOfSystemsSectionTemplateId(
-          (ReviewOfSystemsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateHITSPReviewOfSystemsSectionTemplateIdTestCase.doValidationTest();
-}
+		validateHITSPReviewOfSystemsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -161,9 +127,9 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -171,8 +137,8 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ReviewOfSystemsSectionOperations

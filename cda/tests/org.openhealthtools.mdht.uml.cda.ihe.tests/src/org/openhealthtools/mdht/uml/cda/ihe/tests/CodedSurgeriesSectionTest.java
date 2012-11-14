@@ -49,67 +49,33 @@ public class CodedSurgeriesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCodedSurgeriesSectionTemplateId() {
-      OperationsTestCase<CodedSurgeriesSection> validateCodedSurgeriesSectionTemplateIdTestCase = new OperationsTestCase<CodedSurgeriesSection>(
-      "validateCodedSurgeriesSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CODED_SURGERIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CodedSurgeriesSection> validateCodedSurgeriesSectionTemplateIdTestCase = new OperationsTestCase<CodedSurgeriesSection>(
+			"validateCodedSurgeriesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_SURGERIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CodedSurgeriesSection target) {
+			@Override
+			protected void updateToFail(CodedSurgeriesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CodedSurgeriesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CodedSurgeriesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CodedSurgeriesSectionOperations.validateCodedSurgeriesSectionTemplateId(
+					(CodedSurgeriesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CodedSurgeriesSectionOperations.validateCodedSurgeriesSectionTemplateId(
-          (CodedSurgeriesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCodedSurgeriesSectionTemplateIdTestCase.doValidationTest();
-}
+		validateCodedSurgeriesSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -190,13 +156,10 @@ public class CodedSurgeriesSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetExternalReference() {
 
+		CodedSurgeriesSection target = objectFactory.create();
+		target.getExternalReference();
 
-CodedSurgeriesSection target = objectFactory.create();
-target.getExternalReference();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -205,13 +168,10 @@ target.getExternalReference();
 	@Test
 	public void testGetProcedureEntryProcedureActivityProcedures() {
 
+		CodedSurgeriesSection target = objectFactory.create();
+		target.getProcedureEntryProcedureActivityProcedures();
 
-CodedSurgeriesSection target = objectFactory.create();
-target.getProcedureEntryProcedureActivityProcedures();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -267,9 +227,9 @@ target.getProcedureEntryProcedureActivityProcedures();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -277,8 +237,8 @@ target.getProcedureEntryProcedureActivityProcedures();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CodedSurgeriesSectionOperations

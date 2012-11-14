@@ -43,67 +43,32 @@ public class PHRUpdateTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePHRUpdateTemplateId() {
-      OperationsTestCase<PHRUpdate> validatePHRUpdateTemplateIdTestCase = new OperationsTestCase<PHRUpdate>(
-      "validatePHRUpdateTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PHR_UPDATE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PHRUpdate> validatePHRUpdateTemplateIdTestCase = new OperationsTestCase<PHRUpdate>(
+			"validatePHRUpdateTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PHR_UPDATE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PHRUpdate target) {
+			@Override
+			protected void updateToFail(PHRUpdate target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PHRUpdate target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PHRUpdate target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PHRUpdateOperations.validatePHRUpdateTemplateId((PHRUpdate) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PHRUpdateOperations.validatePHRUpdateTemplateId(
-          (PHRUpdate) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePHRUpdateTemplateIdTestCase.doValidationTest();
-}
+		validatePHRUpdateTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -159,9 +124,9 @@ public class PHRUpdateTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -169,8 +134,8 @@ public class PHRUpdateTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PHRUpdateOperations

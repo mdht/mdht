@@ -82,67 +82,33 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePlanOfCareActivityActTemplateId() {
-      OperationsTestCase<PlanOfCareActivityAct> validatePlanOfCareActivityActTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivityAct>(
-      "validatePlanOfCareActivityActTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<PlanOfCareActivityAct> validatePlanOfCareActivityActTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivityAct>(
+			"validatePlanOfCareActivityActTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(PlanOfCareActivityAct target) {
+			@Override
+			protected void updateToFail(PlanOfCareActivityAct target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(PlanOfCareActivityAct target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(PlanOfCareActivityAct target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return PlanOfCareActivityActOperations.validatePlanOfCareActivityActTemplateId(
+					(PlanOfCareActivityAct) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return PlanOfCareActivityActOperations.validatePlanOfCareActivityActTemplateId(
-          (PlanOfCareActivityAct) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validatePlanOfCareActivityActTemplateIdTestCase.doValidationTest();
-}
+		validatePlanOfCareActivityActTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -265,17 +231,17 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // PlanOfCareActivityActOperations

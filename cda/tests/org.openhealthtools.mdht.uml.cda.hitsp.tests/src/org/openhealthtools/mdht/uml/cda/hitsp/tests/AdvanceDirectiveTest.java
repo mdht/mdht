@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.PlayingEntity;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectiveObservationOperations;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AdvanceDirectiveOperations;
@@ -372,209 +373,104 @@ public class AdvanceDirectiveTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveTemplateId() {
-      OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveTemplateIdTestCase = new OperationsTestCase<AdvanceDirective>(
-      "validateAdvanceDirectiveTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveTemplateIdTestCase = new OperationsTestCase<AdvanceDirective>(
+			"validateAdvanceDirectiveTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AdvanceDirective target) {
+			@Override
+			protected void updateToFail(AdvanceDirective target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AdvanceDirective target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AdvanceDirective target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AdvanceDirectiveOperations.validateAdvanceDirectiveTemplateId(
+					(AdvanceDirective) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AdvanceDirectiveOperations.validateAdvanceDirectiveTemplateId(
-          (AdvanceDirective) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAdvanceDirectiveTemplateIdTestCase.doValidationTest();
-}
+		validateAdvanceDirectiveTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAdvanceDirectiveCode() {
+		OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveCodeTestCase = new OperationsTestCase<AdvanceDirective>(
+			"validateAdvanceDirectiveCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
- 
-                  
-public void testValidateAdvanceDirectiveCode() {
-      OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveCodeTestCase = new OperationsTestCase<AdvanceDirective>(
-      "validateAdvanceDirectiveCode",
-      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(AdvanceDirective target) {
 
-      @Override
-      protected void updateToFail(AdvanceDirective target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(AdvanceDirective target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(AdvanceDirective target) {
-        target.init();
-        
-        
-        
-        
-        
+			}
 
-        
-        
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-      
+				return AdvanceDirectiveOperations.validateAdvanceDirectiveCode(
+					(AdvanceDirective) objectToTest, diagnostician, map);
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+		};
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AdvanceDirectiveOperations.validateAdvanceDirectiveCode(
-          (AdvanceDirective) objectToTest, diagnostician, map);
-      }
+		validateAdvanceDirectiveCodeTestCase.doValidationTest();
+	}
 
-    };
-
-    validateAdvanceDirectiveCodeTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	*
 	* @generated
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveEffectiveTime() {
-      OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveEffectiveTimeTestCase = new OperationsTestCase<AdvanceDirective>(
-      "validateAdvanceDirectiveEffectiveTime",
-      operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AdvanceDirective> validateAdvanceDirectiveEffectiveTimeTestCase = new OperationsTestCase<AdvanceDirective>(
+			"validateAdvanceDirectiveEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AdvanceDirective target) {
+			@Override
+			protected void updateToFail(AdvanceDirective target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AdvanceDirective target) {
-        target.init();
-        
-        
-          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-          target.setEffectiveTime(ts );								
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AdvanceDirective target) {
+				target.init();
 
-        
-        
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-  
-      
+			}
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AdvanceDirectiveOperations.validateAdvanceDirectiveEffectiveTime(
-          (AdvanceDirective) objectToTest, diagnostician, map);
-      }
+				return AdvanceDirectiveOperations.validateAdvanceDirectiveEffectiveTime(
+					(AdvanceDirective) objectToTest, diagnostician, map);
+			}
 
-    };
+		};
 
-    validateAdvanceDirectiveEffectiveTimeTestCase.doValidationTest();
-}
+		validateAdvanceDirectiveEffectiveTimeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -606,7 +502,7 @@ public void testValidateAdvanceDirectiveCode() {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveOperations.validateAdvanceDirectiveObservationCode(
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationCode(
 					(AdvanceDirective) objectToTest, diagnostician, map);
 			}
 
@@ -668,17 +564,17 @@ public void testValidateAdvanceDirectiveCode() {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AdvanceDirectiveOperations

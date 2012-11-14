@@ -45,67 +45,33 @@ public class CodedAdvanceDirectivesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCodedAdvanceDirectivesSectionTemplateId() {
-      OperationsTestCase<CodedAdvanceDirectivesSection> validateCodedAdvanceDirectivesSectionTemplateIdTestCase = new OperationsTestCase<CodedAdvanceDirectivesSection>(
-      "validateCodedAdvanceDirectivesSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<CodedAdvanceDirectivesSection> validateCodedAdvanceDirectivesSectionTemplateIdTestCase = new OperationsTestCase<CodedAdvanceDirectivesSection>(
+			"validateCodedAdvanceDirectivesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(CodedAdvanceDirectivesSection target) {
+			@Override
+			protected void updateToFail(CodedAdvanceDirectivesSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(CodedAdvanceDirectivesSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(CodedAdvanceDirectivesSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return CodedAdvanceDirectivesSectionOperations.validateCodedAdvanceDirectivesSectionTemplateId(
+					(CodedAdvanceDirectivesSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return CodedAdvanceDirectivesSectionOperations.validateCodedAdvanceDirectivesSectionTemplateId(
-          (CodedAdvanceDirectivesSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCodedAdvanceDirectivesSectionTemplateIdTestCase.doValidationTest();
-}
+		validateCodedAdvanceDirectivesSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -149,13 +115,10 @@ public class CodedAdvanceDirectivesSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetAdvanceDirectivesObservations() {
 
+		CodedAdvanceDirectivesSection target = objectFactory.create();
+		target.getAdvanceDirectivesObservations();
 
-CodedAdvanceDirectivesSection target = objectFactory.create();
-target.getAdvanceDirectivesObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -211,9 +174,9 @@ target.getAdvanceDirectivesObservations();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -221,8 +184,8 @@ target.getAdvanceDirectivesObservations();
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // CodedAdvanceDirectivesSectionOperations

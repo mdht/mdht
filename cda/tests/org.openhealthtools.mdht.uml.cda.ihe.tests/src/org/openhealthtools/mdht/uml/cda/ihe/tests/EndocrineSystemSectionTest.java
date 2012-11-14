@@ -46,67 +46,33 @@ public class EndocrineSystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEndocrineSystemSectionTemplateId() {
-      OperationsTestCase<EndocrineSystemSection> validateEndocrineSystemSectionTemplateIdTestCase = new OperationsTestCase<EndocrineSystemSection>(
-      "validateEndocrineSystemSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ENDOCRINE_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EndocrineSystemSection> validateEndocrineSystemSectionTemplateIdTestCase = new OperationsTestCase<EndocrineSystemSection>(
+			"validateEndocrineSystemSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ENDOCRINE_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EndocrineSystemSection target) {
+			@Override
+			protected void updateToFail(EndocrineSystemSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EndocrineSystemSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EndocrineSystemSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EndocrineSystemSectionOperations.validateEndocrineSystemSectionTemplateId(
+					(EndocrineSystemSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EndocrineSystemSectionOperations.validateEndocrineSystemSectionTemplateId(
-          (EndocrineSystemSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateEndocrineSystemSectionTemplateIdTestCase.doValidationTest();
-}
+		validateEndocrineSystemSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,33 @@ public class EndocrineSystemSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateEndocrineSystemSectionCode() {
-      OperationsTestCase<EndocrineSystemSection> validateEndocrineSystemSectionCodeTestCase = new OperationsTestCase<EndocrineSystemSection>(
-      "validateEndocrineSystemSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_ENDOCRINE_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EndocrineSystemSection> validateEndocrineSystemSectionCodeTestCase = new OperationsTestCase<EndocrineSystemSection>(
+			"validateEndocrineSystemSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_ENDOCRINE_SYSTEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EndocrineSystemSection target) {
+			@Override
+			protected void updateToFail(EndocrineSystemSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EndocrineSystemSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EndocrineSystemSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EndocrineSystemSectionOperations.validateEndocrineSystemSectionCode(
+					(EndocrineSystemSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EndocrineSystemSectionOperations.validateEndocrineSystemSectionCode(
-          (EndocrineSystemSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateEndocrineSystemSectionCodeTestCase.doValidationTest();
-}
+		validateEndocrineSystemSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +149,10 @@ public class EndocrineSystemSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		EndocrineSystemSection target = objectFactory.create();
+		target.getProblemEntry();
 
-EndocrineSystemSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +207,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // EndocrineSystemSectionOperations

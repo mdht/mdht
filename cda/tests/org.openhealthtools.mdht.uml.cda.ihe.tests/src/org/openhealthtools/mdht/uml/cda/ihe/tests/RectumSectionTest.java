@@ -46,67 +46,33 @@ public class RectumSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateRectumSectionTemplateId() {
-      OperationsTestCase<RectumSection> validateRectumSectionTemplateIdTestCase = new OperationsTestCase<RectumSection>(
-      "validateRectumSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_RECTUM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<RectumSection> validateRectumSectionTemplateIdTestCase = new OperationsTestCase<RectumSection>(
+			"validateRectumSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RECTUM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(RectumSection target) {
+			@Override
+			protected void updateToFail(RectumSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(RectumSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(RectumSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return RectumSectionOperations.validateRectumSectionTemplateId(
+					(RectumSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return RectumSectionOperations.validateRectumSectionTemplateId(
-          (RectumSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateRectumSectionTemplateIdTestCase.doValidationTest();
-}
+		validateRectumSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -114,67 +80,32 @@ public class RectumSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateRectumSectionCode() {
-      OperationsTestCase<RectumSection> validateRectumSectionCodeTestCase = new OperationsTestCase<RectumSection>(
-      "validateRectumSectionCode",
-      operationsForOCL.getOCLValue("VALIDATE_RECTUM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<RectumSection> validateRectumSectionCodeTestCase = new OperationsTestCase<RectumSection>(
+			"validateRectumSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_RECTUM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-      @Override
-      protected void updateToFail(RectumSection target) {
+			@Override
+			protected void updateToFail(RectumSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(RectumSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(RectumSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return RectumSectionOperations.validateRectumSectionCode(
+					(RectumSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return RectumSectionOperations.validateRectumSectionCode(
-          (RectumSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateRectumSectionCodeTestCase.doValidationTest();
-}
+		validateRectumSectionCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -217,13 +148,10 @@ public class RectumSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemEntry() {
 
+		RectumSection target = objectFactory.create();
+		target.getProblemEntry();
 
-RectumSection target = objectFactory.create();
-target.getProblemEntry();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -278,17 +206,17 @@ target.getProblemEntry();
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // RectumSectionOperations

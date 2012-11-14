@@ -43,67 +43,33 @@ public class IntakeOutputSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIntakeOutputSectionTemplateId() {
-      OperationsTestCase<IntakeOutputSection> validateIntakeOutputSectionTemplateIdTestCase = new OperationsTestCase<IntakeOutputSection>(
-      "validateIntakeOutputSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_INTAKE_OUTPUT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<IntakeOutputSection> validateIntakeOutputSectionTemplateIdTestCase = new OperationsTestCase<IntakeOutputSection>(
+			"validateIntakeOutputSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INTAKE_OUTPUT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(IntakeOutputSection target) {
+			@Override
+			protected void updateToFail(IntakeOutputSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(IntakeOutputSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(IntakeOutputSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return IntakeOutputSectionOperations.validateIntakeOutputSectionTemplateId(
+					(IntakeOutputSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return IntakeOutputSectionOperations.validateIntakeOutputSectionTemplateId(
-          (IntakeOutputSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateIntakeOutputSectionTemplateIdTestCase.doValidationTest();
-}
+		validateIntakeOutputSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -159,9 +125,9 @@ public class IntakeOutputSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -169,8 +135,8 @@ public class IntakeOutputSectionTest extends CDAValidationTest {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // IntakeOutputSectionOperations

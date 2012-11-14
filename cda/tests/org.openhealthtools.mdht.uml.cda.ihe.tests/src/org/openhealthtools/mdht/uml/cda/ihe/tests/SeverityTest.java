@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.SeverityObservationOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.Severity;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.SeverityOperations;
@@ -86,67 +87,32 @@ public class SeverityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSeverityTemplateId() {
-      OperationsTestCase<Severity> validateSeverityTemplateIdTestCase = new OperationsTestCase<Severity>(
-      "validateSeverityTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_SEVERITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<Severity> validateSeverityTemplateIdTestCase = new OperationsTestCase<Severity>(
+			"validateSeverityTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(Severity target) {
+			@Override
+			protected void updateToFail(Severity target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(Severity target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(Severity target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SeverityOperations.validateSeverityTemplateId((Severity) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SeverityOperations.validateSeverityTemplateId(
-          (Severity) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateSeverityTemplateIdTestCase.doValidationTest();
-}
+		validateSeverityTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -182,80 +148,41 @@ public class SeverityTest extends CDAValidationTest {
 	}
 
 	/**
-*
-* @generated
-*/
-@Test
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSeverityValue() {
+		OperationsTestCase<Severity> validateSeverityValueTestCase = new OperationsTestCase<Severity>(
+			"validateSeverityValue",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
- 
-                  
-public void testValidateSeverityValue() {
-      OperationsTestCase<Severity> validateSeverityValueTestCase = new OperationsTestCase<Severity>(
-      "validateSeverityValue",
-      operationsForOCL.getOCLValue("VALIDATE_SEVERITY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+			@Override
+			protected void updateToFail(Severity target) {
 
-      @Override
-      protected void updateToFail(Severity target) {
+			}
 
-      }
+			@Override
+			protected void updateToPass(Severity target) {
+				target.init();
 
-      @Override
-      protected void updateToPass(Severity target) {
-        target.init();
-        
-        
-        
-        
-        
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
 
-        
-      
-        CD value = DatatypesFactory.eINSTANCE.createCD();
-        target.getValues().add(value);
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SeverityOperations.validateSeverityValue((Severity) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SeverityOperations.validateSeverityValue(
-          (Severity) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
+		validateSeverityValueTestCase.doValidationTest();
+	}
 
-    validateSeverityValueTestCase.doValidationTest();
-}
-
-  /**
+	/**
 	*
 	* @generated NOT
 	*/
@@ -282,7 +209,8 @@ public void testValidateSeverityValue() {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SeverityOperations.validateSeverityObservationValue((Severity) objectToTest, diagnostician, map);
+				return SeverityObservationOperations.validateSeverityObservationValue(
+					(Severity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -344,9 +272,9 @@ public void testValidateSeverityValue() {
 	*/
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	*
@@ -354,8 +282,8 @@ public void testValidateSeverityValue() {
 	*/
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SeverityOperations

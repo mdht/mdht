@@ -124,13 +124,10 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetConditions() {
 
+		ReasonForReferralSection target = objectFactory.create();
+		target.getConditions();
 
-ReasonForReferralSection target = objectFactory.create();
-target.getConditions();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -139,13 +136,10 @@ target.getConditions();
 	@Test
 	public void testGetResults() {
 
+		ReasonForReferralSection target = objectFactory.create();
+		target.getResults();
 
-ReasonForReferralSection target = objectFactory.create();
-target.getResults();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -153,67 +147,33 @@ target.getResults();
 	*/
 	@Test
 	public void testValidateCodedReasonForReferralSectionTemplateId() {
-      OperationsTestCase<ReasonForReferralSection> validateCodedReasonForReferralSectionTemplateIdTestCase = new OperationsTestCase<ReasonForReferralSection>(
-      "validateCodedReasonForReferralSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_CODED_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ReasonForReferralSection> validateCodedReasonForReferralSectionTemplateIdTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			"validateCodedReasonForReferralSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ReasonForReferralSection target) {
+			@Override
+			protected void updateToFail(ReasonForReferralSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ReasonForReferralSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ReasonForReferralSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ReasonForReferralSectionOperations.validateCodedReasonForReferralSectionTemplateId(
+					(ReasonForReferralSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ReasonForReferralSectionOperations.validateCodedReasonForReferralSectionTemplateId(
-          (ReasonForReferralSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateCodedReasonForReferralSectionTemplateIdTestCase.doValidationTest();
-}
+		validateCodedReasonForReferralSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -271,9 +231,9 @@ target.getResults();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -281,8 +241,8 @@ target.getResults();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ReasonForReferralSectionOperations
