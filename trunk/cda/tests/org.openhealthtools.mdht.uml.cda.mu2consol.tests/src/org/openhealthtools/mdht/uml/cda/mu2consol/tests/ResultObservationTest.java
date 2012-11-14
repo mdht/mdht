@@ -44,10 +44,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolResultObservationResultObservationCodeValue() {
 		OperationsTestCase<ResultObservation> validateMu2consolResultObservationResultObservationCodeValueTestCase = new OperationsTestCase<ResultObservation>(
-				"validateMu2consolResultObservationResultObservationCodeValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_RESULT_OBSERVATION_RESULT_OBSERVATION_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolResultObservationResultObservationCodeValue",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_OBSERVATION_RESULT_OBSERVATION_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -66,19 +65,15 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateMu2consolResultObservationResultObservationCodeValue(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateMu2consolResultObservationResultObservationCodeValue(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolResultObservationResultObservationCodeValueTestCase
-				.doValidationTest();
+		validateMu2consolResultObservationResultObservationCodeValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -88,10 +83,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolResultObservationCode() {
 		OperationsTestCase<ResultObservation> validateMu2consolResultObservationCodeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateMu2consolResultObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolResultObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -108,13 +102,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateMu2consolResultObservationCode(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateMu2consolResultObservationCode(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -128,67 +119,33 @@ public class ResultObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultObservationTemplateId() {
-      OperationsTestCase<ResultObservation> validateResultObservationTemplateIdTestCase = new OperationsTestCase<ResultObservation>(
-      "validateResultObservationTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultObservation> validateResultObservationTemplateIdTestCase = new OperationsTestCase<ResultObservation>(
+			"validateResultObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultObservation target) {
+			@Override
+			protected void updateToFail(ResultObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ResultObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ResultObservationOperations.validateResultObservationTemplateId(
+					(ResultObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultObservationOperations.validateResultObservationTemplateId(
-          (ResultObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateResultObservationTemplateIdTestCase.doValidationTest();
-}
+		validateResultObservationTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -200,8 +157,7 @@ public class ResultObservationTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -213,9 +169,8 @@ public class ResultObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ResultObservation> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<ResultObservation> {
+
 		public ResultObservation create() {
 			return Mu2consolFactory.eINSTANCE.createResultObservation();
 		}
@@ -238,8 +193,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			ResultObservationOperations {
+	private static class ConstructorTestClass extends ResultObservationOperations {
 	};
 
 	/**
@@ -249,17 +203,18 @@ public class ResultObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ResultObservationOperations

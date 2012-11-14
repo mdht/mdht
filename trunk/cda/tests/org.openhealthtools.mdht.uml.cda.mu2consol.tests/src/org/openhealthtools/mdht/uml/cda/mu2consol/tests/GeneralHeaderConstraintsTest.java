@@ -74,10 +74,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolGeneralHeaderConstraintsRecordTarget() {
 		OperationsTestCase<GeneralHeaderConstraints> validateMu2consolGeneralHeaderConstraintsRecordTargetTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateMu2consolGeneralHeaderConstraintsRecordTarget",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolGeneralHeaderConstraintsRecordTarget",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -87,26 +86,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
-				RecordTarget rTarget = CDAFactory.eINSTANCE
-						.createRecordTarget();
+				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
 				target.getRecordTargets().add(rTarget);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateMu2consolGeneralHeaderConstraintsRecordTarget(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateMu2consolGeneralHeaderConstraintsRecordTarget(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolGeneralHeaderConstraintsRecordTargetTestCase
-				.doValidationTest();
+		validateMu2consolGeneralHeaderConstraintsRecordTargetTestCase.doValidationTest();
 	}
 
 	/**
@@ -116,10 +110,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolGeneralHeaderConstraintsDocumentationOf() {
 		OperationsTestCase<GeneralHeaderConstraints> validateMu2consolGeneralHeaderConstraintsDocumentationOfTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateMu2consolGeneralHeaderConstraintsDocumentationOf",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolGeneralHeaderConstraintsDocumentationOf",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -129,26 +122,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
-				DocumentationOf dOf = CDAFactory.eINSTANCE
-						.createDocumentationOf();
+				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
 				target.getDocumentationOfs().add(dOf);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateMu2consolGeneralHeaderConstraintsDocumentationOf(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateMu2consolGeneralHeaderConstraintsDocumentationOf(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolGeneralHeaderConstraintsDocumentationOfTestCase
-				.doValidationTest();
+		validateMu2consolGeneralHeaderConstraintsDocumentationOfTestCase.doValidationTest();
 	}
 
 	/**
@@ -158,16 +146,14 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPersonTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER1_ASSIGNED_ENTITY_ASSIGNED_PERSON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER1_ASSIGNED_ENTITY_ASSIGNED_PERSON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 				target.init();
-				DocumentationOf dOf = CDAFactory.eINSTANCE
-						.createDocumentationOf();
+				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
 				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
 				AssignedEntity aE = CDAFactory.eINSTANCE.createAssignedEntity();
@@ -181,26 +167,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				Person aPerson = CDAFactory.eINSTANCE.createPerson();
-				target.getDocumentationOfs().get(0).getServiceEvent()
-						.getPerformers().get(0).getAssignedEntity()
-						.setAssignedPerson(aPerson);
+				target.getDocumentationOfs().get(0).getServiceEvent().getPerformers().get(0).getAssignedEntity().setAssignedPerson(
+					aPerson);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPersonTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPersonTestCase.doValidationTest();
 	}
 
 	/**
@@ -210,15 +191,13 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER1_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER1_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-				DocumentationOf dOf = CDAFactory.eINSTANCE
-						.createDocumentationOf();
+				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
 				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
 				dOf.setServiceEvent(sEvent);
@@ -229,25 +208,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				AssignedEntity aE = CDAFactory.eINSTANCE.createAssignedEntity();
-				target.getDocumentationOfs().get(0).getServiceEvent()
-						.getPerformers().get(0).setAssignedEntity(aE);
+				target.getDocumentationOfs().get(0).getServiceEvent().getPerformers().get(0).setAssignedEntity(aE);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityTestCase.doValidationTest();
 	}
 
 	/**
@@ -257,16 +231,14 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformerTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 				target.init();
-				DocumentationOf dOf = CDAFactory.eINSTANCE
-						.createDocumentationOf();
+				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
 				dOf.setServiceEvent(sEvent);
 				target.getDocumentationOfs().add(dOf);
@@ -276,25 +248,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
-				target.getDocumentationOfs().get(0).getServiceEvent()
-						.getPerformers().add(performer);
+				target.getDocumentationOfs().get(0).getServiceEvent().getPerformers().add(performer);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformerTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformerTestCase.doValidationTest();
 	}
 
 	/**
@@ -304,15 +271,13 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEvent() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDocumentationOfServiceEventTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsDocumentationOfServiceEvent",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsDocumentationOfServiceEvent",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-				DocumentationOf dOf = CDAFactory.eINSTANCE
-						.createDocumentationOf();
+				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
 				target.getDocumentationOfs().add(dOf);
 
 			}
@@ -325,19 +290,15 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsDocumentationOfServiceEvent(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEvent(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsDocumentationOfServiceEventTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsDocumentationOfServiceEventTestCase.doValidationTest();
 	}
 
 	/**
@@ -347,17 +308,15 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipantTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_COMPONENT1_ENCOMPASSING_ENCOUNTER_ENCOUNTER_PARTICIPANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_COMPONENT1_ENCOMPASSING_ENCOUNTER_ENCOUNTER_PARTICIPANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 				target.init();
 				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE
-						.createEncompassingEncounter();
+				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
 				comp1.setEncompassingEncounter(eEncounter);
 				target.setComponentOf(comp1);
 
@@ -365,27 +324,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				EncounterParticipant participant = CDAFactory.eINSTANCE
-						.createEncounterParticipant();
-				target.getComponentOf().getEncompassingEncounter()
-						.getEncounterParticipants().add(participant);
+				EncounterParticipant participant = CDAFactory.eINSTANCE.createEncounterParticipant();
+				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(participant);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipantTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipantTestCase.doValidationTest();
 	}
 
 	/**
@@ -395,10 +348,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsComponent1EncompassingEncounter() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsComponent1EncompassingEncounterTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsComponent1EncompassingEncounter",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_COMPONENT1_ENCOMPASSING_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsComponent1EncompassingEncounter",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_COMPONENT1_ENCOMPASSING_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -410,26 +362,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
-				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE
-						.createEncompassingEncounter();
+				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
 				target.getComponentOf().setEncompassingEncounter(eEncounter);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsComponent1EncompassingEncounter(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsComponent1EncompassingEncounter(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsComponent1EncompassingEncounterTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsComponent1EncompassingEncounterTestCase.doValidationTest();
 	}
 
 	/**
@@ -438,67 +385,33 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-      OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-      "validateGeneralHeaderConstraintsTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(GeneralHeaderConstraints target) {
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(GeneralHeaderConstraints target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTemplateId(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTemplateId(
-          (GeneralHeaderConstraints) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-}
+		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -507,19 +420,16 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodePTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION_LANGUAGE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION_LANGUAGE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-				RecordTarget rTarget = CDAFactory.eINSTANCE
-						.createRecordTarget();
+				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				LanguageCommunication lComm = CDAFactory.eINSTANCE
-						.createLanguageCommunication();
+				LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
 				patient.getLanguageCommunications().add(lComm);
 				pRole.setPatient(patient);
 				rTarget.setPatientRole(pRole);
@@ -531,26 +441,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				CS csType = DatatypesFactory.eINSTANCE.createCS();
 				csType.setCode("amh");
-				target.getRecordTargets().get(0).getPatientRole().getPatient()
-						.getLanguageCommunications().get(0)
-						.setLanguageCode(csType);
+				target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(0).setLanguageCode(
+					csType);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodePTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -560,19 +465,16 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION_LANGUAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION_LANGUAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-				RecordTarget rTarget = CDAFactory.eINSTANCE
-						.createRecordTarget();
+				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				LanguageCommunication lComm = CDAFactory.eINSTANCE
-						.createLanguageCommunication();
+				LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
 				patient.getLanguageCommunications().add(lComm);
 				pRole.setPatient(patient);
 				rTarget.setPatientRole(pRole);
@@ -587,26 +489,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				CS csType = DatatypesFactory.eINSTANCE.createCS();
 				csType.setCode("zul");
-				target.getRecordTargets().get(0).getPatientRole().getPatient()
-						.getLanguageCommunications().get(0)
-						.setLanguageCode(csType);
+				target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(0).setLanguageCode(
+					csType);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -616,10 +513,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_ETHNIC_GROUP_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_ETHNIC_GROUP_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -637,25 +533,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				ce.setCode("2135-2");
 				ce.setCodeSystem("2.16.840.1.113883.6.238");
-				target.getRecordTargets().get(0).getPatientRole().getPatient()
-						.setEthnicGroupCode(ce);
+				target.getRecordTargets().get(0).getPatientRole().getPatient().setEthnicGroupCode(ce);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -665,10 +556,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodePTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_ETHNIC_GROUP_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_ETHNIC_GROUP_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -686,24 +576,19 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				ce.setCode("2135-2");
 				ce.setCodeSystem("2.16.840.1.113883.6.238");
-				target.getRecordTargets().get(0).getPatientRole().getPatient()
-						.setEthnicGroupCode(ce);
+				target.getRecordTargets().get(0).getPatientRole().getPatient().setEthnicGroupCode(ce);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodePTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -713,10 +598,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_RACE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_RACE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -734,25 +618,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				ce.setCodeSystem("2.16.840.1.113883.6.238");
 				ce.setCode("2054-5");
-				target.getRecordTargets().get(0).getPatientRole().getPatient()
-						.setRaceCode(ce);
+				target.getRecordTargets().get(0).getPatientRole().getPatient().setRaceCode(ce);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCode(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -762,10 +641,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodePTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_RACE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_RACE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -783,25 +661,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				ce.setCodeSystem("2.16.840.1.113883.6.238");
 				ce.setCode("1111111111");
-				target.getRecordTargets().get(0).getPatientRole().getPatient()
-						.setRaceCode(ce);
+				target.getRecordTargets().get(0).getPatientRole().getPatient().setRaceCode(ce);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodePTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -811,10 +684,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -830,27 +702,21 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				LanguageCommunication lComm = CDAFactory.eINSTANCE
-						.createLanguageCommunication();
-				target.getRecordTargets().get(0).getPatientRole().getPatient()
-						.getLanguageCommunications().add(lComm);
+				LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
+				target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().add(lComm);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationTestCase.doValidationTest();
 	}
 
 	/**
@@ -860,10 +726,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatient() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRolePatient",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatient",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -878,24 +743,19 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				target.getRecordTargets().get(0).getPatientRole()
-						.setPatient(patient);
+				target.getRecordTargets().get(0).getPatientRole().setPatient(patient);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRolePatient(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatient(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTestCase.doValidationTest();
 	}
 
 	/**
@@ -905,10 +765,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRole() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRoleTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-				"validateGeneralHeaderConstraintsRecordTargetPatientRole",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsRecordTargetPatientRole",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -925,34 +784,28 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations
-						.validateGeneralHeaderConstraintsRecordTargetPatientRole(
-								(GeneralHeaderConstraints) objectToTest,
-								diagnostician, map);
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRole(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsRecordTargetPatientRoleTestCase
-				.doValidationTest();
+		validateGeneralHeaderConstraintsRecordTargetPatientRoleTestCase.doValidationTest();
 	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			GeneralHeaderConstraintsOperations {
+	private static class OperationsForOCL extends GeneralHeaderConstraintsOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -964,10 +817,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<GeneralHeaderConstraints> {
+	private static class ObjectFactory implements TestObjectFactory<GeneralHeaderConstraints> {
 
-		@Override
 		public GeneralHeaderConstraints create() {
 			return Mu2consolFactory.eINSTANCE.createGeneralHeaderConstraints();
 		}
@@ -990,8 +841,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			GeneralHeaderConstraintsOperations {
+	private static class ConstructorTestClass extends GeneralHeaderConstraintsOperations {
 	};
 
 	/**
@@ -1001,9 +851,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -1011,9 +861,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 	/**
 	 * 

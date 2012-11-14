@@ -61,10 +61,9 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses() {
 		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnosesTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
-				"validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_INPATIENT_ENCOUNTER_DIAGNOSES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_INPATIENT_ENCOUNTER_DIAGNOSES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
@@ -74,25 +73,20 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
 				target.init();
-				HospitalAdmissionDiagnosisSection hSection = ConsolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosisSection().init();
+				HospitalAdmissionDiagnosisSection hSection = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
 				target.addSection(hSection);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareInpatientSummaryOperations
-						.validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses(
-								(TransitionOfCareInpatientSummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnoses(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnosesTestCase
-				.doValidationTest();
+		validateTransitionOfCareInpatientSummaryInpatientEncounterDiagnosesTestCase.doValidationTest();
 	}
 
 	/**
@@ -102,16 +96,14 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntry() {
 		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
-				"validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntry",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntry",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
 				target.init();
-				HospitalAdmissionDiagnosisSection aSection = ConsolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosisSection().init();
+				HospitalAdmissionDiagnosisSection aSection = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
 				target.addSection(aSection);
 				// HospitalAdmissionDiagnosis section =
 				// ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosis().init();
@@ -119,26 +111,21 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				HospitalAdmissionDiagnosis act = ConsolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosis().init();
+				HospitalAdmissionDiagnosis act = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosis().init();
 				target.getHospitalAdmissionDiagnosisSection().addAct(act);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareInpatientSummaryOperations
-						.validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntry(
-								(TransitionOfCareInpatientSummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntry(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase
-				.doValidationTest();
+		validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase.doValidationTest();
 	}
 
 	/**
@@ -148,41 +135,34 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntry() {
 		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntryTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
-				"validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntry",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_DIAGNOSES_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntry",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_DIAGNOSES_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
 				target.init();
-				HospitalDischargeDiagnosisSection aSection = ConsolFactory.eINSTANCE
-						.createHospitalDischargeDiagnosisSection().init();
+				HospitalDischargeDiagnosisSection aSection = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				HospitalDischargeDiagnosis act = ConsolFactory.eINSTANCE
-						.createHospitalDischargeDiagnosis().init();
+				HospitalDischargeDiagnosis act = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosis().init();
 				target.getHospitalDischargeDiagnosisSection().addAct(act);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareInpatientSummaryOperations
-						.validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntry(
-								(TransitionOfCareInpatientSummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntry(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntryTestCase
-				.doValidationTest();
+		validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosesEntryTestCase.doValidationTest();
 	}
 
 	/**
@@ -192,41 +172,34 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntry() {
 		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntryTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
-				"validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntry",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_POSTOPERATIVE_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntry",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_POSTOPERATIVE_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
 				target.init();
-				PostoperativeDiagnosisSection aSection = ConsolFactory.eINSTANCE
-						.createPostoperativeDiagnosisSection().init();
+				PostoperativeDiagnosisSection aSection = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				ProblemObservation obs = ConsolFactory.eINSTANCE
-						.createProblemObservation().init();
+				ProblemObservation obs = ConsolFactory.eINSTANCE.createProblemObservation().init();
 				target.getPostoperativeDiagnosisSection().addObservation(obs);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareInpatientSummaryOperations
-						.validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntry(
-								(TransitionOfCareInpatientSummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntry(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntryTestCase
-				.doValidationTest();
+		validateTransitionOfCareInpatientSummaryPostoperativeDiagnosisEntryTestCase.doValidationTest();
 	}
 
 	/**
@@ -236,41 +209,34 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry() {
 		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntryTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
-				"validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_POSTPROCEDURE_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_POSTPROCEDURE_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
 				target.init();
-				PostprocedureDiagnosisSection aSection = ConsolFactory.eINSTANCE
-						.createPostprocedureDiagnosisSection().init();
+				PostprocedureDiagnosisSection aSection = ConsolFactory.eINSTANCE.createPostprocedureDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(TransitionOfCareInpatientSummary target) {
-				ProblemObservation pObs = ConsolFactory.eINSTANCE
-						.createProblemObservation().init();
+				ProblemObservation pObs = ConsolFactory.eINSTANCE.createProblemObservation().init();
 				target.getPostprocedureDiagnosisSection().addObservation(pObs);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareInpatientSummaryOperations
-						.validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry(
-								(TransitionOfCareInpatientSummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntryTestCase
-				.doValidationTest();
+		validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntryTestCase.doValidationTest();
 	}
 
 	/**
@@ -280,10 +246,9 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection() {
 		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSectionTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
-				"validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
@@ -297,27 +262,22 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 				/* HospitalDischargeInstructionsSection */
 				HospitalDischargeInstructionsSection section =
 
-				ConsolFactory.eINSTANCE
-						.createHospitalDischargeInstructionsSection().init();
+				ConsolFactory.eINSTANCE.createHospitalDischargeInstructionsSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareInpatientSummaryOperations
-						.validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection(
-								(TransitionOfCareInpatientSummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSectionTestCase
-				.doValidationTest();
+		validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -327,10 +287,9 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection() {
 		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSectionTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
-				"validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareInpatientSummary target) {
@@ -344,27 +303,22 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 				/* HospitalDischargeMedicationsSection */
 				HospitalDischargeMedicationsSection section =
 
-				ConsolFactory.eINSTANCE
-						.createHospitalDischargeMedicationsSection().init();
+				ConsolFactory.eINSTANCE.createHospitalDischargeMedicationsSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareInpatientSummaryOperations
-						.validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection(
-								(TransitionOfCareInpatientSummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSectionTestCase
-				.doValidationTest();
+		validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -374,13 +328,10 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalDischargeInstructionsSection() {
 
+		TransitionOfCareInpatientSummary target = objectFactory.create();
+		target.getHospitalDischargeInstructionsSection();
 
-TransitionOfCareInpatientSummary target = objectFactory.create();
-target.getHospitalDischargeInstructionsSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -389,13 +340,10 @@ target.getHospitalDischargeInstructionsSection();
 	@Test
 	public void testGetHospitalDischargeMedicationsSection() {
 
+		TransitionOfCareInpatientSummary target = objectFactory.create();
+		target.getHospitalDischargeMedicationsSection();
 
-TransitionOfCareInpatientSummary target = objectFactory.create();
-target.getHospitalDischargeMedicationsSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -404,13 +352,10 @@ target.getHospitalDischargeMedicationsSection();
 	@Test
 	public void testGetHospitalAdmissionDiagnosisSection() {
 
+		TransitionOfCareInpatientSummary target = objectFactory.create();
+		target.getHospitalAdmissionDiagnosisSection();
 
-TransitionOfCareInpatientSummary target = objectFactory.create();
-target.getHospitalAdmissionDiagnosisSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -419,13 +364,10 @@ target.getHospitalAdmissionDiagnosisSection();
 	@Test
 	public void testGetHospitalDischargeDiagnosisSection() {
 
+		TransitionOfCareInpatientSummary target = objectFactory.create();
+		target.getHospitalDischargeDiagnosisSection();
 
-TransitionOfCareInpatientSummary target = objectFactory.create();
-target.getHospitalDischargeDiagnosisSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -434,27 +376,22 @@ target.getHospitalDischargeDiagnosisSection();
 	@Test
 	public void testGetHospitalAdmissionMedicationsSectionEntriesOptional() {
 
+		TransitionOfCareInpatientSummary target = objectFactory.create();
+		target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 
-TransitionOfCareInpatientSummary target = objectFactory.create();
-target.getHospitalAdmissionMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			TransitionOfCareInpatientSummaryOperations {
+	private static class OperationsForOCL extends TransitionOfCareInpatientSummaryOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -466,12 +403,10 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<TransitionOfCareInpatientSummary> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<TransitionOfCareInpatientSummary> {
+
 		public TransitionOfCareInpatientSummary create() {
-			return Mu2consolFactory.eINSTANCE
-					.createTransitionOfCareInpatientSummary();
+			return Mu2consolFactory.eINSTANCE.createTransitionOfCareInpatientSummary();
 		}
 	}
 
@@ -492,8 +427,7 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			TransitionOfCareInpatientSummaryOperations {
+	private static class ConstructorTestClass extends TransitionOfCareInpatientSummaryOperations {
 	};
 
 	/**
@@ -503,17 +437,18 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // TransitionOfCareInpatientSummaryOperations

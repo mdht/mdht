@@ -72,16 +72,14 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryEffectiveTime() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryEffectiveTimeTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryEffectiveTime",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
 				Component1 compOf = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter enCounter = CDAFactory.eINSTANCE
-						.createEncompassingEncounter();
+				EncompassingEncounter enCounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
 				compOf.setEncompassingEncounter(enCounter);
 				target.setComponentOf(compOf);
 
@@ -90,19 +88,15 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
 				IVL_TS effTime = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.getComponentOf().getEncompassingEncounter()
-						.setEffectiveTime(effTime);
+				target.getComponentOf().getEncompassingEncounter().setEffectiveTime(effTime);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryEffectiveTime(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryEffectiveTime(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -117,16 +111,14 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryLocation() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryLocationTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryLocation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryLocation",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
 				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter encounter = CDAFactory.eINSTANCE
-						.createEncompassingEncounter();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
 				comp1.setEncompassingEncounter(encounter);
 				target.setComponentOf(comp1);
 			}
@@ -134,19 +126,15 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
 				Location locn = CDAFactory.eINSTANCE.createLocation();
-				target.getComponentOf().getEncompassingEncounter()
-						.setLocation(locn);
+				target.getComponentOf().getEncompassingEncounter().setLocation(locn);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryLocation(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryLocation(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -161,20 +149,16 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryChiefComplaintOrReasonForVisit() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryChiefComplaintOrReasonForVisitTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryChiefComplaintOrReasonForVisit",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_CHIEF_COMPLAINT_OR_REASON_FOR_VISIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryChiefComplaintOrReasonForVisit",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_CHIEF_COMPLAINT_OR_REASON_FOR_VISIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
 				target.init();
-				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE
-						.createChiefComplaintSection().init();
-				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE
-						.createReasonForVisitSection().init();
-				ChiefComplaintAndReasonForVisitSection ccRvsSection = ConsolFactory.eINSTANCE
-						.createChiefComplaintAndReasonForVisitSection().init();
+				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE.createReasonForVisitSection().init();
+				ChiefComplaintAndReasonForVisitSection ccRvsSection = ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
 				target.addSection(ccRvsSection);
 				target.addSection(rvsSection);
 				target.addSection(ccSection);
@@ -184,29 +168,23 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(VDTInpatientSummary target) {
 				Component2 comp2 = CDAFactory.eINSTANCE.createComponent2();
 				target.setComponent(comp2);
-				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE
-						.createChiefComplaintSection().init();
-				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE
-						.createReasonForVisitSection().init();
+				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE.createReasonForVisitSection().init();
 				target.addSection(rvsSection);
 				target.addSection(ccSection);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryChiefComplaintOrReasonForVisit(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryChiefComplaintOrReasonForVisit(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateVDTInpatientSummaryChiefComplaintOrReasonForVisitTestCase
-				.doValidationTest();
+		validateVDTInpatientSummaryChiefComplaintOrReasonForVisitTestCase.doValidationTest();
 	}
 
 	/**
@@ -216,39 +194,32 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
-				HospitalAdmissionDiagnosisSection aSection = ConsolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosisSection().init();
+				HospitalAdmissionDiagnosisSection aSection = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
-				HospitalAdmissionDiagnosis act = ConsolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosis().init();
+				HospitalAdmissionDiagnosis act = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosis().init();
 				target.getHospitalAdmissionDiagnosisSection().addAct(act);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntry(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase
-				.doValidationTest();
+		validateVDTInpatientSummaryHospitalAdmissionDiagnosisEntryTestCase.doValidationTest();
 	}
 
 	/**
@@ -258,39 +229,32 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryPreoperativeDiagnosisEntry() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryPreoperativeDiagnosisEntryTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryPreoperativeDiagnosisEntry",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_PREOPERATIVE_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryPreoperativeDiagnosisEntry",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_PREOPERATIVE_DIAGNOSIS_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
-				PreoperativeDiagnosisSection aSection = ConsolFactory.eINSTANCE
-						.createPreoperativeDiagnosisSection().init();
+				PreoperativeDiagnosisSection aSection = ConsolFactory.eINSTANCE.createPreoperativeDiagnosisSection().init();
 				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(VDTInpatientSummary target) {
-				PreoperativeDiagnosis act = ConsolFactory.eINSTANCE
-						.createPreoperativeDiagnosis().init();
+				PreoperativeDiagnosis act = ConsolFactory.eINSTANCE.createPreoperativeDiagnosis().init();
 				target.getPreoperativeDiagnosisSection().addAct(act);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryPreoperativeDiagnosisEntry(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryPreoperativeDiagnosisEntry(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateVDTInpatientSummaryPreoperativeDiagnosisEntryTestCase
-				.doValidationTest();
+		validateVDTInpatientSummaryPreoperativeDiagnosisEntryTestCase.doValidationTest();
 	}
 
 	/**
@@ -300,10 +264,9 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryHospitalDischargeInstructionsSection() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalDischargeInstructionsSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryHospitalDischargeInstructionsSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryHospitalDischargeInstructionsSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
@@ -317,27 +280,22 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 				/* HospitalDischargeInstructionsSection */
 				HospitalDischargeInstructionsSection section =
 
-				ConsolFactory.eINSTANCE
-						.createHospitalDischargeInstructionsSection().init();
+				ConsolFactory.eINSTANCE.createHospitalDischargeInstructionsSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryHospitalDischargeInstructionsSection(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryHospitalDischargeInstructionsSection(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateVDTInpatientSummaryHospitalDischargeInstructionsSectionTestCase
-				.doValidationTest();
+		validateVDTInpatientSummaryHospitalDischargeInstructionsSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -347,10 +305,9 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryHospitalAdmissionDiagnosisSection() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryHospitalAdmissionDiagnosisSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryHospitalAdmissionDiagnosisSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
@@ -364,27 +321,22 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 				/* HospitalAdmissionDiagnosisSection */
 				HospitalAdmissionDiagnosisSection section =
 
-				ConsolFactory.eINSTANCE
-						.createHospitalAdmissionDiagnosisSection().init();
+				ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryHospitalAdmissionDiagnosisSection(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryHospitalAdmissionDiagnosisSection(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTestCase
-				.doValidationTest();
+		validateVDTInpatientSummaryHospitalAdmissionDiagnosisSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -394,10 +346,9 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTInpatientSummaryHospitalDischargeMedicationsSection() {
 		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalDischargeMedicationsSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
-				"validateVDTInpatientSummaryHospitalDischargeMedicationsSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTInpatientSummaryHospitalDischargeMedicationsSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTInpatientSummary target) {
@@ -411,27 +362,22 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 				/* HospitalDischargeMedicationsSection */
 				HospitalDischargeMedicationsSection section =
 
-				ConsolFactory.eINSTANCE
-						.createHospitalDischargeMedicationsSection().init();
+				ConsolFactory.eINSTANCE.createHospitalDischargeMedicationsSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTInpatientSummaryOperations
-						.validateVDTInpatientSummaryHospitalDischargeMedicationsSection(
-								(VDTInpatientSummary) objectToTest,
-								diagnostician, map);
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryHospitalDischargeMedicationsSection(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateVDTInpatientSummaryHospitalDischargeMedicationsSectionTestCase
-				.doValidationTest();
+		validateVDTInpatientSummaryHospitalDischargeMedicationsSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -441,13 +387,10 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalDischargeInstructionsSection() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getHospitalDischargeInstructionsSection();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getHospitalDischargeInstructionsSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -456,13 +399,10 @@ target.getHospitalDischargeInstructionsSection();
 	@Test
 	public void testGetHospitalAdmissionDiagnosisSection() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getHospitalAdmissionDiagnosisSection();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getHospitalAdmissionDiagnosisSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -471,13 +411,10 @@ target.getHospitalAdmissionDiagnosisSection();
 	@Test
 	public void testGetChiefComplaintSection() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getChiefComplaintSection();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getChiefComplaintSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -486,13 +423,10 @@ target.getChiefComplaintSection();
 	@Test
 	public void testGetReasonForVisitSection() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getReasonForVisitSection();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -501,13 +435,10 @@ target.getReasonForVisitSection();
 	@Test
 	public void testGetChiefComplaintAndReasonForVisitSection() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getChiefComplaintAndReasonForVisitSection();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getChiefComplaintAndReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -516,13 +447,10 @@ target.getChiefComplaintAndReasonForVisitSection();
 	@Test
 	public void testGetHospitalDischargeMedicationsSection() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getHospitalDischargeMedicationsSection();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getHospitalDischargeMedicationsSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -531,13 +459,10 @@ target.getHospitalDischargeMedicationsSection();
 	@Test
 	public void testGetPreoperativeDiagnosisSection() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getPreoperativeDiagnosisSection();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getPreoperativeDiagnosisSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -546,13 +471,10 @@ target.getPreoperativeDiagnosisSection();
 	@Test
 	public void testGetHospitalAdmissionMedicationsSectionEntriesOptional() {
 
+		VDTInpatientSummary target = objectFactory.create();
+		target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 
-VDTInpatientSummary target = objectFactory.create();
-target.getHospitalAdmissionMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -564,8 +486,7 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -577,9 +498,8 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<VDTInpatientSummary> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<VDTInpatientSummary> {
+
 		public VDTInpatientSummary create() {
 			return Mu2consolFactory.eINSTANCE.createVDTInpatientSummary();
 		}
@@ -602,8 +522,7 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			VDTInpatientSummaryOperations {
+	private static class ConstructorTestClass extends VDTInpatientSummaryOperations {
 	};
 
 	/**
@@ -613,17 +532,18 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // VDTInpatientSummaryOperations

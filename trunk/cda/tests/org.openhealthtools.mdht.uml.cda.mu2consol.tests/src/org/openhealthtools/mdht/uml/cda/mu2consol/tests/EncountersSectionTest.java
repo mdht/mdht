@@ -41,67 +41,33 @@ public class EncountersSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolEncountersSectionEncounterActivities() {
-      OperationsTestCase<EncountersSection> validateMu2consolEncountersSectionEncounterActivitiesTestCase = new OperationsTestCase<EncountersSection>(
-      "validateMu2consolEncountersSectionEncounterActivities",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_ENCOUNTERS_SECTION_ENCOUNTER_ACTIVITIES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EncountersSection> validateMu2consolEncountersSectionEncounterActivitiesTestCase = new OperationsTestCase<EncountersSection>(
+			"validateMu2consolEncountersSectionEncounterActivities",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_ENCOUNTERS_SECTION_ENCOUNTER_ACTIVITIES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EncountersSection target) {
+			@Override
+			protected void updateToFail(EncountersSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EncountersSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EncountersSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncountersSectionOperations.validateMu2consolEncountersSectionEncounterActivities(
+					(EncountersSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncountersSectionOperations.validateMu2consolEncountersSectionEncounterActivities(
-          (EncountersSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMu2consolEncountersSectionEncounterActivitiesTestCase.doValidationTest();
-}
+		validateMu2consolEncountersSectionEncounterActivitiesTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -110,13 +76,10 @@ public class EncountersSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMu2consolEncounterActivitiess() {
 
+		EncountersSection target = objectFactory.create();
+		target.getMu2consolEncounterActivitiess();
 
-EncountersSection target = objectFactory.create();
-target.getMu2consolEncounterActivitiess();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -124,67 +87,33 @@ target.getMu2consolEncounterActivitiess();
 	 */
 	@Test
 	public void testValidateEncountersSectionEntriesOptionalTemplateId() {
-      OperationsTestCase<EncountersSection> validateEncountersSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<EncountersSection>(
-      "validateEncountersSectionEntriesOptionalTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EncountersSection> validateEncountersSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<EncountersSection>(
+			"validateEncountersSectionEntriesOptionalTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EncountersSection target) {
+			@Override
+			protected void updateToFail(EncountersSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EncountersSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EncountersSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncountersSectionOperations.validateEncountersSectionEntriesOptionalTemplateId(
+					(EncountersSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncountersSectionOperations.validateEncountersSectionEntriesOptionalTemplateId(
-          (EncountersSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateEncountersSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-}
+		validateEncountersSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -196,8 +125,7 @@ target.getMu2consolEncounterActivitiess();
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -209,9 +137,8 @@ target.getMu2consolEncounterActivitiess();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<EncountersSection> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<EncountersSection> {
+
 		public EncountersSection create() {
 			return Mu2consolFactory.eINSTANCE.createEncountersSection();
 		}
@@ -234,8 +161,7 @@ target.getMu2consolEncounterActivitiess();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			EncountersSectionOperations {
+	private static class ConstructorTestClass extends EncountersSectionOperations {
 	};
 
 	/**
@@ -245,17 +171,18 @@ target.getMu2consolEncounterActivitiess();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // EncountersSectionOperations

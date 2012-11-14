@@ -44,10 +44,9 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolProcedureActivityProcedureCodeValue() {
 		OperationsTestCase<ProcedureActivityProcedure> validateMu2consolProcedureActivityProcedureCodeValueTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
-				"validateMu2consolProcedureActivityProcedureCodeValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_PROCEDURE_ACTIVITY_PROCEDURE_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolProcedureActivityProcedureCodeValue",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PROCEDURE_ACTIVITY_PROCEDURE_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureActivityProcedure target) {
@@ -66,19 +65,15 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProcedureActivityProcedureOperations
-						.validateMu2consolProcedureActivityProcedureCodeValue(
-								(ProcedureActivityProcedure) objectToTest,
-								diagnostician, map);
+				return ProcedureActivityProcedureOperations.validateMu2consolProcedureActivityProcedureCodeValue(
+					(ProcedureActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolProcedureActivityProcedureCodeValueTestCase
-				.doValidationTest();
+		validateMu2consolProcedureActivityProcedureCodeValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -88,10 +83,9 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolProcedureActivityProcedureCode() {
 		OperationsTestCase<ProcedureActivityProcedure> validateMu2consolProcedureActivityProcedureCodeTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
-				"validateMu2consolProcedureActivityProcedureCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_PROCEDURE_ACTIVITY_PROCEDURE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolProcedureActivityProcedureCode",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PROCEDURE_ACTIVITY_PROCEDURE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureActivityProcedure target) {
@@ -107,19 +101,15 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProcedureActivityProcedureOperations
-						.validateMu2consolProcedureActivityProcedureCode(
-								(ProcedureActivityProcedure) objectToTest,
-								diagnostician, map);
+				return ProcedureActivityProcedureOperations.validateMu2consolProcedureActivityProcedureCode(
+					(ProcedureActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolProcedureActivityProcedureCodeTestCase
-				.doValidationTest();
+		validateMu2consolProcedureActivityProcedureCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -128,81 +118,45 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateProcedureActivityProcedureTemplateId() {
-      OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureTemplateIdTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
-      "validateProcedureActivityProcedureTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureTemplateIdTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
+			"validateProcedureActivityProcedureTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ProcedureActivityProcedure target) {
+			@Override
+			protected void updateToFail(ProcedureActivityProcedure target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ProcedureActivityProcedure target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ProcedureActivityProcedure target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ProcedureActivityProcedureOperations.validateProcedureActivityProcedureTemplateId(
+					(ProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ProcedureActivityProcedureOperations.validateProcedureActivityProcedureTemplateId(
-          (ProcedureActivityProcedure) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateProcedureActivityProcedureTemplateIdTestCase.doValidationTest();
-}
+		validateProcedureActivityProcedureTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			ProcedureActivityProcedureOperations {
+	private static class OperationsForOCL extends ProcedureActivityProcedureOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -214,12 +168,10 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ProcedureActivityProcedure> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<ProcedureActivityProcedure> {
+
 		public ProcedureActivityProcedure create() {
-			return Mu2consolFactory.eINSTANCE
-					.createProcedureActivityProcedure();
+			return Mu2consolFactory.eINSTANCE.createProcedureActivityProcedure();
 		}
 	}
 
@@ -240,8 +192,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			ProcedureActivityProcedureOperations {
+	private static class ConstructorTestClass extends ProcedureActivityProcedureOperations {
 	};
 
 	/**
@@ -251,17 +202,18 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ProcedureActivityProcedureOperations
