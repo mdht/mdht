@@ -41,67 +41,33 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolResultOrganizerResultObservation() {
-      OperationsTestCase<ResultOrganizer> validateMu2consolResultOrganizerResultObservationTestCase = new OperationsTestCase<ResultOrganizer>(
-      "validateMu2consolResultOrganizerResultObservation",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultOrganizer> validateMu2consolResultOrganizerResultObservationTestCase = new OperationsTestCase<ResultOrganizer>(
+			"validateMu2consolResultOrganizerResultObservation",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultOrganizer target) {
+			@Override
+			protected void updateToFail(ResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ResultOrganizerOperations.validateMu2consolResultOrganizerResultObservation(
+					(ResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultOrganizerOperations.validateMu2consolResultOrganizerResultObservation(
-          (ResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMu2consolResultOrganizerResultObservationTestCase.doValidationTest();
-}
+		validateMu2consolResultOrganizerResultObservationTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -110,13 +76,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testGetMu2consolResultObservations() {
 
+		ResultOrganizer target = objectFactory.create();
+		target.getMu2consolResultObservations();
 
-ResultOrganizer target = objectFactory.create();
-target.getMu2consolResultObservations();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -124,67 +87,33 @@ target.getMu2consolResultObservations();
 	 */
 	@Test
 	public void testValidateResultOrganizerTemplateId() {
-      OperationsTestCase<ResultOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<ResultOrganizer>(
-      "validateResultOrganizerTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<ResultOrganizer>(
+			"validateResultOrganizerTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultOrganizer target) {
+			@Override
+			protected void updateToFail(ResultOrganizer target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultOrganizer target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ResultOrganizer target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ResultOrganizerOperations.validateResultOrganizerTemplateId(
+					(ResultOrganizer) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultOrganizerOperations.validateResultOrganizerTemplateId(
-          (ResultOrganizer) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateResultOrganizerTemplateIdTestCase.doValidationTest();
-}
+		validateResultOrganizerTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -196,8 +125,7 @@ target.getMu2consolResultObservations();
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -209,9 +137,8 @@ target.getMu2consolResultObservations();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ResultOrganizer> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<ResultOrganizer> {
+
 		public ResultOrganizer create() {
 			return Mu2consolFactory.eINSTANCE.createResultOrganizer();
 		}
@@ -244,17 +171,18 @@ target.getMu2consolResultObservations();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ResultOrganizerOperations

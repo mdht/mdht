@@ -44,10 +44,9 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSmokingStatusObservationValueP() {
 		OperationsTestCase<SmokingStatusObservation> validateSmokingStatusObservationValuePTestCase = new OperationsTestCase<SmokingStatusObservation>(
-				"validateSmokingStatusObservationValueP",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SMOKING_STATUS_OBSERVATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSmokingStatusObservationValueP",
+			operationsForOCL.getOCLValue("VALIDATE_SMOKING_STATUS_OBSERVATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SmokingStatusObservation target) {
@@ -63,13 +62,10 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SmokingStatusObservationOperations
-						.validateSmokingStatusObservationValueP(
-								(SmokingStatusObservation) objectToTest,
-								diagnostician, map);
+				return SmokingStatusObservationOperations.validateSmokingStatusObservationValueP(
+					(SmokingStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -84,10 +80,9 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSmokingStatusObservationValue() {
 		OperationsTestCase<SmokingStatusObservation> validateSmokingStatusObservationValueTestCase = new OperationsTestCase<SmokingStatusObservation>(
-				"validateSmokingStatusObservationValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SMOKING_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSmokingStatusObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_SMOKING_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SmokingStatusObservation target) {
@@ -98,21 +93,16 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(SmokingStatusObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE
-						.createCD("428061000124105", "2.16.840.1.113883.6.96",
-								null, null);
+				CD value = DatatypesFactory.eINSTANCE.createCD("428061000124105", "2.16.840.1.113883.6.96", null, null);
 				target.getValues().add(value);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SmokingStatusObservationOperations
-						.validateSmokingStatusObservationValue(
-								(SmokingStatusObservation) objectToTest,
-								diagnostician, map);
+				return SmokingStatusObservationOperations.validateSmokingStatusObservationValue(
+					(SmokingStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -126,81 +116,45 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateTobaccoUseTemplateId() {
-      OperationsTestCase<SmokingStatusObservation> validateTobaccoUseTemplateIdTestCase = new OperationsTestCase<SmokingStatusObservation>(
-      "validateTobaccoUseTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<SmokingStatusObservation> validateTobaccoUseTemplateIdTestCase = new OperationsTestCase<SmokingStatusObservation>(
+			"validateTobaccoUseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_TOBACCO_USE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(SmokingStatusObservation target) {
+			@Override
+			protected void updateToFail(SmokingStatusObservation target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(SmokingStatusObservation target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(SmokingStatusObservation target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return SmokingStatusObservationOperations.validateTobaccoUseTemplateId(
+					(SmokingStatusObservation) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return SmokingStatusObservationOperations.validateTobaccoUseTemplateId(
-          (SmokingStatusObservation) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateTobaccoUseTemplateIdTestCase.doValidationTest();
-}
+		validateTobaccoUseTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			SmokingStatusObservationOperations {
+	private static class OperationsForOCL extends SmokingStatusObservationOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -212,9 +166,8 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<SmokingStatusObservation> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<SmokingStatusObservation> {
+
 		public SmokingStatusObservation create() {
 			return Mu2consolFactory.eINSTANCE.createSmokingStatusObservation();
 		}
@@ -237,8 +190,7 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			SmokingStatusObservationOperations {
+	private static class ConstructorTestClass extends SmokingStatusObservationOperations {
 	};
 
 	/**
@@ -248,17 +200,18 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // SmokingStatusObservationOperations

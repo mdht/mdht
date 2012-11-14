@@ -44,38 +44,31 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateVDTAmbulatorySummaryResponsibleParty() {
 		OperationsTestCase<VDTAmbulatorySummary> validateVDTAmbulatorySummaryResponsiblePartyTestCase = new OperationsTestCase<VDTAmbulatorySummary>(
-				"validateVDTAmbulatorySummaryResponsibleParty",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VDT_AMBULATORY_SUMMARY_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVDTAmbulatorySummaryResponsibleParty",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_SUMMARY_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTAmbulatorySummary target) {
 				target.init();
 				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter encounter = CDAFactory.eINSTANCE
-						.createEncompassingEncounter();
+				EncompassingEncounter encounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
 				comp1.setEncompassingEncounter(encounter);
 				target.setComponentOf(comp1);
 			}
 
 			@Override
 			protected void updateToPass(VDTAmbulatorySummary target) {
-				ResponsibleParty party = CDAFactory.eINSTANCE
-						.createResponsibleParty();
-				target.getComponentOf().getEncompassingEncounter()
-						.setResponsibleParty(party);
+				ResponsibleParty party = CDAFactory.eINSTANCE.createResponsibleParty();
+				target.getComponentOf().getEncompassingEncounter().setResponsibleParty(party);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTAmbulatorySummaryOperations
-						.validateVDTAmbulatorySummaryResponsibleParty(
-								(VDTAmbulatorySummary) objectToTest,
-								diagnostician, map);
+				return VDTAmbulatorySummaryOperations.validateVDTAmbulatorySummaryResponsibleParty(
+					(VDTAmbulatorySummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -87,15 +80,13 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			VDTAmbulatorySummaryOperations {
+	private static class OperationsForOCL extends VDTAmbulatorySummaryOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -107,9 +98,8 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<VDTAmbulatorySummary> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<VDTAmbulatorySummary> {
+
 		public VDTAmbulatorySummary create() {
 			return Mu2consolFactory.eINSTANCE.createVDTAmbulatorySummary();
 		}
@@ -132,8 +122,7 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			VDTAmbulatorySummaryOperations {
+	private static class ConstructorTestClass extends VDTAmbulatorySummaryOperations {
 	};
 
 	/**
@@ -143,17 +132,18 @@ public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // VDTAmbulatorySummaryOperations

@@ -50,17 +50,15 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareAmbulatorySummaryResponsibleParty() {
 		OperationsTestCase<TransitionOfCareAmbulatorySummary> validateTransitionOfCareAmbulatorySummaryResponsiblePartyTestCase = new OperationsTestCase<TransitionOfCareAmbulatorySummary>(
-				"validateTransitionOfCareAmbulatorySummaryResponsibleParty",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareAmbulatorySummaryResponsibleParty",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareAmbulatorySummary target) {
 
 				Component1 compOf = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE
-						.createEncompassingEncounter();
+				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
 				compOf.setEncompassingEncounter(eEncounter);
 				target.setComponentOf(compOf);
 				System.out.println(compOf);
@@ -69,26 +67,20 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(TransitionOfCareAmbulatorySummary target) {
 
-				ResponsibleParty party = CDAFactory.eINSTANCE
-						.createResponsibleParty();
-				target.getComponentOf().getEncompassingEncounter()
-						.setResponsibleParty(party);
+				ResponsibleParty party = CDAFactory.eINSTANCE.createResponsibleParty();
+				target.getComponentOf().getEncompassingEncounter().setResponsibleParty(party);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareAmbulatorySummaryOperations
-						.validateTransitionOfCareAmbulatorySummaryResponsibleParty(
-								(TransitionOfCareAmbulatorySummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareAmbulatorySummaryOperations.validateTransitionOfCareAmbulatorySummaryResponsibleParty(
+					(TransitionOfCareAmbulatorySummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareAmbulatorySummaryResponsiblePartyTestCase
-				.doValidationTest();
+		validateTransitionOfCareAmbulatorySummaryResponsiblePartyTestCase.doValidationTest();
 	}
 
 	/**
@@ -98,10 +90,9 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses() {
 		OperationsTestCase<TransitionOfCareAmbulatorySummary> validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnosesTestCase = new OperationsTestCase<TransitionOfCareAmbulatorySummary>(
-				"validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_AMBULATORY_ENCOUNTER_DIAGNOSES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_AMBULATORY_ENCOUNTER_DIAGNOSES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareAmbulatorySummary target) {
@@ -111,26 +102,21 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(TransitionOfCareAmbulatorySummary target) {
 				target.init();
-				AssessmentSection aSection = Mu2consolFactory.eINSTANCE
-						.createAssessmentSection().init();
+				AssessmentSection aSection = Mu2consolFactory.eINSTANCE.createAssessmentSection().init();
 				target.addSection(aSection);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareAmbulatorySummaryOperations
-						.validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses(
-								(TransitionOfCareAmbulatorySummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareAmbulatorySummaryOperations.validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnoses(
+					(TransitionOfCareAmbulatorySummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnosesTestCase
-				.doValidationTest();
+		validateTransitionOfCareAmbulatorySummaryAmbulatoryEncounterDiagnosesTestCase.doValidationTest();
 	}
 
 	/**
@@ -140,10 +126,9 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateTransitionOfCareAmbulatorySummaryReasonForReferralSection() {
 		OperationsTestCase<TransitionOfCareAmbulatorySummary> validateTransitionOfCareAmbulatorySummaryReasonForReferralSectionTestCase = new OperationsTestCase<TransitionOfCareAmbulatorySummary>(
-				"validateTransitionOfCareAmbulatorySummaryReasonForReferralSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_REASON_FOR_REFERRAL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateTransitionOfCareAmbulatorySummaryReasonForReferralSection",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_REASON_FOR_REFERRAL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(TransitionOfCareAmbulatorySummary target) {
@@ -155,27 +140,22 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 				target.init();
 
 				/* ReasonForReferralSection */
-				ReasonForReferralSection section = ConsolFactory.eINSTANCE
-						.createReasonForReferralSection().init();
+				ReasonForReferralSection section = ConsolFactory.eINSTANCE.createReasonForReferralSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return TransitionOfCareAmbulatorySummaryOperations
-						.validateTransitionOfCareAmbulatorySummaryReasonForReferralSection(
-								(TransitionOfCareAmbulatorySummary) objectToTest,
-								diagnostician, map);
+				return TransitionOfCareAmbulatorySummaryOperations.validateTransitionOfCareAmbulatorySummaryReasonForReferralSection(
+					(TransitionOfCareAmbulatorySummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTransitionOfCareAmbulatorySummaryReasonForReferralSectionTestCase
-				.doValidationTest();
+		validateTransitionOfCareAmbulatorySummaryReasonForReferralSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -185,27 +165,22 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetReasonForReferralSection() {
 
+		TransitionOfCareAmbulatorySummary target = objectFactory.create();
+		target.getReasonForReferralSection();
 
-TransitionOfCareAmbulatorySummary target = objectFactory.create();
-target.getReasonForReferralSection();
-
-
-
-}
+	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			TransitionOfCareAmbulatorySummaryOperations {
+	private static class OperationsForOCL extends TransitionOfCareAmbulatorySummaryOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -217,12 +192,10 @@ target.getReasonForReferralSection();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<TransitionOfCareAmbulatorySummary> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<TransitionOfCareAmbulatorySummary> {
+
 		public TransitionOfCareAmbulatorySummary create() {
-			return Mu2consolFactory.eINSTANCE
-					.createTransitionOfCareAmbulatorySummary();
+			return Mu2consolFactory.eINSTANCE.createTransitionOfCareAmbulatorySummary();
 		}
 	}
 
@@ -243,8 +216,7 @@ target.getReasonForReferralSection();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			TransitionOfCareAmbulatorySummaryOperations {
+	private static class ConstructorTestClass extends TransitionOfCareAmbulatorySummaryOperations {
 	};
 
 	/**
@@ -254,17 +226,18 @@ target.getReasonForReferralSection();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // TransitionOfCareAmbulatorySummaryOperations

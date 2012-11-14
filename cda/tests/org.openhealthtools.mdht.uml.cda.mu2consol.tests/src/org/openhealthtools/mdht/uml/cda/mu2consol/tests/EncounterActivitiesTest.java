@@ -43,10 +43,9 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolEncounterActivitiesCodeValue() {
 		OperationsTestCase<EncounterActivities> validateMu2consolEncounterActivitiesCodeValueTestCase = new OperationsTestCase<EncounterActivities>(
-				"validateMu2consolEncounterActivitiesCodeValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_ENCOUNTER_ACTIVITIES_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolEncounterActivitiesCodeValue",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_ENCOUNTER_ACTIVITIES_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterActivities target) {
@@ -63,19 +62,15 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterActivitiesOperations
-						.validateMu2consolEncounterActivitiesCodeValue(
-								(EncounterActivities) objectToTest,
-								diagnostician, map);
+				return EncounterActivitiesOperations.validateMu2consolEncounterActivitiesCodeValue(
+					(EncounterActivities) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolEncounterActivitiesCodeValueTestCase
-				.doValidationTest();
+		validateMu2consolEncounterActivitiesCodeValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -84,67 +79,33 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateEncounterActivitiesTemplateId() {
-      OperationsTestCase<EncounterActivities> validateEncounterActivitiesTemplateIdTestCase = new OperationsTestCase<EncounterActivities>(
-      "validateEncounterActivitiesTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ACTIVITIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<EncounterActivities> validateEncounterActivitiesTemplateIdTestCase = new OperationsTestCase<EncounterActivities>(
+			"validateEncounterActivitiesTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ACTIVITIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(EncounterActivities target) {
+			@Override
+			protected void updateToFail(EncounterActivities target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(EncounterActivities target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(EncounterActivities target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return EncounterActivitiesOperations.validateEncounterActivitiesTemplateId(
+					(EncounterActivities) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return EncounterActivitiesOperations.validateEncounterActivitiesTemplateId(
-          (EncounterActivities) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateEncounterActivitiesTemplateIdTestCase.doValidationTest();
-}
+		validateEncounterActivitiesTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -156,8 +117,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -169,9 +129,8 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<EncounterActivities> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<EncounterActivities> {
+
 		public EncounterActivities create() {
 			return Mu2consolFactory.eINSTANCE.createEncounterActivities();
 		}
@@ -194,8 +153,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			EncounterActivitiesOperations {
+	private static class ConstructorTestClass extends EncounterActivitiesOperations {
 	};
 
 	/**
@@ -205,17 +163,18 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // EncounterActivitiesOperations

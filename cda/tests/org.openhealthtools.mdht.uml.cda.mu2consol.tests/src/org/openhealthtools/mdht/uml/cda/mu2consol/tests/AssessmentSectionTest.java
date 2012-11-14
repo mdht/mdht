@@ -44,10 +44,9 @@ public class AssessmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateMu2consolAssessmentSectionProblemObservation() {
 		OperationsTestCase<AssessmentSection> validateMu2consolAssessmentSectionProblemObservationTestCase = new OperationsTestCase<AssessmentSection>(
-				"validateMu2consolAssessmentSectionProblemObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_ASSESSMENT_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMu2consolAssessmentSectionProblemObservation",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_ASSESSMENT_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AssessmentSection target) {
@@ -56,25 +55,20 @@ public class AssessmentSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(AssessmentSection target) {
-				ProblemObservation pObs = ConsolFactory.eINSTANCE
-						.createProblemObservation().init();
+				ProblemObservation pObs = ConsolFactory.eINSTANCE.createProblemObservation().init();
 				target.addObservation(pObs);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AssessmentSectionOperations
-						.validateMu2consolAssessmentSectionProblemObservation(
-								(AssessmentSection) objectToTest,
-								diagnostician, map);
+				return AssessmentSectionOperations.validateMu2consolAssessmentSectionProblemObservation(
+					(AssessmentSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolAssessmentSectionProblemObservationTestCase
-				.doValidationTest();
+		validateMu2consolAssessmentSectionProblemObservationTestCase.doValidationTest();
 	}
 
 	/**
@@ -84,13 +78,10 @@ public class AssessmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservation() {
 
+		AssessmentSection target = objectFactory.create();
+		target.getProblemObservation();
 
-AssessmentSection target = objectFactory.create();
-target.getProblemObservation();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -98,67 +89,33 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testValidateAssessmentSectionTemplateId() {
-      OperationsTestCase<AssessmentSection> validateAssessmentSectionTemplateIdTestCase = new OperationsTestCase<AssessmentSection>(
-      "validateAssessmentSectionTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<AssessmentSection> validateAssessmentSectionTemplateIdTestCase = new OperationsTestCase<AssessmentSection>(
+			"validateAssessmentSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(AssessmentSection target) {
+			@Override
+			protected void updateToFail(AssessmentSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(AssessmentSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(AssessmentSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return AssessmentSectionOperations.validateAssessmentSectionTemplateId(
+					(AssessmentSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return AssessmentSectionOperations.validateAssessmentSectionTemplateId(
-          (AssessmentSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateAssessmentSectionTemplateIdTestCase.doValidationTest();
-}
+		validateAssessmentSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -170,8 +127,7 @@ target.getProblemObservation();
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -183,10 +139,8 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AssessmentSection> {
+	private static class ObjectFactory implements TestObjectFactory<AssessmentSection> {
 
-		@Override
 		public AssessmentSection create() {
 			return Mu2consolFactory.eINSTANCE.createAssessmentSection();
 		}
@@ -209,8 +163,7 @@ target.getProblemObservation();
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			AssessmentSectionOperations {
+	private static class ConstructorTestClass extends AssessmentSectionOperations {
 	};
 
 	/**
@@ -220,9 +173,9 @@ target.getProblemObservation();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
@@ -230,8 +183,8 @@ target.getProblemObservation();
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // AssessmentSectionOperations

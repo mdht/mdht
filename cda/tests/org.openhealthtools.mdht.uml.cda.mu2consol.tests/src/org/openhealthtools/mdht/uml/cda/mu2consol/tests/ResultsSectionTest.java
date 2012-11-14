@@ -47,67 +47,33 @@ public class ResultsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolResultsSectionResultOrganizer() {
-      OperationsTestCase<ResultsSection> validateMu2consolResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
-      "validateMu2consolResultsSectionResultOrganizer",
-      operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultsSection> validateMu2consolResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
+			"validateMu2consolResultsSectionResultOrganizer",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultsSection target) {
+			@Override
+			protected void updateToFail(ResultsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ResultsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ResultsSectionOperations.validateMu2consolResultsSectionResultOrganizer(
+					(ResultsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultsSectionOperations.validateMu2consolResultsSectionResultOrganizer(
-          (ResultsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateMu2consolResultsSectionResultOrganizerTestCase.doValidationTest();
-}
+		validateMu2consolResultsSectionResultOrganizerTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -116,13 +82,10 @@ public class ResultsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMu2consolResultOrganizers() {
 
+		ResultsSection target = objectFactory.create();
+		target.getMu2consolResultOrganizers();
 
-ResultsSection target = objectFactory.create();
-target.getMu2consolResultOrganizers();
-
-
-
-}
+	}
 
 	/**
 	 * 
@@ -130,67 +93,33 @@ target.getMu2consolResultOrganizers();
 	 */
 	@Test
 	public void testValidateResultsSectionEntriesOptionalTemplateId() {
-      OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ResultsSection>(
-      "validateResultsSectionEntriesOptionalTemplateId",
-      operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-      ,objectFactory) {
+		OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ResultsSection>(
+			"validateResultsSectionEntriesOptionalTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-      @Override
-      protected void updateToFail(ResultsSection target) {
+			@Override
+			protected void updateToFail(ResultsSection target) {
 
-      }
+			}
 
-      @Override
-      protected void updateToPass(ResultsSection target) {
-        target.init();
-        
-        
-        
-        
-        
+			@Override
+			protected void updateToPass(ResultsSection target) {
+				target.init();
 
-        
-        
+			}
 
-  
-      
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-  
-    
-    
-      
-        
-    
-      
-        
-      
-        
-        
-        
-        
-        
-        
-        
-      
-      
-          
-      
-        
-      }
+				return ResultsSectionOperations.validateResultsSectionEntriesOptionalTemplateId(
+					(ResultsSection) objectToTest, diagnostician, map);
+			}
 
-      @Override
-      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-      
-      
-      
-        return ResultsSectionOperations.validateResultsSectionEntriesOptionalTemplateId(
-          (ResultsSection) objectToTest, diagnostician, map);
-      }
+		};
 
-    };
-
-    validateResultsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-}
+		validateResultsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -202,8 +131,7 @@ target.getMu2consolResultOrganizers();
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -215,9 +143,8 @@ target.getMu2consolResultOrganizers();
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ResultsSection> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<ResultsSection> {
+
 		public ResultsSection create() {
 			return Mu2consolFactory.eINSTANCE.createResultsSection();
 		}
@@ -250,17 +177,18 @@ target.getMu2consolResultOrganizers();
 	 */
 	@Test
 	public void testConstructor() {
-          @SuppressWarnings("unused")
-      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
-  } // testConstructor
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
-    return null;
-  }
+	protected EObject getObjectToTest() {
+		return null;
+	}
 
 } // ResultsSectionOperations
