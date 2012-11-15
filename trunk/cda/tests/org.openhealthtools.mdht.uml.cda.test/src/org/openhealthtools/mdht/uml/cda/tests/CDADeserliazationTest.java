@@ -18,7 +18,6 @@ import java.io.FileNotFoundException;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -52,7 +51,7 @@ public class CDADeserliazationTest {
 	/**
 	 * Test that the sample document can be trivially deserialized.
 	 */
-	@Test
+
 	public void deserializeSampleCDADocment() {
 		try {
 			final ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream(SAMPLE_DOCUMENT));
