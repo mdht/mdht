@@ -91,7 +91,7 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureEntryHasTextReference() {
@@ -102,12 +102,12 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureEntry target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+				target.setText(DatatypesFactory.eINSTANCE.createED());
 
 			}
 
@@ -138,14 +138,12 @@ public class ProcedureEntryTest extends CDAValidationTest {
 			protected void updateToFail(ProcedureEntry target) {
 				target.init();
 				target.setMoodCode(x_DocumentProcedureMood.INT);
-				target.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS("12345"));
-				// target.setPriorityCode(DatatypesFactory.eINSTANCE.createCE("CODE", "SYSTEM"));
 
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-
+				target.setPriorityCode(DatatypesFactory.eINSTANCE.createCE("CODE", "SYSTEM"));
 			}
 
 			@Override
@@ -311,7 +309,7 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureEntryApproachSiteCode() {
@@ -328,6 +326,8 @@ public class ProcedureEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
 				target.init();
+
+				target.getApproachSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
 
 			}
 
