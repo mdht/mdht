@@ -28,9 +28,9 @@ import org.junit.runners.Suite;
 public class Mu2consolTests {
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+	* <!-- begin-user-doc --> <!-- end-user-doc -->
+	* @generated
+	*/
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(Mu2consolTests.class);
 	}
