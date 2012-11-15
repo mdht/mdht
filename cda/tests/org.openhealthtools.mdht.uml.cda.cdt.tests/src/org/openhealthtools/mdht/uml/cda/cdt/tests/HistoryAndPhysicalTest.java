@@ -164,7 +164,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated not
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalReasonForVisitAndChiefComplaint() {
@@ -173,15 +173,75 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			// cdt::ReasonForVisitAndChiefComplaintSection)) xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and
+			// section.oclIsKindOf(cdt::ReasonForVisitSection)) and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined()
+			// and section.oclIsKindOf(cdt::ChiefComplaintSection)))
+
 			@Override
-			protected void updateToFail(HistoryAndPhysical target) {
+			public void addFailTests() {
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(HistoryAndPhysical target) {
+
+					}
+				});
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(HistoryAndPhysical target) {
+
+						target.addSection(CDTFactory.eINSTANCE.createReasonForVisitAndChiefComplaintSection().init());
+						target.addSection(CDTFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+				});
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(HistoryAndPhysical target) {
+
+						target.addSection(CDTFactory.eINSTANCE.createReasonForVisitAndChiefComplaintSection().init());
+						target.addSection(CDTFactory.eINSTANCE.createChiefComplaintSection().init());
+					}
+				});
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(HistoryAndPhysical target) {
+
+						target.addSection(CDTFactory.eINSTANCE.createReasonForVisitAndChiefComplaintSection().init());
+						target.addSection(CDTFactory.eINSTANCE.createReasonForVisitSection().init());
+						target.addSection(CDTFactory.eINSTANCE.createChiefComplaintSection().init());
+					}
+				});
 
 			}
 
 			@Override
-			protected void updateToPass(HistoryAndPhysical target) {
-				target.init();
+			public void addPassTests() {
 
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(HistoryAndPhysical target) {
+						target.addSection(CDTFactory.eINSTANCE.createReasonForVisitAndChiefComplaintSection().init());
+
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(HistoryAndPhysical target) {
+
+						target.addSection(CDTFactory.eINSTANCE.createReasonForVisitSection().init());
+						target.addSection(CDTFactory.eINSTANCE.createChiefComplaintSection().init());
+					}
+				});
 			}
 
 			@Override
@@ -241,7 +301,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalCode() {
@@ -252,12 +312,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE("aaaa", "2.16.840.1.113883.6.1");
+				target.setCode(ce);
 
 			}
 

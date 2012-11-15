@@ -410,7 +410,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated  not
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTypeIdExtension() {
@@ -421,12 +421,14 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				InfrastructureRootTypeId value = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+				value.setExtension("POCD_HD000040");
+				target.setTypeId(value);
 
 			}
 
