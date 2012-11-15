@@ -83,7 +83,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVitalSignObservationCode() {
@@ -102,6 +102,8 @@ public class VitalSignObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
+				cd.setCode("aaa");
 				target.setCode(cd);
 
 			}
