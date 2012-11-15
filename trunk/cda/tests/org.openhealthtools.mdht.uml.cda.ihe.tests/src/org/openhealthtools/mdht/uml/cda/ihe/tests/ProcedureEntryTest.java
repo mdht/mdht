@@ -107,7 +107,9 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.setText(DatatypesFactory.eINSTANCE.createED());
+				ED ed = DatatypesFactory.eINSTANCE.createED();
+				ed.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(ed);
 
 			}
 
