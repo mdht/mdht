@@ -12,9 +12,6 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
-import static org.junit.Assert.fail;
-
-import org.junit.Test;
 
 /**
  * This class
@@ -27,9 +24,5 @@ public class EIVL_eventOperationsTest {
 	 * {@link org.openhealthtools.mdht.uml.hl7.datatypes.operations.EIVL_eventOperations#init(org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event)}
 	 * .
 	 */
-	@Test
-	public void testInit() {
-		fail("Not yet implemented");
-	}
 
 } // EIVL_eventOperationsTest
