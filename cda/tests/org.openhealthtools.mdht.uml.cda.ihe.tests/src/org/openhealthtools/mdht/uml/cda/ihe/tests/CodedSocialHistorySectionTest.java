@@ -37,7 +37,7 @@ public class CodedSocialHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateCodedSocialHistorySectionSocialHistoryObservation() {
@@ -48,13 +48,14 @@ public class CodedSocialHistorySectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(CodedSocialHistorySection target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(CodedSocialHistorySection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createSocialHistoryObservation().init());
 			}
 
 			@Override
