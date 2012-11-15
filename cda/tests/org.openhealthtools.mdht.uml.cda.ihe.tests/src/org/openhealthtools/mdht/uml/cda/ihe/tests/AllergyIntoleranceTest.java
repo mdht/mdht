@@ -546,7 +546,7 @@ public class AllergyIntoleranceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyIntoleranceCode() {
@@ -564,6 +564,10 @@ public class AllergyIntoleranceTest extends CDAValidationTest {
 			protected void updateToPass(AllergyIntolerance target) {
 				target.init();
 
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.5.4");
+				cd.setCode("aaa");
+				target.setCode(cd);
 			}
 
 			@Override

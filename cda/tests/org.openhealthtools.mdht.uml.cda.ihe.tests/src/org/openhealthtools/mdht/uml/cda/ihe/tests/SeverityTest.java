@@ -149,7 +149,7 @@ public class SeverityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSeverityValue() {
@@ -167,6 +167,8 @@ public class SeverityTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.5.1063");
+				value.setCode("H");
 				target.getValues().add(value);
 
 			}
