@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Encounter;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.EncounterOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
@@ -149,7 +150,10 @@ public class EncounterTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(Encounter target) {
-				target.getCode().setCode("111");
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("8310-5");
+				cd.setCodeSystem("2.16.840.1.113883.6.12");
+				target.setCode(cd);
 
 			}
 

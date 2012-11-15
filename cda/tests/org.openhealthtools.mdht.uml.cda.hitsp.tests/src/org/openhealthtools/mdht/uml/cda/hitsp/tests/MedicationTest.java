@@ -870,12 +870,16 @@ public class MedicationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Medication target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(Medication target) {
-				target.init();
+
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.3.26.1.1");
+				ce.setCode("aaa");
+				target.setRouteCode(ce);
 
 			}
 
@@ -1083,7 +1087,7 @@ public class MedicationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Medication target) {
-				target.init();
+				// target.init();
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.getApproachSiteCodes().add(cd);
 
@@ -1093,7 +1097,8 @@ public class MedicationTest extends CDAValidationTest {
 			protected void updateToPass(Medication target) {
 
 				for (CD cd : target.getApproachSiteCodes()) {
-					cd.setCodeSystem("2.16.840.1.113883.3.88.12.3221.8.9");
+					cd.setCode("aaa");
+					cd.setCodeSystem("2.16.840.1.113883.6.96");
 				}
 
 			}

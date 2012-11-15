@@ -75,7 +75,7 @@ public class VitalSignTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVitalSignCode() {
@@ -85,12 +85,15 @@ public class VitalSignTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VitalSign target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSign target) {
-				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("8310-5");
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
+				target.setCode(cd);
 
 			}
 
