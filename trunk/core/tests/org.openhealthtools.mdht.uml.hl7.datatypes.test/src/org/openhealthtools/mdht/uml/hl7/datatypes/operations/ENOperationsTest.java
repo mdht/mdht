@@ -41,8 +41,7 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 	private static abstract class ENTestCase extends DatatypeTestCase {
 		EntityNamePartType partType;
 
-		public ENTestCase(final EStructuralFeature feature,
-				final EntityNamePartType partType) {
+		public ENTestCase(final EStructuralFeature feature, final EntityNamePartType partType) {
 			super(feature);
 			this.partType = partType;
 		}
@@ -56,12 +55,11 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 			ENOperations obj = new ENOperations();
 			assertTrue(true);
 		} // testConstructor
-		
+
 		@Override
 		@SuppressWarnings("unchecked")
 		public void createAndAddPartType(final EObject objectToTest) {
-			final ENXP enxp = DatatypesFactory.eINSTANCE.createENXP(partType,
-					TEST_TEXT);
+			final ENXP enxp = DatatypesFactory.eINSTANCE.createENXP(partType, TEST_TEXT);
 			((EList<ENXP>) (objectToTest.eGet(feature))).add(enxp);
 
 		}
@@ -76,33 +74,28 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 	} // ADTestCase
 
 	private static final DatatypeTestCase TEST_CASE_ARRAY[] = {
-	// delimiter
+			// delimiter
 			// -------------------------------------------------------------
 
-			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Delimiter(),
-					EntityNamePartType.DEL) {
+			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Delimiter(), EntityNamePartType.DEL) {
 
 				@Override
-				public boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				public boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateDelimiter((EN) objectToTest,
-							diagnostician, map);
+					return ENOperations.validateDelimiter((EN) objectToTest, diagnostician, map);
 				}
 
 				@SuppressWarnings("unchecked")
 				@Override
 				public void createAndAddBadPartType(final EObject objectToTest) {
 					// The default is delimiter so, don't set that
-					final ENXP enxpBad = DatatypesFactory.eINSTANCE
-							.createENXP();
+					final ENXP enxpBad = DatatypesFactory.eINSTANCE.createENXP();
 					enxpBad.setPartType(EntityNamePartType.FAM);
 					((EList<ENXP>) (objectToTest.eGet(feature))).add(enxpBad);
 				}
 
 				@Override
-				public void add(final EObject objectToTest,
-						final String adxpText) {
+				public void add(final EObject objectToTest, final String adxpText) {
 					ENOperations.addDelimiter((EN) objectToTest, adxpText);
 				}
 
@@ -110,80 +103,64 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 
 			// family
 			// -------------------------------------------------------------
-			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Family(),
-					EntityNamePartType.FAM) {
+			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Family(), EntityNamePartType.FAM) {
 
 				@Override
-				public boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				public boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateFamily((EN) objectToTest,
-							diagnostician, map);
+					return ENOperations.validateFamily((EN) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject objectToTest,
-						final String adxpText) {
+				public void add(final EObject objectToTest, final String adxpText) {
 					ENOperations.addFamily((EN) objectToTest, adxpText);
 				}
 			},
 
 			// given
 			// -------------------------------------------------------------
-			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Given(),
-					EntityNamePartType.GIV) {
+			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Given(), EntityNamePartType.GIV) {
 
 				@Override
-				public boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				public boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateGiven((EN) objectToTest,
-							diagnostician, map);
+					return ENOperations.validateGiven((EN) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject objectToTest,
-						final String adxpText) {
+				public void add(final EObject objectToTest, final String adxpText) {
 					ENOperations.addGiven((EN) objectToTest, adxpText);
 				}
 			},
 
 			// prefix
 			// -------------------------------------------------------------
-			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Prefix(),
-					EntityNamePartType.PFX) {
+			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Prefix(), EntityNamePartType.PFX) {
 
 				@Override
-				public boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				public boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validatePrefix((EN) objectToTest,
-							diagnostician, map);
+					return ENOperations.validatePrefix((EN) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject objectToTest,
-						final String adxpText) {
+				public void add(final EObject objectToTest, final String adxpText) {
 					ENOperations.addPrefix((EN) objectToTest, adxpText);
 				}
 			},
 
 			// suffix
 			// -------------------------------------------------------------
-			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Suffix(),
-					EntityNamePartType.SFX) {
+			new ENTestCase(DatatypesPackage.eINSTANCE.getEN_Suffix(), EntityNamePartType.SFX) {
 
 				@Override
-				public boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				public boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateSuffix((EN) objectToTest,
-							diagnostician, map);
+					return ENOperations.validateSuffix((EN) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject objectToTest,
-						final String adxpText) {
+				public void add(final EObject objectToTest, final String adxpText) {
 					ENOperations.addSuffix((EN) objectToTest, adxpText);
 				}
 			} };

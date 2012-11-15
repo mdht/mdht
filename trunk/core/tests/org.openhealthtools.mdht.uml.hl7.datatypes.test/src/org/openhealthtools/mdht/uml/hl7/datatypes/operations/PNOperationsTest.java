@@ -42,7 +42,7 @@ public class PNOperationsTest extends ENOperationsTest {
 		PNOperations obj = new PNOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.hl7.datatypes.operations.PNOperations#validateInvariant(org.openhealthtools.mdht.uml.hl7.datatypes.PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -62,11 +62,9 @@ public class PNOperationsTest extends ENOperationsTest {
 		// enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS))
 
 		final PN pn = (PN) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(pn);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(pn);
 
-		boolean isValid = PNOperations
-				.validateInvariant(pn, diagnostician, map);
+		boolean isValid = PNOperations.validateInvariant(pn, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 		// delimiter

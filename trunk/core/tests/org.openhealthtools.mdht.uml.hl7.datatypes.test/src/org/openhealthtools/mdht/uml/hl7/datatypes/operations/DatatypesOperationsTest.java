@@ -29,14 +29,11 @@ public abstract class DatatypesOperationsTest {
 
 	protected abstract EObject getObjectToTest();
 
-	protected String createUnsupportedOperationFailureMessage(
-			final UnsupportedOperationException uoe) {
-		return "The test failed because of \"" + uoe.getMessage()
-				+ "\".  This is likely due to errors in the OCL.";
+	protected String createUnsupportedOperationFailureMessage(final UnsupportedOperationException uoe) {
+		return "The test failed because of \"" + uoe.getMessage() + "\".  This is likely due to errors in the OCL.";
 	}
 
-	protected String createAssertionFailureMessage(
-			final BasicDiagnostic diagnostician) {
+	protected String createAssertionFailureMessage(final BasicDiagnostic diagnostician) {
 		final StringBuilder sb = new StringBuilder();
 		for (final Diagnostic diagnostic : diagnostician.getChildren()) {
 			sb.append(" ");
