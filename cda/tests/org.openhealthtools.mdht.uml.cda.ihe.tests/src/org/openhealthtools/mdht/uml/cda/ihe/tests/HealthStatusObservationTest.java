@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.HealthStatusObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
@@ -154,7 +154,7 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHealthStatusObservationValue() {
@@ -172,7 +172,9 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(HealthStatusObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				CE value = DatatypesFactory.eINSTANCE.createCE();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("81323004");
 				target.getValues().add(value);
 
 			}
