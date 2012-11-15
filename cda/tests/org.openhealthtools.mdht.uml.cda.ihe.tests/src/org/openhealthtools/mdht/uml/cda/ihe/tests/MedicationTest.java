@@ -51,8 +51,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationHasDosing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Has Dosing</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationDosingRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dosing Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationHasDescriptionNoMedNotKnown(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Has Description No Med Not Known</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationReasonClassMood(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Reason Class Mood</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationHasProductEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Has Product Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationHasIntructionsInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Has Intructions Inversion</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationProductStrength(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Product Strength</em>}</li>
@@ -150,74 +148,6 @@ public class MedicationTest extends CDAValidationTest {
 		};
 
 		validateMedicationDosingRelationshipTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationHasDescriptionNoMedNotKnown() {
-		OperationsTestCase<Medication> validateMedicationHasDescriptionNoMedNotKnownTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationHasDescriptionNoMedNotKnown",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_DESCRIPTION_NO_MED_NOT_KNOWN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Medication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOperations.validateMedicationHasDescriptionNoMedNotKnown(
-					(Medication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationHasDescriptionNoMedNotKnownTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationReasonClassMood() {
-		OperationsTestCase<Medication> validateMedicationReasonClassMoodTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationReasonClassMood",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_REASON_CLASS_MOOD__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Medication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOperations.validateMedicationReasonClassMood(
-					(Medication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationReasonClassMoodTestCase.doValidationTest();
 	}
 
 	/**
