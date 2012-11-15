@@ -576,7 +576,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProgressNoteCode() {
@@ -586,12 +586,17 @@ public class ProgressNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProgressNote target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.6.1");
+				ce.setCode("aaaaaaa");
+				target.setCode(ce);
+
+				//
 
 			}
 
