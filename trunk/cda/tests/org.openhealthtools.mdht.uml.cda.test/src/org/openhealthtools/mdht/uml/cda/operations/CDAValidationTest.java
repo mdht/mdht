@@ -51,7 +51,6 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
@@ -100,30 +99,6 @@ public abstract class CDAValidationTest {
 	// protected static int count = 0;
 
 	protected static Map<Object, Object> map = new HashMap<Object, Object>();
-
-	/**
-	 * Do all validation tests defined for the objectToTest.
-	 */
-	@Test
-	public final void testAll() {
-		String testTargetDescription = "";
-		try {
-			for (final CDATestCase testCase : getTestCases()) {
-				testTargetDescription = testCase.getTestTargetDescription();
-				final EObject objectToTest = getObjectToTest();
-				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest);
-
-				testCase.doTest(objectToTest, diagnostician, map);
-			}
-
-		} catch (final UnsupportedOperationException uoe) {
-			fail(createUnsupportedOperationFailureMessage(testTargetDescription, uoe));
-		}
-		// finally {
-		// count += getTestCases().size();
-		// System.out.println("count = " + count);
-		// }
-	} // testAll
 
 	protected List<CDATestCase> getTestCases() {
 		return new ArrayList<CDATestCase>();
