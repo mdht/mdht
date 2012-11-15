@@ -279,7 +279,7 @@ public class ConditionEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConditionEntryValue() {
@@ -298,6 +298,8 @@ public class ConditionEntryTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("aaaa");
 				target.getValues().add(value);
 
 			}

@@ -403,7 +403,7 @@ public class AdvanceDirectiveTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveCode() {
@@ -420,6 +420,10 @@ public class AdvanceDirectiveTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirective target) {
 				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("281789004");
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
+				target.setCode(cd);
 
 			}
 

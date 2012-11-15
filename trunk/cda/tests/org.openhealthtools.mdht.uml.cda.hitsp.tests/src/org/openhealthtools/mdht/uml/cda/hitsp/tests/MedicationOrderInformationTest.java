@@ -520,7 +520,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationOrderInformationStatusCodeP() {
@@ -531,12 +531,13 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
-				target.init();
+				CS cs = DatatypesFactory.eINSTANCE.createCS();
+				target.setStatusCode(cs);
 
 			}
 
