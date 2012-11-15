@@ -40,7 +40,7 @@ public class ONOperationsTest extends ENOperationsTest {
 		ONOperations obj = new ONOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.hl7.datatypes.operations.ONOperations#validateInvariant(org.openhealthtools.mdht.uml.hl7.datatypes.ON, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -49,11 +49,9 @@ public class ONOperationsTest extends ENOperationsTest {
 	@Test
 	public final void testValidateInvariant() {
 		final ON on = (ON) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(on);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(on);
 
-		boolean isValid = ONOperations
-				.validateInvariant(on, diagnostician, map);
+		boolean isValid = ONOperations.validateInvariant(on, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 		on.addFamily(DatatypeTestCase.TEST_TEXT);

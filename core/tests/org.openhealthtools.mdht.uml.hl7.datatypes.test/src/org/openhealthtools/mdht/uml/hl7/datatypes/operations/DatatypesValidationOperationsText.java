@@ -30,8 +30,7 @@ import org.junit.Test;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public abstract class DatatypesValidationOperationsText extends
-		DatatypesOperationsTest {
+public abstract class DatatypesValidationOperationsText extends DatatypesOperationsTest {
 
 	/**
 	 * This class is a JUnit4 test case.
@@ -39,14 +38,14 @@ public abstract class DatatypesValidationOperationsText extends
 	protected static abstract class DatatypeTestCase {
 
 		public static final String TEST_TEXT = "some test text";
+
 		protected EStructuralFeature feature;
 
 		protected DatatypeTestCase(final EStructuralFeature feature) {
 			this.feature = feature;
 		}
 
-		public abstract boolean validate(EObject eObjectToTest,
-				BasicDiagnostic diagnostician, Map<Object, Object> map);
+		public abstract boolean validate(EObject eObjectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map);
 
 		public abstract void createAndAddPartType(EObject eObjectToTest);
 
@@ -68,25 +67,21 @@ public abstract class DatatypesValidationOperationsText extends
 		try {
 			for (final DatatypeTestCase testCase : getTestCases()) {
 				final EObject eObjectToTest = getObjectToTest();
-				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-						.createDefaultDiagnostic(eObjectToTest);
+				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(eObjectToTest);
 
-				boolean isValid = testCase.validate(eObjectToTest,
-						diagnostician, map);
-				assertTrue(createAssertionFailureMessage(diagnostician),
-						isValid);
+				boolean isValid = testCase.validate(eObjectToTest, diagnostician, map);
+				assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 				testCase.createAndAddPartType(eObjectToTest);
 
 				isValid = testCase.validate(eObjectToTest, diagnostician, map);
-				assertTrue(createAssertionFailureMessage(diagnostician),
-						isValid);
+				assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 				testCase.createAndAddBadPartType(eObjectToTest);
 
 				isValid = testCase.validate(eObjectToTest, diagnostician, map);
-				assertTrue("Validation of \"" + testCase.feature.getName()
-						+ "\" passed when it should have failed.", !isValid);
+				assertTrue(
+					"Validation of \"" + testCase.feature.getName() + "\" passed when it should have failed.", !isValid);
 
 			}
 
@@ -106,23 +101,19 @@ public abstract class DatatypesValidationOperationsText extends
 		try {
 			for (final DatatypeTestCase testCase : getTestCases()) {
 				final EObject eObjectToTest = getObjectToTest();
-				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-						.createDefaultDiagnostic(eObjectToTest);
+				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(eObjectToTest);
 
-				boolean isValid = testCase.validate(eObjectToTest,
-						diagnostician, map);
-				assertTrue(createAssertionFailureMessage(diagnostician),
-						isValid);
+				boolean isValid = testCase.validate(eObjectToTest, diagnostician, map);
+				assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 				testCase.add(eObjectToTest, DatatypeTestCase.TEST_TEXT);
 
-				assertTrue("Adding to \"" + testCase.feature.getName()
-						+ "\" failed!", !((EList<?>) (eObjectToTest
-						.eGet(testCase.feature))).isEmpty());
+				assertTrue(
+					"Adding to \"" + testCase.feature.getName() + "\" failed!",
+					!((EList<?>) (eObjectToTest.eGet(testCase.feature))).isEmpty());
 
 				isValid = testCase.validate(eObjectToTest, diagnostician, map);
-				assertTrue(createAssertionFailureMessage(diagnostician),
-						isValid);
+				assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 			}
 		} catch (final UnsupportedOperationException uoe) {
 			fail(createUnsupportedOperationFailureMessage(uoe));

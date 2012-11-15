@@ -21,10 +21,9 @@ import org.junit.runners.Suite;
  * This class represents a suite of Junit 4 test cases for HL7 Datatypes.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ ADOperationsTest.class, BNOperationsTest.class,
-		EDOperationsTest.class, EIVL_eventOperationsTest.class,
-		ENOperationsTest.class, ONOperationsTest.class, PNOperationsTest.class,
-		TNOperationsTest.class })
+@Suite.SuiteClasses({
+		ADOperationsTest.class, BNOperationsTest.class, EDOperationsTest.class, EIVL_eventOperationsTest.class,
+		ENOperationsTest.class, ONOperationsTest.class, PNOperationsTest.class, TNOperationsTest.class })
 public class ALLDatatypeOperationsTests {
 
 	/**

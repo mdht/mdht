@@ -44,7 +44,7 @@ public class BNOperationsTest extends DatatypesOperationsTest {
 		BNOperations obj = new BNOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.hl7.datatypes.operations.BNOperations#validateNullFlavor(org.openhealthtools.mdht.uml.hl7.datatypes.BN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -54,11 +54,11 @@ public class BNOperationsTest extends DatatypesOperationsTest {
 	public final void testValidateNullFlavor() {
 		final BN bn = (BN) getObjectToTest();
 		final EObject objectToTest = getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(objectToTest);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest);
 
-		boolean isValid = BNOperations.validateNullFlavor(bn, diagnostician,
-				map);
+		bn.setNullFlavor(NullFlavor.ASKU);
+
+		boolean isValid = BNOperations.validateNullFlavor(bn, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
 		bn.setNullFlavor(NullFlavor.ASKU);

@@ -40,7 +40,7 @@ public class TNOperationsTest extends ENOperationsTest {
 		TNOperations obj = new TNOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.hl7.datatypes.operations.TNOperations#validateInvariant(org.openhealthtools.mdht.uml.hl7.datatypes.TN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -53,13 +53,11 @@ public class TNOperationsTest extends ENOperationsTest {
 		// self.suffix->isEmpty() and mixed->size() = 1
 
 		final TN tn = (TN) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(tn);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(tn);
 
 		tn.addText(DatatypeTestCase.TEST_TEXT);
 
-		boolean isValid = TNOperations
-				.validateInvariant(tn, diagnostician, map);
+		boolean isValid = TNOperations.validateInvariant(tn, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 		// delimiter

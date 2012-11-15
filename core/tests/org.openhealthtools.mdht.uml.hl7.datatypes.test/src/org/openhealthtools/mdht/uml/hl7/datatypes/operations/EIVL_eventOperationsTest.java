@@ -12,7 +12,7 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
