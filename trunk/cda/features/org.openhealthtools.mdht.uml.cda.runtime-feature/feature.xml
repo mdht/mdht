@@ -27,6 +27,7 @@
 
    <requires>
       <import feature="org.openhealthtools.mdht.uml.cda" version="1.1.0.qualifier"/>
+      <import feature="org.openhealthtools.mdht.uml.cda.tooling" version="1.1.0.qualifier"/>
    </requires>
 
    <plugin
