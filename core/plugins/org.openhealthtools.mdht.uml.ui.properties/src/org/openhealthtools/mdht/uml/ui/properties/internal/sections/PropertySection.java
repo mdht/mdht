@@ -200,6 +200,9 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 						if (redefinesCombo.getSelectionIndex() > 0) {
 							Property redefined = inheritedProperties.get(redefinesCombo.getSelectionIndex() - 1);
 							property.getRedefinedProperties().add(redefined);
+
+							property.getSubsettedProperties().clear();
+							subsetsCombo.select(0);
 						}
 					} else if (subsetsModified) {
 						subsetsModified = false;
@@ -207,6 +210,9 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 						if (subsetsCombo.getSelectionIndex() > 0) {
 							Property subsetted = inheritedCollectionProperties.get(subsetsCombo.getSelectionIndex() - 1);
 							property.getSubsettedProperties().add(subsetted);
+
+							property.getRedefinedProperties().clear();
+							redefinesCombo.select(0);
 						}
 					} else {
 						return Status.CANCEL_STATUS;
