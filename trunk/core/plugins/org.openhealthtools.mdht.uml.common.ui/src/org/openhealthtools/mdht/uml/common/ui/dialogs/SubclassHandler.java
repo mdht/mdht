@@ -108,6 +108,8 @@ public class SubclassHandler {
 				UMLUtil.cloneStereotypes(property, clonedProperty);
 
 				// add redefinition relationship
+				clonedProperty.getRedefinedProperties().clear();
+				clonedProperty.getSubsettedProperties().clear();
 				clonedProperty.getRedefinedProperties().add(property);
 
 				// add association
