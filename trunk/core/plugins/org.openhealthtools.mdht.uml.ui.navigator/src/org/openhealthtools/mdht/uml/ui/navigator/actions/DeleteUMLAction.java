@@ -26,9 +26,9 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.common.edit.command.ChangeCommand;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelDocument;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelManager;
 
@@ -57,21 +57,9 @@ public class DeleteUMLAction extends CommandActionHandler {
 			if (object instanceof Element && ((Element) object).getOwner() != null) {
 				if (object instanceof Class) {
 					Class umlClass = (Class) object;
-					// delete associations for owned attributes
-					for (Property property : umlClass.getOwnedAttributes()) {
-						if (property.getAssociation() != null) {
-							elements.addAll(property.getAssociation().getMemberEnds());
-							elements.add(property.getAssociation());
-						}
-					}
 
-					// delete associations when umlClass is the target
-					// List<DirectedRelationship> specializations = umlClass.getTargetDirectedRelationships(UMLPackage.Literals.ASSOCIATION);
-					// for (DirectedRelationship relationship : specializations) {
-					for (Association association : umlClass.getAssociations()) {
-						elements.addAll(association.getMemberEnds());
-						elements.add(association);
-					}
+					// delete all associations to/from this class, recursively for all nested classes
+					addAssociations(umlClass, elements);
 
 					// delete the class
 					elements.add(umlClass);
@@ -91,6 +79,22 @@ public class DeleteUMLAction extends CommandActionHandler {
 		}
 
 		return UnexecutableCommand.INSTANCE;
+	}
+
+	private void addAssociations(Class umlClass, List<Element> elements) {
+		for (Association association : umlClass.getAssociations()) {
+			if (!elements.contains(association)) {
+				elements.addAll(association.getMemberEnds());
+				elements.add(association);
+			}
+		}
+
+		// recursively process all nested classes
+		for (Classifier classifier : umlClass.getNestedClassifiers()) {
+			if (classifier instanceof Class) {
+				addAssociations((Class) classifier, elements);
+			}
+		}
 	}
 
 	@Override
