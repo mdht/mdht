@@ -707,9 +707,11 @@ public class CDAUtil {
 
 	public static void performSchemaValidation(Document document, ValidationHandler handler) {
 		try {
-			URL url = CDAUtil.class.getResource("/samples/CDA.xsd");
+			// URL url = CDAUtil.class.getResource("/samples/CDA.xsd");
+			URL url = CDAUtil.class.getResource("/samples/C32_CDA.xsd");
 			if (url == null) {
-				url = new File("../org.openhealthtools.mdht.uml.cda/samples/CDA.xsd").toURI().toURL();
+				// url = new File("../org.openhealthtools.mdht.uml.cda/samples/CDA.xsd").toURI().toURL();
+				url = new File("../org.openhealthtools.mdht.uml.cda/samples/C32_CDA.xsd").toURI().toURL();
 			}
 
 			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
