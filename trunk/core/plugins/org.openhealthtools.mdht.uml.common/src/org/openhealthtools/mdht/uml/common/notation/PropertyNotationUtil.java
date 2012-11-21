@@ -207,7 +207,7 @@ public class PropertyNotationUtil {
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// property modifiers
-			String modifiers = PropertyNotationUtil.getModifiersAsString(property, multiLine);
+			String modifiers = getModifiersAsString(property, multiLine);
 			if (!modifiers.equals("")) {
 				if (multiLine) {
 					buffer.append("\n");
@@ -280,23 +280,17 @@ public class PropertyNotationUtil {
 			org.eclipse.uml2.uml.Property redefinedProperty = it.next();
 			// display only if redefined property has a different name (i.e., not "implicit")
 			if (!redefinedProperty.eIsProxy()) {
-				if (redefinedProperty.getName().equals(property.getName())) {
-					// if (needsComma) {
-					// buffer.append(", ");
-					// buffer.append(NL);
-					// }
-					//
-					// buffer.append("redefined");
-					// needsComma = true;
-				} else {
-					if (needsComma) {
-						buffer.append(", ");
-						buffer.append(NL);
-					}
+				if (needsComma) {
+					buffer.append(", ");
+					buffer.append(NL);
+				}
+				needsComma = true;
 
+				if (redefinedProperty.getName().equals(property.getName())) {
+					buffer.append("redefined");
+				} else {
 					buffer.append("redefines ");
 					buffer.append(redefinedProperty.getName());
-					needsComma = true;
 				}
 			}
 		}
