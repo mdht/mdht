@@ -50,7 +50,7 @@ public class CDAAnnotationProvider implements INotationProvider, IExecutableExte
 		} else if (element instanceof Association) {
 			annotation = CDAAssociationNotation.getCustomLabel((Association) element, CDA_ASSOCIATION_ANNOTATION);
 		} else if (element instanceof Property) {
-			annotation = TermPropertyNotation.getCustomLabel((Property) element, CDA_PROPERTY_ANNOTATION);
+			annotation = CDAPropertyNotation.getCustomLabel((Property) element, CDA_PROPERTY_ANNOTATION);
 		}
 
 		return annotation;
