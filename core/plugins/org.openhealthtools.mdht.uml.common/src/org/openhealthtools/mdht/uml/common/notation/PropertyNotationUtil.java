@@ -279,14 +279,25 @@ public class PropertyNotationUtil {
 		while (it.hasNext()) {
 			org.eclipse.uml2.uml.Property redefinedProperty = it.next();
 			// display only if redefined property has a different name (i.e., not "implicit")
-			if (!redefinedProperty.eIsProxy() && !redefinedProperty.getName().equals(property.getName())) {
-				if (needsComma) {
-					buffer.append(", ");
-					buffer.append(NL);
+			if (!redefinedProperty.eIsProxy()) {
+				if (redefinedProperty.getName().equals(property.getName())) {
+					// if (needsComma) {
+					// buffer.append(", ");
+					// buffer.append(NL);
+					// }
+					//
+					// buffer.append("redefined");
+					// needsComma = true;
+				} else {
+					if (needsComma) {
+						buffer.append(", ");
+						buffer.append(NL);
+					}
+
+					buffer.append("redefines ");
+					buffer.append(redefinedProperty.getName());
+					needsComma = true;
 				}
-				buffer.append("redefines ");
-				buffer.append(redefinedProperty.getName());
-				needsComma = true;
 			}
 		}
 
