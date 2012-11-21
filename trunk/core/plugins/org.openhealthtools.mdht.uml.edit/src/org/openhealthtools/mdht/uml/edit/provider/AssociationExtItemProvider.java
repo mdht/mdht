@@ -272,8 +272,14 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 				} else {
 					return association.getVisibility().getName();
 				}
-			case IUMLTableProperties.ANNOTATION_INDEX:
-				return NotationUtil.getAnnotation(association);
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				String annotation = NotationUtil.getAnnotation(association);
+				if ((annotation == null || annotation.length() == 0) && navigableEnd != null) {
+					// if no association annotations, display property annotations
+					annotation = NotationUtil.getAnnotation(navigableEnd);
+				}
+				return annotation;
+			}
 			default:
 				return null;
 		}
