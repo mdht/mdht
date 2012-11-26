@@ -1,8 +1,0 @@
-* Need to separate property multiplicity severity and terminology severity
-  -- e.g. LanguageSpoken modeCode is not required, but SHALL use specified value set
-  -- proposal: use [0..1] to mean optional and [1..1] to mean required
-     -- but still cannot differentiate SHOULD multiplicity which is also 1..1
-  
-* Support [0..0] as meaning NOT, e.g. LanguageSpoken::proficiencyLevel SHOULD NOT be present
-
-* 
