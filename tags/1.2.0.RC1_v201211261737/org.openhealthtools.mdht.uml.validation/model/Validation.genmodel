@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" copyrightText="Copyright (c) 2012 Christian W. Damus and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Christian W. Damus - initial API and implementation"
+    modelDirectory="/org.openhealthtools.mdht.uml.validation/src" modelPluginID="org.openhealthtools.mdht.uml.validation"
+    modelName="Validation" modelPluginClass="org.openhealthtools.mdht.uml.validation.internal.ValidationPlugin"
+    nonNLSMarkers="true" codeFormatting="true" booleanFlagsField="eFlags" booleanFlagsReservedBits="0"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    runtimeVersion="2.5" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    pluralizedGetters="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+  </genAnnotations>
+  <foreignModel>Validation.profile.uml</foreignModel>
+  <modelPluginVariables>EMF_VALIDATION=org.eclipse.emf.validation</modelPluginVariables>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Validation" basePackage="org.openhealthtools.mdht.uml"
+      disposableProviderFactory="true" classPackageSuffix="internal.impl" ecorePackage="validation.ecore#/"
+      operationsPackage="org.openhealthtools.mdht.uml.validation.internal.operations">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="validation.ecore#//EvaluationModeKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="validation.ecore#//EvaluationModeKind/batch"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="validation.ecore#//EvaluationModeKind/live"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="validation.ecore#//SeverityKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="validation.ecore#//SeverityKind/informational"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="validation.ecore#//SeverityKind/warning"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="validation.ecore#//SeverityKind/error"/>
+    </genEnums>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="validation.ecore#//Status"/>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="validation.ecore#//ValidationContext"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="validation.ecore#//Diagnostic">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference validation.ecore#//Diagnostic/base_Constraint"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//Diagnostic/evaluationMode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//Diagnostic/severity"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//Diagnostic/code"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//Diagnostic/message"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="validation.ecore#//Diagnostic/fail">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="validation.ecore#//Diagnostic/fail/context"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="validation.ecore#//Diagnostic/fail/target"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="validation.ecore#//Diagnostic/fail.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="validation.ecore#//Diagnostic/fail.1/context"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="validation.ecore#//Diagnostic/fail.1/target"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="validation.ecore#//Diagnostic/fail.1/related"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="validation.ecore#//Diagnostic/getTargets"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="validation.ecore#//Diagnostic/targets">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="validation.ecore#//Diagnostic/targets/object"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="validation.ecore#//Diagnostic/getConstraintProvider"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="validation.ecore#//ConstraintProvider">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference validation.ecore#//ConstraintProvider/base_Namespace"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//ConstraintProvider/diagnosticSource"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//ConstraintProvider/categoryID"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//ConstraintProvider/categoryName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//ConstraintProvider/parentCategoryID"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//ConstraintProvider/bundleName"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="validation.ecore#//ConstraintProvider/getDiagnostics"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

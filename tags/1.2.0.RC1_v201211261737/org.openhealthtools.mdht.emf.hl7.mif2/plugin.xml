@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+  Copyright (c) 2006, 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "urn:hl7-org:v3/mif2" 
+       class = "org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package"
+       genModel = "model/MIF.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser 
+       type="mif" 
+       class="org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2ResourceFactoryImpl" />
+    <parser 
+       type="coremif" 
+       class="org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2ResourceFactoryImpl" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.w3.org/1999/xhtml" 
+       class = "org.openhealthtools.mdht.emf.w3c.xhtml.XhtmlPackage"
+       genModel = "model/MIF.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser 
+       type="xhtml" 
+       class="org.openhealthtools.mdht.emf.w3c.xhtml.util.XhtmlResourceFactoryImpl" />
+  </extension>
+
+</plugin>
