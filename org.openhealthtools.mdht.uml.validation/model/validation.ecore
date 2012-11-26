@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="validation"
+    nsURI="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" nsPrefix="validation">
+  <eClassifiers xsi:type="ecore:EClass" name="Diagnostic">
+    <eOperations name="fail" ordered="false" lowerBound="1" eType="#//Status">
+      <eParameters name="context" ordered="false" lowerBound="1" eType="#//ValidationContext"/>
+      <eParameters name="target" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="fail" ordered="false" lowerBound="1" eType="#//Status">
+      <eParameters name="context" ordered="false" lowerBound="1" eType="#//ValidationContext"/>
+      <eParameters name="target" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="related" ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="getTargets" ordered="false" lowerBound="1" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eOperations name="targets" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="object" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="getConstraintProvider" ordered="false" lowerBound="1" eType="#//ConstraintProvider"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Constraint" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evaluationMode" ordered="false"
+        lowerBound="1" eType="#//EvaluationModeKind" defaultValueLiteral="batch"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
+        lowerBound="1" eType="#//SeverityKind" defaultValueLiteral="error"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EvaluationModeKind">
+    <eLiterals name="batch"/>
+    <eLiterals name="live" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SeverityKind">
+    <eLiterals name="informational" literal="info"/>
+    <eLiterals name="warning" value="1" literal="warn"/>
+    <eLiterals name="error" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Status" instanceClassName="org.eclipse.core.runtime.IStatus"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ValidationContext" instanceClassName="org.eclipse.emf.validation.IValidationContext"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintProvider">
+    <eOperations name="getDiagnostics" ordered="false" upperBound="-1" eType="#//Diagnostic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Namespace" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Namespace"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagnosticSource" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="categoryID" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="categoryName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentCategoryID" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bundleName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
