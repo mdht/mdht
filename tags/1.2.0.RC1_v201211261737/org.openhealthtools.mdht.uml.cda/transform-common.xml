@@ -1,0 +1,37 @@
+<project name="common">
+	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
+	<property name="modelPath.uml" location="${basedir}.model/model/${modelName}.uml"/>
+	<property name="ecoreModelPath.uml" location="${basedir}/model/${modelName}_Ecore.uml"/>
+	<property name="domainModelPath.uml" location="${basedir}/model/${modelName}_domain_Ecore.uml"/>
+	<property name="consolidatedModelPath.uml" location="${basedir}/model/${modelName}_consolidated.uml"/>
+	<property name="vocabModelPath.uml" location="${basedir}/model/${modelName}_consolidated-vocab.uml"/>
+	<property name="flattenedModelPath.uml" location="${basedir}/model/${modelName}_flattened.uml"/>
+    <property name="filteredModelPath.uml" location="${basedir}/model/${modelName}_filtered.uml"/>
+    <property name="validation.failOnError" value="true"/>
+	
+	<target name="all">
+		<antcall target="transformModel"></antcall>
+	</target>
+
+    <target name="transformModel" description="Transform Ecore UML model.">
+        <cdatools model="${modelPath.uml}">
+        	<validateModel failOnError="${validation.failOnError}"/>
+            <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" />
+        </cdatools>
+
+    	<convertEcorePaths filePath="${ecoreModelPath.uml}"/>
+
+    	<antcall target="refresh"/>
+    </target>
+
+	<available file="${domainModelPath.uml}" property="domainModelPath.uml.present"/>
+
+	<target name="convertDomainPaths" if="domainModelPath.uml.present">
+    	<convertEcorePaths filePath="${domainModelPath.uml}"/>
+	</target>
+
+	<target name="refresh" if="eclipse.running" description="Refresh this folder.">
+	  <eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
+	  <eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
+	</target>
+</project>
