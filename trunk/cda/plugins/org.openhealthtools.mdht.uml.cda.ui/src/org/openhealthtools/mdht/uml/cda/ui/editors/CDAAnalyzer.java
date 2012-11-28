@@ -184,7 +184,13 @@ public class CDAAnalyzer extends EditorPart {
 			Collections.sort(sections, new Comparator<Section>() {
 
 				public int compare(Section arg0, Section arg1) {
-					return arg0.getTitle().getText().toUpperCase().compareTo(arg1.getTitle().getText().toUpperCase());
+					if (arg0.getTitle() != null && arg0.getTitle().getText() != null && arg1.getTitle() != null &&
+							arg1.getTitle().getText() != null) {
+						return arg0.getTitle().getText().toUpperCase().compareTo(
+							arg1.getTitle().getText().toUpperCase());
+					} else {
+						return 0;
+					}
 				}
 			});
 
@@ -283,12 +289,16 @@ public class CDAAnalyzer extends EditorPart {
 					case 6:
 						return Integer.toString(countValidations.getInformational());
 					default:
-						return ((Section) obj).getTitle().getText().toUpperCase();
+						if (((Section) obj).getTitle() != null && ((Section) obj).getTitle().getText() != null) {
+							return ((Section) obj).getTitle().getText().toUpperCase();
+						} else {
+							String templateIds = "";
+							for (II ii : ((Section) obj).getTemplateIds()) {
+								templateIds += ii.getRoot();
+							}
+							return obj.getClass().getSimpleName() + " Missing Title, " + templateIds;
+						}
 				}
-			}
-
-			if (index > 0) {
-				return "status here";
 			}
 
 			return getText(obj);
