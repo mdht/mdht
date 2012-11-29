@@ -12,6 +12,7 @@
  *                        - discriminate multiple property constraints (artf3185)
  *                        - implement terminology constraint dependencies (artf3030)
  *                        - support nested datatype subclasses (artf3350)
+ *     Rama Ramakrishnan  - Generated OCL for subclassed datatypes does not check nullFlavor(artf3450)
  *     
  * $Id$
  *******************************************************************************/
@@ -51,6 +52,10 @@ public abstract class TransformAbstract extends AbstractTransform {
 	public static final String VALIDATION_INFO = "constraints.validation.info";
 
 	private static final String VALIDATION_QUERY = "constraints.validation.query";
+
+	public static final String PARENT_CLASS_NULLFLAVOR_CHECK_STRING_PREPEND = " ( self.isNullFlavorUndefined() implies (";
+
+	public static final String PARENT_CLASS_NULLFLAVOR_CHECK_STRING_APPEND = " ))";
 
 	private final IEcoreProfileReflection ecoreProfile;
 
@@ -151,10 +156,11 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 		String nullFlavorBody = body.toString();
 		boolean hasNullFlavor = false;
+
 		if (baseProperty.getType() instanceof Class) {
-			List<String> parentNames = org.openhealthtools.mdht.uml.common.util.UMLUtil.getAllParentNames((Class) baseProperty.getType());
-			hasNullFlavor = parentNames.contains("ANY");
+			hasNullFlavor = isSubTypeOfANY((Class) baseProperty.getType());
 		}
+
 		if (hasNullFlavor && !getEcoreProfile().isMandatory(property)) {
 			if (baseProperty.upperBound() == 1) {
 				nullFlavorBody = "(" + selfName + ".oclIsUndefined() or " + selfName +
@@ -163,6 +169,16 @@ public abstract class TransformAbstract extends AbstractTransform {
 				// must have size()==1 to have nullFlavor
 				nullFlavorBody = "(" + selfName + "->isEmpty() or " + selfName +
 						"->exists(element | element.isNullFlavorUndefined()))" + " implies (" + body + ")";
+			}
+		}
+
+		// Add nullFlavor checks for the enclosing parent (if necessary)
+		// This check will be relaxed further if the parent attribute is Mandatory, in which case the check is not required.
+		if (property.eContainer() instanceof Class) {
+
+			if (isSubTypeOfANY((Class) property.eContainer())) {
+				nullFlavorBody = PARENT_CLASS_NULLFLAVOR_CHECK_STRING_PREPEND + nullFlavorBody +
+						PARENT_CLASS_NULLFLAVOR_CHECK_STRING_APPEND;
 			}
 		}
 
@@ -254,5 +270,20 @@ public abstract class TransformAbstract extends AbstractTransform {
 			result += part.substring(0, 1).toUpperCase() + part.substring(1);
 		}
 		return result;
+	}
+
+	/**
+	 * Checks if the Class is a subtype of datatpes::ANY
+	 * 
+	 * @return
+	 */
+	public boolean isSubTypeOfANY(Classifier clazz) {
+		boolean retVal = false;
+		// Check if the property is of type Class
+		if (clazz instanceof Class) {
+			List<String> parentNames = org.openhealthtools.mdht.uml.common.util.UMLUtil.getAllParentNames(clazz);
+			retVal = parentNames.contains("ANY");
+		}
+		return retVal;
 	}
 }

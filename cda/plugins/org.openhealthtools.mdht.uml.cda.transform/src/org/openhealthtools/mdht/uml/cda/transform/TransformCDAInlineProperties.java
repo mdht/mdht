@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     Rama Ramakrishnan - initial API and implementation
+ *     					 - Generated OCL for subclassed datatypes does not check nullFlavor(artf3450)
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
@@ -18,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -143,7 +145,6 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 					!isDatatypesModel(bucketClass, propertyType) && !getEcoreProfile().isPrimaryEClass(propertyType) &&
 					(property.getOwner() != propertyType) &&
 					((getBaseClass(inlineClass) != null) || getBaseDatatype(inlineClass, bucketClass) != null)) {
-
 				Element validationElement = (property.getAssociation() != null)
 						? property.getAssociation()
 						: property;
@@ -186,13 +187,22 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 		}
 
 		for (Constraint constraint : inlineClass.getOwnedRules()) {
-
 			ValidationSeverityKind constraintSeverity = ValidationSeverityKind.ERROR;
 
 			if (infos.contains(constraint.getName())) {
 				constraintSeverity = ValidationSeverityKind.INFO;
 			} else if (warnings.contains(constraint.getName())) {
 				constraintSeverity = ValidationSeverityKind.WARNING;
+			}
+
+			// Update the OCL by removing the parent nullflavor for data subtypes
+			// and check if the parent property is Mandatory.
+			boolean anySubtype = false;
+			if (transformationProperty.getType() instanceof Class) {
+				anySubtype = isSubTypeOfANY((Class) transformationProperty.getType());
+			}
+			if (anySubtype && getEcoreProfile().isMandatory(transformationProperty)) {
+				updateOCLConstraintForMandatoryAttribute(constraint);
 			}
 
 			String propertyOperationName = getOperationName(transformationProperty) + "()";
@@ -356,5 +366,45 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 		}
 
 		return retVal;
+	}
+
+	/**
+	 * Get the updated OCL String by removing the parent nullFlavor check on the input string.
+	 * 
+	 * @param inStr
+	 * @return
+	 */
+	private String getOCLStringWithoutParentNullFlavorCheck(String inStr) {
+		String retVal = inStr;
+		List<String> arrList = Arrays.asList(retVal.split(" \\( self.isNullFlavorUndefined\\(\\) implies \\("));
+		for (String str : arrList) {
+			if (str.length() > 0) {
+				int i = str.lastIndexOf(PARENT_CLASS_NULLFLAVOR_CHECK_STRING_APPEND);
+				if (i > 0) {
+					retVal = str.substring(0, i);
+					break;
+				}
+			}
+		}
+		return retVal;
+	}
+
+	/**
+	 * Update the OCL in the constraint by removing the check for the parent nullflavor
+	 * 
+	 * @param c
+	 */
+	private void updateOCLConstraintForMandatoryAttribute(Constraint c) {
+		if (c.getSpecification() instanceof OpaqueExpression) {
+			OpaqueExpression op = (OpaqueExpression) c.getSpecification();
+			EList<String> languageList = op.getLanguages();
+			EList<String> exprList = op.getBodies();
+			for (int i = 0; i < languageList.size(); i++) {
+				if ("OCL".equals(languageList.get(i))) {
+					exprList.set(i, getOCLStringWithoutParentNullFlavorCheck(exprList.get(i)));
+				}
+			}
+		}
+
 	}
 }
