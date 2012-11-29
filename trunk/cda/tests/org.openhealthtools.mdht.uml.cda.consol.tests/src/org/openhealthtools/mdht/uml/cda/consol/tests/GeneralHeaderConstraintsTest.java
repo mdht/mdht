@@ -63,6 +63,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
 import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
@@ -1463,9 +1464,16 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				target.getRecordTargets().clear();
 				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				pr.getAddrs().add(createUSRealmAddress());
+				AD ad = createUSRealmAddress();
+				AD ad1 = DatatypesFactory.eINSTANCE.createAD();
+				ad1.setNullFlavor(NullFlavor.NA);
+
+				pr.getAddrs().add(ad1);
 				rt.setPatientRole(pr);
 				target.getRecordTargets().add(rt);
+
+				// --
+				// ad.getCities().get(0).setNullFlavor(NullFlavor.NA);
 			}
 
 			@Override
