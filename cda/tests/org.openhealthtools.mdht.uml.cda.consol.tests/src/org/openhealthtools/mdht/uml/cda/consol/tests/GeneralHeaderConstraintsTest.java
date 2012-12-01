@@ -1464,7 +1464,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				target.getRecordTargets().clear();
 				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				AD ad = createUSRealmAddress();
+				createUSRealmAddress();
 				AD ad1 = DatatypesFactory.eINSTANCE.createAD();
 				ad1.setNullFlavor(NullFlavor.NA);
 
