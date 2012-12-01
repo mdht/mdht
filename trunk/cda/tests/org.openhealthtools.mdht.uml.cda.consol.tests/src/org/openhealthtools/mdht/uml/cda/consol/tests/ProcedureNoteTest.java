@@ -16,16 +16,13 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
-import org.openhealthtools.mdht.uml.cda.AssociatedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Component1;
 import org.openhealthtools.mdht.uml.cda.DocumentationOf;
 import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
 import org.openhealthtools.mdht.uml.cda.HealthCareFacility;
-import org.openhealthtools.mdht.uml.cda.Participant1;
 import org.openhealthtools.mdht.uml.cda.Performer1;
-import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional;
@@ -65,8 +62,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
-import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
-import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssociative;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_EncounterParticipant;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
 
@@ -86,7 +81,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Component Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePrimaryCarePhysician(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Primary Care Physician</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteAssessmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Assessment Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteAssessmentAndPlanSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Assessment And Plan Section</em>}</li>
@@ -124,12 +118,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteComponentOfEncompassingEncounter5Location(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Component Of Encompassing Encounter5 Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteComponentOfEncompassingEncounter5EncounterParticipant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Component Of Encompassing Encounter5 Encounter Participant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteComponentOfEncompassingEncounter5(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Component Of Encompassing Encounter5</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePrimaryCarePhysicianAssociatedEntityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Primary Care Physician Associated Entity Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePrimaryCarePhysicianAssociatedEntityAssociatedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Primary Care Physician Associated Entity Associated Person</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePrimaryCarePhysicianFunctionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Primary Care Physician Function Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePrimaryCarePhysicianFunctionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Primary Care Physician Function Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePrimaryCarePhysicianTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Primary Care Physician Type Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNotePrimaryCarePhysicianAssociatedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Primary Care Physician Associated Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteDocumentationOfServiceEvent1PrimaryPerformerAssignedEntityCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Documentation Of Service Event1 Primary Performer Assigned Entity Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteDocumentationOfServiceEvent1PrimaryPerformerAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Documentation Of Service Event1 Primary Performer Assigned Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteDocumentationOfServiceEvent1PrimaryPerformerTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Documentation Of Service Event1 Primary Performer Type Code</em>}</li>
@@ -596,42 +584,6 @@ public class ProcedureNoteTest extends CDAValidationTest {
 		};
 
 		validateProcedureNoteComponentOfTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProcedureNotePrimaryCarePhysician() {
-		OperationsTestCase<ProcedureNote> validateProcedureNotePrimaryCarePhysicianTestCase = new OperationsTestCase<ProcedureNote>(
-			"validateProcedureNotePrimaryCarePhysician",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PRIMARY_CARE_PHYSICIAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureNote target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNote target) {
-
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNoteOperations.validateProcedureNotePrimaryCarePhysician(
-					(ProcedureNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNotePrimaryCarePhysicianTestCase.doValidationTest();
 	}
 
 	/**
@@ -2133,262 +2085,6 @@ public class ProcedureNoteTest extends CDAValidationTest {
 		};
 
 		validateProcedureNoteComponentOfEncompassingEncounter5TestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProcedureNotePrimaryCarePhysicianAssociatedEntityClassCode() {
-		OperationsTestCase<ProcedureNote> validateProcedureNotePrimaryCarePhysicianAssociatedEntityClassCodeTestCase = new OperationsTestCase<ProcedureNote>(
-			"validateProcedureNotePrimaryCarePhysicianAssociatedEntityClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PRIMARY_CARE_PHYSICIAN_ASSOCIATED_ENTITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureNote target) {
-				target.init();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
-				par.setAssociatedEntity(ae);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNote target) {
-				target.getParticipants().clear();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-
-				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
-				ae.setClassCode(RoleClassAssociative.PROV);
-				Person ap = CDAFactory.eINSTANCE.createPerson();
-				ae.setAssociatedPerson(ap);
-				par.setAssociatedEntity(ae);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNoteOperations.validateProcedureNotePrimaryCarePhysicianAssociatedEntityClassCode(
-					(ProcedureNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNotePrimaryCarePhysicianAssociatedEntityClassCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProcedureNotePrimaryCarePhysicianAssociatedEntityAssociatedPerson() {
-		OperationsTestCase<ProcedureNote> validateProcedureNotePrimaryCarePhysicianAssociatedEntityAssociatedPersonTestCase = new OperationsTestCase<ProcedureNote>(
-			"validateProcedureNotePrimaryCarePhysicianAssociatedEntityAssociatedPerson",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PRIMARY_CARE_PHYSICIAN_ASSOCIATED_ENTITY_ASSOCIATED_PERSON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureNote target) {
-				target.init();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
-				par.setAssociatedEntity(ae);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNote target) {
-				target.getParticipants().clear();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-
-				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
-				ae.setClassCode(RoleClassAssociative.PROV);
-				Person ap = CDAFactory.eINSTANCE.createPerson();
-				ae.setAssociatedPerson(ap);
-				par.setAssociatedEntity(ae);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNoteOperations.validateProcedureNotePrimaryCarePhysicianAssociatedEntityAssociatedPerson(
-					(ProcedureNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNotePrimaryCarePhysicianAssociatedEntityAssociatedPersonTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProcedureNotePrimaryCarePhysicianFunctionCode() {
-		OperationsTestCase<ProcedureNote> validateProcedureNotePrimaryCarePhysicianFunctionCodeTestCase = new OperationsTestCase<ProcedureNote>(
-			"validateProcedureNotePrimaryCarePhysicianFunctionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PRIMARY_CARE_PHYSICIAN_FUNCTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureNote target) {
-				target.init();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNote target) {
-				target.getParticipants().clear();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				par.setFunctionCode(DatatypesFactory.eINSTANCE.createCE("PCP", "2.16.840.1.113883.5.88"));
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNoteOperations.validateProcedureNotePrimaryCarePhysicianFunctionCode(
-					(ProcedureNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNotePrimaryCarePhysicianFunctionCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProcedureNotePrimaryCarePhysicianFunctionCodeP() {
-		OperationsTestCase<ProcedureNote> validateProcedureNotePrimaryCarePhysicianFunctionCodePTestCase = new OperationsTestCase<ProcedureNote>(
-			"validateProcedureNotePrimaryCarePhysicianFunctionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PRIMARY_CARE_PHYSICIAN_FUNCTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureNote target) {
-				target.init();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNote target) {
-				target.getParticipants().clear();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				par.setFunctionCode(DatatypesFactory.eINSTANCE.createCE("PCP", "2.16.840.1.113883.5.88"));
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNoteOperations.validateProcedureNotePrimaryCarePhysicianFunctionCodeP(
-					(ProcedureNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNotePrimaryCarePhysicianFunctionCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProcedureNotePrimaryCarePhysicianTypeCode() {
-		OperationsTestCase<ProcedureNote> validateProcedureNotePrimaryCarePhysicianTypeCodeTestCase = new OperationsTestCase<ProcedureNote>(
-			"validateProcedureNotePrimaryCarePhysicianTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PRIMARY_CARE_PHYSICIAN_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			{
-				this.skipFailsTest();
-			}
-
-			@Override
-			protected void updateToFail(ProcedureNote target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNote target) {
-
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNoteOperations.validateProcedureNotePrimaryCarePhysicianTypeCode(
-					(ProcedureNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNotePrimaryCarePhysicianTypeCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProcedureNotePrimaryCarePhysicianAssociatedEntity() {
-		OperationsTestCase<ProcedureNote> validateProcedureNotePrimaryCarePhysicianAssociatedEntityTestCase = new OperationsTestCase<ProcedureNote>(
-			"validateProcedureNotePrimaryCarePhysicianAssociatedEntity",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_PRIMARY_CARE_PHYSICIAN_ASSOCIATED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureNote target) {
-				target.init();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNote target) {
-				target.getParticipants().clear();
-				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
-				par.setTypeCode(ParticipationType.IND);
-
-				AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
-				par.setAssociatedEntity(ae);
-				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNoteOperations.validateProcedureNotePrimaryCarePhysicianAssociatedEntity(
-					(ProcedureNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNotePrimaryCarePhysicianAssociatedEntityTestCase.doValidationTest();
 	}
 
 	/**

@@ -43,6 +43,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseContainsMedicationOrImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Contains Medication Or Immunization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Effective Time</em>}</li>
@@ -52,9 +53,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseMedicationSupplyOrder(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Medication Supply Order</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Product</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseProductContainsMedicationOrImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Product Contains Medication Or Immunization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressStreet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Street</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address City</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityUSRealmAddressCountry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity US Realm Address Country</em>}</li>
@@ -73,6 +72,44 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  */
 
 public class MedicationDispenseTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispenseContainsMedicationOrImmunization() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispenseContainsMedicationOrImmunizationTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispenseContainsMedicationOrImmunization",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_CONTAINS_MEDICATION_OR_IMMUNIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Product prod = CDAFactory.eINSTANCE.createProduct();
+				target.setProduct(prod);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				Product prod = CDAFactory.eINSTANCE.createProduct();
+				prod.setManufacturedProduct(ConsolFactory.eINSTANCE.createImmunizationMedicationInformation());
+				target.setProduct(prod);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispenseContainsMedicationOrImmunization(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispenseContainsMedicationOrImmunizationTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -360,39 +397,6 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateMedicationDispenseProduct() {
-		OperationsTestCase<MedicationDispense> validateMedicationDispenseProductTestCase = new OperationsTestCase<MedicationDispense>(
-			"validateMedicationDispenseProduct",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PRODUCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationDispense target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(MedicationDispense target) {
-				target.setProduct(CDAFactory.eINSTANCE.createProduct());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationDispenseOperations.validateMedicationDispenseProduct(
-					(MedicationDispense) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationDispenseProductTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
 	public void testValidateMedicationDispensePerformer() {
 		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerTestCase = new OperationsTestCase<MedicationDispense>(
 			"validateMedicationDispensePerformer",
@@ -420,44 +424,6 @@ public class MedicationDispenseTest extends CDAValidationTest {
 		};
 
 		validateMedicationDispensePerformerTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateMedicationDispenseProductContainsMedicationOrImmunization() {
-		OperationsTestCase<MedicationDispense> validateMedicationDispenseProductContainsMedicationOrImmunizationTestCase = new OperationsTestCase<MedicationDispense>(
-			"validateMedicationDispenseProductContainsMedicationOrImmunization",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PRODUCT_CONTAINS_MEDICATION_OR_IMMUNIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationDispense target) {
-				target.init();
-				Product prod = CDAFactory.eINSTANCE.createProduct();
-				target.setProduct(prod);
-			}
-
-			@Override
-			protected void updateToPass(MedicationDispense target) {
-				Product prod = CDAFactory.eINSTANCE.createProduct();
-				prod.setManufacturedProduct(ConsolFactory.eINSTANCE.createImmunizationMedicationInformation());
-				target.setProduct(prod);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationDispenseOperations.validateMedicationDispenseProductContainsMedicationOrImmunization(
-					(MedicationDispense) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationDispenseProductContainsMedicationOrImmunizationTestCase.doValidationTest();
 	}
 
 	/**
