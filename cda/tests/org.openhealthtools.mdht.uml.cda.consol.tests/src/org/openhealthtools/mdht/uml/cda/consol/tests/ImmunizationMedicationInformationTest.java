@@ -426,7 +426,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(ImmunizationMedicationInformation target) {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 
-				mm.setCode(DatatypesFactory.eINSTANCE.createCE("143", "2.16.840.1.113883.6.59"));
+				mm.setCode(DatatypesFactory.eINSTANCE.createCE("143", "2.16.840.1.113883.12.292"));
 				target.setManufacturedMaterial(mm);
 			}
 
