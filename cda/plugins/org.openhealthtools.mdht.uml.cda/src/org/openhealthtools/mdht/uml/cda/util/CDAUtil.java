@@ -545,13 +545,22 @@ public class CDAUtil {
 
 	public static void saveSnippet(InfrastructureRoot snippet, OutputStream out, boolean defaults) throws Exception {
 		XMLResource resource = prepare(snippet, defaults);
-		resource.save(out, null);
+		resource.save(out, snippetOptions());
 	}
 
 	public static void saveSnippet(InfrastructureRoot snippet, Writer writer) throws Exception {
 		XMLResource resource = prepare(snippet, true);
-		resource.save(writer, null);
+		resource.save(writer, snippetOptions());
 
+	}
+
+	private static Map<String, Object> snippetOptions() {
+		Map<String, Object> options = new HashMap<String, Object>();
+		options.put(XMLResource.OPTION_ENCODING, "UTF8");
+		options.put(XMLResource.OPTION_SCHEMA_LOCATION, Boolean.FALSE);
+		options.put(XMLResource.OPTION_DECLARE_XML, Boolean.FALSE);
+
+		return options;
 	}
 
 	/**
