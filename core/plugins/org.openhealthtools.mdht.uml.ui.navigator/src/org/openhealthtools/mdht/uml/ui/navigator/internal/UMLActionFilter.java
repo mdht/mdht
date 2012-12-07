@@ -15,12 +15,15 @@ package org.openhealthtools.mdht.uml.ui.navigator.internal;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IActionFilter;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Profile;
 
 public class UMLActionFilter implements IActionFilter {
 
 	public static final String UML_TYPE = "umlType";
 
 	public static final String UML_STRICT_TYPE = "umlStrictType";
+
+	public static final String HAS_PROFILE = "hasProfile";
 
 	public static final String HAS_STEREOTYPE = "hasStereotype";
 
@@ -37,6 +40,7 @@ public class UMLActionFilter implements IActionFilter {
 		if (element != null) {
 			if (UML_STRICT_TYPE.equals(name)) {
 				return element.getClass().getName().equals(UML_JAVA_PACKAGE + value);
+
 			} else if (UML_TYPE.equals(name)) {
 				try {
 					Class umlType = Class.forName(UML_JAVA_PACKAGE + value);
@@ -44,8 +48,17 @@ public class UMLActionFilter implements IActionFilter {
 
 				} catch (ClassNotFoundException e) {
 				}
+
 			} else if (HAS_STEREOTYPE.equals(name)) {
 				return null != element.getAppliedStereotype(value);
+
+			} else if (HAS_PROFILE.equals(name)) {
+				for (Profile profile : element.getNearestPackage().getAllAppliedProfiles()) {
+					if (profile.getDefinition().getNsURI().startsWith(value)) {
+						return true;
+					}
+				}
+
 			}
 		}
 
