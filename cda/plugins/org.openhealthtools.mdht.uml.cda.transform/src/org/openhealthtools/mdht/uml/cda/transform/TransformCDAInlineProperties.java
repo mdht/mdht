@@ -8,34 +8,19 @@
  * Contributors:
  *     Rama Ramakrishnan - initial API and implementation
  *     					 - Generated OCL for subclassed datatypes does not check nullFlavor(artf3450)
+ *     Sean Muir		 - Refactored to extend the underlying inline transformation
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
-
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
-import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
-import org.openhealthtools.mdht.uml.transform.ecore.AnnotationsUtil;
-import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationSeverityKind;
-import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationStereotypeKind;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties;
 
 /**
@@ -44,367 +29,103 @@ import org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties;
  */
 public class TransformCDAInlineProperties extends TransformInlinedProperties {
 
-	PluginPropertiesUtil properties = null;
-
-	static ArrayList<String> rimObjects = new ArrayList<String>(Arrays.asList(
-		"ActRelationship", "InfrastructureRoot", "Participation", "Role", "RoleLink"));
-
 	/**
 	 * @param options
 	 * @param baseModelReflection
 	 */
 	public TransformCDAInlineProperties(TransformerOptions options, IBaseModelReflection baseModelReflection) {
 		super(options, baseModelReflection);
-		properties = transformerOptions.getPluginPropertiesUtil();
+		// TODO Auto-generated constructor stub
 	}
 
+	/*
+	 * 
+	 * Within MDHT we support a level of simplification of associations between clinical documents and sections as well as sections and clinical
+	 * statements
+	 * As such we need to replace the path with a corresponding operation to use in the ocl
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#getPath(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Class,
+	 * org.eclipse.uml2.uml.Property)
+	 */
 	@Override
-	public Object caseProperty(Property property) {
-		HashMap<String, ArrayList<String>> constraints = new HashMap<String, ArrayList<String>>();
+	public String getPath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
 
-		final Class owner = property.getClass_();
+		if (CDAModelUtil.isClinicalDocument(baseSourceClass) && CDAModelUtil.isSection(targetClass)) {
+			return "getAllSections()";
+		} else if (CDAModelUtil.isSection(baseSourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
 
-		Association association = null;
-		Class baseDatatype = null;
+			Class cdaClass = CDAModelUtil.getCDAClass(targetClass);
 
-		// supported types are only classes, and not the class that defines the property (reflexive association). Only transform
-		// properties owned by classes (not by associations; note that we do not use association classes)
-		if ((owner != null) && !(owner instanceof Association) && (property.getType() instanceof Class) &&
-				(property.getOwner() != property.getType())) {
+			if (cdaClass != null) {
+				if (cdaClass.getName().equals("Act")) {
+					return "getActs()";
+				}
+				if (cdaClass.getName().equals("Encounter")) {
+					return "getEncounters()";
+				}
+				if (cdaClass.getName().equals("Observation")) {
+					return "getObservations()";
+				}
+				if (cdaClass.getName().equals("ObservationMedia")) {
+					return "getObservationMedias()";
+				}
+				if (cdaClass.getName().equals("Organizer")) {
+					return "getOrganizers()";
+				}
+				if (cdaClass.getName().equals("Procedure")) {
+					return "getProcedures()";
+				}
+				if (cdaClass.getName().equals("RegionOfInterest")) {
+					return "getRegionOfInterests()";
+				}
+				if (cdaClass.getName().equals("SubstanceAdministration")) {
+					return "getSubstanceAdministrations()";
+				}
+				if (cdaClass.getName().equals("Supply")) {
+					return "getSupplies()";
+				}
+			}
+			return super.getPath(baseSourceClass, targetClass, sourceProperty);
 
-			Class propertyType = (Class) property.getType();
-			association = property.getAssociation();
-			baseDatatype = getBaseDatatype(propertyType, property);
+		} else {
+			return super.getPath(baseSourceClass, targetClass, sourceProperty);
+		}
+	}
 
-			// is it either an in-line associated type or a local datatype subclass?
-			if (((association != null) && isInlineClass(propertyType)) || (baseDatatype != null)) {
-				Class baseOwner = null;
-				if (owner != null) {
-					baseOwner = getBaseClass(owner);
-					if (baseOwner == null) {
-						// maybe it's a local datatype subclass
-						baseOwner = getBaseDatatype(owner, property);
+	/*
+	 * If the property type is a datatype and not mandatory, add a check for null flavor
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#getNullSafePath(org.eclipse.uml2.uml.Class,
+	 * org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Property)
+	 */
+	@Override
+	public String getNullSafePath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
+		if (isHL7Datatype(sourceProperty.getType()) && !CDAProfileUtil.isMandatory(sourceProperty)) {
+			return super.getNullSafePath(baseSourceClass, targetClass, sourceProperty) +
+					"->select(isNullFlavorUndefined())";
+		} else {
+			return super.getNullSafePath(baseSourceClass, targetClass, sourceProperty);
+
+		}
+	}
+
+	private boolean isHL7Datatype(org.eclipse.uml2.uml.Type type) {
+		boolean result = false;
+		if (type instanceof Classifier) {
+			if (CDAModelUtil.isDatatypeModel(type)) {
+				result = true;
+			} else {
+				for (Classifier classifier : UMLUtil.getAllGeneralizations((Classifier) type)) {
+					if (CDAModelUtil.isDatatypeModel(classifier)) {
+						result = true;
+						break;
 					}
 				}
-
-				if (baseOwner != null) {
-					AnnotationsUtil bucketAnnotations = getEcoreProfile().annotate(owner);
-					Element validationElement = (association != null)
-							? association
-							: property;
-					collectConstraints(
-						property.getClass_(), bucketAnnotations, (Class) property.getType(),
-						getEcoreProfile().getValidationMessage(validationElement, ValidationStereotypeKind.ANY),
-						"self." + getNullSafePath(baseOwner, propertyType, property) + getInlineFilter(propertyType),
-						owner.getName(), constraints, property.getName(), property);
-
-					bucketAnnotations.saveAnnotations();
-				} else {
-					Logger.log(Logger.ERROR, String.format(
-						"Unsupported inlined association or datatype property %s from %s; %s has no base element",
-						property.getName(), property.getNamespace().getQualifiedName(),
-						property.getNamespace().getQualifiedName()));
-				}
-			}
-
-		}
-
-		return property;
-	}
-
-	/**
-	 * 
-	 * collectConstraints walks the untemplated associations recursively to create a for->all() ocl
-	 * 
-	 * TODO Message munging to get a readable validation message is bound to the current validation generation which needs to change, after dynamic
-	 * validation message generation should be able to create better message
-	 */
-	private void collectConstraints(final Class bucketClass, final AnnotationsUtil bucketAnnotations,
-			Class inlineClass, String message, String path, String stack,
-			HashMap<String, ArrayList<String>> constraints, String associationName, Property transformationProperty) {
-
-		AnnotationsUtil inlineClassAnnotations = getEcoreProfile().annotate(inlineClass);
-
-		String warningsAnnotation = inlineClassAnnotations.getAnnotation(VALIDATION_WARNING);
-		String infosAnnotation = inlineClassAnnotations.getAnnotation(VALIDATION_INFO);
-		final Set<String> warnings = (warningsAnnotation == null)
-				? Collections.<String> emptySet()
-				: new java.util.HashSet<String>(Arrays.asList(warningsAnnotation.split(" ")));
-		final Set<String> infos = (infosAnnotation == null)
-				? Collections.<String> emptySet()
-				: new java.util.HashSet<String>(Arrays.asList(infosAnnotation.split(" ")));
-
-		String splitName = getEcoreProfile().getPrefixedSplitName(inlineClass);
-
-		for (Property property : inlineClass.getOwnedAttributes()) {
-			final Class propertyType = (property.getType() instanceof Class)
-					? (Class) property.getType()
-					: null;
-
-			if ((propertyType != null) && (inlineClass != propertyType) && !isBaseModel(bucketClass, propertyType) &&
-					!isDatatypesModel(bucketClass, propertyType) && !getEcoreProfile().isPrimaryEClass(propertyType) &&
-					(property.getOwner() != propertyType) &&
-					((getBaseClass(inlineClass) != null) || getBaseDatatype(inlineClass, bucketClass) != null)) {
-				Element validationElement = (property.getAssociation() != null)
-						? property.getAssociation()
-						: property;
-				String associationMessage = getEcoreProfile().getValidationMessage(
-					validationElement, ValidationStereotypeKind.ANY);
-
-				associationMessage = associationMessage.replaceAll(
-					"its type is " + UMLUtil.splitName(property.getType()), "");
-
-				Class propertyBaseType = getBaseClass(propertyType);
-				if (propertyBaseType == null) {
-					// OK, it's a datatype
-					propertyBaseType = getBaseDatatype(propertyType, inlineClass);
-				}
-
-				if ((associationMessage != null) && (propertyBaseType != null)) {
-					associationMessage = associationMessage.replaceAll(
-						getEcoreProfile().getPrefixedSplitName(property.getType()),
-						propertyBaseType.getName().toLowerCase());
-
-					associationMessage = associationMessage.replaceAll(
-						UMLUtil.splitName(property.getType()), propertyBaseType.getName().toLowerCase());
-
-					associationMessage = associationMessage.replaceAll(
-						getEcoreProfile().getPrefixedSplitName(property.getClass_()), "each");
-				}
-
-				// get the owner base type
-				Class ownerBaseType = getBaseClass(inlineClass);
-				if (ownerBaseType == null) {
-					// OK, it's a datatype
-					ownerBaseType = getBaseDatatype(inlineClass, bucketClass);
-				}
-
-				collectConstraints(
-					bucketClass, bucketAnnotations, propertyType, message + " " + associationMessage, path + "." +
-							getNullSafePath(ownerBaseType, propertyType, property), stack + inlineClass.getName(),
-					constraints, property.getName(), transformationProperty);
 			}
 		}
-
-		for (Constraint constraint : inlineClass.getOwnedRules()) {
-			ValidationSeverityKind constraintSeverity = ValidationSeverityKind.ERROR;
-
-			if (infos.contains(constraint.getName())) {
-				constraintSeverity = ValidationSeverityKind.INFO;
-			} else if (warnings.contains(constraint.getName())) {
-				constraintSeverity = ValidationSeverityKind.WARNING;
-			}
-
-			// Update the OCL by removing the parent nullflavor for data subtypes
-			// and check if the parent property is Mandatory.
-			boolean anySubtype = false;
-			if (transformationProperty.getType() instanceof Class) {
-				anySubtype = isSubTypeOfANY((Class) transformationProperty.getType());
-			}
-			if (anySubtype && getEcoreProfile().isMandatory(transformationProperty)) {
-				updateOCLConstraintForMandatoryAttribute(constraint);
-			}
-
-			String propertyOperationName = getOperationName(transformationProperty) + "()";
-			String relativeOCL = "";
-			if (path.contains(propertyOperationName)) {
-				relativeOCL = getRelativeOCL(constraint, propertyOperationName);
-			} else {
-				relativeOCL = getRelativeOCL(constraint, null);
-			}
-
-			if (relativeOCL != null) {
-				String constraintMessage = properties.getProperty(constraint.getName());
-
-				if (constraintMessage != null) {
-					constraintMessage = constraintMessage.replaceAll(splitName, associationName);
-				}
-
-				/*
-				 * TODO Fix constraint messages implementation - currently only setting the specific rule with out the path to the rule
-				 */
-				Constraint inlinedConstraint = appendInlinedOCLConstraint(
-					bucketClass, stack + constraint.getName(), constraintSeverity, message + " " + constraintMessage,
-					path + getScopeFilter(inlineClass) + "->reject(" + relativeOCL + ")");
-
-				// handle constraint dependencies
-				String dependency = getConstraintDependency(inlineClassAnnotations, constraint.getName());
-				if (dependency != null) {
-					setConstraintDependency(bucketAnnotations, inlinedConstraint.getName(), stack + dependency);
-				}
-			}
-
-		}
-
-	}
-
-	private String getPath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
-		Property property = null;
-		for (Property rededfinedProperty : sourceProperty.getRedefinedProperties()) {
-			property = baseSourceClass.getOwnedAttribute(
-				rededfinedProperty.getName(), rededfinedProperty.getType(), true, null, false);
-		}
-
-		if (property == null) {
-			property = baseSourceClass.getOwnedAttribute(null, targetClass, true, null, false);
-		}
-		//
-		// If not - walk the hierarchy and check for properties
-		if (property == null) {
-			for (Classifier c : targetClass.allParents()) {
-				property = baseSourceClass.getOwnedAttribute(null, c, true, null, false);
-
-				if ((property != null) || isBaseModel(targetClass, c)) {
-					break;
-				}
-			}
-		}
-
-		// If we still can not find - use the name - this is not optimal but CDA has some hop scotch hierarchies such as consumable and
-		// manufactured product
-		if (property == null) {
-			property = baseSourceClass.getOwnedAttribute(sourceProperty.getName(), null, true, null, false);
-		}
-
-		if (property != null) {
-			return property.getName();
-		}
-		// Handle special CDA processings.
-
-		return handleSpecialAssociation(baseSourceClass, targetClass, sourceProperty);
-
-	}
-
-	protected String handleSpecialAssociation(Class sourceClass, Class targetClass, Property sourceProperty) {
-		StringBuilder retVal = new StringBuilder().append("");
-
-		// ClinicalDocument -> Section || Section -> Section
-		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass)) &&
-				CDAModelUtil.isSection(targetClass)) {
-
-			retVal.append(getOperationName(sourceProperty) + "()");
-		}
-
-		return retVal.toString();
-	}
-
-	private String getOperationName(Property sProperty) {
-		String retVal = "";
-		retVal = "get" + ((sProperty.getUpper() == 1)
-				? capitalize(sProperty.getName())
-				: capitalize(pluralize(sProperty.getName())));
-		return retVal;
-	}
-
-	private String getNullSafePath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
-		String result = getPath(baseSourceClass, targetClass, sourceProperty);
-
-		if (result.length() > 0) {
-			result = result + "->excluding(null)";
-		}
-
 		return result;
 	}
 
-	/**
-	 * The relative OCL is modified to prepend the path, in lieu of the 'self.'
-	 * 
-	 * @param constraint
-	 * @param replaceSelfString
-	 * @return
-	 */
-	private String getRelativeOCL(Constraint constraint, String replaceSelfString) {
-
-		String retVal = null;
-		if (constraint.getSpecification() instanceof OpaqueExpression) {
-			OpaqueExpression oe = (OpaqueExpression) constraint.getSpecification();
-			int index = 0;
-			for (String language : oe.getLanguages()) {
-				if ("OCL".equals(language)) {
-					if (null == replaceSelfString) {
-						retVal = oe.getBodies().get(index).replaceAll("self.", "");
-						break;
-					} else {
-						retVal = oe.getBodies().get(index).replaceAll("self.", replaceSelfString + ".");
-						break;
-					}
-
-				}
-				index++;
-			}
-		}
-
-		return retVal;
-	}
-
-	/**
-	 * Returns the relative paths in the OCL String
-	 * Most of the nested paths occur in the oclKindOf function call
-	 * 
-	 * @param relativeOcl
-	 * @return
-	 */
-	private List<String> getRelativePaths(String relativeOcl) {
-		List<String> retVal = new ArrayList<String>();
-
-		if (null != relativeOcl && (relativeOcl.length() > 0)) {
-			int strLength = relativeOcl.length();
-			int i = 0;
-
-			while (i < strLength) {
-				if (relativeOcl.indexOf("oclIsKindOf(", i) != -1) {
-					int intStart = relativeOcl.indexOf("oclIsKindOf(", i);
-					int intEnd = relativeOcl.indexOf(")", intStart);
-					String str = relativeOcl.substring(intStart + 12, intEnd);
-					retVal.add(str);
-					i = intEnd;
-
-				} else {
-					i = strLength;
-				}
-			}
-		}
-
-		return retVal;
-	}
-
-	/**
-	 * Get the updated OCL String by removing the parent nullFlavor check on the input string.
-	 * 
-	 * @param inStr
-	 * @return
-	 */
-	private String getOCLStringWithoutParentNullFlavorCheck(String inStr) {
-		String retVal = inStr;
-		List<String> arrList = Arrays.asList(retVal.split(" \\( self.isNullFlavorUndefined\\(\\) implies \\("));
-		for (String str : arrList) {
-			if (str.length() > 0) {
-				int i = str.lastIndexOf(PARENT_CLASS_NULLFLAVOR_CHECK_STRING_APPEND);
-				if (i > 0) {
-					retVal = str.substring(0, i);
-					break;
-				}
-			}
-		}
-		return retVal;
-	}
-
-	/**
-	 * Update the OCL in the constraint by removing the check for the parent nullflavor
-	 * 
-	 * @param c
-	 */
-	private void updateOCLConstraintForMandatoryAttribute(Constraint c) {
-		if (c.getSpecification() instanceof OpaqueExpression) {
-			OpaqueExpression op = (OpaqueExpression) c.getSpecification();
-			EList<String> languageList = op.getLanguages();
-			EList<String> exprList = op.getBodies();
-			for (int i = 0; i < languageList.size(); i++) {
-				if ("OCL".equals(languageList.get(i))) {
-					exprList.set(i, getOCLStringWithoutParentNullFlavorCheck(exprList.get(i)));
-				}
-			}
-		}
-
-	}
 }

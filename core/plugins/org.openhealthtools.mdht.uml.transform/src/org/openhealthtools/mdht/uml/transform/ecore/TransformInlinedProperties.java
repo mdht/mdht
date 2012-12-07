@@ -140,22 +140,6 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 	}
 
-	public static String getScopeFilter(Class inlineClass) {
-		String filter = "";
-		for (Comment comment : inlineClass.getOwnedComments()) {
-			if (comment.getBody().startsWith("SCOPE&")) {
-				String[] temp = comment.getBody().split("&");
-				if (temp.length == 2) {
-					filter = String.format("->select(%s)", temp[1]);
-				}
-				break;
-			}
-		}
-
-		return filter;
-
-	}
-
 	@Override
 	public Object caseProperty(Property property) {
 		HashMap<String, ArrayList<String>> constraints = new HashMap<String, ArrayList<String>>();
@@ -210,7 +194,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 		return property;
 	}
 
-	private String getNullSafePath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
+	public String getNullSafePath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
 		String result = getPath(baseSourceClass, targetClass, sourceProperty);
 
 		if (result.length() > 0) {
@@ -220,7 +204,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 		return result;
 	}
 
-	private String getPath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
+	public String getPath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
 		Property property = null;
 		for (Property rededfinedProperty : sourceProperty.getRedefinedProperties()) {
 			property = baseSourceClass.getOwnedAttribute(
@@ -341,8 +325,8 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 				collectConstraints(
 					bucketClass, bucketAnnotations, propertyType, message + " " + associationMessage, path + "." +
-							getNullSafePath(ownerBaseType, propertyType, property), stack + inlineClass.getName(),
-					constraints, property.getName());
+							getNullSafePath(ownerBaseType, propertyType, property) + getInlineFilter(propertyType),
+					stack + inlineClass.getName(), constraints, property.getName());
 			}
 		}
 
@@ -370,7 +354,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 				 */
 				Constraint inlinedConstraint = appendInlinedOCLConstraint(
 					bucketClass, stack + constraint.getName(), constraintSeverity, message + " " + constraintMessage,
-					path + getScopeFilter(inlineClass) + "->reject(" + relativeOCL + ")");
+					path + getInlineFilter(inlineClass) + "->reject(" + relativeOCL + ")");
 
 				// handle constraint dependencies
 				String dependency = getConstraintDependency(inlineClassAnnotations, constraint.getName());
