@@ -194,10 +194,13 @@
 	
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution adaptable="true"
-			objectClass="org.eclipse.uml2.uml.Element"
+			objectClass="org.eclipse.core.runtime.IAdaptable"
             id="mdht.objectContribution.uml">
          <visibility>
-			<objectClass name="org.eclipse.uml2.uml.Element" />
+            <and>
+            	<objectState name="umlType" value="Element"/>
+            	<objectState name="hasProfile" value="http://www.openhealthtools.org/mdht/schemas/cda/"/>
+            </and>
          </visibility>
          <menu
                label="%addCDA.label"
