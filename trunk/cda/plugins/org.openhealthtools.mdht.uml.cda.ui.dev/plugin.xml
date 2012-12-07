@@ -19,7 +19,7 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
       		adaptable="true"
-            objectClass="org.eclipse.uml2.uml.Element"
+            objectClass="org.eclipse.core.runtime.IAdaptable"
             id="org.openhealthtools.mdht.uml.ui.dev.popup">
          <menu
                label="%menu_CDATools"
@@ -29,6 +29,13 @@
                   name="transform">
             </separator>
          </menu>
+		 <visibility>
+            <and>
+            	<objectState name="umlType" value="Element"/>
+            	<objectState name="hasProfile" value="http://www.openhealthtools.org/mdht/schemas/cda/"/>
+            </and>
+		 </visibility>
+			
          <action
                label="%menu_RemoveConstraintAnnotations"
                class="org.openhealthtools.mdht.uml.ui.dev.actions.RemoveConstraintAnnotationsAction"
