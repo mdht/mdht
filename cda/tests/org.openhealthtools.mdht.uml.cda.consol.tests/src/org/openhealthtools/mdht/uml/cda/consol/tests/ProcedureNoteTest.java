@@ -2027,15 +2027,21 @@ public class ProcedureNoteTest extends CDAValidationTest {
 				target.init();
 				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
 				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
+				ee.getEncounterParticipants().add(ep);
 				cof.setEncompassingEncounter(ee);
 				target.setComponentOf(cof);
 			}
 
 			@Override
 			protected void updateToPass(ProcedureNote target) {
+				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
 				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
-				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(ep);
-
+				ee.getEncounterParticipants().add(ep);
+				ep.setTypeCode(x_EncounterParticipant.REF);
+				cof.setEncompassingEncounter(ee);
+				target.setComponentOf(cof);
 			}
 
 			@Override
