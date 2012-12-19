@@ -27,8 +27,10 @@ import org.openhealthtools.mdht.cda.documentevent.processor.CDADocumentEventRegi
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
-import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
-import org.openhealthtools.mdht.uml.cda.ncr.NeonatalCareReport;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
+import org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.consol.DischargeSummary;
+import org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
@@ -87,8 +89,8 @@ public class CDADirectoryPoller {
 						try {
 
 							System.out.println("Processing File : " + cdaFileName);
-
 							loadAndProcess(new FileInputStream(cdaFileName));
+							System.out.println("");
 
 						} catch (FileNotFoundException e) {
 							// TODO Auto-generated catch block
@@ -116,7 +118,7 @@ public class CDADirectoryPoller {
 
 	public static ClinicalDocument loadAndProcess(InputStream in) throws Exception {
 
-		ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
+		ClinicalDocument clinicalDocument = CDAUtil.load(in);
 
 		CDADocumentEventRegistry.processCDADocumentEvent(clinicalDocument);
 
@@ -161,46 +163,56 @@ public class CDADirectoryPoller {
 				}
 
 				@Override
-				public ClinicalDocument ProcessCDADocumentEvent(ClinicalDocument cdaDocumentInstance) {
+				public void ProcessCDADocumentEvent(ClinicalDocument cdaDocumentInstance) {
 					try {
 
 						System.out.println("Validating all ClinicalDocument Recieved ");
 
-						validate(cdaDocumentInstance);
+						// validate(cdaDocumentInstance);
 
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					return null;
+					return;
 				}
 			});
 
-		// Defining a NCR Document Event Handler
 		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
-			NCRPackage.eINSTANCE.getNeonatalCareReport(), new CDADocumentEventProcessor<NeonatalCareReport>() {
+			ConsolPackage.eINSTANCE.getGeneralHeaderConstraints(),
+			new CDADocumentEventProcessor<GeneralHeaderConstraints>() {
 
 				@Override
-				public NeonatalCareReport ProcessCDADocumentEvent(NeonatalCareReport ncrDocument) {
-					try {
-						System.out.println(" Processing NeonatalCareReport - Save to specific table ");
+				public void ProcessCDADocumentEvent(GeneralHeaderConstraints cdaDocumentInstance) {
+					// Have general GeneralHeaderConstraints type documens processing here
+					System.out.println("Generic for documents conforming to the General Header " +
+							cdaDocumentInstance.getClass().getSimpleName());
 
-						for (Section section : ncrDocument.getSections()) {
-
-							ST st = section.getTitle();
-
-							if (st != null) {
-								System.out.println("Insert into ncr table values " + st.getText());
-							}
-
-						}
-
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					return null;
 				}
+
+			});
+
+		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
+			ConsolPackage.eINSTANCE.getContinuityOfCareDocument(),
+			new CDADocumentEventProcessor<ContinuityOfCareDocument>() {
+
+				@Override
+				public void ProcessCDADocumentEvent(ContinuityOfCareDocument cdaDocumentInstance) {
+					// Have specific ContinuityOfCareDocument processing here
+					System.out.println("Specific Processing for Consol ContinuityOfCareDocument Document");
+				}
+
+			});
+
+		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
+			ConsolPackage.eINSTANCE.getDischargeSummary(), new CDADocumentEventProcessor<DischargeSummary>() {
+
+				@Override
+				public void ProcessCDADocumentEvent(DischargeSummary cdaDocumentInstance) {
+					// Have specific ContinuityOfCareDocument processing here
+					System.out.println("Specific Processing for Consol DischargeSummary Document");
+				}
+
 			});
 
 		Timer timer = new Timer();
