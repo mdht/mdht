@@ -20,7 +20,7 @@ package org.openhealthtools.mdht.cda.documentevent.processor;
  */
 public abstract class CDADocumentEventProcessor<T> {
 
-	public abstract T ProcessCDADocumentEvent(T cdaDocumentInstance);
+	public abstract void ProcessCDADocumentEvent(T cdaDocumentInstance);
 
 	public int getPriority() {
 		return 0;
