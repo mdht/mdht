@@ -2,7 +2,7 @@
 <feature
       id="org.openhealthtools.mdht"
       label="%featureName"
-      version="1.1.0.qualifier"
+      version="1.2.0.qualifier"
       provider-name="%featureProvider">
 
    <description url="http://mdht.projects.openhealthtools.org">
