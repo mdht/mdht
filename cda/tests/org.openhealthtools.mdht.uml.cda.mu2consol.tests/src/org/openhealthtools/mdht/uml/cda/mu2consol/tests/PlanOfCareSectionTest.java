@@ -15,82 +15,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.PlanOfCareSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 public class PlanOfCareSectionTest extends CDAValidationTest {
-
-	/**
-	 * 
-	 * @generated not
-	 */
-	@Test
-	public void testValidateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
-		OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<PlanOfCareSection>(
-			"validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PlanOfCareSection target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(PlanOfCareSection target) {
-				target.addObservation(ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init());
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PlanOfCareSectionOperations.validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
-					(PlanOfCareSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated not
-	 */
-	@Test
-	public void testValidateMu2consolPlanOfCareSectionPlanOfCareActivityObservation() {
-		OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase = new OperationsTestCase<PlanOfCareSection>(
-			"validateMu2consolPlanOfCareSectionPlanOfCareActivityObservation",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PlanOfCareSection target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(PlanOfCareSection target) {
-
-				target.addObservation(ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init());
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PlanOfCareSectionOperations.validateMu2consolPlanOfCareSectionPlanOfCareActivityObservation(
-					(PlanOfCareSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolPlanOfCareSectionPlanOfCareActivityObservationTestCase.doValidationTest();
-	}
 
 	/**
 	 * 
