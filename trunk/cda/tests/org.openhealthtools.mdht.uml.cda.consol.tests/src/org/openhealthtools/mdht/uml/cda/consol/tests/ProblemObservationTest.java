@@ -215,12 +215,14 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProblemObservation target) {
+				target.init();
+				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
 
+				target.setEffectiveTime(ef);
 			}
 
 			@Override
 			protected void updateToPass(ProblemObservation target) {
-				target.init();
 				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
 				ef.setLow(DatatypesFactory.eINSTANCE.createIVXB_TS());
 				target.setEffectiveTime(ef);
@@ -252,12 +254,15 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProblemObservation target) {
+				target.init();
+				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
 
+				target.setEffectiveTime(ef);
 			}
 
 			@Override
 			protected void updateToPass(ProblemObservation target) {
-				target.init();
+
 				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
 				ef.setHigh(DatatypesFactory.eINSTANCE.createIVXB_TS());
 				target.setEffectiveTime(ef);
