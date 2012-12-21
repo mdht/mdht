@@ -18,6 +18,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionMedicationsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
@@ -45,6 +46,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryPostprocedureDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Postprocedure Diagnosis Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Discharge Instructions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Discharge Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Admission Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Discharge Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#validateTransitionOfCareInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Inpatient Summary Hospital Admission Medications Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeInstructionsSection() <em>Get Hospital Discharge Instructions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalDischargeMedicationsSection() <em>Get Hospital Discharge Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareInpatientSummary#getHospitalAdmissionDiagnosisSection() <em>Get Hospital Admission Diagnosis Section</em>}</li>
@@ -323,6 +327,129 @@ public class TransitionOfCareInpatientSummaryTest extends CDAValidationTest {
 		};
 
 		validateTransitionOfCareInpatientSummaryHospitalDischargeMedicationsSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisSection() {
+		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisSectionTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
+			"validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisSection",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TransitionOfCareInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TransitionOfCareInpatientSummary target) {
+				target.init();
+
+				/* HospitalAdmissionDiagnosisSection */
+				HospitalAdmissionDiagnosisSection section =
+
+				ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisSection(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTransitionOfCareInpatientSummaryHospitalAdmissionDiagnosisSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosisSection() {
+		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosisSectionTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
+			"validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosisSection",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_DISCHARGE_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TransitionOfCareInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TransitionOfCareInpatientSummary target) {
+				target.init();
+
+				/* HospitalDischargeDiagnosisSection */
+				HospitalDischargeDiagnosisSection section =
+
+				ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosisSection(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTransitionOfCareInpatientSummaryHospitalDischargeDiagnosisSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateTransitionOfCareInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional() {
+		OperationsTestCase<TransitionOfCareInpatientSummary> validateTransitionOfCareInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<TransitionOfCareInpatientSummary>(
+			"validateTransitionOfCareInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TransitionOfCareInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TransitionOfCareInpatientSummary target) {
+				target.init();
+
+				/* HospitalAdmissionMedicationsSectionEntriesOptional */
+				HospitalAdmissionMedicationsSectionEntriesOptional section =
+
+				ConsolFactory.eINSTANCE.createHospitalAdmissionMedicationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransitionOfCareInpatientSummaryOperations.validateTransitionOfCareInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional(
+					(TransitionOfCareInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTransitionOfCareInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
