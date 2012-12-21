@@ -25,6 +25,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionMedicationsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis;
@@ -52,7 +53,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryPreoperativeDiagnosisEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Preoperative Diagnosis Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Discharge Instructions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Admission Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryChiefComplaintSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Chief Complaint Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryReasonForVisitSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Reason For Visit Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryChiefComplaintAndReasonForVisitSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Chief Complaint And Reason For Visit Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalDischargeMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Discharge Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryPreoperativeDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Preoperative Diagnosis Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#validateVDTInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Inpatient Summary Hospital Admission Medications Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalDischargeInstructionsSection() <em>Get Hospital Discharge Instructions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getHospitalAdmissionDiagnosisSection() <em>Get Hospital Admission Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTInpatientSummary#getChiefComplaintSection() <em>Get Chief Complaint Section</em>}</li>
@@ -344,6 +350,129 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateVDTInpatientSummaryChiefComplaintSection() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryChiefComplaintSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
+			"validateVDTInpatientSummaryChiefComplaintSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				target.init();
+
+				/* ChiefComplaintSection */
+				ChiefComplaintSection section =
+
+				ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryChiefComplaintSection(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryChiefComplaintSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateVDTInpatientSummaryReasonForVisitSection() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryReasonForVisitSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
+			"validateVDTInpatientSummaryReasonForVisitSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				target.init();
+
+				/* ReasonForVisitSection */
+				ReasonForVisitSection section =
+
+				ConsolFactory.eINSTANCE.createReasonForVisitSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryReasonForVisitSection(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryReasonForVisitSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateVDTInpatientSummaryChiefComplaintAndReasonForVisitSection() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
+			"validateVDTInpatientSummaryChiefComplaintAndReasonForVisitSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				target.init();
+
+				/* ChiefComplaintAndReasonForVisitSection */
+				ChiefComplaintAndReasonForVisitSection section =
+
+				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryChiefComplaintAndReasonForVisitSection(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryChiefComplaintAndReasonForVisitSectionTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated NOT
 	 */
@@ -382,6 +511,88 @@ public class VDTInpatientSummaryTest extends CDAValidationTest {
 		};
 
 		validateVDTInpatientSummaryHospitalDischargeMedicationsSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateVDTInpatientSummaryPreoperativeDiagnosisSection() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryPreoperativeDiagnosisSectionTestCase = new OperationsTestCase<VDTInpatientSummary>(
+			"validateVDTInpatientSummaryPreoperativeDiagnosisSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_PREOPERATIVE_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				target.init();
+
+				/* PreoperativeDiagnosisSection */
+				PreoperativeDiagnosisSection section =
+
+				ConsolFactory.eINSTANCE.createPreoperativeDiagnosisSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryPreoperativeDiagnosisSection(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryPreoperativeDiagnosisSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateVDTInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional() {
+		OperationsTestCase<VDTInpatientSummary> validateVDTInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<VDTInpatientSummary>(
+			"validateVDTInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_INPATIENT_SUMMARY_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTInpatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTInpatientSummary target) {
+				target.init();
+
+				/* HospitalAdmissionMedicationsSectionEntriesOptional */
+				HospitalAdmissionMedicationsSectionEntriesOptional section =
+
+				ConsolFactory.eINSTANCE.createHospitalAdmissionMedicationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTInpatientSummaryOperations.validateVDTInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptional(
+					(VDTInpatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTInpatientSummaryHospitalAdmissionMedicationsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
