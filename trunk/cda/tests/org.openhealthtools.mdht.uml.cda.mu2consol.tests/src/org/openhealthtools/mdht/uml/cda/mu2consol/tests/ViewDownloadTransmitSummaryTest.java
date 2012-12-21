@@ -25,12 +25,10 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
-import org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ViewDownloadTransmitSummaryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -50,10 +48,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAssessmentAndPlanSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Assessment And Plan Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarySocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Social History Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Assessment And Plan Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Plan Of Care Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarySocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Social History Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Mu2consol Social History Section Smoking Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#retrievePreoperativeDiagnosisSection() <em>Retrieve Preoperative Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAllergiesSection() <em>Get Allergies Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getMedicationsSection() <em>Get Medications Section</em>}</li>
@@ -475,166 +469,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 		};
 
 		validateViewDownloadTransmitSummarySocialHistorySectionTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateId() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateIdTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
-				for (II ii : aSection.getTemplateIds()) {
-					ii.setRoot(BAD_TEMPLATE_ID);
-				}
-				target.addSection(aSection);
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
-				II iiTemp = aSection.getTemplateIds().get(0);
-
-				for (II ii : target.getAssessmentAndPlanSection().getTemplateIds()) {
-					ii.setRoot(iiTemp.getRoot());
-				}
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateId(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTemplateIdTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-				target.addSection(pSection);
-				for (II ii : pSection.getTemplateIds()) {
-					ii.setRoot(BAD_TEMPLATE_ID);
-				}
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				PlanOfCareSection pSection = Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-				II iiTemp = pSection.getTemplateIds().get(0);
-				for (II ii : target.getPlanOfCareSection().getTemplateIds()) {
-					ii.setRoot(iiTemp.getRoot());
-				}
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateId(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryPlanOfCareSectionTemplateIdTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateViewDownloadTransmitSummarySocialHistorySectionTemplateId() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummarySocialHistorySectionTemplateIdTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummarySocialHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE.createSocialHistorySection().init();
-				target.addSection(sSection);
-				for (II ii : sSection.getTemplateIds()) {
-					ii.setRoot(BAD_TEMPLATE_ID);
-				}
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE.createSocialHistorySection().init();
-				II iiTemp = sSection.getTemplateIds().get(0);
-
-				for (II ii : target.getSocialHistorySection().getTemplateIds()) {
-					ii.setRoot(iiTemp.getRoot());
-				}
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummarySocialHistorySectionTemplateId(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummarySocialHistorySectionTemplateIdTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservation",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARYMU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-				SocialHistorySection sSection = Mu2consolFactory.eINSTANCE.createSocialHistorySection().init();
-				target.addSection(sSection);
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				SmokingStatusObservation sObs = Mu2consolFactory.eINSTANCE.createSmokingStatusObservation().init();
-				target.getSocialHistorySection().addObservation(sObs);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryMu2consolSocialHistorySectionSmokingStatusObservation(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummarymu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
 	}
 
 	/**
