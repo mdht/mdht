@@ -52,6 +52,8 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
@@ -80,11 +82,19 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 	 */
 	@Override
 	public Object getImage(Object object) {
-		ComposedImage composedImage = (ComposedImage) super.getImage(object);
-		if (ModelFilterUtil.isHidden((Property) object)) {
-			composedImage.getImages().add(UMLExtEditPlugin.INSTANCE.getImage("full/ovr16/filtered"));
+		Property property = (Property) object;
+
+		Object elementImage = NotationUtil.getElementImage(property);
+
+		if (elementImage == null) {
+			ComposedImage composedImage = (ComposedImage) super.getImage(property);
+			if (ModelFilterUtil.isHidden(property)) {
+				composedImage.getImages().add(UMLExtEditPlugin.INSTANCE.getImage("full/ovr16/filtered"));
+			}
+			elementImage = composedImage;
 		}
-		return composedImage;
+
+		return elementImage;
 	}
 
 	protected String getName(NamedElement namedElement) {
@@ -216,11 +226,22 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 				return getImage(property);
 			case IUMLTableProperties.TYPE_INDEX:
 				if (type != null) {
-					IItemLabelProvider provider = (IItemLabelProvider) getAdapterFactory().adapt(
-						type, IItemLabelProvider.class);
-					if (provider != null) {
-						return provider.getImage(type);
+					Object image = null;
+
+					// must pass property (rather than type) so that correct notation provider is selected
+					INotationProvider notationProvider = NotationRegistry.INSTANCE.getNotationProvider(property);
+					if (notationProvider != null) {
+						image = notationProvider.getElementImage(type);
 					}
+
+					if (image == null) {
+						IItemLabelProvider provider = (IItemLabelProvider) getAdapterFactory().adapt(
+							type, IItemLabelProvider.class);
+						if (provider != null) {
+							image = provider.getImage(type);
+						}
+					}
+					return image;
 				}
 			case IUMLTableProperties.ANNOTATION_INDEX: {
 				return NotationUtil.getAnnotationImage(property);
