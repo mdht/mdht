@@ -54,6 +54,45 @@ public class AddUMLClassAction extends UML2AbstractAction {
 	}
 
 	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Default is to open dialog containing all available classes.
+	 * 
+	 * @param new class
+	 */
+	protected Class selectSuperClass(Class newClass) {
+		Class superClass = (Class) DialogLaunchUtil.chooseElement(
+			new GeneralizationTypeFilter(newClass), UMLUtil.getTopPackage(newClass), activePart.getSite().getShell(),
+			"Class Selection", "Select base class (Cancel for none):");
+
+		return superClass;
+	}
+
+	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Default is to open subclass redefinition dialog.
+	 * 
+	 * @param new class
+	 */
+	protected void addProperties(Class newClass, Class superClass) {
+		if (superClass != null) {
+			// prompt for selection of redefined properties
+			// TODO customize dialog title and prompt
+			SubclassHandler subclassHandler = new SubclassHandler(activePart.getSite().getShell(), newClass);
+			subclassHandler.openSubclassDialog();
+		}
+	}
+
+	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Do nothing by default.
+	 * 
+	 * @param new class
+	 */
+	protected void postProcess(Class newClass) {
+		// do nothing by default
+	}
+
+	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
@@ -85,21 +124,14 @@ public class AddUMLClassAction extends UML2AbstractAction {
 							((Class) element).getNestedClassifiers().add(newClass);
 						}
 
-						// prompt for base class and create generalization
-						Class baseClass = (Class) DialogLaunchUtil.chooseElement(
-							new GeneralizationTypeFilter(newClass), UMLUtil.getTopPackage(newClass),
-							activePart.getSite().getShell(), "Class Selection", "Select base class (Cancel for none):");
-
-						if (baseClass != null) {
-							// create new generalization
-							newClass.createGeneralization(baseClass);
-
-							// prompt for selection of redefined properties
-							// TODO customize dialog title and prompt
-							SubclassHandler subclassHandler = new SubclassHandler(
-								activePart.getSite().getShell(), newClass);
-							subclassHandler.openSubclassDialog();
+						Class superClass = selectSuperClass(newClass);
+						if (superClass != null) {
+							newClass.createGeneralization(superClass);
 						}
+
+						addProperties(newClass, superClass);
+
+						postProcess(newClass);
 
 						// TODO this does not select in CommonNavigator. maybe need a refresh first?
 						if (activePart instanceof ISetSelectionTarget) {
