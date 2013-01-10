@@ -43,7 +43,11 @@ public class NotationUtil {
 	}
 
 	public static Object getElementImage(Element element) {
-		// TODO get from UML adapter provider
+		INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+		if (provider != null) {
+			return provider.getElementImage(element);
+		}
+
 		return null;
 	}
 

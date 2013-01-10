@@ -71,7 +71,12 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return super.getImage(object);
+		Object elementImage = NotationUtil.getElementImage((Class) object);
+		if (elementImage == null) {
+			elementImage = super.getImage(object);
+		}
+
+		return elementImage;
 	}
 
 	protected String getName(NamedElement namedElement) {
@@ -246,9 +251,13 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 
 	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
+		Class classifier = (Class) object;
+
 		switch (columnIndex) {
 			case IUMLTableProperties.NAME_INDEX:
 				return getImage(object);
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotationImage(classifier);
 			default:
 				return null;
 		}

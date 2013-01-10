@@ -57,6 +57,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
 import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -82,12 +84,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 
 	@Override
 	public Object getImage(Object object) {
-		Property navigableEnd = null;
-		for (Property memberEnd : ((Association) object).getMemberEnds()) {
-			if (memberEnd.isNavigable()) {
-				navigableEnd = memberEnd;
-			}
-		}
+		Property navigableEnd = UMLUtil.getNavigableEnd((Association) object);
 
 		ComposedImage composedImage = (ComposedImage) super.getImage(object);
 		if (navigableEnd != null) {
@@ -231,11 +228,22 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 				return getImage(object);
 			case IUMLTableProperties.TYPE_INDEX:
 				if (endType != null) {
-					IItemLabelProvider provider = (IItemLabelProvider) getAdapterFactory().adapt(
-						endType, IItemLabelProvider.class);
-					if (provider != null) {
-						return provider.getImage(endType);
+					Object image = null;
+
+					// must pass property (rather than type) so that correct notation provider is selected
+					INotationProvider notationProvider = NotationRegistry.INSTANCE.getNotationProvider(navigableEnd);
+					if (notationProvider != null) {
+						image = notationProvider.getElementImage(endType);
 					}
+
+					if (image == null) {
+						IItemLabelProvider provider = (IItemLabelProvider) getAdapterFactory().adapt(
+							endType, IItemLabelProvider.class);
+						if (provider != null) {
+							image = provider.getImage(endType);
+						}
+					}
+					return image;
 				}
 			case IUMLTableProperties.ANNOTATION_INDEX:
 				return NotationUtil.getAnnotationImage(association);
