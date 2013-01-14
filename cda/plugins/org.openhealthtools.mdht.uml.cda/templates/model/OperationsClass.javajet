@@ -181,7 +181,7 @@ if (!genOperation.hasBody()) {%>
       	if (isQueryConstraint) {
        		oclInv = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_QRY";
        	}%>
-		<%if (!isQueryConstraint) {%>if (<%=oclInv%> == null) {<%}%>
+		if (<%=oclInv%> == null) {
 			<%=genModel.getImportedName("org.eclipse.ocl.ecore.OCL")%>.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(<%=opClass.getQualifiedClassifierAccessor()%>);
 			try
@@ -194,7 +194,8 @@ if (!genOperation.hasBody()) {%>
 			{
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
-		<%if (!isQueryConstraint) {%>}<%}%><%if (isQueryConstraint) {%>
+		}
+        <%if (isQueryConstraint) {%>
 		Object oclResult = <%=oclInv%>.evaluate(<%=genClass.safeName(genClass.getUncapName())%>);		
 		if (oclResult != null && oclResult instanceof <%=genModel.getImportedName("java.util.Collection") %>) {
 			<%=genModel.getImportedName("java.util.Collection")%><? extends EObject> oclResultSet = (<%=genModel.getImportedName("java.util.Collection")%><? extends EObject>) oclResult;
