@@ -54,7 +54,8 @@ public class UMLActionFilter implements IActionFilter {
 
 			} else if (HAS_PROFILE.equals(name)) {
 				for (Profile profile : element.getNearestPackage().getAllAppliedProfiles()) {
-					if (profile.getDefinition().getNsURI().startsWith(value)) {
+					if (profile.getDefinition() != null && profile.getDefinition().getNsURI() != null &&
+							profile.getDefinition().getNsURI().startsWith(value)) {
 						return true;
 					}
 				}
@@ -64,5 +65,4 @@ public class UMLActionFilter implements IActionFilter {
 
 		return false;
 	}
-
 }
