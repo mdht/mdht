@@ -870,16 +870,12 @@ public class MedicationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Medication target) {
-				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(Medication target) {
-
-				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.3.26.1.1");
-				ce.setCode("aaa");
-				target.setRouteCode(ce);
+				target.init();
 
 			}
 
