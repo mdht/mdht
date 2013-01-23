@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="generatedpropertyconstraintsconcept" xml:lang="en-us">
+<title>Generated Property Constraints</title>
+<conbody>
+<p>Vocabulary constraints are those constraints that involve coded attributes.</p>
+<p>An example of a constraint generated from template model using information specified in the vocab specification stereotype. The code system and code value have been fixed in this example taken form Neonatal Care Report (NCR)</p>
+<codeblock>
+<![CDATA[
+not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (value.code = '47340003' and value.codeSystem = '2.16.840.1.113883.6.96')
+]]>
+</codeblock>
+</conbody>
+</concept>

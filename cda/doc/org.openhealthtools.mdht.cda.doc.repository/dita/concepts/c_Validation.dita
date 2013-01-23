@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="validationconcept" xml:lang="en-us">
+<title>Validation</title>
+<conbody>
+<p>Constraints specified in the form of standard UML constructs such as cardinality are automatically validated as part of the EMF framework</p>
+<p>OCL constraints specified by the modeler or generated during the model-to-model transformation are carried through to the EMF model and Java source code</p>
+
+<p>EMF validation mechanism</p>
+<p>
+<ul>
+<li>Uses OCL interpreter at run time to validate these constraints</li>
+<li>Each Ecore model gets a separate validator (e.g. datatypes, CDA, CCD, etc.)</li>
+<li>Validators work together to validate Ecore model instance</li>
+</ul>
+</p>
+
+<p>Output of validation is a diagnostic tree</p>
+<p>
+<ul>
+	<li>Validation severity and message specified in the model are used at runtime</li>
+	<li>Diagnostic tree can be processed using CDA utility class</li>
+</ul>
+</p>
+
+<codeblock><![CDATA[
+boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+	@Override
+	public void handleError(Diagnostic diagnostic) {
+		System.out.println("ERROR: " + diagnostic.getMessage());
+	}
+	@Override
+	public void handleWarning(Diagnostic diagnostic) {
+		System.out.println("WARNING: " + diagnostic.getMessage());
+	}
+	@Override
+	public void handleInfo(Diagnostic diagnostic) {
+		System.out.println("INFO: " + diagnostic.getMessage());
+	}
+});
+
+if (valid) {
+	System.out.println("Document is valid");
+} else {
+	System.out.println("Document is invalid");
+}
+]]></codeblock>
+</conbody>
+</concept>

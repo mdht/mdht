@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../dtd/task.dtd">
+	<task id="createcda" xml:lang="en-us">
+		<title>Create a new CDA Model Project</title>
+		<taskbody>
+			<context>Create a new model project supporting a CDA IG</context>
+			<steps>
+				<step>
+					<cmd>
+						Start the CDA Model project wizard.
+						<menucascade>
+							<uicontrol>File</uicontrol>
+							<uicontrol>New Project</uicontrol>
+							<uicontrol>Model Driven Health Tools</uicontrol>
+							<uicontrol>New CDA Model</uicontrol>
+						</menucascade>
+						
+					</cmd>
+					<info><image height="400" width="400"
+							href="../images/selectprojectwizard.jpg" /></info>
+				</step>
+				<step>
+					<cmd>
+						Click
+						<uicontrol>Next</uicontrol>
+						button.
+					</cmd>
+
+				</step>
+				<step>
+					<cmd>Define Implementation Guide </cmd>
+							<info><image height="400" width="400"
+							href="../images/defineimplementationguide.jpg" /></info>
+					<substeps>
+						<substep>
+							<cmd>
+								Set Implementation Guide Namespace, for example
+								<userinput>MyTestModel</userinput>
+							</cmd>
+						</substep>
+						<substep>
+							<cmd>
+								Set Document Name, for example
+								<userinput>MyTestDocument</userinput>
+							</cmd>
+						</substep>
+						<substep>
+							<cmd>
+								Select base document type, for example
+								<userinput>cda::ClinicalDocument</userinput>
+							</cmd>
+						</substep>
+						<substep>
+							<cmd>
+								Set optional Template ID for document, for example
+								<userinput>1.22.333.4.55555.66.77.8</userinput>
+							</cmd>
+						</substep>
+						<substep>
+							<cmd>
+								Set optional Assigning Authority for Template ID, for example
+								<userinput>MyOrganization</userinput>
+							</cmd>
+						</substep>
+						
+					</substeps>
+					<info><p><i>MDHT automatically pre-populates the Document Base Package and generates a Namespace
+						URI based on it. You are able to customize the base package naming and the
+						URI will be update accordingly.</i></p>
+					<p><i>You can also customize the prefix use for the Java API.  The prefix is used in the java generation process and defines the pattern of the EMF Factory and Package names.</i></p>
+					</info>
+				</step>
+				<step>
+					<cmd>
+						Click
+						<uicontrol>Finish</uicontrol>
+						button.
+					</cmd>
+					<stepresult><p>This will start the model creation process and will
+						create three projects, model, doc, and java.</p>
+						<p> <image height="400" width="500"
+							href="../images/wizardresult.jpg" /></p></stepresult>					
+				</step>
+			</steps>
+			<result><p>After succesful completion, you will have three new projects in your workspace,
+					<i><b>org.openhealthtools.mdht.uml.mytestmodel.model</b></i> project which
+			contains the uml model of the implementation guide,
+					<i><b>org.openhealthtools.mdht.uml.mytestmodel.doc</b></i> project which is used
+			for publication, and <i><b>org.openhealthtools.mdht.uml.mytestmodel </b></i>project
+				which contains the java implementation.</p>
+			<p>MDHT provides an automated build feature which will update your java and documentaion projects based on changes to the UML model.  To manual trigger the build process you can execute a clean build by <menucascade>
+				<uicontrol>Project</uicontrol>
+				<uicontrol>Clean</uicontrol>
+			</menucascade> then select either or both of the java and documentation projects.  You can also run the build process manually, see Manually Generate Java and Manualy Generate DITA. 
+				
+			</p>
+			</result>
+		</taskbody>
+	</task>
