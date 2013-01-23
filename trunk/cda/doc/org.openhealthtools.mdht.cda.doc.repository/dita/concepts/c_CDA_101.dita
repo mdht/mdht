@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_u2w_cj3_z3">
+<concept id="cdatemplateconcept" xml:lang="en-us">
  <title> CDA 101</title>
  <shortdesc>Clinical Documentation Architecture (CDA) supplies a framework for specifying the full
   semantics of a clinical document. CDA defines a clinical document as having the following six

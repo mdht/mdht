@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_hlq_xj3_z3">
+<concept id="cdatemplateconcept" xml:lang="en-us">
  <title>UML 101</title>
  <shortdesc>Unified Modeling Language (UML) is a standardized general-purpose language. Object
   Management Group created and manages the standard.</shortdesc>
