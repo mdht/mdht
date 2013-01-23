@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="cdagettingstartedbook">
+	<booktitle>
+		<booklibrary>Model Driven Health Tools Documentation</booklibrary>
+		<mainbooktitle>Getting Started Guide for CDA Implementation Guide Developers</mainbooktitle>
+	</booktitle>
+	<bookmeta>
+		<prodinfo>
+			<prodname>MDHT_GETTING_STARTED_GUIDE</prodname>
+			<vrmlist>
+				<vrm version="1.2"/>
+			</vrmlist>
+		</prodinfo>
+		<bookid>
+			<booknumber/>
+			<maintainer>
+				<organization>Open Health Tools, Model Driven Health Tools (MDHT)</organization>
+				<person/>
+			</maintainer>
+		</bookid>
+		<bookrights>
+			<copyrfirst>
+				<year>2013</year>
+			</copyrfirst>
+			<copyrlast>
+				<year>2013</year>
+			</copyrlast>
+			<bookowner>
+				<organization/>
+			</bookowner>
+		</bookrights>
+	</bookmeta>
+	<part>
+		<topicref href="release.ditamap" format="ditamap"/>
+		<topicref href="maps/m_Getting_Started_Guide.ditamap" format="ditamap"/>
+	</part>
+</bookmap>
