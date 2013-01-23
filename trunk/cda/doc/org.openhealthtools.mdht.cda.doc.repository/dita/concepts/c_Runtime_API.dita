@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="runtimeapiconcept" xml:lang="en-us">
+<title>Runtime API</title>
+<conbody>
+<p>The Runtime API is comprised of:</p>
+<ul>
+<li>CDA, data types, and vocabulary runtime APIs with helper methods to assist in writing constraints</li>
+<li>Java classes/packages generated for template model</li>
+<li>Utility class with convenience methods to save, load, and validate documents</li>
+</ul>
+<p>Additional UML operations specified in the template model are carried through to the Java source code and can be implemented directly in the model using OCL or by specifying the method body in the generated code. This gives the modeler the ability to add convenience to the runtime API at design-time. Annotations generated from the template model are used to populate the runtime instance for default/fixed values. This reduces the number of method calls required to build a document.</p>
+<p>Path expression support (experimental) has also been added to construct parts of a document efficiently. This is mainly intended to be a transitional API for those familiar with the XML structure of a CDA document.</p>
+<codeblock><![CDATA[
+CDAUtil.create("/component/structuredBody/component/section", CCDPackage.Literals.PROBLEM_SECTION);
+]]></codeblock></conbody>
+</concept>

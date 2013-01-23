@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_E9E1FC332A184563A9CE82093D07ECB4"> 
+  <title>Create a new association</title> 
+  <shortdesc>Create a new association constraint between two template classes.
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_16025D3D24E544BEB93CBBBE166A126F"> 
+		<step id="step_F81E212B8C7C4ED6ABC73A93E24335CB"> 
+		  <cmd>Select the table row for the template class that is the
+			 source/origin end of the association.
+		  </cmd> 
+		</step> 
+		<step id="step_0C7C66786E584619BB455307493DC8F5"> 
+		  <cmd>To add a new association, right-click on the table row and select 
+			 <menucascade><uicontrol>Add
+				  UML</uicontrol><uicontrol>Association</uicontrol></menucascade> 
+		  </cmd> 
+		  <stepresult><image placement="break"
+			 id="image_168A8C88C7CE4DE183F3A5E415766E27"
+			 href="../images/TableAssociationAdd.png"></image> 
+		  </stepresult> 
+		</step> 
+		<step id="step_ED4BED3BDAC7446795E961F7B0B33CC4">
+		  <cmd>Select the association target class. Type the first few characters
+			 of the class name to filter the list. Classes are shown for all open models,
+			 which includes classes in other models such as CDA or CCD.
+		  </cmd>
+		  <stepresult><image placement="break"
+			 id="image_00018B83BB734BDBBE86EDB20B46DC67"
+			 href="../images/TableAssociationTarget.png"></image>
+		  </stepresult>
+		</step>
+		<step id="step_A6AA75A9080548AD95D63FCA9906FA9E">
+		  <cmd>Assign the target end multiplicity, if different from the default
+			 1..1
+		  </cmd>
+		  <stepresult><image placement="break"
+			 id="image_EEEBA0A6725B48858E57DB4570D0E15F"
+			 href="../images/TableAssociationTargetMultiplicity.png"></image>
+		  </stepresult>
+		</step>
+	 </steps> 
+  </taskbody>
+</task>
