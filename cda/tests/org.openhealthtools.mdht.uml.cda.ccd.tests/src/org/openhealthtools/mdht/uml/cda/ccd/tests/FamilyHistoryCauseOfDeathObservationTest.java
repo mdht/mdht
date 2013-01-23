@@ -64,14 +64,13 @@ public class FamilyHistoryCauseOfDeathObservationTest extends CDAValidationTest 
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.CAUS);
-				er.setObservation(CCDFactory.eINSTANCE.createCauseOfDeathObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistoryCauseOfDeathObservationOperations.validateFamilyHistoryCauseOfDeathObservationCauseOfDeathObservation(
+				return FamilyHistoryCauseOfDeathObservationOperations.validateFamilyHistoryCauseOfDeathObservationEntryRelationship(
 					(FamilyHistoryCauseOfDeathObservation) objectToTest, diagnostician, map);
 			}
 
@@ -86,10 +85,7 @@ public class FamilyHistoryCauseOfDeathObservationTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testGetCauseOfDeathObservations() {
-
 		FamilyHistoryCauseOfDeathObservation target = objectFactory.create();
-		target.getCauseOfDeathObservations();
-
 	}
 
 	/**
