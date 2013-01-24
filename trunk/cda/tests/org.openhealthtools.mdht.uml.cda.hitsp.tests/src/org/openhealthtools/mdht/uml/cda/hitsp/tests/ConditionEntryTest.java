@@ -19,7 +19,6 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionEntryOperations;
@@ -399,46 +398,6 @@ public class ConditionEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateConditionEntryCauseOfDeathObservation() {
-		OperationsTestCase<ConditionEntry> validateConditionEntryCauseOfDeathObservationTestCase = new OperationsTestCase<ConditionEntry>(
-			"validateConditionEntryCauseOfDeathObservation",
-			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_CAUSE_OF_DEATH_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ConditionEntry target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ConditionEntry target) {
-				target.init();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				CauseOfDeathObservation codo = CCDFactory.eINSTANCE.createCauseOfDeathObservation().init();
-				er.setObservation(codo);
-				er.setTypeCode(x_ActRelationshipEntryRelationship.CAUS);
-
-				target.getEntryRelationships().add(er);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ConditionEntryOperations.validateConditionEntryCauseOfDeathObservation(
-					(ConditionEntry) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateConditionEntryCauseOfDeathObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
 	* @generated
 	*/
 	@Test
@@ -458,18 +417,6 @@ public class ConditionEntryTest extends CDAValidationTest {
 
 		ConditionEntry target = objectFactory.create();
 		target.getHITSPProblemStatusObservation();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetCauseOfDeathObservation() {
-
-		ConditionEntry target = objectFactory.create();
-		target.getCauseOfDeathObservation();
 
 	}
 
