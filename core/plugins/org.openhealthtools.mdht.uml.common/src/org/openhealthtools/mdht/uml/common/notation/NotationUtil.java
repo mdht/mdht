@@ -23,9 +23,11 @@ public class NotationUtil {
 
 	public static String getPrintString(Element element) {
 		String text = null;
-		INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
-		if (provider != null) {
-			text = provider.getPrintString(element);
+		if (element != null) {
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+			if (provider != null) {
+				text = provider.getPrintString(element);
+			}
 		}
 
 		if (text == null) {
@@ -43,9 +45,11 @@ public class NotationUtil {
 	}
 
 	public static Object getElementImage(Element element) {
-		INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
-		if (provider != null) {
-			return provider.getElementImage(element);
+		if (element != null) {
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+			if (provider != null) {
+				return provider.getElementImage(element);
+			}
 		}
 
 		return null;
@@ -54,9 +58,11 @@ public class NotationUtil {
 	public static String getAnnotation(Element element) {
 		String annotation = null;
 
-		INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
-		if (provider != null) {
-			annotation = provider.getAnnotation(element);
+		if (element != null) {
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+			if (provider != null) {
+				annotation = provider.getAnnotation(element);
+			}
 		}
 
 		if (annotation == null) {
@@ -74,9 +80,11 @@ public class NotationUtil {
 	}
 
 	public static Object getAnnotationImage(Element element) {
-		INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
-		if (provider != null) {
-			return provider.getAnnotationImage(element);
+		if (element != null) {
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+			if (provider != null) {
+				return provider.getAnnotationImage(element);
+			}
 		}
 
 		return null;
