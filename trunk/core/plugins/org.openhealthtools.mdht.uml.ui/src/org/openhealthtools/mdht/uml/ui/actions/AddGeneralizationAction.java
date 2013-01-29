@@ -26,6 +26,7 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
@@ -41,6 +42,31 @@ public class AddGeneralizationAction extends UML2AbstractAction {
 	}
 
 	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Default is to open dialog containing all available classes.
+	 * 
+	 * @param new class
+	 */
+	protected Classifier selectGeneralClassifier(Classifier child) {
+		// prompt for parent class
+		Classifier parent = (Classifier) DialogLaunchUtil.chooseElement(
+			new GeneralizationTypeFilter(child), UMLUtil.getTopPackage(child), activePart.getSite().getShell(),
+			UML2UIMessages.GeneralizationSelectionDialog_title, UML2UIMessages.GeneralizationSelectionDialog_message);
+
+		return parent;
+	}
+
+	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Do nothing by default.
+	 * 
+	 * @param new property
+	 */
+	protected void postProcess(Generalization generalization) {
+		// do nothing by default
+	}
+
+	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
@@ -51,20 +77,18 @@ public class AddGeneralizationAction extends UML2AbstractAction {
 					editingDomain, UML2UIMessages.AddUMLGeneralization_operation_title) {
 					@Override
 					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-						if (Class.class.isInstance(element)) {
-							Class child = (Class) element;
+						if (Classifier.class.isInstance(element)) {
+							Classifier child = (Class) element;
 
 							// prompt for parent class
-							Class parent = (Class) DialogLaunchUtil.chooseElement(
-								new GeneralizationTypeFilter(child), UMLUtil.getTopPackage(child),
-								activePart.getSite().getShell(), UML2UIMessages.GeneralizationSelectionDialog_title,
-								UML2UIMessages.GeneralizationSelectionDialog_message);
-
+							Classifier parent = selectGeneralClassifier(child);
 							if (parent == null) {
 								return Status.CANCEL_STATUS;
 							}
 
 							Generalization generalization = child.createGeneralization(parent);
+
+							postProcess(generalization);
 
 							if (activePart instanceof ISetSelectionTarget) {
 								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(child));

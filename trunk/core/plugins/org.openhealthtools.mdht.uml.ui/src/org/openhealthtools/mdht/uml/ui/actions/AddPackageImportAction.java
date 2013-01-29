@@ -40,6 +40,16 @@ public class AddPackageImportAction extends UML2AbstractAction {
 	}
 
 	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Do nothing by default.
+	 * 
+	 * @param new PackageImport
+	 */
+	protected void postProcess(PackageImport newPackageImport) {
+		// do nothing by default
+	}
+
+	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
@@ -63,6 +73,8 @@ public class AddPackageImportAction extends UML2AbstractAction {
 							PackageImport packageImport = UMLFactory.eINSTANCE.createPackageImport();
 							packageImport.setImportingNamespace(umlPackage);
 							packageImport.setImportedPackage(element);
+
+							postProcess(packageImport);
 
 							if (activePart instanceof ISetSelectionTarget) {
 								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(umlPackage));

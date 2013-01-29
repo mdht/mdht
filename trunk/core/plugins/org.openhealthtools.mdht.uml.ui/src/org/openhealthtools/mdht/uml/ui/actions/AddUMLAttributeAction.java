@@ -49,6 +49,16 @@ public class AddUMLAttributeAction extends UML2AbstractAction {
 	}
 
 	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Do nothing by default.
+	 * 
+	 * @param new property
+	 */
+	protected void postProcess(Property newProperty) {
+		// do nothing by default
+	}
+
+	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
@@ -69,6 +79,11 @@ public class AddUMLAttributeAction extends UML2AbstractAction {
 								(DataType) element, UML2UIMessages.AddUMLAttribute_default_name);
 							newProperty = ((DataType) element).createOwnedAttribute(name, null);
 						}
+
+						newProperty.setLower(0);
+						newProperty.setUpper(1);
+
+						postProcess(newProperty);
 
 						if (newProperty != null && activePart instanceof ISetSelectionTarget) {
 							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(newProperty));
