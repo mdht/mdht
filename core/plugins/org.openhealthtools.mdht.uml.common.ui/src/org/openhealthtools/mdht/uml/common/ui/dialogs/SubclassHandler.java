@@ -110,7 +110,13 @@ public class SubclassHandler {
 				// add redefinition relationship
 				clonedProperty.getRedefinedProperties().clear();
 				clonedProperty.getSubsettedProperties().clear();
-				clonedProperty.getRedefinedProperties().add(property);
+
+				if (property.getUpper() == 1) {
+					clonedProperty.getRedefinedProperties().add(property);
+				} else {
+					clonedProperty.getSubsettedProperties().add(property);
+					clonedProperty.setName(getUniquePropertyName(selectedClass, property.getName()));
+				}
 
 				// add association
 				if (property.getAssociation() != null) {
@@ -125,6 +131,20 @@ public class SubclassHandler {
 				}
 			}
 		}
+	}
+
+	private String getUniquePropertyName(Class owner, String name) {
+		int seqNo = 1;
+		String uniqueName = name;
+
+		while (owner.getAttribute(uniqueName, null) != null) {
+			uniqueName = name + String.valueOf(seqNo++);
+		}
+		while (owner.getInheritedMember(uniqueName) != null) {
+			uniqueName = name + String.valueOf(seqNo++);
+		}
+
+		return uniqueName;
 	}
 
 	private List<Property> cleanUpSelection(List<Property> newSelectionList) {

@@ -16,6 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.CommonPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +35,6 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.common.edit.command.ChangeCommand;
 import org.eclipse.uml2.common.edit.provider.IItemQualifiedTextProvider;
-import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.ui.util.AdapterFactoryManager;
 import org.openhealthtools.mdht.uml.common.ui.util.EditingDomainUtil;
 
@@ -52,8 +52,8 @@ public class UMLCommandAction extends CommandAction implements IObjectActionDele
 		ISelection unwrappedSelection = null;
 
 		if (selection instanceof IStructuredSelection) {
-			List unwrapped = new ArrayList();
-			for (Iterator elements = ((IStructuredSelection) selection).iterator(); elements.hasNext();) {
+			List<EObject> unwrapped = new ArrayList<EObject>();
+			for (Iterator<?> elements = ((IStructuredSelection) selection).iterator(); elements.hasNext();) {
 
 				Object element = elements.next();
 				EObject eObject = null;
@@ -88,16 +88,11 @@ public class UMLCommandAction extends CommandAction implements IObjectActionDele
 		super.selectionChanged(action, unwrappedSelection);
 	}
 
-	protected class TextComparator implements Comparator {
+	protected class TextComparator<T> implements Comparator<T> {
 
-		public int compare(Object o1, Object o2) {
-			if (getLabelProvider() != null) {
-				return getLabelProvider().getText(o1).compareTo(getLabelProvider().getText(o2));
-			} else if (o1 instanceof NamedElement && o2 instanceof NamedElement) {
-				return ((NamedElement) o1).getQualifiedName().compareTo(((NamedElement) o2).getQualifiedName());
-			} else {
-				return 0;
-			}
+		public int compare(T t1, T t2) {
+			return CommonPlugin.INSTANCE.getComparator().compare(
+				getLabelProvider().getText(t1), getLabelProvider().getText(t2));
 		}
 	}
 

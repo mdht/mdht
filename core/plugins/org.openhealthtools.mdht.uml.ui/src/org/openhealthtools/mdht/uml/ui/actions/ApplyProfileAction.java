@@ -13,12 +13,12 @@ package org.openhealthtools.mdht.uml.ui.actions;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.command.UnexecutableCommand;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -26,11 +26,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.window.Window;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.resource.UMLResource;
+import org.eclipse.uml2.uml.UMLPlugin;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
@@ -41,7 +40,7 @@ public class ApplyProfileAction extends UMLCommandAction {
 	}
 
 	@Override
-	protected Command createActionCommand(EditingDomain editingDomain, Collection collection) {
+	protected Command createActionCommand(EditingDomain editingDomain, Collection<?> collection) {
 
 		if (collection.size() == 1 && collection.iterator().next() instanceof org.eclipse.uml2.uml.Package) {
 
@@ -57,25 +56,25 @@ public class ApplyProfileAction extends UMLCommandAction {
 		if (command != UnexecutableCommand.INSTANCE) {
 			final org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) collection.iterator().next();
 
-			final List choiceOfValues = new ArrayList();
+			final List<Profile> choiceOfValues = new ArrayList<Profile>();
 
 			ResourceSet resourceSet = package_.eResource().getResourceSet();
 
-			try {
-				resourceSet.getResource(URI.createURI(UMLResource.STANDARD_PROFILE_URI), true);
+			for (URI profileURI : UMLPlugin.getEPackageNsURIToProfileLocationMap().values()) {
 
-				resourceSet.getResource(URI.createURI(UMLResource.ECORE_PROFILE_URI), true);
-			} catch (Exception e) {
-				// ignore
+				try {
+					resourceSet.getResource(profileURI.trimFragment(), true);
+				} catch (Exception e) {
+					// ignore
+				}
 			}
 
-			for (Iterator resources = resourceSet.getResources().iterator(); resources.hasNext();) {
-
-				Iterator allContents = ((Resource) resources.next()).getAllContents();
+			for (Resource resource : resourceSet.getResources()) {
+				TreeIterator<EObject> allContents = resource.getAllContents();
 
 				while (allContents.hasNext()) {
 
-					new UMLSwitch() {
+					new UMLSwitch<Object>() {
 
 						@Override
 						public Object caseProfile(Profile profile) {
@@ -92,27 +91,26 @@ public class ApplyProfileAction extends UMLCommandAction {
 
 							return profile;
 						}
-					}.doSwitch((EObject) allContents.next());
+					}.doSwitch(allContents.next());
 				}
 			}
 
-			Collections.sort(choiceOfValues, new TextComparator());
+			Collections.<Profile> sort(choiceOfValues, new TextComparator<Profile>());
 
 			String label = UML2UIMessages._UI_ApplyProfileActionCommand_label;
 
 			final FeatureEditorDialog dialog = new FeatureEditorDialog(
 				workbenchPart.getSite().getShell(), getLabelProvider(), package_, UMLPackage.Literals.PROFILE,
-				Collections.EMPTY_LIST, label, choiceOfValues);
+				Collections.EMPTY_LIST, label, choiceOfValues, false, false, true);
 			dialog.open();
 
-			if (dialog.getReturnCode() == Window.OK) {
+			if (dialog.getReturnCode() == FeatureEditorDialog.OK) {
 				editingDomain.getCommandStack().execute(new RefreshingChangeCommand(editingDomain, new Runnable() {
 
 					public void run() {
 
-						for (Iterator profiles = dialog.getResult().iterator(); profiles.hasNext();) {
-
-							package_.applyProfile((Profile) profiles.next());
+						for (Object result : dialog.getResult()) {
+							package_.applyProfile((Profile) result);
 						}
 					}
 				}, label));

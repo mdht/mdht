@@ -34,6 +34,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
@@ -50,6 +51,58 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 	}
 
 	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Default is to open dialog containing all available classes.
+	 * 
+	 * @param new class
+	 */
+	protected Type selectTargetType(Class source) {
+		Package topPackage = UMLUtil.getTopPackage(source);
+		NamedElement target = null;
+
+		// prompt for target class
+		if (topPackage instanceof Profile) {
+			if (source instanceof Stereotype) {
+				target = DialogLaunchUtil.chooseElement(
+					new StereotypePropertyTypeFilter(), topPackage, activePart.getSite().getShell(),
+					UML2UIMessages.TargetSelectionDialog_title, UML2UIMessages.TargetSelectionDialog_message);
+			} else {
+				target = DialogLaunchUtil.chooseElement(
+					new PropertyTypeFilter(), topPackage, activePart.getSite().getShell(),
+					UML2UIMessages.TargetSelectionDialog_title, UML2UIMessages.TargetSelectionDialog_message);
+			}
+		} else {
+			// TODO refine selection for redefined properties to include only subtypes.
+			target = DialogLaunchUtil.chooseElement(
+				new PropertyTypeFilter(), topPackage, activePart.getSite().getShell());
+		}
+
+		return target instanceof Type
+				? (Type) target
+				: null;
+	}
+
+	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Do nothing by default.
+	 * 
+	 * @param new property
+	 */
+	protected void postProcess(Property newProperty) {
+		// do nothing by default
+	}
+
+	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Do nothing by default.
+	 * 
+	 * @param new property
+	 */
+	protected void postProcess(Association newAssociation) {
+		// do nothing by default
+	}
+
+	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
@@ -63,32 +116,7 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 						if (Class.class.isInstance(element)) {
 							Class source = (Class) element;
 
-							Package topPackage = UMLUtil.getTopPackage(source);
-							NamedElement type = null;
-							Class target = null;
-
-							// prompt for target class
-							if (topPackage instanceof Profile) {
-								if (source instanceof Stereotype) {
-									type = DialogLaunchUtil.chooseElement(
-										new StereotypePropertyTypeFilter(), topPackage,
-										activePart.getSite().getShell(), UML2UIMessages.TargetSelectionDialog_title,
-										UML2UIMessages.TargetSelectionDialog_message);
-								} else {
-									type = DialogLaunchUtil.chooseElement(
-										new PropertyTypeFilter(), topPackage, activePart.getSite().getShell(),
-										UML2UIMessages.TargetSelectionDialog_title,
-										UML2UIMessages.TargetSelectionDialog_message);
-								}
-							} else {
-								// TODO refine selection for redefined properties to include only subtypes.
-								type = DialogLaunchUtil.chooseElement(
-									new PropertyTypeFilter(), topPackage, activePart.getSite().getShell());
-							}
-
-							if (type instanceof Class) {
-								target = (Class) type;
-							}
+							Type target = selectTargetType(source);
 							if (target == null) {
 								return Status.CANCEL_STATUS;
 							}
@@ -102,6 +130,7 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 							source.getOwnedAttributes().add(property);
 							property.setType(target);
 							property.setLower(0);
+							property.setUpper(-1);
 							property.setAggregation(AggregationKind.NONE_LITERAL);
 
 							Association association = (Association) source.getNearestPackage().createOwnedType(
@@ -115,6 +144,9 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 							if (source.eResource() != source.getNearestPackage().eResource()) {
 								source.eResource().getContents().add(association);
 							}
+
+							postProcess(property);
+							postProcess(association);
 
 							if (activePart instanceof ISetSelectionTarget) {
 								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(source));

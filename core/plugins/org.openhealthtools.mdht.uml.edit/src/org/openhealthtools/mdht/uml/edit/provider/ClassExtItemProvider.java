@@ -122,8 +122,24 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 				children.add(property.getAssociation());
 			}
 		}
+		// include associations that own both ends
+		for (Association association : clazz.getAssociations()) {
+			// do not include nested associations already included via their properties
+			// only include associations that own both ends
+			if (!children.contains(association) && association.getOwnedEnds().size() == 2) {
+				children.add(association);
+			}
+		}
+
 		children.addAll(clazz.getOwnedOperations());
-		children.addAll(clazz.getNestedClassifiers());
+
+		for (Classifier classifier : clazz.getNestedClassifiers()) {
+			// do not include nested associations already included via their properties
+			if (!children.contains(classifier)) {
+				children.add(classifier);
+			}
+		}
+
 		children.addAll(clazz.getOwnedRules());
 		children.addAll(clazz.getClientDependencies());
 		children.addAll(clazz.getGeneralizations());

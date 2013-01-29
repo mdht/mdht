@@ -196,6 +196,15 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 			for (Object next : endType.getGeneralizations()) {
 				children.add(wrap(endType, navigableEndRef, next, Notification.NO_INDEX));
 			}
+		} else {
+			// if not navigable, include all owned properties as children
+			for (Property ownedEnd : association.getOwnedEnds()) {
+				children.add(ownedEnd);
+
+				// should these be wrapped? how?
+				// children.add(wrap(
+				// association, UMLPackage.Literals.ASSOCIATION__OWNED_END, ownedEnd, Notification.NO_INDEX));
+			}
 		}
 
 		// these are proper contents of the association. No wrapping!

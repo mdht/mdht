@@ -597,6 +597,10 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 	@Override
 	public void refresh() {
+		if (property == null) {
+			return;
+		}
+
 		if (property.getType() != null && property.getType().getName() != null) {
 			typeName.setText(property.getType().getQualifiedName());
 		} else {
