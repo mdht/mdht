@@ -17,12 +17,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
-import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
-import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
-import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection;
@@ -38,25 +34,18 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryCarePlanFields(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Care Plan Fields</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryCarePlanning(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Care Planning</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryVitalSigns(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Vital Signs</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Allergies Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Problem Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Procedures Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Vital Signs Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Results Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryAssessmentAndPlanSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Assessment And Plan Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummaryPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#validateViewDownloadTransmitSummarySocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate View Download Transmit Summary Social History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#retrievePreoperativeDiagnosisSection() <em>Retrieve Preoperative Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAllergiesSection() <em>Get Allergies Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getMedicationsSection() <em>Get Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getProblemSection() <em>Get Problem Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getProceduresSection() <em>Get Procedures Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getVitalSignsSection() <em>Get Vital Signs Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getResultsSection() <em>Get Results Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getAssessmentAndPlanSection() <em>Get Assessment And Plan Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ViewDownloadTransmitSummary#getSocialHistorySection() <em>Get Social History Section</em>}</li>
  * </ul>
  * </p>
@@ -67,14 +56,14 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated not
+	*/
 	@Test
-	public void testValidateViewDownloadTransmitSummaryCarePlanFields() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryCarePlanFieldsTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummaryCarePlanFields",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_CARE_PLAN_FIELDS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateViewDownloadTransmitSummaryCarePlanning() {
+		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryCarePlanningTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
+			"validateViewDownloadTransmitSummaryCarePlanning",
+			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_CARE_PLANNING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -83,23 +72,91 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-				AssessmentAndPlanSection aSection = Mu2consolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
-				target.addSection(aSection);
+			public void addPassTests() {
 
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ViewDownloadTransmitSummary target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createPlanOfCareSection().init());
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ViewDownloadTransmitSummary target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init());
+					}
+
+				});
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryCarePlanFields(
+				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryCarePlanning(
 					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateViewDownloadTransmitSummaryCarePlanFieldsTestCase.doValidationTest();
+		validateViewDownloadTransmitSummaryCarePlanningTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateViewDownloadTransmitSummaryVitalSigns() {
+		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryVitalSignsTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
+			"validateViewDownloadTransmitSummaryVitalSigns",
+			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ViewDownloadTransmitSummary target) {
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ViewDownloadTransmitSummary target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createVitalSignsSection().init());
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ViewDownloadTransmitSummary target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init());
+					}
+
+				});
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryVitalSigns(
+					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateViewDownloadTransmitSummaryVitalSignsTestCase.doValidationTest();
 	}
 
 	/**
@@ -141,47 +198,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 		};
 
 		validateViewDownloadTransmitSummaryAllergiesSectionTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateViewDownloadTransmitSummaryMedicationsSection() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryMedicationsSectionTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummaryMedicationsSection",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
-				/* MedicationsSection */
-				MedicationsSection section =
-
-				ConsolFactory.eINSTANCE.createMedicationsSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryMedicationsSection(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryMedicationsSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -271,47 +287,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateViewDownloadTransmitSummaryVitalSignsSection() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryVitalSignsSectionTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummaryVitalSignsSection",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
-				/* VitalSignsSection */
-				VitalSignsSection section =
-
-				ConsolFactory.eINSTANCE.createVitalSignsSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryVitalSignsSection(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryVitalSignsSectionTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
 	public void testValidateViewDownloadTransmitSummaryResultsSection() {
 		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryResultsSectionTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
 			"validateViewDownloadTransmitSummaryResultsSection",
@@ -346,88 +321,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 		};
 
 		validateViewDownloadTransmitSummaryResultsSectionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateViewDownloadTransmitSummaryAssessmentAndPlanSection() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummaryAssessmentAndPlanSection",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
-				/* AssessmentAndPlanSection */
-				AssessmentAndPlanSection section =
-
-				Mu2consolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryAssessmentAndPlanSection(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryAssessmentAndPlanSectionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateViewDownloadTransmitSummaryPlanOfCareSection() {
-		OperationsTestCase<ViewDownloadTransmitSummary> validateViewDownloadTransmitSummaryPlanOfCareSectionTestCase = new OperationsTestCase<ViewDownloadTransmitSummary>(
-			"validateViewDownloadTransmitSummaryPlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_VIEW_DOWNLOAD_TRANSMIT_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ViewDownloadTransmitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ViewDownloadTransmitSummary target) {
-				target.init();
-
-				/* PlanOfCareSection */
-				PlanOfCareSection section =
-
-				Mu2consolFactory.eINSTANCE.createPlanOfCareSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ViewDownloadTransmitSummaryOperations.validateViewDownloadTransmitSummaryPlanOfCareSection(
-					(ViewDownloadTransmitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateViewDownloadTransmitSummaryPlanOfCareSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -488,18 +381,6 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetMedicationsSection() {
-
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getMedicationsSection();
-
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
 	public void testGetProblemSection() {
 
 		ViewDownloadTransmitSummary target = objectFactory.create();
@@ -524,46 +405,10 @@ public class ViewDownloadTransmitSummaryTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testGetVitalSignsSection() {
-
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getVitalSignsSection();
-
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
 	public void testGetResultsSection() {
 
 		ViewDownloadTransmitSummary target = objectFactory.create();
 		target.getResultsSection();
-
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testGetAssessmentAndPlanSection() {
-
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getAssessmentAndPlanSection();
-
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testGetPlanOfCareSection() {
-
-		ViewDownloadTransmitSummary target = objectFactory.create();
-		target.getPlanOfCareSection();
 
 	}
 

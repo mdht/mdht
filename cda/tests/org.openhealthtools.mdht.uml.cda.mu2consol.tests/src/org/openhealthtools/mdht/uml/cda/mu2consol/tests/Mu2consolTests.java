@@ -24,17 +24,19 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-		SummaryOfCareRecordTest.class, ClinicalOfficeVisitSummaryTest.class,
+		GeneralHeaderConstraintsTest.class, SummaryOfCareRecordTest.class, SocialHistorySectionTest.class,
+		SmokingStatusObservationTest.class, ResultsSectionTest.class, ResultOrganizerTest.class,
+		ResultObservationTest.class, ProceduresSectionTest.class, ProcedureActivityProcedureTest.class,
+		AssessmentSectionTest.class, ClinicalOfficeVisitSummaryTest.class, MedicationsAdministeredSectionTest.class,
 		TransitionOfCareAmbulatorySummaryTest.class, TransitionOfCareInpatientSummaryTest.class,
-		ViewDownloadTransmitSummaryTest.class, VDTAmbulatorySummaryTest.class, VDTInpatientSummaryTest.class,
-		SmokingStatusObservationTest.class, AssessmentSectionTest.class, GeneralHeaderConstraintsTest.class,
-		ProcedureActivityProcedureTest.class, ResultObservationTest.class })
+		ViewDownloadTransmitSummaryTest.class, VDTInpatientSummaryTest.class, VDTAmbulatorySummaryTest.class,
+		EncounterActivitiesTest.class, EncountersSectionTest.class })
 public class Mu2consolTests {
 
 	/**
-	* <!-- begin-user-doc --> <!-- end-user-doc -->
-	* @generated
-	*/
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(Mu2consolTests.class);
 	}
