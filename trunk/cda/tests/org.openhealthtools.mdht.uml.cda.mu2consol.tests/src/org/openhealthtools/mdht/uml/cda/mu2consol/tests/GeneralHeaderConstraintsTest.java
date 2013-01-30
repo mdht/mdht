@@ -25,8 +25,8 @@ import org.openhealthtools.mdht.uml.cda.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.Patient;
 import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.Performer1;
-import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RecordTarget;
+import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
@@ -44,11 +44,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsCareTeamMembers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol General Header Constraints Care Team Members</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol General Header Constraints Record Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol General Header Constraints Documentation Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event Performer1 Assigned Entity Assigned Person</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Component1 Encompassing Encounter Encounter Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsComponent1EncompassingEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Component1 Encompassing Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#retrieveHospitalAdmissionDiagnosisSection() <em>Retrieve Hospital Admission Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code P</em>}</li>
@@ -60,9 +57,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event Performer1 Assigned Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDocumentationOfServiceEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Documentation Of Service Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +64,86 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class GeneralHeaderConstraintsTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMu2consolGeneralHeaderConstraintsCareTeamMembers() {
+		OperationsTestCase<GeneralHeaderConstraints> validateMu2consolGeneralHeaderConstraintsCareTeamMembersTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateMu2consolGeneralHeaderConstraintsCareTeamMembers",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_CARE_TEAM_MEMBERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+						DocumentationOf doc = CDAFactory.eINSTANCE.createDocumentationOf();
+						ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+						Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+
+						se.getPerformers().add(perf);
+						doc.setServiceEvent(se);
+						target.getDocumentationOfs().add(doc);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+						Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+
+						ee.setResponsibleParty(rp);
+						comp.setEncompassingEncounter(ee);
+						target.setComponentOf(comp);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+						Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
+
+						ee.getEncounterParticipants().add(ep);
+						comp.setEncompassingEncounter(ee);
+						target.setComponentOf(comp);
+					}
+
+				});
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateMu2consolGeneralHeaderConstraintsCareTeamMembers(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMu2consolGeneralHeaderConstraintsCareTeamMembersTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -112,87 +186,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateMu2consolGeneralHeaderConstraintsDocumentationOf() {
-		OperationsTestCase<GeneralHeaderConstraints> validateMu2consolGeneralHeaderConstraintsDocumentationOfTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateMu2consolGeneralHeaderConstraintsDocumentationOf",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
-				target.getDocumentationOfs().add(dOf);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateMu2consolGeneralHeaderConstraintsDocumentationOf(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolGeneralHeaderConstraintsDocumentationOfTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPersonTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER1_ASSIGNED_ENTITY_ASSIGNED_PERSON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
-				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
-				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
-				AssignedEntity aE = CDAFactory.eINSTANCE.createAssignedEntity();
-				dOf.setServiceEvent(sEvent);
-				sEvent.getPerformers().add(performer);
-				performer.setAssignedEntity(aE);
-				target.getDocumentationOfs().add(dOf);
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				Person aPerson = CDAFactory.eINSTANCE.createPerson();
-				target.getDocumentationOfs().get(0).getServiceEvent().getPerformers().get(0).getAssignedEntity().setAssignedPerson(
-					aPerson);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPerson(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityAssignedPersonTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
 	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
 			"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity",
@@ -219,53 +212,13 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity(
+				return org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntity(
 					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer1AssignedEntityTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformerTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DOCUMENTATION_OF_SERVICE_EVENT_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				DocumentationOf dOf = CDAFactory.eINSTANCE.createDocumentationOf();
-				ServiceEvent sEvent = CDAFactory.eINSTANCE.createServiceEvent();
-				dOf.setServiceEvent(sEvent);
-				target.getDocumentationOfs().add(dOf);
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				Performer1 performer = CDAFactory.eINSTANCE.createPerformer1();
-				target.getDocumentationOfs().get(0).getServiceEvent().getPerformers().add(performer);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformer(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsDocumentationOfServiceEventPerformerTestCase.doValidationTest();
 	}
 
 	/**
@@ -296,91 +249,13 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEvent(
+				return org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDocumentationOfServiceEvent(
 					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateGeneralHeaderConstraintsDocumentationOfServiceEventTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipantTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_COMPONENT1_ENCOMPASSING_ENCOUNTER_ENCOUNTER_PARTICIPANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
-				comp1.setEncompassingEncounter(eEncounter);
-				target.setComponentOf(comp1);
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				EncounterParticipant participant = CDAFactory.eINSTANCE.createEncounterParticipant();
-				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(participant);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipant(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsComponent1EncompassingEncounterEncounterParticipantTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsComponent1EncompassingEncounter() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsComponent1EncompassingEncounterTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsComponent1EncompassingEncounter",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_COMPONENT1_ENCOMPASSING_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				Component1 compObj = CDAFactory.eINSTANCE.createComponent1();
-				target.setComponentOf(compObj);
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-				EncompassingEncounter eEncounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
-				target.getComponentOf().setEncompassingEncounter(eEncounter);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsComponent1EncompassingEncounter(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsComponent1EncompassingEncounterTestCase.doValidationTest();
 	}
 
 	/**

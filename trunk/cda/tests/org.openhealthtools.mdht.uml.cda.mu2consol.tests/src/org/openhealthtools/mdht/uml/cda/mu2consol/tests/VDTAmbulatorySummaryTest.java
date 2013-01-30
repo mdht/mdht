@@ -15,14 +15,23 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.DocumentationOf;
 import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
+import org.openhealthtools.mdht.uml.cda.Performer1;
+import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
+import org.openhealthtools.mdht.uml.cda.ServiceEvent;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatorySummary;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.VDTAmbulatorySummaryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -32,7 +41,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatorySummary#validateVDTAmbulatorySummaryResponsibleParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Summary Responsible Party</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatorySummary#validateVDTAmbulatorySummaryProviderNameAndContactInfo(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Summary Provider Name And Contact Info</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatorySummary#validateVDTAmbulatorySummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate VDT Ambulatory Summary Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.VDTAmbulatorySummary#getMedicationsSection() <em>Get Medications Section</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,42 +53,160 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class VDTAmbulatorySummaryTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated not
+	*/
 	@Test
-	public void testValidateVDTAmbulatorySummaryResponsibleParty() {
-		OperationsTestCase<VDTAmbulatorySummary> validateVDTAmbulatorySummaryResponsiblePartyTestCase = new OperationsTestCase<VDTAmbulatorySummary>(
-			"validateVDTAmbulatorySummaryResponsibleParty",
-			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_SUMMARY_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateVDTAmbulatorySummaryProviderNameAndContactInfo() {
+		OperationsTestCase<VDTAmbulatorySummary> validateVDTAmbulatorySummaryProviderNameAndContactInfoTestCase = new OperationsTestCase<VDTAmbulatorySummary>(
+			"validateVDTAmbulatorySummaryProviderNameAndContactInfo",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_SUMMARY_PROVIDER_NAME_AND_CONTACT_INFO__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
 			protected void updateToFail(VDTAmbulatorySummary target) {
-				target.init();
-				Component1 comp1 = CDAFactory.eINSTANCE.createComponent1();
-				EncompassingEncounter encounter = CDAFactory.eINSTANCE.createEncompassingEncounter();
-				comp1.setEncompassingEncounter(encounter);
-				target.setComponentOf(comp1);
+
 			}
 
 			@Override
-			protected void updateToPass(VDTAmbulatorySummary target) {
-				ResponsibleParty party = CDAFactory.eINSTANCE.createResponsibleParty();
-				target.getComponentOf().getEncompassingEncounter().setResponsibleParty(party);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(VDTAmbulatorySummary target) {
+						target.init();
+						DocumentationOf doc = CDAFactory.eINSTANCE.createDocumentationOf();
+						ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+						Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+						Person ap = CDAFactory.eINSTANCE.createPerson();
+						ap.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+						ae.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+						ae.setAssignedPerson(ap);
+						perf.setAssignedEntity(ae);
+						se.getPerformers().add(perf);
+						doc.setServiceEvent(se);
+						target.getDocumentationOfs().add(doc);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(VDTAmbulatorySummary target) {
+						target.init();
+						Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+						Person ap = CDAFactory.eINSTANCE.createPerson();
+						ap.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+						ae.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+						ae.setAssignedPerson(ap);
+						rp.setAssignedEntity(ae);
+						ee.setResponsibleParty(rp);
+						comp.setEncompassingEncounter(ee);
+						target.setComponentOf(comp);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(VDTAmbulatorySummary target) {
+						target.init();
+						Component1 comp = CDAFactory.eINSTANCE.createComponent1();
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
+
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+						Person ap = CDAFactory.eINSTANCE.createPerson();
+						ap.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+						ae.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+						ae.setAssignedPerson(ap);
+						ep.setAssignedEntity(ae);
+						ee.getEncounterParticipants().add(ep);
+						comp.setEncompassingEncounter(ee);
+						target.setComponentOf(comp);
+					}
+
+				});
 
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VDTAmbulatorySummaryOperations.validateVDTAmbulatorySummaryResponsibleParty(
+				return VDTAmbulatorySummaryOperations.validateVDTAmbulatorySummaryProviderNameAndContactInfo(
 					(VDTAmbulatorySummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateVDTAmbulatorySummaryResponsiblePartyTestCase.doValidationTest();
+		validateVDTAmbulatorySummaryProviderNameAndContactInfoTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateVDTAmbulatorySummaryMedicationsSection() {
+		OperationsTestCase<VDTAmbulatorySummary> validateVDTAmbulatorySummaryMedicationsSectionTestCase = new OperationsTestCase<VDTAmbulatorySummary>(
+			"validateVDTAmbulatorySummaryMedicationsSection",
+			operationsForOCL.getOCLValue("VALIDATE_VDT_AMBULATORY_SUMMARY_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VDTAmbulatorySummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VDTAmbulatorySummary target) {
+				target.init();
+
+				/* MedicationsSection */
+				MedicationsSection section =
+
+				ConsolFactory.eINSTANCE.createMedicationsSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VDTAmbulatorySummaryOperations.validateVDTAmbulatorySummaryMedicationsSection(
+					(VDTAmbulatorySummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVDTAmbulatorySummaryMedicationsSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationsSection() {
+
+		VDTAmbulatorySummary target = objectFactory.create();
+		target.getMedicationsSection();
+
 	}
 
 	/**
