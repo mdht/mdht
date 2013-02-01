@@ -56,6 +56,21 @@ public class AddUMLClassAction extends UML2AbstractAction {
 	/**
 	 * Subclass may override to customize domain-specific processing.
 	 * Default is to open dialog containing all available classes.
+	 */
+	protected String getClassName() {
+		String className = null;
+
+		InputDialog inputDialog = new InputDialog(
+			activePart.getSite().getShell(), "New Class", "Enter class name", "", null);
+		if (inputDialog.open() == Window.OK) {
+			className = inputDialog.getValue();
+		}
+		return className;
+	}
+
+	/**
+	 * Subclass may override to customize domain-specific processing.
+	 * Default is to open dialog containing all available classes.
 	 * 
 	 * @param new class
 	 */
@@ -105,12 +120,7 @@ public class AddUMLClassAction extends UML2AbstractAction {
 					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
 						// prompt for new class name
-						String className = null;
-						InputDialog inputDialog = new InputDialog(
-							activePart.getSite().getShell(), "New Class", "Enter class name", "", null);
-						if (inputDialog.open() == Window.OK) {
-							className = inputDialog.getValue();
-						}
+						String className = getClassName();
 						if (className == null || className.length() == 0) {
 							return Status.CANCEL_STATUS;
 						}
