@@ -39,7 +39,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_jAwm8Pv5EeCyhLcwvvU4Nw" name="matches">
+      <ownedOperation xmi:id="_jAwm8Pv5EeCyhLcwvvU4Nw" name="matches" isQuery="true">
         <ownedComment xmi:id="_b8W6oPv6EeCyhLcwvvU4Nw">
           <body>Provides Regular Expression support to ocl in the form of Feature Name to evaluated and the Regular Expression</body>
         </ownedComment>
@@ -118,7 +118,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_1iZnEADkEeGQrt4VJGN6-w" name="matches">
+      <ownedOperation xmi:id="_1iZnEADkEeGQrt4VJGN6-w" name="matches" isQuery="true">
         <ownedComment xmi:id="_1iZnEQDkEeGQrt4VJGN6-w">
           <body>Provides Regular Expression support to ocl</body>
         </ownedComment>
