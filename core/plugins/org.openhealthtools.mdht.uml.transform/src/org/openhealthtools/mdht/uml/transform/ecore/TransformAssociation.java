@@ -342,11 +342,16 @@ public abstract class TransformAssociation extends TransformAbstract {
 	 * consol::GeneralHeaderConstraints::RecordTarget::PatientRole should
 	 * be referenced as cda::PatientRole
 	 * 
+	 * Also make sure the the class name is valid for Java - so no spaces, etc
+	 * 
 	 * @param constraintTarget
 	 * @return
 	 */
 	public String getConstraintTargetQualifiedName(Class constraintTarget) {
-		String retVal = constraintTarget.getQualifiedName();
+
+		String retVal = constraintTarget.getQualifiedName().replace(
+			constraintTarget.getName(),
+			org.eclipse.uml2.common.util.UML2Util.getValidJavaIdentifier(constraintTarget.getName()));
 
 		String[] arrStr = retVal.split("::");
 		if (arrStr.length > 2) {
