@@ -19,8 +19,6 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.EncounterActivities;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.EncounterActivitiesOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -30,7 +28,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.EncounterActivities#validateMu2consolEncounterActivitiesCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Encounter Activities Code Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.EncounterActivities#validateEncounterActivitiesTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Template Id</em>}</li>
  * </ul>
  * </p>
@@ -39,44 +36,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class EncounterActivitiesTest extends CDAValidationTest {
-
-	/**
-	 * 
-	 * @generated NoT
-	 */
-	@Test
-	public void testValidateMu2consolEncounterActivitiesCodeValue() {
-		OperationsTestCase<EncounterActivities> validateMu2consolEncounterActivitiesCodeValueTestCase = new OperationsTestCase<EncounterActivities>(
-			"validateMu2consolEncounterActivitiesCodeValue",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_ENCOUNTER_ACTIVITIES_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(EncounterActivities target) {
-
-			}
-
-			@Override
-			protected void updateToPass(EncounterActivities target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				value.setCodeSystem("2.16.840.1.113883.6.3");
-				target.setCode(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EncounterActivitiesOperations.validateMu2consolEncounterActivitiesCodeValue(
-					(EncounterActivities) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolEncounterActivitiesCodeValueTestCase.doValidationTest();
-	}
 
 	/**
 	 * 
