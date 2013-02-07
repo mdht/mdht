@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="task_nrt_3dd_cj">
     <title>Produce CDA Content using MDHT API</title>
-    <shortdesc>GOAL Write/produce/construct a CDA document - </shortdesc>
+    <shortdesc>An example utilizing the MDHT Java API to create a CDA document</shortdesc>
 
     <taskbody>
         <context> Using the APIs to programmatically construct an instance. When someone needs to
