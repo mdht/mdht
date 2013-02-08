@@ -137,7 +137,15 @@ for (ReactionObservation reactionObservation : alertObservation.getReactionObser
                 <cmd>Getting Alert Status Observations</cmd>
                 <stepxmp>
                     <codeblock>
-                        
+ 
+// get alert status observation using domain-specific "getter" method
+AlertStatusObservation alertStatusObservation = alertObservation.getAlertStatusObservation();
+if (alertStatusObservation != null &amp; !alertStatusObservation.getValues().isEmpty() 
+    &amp; alertObservation.getValues().get(0) instanceof CD) {
+    CD value = (CD) alertStatusObservation.getValues().get(0);
+    System.out.println("alert status observation value: " + value.getCode() + ", " + value.getCodeSystem() + ", " + value.getDisplayName());
+}
+                       
                         
                     </codeblock>
                 </stepxmp>
