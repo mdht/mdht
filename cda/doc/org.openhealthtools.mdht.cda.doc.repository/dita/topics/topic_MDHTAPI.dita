@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_ffp_nvc_cj">
+<topic id="topic_ffp_nvc_cj" xml:lang="en-us">
   <title>MDHT APIs</title>
   <shortdesc>API’s delivered by the MDHT Runtime API Jars can be divided into three different
     levels. Each level builds upon the other. API’s are an artifact that get generated or delivered
