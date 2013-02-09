@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Getting Started">
+    <topicref href="../topics/topic_Developers_Guide.dita">
+        <topicref href="../tasks/t_Install.dita" />
+        <topicref href="../topics/topic_MDHTAPI.dita" />
+        <topicref  audience="developer" href="../tasks/t_Run_Sample.dita"/> 
+    </topicref>
+</map>
