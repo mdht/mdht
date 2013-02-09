@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Getting Started">
+    <topicref href="../topics/topic_Getting_Started.dita">
+        <topicref href="../tasks/t_Install.dita" />
+        <topicref  audience="developer" href="../tasks/t_Run_Sample.dita"/> 
+        <topicref  audience="standards" href="../concepts/c_UML_101.dita"/>     
+        <topicref  audience="standards" href="../concepts/c_CDA_101.dita"/>       
+        <topicref  audience="standards" href="../concepts/l_Understanding_the_Example_Model.dita"/>       
+        <topicref  audience="standards" href="../tasks/t_Create_CDA.dita"/>        
+        <topicref  audience="standards" href="../tasks/t_Create_a_new_template.dita"/>        
+        <topicref  audience="standards" href="../tasks/t_Generate_Java.dita"/>
+    </topicref>
+</map>
