@@ -33,6 +33,6 @@
 	</bookmeta>
 	<part>
 		<topicref href="release.ditamap" format="ditamap"/>
-		<topicref href="maps/m_Getting_Started_Guide.ditamap" format="ditamap"/>
+		<topicref href="maps/m_Developers_Guide.ditamap" format="ditamap"/>
 	</part>
 </bookmap>
