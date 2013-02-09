@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="release-keyword-definition">
+	<title>releaseditamap</title>
+	<keydef keys="relversion">
+		<topicmeta>
+			<keywords>
+				<keyword>1.2</keyword>
+			</keywords>
+		</topicmeta>
+	</keydef>
+	<keydef keys="usertype">
+		<topicmeta>
+			<keywords>
+				<keyword audience="standards" >CDA Implementation Guide Author</keyword>
+				<keyword audience="developer" >CDA Developer</keyword>
+				<keyword audience="analyst" >CDA Analyst</keyword>
+			</keywords>
+		</topicmeta>
+	</keydef>
+	<keydef keys="allinonename">
+		<topicmeta>
+			<keywords>
+				<keyword audience="standards" >MDHT_CDATools</keyword>
+				<keyword audience="developer" >MDHT_CDAAnalyst</keyword>
+				<keyword audience="analyst" >MDHT_CDAAnalyst</keyword>
+			</keywords>
+		</topicmeta>
+	</keydef>
+	
+</map>
