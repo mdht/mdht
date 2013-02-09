@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task id="task_zdm_rnv_dj">
+<task id="task_zdm_rnv_dj" xml:lang="en-us">
     <title>Query CDA Content</title>
     <shortdesc>Programatically query CDA Document instances using OCL or XPath</shortdesc>
     <taskbody>
