@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_nqc_mvc_cj">
+<concept id="concept_nqc_mvc_cj" xml:lang="en-us">
  <title>Java Design Patterns</title>
  <shortdesc>Patterns used in the document are important to notice.  There will be patterns that are dictated by the technology.  This determines the way the generated code looks and how the API’s are used to produce, consume and validate CDA documents.
  </shortdesc>

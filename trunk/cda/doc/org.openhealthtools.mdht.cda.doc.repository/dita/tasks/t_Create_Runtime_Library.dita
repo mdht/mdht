@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task id="task_ypn_ts1_2j">
+<task id="task_ypn_ts1_2j" xml:lang="en-us">
     <title>Creating the MDHT Runtime Library</title>
     <shortdesc>This describes the steps for creating the java libraries from the MDHT models and
         packaging them up with the set of EMF and OCL run-time dependency libraries that are needed

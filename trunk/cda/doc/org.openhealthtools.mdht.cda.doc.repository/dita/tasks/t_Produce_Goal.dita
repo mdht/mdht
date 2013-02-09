@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task id="task_nrt_3dd_cj">
+<task id="task_nrt_3dd_cj" xml:lang="en-us">
     <title>Produce CDA Content using MDHT API</title>
     <shortdesc>An example utilizing the MDHT Java API to create a CDA document</shortdesc>
 
