@@ -249,73 +249,79 @@
             </step>
 
         </steps>
-        <result><![CDATA[           <?xml version="1.0" encoding="UTF-8"?>
-            <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
-                <templateId root="2.16.840.1.113883.10.20.1"/>
-                <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of episode note"/>
-                <recordTarget>
-                    <patientRole>
-                        <id root="996-756-495" extension="2.16.840.1.113883.19.5"/>
-                        <addr use="H"><streetAddressLine>1313 Mockingbird Lane</streetAddressLine><city>Janesville</city><state>WI</state><postalCode>53545</postalCode></addr>
-                        <patient>
-                            <name><given>Henry</given><family>Levin</family></name>
-                            <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
-                            <birthTime value="19320924"/>
-                        </patient>
-                    </patientRole>
-                </recordTarget>
-                <component>
-                    <structuredBody>
-                        <component>
-                            <section>
-                                <templateId root="2.16.840.1.113883.10.20.1.2"/>
-                                <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
-                                <text><table border="1" width="100%"><thead><tr><th>Substance</th><th>Reaction</th><th>Status</th></tr></thead><tbody><tr><td>Penicillin</td><td>Hives</td><td>Active</td></tr></tbody></table></text>
-                                <entry>
-                                    <act classCode="ACT" moodCode="EVN">
-                                        <templateId root="2.16.840.1.113883.10.20.1.27"/>
-                                        <id root="a7140229-4a87-457a-b63e-50b79c57dfa1"/>
-                                        <code nullFlavor="NA"/>
-                                        <entryRelationship typeCode="SUBJ">
-                                            <observation moodCode="EVN">
-                                                <templateId root="2.16.840.1.113883.10.20.1.18"/>
-                                                <id root="85d9039f-d254-4d5b-86d1-7500279f0454"/>
-                                                <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
-                                                <statusCode code="completed"/>
-                                                <value xsi:type="CD" code="282100009" codeSystem="2.16.840.1.113883.6.96" displayName="Adverse reaction to substance"/>
-                                                <participant typeCode="CSM">
-                                                    <participantRole classCode="MANU">
-                                                        <playingEntity classCode="MMAT">
-                                                            <code code="70618" codeSystem="2.16.840.1.113883.6.88" displayName="Penicillin"/>
-                                                        </playingEntity>
-                                                    </participantRole>
-                                                </participant>
-                                                <entryRelationship typeCode="MFST" inversionInd="true">
-                                                    <observation classCode="OBS" moodCode="EVN">
-                                                        <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                                                        <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
-                                                        <statusCode code="completed"/>
-                                                        <value xsi:type="CD" code="247472004" codeSystem="2.16.840.1.113883.6.96" displayName="Hives"/>
-                                                    </observation>
-                                                </entryRelationship>
-                                                <entryRelationship typeCode="REFR">
-                                                    <observation classCode="OBS" moodCode="EVN">
-                                                        <templateId root="2.16.840.1.113883.10.20.1.57"/>
-                                                        <templateId root="2.16.840.1.113883.10.20.1.39"/>
-                                                        <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
-                                                        <statusCode code="completed"/>
-                                                        <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
-                                                    </observation>
-                                                </entryRelationship>
-                                            </observation>
-                                        </entryRelationship>
-                                    </act>
-                                </entry>
-                            </section>
-                        </component>
-                    </structuredBody>
-                </component>
-            </ClinicalDocument>]]>
+        <result>
+            <codeblock>
+<![CDATA[           
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+    <templateId root="2.16.840.1.113883.10.20.1"/>
+    <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of episode note"/>
+    <recordTarget>
+        <patientRole>
+            <id root="996-756-495" extension="2.16.840.1.113883.19.5"/>
+            <addr use="H"><streetAddressLine>1313 Mockingbird Lane</streetAddressLine><city>Janesville</city><state>WI</state><postalCode>53545</postalCode></addr>
+            <patient>
+                <name><given>Henry</given><family>Levin</family></name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19320924"/>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.2"/>
+                    <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+                    <text><table border="1" width="100%"><thead><tr><th>Substance</th><th>Reaction</th><th>Status</th></tr></thead><tbody><tr><td>Penicillin</td><td>Hives</td><td>Active</td></tr></tbody></table></text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <id root="a7140229-4a87-457a-b63e-50b79c57dfa1"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <id root="85d9039f-d254-4d5b-86d1-7500279f0454"/>
+                                    <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" code="282100009" codeSystem="2.16.840.1.113883.6.96" displayName="Adverse reaction to substance"/>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <code code="70618" codeSystem="2.16.840.1.113883.6.88" displayName="Penicillin"/>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship typeCode="MFST" inversionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                            <statusCode code="completed"/>
+                                            <value xsi:type="CD" code="247472004" codeSystem="2.16.840.1.113883.6.96" displayName="Hives"/>
+                                        </observation>
+                                    </entryRelationship>
+                                    <entryRelationship typeCode="REFR">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.57"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.39"/>
+                                            <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                                            <statusCode code="completed"/>
+                                            <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>
+
+]]>
+            </codeblock>
             <note>Note that many of the fixed/default values for the various templates (document,
                 section and entry-level) have been filled in automatically from the model. This
                 reduces the amount of client code necessary to create a conformant instance. </note>
