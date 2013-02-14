@@ -416,7 +416,7 @@ public class CognitiveStatusProblemObservationTest extends CDAValidationTest {
 			protected void updateToPass(CognitiveStatusProblemObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD("373930000", "2.16.840.1.113883.6.1", "", "");
+				CD cd = DatatypesFactory.eINSTANCE.createCD("373930000", "2.16.840.1.113883.6.96", "", "");
 				target.setCode(cd);
 			}
 
