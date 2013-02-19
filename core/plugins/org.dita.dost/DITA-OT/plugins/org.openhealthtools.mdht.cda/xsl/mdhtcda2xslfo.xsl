@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Copyright (c) 2012 Sean Muir. All rights reserved. This program and 
+<!-- Copyright (c) 2013 Sean Muir. All rights reserved. This program and 
 	the accompanying materials are made available under the terms of the Eclipse 
 	Public License v1.0 which accompanies this distribution, and is available 
 	at http://www.eclipse.org/legal/epl-v10.html Contributors: Sean Muir (JKM 
@@ -278,7 +278,7 @@
 					standard.
 				</fo:block>
 				<fo:block xsl:use-attribute-sets="tm__content">
-					Copyright &#169; 2012
+					Copyright &#169; <xsl:value-of select="$map/bookmeta/bookrights/copyrlast/year" />
 					Health Level Seven International &#174; ALL RIGHTS
 					RESERVED. The
 					reproduction of this material in any form
