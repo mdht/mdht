@@ -29,8 +29,7 @@ import org.junit.runners.Suite;
 		ResultObservationTest.class, ProceduresSectionTest.class, ProcedureActivityProcedureTest.class,
 		AssessmentSectionTest.class, ClinicalOfficeVisitSummaryTest.class, MedicationsAdministeredSectionTest.class,
 		TransitionOfCareAmbulatorySummaryTest.class, TransitionOfCareInpatientSummaryTest.class,
-		ViewDownloadTransmitSummaryTest.class, VDTInpatientSummaryTest.class, VDTAmbulatorySummaryTest.class,
-		EncounterActivitiesTest.class, EncountersSectionTest.class })
+		ViewDownloadTransmitSummaryTest.class, VDTInpatientSummaryTest.class, VDTAmbulatorySummaryTest.class })
 public class Mu2consolTests {
 
 	/**
