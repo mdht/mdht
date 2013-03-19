@@ -198,6 +198,14 @@ public class DialogLaunchUtil {
 	 */
 	public static NamedElement chooseElement(IElementFilter filter, Package umlPackage, Shell shell, String title,
 			String message) {
+		return chooseElement(filter, umlPackage, shell, title, message, false);
+	}
+
+	/**
+	 * 
+	 */
+	public static NamedElement chooseElement(IElementFilter filter, Package umlPackage, Shell shell, String title,
+			String message, boolean returnOne) {
 		if (title == null) {
 			title = Messages.ElementSelectionDialog_title;
 		}
@@ -205,6 +213,10 @@ public class DialogLaunchUtil {
 			message = Messages.ElementSelectionDialog_message;
 		}
 		List<Element> typeList = ModelSearch.findAllOf(umlPackage, filter);
+
+		if (returnOne && typeList.size() == 1) {
+			return (NamedElement) typeList.get(0);
+		}
 
 		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
 		dialog.setTitle(title);

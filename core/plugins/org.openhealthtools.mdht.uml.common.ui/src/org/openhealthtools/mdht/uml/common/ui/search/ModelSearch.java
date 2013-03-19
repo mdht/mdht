@@ -137,20 +137,23 @@ public class ModelSearch {
 			if (element instanceof ElementImport) {
 				element = ((ElementImport) element).getImportedElement();
 
-				if (!UMLResource.UML_METAMODEL_URI.equals(element.eResource().getURI().toString())) {
-					// exclude metaclasses
-					elementList.add((Element) element);
+				// exclude metaclasses
+				if (UMLResource.UML_METAMODEL_URI.equals(element.eResource().getURI().toString())) {
+					continue;
 				}
 			} else if (element instanceof PackageImport) {
 				Package importedPackage = ((PackageImport) element).getImportedPackage();
 				// exclude metaclasses
-				if (!UMLResource.UML_METAMODEL_URI.equals(importedPackage.eResource().getURI().toString())) {
+				if (importedPackage != null && !importedPackage.eIsProxy() &&
+						!UMLResource.UML_METAMODEL_URI.equals(importedPackage.eResource().getURI().toString())) {
+					element = importedPackage;
 					elementList.addAll(findAllOf(importedPackage, filter));
+				} else {
+					continue;
 				}
-				continue;
 			}
 
-			else if (element instanceof Element && filter.accept((Element) element)) {
+			if (element instanceof Element && filter.accept((Element) element)) {
 				elementList.add((Element) element);
 			} else if (!Package.class.isInstance(element)) {
 				iterator.prune();
