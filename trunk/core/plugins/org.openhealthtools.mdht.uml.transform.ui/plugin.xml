@@ -14,24 +14,49 @@
 -->
 
 <plugin>
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element" 
+			id="org.openhealthtools.mdht.uml.transform.ui.popupMenus.umlElement">
+			<menu label="%menu_UMLTransform" path="additions" 
+					id="org.openhealthtools.mdht.uml.transform.ui.popupMenus.umlElement">
+				<separator name="edit"/>
+				<separator name="port"/>
+				<separator name="transform"/>
+			</menu>
+		</objectContribution>
+		<objectContribution
+			objectClass="org.eclipse.core.resources.IFile" 
+			id="org.openhealthtools.mdht.uml.transform.ui.popupMenus.file">
+			<menu label="%menu_UMLTransform" path="additions" 
+					id="org.openhealthtools.mdht.uml.transform.ui.popupMenus.file">
+				<separator name="edit"/>
+				<separator name="port"/>
+				<separator name="transform"/>
+			</menu>
+		</objectContribution>
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.gmf.runtime.notation.View" 
+			id="org.openhealthtools.mdht.uml.transform.ui.popupMenus.notationView">
+			<menu label="%menu_UMLTransform" path="additions" 
+					id="org.openhealthtools.mdht.uml.transform.ui.popupMenus.notationView">
+				<separator name="edit"/>
+				<separator name="port"/>
+				<separator name="transform"/>
+			</menu>
+		</objectContribution>
+	</extension>
+	
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
       		adaptable="true"
             objectClass="org.eclipse.uml2.uml.Element"
             id="org.openhealthtools.mdht.uml.ui.dev.popup">
-         <menu
-               label="%menu_UMLTransform"
-               path="additions"
-               id="umltools">
-            <separator
-                  name="transform">
-            </separator>
-         </menu>
          <action
-               label="%menu_FlattenModel"
+               label="%menu_FlattenModel-deprecated"
                class="org.openhealthtools.mdht.uml.transform.ui.actions.FlattenModelAction"
-               menubarPath="umltools/transform"
+               menubarPath="org.openhealthtools.mdht.uml.transform.ui.popupMenus.umlElement/transform"
                enablesFor="1"
                id="org.openhealthtools.mdht.uml.transform.ui.actions.FlattenModelAction">
          </action>
