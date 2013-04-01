@@ -99,6 +99,7 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_PaaCgGdREeGkeaezs0FtvA" name="LanguageAbilityProficiency"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_vhwioNdhEeGlV9-AkwqSzg" name="DCMUID"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_SizqcOxyEeG7k4bbVdXbXw" name="ParticipationFunction"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_JR9mMJpCEeKCjtM-Tjpk1g" name="HL7DischargeDisposition"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -164,4 +165,5 @@
   <term:CodeSystemVersion xmi:id="_7Du1gHHeEeGeeZysMrDRUg" identifier="2.16.840.1.113883.6.101" url="http://www.nucc.org" base_Enumeration="_svo1oDVVEeGIw7CntkyPQw"/>
   <term:CodeSystemVersion xmi:id="_vhyX0NdhEeGlV9-AkwqSzg" identifier="1.2.840.10008.2.6.1" base_Enumeration="_vhwioNdhEeGlV9-AkwqSzg"/>
   <term:CodeSystemVersion xmi:id="_Si0RgOxyEeG7k4bbVdXbXw" identifier="2.16.840.1.113883.5.88" fullName="Participation Function" base_Enumeration="_SizqcOxyEeG7k4bbVdXbXw"/>
+  <term:CodeSystemVersion xmi:id="_JR-NQJpCEeKCjtM-Tjpk1g" identifier="2.16.840.1.113883.12.112" base_Enumeration="_JR9mMJpCEeKCjtM-Tjpk1g"/>
 </xmi:XMI>

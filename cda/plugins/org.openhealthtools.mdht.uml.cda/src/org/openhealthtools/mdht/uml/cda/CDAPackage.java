@@ -6181,13 +6181,22 @@ public interface CDAPackage extends EPackage {
 	int ENCOUNTER__MOOD_CODE = CLINICAL_STATEMENT_FEATURE_COUNT + 20;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Discharge Disposition Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE = CLINICAL_STATEMENT_FEATURE_COUNT + 21;
+
+	/**
 	 * The number of structural features of the '<em>Encounter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_FEATURE_COUNT = CLINICAL_STATEMENT_FEATURE_COUNT + 21;
+	int ENCOUNTER_FEATURE_COUNT = CLINICAL_STATEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -18061,6 +18070,17 @@ public interface CDAPackage extends EPackage {
 	EAttribute getEncounter_MoodCode();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getSDTCDischargeDispositionCodes <em>SDTC Discharge Disposition Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>SDTC Discharge Disposition Code</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getSDTCDischargeDispositionCodes()
+	 * @see #getEncounter()
+	 * @generated
+	 */
+	EReference getEncounter_SDTCDischargeDispositionCode();
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.Reference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -27540,6 +27560,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENCOUNTER__MOOD_CODE = eINSTANCE.getEncounter_MoodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Discharge Disposition Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE = eINSTANCE.getEncounter_SDTCDischargeDispositionCode();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceImpl <em>Reference</em>}' class.

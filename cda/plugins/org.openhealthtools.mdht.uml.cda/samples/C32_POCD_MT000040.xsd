@@ -46,7 +46,7 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
 	<xs:include schemaLocation="coreschemas/datatypes.xsd"/>
 	<xs:include schemaLocation="coreschemas/voc.xsd"/>
 	<xs:include schemaLocation="coreschemas/NarrativeBlock.xsd"/>
-	<xs:import namespace="urn:hl7-org:sdtc" schemaLocation="SDTC_Extension.xsd" />
+	<xs:import namespace="urn:hl7-org:sdtc" schemaLocation="./SDTC_Extension.xsd" />
 	
 	<xs:complexType name="POCD_MT000040.InfrastructureRoot.typeId">
 		<xs:complexContent>
@@ -425,7 +425,8 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
 			<xs:element name="code" type="CD" minOccurs="0"/>
 			<xs:element name="text" type="ED" minOccurs="0"/>
 			<xs:element name="statusCode" type="CS" minOccurs="0"/>
-			<xs:element name="effectiveTime" type="IVL_TS" minOccurs="0"/>
+			<xs:element name="effectiveTime" type="IVL_TS" minOccurs="0"/>			
+			<xs:element ref="sdtc:dischargeDispositionCode" xmlns:sdtc="urn:hl7-org:sdtc" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="priorityCode" type="CE" minOccurs="0"/>
 			<xs:element name="subject" type="POCD_MT000040.Subject" minOccurs="0"/>
 			<xs:element name="specimen" type="POCD_MT000040.Specimen" minOccurs="0" maxOccurs="unbounded"/>
@@ -1289,9 +1290,12 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
 			<xs:element name="realmCode" type="CS" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="typeId" type="POCD_MT000040.InfrastructureRoot.typeId" minOccurs="0"/>
 			<xs:element name="templateId" type="II" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="sdtc:id" minOccurs="0" />
 			<xs:element name="name" type="PN" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="administrativeGenderCode" type="CE" minOccurs="0"/>
 			<xs:element name="birthTime" type="TS" minOccurs="0"/>
+			<xs:element ref="sdtc:deceasedInd" minOccurs="0" />
+			<xs:element ref="sdtc:deceasedTime" minOccurs="0" />
 		</xs:sequence>
 		<xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
 		<xs:attribute name="classCode" type="EntityClass" use="optional" fixed="PSN"/>

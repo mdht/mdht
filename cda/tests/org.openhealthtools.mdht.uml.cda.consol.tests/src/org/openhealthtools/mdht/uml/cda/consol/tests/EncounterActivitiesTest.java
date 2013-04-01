@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Drajer) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -27,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.EncounterActivitiesOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -52,6 +54,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesSDTCDischargeDispositionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities SDTC Discharge Disposition Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesSDTCDischargeDispositionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities SDTC Discharge Disposition Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesServiceDeliveryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Service Delivery Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Indication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesEncounterPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Encounter Performer</em>}</li>
@@ -491,6 +495,93 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 		};
 
 		validateEncounterActivitiesEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEncounterActivitiesSDTCDischargeDispositionCodeP() {
+		OperationsTestCase<EncounterActivities> validateEncounterActivitiesSDTCDischargeDispositionCodePTestCase = new OperationsTestCase<EncounterActivities>(
+			"validateEncounterActivitiesSDTCDischargeDispositionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ACTIVITIES_SDTC_DISCHARGE_DISPOSITION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncounterActivities target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncounterActivities target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncounterActivitiesOperations.validateEncounterActivitiesSDTCDischargeDispositionCodeP(
+					(EncounterActivities) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncounterActivitiesSDTCDischargeDispositionCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateEncounterActivitiesSDTCDischargeDispositionCode() {
+		OperationsTestCase<EncounterActivities> validateEncounterActivitiesSDTCDischargeDispositionCodeTestCase = new OperationsTestCase<EncounterActivities>(
+			"validateEncounterActivitiesSDTCDischargeDispositionCode",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ACTIVITIES_SDTC_DISCHARGE_DISPOSITION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			// constant codeSystem for sdtc:dischargeDispositionCode
+			private static final String DDC_CODESYSTEM_VALUE = "2.16.840.1.113883.12.112";
+
+			@Override
+			protected void updateToFail(EncounterActivities target) {
+				// Fails due to incorrect codeSystem
+				CE sdtcCode = DatatypesFactory.eINSTANCE.createCE();
+				sdtcCode.setCode("AnyStringRequired"); // Required to be defined, but not to any specific String
+				sdtcCode.setCodeSystem("1.23.456.7.89123.4.567.89"); // apply incorrect codeSystem
+				sdtcCode.setCodeSystemName("NothingRequired"); // not required (not checked as a constraint)
+				target.getSDTCDischargeDispositionCodes().add(sdtcCode);
+			}
+
+			@Override
+			protected void updateToPass(EncounterActivities target) {
+				target.getSDTCDischargeDispositionCodes().remove(0); // get rid of incorrect code added for updateToFail
+				target.init(); // not required to pass but makes XML snippet output more complete
+				// generates by default
+				// ...
+				// <sdtc:dischargeDispositionCode codeSystem="WhateverItIs" codeSystemName="HL7DischargeDisposition"/>
+				// ...
+				target.getSDTCDischargeDispositionCodes().remove(0); // remove default element since it has no code
+				// Now setup/add all proper attributes
+				CE sdtcCode = DatatypesFactory.eINSTANCE.createCE();
+				sdtcCode.setCode("42"); // Required to be defined, but not to any specific String
+				sdtcCode.setCodeSystem(DDC_CODESYSTEM_VALUE); // the actual constraint checked which must be accurate
+				sdtcCode.setCodeSystemName("HL7 Discharge Disposition"); // not required (not checked as a constraint)
+				target.getSDTCDischargeDispositionCodes().add(sdtcCode);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncounterActivitiesOperations.validateEncounterActivitiesSDTCDischargeDispositionCode(
+					(EncounterActivities) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncounterActivitiesSDTCDischargeDispositionCodeTestCase.doValidationTest();
 	}
 
 	/**

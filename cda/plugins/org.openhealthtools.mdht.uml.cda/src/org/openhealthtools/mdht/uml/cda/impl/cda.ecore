@@ -4249,6 +4249,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_DocumentEncounterMood"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sDTCDischargeDispositionCode"
+        ordered="false" upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="dischargeDispositionCode"/>
+        <details key="namespace" value="urn:hl7-org:sdtc"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specimen" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
