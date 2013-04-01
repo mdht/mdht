@@ -21,7 +21,8 @@ import org.openhealthtools.mdht.uml.cda.operations.AllCDAOperationsTests;
  * processing.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ CDADeserliazationTest.class, CDASerializationTest.class, AllCDAOperationsTests.class })
+@Suite.SuiteClasses({
+		CDADeserliazationTest.class, CDASerializationTest.class, AllCDAOperationsTests.class, SDTCExtensionTest.class })
 public class AllCDATests {
 
 	/**

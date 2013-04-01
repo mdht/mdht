@@ -70,6 +70,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentEncounterMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncounterImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncounterImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncounterImpl#getMoodCode <em>Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncounterImpl#getSDTCDischargeDispositionCodes <em>SDTC Discharge Disposition Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -342,6 +343,16 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * @ordered
 	 */
 	protected boolean moodCodeESet;
+
+	/**
+	 * The cached value of the '{@link #getSDTCDischargeDispositionCodes() <em>SDTC Discharge Disposition Code</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCDischargeDispositionCodes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CE> sDTCDischargeDispositionCodes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1051,6 +1062,19 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<CE> getSDTCDischargeDispositionCodes() {
+		if (sDTCDischargeDispositionCodes == null) {
+			sDTCDischargeDispositionCodes = new EObjectContainmentEList<CE>(
+				CE.class, this, CDAPackage.ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE);
+		}
+		return sDTCDischargeDispositionCodes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -1090,6 +1114,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 				return ((InternalEList<?>) getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__PRECONDITION:
 				return ((InternalEList<?>) getPreconditions()).basicRemove(otherEnd, msgs);
+			case CDAPackage.ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE:
+				return ((InternalEList<?>) getSDTCDischargeDispositionCodes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1144,6 +1170,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 				return getClassCode();
 			case CDAPackage.ENCOUNTER__MOOD_CODE:
 				return getMoodCode();
+			case CDAPackage.ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE:
+				return getSDTCDischargeDispositionCodes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1231,6 +1259,10 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 			case CDAPackage.ENCOUNTER__MOOD_CODE:
 				setMoodCode((x_DocumentEncounterMood) newValue);
 				return;
+			case CDAPackage.ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE:
+				getSDTCDischargeDispositionCodes().clear();
+				getSDTCDischargeDispositionCodes().addAll((Collection<? extends CE>) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1306,6 +1338,9 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 			case CDAPackage.ENCOUNTER__MOOD_CODE:
 				unsetMoodCode();
 				return;
+			case CDAPackage.ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE:
+				getSDTCDischargeDispositionCodes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1360,6 +1395,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 				return isSetClassCode();
 			case CDAPackage.ENCOUNTER__MOOD_CODE:
 				return isSetMoodCode();
+			case CDAPackage.ENCOUNTER__SDTC_DISCHARGE_DISPOSITION_CODE:
+				return sDTCDischargeDispositionCodes != null && !sDTCDischargeDispositionCodes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -50,6 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentEncounterMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Encounter#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Encounter#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Encounter#getMoodCode <em>Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Encounter#getSDTCDischargeDispositionCodes <em>SDTC Discharge Disposition Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -601,5 +602,22 @@ public interface Encounter extends ClinicalStatement {
 	 * @generated
 	 */
 	boolean isSetMoodCode();
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Discharge Disposition Code</b></em>' containment reference list.
+	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Discharge Disposition Code</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Discharge Disposition Code</em>' containment reference list.
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncounter_SDTCDischargeDispositionCode()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='dischargeDispositionCode' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	EList<CE> getSDTCDischargeDispositionCodes();
 
 } // Encounter

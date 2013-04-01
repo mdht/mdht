@@ -7332,6 +7332,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEncounter_SDTCDischargeDispositionCode() {
+		return (EReference) getEncounter().getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReference() {
 		if (referenceEClass == null) {
 			referenceEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(

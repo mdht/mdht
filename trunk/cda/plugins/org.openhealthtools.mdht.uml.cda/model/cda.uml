@@ -2453,6 +2453,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3GiwUo0Ed6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3GiwEo0Ed6c3qsAxlFHaQ" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_eCTm4I_1EeKDcJPVSJHobw" name="sDTCDischargeDispositionCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oI9t0I_1EeKDcJPVSJHobw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oI-U4I_1EeKDcJPVSJHobw"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_B6aX4EbvEd6besF9iFIJkQ" name="Organizer">
       <generalization xmi:id="_9r6r4HfTEd-6wJLq2P_7OA" general="_Rm7eQHfTEd-6wJLq2P_7OA"/>
@@ -9025,4 +9030,5 @@
   <Ecore:EReference xmi:id="_yczXkAPjEeGdM61FsLhcmQ" xmlName="deceasedInd" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_rS5VoAPjEeGdM61FsLhcmQ"/>
   <Ecore:EReference xmi:id="_T7cRkAPkEeGdM61FsLhcmQ" xmlName="deceasedTime" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_LJEdAAPkEeGdM61FsLhcmQ"/>
   <Ecore:EReference xmi:id="_wjqvUFZvEeGCdLgBm6VHOQ" xmlName="id" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_jSS_4FZvEeGCdLgBm6VHOQ"/>
+  <Ecore:EReference xmi:id="_utLkkI_8EeKDcJPVSJHobw" xmlName="dischargeDispositionCode" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_eCTm4I_1EeKDcJPVSJHobw"/>
 </xmi:XMI>
