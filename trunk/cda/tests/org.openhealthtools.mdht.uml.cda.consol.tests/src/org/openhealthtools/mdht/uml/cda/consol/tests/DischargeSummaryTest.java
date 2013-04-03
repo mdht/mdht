@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Drajer) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -52,6 +53,7 @@ import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.operations.DischargeSummaryOperations;
 import org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -1648,7 +1650,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode() {
@@ -1657,25 +1659,32 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_COMPONENT_OF_ENCOMPASSING_ENCOUNTER3_DISCHARGE_DISPOSITION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			// constant codeSystem for dischargeDispositionCode
+			private static final String DDC_CODESYSTEM_VALUE = "2.16.840.1.113883.12.112";
+
 			@Override
 			protected void updateToFail(DischargeSummary target) {
+				// The following test fails because there is no dischargeDispositionCode element and the multiplicity is 1..1
+				// It helps setup the updateToPass test as well with required elements
+				// Note: In future maybe add test against multiple dischargeDispositionCode elements (against external doc snippet)
 				target.init();
 				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
-
 				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
 
 				cof.setEncompassingEncounter(ee);
 				target.setComponentOf(cof);
-
 			}
 
 			@Override
 			protected void updateToPass(DischargeSummary target) {
-				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
-				target.getComponentOf().getEncompassingEncounter().setDischargeDispositionCode(
-					DatatypesFactory.eINSTANCE.createCE());
+				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant(); // not required
 				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(ep);
 
+				CE ddcCE = DatatypesFactory.eINSTANCE.createCE();
+				ddcCE.setCode("01"); // Required to be defined, but not to any specific String
+				ddcCE.setCodeSystem(DDC_CODESYSTEM_VALUE); // the actual constraint checked which must be accurate (and exist)
+				ddcCE.setCodeSystemName("Routine Discharge"); // not required (not checked as a constraint)
+				target.getComponentOf().getEncompassingEncounter().setDischargeDispositionCode(ddcCE);
 			}
 
 			@Override
@@ -1692,7 +1701,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeP() {
@@ -1703,13 +1712,21 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
+				// The following test fails because there is no dischargeDispositionCode element in encompassingEncounter
+				target.init();
+				// needs to have more elements in order to fail, elements that require dischargeDispositionCode
+				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
 
+				cof.setEncompassingEncounter(ee);
+				target.setComponentOf(cof);
 			}
 
 			@Override
 			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
+				// Simply requires a dischargeDispositionCode element in encompassingEncounter
+				target.getComponentOf().getEncompassingEncounter().setDischargeDispositionCode(
+					DatatypesFactory.eINSTANCE.createCE());
 			}
 
 			@Override
