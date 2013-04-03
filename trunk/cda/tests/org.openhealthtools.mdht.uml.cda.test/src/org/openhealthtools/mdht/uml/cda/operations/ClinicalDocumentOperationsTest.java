@@ -7,9 +7,11 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Dan Brown (Drajer) - added testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -20,6 +22,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Patient;
@@ -256,6 +259,15 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 	@Override
 	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createClinicalDocument();
+	}
+
+	/**
+	 * Simple constructor test confirming an instance can be created which is not null.
+	 */
+	@Test
+	public final void testConstructor() {
+		ClinicalDocumentOperations cdo = new ClinicalDocumentOperations();
+		assertNotNull(cdo);
 	}
 
 } // ClinicalDocumentOperationsTest
