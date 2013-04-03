@@ -57,6 +57,7 @@ import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.ParameterableElement;
@@ -565,6 +566,45 @@ public class UMLUtil {
 
 			@Override
 			public List<Property> doSwitch(EObject eObject) {
+				return null == eObject
+						? null
+						: super.doSwitch(eObject);
+			}
+		}.doSwitch(type);
+	}
+
+	/**
+	 * Delegates to the subclass specific getOwnedOperations() method for type.
+	 * 
+	 * @param type
+	 * @return list of Operation
+	 */
+	public static List<Operation> getOwnedOperations(Type type) {
+
+		return new UMLSwitch<List<Operation>>() {
+
+			@Override
+			public List<Operation> caseArtifact(Artifact artifact) {
+				return artifact.getOwnedOperations();
+			}
+
+			@Override
+			public List<Operation> caseDataType(DataType dataType) {
+				return dataType.getOwnedOperations();
+			}
+
+			@Override
+			public List<Operation> caseInterface(Interface interface_) {
+				return interface_.getOwnedOperations();
+			}
+
+			@Override
+			public List<Operation> caseClass(Class clazz) {
+				return clazz.getOwnedOperations();
+			}
+
+			@Override
+			public List<Operation> doSwitch(EObject eObject) {
 				return null == eObject
 						? null
 						: super.doSwitch(eObject);
