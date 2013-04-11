@@ -65,6 +65,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.xml.sax.InputSource;
 
 /**
@@ -531,6 +532,8 @@ public abstract class CDAValidationTest {
 
 		private boolean skipPassTest = false;
 
+		private boolean skipNullFlavorTest = false;
+
 		public void skipFailsTest() {
 			skipFailsTest = true;
 		}
@@ -808,6 +811,40 @@ public abstract class CDAValidationTest {
 					}
 				}
 
+				if (!skipNullFlavorTest) {
+
+					updateNullFlavor((ValidationTarget) objectToTest);
+
+					EObject objectToSerialize = (getObjectToSerialze() != null
+							? getObjectToSerialze()
+							: objectToTest);
+
+					if (objectToSerialize instanceof InfrastructureRoot) {
+						if (testLogDir != null) {
+							xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToSerialize));
+						} else {
+							try {
+								System.out.println();
+								System.out.println("Null Flavor Snippet");
+								CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToSerialize, System.out);
+								System.out.println();
+							} catch (Exception e) {
+
+							}
+						}
+					}
+					validateExpectPass(objectToTest, diagnostician, map);
+
+				} else {
+
+					if (testLogDir != null) {
+						xmlSnippetsBuffer.append(generateSkipMessage(FAILSNIPPET, "Skip Pass Test"));
+					} else {
+						System.out.println();
+						System.out.println("Skipped Pass Test");
+						System.out.println();
+					}
+				}
 			} finally {
 
 				try {
@@ -849,6 +886,20 @@ public abstract class CDAValidationTest {
 		};
 
 		protected void updateToPass(ValidationTarget target) {
+		};
+
+		protected void updateNullFlavor(ValidationTarget target) {
+			// setNullFlavor(NullFlavor newNullFlavor) {
+			@SuppressWarnings("rawtypes")
+			final java.lang.Class[] nullFlavorArgument = new java.lang.Class[] { org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor.class };
+			try {
+				Method initMethod = target.getClass().getMethod("setNullFlavor", nullFlavorArgument);
+				if (initMethod != null) {
+					initMethod.invoke(target, NullFlavor.NA);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		};
 
 	}
