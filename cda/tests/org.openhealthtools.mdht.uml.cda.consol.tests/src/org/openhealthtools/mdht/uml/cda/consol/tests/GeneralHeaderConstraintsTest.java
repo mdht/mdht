@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -62,6 +63,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
@@ -113,6 +115,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRoleUSRealmAddressUseP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role US Realm Address Use P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRoleUSRealmAddressUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role US Realm Address Use</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRoleTELUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role TEL Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToYear(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient TS Birth Time Precise To Year</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToDay(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient TS Birth Time Precise To Day</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient TS Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientUSRealmPatientNameMixedContent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient US Realm Patient Name Mixed Content</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientUSRealmPatientNameFamily(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient US Realm Patient Name Family</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientUSRealmPatientNameGiven(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient US Realm Patient Name Given</em>}</li>
@@ -144,8 +149,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationModeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Mode Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Birth Time Precise To Year</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Birth Time Precise To Day</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Ethnic Group Code P</em>}</li>
@@ -1799,6 +1802,154 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsRecordTargetPatientRoleTELUseTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToYear() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToYearTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToYear",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_TS_BIRTH_TIME_PRECISE_TO_YEAR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				// fails if value is less than required number of digits (4)
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("123")); // fails as intended
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				// passes if value is more than or equal to required number of digits (6)
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("1234")); // passes as intended
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToYear(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToYearTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToDay() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToDayTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToDay",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_TS_BIRTH_TIME_PRECISE_TO_DAY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				// fails if value is less than required number of digits (6)
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("12345")); // fails as intended
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				// passes if value is more than or equal to required number of digits (6)
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("123456")); // passes as intended
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToDay(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSBirthTimePreciseToDayTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSValue() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSValueTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSValue",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_TS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				// fails if there is an empty birthTime element. Would also fail if it had more than 1 value (would need to deserialize a document)
+				target.init();
+				TS btTS = DatatypesFactory.eINSTANCE.createTS(); // added
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(btTS); // add empty TS
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				// passes if it has a value (or doesn't, 0..1, and has a nullFlavor instead)
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("AnyString"));
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSValue(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientTSValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -7777,100 +7928,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated  not
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYearTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_BIRTH_TIME_PRECISE_TO_YEAR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("10"));
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.getRecordTargets().clear();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("1980"));
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYearTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated  not
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDayTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_BIRTH_TIME_PRECISE_TO_DAY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.getRecordTargets().clear();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("19800101"));
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDayTestCase.doValidationTest();
-	}
-
-	/**
-	*
 	* @generated not
 	*/
 	@Test
@@ -8372,7 +8429,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTime() {
@@ -8383,6 +8440,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				// fails if no birthTime element exists (SHALL contain exactly one [1..1] birthTime)
 				target.init();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
@@ -8394,15 +8452,18 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
+				// passes if a birthTime element exists; threw nullFlavor in for an extra test to ensure it works
+				TS btTS = DatatypesFactory.eINSTANCE.createTS();
+				btTS.setNullFlavor(NullFlavor.NAV);
 				target.getRecordTargets().clear();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
 				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
+				patient.setBirthTime(btTS); // add TS with null flavor
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
-
 			}
 
 			@Override
