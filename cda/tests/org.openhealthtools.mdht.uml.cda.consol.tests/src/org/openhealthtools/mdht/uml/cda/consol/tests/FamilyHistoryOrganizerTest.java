@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Ai) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -23,7 +24,10 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer;
 import org.openhealthtools.mdht.uml.cda.consol.operations.FamilyHistoryOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
 
 /**
@@ -381,9 +385,8 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.getSubject().getRelatedSubject().getSubject().setSDTCDeceasedInd(
-					DatatypesFactory.eINSTANCE.createBL());
-
+				BL indBL = DatatypesFactory.eINSTANCE.createBL(true);
+				target.getSubject().getRelatedSubject().getSubject().setSDTCDeceasedInd(indBL);
 			}
 
 			@Override
@@ -423,9 +426,8 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.getSubject().getRelatedSubject().getSubject().setSDTCDeceasedTime(
-					DatatypesFactory.eINSTANCE.createTS());
-
+				TS timeTS = DatatypesFactory.eINSTANCE.createTS("1999");
+				target.getSubject().getRelatedSubject().getSubject().setSDTCDeceasedTime(timeTS);
 			}
 
 			@Override
@@ -465,8 +467,10 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.getSubject().getRelatedSubject().getSubject().getSDTCIds().add(
-					DatatypesFactory.eINSTANCE.createII());
+				II idII = DatatypesFactory.eINSTANCE.createII("root", "extension");
+				idII.setAssigningAuthorityName("assigningAuthorityName");
+				idII.setDisplayable(false);
+				target.getSubject().getRelatedSubject().getSubject().getSDTCIds().add(idII);
 			}
 
 			@Override
