@@ -14,14 +14,11 @@
     1670|Consol Immunization Medication Information SHALL contain exactly one [1..1] manufacturedMaterial (CONF:9006) manufacturedMaterial SHALL contain exactly one [1..1] code, where the @code SHALL be selected from ValueSet Vaccines administered (CVX) 2.16.840.1.114222.4.11.934 STATIC 7 (CONF:9007)
     22|Mu2consol Social History Section SHALL contain at least one [1..*] entry Contains exactly one [1..1] Smoking Status Observation (templateId: 2.16.840.1.113883.10.20.22.4.78)
 	manufacturedMaterial SHALL contain exactly one [1..1] code, where the @code SHALL be selected from ValueSet Vaccines administered (CVX) 2.16.840.1.114222.4.11.934 STATIC 7 (CONF:9007)
-	Extra error added for this version: 
-	cvc-complex-type.2.4.a: Invalid content was found starting with element 'sdtc:dischargeDispositionCode'. 
-	One of '{"urn:hl7-org:sdtc":dischargeDispositionCode, "urn:hl7-org:v3":priorityCode, "urn:hl7-org:v3":subject, "urn:hl7-org:v3":specimen, "urn:hl7-org:v3":performer, "urn:hl7-org:v3":author, "urn:hl7-org:v3":informant, "urn:hl7-org:v3":participant, "urn:hl7-org:v3":entryRelationship, "urn:hl7-org:v3":reference, "urn:hl7-org:v3":precondition}' is expected.
-	-DRB
-
+	04/10/2013 DRB added entire FAMILY HISTORY section to test sdtc:deceasedInd/sdtc:deceasedTime/sdtc:id
+	04/15/2013 DRB added sdtc:raceCode and sdtc:birthTime to the base model
  -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="urn:hl7-org:v3 ..\..\org.openhealthtools.mdht.uml.cda\samples\C32_CDA.xsd"
+ xsi:schemaLocation="urn:hl7-org:v3 C:\XML\C32_CDA_Schema\infrastructure\cda\C32_CDA.xsd"
  xmlns="urn:hl7-org:v3"
  xmlns:cda="urn:hl7-org:v3">
    
@@ -112,7 +109,7 @@
          <!-- HP is "primary home" from HL7 AddressUse 2.16.840.1.113883.5.1119 -->
          
          <!-- CONF 5283 -->
-         <patient>
+         <patient xmlns:sdtc="urn:hl7-org:sdtc">
             
             <!-- CONF 5284 -->
             <name
@@ -146,6 +143,9 @@
                displayName="White"
                codeSystem="2.16.840.1.113883.6.238"
                codeSystemName="Race and Ethnicity - CDC"/>
+               
+            <sdtc:raceCode code="RACE_CODE_VALUE" codeSystem="1.2.3.4.5" codeSystemName="RACE_CODESYSTEMNAME_VALUE"/>
+             
             <ethnicGroupCode
                code="2186-5"
                displayName="Not Hispanic or Latino"
@@ -237,15 +237,20 @@
          <telecom
             use="WP"
             value="tel:555-555-1002"/>
-         <assignedPerson>
+         <assignedPerson xmlns:sdtc="urn:hl7-org:sdtc">
             <name>
                <prefix>Dr</prefix>
                <given>Henry</given>
                <family>Seven</family>
             </name>
+			
+			<!--base model placement of sdtc:birthTime-->
+			<sdtc:birthTime value="19880907"/>
+			
          </assignedPerson>
       </assignedAuthor>
    </author>
+   
    <dataEnterer>
       <assignedEntity>
          <id
@@ -1212,7 +1217,7 @@ ENCOUNTERS
                </text>
                <entry
                   typeCode="DRIV">
-                  <encounter xmlns:sdtc="urn:hl7-org:sdtcABC" classCode="ENC" moodCode="EVN">
+                  <encounter xmlns:sdtc="urn:hl7-org:sdtc" classCode="ENC" moodCode="EVN">
                      <templateId
                         root="2.16.840.1.113883.10.20.22.4.49"/>
                      <!-- Encounter Activities -->
@@ -1346,7 +1351,139 @@ ENCOUNTERS
                </entry>
             </section>
          </component>
-        
+		 
+		          <!--
+********************************************************
+FAMILY HISTORY
+********************************************************
+-->
+
+<component>
+<section>
+   <templateId root="2.16.840.1.113883.10.20.22.2.15"/>
+   <!--  ********  Family history section template   ******** -->
+   <code code="10157-6" codeSystem="2.16.840.1.113883.6.1"/>
+   <title>FAMILY HISTORY</title>
+   <text>
+      <paragraph>Father (deceased)</paragraph>
+      <table border="1" width="100%">
+         <thead>
+            <tr>
+               <th>Diagnosis</th>
+               <th>Age At Onset</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Myocardial Infarction (cause of death)</td>
+               <td>57</td>
+            </tr>
+            <tr>
+               <td>Diabetes</td>
+               <td>40</td>
+            </tr>
+         </tbody>
+      </table>
+   </text>
+   <entry typeCode="DRIV">
+      <organizer xmlns:sdtc="urn:hl7-org:sdtc" moodCode="EVN" classCode="CLUSTER">
+         <templateId root="2.16.840.1.113883.10.20.22.4.45"/>
+   <!--  ********  Family history organizer template   ******** -->
+         <statusCode code="completed"/>
+         <subject>
+            <relatedSubject classCode="PRS">
+               <code code="FTH" displayName="Father" 
+                  codeSystemName="HL7 FamilyMember" 
+                  codeSystem="2.16.840.1.113883.5.111">
+                  <translation code="9947008" 
+                     displayName="Biological father" 
+                     codeSystemName="SNOMED" 
+                     codeSystem="2.16.840.1.113883.6.96"/>
+               </code>
+               <subject>
+               
+                  <sdtc:id root="root" extension="extension" assigningAuthorityName="assigningAuthorityName" displayable="false"/>
+				
+				  <administrativeGenderCode code="M" 
+                     codeSystem="2.16.840.1.113883.5.1" 
+                     displayName="Male"/>
+                  <birthTime value="1910"/>
+                
+                  <sdtc:deceasedInd value="true"/>
+                
+                  <sdtc:deceasedTime value="1967"/>
+               
+               </subject>
+            </relatedSubject>
+         </subject>
+         <component>
+            <observation classCode="OBS" moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.22.4.46"/>
+               <!-- Family History Observation template -->
+               <id root="d42ebf70-5c89-11db-b0de-0800200c9a66"/>
+               <code code="55561003" displayName="Active" 
+                  codeSystemName="SNOMED CT" 
+                  codeSystem="2.16.840.1.113883.6.96"/>
+               <statusCode code="completed"/>
+               <effectiveTime value="1967"/>
+               <value xsi:type="CD" code="22298006" 
+                  codeSystem="2.16.840.1.113883.6.96" 
+                  displayName="Myocardial infarction"/>
+               <entryRelationship typeCode="CAUS">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.22.4.47"/>
+   <!--  ******** Family history death observation template   ******** -->
+                     <id root="6898fae0-5c8a-11db-b0de-0800200c9a66"/>
+                     <code code="ASSERTION" 
+                        codeSystem="2.16.840.1.113883.5.4"/>
+                     <statusCode code="completed"/>
+                     <value xsi:type="CD" code="419099009" 
+                        codeSystem="2.16.840.1.113883.6.96" 
+                        displayName="Dead"/>
+                  </observation>
+               </entryRelationship>
+               <entryRelationship typeCode="SUBJ" inversionInd="true">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.22.4.31"/>
+   <!--  ********  Age observation template   ******** -->
+                     <code code="397659008" codeSystem="2.16.840.1.113883.6.96" 
+                        displayName="Age"/>
+                     <statusCode code="completed"/>
+                     <value xsi:type="PQ" value="57" unit="a"/>
+                  </observation>
+               </entryRelationship>
+            </observation>
+         </component>
+         <component>
+            <observation classCode="OBS" moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.22.4.46"/>
+    <!--  ********  Family history observation template   ******** -->
+               <id root="5bfe3ec0-5c8b-11db-b0de-0800200c9a66"/>
+               <code code="7087005" displayName="Intermittent" 
+                  codeSystemName="SNOMED CT" 
+                  codeSystem="2.16.840.1.113883.6.96"/>
+               <statusCode code="completed"/>
+               <effectiveTime value="1950"/>
+               <value xsi:type="CD" code="46635009" 
+                  codeSystem="2.16.840.1.113883.6.96" 
+                  displayName="Diabetes mellitus type 1"/>
+               <entryRelationship typeCode="SUBJ" inversionInd="true">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.22.4.31"/>
+    <!--  ********  Age observation template   ******** -->
+                     <code code="397659008" codeSystem="2.16.840.1.113883.6.96" 
+                        displayName="Age"/>
+                     <statusCode code="completed"/>
+                     <value xsi:type="PQ" value="40" unit="a"/>
+                  </observation>
+               </entryRelationship>
+            </observation>
+         </component>
+      </organizer>
+   </entry>
+</section>
+</component>        
+
          <!--
 ********************************************************
 IMMUNIZATIONS
@@ -1798,12 +1935,12 @@ MEDICATIONS
                                     nullFlavor="UNK"/>
                                  <telecom
                                     nullFlavor="UNK"/>
-                                 <assignedPerson>
+                                 <assignedPerson xmlns:sdtc="urn:hl7-org:sdtc">								 
                                     <name>
                                        <prefix>Dr.</prefix>
                                        <given>Henry</given>
                                        <family>Seven</family>
-                                    </name>
+                                    </name>									
                                  </assignedPerson>
                               </assignedAuthor>
                            </author>

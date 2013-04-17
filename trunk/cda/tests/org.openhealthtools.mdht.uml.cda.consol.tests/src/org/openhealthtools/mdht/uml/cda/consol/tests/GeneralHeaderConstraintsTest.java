@@ -8951,16 +8951,15 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
+				CE raceCE = DatatypesFactory.eINSTANCE.createCE();
 				target.getRecordTargets().clear();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.getSDTCRaceCodes().add(
-					(DatatypesFactory.eINSTANCE.createCE("2058-6", "2.16.840.1.113883.6.238")));
+				patient.getSDTCRaceCodes().add(raceCE); // this constraint only checks to see if element is there
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
-
 			}
 
 			@Override
@@ -8988,11 +8987,15 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				CE raceCE = DatatypesFactory.eINSTANCE.createCE();
+				raceCE.setCode("Must Exist"); // passes since it is only required to exist
+				raceCE.setCodeSystem("9.8.7.6.5.4.3.2.1"); // fails due to incorrect codeSystem
+
 				target.init();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.getSDTCRaceCodes().add((DatatypesFactory.eINSTANCE.createCE()));
+				patient.getSDTCRaceCodes().add((raceCE));
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
@@ -9000,16 +9003,18 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
+				CE raceCE = DatatypesFactory.eINSTANCE.createCE();
+				raceCE.setCode("2058-6"); // although a correct code, not required to be accurate, just to exist
+				raceCE.setCodeSystem("2.16.840.1.113883.6.238"); // correct passing codeSystem
+
 				target.getRecordTargets().clear();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.getSDTCRaceCodes().add(
-					(DatatypesFactory.eINSTANCE.createCE("2058-6", "2.16.840.1.113883.6.238")));
+				patient.getSDTCRaceCodes().add(raceCE);
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
-
 			}
 
 			@Override
@@ -9022,6 +9027,60 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientSDTCRaceCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	* 
+	* Note: Not part of additional constraint in the model, just an additional test to ensure a code exists
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientSDTCRaceCodeCustomCheckCode() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientSDTCRaceCodeCustomCheckCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientSDTCRaceCodeCustomCheckCode",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_SDTC_RACE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				CE raceCE = DatatypesFactory.eINSTANCE.createCE();
+				raceCE.setCodeSystem("2.16.840.1.113883.6.238"); // correct passing codeSystem, fails due to no code existing
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.getSDTCRaceCodes().add((raceCE));
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				CE raceCE = DatatypesFactory.eINSTANCE.createCE();
+				raceCE.setCode("code exists"); // passing due to having a code
+				raceCE.setCodeSystem("2.16.840.1.113883.6.238"); // correct passing codeSystem
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.getSDTCRaceCodes().add(raceCE);
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientSDTCRaceCode(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientSDTCRaceCodeCustomCheckCodeTestCase.doValidationTest();
 	}
 
 	/**
