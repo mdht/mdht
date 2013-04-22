@@ -95,9 +95,9 @@ public class SDTCExtensionTest {
 	private static final String BT_TS_VALUE = "19880907";
 
 	// constants for sdtc:raceCode
-	private static final String RACE_CODE_VALUE = "RACE_CODE_VALUE";
+	private static final String RACE_CODE_VALUE = "1002-5";
 
-	private static final String RACE_CODESYSTEM_VALUE = "1.2.3.4.5";
+	private static final String RACE_CODESYSTEM_VALUE = "2.16.840.1.113883.6.238";
 
 	private static final String RACE_CODESYSTEMNAME_VALUE = "RACE_CODESYSTEMNAME_VALUE";
 
