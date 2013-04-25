@@ -248,7 +248,7 @@ public class ResultsSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultsSectionEntriesOptional target) {
 				target.init();
-				ResultOrganizer org = ConsolFactory.eINSTANCE.createResultOrganizer();
+				ResultOrganizer org = ConsolFactory.eINSTANCE.createResultOrganizer().init();
 				target.addOrganizer(org);
 			}
 

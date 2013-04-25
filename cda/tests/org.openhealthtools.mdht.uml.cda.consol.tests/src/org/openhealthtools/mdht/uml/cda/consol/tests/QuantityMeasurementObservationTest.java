@@ -356,7 +356,7 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SPRT);
-				er.setObservation(ConsolFactory.eINSTANCE.createSOPInstanceObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createSOPInstanceObservation().init());
 				target.getEntryRelationships().add(er);
 
 			}

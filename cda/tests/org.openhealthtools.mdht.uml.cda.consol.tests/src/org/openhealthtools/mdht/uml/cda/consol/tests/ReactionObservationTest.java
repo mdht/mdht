@@ -279,6 +279,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_SEVERITY_OBSERVATION_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(ReactionObservation target) {
 				target.init();
@@ -339,6 +343,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_PROCEDURE_ACTIVITY_PROCEDURE_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(ReactionObservation target) {
 				target.init();
@@ -395,6 +403,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 			"validateReactionObservationMedicationActivityInversionInd",
 			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_MEDICATION_ACTIVITY_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				skipNullTest();
+			}
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
@@ -1010,12 +1022,12 @@ public class ReactionObservationTest extends CDAValidationTest {
 		EntryRelationship e = CDAFactory.eINSTANCE.createEntryRelationship();
 		switch (type) {
 			case SEVERITY_OBS:
-				SeverityObservation sObs = ConsolFactory.eINSTANCE.createSeverityObservation();
+				SeverityObservation sObs = ConsolFactory.eINSTANCE.createSeverityObservation().init();
 				sObs.init();
 				e.setObservation(sObs);
 				break;
 			case PROCEDURE_ACTIVITY_PROCEDURE:
-				ProcedureActivityProcedure paProcedure = ConsolFactory.eINSTANCE.createProcedureActivityProcedure();
+				ProcedureActivityProcedure paProcedure = ConsolFactory.eINSTANCE.createProcedureActivityProcedure().init();
 				paProcedure.init();
 				e.setProcedure(paProcedure);
 				break;

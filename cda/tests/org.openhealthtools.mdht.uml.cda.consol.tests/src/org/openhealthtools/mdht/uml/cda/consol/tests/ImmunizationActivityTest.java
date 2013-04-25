@@ -277,10 +277,14 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_ACTIVITY_INSTRUCTION_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.addAct(ConsolFactory.eINSTANCE.createInstructions().init());
 			}
 
 			@Override
@@ -484,6 +488,10 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			"validateImmunizationActivityMoodCode",
 			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				skipNullTest();
+			}
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {

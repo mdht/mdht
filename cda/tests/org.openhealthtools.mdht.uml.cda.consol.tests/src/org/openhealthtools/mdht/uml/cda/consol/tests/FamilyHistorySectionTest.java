@@ -242,7 +242,7 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FamilyHistorySection target) {
 				target.init();
-				target.addOrganizer(ConsolFactory.eINSTANCE.createFamilyHistoryOrganizer());
+				target.addOrganizer(ConsolFactory.eINSTANCE.createFamilyHistoryOrganizer().init());
 			}
 
 			@Override

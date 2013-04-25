@@ -502,7 +502,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			protected void updateToFail(MedicationActivity target) {
 				target.init();
 				Participant2 p = CDAFactory.eINSTANCE.createParticipant2();
-				p.setParticipantRole(ConsolFactory.eINSTANCE.createDrugVehicle());
+				p.setParticipantRole(ConsolFactory.eINSTANCE.createDrugVehicle().init());
 				target.getParticipants().add(p);
 			}
 
@@ -510,7 +510,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			protected void updateToPass(MedicationActivity target) {
 				target.getParticipants().clear();
 				Participant2 p = CDAFactory.eINSTANCE.createParticipant2();
-				p.setParticipantRole(ConsolFactory.eINSTANCE.createDrugVehicle());
+				p.setParticipantRole(ConsolFactory.eINSTANCE.createDrugVehicle().init());
 				p.setTypeCode(ParticipationType.CSM);
 				target.getParticipants().add(p);
 
@@ -539,10 +539,14 @@ public class MedicationActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_INSTRUCTIONS_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(MedicationActivity target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.addAct(ConsolFactory.eINSTANCE.createInstructions().init());
 			}
 
 			@Override
@@ -567,7 +571,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			protected void updateToPass(MedicationActivity target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions().init());
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 				er.setInversionInd(true);
 				target.getEntryRelationships().add(er);
@@ -600,7 +604,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(MedicationActivity target) {
 				target.init();
-				PreconditionForSubstanceAdministration pc = ConsolFactory.eINSTANCE.createPreconditionForSubstanceAdministration();
+				PreconditionForSubstanceAdministration pc = ConsolFactory.eINSTANCE.createPreconditionForSubstanceAdministration().init();
 				pc.setTypeCode(ActRelationshipType.CAUS);
 				target.getPreconditions().add(pc);
 
@@ -609,7 +613,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationActivity target) {
 				target.getPreconditions().clear();
-				PreconditionForSubstanceAdministration pc = ConsolFactory.eINSTANCE.createPreconditionForSubstanceAdministration();
+				PreconditionForSubstanceAdministration pc = ConsolFactory.eINSTANCE.createPreconditionForSubstanceAdministration().init();
 				pc.setTypeCode(ActRelationshipType.PRCN);
 				target.getPreconditions().add(pc);
 			}
@@ -704,6 +708,10 @@ public class MedicationActivityTest extends CDAValidationTest {
 			"validateMedicationActivityMoodCode",
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				skipNullTest();
+			}
 
 			@Override
 			protected void updateToFail(MedicationActivity target) {
@@ -1341,7 +1349,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationActivity target) {
 				Consumable con = CDAFactory.eINSTANCE.createConsumable();
-				con.setManufacturedProduct(ConsolFactory.eINSTANCE.createMedicationInformation());
+				con.setManufacturedProduct(ConsolFactory.eINSTANCE.createMedicationInformation().init());
 				target.setConsumable(con);
 
 			}
@@ -1545,7 +1553,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationActivity target) {
 				target.init();
-				PreconditionForSubstanceAdministration pc = ConsolFactory.eINSTANCE.createPreconditionForSubstanceAdministration();
+				PreconditionForSubstanceAdministration pc = ConsolFactory.eINSTANCE.createPreconditionForSubstanceAdministration().init();
 				pc.setTypeCode(ActRelationshipType.PRCN);
 				target.getPreconditions().add(pc);
 			}

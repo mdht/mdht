@@ -242,7 +242,7 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsAdministeredSection target) {
 				target.init();
-				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity());
+				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
 			}
 
 			@Override

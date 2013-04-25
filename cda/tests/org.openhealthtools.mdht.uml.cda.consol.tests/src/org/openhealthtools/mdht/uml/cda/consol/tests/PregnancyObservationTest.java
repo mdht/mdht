@@ -364,7 +364,7 @@ public class PregnancyObservationTest extends CDAValidationTest {
 
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				er.setObservation(ConsolFactory.eINSTANCE.createEstimatedDateOfDelivery());
+				er.setObservation(ConsolFactory.eINSTANCE.createEstimatedDateOfDelivery().init());
 				target.getEntryRelationships().add(er);
 
 			}

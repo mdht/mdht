@@ -324,6 +324,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_ENCOUNTER_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
 				target.init();
@@ -388,7 +392,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			protected void updateToFail(ProcedureActivityAct target) {
 				target.init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation().init());
 				target.getParticipants().add(par);
 			}
 
@@ -396,7 +400,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.getParticipants().clear();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation().init());
 				par.setTypeCode(ParticipationType.LOC);
 				target.getParticipants().add(par);
 
@@ -425,11 +429,15 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_INSTRUCTIONS_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -457,7 +465,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setInversionInd(true);
-				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions().init());
 				target.getEntryRelationships().add(er);
 
 			}
@@ -841,7 +849,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation().init());
 				target.getParticipants().add(par);
 			}
 
@@ -878,7 +886,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -915,7 +923,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
-				er.setObservation(ConsolFactory.eINSTANCE.createIndication());
+				er.setObservation(ConsolFactory.eINSTANCE.createIndication().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -952,7 +960,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
-				er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity());
+				er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
 				target.getEntryRelationships().add(er);
 
 			}

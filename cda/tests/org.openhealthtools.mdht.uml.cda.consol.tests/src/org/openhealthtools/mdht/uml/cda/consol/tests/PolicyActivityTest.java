@@ -3927,7 +3927,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				er.setAct(ConsolFactory.eINSTANCE.createAuthorizationActivity());
+				er.setAct(ConsolFactory.eINSTANCE.createAuthorizationActivity().init());
 				target.getEntryRelationships().add(er);
 			}
 

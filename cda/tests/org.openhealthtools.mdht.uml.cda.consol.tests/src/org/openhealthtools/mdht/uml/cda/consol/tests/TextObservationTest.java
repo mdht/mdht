@@ -455,7 +455,7 @@ public class TextObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SPRT);
-				er.setObservation(ConsolFactory.eINSTANCE.createSOPInstanceObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createSOPInstanceObservation().init());
 				target.getEntryRelationships().add(er);
 
 			}
@@ -493,7 +493,7 @@ public class TextObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SPRT);
-				er.setObservation(ConsolFactory.eINSTANCE.createQuantityMeasurementObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createQuantityMeasurementObservation().init());
 				target.getEntryRelationships().add(er);
 
 			}

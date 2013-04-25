@@ -202,7 +202,7 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AssessmentAndPlanSection target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createPlanOfCareActivityAct());
+				target.addAct(ConsolFactory.eINSTANCE.createPlanOfCareActivityAct().init());
 			}
 
 			@Override

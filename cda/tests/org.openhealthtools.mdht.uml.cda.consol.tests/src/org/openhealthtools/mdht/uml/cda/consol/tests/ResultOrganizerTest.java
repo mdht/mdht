@@ -386,7 +386,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
-				ResultObservation resultObs = ConsolFactory.eINSTANCE.createResultObservation();
+				ResultObservation resultObs = ConsolFactory.eINSTANCE.createResultObservation().init();
 				target.addObservation(resultObs);
 			}
 

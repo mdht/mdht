@@ -94,7 +94,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationDispense target) {
 				Product prod = CDAFactory.eINSTANCE.createProduct();
-				prod.setManufacturedProduct(ConsolFactory.eINSTANCE.createImmunizationMedicationInformation());
+				prod.setManufacturedProduct(ConsolFactory.eINSTANCE.createImmunizationMedicationInformation().init());
 				target.setProduct(prod);
 
 			}

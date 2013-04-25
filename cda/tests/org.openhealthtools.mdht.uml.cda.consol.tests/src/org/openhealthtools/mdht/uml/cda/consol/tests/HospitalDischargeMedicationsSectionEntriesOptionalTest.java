@@ -242,7 +242,7 @@ public class HospitalDischargeMedicationsSectionEntriesOptionalTest extends CDAV
 			@Override
 			protected void updateToPass(HospitalDischargeMedicationsSectionEntriesOptional target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createDischargeMedication());
+				target.addAct(ConsolFactory.eINSTANCE.createDischargeMedication().init());
 			}
 
 			@Override

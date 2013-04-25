@@ -208,7 +208,7 @@ public class ProblemSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemSection target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct());
+				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct().init());
 			}
 
 			@Override

@@ -260,7 +260,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				PlanOfCareActivityAct ActivityAct = ConsolFactory.eINSTANCE.createPlanOfCareActivityAct();
+				PlanOfCareActivityAct ActivityAct = ConsolFactory.eINSTANCE.createPlanOfCareActivityAct().init();
 				target.addAct(ActivityAct);
 
 			}
@@ -296,7 +296,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				PlanOfCareActivityEncounter Actent = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter();
+				PlanOfCareActivityEncounter Actent = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter().init();
 				target.addEncounter(Actent);
 			}
 
@@ -331,7 +331,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				PlanOfCareActivityObservation ActObs = ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation();
+				PlanOfCareActivityObservation ActObs = ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation().init();
 				target.addObservation(ActObs);
 			}
 
@@ -366,7 +366,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				PlanOfCareActivityProcedure ActProc = ConsolFactory.eINSTANCE.createPlanOfCareActivityProcedure();
+				PlanOfCareActivityProcedure ActProc = ConsolFactory.eINSTANCE.createPlanOfCareActivityProcedure().init();
 				target.addProcedure(ActProc);
 			}
 
@@ -401,7 +401,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				PlanOfCareActivitySubstanceAdministration ActObs = ConsolFactory.eINSTANCE.createPlanOfCareActivitySubstanceAdministration();
+				PlanOfCareActivitySubstanceAdministration ActObs = ConsolFactory.eINSTANCE.createPlanOfCareActivitySubstanceAdministration().init();
 				target.addSubstanceAdministration(ActObs);
 			}
 
@@ -436,7 +436,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				PlanOfCareActivitySupply ActSupply = ConsolFactory.eINSTANCE.createPlanOfCareActivitySupply();
+				PlanOfCareActivitySupply ActSupply = ConsolFactory.eINSTANCE.createPlanOfCareActivitySupply().init();
 				target.addSupply(ActSupply);
 			}
 
@@ -471,7 +471,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.addAct(ConsolFactory.eINSTANCE.createInstructions().init());
 			}
 
 			@Override

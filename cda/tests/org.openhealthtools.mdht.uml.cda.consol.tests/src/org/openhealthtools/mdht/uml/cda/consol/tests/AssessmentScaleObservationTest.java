@@ -618,7 +618,7 @@ public class AssessmentScaleObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
-				er.setObservation(ConsolFactory.eINSTANCE.createAssessmentScaleSupportingObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAssessmentScaleSupportingObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 

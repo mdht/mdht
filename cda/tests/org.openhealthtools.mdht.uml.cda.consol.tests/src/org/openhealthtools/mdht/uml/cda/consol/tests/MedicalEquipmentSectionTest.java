@@ -242,7 +242,7 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicalEquipmentSection target) {
 				target.init();
-				target.addSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity());
+				target.addSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity().init());
 			}
 
 			@Override

@@ -140,8 +140,8 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
 				target.init();
-				target.addSection(ConsolFactory.eINSTANCE.createAllergiesSection());
-				target.addSection(ConsolFactory.eINSTANCE.createAdvanceDirectivesSection());
+				target.addSection(ConsolFactory.eINSTANCE.createAllergiesSection().init());
+				target.addSection(ConsolFactory.eINSTANCE.createAdvanceDirectivesSection().init());
 			}
 
 			@Override
@@ -179,8 +179,8 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
 				target.init();
-				target.addSection(ConsolFactory.eINSTANCE.createAllergiesSection());
-				target.addSection(ConsolFactory.eINSTANCE.createAdvanceDirectivesSection());
+				target.addSection(ConsolFactory.eINSTANCE.createAllergiesSection().init());
+				target.addSection(ConsolFactory.eINSTANCE.createAdvanceDirectivesSection().init());
 			}
 
 			@Override
@@ -947,7 +947,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 				target.getDocumentationOfs().clear();
 				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
-				PhysicianReadingStudyPerformer phy = ConsolFactory.eINSTANCE.createPhysicianReadingStudyPerformer();
+				PhysicianReadingStudyPerformer phy = ConsolFactory.eINSTANCE.createPhysicianReadingStudyPerformer().init();
 				se.getPerformers().add(phy);
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);
@@ -1220,7 +1220,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 				Component1 comp = CDAFactory.eINSTANCE.createComponent1();
 
 				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
-				PhysicianofRecordParticipant rp = ConsolFactory.eINSTANCE.createPhysicianofRecordParticipant();
+				PhysicianofRecordParticipant rp = ConsolFactory.eINSTANCE.createPhysicianofRecordParticipant().init();
 				ee.getEncounterParticipants().add(rp);
 				comp.setEncompassingEncounter(ee);
 				target.setComponentOf(comp);

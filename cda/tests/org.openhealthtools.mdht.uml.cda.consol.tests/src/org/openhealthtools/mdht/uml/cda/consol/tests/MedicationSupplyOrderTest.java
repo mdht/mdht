@@ -73,12 +73,16 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SUPPLY_ORDER_INSTRUCTION_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(MedicationSupplyOrder target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 
-				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -106,7 +110,7 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 				er.setInversionInd(true);
-				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -184,7 +188,7 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationSupplyOrder target) {
 				Product prod = CDAFactory.eINSTANCE.createProduct();
-				prod.setManufacturedProduct(ConsolFactory.eINSTANCE.createImmunizationMedicationInformation());
+				prod.setManufacturedProduct(ConsolFactory.eINSTANCE.createImmunizationMedicationInformation().init());
 				target.setProduct(prod);
 			}
 
