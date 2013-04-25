@@ -71,7 +71,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 			protected void updateToPass(CoverageActivity target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setAct(ConsolFactory.eINSTANCE.createPolicyActivity());
+				er.setAct(ConsolFactory.eINSTANCE.createPolicyActivity().init());
 				er.setSequenceNumber(DatatypesFactory.eINSTANCE.createINT());
 				target.getEntryRelationships().add(er);
 			}

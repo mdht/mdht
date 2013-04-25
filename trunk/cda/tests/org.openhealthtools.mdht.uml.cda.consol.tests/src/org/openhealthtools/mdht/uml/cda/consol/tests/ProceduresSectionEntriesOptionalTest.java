@@ -245,7 +245,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
-				target.addProcedure(ConsolFactory.eINSTANCE.createProcedureActivityProcedure());
+				target.addProcedure(ConsolFactory.eINSTANCE.createProcedureActivityProcedure().init());
 			}
 
 			@Override
@@ -279,7 +279,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createProcedureActivityObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createProcedureActivityObservation().init());
 			}
 
 			@Override
@@ -313,7 +313,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createProcedureActivityAct());
+				target.addAct(ConsolFactory.eINSTANCE.createProcedureActivityAct().init());
 			}
 
 			@Override

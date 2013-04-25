@@ -248,7 +248,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createSocialHistoryObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createSocialHistoryObservation().init());
 			}
 
 			@Override
@@ -282,7 +282,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createPregnancyObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createPregnancyObservation().init());
 			}
 
 			@Override
@@ -316,7 +316,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createSmokingStatusObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createSmokingStatusObservation().init());
 			}
 
 			@Override
@@ -350,7 +350,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createTobaccoUse());
+				target.addObservation(ConsolFactory.eINSTANCE.createTobaccoUse().init());
 			}
 
 			@Override

@@ -109,7 +109,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 				target.init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createProductInstance());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createProductInstance().init());
 
 				target.getParticipants().add(par);
 			}
@@ -118,7 +118,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.getParticipants().clear();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createProductInstance());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createProductInstance().init());
 				par.setTypeCode(ParticipationType.PRD);
 				target.getParticipants().add(par);
 			}
@@ -213,6 +213,10 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			"validateNonMedicinalSupplyActivityMoodCode",
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				skipNullTest();
+			}
 
 			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
@@ -408,7 +412,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createProductInstance());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createProductInstance().init());
 				par.setTypeCode(ParticipationType.PRD);
 				target.getParticipants().add(par);
 			}

@@ -304,7 +304,7 @@ public class CognitiveStatusResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CognitiveStatusResultOrganizer target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusResultObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusResultObservation().init());
 			}
 
 			@Override

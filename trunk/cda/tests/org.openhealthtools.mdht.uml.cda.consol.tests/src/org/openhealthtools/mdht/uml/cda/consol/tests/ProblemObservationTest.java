@@ -330,11 +330,15 @@ public class ProblemObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(ProblemObservation target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -358,7 +362,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 			protected void updateToPass(ProblemObservation target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation().init());
 				er.setInversionInd(true);
 				target.getEntryRelationships().add(er);
 			}
@@ -907,7 +911,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -944,7 +948,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				er.setObservation(ConsolFactory.eINSTANCE.createHealthStatusObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createHealthStatusObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -981,7 +985,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				er.setObservation(ConsolFactory.eINSTANCE.createProblemStatus());
+				er.setObservation(ConsolFactory.eINSTANCE.createProblemStatus().init());
 				target.getEntryRelationships().add(er);
 			}
 

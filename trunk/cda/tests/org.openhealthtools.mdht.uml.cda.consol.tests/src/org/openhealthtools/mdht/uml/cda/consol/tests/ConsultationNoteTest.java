@@ -138,6 +138,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_HAS_AN_ASSEMENT_AND_PLAN_SECTION_OR_INDIVIDUAL_ASSEMENT_AND_PLAN_SECTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			public void addFailTests() {
 
@@ -218,6 +222,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			"validateConsultationNoteDoesNotHaveIndividualAssementAndPlanSectionsWhenAssementAndPlanSectionPresent",
 			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_DOES_NOT_HAVE_INDIVIDUAL_ASSEMENT_AND_PLAN_SECTIONS_WHEN_ASSEMENT_AND_PLAN_SECTION_PRESENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				skipNullTest();
+			}
 
 			/*
 			 * (non-Javadoc)
@@ -305,6 +313,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_DOES_NOT_HAVE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_WITH_CHIEF_COMPLAINT_SECTION_OR_REASON_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			public void addFailTests() {
 
@@ -385,6 +397,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			"validateConsultationNoteHasReasonForReferralOrReasonForVisit",
 			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_HAS_REASON_FOR_REFERRAL_OR_REASON_FOR_VISIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				skipNullTest();
+			}
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {

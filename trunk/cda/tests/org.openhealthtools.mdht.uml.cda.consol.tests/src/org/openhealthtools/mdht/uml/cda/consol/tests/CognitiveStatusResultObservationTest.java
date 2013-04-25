@@ -709,7 +709,7 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				er.setSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity());
+				er.setSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -746,7 +746,7 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				er.setObservation(ConsolFactory.eINSTANCE.createCaregiverCharacteristics());
+				er.setObservation(ConsolFactory.eINSTANCE.createCaregiverCharacteristics().init());
 				target.getEntryRelationships().add(er);
 
 			}
@@ -784,7 +784,7 @@ public class CognitiveStatusResultObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
-				er.setObservation(ConsolFactory.eINSTANCE.createAssessmentScaleObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAssessmentScaleObservation().init());
 				target.getEntryRelationships().add(er);
 
 			}

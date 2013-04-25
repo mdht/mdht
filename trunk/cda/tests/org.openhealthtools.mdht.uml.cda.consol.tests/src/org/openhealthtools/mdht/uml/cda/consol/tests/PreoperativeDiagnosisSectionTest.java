@@ -242,7 +242,7 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PreoperativeDiagnosisSection target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createPreoperativeDiagnosis());
+				target.addAct(ConsolFactory.eINSTANCE.createPreoperativeDiagnosis().init());
 			}
 
 			@Override

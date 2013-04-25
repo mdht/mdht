@@ -399,7 +399,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				er.setObservation(ConsolFactory.eINSTANCE.createAllergyObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAllergyObservation().init());
 				target.getEntryRelationships().add(er);
 
 			}

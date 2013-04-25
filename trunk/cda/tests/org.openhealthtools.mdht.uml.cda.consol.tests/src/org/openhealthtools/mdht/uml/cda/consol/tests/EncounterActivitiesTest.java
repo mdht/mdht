@@ -262,7 +262,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 			protected void updateToFail(EncounterActivities target) {
 				target.init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation().init());
 				target.getParticipants().add(par);
 			}
 
@@ -271,7 +271,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 				target.getParticipants().clear();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
 				par.setTypeCode(ParticipationType.LOC);
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation().init());
 				target.getParticipants().add(par);
 			}
 
@@ -605,7 +605,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 				target.init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
 				par.setTypeCode(ParticipationType.LOC);
-				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation().init());
 				target.getParticipants().add(par);
 			}
 
@@ -712,7 +712,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EncounterActivities target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createEncounterDiagnosis());
+				target.addAct(ConsolFactory.eINSTANCE.createEncounterDiagnosis().init());
 			}
 
 			@Override

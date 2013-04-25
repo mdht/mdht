@@ -242,7 +242,7 @@ public class HospitalDischargeDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HospitalDischargeDiagnosisSection target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosis());
+				target.addAct(ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosis().init());
 			}
 
 			@Override

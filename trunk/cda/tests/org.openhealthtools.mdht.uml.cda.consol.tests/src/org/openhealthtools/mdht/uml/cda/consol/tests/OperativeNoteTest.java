@@ -1111,7 +1111,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated
 	*/
 	@Test
 	public void testValidateOperativeNoteDocumentationOfServiceEventProcedureCodes() {
@@ -1119,68 +1119,15 @@ public class OperativeNoteTest extends CDAValidationTest {
 			"validateOperativeNoteDocumentationOfServiceEventProcedureCodes",
 			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_DOCUMENTATION_OF_SERVICE_EVENT_PROCEDURE_CODES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
-			// 2.16.840.1.113883.6.104' or code.codeSystem = '2.16.840.1.113883.6.12' or code.codeSystem = '2.16.840.1.113883.6.96'
 
 			@Override
 			protected void updateToFail(OperativeNote target) {
-				target.init();
-				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
-				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
-				se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "NOT2.16.840.1.113883.6.104"));
-				dof.setServiceEvent(se);
-				target.getDocumentationOfs().add(dof);
 
 			}
 
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
-			 */
 			@Override
-			public void addPassTests() {
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(OperativeNote target) {
-						target.getDocumentationOfs().clear();
-						DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
-						ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
-						se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.104"));
-						dof.setServiceEvent(se);
-						target.getDocumentationOfs().add(dof);
-
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(OperativeNote target) {
-						target.getDocumentationOfs().clear();
-						DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
-						ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
-						se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.12"));
-						dof.setServiceEvent(se);
-						target.getDocumentationOfs().add(dof);
-
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(OperativeNote target) {
-						target.getDocumentationOfs().clear();
-						DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
-						ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
-						se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.96"));
-						dof.setServiceEvent(se);
-						target.getDocumentationOfs().add(dof);
-
-					}
-				});
+			protected void updateToPass(OperativeNote target) {
+				target.init();
 
 			}
 
@@ -1195,6 +1142,94 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 		validateOperativeNoteDocumentationOfServiceEventProcedureCodesTestCase.doValidationTest();
 	}
+
+	// /**
+	// *
+	// * @generated not
+	// */
+	// @Test
+	// public void testValidateOperativeNoteDocumentationOfServiceEventProcedureCodes() {
+	// OperationsTestCase<OperativeNote> validateOperativeNoteDocumentationOfServiceEventProcedureCodesTestCase = new
+	// OperationsTestCase<OperativeNote>(
+	// "validateOperativeNoteDocumentationOfServiceEventProcedureCodes",
+	// operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_DOCUMENTATION_OF_SERVICE_EVENT_PROCEDURE_CODES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	// objectFactory) {
+	// // 2.16.840.1.113883.6.104' or code.codeSystem = '2.16.840.1.113883.6.12' or code.codeSystem = '2.16.840.1.113883.6.96'
+	//
+	// @Override
+	// protected void updateToFail(OperativeNote target) {
+	// target.init();
+	// DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+	// ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+	// se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "NOT2.16.840.1.113883.6.104"));
+	// dof.setServiceEvent(se);
+	// target.getDocumentationOfs().add(dof);
+	//
+	// }
+	//
+	// /*
+	// * (non-Javadoc)
+	// *
+	// * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+	// */
+	// @Override
+	// public void addPassTests() {
+	//
+	// addPassTest(new PassTest() {
+	//
+	// @Override
+	// public void updateToPass(OperativeNote target) {
+	// target.getDocumentationOfs().clear();
+	// DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+	// ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+	// se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.104"));
+	// dof.setServiceEvent(se);
+	// target.getDocumentationOfs().add(dof);
+	//
+	// }
+	// });
+	//
+	// addPassTest(new PassTest() {
+	//
+	// @Override
+	// public void updateToPass(OperativeNote target) {
+	// target.getDocumentationOfs().clear();
+	// DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+	// ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+	// se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.12"));
+	// dof.setServiceEvent(se);
+	// target.getDocumentationOfs().add(dof);
+	//
+	// }
+	// });
+	//
+	// addPassTest(new PassTest() {
+	//
+	// @Override
+	// public void updateToPass(OperativeNote target) {
+	// target.getDocumentationOfs().clear();
+	// DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+	// ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+	// se.setCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.96"));
+	// dof.setServiceEvent(se);
+	// target.getDocumentationOfs().add(dof);
+	//
+	// }
+	// });
+	//
+	// }
+	//
+	// @Override
+	// protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+	//
+	// return OperativeNoteOperations.validateOperativeNoteDocumentationOfServiceEventProcedureCodes(
+	// (OperativeNote) objectToTest, diagnostician, map);
+	// }
+	//
+	// };
+	//
+	// validateOperativeNoteDocumentationOfServiceEventProcedureCodesTestCase.doValidationTest();
+	// }
 
 	/**
 	*

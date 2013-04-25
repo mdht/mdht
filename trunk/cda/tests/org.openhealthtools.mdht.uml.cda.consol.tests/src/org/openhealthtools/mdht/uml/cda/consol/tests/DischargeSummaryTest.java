@@ -151,6 +151,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_DOES_NOT_HAVE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_WITH_CHIEF_COMPLAINT_SECTION_OR_REASON_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			public void addFailTests() {
 

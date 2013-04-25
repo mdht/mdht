@@ -242,7 +242,7 @@ public class ProblemSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemSectionEntriesOptional target) {
 				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct());
+				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct().init());
 			}
 
 			@Override

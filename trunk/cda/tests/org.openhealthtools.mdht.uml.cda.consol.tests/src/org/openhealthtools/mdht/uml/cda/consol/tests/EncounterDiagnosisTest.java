@@ -234,7 +234,7 @@ public class EncounterDiagnosisTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				er.setObservation(ConsolFactory.eINSTANCE.createProblemObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createProblemObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 

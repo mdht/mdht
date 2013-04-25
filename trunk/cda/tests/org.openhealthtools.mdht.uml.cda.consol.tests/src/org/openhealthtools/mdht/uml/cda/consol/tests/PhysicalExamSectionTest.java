@@ -246,7 +246,7 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PhysicalExamSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createPressureUlcerObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createPressureUlcerObservation().init());
 			}
 
 			@Override
@@ -280,7 +280,7 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PhysicalExamSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createNumberOfPressureUlcersObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createNumberOfPressureUlcersObservation().init());
 			}
 
 			@Override
@@ -314,7 +314,7 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PhysicalExamSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createHighestPressureUlcerStage());
+				target.addObservation(ConsolFactory.eINSTANCE.createHighestPressureUlcerStage().init());
 			}
 
 			@Override

@@ -65,7 +65,7 @@ public class DischargeMedicationTest extends CDAValidationTest {
 			protected void updateToPass(DischargeMedication target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity());
+				er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 				target.getEntryRelationships().add(er);
 			}

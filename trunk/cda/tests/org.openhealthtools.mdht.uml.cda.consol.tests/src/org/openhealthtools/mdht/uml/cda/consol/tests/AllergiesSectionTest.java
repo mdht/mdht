@@ -208,7 +208,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSection target) {
 
-				target.addAct(ConsolFactory.eINSTANCE.createAllergyProblemAct());
+				target.addAct(ConsolFactory.eINSTANCE.createAllergyProblemAct().init());
 
 			}
 

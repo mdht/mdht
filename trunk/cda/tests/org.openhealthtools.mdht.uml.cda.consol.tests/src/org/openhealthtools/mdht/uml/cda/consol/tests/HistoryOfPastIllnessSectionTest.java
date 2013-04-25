@@ -242,7 +242,7 @@ public class HistoryOfPastIllnessSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryOfPastIllnessSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createProblemObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createProblemObservation().init());
 			}
 
 			@Override

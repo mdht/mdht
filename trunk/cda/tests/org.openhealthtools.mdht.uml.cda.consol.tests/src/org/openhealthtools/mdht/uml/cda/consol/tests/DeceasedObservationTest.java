@@ -503,7 +503,7 @@ public class DeceasedObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.CAUS);
-				er.setObservation(ConsolFactory.eINSTANCE.createProblemObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createProblemObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 

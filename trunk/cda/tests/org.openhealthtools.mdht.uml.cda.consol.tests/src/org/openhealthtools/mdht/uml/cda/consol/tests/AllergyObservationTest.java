@@ -273,11 +273,15 @@ public class AllergyObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_ALLERGY_STATUS_INVERSION_INDICATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(AllergyObservation target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createAllergyStatusObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAllergyStatusObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -304,7 +308,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 				target.init();
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createAllergyStatusObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAllergyStatusObservation().init());
 				er.setInversionInd(true);
 				target.getEntryRelationships().add(er);
 			}
@@ -332,11 +336,15 @@ public class AllergyObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_REACTION_INVERSION_INDICATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(AllergyObservation target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createReactionObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createReactionObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -363,7 +371,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 				target.init();
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createReactionObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createReactionObservation().init());
 				er.setInversionInd(true);
 				target.getEntryRelationships().add(er);
 
@@ -392,11 +400,15 @@ public class AllergyObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_SEVERITY_INVERSION_INDICATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(AllergyObservation target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createSeverityObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createSeverityObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -423,7 +435,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 				target.init();
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createSeverityObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createSeverityObservation().init());
 				er.setInversionInd(true);
 				target.getEntryRelationships().add(er);
 

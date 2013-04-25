@@ -304,7 +304,7 @@ public class FunctionalStatusResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusResultOrganizer target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusResultObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusResultObservation().init());
 			}
 
 			@Override

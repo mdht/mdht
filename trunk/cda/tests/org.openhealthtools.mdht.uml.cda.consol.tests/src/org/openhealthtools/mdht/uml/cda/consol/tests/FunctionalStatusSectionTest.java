@@ -229,7 +229,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addOrganizer(ConsolFactory.eINSTANCE.createFunctionalStatusResultOrganizer());
+				target.addOrganizer(ConsolFactory.eINSTANCE.createFunctionalStatusResultOrganizer().init());
 			}
 
 			@Override
@@ -263,7 +263,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addOrganizer(ConsolFactory.eINSTANCE.createCognitiveStatusResultOrganizer());
+				target.addOrganizer(ConsolFactory.eINSTANCE.createCognitiveStatusResultOrganizer().init());
 			}
 
 			@Override
@@ -297,7 +297,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusResultObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusResultObservation().init());
 			}
 
 			@Override
@@ -331,7 +331,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusResultObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusResultObservation().init());
 			}
 
 			@Override
@@ -365,7 +365,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusProblemObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusProblemObservation().init());
 			}
 
 			@Override
@@ -399,7 +399,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusProblemObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusProblemObservation().init());
 			}
 
 			@Override
@@ -433,7 +433,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createCaregiverCharacteristics());
+				target.addObservation(ConsolFactory.eINSTANCE.createCaregiverCharacteristics().init());
 			}
 
 			@Override
@@ -467,7 +467,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createAssessmentScaleObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createAssessmentScaleObservation().init());
 			}
 
 			@Override
@@ -501,7 +501,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity());
+				target.addSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity().init());
 			}
 
 			@Override
@@ -535,7 +535,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createPressureUlcerObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createPressureUlcerObservation().init());
 			}
 
 			@Override
@@ -569,7 +569,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createNumberOfPressureUlcersObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createNumberOfPressureUlcersObservation().init());
 			}
 
 			@Override
@@ -603,7 +603,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createHighestPressureUlcerStage());
+				target.addObservation(ConsolFactory.eINSTANCE.createHighestPressureUlcerStage().init());
 			}
 
 			@Override

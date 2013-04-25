@@ -75,11 +75,15 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_AGE_OBSERVATION_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				skipNullTest();
+			}
+
 			@Override
 			protected void updateToFail(FamilyHistoryObservation target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation().init());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -105,7 +109,7 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			protected void updateToPass(FamilyHistoryObservation target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation().init());
 				er.setInversionInd(true);
 				target.getEntryRelationships().add(er);
 
@@ -340,7 +344,7 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void integrationTestValidateFamilyHistoryObservationCode() {
-		FamilyHistoryObservation fixture = ConsolFactory.eINSTANCE.createFamilyHistoryObservation();
+		FamilyHistoryObservation fixture = ConsolFactory.eINSTANCE.createFamilyHistoryObservation().init();
 
 		Diagnostic problems = Diagnostician.INSTANCE.validate(fixture);
 
@@ -527,7 +531,7 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			protected void updateToPass(FamilyHistoryObservation target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation().init());
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 				target.getEntryRelationships().add(er);
 			}
@@ -564,7 +568,7 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			protected void updateToPass(FamilyHistoryObservation target) {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setObservation(ConsolFactory.eINSTANCE.createFamilyHistoryDeathObservation());
+				er.setObservation(ConsolFactory.eINSTANCE.createFamilyHistoryDeathObservation().init());
 				er.setTypeCode(x_ActRelationshipEntryRelationship.CAUS);
 				target.getEntryRelationships().add(er);
 

@@ -242,7 +242,7 @@ public class ComplicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ComplicationsSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createProblemObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createProblemObservation().init());
 			}
 
 			@Override

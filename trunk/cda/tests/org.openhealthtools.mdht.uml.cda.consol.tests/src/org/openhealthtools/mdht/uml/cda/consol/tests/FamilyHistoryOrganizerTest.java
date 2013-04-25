@@ -184,7 +184,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createFamilyHistoryObservation());
+				target.addObservation(ConsolFactory.eINSTANCE.createFamilyHistoryObservation().init());
 			}
 
 			@Override
