@@ -532,10 +532,14 @@ public abstract class CDAValidationTest {
 
 		private boolean skipPassTest = false;
 
-		private boolean skipNullFlavorTest = false;
+		private boolean skipNullFlavorTest = true;
 
 		public void skipFailsTest() {
 			skipFailsTest = true;
+		}
+
+		public void skipNullTest() {
+			skipNullFlavorTest = true;
 		}
 
 		public void skipPassTest() {
@@ -813,11 +817,15 @@ public abstract class CDAValidationTest {
 
 				if (!skipNullFlavorTest) {
 
-					updateNullFlavor((ValidationTarget) objectToTest);
+					EObject nullFlavorTest = (EObject) testObjectFactory.create();
+
+					updateToFail((ValidationTarget) nullFlavorTest);
+
+					updateNullFlavor((ValidationTarget) nullFlavorTest);
 
 					EObject objectToSerialize = (getObjectToSerialze() != null
 							? getObjectToSerialze()
-							: objectToTest);
+							: nullFlavorTest);
 
 					if (objectToSerialize instanceof InfrastructureRoot) {
 						if (testLogDir != null) {
@@ -833,7 +841,7 @@ public abstract class CDAValidationTest {
 							}
 						}
 					}
-					validateExpectPass(objectToTest, diagnostician, map);
+					validateExpectPass(nullFlavorTest, diagnostician, map);
 
 				} else {
 
@@ -888,8 +896,8 @@ public abstract class CDAValidationTest {
 		protected void updateToPass(ValidationTarget target) {
 		};
 
-		protected void updateNullFlavor(ValidationTarget target) {
-			// setNullFlavor(NullFlavor newNullFlavor) {
+		private void setNullFlavor(Object target) {
+
 			@SuppressWarnings("rawtypes")
 			final java.lang.Class[] nullFlavorArgument = new java.lang.Class[] { org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor.class };
 			try {
@@ -900,6 +908,59 @@ public abstract class CDAValidationTest {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+
+		private void setNullFlavors(EObject target, int level) {
+
+			EClass eClass = target.eClass();
+
+			for (EStructuralFeature cdaFeature : eClass.getEAllStructuralFeatures()) {
+				if (cdaFeature instanceof EReference) {
+					EReference cdaReference = (EReference) cdaFeature;
+					if (cdaReference.isMany()) {
+						EList<EObject> eList = (EList<EObject>) (target).eGet(cdaReference);
+						if (!eList.isEmpty()) {
+							for (EObject eo : eList) {
+								setNullFlavor(eo);
+								setNullFlavors(eo, level++);
+							}
+						} else {
+
+							if (!cdaReference.getEReferenceType().isAbstract() && level == 1) {
+								EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
+									cdaReference.getEReferenceType());
+								setNullFlavor(objectToAdd);
+								((EList) (target).eGet(cdaReference)).add(objectToAdd);
+							}
+
+						}
+					} else {
+						EObject eObject = (EObject) (target).eGet(cdaReference);
+						if (eObject != null) {
+							setNullFlavor(eObject);
+							setNullFlavors(eObject, level++);
+						} else {
+
+							if (!cdaReference.getEReferenceType().isAbstract() && level == 1) {
+								EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
+									cdaReference.getEReferenceType());
+								setNullFlavor(objectToAdd);
+								(target).eSet(cdaReference, objectToAdd);
+							}
+						}
+
+					}
+
+				}
+			}
+		}
+
+		protected void updateNullFlavor(ValidationTarget target) {
+			// setNullFlavor(NullFlavor newNullFlavor) {
+
+			setNullFlavor(target);
+			setNullFlavors((EObject) target, 1);
+
 		};
 
 	}
