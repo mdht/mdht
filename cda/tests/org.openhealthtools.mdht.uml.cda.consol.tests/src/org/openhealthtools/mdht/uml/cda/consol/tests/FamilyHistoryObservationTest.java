@@ -341,10 +341,12 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	 * Test the dependency interaction of the Code and CodeP constraints.
+	 * 
+	 *  @generated not
 	 */
 	@Test
 	public void integrationTestValidateFamilyHistoryObservationCode() {
-		FamilyHistoryObservation fixture = ConsolFactory.eINSTANCE.createFamilyHistoryObservation().init();
+		FamilyHistoryObservation fixture = ConsolFactory.eINSTANCE.createFamilyHistoryObservation();
 
 		Diagnostic problems = Diagnostician.INSTANCE.validate(fixture);
 
