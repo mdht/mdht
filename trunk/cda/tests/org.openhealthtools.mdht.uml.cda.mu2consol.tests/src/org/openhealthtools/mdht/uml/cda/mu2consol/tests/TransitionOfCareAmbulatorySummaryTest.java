@@ -7,6 +7,7 @@
  *
  * Contributors:
  *    Rama Ramakrishnan (Agilex Corporation) - initial API and implementation
+ *    Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 
@@ -65,8 +66,34 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(TransitionOfCareAmbulatorySummary target) {
+			public void addFailTests() {
 
+				// empty test
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+
+					}
+				});
+
+				// test failing snippet (does not include an assignedPerson)
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						target.init();
+						DocumentationOf doc = CDAFactory.eINSTANCE.createDocumentationOf();
+						ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+						Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+						ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+						ae.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+						perf.setAssignedEntity(ae);
+						se.getPerformers().add(perf);
+						doc.setServiceEvent(se);
+						target.getDocumentationOfs().add(doc);
+					}
+				});
 			}
 
 			@Override
@@ -139,6 +166,50 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 						ee.getEncounterParticipants().add(ep);
 						comp.setEncompassingEncounter(ee);
 						target.setComponentOf(comp);
+					}
+
+				});
+
+				// test "at least" scenario for clause one with a snippet with multiple performers
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						target.init();
+						DocumentationOf doc = CDAFactory.eINSTANCE.createDocumentationOf();
+						ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+
+						Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						Person ap = CDAFactory.eINSTANCE.createPerson();
+						ap.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+						ae.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+						ae.setAssignedPerson(ap);
+						perf.setAssignedEntity(ae);
+
+						Performer1 perf2 = CDAFactory.eINSTANCE.createPerformer1();
+						AssignedEntity ae2 = CDAFactory.eINSTANCE.createAssignedEntity();
+						Person ap2 = CDAFactory.eINSTANCE.createPerson();
+						ap2.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						ae2.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+						ae2.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+						ae2.setAssignedPerson(ap2);
+						perf2.setAssignedEntity(ae2);
+
+						// 3rd performer has no assignedPerson element, only one performer needs to have it
+						Performer1 perf3 = CDAFactory.eINSTANCE.createPerformer1();
+						AssignedEntity ae3 = CDAFactory.eINSTANCE.createAssignedEntity();
+						ae3.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+						ae3.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+						perf3.setAssignedEntity(ae3);
+
+						se.getPerformers().add(perf);
+						se.getPerformers().add(perf2);
+						se.getPerformers().add(perf3);
+
+						doc.setServiceEvent(se);
+						target.getDocumentationOfs().add(doc);
 					}
 
 				});
