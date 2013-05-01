@@ -1301,6 +1301,7 @@
           <body>not self.width.oclIsUndefined() implies ((not self.low.oclIsUndefined()) and self.center.oclIsUndefined() and self.high.oclIsUndefined()) or (self.low.oclIsUndefined() and self.center.oclIsUndefined()) or ((not self.center.oclIsUndefined()) and self.low.oclIsUndefined() and self.high.oclIsUndefined())</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_r_gAgKz_EeKWI_qYMeiA1A" name="INT" constrainedElement="_wDsPEEo9Ed6c3qsAxlFHaQ"/>
       <generalization xmi:id="_3ksiYEo9Ed6c3qsAxlFHaQ" general="__NRSwEo8Ed6c3qsAxlFHaQ"/>
       <ownedAttribute xmi:id="_xTaKgEo9Ed6c3qsAxlFHaQ" name="low" visibility="private" type="_gGEUwEo9Ed6c3qsAxlFHaQ" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ylXhoUo9Ed6c3qsAxlFHaQ" value="1"/>

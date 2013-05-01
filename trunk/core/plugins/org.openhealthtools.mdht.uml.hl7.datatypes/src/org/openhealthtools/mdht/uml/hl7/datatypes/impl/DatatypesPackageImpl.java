@@ -3795,6 +3795,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		// Create annotations
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -3932,6 +3934,17 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addAnnotation(eivL_eventEClass, source, new String[] { "name", "EIVL.event" });
 		addAnnotation(getEIVL_TS_Event(), source, new String[] { "namespace", "urn:hl7-org:v3" });
 		addAnnotation(getEIVL_TS_Offset(), source, new String[] { "namespace", "urn:hl7-org:v3" });
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates";
+		addAnnotation(ivL_INTEClass, source, new String[] {});
 	}
 
 } // DatatypesPackageImpl

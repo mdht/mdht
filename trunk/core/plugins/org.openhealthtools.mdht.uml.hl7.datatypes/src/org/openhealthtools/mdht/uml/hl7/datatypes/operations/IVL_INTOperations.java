@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT#validateOptionsContainingCenter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Options Containing Center</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT#validateOptionsContainingHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Options Containing High</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT#validateOptionsContainingWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Options Containing Width</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT#validateINT(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate INT</em>}</li>
  * </ul>
  * </p>
  *
@@ -282,6 +283,20 @@ public class IVL_INTOperations extends INTOperations {
 			}
 			return false;
 		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * @param ivL_INT The receiving '<em><b>IVL INT</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated NOT
+	 */
+	public static boolean validateINT(IVL_INT ivL_INT, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
