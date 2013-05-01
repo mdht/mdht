@@ -359,6 +359,16 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	 * @generated
 	 */
 	@Override
+	public boolean validateINT(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return IVL_INTOperations.validateINT(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DatatypesPackage.IVL_INT__LOW:

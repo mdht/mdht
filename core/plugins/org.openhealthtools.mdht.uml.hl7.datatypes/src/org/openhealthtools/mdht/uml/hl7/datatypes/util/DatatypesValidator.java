@@ -630,12 +630,20 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int IVL_INT__OPTIONS_CONTAINING_WIDTH = 67;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate INT' of 'IVL INT'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int IVL_INT__INT = 68;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Low' of 'IVL PQ'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_PQ__OPTIONS_CONTAINING_LOW = 68;
+	public static final int IVL_PQ__OPTIONS_CONTAINING_LOW = 69;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Center' of 'IVL PQ'.
@@ -643,7 +651,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_PQ__OPTIONS_CONTAINING_CENTER = 69;
+	public static final int IVL_PQ__OPTIONS_CONTAINING_CENTER = 70;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing High' of 'IVL PQ'.
@@ -651,7 +659,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_PQ__OPTIONS_CONTAINING_HIGH = 70;
+	public static final int IVL_PQ__OPTIONS_CONTAINING_HIGH = 71;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Width' of 'IVL PQ'.
@@ -659,7 +667,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_PQ__OPTIONS_CONTAINING_WIDTH = 71;
+	public static final int IVL_PQ__OPTIONS_CONTAINING_WIDTH = 72;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Denominator' of 'RTO PQ PQ'.
@@ -667,7 +675,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RTO_PQ_PQ__DENOMINATOR = 72;
+	public static final int RTO_PQ_PQ__DENOMINATOR = 73;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Original Text' of 'EIVL event'.
@@ -675,7 +683,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__ORIGINAL_TEXT = 73;
+	public static final int EIVL_EVENT__ORIGINAL_TEXT = 74;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Translation' of 'EIVL event'.
@@ -683,7 +691,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__TRANSLATION = 74;
+	public static final int EIVL_EVENT__TRANSLATION = 75;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code System' of 'EIVL event'.
@@ -691,7 +699,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__CODE_SYSTEM = 75;
+	public static final int EIVL_EVENT__CODE_SYSTEM = 76;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code System Name' of 'EIVL event'.
@@ -699,7 +707,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__CODE_SYSTEM_NAME = 76;
+	public static final int EIVL_EVENT__CODE_SYSTEM_NAME = 77;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code' of 'EIVL event'.
@@ -707,7 +715,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__CODE = 77;
+	public static final int EIVL_EVENT__CODE = 78;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -715,7 +723,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 77;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 78;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -2856,7 +2864,7 @@ public class DatatypesValidator extends EObjectValidator {
 			result &= validate_EveryMapEntryUnique(ivL_INT, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
-			result &= validateINT_validateINT(ivL_INT, diagnostics, context);
+			result &= validateIVL_INT_validateINT(ivL_INT, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validateIVL_INT_validateOptionsContainingLow(ivL_INT, diagnostics, context);
@@ -2915,6 +2923,16 @@ public class DatatypesValidator extends EObjectValidator {
 	public boolean validateIVL_INT_validateOptionsContainingWidth(IVL_INT ivL_INT, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return ivL_INT.validateOptionsContainingWidth(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateINT constraint of '<em>IVL INT</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validateIVL_INT_validateINT(IVL_INT ivL_INT, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validateINT_validateINT(ivL_INT, diagnostics, context);
 	}
 
 	/**
