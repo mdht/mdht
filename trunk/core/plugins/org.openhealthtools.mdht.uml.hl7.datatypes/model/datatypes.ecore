@@ -62,6 +62,7 @@
     <eOperations name="matches" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="regularExpression" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="getCDATA" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -296,10 +297,10 @@
     </eOperations>
     <eOperations name="ST" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="(self.isNullFlavorDefined() or self.getText() &lt;> '') and not(self.isNullFlavorDefined() and self.getText() &lt;> '')"/>
+        <details key="body" value="((self.isNullFlavorDefined() or self.getText() &lt;> '') and not(self.isNullFlavorDefined() and self.getText() &lt;> '')) or ((self.isNullFlavorDefined() or self.getCDATA() &lt;> '') and not(self.isNullFlavorDefined() and self.getCDATA() &lt;> ''))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="(self.isNullFlavorDefined() or self.getText() &lt;> '') and not(self.isNullFlavorDefined() and self.getText() &lt;> '')"/>
+        <details key="documentation" value="((self.isNullFlavorDefined() or self.getText() &lt;> '') and not(self.isNullFlavorDefined() and self.getText() &lt;> '')) or ((self.isNullFlavorDefined() or self.getCDATA() &lt;> '') and not(self.isNullFlavorDefined() and self.getCDATA() &lt;> ''))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

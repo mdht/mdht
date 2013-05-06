@@ -129,6 +129,11 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_Jr4-QLZ_EeK9lKFgcEZnwQ" name="getCDATA" isQuery="true">
+        <ownedParameter xmi:id="_i9j20LZ_EeK9lKFgcEZnwQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_EaTNsDxaEd6JwqSGecoePg" name="ST">
       <ownedRule xmi:id="_LGJa8Dk4EeCcR9mDkxn5-g" name="thumbnail" constrainedElement="_EaTNsDxaEd6JwqSGecoePg">
@@ -170,7 +175,7 @@
       <ownedRule xmi:id="_9gmV0E8xEeCPKdtRJ_I6Zg" name="ST">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_-UwWoE8xEeCPKdtRJ_I6Zg">
           <language>OCL</language>
-          <body>(self.isNullFlavorDefined() or self.getText() &lt;> '') and not(self.isNullFlavorDefined() and self.getText() &lt;> '')</body>
+          <body>((self.isNullFlavorDefined() or self.getText() &lt;> '') and not(self.isNullFlavorDefined() and self.getText() &lt;> '')) or ((self.isNullFlavorDefined() or self.getCDATA() &lt;> '') and not(self.isNullFlavorDefined() and self.getCDATA() &lt;> ''))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_IY9boDxaEd6JwqSGecoePg" general="_CowXkDxaEd6JwqSGecoePg"/>
