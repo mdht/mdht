@@ -75,6 +75,7 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/matches">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ED/matches/regularExpression"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/getCDATA"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//TEL">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

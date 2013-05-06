@@ -2350,6 +2350,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		op = addEOperation(edEClass, ecorePackage.getEBoolean(), "matches", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "regularExpression", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		addEOperation(edEClass, ecorePackage.getEString(), "getCDATA", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(
 			telEClass, org.openhealthtools.mdht.uml.hl7.datatypes.TEL.class, "TEL", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);

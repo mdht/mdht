@@ -368,4 +368,12 @@ public interface ED extends BIN {
 	 */
 	boolean matches(String regularExpression);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getCDATA();
+
 } // ED

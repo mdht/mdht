@@ -95,11 +95,11 @@ public interface ST extends ED {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * (self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')
+	 * ((self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')) or ((self.isNullFlavorDefined() or self.getCDATA() <> '') and not(self.isNullFlavorDefined() and self.getCDATA() <> ''))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(self.isNullFlavorDefined() or self.getText() <> \'\') and not(self.isNullFlavorDefined() and self.getText() <> \'\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='((self.isNullFlavorDefined() or self.getText() <> \'\') and not(self.isNullFlavorDefined() and self.getText() <> \'\')) or ((self.isNullFlavorDefined() or self.getCDATA() <> \'\') and not(self.isNullFlavorDefined() and self.getCDATA() <> \'\'))'"
 	 * @generated
 	 */
 	boolean validateST(DiagnosticChain diagnostics, Map<Object, Object> context);
