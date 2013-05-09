@@ -376,4 +376,12 @@ public interface ED extends BIN {
 	 */
 	String getCDATA();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" cdataRequired="true" cdataOrdered="false"
+	 * @generated
+	 */
+	ED addCDATA(String cdata);
+
 } // ED

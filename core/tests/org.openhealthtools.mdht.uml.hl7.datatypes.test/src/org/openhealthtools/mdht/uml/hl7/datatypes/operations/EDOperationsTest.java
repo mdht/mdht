@@ -46,7 +46,6 @@ public class EDOperationsTest extends DatatypesOperationsTest {
 
 	@Test
 	public final void testMatches() {
-		@SuppressWarnings("unused")
 		ED ed = (ED) getObjectToTest();
 
 		ed.addText("true");
@@ -98,5 +97,16 @@ public class EDOperationsTest extends DatatypesOperationsTest {
 
 		ed.addText(DatatypeTestCase.TEST_TEXT);
 		assertTrue(ed.getText().equals(DatatypeTestCase.TEST_TEXT));
+	}
+
+	/**
+	 * test addCDATA and getCDATA
+	 */
+	@Test
+	public final void testAddCDATAGetCDATA() {
+		final ED ed = (ED) getObjectToTest();
+
+		ed.addCDATA(DatatypeTestCase.CDATA_EXAMPLE);
+		assertTrue(ed.getCDATA().equals(DatatypeTestCase.CDATA_EXAMPLE));
 	}
 } // EDOperationsTest

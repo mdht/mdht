@@ -134,6 +134,12 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_pqYaMLfqEeKxkq_Nv01Fbg" name="addCDATA">
+        <ownedParameter xmi:id="_vcHIQLfqEeKxkq_Nv01Fbg" name="cdata">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_2kdrALfqEeKxkq_Nv01Fbg" name="Parameter1" type="_CowXkDxaEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_EaTNsDxaEd6JwqSGecoePg" name="ST">
       <ownedRule xmi:id="_LGJa8Dk4EeCcR9mDkxn5-g" name="thumbnail" constrainedElement="_EaTNsDxaEd6JwqSGecoePg">

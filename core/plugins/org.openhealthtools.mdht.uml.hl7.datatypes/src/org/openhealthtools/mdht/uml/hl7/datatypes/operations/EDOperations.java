@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getText() <em>Get Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#matches(java.lang.String) <em>Matches</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getCDATA() <em>Get CDATA</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#addCDATA(java.lang.String) <em>Add CDATA</em>}</li>
  * </ul>
  * </p>
  *
@@ -168,6 +169,19 @@ public class EDOperations extends ANYOperations {
 			}
 		}
 		return text.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static ED addCDATA(ED ed, String cdata) {
+		if (cdata == null) {
+			throw new IllegalArgumentException("CDATA is null");
+		}
+		FeatureMapUtil.addCDATA(ed.getMixed(), cdata);
+		return ed;
 	}
 
 } // EDOperations
