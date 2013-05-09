@@ -23,7 +23,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 		ADOperationsTest.class, BNOperationsTest.class, EDOperationsTest.class, EIVL_eventOperationsTest.class,
-		ENOperationsTest.class, ONOperationsTest.class, PNOperationsTest.class, TNOperationsTest.class })
+		ENOperationsTest.class, ONOperationsTest.class, PNOperationsTest.class, TNOperationsTest.class,
+		STOperationsTest.class })
 public class ALLDatatypeOperationsTests {
 
 	/**

@@ -39,6 +39,8 @@ public abstract class DatatypesValidationOperationsText extends DatatypesOperati
 
 		public static final String TEST_TEXT = "some test text";
 
+		public static final String CDATA_EXAMPLE = "<![CDATA[Text result]]>";
+
 		protected EStructuralFeature feature;
 
 		protected DatatypeTestCase(final EStructuralFeature feature) {
