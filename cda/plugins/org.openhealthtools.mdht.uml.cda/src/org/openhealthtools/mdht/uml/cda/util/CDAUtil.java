@@ -539,11 +539,11 @@ public class CDAUtil {
 		return resource;
 	}
 
-	public static void saveSnippet(InfrastructureRoot snippet, OutputStream out) throws Exception {
+	public static void saveSnippet(EObject snippet, OutputStream out) throws Exception {
 		saveSnippet(snippet, out, true);
 	}
 
-	public static void saveSnippet(InfrastructureRoot snippet, OutputStream out, boolean defaults) throws Exception {
+	public static void saveSnippet(EObject snippet, OutputStream out, boolean defaults) throws Exception {
 		XMLResource resource = prepare(snippet, defaults);
 		resource.save(out, snippetOptions());
 	}
@@ -571,7 +571,7 @@ public class CDAUtil {
 	 * @return
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private static XMLResource prepare(InfrastructureRoot cdaSnippet, boolean defaults) {
+	private static XMLResource prepare(EObject cdaSnippet, boolean defaults) {
 
 		XMLResource resource = (XMLResource) createResourceSet().createResource(URI.createURI(CDAPackage.eNS_URI));
 
