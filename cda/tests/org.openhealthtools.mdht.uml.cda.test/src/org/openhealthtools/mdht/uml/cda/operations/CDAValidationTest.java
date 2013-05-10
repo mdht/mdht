@@ -279,7 +279,7 @@ public abstract class CDAValidationTest {
 			String xml = "";
 
 			try {
-				CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, out);
+				CDAValidationTest.saveTestSnippet(objectToTest, out);
 				xml = out.toString();
 			} catch (Exception e) {
 			}
@@ -510,7 +510,7 @@ public abstract class CDAValidationTest {
 		return sb.toString();
 	}
 
-	private static void saveTestSnippet(InfrastructureRoot snippet, OutputStream out) throws Exception {
+	private static void saveTestSnippet(EObject snippet, OutputStream out) throws Exception {
 
 		ClinicalDocument containerDocument = CDAUtil.getClinicalDocument(snippet);
 
@@ -532,7 +532,7 @@ public abstract class CDAValidationTest {
 
 		private boolean skipPassTest = false;
 
-		private boolean skipNullFlavorTest = true;
+		private boolean skipNullFlavorTest = false;
 
 		public void skipFailsTest() {
 			skipFailsTest = true;
@@ -580,7 +580,7 @@ public abstract class CDAValidationTest {
 
 		private static final int PASSSNIPPET = 2;
 
-		private static String escapeXML(int snippetType, InfrastructureRoot objectToTest) {
+		private static String escapeXML(int snippetType, EObject objectToTest) {
 			String xml = "";
 			try {
 				ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -632,15 +632,16 @@ public abstract class CDAValidationTest {
 
 				failTest.updateToFail(target);
 
-				if (target instanceof InfrastructureRoot) {
-					if (testLogDir != null) {
-						xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) target));
-					} else {
-						try {
-							CDAValidationTest.saveTestSnippet((InfrastructureRoot) target, System.out);
-						} catch (Exception e) {
+				if (testLogDir != null) {
+					xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) target));
+				} else {
+					try {
+						System.out.println();
+						System.out.println("Fail Snippet");
+						CDAValidationTest.saveTestSnippet((EObject) target, System.out);
+						System.out.println();
+					} catch (Exception e) {
 
-						}
 					}
 				}
 
@@ -675,15 +676,16 @@ public abstract class CDAValidationTest {
 
 				passTest.updateToPass(target);
 
-				if (target instanceof InfrastructureRoot) {
-					if (testLogDir != null) {
-						xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) target));
-					} else {
-						try {
-							CDAValidationTest.saveTestSnippet((InfrastructureRoot) target, System.out);
-						} catch (Exception e) {
+				if (testLogDir != null) {
+					xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) target));
+				} else {
+					try {
+						System.out.println();
+						System.out.println("Pass Snippet");
+						CDAValidationTest.saveTestSnippet((EObject) target, System.out);
+						System.out.println();
+					} catch (Exception e) {
 
-						}
 					}
 				}
 
@@ -739,21 +741,20 @@ public abstract class CDAValidationTest {
 								? getObjectToSerialze()
 								: objectToTest);
 
-						if (objectToSerialize instanceof InfrastructureRoot) {
-							if (testLogDir != null) {
-								xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToSerialize));
-							} else {
-								try {
-									System.out.println();
-									System.out.println("Fail Snippet");
-									CDAValidationTest.saveTestSnippet(
-										(InfrastructureRoot) objectToSerialize, System.out);
-									System.out.println();
-								} catch (Exception e) {
+						// if (objectToSerialize instanceof EObject) {
+						if (testLogDir != null) {
+							xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, objectToSerialize));
+						} else {
+							try {
+								System.out.println();
+								System.out.println("Fail Snippet");
+								CDAValidationTest.saveTestSnippet(objectToSerialize, System.out);
+								System.out.println();
+							} catch (Exception e) {
 
-								}
 							}
 						}
+						// }
 
 						validateExpectFail(objectToTest, diagnostician, map);
 
@@ -787,21 +788,20 @@ public abstract class CDAValidationTest {
 								? getObjectToSerialze()
 								: objectToTest);
 
-						if (objectToSerialize instanceof InfrastructureRoot) {
-							if (testLogDir != null) {
-								xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToSerialize));
-							} else {
-								try {
-									System.out.println();
-									System.out.println("Pass Snippet");
-									CDAValidationTest.saveTestSnippet(
-										(InfrastructureRoot) objectToSerialize, System.out);
-									System.out.println();
-								} catch (Exception e) {
+						// if (objectToSerialize instanceof InfrastructureRoot) {
+						if (testLogDir != null) {
+							xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, objectToSerialize));
+						} else {
+							try {
+								System.out.println();
+								System.out.println("Pass Snippet");
+								CDAValidationTest.saveTestSnippet(objectToSerialize, System.out);
+								System.out.println();
+							} catch (Exception e) {
 
-								}
 							}
 						}
+						// }
 						validateExpectPass(objectToTest, diagnostician, map);
 					}
 				} else {
@@ -827,20 +827,20 @@ public abstract class CDAValidationTest {
 							? getObjectToSerialze()
 							: nullFlavorTest);
 
-					if (objectToSerialize instanceof InfrastructureRoot) {
-						if (testLogDir != null) {
-							xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToSerialize));
-						} else {
-							try {
-								System.out.println();
-								System.out.println("Null Flavor Snippet");
-								CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToSerialize, System.out);
-								System.out.println();
-							} catch (Exception e) {
+					// if (objectToSerialize instanceof InfrastructureRoot) {
+					if (testLogDir != null) {
+						xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, objectToSerialize));
+					} else {
+						try {
+							System.out.println();
+							System.out.println("Null Flavor Snippet");
+							CDAValidationTest.saveTestSnippet(objectToSerialize, System.out);
+							System.out.println();
+						} catch (Exception e) {
 
-							}
 						}
 					}
+					// }
 					validateExpectPass(nullFlavorTest, diagnostician, map);
 
 				} else {
@@ -849,7 +849,7 @@ public abstract class CDAValidationTest {
 						xmlSnippetsBuffer.append(generateSkipMessage(FAILSNIPPET, "Skip Pass Test"));
 					} else {
 						System.out.println();
-						System.out.println("Skipped Pass Test");
+						System.out.println("Skipped Null Flavor Test");
 						System.out.println();
 					}
 				}
@@ -926,12 +926,12 @@ public abstract class CDAValidationTest {
 							}
 						} else {
 
-							if (!cdaReference.getEReferenceType().isAbstract() && level == 1) {
-								EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
-									cdaReference.getEReferenceType());
-								setNullFlavor(objectToAdd);
-								((EList) (target).eGet(cdaReference)).add(objectToAdd);
-							}
+							// if (!cdaReference.getEReferenceType().isAbstract() && level == 1) {
+							// EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
+							// cdaReference.getEReferenceType());
+							// setNullFlavor(objectToAdd);
+							// ((EList) (target).eGet(cdaReference)).add(objectToAdd);
+							// }
 
 						}
 					} else {
@@ -941,12 +941,12 @@ public abstract class CDAValidationTest {
 							setNullFlavors(eObject, level++);
 						} else {
 
-							if (!cdaReference.getEReferenceType().isAbstract() && level == 1) {
-								EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
-									cdaReference.getEReferenceType());
-								setNullFlavor(objectToAdd);
-								(target).eSet(cdaReference, objectToAdd);
-							}
+							// if (!cdaReference.getEReferenceType().isAbstract() && level == 1) {
+							// EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
+							// cdaReference.getEReferenceType());
+							// setNullFlavor(objectToAdd);
+							// (target).eSet(cdaReference, objectToAdd);
+							// }
 						}
 
 					}
