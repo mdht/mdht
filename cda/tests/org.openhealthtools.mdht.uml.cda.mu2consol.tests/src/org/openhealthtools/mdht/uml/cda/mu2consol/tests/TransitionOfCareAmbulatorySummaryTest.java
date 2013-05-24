@@ -26,8 +26,21 @@ import org.openhealthtools.mdht.uml.cda.Performer1;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.ServiceEvent;
+import org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.consol.AssessmentSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.EncounterActivities;
+import org.openhealthtools.mdht.uml.cda.consol.EncounterDiagnosis;
+import org.openhealthtools.mdht.uml.cda.consol.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosis;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosis;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.consol.PostoperativeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.consol.ProblemConcernAct;
+import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.TransitionOfCareAmbulatorySummaryOperations;
@@ -44,6 +57,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryProviderNameAndContactInfo(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Ambulatory Summary Provider Name And Contact Info</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryReasonForReferral(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Ambulatory Summary Reason For Referral</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryEncounterDiagnoses(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Ambulatory Summary Encounter Diagnoses</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#validateTransitionOfCareAmbulatorySummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transition Of Care Ambulatory Summary Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary#getMedicationsSection() <em>Get Medications Section</em>}</li>
  * </ul>
@@ -56,7 +70,7 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateTransitionOfCareAmbulatorySummaryProviderNameAndContactInfo() {
@@ -298,6 +312,460 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 		};
 
 		validateTransitionOfCareAmbulatorySummaryReasonForReferralTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateTransitionOfCareAmbulatorySummaryEncounterDiagnoses() {
+		OperationsTestCase<TransitionOfCareAmbulatorySummary> validateTransitionOfCareAmbulatorySummaryEncounterDiagnosesTestCase = new OperationsTestCase<TransitionOfCareAmbulatorySummary>(
+			"validateTransitionOfCareAmbulatorySummaryEncounterDiagnoses",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSITION_OF_CARE_AMBULATORY_SUMMARY_ENCOUNTER_DIAGNOSES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Assessment Section w/o any entries (c1)
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Assessment And Plan Section w/o any entries (c2)
+						target.init();
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						target.addSection(aapSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Postoperative Diagnosis Section w/o any entries (c3)
+						target.init();
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						target.addSection(podSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Problem Section w/o any entries (c4)
+						target.init();
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						target.addSection(probSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Hospital Admission Diagnosis Section w/o any entries (c5)
+						target.init();
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						target.addSection(hadSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Hospital Discharge Diagnosis Section w/o any entries (c6)
+						target.init();
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						target.addSection(hddSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Encounters Section w/o any entries (c7)
+						target.init();
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						target.addSection(encSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// 5th and 6th clauses section only
+						target.init();
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						target.addSection(hadSec);
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						target.addSection(hddSec);
+
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// 1st 2nd and 3rd clause sections included with NO entries
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						target.addSection(aapSec);
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						target.addSection(podSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// 1st and 3rd sections included with NO entries
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						target.addSection(podSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has first 6 sections w/o any entries (all sections except EncountersSection)
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						target.addSection(aapSec);
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						target.addSection(podSec);
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						target.addSection(probSec);
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						target.addSection(hadSec);
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						target.addSection(hddSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// CCD1_RemoveProbConcernAndProbObs.xml manual test (5) document emulation
+						// Has The Assessment Section (TemplateID = 2.16.840.1.113883.10.20.22.2.8)
+						// - with NO entries
+						// Does NOT have The Assessment And Plan Section (TemplateID = 2.16.840.1.113883.10.20.22.2.9)
+						// Does NOT have The Postoperative Diagnosis section (TemplateID = 2.16.840.1.113883.10.20.22.2.35)
+						// Has The Problem Section (entries required: TemplateID = 2.16.840.1.113883.10.20.22.2.5.1)
+						// - with NO entries
+						// Does NOT have The Hospital Admission Diagnosis Section (TemplateID = 2.16.840.1.113883.10.20.22.2.43)
+						// Does NOT have The Hospital Discharge Diagnosis Section (TemplateID = 2.16.840.1.113883.10.20.22.2.24)
+						// Does NOT have The Encounters Section (entries required: TemplateID = 2.16.840.1.113883.10.20.22.2.22.1)
+						target.init();
+						// Add Assessment Section w/o any entries
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+						// Add Problem Section w/o any entries
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						target.addSection(probSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Test left blank intentionally:
+						// If none of the following sections exist then none of them have an entry and therefore the
+						// Encounter Diagnosis requirement is not met: Assessment Section, Assessment And Plan Section,
+						// Postoperative Diagnosis section, Problem Section, Hospital Admission Diagnosis Section,
+						// Hospital Discharge Diagnosis Section, Encounters Section.
+						target.init();
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// All 7 Clauses at same time w/o any entries
+						target.init();
+						// Add Assessment Section w/o any entries
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+						// Add Assessment And Plan Section w/o any entries
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						target.addSection(aapSec);
+						// Has Postoperative Diagnosis Section w/o any entries
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						target.addSection(podSec);
+						// Add Problem Section w/o any entries
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						target.addSection(probSec);
+						// Add Hospital Admission Diagnosis Section w/o any entries
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						target.addSection(hadSec);
+						// Add Hospital Discharge Diagnosis Section w/o any entries
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						target.addSection(hddSec);
+						// Add Encounters Section w/o any entries
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						target.addSection(encSec);
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 1 Test: Add entry Problem Observation (2.16.840.1.113883.10.20.22.4.4)
+						// to AssessmentSection
+						// target.getComponent().getStructuredBody().getComponents().clear();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						ProblemObservation probOb = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						aSec.addObservation(probOb);
+						target.addSection(aSec);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 2 Test: Add entry Problem Observation (2.16.840.1.113883.10.20.22.4.4)
+						// to AssessmentAndPlanSection
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						ProblemObservation probOb2 = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						aapSec.addObservation(probOb2);
+						target.addSection(aapSec);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 3 Test: Add entry Problem Observation (2.16.840.1.113883.10.20.22.4.4)
+						// to PostoperativeDiagnosisSection
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						ProblemObservation probOb3 = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						podSec.addObservation(probOb3);
+						target.addSection(podSec);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 4 Test 1: Add Problem Concern Act to ProblemSection
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						ProblemConcernAct probConAct = ConsolFactory.eINSTANCE.createProblemConcernAct().init();
+						probSec.addAct(probConAct);
+						target.addSection(probSec);
+
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 4 Test 2: Add Problem Concern Act and Problem Observation to ProblemSection
+						ProblemSection probSec2 = ConsolFactory.eINSTANCE.createProblemSection().init();
+						ProblemConcernAct probConAct2 = ConsolFactory.eINSTANCE.createProblemConcernAct().init();
+						ProblemObservation probOb4 = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						probSec2.addAct(probConAct2);
+						probSec2.addObservation(probOb4);
+						target.addSection(probSec2);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 5: Add Hospital Admission Diagnosis entry to HospitalAdmissionDiagnosis section
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						HospitalAdmissionDiagnosis hospAdmisDiag = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosis().init();
+						hadSec.addAct(hospAdmisDiag);
+						target.addSection(hadSec);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 6: Add Hospital Discharge Diagnosis entry to HospitalDischargeDiagnosis section
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						HospitalDischargeDiagnosis hospDisDiag = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosis().init();
+						hddSec.addAct(hospDisDiag);
+						target.addSection(hddSec);
+
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 7 Test 1: Add Encounter Activities entry to EncountersSection
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						EncounterActivities encActivities = ConsolFactory.eINSTANCE.createEncounterActivities().init();
+						encSec.addEncounter(encActivities);
+						target.addSection(encSec);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Clause 7 Test 2: Add Encounter Activities and Encounter Diagnosis to EncountersSection
+						EncountersSection encSec2 = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						EncounterActivities encActivities2 = ConsolFactory.eINSTANCE.createEncounterActivities().init();
+						EncounterDiagnosis encDiag = ConsolFactory.eINSTANCE.createEncounterDiagnosis().init();
+						encSec2.addEncounter(encActivities2);
+						encSec2.addAct(encDiag);
+						target.addSection(encSec2);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// // All 7 Clauses at same time
+						// Clause 1 Test: Add required entry Problem Observation (2.16.840.1.113883.10.20.22.4.4)
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						ProblemObservation probOb = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						aSec.addObservation(probOb);
+						target.addSection(aSec);
+						// Clause 2 Test: Add required entry Problem Observation (2.16.840.1.113883.10.20.22.4.4)
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						ProblemObservation probOb2 = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						aapSec.addObservation(probOb2);
+						target.addSection(aapSec);
+						// Clause 3 Test: Add required entry Problem Observation (2.16.840.1.113883.10.20.22.4.4) to PostoperativeDiagnosisSection
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						ProblemObservation probOb3 = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						podSec.addObservation(probOb3);
+						target.addSection(podSec);
+						// Clause 4 Test 1: Add Problem Concern Act to ProblemSection
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						ProblemConcernAct probConAct = ConsolFactory.eINSTANCE.createProblemConcernAct().init();
+						probSec.addAct(probConAct);
+						target.addSection(probSec);
+						// Clause 4 Test 2: Add Problem Concern Act and Problem Observation to ProblemSection
+						ProblemSection probSec2 = ConsolFactory.eINSTANCE.createProblemSection().init();
+						ProblemConcernAct probConAct2 = ConsolFactory.eINSTANCE.createProblemConcernAct().init();
+						ProblemObservation probOb4 = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						probSec2.addAct(probConAct2);
+						probSec2.addObservation(probOb4);
+						target.addSection(probSec2);
+						// Clause 5: Add Hospital Admission Diagnosis entry to HospitalAdmissionDiagnosis section
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						HospitalAdmissionDiagnosis hospAdmisDiag = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosis().init();
+						hadSec.addAct(hospAdmisDiag);
+						target.addSection(hadSec);
+						// Clause 6: Add Hospital Discharge Diagnosis entry to HospitalDischargeDiagnosis section
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						HospitalDischargeDiagnosis hospDisDiag = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosis().init();
+						hddSec.addAct(hospDisDiag);
+						target.addSection(hddSec);
+						// Clause 7 Test 1: Add Encounter Activities entry to EncountersSection
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						EncounterActivities encActivities = ConsolFactory.eINSTANCE.createEncounterActivities().init();
+						encSec.addEncounter(encActivities);
+						target.addSection(encSec);
+						// Clause 7 Test 2: Add Encounter Activities and Encounter Diagnosis to EncountersSection
+						EncountersSection encSec2 = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						EncounterActivities encActivities2 = ConsolFactory.eINSTANCE.createEncounterActivities().init();
+						EncounterDiagnosis encDiag = ConsolFactory.eINSTANCE.createEncounterDiagnosis().init();
+						encSec2.addEncounter(encActivities2);
+						encSec2.addAct(encDiag);
+						target.addSection(encSec2);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// CCD 1.xml manual test (1) document emulation
+						// Has The Assessment Section (TemplateID = 2.16.840.1.113883.10.20.22.2.8)
+						// - with NO entries
+						// Does NOT have The Assessment And Plan Section (TemplateID = 2.16.840.1.113883.10.20.22.2.9)
+						// Does NOT have The Postoperative Diagnosis section (TemplateID = 2.16.840.1.113883.10.20.22.2.35)
+						// Has The Problem Section (entries required: TemplateID = 2.16.840.1.113883.10.20.22.2.5.1)
+						// - with 2 Problem Concern Act Entry (TemplateID = 2.16.840.1.113883.10.20.22.4.3) and
+						// - with 2 Problem Observation Entry (TemplateID = 2.16.840.1.113883.10.20.22.4.4)
+						// Does NOT have The Hospital Admission Diagnosis Section (TemplateID = 2.16.840.1.113883.10.20.22.2.43)
+						// Does NOT have The Hospital Discharge Diagnosis Section (TemplateID = 2.16.840.1.113883.10.20.22.2.24)
+						// Has The Encounters Section (entries required: TemplateID = 2.16.840.1.113883.10.20.22.2.22.1)
+						// - with a Encounter Activities Entry (TemplateID = 2.16.840.1.113883.10.20.22.4.49)
+						// - Note: does NOT contain a Encounter Diagnosis Entry (TemplateID = 2.16.840.1.113883.10.20.22.4.80)
+						target.init();
+						// Add Assessment Section w/o any entries
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+						// Add Problem Section with both entries (2 of each) in same section
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						ProblemConcernAct probConAct = ConsolFactory.eINSTANCE.createProblemConcernAct().init();
+						ProblemObservation probOb = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						probConAct.getCode().setCodeSystemName("First ProblemConcernAct"); // reference
+						probSec.addAct(probConAct);
+						probSec.addObservation(probOb);
+						ProblemConcernAct probConAct2 = ConsolFactory.eINSTANCE.createProblemConcernAct().init();
+						ProblemObservation probOb2 = ConsolFactory.eINSTANCE.createProblemObservation().init();
+						probConAct2.getCode().setCodeSystemName("Second ProblemConcernAct"); // reference
+						probSec.addAct(probConAct2);
+						probSec.addObservation(probOb2);
+						target.addSection(probSec);
+						// Add Encounters Section with Encounter Activities Entry ONLY
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						EncounterActivities encActivities = ConsolFactory.eINSTANCE.createEncounterActivities().init();
+						encSec.addEncounter(encActivities);
+						target.addSection(encSec);
+					}
+
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransitionOfCareAmbulatorySummaryOperations.validateTransitionOfCareAmbulatorySummaryEncounterDiagnoses(
+					(TransitionOfCareAmbulatorySummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTransitionOfCareAmbulatorySummaryEncounterDiagnosesTestCase.doValidationTest();
 	}
 
 	/**
