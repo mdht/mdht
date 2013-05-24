@@ -27,7 +27,7 @@ import org.junit.runners.Suite;
 		GeneralHeaderConstraintsTest.class, SummaryOfCareRecordTest.class, SocialHistorySectionTest.class,
 		SmokingStatusObservationTest.class, ResultsSectionTest.class, ResultOrganizerTest.class,
 		ResultObservationTest.class, ProceduresSectionTest.class, ProcedureActivityProcedureTest.class,
-		AssessmentSectionTest.class, ClinicalOfficeVisitSummaryTest.class, MedicationsAdministeredSectionTest.class,
+		ClinicalOfficeVisitSummaryTest.class, MedicationsAdministeredSectionTest.class,
 		TransitionOfCareAmbulatorySummaryTest.class, TransitionOfCareInpatientSummaryTest.class,
 		ViewDownloadTransmitSummaryTest.class, VDTInpatientSummaryTest.class, VDTAmbulatorySummaryTest.class,
 		CognitiveStatusResultObservationTest.class, CognitiveStatusResultOrganizerTest.class,
