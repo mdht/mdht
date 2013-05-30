@@ -132,7 +132,8 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 	protected String generateQualifiedConstraintName(Class constrainedClass, String constraintName) {
 		if (constrainedClass.getOwner() instanceof Class && constrainedClass.getNearestPackage() != null) {
-			return constrainedClass.getQualifiedName().replace("::", "").replace(
+
+			return ((Class) constrainedClass.getOwner()).getQualifiedName().replace("::", "").replace(
 				constrainedClass.getNearestPackage().getName(), "") +
 					constraintName;
 		}
