@@ -126,8 +126,17 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 		PluginPropertiesUtil properties = transformerOptions.getPluginPropertiesUtil();
 		if (properties != null) {
-			properties.addProperty(constraintName, message);
+			properties.addProperty(generateQualifiedConstraintName(constrainedClass, constraintName), message);
 		}
+	}
+
+	protected String generateQualifiedConstraintName(Class constrainedClass, String constraintName) {
+		if (constrainedClass.getOwner() instanceof Class && constrainedClass.getNearestPackage() != null) {
+			return constrainedClass.getQualifiedName().replace("::", "").replace(
+				constrainedClass.getNearestPackage().getName(), "") +
+					constraintName;
+		}
+		return constraintName;
 	}
 
 	protected void addOCLConstraint(Property property, ValidationStereotypeKind stereotype, StringBuffer body) {

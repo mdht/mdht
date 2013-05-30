@@ -343,18 +343,21 @@ public class TransformInlinedProperties extends TransformAbstract {
 			String relativeOCL = getRelativeOCL(constraint);
 
 			if (relativeOCL != null) {
-				String constraintMessage = properties.getProperty(constraint.getName());
-
+				/*
+				 * The inline message property is a two step process - the first step use the general purpose constraint generation an puts an
+				 * incomplete message in qualified key
+				 * This pass then get the incomplete message and prepends the path messsage to create the complete message
+				 */
+				String constraintMessage = properties.getProperty(generateQualifiedConstraintName(
+					inlineClass, constraint.getName()));
 				if (constraintMessage != null) {
 					constraintMessage = constraintMessage.replaceAll(splitName, associationName);
 				}
 
-				/*
-				 * TODO Fix constraint messages implementation - currently only setting the specific rule with out the path to the rule
-				 */
 				Constraint inlinedConstraint = appendInlinedOCLConstraint(
-					bucketClass, stack + constraint.getName(), constraintSeverity, message + " " + constraintMessage,
-					path + getInlineFilter(inlineClass) + "->reject(" + relativeOCL + ")");
+					bucketClass, generateQualifiedConstraintName(inlineClass, constraint.getName()),
+					constraintSeverity, message + " " + constraintMessage, path + getInlineFilter(inlineClass) +
+							"->reject(" + relativeOCL + ")");
 
 				// handle constraint dependencies
 				String dependency = getConstraintDependency(inlineClassAnnotations, constraint.getName());
