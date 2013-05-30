@@ -12198,7 +12198,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
 				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				ae.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.101"));
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("test", "Just Has To Be Something"));
 				perf.setAssignedEntity(ae);
 				se.getPerformers().add(perf);
 				dof.setServiceEvent(se);
@@ -12250,6 +12250,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
 				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				// codeSystem must be accurate
 				ae.setCode(DatatypesFactory.eINSTANCE.createCE("test", "2.16.840.1.113883.6.101"));
 				perf.setAssignedEntity(ae);
 				se.getPerformers().add(perf);
