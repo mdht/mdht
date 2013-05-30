@@ -532,7 +532,7 @@ public abstract class CDAValidationTest {
 
 		private boolean skipPassTest = false;
 
-		private boolean skipNullFlavorTest = false;
+		private boolean skipNullFlavorTest = true;
 
 		public void skipFailsTest() {
 			skipFailsTest = true;
