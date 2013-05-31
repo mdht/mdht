@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -36,12 +37,12 @@ public class UMLSheetLabelProvider extends DecoratingLabelProvider {
 	}
 
 	protected static ComposedAdapterFactory createAdapterFactory() {
-		List factories = new ArrayList();
+		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
 
-	protected static void fillItemProviderFactories(List factories) {
+	protected static void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories.add(new UMLItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
