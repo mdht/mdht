@@ -175,7 +175,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 							? association
 							: property;
 					collectConstraints(
-						property.getClass_(), bucketAnnotations, (Class) property.getType(),
+						property, property.getClass_(), bucketAnnotations, (Class) property.getType(),
 						getEcoreProfile().getValidationMessage(validationElement, ValidationStereotypeKind.ANY),
 						"self." + getNullSafePath(baseOwner, propertyType, property) + getInlineFilter(propertyType),
 						owner.getName(), constraints, property.getName());
@@ -262,8 +262,8 @@ public class TransformInlinedProperties extends TransformAbstract {
 	 * TODO Message munging to get a readable validation message is bound to the current validation generation which needs to change, after dynamic
 	 * validation message generation should be able to create better message
 	 */
-	private void collectConstraints(final Class bucketClass, final AnnotationsUtil bucketAnnotations,
-			Class inlineClass, String message, String path, String stack,
+	private void collectConstraints(final Property theProperty, final Class bucketClass,
+			final AnnotationsUtil bucketAnnotations, Class inlineClass, String message, String path, String stack,
 			HashMap<String, ArrayList<String>> constraints, String associationName) {
 
 		AnnotationsUtil inlineClassAnnotations = getEcoreProfile().annotate(inlineClass);
@@ -323,10 +323,9 @@ public class TransformInlinedProperties extends TransformAbstract {
 					ownerBaseType = getBaseDatatype(inlineClass, bucketClass);
 				}
 
-				collectConstraints(
-					bucketClass, bucketAnnotations, propertyType, message + " " + associationMessage, path + "." +
-							getNullSafePath(ownerBaseType, propertyType, property) + getInlineFilter(propertyType),
-					stack + inlineClass.getName(), constraints, property.getName());
+				collectConstraints(property, bucketClass, bucketAnnotations, propertyType, message + " " +
+						associationMessage, path + "." + getNullSafePath(ownerBaseType, propertyType, property) +
+						getInlineFilter(propertyType), stack + inlineClass.getName(), constraints, property.getName());
 			}
 		}
 
@@ -354,8 +353,12 @@ public class TransformInlinedProperties extends TransformAbstract {
 					constraintMessage = constraintMessage.replaceAll(splitName, associationName);
 				}
 
+				/*
+				 * Use the property owner to handle situations where the inlined class is defined someplace else (ie USRealm)
+				 */
+
 				Constraint inlinedConstraint = appendInlinedOCLConstraint(
-					bucketClass, generateQualifiedConstraintName(inlineClass, constraint.getName()),
+					bucketClass, generateQualifiedConstraintName((Class) theProperty.getOwner(), constraint.getName()),
 					constraintSeverity, message + " " + constraintMessage, path + getInlineFilter(inlineClass) +
 							"->reject(" + relativeOCL + ")");
 
