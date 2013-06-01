@@ -131,9 +131,12 @@ public abstract class TransformAbstract extends AbstractTransform {
 	}
 
 	protected String generateQualifiedConstraintName(Class constrainedClass, String constraintName) {
-		return constrainedClass.getQualifiedName().replace("::", "").replace(
-			constrainedClass.getNearestPackage().getName(), "") +
-				constraintName;
+		String prefix = constrainedClass.getQualifiedName().replace("::", "").replace(
+			constrainedClass.getNearestPackage().getName(), "");
+		if (constraintName.startsWith(prefix))
+			return constraintName;
+		else
+			return prefix + constraintName;
 	}
 
 	protected void addOCLConstraint(Property property, ValidationStereotypeKind stereotype, StringBuffer body) {
