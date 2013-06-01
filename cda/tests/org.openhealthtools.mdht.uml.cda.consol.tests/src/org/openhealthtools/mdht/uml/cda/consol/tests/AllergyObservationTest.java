@@ -1566,7 +1566,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateAllergyObservationAllergyObservationParticipantTypeCode() {
+	public void testValidateAllergyObservationParticipantTypeCode() {
 		OperationsTestCase<AllergyObservation> validateAllergyObservationAllergyObservationParticipantTypeCodeTestCase = new OperationsTestCase<AllergyObservation>(
 			"validateAllergyObservationAllergyObservationParticipantTypeCode",
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_ALLERGY_OBSERVATION_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -1592,7 +1592,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AllergyObservationOperations.validateAllergyObservationAllergyObservationParticipantTypeCode(
+				return AllergyObservationOperations.validateAllergyObservationParticipantTypeCode(
 					(AllergyObservation) objectToTest, diagnostician, map);
 			}
 
@@ -1606,7 +1606,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateAllergyObservationAllergyObservationParticipantParticipantRole() {
+	public void testValidateAllergyObservationParticipantParticipantRole() {
 		OperationsTestCase<AllergyObservation> validateAllergyObservationAllergyObservationParticipantParticipantRoleTestCase = new OperationsTestCase<AllergyObservation>(
 			"validateAllergyObservationAllergyObservationParticipantParticipantRole",
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_ALLERGY_OBSERVATION_PARTICIPANT_PARTICIPANT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -1635,7 +1635,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AllergyObservationOperations.validateAllergyObservationAllergyObservationParticipantParticipantRole(
+				return AllergyObservationOperations.validateAllergyObservationParticipantParticipantRole(
 					(AllergyObservation) objectToTest, diagnostician, map);
 			}
 

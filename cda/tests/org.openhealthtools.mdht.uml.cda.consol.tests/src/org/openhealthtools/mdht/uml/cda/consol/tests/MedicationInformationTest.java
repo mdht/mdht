@@ -39,11 +39,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturerOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Manufacturer Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturedMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Manufactured Material</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code Original Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Original Text Reference Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code Translation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturedMaterialCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code Original Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturedMaterialReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturedMaterialOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Original Text Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturedMaterialCodeTranslation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code Translation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturedMaterialCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -192,9 +192,9 @@ public class MedicationInformationTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
-	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalText() {
-		OperationsTestCase<MedicationInformation> validateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalTextTestCase = new OperationsTestCase<MedicationInformation>(
-			"validateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalText",
+	public void testValidateMedicationInformationManufacturedMaterialCodeOriginalText() {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationManufacturedMaterialCodeOriginalTextTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationManufacturedMaterialCodeOriginalText",
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_CODE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -225,13 +225,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationInformationOperations.validateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalText(
+				return MedicationInformationOperations.validateMedicationInformationManufacturedMaterialCodeOriginalText(
 					(MedicationInformation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalTextTestCase.doValidationTest();
+		validateMedicationInformationManufacturedMaterialCodeOriginalTextTestCase.doValidationTest();
 	}
 
 	/**
@@ -239,9 +239,9 @@ public class MedicationInformationTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
-	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialReference() {
-		OperationsTestCase<MedicationInformation> validateMedicationInformationMedicationInformationManufacturedMaterialReferenceTestCase = new OperationsTestCase<MedicationInformation>(
-			"validateMedicationInformationMedicationInformationManufacturedMaterialReference",
+	public void testValidateMedicationInformationManufacturedMaterialReference() {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationManufacturedMaterialReferenceTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationManufacturedMaterialReference",
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -273,13 +273,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationInformationOperations.validateMedicationInformationMedicationInformationManufacturedMaterialReference(
+				return MedicationInformationOperations.validateMedicationInformationManufacturedMaterialReference(
 					(MedicationInformation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationInformationMedicationInformationManufacturedMaterialReferenceTestCase.doValidationTest();
+		validateMedicationInformationManufacturedMaterialReferenceTestCase.doValidationTest();
 	}
 
 	/**
@@ -287,9 +287,9 @@ public class MedicationInformationTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue() {
-		OperationsTestCase<MedicationInformation> validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValueTestCase = new OperationsTestCase<MedicationInformation>(
-			"validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue",
+	public void testValidateMedicationInformationManufacturedMaterialOriginalTextReferenceValue() {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationManufacturedMaterialOriginalTextReferenceValueTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationManufacturedMaterialOriginalTextReferenceValue",
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_ORIGINAL_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -323,13 +323,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationInformationOperations.validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue(
+				return MedicationInformationOperations.validateMedicationInformationManufacturedMaterialOriginalTextReferenceValue(
 					(MedicationInformation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValueTestCase.doValidationTest();
+		validateMedicationInformationManufacturedMaterialOriginalTextReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -337,9 +337,9 @@ public class MedicationInformationTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
-	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslation() {
-		OperationsTestCase<MedicationInformation> validateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslationTestCase = new OperationsTestCase<MedicationInformation>(
-			"validateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslation",
+	public void testValidateMedicationInformationManufacturedMaterialCodeTranslation() {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationManufacturedMaterialCodeTranslationTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationManufacturedMaterialCodeTranslation",
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_CODE_TRANSLATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -367,13 +367,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationInformationOperations.validateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslation(
+				return MedicationInformationOperations.validateMedicationInformationManufacturedMaterialCodeTranslation(
 					(MedicationInformation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslationTestCase.doValidationTest();
+		validateMedicationInformationManufacturedMaterialCodeTranslationTestCase.doValidationTest();
 	}
 
 	/**
@@ -381,9 +381,9 @@ public class MedicationInformationTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
-	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialCode() {
-		OperationsTestCase<MedicationInformation> validateMedicationInformationMedicationInformationManufacturedMaterialCodeTestCase = new OperationsTestCase<MedicationInformation>(
-			"validateMedicationInformationMedicationInformationManufacturedMaterialCode",
+	public void testValidateMedicationInformationManufacturedMaterialCode() {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationManufacturedMaterialCodeTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationManufacturedMaterialCode",
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -410,13 +410,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationInformationOperations.validateMedicationInformationMedicationInformationManufacturedMaterialCode(
+				return MedicationInformationOperations.validateMedicationInformationManufacturedMaterialCode(
 					(MedicationInformation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationInformationMedicationInformationManufacturedMaterialCodeTestCase.doValidationTest();
+		validateMedicationInformationManufacturedMaterialCodeTestCase.doValidationTest();
 	}
 
 	/**
