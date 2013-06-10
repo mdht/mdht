@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.uml2.uml.Comment;
@@ -38,7 +39,17 @@ public class TransformValueSet extends TransformAbstract {
 		super(options);
 	}
 
-	private void appendBody(PrintWriter writer, Enumeration umlEnumeration) {
+	public static String getDefinition(Enumeration enumeration) {
+		StringWriter sw = new StringWriter();
+		PrintWriter pw = new PrintWriter(sw);
+
+		appendHeader(pw, enumeration);
+		appendBody(pw, enumeration);
+
+		return sw.toString();
+	}
+
+	private static void appendBody(PrintWriter writer, Enumeration umlEnumeration) {
 		writer.println("<body>");
 		writer.println("<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->");
 		writer.println("<section id=\"definition\">");
@@ -51,7 +62,7 @@ public class TransformValueSet extends TransformAbstract {
 		writer.println("</topic>");
 	}
 
-	private void appendConcepts(PrintWriter writer, Enumeration umlEnumeration) {
+	private static void appendConcepts(PrintWriter writer, Enumeration umlEnumeration) {
 		String codeSystemName = null;
 		ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 		if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null &&
@@ -97,7 +108,7 @@ public class TransformValueSet extends TransformAbstract {
 		}
 	}
 
-	private void appendDefinition(PrintWriter writer, Enumeration umlEnumeration) {
+	private static void appendDefinition(PrintWriter writer, Enumeration umlEnumeration) {
 		writer.println("<table><tgroup cols=\"2\">");
 		writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 		writer.println("<colspec colname=\"col2\" colwidth=\"4*\"/>");
@@ -164,7 +175,7 @@ public class TransformValueSet extends TransformAbstract {
 		writer.println("</tbody></tgroup></table>");
 	}
 
-	private void appendHeader(PrintWriter writer, Enumeration umlEnumeration) {
+	private static void appendHeader(PrintWriter writer, Enumeration umlEnumeration) {
 		writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
