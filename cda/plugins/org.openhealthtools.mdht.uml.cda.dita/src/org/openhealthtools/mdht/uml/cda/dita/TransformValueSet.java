@@ -43,9 +43,12 @@ public class TransformValueSet extends TransformAbstract {
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
 
-		appendHeader(pw, enumeration);
-		appendBody(pw, enumeration);
+		pw.println("<section id=\"definition\">");
 
+		appendDefinition(pw, enumeration);
+		appendConcepts(pw, enumeration);
+
+		pw.println("</section>");
 		return sw.toString();
 	}
 
