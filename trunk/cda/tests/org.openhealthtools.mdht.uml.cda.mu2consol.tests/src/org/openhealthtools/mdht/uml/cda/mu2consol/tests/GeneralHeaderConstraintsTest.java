@@ -7,6 +7,7 @@
  *
  * Contributors:
  *    Rama Ramakrishnan (Agilex Corporation) - initial API and implementation
+ *    Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 
@@ -580,9 +581,48 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
-				target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().add(lComm);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+
+						RecordTarget recTarget = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole patRole = CDAFactory.eINSTANCE.createPatientRole();
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
+
+						target.getRecordTargets().add(recTarget);
+						recTarget.setPatientRole(patRole);
+						patRole.setPatient(pat);
+						pat.getLanguageCommunications().add(lComm);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// This test ensures multiple languageCommunication elements are allowed
+						target.init();
+
+						RecordTarget recTarget = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole patRole = CDAFactory.eINSTANCE.createPatientRole();
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
+						LanguageCommunication lComm2 = CDAFactory.eINSTANCE.createLanguageCommunication();
+
+						target.getRecordTargets().add(recTarget);
+						recTarget.setPatientRole(patRole);
+						patRole.setPatient(pat);
+						pat.getLanguageCommunications().add(lComm);
+						pat.getLanguageCommunications().add(lComm2);
+					}
+
+				});
 
 			}
 
