@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -18,6 +19,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.consol.CommentActivity;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
@@ -795,7 +797,7 @@ public class CommentActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateCommentActivityAuthorAssignedAuthorHasPersonOrOrganization() {
@@ -806,25 +808,111 @@ public class CommentActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(CommentActivity target) {
+				// Test driver test 4 emulation
+				// Contains 1 author element, which contains 1 assignedAuthor element
+				// -Does not contain an assignedPerson element (and therefore no name).
+				// -Does not contain a representedOrganization element (and therefore no name).
 				target.init();
 				Author author = CDAFactory.eINSTANCE.createAuthor();
 				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
 				author.setAssignedAuthor(aa);
 				target.getAuthors().add(author);
-
 			}
 
 			@Override
-			protected void updateToPass(CommentActivity target) {
-				target.getAuthors().clear();
-				Author author = CDAFactory.eINSTANCE.createAuthor();
-				author.setTime(DatatypesFactory.eINSTANCE.createTS());
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-				Person person = CDAFactory.eINSTANCE.createPerson();
-				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
-				aa.setAssignedPerson(person);
-				author.setAssignedAuthor(aa);
-				target.getAuthors().add(author);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(CommentActivity target) {
+						// Test driver test 1 emulation
+						// Contains 1 author element, which contains 1 assignedAuthor element,
+						// which contains 1 assignedPerson element, which contains 1 name element.
+						// -Does not contain a representedOrganization element.
+						target.init();
+						// target.getAuthors().clear();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						aa.setAssignedPerson(person);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(CommentActivity target) {
+						// Test driver test 2 emulation (repro of original reported error for artf3565)
+						// Contains 1 author element, which contains 1 assignedAuthor element,
+						// which contains 1 assignedPerson element and 1 representedOrganization element.
+						// -The assignedPerson element contains 1 name element.
+						// -The representedOrganization element contains 1 name element.
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						aa.setAssignedPerson(person);
+						Organization org = CDAFactory.eINSTANCE.createOrganization();
+						org.getNames().add(DatatypesFactory.eINSTANCE.createON());
+						aa.setRepresentedOrganization(org);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(CommentActivity target) {
+						// Test driver test 3 emulation
+						// Contains 1 author element, which contains 1 assignedAuthor element,
+						// which contains 1 representedOrganization element which contains 1 name element.
+						// -Does not contain an assignedPerson element.
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Organization org = CDAFactory.eINSTANCE.createOrganization();
+						org.getNames().add(DatatypesFactory.eINSTANCE.createON());
+						aa.setRepresentedOrganization(org);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(CommentActivity target) {
+						// Extra test
+						// Contains 1 author element, which contains 1 assignedAuthor element,
+						// which contains 1 representedOrganization element which contains 1 name element.
+						// -The assignedAuthor element also contains an assignedPerson element,
+						// but the assignedPerson element does NOT contain a name element.
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						aa.setAssignedPerson(person);
+						Organization org = CDAFactory.eINSTANCE.createOrganization();
+						org.getNames().add(DatatypesFactory.eINSTANCE.createON());
+						aa.setRepresentedOrganization(org);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+
+				});
 
 			}
 

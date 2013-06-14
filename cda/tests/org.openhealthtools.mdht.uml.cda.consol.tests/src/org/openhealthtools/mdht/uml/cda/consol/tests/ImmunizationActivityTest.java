@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 
 package org.openhealthtools.mdht.uml.cda.consol.tests;
@@ -850,7 +851,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateImmunizationActivityNegationInd() {
@@ -867,7 +868,10 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
-
+				// Either false or true is acceptable; there is no required default value.
+				// However, since there SHALL be 1..1 @negationInd,
+				// there must be a boolean value associated with @negationInd of some kind.
+				target.setNegationInd(true);
 			}
 
 			@Override
