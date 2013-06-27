@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -143,6 +144,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
  */
 
 public class PolicyActivityTest extends CDAValidationTest {
+
+	public static final String PAYER_PERFORMER_ROOT = "2.16.840.1.113883.10.20.22.4.87";
+
+	public static final String GUARANTOR_PERFORMER_ROOT = "2.16.840.1.113883.10.20.22.4.88";
 
 	/**
 	*
@@ -399,23 +404,119 @@ public class PolicyActivityTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(PolicyActivity target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// does not contain any payer or any guarantor performer elements
+						target.init();
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 2 payers and Contains 1 guarantor
+						target.init();
+						target.getPerformers().clear();
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+						Performer2 payer2 = createPerformer();
+						payer2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer2);
+
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 2 payers and Contains 0 guarantor
+						target.init();
+						target.getPerformers().clear();
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+						Performer2 payer2 = createPerformer();
+						payer2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer2);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 0 payers and Contains 2 guarantors
+						target.init();
+						target.getPerformers().clear();
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
+						Performer2 guarantor2 = createPerformer();
+						guarantor2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor2);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 2 payers and Contains 2 guarantors
+						target.init();
+						target.getPerformers().clear();
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
+						Performer2 guarantor2 = createPerformer();
+						guarantor2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor2);
+
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+						Performer2 payer2 = createPerformer();
+						payer2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer2);
+					}
+				});
 
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
+
 				Performer2 payer = createPerformer();
+				AssignedEntity aePay = CDAFactory.eINSTANCE.createAssignedEntity();
+				aePay.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.110"));
+
+				payer.setAssignedEntity(aePay);
 				target.getPerformers().add(payer);
+
+				II iiPay = DatatypesFactory.eINSTANCE.createII();
+				iiPay.setRoot(PAYER_PERFORMER_ROOT);
+				payer.getTemplateIds().add(0, iiPay);
 
 				Performer2 guarantor = createPerformer();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				ae.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", ""));
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.110"));
 
 				guarantor.setAssignedEntity(ae);
 				target.getPerformers().add(guarantor);
 
+				II iiGuar = DatatypesFactory.eINSTANCE.createII();
+				iiGuar.setRoot(GUARANTOR_PERFORMER_ROOT);
+				guarantor.getTemplateIds().add(0, iiGuar);
 			}
 
 			@Override
@@ -442,19 +543,120 @@ public class PolicyActivityTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(PolicyActivity target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// does not contain any payer or any guarantor performer elements
+						target.init();
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 1 payer and Contains 2 guarantors
+						target.init();
+						target.getPerformers().clear();
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
+						Performer2 guarantor2 = createPerformer();
+						guarantor2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor2);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 2 payers and Contains 0 guarantor
+						target.init();
+						target.getPerformers().clear();
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+						Performer2 payer2 = createPerformer();
+						payer2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer2);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 0 payers and Contains 2 guarantors
+						target.init();
+						target.getPerformers().clear();
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
+						Performer2 guarantor2 = createPerformer();
+						guarantor2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor2);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(PolicyActivity target) {
+						// Contains 2 payers and Contains 2 guarantors
+						target.init();
+						target.getPerformers().clear();
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
+						Performer2 guarantor2 = createPerformer();
+						guarantor2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor2);
+
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+						Performer2 payer2 = createPerformer();
+						payer2.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer2);
+					}
+				});
 
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
+				// Contains 1 payer and 1 guarantor
 				target.init();
+				target.getPerformers().clear();
+				Performer2 payer = createPerformer();
+				AssignedEntity aePay = CDAFactory.eINSTANCE.createAssignedEntity();
+				aePay.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.110"));
+
+				payer.setAssignedEntity(aePay);
+				target.getPerformers().add(payer);
+
+				II iiPay = DatatypesFactory.eINSTANCE.createII();
+				iiPay.setRoot(PAYER_PERFORMER_ROOT);
+				payer.getTemplateIds().add(0, iiPay);
+
 				Performer2 guarantor = createPerformer();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				ae.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", ""));
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.110"));
 
 				guarantor.setAssignedEntity(ae);
 				target.getPerformers().add(guarantor);
+
+				II iiGuar = DatatypesFactory.eINSTANCE.createII();
+				iiGuar.setRoot(GUARANTOR_PERFORMER_ROOT);
+				guarantor.getTemplateIds().add(0, iiGuar);
 			}
 
 			@Override
@@ -579,7 +781,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityUSRealmAddressStreet() {
@@ -598,6 +800,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 						target.init();
 						target.getPerformers().clear();
 						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 						AD ad = DatatypesFactory.eINSTANCE.createAD();
 						ad.addStreetAddressLine("123");
 						ad.addStreetAddressLine("123");
@@ -608,7 +811,6 @@ public class PolicyActivityTest extends CDAValidationTest {
 						AssignedEntity payerEntity = createPayerAssignedEntity();
 						payerEntity.getAddrs().add(ad);
 						payer.setAssignedEntity(payerEntity);
-
 					}
 				});
 
@@ -619,6 +821,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 						target.init();
 						target.getPerformers().clear();
 						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 						AD ad = DatatypesFactory.eINSTANCE.createAD();
 
 						target.getPerformers().add(payer);
@@ -636,6 +839,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
@@ -672,23 +876,22 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
-
 				payer.setAssignedEntity(payerEntity);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
 				payerEntity.getAddrs().add(createUSRealmAddress());
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -705,7 +908,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityUSRealmAddressCountry() {
@@ -719,6 +922,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 
@@ -730,6 +934,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
@@ -752,7 +957,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityUSRealmAddressPostalCode() {
@@ -766,23 +971,22 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
-
 				payer.setAssignedEntity(payerEntity);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
 				payerEntity.getAddrs().add(createUSRealmAddress());
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -799,7 +1003,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityUSRealmAddressState() {
@@ -813,23 +1017,22 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
-
 				payer.setAssignedEntity(payerEntity);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
 				payerEntity.getAddrs().add(createUSRealmAddress());
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -846,7 +1049,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityUSRealmAddressStreetAddressLine() {
@@ -860,23 +1063,22 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
-
 				payer.setAssignedEntity(payerEntity);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
 				payerEntity.getAddrs().add(createUSRealmAddress());
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -893,7 +1095,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityUSRealmAddressUseP() {
@@ -907,23 +1109,22 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
-
 				payer.setAssignedEntity(payerEntity);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
 				payerEntity.getAddrs().add(createUSRealmAddress());
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -940,7 +1141,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityUSRealmAddressUse() {
@@ -954,6 +1155,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
@@ -965,15 +1167,14 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
 				payerEntity.getAddrs().add(createUSRealmAddress());
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -1004,20 +1205,19 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payer.setAssignedEntity(payerEntity);
-
 				Organization repOrg = CDAFactory.eINSTANCE.createOrganization();
 				payerEntity.getRepresentedOrganizations().add(repOrg);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payer.setAssignedEntity(payerEntity);
@@ -1027,7 +1227,6 @@ public class PolicyActivityTest extends CDAValidationTest {
 				repOrg.getNames().add(name);
 
 				payerEntity.getRepresentedOrganizations().add(repOrg);
-
 			}
 
 			@Override
@@ -1058,21 +1257,53 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getIds().clear();
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
-			protected void updateToPass(PolicyActivity target) {
-				target.init();
-				target.getPerformers().clear();
-				Performer2 payer = createPerformer();
-				target.getPerformers().add(payer);
-				AssignedEntity payerEntity = createPayerAssignedEntity();
-				payer.setAssignedEntity(payerEntity);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with payer/assignedEntity/code
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+						AssignedEntity payerEntity = createPayerAssignedEntity();
+						payer.setAssignedEntity(payerEntity);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with payer/assignedEntity/code="GUAR" AND guarantor/assignedEntity/code="GUAR"
+					// to ensure there is no confusion between the two identities.
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						// payer
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						payer.setAssignedEntity(createPayerAssignedEntity());
+						target.getPerformers().add(payer);
+						// guarantor
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						guarantor.setAssignedEntity(createGuarantorAssignedEntity());
+						target.getPerformers().add(guarantor);
+					}
+
+				});
 
 			}
 
@@ -1104,21 +1335,53 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.setCode(null);
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
-			protected void updateToPass(PolicyActivity target) {
-				target.init();
-				target.getPerformers().clear();
-				Performer2 payer = createPerformer();
-				target.getPerformers().add(payer);
-				AssignedEntity payerEntity = createPayerAssignedEntity();
-				payer.setAssignedEntity(payerEntity);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with payer/assignedEntity/code
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						target.getPerformers().add(payer);
+						AssignedEntity payerEntity = createPayerAssignedEntity();
+						payer.setAssignedEntity(payerEntity);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with payer/assignedEntity/code="GUAR" AND guarantor/assignedEntity/code="GUAR"
+					// to ensure there is no confusion between the two identities.
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						// payer
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						payer.setAssignedEntity(createPayerAssignedEntity());
+						target.getPerformers().add(payer);
+						// guarantor
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						guarantor.setAssignedEntity(createGuarantorAssignedEntity());
+						target.getPerformers().add(guarantor);
+					}
+
+				});
 
 			}
 
@@ -1136,7 +1399,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityCodeP() {
@@ -1150,11 +1413,11 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.setCode(null);
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -1162,10 +1425,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -1196,22 +1459,21 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getAddrs().clear();
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -1242,22 +1504,21 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payerEntity.getTelecoms().clear();
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
@@ -1288,17 +1549,17 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payer.setAssignedEntity(payerEntity);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				AssignedEntity payerEntity = createPayerAssignedEntity();
 				payer.setAssignedEntity(payerEntity);
@@ -1321,7 +1582,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerTemplateId() {
@@ -1330,13 +1591,20 @@ public class PolicyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			// Checks if the template ID exists or not, but the template ID must exist in order to differentiate between the two different types of
+			// performers, payer and guarantor. So, it is not possible to not include a template ID and for the code to know to fail it for not
+			// specifically having a payer or a guarantor. Due to the identification issue, the fail test has been skipped.
+
+			{
+				this.skipFailsTest();
+			}
+
 			@Override
 			protected void updateToFail(PolicyActivity target) {
+				// target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
 				target.getPerformers().add(payer);
-				payer.setTypeCode(ParticipationPhysicalPerformer.SPRF);
-
 			}
 
 			@Override
@@ -1345,8 +1613,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
 				target.getPerformers().add(payer);
-				payer.setTypeCode(ParticipationPhysicalPerformer.PRF);
-				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.10.20.22.4.87"));
+				// Although the correct PAYER performer template ID is provided, any ID will pass, as the test only ensures an ID is there.
+				// The real check for the actual ID is done with testValidatePolicyActivityPayer()
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 			}
 
 			@Override
@@ -1363,7 +1632,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated  NOT
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerTypeCode() {
@@ -1376,6 +1645,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 			protected void updateToFail(PolicyActivity target) {
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				payer.setTypeCode(ParticipationPhysicalPerformer.SPRF);
 
@@ -1386,6 +1656,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = createPerformer();
+				payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
 				target.getPerformers().add(payer);
 				payer.setTypeCode(ParticipationPhysicalPerformer.PRF);
 
@@ -1419,6 +1690,8 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = CDAFactory.eINSTANCE.createPerformer2();
+				II iiPay = DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT);
+				payer.getTemplateIds().add(0, iiPay);
 				target.getPerformers().add(payer);
 
 			}
@@ -1428,6 +1701,8 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 payer = CDAFactory.eINSTANCE.createPerformer2();
+				II iiPay = DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT);
+				payer.getTemplateIds().add(0, iiPay);
 				payer.setAssignedEntity(createPayerAssignedEntity());
 				target.getPerformers().add(payer);
 
@@ -1447,7 +1722,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressStreet() {
@@ -1466,6 +1741,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 						target.init();
 						target.getPerformers().clear();
 						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 						target.getPerformers().add(guarantor);
 						AD ad = DatatypesFactory.eINSTANCE.createAD();
 						ad.addStreetAddressLine("123");
@@ -1477,7 +1753,6 @@ public class PolicyActivityTest extends CDAValidationTest {
 						gEntity.getAddrs().clear();
 						gEntity.getAddrs().add(ad);
 						guarantor.setAssignedEntity(gEntity);
-
 					}
 				});
 
@@ -1488,6 +1763,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 						target.init();
 						target.getPerformers().clear();
 						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 						target.getPerformers().add(guarantor);
 						AD ad = DatatypesFactory.eINSTANCE.createAD();
 						AssignedEntity gEntity = createGuarantorAssignedEntity();
@@ -1504,6 +1780,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
@@ -1526,7 +1803,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressCity() {
@@ -1540,24 +1817,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().clear();
 				gEntity.getAddrs().add(createUSRealmAddress());
-
 			}
 
 			@Override
@@ -1574,7 +1850,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressCountry() {
@@ -1588,24 +1864,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().clear();
 				gEntity.getAddrs().add(createUSRealmAddress());
-
 			}
 
 			@Override
@@ -1622,7 +1897,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressPostalCode() {
@@ -1636,24 +1911,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().clear();
 				gEntity.getAddrs().add(createUSRealmAddress());
-
 			}
 
 			@Override
@@ -1670,7 +1944,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressState() {
@@ -1684,24 +1958,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().clear();
 				gEntity.getAddrs().add(createUSRealmAddress());
-
 			}
 
 			@Override
@@ -1718,7 +1991,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressStreetAddressLine() {
@@ -1732,24 +2005,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().clear();
 				gEntity.getAddrs().add(createUSRealmAddress());
-
 			}
 
 			@Override
@@ -1766,7 +2038,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressUseP() {
@@ -1780,24 +2052,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().clear();
 				gEntity.getAddrs().add(createUSRealmAddress());
-
 			}
 
 			@Override
@@ -1814,7 +2085,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityUSRealmAddressUse() {
@@ -1828,6 +2099,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
@@ -1835,20 +2107,18 @@ public class PolicyActivityTest extends CDAValidationTest {
 				AD ad = DatatypesFactory.eINSTANCE.createAD();
 				ad.getUses().add(null);
 				gEntity.getAddrs().add(ad);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().clear();
 				gEntity.getAddrs().add(createUSRealmAddress());
-
 			}
 
 			@Override
@@ -1876,37 +2146,17 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
+				// Case with assignedPerson with no name. Does not contain represented organization at all.
 				target.init();
 				target.getPerformers().clear();
-				Performer2 payer = createPerformer();
-				target.getPerformers().add(payer);
+				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+				target.getPerformers().add(guarantor);
 				AssignedEntity guarantorEntity = createGuarantorAssignedEntity();
-				payer.setAssignedEntity(guarantorEntity);
+				guarantor.setAssignedEntity(guarantorEntity);
 
 				Person person = CDAFactory.eINSTANCE.createPerson();
 				guarantorEntity.setAssignedPerson(person);
-
-			}
-
-			// Case with Person & Represented Organization
-			@Override
-			protected void updateToPass(PolicyActivity target) {
-				target.init();
-				target.getPerformers().clear();
-				Performer2 payer = createPerformer();
-				target.getPerformers().add(payer);
-				AssignedEntity guarantorEntity = createGuarantorAssignedEntity();
-				payer.setAssignedEntity(guarantorEntity);
-
-				Person person = CDAFactory.eINSTANCE.createPerson();
-				PN pn11 = DatatypesFactory.eINSTANCE.createPN();
-				person.getNames().add(pn11);
-				guarantorEntity.setAssignedPerson(person);
-
-				Organization org = CDAFactory.eINSTANCE.createOrganization();
-				guarantorEntity.getRepresentedOrganizations().add(org);
-				ON on1 = DatatypesFactory.eINSTANCE.createON();
-				org.getNames().add(on1);
 			}
 
 			@Override
@@ -1915,14 +2165,41 @@ public class PolicyActivityTest extends CDAValidationTest {
 				addPassTest(new PassTest() {
 
 					@Override
+					// Case with Person & Represented Organization
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
+						AssignedEntity guarantorEntity = createGuarantorAssignedEntity();
+						guarantor.setAssignedEntity(guarantorEntity);
+
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						PN pn11 = DatatypesFactory.eINSTANCE.createPN();
+						person.getNames().add(pn11);
+						guarantorEntity.setAssignedPerson(person);
+
+						Organization org = CDAFactory.eINSTANCE.createOrganization();
+						guarantorEntity.getRepresentedOrganizations().add(org);
+						ON on1 = DatatypesFactory.eINSTANCE.createON();
+						org.getNames().add(on1);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
 					// Case with Person only
 					public void updateToPass(PolicyActivity target) {
 						target.init();
 						target.getPerformers().clear();
-						Performer2 payer = createPerformer();
-						target.getPerformers().add(payer);
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
 						AssignedEntity guarantorEntity = createGuarantorAssignedEntity();
-						payer.setAssignedEntity(guarantorEntity);
+						guarantor.setAssignedEntity(guarantorEntity);
 
 						Person person = CDAFactory.eINSTANCE.createPerson();
 						PN pn11 = DatatypesFactory.eINSTANCE.createPN();
@@ -1939,10 +2216,11 @@ public class PolicyActivityTest extends CDAValidationTest {
 					public void updateToPass(PolicyActivity target) {
 						target.init();
 						target.getPerformers().clear();
-						Performer2 payer = createPerformer();
-						target.getPerformers().add(payer);
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						target.getPerformers().add(guarantor);
 						AssignedEntity guarantorEntity = createGuarantorAssignedEntity();
-						payer.setAssignedEntity(guarantorEntity);
+						guarantor.setAssignedEntity(guarantorEntity);
 
 						Organization org = CDAFactory.eINSTANCE.createOrganization();
 						guarantorEntity.getRepresentedOrganizations().add(org);
@@ -1982,20 +2260,52 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				guarantor.setAssignedEntity(createGuarantorAssignedEntity());
 				guarantor.getAssignedEntity().setCode(
-					DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.111X"));
+					DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.XXX"));
 				target.getPerformers().add(guarantor);
-
 			}
 
 			@Override
-			protected void updateToPass(PolicyActivity target) {
-				target.init();
-				target.getPerformers().clear();
-				Performer2 guarantor = createPerformer();
-				guarantor.setAssignedEntity(createGuarantorAssignedEntity());
-				target.getPerformers().add(guarantor);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with guarantor/assignedEntity/code
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						guarantor.setAssignedEntity(createGuarantorAssignedEntity());
+						target.getPerformers().add(guarantor);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with guarantor/assignedEntity/code="GUAR" AND payer/assignedEntity/code="GUAR"
+					// to ensure there is no confusion between the two identities.
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						// payer
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						payer.setAssignedEntity(createPayerAssignedEntity());
+						target.getPerformers().add(payer);
+						// guarantor
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						guarantor.setAssignedEntity(createGuarantorAssignedEntity());
+						target.getPerformers().add(guarantor);
+					}
+
+				});
 
 			}
 
@@ -2013,7 +2323,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityCodeP() {
@@ -2022,28 +2332,56 @@ public class PolicyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_GUARANTOR_ASSIGNED_ENTITY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
-			{
-				this.skipFailsTest();
-			}
-
 			@Override
 			protected void updateToFail(PolicyActivity target) {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				guarantor.setAssignedEntity(createGuarantorAssignedEntity());
 				guarantor.getAssignedEntity().setCode(null);
 				target.getPerformers().add(guarantor);
-
 			}
 
 			@Override
-			protected void updateToPass(PolicyActivity target) {
-				target.init();
-				target.getPerformers().clear();
-				Performer2 guarantor = createPerformer();
-				guarantor.setAssignedEntity(createGuarantorAssignedEntity());
-				target.getPerformers().add(guarantor);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with guarantor/assignedEntity/code
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						guarantor.setAssignedEntity(createGuarantorAssignedEntity());
+						target.getPerformers().add(guarantor);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					// Case with guarantor/assignedEntity/code="GUAR" AND payer/assignedEntity/code="GUAR"
+					// to ensure there is no confusion between the two identities.
+					public void updateToPass(PolicyActivity target) {
+						target.init();
+						target.getPerformers().clear();
+						// payer
+						Performer2 payer = createPerformer();
+						payer.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(PAYER_PERFORMER_ROOT));
+						payer.setAssignedEntity(createPayerAssignedEntity());
+						target.getPerformers().add(payer);
+						// guarantor
+						Performer2 guarantor = createPerformer();
+						guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
+						guarantor.setAssignedEntity(createGuarantorAssignedEntity());
+						target.getPerformers().add(guarantor);
+					}
+
+				});
 
 			}
 
@@ -2075,23 +2413,22 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				// gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
@@ -2122,24 +2459,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				// gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
 				// gEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 				gEntity.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
-
 			}
 
 			@Override
@@ -2156,7 +2492,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorTemplateId() {
@@ -2165,26 +2501,31 @@ public class PolicyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			// Checks if the template ID exists or not, but the template ID must exist in order to differentiate between the two different types of
+			// performers, payer and guarantor. So, it is not possible to not include a template ID and for the code to know to fail it for not
+			// specifically having a payer or a guarantor. Due to the identification issue, the fail test has been skipped.
+
+			{
+				this.skipFailsTest();
+			}
+
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-				target.init();
+				// target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
 				target.getPerformers().add(guarantor);
-				AssignedEntity gEntity = createGuarantorAssignedEntity();
-				guarantor.setAssignedEntity(gEntity);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
+				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
 				target.getPerformers().add(guarantor);
-				AssignedEntity gEntity = createGuarantorAssignedEntity();
-				guarantor.setAssignedEntity(gEntity);
-				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.10.20.22.4.88"));
-
+				// Although the correct GUARANTOR performer template ID is provided, any ID will pass, as the test only ensures an ID is there.
+				// The real check for the actual ID is done with testValidatePolicyActivityGuarantor()
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 			}
 
 			@Override
@@ -2215,23 +2556,17 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
-				AssignedEntity gEntity = createGuarantorAssignedEntity();
-				guarantor.setAssignedEntity(gEntity);
-				// guarantor.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
-				AssignedEntity gEntity = createGuarantorAssignedEntity();
-				guarantor.setAssignedEntity(gEntity);
 				guarantor.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
-
 			}
 
 			@Override
@@ -2262,21 +2597,17 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
-				AssignedEntity gEntity = createGuarantorAssignedEntity();
-				guarantor.setAssignedEntity(gEntity);
 				guarantor.setTypeCode(ParticipationPhysicalPerformer.PPRF);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				guarantor.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT));
 				target.getPerformers().add(guarantor);
-				AssignedEntity gEntity = createGuarantorAssignedEntity();
-				guarantor.setAssignedEntity(gEntity);
 				guarantor.setTypeCode(ParticipationPhysicalPerformer.PRF);
 			}
 
@@ -2303,32 +2634,25 @@ public class PolicyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_GUARANTOR_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
-			{
-				skipFailsTest();
-			}
-
-			// Skipping this test as the condition requires AssignedEntity code is
-			// checked for a Guarantor..
 			@Override
 			protected void updateToFail(PolicyActivity target) {
 				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				II iiGuar = DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT);
+				guarantor.getTemplateIds().add(0, iiGuar);
 				target.getPerformers().add(guarantor);
-				// AssignedEntity gEntity = createPayerAssignedEntity();
-				// guarantor.setAssignedEntity(gEntity);
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
 				target.getPerformers().clear();
 				Performer2 guarantor = createPerformer();
+				II iiGuar = DatatypesFactory.eINSTANCE.createII(GUARANTOR_PERFORMER_ROOT);
+				guarantor.getTemplateIds().add(0, iiGuar);
 				target.getPerformers().add(guarantor);
 				AssignedEntity gEntity = createGuarantorAssignedEntity();
 				guarantor.setAssignedEntity(gEntity);
-
 			}
 
 			@Override
@@ -4105,7 +4429,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	private static AssignedEntity createPayerAssignedEntity() {
 		AssignedEntity assignedEntity = CDAFactory.eINSTANCE.createAssignedEntity();
 		assignedEntity.getIds().add(DatatypesFactory.eINSTANCE.createII("12345"));
-		assignedEntity.setCode(DatatypesFactory.eINSTANCE.createCE("EMP", "2.16.840.1.113883.5.110"));
+		assignedEntity.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.110"));
 		assignedEntity.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 		assignedEntity.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
 		return assignedEntity;
@@ -4114,7 +4438,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	private static AssignedEntity createGuarantorAssignedEntity() {
 		AssignedEntity assignedEntity = CDAFactory.eINSTANCE.createAssignedEntity();
 		assignedEntity.getIds().add(DatatypesFactory.eINSTANCE.createII("12345"));
-		assignedEntity.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.111"));
+		assignedEntity.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", "2.16.840.1.113883.5.110"));
 		return assignedEntity;
 	}
 
