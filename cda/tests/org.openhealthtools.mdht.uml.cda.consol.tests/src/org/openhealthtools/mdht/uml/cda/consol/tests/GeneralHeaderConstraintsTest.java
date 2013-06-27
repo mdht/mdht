@@ -201,15 +201,13 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAuthoringDeviceManufacturerModelName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Authoring Device Manufacturer Model Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAuthoringDeviceSoftwareName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Authoring Device Software Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorPersonName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Person Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Has Assigned Person Or Assigned Authoring Device</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorHasOneAssignedPersonOrOneAssignedAuthoringDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Has One Assigned Person Or One Assigned Authoring Device</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedAuthoringDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Assigned Authoring Device</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Assigned Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDataEntererAssignedEntityUSRealmAddressStreet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Data Enterer Assigned Entity US Realm Address Street</em>}</li>
@@ -760,8 +758,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-
 				target.init();
+
 			}
 
 			@Override
@@ -3020,13 +3018,13 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
-	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDeviceTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_HAS_ASSIGNED_PERSON_OR_ASSIGNED_AUTHORING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorHasOneAssignedPersonOrOneAssignedAuthoringDevice() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorHasOneAssignedPersonOrOneAssignedAuthoringDeviceTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsAuthorAssignedAuthorHasOneAssignedPersonOrOneAssignedAuthoringDevice",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_HAS_ONE_ASSIGNED_PERSON_OR_ONE_ASSIGNED_AUTHORING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			/*
@@ -3041,6 +3039,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
+						// empty assignedAuthor element (does not contain assignedPerson or assignedAuthoringDevice)
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3053,6 +3052,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
+						// contains both assignedPerson and assignedAuthoringDevice
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3062,6 +3062,27 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 						target.getAuthors().add(author);
 					}
 				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// nullflavor test with both elements at the same time
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						Person ap = CDAFactory.eINSTANCE.createPerson();
+						ap.setNullFlavor(NullFlavor.UNK);
+						AuthoringDevice aad = CDAFactory.eINSTANCE.createAuthoringDevice();
+						aad.setNullFlavor(NullFlavor.UNK);
+						aa.setAssignedPerson(ap);
+						aa.setAssignedAuthoringDevice(aad);
+						target.getAuthors().add(author);
+					}
+				}
+
+				);
 
 			}
 
@@ -3077,6 +3098,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
+						// contains assignedPerson only
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3092,6 +3114,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
+						// contains assignedAuthoringDevice only
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3103,18 +3126,54 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 				);
 
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// nullflavor test assignedAuthoringDevice only
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						AuthoringDevice aad = CDAFactory.eINSTANCE.createAuthoringDevice();
+						aad.setNullFlavor(NullFlavor.UNK);
+						aa.setAssignedAuthoringDevice(aad);
+						target.getAuthors().add(author);
+					}
+				}
+
+				);
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// nullflavor test assignedPerson only
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						Person ap = CDAFactory.eINSTANCE.createPerson();
+						ap.setNullFlavor(NullFlavor.UNK);
+						aa.setAssignedPerson(ap);
+						target.getAuthors().add(author);
+					}
+				}
+
+				);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice(
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorHasOneAssignedPersonOrOneAssignedAuthoringDevice(
 					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDeviceTestCase.doValidationTest();
+		validateGeneralHeaderConstraintsAuthorAssignedAuthorHasOneAssignedPersonOrOneAssignedAuthoringDeviceTestCase.doValidationTest();
 	}
 
 	/**
@@ -3425,103 +3484,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsAuthorAssignedAuthorTelecomTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedAuthoringDevice() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedAuthoringDeviceTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedAuthoringDevice",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_ASSIGNED_AUTHORING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-
-				target.init();
-				Author author = CDAFactory.eINSTANCE.createAuthor();
-
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-
-				author.setAssignedAuthor(aa);
-
-				target.getAuthors().add(author);
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-
-				target.getAuthors().clear();
-
-				Author author = CDAFactory.eINSTANCE.createAuthor();
-
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-
-				aa.setAssignedAuthoringDevice(CDAFactory.eINSTANCE.createAuthoringDevice());
-				author.setAssignedAuthor(aa);
-
-				target.getAuthors().add(author);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedAuthoringDevice(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedAuthoringDeviceTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedPerson() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedPersonTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedPerson",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_ASSIGNED_PERSON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				Author a = CDAFactory.eINSTANCE.createAuthor();
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-
-				a.setAssignedAuthor(aa);
-				target.getAuthors().add(a);
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.getAuthors().clear();
-				Author a = CDAFactory.eINSTANCE.createAuthor();
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-				Person ap = CDAFactory.eINSTANCE.createPerson();
-				aa.setAssignedPerson(ap);
-				a.setAssignedAuthor(aa);
-				target.getAuthors().add(a);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedPerson(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsAuthorAssignedAuthorAssignedPersonTestCase.doValidationTest();
 	}
 
 	/**
