@@ -71,6 +71,7 @@ plugin@org.openhealthtools.mdht.uml.cda.consol.doc=SVN,trunk,https://www.project
 
 plugin@org.openhealthtools.mdht.uml.cda.mu2consol.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.mu2consol.doc,force
 
+plugin@org.openhealthtools.mdht.uml.cda.emspcr.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.emspcr.doc,force
 
 
 plugin@org.openhealthtools.mdht.uml.cda.consoltoc.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.consoltoc.doc,force
