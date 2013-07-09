@@ -4666,6 +4666,12 @@
         <details key="processing" value="lax"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iD" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="ID"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subject" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

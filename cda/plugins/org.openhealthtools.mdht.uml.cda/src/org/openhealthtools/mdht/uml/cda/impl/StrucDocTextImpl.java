@@ -10,9 +10,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.impl;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -30,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.StrucDocTextImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.StrucDocTextImpl#getAny <em>Any</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.StrucDocTextImpl#getID <em>ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +48,26 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	 * @ordered
 	 */
 	protected FeatureMap mixed;
+
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String iD = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,6 +107,28 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	 */
 	public FeatureMap getAny() {
 		return (FeatureMap) getMixed().<FeatureMap.Entry> list(CDAPackage.Literals.STRUC_DOC_TEXT__ANY);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getID() {
+		return iD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(String newID) {
+		String oldID = iD;
+		iD = newID;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.STRUC_DOC_TEXT__ID, oldID, iD));
+		}
 	}
 
 	/**
@@ -145,6 +190,8 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 					return getAny();
 				}
 				return ((FeatureMap.Internal) getAny()).getWrapper();
+			case CDAPackage.STRUC_DOC_TEXT__ID:
+				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,6 +209,9 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 				return;
 			case CDAPackage.STRUC_DOC_TEXT__ANY:
 				((FeatureMap.Internal) getAny()).set(newValue);
+				return;
+			case CDAPackage.STRUC_DOC_TEXT__ID:
+				setID((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,6 +231,9 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 			case CDAPackage.STRUC_DOC_TEXT__ANY:
 				getAny().clear();
 				return;
+			case CDAPackage.STRUC_DOC_TEXT__ID:
+				setID(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,6 +250,10 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 				return mixed != null && !mixed.isEmpty();
 			case CDAPackage.STRUC_DOC_TEXT__ANY:
 				return !getAny().isEmpty();
+			case CDAPackage.STRUC_DOC_TEXT__ID:
+				return ID_EDEFAULT == null
+						? iD != null
+						: !ID_EDEFAULT.equals(iD);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,6 +272,8 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
 		result.append(mixed);
+		result.append(", iD: ");
+		result.append(iD);
 		result.append(')');
 		return result.toString();
 	}

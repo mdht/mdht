@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.StrucDocText#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.StrucDocText#getAny <em>Any</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.StrucDocText#getID <em>ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +65,33 @@ public interface StrucDocText extends EObject {
 	 * @generated
 	 */
 	FeatureMap getAny();
+
+	/**
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(String)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStrucDocText_ID()
+	 * @model ordered="false"
+	 *        extendedMetaData="name='ID' kind='attribute'"
+	 * @generated
+	 */
+	String getID();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.StrucDocText#getID <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
+	 * @generated
+	 */
+	void setID(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

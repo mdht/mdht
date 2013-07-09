@@ -5166,13 +5166,22 @@ public interface CDAPackage extends EPackage {
 	int STRUC_DOC_TEXT__ANY = 1;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUC_DOC_TEXT__ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>Struc Doc Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUC_DOC_TEXT_FEATURE_COUNT = 2;
+	int STRUC_DOC_TEXT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.SubjectImpl <em>Subject</em>}' class.
@@ -15952,6 +15961,17 @@ public interface CDAPackage extends EPackage {
 	EAttribute getStrucDocText_Any();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.StrucDocText#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.StrucDocText#getID()
+	 * @see #getStrucDocText()
+	 * @generated
+	 */
+	EAttribute getStrucDocText_ID();
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.Subject <em>Subject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -25976,6 +25996,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRUC_DOC_TEXT__ANY = eINSTANCE.getStrucDocText_Any();
+
+		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUC_DOC_TEXT__ID = eINSTANCE.getStrucDocText_ID();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SubjectImpl <em>Subject</em>}' class.

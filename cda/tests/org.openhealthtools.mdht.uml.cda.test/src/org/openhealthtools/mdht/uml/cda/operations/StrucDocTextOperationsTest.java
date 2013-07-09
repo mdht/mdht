@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
@@ -23,6 +24,8 @@ import org.openhealthtools.mdht.uml.cda.StrucDocText;
 public class StrucDocTextOperationsTest {
 
 	static final String TEST_TEXT = "Some text for testing";
+
+	static final String TEXT_ID = "medicationDescriptionID0";
 
 	/**
 	 * Test method for
@@ -61,6 +64,19 @@ public class StrucDocTextOperationsTest {
 
 	/**
 	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations#setID(org.openhealthtools.mdht.uml.cda.StrucDocText)}
+	 * and
+	 * {@link org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations#getID(org.openhealthtools.mdht.uml.cda.StrucDocText)}
+	 */
+	@Test
+	public final void testGetAndSetID() {
+		final StrucDocText strcDocText = CDAFactory.eINSTANCE.createStrucDocText();
+		strcDocText.setID(TEXT_ID);
+		assertTrue(strcDocText.getID().equals(TEXT_ID));
+	}
+
+	/**
+	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations#getText(org.openhealthtools.mdht.uml.cda.StrucDocText)}
 	 * .
 	 */
@@ -69,4 +85,21 @@ public class StrucDocTextOperationsTest {
 		final StrucDocText strcDocText = CDAFactory.eINSTANCE.createStrucDocText();
 		assertTrue(StrucDocTextOperations.getText(strcDocText, "foo") == null);
 	}
+
+	/**
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations#getText(org.openhealthtools.mdht.uml.cda.StrucDocText)}
+	 * .
+	 */
+	@Test
+	public final void testGetText_StructDocTextMatchingID() {
+		final StrucDocText strcDocText = CDAFactory.eINSTANCE.createStrucDocText();
+		// set the ID
+		strcDocText.setID(TEXT_ID);
+		// set the text to a random string which we will return if the id matches
+		strcDocText.addText(TEST_TEXT);
+		// send in the same ID that was set. It should be a match, if so, it will return the matching TEST_TEXT string
+		assertTrue(StrucDocTextOperations.getText(strcDocText, TEXT_ID).equals(TEST_TEXT));
+	}
+
 } // StrucDocTextOperationsTest
