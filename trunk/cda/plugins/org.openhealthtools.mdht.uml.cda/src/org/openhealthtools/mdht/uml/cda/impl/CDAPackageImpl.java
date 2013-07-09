@@ -5526,6 +5526,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStrucDocText_ID() {
+		return (EAttribute) getStrucDocText().getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSubject() {
 		if (subjectEClass == null) {
 			subjectEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(

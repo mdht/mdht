@@ -73,6 +73,12 @@ public class StrucDocTextOperations {
 	 * @generated NOT
 	 */
 	public static String getText(StrucDocText strucDocText, String id) {
+		String attributeValue = strucDocText.getID();
+		if (attributeValue != null && attributeValue.equals(id)) {
+			// Found a match in the root text element ID attribute. Return the text.
+			return getText(strucDocText.getMixed());
+		}
+		// We don't have a match yet. Continue searching below the root text element.
 		return getText(strucDocText.getMixed(), id);
 	}
 

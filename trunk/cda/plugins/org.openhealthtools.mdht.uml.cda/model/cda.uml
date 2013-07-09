@@ -7714,6 +7714,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7ovXsU8AEd6ohP_YEXs4Wg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7ovXsE8AEd6ohP_YEXs4Wg"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_pFDz8ONKEeKLC7zu0C2K8Q" name="iD" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pFDz8uNKEeKLC7zu0C2K8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pFDz8eNKEeKLC7zu0C2K8Q"/>
+      </ownedAttribute>
       <ownedOperation xmi:id="_umBWgGsTEd6Mc4CaAXYrKA" name="addText">
         <ownedParameter xmi:id="_vpEu8GsTEd6Mc4CaAXYrKA" name="text">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -9031,4 +9036,5 @@
   <Ecore:EReference xmi:id="_T7cRkAPkEeGdM61FsLhcmQ" xmlName="deceasedTime" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_LJEdAAPkEeGdM61FsLhcmQ"/>
   <Ecore:EReference xmi:id="_wjqvUFZvEeGCdLgBm6VHOQ" xmlName="id" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_jSS_4FZvEeGCdLgBm6VHOQ"/>
   <Ecore:EReference xmi:id="_utLkkI_8EeKDcJPVSJHobw" xmlName="dischargeDispositionCode" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_eCTm4I_1EeKDcJPVSJHobw"/>
+  <Ecore:EAttribute xmi:id="_g7DKcONLEeKLC7zu0C2K8Q" xmlName="ID" xmlFeatureKind="Attribute" base_Property="_pFDz8ONKEeKLC7zu0C2K8Q"/>
 </xmi:XMI>

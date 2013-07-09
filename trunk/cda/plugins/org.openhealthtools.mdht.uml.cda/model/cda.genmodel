@@ -1304,6 +1304,7 @@
           pluralizationException="true"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/any" pluralizationException="true"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/iD"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StrucDocText/addText">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StrucDocText/addText/text"/>
       </genOperations>
