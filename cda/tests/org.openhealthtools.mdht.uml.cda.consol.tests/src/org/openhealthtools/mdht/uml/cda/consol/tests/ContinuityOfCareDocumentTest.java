@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -1228,7 +1229,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentAuthorAssignedAuthorHasAssignedPersonOrRepresentedOrganization() {
@@ -1238,25 +1239,75 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(ContinuityOfCareDocument target) {
-				target.init();
-				Author author = CDAFactory.eINSTANCE.createAuthor();
-				author.setTime(DatatypesFactory.eINSTANCE.createTS());
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-				author.setAssignedAuthor(aa);
-				target.getAuthors().add(author);
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+						// Contains an assignedAuthor which does not contain
+						// an assignedPerson element or a representedOrganization element
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
 			}
 
 			@Override
-			protected void updateToPass(ContinuityOfCareDocument target) {
-				target.getAuthors().clear();
-				Author author = CDAFactory.eINSTANCE.createAuthor();
-				author.setTime(DatatypesFactory.eINSTANCE.createTS());
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-				Person person = CDAFactory.eINSTANCE.createPerson();
-				aa.setAssignedPerson(person);
-				author.setAssignedAuthor(aa);
-				target.getAuthors().add(author);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ContinuityOfCareDocument target) {
+						// assignedPerson element and representedOrganization element
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						Organization org = CDAFactory.eINSTANCE.createOrganization();
+						aa.setAssignedPerson(person);
+						aa.setRepresentedOrganization(org);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ContinuityOfCareDocument target) {
+						// assignedPerson element only
+						target.getAuthors().clear();
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						aa.setAssignedPerson(person);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ContinuityOfCareDocument target) {
+						// representedOrganization element only
+						target.getAuthors().clear();
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						author.setTime(DatatypesFactory.eINSTANCE.createTS());
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						aa.setAssignedPerson(person);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
 
 			}
 
