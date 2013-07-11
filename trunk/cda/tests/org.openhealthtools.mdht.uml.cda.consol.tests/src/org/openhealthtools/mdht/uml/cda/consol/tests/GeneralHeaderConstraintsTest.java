@@ -11717,7 +11717,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated  not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization() {
@@ -11738,11 +11738,10 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
+						// Does not contain an associatedPerson element or a scopingOrganization element
 						target.init();
 						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
 						AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
-						ae.setAssociatedPerson(CDAFactory.eINSTANCE.createPerson());
-						ae.setScopingOrganization(CDAFactory.eINSTANCE.createOrganization());
 						participant.setAssociatedEntity(ae);
 						target.getParticipants().add(participant);
 					}
@@ -11762,6 +11761,22 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
+						// associatedPerson element and scopingOrganization element
+						target.init();
+						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
+						AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+						ae.setAssociatedPerson(CDAFactory.eINSTANCE.createPerson());
+						ae.setScopingOrganization(CDAFactory.eINSTANCE.createOrganization());
+						participant.setAssociatedEntity(ae);
+						target.getParticipants().add(participant);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// scopingOrganization element only
 						target.init();
 						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
 						AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
@@ -11776,6 +11791,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
+						// associatedPerson element only
 						target.init();
 						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
 						AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();

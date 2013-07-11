@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -109,7 +110,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateMedicationActivityDoseQuantityorrateQuantity() {
@@ -119,14 +120,56 @@ public class MedicationActivityTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(MedicationActivity target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(MedicationActivity target) {
+						// empty test
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(MedicationActivity target) {
+						// Does not contain a rateQuantity element or a doseQuantity element
+						target.init();
+					}
+				});
 
 			}
 
 			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-				target.setRateQuantity(DatatypesFactory.eINSTANCE.createIVL_PQ());
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(MedicationActivity target) {
+						// doseQuantity element and rateQuantity element
+						target.init();
+						target.setDoseQuantity(DatatypesFactory.eINSTANCE.createIVL_PQ());
+						target.setRateQuantity(DatatypesFactory.eINSTANCE.createIVL_PQ());
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(MedicationActivity target) {
+						// rateQuantity element only
+						target.init();
+						target.setRateQuantity(DatatypesFactory.eINSTANCE.createIVL_PQ());
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(MedicationActivity target) {
+						// doseQuantity element only
+						target.init();
+						target.setDoseQuantity(DatatypesFactory.eINSTANCE.createIVL_PQ());
+					}
+				});
+
 			}
 
 			@Override
