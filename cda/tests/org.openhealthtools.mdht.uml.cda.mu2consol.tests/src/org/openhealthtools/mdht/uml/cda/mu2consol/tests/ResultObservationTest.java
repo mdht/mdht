@@ -19,8 +19,6 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.ResultObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -30,8 +28,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateMu2consolResultObservationResultObservationCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Result Observation Result Observation Code Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateMu2consolResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Result Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}</li>
  * </ul>
  * </p>
@@ -40,82 +36,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class ResultObservationTest extends CDAValidationTest {
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateMu2consolResultObservationResultObservationCodeValue() {
-		OperationsTestCase<ResultObservation> validateMu2consolResultObservationResultObservationCodeValueTestCase = new OperationsTestCase<ResultObservation>(
-			"validateMu2consolResultObservationResultObservationCodeValue",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_OBSERVATION_RESULT_OBSERVATION_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ResultObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.setCode(value);
-				value.setCodeSystem("2.16.840.1.113883.6.1");
-				value.setCode("testValue");
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResultObservationOperations.validateMu2consolResultObservationResultObservationCodeValue(
-					(ResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolResultObservationResultObservationCodeValueTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateMu2consolResultObservationCode() {
-		OperationsTestCase<ResultObservation> validateMu2consolResultObservationCodeTestCase = new OperationsTestCase<ResultObservation>(
-			"validateMu2consolResultObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ResultObservation target) {
-				target.init();
-
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
-				target.setCode(cd);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResultObservationOperations.validateMu2consolResultObservationCode(
-					(ResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMu2consolResultObservationCodeTestCase.doValidationTest();
-	}
 
 	/**
 	 * 
