@@ -10,6 +10,8 @@
  *     John T.E. Timm (IBM Corporation) - added isEntry
  *     Christian W. Damus - discriminate multiple property constraints (artf3185)
  *                        - support nested datatype subclasses (artf3350)
+ *     Dan Brown (Audacious Inquiry) - modified XML binding messages based on mandatory property 
+ *     								 - part of artf3549, artf3577, errata 156 and errata 72
  *     
  * $Id$
  *******************************************************************************/
@@ -728,6 +730,7 @@ public class CDAModelUtil {
 		message.append(markup
 				? "<tt><b>"
 				: "");
+		// classCode/moodCode
 		if (isXMLAttribute(property)) {
 			message.append("@");
 		}
@@ -1232,6 +1235,7 @@ public class CDAModelUtil {
 			message.append(markup
 					? "<tt><b>"
 					: "");
+			// single value binding
 			message.append("/@code");
 			message.append(markup
 					? "</b>"
@@ -1253,7 +1257,9 @@ public class CDAModelUtil {
 			}
 
 		} else {
-			message.append(", where the @code ");
+			// capture and return proper xml binding message based on mandatory or not
+			message.append(mandatoryOrNotMessage(property));
+
 			if (keyword != null) {
 				message.append(markup
 						? "<b>"
@@ -1334,7 +1340,10 @@ public class CDAModelUtil {
 		}
 
 		StringBuffer message = new StringBuffer();
-		message.append(", where the @code ");
+
+		// capture and return proper xml binding message based on mandatory or not
+		message.append(mandatoryOrNotMessage(property));
+
 		if (keyword != null) {
 			message.append(markup
 					? "<b>"
@@ -2061,6 +2070,17 @@ public class CDAModelUtil {
 		}
 		result = UML2Util.getValidJavaIdentifier(result);
 		return result;
+	}
+
+	private static String mandatoryOrNotMessage(Property curProperty) {
+		// capture if allows nullFlavor or not
+		boolean mandatory = CDAProfileUtil.isMandatory(curProperty);
+		// mandatory implies nullFlavor is NOT allowed ", where the @code "
+		// non-mandatory implies nullFlavor is allowed ", which "
+		// return the proper message based on mandatory or not
+		return mandatory
+				? ", where the @code "
+				: ", which ";
 	}
 
 }
