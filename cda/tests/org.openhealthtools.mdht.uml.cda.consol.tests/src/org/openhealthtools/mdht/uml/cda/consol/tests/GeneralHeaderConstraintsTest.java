@@ -8705,7 +8705,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientName() {
@@ -8716,6 +8716,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				// contains 0 name elements
 				target.init();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
@@ -8726,15 +8727,44 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.getRecordTargets().clear();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.getNames().add(DatatypesFactory.eINSTANCE.createPN());
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// contains 1 name element
+						target.getRecordTargets().clear();
+						RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						patient.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						pr.setPatient(patient);
+						re.setPatientRole(pr);
+						target.getRecordTargets().add(re);
+					}
+				}
+
+				);
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// contains 2 name elements
+						target.getRecordTargets().clear();
+						RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						patient.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						patient.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						pr.setPatient(patient);
+						re.setPatientRole(pr);
+						target.getRecordTargets().add(re);
+					}
+				}
+
+				);
 
 			}
 
