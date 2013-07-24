@@ -836,7 +836,7 @@ public class PressureUlcerObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PressureUlcerObservation target) {
-
+				target.init();
 			}
 
 			@Override
