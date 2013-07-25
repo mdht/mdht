@@ -25,13 +25,9 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.AbstractTransform;
-import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
@@ -133,7 +129,7 @@ public abstract class TransformAbstract extends AbstractTransform {
 	protected String generateQualifiedConstraintName(Class constrainedClass, String constraintName) {
 		String prefix = constrainedClass.getQualifiedName().replace("::", "").replace(
 			constrainedClass.getNearestPackage().getName(), "");
-		if (constraintName.startsWith(prefix))
+		if (constraintName != null && constraintName.startsWith(prefix))
 			return constraintName;
 		else
 			return prefix + constraintName;
@@ -226,35 +222,7 @@ public abstract class TransformAbstract extends AbstractTransform {
 	}
 
 	protected String createConstraintName(Class umlClass, String suffix) {
-		String prefix = null;
-
-		for (Classifier classifier : umlClass.allParents()) {
-			if (classifier instanceof Class) {
-				Class class_ = (Class) classifier;
-				if (umlClass.getName().equals(class_.getName())) {
-					Package umlPackage = umlClass.getPackage();
-					if (umlPackage != null) {
-						Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(
-							umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
-						if (ePackage != null) {
-							prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
-							break;
-						}
-					}
-				}
-			}
-		}
-
-		String constraintName = "";
-		if (prefix != null) {
-			constraintName += prefix;
-		}
-		constraintName += umlClass.getName();
-		if (suffix != null) {
-			constraintName += suffix;
-		}
-
-		return constraintName;
+		return generateQualifiedConstraintName(umlClass, suffix);
 	}
 
 	protected String getConstraintDependency(AnnotationsUtil annotations, String constraintName) {
