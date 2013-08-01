@@ -136,22 +136,27 @@ public abstract class TransformAbstract extends AbstractTransform {
 		String prefix = constrainedClass.getQualifiedName().replace("::", "").replace(
 			constrainedClass.getNearestPackage().getName(), "");
 
-		for (Classifier g : UMLUtil.getAllGeneralizations(constrainedClass)) {
+		String packagePrefix = "";
 
-			if (g.getName().equals(constrainedClass.getName()) &&
-					(!g.getQualifiedName().equals(constrainedClass.getQualifiedName()))) {
+		if (!(constrainedClass.getOwner() instanceof Class)) {
 
-				prefix = constrainedClass.getNearestPackage().getName().toUpperCase() + prefix;
-				break;
+			for (Classifier g : UMLUtil.getAllGeneralizations(constrainedClass)) {
+
+				if (g.getName().equals(constrainedClass.getName()) &&
+						(!g.getQualifiedName().equals(constrainedClass.getQualifiedName()))) {
+
+					packagePrefix = constrainedClass.getNearestPackage().getName().toUpperCase() + prefix;
+					break;
+				}
+
 			}
-
 		}
 
 		if (constraintName != null && constraintName.startsWith(prefix)) {
 			return constraintName;
 		} else {
 
-			return prefix + (constraintName != null
+			return packagePrefix + prefix + (constraintName != null
 					? constraintName
 					: "");
 		}
