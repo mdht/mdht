@@ -27,6 +27,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.AbstractTransform;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
@@ -126,8 +127,26 @@ public abstract class TransformAbstract extends AbstractTransform {
 		}
 	}
 
+	/*
+	 * TODO - Revisit approach to naming constraints -
+	 * Current approach uses nearest package to differentiate from inherited class methods for
+	 * hierarchies with the same class name
+	 */
 	protected String generateQualifiedConstraintName(Class constrainedClass, String constraintName) {
-		String prefix = constrainedClass.getQualifiedName().replace("::", "");
+		String prefix = constrainedClass.getQualifiedName().replace("::", "").replace(
+			constrainedClass.getNearestPackage().getName(), "");
+
+		for (Classifier g : UMLUtil.getAllGeneralizations(constrainedClass)) {
+
+			if (g.getName().equals(constrainedClass.getName()) &&
+					(!g.getQualifiedName().equals(constrainedClass.getQualifiedName()))) {
+
+				prefix = constrainedClass.getNearestPackage().getName().toUpperCase() + prefix;
+				break;
+			}
+
+		}
+
 		if (constraintName != null && constraintName.startsWith(prefix)) {
 			return constraintName;
 		} else {
