@@ -145,14 +145,14 @@ public abstract class TransformAbstract extends AbstractTransform {
 				if (g.getName().equals(constrainedClass.getName()) &&
 						(!g.getQualifiedName().equals(constrainedClass.getQualifiedName()))) {
 
-					packagePrefix = constrainedClass.getNearestPackage().getName().toUpperCase() + prefix;
+					packagePrefix = constrainedClass.getNearestPackage().getName().toUpperCase();
 					break;
 				}
 
 			}
 		}
 
-		if (constraintName != null && constraintName.startsWith(prefix)) {
+		if (constraintName != null && (constraintName.startsWith(packagePrefix + prefix))) {
 			return constraintName;
 		} else {
 
