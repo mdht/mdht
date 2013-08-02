@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection#validateMu2consolProceduresSectionProcedureActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Procedures Section Procedure Activity Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection#validateMU2CONSOLProceduresSectionProcedureActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL Procedures Section Procedure Activity Procedure</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection#getMu2consolProcedureActivityProcedures() <em>Get Mu2consol Procedure Activity Procedures</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection#validateProceduresSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Entries Optional Template Id</em>}</li>
  * </ul>
@@ -40,15 +40,22 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class ProceduresSectionTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated not
-	 */
+	*
+	* @generated
+	*/
 	@Test
-	public void testValidateMu2consolProceduresSectionProcedureActivityProcedure() {
-		OperationsTestCase<ProceduresSection> validateMu2consolProceduresSectionProcedureActivityProcedureTestCase = new OperationsTestCase<ProceduresSection>(
-			"validateMu2consolProceduresSectionProcedureActivityProcedure",
+	public void testValidateMU2CONSOLProceduresSectionProcedureActivityProcedure() {
+		OperationsTestCase<ProceduresSection> validateMU2CONSOLProceduresSectionProcedureActivityProcedureTestCase = new OperationsTestCase<ProceduresSection>(
+			"validateMU2CONSOLProceduresSectionProcedureActivityProcedure",
 			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PROCEDURES_SECTION_PROCEDURE_ACTIVITY_PROCEDURE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProceduresSectionOperations.validateMU2CONSOLProceduresSectionProcedureActivityProcedure(
+					(ProceduresSection) objectToTest, diagnostician, map);
+			}
 
 			@Override
 			protected void updateToFail(ProceduresSection target) {
@@ -63,16 +70,9 @@ public class ProceduresSectionTest extends CDAValidationTest {
 
 			}
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProceduresSectionOperations.validateMu2consolProceduresSectionProcedureActivityProcedure(
-					(ProceduresSection) objectToTest, diagnostician, map);
-			}
-
 		};
 
-		validateMu2consolProceduresSectionProcedureActivityProcedureTestCase.doValidationTest();
+		validateMU2CONSOLProceduresSectionProcedureActivityProcedureTestCase.doValidationTest();
 	}
 
 	/**

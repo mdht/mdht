@@ -46,15 +46,22 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class ResultsSectionTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated not
-	 */
+	*
+	* @generated
+	*/
 	@Test
-	public void testValidateMu2consolResultsSectionResultOrganizer() {
-		OperationsTestCase<ResultsSection> validateMu2consolResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
-			"validateMu2consolResultsSectionResultOrganizer",
+	public void testValidateMU2CONSOLResultsSectionResultOrganizer() {
+		OperationsTestCase<ResultsSection> validateMU2CONSOLResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
+			"validateMU2CONSOLResultsSectionResultOrganizer",
 			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResultsSectionOperations.validateMU2CONSOLResultsSectionResultOrganizer(
+					(ResultsSection) objectToTest, diagnostician, map);
+			}
 
 			@Override
 			protected void updateToFail(ResultsSection target) {
@@ -67,16 +74,9 @@ public class ResultsSectionTest extends CDAValidationTest {
 
 			}
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResultsSectionOperations.validateMu2consolResultsSectionResultOrganizer(
-					(ResultsSection) objectToTest, diagnostician, map);
-			}
-
 		};
 
-		validateMu2consolResultsSectionResultOrganizerTestCase.doValidationTest();
+		validateMU2CONSOLResultsSectionResultOrganizerTestCase.doValidationTest();
 	}
 
 	/**

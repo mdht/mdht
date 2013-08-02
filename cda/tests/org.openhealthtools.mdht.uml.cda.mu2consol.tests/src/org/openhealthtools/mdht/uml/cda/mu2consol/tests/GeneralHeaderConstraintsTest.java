@@ -45,8 +45,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsCareTeamMembers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol General Header Constraints Care Team Members</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMu2consolGeneralHeaderConstraintsRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol General Header Constraints Record Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMU2CONSOLGeneralHeaderConstraintsCareTeamMembers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL General Header Constraints Care Team Members</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMU2CONSOLGeneralHeaderConstraintsRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL General Header Constraints Record Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL General Header Constraints General Header Constraints Record Target Patient Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#retrieveHospitalAdmissionDiagnosisSection() <em>Retrieve Hospital Admission Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code P</em>}</li>
@@ -57,7 +58,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientRaceCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Race Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,18 +68,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated
 	*/
 	@Test
-	public void testValidateMu2consolGeneralHeaderConstraintsCareTeamMembers() {
-		OperationsTestCase<GeneralHeaderConstraints> validateMu2consolGeneralHeaderConstraintsCareTeamMembersTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateMu2consolGeneralHeaderConstraintsCareTeamMembers",
+	public void testValidateMU2CONSOLGeneralHeaderConstraintsCareTeamMembers() {
+		OperationsTestCase<GeneralHeaderConstraints> validateMU2CONSOLGeneralHeaderConstraintsCareTeamMembersTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateMU2CONSOLGeneralHeaderConstraintsCareTeamMembers",
 			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_CARE_TEAM_MEMBERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
+				return GeneralHeaderConstraintsOperations.validateMU2CONSOLGeneralHeaderConstraintsCareTeamMembers(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -135,27 +137,32 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected void updateToFail(GeneralHeaderConstraints target) {
 
-				return GeneralHeaderConstraintsOperations.validateMu2consolGeneralHeaderConstraintsCareTeamMembers(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolGeneralHeaderConstraintsCareTeamMembersTestCase.doValidationTest();
+		validateMU2CONSOLGeneralHeaderConstraintsCareTeamMembersTestCase.doValidationTest();
 	}
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated
+	*/
 	@Test
-	public void testValidateMu2consolGeneralHeaderConstraintsRecordTarget() {
-		OperationsTestCase<GeneralHeaderConstraints> validateMu2consolGeneralHeaderConstraintsRecordTargetTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateMu2consolGeneralHeaderConstraintsRecordTarget",
+	public void testValidateMU2CONSOLGeneralHeaderConstraintsRecordTarget() {
+		OperationsTestCase<GeneralHeaderConstraints> validateMU2CONSOLGeneralHeaderConstraintsRecordTargetTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateMU2CONSOLGeneralHeaderConstraintsRecordTarget",
 			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateMU2CONSOLGeneralHeaderConstraintsRecordTarget(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
@@ -170,16 +177,43 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			}
 
+		};
+
+		validateMU2CONSOLGeneralHeaderConstraintsRecordTargetTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRole() {
+		OperationsTestCase<GeneralHeaderConstraints> validateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRoleTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRole",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_GENERAL_HEADER_CONSTRAINTS_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.init();
+
+			}
+
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations.validateMu2consolGeneralHeaderConstraintsRecordTarget(
+				return GeneralHeaderConstraintsOperations.validateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRole(
 					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolGeneralHeaderConstraintsRecordTargetTestCase.doValidationTest();
+		validateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRoleTestCase.doValidationTest();
 	}
 
 	/**
@@ -705,7 +739,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRole(
+				return org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRole(
 					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 

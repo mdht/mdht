@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#validateMu2consolSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Social History Section Smoking Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#validateMU2CONSOLSocialHistorySectionSmokingStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL Social History Section Smoking Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#getMu2consolSmokingStatusObservations() <em>Get Mu2consol Smoking Status Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SocialHistorySection#validateSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Template Id</em>}</li>
  * </ul>
@@ -41,15 +41,22 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class SocialHistorySectionTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated
+	*/
 	@Test
-	public void testValidateMu2consolSocialHistorySectionSmokingStatusObservation() {
-		OperationsTestCase<SocialHistorySection> validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateMu2consolSocialHistorySectionSmokingStatusObservation",
+	public void testValidateMU2CONSOLSocialHistorySectionSmokingStatusObservation() {
+		OperationsTestCase<SocialHistorySection> validateMU2CONSOLSocialHistorySectionSmokingStatusObservationTestCase = new OperationsTestCase<SocialHistorySection>(
+			"validateMU2CONSOLSocialHistorySectionSmokingStatusObservation",
 			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_SOCIAL_HISTORY_SECTION_SMOKING_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SocialHistorySectionOperations.validateMU2CONSOLSocialHistorySectionSmokingStatusObservation(
+					(SocialHistorySection) objectToTest, diagnostician, map);
+			}
 
 			@Override
 			protected void updateToFail(SocialHistorySection target) {
@@ -63,16 +70,9 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 			}
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateMu2consolSocialHistorySectionSmokingStatusObservation(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
 		};
 
-		validateMu2consolSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
+		validateMU2CONSOLSocialHistorySectionSmokingStatusObservationTestCase.doValidationTest();
 	}
 
 	/**

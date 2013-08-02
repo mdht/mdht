@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#validateMu2consolResultOrganizerResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Result Organizer Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#validateMU2CONSOLResultOrganizerResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL Result Organizer Result Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#getMu2consolResultObservations() <em>Get Mu2consol Result Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#validateResultOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Template Id</em>}</li>
  * </ul>
@@ -40,15 +40,22 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated not
-	 */
+	*
+	* @generated
+	*/
 	@Test
-	public void testValidateMu2consolResultOrganizerResultObservation() {
-		OperationsTestCase<ResultOrganizer> validateMu2consolResultOrganizerResultObservationTestCase = new OperationsTestCase<ResultOrganizer>(
-			"validateMu2consolResultOrganizerResultObservation",
+	public void testValidateMU2CONSOLResultOrganizerResultObservation() {
+		OperationsTestCase<ResultOrganizer> validateMU2CONSOLResultOrganizerResultObservationTestCase = new OperationsTestCase<ResultOrganizer>(
+			"validateMU2CONSOLResultOrganizerResultObservation",
 			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResultOrganizerOperations.validateMU2CONSOLResultOrganizerResultObservation(
+					(ResultOrganizer) objectToTest, diagnostician, map);
+			}
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -61,16 +68,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 			}
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResultOrganizerOperations.validateMu2consolResultOrganizerResultObservation(
-					(ResultOrganizer) objectToTest, diagnostician, map);
-			}
-
 		};
 
-		validateMu2consolResultOrganizerResultObservationTestCase.doValidationTest();
+		validateMU2CONSOLResultOrganizerResultObservationTestCase.doValidationTest();
 	}
 
 	/**
