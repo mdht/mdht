@@ -80,8 +80,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationAllergyObservationParticipantAllergyObservationParticipantRoleAllergyObservationPlayingEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Allergy Observation Participant Allergy Observation Participant Role Allergy Observation Playing Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationAllergyObservationParticipantAllergyObservationParticipantRoleClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Allergy Observation Participant Allergy Observation Participant Role Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationAllergyObservationParticipantAllergyObservationParticipantRolePlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Allergy Observation Participant Allergy Observation Participant Role Playing Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationParticipantTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Participant Type Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationParticipantParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Participant Participant Role</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationAllergyObservationParticipantTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Allergy Observation Participant Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#validateAllergyObservationAllergyObservationParticipantParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Allergy Observation Participant Participant Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#getProblemEntryReactionObservationContainers() <em>Get Problem Entry Reaction Observation Containers</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#getSeverity() <em>Get Severity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservation#getAllergyStatusObservation() <em>Get Allergy Status Observation</em>}</li>
@@ -940,7 +940,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateAllergyObservationProblemEntryReactionObservationContainer() {
@@ -976,6 +976,46 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 		validateAllergyObservationProblemEntryReactionObservationContainerTestCase.doValidationTest();
 	}
+
+	// /**
+	// *
+	// * @generated NOT
+	// */
+	// @Test
+	// public void testValidateAllergyObservationProblemEntryReactionObservationContainer() {
+	// OperationsTestCase<AllergyObservation> validateAllergyObservationProblemEntryReactionObservationContainerTestCase = new
+	// OperationsTestCase<AllergyObservation>(
+	// "validateAllergyObservationProblemEntryReactionObservationContainer",
+	// operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_PROBLEM_ENTRY_REACTION_OBSERVATION_CONTAINER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	// objectFactory) {
+	//
+	// @Override
+	// protected void updateToFail(AllergyObservation target) {
+	//
+	// }
+	//
+	// @Override
+	// protected void updateToPass(AllergyObservation target) {
+	// target.init();
+	// ReactionObservation observation = ConsolFactory.eINSTANCE.createReactionObservation().init();
+	// target.addObservation(observation);
+	// for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
+	// er.setTypeCode(x_ActRelationshipEntryRelationship.MFST);
+	// }
+	//
+	// }
+	//
+	// @Override
+	// protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+	//
+	// return AllergyObservationOperations.validateAllergyObservationProblemEntryReactionObservationContainer(
+	// (AllergyObservation) objectToTest, diagnostician, map);
+	// }
+	//
+	// };
+	//
+	// validateAllergyObservationProblemEntryReactionObservationContainerTestCase.doValidationTest();
+	// }
 
 	/**
 	*
@@ -1563,14 +1603,21 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated
 	*/
 	@Test
-	public void testValidateAllergyObservationParticipantTypeCode() {
+	public void testValidateAllergyObservationAllergyObservationParticipantTypeCode() {
 		OperationsTestCase<AllergyObservation> validateAllergyObservationAllergyObservationParticipantTypeCodeTestCase = new OperationsTestCase<AllergyObservation>(
 			"validateAllergyObservationAllergyObservationParticipantTypeCode",
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_ALLERGY_OBSERVATION_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyObservationOperations.validateAllergyObservationAllergyObservationParticipantTypeCode(
+					(AllergyObservation) objectToTest, diagnostician, map);
+			}
 
 			@Override
 			protected void updateToFail(AllergyObservation target) {
@@ -1589,13 +1636,6 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 			}
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyObservationOperations.validateAllergyObservationParticipantTypeCode(
-					(AllergyObservation) objectToTest, diagnostician, map);
-			}
-
 		};
 
 		validateAllergyObservationAllergyObservationParticipantTypeCodeTestCase.doValidationTest();
@@ -1603,14 +1643,21 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated
 	*/
 	@Test
-	public void testValidateAllergyObservationParticipantParticipantRole() {
+	public void testValidateAllergyObservationAllergyObservationParticipantParticipantRole() {
 		OperationsTestCase<AllergyObservation> validateAllergyObservationAllergyObservationParticipantParticipantRoleTestCase = new OperationsTestCase<AllergyObservation>(
 			"validateAllergyObservationAllergyObservationParticipantParticipantRole",
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_ALLERGY_OBSERVATION_PARTICIPANT_PARTICIPANT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyObservationOperations.validateAllergyObservationAllergyObservationParticipantParticipantRole(
+					(AllergyObservation) objectToTest, diagnostician, map);
+			}
 
 			@Override
 			protected void updateToFail(AllergyObservation target) {
@@ -1630,13 +1677,6 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 				par.setParticipantRole(pr);
 				target.getParticipants().add(par);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyObservationOperations.validateAllergyObservationParticipantParticipantRole(
-					(AllergyObservation) objectToTest, diagnostician, map);
 			}
 
 		};
