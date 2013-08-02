@@ -203,7 +203,7 @@ public class ConditionTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateConditionConditionEntry() {
+	public void testValidateConditionEntry() {
 		OperationsTestCase<Condition> validateConditionConditionEntryTestCase = new OperationsTestCase<Condition>(
 			"validateConditionConditionEntry",
 			operationsForOCL.getOCLValue("VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -235,7 +235,7 @@ public class ConditionTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConditionOperations.validateConditionConditionEntry((Condition) objectToTest, diagnostician, map);
+				return ConditionOperations.validateConditionEntry((Condition) objectToTest, diagnostician, map);
 			}
 
 		};
