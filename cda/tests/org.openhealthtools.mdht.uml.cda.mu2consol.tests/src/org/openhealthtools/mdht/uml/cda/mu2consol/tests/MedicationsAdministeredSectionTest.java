@@ -38,7 +38,7 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLMedicationsAdministeredSectionMedicationActivity() {
