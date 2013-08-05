@@ -41,7 +41,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLResultOrganizerResultObservation() {
