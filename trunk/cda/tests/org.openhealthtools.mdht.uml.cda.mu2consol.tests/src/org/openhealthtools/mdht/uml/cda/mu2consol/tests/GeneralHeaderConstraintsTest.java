@@ -68,7 +68,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLGeneralHeaderConstraintsCareTeamMembers() {
@@ -148,7 +148,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLGeneralHeaderConstraintsRecordTarget() {
@@ -184,7 +184,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRole() {
@@ -195,12 +195,17 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
+				target.getRecordTargets().add(rTarget);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getRecordTargets().clear();
+				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
+				rTarget.setPatientRole(CDAFactory.eINSTANCE.createPatientRole());
+				target.getRecordTargets().add(rTarget);
 
 			}
 
