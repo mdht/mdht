@@ -249,7 +249,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteAnesthesiaSection() {
@@ -290,7 +290,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteComplicationsSection() {
@@ -331,7 +331,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNotePostoperativeDiagnosisSection() {
@@ -372,7 +372,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNotePreoperativeDiagnosisSection() {
@@ -413,7 +413,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteProcedureEstimatedBloodLossSection() {
@@ -454,7 +454,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteProcedureFindingsSection() {
@@ -495,7 +495,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteProcedureSpecimensTakenSection() {
@@ -536,7 +536,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteProcedureDescriptionSection() {
@@ -577,7 +577,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteProcedureImplantsSection() {
@@ -659,7 +659,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteSurgicalProcedureSection() {
@@ -700,7 +700,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNotePlanOfCareSection() {
@@ -741,7 +741,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNotePlannedProcedureSection() {
@@ -782,7 +782,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteProcedureDispositionSection() {
@@ -823,7 +823,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteProcedureIndicationsSection() {
@@ -864,7 +864,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteSurgicalDrainsSection() {
@@ -1495,7 +1495,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not not
+	* @generated not 
 	*/
 	@Test
 	public void testValidateOperativeNoteDocumentationOfServiceEvent() {
