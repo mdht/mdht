@@ -189,7 +189,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalText() {
@@ -236,7 +236,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialReference() {
@@ -284,7 +284,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue() {
@@ -334,7 +334,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslation() {
@@ -378,7 +378,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialCode() {
