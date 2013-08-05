@@ -88,14 +88,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * </ul>
  * </p>
  *
- * @generated
+ * @generated not
  */
 
 public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated not not
 	*/
 	@Test
 	public void testValidateAllergyObservationValueOriginalText() {
@@ -132,7 +132,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated not not
 	*/
 	@Test
 	public void testValidateAllergyObservationOriginalTextReference() {
@@ -175,7 +175,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated not not
 	*/
 	@Test
 	public void testValidateAllergyObservationOriginalTextReferenceValue() {
@@ -218,7 +218,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated not NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationReferenceValue() {
@@ -264,7 +264,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated not NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationAllergyStatusInversionIndicator() {
@@ -327,7 +327,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated not NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationReactionInversionIndicator() {
@@ -391,7 +391,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated not NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationSeverityInversionIndicator() {
@@ -455,7 +455,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated not not
 	*/
 	@Test
 	public void testValidateAllergyObservationAllergyPlayingEntityCodeSystems() {
@@ -615,7 +615,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationTemplateId() {
@@ -649,7 +649,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationClassCode() {
@@ -683,7 +683,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationMoodCode() {
@@ -717,7 +717,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationId() {
@@ -827,7 +827,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationStatusCode() {
@@ -864,7 +864,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationEffectiveTime() {
@@ -940,7 +940,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationProblemEntryReactionObservationContainer() {
@@ -1603,7 +1603,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationAllergyObservationParticipantTypeCode() {
@@ -1643,7 +1643,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationAllergyObservationParticipantParticipantRole() {
