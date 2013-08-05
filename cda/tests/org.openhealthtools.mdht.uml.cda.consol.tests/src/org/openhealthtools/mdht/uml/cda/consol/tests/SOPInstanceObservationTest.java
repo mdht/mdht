@@ -360,7 +360,7 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationEffectiveTime() {
@@ -397,7 +397,7 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationId() {
@@ -577,7 +577,7 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSOPInstanceObservation() {
