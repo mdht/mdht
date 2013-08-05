@@ -41,7 +41,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLProceduresSectionProcedureActivityProcedure() {
