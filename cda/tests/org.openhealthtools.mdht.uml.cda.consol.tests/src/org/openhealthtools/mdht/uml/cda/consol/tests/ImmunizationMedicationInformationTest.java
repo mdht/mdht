@@ -225,7 +225,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialCodeOriginalText() {
@@ -267,7 +267,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialOriginalTextReference() {
@@ -313,7 +313,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialTextReferenceValue() {
@@ -364,7 +364,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialCodeTranslation() {
@@ -406,7 +406,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialCode() {
@@ -444,7 +444,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialLotNumberText() {
