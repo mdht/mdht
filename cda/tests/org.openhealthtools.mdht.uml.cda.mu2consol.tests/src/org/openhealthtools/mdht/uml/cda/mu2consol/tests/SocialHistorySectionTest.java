@@ -42,7 +42,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLSocialHistorySectionSmokingStatusObservation() {
