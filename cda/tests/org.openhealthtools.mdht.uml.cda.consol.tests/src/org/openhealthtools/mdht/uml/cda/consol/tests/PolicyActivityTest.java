@@ -357,7 +357,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityStatusCode() {
@@ -781,7 +781,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressUSRealmAddressStreet() {
@@ -862,7 +862,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressCity() {
@@ -908,7 +908,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressCountry() {
@@ -957,7 +957,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressPostalCode() {
@@ -1003,7 +1003,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressState() {
@@ -1049,7 +1049,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressStreetAddressLine() {
@@ -1095,7 +1095,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressUseP() {
@@ -1141,7 +1141,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityPayerPayerAssignedEntityGeneralHeaderConstraintsUSRealmAddressUse() {
@@ -1722,7 +1722,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressUSRealmAddressStreet() {
@@ -1803,7 +1803,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressCity() {
@@ -1850,7 +1850,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressCountry() {
@@ -1897,7 +1897,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressPostalCode() {
@@ -1944,7 +1944,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressState() {
@@ -1991,7 +1991,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressStreetAddressLine() {
@@ -2038,7 +2038,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressUseP() {
@@ -2085,7 +2085,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityGeneralHeaderConstraintsUSRealmAddressUse() {
@@ -2669,7 +2669,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressUSRealmAddressStreet() {
@@ -2739,7 +2739,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressCity() {
@@ -2779,7 +2779,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressCountry() {
@@ -2819,7 +2819,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressPostalCode() {
@@ -2859,7 +2859,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressState() {
@@ -2899,7 +2899,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressStreetAddressLine() {
@@ -2939,7 +2939,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressUseP() {
@@ -2979,7 +2979,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleGeneralHeaderConstraintsUSRealmAddressUse() {
@@ -3558,7 +3558,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressUSRealmAddressStreet() {
@@ -3635,7 +3635,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressCity() {
@@ -3683,7 +3683,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressCountry() {
@@ -3731,7 +3731,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressPostalCode() {
@@ -3779,7 +3779,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressState() {
@@ -3827,7 +3827,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressStreetAddressLine() {
@@ -3875,7 +3875,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressUseP() {
@@ -3923,7 +3923,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleGeneralHeaderConstraintsUSRealmAddressUse() {
