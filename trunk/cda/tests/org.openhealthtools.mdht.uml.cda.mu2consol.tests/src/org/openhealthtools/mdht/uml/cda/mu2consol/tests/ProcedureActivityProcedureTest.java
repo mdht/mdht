@@ -43,7 +43,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLProcedureActivityProcedureCodeValue() {
@@ -82,7 +82,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMU2CONSOLProcedureActivityProcedureCode() {
