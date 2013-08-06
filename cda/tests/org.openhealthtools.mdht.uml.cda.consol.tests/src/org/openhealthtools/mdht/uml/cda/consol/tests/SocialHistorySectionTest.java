@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -55,7 +56,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistorySectionTemplateId() {
@@ -65,7 +66,29 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(SocialHistorySection target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					// empty fail
+					@Override
+					public void updateToFail(SocialHistorySection target) {
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+
+					// Contains an invalid template ID
+					@Override
+					public void updateToFail(SocialHistorySection target) {
+						target.init();
+						target.getTemplateIds().clear();
+						target.getTemplateIds().add(
+							DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.XX.XX.XX.X.XX"));
+					}
+
+				});
 
 			}
 
@@ -299,7 +322,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistorySectionSmokingStatusObservation() {
@@ -309,14 +332,57 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(SocialHistorySection target) {
+			public void addFailTests() {
 
+				addFailTest(new FailTest() {
+
+					// empty fail
+					@Override
+					public void updateToFail(SocialHistorySection target) {
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+
+					// TEST 4
+					// Contains 0 entry with 0 Smoking status observation templates
+					@Override
+					public void updateToFail(SocialHistorySection target) {
+						target.init();
+					}
+
+				});
 			}
 
 			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createSmokingStatusObservation().init());
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(SocialHistorySection target) {
+						// TEST 1
+						// Contains 3 entry elements, where the 1st of which, contains a Smoking status observation template.
+						target.init();
+						target.addObservation(ConsolFactory.eINSTANCE.createSmokingStatusObservation().init());
+						target.addObservation(ConsolFactory.eINSTANCE.createSocialHistoryObservation().init());
+						target.addObservation(ConsolFactory.eINSTANCE.createSocialHistoryObservation().init());
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(SocialHistorySection target) {
+						// TEST 2
+						// Contains 1 entry with a Smoking status observation template.
+						target.init();
+						target.addObservation(ConsolFactory.eINSTANCE.createSmokingStatusObservation().init());
+					}
+
+				});
 			}
 
 			@Override

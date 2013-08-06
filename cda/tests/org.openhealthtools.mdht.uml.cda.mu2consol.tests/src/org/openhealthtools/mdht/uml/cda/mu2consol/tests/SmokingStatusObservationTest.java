@@ -7,6 +7,7 @@
  *
  * Contributors:
  *    Rama Ramakrishnan (Agilex Corporation) - initial API and implementation
+ *    Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 
@@ -30,8 +31,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateSmokingStatusObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Smoking Status Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateSmokingStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Smoking Status Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateMU2CONSOLSmokingStatusObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL Smoking Status Observation Value P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateMU2CONSOLSmokingStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL Smoking Status Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.SmokingStatusObservation#validateTobaccoUseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Tobacco Use Template Id</em>}</li>
  * </ul>
  * </p>
@@ -42,14 +43,14 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 public class SmokingStatusObservationTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated NOT
+	*/
 	@Test
-	public void testValidateSmokingStatusObservationValueP() {
-		OperationsTestCase<SmokingStatusObservation> validateSmokingStatusObservationValuePTestCase = new OperationsTestCase<SmokingStatusObservation>(
-			"validateSmokingStatusObservationValueP",
-			operationsForOCL.getOCLValue("VALIDATE_SMOKING_STATUS_OBSERVATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateMU2CONSOLSmokingStatusObservationValueP() {
+		OperationsTestCase<SmokingStatusObservation> validateMU2CONSOLSmokingStatusObservationValuePTestCase = new OperationsTestCase<SmokingStatusObservation>(
+			"validateMU2CONSOLSmokingStatusObservationValueP",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_SMOKING_STATUS_OBSERVATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -60,32 +61,31 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SmokingStatusObservation target) {
 				target.init();
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(cd);
-
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SmokingStatusObservationOperations.validateSmokingStatusObservationValueP(
+				return SmokingStatusObservationOperations.validateMU2CONSOLSmokingStatusObservationValueP(
 					(SmokingStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateSmokingStatusObservationValuePTestCase.doValidationTest();
+		validateMU2CONSOLSmokingStatusObservationValuePTestCase.doValidationTest();
 	}
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated NOT
+	*/
 	@Test
-	public void testValidateSmokingStatusObservationValue() {
-		OperationsTestCase<SmokingStatusObservation> validateSmokingStatusObservationValueTestCase = new OperationsTestCase<SmokingStatusObservation>(
-			"validateSmokingStatusObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_SMOKING_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateMU2CONSOLSmokingStatusObservationValue() {
+		OperationsTestCase<SmokingStatusObservation> validateMU2CONSOLSmokingStatusObservationValueTestCase = new OperationsTestCase<SmokingStatusObservation>(
+			"validateMU2CONSOLSmokingStatusObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_SMOKING_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -99,19 +99,18 @@ public class SmokingStatusObservationTest extends CDAValidationTest {
 
 				CD value = DatatypesFactory.eINSTANCE.createCD("428061000124105", "2.16.840.1.113883.6.96", null, null);
 				target.getValues().add(value);
-
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SmokingStatusObservationOperations.validateSmokingStatusObservationValue(
+				return SmokingStatusObservationOperations.validateMU2CONSOLSmokingStatusObservationValue(
 					(SmokingStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateSmokingStatusObservationValueTestCase.doValidationTest();
+		validateMU2CONSOLSmokingStatusObservationValueTestCase.doValidationTest();
 	}
 
 	/**

@@ -31,10 +31,10 @@ import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.InstructionsSection;
-import org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary;
+import org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.ResultsSection;
@@ -58,15 +58,14 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryVisitLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Visit Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryProviderNameAndContactInfo(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Provider Name And Contact Info</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryVitalSigns(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Vital Signs</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryMedicationsAdministeredSectionOrMedicationsSectionER(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Medications Administered Section Or Medications Section ER</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Problem Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Allergies Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Results Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Procedures Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryImmunizationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Immunizations Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryInstructionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Instructions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummarySocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Social History Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#validateClinicalOfficeVisitSummaryMedicationsAdministeredSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Office Visit Summary Medications Administered Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#retrieveInstructionsSection() <em>Retrieve Instructions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#retrieveMedicationsAdministeredSection() <em>Retrieve Medications Administered Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ClinicalOfficeVisitSummary#getProblemSection() <em>Get Problem Section</em>}</li>
@@ -374,7 +373,7 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateClinicalOfficeVisitSummaryProviderNameAndContactInfo() {
@@ -599,6 +598,92 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateClinicalOfficeVisitSummaryMedicationsAdministeredSectionOrMedicationsSectionER() {
+		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryMedicationsAdministeredSectionOrMedicationsSectionERTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
+			"validateClinicalOfficeVisitSummaryMedicationsAdministeredSectionOrMedicationsSectionER",
+			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_MEDICATIONS_ADMINISTERED_SECTION_OR_MEDICATIONS_SECTION_ER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				// empty test
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ClinicalOfficeVisitSummary target) {
+					}
+				});
+
+				// Contains neither a Medications Section with entries required (TemplateID = 2.16.840.1.113883.10.20.22.2.1.1)
+				// nor a Medications Administered Section (Template ID = 2.16.840.1.113883.10.20.22.2.38)
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ClinicalOfficeVisitSummary target) {
+						target.init();
+					}
+				});
+			}
+
+			@Override
+			public void addPassTests() {
+
+				// Contains both a Medications Section with entries required (TemplateID = 2.16.840.1.113883.10.20.22.2.1.1)
+				// and a Medications Administered Section (Template ID = 2.16.840.1.113883.10.20.22.2.38)
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ClinicalOfficeVisitSummary target) {
+						target.init();
+						MedicationsSection medSecER = ConsolFactory.eINSTANCE.createMedicationsSection().init();
+						MedicationsAdministeredSection medAdminSection = Mu2consolFactory.eINSTANCE.createMedicationsAdministeredSection().init();
+						target.addSection(medSecER);
+						target.addSection(medAdminSection);
+					}
+				});
+
+				// Medications Section with entries required only
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ClinicalOfficeVisitSummary target) {
+						target.init();
+						MedicationsSection medSecER = ConsolFactory.eINSTANCE.createMedicationsSection().init();
+						target.addSection(medSecER);
+					}
+				});
+
+				// Medications Administered Section Only
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ClinicalOfficeVisitSummary target) {
+						target.init();
+						MedicationsAdministeredSection medAdminSection = Mu2consolFactory.eINSTANCE.createMedicationsAdministeredSection().init();
+						target.addSection(medAdminSection);
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryMedicationsAdministeredSectionOrMedicationsSectionER(
+					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateClinicalOfficeVisitSummaryMedicationsAdministeredSectionOrMedicationsSectionERTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */
@@ -678,47 +763,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 		};
 
 		validateClinicalOfficeVisitSummaryProblemSectionTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateClinicalOfficeVisitSummaryMedicationsSection() {
-		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryMedicationsSectionTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryMedicationsSection",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
-				/* MedicationsSection */
-				MedicationsSection section =
-
-				ConsolFactory.eINSTANCE.createMedicationsSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryMedicationsSection(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateClinicalOfficeVisitSummaryMedicationsSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -883,47 +927,6 @@ public class ClinicalOfficeVisitSummaryTest extends CDAValidationTest {
 		};
 
 		validateClinicalOfficeVisitSummaryImmunizationsSectionTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateClinicalOfficeVisitSummaryMedicationsAdministeredSection() {
-		OperationsTestCase<ClinicalOfficeVisitSummary> validateClinicalOfficeVisitSummaryMedicationsAdministeredSectionTestCase = new OperationsTestCase<ClinicalOfficeVisitSummary>(
-			"validateClinicalOfficeVisitSummaryMedicationsAdministeredSection",
-			operationsForOCL.getOCLValue("VALIDATE_CLINICAL_OFFICE_VISIT_SUMMARY_MEDICATIONS_ADMINISTERED_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ClinicalOfficeVisitSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ClinicalOfficeVisitSummary target) {
-				target.init();
-
-				/* MedicationsAdministeredSection */
-				MedicationsAdministeredSection section =
-
-				Mu2consolFactory.eINSTANCE.createMedicationsAdministeredSection().init();
-
-				target.addSection(section);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ClinicalOfficeVisitSummaryOperations.validateClinicalOfficeVisitSummaryMedicationsAdministeredSection(
-					(ClinicalOfficeVisitSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateClinicalOfficeVisitSummaryMedicationsAdministeredSectionTestCase.doValidationTest();
 	}
 
 	/**
