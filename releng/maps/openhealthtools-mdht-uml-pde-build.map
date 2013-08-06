@@ -85,6 +85,9 @@ feature@org.openhealthtools.mdht.uml.cda.models=SVN,trunk,https://www.projects.o
 
 feature@org.openhealthtools.mdht.uml.cda.runtime=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.runtime-feature,force
 
+feature@org.openhealthtools.mdht.uml.cda.emspcr.runtime=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.emspcr.runtime-feature,force
+
+
 plugin@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda,force
 
 plugin@org.openhealthtools.mdht.uml.cda.cdt=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.cdt,force
@@ -170,6 +173,8 @@ plugin@org.openhealthtools.mdht.uml.cda.phcr.wnv.tests=SVN,trunk,https://www.pro
 feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.source-feature,force
 feature@org.openhealthtools.mdht.uml.cda.runtime.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.runtime.source-feature,force
 feature@org.openhealthtools.mdht.uml.cda.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.source-feature,force
+feature@org.openhealthtools.mdht.uml.cda.emspcr.runtime.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.emspcr.runtime.source-feature,force
+
 
 !***************  MDHT Feature for JUnit Tests - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.test.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.test.source-feature,force
