@@ -39,11 +39,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#validateEMSPCRVitalSignsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Vital Signs Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#validateEMSPCRVitalSignsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Vital Signs Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#validateEMSPCRVitalSignsSectionVitalSignsOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Vital Signs Section Vital Signs Organizer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#validateEMSPCRVitalSignsSectionPriorAidVitals(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Vital Signs Section Prior Aid Vitals</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#validateEMSPCRVitalSignsSectionAdditionalVitalSignsOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Vital Signs Section Additional Vital Signs Organizer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#getemspcrVitalSignsOrganizer() <em>Getemspcr Vital Signs Organizer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#getPriorAidVitals() <em>Get Prior Aid Vitals</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#getAdditionalVitalSignsOrganizer() <em>Get Additional Vital Signs Organizer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#getemspcrVitalSignsOrganizers() <em>Getemspcr Vital Signs Organizers</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#getAdditionalVitalSignsOrganizers() <em>Get Additional Vital Signs Organizers</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection#validateVitalSignsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Entries Optional Template Id</em>}</li>
  * </ul>
  * </p>
@@ -200,40 +198,6 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateEMSPCRVitalSignsSectionPriorAidVitals() {
-		OperationsTestCase<VitalSignsSection> validateEMSPCRVitalSignsSectionPriorAidVitalsTestCase = new OperationsTestCase<VitalSignsSection>(
-			"validateEMSPCRVitalSignsSectionPriorAidVitals",
-			operationsForOCL.getOCLValue("VALIDATE_EMSPCR_VITAL_SIGNS_SECTION_PRIOR_AID_VITALS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VitalSignsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VitalSignsSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VitalSignsSectionOperations.validateEMSPCRVitalSignsSectionPriorAidVitals(
-					(VitalSignsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateEMSPCRVitalSignsSectionPriorAidVitalsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidateEMSPCRVitalSignsSectionAdditionalVitalSignsOrganizer() {
 		OperationsTestCase<VitalSignsSection> validateEMSPCRVitalSignsSectionAdditionalVitalSignsOrganizerTestCase = new OperationsTestCase<VitalSignsSection>(
 			"validateEMSPCRVitalSignsSectionAdditionalVitalSignsOrganizer",
@@ -268,10 +232,10 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetemspcrVitalSignsOrganizer() {
+	public void testGetemspcrVitalSignsOrganizers() {
 
 		VitalSignsSection target = objectFactory.create();
-		target.getemspcrVitalSignsOrganizer();
+		target.getemspcrVitalSignsOrganizers();
 
 	}
 
@@ -280,22 +244,10 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPriorAidVitals() {
+	public void testGetAdditionalVitalSignsOrganizers() {
 
 		VitalSignsSection target = objectFactory.create();
-		target.getPriorAidVitals();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetAdditionalVitalSignsOrganizer() {
-
-		VitalSignsSection target = objectFactory.create();
-		target.getAdditionalVitalSignsOrganizer();
+		target.getAdditionalVitalSignsOrganizers();
 
 	}
 

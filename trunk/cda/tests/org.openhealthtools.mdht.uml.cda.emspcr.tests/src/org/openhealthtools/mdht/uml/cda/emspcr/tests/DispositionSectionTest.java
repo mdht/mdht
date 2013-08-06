@@ -40,7 +40,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionEntry4(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Entry4</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionNumberOfPatientsObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Number Of Patients Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionIncidentDispositionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Incident Disposition Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionTransportModeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Transport Mode Observation</em>}</li>
@@ -48,7 +47,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionReasonForChoosingDestinationObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Reason For Choosing Destination Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionPrearrivalActivationObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Prearrival Activation Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#validateDispositionSectionPatientConditionChangeAtDestinationObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Disposition Section Patient Condition Change At Destination Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#getemspcrEntry4() <em>Getemspcr Entry4</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#getNumberOfPatientsObservation() <em>Get Number Of Patients Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#getIncidentDispositionObservation() <em>Get Incident Disposition Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection#getTransportModeObservation() <em>Get Transport Mode Observation</em>}</li>
@@ -238,40 +236,6 @@ public class DispositionSectionTest extends CDAValidationTest {
 		};
 
 		validateDispositionSectionTextTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDispositionSectionEntry4() {
-		OperationsTestCase<DispositionSection> validateDispositionSectionEntry4TestCase = new OperationsTestCase<DispositionSection>(
-			"validateDispositionSectionEntry4",
-			operationsForOCL.getOCLValue("VALIDATE_DISPOSITION_SECTION_ENTRY4__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DispositionSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DispositionSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DispositionSectionOperations.validateDispositionSectionEntry4(
-					(DispositionSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDispositionSectionEntry4TestCase.doValidationTest();
 	}
 
 	/**
@@ -510,18 +474,6 @@ public class DispositionSectionTest extends CDAValidationTest {
 		};
 
 		validateDispositionSectionPatientConditionChangeAtDestinationObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetemspcrEntry4() {
-
-		DispositionSection target = objectFactory.create();
-		target.getemspcrEntry4();
-
 	}
 
 	/**

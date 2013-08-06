@@ -47,7 +47,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#validateSituationSectionOtherSymptoms(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Situation Section Other Symptoms</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#validateSituationSectionProviderSecondaryImpressions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Situation Section Provider Secondary Impressions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#validateSituationSectionInitialPatientAcuity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Situation Section Initial Patient Acuity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#getComplaint() <em>Get Complaint</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#getComplaints() <em>Get Complaints</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#getPossibleInjury() <em>Get Possible Injury</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#getProviderPrimaryImpression() <em>Get Provider Primary Impression</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SituationSection#getPrimarySymptom() <em>Get Primary Symptom</em>}</li>
@@ -481,10 +481,10 @@ public class SituationSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetComplaint() {
+	public void testGetComplaints() {
 
 		SituationSection target = objectFactory.create();
-		target.getComplaint();
+		target.getComplaints();
 
 	}
 

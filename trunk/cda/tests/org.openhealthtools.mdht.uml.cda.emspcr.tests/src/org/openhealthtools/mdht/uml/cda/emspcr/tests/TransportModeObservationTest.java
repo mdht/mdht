@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Value P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Mood Code</em>}</li>
  * </ul>
  * </p>
@@ -185,6 +186,40 @@ public class TransportModeObservationTest extends CDAValidationTest {
 		};
 
 		validateTransportModeObservationValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateTransportModeObservationValueP() {
+		OperationsTestCase<TransportModeObservation> validateTransportModeObservationValuePTestCase = new OperationsTestCase<TransportModeObservation>(
+			"validateTransportModeObservationValueP",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSPORT_MODE_OBSERVATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TransportModeObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TransportModeObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransportModeObservationOperations.validateTransportModeObservationValueP(
+					(TransportModeObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTransportModeObservationValuePTestCase.doValidationTest();
 	}
 
 	/**
