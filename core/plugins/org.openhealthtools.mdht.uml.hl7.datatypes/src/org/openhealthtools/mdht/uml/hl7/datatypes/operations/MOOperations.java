@@ -81,7 +81,6 @@ public class MOOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not(self.isNullFlavorDefined() and (self.isDefined('value') or self.isDefined('currency')))
 	 * @param mo The receiving '<em><b>MO</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

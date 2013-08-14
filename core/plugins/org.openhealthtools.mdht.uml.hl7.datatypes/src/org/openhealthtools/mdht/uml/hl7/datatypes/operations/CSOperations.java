@@ -74,7 +74,6 @@ public class CSOperations extends CVOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.originalText.oclIsUndefined()
 	 * @param cs The receiving '<em><b>CS</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -131,7 +130,6 @@ public class CSOperations extends CVOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.codeSystem.oclIsUndefined()
 	 * @param cs The receiving '<em><b>CS</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -188,7 +186,6 @@ public class CSOperations extends CVOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.codeSystemName.oclIsUndefined()
 	 * @param cs The receiving '<em><b>CS</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -245,7 +242,6 @@ public class CSOperations extends CVOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.codeSystemVersion.oclIsUndefined()
 	 * @param cs The receiving '<em><b>CS</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -302,7 +298,6 @@ public class CSOperations extends CVOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.displayName.oclIsUndefined()
 	 * @param cs The receiving '<em><b>CS</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

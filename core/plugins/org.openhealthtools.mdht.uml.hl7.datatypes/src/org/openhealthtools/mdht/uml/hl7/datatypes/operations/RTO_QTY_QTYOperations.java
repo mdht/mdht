@@ -79,7 +79,6 @@ public class RTO_QTY_QTYOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * (self.denominator.oclIsKindOf(datatypes::INT) implies self.denominator.oclAsType(datatypes::INT).value <> 0) and (self.denominator.oclIsKindOf(datatypes::REAL) implies self.denominator.oclAsType(datatypes::REAL).value <> 0)
 	 * @param rtO_QTY_QTY The receiving '<em><b>RTO QTY QTY</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

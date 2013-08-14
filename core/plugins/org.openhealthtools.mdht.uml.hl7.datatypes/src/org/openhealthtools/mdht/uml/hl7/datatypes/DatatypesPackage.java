@@ -643,13 +643,31 @@ public interface DatatypesPackage extends EPackage {
 	int CD__DISPLAY_NAME = ANY_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CD__SDTC_VALUE_SET = ANY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CD__SDTC_VALUE_SET_VERSION = ANY_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>CD</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CD_FEATURE_COUNT = ANY_FEATURE_COUNT + 8;
+	int CD_FEATURE_COUNT = ANY_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CRImpl <em>CR</em>}' class.
@@ -798,6 +816,24 @@ public interface DatatypesPackage extends EPackage {
 	int CE__DISPLAY_NAME = CD__DISPLAY_NAME;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CE__SDTC_VALUE_SET = CD__SDTC_VALUE_SET;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CE__SDTC_VALUE_SET_VERSION = CD__SDTC_VALUE_SET_VERSION;
+
+	/**
 	 * The number of structural features of the '<em>CE</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -896,6 +932,24 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CV__DISPLAY_NAME = CE__DISPLAY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CV__SDTC_VALUE_SET = CE__SDTC_VALUE_SET;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CV__SDTC_VALUE_SET_VERSION = CE__SDTC_VALUE_SET_VERSION;
 
 	/**
 	 * The number of structural features of the '<em>CV</em>' class.
@@ -1989,6 +2043,24 @@ public interface DatatypesPackage extends EPackage {
 	int PQR__DISPLAY_NAME = CV__DISPLAY_NAME;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__SDTC_VALUE_SET = CV__SDTC_VALUE_SET;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__SDTC_VALUE_SET_VERSION = CV__SDTC_VALUE_SET_VERSION;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2499,6 +2571,24 @@ public interface DatatypesPackage extends EPackage {
 	int CS__DISPLAY_NAME = CV__DISPLAY_NAME;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS__SDTC_VALUE_SET = CV__SDTC_VALUE_SET;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS__SDTC_VALUE_SET_VERSION = CV__SDTC_VALUE_SET_VERSION;
+
+	/**
 	 * The number of structural features of the '<em>CS</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2597,6 +2687,24 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CO__DISPLAY_NAME = CV__DISPLAY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO__SDTC_VALUE_SET = CV__SDTC_VALUE_SET;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO__SDTC_VALUE_SET_VERSION = CV__SDTC_VALUE_SET_VERSION;
 
 	/**
 	 * The number of structural features of the '<em>CO</em>' class.
@@ -3521,6 +3629,24 @@ public interface DatatypesPackage extends EPackage {
 	int EIVL_EVENT__DISPLAY_NAME = CE__DISPLAY_NAME;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__SDTC_VALUE_SET = CE__SDTC_VALUE_SET;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__SDTC_VALUE_SET_VERSION = CE__SDTC_VALUE_SET_VERSION;
+
+	/**
 	 * The number of structural features of the '<em>EIVL event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3995,6 +4121,28 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCD_DisplayName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSet <em>SDTC Value Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>SDTC Value Set</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSet()
+	 * @see #getCD()
+	 * @generated
+	 */
+	EAttribute getCD_SDTCValueSet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSetVersion <em>SDTC Value Set Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>SDTC Value Set Version</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSetVersion()
+	 * @see #getCD()
+	 * @generated
+	 */
+	EAttribute getCD_SDTCValueSetVersion();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CR <em>CR</em>}'.
@@ -5721,6 +5869,22 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CD__DISPLAY_NAME = eINSTANCE.getCD_DisplayName();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Value Set</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CD__SDTC_VALUE_SET = eINSTANCE.getCD_SDTCValueSet();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Value Set Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CD__SDTC_VALUE_SET_VERSION = eINSTANCE.getCD_SDTCValueSetVersion();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CRImpl <em>CR</em>}' class.

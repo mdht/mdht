@@ -760,6 +760,24 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCD_SDTCValueSet() {
+		return (EAttribute) cdEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCD_SDTCValueSetVersion() {
+		return (EAttribute) cdEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCR() {
 		return crEClass;
 	}
@@ -2015,6 +2033,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		createEAttribute(cdEClass, CD__CODE_SYSTEM_NAME);
 		createEAttribute(cdEClass, CD__CODE_SYSTEM_VERSION);
 		createEAttribute(cdEClass, CD__DISPLAY_NAME);
+		createEAttribute(cdEClass, CD__SDTC_VALUE_SET);
+		createEAttribute(cdEClass, CD__SDTC_VALUE_SET_VERSION);
 
 		crEClass = createEClass(CR);
 		createEReference(crEClass, CR__NAME);
@@ -2510,6 +2530,14 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getCD_DisplayName(), this.getstType(), "displayName", null, 0, 1,
+			org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getCD_SDTCValueSet(), this.getstType(), "sDTCValueSet", null, 0, 1,
+			org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getCD_SDTCValueSetVersion(), this.getstType(), "sDTCValueSetVersion", null, 0, 1,
 			org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -3827,6 +3855,10 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addAnnotation(getCD_OriginalText(), source, new String[] { "namespace", "urn:hl7-org:v3" });
 		addAnnotation(getCD_Qualifier(), source, new String[] { "namespace", "urn:hl7-org:v3" });
 		addAnnotation(getCD_Translation(), source, new String[] { "namespace", "urn:hl7-org:v3" });
+		addAnnotation(getCD_SDTCValueSet(), source, new String[] {
+				"name", "valueSet", "namespace", "urn:hl7-org:sdtc", "kind", "attribute" });
+		addAnnotation(getCD_SDTCValueSetVersion(), source, new String[] {
+				"name", "valueSetVersion", "namespace", "urn:hl7-org:sdtc", "kind", "attribute" });
 		addAnnotation(getCR_Name(), source, new String[] { "namespace", "urn:hl7-org:v3" });
 		addAnnotation(getCR_Value(), source, new String[] { "namespace", "urn:hl7-org:v3" });
 		addAnnotation(

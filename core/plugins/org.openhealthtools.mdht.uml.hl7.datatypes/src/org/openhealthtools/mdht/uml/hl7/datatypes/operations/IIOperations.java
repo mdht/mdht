@@ -79,7 +79,6 @@ public class IIOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * (self.isNullFlavorDefined() or self.isDefined('root')) and not(self.isNullFlavorDefined() and self.isDefined('root'))
 	 * @param ii The receiving '<em><b>II</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
