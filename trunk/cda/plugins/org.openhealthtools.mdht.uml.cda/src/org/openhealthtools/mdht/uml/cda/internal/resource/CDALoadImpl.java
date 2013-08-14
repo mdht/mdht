@@ -11,8 +11,10 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
+import org.eclipse.emf.ecore.xmi.IllegalValueException;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLLoadImpl;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 public class CDALoadImpl extends FleXMLLoadImpl {
 	public CDALoadImpl(XMLHelper helper) {
@@ -21,13 +23,8 @@ public class CDALoadImpl extends FleXMLLoadImpl {
 
 	@Override
 	protected boolean shouldThrow(Exception exception) {
-		Throwable cause = exception.getCause();
-		if (cause != null) {
-			String message = cause.getMessage();
-			if ((message != null && message.contains("is not a valid enumerator of")) ||
-					cause instanceof NumberFormatException) {
-				return false;
-			}
+		if (exception instanceof IllegalValueException && CDAUtil.ignoreBadValues) {
+			return false;
 		}
 		return true;
 	}
