@@ -121,6 +121,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 public class CDAUtil {
+	public static boolean ignoreBadValues = true;
+
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
