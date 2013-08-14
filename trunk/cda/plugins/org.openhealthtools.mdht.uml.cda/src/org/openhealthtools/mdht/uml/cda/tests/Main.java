@@ -102,7 +102,7 @@ public class Main {
 
 		// create a validation result object to collect diagnostics produced during validation
 		ValidationResult result = new ValidationResult();
-		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("samples/Test.xml"), result);
+		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("samples/SampleCDADocument.xml"), result);
 
 		System.out.println("\n***** Reserialization of sample *****");
 		System.out.println(clinicalDocument);
