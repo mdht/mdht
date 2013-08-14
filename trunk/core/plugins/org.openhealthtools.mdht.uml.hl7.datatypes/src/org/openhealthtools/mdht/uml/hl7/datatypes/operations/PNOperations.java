@@ -70,7 +70,6 @@ public class PNOperations extends ENOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.delimiter->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.family->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.given->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.prefix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.suffix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS))
 	 * @param pn The receiving '<em><b>PN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

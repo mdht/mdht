@@ -142,7 +142,6 @@ public interface II extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * (self.isNullFlavorDefined() or self.isDefined('root')) and not(self.isNullFlavorDefined() and self.isDefined('root'))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

@@ -76,7 +76,6 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.originalText.oclIsUndefined()
 	 * @param eivL_event The receiving '<em><b>EIVL event</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -135,7 +134,6 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.translation->size()=0
 	 * @param eivL_event The receiving '<em><b>EIVL event</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -193,7 +191,6 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.codeSystem.oclIsUndefined() implies self.codeSystem='2.16.840.1.113883.5.139'
 	 * @param eivL_event The receiving '<em><b>EIVL event</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -251,7 +248,6 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.codeSystemName.oclIsUndefined() implies self.codeSystemName='TimingEvent'
 	 * @param eivL_event The receiving '<em><b>EIVL event</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

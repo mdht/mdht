@@ -90,7 +90,6 @@ public interface RTO_QTY_QTY extends QTY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * (self.denominator.oclIsKindOf(datatypes::INT) implies self.denominator.oclAsType(datatypes::INT).value <> 0) and (self.denominator.oclIsKindOf(datatypes::REAL) implies self.denominator.oclAsType(datatypes::REAL).value <> 0)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

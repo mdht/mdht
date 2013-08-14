@@ -144,6 +144,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/codeSystemName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/codeSystemVersion"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/displayName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/sDTCValueSet"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/sDTCValueSetVersion"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CR">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

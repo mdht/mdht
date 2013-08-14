@@ -28,6 +28,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getCodeSystemName <em>Code System Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getCodeSystemVersion <em>Code System Version</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getDisplayName <em>Display Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSet <em>SDTC Value Set</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSetVersion <em>SDTC Value Set Version</em>}</li>
  * </ul>
  * </p>
  *
@@ -226,5 +228,59 @@ public interface CD extends ANY {
 	 * @generated
 	 */
 	void setDisplayName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Value Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Value Set</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Value Set</em>' attribute.
+	 * @see #setSDTCValueSet(String)
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_SDTCValueSet()
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" ordered="false"
+	 *        extendedMetaData="name='valueSet' namespace='urn:hl7-org:sdtc' kind='attribute'"
+	 * @generated
+	 */
+	String getSDTCValueSet();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSet <em>SDTC Value Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Value Set</em>' attribute.
+	 * @see #getSDTCValueSet()
+	 * @generated
+	 */
+	void setSDTCValueSet(String value);
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Value Set Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Value Set Version</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Value Set Version</em>' attribute.
+	 * @see #setSDTCValueSetVersion(String)
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_SDTCValueSetVersion()
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" ordered="false"
+	 *        extendedMetaData="name='valueSetVersion' namespace='urn:hl7-org:sdtc' kind='attribute'"
+	 * @generated
+	 */
+	String getSDTCValueSetVersion();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getSDTCValueSetVersion <em>SDTC Value Set Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Value Set Version</em>' attribute.
+	 * @see #getSDTCValueSetVersion()
+	 * @generated
+	 */
+	void setSDTCValueSetVersion(String value);
 
 } // CD

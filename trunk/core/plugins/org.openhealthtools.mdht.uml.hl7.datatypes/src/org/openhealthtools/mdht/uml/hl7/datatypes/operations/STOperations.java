@@ -81,7 +81,6 @@ public class STOperations extends EDOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.thumbnail.oclIsUndefined()
 	 * @param st The receiving '<em><b>ST</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -138,7 +137,6 @@ public class STOperations extends EDOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.reference.oclIsUndefined()
 	 * @param st The receiving '<em><b>ST</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -195,7 +193,6 @@ public class STOperations extends EDOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.integrityCheck.oclIsUndefined()
 	 * @param st The receiving '<em><b>ST</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -272,7 +269,6 @@ public class STOperations extends EDOperations {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.isCompressionDefined()
 	 * @param st The receiving '<em><b>ST</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -329,7 +325,6 @@ public class STOperations extends EDOperations {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT
 	 * @param st The receiving '<em><b>ST</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -386,7 +381,6 @@ public class STOperations extends EDOperations {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * ((self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')) or ((self.isNullFlavorDefined() or self.getCDATA() <> '') and not(self.isNullFlavorDefined() and self.getCDATA() <> ''))
 	 * @param st The receiving '<em><b>ST</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -442,10 +436,6 @@ public class STOperations extends EDOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('compression')
-	 * @param st The receiving '<em><b>ST</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isCompressionDefined(ST st) {
@@ -486,10 +476,6 @@ public class STOperations extends EDOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('integrityCheckAlgorithm')
-	 * @param st The receiving '<em><b>ST</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isIntegrityCheckAlgorithmDefined(ST st) {
@@ -530,10 +516,6 @@ public class STOperations extends EDOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('representation')
-	 * @param st The receiving '<em><b>ST</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isRepresentationDefined(ST st) {
@@ -555,7 +537,6 @@ public class STOperations extends EDOperations {
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.isIntegrityCheckAlgorithmDefined()
 	 * @param st The receiving '<em><b>ST</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

@@ -79,7 +79,6 @@ public class RTO_PQ_PQOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.denominator.value<>0
 	 * @param rtO_PQ_PQ The receiving '<em><b>RTO PQ PQ</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

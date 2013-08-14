@@ -647,7 +647,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.delimiter->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -660,7 +659,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.country->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -673,7 +671,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.state->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -686,7 +683,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.county->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -699,7 +695,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.city->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -712,7 +707,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.postalCode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -725,7 +719,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.streetAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -738,7 +731,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.houseNumber->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -751,7 +743,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.houseNumberNumeric->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -764,7 +755,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.direction->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -777,7 +767,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.streetName->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -790,7 +779,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.streetNameBase->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -803,7 +791,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.streetNameType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -816,7 +803,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.additionalLocator->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -829,7 +815,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.unitID->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -842,7 +827,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.unitType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -855,7 +839,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.careOf->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -868,7 +851,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.censusTract->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -881,7 +863,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.deliveryAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -894,7 +875,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.deliveryInstallationType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -907,7 +887,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.deliveryInstallationArea->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -920,7 +899,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.deliveryInstallationQualifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -933,7 +911,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.deliveryMode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -946,7 +923,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.deliveryModeIdentifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -959,7 +935,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.buildingNumberSuffix->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -972,7 +947,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.postBox->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -985,7 +959,6 @@ public interface AD extends ANY {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.precinct->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

@@ -40,6 +40,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getCodeSystemName <em>Code System Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getCodeSystemVersion <em>Code System Version</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getDisplayName <em>Display Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getSDTCValueSet <em>SDTC Value Set</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getSDTCValueSetVersion <em>SDTC Value Set Version</em>}</li>
  * </ul>
  * </p>
  *
@@ -175,6 +177,46 @@ public class CDImpl extends ANYImpl implements CD {
 	 * @ordered
 	 */
 	protected String displayName = DISPLAY_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSDTCValueSet() <em>SDTC Value Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCValueSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SDTC_VALUE_SET_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSDTCValueSet() <em>SDTC Value Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCValueSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sDTCValueSet = SDTC_VALUE_SET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSDTCValueSetVersion() <em>SDTC Value Set Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCValueSetVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SDTC_VALUE_SET_VERSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSDTCValueSetVersion() <em>SDTC Value Set Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCValueSetVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sDTCValueSetVersion = SDTC_VALUE_SET_VERSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -394,6 +436,53 @@ public class CDImpl extends ANYImpl implements CD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSDTCValueSet() {
+		return sDTCValueSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCValueSet(String newSDTCValueSet) {
+		String oldSDTCValueSet = sDTCValueSet;
+		sDTCValueSet = newSDTCValueSet;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__SDTC_VALUE_SET, oldSDTCValueSet, sDTCValueSet));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSDTCValueSetVersion() {
+		return sDTCValueSetVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCValueSetVersion(String newSDTCValueSetVersion) {
+		String oldSDTCValueSetVersion = sDTCValueSetVersion;
+		sDTCValueSetVersion = newSDTCValueSetVersion;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__SDTC_VALUE_SET_VERSION, oldSDTCValueSetVersion,
+				sDTCValueSetVersion));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -431,6 +520,10 @@ public class CDImpl extends ANYImpl implements CD {
 				return getCodeSystemVersion();
 			case DatatypesPackage.CD__DISPLAY_NAME:
 				return getDisplayName();
+			case DatatypesPackage.CD__SDTC_VALUE_SET:
+				return getSDTCValueSet();
+			case DatatypesPackage.CD__SDTC_VALUE_SET_VERSION:
+				return getSDTCValueSetVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -470,6 +563,12 @@ public class CDImpl extends ANYImpl implements CD {
 			case DatatypesPackage.CD__DISPLAY_NAME:
 				setDisplayName((String) newValue);
 				return;
+			case DatatypesPackage.CD__SDTC_VALUE_SET:
+				setSDTCValueSet((String) newValue);
+				return;
+			case DatatypesPackage.CD__SDTC_VALUE_SET_VERSION:
+				setSDTCValueSetVersion((String) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -505,6 +604,12 @@ public class CDImpl extends ANYImpl implements CD {
 				return;
 			case DatatypesPackage.CD__DISPLAY_NAME:
 				setDisplayName(DISPLAY_NAME_EDEFAULT);
+				return;
+			case DatatypesPackage.CD__SDTC_VALUE_SET:
+				setSDTCValueSet(SDTC_VALUE_SET_EDEFAULT);
+				return;
+			case DatatypesPackage.CD__SDTC_VALUE_SET_VERSION:
+				setSDTCValueSetVersion(SDTC_VALUE_SET_VERSION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -544,6 +649,14 @@ public class CDImpl extends ANYImpl implements CD {
 				return DISPLAY_NAME_EDEFAULT == null
 						? displayName != null
 						: !DISPLAY_NAME_EDEFAULT.equals(displayName);
+			case DatatypesPackage.CD__SDTC_VALUE_SET:
+				return SDTC_VALUE_SET_EDEFAULT == null
+						? sDTCValueSet != null
+						: !SDTC_VALUE_SET_EDEFAULT.equals(sDTCValueSet);
+			case DatatypesPackage.CD__SDTC_VALUE_SET_VERSION:
+				return SDTC_VALUE_SET_VERSION_EDEFAULT == null
+						? sDTCValueSetVersion != null
+						: !SDTC_VALUE_SET_VERSION_EDEFAULT.equals(sDTCValueSetVersion);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -570,6 +683,10 @@ public class CDImpl extends ANYImpl implements CD {
 		result.append(codeSystemVersion);
 		result.append(", displayName: ");
 		result.append(displayName);
+		result.append(", sDTCValueSet: ");
+		result.append(sDTCValueSet);
+		result.append(", sDTCValueSetVersion: ");
+		result.append(sDTCValueSetVersion);
 		result.append(')');
 		return result.toString();
 	}

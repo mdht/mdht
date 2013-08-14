@@ -253,6 +253,12 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qi93AT57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qi93AD57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_8Y3PEAT4EeOFTql9pPvb9Q" name="sDTCValueSet" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FuN04AT5EeOFTql9pPvb9Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_T4IV4AT5EeOFTql9pPvb9Q" name="sDTCValueSetVersion" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WdufIAT5EeOFTql9pPvb9Q"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Z1EGIDxaEd6JwqSGecoePg" name="CE">
       <ownedRule xmi:id="_QbARwDYBEeCMTMnRUBJ_FQ" name="qualifier" constrainedElement="_Z1EGIDxaEd6JwqSGecoePg">
@@ -1670,4 +1676,6 @@
   </Ecore:EDataType>
   <Ecore:EAttribute xmi:id="_oYGC0LIdEeCAEKnqHv4T9Q" isUnsettable="true" base_Property="_Q6aOAD54Ed6cla2oXsPtlA"/>
   <Ecore:EAttribute xmi:id="_FiyloFcVEeGCdLgBm6VHOQ" isUnsettable="true" base_Property="_TrUQkE-pEd6lBqYlbulQZA"/>
+  <Ecore:EAttribute xmi:id="_KS9ycAT5EeOFTql9pPvb9Q" xmlName="valueSet" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Attribute" base_Property="_8Y3PEAT4EeOFTql9pPvb9Q"/>
+  <Ecore:EAttribute xmi:id="_dewR4AT5EeOFTql9pPvb9Q" xmlName="valueSetVersion" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Attribute" base_Property="_T4IV4AT5EeOFTql9pPvb9Q"/>
 </xmi:XMI>

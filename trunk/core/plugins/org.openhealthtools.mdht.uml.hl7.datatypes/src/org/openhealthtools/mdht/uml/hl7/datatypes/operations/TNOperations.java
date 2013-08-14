@@ -70,7 +70,6 @@ public class TNOperations extends ENOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.delimiter->isEmpty() and self.family->isEmpty() and self.given->isEmpty() and self.prefix->isEmpty() and self.suffix->isEmpty() and mixed->size() = 1
 	 * @param tn The receiving '<em><b>TN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

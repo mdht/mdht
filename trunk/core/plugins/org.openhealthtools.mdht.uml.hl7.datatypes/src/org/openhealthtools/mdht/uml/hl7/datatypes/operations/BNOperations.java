@@ -70,7 +70,6 @@ public class BNOperations extends BLOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isNullFlavorUndefined()
 	 * @param bn The receiving '<em><b>BN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
