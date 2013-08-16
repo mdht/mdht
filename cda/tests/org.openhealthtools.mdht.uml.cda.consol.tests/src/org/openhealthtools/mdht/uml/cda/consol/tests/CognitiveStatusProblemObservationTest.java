@@ -327,7 +327,7 @@ public class CognitiveStatusProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateCognitiveStatusProblemObservationId() {
@@ -337,16 +337,54 @@ public class CognitiveStatusProblemObservationTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(CognitiveStatusProblemObservation target) {
+			public void addFailTests() {
+
+				// empty fail
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(CognitiveStatusProblemObservation target) {
+
+					}
+				});
+
+				// fail for having less than 1 id
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(CognitiveStatusProblemObservation target) {
+						target.init();
+					}
+				});
 
 			}
 
 			@Override
-			protected void updateToPass(CognitiveStatusProblemObservation target) {
-				target.init();
+			public void addPassTests() {
 
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
+				// single id
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(CognitiveStatusProblemObservation target) {
+						target.init();
+						II iiId1 = DatatypesFactory.eINSTANCE.createII();
+						target.getIds().add(iiId1);
+					}
+				});
+
+				// two ids (more than 1) -db
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(CognitiveStatusProblemObservation target) {
+						target.init();
+						II iiId1 = DatatypesFactory.eINSTANCE.createII();
+						II iiId2 = DatatypesFactory.eINSTANCE.createII();
+						target.getIds().add(iiId1);
+						target.getIds().add(iiId2);
+					}
+				});
 
 			}
 

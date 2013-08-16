@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -51,7 +52,7 @@ public class AgeObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAgeObservationValueUnits() {
@@ -61,7 +62,34 @@ public class AgeObservationTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(AgeObservation target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AgeObservation target) {
+						// empty
+					}
+				}
+
+				);
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AgeObservation target) {
+						// check against two units
+						target.init();
+						PQ val1 = DatatypesFactory.eINSTANCE.createPQ();
+						PQ val2 = DatatypesFactory.eINSTANCE.createPQ();
+						val1.setUnit("Unit 1");
+						val2.setUnit("Unit 2");
+						target.getValues().add(val1);
+						target.getValues().add(val2);
+					}
+				}
+
+				);
 
 			}
 
