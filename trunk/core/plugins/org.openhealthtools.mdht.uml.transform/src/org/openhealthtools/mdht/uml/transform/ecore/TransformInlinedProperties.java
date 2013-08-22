@@ -364,8 +364,9 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 				// handle constraint dependencies
 				String dependency = getConstraintDependency(inlineClassAnnotations, constraint.getName());
+
 				if (dependency != null) {
-					setConstraintDependency(bucketAnnotations, inlinedConstraint.getName(), stack + dependency);
+					setConstraintDependency(bucketAnnotations, inlinedConstraint.getName(), dependency);
 				}
 			}
 
