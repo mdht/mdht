@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -321,6 +322,13 @@ public class ProblemConcernActTest extends CDAValidationTest {
 			protected void updateToPass(ProblemConcernAct target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ProblemConcernAct target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.ProblemConcernActCodeP", passToken);
 			}
 
 			@Override

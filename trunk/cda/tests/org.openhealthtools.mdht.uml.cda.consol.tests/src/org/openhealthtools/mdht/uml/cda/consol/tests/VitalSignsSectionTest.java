@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -102,6 +103,13 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 			protected void updateToPass(VitalSignsSection target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(VitalSignsSection target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.VitalSignsSectionCodeP", passToken);
 			}
 
 			@Override

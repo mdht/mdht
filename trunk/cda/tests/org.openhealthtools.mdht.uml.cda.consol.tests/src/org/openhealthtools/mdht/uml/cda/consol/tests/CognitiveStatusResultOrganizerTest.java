@@ -6,6 +6,7 @@
  */
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -271,6 +272,13 @@ public class CognitiveStatusResultOrganizerTest extends CDAValidationTest {
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
 
+			}
+
+			@Override
+			protected void setDependency(CognitiveStatusResultOrganizer target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.CognitiveStatusResultOrganizerStatusCodeP", passToken);
 			}
 
 			@Override

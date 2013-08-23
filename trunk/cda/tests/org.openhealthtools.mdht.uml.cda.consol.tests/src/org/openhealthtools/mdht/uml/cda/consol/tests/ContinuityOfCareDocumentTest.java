@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -170,6 +171,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ContinuityOfCareDocument target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocumentCodeP", passToken);
 			}
 
 			@Override

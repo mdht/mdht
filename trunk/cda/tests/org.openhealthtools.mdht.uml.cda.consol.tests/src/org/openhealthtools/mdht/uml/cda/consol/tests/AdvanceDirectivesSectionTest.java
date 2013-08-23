@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -101,6 +102,13 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 			protected void updateToPass(AdvanceDirectivesSection target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(AdvanceDirectivesSection target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionCodeP", passToken);
 			}
 
 			@Override
