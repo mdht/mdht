@@ -534,6 +534,8 @@ public abstract class CDAValidationTest {
 
 		private boolean skipNullFlavorTest = true;
 
+		private boolean checkDependency = false;
+
 		public void skipFailsTest() {
 			skipFailsTest = true;
 		}
@@ -544,6 +546,10 @@ public abstract class CDAValidationTest {
 
 		public void skipPassTest() {
 			skipPassTest = true;
+		}
+
+		public void runDependencyTest() {
+			checkDependency = true;
 		}
 
 		public abstract class PassTest {
@@ -602,7 +608,7 @@ public abstract class CDAValidationTest {
 			return ENDTAGS[snippetType] + "<br/>" + message + "<br/>" + ENDTAGS[snippetType + 1];
 		}
 
-		TestObjectFactory<?> testObjectFactory;
+		protected TestObjectFactory<?> testObjectFactory;
 
 		String testLogDir = null;
 
@@ -646,6 +652,54 @@ public abstract class CDAValidationTest {
 				}
 
 				validateExpectFail((EObject) target, diagnostician, map);
+
+				if (!gotDiagnostic) {
+					gotDiagnostic = true;
+					for (Diagnostic d : diagnostician.getChildren()) {
+
+						String message = d.getMessage();
+
+						xmlSnippetsBuffer.append("<diagnostic>");
+
+						message = StringEscapeUtils.escapeHtml(message);
+
+						message = message.replace(System.getProperty("line.separator"), "<br/>");
+
+						xmlSnippetsBuffer.append(message);
+						xmlSnippetsBuffer.append("</diagnostic>");
+					}
+				}
+			}
+
+		}
+
+		private void runDependencies(StringBuffer xmlSnippetsBuffer) {
+
+			boolean gotDiagnostic = false;
+
+			for (FailTest failTest : failTests) {
+
+				ValidationTarget target = (ValidationTarget) testObjectFactory.create();
+
+				BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic((EObject) target);
+
+				failTest.updateToFail(target);
+				setDependency(target);
+
+				if (testLogDir != null) {
+					xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) target));
+				} else {
+					try {
+						System.out.println();
+						System.out.println("Dependency Snippet");
+						CDAValidationTest.saveTestSnippet((EObject) target, System.out);
+						System.out.println();
+					} catch (Exception e) {
+
+					}
+				}
+
+				validateExpectPass((EObject) target, diagnostician, map);
 
 				if (!gotDiagnostic) {
 					gotDiagnostic = true;
@@ -853,6 +907,51 @@ public abstract class CDAValidationTest {
 						System.out.println();
 					}
 				}
+
+				if (checkDependency) {
+					if (!skipFailsTest) {
+
+						if (!failTests.isEmpty()) {
+							runDependencies(xmlSnippetsBuffer);
+						} else {
+
+							EObject dependencyTest = (EObject) testObjectFactory.create();
+
+							updateToFail((ValidationTarget) dependencyTest);
+							setDependency((ValidationTarget) dependencyTest);
+
+							EObject objectToSerialize = (getObjectToSerialze() != null
+									? getObjectToSerialze()
+									: dependencyTest);
+
+							// if (objectToSerialize instanceof EObject) {
+							if (testLogDir != null) {
+								xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, objectToSerialize));
+							} else {
+								try {
+									System.out.println();
+									System.out.println("Dependency Snippet");
+									CDAValidationTest.saveTestSnippet(objectToSerialize, System.out);
+									System.out.println();
+								} catch (Exception e) {
+
+								}
+							}
+							// }
+
+							validateExpectPass(dependencyTest, diagnostician, map);
+
+							for (Diagnostic d : diagnostician.getChildren()) {
+
+								String message = d.getMessage();
+
+								appendToBuffer(xmlSnippetsBuffer, "<diagnostic>", message, "</diagnostic>");
+
+							}
+						}
+
+					}
+				}
 			} finally {
 
 				try {
@@ -895,6 +994,10 @@ public abstract class CDAValidationTest {
 
 		protected void updateToPass(ValidationTarget target) {
 		};
+
+		protected void setDependency(ValidationTarget target) {
+
+		}
 
 		private void setNullFlavor(Object target) {
 
