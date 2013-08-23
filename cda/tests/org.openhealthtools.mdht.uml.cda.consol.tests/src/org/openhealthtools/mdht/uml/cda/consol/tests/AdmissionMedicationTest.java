@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -166,6 +167,13 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 			protected void updateToPass(AdmissionMedication target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(AdmissionMedication target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.AdmissionMedicationCodeP", passToken);
 			}
 
 			@Override
