@@ -8,6 +8,7 @@ package <%=genPackage.getTestsPackageName() %>;
 <%genModel.markImportLocation(stringBuffer, genPackage);%>
 
 <%genModel.addImport("org.junit.Test");%>
+<%genModel.addImport("java.util.Collection");%>
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +40,23 @@ public class <%=genClass.getName()%>Test extends  <%=genModel.getImportedName("o
 
 <% if ( !UML2GenModelUtil.getOperationsClassGenOperations(genClass).isEmpty() ) { %>
 
-<%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+<%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {
+
+    String constraintName = genOperation.getName().replaceFirst("^validate", "");
+    boolean isQueryConstraint = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(constraintName);
+    String dependency = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.dependOn." + constraintName);
+	boolean hasDependents = false;
+	EAnnotation cdaAnnotation = genClass.getEcoreClass().getEAnnotation("http://www.openhealthtools.org/mdht/uml/cda/annotation");
+	if (cdaAnnotation != null) {
+		for (Map.Entry<String, String> next : cdaAnnotation.getDetails().entrySet()) {
+			if (next.getKey().startsWith("constraints.validation.dependOn.") && constraintName.equals(next.getValue())) {
+				hasDependents = true;
+				break;
+			}
+		}
+	} 
+
+%>
 
 <% if ( genOperation.getName().startsWith("validate") ) { %>
 /**
@@ -138,6 +155,18 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 			
 				
 			}
+			
+		<%if ((dependency != null) && !isQueryConstraint) {%>
+        
+        @Override
+            protected void setDependency(<%=genOperation.getGenClass().getName() %> target) {
+                Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+                passToken.add(target);
+                map.put("<%=genPackage.getInterfacePackageName()%>.<%=dependency%>", passToken);
+            }
+        
+        <%}%> 
+			
 
 			@Override
 			protected boolean validate(EObject objectToTest, <%=genModel.getImportedName("org.eclipse.emf.common.util.BasicDiagnostic") %> diagnostician, <%=genModel.getImportedName("java.util.Map") %><Object, Object> map) {
