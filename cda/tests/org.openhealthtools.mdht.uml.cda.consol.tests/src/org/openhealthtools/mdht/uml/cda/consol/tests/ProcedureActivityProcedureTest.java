@@ -100,7 +100,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure#validateProcedureActivityProcedureEntryRelationshipProcedureActivityEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Entry Relationship Procedure Activity Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure#getIndications() <em>Get Indications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure#getServiceDeliveryLocations() <em>Get Service Delivery Locations</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure#getMedicationActivity() <em>Get Medication Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure#getMedicationActivities() <em>Get Medication Activities</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure#getPatientInstruction() <em>Get Patient Instruction</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure#getProductInstances() <em>Get Product Instances</em>}</li>
  * </ul>
@@ -1113,12 +1113,38 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void updateToPass(ProcedureActivityProcedure target) {
-				target.init();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
-				er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
-				target.getEntryRelationships().add(er);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityProcedure target) {
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+						er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
+						target.getEntryRelationships().add(er);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityProcedure target) {
+						// test more than 1 entryRelationship
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+						er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
+						target.getEntryRelationships().add(er);
+						EntryRelationship er2 = CDAFactory.eINSTANCE.createEntryRelationship();
+						er2.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+						er2.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
+						target.getEntryRelationships().add(er2);
+					}
+
+				});
 			}
 
 			@Override
@@ -2014,10 +2040,10 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetMedicationActivity() {
+	public void testGetMedicationActivities() {
 
 		ProcedureActivityProcedure target = objectFactory.create();
-		target.getMedicationActivity();
+		target.getMedicationActivities();
 
 	}
 
