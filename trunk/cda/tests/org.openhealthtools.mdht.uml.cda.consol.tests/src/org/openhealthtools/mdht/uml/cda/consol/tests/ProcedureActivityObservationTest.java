@@ -117,16 +117,85 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
+			public void addFailTests() {
 
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ProcedureActivityObservation target) {
+						// empty
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ProcedureActivityObservation target) {
+						// invalid codeSystem
+						target.init();
+						CD code = DatatypesFactory.eINSTANCE.createCD();
+						code.setCodeSystem("234324.234324.24323423.234");
+						target.setCode(code);
+					}
+
+				});
 			}
 
 			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
-				CD code = DatatypesFactory.eINSTANCE.createCD();
-				code.setCodeSystem("2.16.840.1.113883.6.96");
-				target.setCode(code);
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityObservation target) {
+						// LOINC
+						target.init();
+						CD code = DatatypesFactory.eINSTANCE.createCD();
+						code.setCodeSystem("2.16.840.1.113883.6.1");
+						target.setCode(code);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityObservation target) {
+						// SNOMED CT
+						target.init();
+						CD code = DatatypesFactory.eINSTANCE.createCD();
+						code.setCodeSystem("2.16.840.1.113883.6.96");
+						target.setCode(code);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityObservation target) {
+						// CPT-4
+						target.init();
+						CD code = DatatypesFactory.eINSTANCE.createCD();
+						code.setCodeSystem("2.16.840.1.113883.6.12");
+						target.setCode(code);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityObservation target) {
+						// ICD10 PCS
+						target.init();
+						CD code = DatatypesFactory.eINSTANCE.createCD();
+						code.setCodeSystem("2.16.840.1.113883.6.4");
+						target.setCode(code);
+					}
+
+				});
 			}
 
 			@Override
