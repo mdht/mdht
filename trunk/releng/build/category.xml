@@ -1,79 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
 
+<!-- DITA Feature(s) -->
+<feature url="features/org.dita.dost_1.5.4.qualifier.jar" id="org.dita.dost" version="1.5.4.qualifier">
+	<category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
+</feature>
 
-<!-- XML Modeling Feature -->
-   <feature url="features/net.sourceforge.xmlmodeling.uml.xsd_3.0.0.qualifier.jar" id="net.sourceforge.xmlmodeling.uml.xsd" version="3.0.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.hdf.basic.cat"/>     
-     <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
-   </feature>
+<!-- MDHT Feature(s) -->
 
-
-<!-- MDHT UML Feature -->
-  <feature url="features/org.openhealthtools.mdht_1.1.0.qualifier.jar" id="org.openhealthtools.mdht" version="1.1.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.hdf.basic.cat"/>    
-     <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
+<feature url="features/org.openhealthtools.mdht_1.2.0.qualifier.jar" id="org.openhealthtools.mdht" version="1.2.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
-   </feature>
+     <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+     <category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<feature url="features/org.openhealthtools.mdht.uml_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.uml" version="1.2.0.qualifier">
+	<category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
+	<category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+	<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
 
 
-<!-- MDHT CDA Feature -->
-  <feature url="features/org.openhealthtools.mdht.uml.cda_1.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda" version="1.1.0.qualifier">
+
+<!-- CDA Feature(s) -->
+
+<!-- CDA Design Feature(s) -->
+
+<feature url="features/org.openhealthtools.mdht.uml.cda_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda" version="1.2.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
-   </feature>
+     <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+     <category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
 
-  <feature url="features/org.openhealthtools.mdht.test_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.test" version="0.7.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
-   </feature>
+<feature url="features/org.openhealthtools.mdht.uml.cda.source_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.source" version="1.2.0.qualifier">
+    <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
+    <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+    <category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
 
-  <feature url="features/org.openhealthtools.mdht.test.source_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.test.source" version="0.7.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
-   </feature>
-
-
-<!-- MDHT CDA DOC Features  -->
-  <feature url="features/org.openhealthtools.mdht.uml.cda.models.doc_1.0.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models.doc" version="1.0.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.cda.models.doc.cat"/>
-   </feature>
-
-
-<!-- MDHT CDA MODELS Features  -->
-  <feature url="features/org.openhealthtools.mdht.uml.cda.models_1.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models" version="1.1.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
-   </feature>
-   
-  <feature url="features/org.openhealthtools.mdht.uml.cda.models.source_1.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models.source" version="1.1.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
-   </feature>
- 
-<!-- MDHT HDF Features -->
-  <feature url="features/org.openhealthtools.mdht.uml.hdf_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.hdf" version="0.7.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.hdf.basic.cat"/>     
-     <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
-   </feature>
-
-   <feature url="features/org.openhealthtools.mdht.uml.rsm_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.rsm" version="0.7.0.qualifier">
-      <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
-   </feature>
-
-<!--
-   <feature url="features/org.openhealthtools.mdht.uml.cda.papyrus_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.papyrus" version="0.7.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.hdf.basic.cat"/>    
+<feature url="features/org.openhealthtools.mdht.uml.cda.tooling_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.tooling" version="1.2.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
-   </feature>
--->
-
-<!-- MDHT CDA Categories -->
-   <category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA Design"/>
-   
-   <category-def name="org.openhealthtools.mdht.uml.cda.models.doc.cat" label="MDHT CDA Guides"/>
-
-   <category-def name="org.openhealthtools.mdht.uml.cda.models.cat" label="MDHT CDA Runtime"/>
-
-   <category-def name="org.openhealthtools.mdht.uml.hdf.basic.cat" label="MDHT RIM Design"/>
-
-   <category-def name="org.openhealthtools.mdht.uml.hdf.rsm.cat" label="MDHT RIM Design for RSM"/>
+</feature>
 
 
+
+<!-- CDA Runtime Feature(s) -->
+
+<feature url="features/org.openhealthtools.mdht.uml.cda.runtime_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.runtime" version="1.2.0.qualifier">
+	<category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<feature url="features/org.openhealthtools.mdht.uml.cda.emspcr.runtime_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.emspcr.runtime"  version="0.7.0.qualifier">
+	<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<feature url="features/org.openhealthtools.mdht.test_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.test" version="0.7.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<feature url="features/org.openhealthtools.mdht.test.source_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.test.source" version="0.7.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<feature url="features/org.openhealthtools.mdht.uml.cda.models.doc_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models.doc" version="1.2.0.qualifier">
+       <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+	<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<feature url="features/org.openhealthtools.mdht.uml.cda.runtime.source_1.2.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.runtime.source" version="1.2.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<feature url="features/org.openhealthtools.mdht.uml.cda..emspcr.runtime.source_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.runtime.source" version="1.2.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.rt.cat"/>
+<category name="org.openhealthtools.mdht.uml.cda.ems.rt.cat"/>
+</feature>
+
+<category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA Design"/>
+
+<category-def name="org.openhealthtools.mdht.uml.cda.rt.cat" label="MDHT CDA Runtime"/>
+
+<category-def name="org.openhealthtools.mdht.uml.cda.ems.rt.cat" label="MDHT EMS Runtime"/>
 
 </site>
