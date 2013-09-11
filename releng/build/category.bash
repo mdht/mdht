@@ -135,16 +135,11 @@ echo "********************************************************************"
 # <system-property javax.xml.transform.TransformerFactory= "org.apache.xalan.processor.TransformerFactoryImpl"/>
 #       -Djavax.xml.transform.TransformerFactory=org.apache.xalan.processor.TransformerFactoryImpl
 
-#echo Building : java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -Dsvnuser=$svnuser -Dsvnpasswd=********* -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Dmdhtcomponent=$MDHT_COMPONENT -DjavacDebugInfo=true 
-
-java -Xmx3800m -Xms3800m -Xmn2g  -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -Dsvnuser=$svnuser -Dsvnpasswd=$svnpasswd -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER  -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Djavax.xml.transform.TransformerFactory=ddd -Dmdhtcomponent=$MDHT_COMPONENT  -DjavacDebugInfo=true 
 
 echo Building : java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -DbuildType=$MDHT_BUILDTARGET
 
 java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -Drepodir=$MDHT_REPODIRECTORY
 
-
-java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile postBuild.xml  -Dsvnuser=$svnuser -Dsvnpasswd=$svnpasswd -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER  -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Djavax.xml.transform.TransformerFactory=ddd -Dmdhtcomponent=$MDHT_COMPONENT  -DjavacDebugInfo=true 
 
 
 echo "*************************************************"
