@@ -155,11 +155,11 @@ public abstract class TransformAbstract extends AbstractTransform {
 		if (constraintName != null && (constraintName.startsWith(packagePrefix + prefix))) {
 			return constraintName;
 		} else {
-
 			return packagePrefix + prefix + (constraintName != null
 					? constraintName
 					: "");
 		}
+
 	}
 
 	protected void addOCLConstraint(Property property, ValidationStereotypeKind stereotype, StringBuffer body) {
@@ -243,9 +243,23 @@ public abstract class TransformAbstract extends AbstractTransform {
 		return constraintName;
 	}
 
+	Class getInitialTemplateClass(Property property) {
+
+		Class c = property.getClass_();
+
+		for (Property p : property.getRedefinedProperties()) {
+			if (!isBaseModel(property.getClass_(), p)) {
+				c = getInitialTemplateClass(p);
+			}
+		}
+
+		return c;
+	}
+
 	protected String createConstraintName(Property property) {
-		return createConstraintName(property.getClass_(), property.getName().substring(0, 1).toUpperCase() +
-				property.getName().substring(1));
+		return createConstraintName(
+			getInitialTemplateClass(property), property.getName().substring(0, 1).toUpperCase() +
+					property.getName().substring(1));
 	}
 
 	protected String createConstraintName(Class umlClass, String suffix) {
