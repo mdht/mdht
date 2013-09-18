@@ -72,7 +72,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 			message = "The template identifier for " + umlClass.getName() + " must be " + templateId + ".";
 		}
 		// addValidationError(umlClass, constraintName, message);
-		addValidationError(umlClass, createConstraintName(umlClass, "TemplateId"), message);
+		addValidationError(umlClass, constraintName, message);
 	}
 
 	protected String createTemplateConstraintName(Class template) {
