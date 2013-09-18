@@ -46,40 +46,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class ResultsSectionTest extends CDAValidationTest {
 
 	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateMU2CONSOLResultsSectionResultOrganizer() {
-		OperationsTestCase<ResultsSection> validateMU2CONSOLResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
-			"validateMU2CONSOLResultsSectionResultOrganizer",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResultsSectionOperations.validateMU2CONSOLResultsSectionResultOrganizer(
-					(ResultsSection) objectToTest, diagnostician, map);
-			}
-
-			@Override
-			protected void updateToFail(ResultsSection target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(ResultsSection target) {
-				target.addOrganizer(Mu2consolFactory.eINSTANCE.createResultOrganizer().init());
-
-			}
-
-		};
-
-		validateMU2CONSOLResultsSectionResultOrganizerTestCase.doValidationTest();
-	}
-
-	/**
 	 * 
 	 * @generated
 	 */
@@ -123,6 +89,41 @@ public class ResultsSectionTest extends CDAValidationTest {
 		};
 
 		validateResultsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateResultsSectionResultOrganizer() {
+		OperationsTestCase<ResultsSection> validateResultsSectionResultOrganizerTestCase = new OperationsTestCase<ResultsSection>(
+			"validateResultsSectionResultOrganizer",
+			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ResultsSection target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ResultsSection target) {
+
+				target.addOrganizer(Mu2consolFactory.eINSTANCE.createResultOrganizer().init());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResultsSectionOperations.validateResultsSectionResultOrganizer(
+					(ResultsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultsSectionResultOrganizerTestCase.doValidationTest();
 	}
 
 	/**

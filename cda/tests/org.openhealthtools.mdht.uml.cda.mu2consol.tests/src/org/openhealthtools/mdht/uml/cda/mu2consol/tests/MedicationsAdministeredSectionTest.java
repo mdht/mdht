@@ -25,9 +25,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMU2CONSOLMedicationsAdministeredSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL Medications Administered Section Medication Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#getMu2consolMedicationActivities() <em>Get Mu2consol Medication Activities</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Medication Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,40 +35,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class MedicationsAdministeredSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateMU2CONSOLMedicationsAdministeredSectionMedicationActivity() {
-		OperationsTestCase<MedicationsAdministeredSection> validateMU2CONSOLMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
-			"validateMU2CONSOLMedicationsAdministeredSectionMedicationActivity",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationsAdministeredSectionOperations.validateMU2CONSOLMedicationsAdministeredSectionMedicationActivity(
-					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
-			}
-
-			@Override
-			protected void updateToFail(MedicationsAdministeredSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationsAdministeredSection target) {
-				target.init();
-				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
-			}
-
-		};
-
-		validateMU2CONSOLMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -114,6 +80,41 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 		};
 
 		validateMedicationsAdministeredSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateMedicationsAdministeredSectionMedicationActivity() {
+		OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+			"validateMedicationsAdministeredSectionMedicationActivity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsAdministeredSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsAdministeredSection target) {
+				target.init();
+				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionMedicationActivity(
+					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
 	}
 
 	/**

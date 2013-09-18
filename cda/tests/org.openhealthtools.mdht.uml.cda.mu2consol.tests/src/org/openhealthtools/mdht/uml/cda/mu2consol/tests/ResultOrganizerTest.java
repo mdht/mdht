@@ -28,9 +28,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#validateMU2CONSOLResultOrganizerResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL Result Organizer Result Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#getMu2consolResultObservations() <em>Get Mu2consol Result Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#validateResultOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.ResultOrganizer#validateResultOrganizerResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Result Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,40 +38,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ResultOrganizerTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateMU2CONSOLResultOrganizerResultObservation() {
-		OperationsTestCase<ResultOrganizer> validateMU2CONSOLResultOrganizerResultObservationTestCase = new OperationsTestCase<ResultOrganizer>(
-			"validateMU2CONSOLResultOrganizerResultObservation",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResultOrganizerOperations.validateMU2CONSOLResultOrganizerResultObservation(
-					(ResultOrganizer) objectToTest, diagnostician, map);
-			}
-
-			@Override
-			protected void updateToFail(ResultOrganizer target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(ResultOrganizer target) {
-				target.addObservation(Mu2consolFactory.eINSTANCE.createResultObservation().init());
-
-			}
-
-		};
-
-		validateMU2CONSOLResultOrganizerResultObservationTestCase.doValidationTest();
-	}
 
 	/**
 	 * 
@@ -117,6 +83,41 @@ public class ResultOrganizerTest extends CDAValidationTest {
 		};
 
 		validateResultOrganizerTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateResultOrganizerResultObservation() {
+		OperationsTestCase<ResultOrganizer> validateResultOrganizerResultObservationTestCase = new OperationsTestCase<ResultOrganizer>(
+			"validateResultOrganizerResultObservation",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ResultOrganizer target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ResultOrganizer target) {
+
+				target.addObservation(Mu2consolFactory.eINSTANCE.createResultObservation().init());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResultOrganizerOperations.validateResultOrganizerResultObservation(
+					(ResultOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultOrganizerResultObservationTestCase.doValidationTest();
 	}
 
 	/**
