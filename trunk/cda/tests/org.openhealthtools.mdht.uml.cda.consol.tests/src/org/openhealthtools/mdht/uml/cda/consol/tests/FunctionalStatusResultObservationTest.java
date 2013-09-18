@@ -42,19 +42,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationValueDatatype(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Value Datatype</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationStatusCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Status Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Interpretation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Method Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Target Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationNonMedicinalSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Non Medicinal Supply Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateFunctionalStatusResultObservationCaregiverCharacteristics(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Result Observation Caregiver Characteristics</em>}</li>
@@ -66,6 +54,18 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#getCaregiverCharacteristics() <em>Get Caregiver Characteristics</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#getAssessmentScaleObservation() <em>Get Assessment Scale Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationStatusCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Status Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Interpretation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Method Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservation#validateResultObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Target Site Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -201,10 +201,10 @@ public class FunctionalStatusResultObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateFunctionalStatusResultObservationClassCode() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationClassCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateResultObservationCodeP() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationCodePTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -221,447 +221,13 @@ public class FunctionalStatusResultObservationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationClassCode(
+				return FunctionalStatusResultObservationOperations.validateResultObservationCodeP(
 					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateFunctionalStatusResultObservationClassCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationMoodCode() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationMoodCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationMoodCode(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationMoodCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationId() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationIdTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationId(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationIdTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationCodeP() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationCodePTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationCodeP(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationCode() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-				CE cd = DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.1", "", "");
-				target.setCode(cd);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationCode(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationText() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationTextTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationText",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationText(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationTextTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationStatusCodeP() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationStatusCodePTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationStatusCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationStatusCodeP(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationStatusCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationStatusCode() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationStatusCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
-
-			}
-
-			@Override
-			protected void setDependency(FunctionalStatusResultObservation target) {
-				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
-				passToken.add(target);
-				map.put(
-					"org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusResultObservationStatusCodeP", passToken);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationStatusCode(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationStatusCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationEffectiveTime() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationEffectiveTimeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationEffectiveTime(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationEffectiveTimeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationValue() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationValueTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationValue(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationInterpretationCode() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationInterpretationCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationInterpretationCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-				target.getInterpretationCodes().add(DatatypesFactory.eINSTANCE.createCE());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationInterpretationCode(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationInterpretationCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationMethodCode() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationMethodCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationMethodCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-				target.getMethodCodes().add(DatatypesFactory.eINSTANCE.createCE());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationMethodCode(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationMethodCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateFunctionalStatusResultObservationTargetSiteCode() {
-		OperationsTestCase<FunctionalStatusResultObservation> validateFunctionalStatusResultObservationTargetSiteCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
-			"validateFunctionalStatusResultObservationTargetSiteCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_RESULT_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusResultObservation target) {
-				target.init();
-				target.getTargetSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusResultObservationOperations.validateFunctionalStatusResultObservationTargetSiteCode(
-					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusResultObservationTargetSiteCodeTestCase.doValidationTest();
+		validateResultObservationCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -992,6 +558,449 @@ public class FunctionalStatusResultObservationTest extends CDAValidationTest {
 		};
 
 		validateResultObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationClassCode() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationClassCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationClassCode(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationMoodCode() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationMoodCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationMoodCode(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationId() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationIdTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationId(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateResultObservationCode() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+				CE cd = DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.1", "", "");
+				target.setCode(cd);
+
+			}
+
+			@Override
+			protected void setDependency(FunctionalStatusResultObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.ResultObservationCodeP", passToken);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationCode(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationText() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationTextTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationText",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationText(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationStatusCodeP() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationStatusCodePTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationStatusCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationStatusCodeP(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationStatusCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationStatusCode() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationStatusCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected void setDependency(FunctionalStatusResultObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.ResultObservationStatusCodeP", passToken);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationStatusCode(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationEffectiveTime() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationEffectiveTimeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationEffectiveTime(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResultObservationValue() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationValueTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationValue(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateResultObservationInterpretationCode() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationInterpretationCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationInterpretationCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+				target.getInterpretationCodes().add(DatatypesFactory.eINSTANCE.createCE());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationInterpretationCode(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationInterpretationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateResultObservationMethodCode() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationMethodCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationMethodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+				target.getMethodCodes().add(DatatypesFactory.eINSTANCE.createCE());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationMethodCode(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationMethodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateResultObservationTargetSiteCode() {
+		OperationsTestCase<FunctionalStatusResultObservation> validateResultObservationTargetSiteCodeTestCase = new OperationsTestCase<FunctionalStatusResultObservation>(
+			"validateResultObservationTargetSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusResultObservation target) {
+				target.init();
+				target.getTargetSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusResultObservationOperations.validateResultObservationTargetSiteCode(
+					(FunctionalStatusResultObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationTargetSiteCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -52,9 +52,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportAllSectionsHaveTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report All Sections Have Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportSectionsHaveText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Sections Have Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateGeneralHeaderConstraintsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportInformant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Informant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportInformationRecipient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Information Recipient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportParticipant1(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Participant1</em>}</li>
@@ -81,6 +79,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOfEncompassingEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of Encompassing Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#getFindingsSection() <em>Get Findings Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#getDICOMObjectCatalogSection() <em>Get DICOM Object Catalog Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateGeneralHeaderConstraintsId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -242,10 +242,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateDiagnosticImagingReportCodeP() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportCodePTestCase = new OperationsTestCase<DiagnosticImagingReport>(
-			"validateDiagnosticImagingReportCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateGeneralHeaderConstraintsCodeP() {
+		OperationsTestCase<DiagnosticImagingReport> validateGeneralHeaderConstraintsCodePTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateGeneralHeaderConstraintsCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -262,81 +262,13 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportCodeP(
+				return DiagnosticImagingReportOperations.validateGeneralHeaderConstraintsCodeP(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDiagnosticImagingReportCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateDiagnosticImagingReportCode() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportCodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
-			"validateDiagnosticImagingReportCode",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DiagnosticImagingReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("11522-0", "2.16.840.1.113883.6.1"));
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportCode(
-					(DiagnosticImagingReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDiagnosticImagingReportCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateDiagnosticImagingReportId() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportIdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
-			"validateDiagnosticImagingReportId",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DiagnosticImagingReport target) {
-				target.init();
-			}
-
-			@Override
-			protected void updateToPass(DiagnosticImagingReport target) {
-				target.setId(DatatypesFactory.eINSTANCE.createII());
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportId(
-					(DiagnosticImagingReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDiagnosticImagingReportIdTestCase.doValidationTest();
+		validateGeneralHeaderConstraintsCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -1380,6 +1312,40 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsId() {
+		OperationsTestCase<DiagnosticImagingReport> validateGeneralHeaderConstraintsIdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateGeneralHeaderConstraintsId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.init();
+				target.setId(DatatypesFactory.eINSTANCE.createII());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateGeneralHeaderConstraintsId(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsIdTestCase.doValidationTest();
 	}
 
 	/**

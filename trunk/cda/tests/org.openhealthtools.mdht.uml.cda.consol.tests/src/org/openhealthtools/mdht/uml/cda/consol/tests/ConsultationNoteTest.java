@@ -62,8 +62,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Does Not Have Chief Complaint And Reason For Visit With Chief Complaint Section Or Reason Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteHasReasonForReferralOrReasonForVisit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Has Reason For Referral Or Reason For Visit</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateGeneralHeaderConstraintsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Component Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteAssessmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Assessment Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteAssessmentAndPlanSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Assessment And Plan Section</em>}</li>
@@ -119,6 +118,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#getReviewOfSystemsSection() <em>Get Review Of Systems Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#getSocialHistorySection() <em>Get Social History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#getVitalSignsSectionEntriesOptional() <em>Get Vital Signs Section Entries Optional</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -479,10 +479,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateConsultationNoteCodeP() {
-		OperationsTestCase<ConsultationNote> validateConsultationNoteCodePTestCase = new OperationsTestCase<ConsultationNote>(
-			"validateConsultationNoteCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateGeneralHeaderConstraintsCodeP() {
+		OperationsTestCase<ConsultationNote> validateGeneralHeaderConstraintsCodePTestCase = new OperationsTestCase<ConsultationNote>(
+			"validateGeneralHeaderConstraintsCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -499,47 +499,13 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationNoteOperations.validateConsultationNoteCodeP(
+				return ConsultationNoteOperations.validateGeneralHeaderConstraintsCodeP(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationNoteCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateConsultationNoteCode() {
-		OperationsTestCase<ConsultationNote> validateConsultationNoteCodeTestCase = new OperationsTestCase<ConsultationNote>(
-			"validateConsultationNoteCode",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ConsultationNote target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ConsultationNote target) {
-				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("11488-4", "2.16.840.1.113883.6.1"));
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ConsultationNoteOperations.validateConsultationNoteCode(
-					(ConsultationNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateConsultationNoteCodeTestCase.doValidationTest();
+		validateGeneralHeaderConstraintsCodePTestCase.doValidationTest();
 	}
 
 	/**

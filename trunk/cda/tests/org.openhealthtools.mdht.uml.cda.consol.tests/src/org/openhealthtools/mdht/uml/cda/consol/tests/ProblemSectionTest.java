@@ -33,13 +33,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Title</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionProblemConcern(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Problem Concern</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#getConsolProblemConcerns() <em>Get Consol Problem Concerns</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalProblemConcern(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Problem Concern</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,189 +47,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class ProblemSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProblemSectionCodeP() {
-		OperationsTestCase<ProblemSection> validateProblemSectionCodePTestCase = new OperationsTestCase<ProblemSection>(
-			"validateProblemSectionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProblemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProblemSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProblemSectionOperations.validateProblemSectionCodeP(
-					(ProblemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProblemSectionCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProblemSectionCode() {
-		OperationsTestCase<ProblemSection> validateProblemSectionCodeTestCase = new OperationsTestCase<ProblemSection>(
-			"validateProblemSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProblemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProblemSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected void setDependency(ProblemSection target) {
-				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
-				passToken.add(target);
-				map.put("org.openhealthtools.mdht.uml.cda.consol.ProblemSectionCodeP", passToken);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProblemSectionOperations.validateProblemSectionCode(
-					(ProblemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProblemSectionCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProblemSectionText() {
-		OperationsTestCase<ProblemSection> validateProblemSectionTextTestCase = new OperationsTestCase<ProblemSection>(
-			"validateProblemSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProblemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProblemSection target) {
-				target.init();
-
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProblemSectionOperations.validateProblemSectionText(
-					(ProblemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProblemSectionTextTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProblemSectionTitle() {
-		OperationsTestCase<ProblemSection> validateProblemSectionTitleTestCase = new OperationsTestCase<ProblemSection>(
-			"validateProblemSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProblemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProblemSection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProblemSectionOperations.validateProblemSectionTitle(
-					(ProblemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProblemSectionTitleTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateProblemSectionProblemConcern() {
-		OperationsTestCase<ProblemSection> validateProblemSectionProblemConcernTestCase = new OperationsTestCase<ProblemSection>(
-			"validateProblemSectionProblemConcern",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_PROBLEM_CONCERN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProblemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProblemSection target) {
-				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct().init());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProblemSectionOperations.validateProblemSectionProblemConcern(
-					(ProblemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProblemSectionProblemConcernTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -275,6 +92,189 @@ public class ProblemSectionTest extends CDAValidationTest {
 		};
 
 		validateProblemSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProblemSectionEntriesOptionalCodeP() {
+		OperationsTestCase<ProblemSection> validateProblemSectionEntriesOptionalCodePTestCase = new OperationsTestCase<ProblemSection>(
+			"validateProblemSectionEntriesOptionalCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_ENTRIES_OPTIONAL_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemSectionOperations.validateProblemSectionEntriesOptionalCodeP(
+					(ProblemSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemSectionEntriesOptionalCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProblemSectionEntriesOptionalCode() {
+		OperationsTestCase<ProblemSection> validateProblemSectionEntriesOptionalCodeTestCase = new OperationsTestCase<ProblemSection>(
+			"validateProblemSectionEntriesOptionalCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void setDependency(ProblemSection target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.consol.ProblemSectionEntriesOptionalCodeP", passToken);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemSectionOperations.validateProblemSectionEntriesOptionalCode(
+					(ProblemSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemSectionEntriesOptionalCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProblemSectionEntriesOptionalText() {
+		OperationsTestCase<ProblemSection> validateProblemSectionEntriesOptionalTextTestCase = new OperationsTestCase<ProblemSection>(
+			"validateProblemSectionEntriesOptionalText",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_ENTRIES_OPTIONAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemSectionOperations.validateProblemSectionEntriesOptionalText(
+					(ProblemSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemSectionEntriesOptionalTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProblemSectionEntriesOptionalTitle() {
+		OperationsTestCase<ProblemSection> validateProblemSectionEntriesOptionalTitleTestCase = new OperationsTestCase<ProblemSection>(
+			"validateProblemSectionEntriesOptionalTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_ENTRIES_OPTIONAL_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemSectionOperations.validateProblemSectionEntriesOptionalTitle(
+					(ProblemSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemSectionEntriesOptionalTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProblemSectionEntriesOptionalProblemConcern() {
+		OperationsTestCase<ProblemSection> validateProblemSectionEntriesOptionalProblemConcernTestCase = new OperationsTestCase<ProblemSection>(
+			"validateProblemSectionEntriesOptionalProblemConcern",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_ENTRIES_OPTIONAL_PROBLEM_CONCERN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemSection target) {
+				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct().init());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemSectionOperations.validateProblemSectionEntriesOptionalProblemConcern(
+					(ProblemSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemSectionEntriesOptionalProblemConcernTestCase.doValidationTest();
 	}
 
 	/**
