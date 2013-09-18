@@ -123,7 +123,7 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 		PluginPropertiesUtil properties = transformerOptions.getPluginPropertiesUtil();
 		if (properties != null) {
-			properties.addProperty(constraintName, message);
+			properties.addProperty(constrainedClass.getName() + constraintName, message);
 		}
 	}
 
