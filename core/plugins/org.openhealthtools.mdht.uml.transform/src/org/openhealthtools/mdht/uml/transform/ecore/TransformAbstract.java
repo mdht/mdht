@@ -248,7 +248,7 @@ public abstract class TransformAbstract extends AbstractTransform {
 		Class c = property.getClass_();
 
 		for (Property p : property.getRedefinedProperties()) {
-			if (!isBaseModel(property.getClass_(), p)) {
+			if (!isBaseModel(property.getClass_(), p) && !isDatatypesModelElement(property.getClass_(), p)) {
 				c = getInitialTemplateClass(p);
 			}
 		}
