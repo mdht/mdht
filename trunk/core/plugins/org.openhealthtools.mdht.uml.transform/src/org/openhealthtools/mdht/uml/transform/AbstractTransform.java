@@ -34,7 +34,7 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 public abstract class AbstractTransform extends UMLSwitch<Object> {
 	protected TransformerOptions transformerOptions;
 
-	private final IBaseModelReflection baseModelReflection;
+	protected final IBaseModelReflection baseModelReflection;
 
 	public AbstractTransform(TransformerOptions options, IBaseModelReflection baseModelReflection) {
 		transformerOptions = options;
@@ -71,6 +71,10 @@ public abstract class AbstractTransform extends UMLSwitch<Object> {
 
 	protected boolean isBaseModel(Element userElement, Element baseElement) {
 		return baseModelReflection.isBaseModelElement(userElement, baseElement);
+	}
+
+	protected boolean isDatatypesModelElement(Element context, Element base) {
+		return baseModelReflection.isDatatypesModelElement(context, base);
 	}
 
 	protected Property getBaseProperty(Property templateProperty) {
