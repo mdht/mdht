@@ -57,8 +57,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteHasAnAssementAndPlanSectionOrIndividualAssementAndPlanSections(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Has An Assement And Plan Section Or Individual Assement And Plan Sections</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteDoesNotHaveIndividualAssementAndPlanSectionsWhenAssementAndPlanSectionPresent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Does Not Have Individual Assement And Plan Sections When Assement And Plan Section Present</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateGeneralHeaderConstraintsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Documentation Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Component Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateProgressNoteAssessmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Progress Note Assessment Section</em>}</li>
@@ -103,6 +102,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#getSubjectiveSection() <em>Get Subjective Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#getVitalSignsSectionEntriesOptional() <em>Get Vital Signs Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#getInstructionsSection() <em>Get Instructions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProgressNote#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -320,10 +320,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateProgressNoteCodeP() {
-		OperationsTestCase<ProgressNote> validateProgressNoteCodePTestCase = new OperationsTestCase<ProgressNote>(
-			"validateProgressNoteCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateGeneralHeaderConstraintsCodeP() {
+		OperationsTestCase<ProgressNote> validateGeneralHeaderConstraintsCodePTestCase = new OperationsTestCase<ProgressNote>(
+			"validateGeneralHeaderConstraintsCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -340,44 +340,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProgressNoteOperations.validateProgressNoteCodeP((ProgressNote) objectToTest, diagnostician, map);
+				return ProgressNoteOperations.validateGeneralHeaderConstraintsCodeP(
+					(ProgressNote) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateProgressNoteCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateProgressNoteCode() {
-		OperationsTestCase<ProgressNote> validateProgressNoteCodeTestCase = new OperationsTestCase<ProgressNote>(
-			"validateProgressNoteCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(ProgressNote target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProgressNote target) {
-				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("11506-3", "2.16.840.1.113883.6.1"));
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProgressNoteOperations.validateProgressNoteCode((ProgressNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProgressNoteCodeTestCase.doValidationTest();
+		validateGeneralHeaderConstraintsCodePTestCase.doValidationTest();
 	}
 
 	/**

@@ -56,8 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateGeneralHeaderConstraintsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Documentation Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteAnesthesiaSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Anesthesia Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateOperativeNoteComplicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Complications Section</em>}</li>
@@ -103,6 +102,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#getProcedureDispositionSection() <em>Get Procedure Disposition Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#getProcedureIndicationsSection() <em>Get Procedure Indications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#getSurgicalDrainsSection() <em>Get Surgical Drains Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNote#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -150,10 +150,10 @@ public class OperativeNoteTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateOperativeNoteCodeP() {
-		OperationsTestCase<OperativeNote> validateOperativeNoteCodePTestCase = new OperationsTestCase<OperativeNote>(
-			"validateOperativeNoteCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateGeneralHeaderConstraintsCodeP() {
+		OperationsTestCase<OperativeNote> validateGeneralHeaderConstraintsCodePTestCase = new OperationsTestCase<OperativeNote>(
+			"validateGeneralHeaderConstraintsCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -170,46 +170,13 @@ public class OperativeNoteTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return OperativeNoteOperations.validateOperativeNoteCodeP(
+				return OperativeNoteOperations.validateGeneralHeaderConstraintsCodeP(
 					(OperativeNote) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateOperativeNoteCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateOperativeNoteCode() {
-		OperationsTestCase<OperativeNote> validateOperativeNoteCodeTestCase = new OperationsTestCase<OperativeNote>(
-			"validateOperativeNoteCode",
-			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(OperativeNote target) {
-
-			}
-
-			@Override
-			protected void updateToPass(OperativeNote target) {
-				target.init();
-				target.setCode(DatatypesFactory.eINSTANCE.createCE("34868-0", "2.16.840.1.113883.6.1"));
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return OperativeNoteOperations.validateOperativeNoteCode(
-					(OperativeNote) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateOperativeNoteCodeTestCase.doValidationTest();
+		validateGeneralHeaderConstraintsCodePTestCase.doValidationTest();
 	}
 
 	/**
