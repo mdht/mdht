@@ -16,7 +16,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -44,11 +43,10 @@ public class ResourceExtItemProvider extends ResourceItemProvider {
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProvider#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object object) {
-		Collection allChildren = super.getChildren(object);
-		List children = new ArrayList();
-		for (Iterator iter = allChildren.iterator(); iter.hasNext();) {
-			Object child = iter.next();
+	public Collection<?> getChildren(Object object) {
+		Collection<?> allChildren = super.getChildren(object);
+		List<Object> children = new ArrayList<Object>();
+		for (Object child : allChildren) {
 			// filter out DynamicEObjectImpl used for stereotype instances
 			if (!(child instanceof DynamicEObjectImpl)) {
 				children.add(child);

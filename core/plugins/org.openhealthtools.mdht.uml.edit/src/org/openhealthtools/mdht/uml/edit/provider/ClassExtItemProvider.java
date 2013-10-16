@@ -36,7 +36,6 @@ import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
@@ -106,9 +105,15 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection<Element> getChildren(Object object) {
+	public Collection<Object> getChildren(Object object) {
 		Class clazz = (Class) object;
-		List<Element> children = new ArrayList<Element>();
+		List<Object> children = new ArrayList<Object>();
+
+		/* Applied Stereotypes */
+		// for (EObject stereotypeApplication : clazz.getStereotypeApplications()) {
+		// children.add(stereotypeApplication);
+		// }
+
 		children.addAll(clazz.getOwnedComments());
 		for (Property property : clazz.getOwnedAttributes()) {
 			if (property.getAssociation() == null) {

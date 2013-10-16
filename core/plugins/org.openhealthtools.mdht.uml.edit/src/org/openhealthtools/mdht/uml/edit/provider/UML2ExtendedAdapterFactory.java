@@ -390,6 +390,15 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 	}
 
 	@Override
+	public Adapter createStereotypeApplicationAdapter() {
+		if (stereotypeApplicationItemProvider == null) {
+			stereotypeApplicationItemProvider = new StereotypeApplicationExtItemProvider(this);
+		}
+
+		return stereotypeApplicationItemProvider;
+	}
+
+	@Override
 	public Adapter createSubstitutionAdapter() {
 		if (substitutionItemProvider == null) {
 			substitutionItemProvider = new SubstitutionExtItemProvider(this);

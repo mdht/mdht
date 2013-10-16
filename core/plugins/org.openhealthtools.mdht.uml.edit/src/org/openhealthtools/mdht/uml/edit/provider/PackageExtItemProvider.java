@@ -97,6 +97,12 @@ public class PackageExtItemProvider extends PackageItemProvider implements ITabl
 	public Collection<Object> getChildren(Object object) {
 		Package pkg = (Package) object;
 		List<Object> children = new ArrayList<Object>();
+
+		/* Applied Stereotypes */
+		// for (EObject stereotypeApplication : pkg.getStereotypeApplications()) {
+		// children.add(stereotypeApplication);
+		// }
+
 		children.addAll(pkg.getOwnedComments());
 		children.addAll(pkg.getOwnedRules());
 
