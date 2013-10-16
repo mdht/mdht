@@ -12,14 +12,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.internal;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.core.resources.IFile;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.service.IValidationListener;
@@ -88,16 +82,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	}
 
 	protected ComposedAdapterFactory createAdapterFactory() {
-		List factories = new ArrayList();
-		fillItemProviderFactories(factories);
-		return new ComposedAdapterFactory(factories);
-	}
-
-	protected void fillItemProviderFactories(List factories) {
-		factories.add(new NavigatorUMLItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
+		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		adapterFactory.addAdapterFactory(new NavigatorUMLItemProviderAdapterFactory());
+		return adapterFactory;
 	}
 
 	@Override
