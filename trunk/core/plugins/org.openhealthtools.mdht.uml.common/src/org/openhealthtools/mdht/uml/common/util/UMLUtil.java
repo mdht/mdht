@@ -1441,4 +1441,19 @@ public class UMLUtil {
 
 		return null;
 	}
+
+	/**
+	 * Returns the nearest inherited property with the given name, or null if not found.
+	 */
+	public static Property getInheritedProperty(Class childClass, String propertyName) {
+		for (Classifier parent : childClass.allParents()) {
+			for (Property inherited : parent.getAttributes()) {
+				if (inherited.getName().equals(propertyName)) {
+					return inherited;
+				}
+			}
+		}
+
+		return null;
+	}
 }
