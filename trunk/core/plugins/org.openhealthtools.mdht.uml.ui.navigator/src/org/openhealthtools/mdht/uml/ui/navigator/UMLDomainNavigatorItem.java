@@ -16,13 +16,16 @@ import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 
 public class UMLDomainNavigatorItem extends UMLAbstractNavigatorItem {
 
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		final Class[] supportedTypes = new Class[] {
+				EObject.class, IPropertySource.class, ITreeItemContentProvider.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
@@ -34,6 +37,9 @@ public class UMLDomainNavigatorItem extends UMLAbstractNavigatorItem {
 					}
 					if (adapterType == IPropertySource.class) {
 						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
+					}
+					if (adapterType == ITreeItemContentProvider.class) {
+						return null;
 					}
 				}
 
@@ -48,20 +54,24 @@ public class UMLDomainNavigatorItem extends UMLAbstractNavigatorItem {
 
 	private EObject myEObject;
 
-	private IPropertySourceProvider myPropertySourceProvider;
+	private AdapterFactoryContentProvider myContentProvider;
 
-	public UMLDomainNavigatorItem(EObject eObject, Object parent, IPropertySourceProvider propertySourceProvider) {
+	public UMLDomainNavigatorItem(EObject eObject, Object parent, AdapterFactoryContentProvider contentProvider) {
 		super(parent);
 		myEObject = eObject;
-		myPropertySourceProvider = propertySourceProvider;
+		myContentProvider = contentProvider;
 	}
 
 	public EObject getEObject() {
 		return myEObject;
 	}
 
+	// public ITreeItemContentProvider getTreeContentProvider() {
+	// return myContentProvider;
+	// }
+
 	public IPropertySourceProvider getPropertySourceProvider() {
-		return myPropertySourceProvider;
+		return myContentProvider;
 	}
 
 	@Override

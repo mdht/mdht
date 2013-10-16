@@ -28,17 +28,13 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.transaction.DemultiplexingListener;
 import org.eclipse.emf.transaction.NotificationFilter;
@@ -222,35 +218,23 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	}
 
 	protected ComposedAdapterFactory createAdapterFactory() {
-		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-		fillItemProviderFactories(factories);
-		return new ComposedAdapterFactory(factories);
-	}
-
-	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		factories.add(new NavigatorUMLItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
+		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		adapterFactory.addAdapterFactory(new NavigatorUMLItemProviderAdapterFactory());
+		return adapterFactory;
 	}
 
 	/**
 	 * This is a both helper and hack.
 	 * 
-	 * Helpful to preload profiles and datatypes so that they are available.
-	 * 
-	 * Hack because the EMFT transactions seems to have a bug where
-	 * change recording for Undo FAILS after a UML profile has been demand-loaded.
+	 * Preload datatypes so that they are available.
 	 */
 	protected void loadUMLProfiles() {
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 
-		// TODO temporary hack until I write an extension point for UML profile and library registration
-		String umlProfileURI = UMLResource.STANDARD_PROFILE_URI;
+		// TODO Need an extension point for UML library registration
 		String umlLibURI = UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI;
 
 		try {
-			resourceSet.getResource(URI.createURI(umlProfileURI), true);
 			resourceSet.getResource(URI.createURI(umlLibURI), true);
 		} catch (Exception e) {
 			// ignore if missing
@@ -303,7 +287,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 		if (parentElement instanceof IFile) {
 			Resource resource = ModelManager.getManager().getResource((IFile) parentElement);
 			if (resource != null) {
-				List<UMLAbstractNavigatorItem> result = wrapModelElements(resource.getContents(), parentElement);
+				List<UMLAbstractNavigatorItem> result = wrapModelElements(getResourceContents(resource), parentElement);
 				return result.toArray();
 			}
 		} else if (parentElement instanceof UMLAbstractNavigatorItem) {
@@ -321,6 +305,17 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 
 		}
 		return EMPTY_ARRAY;
+	}
+
+	private List<EObject> getResourceContents(Resource resource) {
+		List<EObject> contents = new ArrayList<EObject>();
+		// filter out stereotype applications
+		for (EObject eObject : resource.getContents()) {
+			if (eObject instanceof Element) {
+				contents.add(eObject);
+			}
+		}
+		return contents;
 	}
 
 	public Object getParent(Object element) {
