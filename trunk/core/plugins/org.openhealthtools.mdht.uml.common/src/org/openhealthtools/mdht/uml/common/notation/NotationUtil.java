@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 David A Carlson.
+ * Copyright (c) 2011-20113 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,69 @@ import org.eclipse.uml2.uml.Property;
  * 
  */
 public class NotationUtil {
+
+	/*
+	 * TODO: Add priority to notation extensions.
+	 * Use profile URI for notation extensions.
+	 * Sort extensions by priority, iterate through extensions and return first non-null result.
+	 */
+
+	/*
+	 * public static List<Object> getDesignationNamespaces(Element element) {
+	 * List<Object> namespaces = null;
+	 * if (element != null) {
+	 * INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+	 * if (provider != null) {
+	 * namespaces = provider.getDesignationNamespaces(element);
+	 * }
+	 * }
+	 * return namespaces;
+	 * }
+	 * 
+	 * public static List<String> getDesignations(Element element) {
+	 * List<String> designations = null;
+	 * if (element != null) {
+	 * INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+	 * if (provider != null) {
+	 * designations = provider.getDesignations(element);
+	 * }
+	 * }
+	 * return designations;
+	 * }
+	 * 
+	 * public static List<String> getDesignations(Element element, String language) {
+	 * List<String> designations = null;
+	 * if (element != null) {
+	 * INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+	 * if (provider != null) {
+	 * designations = provider.getDesignations(element, language);
+	 * }
+	 * }
+	 * return designations;
+	 * }
+	 * 
+	 * public static List<String> getDesignations(Element element, Object namespace) {
+	 * List<String> designations = null;
+	 * if (element != null) {
+	 * INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+	 * if (provider != null) {
+	 * designations = provider.getDesignations(element, namespace);
+	 * }
+	 * }
+	 * return designations;
+	 * }
+	 * 
+	 * public static List<String> getDesignations(Element element, Object namespace, String language) {
+	 * List<String> designations = null;
+	 * if (element != null) {
+	 * INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+	 * if (provider != null) {
+	 * designations = provider.getDesignations(element, namespace, language);
+	 * }
+	 * }
+	 * return designations;
+	 * }
+	 */
 
 	public static String getPrintString(Element element) {
 		String text = null;
@@ -90,4 +153,16 @@ public class NotationUtil {
 		return null;
 	}
 
+	/*
+	 * public static AdapterFactory getAdapterFactory(Element element) {
+	 * if (element != null) {
+	 * INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+	 * if (provider != null) {
+	 * return provider.getAdapterFactory(element);
+	 * }
+	 * }
+	 * 
+	 * return null;
+	 * }
+	 */
 }
