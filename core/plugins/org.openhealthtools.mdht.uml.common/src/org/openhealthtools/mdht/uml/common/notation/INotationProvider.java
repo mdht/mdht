@@ -17,6 +17,36 @@ import org.eclipse.uml2.uml.Element;
 public interface INotationProvider {
 
 	/**
+	 * Return languages used by designations for the model element, may be empty list.
+	 */
+	// public List<String> getDesignationLanguages(Element element);
+
+	/**
+	 * Return namespaces used by designations for the model element, may be empty list.
+	 */
+	// public List<Object> getDesignationNamespaces(Element element);
+
+	/**
+	 * Return designations for the model element, may be empty list.
+	 */
+	// public List<String> getDesignations(Element element);
+
+	/**
+	 * Return language-specific designations for the model element, may be empty list.
+	 */
+	// public List<String> getDesignations(Element element, String language);
+
+	/**
+	 * Return namespace-specific designations for the model element, may be empty list.
+	 */
+	// public List<String> getDesignations(Element element, Object namespace);
+
+	/**
+	 * Return namespace and language-specific designations for the model element, may be empty list.
+	 */
+	// public List<String> getDesignations(Element element, Object namespace, String language);
+
+	/**
 	 * Returns the complete print string for displaying a model element.
 	 */
 	public String getPrintString(Element element);
@@ -36,4 +66,8 @@ public interface INotationProvider {
 	 */
 	public Object getAnnotationImage(Element element);
 
+	/**
+	 * Returns an adapter factory for displaying annotations, or null.
+	 */
+	// public AdapterFactory getAdapterFactory(Element element);
 }
