@@ -153,7 +153,7 @@ public class ExportToXMIAction extends ActionDelegate implements IObjectActionDe
 		return UMLResource.FILE_EXTENSION.equals(resourceURI.fileExtension()) &&
 				!URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI).equals(resourceURI) &&
 				!URI.createURI(UMLResource.UML_METAMODEL_URI).equals(resourceURI) &&
-				!URI.createURI(UMLResource.STANDARD_PROFILE_URI).equals(resourceURI);
+				!URI.createURI(UMLResource.ECORE_PROFILE_URI).equals(resourceURI);
 	}
 
 	protected Resource exportResource(ResourceSet resourceSet, Resource resource, URI destinationURI) {
