@@ -78,7 +78,7 @@ public class SimpleListItemProvider extends ItemProviderAdapter implements IEdit
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object parentElement) {
+	public Collection<Object> getChildren(Object parentElement) {
 		return ((SimpleListNotifier) parentElement).getMembers();
 	}
 
