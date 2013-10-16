@@ -21,7 +21,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.VisibilityKind;
@@ -82,9 +81,15 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider implemen
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection<Element> getChildren(Object object) {
+	public Collection<Object> getChildren(Object object) {
 		Enumeration datatype = (Enumeration) object;
-		List<Element> children = new ArrayList<Element>();
+		List<Object> children = new ArrayList<Object>();
+
+		/* Applied Stereotypes */
+		// for (EObject stereotypeApplication : datatype.getStereotypeApplications()) {
+		// children.add(stereotypeApplication);
+		// }
+
 		children.addAll(datatype.getOwnedComments());
 		children.addAll(datatype.getOwnedRules());
 		children.addAll(datatype.getGeneralizations());
