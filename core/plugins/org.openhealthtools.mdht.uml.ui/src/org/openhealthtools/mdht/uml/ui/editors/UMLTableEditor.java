@@ -46,12 +46,14 @@ import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.ui.dnd.EditingDomainViewerDropAdapter;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
@@ -161,6 +163,7 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.SimpleListNotifier;
 import org.openhealthtools.mdht.uml.edit.provider.UML2ExtendedAdapterFactory;
+import org.openhealthtools.mdht.uml.edit.reflection.ExtendedReflectiveItemProviderAdapterFactory;
 import org.openhealthtools.mdht.uml.ui.internal.UML2UIPlugin;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 import org.openhealthtools.mdht.uml.ui.navigator.DecoratorAdapterFactoryLabelProvider;
@@ -193,7 +196,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	private EditCommandsFactory editCommandsFactory = new EditCommandsFactory();
 
 	/** This is the one adapter factory used for providing views of the model. */
-	private UML2ExtendedAdapterFactory adapterFactory;
+	private ComposedAdapterFactory adapterFactory;
 
 	private AdapterFactoryContentProvider adapterFactoryContentProvider;
 
@@ -260,9 +263,9 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 				TreeItem[] selection = ((Tree) fControl).getSelection();
 				Object[] values = new Object[selection.length];
 				for (int i = 0; i < values.length; i++) {
-					if (selection[i].getData() instanceof Element) {
+					if (selection[i].getData() instanceof EObject) {
 						values[i] = new UMLDomainNavigatorItem(
-							(Element) selection[i].getData(), null, adapterFactoryContentProvider);
+							(EObject) selection[i].getData(), null, adapterFactoryContentProvider);
 						// values[i] = selection[i].getData();
 					} else {
 						values[i] = selection[i].getData();
@@ -440,8 +443,12 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 		ModelManager.getManager().manage(editingDomain);
 
-		adapterFactory = new UML2ExtendedAdapterFactory();
+		adapterFactory = new TableEditorComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		adapterFactory.addAdapterFactory(new UML2ExtendedAdapterFactory());
+		adapterFactory.addAdapterFactory(new ExtendedReflectiveItemProviderAdapterFactory());
+
 		adapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
+		adapterFactoryLabelProvider = new DecoratorAdapterFactoryLabelProvider(adapterFactory);
 
 		getOperationHistory().addOperationHistoryListener(historyListener);
 
@@ -511,6 +518,9 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		if (input instanceof IFileEditorInput) {
 			IFile file = ((IFileEditorInput) input).getFile();
 			URI resourceURI = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
+
+			// assure that all static profiles are loaded (fixed issue in e4)
+			EPackage.Registry ePackageRegistry = EPackage.Registry.INSTANCE;
 
 			try {
 				resource = editingDomain.getResourceSet().getResource(resourceURI, true);
@@ -711,7 +721,6 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 				IUMLTableProperties.DEFAULT_VALUE_PROPERTY });
 		treeViewerWithColumns.setContentProvider(adapterFactoryContentProvider);
 
-		adapterFactoryLabelProvider = new DecoratorAdapterFactoryLabelProvider(adapterFactory);
 		treeViewerWithColumns.setLabelProvider(adapterFactoryLabelProvider);
 
 		treeViewerWithColumns.setCellModifier(new AdapterFactoryCellModifier(adapterFactory));
