@@ -16,5 +16,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.transform,
  org.openhealthtools.mdht.uml.transform.ecore
 Bundle-ClassPath: .
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
