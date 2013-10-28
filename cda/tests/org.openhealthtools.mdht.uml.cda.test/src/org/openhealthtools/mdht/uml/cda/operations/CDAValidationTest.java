@@ -9,6 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *     Sean Muir (JKM Software) -Operation Test and generation
  *     Christian W. Damus - Add NarrativeReferenceTestCase for constraints on CDA R2 narrative text references (artf2815)
+ *     Dan Brown (Ai) - Added a few testing constants
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
@@ -96,6 +97,13 @@ public abstract class CDAValidationTest {
 	static {
 		THE_BAD_II.setRoot(BAD_TEMPLATE_ID);
 	}
+
+	/**
+	 * Additional constants for use in testing
+	 */
+	protected static final String BAD_CODESYSTEM_ID = "6.66.666.6.666666.6.666";
+
+	protected static final String BAD_CODE_VALUE = "NOTACODE";
 
 	// protected static int count = 0;
 
