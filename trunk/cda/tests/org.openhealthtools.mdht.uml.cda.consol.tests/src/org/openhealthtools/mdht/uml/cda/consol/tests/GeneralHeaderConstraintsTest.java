@@ -3178,7 +3178,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifier() {
@@ -3187,33 +3187,224 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			// CONF:16786
+
 			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
+			public void addFailTests() {
 
-				target.init();
-				Author author = CDAFactory.eINSTANCE.createAuthor();
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-				aa.getIds().add(DatatypesFactory.eINSTANCE.createII("111111"));
+				addFailTest(new FailTest() {
 
-				author.setAssignedAuthor(aa);
-				aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-				target.getAuthors().add(author);
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// Id is NOT equal to 2.16.840.1.113883.4.6 (or does not have a nullFlavor set instead) (has assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("111111"));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// Id does not have an attribute root (or any attribute) (or does not have a nullFlavor set instead) (has assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// Has Id but has two roots (has assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("111111"));
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("222222"));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// Has Id but has zero roots (has assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
 			}
 
 			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
+			public void addPassTests() {
 
-				target.getAuthors().clear();
+				addPassTest(new PassTest() {
 
-				Author author = CDAFactory.eINSTANCE.createAuthor();
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Id is equal to 2.16.840.1.113883.4.6 (without assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
 
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				addPassTest(new PassTest() {
 
-				aa.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Id is equal to 2.16.840.1.113883.4.6 (with assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						aa.setAssignedPerson(person);
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
 
-				author.setAssignedAuthor(aa);
+				addPassTest(new PassTest() {
 
-				target.getAuthors().add(author);
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Has assignedPerson and No Id is present (0..1)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Does not Have assignedPerson and No is Id present (No Id in general) (0..1)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// nullFlavor on Id with assignedPerson
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(NullFlavor.ASKU));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// nullFlavor on Id without assignedPerson
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(NullFlavor.ASKU));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				// SME recommendation (with my CONFs inserted by relation):
+				// 1. If this assignedAuthor is an assignedPerson, the assignedAuthor SHOULD contain zero to one [0..1] id such that it (CONF:19521).
+				// // // // SHALL contain exactly one 1..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:16786).
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Id is NOT equal to 2.16.840.1.113883.4.6 (or does not have a nullFlavor set instead) (no assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("111111"));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Id does not have an attribute root (or any attribute) (or does not have a nullFlavor set instead) (no assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Has Id but has two roots (no assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("111111"));
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("222222"));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// Has Id but has zero roots (no assignedPerson)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
 
 			}
 
@@ -3227,6 +3418,146 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceId() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_IF_HAS_ASSIGNED_PERSON_ENFORCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			// CONF:19521
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// If there's an assignedPerson element and the assignedAuthor has two ids
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// If there's an assignedPerson element and the assignedAuthor has one id
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// If there's NO assignedPerson element and the assignedAuthor has one id
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// If there's an assignedPerson element and the assignedAuthor has zero (no) ids
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// If there's NO assignedPerson element and the assignedAuthor has zero (no) ids
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// If there's NO assignedPerson element and the assignedAuthor has two ids
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// If there's NO assignedPerson element and the assignedAuthor has an incorrect root
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("666"));
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceId(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceIdTestCase.doValidationTest();
 	}
 
 	/**
@@ -7734,7 +8065,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCode() {
@@ -7745,6 +8076,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				// -has guardian and has no code element at all
 				target.init();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
@@ -7757,19 +8089,58 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.getRecordTargets().clear();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
-				guardian.setCode(DatatypesFactory.eINSTANCE.createCE("SPS", "2.16.840.1.113883.5.111"));
+			public void addPassTests() {
 
-				guardian.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-				patient.getGuardians().add(guardian);
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has guardian and has code element
+						RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
+						guardian.setCode(DatatypesFactory.eINSTANCE.createCE());
+						patient.getGuardians().add(guardian);
+						pr.setPatient(patient);
+						re.setPatientRole(pr);
+						target.getRecordTargets().add(re);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -does not have guardian and does not have code element at all
+						RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(patient);
+						re.setPatientRole(pr);
+						target.getRecordTargets().add(re);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -nullFlavor code element
+						target.getRecordTargets().clear();
+						RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
+						CE code = DatatypesFactory.eINSTANCE.createCE();
+						code.setNullFlavor(NullFlavor.UNK);
+						guardian.setCode(code);
+						patient.getGuardians().add(guardian);
+						pr.setPatient(patient);
+						re.setPatientRole(pr);
+						target.getRecordTargets().add(re);
+					}
+				});
 
 			}
 
@@ -7783,59 +8154,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeP() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodePTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_GUARDIAN_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				target.init();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
-				patient.getGuardians().add(guardian);
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.getRecordTargets().clear();
-				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
-				guardian.setCode(DatatypesFactory.eINSTANCE.createCE("HUSB", "2.16.840.1.113883.5.111"));
-
-				guardian.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-				patient.getGuardians().add(guardian);
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeP(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -8160,6 +8478,198 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianPersonNameTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeFromPersonalRelationshipOrResponsibleParty() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeFromPersonalRelationshipOrResponsiblePartyTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeFromPersonalRelationshipOrResponsibleParty",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_GUARDIAN_CODE_FROM_PERSONAL_RELATIONSHIP_OR_RESPONSIBLE_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			// define constants
+
+			private static final String VALID_CODESYSTEM_ID = "2.16.840.1.113883.5.111";
+
+			private static final String VALID_PERSONALRELATIONSHIP_CODE = "ADOPT";
+
+			private static final String VALID_PERSONALRELATIONSHIP_CODE2 = "GPARNT";
+
+			private static final String VALID_RESPONSIBLEPARTY_CODE = "RESPRSN";
+
+			private static final String VALID_RESPONSIBLEPARTY_CODE2 = "SPOWATT";
+
+			// define fields used in every test
+
+			private RecordTarget re;
+
+			private PatientRole pr;
+
+			private Patient patient;
+
+			private Guardian guardian;
+
+			/**
+			 * Sets up fields and ensures they are fresh for each test so there is no chance of interference
+			 * and initializes the target.
+			 */
+			private void setup(GeneralHeaderConstraints target) {
+				target.init();
+				re = CDAFactory.eINSTANCE.createRecordTarget();
+				pr = CDAFactory.eINSTANCE.createPatientRole();
+				patient = CDAFactory.eINSTANCE.createPatient();
+				guardian = CDAFactory.eINSTANCE.createGuardian();
+			}
+
+			/**
+			 * Adds elements to the hierarchy for code reuse
+			 */
+			private void addElements(GeneralHeaderConstraints target) {
+				guardian.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				patient.getGuardians().add(guardian);
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// -has guardian and an incorrect codeSystem ID with a valid code
+						setup(target);
+						guardian.setCode(DatatypesFactory.eINSTANCE.createCE(
+							VALID_PERSONALRELATIONSHIP_CODE, CDAValidationTest.BAD_CODESYSTEM_ID));
+						addElements(target);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// -has guardian, an invalid code, and a valid codeSystem ID
+						setup(target);
+						guardian.setCode(DatatypesFactory.eINSTANCE.createCE(
+							CDAValidationTest.BAD_CODE_VALUE, VALID_CODESYSTEM_ID));
+						addElements(target);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// -has guardian, an incorrect codeSystem ID, and invalid code
+						setup(target);
+						guardian.setCode(DatatypesFactory.eINSTANCE.createCE(
+							CDAValidationTest.BAD_CODE_VALUE, CDAValidationTest.BAD_CODESYSTEM_ID));
+						addElements(target);
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -does not have guardian and does not have code element at all
+						// (only checking if we have guardian/code)
+						target.init();
+						RecordTarget recordTarget = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						patientRole.setPatient(patient);
+						recordTarget.setPatientRole(patientRole);
+						target.getRecordTargets().add(recordTarget);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has guardian and a correct codeSystem and a valid (PersonalRelationship) code
+						setup(target);
+						guardian.setCode(DatatypesFactory.eINSTANCE.createCE(
+							VALID_PERSONALRELATIONSHIP_CODE2, VALID_CODESYSTEM_ID));
+						addElements(target);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has guardian and a correct codeSystem and a valid (ResponsibleParty) code
+						setup(target);
+						guardian.setCode(DatatypesFactory.eINSTANCE.createCE(
+							VALID_RESPONSIBLEPARTY_CODE, VALID_CODESYSTEM_ID));
+						addElements(target);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has guardian and a correct codeSystem and a different valid (ResponsibleParty) code
+						setup(target);
+						guardian.setCode(DatatypesFactory.eINSTANCE.createCE(
+							VALID_RESPONSIBLEPARTY_CODE2, VALID_CODESYSTEM_ID));
+						addElements(target);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has guardian and no code element at all.
+						// Note: This passes because this OCL is not checking if code exists, only for the
+						// codeSystem, codes, and type. And we only make the extra checks if code exists.
+						// The existence is checked by the modeled attribute.
+						setup(target);
+						addElements(target);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -nullFlavor code element
+						setup(target);
+						CE code = DatatypesFactory.eINSTANCE.createCE();
+						code.setNullFlavor(NullFlavor.ASKU);
+						guardian.setCode(code);
+						addElements(target);
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeFromPersonalRelationshipOrResponsibleParty(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCodeFromPersonalRelationshipOrResponsiblePartyTestCase.doValidationTest();
 	}
 
 	/**
@@ -10022,6 +10532,164 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientIfSdtcEnforceRaceCode() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientIfSdtcEnforceRaceCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientIfSdtcEnforceRaceCode",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_IF_SDTC_ENFORCE_RACE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// -has sdtcRaceCode (without data) but does not have raceCode
+						target.init();
+						RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+						target.getRecordTargets().add(rt);
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						rt.setPatientRole(pr);
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(pat);
+						CE sdtcRaceCode = DatatypesFactory.eINSTANCE.createCE();
+						pat.getSDTCRaceCodes().add(sdtcRaceCode);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// -has sdtcRaceCode (with data) but does not have raceCode
+						target.init();
+						RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+						target.getRecordTargets().add(rt);
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						rt.setPatientRole(pr);
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(pat);
+						CE sdtcRaceCode = DatatypesFactory.eINSTANCE.createCE();
+						sdtcRaceCode.setCode("HASACODE");
+						sdtcRaceCode.setCodeSystem("HASACODESYSTEM.123");
+						pat.getSDTCRaceCodes().add(sdtcRaceCode);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// -has sdtcRaceCode (with a nullFlavor set) but does not have raceCode
+						target.init();
+						RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+						target.getRecordTargets().add(rt);
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						rt.setPatientRole(pr);
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(pat);
+						CE sdtcRaceCode = DatatypesFactory.eINSTANCE.createCE();
+						sdtcRaceCode.setNullFlavor(NullFlavor.NAV);
+						pat.getSDTCRaceCodes().add(sdtcRaceCode);
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has sdtcRaceCode and has raceCode
+						target.init();
+						RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+						target.getRecordTargets().add(rt);
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						rt.setPatientRole(pr);
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(pat);
+						CE sdtcRaceCode = DatatypesFactory.eINSTANCE.createCE();
+						CE raceCode = DatatypesFactory.eINSTANCE.createCE();
+						pat.getSDTCRaceCodes().add(sdtcRaceCode);
+						pat.setRaceCode(raceCode);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has raceCode but does not have sdtcRaceCode
+						target.init();
+						RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+						target.getRecordTargets().add(rt);
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						rt.setPatientRole(pr);
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(pat);
+						CE raceCode = DatatypesFactory.eINSTANCE.createCE();
+						pat.setRaceCode(raceCode);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -patient has neither raceCode nor sdtcRaceCode (should be irrelevant for this case specifically)
+						target.init();
+						RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+						target.getRecordTargets().add(rt);
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						rt.setPatientRole(pr);
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(pat);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// -has sdtcRaceCode and has raceCode but with a nullFlavor set
+						target.init();
+						RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+						target.getRecordTargets().add(rt);
+						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+						rt.setPatientRole(pr);
+						Patient pat = CDAFactory.eINSTANCE.createPatient();
+						pr.setPatient(pat);
+						CE sdtcRaceCode = DatatypesFactory.eINSTANCE.createCE();
+						CE raceCode = DatatypesFactory.eINSTANCE.createCE();
+						raceCode.setNullFlavor(NullFlavor.ASKU);
+						pat.getSDTCRaceCodes().add(sdtcRaceCode);
+						pat.setRaceCode(raceCode);
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientIfSdtcEnforceRaceCode(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientIfSdtcEnforceRaceCodeTestCase.doValidationTest();
 	}
 
 	/**
