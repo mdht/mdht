@@ -17,9 +17,10 @@
 	04/10/2013 DRB added entire FAMILY HISTORY section to test sdtc:deceasedInd/sdtc:deceasedTime/sdtc:id
 	04/15/2013 DRB added sdtc:raceCode and sdtc:birthTime to the base model
 	04/22/2013 DRB adjusted sdtc:id to new schema sequence; adjusted raceCode to include valid code/codeSystem
+	10/30/2013 DRB adjusted sdtc:id to old schema sequence as the IG is planned to be changed back to it based on Errata 166 and 263
  -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="urn:hl7-org:v3 C:\XML\C32_CDA_Schema\infrastructure\cda\C32_CDA.xsd"
+ xsi:schemaLocation="urn:hl7-org:v3 ../../org.openhealthtools.mdht.uml.cda/samples/C32_CDA.xsd"
  xmlns="urn:hl7-org:v3"
  xmlns:cda="urn:hl7-org:v3">
    
@@ -1403,19 +1404,17 @@ FAMILY HISTORY
                </code>
                <subject>                                 
 				
+				  <sdtc:id root="root" extension="extension" assigningAuthorityName="assigningAuthorityName" displayable="false"/>
+				
 				  <administrativeGenderCode code="M" 
                      codeSystem="2.16.840.1.113883.5.1" 
                      displayName="Male"/>
                   
 				  <birthTime value="1910"/>
-				  
-				  
-				  <sdtc:id root="root" extension="extension" assigningAuthorityName="assigningAuthorityName" displayable="false"/>
                 
                   <sdtc:deceasedInd value="true"/>
                 
                   <sdtc:deceasedTime value="1967"/>
-               
 			   
                </subject>
             </relatedSubject>
