@@ -21,6 +21,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
 /**
@@ -44,6 +45,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CaregiverCharacteristics#validateCaregiverCharacteristicsParticipantParticipantRoleClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Caregiver Characteristics Participant Participant Role Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CaregiverCharacteristics#validateCaregiverCharacteristicsParticipantTimeLow(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Caregiver Characteristics Participant Time Low</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CaregiverCharacteristics#validateCaregiverCharacteristicsParticipantTimeHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Caregiver Characteristics Participant Time High</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CaregiverCharacteristics#validateCaregiverCharacteristicsParticipantTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Caregiver Characteristics Participant Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CaregiverCharacteristics#validateCaregiverCharacteristicsParticipantTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Caregiver Characteristics Participant Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CaregiverCharacteristics#validateCaregiverCharacteristicsParticipantParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Caregiver Characteristics Participant Participant Role</em>}</li>
  * </ul>
@@ -405,7 +407,7 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateCaregiverCharacteristicsParticipantParticipantRoleClassCode() {
@@ -415,23 +417,44 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(CaregiverCharacteristics target) {
-				target.init();
-				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				par.setParticipantRole(pr);
-				target.getParticipants().add(par);
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(CaregiverCharacteristics target) {
+						// no content (classCode) within participantRole
+						target.init();
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(CaregiverCharacteristics target) {
+						// has classCode but classCode has the wrong default (PART instead of CAREGIVER)
+						target.init();
+						Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+						ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+						pr.setClassCode(RoleClassRoot.PART);
+						par.setParticipantRole(pr);
+						target.getParticipants().add(par);
+					}
+				});
+
 			}
 
 			@Override
 			protected void updateToPass(CaregiverCharacteristics target) {
+				// has classCode with CAREGIVER default
 				target.getParticipants().clear();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				pr.setClassCode(RoleClassRoot.PART);
+				pr.setClassCode(RoleClassRoot.CAREGIVER);
 				par.setParticipantRole(pr);
 				target.getParticipants().add(par);
-
 			}
 
 			@Override
@@ -524,6 +547,64 @@ public class CaregiverCharacteristicsTest extends CDAValidationTest {
 		};
 
 		validateCaregiverCharacteristicsParticipantTimeHighTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateCaregiverCharacteristicsParticipantTypeCode() {
+		OperationsTestCase<CaregiverCharacteristics> validateCaregiverCharacteristicsParticipantTypeCodeTestCase = new OperationsTestCase<CaregiverCharacteristics>(
+			"validateCaregiverCharacteristicsParticipantTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_CAREGIVER_CHARACTERISTICS_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(CaregiverCharacteristics target) {
+						// has a participant without a typeCode
+						target.init();
+						Participant2 p = CDAFactory.eINSTANCE.createParticipant2();
+						target.getParticipants().add(p);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(CaregiverCharacteristics target) {
+						// has a participant with a typeCode that has the wrong default
+						target.init();
+						Participant2 p = CDAFactory.eINSTANCE.createParticipant2();
+						target.getParticipants().add(p);
+						p.setTypeCode(ParticipationType.ADM);
+					}
+				});
+
+			}
+
+			@Override
+			protected void updateToPass(CaregiverCharacteristics target) {
+				// has a participant with a typeCode that has the correct default
+				target.init();
+				Participant2 p = CDAFactory.eINSTANCE.createParticipant2();
+				target.getParticipants().add(p);
+				p.setTypeCode(ParticipationType.IND);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CaregiverCharacteristicsOperations.validateCaregiverCharacteristicsParticipantTypeCode(
+					(CaregiverCharacteristics) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCaregiverCharacteristicsParticipantTypeCodeTestCase.doValidationTest();
 	}
 
 	/**

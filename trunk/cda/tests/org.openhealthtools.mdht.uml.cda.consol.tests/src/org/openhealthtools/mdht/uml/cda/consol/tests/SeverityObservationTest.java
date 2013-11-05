@@ -45,7 +45,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Interpretation Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -424,45 +423,6 @@ public class SeverityObservationTest extends CDAValidationTest {
 		};
 
 		validateSeverityObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateSeverityObservationInterpretationCode() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationInterpretationCodeTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationInterpretationCode",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SeverityObservation target) {
-				target.init();
-
-				target.getInterpretationCodes().clear();
-				target.getInterpretationCodes().add(DatatypesFactory.eINSTANCE.createCE("code", "aaaaa"));
-
-			}
-
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				target.getInterpretationCodes().clear();
-				target.getInterpretationCodes().add(
-					DatatypesFactory.eINSTANCE.createCE("Carrier", "2.16.840.1.113883.5.83"));
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SeverityObservationOperations.validateSeverityObservationInterpretationCode(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSeverityObservationInterpretationCodeTestCase.doValidationTest();
 	}
 
 	/**
