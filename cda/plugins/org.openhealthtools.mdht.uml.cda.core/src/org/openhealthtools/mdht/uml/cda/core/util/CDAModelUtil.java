@@ -12,7 +12,7 @@
  *                        - support nested datatype subclasses (artf3350)
  *     Dan Brown (Audacious Inquiry) - modified XML binding messages based on mandatory property 
  *     								 - part of artf3549, artf3577, errata 156 and errata 72
- *     
+ *     								 - changed output from 'data type CD' to '@xsi:type="CD"' as per errata 177
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -802,7 +802,7 @@ public class CDAModelUtil {
 
 		if (property.getType() != null &&
 				(redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
-			message.append(" with data type ");
+			message.append(" with " + "@xsi:type=\"");
 
 			String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
 				property, property.getType()))
@@ -824,6 +824,7 @@ public class CDAModelUtil {
 			} else {
 				message.append(property.getType().getName());
 			}
+			message.append("\"");
 		}
 
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
