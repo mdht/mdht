@@ -47,10 +47,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMU2CONSOLGeneralHeaderConstraintsCareTeamMembers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL General Header Constraints Care Team Members</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMU2CONSOLGeneralHeaderConstraintsRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL General Header Constraints Record Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTermCaseInsensitive(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code Term Case Insensitive</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateMU2CONSOLGeneralHeaderConstraintsGeneralHeaderConstraintsRecordTargetPatientRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MU2CONSOL General Header Constraints General Header Constraints Record Target Patient Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#retrieveHospitalAdmissionDiagnosisSection() <em>Retrieve Hospital Admission Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Language Communication Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Ethnic Group Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Ethnic Group Code P</em>}</li>
@@ -180,6 +180,89 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateMU2CONSOLGeneralHeaderConstraintsRecordTargetTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTermCaseInsensitive() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTermCaseInsensitiveTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTermCaseInsensitive",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION_LANGUAGE_CODE_TERM_CASE_INSENSITIVE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
+				patient.getLanguageCommunications().add(lComm);
+				pRole.setPatient(patient);
+				rTarget.setPatientRole(pRole);
+				target.getRecordTargets().add(rTarget);
+
+				CS csType = DatatypesFactory.eINSTANCE.createCS();
+				// not a valid code
+				csType.setCode("abcd");
+				lComm.setLanguageCode(csType);
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// random case : languageCode code is NOT case sensitive.
+						CS csType = DatatypesFactory.eINSTANCE.createCS();
+						csType.setCode("eNg");
+						target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(
+							0).setLanguageCode(csType);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// lower case : same as codes in model
+						CS csType = DatatypesFactory.eINSTANCE.createCS();
+						csType.setCode("zul");
+						target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(
+							0).setLanguageCode(csType);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// upper case : languageCode code is NOT case sensitive.
+						CS csType = DatatypesFactory.eINSTANCE.createCS();
+						csType.setCode("BAM");
+						target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(
+							0).setLanguageCode(csType);
+					}
+
+				});
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTermCaseInsensitive(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTermCaseInsensitiveTestCase.doValidationTest();
 	}
 
 	/**
@@ -337,51 +420,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodePTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_LANGUAGE_COMMUNICATION_LANGUAGE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
-				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
-				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
-				patient.getLanguageCommunications().add(lComm);
-				pRole.setPatient(patient);
-				rTarget.setPatientRole(pRole);
-				target.getRecordTargets().add(rTarget);
-
-			}
-
-			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				CS csType = DatatypesFactory.eINSTANCE.createCS();
-				csType.setCode("amh");
-				target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(0).setLanguageCode(
-					csType);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeP(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodePTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCodeTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
 			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode",
@@ -398,19 +436,14 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				pRole.setPatient(patient);
 				rTarget.setPatientRole(pRole);
 				target.getRecordTargets().add(rTarget);
-
-				CS csType = DatatypesFactory.eINSTANCE.createCS();
-				csType.setCode("abcd");
-				lComm.setLanguageCode(csType);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				CS csType = DatatypesFactory.eINSTANCE.createCS();
-				csType.setCode("zul");
+				// There is no need to set an actual code value for this test
 				target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(0).setLanguageCode(
 					csType);
-
 			}
 
 			@Override
