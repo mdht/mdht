@@ -3,7 +3,7 @@ String oclExp = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOper
 
 EClass eClass = genClass.getEcoreClass();
 String name = genOperation.getName().replaceFirst("^validate", "");
-String propertyName = genOperation.getGenClass().getName() + name;
+String propertyName = name;
 
 
 
