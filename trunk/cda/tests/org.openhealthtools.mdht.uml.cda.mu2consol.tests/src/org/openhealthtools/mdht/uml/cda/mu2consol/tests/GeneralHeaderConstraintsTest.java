@@ -195,6 +195,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
 				RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
@@ -218,10 +219,19 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
 						// random case : languageCode code is NOT case sensitive.
+						target.init();
+						RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
+						patient.getLanguageCommunications().add(lComm);
+						pRole.setPatient(patient);
+						rTarget.setPatientRole(pRole);
+						target.getRecordTargets().add(rTarget);
+
 						CS csType = DatatypesFactory.eINSTANCE.createCS();
 						csType.setCode("eNg");
-						target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(
-							0).setLanguageCode(csType);
+						lComm.setLanguageCode(csType);
 					}
 
 				});
@@ -231,10 +241,19 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
 						// lower case : same as codes in model
+						target.init();
+						RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
+						patient.getLanguageCommunications().add(lComm);
+						pRole.setPatient(patient);
+						rTarget.setPatientRole(pRole);
+						target.getRecordTargets().add(rTarget);
+
 						CS csType = DatatypesFactory.eINSTANCE.createCS();
 						csType.setCode("zul");
-						target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(
-							0).setLanguageCode(csType);
+						lComm.setLanguageCode(csType);
 					}
 
 				});
@@ -244,10 +263,19 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
 						// upper case : languageCode code is NOT case sensitive.
+						target.init();
+						RecordTarget rTarget = CDAFactory.eINSTANCE.createRecordTarget();
+						PatientRole pRole = CDAFactory.eINSTANCE.createPatientRole();
+						Patient patient = CDAFactory.eINSTANCE.createPatient();
+						LanguageCommunication lComm = CDAFactory.eINSTANCE.createLanguageCommunication();
+						patient.getLanguageCommunications().add(lComm);
+						pRole.setPatient(patient);
+						rTarget.setPatientRole(pRole);
+						target.getRecordTargets().add(rTarget);
+
 						CS csType = DatatypesFactory.eINSTANCE.createCS();
 						csType.setCode("BAM");
-						target.getRecordTargets().get(0).getPatientRole().getPatient().getLanguageCommunications().get(
-							0).setLanguageCode(csType);
+						lComm.setLanguageCode(csType);
 					}
 
 				});
