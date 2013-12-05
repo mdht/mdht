@@ -7,7 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *     Dan Brown (Drajer) - additional testing code
+ *     Dan Brown (Drajer/Ai) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -100,8 +100,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3EncounterParticipantAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Encounter Participant Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3EncompassingEncounterHasEffectiveTimeLow(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Encompassing Encounter Has Effective Time Low</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3EncompassingEncounterHasEffectiveTimeHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Encompassing Encounter Has Effective Time High</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Discharge Disposition Code Value Set</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Discharge Disposition Code Code System</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Discharge Disposition Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Discharge Disposition Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3EffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3ResponsibleParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Responsible Party</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryComponentOfEncompassingEncounter3EncounterParticipant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Component Of Encompassing Encounter3 Encounter Participant</em>}</li>
@@ -140,9 +141,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 public class DischargeSummaryTest extends CDAValidationTest {
 
+	private static final String NUBC_VALUESET = "2.16.840.1.113883.6.301.5";
+
+	private static final String HL7_DDC_CODESYSTEM = "2.16.840.1.113883.12.112";
+
 	/**
 	*
-	* @generated noy
+	* @generated not
 	*/
 	@Test
 	public void testValidateDischargeSummaryDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection() {
@@ -1657,50 +1662,73 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
-	public void testValidateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_COMPONENT_OF_ENCOMPASSING_ENCOUNTER3_DISCHARGE_DISPOSITION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeValueSet() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeValueSetTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeValueSet",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_COMPONENT_OF_ENCOMPASSING_ENCOUNTER3_DISCHARGE_DISPOSITION_CODE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
-
-			// constant codeSystem for dischargeDispositionCode
-			private static final String DDC_CODESYSTEM_VALUE = "2.16.840.1.113883.12.112";
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
-				// The following test fails because there is no dischargeDispositionCode element and the multiplicity is 1..1
-				// It helps setup the updateToPass test as well with required elements
-				// Note: In future maybe add test against multiple dischargeDispositionCode elements (against external doc snippet)
+				// invalid codeSystem attribute OID
 				target.init();
-				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+				CE ce = DatatypesFactory.eINSTANCE.createCE("irrelevant", BAD_CODESYSTEM_ID);
 				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
-
+				ee.setDischargeDispositionCode(ce);
+				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
 				cof.setEncompassingEncounter(ee);
 				target.setComponentOf(cof);
 			}
 
 			@Override
-			protected void updateToPass(DischargeSummary target) {
-				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant(); // not required
-				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(ep);
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(DischargeSummary target) {
+						// Normal pass for checked codeSystem value (NUBC valueSet)
+						// Consol Encompassing Encounter3 SHALL contain exactly one [1..1] dischargeDispositionCode,
+						// which SHOULD be selected from ValueSet NUBC UB-04 FL17-Patient Status 2.16.840.1.113883.6.301.5 STATIC or,
+						// if access to NUBC is unavailable,
+						// MAY be selected from CodeSystem 2.16.840.1.113883.12.112 HL7 Discharge Disposition (CONF:8476)
+						target.init();
+						CE ce = DatatypesFactory.eINSTANCE.createCE("irrelevant", NUBC_VALUESET);
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						ee.setDischargeDispositionCode(ce);
+						Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+						cof.setEncompassingEncounter(ee);
+						target.setComponentOf(cof);
+					}
+				});
 
-				CE ddcCE = DatatypesFactory.eINSTANCE.createCE();
-				ddcCE.setCode("01"); // Required to be defined, but not to any specific String
-				ddcCE.setCodeSystem(DDC_CODESYSTEM_VALUE); // the actual constraint checked which must be accurate (and exist)
-				ddcCE.setCodeSystemName("Routine Discharge"); // not required (not checked as a constraint)
-				target.getComponentOf().getEncompassingEncounter().setDischargeDispositionCode(ddcCE);
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(DischargeSummary target) {
+						// Pass for ignored constraint so that we don't fail one if the other passes.
+						// Implemented based off of the following preliminary rule as part of Errata 240:
+						// If it’s not equal to the codeSystem (if it’s the valueSet already or if it is an incorrect OID altogether),
+						// then it must be equal to the valueSet. The constraints are separated since they have different severities.
+						// In this passing case, it is already equal to the codeSystem, so doesn't check the rest.
+						target.init();
+						CE ce = DatatypesFactory.eINSTANCE.createCE("irrelevant", HL7_DDC_CODESYSTEM);
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						ee.setDischargeDispositionCode(ce);
+						Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+						cof.setEncompassingEncounter(ee);
+						target.setComponentOf(cof);
+					}
+				});
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeSummaryOperations.validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode(
+				return DischargeSummaryOperations.validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeValueSet(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeTestCase.doValidationTest();
+		validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeValueSetTestCase.doValidationTest();
 	}
 
 	/**
@@ -1708,17 +1736,86 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
-	public void testValidateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeP() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodePTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_COMPONENT_OF_ENCOMPASSING_ENCOUNTER3_DISCHARGE_DISPOSITION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeCodeSystem() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeCodeSystemTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeCodeSystem",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_COMPONENT_OF_ENCOMPASSING_ENCOUNTER3_DISCHARGE_DISPOSITION_CODE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeSummary target) {
+				// invalid codeSystem attribute OID
+				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE("irrelevant", BAD_CODESYSTEM_ID);
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ee.setDischargeDispositionCode(ce);
+				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+				cof.setEncompassingEncounter(ee);
+				target.setComponentOf(cof);
+			}
+
+			@Override
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(DischargeSummary target) {
+						// Normal pass for checked codeSystem value (HL7 Discharge Disposition codeSystem)
+						target.init();
+						CE ce = DatatypesFactory.eINSTANCE.createCE("irrelevant", HL7_DDC_CODESYSTEM);
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						ee.setDischargeDispositionCode(ce);
+						Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+						cof.setEncompassingEncounter(ee);
+						target.setComponentOf(cof);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(DischargeSummary target) {
+						// Pass for ignored constraint so that we don't fail one if the other passes.
+						// Implemented like this:
+						// If it’s not equal to the valueSet (if it’s the codeSystem already or if it is an incorrect OID altogether),
+						// then it must be equal to the codeSystem. The constraints are separated since they have different severities.
+						// In this passing case, it is already equal to the valueSet, so doesn't check the rest.
+						target.init();
+						CE ce = DatatypesFactory.eINSTANCE.createCE("irrelevant", NUBC_VALUESET);
+						EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+						ee.setDischargeDispositionCode(ce);
+						Component1 cof = CDAFactory.eINSTANCE.createComponent1();
+						cof.setEncompassingEncounter(ee);
+						target.setComponentOf(cof);
+					}
+				});
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations.validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeCodeSystem(
+					(DischargeSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeCodeSystemTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_COMPONENT_OF_ENCOMPASSING_ENCOUNTER3_DISCHARGE_DISPOSITION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
 				// The following test fails because there is no dischargeDispositionCode element in encompassingEncounter
 				target.init();
-				// needs to have more elements in order to fail, elements that require dischargeDispositionCode
 				Component1 cof = CDAFactory.eINSTANCE.createComponent1();
 				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
 
@@ -1736,13 +1833,13 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeSummaryOperations.validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeP(
+				return DischargeSummaryOperations.validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCode(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodePTestCase.doValidationTest();
+		validateDischargeSummaryComponentOfEncompassingEncounter3DischargeDispositionCodeTestCase.doValidationTest();
 	}
 
 	/**
