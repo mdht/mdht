@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -37,6 +38,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Value P</em>}</li>
  * </ul>
  * </p>
  *
@@ -247,7 +249,6 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 				value.setCodeSystem("2.16.840.1.113883.6.96");
 				value.setCode("419099009");
 				target.getValues().add(value);
-
 			}
 
 			@Override
@@ -260,6 +261,43 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistoryDeathObservationValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFamilyHistoryDeathObservationValueP() {
+		OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationValuePTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
+			"validateFamilyHistoryDeathObservationValueP",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryDeathObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryDeathObservation target) {
+				target.init();
+
+				// must exist as the correct type but the code value is not checked
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationValueP(
+					(FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryDeathObservationValuePTestCase.doValidationTest();
 	}
 
 	/**
