@@ -46,6 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationUseNoneKnown#validateMedicationUseNoneKnownStatusCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Use None Known Status Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationUseNoneKnown#validateMedicationUseNoneKnownText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Use None Known Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationUseNoneKnown#validateMedicationUseNoneKnownValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Use None Known Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationUseNoneKnown#validateMedicationUseNoneKnownValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Use None Known Value P</em>}</li>
  * </ul>
  * </p>
  *
@@ -536,7 +537,7 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateMedicationUseNoneKnownValue() {
@@ -556,7 +557,6 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 
 				CD value = DatatypesFactory.eINSTANCE.createCD("182904002", "2.16.840.1.113883.6.96", "", "");
 				target.getValues().add(value);
-
 			}
 
 			@Override
@@ -569,6 +569,43 @@ public class MedicationUseNoneKnownTest extends CDAValidationTest {
 		};
 
 		validateMedicationUseNoneKnownValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateMedicationUseNoneKnownValueP() {
+		OperationsTestCase<MedicationUseNoneKnown> validateMedicationUseNoneKnownValuePTestCase = new OperationsTestCase<MedicationUseNoneKnown>(
+			"validateMedicationUseNoneKnownValueP",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_USE_NONE_KNOWN_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationUseNoneKnown target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationUseNoneKnown target) {
+				target.init();
+
+				// must exist as the correct type but the code value is not checked
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationUseNoneKnownOperations.validateMedicationUseNoneKnownValueP(
+					(MedicationUseNoneKnown) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationUseNoneKnownValuePTestCase.doValidationTest();
 	}
 
 	/**
