@@ -105,6 +105,28 @@ public abstract class CDAValidationTest {
 
 	protected static final String BAD_CODE_VALUE = "NOTACODE";
 
+	// currently used for date accuracy in multiple test files
+	// eight character date
+	protected static final String PRECISE_TO_DAY = "20091212";
+
+	// twelve character date
+	protected static final String PRECISE_TO_MINUTE = "200912121721";
+
+	// fourteen character date
+	protected static final String PRECISE_TO_SECOND = "20091212172151";
+
+	// fifteen character date with time-zone
+	protected static final String PRECISE_TO_HOUR_WITH_TIMEZONE = "2012091619-0400";
+
+	// seventeen character date with time-zone
+	protected static final String PRECISE_TO_MINUTE_WITH_TIMEZONE = "201209161918-0400";
+
+	// nineteen character date with time-zone
+	protected static final String PRECISE_TO_SECOND_WITH_TIMEZONE = "20050329171504+0500";
+
+	// twenty-three character date with time-zone
+	protected static final String PRECISE_TO_MS_WITH_TIMEZONE = "20091212172151.035-0500";
+
 	// protected static int count = 0;
 
 	protected static Map<Object, Object> map = new HashMap<Object, Object>();
