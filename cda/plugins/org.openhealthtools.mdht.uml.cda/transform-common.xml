@@ -1,3 +1,14 @@
+<!--
+    Copyright (c) 20?? ? and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        ? - initial API and implementation
+        Dan Brown (Audacious Inquiry) - added postProcessing target and related properties
+ -->
 <project name="common">
 	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
 	<property name="modelPath.uml" location="${basedir}.model/model/${modelName}.uml"/>
@@ -7,7 +18,10 @@
 	<property name="vocabModelPath.uml" location="${basedir}/model/${modelName}_consolidated-vocab.uml"/>
 	<property name="flattenedModelPath.uml" location="${basedir}/model/${modelName}_flattened.uml"/>
     <property name="filteredModelPath.uml" location="${basedir}/model/${modelName}_filtered.uml"/>
+	<property name="propertiesFilePath" value="${basedir}/plugin.properties" />
+	
     <property name="validation.failOnError" value="true"/>
+	<property name="runPostProcessing" value="false"/>
 	
 	<target name="all">
 		<antcall target="transformModel"></antcall>
@@ -21,7 +35,10 @@
 
     	<convertEcorePaths filePath="${ecoreModelPath.uml}"/>
 
+    	<antcall target="postProcessing"/>
+    	
     	<antcall target="refresh"/>
+    	
     </target>
 
 	<available file="${domainModelPath.uml}" property="domainModelPath.uml.present"/>
@@ -29,9 +46,24 @@
 	<target name="convertDomainPaths" if="domainModelPath.uml.present">
     	<convertEcorePaths filePath="${domainModelPath.uml}"/>
 	</target>
+	
+	
+	<target name="postProcessing" if="${runPostProcessing}">
+		<antcall target="postProcess" />
+	</target>
 
 	<target name="refresh" if="eclipse.running" description="Refresh this folder.">
 	  <eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
 	  <eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
 	</target>
+	
+	<macrodef name="replaceTemplateNames">
+		<attribute name="oldTemplateName" />
+		<attribute name="newTemplateName" />
+		<sequential>
+			<replace file="${propertiesFilePath}" token="@{oldTemplateName}" value="@{newTemplateName}" />
+			<echo level="info" message="Replacing instances of &quot;@{oldTemplateName}&quot; in ${propertiesFilePath} with &quot;@{newTemplateName}&quot;" />
+		</sequential>
+	</macrodef>
+
 </project>
