@@ -83,6 +83,20 @@ public class PropertyList {
 		}
 	}
 
+	private boolean hasBeenRedefined(Property property) {
+		if (attributes != null) {
+			for (Property attribute : attributes) {
+				for (Property redefinedProperty : attribute.getRedefinedProperties()) {
+					if (property.equals(redefinedProperty)) {
+						return true;
+					}
+				}
+			}
+
+		}
+		return false;
+	}
+
 	private void addProperties(Class aClass) {
 		List<Property> ownedAttributes = new ArrayList<Property>(aClass.getOwnedAttributes());
 		Collections.reverse(ownedAttributes);
@@ -94,17 +108,14 @@ public class PropertyList {
 				}
 			}
 
-			// skip implicit redefinitions
-			if (getForName(property.getName()) == null) {
+			// skip explicit and implicit redefinitions
+			if (!hasBeenRedefined(property) && getForName(property.getName()) == null) {
 				if (property.getAssociation() == null) {
 					attributes.add(0, property);
 				} else {
 					associationEnds.add(0, property);
 				}
 			}
-
-			// TODO skip explicit redefinitions
-
 		}
 
 		if (isAllSuperclasses) {
