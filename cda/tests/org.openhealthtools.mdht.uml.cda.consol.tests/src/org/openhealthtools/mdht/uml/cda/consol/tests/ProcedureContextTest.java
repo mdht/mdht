@@ -32,6 +32,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureContext#validateProcedureContextEffectiveTimeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Context Effective Time Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureContext#validateProcedureContextTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Context Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureContext#validateProcedureContextClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Context Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureContext#validateProcedureContextMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Context Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureContext#validateProcedureContextCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Context Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureContext#validateProcedureContextEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Context Effective Time</em>}</li>
  * </ul>
@@ -109,6 +111,74 @@ public class ProcedureContextTest extends CDAValidationTest {
 		};
 
 		validateProcedureContextTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureContextClassCode() {
+		OperationsTestCase<ProcedureContext> validateProcedureContextClassCodeTestCase = new OperationsTestCase<ProcedureContext>(
+			"validateProcedureContextClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_CONTEXT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureContext target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureContext target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureContextOperations.validateProcedureContextClassCode(
+					(ProcedureContext) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureContextClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureContextMoodCode() {
+		OperationsTestCase<ProcedureContext> validateProcedureContextMoodCodeTestCase = new OperationsTestCase<ProcedureContext>(
+			"validateProcedureContextMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_CONTEXT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureContext target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureContext target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureContextOperations.validateProcedureContextMoodCode(
+					(ProcedureContext) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureContextMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
