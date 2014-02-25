@@ -259,6 +259,17 @@
                enablesFor="1"
                id="mdht.actions.addUML.nestedClass">
          </action>
+         
+            <action
+               label="%addUMLSubstitution.label"
+               icon="icons/full/obj16/Generalization.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddSubstitutionAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               
+               enablesFor="1"
+               id="mdht.actions.addUML.substitution">
+         </action>
+         
          <action
                label="%addUMLGeneralization.label"
                icon="icons/full/obj16/Generalization.gif"
@@ -267,6 +278,8 @@
                enablesFor="1"
                id="mdht.actions.addUML.generalization">
          </action>
+         
+      
          
          <action
                label="%addUMLOperation.label"
