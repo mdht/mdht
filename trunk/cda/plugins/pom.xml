@@ -20,7 +20,9 @@
   
   
   <modules>
-  	<module>org.openhealthtools.mdht.uml.hl7.datatypes</module>  
+  	<module>org.openhealthtools.mdht.uml.hl7.vocab</module>
+  	<module>org.openhealthtools.mdht.uml.hl7.datatypes</module>
+  	<module>org.openhealthtools.mdht.uml.hl7.rim</module>  
     <module>org.openhealthtools.mdht.cda.xml.ui</module>
     <module>org.openhealthtools.mdht.uml.cda</module>
     <module>org.openhealthtools.mdht.uml.cda.ant</module>
