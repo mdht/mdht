@@ -10,5 +10,5 @@
   <groupId>org.openhealthtools.mdht.site</groupId>
   <artifactId>org.openhealthtools.mdht.site</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>eclipse-update-site</packaging>
+  <packaging>eclipse-repository</packaging>
 </project>
