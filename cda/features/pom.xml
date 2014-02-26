@@ -21,7 +21,6 @@
 
 	<modules>
 		<module>org.openhealthtools.mdht.uml.cda-feature</module>
-		<module>org.openhealthtools.mdht.uml.cda.runtime-feature</module>
 		<module>org.openhealthtools.mdht.uml.cda.tooling-feature</module>
 	</modules>
 
