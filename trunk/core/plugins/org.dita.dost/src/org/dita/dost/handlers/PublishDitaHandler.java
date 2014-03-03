@@ -21,7 +21,7 @@ import org.dita.dost.util.DitaUtil;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.expressions.EvaluationContext;
+import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
@@ -94,11 +94,11 @@ public class PublishDitaHandler extends AbstractHandler {
 	}
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-
 		if (event.getParameter("org.dita.dost.parameter.target") != null) {
 			try {
-				if (event.getApplicationContext() instanceof EvaluationContext) {
-					EvaluationContext evaluationContext = (EvaluationContext) event.getApplicationContext();
+				System.out.println(event.getApplicationContext().getClass().getCanonicalName());
+				if (event.getApplicationContext() instanceof IEvaluationContext) {
+					IEvaluationContext evaluationContext = (IEvaluationContext) event.getApplicationContext();
 
 					for (Object selection : (Collection) evaluationContext.getDefaultVariable()) {
 						if (selection instanceof IFile) {
