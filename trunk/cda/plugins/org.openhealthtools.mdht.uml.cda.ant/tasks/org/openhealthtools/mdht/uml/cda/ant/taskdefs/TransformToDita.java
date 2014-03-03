@@ -46,6 +46,8 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	private Boolean includeTableView = null;
 
+	private Boolean includeUsageNotes = null;
+
 	private Boolean includeVocabularyConstraints = null;
 
 	private int exampleDepth;
@@ -146,6 +148,12 @@ public class TransformToDita extends CDAModelingSubTask {
 			includeTableView = Boolean.valueOf(project.getProperty("includeTableView"));
 
 		}
+
+		if (includeUsageNotes == null && project.getProperty("includeUsageNotes") != null) {
+			includeUsageNotes = Boolean.valueOf(project.getProperty("includeUsageNotes"));
+
+		}
+
 		Integer.getInteger(project.getProperty("exampleDepth"));
 
 	}
@@ -166,6 +174,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	public void setIncludeVocabularyConstraints(boolean include) {
 		includeVocabularyConstraints = new Boolean(include);
+	}
+
+	public void setIncludeUsageNotes(boolean include) {
+		includeUsageNotes = new Boolean(include);
 	}
 
 	// ANT task child elements
@@ -206,6 +218,11 @@ public class TransformToDita extends CDAModelingSubTask {
 		if (includeTableView != null) {
 			options.setIncludeTableView(includeTableView);
 		}
+
+		if (includeUsageNotes != null) {
+			options.setIncludeUsageNotes(includeUsageNotes);
+		}
+
 		if (includeVocabularyConstraints != null) {
 			options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
 		}
