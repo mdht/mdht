@@ -34,6 +34,8 @@ public class DitaTransformerOptions {
 
 	public static final String INCLUDE_TABLE_VIEW = "includeTableView";
 
+	public static final String INCLUDE_USAGE_NOTES = "includeUsageNotes";
+
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 
 	public static final String EXAMPLE_DEPTH = "exampleDepth";
@@ -43,6 +45,8 @@ public class DitaTransformerOptions {
 	private String baseURL = null;
 
 	private boolean includeTableView = false;
+
+	private boolean includeUsageNotes = false;
 
 	private boolean includeVocabularyConstraints = false;
 
@@ -93,10 +97,15 @@ public class DitaTransformerOptions {
 			baseURL = store.getString(BASE_URL);
 		}
 		includeTableView = store.getBoolean(INCLUDE_TABLE_VIEW);
+		includeUsageNotes = store.getBoolean(INCLUDE_USAGE_NOTES);
 		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
 
 		exampleDepth = store.getInt(EXAMPLE_DEPTH);
 
+	}
+
+	public boolean isIncludeUsageNotes() {
+		return includeUsageNotes;
 	}
 
 	public boolean isIncludeTableView() {
@@ -105,6 +114,10 @@ public class DitaTransformerOptions {
 
 	public void setIncludeTableView(boolean includeTableView) {
 		this.includeTableView = includeTableView;
+	}
+
+	public void setIncludeUsageNotes(boolean includeUsageNotes) {
+		this.includeUsageNotes = includeUsageNotes;
 	}
 
 	public boolean isIncludeVocabularyConstraints() {
