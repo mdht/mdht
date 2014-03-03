@@ -39,7 +39,7 @@ public class TransformValueSet extends TransformAbstract {
 		super(options);
 	}
 
-	public static String getDefinition(Enumeration enumeration) {
+	public String getDefinition(Enumeration enumeration) {
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
 
@@ -52,7 +52,7 @@ public class TransformValueSet extends TransformAbstract {
 		return sw.toString();
 	}
 
-	private static void appendBody(PrintWriter writer, Enumeration umlEnumeration) {
+	private void appendBody(PrintWriter writer, Enumeration umlEnumeration) {
 		writer.println("<body>");
 		writer.println("<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->");
 		writer.println("<section id=\"definition\">");
@@ -65,7 +65,7 @@ public class TransformValueSet extends TransformAbstract {
 		writer.println("</topic>");
 	}
 
-	private static void appendConcepts(PrintWriter writer, Enumeration umlEnumeration) {
+	private void appendConcepts(PrintWriter writer, Enumeration umlEnumeration) {
 		String codeSystemName = null;
 		ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 		if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null &&
@@ -74,13 +74,25 @@ public class TransformValueSet extends TransformAbstract {
 		}
 
 		if (!umlEnumeration.getOwnedLiterals().isEmpty()) {
-			writer.println("<table><tgroup cols=\"3\">");
-			writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
-			writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
-			writer.println("<colspec colname=\"col3\" colwidth=\"2*\"/>");
-			writer.println("<thead><row>");
-			writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry>");
-			writer.println("</row></thead><tbody>");
+
+			if (transformerOptions.isIncludeUsageNotes()) {
+				writer.println("<table><tgroup cols=\"4\">");
+				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
+				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
+				writer.println("<colspec colname=\"col3\" colwidth=\"1*\"/>");
+				writer.println("<colspec colname=\"col4\" colwidth=\"2*\"/>");
+				writer.println("<thead><row>");
+				writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry><entry>Usage Note</entry>");
+				writer.println("</row></thead><tbody>");
+			} else {
+				writer.println("<table><tgroup cols=\"3\">");
+				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
+				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
+				writer.println("<colspec colname=\"col3\" colwidth=\"2*\"/>");
+				writer.println("<thead><row>");
+				writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry>");
+				writer.println("</row></thead><tbody>");
+			}
 
 			for (EnumerationLiteral literal : umlEnumeration.getOwnedLiterals()) {
 				ValueSetCode valueSetCode = TermProfileUtil.getValueSetCode(literal);
@@ -103,6 +115,14 @@ public class TransformValueSet extends TransformAbstract {
 					writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetCode.getConceptName()));
 				}
 				writer.print("</entry>");
+
+				if (transformerOptions.isIncludeUsageNotes()) {
+					writer.print("<entry>");
+					if (valueSetCode != null && valueSetCode.getUsageNote() != null) {
+						writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetCode.getUsageNote()));
+					}
+					writer.print("</entry>");
+				}
 
 				writer.println("</row>");
 			}
