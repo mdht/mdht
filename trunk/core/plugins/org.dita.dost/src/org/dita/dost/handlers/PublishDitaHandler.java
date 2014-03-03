@@ -96,7 +96,6 @@ public class PublishDitaHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		if (event.getParameter("org.dita.dost.parameter.target") != null) {
 			try {
-				System.out.println(event.getApplicationContext().getClass().getCanonicalName());
 				if (event.getApplicationContext() instanceof IEvaluationContext) {
 					IEvaluationContext evaluationContext = (IEvaluationContext) event.getApplicationContext();
 
