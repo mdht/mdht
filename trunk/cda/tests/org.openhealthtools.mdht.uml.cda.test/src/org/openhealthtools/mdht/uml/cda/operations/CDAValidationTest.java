@@ -105,6 +105,10 @@ public abstract class CDAValidationTest {
 
 	protected static final String BAD_CODE_VALUE = "NOTACODE";
 
+	protected static final String SNOMEDCT_ID = "2.16.840.1.113883.6.96";
+
+	protected static final String LOINC_ID = "2.16.840.1.113883.6.1";
+
 	// currently used for date accuracy in multiple test files
 	// eight character date
 	protected static final String PRECISE_TO_DAY = "20091212";
