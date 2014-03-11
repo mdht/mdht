@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - added/modified overloaded createCD methods						
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
@@ -328,10 +329,15 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		return cd;
 	}
 
-	public CD createCD(String code, String codeSystem, String codeSystemName, String displayName) {
+	public CD createCD(String code, String codeSystem) {
 		CD cd = createCD();
 		cd.setCode(code);
 		cd.setCodeSystem(codeSystem);
+		return cd;
+	}
+
+	public CD createCD(String code, String codeSystem, String codeSystemName, String displayName) {
+		CD cd = createCD(code, codeSystem);
 		cd.setCodeSystemName(codeSystemName);
 		cd.setDisplayName(displayName);
 		return cd;

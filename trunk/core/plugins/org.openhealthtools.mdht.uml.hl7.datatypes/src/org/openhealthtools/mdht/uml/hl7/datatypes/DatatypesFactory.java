@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - added overloaded createCD method with code and codeSystem only for faster test writing
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
@@ -93,6 +94,8 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	CD createCD();
+
+	CD createCD(String code, String codeSystem);
 
 	CD createCD(String code, String codeSystem, String codeSystemName, String displayName);
 
