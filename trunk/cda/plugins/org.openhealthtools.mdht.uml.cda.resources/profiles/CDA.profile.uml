@@ -529,8 +529,8 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
       </ownedAttribute>
       <ownedAttribute xmi:id="_OKXZIB1wEd-DaIarnYb4TQ" name="ruleId">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R2QcEB1wEd-DaIarnYb4TQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qn-EAB1wEd-DaIarnYb4TQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R2QcEB1wEd-DaIarnYb4TQ" value="*"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_n7pd0EhmEeCAwtsXrgwZCA" name="mandatory">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
@@ -712,6 +712,41 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_JpmX0IL2Ed-8rsU0UqXeIw" name="Association_Participation" memberEnd="_JpmX0YL2Ed-8rsU0UqXeIw _JpmX0oL2Ed-8rsU0UqXeIw">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_JpmX0YL2Ed-8rsU0UqXeIw" name="extension_Participation" type="_ELd7MIL2Ed-8rsU0UqXeIw" aggregation="composite" association="_JpmX0IL2Ed-8rsU0UqXeIw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_Qn_HQJ8qEeOOYab0d1qVDg" name="LogicalConstraint">
+      <generalization xmi:id="_VQimwJ8qEeOOYab0d1qVDg" general="_4AuRwKFKEd6NOYTVzzK9uw"/>
+      <ownedAttribute xmi:id="_J7hZ0J8rEeOOYab0d1qVDg" name="operation" type="_kvtDcJ8qEeOOYab0d1qVDg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ODDP4J8rEeOOYab0d1qVDg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ODCo0J8rEeOOYab0d1qVDg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_kvtDcJ8qEeOOYab0d1qVDg" name="LogicalOperator">
+      <ownedLiteral xmi:id="_PL7jgJ8rEeOOYab0d1qVDg" name="AND"/>
+      <ownedLiteral xmi:id="_Q0sREJ8rEeOOYab0d1qVDg" name="OR"/>
+      <ownedLiteral xmi:id="_SIpzUJ8rEeOOYab0d1qVDg" name="XOR"/>
+      <ownedLiteral xmi:id="_kqbFYJ8rEeOOYab0d1qVDg" name="IFTHEN"/>
+      <ownedLiteral xmi:id="_xpgK8J8rEeOOYab0d1qVDg" name="NOTBOTH"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_UF6CwJ_yEeOfUpjpN-rP2g" name="Inline">
+      <ownedAttribute xmi:id="_U_Sh0J_yEeOfUpjpN-rP2g" name="base_Class" association="_U_R6wJ_yEeOfUpjpN-rP2g">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_WXx-wJ_yEeOfUpjpN-rP2g" name="filter">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WXx-wZ_yEeOfUpjpN-rP2g"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WXyl0J_yEeOfUpjpN-rP2g" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_U_R6wJ_yEeOfUpjpN-rP2g" name="Class_Inline" memberEnd="_U_R6wZ_yEeOfUpjpN-rP2g _U_Sh0J_yEeOfUpjpN-rP2g">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_U_R6wZ_yEeOfUpjpN-rP2g" name="extension_Inline" type="_UF6CwJ_yEeOfUpjpN-rP2g" aggregation="composite" association="_U_R6wJ_yEeOfUpjpN-rP2g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_Vcn_cK7XEeOIc9h626Utvg" name="Unimplementable">
+      <ownedAttribute xmi:id="_W9Z1sa7XEeOIc9h626Utvg" name="base_Constraint" association="_W9ZOoK7XEeOIc9h626Utvg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Constraint"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_W9ZOoK7XEeOIc9h626Utvg" name="Constraint_Unimplementable" memberEnd="_W9Z1sK7XEeOIc9h626Utvg _W9Z1sa7XEeOIc9h626Utvg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_W9Z1sK7XEeOIc9h626Utvg" name="extension_Unimplementable" type="_Vcn_cK7XEeOIc9h626Utvg" aggregation="composite" association="_W9ZOoK7XEeOIc9h626Utvg"/>
     </packagedElement>
     <profileApplication xmi:id="_ud74ACCuEd-RxoWH9gAx2A">
       <eAnnotations xmi:id="_ud8fECCuEd-RxoWH9gAx2A" source="http://www.eclipse.org/uml2/2.0.0/UML">
