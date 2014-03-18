@@ -30,6 +30,16 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.OCLConstraintConstraints
+ * org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.OCLConstraintConstraints
+ * (memberEnd->size() = 2) and
+ * -- check for non-null name detects an unresolved proxy
+ * memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined())
+ * org.openhealthtools.mdht.uml.cda.validation.internal.packages.PackageImportConstraints
+ * org.openhealthtools.mdht.uml.cda.validation.internal.packages.PackageImportConstraints
+ * org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.PropertyConstraints
+ * <!-- end-model-doc -->
  * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory
  * @model kind="package"
@@ -576,6 +586,77 @@ public interface CDAPackage extends EPackage {
 		EReference PARTICIPATION__TYPE_CODE = eINSTANCE.getParticipation_TypeCode();
 
 		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl
+		 * <em>Logical Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalConstraint()
+		 * @generated
+		 */
+		EClass LOGICAL_CONSTRAINT = eINSTANCE.getLogicalConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute LOGICAL_CONSTRAINT__OPERATION = eINSTANCE.getLogicalConstraint_Operation();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl <em>Inline</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getInline()
+		 * @generated
+		 */
+		EClass INLINE = eINSTANCE.getInline();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference INLINE__BASE_CLASS = eINSTANCE.getInline_Base_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute INLINE__FILTER = eINSTANCE.getInline_Filter();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl <em>Unimplementable</em>}'
+		 * class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getUnimplementable()
+		 * @generated
+		 */
+		EClass UNIMPLEMENTABLE = eINSTANCE.getUnimplementable();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference UNIMPLEMENTABLE__BASE_CONSTRAINT = eINSTANCE.getUnimplementable_Base_Constraint();
+
+		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind <em>Severity Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -619,6 +700,17 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum NULL_FLAVOR_KIND = eINSTANCE.getNullFlavorKind();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator <em>Logical Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
+		 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalOperator()
+		 * @generated
+		 */
+		EEnum LOGICAL_OPERATOR = eINSTANCE.getLogicalOperator();
 
 	}
 
@@ -2205,6 +2297,160 @@ public interface CDAPackage extends EPackage {
 	int PARTICIPATION_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl <em>Logical Constraint</em>}'
+	 * class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.LogicalConstraintImpl
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalConstraint()
+	 * @generated
+	 */
+	int LOGICAL_CONSTRAINT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__MESSAGE = CONSTRAINT_VALIDATION__MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Severity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__SEVERITY = CONSTRAINT_VALIDATION__SEVERITY;
+
+	/**
+	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__RULE_ID = CONSTRAINT_VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__MANDATORY = CONSTRAINT_VALIDATION__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__BASE_CONSTRAINT = CONSTRAINT_VALIDATION__BASE_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__OPERATION = CONSTRAINT_VALIDATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Logical Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_VALIDATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl <em>Inline</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getInline()
+	 * @generated
+	 */
+	int INLINE = 19;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE__BASE_CLASS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Filter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE__FILTER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Inline</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl <em>Unimplementable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getUnimplementable()
+	 * @generated
+	 */
+	int UNIMPLEMENTABLE = 20;
+
+	/**
+	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UNIMPLEMENTABLE__BASE_CONSTRAINT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Unimplementable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UNIMPLEMENTABLE_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind <em>Severity Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2213,7 +2459,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getSeverityKind()
 	 * @generated
 	 */
-	int SEVERITY_KIND = 18;
+	int SEVERITY_KIND = 21;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryKind <em>Entry Kind</em>}' enum.
@@ -2224,7 +2470,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryKind()
 	 * @generated
 	 */
-	int ENTRY_KIND = 19;
+	int ENTRY_KIND = 22;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind <em>Entry Relationship Kind</em>}' enum.
@@ -2235,7 +2481,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getEntryRelationshipKind()
 	 * @generated
 	 */
-	int ENTRY_RELATIONSHIP_KIND = 20;
+	int ENTRY_RELATIONSHIP_KIND = 23;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind <em>Null Flavor Kind</em>}' enum.
@@ -2246,7 +2492,18 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getNullFlavorKind()
 	 * @generated
 	 */
-	int NULL_FLAVOR_KIND = 21;
+	int NULL_FLAVOR_KIND = 24;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator <em>Logical Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAPackageImpl#getLogicalOperator()
+	 * @generated
+	 */
+	int LOGICAL_OPERATOR = 25;
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship <em>Act Relationship</em>}'.
@@ -2684,6 +2941,17 @@ public interface CDAPackage extends EPackage {
 	EEnum getNullFlavorKind();
 
 	/**
+	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for enum '<em>Logical Operator</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator
+	 * @generated
+	 */
+	EEnum getLogicalOperator();
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation <em>Participation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2731,6 +2999,89 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getParticipation_TypeCode();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint <em>Logical Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Logical Constraint</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint
+	 * @generated
+	 */
+	EClass getLogicalConstraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation
+	 * <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Operation</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint#getOperation()
+	 * @see #getLogicalConstraint()
+	 * @generated
+	 */
+	EAttribute getLogicalConstraint_Operation();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline <em>Inline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Inline</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline
+	 * @generated
+	 */
+	EClass getInline();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class <em>Base Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Base Class</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class()
+	 * @see #getInline()
+	 * @generated
+	 */
+	EReference getInline_Base_Class();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Filter</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter()
+	 * @see #getInline()
+	 * @generated
+	 */
+	EAttribute getInline_Filter();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable <em>Unimplementable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Unimplementable</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable
+	 * @generated
+	 */
+	EClass getUnimplementable();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable#getBase_Constraint
+	 * <em>Base Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Base Constraint</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable#getBase_Constraint()
+	 * @see #getUnimplementable()
+	 * @generated
+	 */
+	EReference getUnimplementable_Base_Constraint();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation <em>Property Validation</em>}'.

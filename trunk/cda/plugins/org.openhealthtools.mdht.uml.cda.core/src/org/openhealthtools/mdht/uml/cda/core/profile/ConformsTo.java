@@ -60,7 +60,7 @@ public interface ConformsTo extends Validation {
 	 * @return the value of the '<em>Requires Parent Id</em>' attribute.
 	 * @see #setRequiresParentId(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getConformsTo_RequiresParentId()
-	 * @model default="false" ordered="false"
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
 	 * @generated
 	 */
 	boolean isRequiresParentId();
