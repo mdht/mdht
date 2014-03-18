@@ -87,6 +87,8 @@ public interface ICDAProfileConstants {
 	 */
 	public static final String CONSTRAINT_VALIDATION = "ConstraintValidation";
 
+	public static final String LOGICAL_CONSTRAINT = "LogicalConstraint";
+
 	/*
 	 * Vocab Specification Stereotype and Properties
 	 */

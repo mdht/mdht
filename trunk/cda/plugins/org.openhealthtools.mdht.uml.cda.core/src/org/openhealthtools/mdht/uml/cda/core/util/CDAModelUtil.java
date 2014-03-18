@@ -1016,15 +1016,8 @@ public class CDAModelUtil {
 
 	private static void appendPropertyComments(PrintWriter writer, Property property, boolean markup) {
 
-		String[] ol;
-		String[] li;
-
 		if (markup) {
-			ol = OL;
-			li = LI;
 		} else {
-			ol = NOOL;
-			li = NOLI;
 		}
 
 		// INLINE
@@ -1209,8 +1202,6 @@ public class CDAModelUtil {
 		String keyword = getValidationKeyword(property, codeSystemConstraintStereotype);
 		String id = null;
 		String name = null;
-		String version = null;
-		BindingKind binding = null;
 		String code = null;
 		String displayName = null;
 
@@ -1219,14 +1210,14 @@ public class CDAModelUtil {
 				CodeSystemVersion codeSystemVersion = codeSystemConstraint.getReference();
 				id = codeSystemVersion.getIdentifier();
 				name = codeSystemVersion.getEnumerationName();
-				version = codeSystemVersion.getVersion();
+				codeSystemVersion.getVersion();
 			} else {
 				id = codeSystemConstraint.getIdentifier();
 				name = codeSystemConstraint.getName();
-				version = codeSystemConstraint.getVersion();
+				codeSystemConstraint.getVersion();
 			}
 
-			binding = codeSystemConstraint.getBinding();
+			codeSystemConstraint.getBinding();
 			code = codeSystemConstraint.getCode();
 			displayName = codeSystemConstraint.getDisplayName();
 		}

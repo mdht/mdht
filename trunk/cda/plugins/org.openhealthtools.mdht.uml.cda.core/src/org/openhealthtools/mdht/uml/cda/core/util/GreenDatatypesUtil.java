@@ -55,43 +55,43 @@ public class GreenDatatypesUtil {
 
 	public String mapToGreenType(String typeName) {
 		String greenTypeName = null;
-		if ("AD".equals(typeName))
+		if ("AD".equals(typeName)) {
 			greenTypeName = "PostalAddress";
-		else if ("ED".equals(typeName))
+		} else if ("ED".equals(typeName)) {
 			greenTypeName = "EncapsulatedData";
-		else if ("CD".equals(typeName))
+		} else if ("CD".equals(typeName)) {
 			greenTypeName = "ConceptDescriptor";
-		else if ("CE".equals(typeName))
+		} else if ("CE".equals(typeName)) {
 			greenTypeName = "CodedWithEquivalents";
-		else if ("CS".equals(typeName))
+		} else if ("CS".equals(typeName)) {
 			greenTypeName = "CodedSimpleValue";
-		else if ("II".equals(typeName))
+		} else if ("II".equals(typeName)) {
 			greenTypeName = "InstanceIdentifier";
-		else if ("ON".equals(typeName))
+		} else if ("ON".equals(typeName)) {
 			greenTypeName = "OrganizationName";
-		else if ("PN".equals(typeName))
+		} else if ("PN".equals(typeName)) {
 			greenTypeName = "PersonName";
-		else if ("PQ".equals(typeName))
+		} else if ("PQ".equals(typeName)) {
 			greenTypeName = "PhysicalQuantity";
-		else if ("INT".equals(typeName))
+		} else if ("INT".equals(typeName)) {
 			greenTypeName = "IntegerNumber";
-		else if ("IVL_INT".equals(typeName))
+		} else if ("IVL_INT".equals(typeName)) {
 			greenTypeName = "IntervalOfInteger";
-		else if ("MO".equals(typeName))
+		} else if ("MO".equals(typeName)) {
 			greenTypeName = "MonetaryAmount";
-		else if ("TS".equals(typeName))
+		} else if ("TS".equals(typeName)) {
 			greenTypeName = "Timestamp";
-		else if ("IVL_TS".equals(typeName))
+		} else if ("IVL_TS".equals(typeName)) {
 			greenTypeName = "IntervalOfTimestamps";
-		else if ("SXCM_TS".equals(typeName))
+		} else if ("SXCM_TS".equals(typeName)) {
 			greenTypeName = "IntervalOfTimestamps";
-		else if ("TEL".equals(typeName))
+		} else if ("TEL".equals(typeName)) {
 			greenTypeName = "TelecomAddress";
-		else if ("RTO_PQ_PQ".equals(typeName))
+		} else if ("RTO_PQ_PQ".equals(typeName)) {
 			greenTypeName = "Ratio";
-
-		else
+		} else {
 			greenTypeName = typeName;
+		}
 
 		return greenTypeName;
 	}
