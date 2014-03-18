@@ -448,7 +448,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 		}
 	}
 
-	private boolean isTypeString(Type type) {
+	public boolean isTypeString(Type type) {
 		Stereotype eDataType = EcoreTransformUtil.getEcoreStereotype(
 			type, org.eclipse.uml2.uml.util.UMLUtil.STEREOTYPE__E_DATA_TYPE);
 		String instanceClassName = null;
