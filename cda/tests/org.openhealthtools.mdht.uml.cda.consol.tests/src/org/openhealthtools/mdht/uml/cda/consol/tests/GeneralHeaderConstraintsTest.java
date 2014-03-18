@@ -5632,7 +5632,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateGeneralHeaderConstraintsInformationRecipientIntendedRecipientRecievedOrganization() {
+	public void testValidateGeneralHeaderConstraintsInformationRecipientIntendedRecipientReceivedOrganization() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsInformationRecipientIntendedRecipientRecievedOrganizationTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
 			"validateGeneralHeaderConstraintsInformationRecipientIntendedRecipientRecievedOrganization",
 			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_INFORMATION_RECIPIENT_INTENDED_RECIPIENT_RECIEVED_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -5668,7 +5668,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsInformationRecipientIntendedRecipientRecievedOrganization(
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsInformationRecipientIntendedRecipientReceivedOrganization(
 					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 			}
 
