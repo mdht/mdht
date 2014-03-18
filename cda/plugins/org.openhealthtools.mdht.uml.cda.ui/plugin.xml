@@ -132,6 +132,14 @@
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignConformanceRuleIdsAction">
 			</action>
 			
+			
+			<action label="%createLogicalConstraint.label"
+				class="org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.openSubclassEditorAction">
+			</action>
+			
+			
 			<!-- This menu location is deprated and will be removed in next release. Now contributed by uml.ui -->
 			<action label="%openTemplateEditor.label"
 				class="org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction"
@@ -167,6 +175,7 @@
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignConformanceRuleIdsAction"
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignConformanceRuleIdsAction">
+				
 			</action>
 		</objectContribution>
 		
@@ -185,6 +194,74 @@
         </objectContribution>
 	</extension>
 	
+	<extension point="org.eclipse.ui.commands">
+
+	<command  id="org.openhealthtools.mdht.uml.cda.ui.commands.createLogicalConstraint" name="PDF" defaultHandler="org.openhealthtools.mdht.uml.cda.ui.handlers.CreateLogicalConstraintHandler" >
+		<commandParameter id="org.openhealthtools.mdht.uml.cda.ui.commands.logical.operator" name="operator" />
+    </command>
+    
+    </extension>
+	
+	   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=group.new">
+            
+              <menu label="%createLogicalConstraint.label">
+              
+              
+              
+         <command
+               commandId="org.openhealthtools.mdht.uml.cda.ui.commands.createLogicalConstraint"
+               label="AND"
+               icon="icons/full/obj16/Class.gif">
+               	<parameter name="org.openhealthtools.mdht.uml.cda.ui.commands.logical.operator" value="AND" />
+           <visibleWhen
+                  checkEnabled="false">
+ 
+            </visibleWhen>
+         </command>
+         
+              <command
+               commandId="org.openhealthtools.mdht.uml.cda.ui.commands.createLogicalConstraint"
+               label="OR"
+               icon="icons/full/obj16/Class.gif">
+               	<parameter name="org.openhealthtools.mdht.uml.cda.ui.commands.logical.operator" value="OR" />
+            <visibleWhen checkEnabled="false"/>
+         </command>
+         
+         
+                 <command
+               commandId="org.openhealthtools.mdht.uml.cda.ui.commands.createLogicalConstraint"
+               label="Exclusive OR"
+               icon="icons/full/obj16/Class.gif">
+               	<parameter name="org.openhealthtools.mdht.uml.cda.ui.commands.logical.operator" value="XOR" />
+            <visibleWhen checkEnabled="false"/>
+         </command>
+         
+                       <command
+               commandId="org.openhealthtools.mdht.uml.cda.ui.commands.createLogicalConstraint"
+               label="If ... Then ..."
+               icon="icons/full/obj16/Class.gif">
+               	<parameter name="org.openhealthtools.mdht.uml.cda.ui.commands.logical.operator" value="IFTHEN" />
+            <visibleWhen checkEnabled="false"/>
+         </command>
+         
+                             <command
+               commandId="org.openhealthtools.mdht.uml.cda.ui.commands.createLogicalConstraint"
+               label="Not Both"
+               icon="icons/full/obj16/Class.gif">
+               	<parameter name="org.openhealthtools.mdht.uml.cda.ui.commands.logical.operator" value="NOTBOTH" />
+            <visibleWhen checkEnabled="true"/>
+         </command>
+         
+         
+         </menu>
+      </menuContribution>
+   </extension>
+	
+
+   
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution adaptable="true"
 			objectClass="org.eclipse.core.runtime.IAdaptable"
@@ -348,5 +425,6 @@
             name="CDA Analyzer">
       </editor>
    </extension>
+ 
             
 </plugin>
