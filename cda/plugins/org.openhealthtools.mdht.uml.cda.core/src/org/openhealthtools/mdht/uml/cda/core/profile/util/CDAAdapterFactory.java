@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.openhealthtools.mdht.uml.cda.core.profile.*;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
@@ -64,8 +65,8 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected CDASwitch<Adapter> modelSwitch = new CDASwitch<Adapter>() {
 		@Override
-		public Adapter caseActRelationship(ActRelationship object) {
-			return createActRelationshipAdapter();
+		public Adapter caseEntry(Entry object) {
+			return createEntryAdapter();
 		}
 
 		@Override
@@ -74,43 +75,8 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCDATemplate(CDATemplate object) {
-			return createCDATemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseClassValidation(ClassValidation object) {
-			return createClassValidationAdapter();
-		}
-
-		@Override
-		public Adapter caseCodegenSupport(CodegenSupport object) {
-			return createCodegenSupportAdapter();
-		}
-
-		@Override
-		public Adapter caseCodeSystemConstraint(CodeSystemConstraint object) {
-			return createCodeSystemConstraintAdapter();
-		}
-
-		@Override
-		public Adapter caseConceptDomainConstraint(ConceptDomainConstraint object) {
-			return createConceptDomainConstraintAdapter();
-		}
-
-		@Override
-		public Adapter caseConformsTo(ConformsTo object) {
-			return createConformsToAdapter();
-		}
-
-		@Override
-		public Adapter caseConstraintValidation(ConstraintValidation object) {
-			return createConstraintValidationAdapter();
-		}
-
-		@Override
-		public Adapter caseEntry(Entry object) {
-			return createEntryAdapter();
+		public Adapter caseValidation(Validation object) {
+			return createValidationAdapter();
 		}
 
 		@Override
@@ -119,13 +85,8 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseNullFlavor(NullFlavor object) {
-			return createNullFlavorAdapter();
-		}
-
-		@Override
-		public Adapter caseParticipation(Participation object) {
-			return createParticipationAdapter();
+		public Adapter caseCodegenSupport(CodegenSupport object) {
+			return createCodegenSupportAdapter();
 		}
 
 		@Override
@@ -134,9 +95,78 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTerm_CodeSystemConstraint(
-				org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint object) {
-			return createTerm_CodeSystemConstraintAdapter();
+		public Adapter caseClassValidation(ClassValidation object) {
+			return createClassValidationAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabSpecification(VocabSpecification object) {
+			return createVocabSpecificationAdapter();
+		}
+
+		@Override
+		public Adapter caseNullFlavor(NullFlavor object) {
+			return createNullFlavorAdapter();
+		}
+
+		@Override
+		public Adapter caseTextValue(TextValue object) {
+			return createTextValueAdapter();
+		}
+
+		@Override
+		public Adapter caseCDATemplate(CDATemplate object) {
+			return createCDATemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseConstraintValidation(ConstraintValidation object) {
+			return createConstraintValidationAdapter();
+		}
+
+		@Override
+		public Adapter caseConformsTo(ConformsTo object) {
+			return createConformsToAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDomainConstraint(ConceptDomainConstraint object) {
+			return createConceptDomainConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemConstraint(CodeSystemConstraint object) {
+			return createCodeSystemConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetConstraint(ValueSetConstraint object) {
+			return createValueSetConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseActRelationship(ActRelationship object) {
+			return createActRelationshipAdapter();
+		}
+
+		@Override
+		public Adapter caseParticipation(Participation object) {
+			return createParticipationAdapter();
+		}
+
+		@Override
+		public Adapter caseLogicalConstraint(LogicalConstraint object) {
+			return createLogicalConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseInline(Inline object) {
+			return createInlineAdapter();
+		}
+
+		@Override
+		public Adapter caseUnimplementable(Unimplementable object) {
+			return createUnimplementableAdapter();
 		}
 
 		@Override
@@ -146,29 +176,15 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTerm_CodeSystemConstraint(
+				org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint object) {
+			return createTerm_CodeSystemConstraintAdapter();
+		}
+
+		@Override
 		public Adapter caseTerm_ValueSetConstraint(
 				org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint object) {
 			return createTerm_ValueSetConstraintAdapter();
-		}
-
-		@Override
-		public Adapter caseTextValue(TextValue object) {
-			return createTextValueAdapter();
-		}
-
-		@Override
-		public Adapter caseValidation(Validation object) {
-			return createValidationAdapter();
-		}
-
-		@Override
-		public Adapter caseValueSetConstraint(ValueSetConstraint object) {
-			return createValueSetConstraintAdapter();
-		}
-
-		@Override
-		public Adapter caseVocabSpecification(VocabSpecification object) {
-			return createVocabSpecificationAdapter();
 		}
 
 		@Override
@@ -415,6 +431,52 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParticipationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint
+	 * <em>Logical Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint
+	 * @generated
+	 */
+	public Adapter createLogicalConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline <em>Inline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline
+	 * @generated
+	 */
+	public Adapter createInlineAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable <em>Unimplementable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable
+	 * @generated
+	 */
+	public Adapter createUnimplementableAdapter() {
 		return null;
 	}
 

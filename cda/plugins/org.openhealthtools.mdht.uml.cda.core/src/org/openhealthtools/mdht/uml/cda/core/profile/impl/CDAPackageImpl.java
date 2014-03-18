@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.uml2.types.TypesPackage;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
@@ -34,12 +35,16 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalOperator;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
+import org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
@@ -203,6 +208,30 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * 
 	 * @generated
 	 */
+	private EClass logicalConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass inlineEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass unimplementableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	private EEnum severityKindEEnum = null;
 
 	/**
@@ -228,6 +257,14 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	private EEnum nullFlavorKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EEnum logicalOperatorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -397,11 +434,22 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		createEReference(participationEClass, PARTICIPATION__ASSOCIATION_TYPE);
 		createEReference(participationEClass, PARTICIPATION__TYPE_CODE);
 
+		logicalConstraintEClass = createEClass(LOGICAL_CONSTRAINT);
+		createEAttribute(logicalConstraintEClass, LOGICAL_CONSTRAINT__OPERATION);
+
+		inlineEClass = createEClass(INLINE);
+		createEReference(inlineEClass, INLINE__BASE_CLASS);
+		createEAttribute(inlineEClass, INLINE__FILTER);
+
+		unimplementableEClass = createEClass(UNIMPLEMENTABLE);
+		createEReference(unimplementableEClass, UNIMPLEMENTABLE__BASE_CONSTRAINT);
+
 		// Create enums
 		severityKindEEnum = createEEnum(SEVERITY_KIND);
 		entryKindEEnum = createEEnum(ENTRY_KIND);
 		entryRelationshipKindEEnum = createEEnum(ENTRY_RELATIONSHIP_KIND);
 		nullFlavorKindEEnum = createEEnum(NULL_FLAVOR_KIND);
+		logicalOperatorEEnum = createEEnum(LOGICAL_OPERATOR);
 	}
 
 	/**
@@ -770,6 +818,16 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * 
 	 * @generated
 	 */
+	public EEnum getLogicalOperator() {
+		return logicalOperatorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getParticipation() {
 		return participationEClass;
 	}
@@ -802,6 +860,76 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EReference getParticipation_TypeCode() {
 		return (EReference) participationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getLogicalConstraint() {
+		return logicalConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getLogicalConstraint_Operation() {
+		return (EAttribute) logicalConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getInline() {
+		return inlineEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getInline_Base_Class() {
+		return (EReference) inlineEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getInline_Filter() {
+		return (EAttribute) inlineEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getUnimplementable() {
+		return unimplementableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getUnimplementable_Base_Constraint() {
+		return (EReference) unimplementableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1005,6 +1133,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		// Obtain other dependent packages
 		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		TermPackage theTermPackage = (TermPackage) EPackage.Registry.INSTANCE.getEPackage(TermPackage.eNS_URI);
 
 		// Create type parameters
@@ -1029,6 +1158,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		codeSystemConstraintEClass.getESuperTypes().add(this.getValidation());
 		valueSetConstraintEClass.getESuperTypes().add(theTermPackage.getValueSetConstraint());
 		valueSetConstraintEClass.getESuperTypes().add(this.getValidation());
+		logicalConstraintEClass.getESuperTypes().add(this.getConstraintValidation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(entryEClass, Entry.class, "Entry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1047,16 +1177,16 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			validationEClass, Validation.class, "Validation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getValidation_Message(), ecorePackage.getEString(), "message", null, 0, 1, Validation.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+			getValidation_Message(), theTypesPackage.getString(), "message", null, 0, 1, Validation.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getValidation_Severity(), this.getSeverityKind(), "severity", null, 0, 1, Validation.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getValidation_RuleId(), ecorePackage.getEString(), "ruleId", null, 0, -1, Validation.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+			getValidation_RuleId(), theTypesPackage.getString(), "ruleId", null, 0, -1, Validation.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getValidation_Mandatory(), ecorePackage.getEBoolean(), "mandatory", "false", 0, 1, Validation.class,
+			getValidation_Mandatory(), theTypesPackage.getBoolean(), "mandatory", "false", 0, 1, Validation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
@@ -1071,21 +1201,21 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			codegenSupportEClass, CodegenSupport.class, "CodegenSupport", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getCodegenSupport_BasePackage(), ecorePackage.getEString(), "basePackage", null, 0, 1,
+			getCodegenSupport_BasePackage(), theTypesPackage.getString(), "basePackage", null, 0, 1,
 			CodegenSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_NsPrefix(), ecorePackage.getEString(), "nsPrefix", null, 0, 1, CodegenSupport.class,
+			getCodegenSupport_NsPrefix(), theTypesPackage.getString(), "nsPrefix", null, 0, 1, CodegenSupport.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_NsURI(), ecorePackage.getEString(), "nsURI", null, 0, 1, CodegenSupport.class,
+			getCodegenSupport_NsURI(), theTypesPackage.getString(), "nsURI", null, 0, 1, CodegenSupport.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1,
+			getCodegenSupport_PackageName(), theTypesPackage.getString(), "packageName", null, 0, 1,
 			CodegenSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, CodegenSupport.class,
+			getCodegenSupport_Prefix(), theTypesPackage.getString(), "prefix", null, 0, 1, CodegenSupport.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(
 			getCodegenSupport_Base_Namespace(), theUMLPackage.getNamespace(), null, "base_Namespace", null, 1, 1,
@@ -1112,22 +1242,22 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			vocabSpecificationEClass, VocabSpecification.class, "VocabSpecification", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getVocabSpecification_Code(), ecorePackage.getEString(), "code", null, 0, 1, VocabSpecification.class,
+			getVocabSpecification_Code(), theTypesPackage.getString(), "code", null, 0, 1, VocabSpecification.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_CodeSystem(), ecorePackage.getEString(), "codeSystem", null, 0, 1,
+			getVocabSpecification_CodeSystem(), theTypesPackage.getString(), "codeSystem", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_CodeSystemName(), ecorePackage.getEString(), "codeSystemName", null, 0, 1,
+			getVocabSpecification_CodeSystemName(), theTypesPackage.getString(), "codeSystemName", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_CodeSystemVersion(), ecorePackage.getEString(), "codeSystemVersion", null, 0, 1,
+			getVocabSpecification_CodeSystemVersion(), theTypesPackage.getString(), "codeSystemVersion", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1,
+			getVocabSpecification_DisplayName(), theTypesPackage.getString(), "displayName", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
@@ -1140,24 +1270,24 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			textValueEClass, TextValue.class, "TextValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getTextValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextValue.class, !IS_TRANSIENT,
+			getTextValue_Value(), theTypesPackage.getString(), "value", null, 0, 1, TextValue.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getTextValue_IgnoreCase(), ecorePackage.getEBoolean(), "ignoreCase", "false", 0, 1, TextValue.class,
+			getTextValue_IgnoreCase(), theTypesPackage.getBoolean(), "ignoreCase", "false", 0, 1, TextValue.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			cdaTemplateEClass, CDATemplate.class, "CDATemplate", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getCDATemplate_TemplateId(), ecorePackage.getEString(), "templateId", null, 0, 1, CDATemplate.class,
+			getCDATemplate_TemplateId(), theTypesPackage.getString(), "templateId", null, 0, 1, CDATemplate.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCDATemplate_AssigningAuthorityName(), ecorePackage.getEString(), "assigningAuthorityName", null, 0, 1,
+			getCDATemplate_AssigningAuthorityName(), theTypesPackage.getString(), "assigningAuthorityName", null, 0, 1,
 			CDATemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCDATemplate_ContextDependent(), ecorePackage.getEBoolean(), "contextDependent", "false", 0, 1,
+			getCDATemplate_ContextDependent(), theTypesPackage.getBoolean(), "contextDependent", "false", 0, 1,
 			CDATemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
@@ -1176,7 +1306,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			1, 1, ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getConformsTo_RequiresParentId(), ecorePackage.getEBoolean(), "requiresParentId", "false", 0, 1,
+			getConformsTo_RequiresParentId(), theTypesPackage.getBoolean(), "requiresParentId", "false", 0, 1,
 			ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
@@ -1224,6 +1354,31 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(
+			logicalConstraintEClass, LogicalConstraint.class, "LogicalConstraint", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(
+			getLogicalConstraint_Operation(), this.getLogicalOperator(), "operation", null, 1, 1,
+			LogicalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+			!IS_DERIVED, !IS_ORDERED);
+
+		initEClass(inlineEClass, Inline.class, "Inline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(
+			getInline_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Inline.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getInline_Filter(), theTypesPackage.getString(), "filter", null, 0, 1, Inline.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(
+			unimplementableEClass, Unimplementable.class, "Unimplementable", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEReference(
+			getUnimplementable_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint", null, 1, 1,
+			Unimplementable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(severityKindEEnum, SeverityKind.class, "SeverityKind");
 		addEEnumLiteral(severityKindEEnum, SeverityKind.ERROR);
@@ -1260,6 +1415,13 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		addEEnumLiteral(nullFlavorKindEEnum, NullFlavorKind.TRC);
 		addEEnumLiteral(nullFlavorKindEEnum, NullFlavorKind.UNC);
 		addEEnumLiteral(nullFlavorKindEEnum, NullFlavorKind.UNK);
+
+		initEEnum(logicalOperatorEEnum, LogicalOperator.class, "LogicalOperator");
+		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.AND);
+		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.OR);
+		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.XOR);
+		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.IFTHEN);
+		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.NOTBOTH);
 
 		// Create resource
 		createResource(eNS_URI);

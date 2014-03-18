@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.core.profile.*;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory;
@@ -71,7 +72,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 */
 	public static CDAFactory init() {
 		try {
-			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/schemas/cda/4");
+			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory(CDAPackage.eNS_URI);
 			if (theCDAFactory != null) {
 				return theCDAFactory;
 			}
@@ -134,6 +135,33 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 * 
 	 * @generated
 	 */
+	public LogicalOperator createLogicalOperatorFromString(EDataType eDataType, String initialValue) {
+		LogicalOperator result = LogicalOperator.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertLogicalOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public String convertSeverityKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null
 				? null
@@ -157,6 +185,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 				return convertEntryRelationshipKindToString(eDataType, instanceValue);
 			case CDAPackage.NULL_FLAVOR_KIND:
 				return convertNullFlavorKindToString(eDataType, instanceValue);
+			case CDAPackage.LOGICAL_OPERATOR:
+				return convertLogicalOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
 						"' is not a valid classifier");
@@ -206,6 +236,12 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 				return createActRelationship();
 			case CDAPackage.PARTICIPATION:
 				return createParticipation();
+			case CDAPackage.LOGICAL_CONSTRAINT:
+				return createLogicalConstraint();
+			case CDAPackage.INLINE:
+				return createInline();
+			case CDAPackage.UNIMPLEMENTABLE:
+				return createUnimplementable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -379,6 +415,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 				return createEntryRelationshipKindFromString(eDataType, initialValue);
 			case CDAPackage.NULL_FLAVOR_KIND:
 				return createNullFlavorKindFromString(eDataType, initialValue);
+			case CDAPackage.LOGICAL_OPERATOR:
+				return createLogicalOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
 						"' is not a valid classifier");
@@ -420,6 +458,39 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public Participation createParticipation() {
 		ParticipationImpl participation = new ParticipationImpl();
 		return participation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public LogicalConstraint createLogicalConstraint() {
+		LogicalConstraintImpl logicalConstraint = new LogicalConstraintImpl();
+		return logicalConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Inline createInline() {
+		InlineImpl inline = new InlineImpl();
+		return inline;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Unimplementable createUnimplementable() {
+		UnimplementableImpl unimplementable = new UnimplementableImpl();
+		return unimplementable;
 	}
 
 	/**
