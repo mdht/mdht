@@ -28,9 +28,8 @@ import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformClass;
-import org.openhealthtools.mdht.uml.transform.ecore.TransformConstraint;
-import org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedClasses;
+import org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformPackage;
 
 /**
@@ -114,7 +113,7 @@ public class EcoreTransformer extends CDAAbstractTransformer {
 
 		transformPackage = new TransformPackage(transformerOptions, baseModelReflection);
 		transformClass = new TransformClass(transformerOptions, baseModelReflection);
-		transformConstraint = new TransformConstraint(transformerOptions, baseModelReflection);
+		transformConstraint = new TransformLogicalConstraint(transformerOptions, baseModelReflection);
 		transformClinicalDocument = new TransformClinicalDocument(transformerOptions, baseModelReflection);
 		transformTemplateIdentifier = new TransformTemplateIdentifier(transformerOptions, baseModelReflection);
 		transformPropertyConstraint = new TransformCDAPropertyConstraint(transformerOptions, baseModelReflection);

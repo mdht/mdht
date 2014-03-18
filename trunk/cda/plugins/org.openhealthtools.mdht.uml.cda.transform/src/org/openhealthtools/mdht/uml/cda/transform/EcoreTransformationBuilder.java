@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.transform.ecore.BaseEcoreTransformationBuild
 import org.openhealthtools.mdht.uml.transform.ecore.BaseEcoreTransformationBuilder.IRuleOverrideProvider;
 import org.openhealthtools.mdht.uml.transform.ecore.IEcoreTransformIDs;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformAssociation;
+import org.openhealthtools.mdht.uml.transform.ecore.TransformConstraint;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformPropertyConstraint;
 
@@ -63,6 +64,8 @@ public class EcoreTransformationBuilder extends TransformationBuilder {
 				} else if (rule == TransformInlinedProperties.class) {
 					// Use the CDA Inline transformation
 					result = TransformCDAInlineProperties.class.asSubclass(rule);
+				} else if (rule == TransformConstraint.class) {
+					result = TransformLogicalConstraint.class.asSubclass(rule);
 				}
 
 				return result;
