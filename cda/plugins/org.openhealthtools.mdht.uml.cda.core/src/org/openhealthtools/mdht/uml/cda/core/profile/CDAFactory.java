@@ -164,6 +164,36 @@ public interface CDAFactory extends EFactory {
 	Participation createParticipation();
 
 	/**
+	 * Returns a new object of class '<em>Logical Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Logical Constraint</em>'.
+	 * @generated
+	 */
+	LogicalConstraint createLogicalConstraint();
+
+	/**
+	 * Returns a new object of class '<em>Inline</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Inline</em>'.
+	 * @generated
+	 */
+	Inline createInline();
+
+	/**
+	 * Returns a new object of class '<em>Unimplementable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Unimplementable</em>'.
+	 * @generated
+	 */
+	Unimplementable createUnimplementable();
+
+	/**
 	 * Returns a new object of class '<em>Property Validation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

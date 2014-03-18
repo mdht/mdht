@@ -41,7 +41,7 @@ public interface TextValue extends PropertyValidation {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getTextValue_Value()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getValue();
@@ -58,7 +58,7 @@ public interface TextValue extends PropertyValidation {
 	 * @return the value of the '<em>Ignore Case</em>' attribute.
 	 * @see #setIgnoreCase(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getTextValue_IgnoreCase()
-	 * @model default="false" ordered="false"
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
 	 * @generated
 	 */
 	boolean isIgnoreCase();

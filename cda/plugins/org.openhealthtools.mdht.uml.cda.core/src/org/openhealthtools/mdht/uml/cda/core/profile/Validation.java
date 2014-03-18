@@ -46,7 +46,7 @@ public interface Validation extends EObject {
 	 * @return the value of the '<em>Message</em>' attribute.
 	 * @see #setMessage(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidation_Message()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getMessage();
@@ -62,7 +62,7 @@ public interface Validation extends EObject {
 	 * 
 	 * @return the value of the '<em>Rule Id</em>' attribute list.
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidation_RuleId()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	EList<String> getRuleId();
@@ -97,7 +97,7 @@ public interface Validation extends EObject {
 	 * @return the value of the '<em>Mandatory</em>' attribute.
 	 * @see #setMandatory(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidation_Mandatory()
-	 * @model default="false" ordered="false"
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
 	 * @generated
 	 */
 	boolean isMandatory();
