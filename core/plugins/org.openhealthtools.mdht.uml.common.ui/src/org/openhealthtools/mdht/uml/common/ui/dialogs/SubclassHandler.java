@@ -26,16 +26,16 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class SubclassHandler {
-	private Shell shell;
+	protected Shell shell;
 
 	// subclass is the class that user selected to edit
 	private Class subclass;
 
-	private SubclassEditorViewContentProvider contentProvider;
+	protected SubclassEditorViewContentProvider contentProvider;
 
-	private SubclassEditorViewLabelProvider labelProvider;
+	protected SubclassEditorViewLabelProvider labelProvider;
 
-	private SubclassEditorDialog subclassDialog;
+	protected SubclassEditorDialog subclassDialog;
 
 	public SubclassHandler(Shell shell, Class subclass, SubclassEditorViewContentProvider contentProvider,
 			SubclassEditorViewLabelProvider labelProvider) {
@@ -68,7 +68,7 @@ public class SubclassHandler {
 		return resultStatus;
 	}
 
-	private SubclassEditorDialog createSubclassDialog() {
+	protected SubclassEditorDialog createSubclassDialog() {
 		SubclassEditorDialog subclassDialog = new SubclassEditorDialog(
 			shell, labelProvider, contentProvider, getSubclass());
 		// set the subclass attributes based on the tree viewer checked elements.
