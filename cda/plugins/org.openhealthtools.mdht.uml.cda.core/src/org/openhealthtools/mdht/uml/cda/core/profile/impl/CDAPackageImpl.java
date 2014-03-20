@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.uml2.types.TypesPackage;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
@@ -1133,7 +1132,6 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		// Obtain other dependent packages
 		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		TermPackage theTermPackage = (TermPackage) EPackage.Registry.INSTANCE.getEPackage(TermPackage.eNS_URI);
 
 		// Create type parameters
@@ -1177,16 +1175,16 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			validationEClass, Validation.class, "Validation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getValidation_Message(), theTypesPackage.getString(), "message", null, 0, 1, Validation.class,
-			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+			getValidation_Message(), ecorePackage.getEString(), "message", null, 0, 1, Validation.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
 			getValidation_Severity(), this.getSeverityKind(), "severity", null, 0, 1, Validation.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getValidation_RuleId(), theTypesPackage.getString(), "ruleId", null, 0, -1, Validation.class,
-			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+			getValidation_RuleId(), ecorePackage.getEString(), "ruleId", null, 0, -1, Validation.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getValidation_Mandatory(), theTypesPackage.getBoolean(), "mandatory", "false", 0, 1, Validation.class,
+			getValidation_Mandatory(), ecorePackage.getEBoolean(), "mandatory", "false", 0, 1, Validation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
@@ -1201,21 +1199,21 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			codegenSupportEClass, CodegenSupport.class, "CodegenSupport", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getCodegenSupport_BasePackage(), theTypesPackage.getString(), "basePackage", null, 0, 1,
+			getCodegenSupport_BasePackage(), ecorePackage.getEString(), "basePackage", null, 0, 1,
 			CodegenSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_NsPrefix(), theTypesPackage.getString(), "nsPrefix", null, 0, 1, CodegenSupport.class,
+			getCodegenSupport_NsPrefix(), ecorePackage.getEString(), "nsPrefix", null, 0, 1, CodegenSupport.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_NsURI(), theTypesPackage.getString(), "nsURI", null, 0, 1, CodegenSupport.class,
+			getCodegenSupport_NsURI(), ecorePackage.getEString(), "nsURI", null, 0, 1, CodegenSupport.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_PackageName(), theTypesPackage.getString(), "packageName", null, 0, 1,
+			getCodegenSupport_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1,
 			CodegenSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCodegenSupport_Prefix(), theTypesPackage.getString(), "prefix", null, 0, 1, CodegenSupport.class,
+			getCodegenSupport_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, CodegenSupport.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(
 			getCodegenSupport_Base_Namespace(), theUMLPackage.getNamespace(), null, "base_Namespace", null, 1, 1,
@@ -1242,22 +1240,22 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			vocabSpecificationEClass, VocabSpecification.class, "VocabSpecification", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getVocabSpecification_Code(), theTypesPackage.getString(), "code", null, 0, 1, VocabSpecification.class,
+			getVocabSpecification_Code(), ecorePackage.getEString(), "code", null, 0, 1, VocabSpecification.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_CodeSystem(), theTypesPackage.getString(), "codeSystem", null, 0, 1,
+			getVocabSpecification_CodeSystem(), ecorePackage.getEString(), "codeSystem", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_CodeSystemName(), theTypesPackage.getString(), "codeSystemName", null, 0, 1,
+			getVocabSpecification_CodeSystemName(), ecorePackage.getEString(), "codeSystemName", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_CodeSystemVersion(), theTypesPackage.getString(), "codeSystemVersion", null, 0, 1,
+			getVocabSpecification_CodeSystemVersion(), ecorePackage.getEString(), "codeSystemVersion", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getVocabSpecification_DisplayName(), theTypesPackage.getString(), "displayName", null, 0, 1,
+			getVocabSpecification_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1,
 			VocabSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
@@ -1270,24 +1268,24 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(
 			textValueEClass, TextValue.class, "TextValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getTextValue_Value(), theTypesPackage.getString(), "value", null, 0, 1, TextValue.class, !IS_TRANSIENT,
+			getTextValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextValue.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getTextValue_IgnoreCase(), theTypesPackage.getBoolean(), "ignoreCase", "false", 0, 1, TextValue.class,
+			getTextValue_IgnoreCase(), ecorePackage.getEBoolean(), "ignoreCase", "false", 0, 1, TextValue.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			cdaTemplateEClass, CDATemplate.class, "CDATemplate", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getCDATemplate_TemplateId(), theTypesPackage.getString(), "templateId", null, 0, 1, CDATemplate.class,
+			getCDATemplate_TemplateId(), ecorePackage.getEString(), "templateId", null, 0, 1, CDATemplate.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCDATemplate_AssigningAuthorityName(), theTypesPackage.getString(), "assigningAuthorityName", null, 0, 1,
+			getCDATemplate_AssigningAuthorityName(), ecorePackage.getEString(), "assigningAuthorityName", null, 0, 1,
 			CDATemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCDATemplate_ContextDependent(), theTypesPackage.getBoolean(), "contextDependent", "false", 0, 1,
+			getCDATemplate_ContextDependent(), ecorePackage.getEBoolean(), "contextDependent", "false", 0, 1,
 			CDATemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
@@ -1306,7 +1304,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			1, 1, ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getConformsTo_RequiresParentId(), theTypesPackage.getBoolean(), "requiresParentId", "false", 0, 1,
+			getConformsTo_RequiresParentId(), ecorePackage.getEBoolean(), "requiresParentId", "false", 0, 1,
 			ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 
@@ -1368,7 +1366,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 			!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getInline_Filter(), theTypesPackage.getString(), "filter", null, 0, 1, Inline.class, !IS_TRANSIENT,
+			getInline_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, Inline.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
