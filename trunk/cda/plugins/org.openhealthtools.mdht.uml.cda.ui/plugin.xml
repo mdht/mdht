@@ -200,10 +200,33 @@
 		<commandParameter id="org.openhealthtools.mdht.uml.cda.ui.commands.logical.operator" name="operator" />
     </command>
     
+    <command  id="org.openhealthtools.mdht.uml.cda.ui.commands.analyzeCDA" name="ANALYZECDA" defaultHandler="org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler" >
+    </command>
+    
     </extension>
 	
 	   <extension
          point="org.eclipse.ui.menus">
+         
+         
+         
+          <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    
+
+      <command commandId="org.openhealthtools.mdht.uml.cda.ui.commands.analyzeCDA" label="Analyze CDA" id="org.openhealthtools.mdht.uml.cda.ui.menu.analyzeCDA" mnemonic="A">
+
+      	<visibleWhen>
+               <with variable="selection">
+                  <iterate>
+                     <adapt type="org.eclipse.core.resources.IFolder" />
+                  </iterate>
+               </with>
+            </visibleWhen>         
+      </command>    
+      
+    </menuContribution>  
+    
+    
       <menuContribution
             locationURI="popup:org.eclipse.ui.popup.any?after=group.new">
             
@@ -409,7 +432,15 @@
             class="org.openhealthtools.mdht.uml.cda.ui.views.ValidationsView"
             id="org.openhealthtools.mdht.uml.cda.ui.views.validationsview">
       </view>
-
+      
+      <view
+            name="Document Metrics Details"
+            icon="icons/analyzer/analysis.ico"
+            category="cdaanalysis"
+            class="org.openhealthtools.mdht.uml.cda.ui.views.MetricsView"
+            id="org.openhealthtools.mdht.uml.cda.ui.views.metricsview">
+      </view>
+ 
    </extension>
    
    
@@ -424,7 +455,20 @@
             id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
             name="CDA Analyzer">
       </editor>
+      
+         <editor
+            class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xml"
+            icon="icons/analyzer/sample.gif"
+            id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
+            name="CDA Analyzer">
+      </editor>
+      
+      
    </extension>
+ 
+ 
  
             
 </plugin>
