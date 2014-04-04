@@ -99,7 +99,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 		 */
 		public Object getAdapter(Class adapter) {
-			// TODO Auto-generated method stub
+
 			return null;
 		}
 
@@ -109,7 +109,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		 * @see org.eclipse.ui.IEditorInput#exists()
 		 */
 		public boolean exists() {
-			// TODO Auto-generated method stub
+
 			return false;
 		}
 
@@ -119,7 +119,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		 * @see org.eclipse.ui.IEditorInput#getImageDescriptor()
 		 */
 		public ImageDescriptor getImageDescriptor() {
-			// TODO Auto-generated method stub
+
 			return null;
 		}
 
@@ -129,8 +129,8 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		 * @see org.eclipse.ui.IEditorInput#getName()
 		 */
 		public String getName() {
-			// TODO Auto-generated method stub
-			return null;
+
+			return "MDHT CDA Batch Analyzer";
 		}
 
 		/*
@@ -139,7 +139,7 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		 * @see org.eclipse.ui.IEditorInput#getPersistable()
 		 */
 		public IPersistableElement getPersistable() {
-			// TODO Auto-generated method stub
+
 			return null;
 		}
 
@@ -149,8 +149,8 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		 * @see org.eclipse.ui.IEditorInput#getToolTipText()
 		 */
 		public String getToolTipText() {
-			// TODO Auto-generated method stub
-			return null;
+
+			return "MDHT CDA Batch Analyzer";
 		}
 
 	}
@@ -234,12 +234,10 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		}
 
 		public void handleWarning(Diagnostic diagnostic) {
-			// TODO Auto-generated method stub
 
 		}
 
 		public void handleInfo(Diagnostic diagnostic) {
-			// TODO Auto-generated method stub
 
 		}
 	};

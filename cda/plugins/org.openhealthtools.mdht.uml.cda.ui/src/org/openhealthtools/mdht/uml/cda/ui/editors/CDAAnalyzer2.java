@@ -391,26 +391,11 @@ public class CDAAnalyzer2 extends EditorPart {
 
 		viewer.setContentProvider(new ViewContentProvider());
 		viewer.setLabelProvider(new ViewLabelProvider());
-		// viewer.setSorter(new NameSorter());
 		viewer.setInput(getSite());
 
 		try {
 
 			if (getSite().getPage().getPerspective() != null) {
-
-				// EntriesView entriesView = (EntriesView) getSite().getPage().showView(
-				// "org.openhealthtools.mdht.uml.cda.ui.views.entriesview");
-				//
-				// if (entriesView != null) {
-				// entriesView.addTableListener(table);
-				// }
-				//
-				// ValidationsView validationsView = (ValidationsView) getSite().getPage().showView(
-				// "org.openhealthtools.mdht.uml.cda.ui.views.validationsview");
-				// if (validationsView != null) {
-				// validationsView.addTableListener(table);
-				// }
-				//
 				MetricsView metricsView;
 
 				metricsView = (MetricsView) getSite().getPage().showView(
@@ -465,20 +450,6 @@ public class CDAAnalyzer2 extends EditorPart {
 		if (input instanceof org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput) {
 
 			cdaAnalaysisInput = (CDAAnalaysisInput) input;
-			// IFileEditorInput fileInput = (IFileEditorInput) input;
-			//
-			// try {
-			// if (cd == null) {
-			// cd = CDAUtil.load(new FileInputStream(fileInput.getFile().getLocation().toOSString()));
-			// setPartName(String.format("Analysis of %s", fileInput.getName()));
-			// }
-			// } catch (FileNotFoundException e) {
-			//
-			// e.printStackTrace();
-			// } catch (Exception e) {
-			//
-			// e.printStackTrace();
-			// }
 
 		}
 
