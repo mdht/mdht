@@ -7,6 +7,8 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Dan Brown (Audacious Inquiry) - additional testing code as per artf3818 : Errata 384 
+ *     								   Incorporate No Information Section Fixes SITE-462
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -24,6 +26,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.ProblemSectionOperatio
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc -->
@@ -255,14 +258,77 @@ public class ProblemSectionTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(ProblemSection target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(ProblemSection target) {
+						// 1: x- has section withOUT a nullFlavor of type NI and no entry
+						// empty on purpose
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(ProblemSection target) {
+						// *2: x- has section WITH a nullFlavor of type NA and no entry (incorrect nullFlavor type to negate)
+						target.init();
+						target.setNullFlavor(NullFlavor.NA);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(ProblemSection target) {
+						// 3: x- has section withOUT a nullFlavor of any type - but has an INVALID entry
+						target.init();
+						target.addAct(ConsolFactory.eINSTANCE.createAllergyProblemAct().init());
+					}
+				});
 
 			}
 
 			@Override
-			protected void updateToPass(ProblemSection target) {
-				target.init();
-				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct().init());
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ProblemSection target) {
+						// 1: x- has section withOUT a nullFlavor of any type - but HAS a valid entry
+						target.init();
+						target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct().init());
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ProblemSection target) {
+						// *2: x- has section WITH a nullFlavor of type NI and no entry (the correct type to negate)
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ProblemSection target) {
+						// 3: x- has section WITH a nullFlavor of type NI and has a valid entry
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+						target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct().init());
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ProblemSection target) {
+						// 4: x- has section WITH a nullFlavor of type NI and has an INVALID entry
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+						target.addAct(ConsolFactory.eINSTANCE.createAllergyProblemAct().init());
+					}
+				});
+
 			}
 
 			@Override
