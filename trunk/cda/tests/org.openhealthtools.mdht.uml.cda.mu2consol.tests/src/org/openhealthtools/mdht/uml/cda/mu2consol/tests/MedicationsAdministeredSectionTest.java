@@ -1,9 +1,16 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2014 Dan Brown and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     Dan Brown (Audacious Inquiry) - initial API and implementation
+ *									 - additional testing code as per artf3818 : Errata 384 
+ *     								   Incorporate No Information Section Fixes SITE-462
+ *******************************************************************************/
+
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 
 import java.util.Map;
@@ -16,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.MedicationsAdministeredSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,14 +102,76 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(MedicationsAdministeredSection target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(MedicationsAdministeredSection target) {
+						// 1: x- has section withOUT a nullFlavor of type NI and no entry
+						// empty on purpose
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(MedicationsAdministeredSection target) {
+						// *2: x- has section WITH a nullFlavor of type NA and no entry (incorrect nullFlavor type to negate)
+						target.init();
+						target.setNullFlavor(NullFlavor.NA);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(MedicationsAdministeredSection target) {
+						// 3: x- has section withOUT a nullFlavor of any type - but has an INVALID entry
+						target.init();
+						target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createImmunizationActivity().init());
+					}
+				});
 
 			}
 
 			@Override
-			protected void updateToPass(MedicationsAdministeredSection target) {
-				target.init();
-				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(MedicationsAdministeredSection target) {
+						// 1: x- has section withOUT a nullFlavor of any type - but HAS a valid entry
+						target.init();
+						target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(MedicationsAdministeredSection target) {
+						// *2: x- has section WITH a nullFlavor of type NI and no entry (the correct type to negate)
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(MedicationsAdministeredSection target) {
+						// 3: x- has section WITH a nullFlavor of type NI and has a valid entry
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+						target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createImmunizationActivity().init());
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(MedicationsAdministeredSection target) {
+						// 4: x- has section WITH a nullFlavor of type NI and has an INVALID entry
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+						target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createImmunizationActivity().init());
+					}
+				});
 
 			}
 
