@@ -9,7 +9,8 @@
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
  *                        - support local datatype subclasses (artf3350)
- *     Rama Ramakrishnan  - Getting the correct qualified anme for multiple level inline nested clasees (artf3410)                   
+ *     Rama Ramakrishnan  - Getting the correct qualified anme for multiple level inline nested clasees (artf3410)
+ *     Dan Brown (Audacious Inquiry) - Implement fix for artf3818 : Errata 384 Incorporate No Information Section Fixes                 
  *
  * $Id$
  */
@@ -198,7 +199,7 @@ public abstract class TransformAssociation extends TransformAbstract {
 				constraintBody.append(range).append("->includes(");
 			}
 
-			constraintBody.append("self." + associationEnd + "->");
+			constraintBody.append(addPrefix(baseSourceClass) + associationEnd + "->");
 			constraintBody.append(one
 					? "one("
 					: exists
@@ -358,5 +359,28 @@ public abstract class TransformAssociation extends TransformAbstract {
 			retVal = getBaseClass(constraintTarget).getQualifiedName();
 		}
 		return retVal;
+	}
+
+	/**
+	 * 
+	 * Returns the OCL prefix required based on the implementation.
+	 * The String returned for the base class is simply "self." as to not interfere with this generic version.
+	 * However, for the child class TransformCDAAssociation.java -
+	 * It is overridden to provide more complex OCL based on a specific scenario.
+	 * The scenario is Errata 384:
+	 * For all sections requiring entries, If nullFlavor = NI is NOT present, or a different (incorrect) nullFLavor type is present:
+	 * The entry requirement is enforced.
+	 * Otherwise, if there is no nullFlavor = NI specified on the section:
+	 * The entry is required as defined by the existing OCL constraint.
+	 * 
+	 * In the future, other subclasses could override the method for their own prefix requirements as well.
+	 * 
+	 * @param baseSourceClass
+	 *            used for sub class overrides to determine what type of element we are dealing with.
+	 *            If the subclass is calling the method, pass in null since it is not used in the (this) super.
+	 * @return OCL prefix in String form to be appended
+	 */
+	protected String addPrefix(Class baseSourceClass) {
+		return "self.";
 	}
 }
