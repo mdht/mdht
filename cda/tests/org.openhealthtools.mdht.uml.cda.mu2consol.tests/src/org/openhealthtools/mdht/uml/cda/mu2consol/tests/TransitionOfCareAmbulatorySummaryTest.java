@@ -41,11 +41,13 @@ import org.openhealthtools.mdht.uml.cda.consol.PostoperativeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemConcernAct;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.TransitionOfCareAmbulatorySummary;
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.TransitionOfCareAmbulatorySummaryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -328,6 +330,8 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 			@Override
 			public void addFailTests() {
 
+				// skipFailsTest();
+
 				addFailTest(new FailTest() {
 					@Override
 					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
@@ -401,7 +405,7 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 				addFailTest(new FailTest() {
 					@Override
 					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
-						// 5th and 6th clauses section only
+						// 5th and 6th clauses section only (w/o any entries)
 						target.init();
 						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
 						target.addSection(hadSec);
@@ -488,6 +492,7 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 						// Encounter Diagnosis requirement is not met: Assessment Section, Assessment And Plan Section,
 						// Postoperative Diagnosis section, Problem Section, Hospital Admission Diagnosis Section,
 						// Hospital Discharge Diagnosis Section, Encounters Section.
+						// System.out.println("\nBlank Test");
 						target.init();
 					}
 				});
@@ -497,6 +502,68 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
 						// All 7 Clauses at same time w/o any entries
 						target.init();
+						// Add Assessment Section w/o any entries
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						target.addSection(aSec);
+						// Add Assessment And Plan Section w/o any entries
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						target.addSection(aapSec);
+						// Has Postoperative Diagnosis Section w/o any entries
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						target.addSection(podSec);
+						// Add Problem Section w/o any entries
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						target.addSection(probSec);
+						// Add Hospital Admission Diagnosis Section w/o any entries
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						target.addSection(hadSec);
+						// Add Hospital Discharge Diagnosis Section w/o any entries
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						target.addSection(hddSec);
+						// Add Encounters Section w/o any entries
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						target.addSection(encSec);
+					}
+				});
+
+				// tests for errata 384
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Assessment Section withOUT a Problem Observation entry with incorrect nullFlavor towards rule negation
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						aSec.setNullFlavor(NullFlavor.ASKU);
+						target.addSection(aSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Has Encounters Section w/o any entries with incorrect NullFlavor set
+						target.init();
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						encSec.setNullFlavor(NullFlavor.OTH);
+						target.addSection(encSec);
+					}
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(TransitionOfCareAmbulatorySummary target) {
+						// Check if an unrelated to the rule section containing NullFlavor NI -
+						// causes the related sections (missing) entries to pass
+						target.init();
+
+						// add unrelated section...
+						ReviewOfSystemsSection ros = ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init();
+						target.addSection(ros);
+						// set it to nullFlavor of NI (should not affect sepcific sections in rule)
+						target.setNullFlavor(NullFlavor.NI);
+
+						// encounter diagnoses failure (all sections, no entries, no nullFlavor
 						// Add Assessment Section w/o any entries
 						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
 						target.addSection(aSec);
@@ -752,6 +819,200 @@ public class TransitionOfCareAmbulatorySummaryTest extends CDAValidationTest {
 						target.addSection(encSec);
 					}
 
+				});
+
+				// ***tests for errata 384 nullFlavor of correct type
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Has Assessment Section withOUT a Problem Observation entry
+						// with correct nullFlavor for entry requirement negation
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						aSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Has Encounters Section w/o any entries but has nullFlavor NI set
+						target.init();
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						encSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(encSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// 5th and 6th clauses section only but has nullFlavor NI set on both sections
+						target.init();
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						hadSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(hadSec);
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						hddSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(hddSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// 1st 2nd and 3rd clause sections included with NO entries but has nullFlavor NI set on all sections
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						aSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aSec);
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						aapSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aapSec);
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						podSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(podSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// 1st and 3rd sections included with NO entries but has nullFlavor NI set on all sections
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						aSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aSec);
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						podSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(podSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Has first 6 sections w/o any entries (all sections except EncountersSection) and has nullFlavor NI set on all sections
+						target.init();
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						aSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aSec);
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						aapSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aapSec);
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						podSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(podSec);
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						probSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(probSec);
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						hadSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(hadSec);
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						hddSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(hddSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// Has The Assessment Section (TemplateID = 2.16.840.1.113883.10.20.22.2.8)
+						// - with NO entries but has NullFlavor NI set
+						// Does NOT have The Assessment And Plan Section (TemplateID = 2.16.840.1.113883.10.20.22.2.9)
+						// Does NOT have The Postoperative Diagnosis section (TemplateID = 2.16.840.1.113883.10.20.22.2.35)
+						// Has The Problem Section (entries required: TemplateID = 2.16.840.1.113883.10.20.22.2.5.1)
+						// - with NO entries but has NullFlavor NI set
+						// Does NOT have The Hospital Admission Diagnosis Section (TemplateID = 2.16.840.1.113883.10.20.22.2.43)
+						// Does NOT have The Hospital Discharge Diagnosis Section (TemplateID = 2.16.840.1.113883.10.20.22.2.24)
+						// Does NOT have The Encounters Section (entries required: TemplateID = 2.16.840.1.113883.10.20.22.2.22.1)
+						target.init();
+						// Add Assessment Section w/o any entries
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						// add negation
+						aSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aSec);
+						// Add Problem Section w/o any entries
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						// add negation
+						probSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(probSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// All 7 Clauses at same time w/o any entries and all sections have nullFlavor NI set
+						target.init();
+						// Add Assessment Section w/o any entries
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						aSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aSec);
+						// Add Assessment And Plan Section w/o any entries
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						aapSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aapSec);
+						// Has Postoperative Diagnosis Section w/o any entries
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						podSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(podSec);
+						// Add Problem Section w/o any entries
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						probSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(probSec);
+						// Add Hospital Admission Diagnosis Section w/o any entries
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						hadSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(hadSec);
+						// Add Hospital Discharge Diagnosis Section w/o any entries
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						hddSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(hddSec);
+						// Add Encounters Section w/o any entries
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						encSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(encSec);
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(TransitionOfCareAmbulatorySummary target) {
+						// All 7 Clauses at same time w/o any entries but one section has nullFlavor NI set
+						// Technically this is legal because only one clause has to pass (an or situation)
+						// and
+						// "in all cases where a section level null flavor exists, all information within that section
+						// need not be validated except for verifying against the schema.
+						// In the case of many "OR" requirements in MU2, the same rule applies if any of the "OR" statements
+						// are met we are good and by definition including a section with nullFlavor would meet that requirement..."
+						target.init();
+						// Add Assessment Section w/o any entries
+						AssessmentSection aSec = ConsolFactory.eINSTANCE.createAssessmentSection().init();
+						aSec.setNullFlavor(NullFlavor.NI);
+						target.addSection(aSec);
+						// Add Assessment And Plan Section w/o any entries
+						AssessmentAndPlanSection aapSec = ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+						target.addSection(aapSec);
+						// Has Postoperative Diagnosis Section w/o any entries
+						PostoperativeDiagnosisSection podSec = ConsolFactory.eINSTANCE.createPostoperativeDiagnosisSection().init();
+						target.addSection(podSec);
+						// Add Problem Section w/o any entries
+						ProblemSection probSec = ConsolFactory.eINSTANCE.createProblemSection().init();
+						target.addSection(probSec);
+						// Add Hospital Admission Diagnosis Section w/o any entries
+						HospitalAdmissionDiagnosisSection hadSec = ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+						target.addSection(hadSec);
+						// Add Hospital Discharge Diagnosis Section w/o any entries
+						HospitalDischargeDiagnosisSection hddSec = ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+						target.addSection(hddSec);
+						// Add Encounters Section w/o any entries
+						EncountersSection encSec = ConsolFactory.eINSTANCE.createEncountersSection().init();
+						target.addSection(encSec);
+					}
 				});
 
 			}
