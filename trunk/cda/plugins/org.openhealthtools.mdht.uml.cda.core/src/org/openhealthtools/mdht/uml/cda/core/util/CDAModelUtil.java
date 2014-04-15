@@ -11,8 +11,9 @@
  *     Christian W. Damus - discriminate multiple property constraints (artf3185)
  *                        - support nested datatype subclasses (artf3350)
  *     Dan Brown (Audacious Inquiry) - modified XML binding messages based on mandatory property 
- *     								 - part of artf3549, artf3577, errata 156 and errata 72
+ *     								 as part of artf3549, artf3577, errata 156 and errata 72
  *     								 - changed output from 'data type CD' to '@xsi:type="CD"' as per errata 177
+ *     								 - added message support for errata 384 as per artf3818 No Information Section Fix
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -77,6 +78,9 @@ public class CDAModelUtil {
 	public static final String SEVERITY_WARNING = "WARNING";
 
 	public static final String SEVERITY_INFO = "INFO";
+
+	// This message may change in the future to specify certain nullFlavor Types (such as the implementation, NI)
+	private static final String NULLFLAVOR_SECTION_MESSAGE = "If section/@nullFlavor is not present, ";
 
 	public static Class getCDAClass(Classifier templateClass) {
 		Class cdaClass = null;
@@ -518,6 +522,20 @@ public class CDAModelUtil {
 
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
+		}
+
+		// errata 384 message support: if the class owner is a section, and it has an association
+		// to either a clinical statement or an Entry (Act, Observation, etc.), append the message
+		for (Property p : association.getMemberEnds()) {
+			// note: if it is eventually decided that we only want the exception to apply to SHALLs/ERRORs
+			// as opposed to all severities, add the commented out code -db
+			// String curSeverity = getValidationKeyword(association);
+			// if (curSeverity != null && curSeverity.equals("SHALL")) {
+			if ((p.getName() != null && !p.getName().isEmpty()) && (p.getOwner() != null && p.getType() != null) &&
+					(isSection((Class) p.getOwner()) && isClinicalStatement(p.getType()) || isEntry(p.getType()))) {
+				message.append(NULLFLAVOR_SECTION_MESSAGE);
+			}
+			// }
 		}
 
 		String keyword = getValidationKeyword(association);

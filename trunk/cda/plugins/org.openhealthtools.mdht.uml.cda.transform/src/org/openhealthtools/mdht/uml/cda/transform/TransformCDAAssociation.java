@@ -9,6 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
  *                        - support local datatype subclasses (artf3350)
+ *     Dan Brown (Audacious Inquiry) - Implement fix for artf3818 : Errata 384 Incorporate No Information Section Fixes                   
  *
  * $Id$
  */
@@ -169,5 +170,29 @@ public class TransformCDAAssociation extends TransformAssociation {
 		}
 
 		return result;
+	}
+
+	/**
+	 * 
+	 * Returns the OCL prefix required based on the implementation.
+	 * Overrides the parent TransformAssociation.java method to provide more complex OCL based on a specific scenario.
+	 * The scenario is Errata 384:
+	 * For all sections requiring entries, If nullFlavor = NI is NOT present, or a different (incorrect) nullFLavor type is present:
+	 * The entry requirement is enforced.
+	 * Otherwise, if there is no nullFlavor = NI specified on the section:
+	 * The entry is required as defined by the existing OCL constraint.
+	 * 
+	 * @param baseSourceClass
+	 *            used for sub class overrides to determine what type of element we are dealing with.
+	 *            If the subclass is calling the method, pass in null since it is not used in the super.
+	 * @return OCL prefix in String form to be appended
+	 */
+	@Override
+	protected String addPrefix(Class baseSourceClass) {
+		if (CDAModelUtil.isSection(baseSourceClass)) {
+			return "self.nullFlavor <> vocab::NullFlavor::NI implies ";
+		}
+
+		return super.addPrefix(null);
 	}
 }
