@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *	   Dan Brown (Audacious Inquiry) - additional testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -24,6 +25,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.ProceduresSectionOpera
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,13 +68,96 @@ public class ProceduresSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProceduresSection target) {
-
+				// empty
 			}
 
 			@Override
 			protected void updateToPass(ProceduresSection target) {
+				// test 1 has ProcedureActivityProcedure
 				target.init();
 				target.addProcedure(ConsolFactory.eINSTANCE.createProcedureActivityProcedure().init());
+			}
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ProceduresSection target) {
+						// test 1 has no entries and has no nullFlavor set to NI
+						target.init();
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ProceduresSection target) {
+						// test 2 has none of the required entries but the section has nullFlavor set to UNK
+						// currently UNK is not an acceptable nullFlavor to negate entry requirements
+						target.setNullFlavor(NullFlavor.ASKU);
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProceduresSection target) {
+						// test 2 has procedureActivityObservation
+						target.init();
+						target.addObservation(ConsolFactory.eINSTANCE.createProcedureActivityObservation().init());
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProceduresSection target) {
+						// test 3 has procedureActivityAct
+						target.init();
+						target.addAct(ConsolFactory.eINSTANCE.createProcedureActivityAct().init());
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProceduresSection target) {
+						// test 4 has all three
+						target.init();
+						target.addProcedure(ConsolFactory.eINSTANCE.createProcedureActivityProcedure().init());
+						target.addObservation(ConsolFactory.eINSTANCE.createProcedureActivityObservation().init());
+						target.addAct(ConsolFactory.eINSTANCE.createProcedureActivityAct().init());
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProceduresSection target) {
+						// ***test 5 has none of the required entries but the section has nullFlavor set to NI
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProceduresSection target) {
+						// test 6 has one of the required entries and the section has nullFlavor set to NI
+						target.init();
+						target.setNullFlavor(NullFlavor.NI);
+						target.addProcedure(ConsolFactory.eINSTANCE.createProcedureActivityProcedure().init());
+					}
+				});
+
 			}
 
 			@Override
