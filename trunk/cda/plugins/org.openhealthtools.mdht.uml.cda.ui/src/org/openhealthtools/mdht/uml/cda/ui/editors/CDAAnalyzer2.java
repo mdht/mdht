@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
@@ -36,6 +37,8 @@ import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -43,13 +46,20 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.EditorPart;
+import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.openhealthtools.mdht.uml.cda.Act;
@@ -68,6 +78,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler;
 import org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.cda.ui.views.EntriesView;
@@ -288,19 +299,54 @@ public class CDAAnalyzer2 extends EditorPart {
 	public CDAAnalyzer2() {
 	}
 
-	/**
-	 * This is a callback that will allow us
-	 * to create the viewer and initialize it.
-	 */
-
-	// ClinicalDocument cd = null;
-
 	@Override
 	public void createPartControl(Composite parent) {
 
 		int style = SWT.SINGLE | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.HIDE_SELECTION;
 
 		table = new Table(parent, style);
+
+		MouseListener listener = new MouseListener() {
+
+			public void mouseDoubleClick(MouseEvent e) {
+				int[] selectedIndexes = table.getSelectionIndices();
+				for (int i : selectedIndexes) {
+					TableItem ti = table.getItem(i);
+
+					if (ti.getData() instanceof org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput.CDAMetrics) {
+						org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput.CDAMetrics cdaMetrics = (org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput.CDAMetrics) ti.getData();
+						;
+
+						IWorkbench wb = PlatformUI.getWorkbench();
+						IWorkbenchWindow win = wb.getActiveWorkbenchWindow();
+						IWorkbenchPage page = win.getActivePage();
+
+						IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().findEditor(
+							"org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer");
+
+						try {
+							page.openEditor(new FileEditorInput(cdaMetrics.file), desc.getId());
+						} catch (PartInitException e1) {
+							;
+						}
+
+					}
+
+				}
+
+			}
+
+			public void mouseDown(MouseEvent e) {
+
+			}
+
+			public void mouseUp(MouseEvent e) {
+
+			}
+
+		};
+
+		table.addMouseListener(listener);
 
 		viewer = new TableViewer(table);
 
@@ -322,6 +368,7 @@ public class CDAAnalyzer2 extends EditorPart {
 		column.setWidth(20);
 
 		column = new TableColumn(table, SWT.LEFT, 1);
+
 		column.setText("File Name");
 		column.setWidth(400);
 
@@ -450,6 +497,32 @@ public class CDAAnalyzer2 extends EditorPart {
 		if (input instanceof org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput) {
 
 			cdaAnalaysisInput = (CDAAnalaysisInput) input;
+
+		}
+
+		if (input instanceof IFileEditorInput) {
+			IFileEditorInput fileInput = (IFileEditorInput) input;
+			AnalyzeCDAHandler ach = new AnalyzeCDAHandler();
+
+			if (fileInput.getFile().getParent() instanceof IFolder) {
+				IFolder folder = (IFolder) fileInput.getFile().getParent();
+				ach.codeMetricsFile = folder.getFile("codemetrics.cfg");
+			} else {
+				ach.codeMetricsFile = null;
+			}
+
+			// try {
+
+			cdaAnalaysisInput = new CDAAnalaysisInput();
+			cdaAnalaysisInput.getMetrics().add(ach.analyzePluginMode(fileInput.getFile()));
+
+			// } catch (FileNotFoundException e) {
+			//
+			// e.printStackTrace();
+			// } catch (Exception e) {
+			//
+			// e.printStackTrace();
+			// }
 
 		}
 

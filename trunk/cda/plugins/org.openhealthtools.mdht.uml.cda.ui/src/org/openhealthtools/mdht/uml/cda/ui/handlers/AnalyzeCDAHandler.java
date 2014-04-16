@@ -15,6 +15,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -29,8 +30,11 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -40,9 +44,9 @@ import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.eclipse.ui.part.FileEditorInput;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ui.handlers.AnalyzeCDAHandler.CDAAnalaysisInput.CDAMetrics;
@@ -85,6 +89,8 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 			public int totalClinicalStatements;
 
 			public LinkedHashMap<String, Boolean> codedMetrics = new LinkedHashMap<String, Boolean>();
+
+			public IFile file;
 		}
 
 		public ArrayList<CDAMetrics> metrics = new ArrayList<CDAMetrics>();
@@ -155,50 +161,90 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 	}
 
-	IFile codeMetricsFile;
+	public IFile codeMetricsFile;
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		try {
 
+			ProgressMonitorDialog pd = new ProgressMonitorDialog(
+				PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+
 			ISelection selection = HandlerUtil.getCurrentSelectionChecked(event);
 			if (selection instanceof IStructuredSelection) {
 
-				CDAAnalaysisInput cdaAnalaysisInput = new CDAAnalaysisInput();
+				// ProgressMonitorPart monitor = new ProgressMonitorPart(
+				// PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), new FillLayout(), true);
 
-				IStructuredSelection iss = (IStructuredSelection) selection;
-				Iterator<Object> iter = iss.iterator();
-				while (iter.hasNext()) {
-					Object o = iter.next();
-					if (o instanceof IFolder) {
-						IFolder folder = (IFolder) o;
+				/*
+				 * IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+				 * ed = window.getActivePage().getActiveEditor();
+				 * shell = window.getShell();
+				 */
 
-						codeMetricsFile = folder.getFile("codemetrics.cfg");
+				final CDAAnalaysisInput cdaAnalaysisInput = new CDAAnalaysisInput();
+				final IStructuredSelection iss = (IStructuredSelection) selection;
 
-						for (IResource resource : folder.members()) {
-							if (resource instanceof IFile) {
-								IFile file = (IFile) resource;
-								if ("XML".equalsIgnoreCase(file.getFileExtension())) {
+				try {
+					pd.run(true, true, new IRunnableWithProgress() {
 
-									cdaAnalaysisInput.getMetrics().add(analyzePluginMode(file));
+						public void run(IProgressMonitor monitor) throws InvocationTargetException,
+								InterruptedException {
 
-									IWorkbench wb = PlatformUI.getWorkbench();
-									IWorkbenchWindow win = wb.getActiveWorkbenchWindow();
-									IWorkbenchPage page = win.getActivePage();
+							try {
+								Iterator<Object> iter = iss.iterator();
+								while (iter.hasNext() && !monitor.isCanceled()) {
 
-									IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().findEditor(
-										"org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer");
+									Object o = iter.next();
+									if (o instanceof IFolder) {
+										IFolder folder = (IFolder) o;
 
-									page.openEditor(new FileEditorInput(file), desc.getId());
+										monitor.beginTask("Analyze CDA Documents", folder.members().length);
 
-									// System.out.println(file.getName());
+										codeMetricsFile = folder.getFile("codemetrics.cfg");
+
+										for (IResource resource : folder.members()) {
+
+											if (monitor.isCanceled()) {
+												monitor.done();
+												break;
+											}
+											if (resource instanceof IFile) {
+												IFile file = (IFile) resource;
+												if ("XML".equalsIgnoreCase(file.getFileExtension())) {
+
+													monitor.worked(1);
+													monitor.subTask("Processing " + file.getName());
+													cdaAnalaysisInput.getMetrics().add(analyzePluginMode(file));
+													//
+													// IWorkbench wb = PlatformUI.getWorkbench();
+													// IWorkbenchWindow win = wb.getActiveWorkbenchWindow();
+													// IWorkbenchPage page = win.getActivePage();
+													//
+													// IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().findEditor(
+													// "org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer");
+													//
+													// page.openEditor(new FileEditorInput(file), desc.getId());
+
+												}
+
+											}
+
+										}
+
+									}
 								}
+							} catch (PartInitException e) {
+
+							} catch (CoreException e) {
 
 							}
-
 						}
+					});
+				} catch (InvocationTargetException e) {
 
-					}
+				} catch (InterruptedException e) {
+
 				}
 
 				IWorkbench wb = PlatformUI.getWorkbench();
@@ -247,9 +293,10 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 		return o.size();
 	}
 
-	private CDAMetrics analyzePluginMode(IFile file) {
+	public CDAMetrics analyzePluginMode(IFile file) {
 		CDAMetrics cdaMetrics = new CDAMetrics();
 
+		cdaMetrics.file = file;
 		cdaMetrics.fileName = file.getName();
 		try {
 
@@ -297,15 +344,17 @@ public class AnalyzeCDAHandler extends AbstractHandler {
 
 		try {
 
-			br = new BufferedReader(new FileReader(codeMetricsFile.getLocation().toOSString()));
-			while ((line = br.readLine()) != null) {
+			if (codeMetricsFile != null) {
+				br = new BufferedReader(new FileReader(codeMetricsFile.getLocation().toOSString()));
+				while ((line = br.readLine()) != null) {
 
-				// use comma as separator
-				String[] s = line.split(cvsSplitBy);
-				if (s.length == 2) {
-					codedMetrics.put(s[0], s[1]);
+					// use comma as separator
+					String[] s = line.split(cvsSplitBy);
+					if (s.length == 2) {
+						codedMetrics.put(s[0], s[1]);
+					}
+
 				}
-
 			}
 
 		} catch (FileNotFoundException e) {
