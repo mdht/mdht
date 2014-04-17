@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * org.openhealthtools.mdht.uml.cda.validation.internal.packages.PackageImportConstraints
  * org.openhealthtools.mdht.uml.cda.validation.internal.packages.PackageImportConstraints
  * org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.PropertyConstraints
+ * org.openhealthtools.mdht.uml.cda.validation.internal.properties.SeverityAndCardinalityConstraint
  * <!-- end-model-doc -->
  * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory

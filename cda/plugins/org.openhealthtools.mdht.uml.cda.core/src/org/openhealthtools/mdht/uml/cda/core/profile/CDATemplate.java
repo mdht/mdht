@@ -42,7 +42,7 @@ public interface CDATemplate extends ClassValidation {
 	 * @return the value of the '<em>Assigning Authority Name</em>' attribute.
 	 * @see #setAssigningAuthorityName(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate_AssigningAuthorityName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getAssigningAuthorityName();
@@ -58,7 +58,7 @@ public interface CDATemplate extends ClassValidation {
 	 * @return the value of the '<em>Template Id</em>' attribute.
 	 * @see #setTemplateId(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate_TemplateId()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getTemplateId();
@@ -75,7 +75,7 @@ public interface CDATemplate extends ClassValidation {
 	 * @return the value of the '<em>Context Dependent</em>' attribute.
 	 * @see #setContextDependent(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate_ContextDependent()
-	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
+	 * @model default="false" ordered="false"
 	 * @generated
 	 */
 	boolean isContextDependent();

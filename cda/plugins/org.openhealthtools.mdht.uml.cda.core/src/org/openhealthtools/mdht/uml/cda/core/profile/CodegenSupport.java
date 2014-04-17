@@ -64,7 +64,7 @@ public interface CodegenSupport extends EObject {
 	 * @return the value of the '<em>Base Package</em>' attribute.
 	 * @see #setBasePackage(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_BasePackage()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getBasePackage();
@@ -80,7 +80,7 @@ public interface CodegenSupport extends EObject {
 	 * @return the value of the '<em>Ns Prefix</em>' attribute.
 	 * @see #setNsPrefix(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_NsPrefix()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getNsPrefix();
@@ -96,7 +96,7 @@ public interface CodegenSupport extends EObject {
 	 * @return the value of the '<em>Ns URI</em>' attribute.
 	 * @see #setNsURI(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_NsURI()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getNsURI();
@@ -112,7 +112,7 @@ public interface CodegenSupport extends EObject {
 	 * @return the value of the '<em>Package Name</em>' attribute.
 	 * @see #setPackageName(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_PackageName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPackageName();
@@ -128,7 +128,7 @@ public interface CodegenSupport extends EObject {
 	 * @return the value of the '<em>Prefix</em>' attribute.
 	 * @see #setPrefix(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCodegenSupport_Prefix()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPrefix();
