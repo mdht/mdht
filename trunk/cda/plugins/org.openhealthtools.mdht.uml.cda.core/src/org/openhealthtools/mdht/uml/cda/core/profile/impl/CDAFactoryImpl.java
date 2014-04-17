@@ -72,7 +72,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 */
 	public static CDAFactory init() {
 		try {
-			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory(CDAPackage.eNS_URI);
+			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/schemas/cda/4");
 			if (theCDAFactory != null) {
 				return theCDAFactory;
 			}
