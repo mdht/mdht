@@ -469,6 +469,13 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
         <body>org.openhealthtools.mdht.uml.cda.validation.internal.properties.SeverityAndCardinalityConstraint</body>
       </specification>
     </ownedRule>
+    <ownedRule xmi:id="_eGG2MMcfEeOJD41GOvUbjw" name="propertyRedefinition">
+      <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="_DanOgMcgEeOJD41GOvUbjw">
+        <language>Java</language>
+        <body>org.openhealthtools.mdht.uml.cda.validation.internal.properties.PropertyValidation</body>
+      </specification>
+    </ownedRule>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_sBP9kIEVEd6H8o-hO3-B4Q" name="SeverityKind">
       <ownedLiteral xmi:id="_3J00gIEVEd6H8o-hO3-B4Q" name="ERROR"/>
       <ownedLiteral xmi:id="_4PjtgIEVEd6H8o-hO3-B4Q" name="WARNING"/>
@@ -778,4 +785,5 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
   <validation:Diagnostic xmi:id="_tkpq0NKBEeGW7tO7mIdnUQ" base_Constraint="_rqS28NKBEeGW7tO7mIdnUQ" code="5" message="Package &quot;{0}&quot; must import the CDA and HL7 datatypes packages."/>
   <validation:Diagnostic xmi:id="_FZIMoNKCEeGW7tO7mIdnUQ" base_Constraint="_7o1-UNKBEeGW7tO7mIdnUQ" code="6" message="Default value &quot;{1}&quot; of property &quot;{0}&quot; is not a literal of enumeration &quot;{2}&quot;."/>
   <validation:Diagnostic xmi:id="_RwrekMZDEeOVucA3jmIqyQ" base_Constraint="_Rwn0MMZDEeOVucA3jmIqyQ" code="1" message="Severity and Cardinality are not in compliance on {1}::{0}"/>
+  <validation:Diagnostic xmi:id="_eGROQMcfEeOJD41GOvUbjw" base_Constraint="_eGG2MMcfEeOJD41GOvUbjw" severity="warn" code="1" message="Missing redefinition on property {1} is missing redefinition ({0})"/>
 </xmi:XMI>
