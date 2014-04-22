@@ -8,6 +8,7 @@
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
  *     Dan Brown (Audacious Inquiry) - additional testing code
+ *     								 - errata 227 testing code
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -59,6 +60,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
@@ -3187,7 +3189,11 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
-			// CONF:16786
+			private static final String NPI_ID = "2.16.840.1.113883.4.6";
+
+			private static final String INCORRECT_NPI_ID = "2.16.777.7.777777.7.7";
+
+			private static final String EXT_VAL = "ValueIsIrrelevant";
 
 			@Override
 			public void addFailTests() {
@@ -3196,7 +3202,108 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
-						// Id is NOT equal to 2.16.840.1.113883.4.6 (or does not have a nullFlavor set instead) (has assignedPerson)
+						// f1
+						// <assignedPerson> exists and there is an id and the id/@root does NOT = ‘2.16.840.1.113883.4.6’
+						// and the id’s/@extension exists)
+						// expect fail because assigned person exists and the root (NPI) is incorrect
+						System.out.println("\nf1");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(INCORRECT_NPI_ID, EXT_VAL));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// f2
+						// -<assignedPerson> exists and there is an id and (the id/@root = ‘2.16.840.1.113883.4.6’
+						// and the id’s/@extension DOES NOT EXIST)
+						// expect fail because assigned person exists and the id/@extension does not exist
+						System.out.println("\nf2");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(NPI_ID));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// f3
+						// -<assignedPerson> exists and there is an id and (the id/@root does NOT = ‘2.16.840.1.113883.4.6’
+						// and the id’s/@extension DOES NOT EXIST)
+						// expect fail because assigned person exists and the root (NPI) is incorrect and
+						// the id/@extension does not exist
+						System.out.println("\nf3");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(INCORRECT_NPI_ID));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				// null
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// fn1
+						// nullFlavor replacing the root instead of the extension
+						System.out.println("\nfn1");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						II id = DatatypesFactory.eINSTANCE.createII();
+						id.setExtension(EXT_VAL);
+						aa.getIds().add(id);
+						aa.getIds().get(0).setNullFlavor(NullFlavor.UNK);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// fn2
+						// incorrect NPI in the root mixed with a null flavor
+						System.out.println("\nfn2 \nincorrect NPI in the root mixed with a null flavor");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(INCORRECT_NPI_ID));
+						aa.getIds().get(0).setNullFlavor(NullFlavor.UNK);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				// old tests
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// Id is NOT equal to 2.16.840.1.113883.4.6 (or does not have a nullFlavor set instead)
+						// and does not have an @extension (has assignedPerson)
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3211,7 +3318,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
-						// Id does not have an attribute root (or any attribute) (or does not have a nullFlavor set instead) (has assignedPerson)
+						// Id does not have an attribute root or extension (or any attribute) (or does not have a nullFlavor set instead)
+						// (has assignedPerson)
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3226,7 +3334,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
-						// Has Id but has two roots (has assignedPerson)
+						// Has Id but has two id's with a root each (has assignedPerson) (neither of which have a valid NPI)
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3242,7 +3350,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
-						// Has Id but has zero roots (has assignedPerson)
+						// Has Id but has zero roots (empty) (has assignedPerson)
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3254,10 +3362,140 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					}
 				});
 
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// If there's an assignedPerson element and the assignedAuthor has two ids (neither of which have a valid NPI)
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
 			}
 
 			@Override
 			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// p1
+						// <assignedPerson> exists and there is an id and (the id/@root = ‘2.16.840.1.113883.4.6’
+						// and the id’s/@extension exists)
+						System.out.println("\np1");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(NPI_ID, EXT_VAL));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// p2
+						// If there is no id, none of the checks can be enforced, instead, that will be caught by:
+						// Consol Assigned Author SHALL contain at least one [1..*] id (CONF:5449)
+						// If there's an assignedPerson element and the assignedAuthor has zero (no) ids
+						System.out.println("\np2");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// p3
+						// If <assignedPerson> DOES NOT exist (we don’t enforce the id/@root or id/@extension NPI warning at all
+						// For the example we have an incorrect NPI, which is NOT checked.
+						System.out.println("\np3");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(INCORRECT_NPI_ID, EXT_VAL));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// p4
+						// If <assignedPerson> DOES NOT exist (we don’t enforce the id/@root or id/@extension NPI warning at all
+						// For the example we have an incorrect NPI, which is NOT checked, and,
+						// we don’t have an extension, which is NOT checked.
+						System.out.println("\np4");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(INCORRECT_NPI_ID, EXT_VAL));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				// null
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// pn1
+						// correct NPI root and a nullFlavor at the same time (no extension)
+						System.out.println("\npn1");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						II id = DatatypesFactory.eINSTANCE.createII();
+						id.setRoot(NPI_ID);
+						id.setNullFlavor(NullFlavor.UNK);
+						aa.getIds().add(id);
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						// pn2
+						// nullFlavor in id (and nothing else in id), has assignedPerson
+						System.out.println("\npn2");
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(NullFlavor.ASKU));
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				// old tests
 
 				addPassTest(new PassTest() {
 
@@ -3277,64 +3515,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
-						// Id is equal to 2.16.840.1.113883.4.6 (with assignedPerson)
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						Person person = CDAFactory.eINSTANCE.createPerson();
-						aa.setAssignedPerson(person);
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
-						author.setAssignedAuthor(aa);
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// Has assignedPerson and No Id is present (0..1)
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						author.setAssignedAuthor(aa);
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// Does not Have assignedPerson and No is Id present (No Id in general) (0..1)
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						author.setAssignedAuthor(aa);
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// nullFlavor on Id with assignedPerson
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII(NullFlavor.ASKU));
-						author.setAssignedAuthor(aa);
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
 						// nullFlavor on Id without assignedPerson
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
@@ -3345,15 +3525,11 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					}
 				});
 
-				// SME recommendation (with my CONFs inserted by relation):
-				// 1. If this assignedAuthor is an assignedPerson, the assignedAuthor SHOULD contain zero to one [0..1] id such that it (CONF:19521).
-				// // // // SHALL contain exactly one 1..1] @root="2.16.840.1.113883.4.6" National Provider Identifier (CONF:16786).
-
 				addPassTest(new PassTest() {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
-						// Id is NOT equal to 2.16.840.1.113883.4.6 (or does not have a nullFlavor set instead) (no assignedPerson)
+						// Id is NOT equal to 2.16.840.1.113883.4.6 (or does not have a nullFlavor set instead) (*no assignedPerson) and no extension
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3367,7 +3543,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
-						// Id does not have an attribute root (or any attribute) (or does not have a nullFlavor set instead) (no assignedPerson)
+						// Id does not have an attribute root (or any attribute) (or does not have a nullFlavor set instead) and no extension
+						// but *no assignedPerson
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3381,7 +3558,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
-						// Has Id but has two roots (no assignedPerson)
+						// Has Id but has two roots (*no assignedPerson)
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3396,7 +3573,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
-						// Has Id but has zero roots (no assignedPerson)
+						// Has Id but has zero roots (*no assignedPerson)
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
 						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
@@ -3418,146 +3595,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifierTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceId() {
-		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
-			"validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_IF_HAS_ASSIGNED_PERSON_ENFORCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			// CONF:19521
-
-			@Override
-			public void addFailTests() {
-
-				addFailTest(new FailTest() {
-
-					@Override
-					public void updateToFail(GeneralHeaderConstraints target) {
-						// If there's an assignedPerson element and the assignedAuthor has two ids
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
-						author.setAssignedAuthor(aa);
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						target.getAuthors().add(author);
-					}
-				});
-
-			}
-
-			@Override
-			public void addPassTests() {
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// If there's an assignedPerson element and the assignedAuthor has one id
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
-						author.setAssignedAuthor(aa);
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// If there's NO assignedPerson element and the assignedAuthor has one id
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
-						author.setAssignedAuthor(aa);
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// If there's an assignedPerson element and the assignedAuthor has zero (no) ids
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						author.setAssignedAuthor(aa);
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// If there's NO assignedPerson element and the assignedAuthor has zero (no) ids
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						author.setAssignedAuthor(aa);
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// If there's NO assignedPerson element and the assignedAuthor has two ids
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
-						author.setAssignedAuthor(aa);
-						target.getAuthors().add(author);
-					}
-				});
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(GeneralHeaderConstraints target) {
-						// If there's NO assignedPerson element and the assignedAuthor has an incorrect root
-						target.init();
-						Author author = CDAFactory.eINSTANCE.createAuthor();
-						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-						aa.getIds().add(DatatypesFactory.eINSTANCE.createII("666"));
-						author.setAssignedAuthor(aa);
-						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
-						target.getAuthors().add(author);
-					}
-				});
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceId(
-					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsAuthorAssignedAuthorIfHasAssignedPersonEnforceIdTestCase.doValidationTest();
 	}
 
 	/**
