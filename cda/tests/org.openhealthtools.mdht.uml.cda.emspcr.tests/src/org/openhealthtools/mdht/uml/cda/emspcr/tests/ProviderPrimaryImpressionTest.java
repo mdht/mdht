@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProviderPrimaryImpressionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression#validateProviderPrimaryImpressionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Primary Impression Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression#validateProviderPrimaryImpressionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Primary Impression Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression#validateProviderPrimaryImpressionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Primary Impression Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression#validateProviderPrimaryImpressionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Primary Impression Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression#validateProviderPrimaryImpressionValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Primary Impression Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression#validateProviderPrimaryImpressionValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Primary Impression Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpression#validateProviderPrimaryImpressionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Primary Impression Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ProviderPrimaryImpressionTest extends CDAValidationTest {
 		};
 
 		validateProviderPrimaryImpressionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProviderPrimaryImpressionMoodCode() {
+		OperationsTestCase<ProviderPrimaryImpression> validateProviderPrimaryImpressionMoodCodeTestCase = new OperationsTestCase<ProviderPrimaryImpression>(
+			"validateProviderPrimaryImpressionMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROVIDER_PRIMARY_IMPRESSION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProviderPrimaryImpression target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProviderPrimaryImpression target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProviderPrimaryImpressionOperations.validateProviderPrimaryImpressionMoodCode(
+					(ProviderPrimaryImpression) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProviderPrimaryImpressionMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class ProviderPrimaryImpressionTest extends CDAValidationTest {
 			protected void updateToPass(ProviderPrimaryImpression target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ProviderPrimaryImpression target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ProviderPrimaryImpressionCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class ProviderPrimaryImpressionTest extends CDAValidationTest {
 		};
 
 		validateProviderPrimaryImpressionValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProviderPrimaryImpressionMoodCode() {
-		OperationsTestCase<ProviderPrimaryImpression> validateProviderPrimaryImpressionMoodCodeTestCase = new OperationsTestCase<ProviderPrimaryImpression>(
-			"validateProviderPrimaryImpressionMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROVIDER_PRIMARY_IMPRESSION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProviderPrimaryImpression target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProviderPrimaryImpression target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProviderPrimaryImpressionOperations.validateProviderPrimaryImpressionMoodCode(
-					(ProviderPrimaryImpression) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProviderPrimaryImpressionMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

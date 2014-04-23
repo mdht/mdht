@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.HistoryOfConditionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition#validateHistoryOfConditionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Condition Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition#validateHistoryOfConditionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Condition Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition#validateHistoryOfConditionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Condition Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition#validateHistoryOfConditionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Condition Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition#validateHistoryOfConditionValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Condition Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition#validateHistoryOfConditionValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Condition Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfCondition#validateHistoryOfConditionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Condition Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class HistoryOfConditionTest extends CDAValidationTest {
 		};
 
 		validateHistoryOfConditionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHistoryOfConditionMoodCode() {
+		OperationsTestCase<HistoryOfCondition> validateHistoryOfConditionMoodCodeTestCase = new OperationsTestCase<HistoryOfCondition>(
+			"validateHistoryOfConditionMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_CONDITION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HistoryOfCondition target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HistoryOfCondition target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryOfConditionOperations.validateHistoryOfConditionMoodCode(
+					(HistoryOfCondition) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHistoryOfConditionMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class HistoryOfConditionTest extends CDAValidationTest {
 			protected void updateToPass(HistoryOfCondition target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(HistoryOfCondition target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.HistoryOfConditionCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class HistoryOfConditionTest extends CDAValidationTest {
 		};
 
 		validateHistoryOfConditionValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHistoryOfConditionMoodCode() {
-		OperationsTestCase<HistoryOfCondition> validateHistoryOfConditionMoodCodeTestCase = new OperationsTestCase<HistoryOfCondition>(
-			"validateHistoryOfConditionMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_CONDITION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(HistoryOfCondition target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HistoryOfCondition target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HistoryOfConditionOperations.validateHistoryOfConditionMoodCode(
-					(HistoryOfCondition) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHistoryOfConditionMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

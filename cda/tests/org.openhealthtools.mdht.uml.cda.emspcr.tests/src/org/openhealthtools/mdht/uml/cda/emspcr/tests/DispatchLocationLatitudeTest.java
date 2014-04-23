@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationLatitude;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.DispatchLocationLatitudeOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationLatitude#validateDispatchLocationLatitudeTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Latitude Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationLatitude#validateDispatchLocationLatitudeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Latitude Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationLatitude#validateDispatchLocationLatitudeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Latitude Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationLatitude#validateDispatchLocationLatitudeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Latitude Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationLatitude#validateDispatchLocationLatitudeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Latitude Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class DispatchLocationLatitudeTest extends CDAValidationTest {
 		};
 
 		validateDispatchLocationLatitudeTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDispatchLocationLatitudeMoodCode() {
+		OperationsTestCase<DispatchLocationLatitude> validateDispatchLocationLatitudeMoodCodeTestCase = new OperationsTestCase<DispatchLocationLatitude>(
+			"validateDispatchLocationLatitudeMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_LOCATION_LATITUDE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DispatchLocationLatitude target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DispatchLocationLatitude target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DispatchLocationLatitudeOperations.validateDispatchLocationLatitudeMoodCode(
+					(DispatchLocationLatitude) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDispatchLocationLatitudeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class DispatchLocationLatitudeTest extends CDAValidationTest {
 		};
 
 		validateDispatchLocationLatitudeValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDispatchLocationLatitudeMoodCode() {
-		OperationsTestCase<DispatchLocationLatitude> validateDispatchLocationLatitudeMoodCodeTestCase = new OperationsTestCase<DispatchLocationLatitude>(
-			"validateDispatchLocationLatitudeMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_LOCATION_LATITUDE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DispatchLocationLatitude target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DispatchLocationLatitude target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DispatchLocationLatitudeOperations.validateDispatchLocationLatitudeMoodCode(
-					(DispatchLocationLatitude) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDispatchLocationLatitudeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.AdditionalVitalSignsOrganizerOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -40,8 +34,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#validateAdditionalVitalSignsOrganizerCarbonDioxideComponent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Vital Signs Organizer Carbon Dioxide Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#validateAdditionalVitalSignsOrganizerCardiacRhythmComponent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Vital Signs Organizer Cardiac Rhythm Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#validateAdditionalVitalSignsOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Vital Signs Organizer Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#validateAdditionalVitalSignsOrganizerEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Vital Signs Organizer Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#validateAdditionalVitalSignsOrganizerMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Vital Signs Organizer Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#validateAdditionalVitalSignsOrganizerEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Vital Signs Organizer Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#validateAdditionalVitalSignsOrganizerGlasgowComaScoreOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Vital Signs Organizer Glasgow Coma Score Organizer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#getStrokeScoreComponent() <em>Get Stroke Score Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdditionalVitalSignsOrganizer#getPainScoreComponent() <em>Get Pain Score Component</em>}</li>
@@ -336,6 +330,40 @@ public class AdditionalVitalSignsOrganizerTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateAdditionalVitalSignsOrganizerMoodCode() {
+		OperationsTestCase<AdditionalVitalSignsOrganizer> validateAdditionalVitalSignsOrganizerMoodCodeTestCase = new OperationsTestCase<AdditionalVitalSignsOrganizer>(
+			"validateAdditionalVitalSignsOrganizerMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADDITIONAL_VITAL_SIGNS_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdditionalVitalSignsOrganizer target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdditionalVitalSignsOrganizer target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdditionalVitalSignsOrganizerOperations.validateAdditionalVitalSignsOrganizerMoodCode(
+					(AdditionalVitalSignsOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdditionalVitalSignsOrganizerMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateAdditionalVitalSignsOrganizerEffectiveTime() {
 		OperationsTestCase<AdditionalVitalSignsOrganizer> validateAdditionalVitalSignsOrganizerEffectiveTimeTestCase = new OperationsTestCase<AdditionalVitalSignsOrganizer>(
 			"validateAdditionalVitalSignsOrganizerEffectiveTime",
@@ -366,40 +394,6 @@ public class AdditionalVitalSignsOrganizerTest extends CDAValidationTest {
 		};
 
 		validateAdditionalVitalSignsOrganizerEffectiveTimeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAdditionalVitalSignsOrganizerMoodCode() {
-		OperationsTestCase<AdditionalVitalSignsOrganizer> validateAdditionalVitalSignsOrganizerMoodCodeTestCase = new OperationsTestCase<AdditionalVitalSignsOrganizer>(
-			"validateAdditionalVitalSignsOrganizerMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADDITIONAL_VITAL_SIGNS_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AdditionalVitalSignsOrganizer target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AdditionalVitalSignsOrganizer target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AdditionalVitalSignsOrganizerOperations.validateAdditionalVitalSignsOrganizerMoodCode(
-					(AdditionalVitalSignsOrganizer) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAdditionalVitalSignsOrganizerMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

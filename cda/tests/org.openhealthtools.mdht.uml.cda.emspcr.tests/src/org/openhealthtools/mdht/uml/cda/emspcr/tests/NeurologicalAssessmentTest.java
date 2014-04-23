@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.NeurologicalAssessmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment#validateNeurologicalAssessmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurological Assessment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment#validateNeurologicalAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurological Assessment Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment#validateNeurologicalAssessmentCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurological Assessment Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment#validateNeurologicalAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurological Assessment Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment#validateNeurologicalAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurological Assessment Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment#validateNeurologicalAssessmentValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurological Assessment Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessment#validateNeurologicalAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurological Assessment Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class NeurologicalAssessmentTest extends CDAValidationTest {
 		};
 
 		validateNeurologicalAssessmentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateNeurologicalAssessmentMoodCode() {
+		OperationsTestCase<NeurologicalAssessment> validateNeurologicalAssessmentMoodCodeTestCase = new OperationsTestCase<NeurologicalAssessment>(
+			"validateNeurologicalAssessmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_NEUROLOGICAL_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(NeurologicalAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(NeurologicalAssessment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return NeurologicalAssessmentOperations.validateNeurologicalAssessmentMoodCode(
+					(NeurologicalAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateNeurologicalAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class NeurologicalAssessmentTest extends CDAValidationTest {
 			protected void updateToPass(NeurologicalAssessment target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(NeurologicalAssessment target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.NeurologicalAssessmentCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class NeurologicalAssessmentTest extends CDAValidationTest {
 		};
 
 		validateNeurologicalAssessmentValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateNeurologicalAssessmentMoodCode() {
-		OperationsTestCase<NeurologicalAssessment> validateNeurologicalAssessmentMoodCodeTestCase = new OperationsTestCase<NeurologicalAssessment>(
-			"validateNeurologicalAssessmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_NEUROLOGICAL_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(NeurologicalAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(NeurologicalAssessment target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return NeurologicalAssessmentOperations.validateNeurologicalAssessmentMoodCode(
-					(NeurologicalAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateNeurologicalAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.TransportModeObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservation#validateTransportModeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Mode Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class TransportModeObservationTest extends CDAValidationTest {
 		};
 
 		validateTransportModeObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateTransportModeObservationMoodCode() {
+		OperationsTestCase<TransportModeObservation> validateTransportModeObservationMoodCodeTestCase = new OperationsTestCase<TransportModeObservation>(
+			"validateTransportModeObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSPORT_MODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TransportModeObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TransportModeObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransportModeObservationOperations.validateTransportModeObservationMoodCode(
+					(TransportModeObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTransportModeObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,13 @@ public class TransportModeObservationTest extends CDAValidationTest {
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(TransportModeObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.TransportModeObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +256,6 @@ public class TransportModeObservationTest extends CDAValidationTest {
 		};
 
 		validateTransportModeObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateTransportModeObservationMoodCode() {
-		OperationsTestCase<TransportModeObservation> validateTransportModeObservationMoodCodeTestCase = new OperationsTestCase<TransportModeObservation>(
-			"validateTransportModeObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_TRANSPORT_MODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(TransportModeObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(TransportModeObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return TransportModeObservationOperations.validateTransportModeObservationMoodCode(
-					(TransportModeObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateTransportModeObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

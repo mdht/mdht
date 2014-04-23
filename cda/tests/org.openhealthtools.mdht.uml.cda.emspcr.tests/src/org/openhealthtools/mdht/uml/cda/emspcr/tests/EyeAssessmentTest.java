@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.EyeAssessmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,14 +29,14 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Target Site Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentTargetSiteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Target Site Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Target Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessment#validateEyeAssessmentTargetSiteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eye Assessment Target Site Code P</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,6 +77,40 @@ public class EyeAssessmentTest extends CDAValidationTest {
 		};
 
 		validateEyeAssessmentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEyeAssessmentMoodCode() {
+		OperationsTestCase<EyeAssessment> validateEyeAssessmentMoodCodeTestCase = new OperationsTestCase<EyeAssessment>(
+			"validateEyeAssessmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EyeAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EyeAssessment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EyeAssessmentOperations.validateEyeAssessmentMoodCode(
+					(EyeAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEyeAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -140,6 +169,13 @@ public class EyeAssessmentTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(EyeAssessment target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.EyeAssessmentCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return EyeAssessmentOperations.validateEyeAssessmentCode(
@@ -156,10 +192,10 @@ public class EyeAssessmentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateEyeAssessmentTargetSiteCode() {
-		OperationsTestCase<EyeAssessment> validateEyeAssessmentTargetSiteCodeTestCase = new OperationsTestCase<EyeAssessment>(
-			"validateEyeAssessmentTargetSiteCode",
-			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateEyeAssessmentEffectiveTime() {
+		OperationsTestCase<EyeAssessment> validateEyeAssessmentEffectiveTimeTestCase = new OperationsTestCase<EyeAssessment>(
+			"validateEyeAssessmentEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -171,52 +207,21 @@ public class EyeAssessmentTest extends CDAValidationTest {
 			protected void updateToPass(EyeAssessment target) {
 				target.init();
 
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EyeAssessmentOperations.validateEyeAssessmentTargetSiteCode(
-					(EyeAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateEyeAssessmentTargetSiteCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateEyeAssessmentTargetSiteCodeP() {
-		OperationsTestCase<EyeAssessment> validateEyeAssessmentTargetSiteCodePTestCase = new OperationsTestCase<EyeAssessment>(
-			"validateEyeAssessmentTargetSiteCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_TARGET_SITE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(EyeAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(EyeAssessment target) {
-				target.init();
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EyeAssessmentOperations.validateEyeAssessmentTargetSiteCodeP(
+				return EyeAssessmentOperations.validateEyeAssessmentEffectiveTime(
 					(EyeAssessment) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEyeAssessmentTargetSiteCodePTestCase.doValidationTest();
+		validateEyeAssessmentEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**
@@ -295,10 +300,10 @@ public class EyeAssessmentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateEyeAssessmentEffectiveTime() {
-		OperationsTestCase<EyeAssessment> validateEyeAssessmentEffectiveTimeTestCase = new OperationsTestCase<EyeAssessment>(
-			"validateEyeAssessmentEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateEyeAssessmentTargetSiteCode() {
+		OperationsTestCase<EyeAssessment> validateEyeAssessmentTargetSiteCodeTestCase = new OperationsTestCase<EyeAssessment>(
+			"validateEyeAssessmentTargetSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -310,21 +315,18 @@ public class EyeAssessmentTest extends CDAValidationTest {
 			protected void updateToPass(EyeAssessment target) {
 				target.init();
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EyeAssessmentOperations.validateEyeAssessmentEffectiveTime(
+				return EyeAssessmentOperations.validateEyeAssessmentTargetSiteCode(
 					(EyeAssessment) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEyeAssessmentEffectiveTimeTestCase.doValidationTest();
+		validateEyeAssessmentTargetSiteCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -332,10 +334,10 @@ public class EyeAssessmentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateEyeAssessmentMoodCode() {
-		OperationsTestCase<EyeAssessment> validateEyeAssessmentMoodCodeTestCase = new OperationsTestCase<EyeAssessment>(
-			"validateEyeAssessmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateEyeAssessmentTargetSiteCodeP() {
+		OperationsTestCase<EyeAssessment> validateEyeAssessmentTargetSiteCodePTestCase = new OperationsTestCase<EyeAssessment>(
+			"validateEyeAssessmentTargetSiteCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_EYE_ASSESSMENT_TARGET_SITE_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -352,13 +354,13 @@ public class EyeAssessmentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EyeAssessmentOperations.validateEyeAssessmentMoodCode(
+				return EyeAssessmentOperations.validateEyeAssessmentTargetSiteCodeP(
 					(EyeAssessment) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEyeAssessmentMoodCodeTestCase.doValidationTest();
+		validateEyeAssessmentTargetSiteCodePTestCase.doValidationTest();
 	}
 
 	/**

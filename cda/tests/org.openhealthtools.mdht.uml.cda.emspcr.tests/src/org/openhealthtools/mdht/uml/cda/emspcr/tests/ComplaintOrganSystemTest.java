@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ComplaintOrganSystemOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem#validateComplaintOrganSystemTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem#validateComplaintOrganSystemMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem#validateComplaintOrganSystemCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem#validateComplaintOrganSystemCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem#validateComplaintOrganSystemValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem#validateComplaintOrganSystemValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystem#validateComplaintOrganSystemMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ComplaintOrganSystemTest extends CDAValidationTest {
 		};
 
 		validateComplaintOrganSystemTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateComplaintOrganSystemMoodCode() {
+		OperationsTestCase<ComplaintOrganSystem> validateComplaintOrganSystemMoodCodeTestCase = new OperationsTestCase<ComplaintOrganSystem>(
+			"validateComplaintOrganSystemMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_ORGAN_SYSTEM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ComplaintOrganSystem target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ComplaintOrganSystem target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplaintOrganSystemOperations.validateComplaintOrganSystemMoodCode(
+					(ComplaintOrganSystem) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplaintOrganSystemMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class ComplaintOrganSystemTest extends CDAValidationTest {
 			protected void updateToPass(ComplaintOrganSystem target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ComplaintOrganSystem target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ComplaintOrganSystemCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class ComplaintOrganSystemTest extends CDAValidationTest {
 		};
 
 		validateComplaintOrganSystemValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateComplaintOrganSystemMoodCode() {
-		OperationsTestCase<ComplaintOrganSystem> validateComplaintOrganSystemMoodCodeTestCase = new OperationsTestCase<ComplaintOrganSystem>(
-			"validateComplaintOrganSystemMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_ORGAN_SYSTEM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ComplaintOrganSystem target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ComplaintOrganSystem target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ComplaintOrganSystemOperations.validateComplaintOrganSystemMoodCode(
-					(ComplaintOrganSystem) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateComplaintOrganSystemMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

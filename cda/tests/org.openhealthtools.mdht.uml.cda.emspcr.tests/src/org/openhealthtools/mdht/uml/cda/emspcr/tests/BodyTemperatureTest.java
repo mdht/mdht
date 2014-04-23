@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.BodyTemperatureOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -33,10 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateBodyTemperatureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Temperature Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateBodyTemperatureValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Temperature Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateBodyTemperatureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Temperature Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateBodyTemperatureMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Temperature Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateBodyTemperatureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Temperature Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateBodyTemperatureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Temperature Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateBodyTemperatureValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Temperature Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BodyTemperature#validateVitalSignObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Template Id</em>}</li>
  * </ul>
  * </p>
@@ -45,6 +39,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class BodyTemperatureTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateBodyTemperatureMoodCode() {
+		OperationsTestCase<BodyTemperature> validateBodyTemperatureMoodCodeTestCase = new OperationsTestCase<BodyTemperature>(
+			"validateBodyTemperatureMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_BODY_TEMPERATURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(BodyTemperature target) {
+
+			}
+
+			@Override
+			protected void updateToPass(BodyTemperature target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return BodyTemperatureOperations.validateBodyTemperatureMoodCode(
+					(BodyTemperature) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateBodyTemperatureMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -78,43 +106,6 @@ public class BodyTemperatureTest extends CDAValidationTest {
 		};
 
 		validateBodyTemperatureCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateBodyTemperatureValue() {
-		OperationsTestCase<BodyTemperature> validateBodyTemperatureValueTestCase = new OperationsTestCase<BodyTemperature>(
-			"validateBodyTemperatureValue",
-			operationsForOCL.getOCLValue("VALIDATE_BODY_TEMPERATURE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(BodyTemperature target) {
-
-			}
-
-			@Override
-			protected void updateToPass(BodyTemperature target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return BodyTemperatureOperations.validateBodyTemperatureValue(
-					(BodyTemperature) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateBodyTemperatureValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -159,10 +150,10 @@ public class BodyTemperatureTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateBodyTemperatureMoodCode() {
-		OperationsTestCase<BodyTemperature> validateBodyTemperatureMoodCodeTestCase = new OperationsTestCase<BodyTemperature>(
-			"validateBodyTemperatureMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_BODY_TEMPERATURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateBodyTemperatureValue() {
+		OperationsTestCase<BodyTemperature> validateBodyTemperatureValueTestCase = new OperationsTestCase<BodyTemperature>(
+			"validateBodyTemperatureValue",
+			operationsForOCL.getOCLValue("VALIDATE_BODY_TEMPERATURE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -174,18 +165,21 @@ public class BodyTemperatureTest extends CDAValidationTest {
 			protected void updateToPass(BodyTemperature target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return BodyTemperatureOperations.validateBodyTemperatureMoodCode(
+				return BodyTemperatureOperations.validateBodyTemperatureValue(
 					(BodyTemperature) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateBodyTemperatureMoodCodeTestCase.doValidationTest();
+		validateBodyTemperatureValueTestCase.doValidationTest();
 	}
 
 	/**

@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.Procedure;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProcedureOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -41,14 +36,15 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureProcedurePatientResponseRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Procedure Patient Response Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureProcedurePerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Procedure Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureAirwayConfirmationRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Airway Confirmation Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureReasonProcedureNotAttemptedRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Reason Procedure Not Attempted Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureNegationInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Negation Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureStatusCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Status Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureApproachSiteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Approach Site Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureApproachSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Approach Site Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateEMSPCRProcedureNegationInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate EMSPCR Procedure Negation Ind</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Procedure#validateProcedureActivityProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -334,6 +330,74 @@ public class ProcedureTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateEMSPCRProcedureReasonProcedureNotAttemptedRelationship() {
+		OperationsTestCase<Procedure> validateEMSPCRProcedureReasonProcedureNotAttemptedRelationshipTestCase = new OperationsTestCase<Procedure>(
+			"validateEMSPCRProcedureReasonProcedureNotAttemptedRelationship",
+			operationsForOCL.getOCLValue("VALIDATE_EMSPCR_PROCEDURE_REASON_PROCEDURE_NOT_ATTEMPTED_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Procedure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Procedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureOperations.validateEMSPCRProcedureReasonProcedureNotAttemptedRelationship(
+					(Procedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEMSPCRProcedureReasonProcedureNotAttemptedRelationshipTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEMSPCRProcedureTemplateId() {
+		OperationsTestCase<Procedure> validateEMSPCRProcedureTemplateIdTestCase = new OperationsTestCase<Procedure>(
+			"validateEMSPCRProcedureTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_EMSPCR_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Procedure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Procedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureOperations.validateEMSPCRProcedureTemplateId(
+					(Procedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEMSPCRProcedureTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateEMSPCRProcedureCode() {
 		OperationsTestCase<Procedure> validateEMSPCRProcedureCodeTestCase = new OperationsTestCase<Procedure>(
 			"validateEMSPCRProcedureCode",
@@ -367,10 +431,10 @@ public class ProcedureTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateEMSPCRProcedureEffectiveTime() {
-		OperationsTestCase<Procedure> validateEMSPCRProcedureEffectiveTimeTestCase = new OperationsTestCase<Procedure>(
-			"validateEMSPCRProcedureEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_EMSPCR_PROCEDURE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateEMSPCRProcedureNegationInd() {
+		OperationsTestCase<Procedure> validateEMSPCRProcedureNegationIndTestCase = new OperationsTestCase<Procedure>(
+			"validateEMSPCRProcedureNegationInd",
+			operationsForOCL.getOCLValue("VALIDATE_EMSPCR_PROCEDURE_NEGATION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -382,21 +446,18 @@ public class ProcedureTest extends CDAValidationTest {
 			protected void updateToPass(Procedure target) {
 				target.init();
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProcedureOperations.validateEMSPCRProcedureEffectiveTime(
+				return ProcedureOperations.validateEMSPCRProcedureNegationInd(
 					(Procedure) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEMSPCRProcedureEffectiveTimeTestCase.doValidationTest();
+		validateEMSPCRProcedureNegationIndTestCase.doValidationTest();
 	}
 
 	/**
@@ -459,6 +520,13 @@ public class ProcedureTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(Procedure target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.EMSPCRProcedureStatusCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ProcedureOperations.validateEMSPCRProcedureStatusCode(
@@ -468,6 +536,43 @@ public class ProcedureTest extends CDAValidationTest {
 		};
 
 		validateEMSPCRProcedureStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEMSPCRProcedureEffectiveTime() {
+		OperationsTestCase<Procedure> validateEMSPCRProcedureEffectiveTimeTestCase = new OperationsTestCase<Procedure>(
+			"validateEMSPCRProcedureEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_EMSPCR_PROCEDURE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Procedure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Procedure target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureOperations.validateEMSPCRProcedureEffectiveTime(
+					(Procedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEMSPCRProcedureEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**
@@ -527,6 +632,13 @@ public class ProcedureTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(Procedure target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.EMSPCRProcedureApproachSiteCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ProcedureOperations.validateEMSPCRProcedureApproachSiteCode(
@@ -536,74 +648,6 @@ public class ProcedureTest extends CDAValidationTest {
 		};
 
 		validateEMSPCRProcedureApproachSiteCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateEMSPCRProcedureNegationInd() {
-		OperationsTestCase<Procedure> validateEMSPCRProcedureNegationIndTestCase = new OperationsTestCase<Procedure>(
-			"validateEMSPCRProcedureNegationInd",
-			operationsForOCL.getOCLValue("VALIDATE_EMSPCR_PROCEDURE_NEGATION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Procedure target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Procedure target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureOperations.validateEMSPCRProcedureNegationInd(
-					(Procedure) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateEMSPCRProcedureNegationIndTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProcedureActivityProcedureTemplateId() {
-		OperationsTestCase<Procedure> validateProcedureActivityProcedureTemplateIdTestCase = new OperationsTestCase<Procedure>(
-			"validateProcedureActivityProcedureTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Procedure target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Procedure target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureOperations.validateProcedureActivityProcedureTemplateId(
-					(Procedure) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureActivityProcedureTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

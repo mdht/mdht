@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.AirwayConfirmationObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,13 +29,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Method Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationMethodCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Method Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservation#validateAirwayConfirmationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airway Confirmation Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +76,40 @@ public class AirwayConfirmationObservationTest extends CDAValidationTest {
 		};
 
 		validateAirwayConfirmationObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAirwayConfirmationObservationMoodCode() {
+		OperationsTestCase<AirwayConfirmationObservation> validateAirwayConfirmationObservationMoodCodeTestCase = new OperationsTestCase<AirwayConfirmationObservation>(
+			"validateAirwayConfirmationObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_AIRWAY_CONFIRMATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AirwayConfirmationObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AirwayConfirmationObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AirwayConfirmationObservationOperations.validateAirwayConfirmationObservationMoodCode(
+					(AirwayConfirmationObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAirwayConfirmationObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -143,6 +172,13 @@ public class AirwayConfirmationObservationTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(AirwayConfirmationObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.AirwayConfirmationObservationCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return AirwayConfirmationObservationOperations.validateAirwayConfirmationObservationCode(
@@ -152,6 +188,80 @@ public class AirwayConfirmationObservationTest extends CDAValidationTest {
 		};
 
 		validateAirwayConfirmationObservationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAirwayConfirmationObservationEffectiveTime() {
+		OperationsTestCase<AirwayConfirmationObservation> validateAirwayConfirmationObservationEffectiveTimeTestCase = new OperationsTestCase<AirwayConfirmationObservation>(
+			"validateAirwayConfirmationObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_AIRWAY_CONFIRMATION_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AirwayConfirmationObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AirwayConfirmationObservation target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AirwayConfirmationObservationOperations.validateAirwayConfirmationObservationEffectiveTime(
+					(AirwayConfirmationObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAirwayConfirmationObservationEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAirwayConfirmationObservationValue() {
+		OperationsTestCase<AirwayConfirmationObservation> validateAirwayConfirmationObservationValueTestCase = new OperationsTestCase<AirwayConfirmationObservation>(
+			"validateAirwayConfirmationObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_AIRWAY_CONFIRMATION_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AirwayConfirmationObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AirwayConfirmationObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AirwayConfirmationObservationOperations.validateAirwayConfirmationObservationValue(
+					(AirwayConfirmationObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAirwayConfirmationObservationValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -220,114 +330,6 @@ public class AirwayConfirmationObservationTest extends CDAValidationTest {
 		};
 
 		validateAirwayConfirmationObservationMethodCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAirwayConfirmationObservationValue() {
-		OperationsTestCase<AirwayConfirmationObservation> validateAirwayConfirmationObservationValueTestCase = new OperationsTestCase<AirwayConfirmationObservation>(
-			"validateAirwayConfirmationObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_AIRWAY_CONFIRMATION_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AirwayConfirmationObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AirwayConfirmationObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AirwayConfirmationObservationOperations.validateAirwayConfirmationObservationValue(
-					(AirwayConfirmationObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAirwayConfirmationObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAirwayConfirmationObservationEffectiveTime() {
-		OperationsTestCase<AirwayConfirmationObservation> validateAirwayConfirmationObservationEffectiveTimeTestCase = new OperationsTestCase<AirwayConfirmationObservation>(
-			"validateAirwayConfirmationObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_AIRWAY_CONFIRMATION_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AirwayConfirmationObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AirwayConfirmationObservation target) {
-				target.init();
-
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AirwayConfirmationObservationOperations.validateAirwayConfirmationObservationEffectiveTime(
-					(AirwayConfirmationObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAirwayConfirmationObservationEffectiveTimeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAirwayConfirmationObservationMoodCode() {
-		OperationsTestCase<AirwayConfirmationObservation> validateAirwayConfirmationObservationMoodCodeTestCase = new OperationsTestCase<AirwayConfirmationObservation>(
-			"validateAirwayConfirmationObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_AIRWAY_CONFIRMATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AirwayConfirmationObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AirwayConfirmationObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AirwayConfirmationObservationOperations.validateAirwayConfirmationObservationMoodCode(
-					(AirwayConfirmationObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAirwayConfirmationObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

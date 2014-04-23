@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.CandidatePatientRegistryTypeOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType#validateCandidatePatientRegistryTypeTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Candidate Patient Registry Type Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType#validateCandidatePatientRegistryTypeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Candidate Patient Registry Type Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType#validateCandidatePatientRegistryTypeCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Candidate Patient Registry Type Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType#validateCandidatePatientRegistryTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Candidate Patient Registry Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType#validateCandidatePatientRegistryTypeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Candidate Patient Registry Type Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType#validateCandidatePatientRegistryTypeValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Candidate Patient Registry Type Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryType#validateCandidatePatientRegistryTypeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Candidate Patient Registry Type Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class CandidatePatientRegistryTypeTest extends CDAValidationTest {
 		};
 
 		validateCandidatePatientRegistryTypeTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCandidatePatientRegistryTypeMoodCode() {
+		OperationsTestCase<CandidatePatientRegistryType> validateCandidatePatientRegistryTypeMoodCodeTestCase = new OperationsTestCase<CandidatePatientRegistryType>(
+			"validateCandidatePatientRegistryTypeMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CANDIDATE_PATIENT_REGISTRY_TYPE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CandidatePatientRegistryType target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CandidatePatientRegistryType target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CandidatePatientRegistryTypeOperations.validateCandidatePatientRegistryTypeMoodCode(
+					(CandidatePatientRegistryType) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCandidatePatientRegistryTypeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class CandidatePatientRegistryTypeTest extends CDAValidationTest {
 			protected void updateToPass(CandidatePatientRegistryType target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(CandidatePatientRegistryType target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.CandidatePatientRegistryTypeCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class CandidatePatientRegistryTypeTest extends CDAValidationTest {
 		};
 
 		validateCandidatePatientRegistryTypeValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateCandidatePatientRegistryTypeMoodCode() {
-		OperationsTestCase<CandidatePatientRegistryType> validateCandidatePatientRegistryTypeMoodCodeTestCase = new OperationsTestCase<CandidatePatientRegistryType>(
-			"validateCandidatePatientRegistryTypeMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CANDIDATE_PATIENT_REGISTRY_TYPE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(CandidatePatientRegistryType target) {
-
-			}
-
-			@Override
-			protected void updateToPass(CandidatePatientRegistryType target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return CandidatePatientRegistryTypeOperations.validateCandidatePatientRegistryTypeMoodCode(
-					(CandidatePatientRegistryType) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateCandidatePatientRegistryTypeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

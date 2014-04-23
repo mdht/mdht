@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.GlasgowQualifierOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier#validateGlasgowQualifierTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Qualifier Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier#validateGlasgowQualifierMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Qualifier Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier#validateGlasgowQualifierCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Qualifier Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier#validateGlasgowQualifierCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Qualifier Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier#validateGlasgowQualifierValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Qualifier Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier#validateGlasgowQualifierMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Qualifier Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifier#validateGlasgowQualifierValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Qualifier Value P</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +73,40 @@ public class GlasgowQualifierTest extends CDAValidationTest {
 		};
 
 		validateGlasgowQualifierTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateGlasgowQualifierMoodCode() {
+		OperationsTestCase<GlasgowQualifier> validateGlasgowQualifierMoodCodeTestCase = new OperationsTestCase<GlasgowQualifier>(
+			"validateGlasgowQualifierMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_GLASGOW_QUALIFIER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GlasgowQualifier target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GlasgowQualifier target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GlasgowQualifierOperations.validateGlasgowQualifierMoodCode(
+					(GlasgowQualifier) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGlasgowQualifierMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +166,13 @@ public class GlasgowQualifierTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(GlasgowQualifier target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.GlasgowQualifierCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return GlasgowQualifierOperations.validateGlasgowQualifierCode(
@@ -189,10 +226,10 @@ public class GlasgowQualifierTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateGlasgowQualifierMoodCode() {
-		OperationsTestCase<GlasgowQualifier> validateGlasgowQualifierMoodCodeTestCase = new OperationsTestCase<GlasgowQualifier>(
-			"validateGlasgowQualifierMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_GLASGOW_QUALIFIER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateGlasgowQualifierValueP() {
+		OperationsTestCase<GlasgowQualifier> validateGlasgowQualifierValuePTestCase = new OperationsTestCase<GlasgowQualifier>(
+			"validateGlasgowQualifierValueP",
+			operationsForOCL.getOCLValue("VALIDATE_GLASGOW_QUALIFIER_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -209,13 +246,13 @@ public class GlasgowQualifierTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GlasgowQualifierOperations.validateGlasgowQualifierMoodCode(
+				return GlasgowQualifierOperations.validateGlasgowQualifierValueP(
 					(GlasgowQualifier) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGlasgowQualifierMoodCodeTestCase.doValidationTest();
+		validateGlasgowQualifierValuePTestCase.doValidationTest();
 	}
 
 	/**

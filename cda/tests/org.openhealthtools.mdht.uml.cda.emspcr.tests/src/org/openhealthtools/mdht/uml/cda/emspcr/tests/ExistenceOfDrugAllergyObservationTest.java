@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugAllergyObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ExistenceOfDrugAllergyObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugAllergyObservation#validateExistenceOfDrugAllergyObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Allergy Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugAllergyObservation#validateExistenceOfDrugAllergyObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Allergy Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugAllergyObservation#validateExistenceOfDrugAllergyObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Allergy Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugAllergyObservation#validateExistenceOfDrugAllergyObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Allergy Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugAllergyObservation#validateExistenceOfDrugAllergyObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Allergy Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class ExistenceOfDrugAllergyObservationTest extends CDAValidationTest {
 		};
 
 		validateExistenceOfDrugAllergyObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateExistenceOfDrugAllergyObservationMoodCode() {
+		OperationsTestCase<ExistenceOfDrugAllergyObservation> validateExistenceOfDrugAllergyObservationMoodCodeTestCase = new OperationsTestCase<ExistenceOfDrugAllergyObservation>(
+			"validateExistenceOfDrugAllergyObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_EXISTENCE_OF_DRUG_ALLERGY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExistenceOfDrugAllergyObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ExistenceOfDrugAllergyObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ExistenceOfDrugAllergyObservationOperations.validateExistenceOfDrugAllergyObservationMoodCode(
+					(ExistenceOfDrugAllergyObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateExistenceOfDrugAllergyObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -150,40 +178,6 @@ public class ExistenceOfDrugAllergyObservationTest extends CDAValidationTest {
 		};
 
 		validateExistenceOfDrugAllergyObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateExistenceOfDrugAllergyObservationMoodCode() {
-		OperationsTestCase<ExistenceOfDrugAllergyObservation> validateExistenceOfDrugAllergyObservationMoodCodeTestCase = new OperationsTestCase<ExistenceOfDrugAllergyObservation>(
-			"validateExistenceOfDrugAllergyObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_EXISTENCE_OF_DRUG_ALLERGY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ExistenceOfDrugAllergyObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ExistenceOfDrugAllergyObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ExistenceOfDrugAllergyObservationOperations.validateExistenceOfDrugAllergyObservationMoodCode(
-					(ExistenceOfDrugAllergyObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateExistenceOfDrugAllergyObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

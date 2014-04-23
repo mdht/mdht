@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.ArrestRhythm;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ArrestRhythmOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ArrestRhythm#validateArrestRhythmTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Arrest Rhythm Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ArrestRhythm#validateArrestRhythmMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Arrest Rhythm Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ArrestRhythm#validateArrestRhythmCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Arrest Rhythm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ArrestRhythm#validateArrestRhythmValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Arrest Rhythm Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ArrestRhythm#validateArrestRhythmMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Arrest Rhythm Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class ArrestRhythmTest extends CDAValidationTest {
 		};
 
 		validateArrestRhythmTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateArrestRhythmMoodCode() {
+		OperationsTestCase<ArrestRhythm> validateArrestRhythmMoodCodeTestCase = new OperationsTestCase<ArrestRhythm>(
+			"validateArrestRhythmMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_ARREST_RHYTHM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ArrestRhythm target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ArrestRhythm target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ArrestRhythmOperations.validateArrestRhythmMoodCode(
+					(ArrestRhythm) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateArrestRhythmMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -143,40 +171,6 @@ public class ArrestRhythmTest extends CDAValidationTest {
 		};
 
 		validateArrestRhythmValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateArrestRhythmMoodCode() {
-		OperationsTestCase<ArrestRhythm> validateArrestRhythmMoodCodeTestCase = new OperationsTestCase<ArrestRhythm>(
-			"validateArrestRhythmMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ARREST_RHYTHM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ArrestRhythm target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ArrestRhythm target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ArrestRhythmOperations.validateArrestRhythmMoodCode(
-					(ArrestRhythm) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateArrestRhythmMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

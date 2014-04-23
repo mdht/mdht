@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.CurrentlyOnMedication;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.CurrentlyOnMedicationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CurrentlyOnMedication#validateCurrentlyOnMedicationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Currently On Medication Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CurrentlyOnMedication#validateCurrentlyOnMedicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Currently On Medication Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CurrentlyOnMedication#validateCurrentlyOnMedicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Currently On Medication Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CurrentlyOnMedication#validateCurrentlyOnMedicationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Currently On Medication Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CurrentlyOnMedication#validateCurrentlyOnMedicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Currently On Medication Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class CurrentlyOnMedicationTest extends CDAValidationTest {
 		};
 
 		validateCurrentlyOnMedicationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCurrentlyOnMedicationMoodCode() {
+		OperationsTestCase<CurrentlyOnMedication> validateCurrentlyOnMedicationMoodCodeTestCase = new OperationsTestCase<CurrentlyOnMedication>(
+			"validateCurrentlyOnMedicationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CURRENTLY_ON_MEDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CurrentlyOnMedication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CurrentlyOnMedication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CurrentlyOnMedicationOperations.validateCurrentlyOnMedicationMoodCode(
+					(CurrentlyOnMedication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCurrentlyOnMedicationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class CurrentlyOnMedicationTest extends CDAValidationTest {
 		};
 
 		validateCurrentlyOnMedicationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateCurrentlyOnMedicationMoodCode() {
-		OperationsTestCase<CurrentlyOnMedication> validateCurrentlyOnMedicationMoodCodeTestCase = new OperationsTestCase<CurrentlyOnMedication>(
-			"validateCurrentlyOnMedicationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CURRENTLY_ON_MEDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(CurrentlyOnMedication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(CurrentlyOnMedication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return CurrentlyOnMedicationOperations.validateCurrentlyOnMedicationMoodCode(
-					(CurrentlyOnMedication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateCurrentlyOnMedicationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

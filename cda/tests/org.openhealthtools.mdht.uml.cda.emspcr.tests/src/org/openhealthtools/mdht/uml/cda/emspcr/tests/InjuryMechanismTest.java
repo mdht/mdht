@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.InjuryMechanism;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.InjuryMechanismOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryMechanism#validateInjuryMechanismTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Mechanism Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryMechanism#validateInjuryMechanismMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Mechanism Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryMechanism#validateInjuryMechanismCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Mechanism Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryMechanism#validateInjuryMechanismValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Mechanism Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryMechanism#validateInjuryMechanismMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Mechanism Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class InjuryMechanismTest extends CDAValidationTest {
 		};
 
 		validateInjuryMechanismTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateInjuryMechanismMoodCode() {
+		OperationsTestCase<InjuryMechanism> validateInjuryMechanismMoodCodeTestCase = new OperationsTestCase<InjuryMechanism>(
+			"validateInjuryMechanismMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_INJURY_MECHANISM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(InjuryMechanism target) {
+
+			}
+
+			@Override
+			protected void updateToPass(InjuryMechanism target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InjuryMechanismOperations.validateInjuryMechanismMoodCode(
+					(InjuryMechanism) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInjuryMechanismMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class InjuryMechanismTest extends CDAValidationTest {
 		};
 
 		validateInjuryMechanismValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateInjuryMechanismMoodCode() {
-		OperationsTestCase<InjuryMechanism> validateInjuryMechanismMoodCodeTestCase = new OperationsTestCase<InjuryMechanism>(
-			"validateInjuryMechanismMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_INJURY_MECHANISM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(InjuryMechanism target) {
-
-			}
-
-			@Override
-			protected void updateToPass(InjuryMechanism target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return InjuryMechanismOperations.validateInjuryMechanismMoodCode(
-					(InjuryMechanism) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateInjuryMechanismMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

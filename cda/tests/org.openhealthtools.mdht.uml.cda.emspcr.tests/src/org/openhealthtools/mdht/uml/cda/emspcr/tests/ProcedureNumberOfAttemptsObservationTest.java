@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProcedureNumberOfAttemptsObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservation#validateProcedureNumberOfAttemptsObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Number Of Attempts Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservation#validateProcedureNumberOfAttemptsObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Number Of Attempts Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservation#validateProcedureNumberOfAttemptsObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Number Of Attempts Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservation#validateProcedureNumberOfAttemptsObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Number Of Attempts Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservation#validateProcedureNumberOfAttemptsObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Number Of Attempts Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservation#validateProcedureNumberOfAttemptsObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Number Of Attempts Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class ProcedureNumberOfAttemptsObservationTest extends CDAValidationTest 
 		};
 
 		validateProcedureNumberOfAttemptsObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureNumberOfAttemptsObservationMoodCode() {
+		OperationsTestCase<ProcedureNumberOfAttemptsObservation> validateProcedureNumberOfAttemptsObservationMoodCodeTestCase = new OperationsTestCase<ProcedureNumberOfAttemptsObservation>(
+			"validateProcedureNumberOfAttemptsObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NUMBER_OF_ATTEMPTS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureNumberOfAttemptsObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureNumberOfAttemptsObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureNumberOfAttemptsObservationOperations.validateProcedureNumberOfAttemptsObservationMoodCode(
+					(ProcedureNumberOfAttemptsObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNumberOfAttemptsObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -139,6 +168,13 @@ public class ProcedureNumberOfAttemptsObservationTest extends CDAValidationTest 
 			}
 
 			@Override
+			protected void setDependency(ProcedureNumberOfAttemptsObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ProcedureNumberOfAttemptsObservationCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ProcedureNumberOfAttemptsObservationOperations.validateProcedureNumberOfAttemptsObservationCode(
@@ -185,40 +221,6 @@ public class ProcedureNumberOfAttemptsObservationTest extends CDAValidationTest 
 		};
 
 		validateProcedureNumberOfAttemptsObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProcedureNumberOfAttemptsObservationMoodCode() {
-		OperationsTestCase<ProcedureNumberOfAttemptsObservation> validateProcedureNumberOfAttemptsObservationMoodCodeTestCase = new OperationsTestCase<ProcedureNumberOfAttemptsObservation>(
-			"validateProcedureNumberOfAttemptsObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NUMBER_OF_ATTEMPTS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureNumberOfAttemptsObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProcedureNumberOfAttemptsObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureNumberOfAttemptsObservationOperations.validateProcedureNumberOfAttemptsObservationMoodCode(
-					(ProcedureNumberOfAttemptsObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureNumberOfAttemptsObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

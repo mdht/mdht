@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProviderSecondaryImpressionsOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions#validateProviderSecondaryImpressionsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Secondary Impressions Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions#validateProviderSecondaryImpressionsMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Secondary Impressions Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions#validateProviderSecondaryImpressionsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Secondary Impressions Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions#validateProviderSecondaryImpressionsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Secondary Impressions Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions#validateProviderSecondaryImpressionsValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Secondary Impressions Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions#validateProviderSecondaryImpressionsValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Secondary Impressions Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressions#validateProviderSecondaryImpressionsMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Secondary Impressions Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ProviderSecondaryImpressionsTest extends CDAValidationTest {
 		};
 
 		validateProviderSecondaryImpressionsTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProviderSecondaryImpressionsMoodCode() {
+		OperationsTestCase<ProviderSecondaryImpressions> validateProviderSecondaryImpressionsMoodCodeTestCase = new OperationsTestCase<ProviderSecondaryImpressions>(
+			"validateProviderSecondaryImpressionsMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROVIDER_SECONDARY_IMPRESSIONS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProviderSecondaryImpressions target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProviderSecondaryImpressions target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProviderSecondaryImpressionsOperations.validateProviderSecondaryImpressionsMoodCode(
+					(ProviderSecondaryImpressions) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProviderSecondaryImpressionsMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class ProviderSecondaryImpressionsTest extends CDAValidationTest {
 			protected void updateToPass(ProviderSecondaryImpressions target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ProviderSecondaryImpressions target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ProviderSecondaryImpressionsCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class ProviderSecondaryImpressionsTest extends CDAValidationTest {
 		};
 
 		validateProviderSecondaryImpressionsValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProviderSecondaryImpressionsMoodCode() {
-		OperationsTestCase<ProviderSecondaryImpressions> validateProviderSecondaryImpressionsMoodCodeTestCase = new OperationsTestCase<ProviderSecondaryImpressions>(
-			"validateProviderSecondaryImpressionsMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROVIDER_SECONDARY_IMPRESSIONS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProviderSecondaryImpressions target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProviderSecondaryImpressions target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProviderSecondaryImpressionsOperations.validateProviderSecondaryImpressionsMoodCode(
-					(ProviderSecondaryImpressions) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProviderSecondaryImpressionsMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

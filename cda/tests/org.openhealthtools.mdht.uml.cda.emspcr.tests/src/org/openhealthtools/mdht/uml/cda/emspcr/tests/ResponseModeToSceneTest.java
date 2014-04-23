@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ResponseModeToSceneOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene#validateResponseModeToSceneTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Mode To Scene Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene#validateResponseModeToSceneMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Mode To Scene Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene#validateResponseModeToSceneCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Mode To Scene Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene#validateResponseModeToSceneCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Mode To Scene Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene#validateResponseModeToSceneValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Mode To Scene Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene#validateResponseModeToSceneValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Mode To Scene Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToScene#validateResponseModeToSceneMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Mode To Scene Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ResponseModeToSceneTest extends CDAValidationTest {
 		};
 
 		validateResponseModeToSceneTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResponseModeToSceneMoodCode() {
+		OperationsTestCase<ResponseModeToScene> validateResponseModeToSceneMoodCodeTestCase = new OperationsTestCase<ResponseModeToScene>(
+			"validateResponseModeToSceneMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESPONSE_MODE_TO_SCENE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ResponseModeToScene target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ResponseModeToScene target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResponseModeToSceneOperations.validateResponseModeToSceneMoodCode(
+					(ResponseModeToScene) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResponseModeToSceneMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class ResponseModeToSceneTest extends CDAValidationTest {
 			protected void updateToPass(ResponseModeToScene target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ResponseModeToScene target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ResponseModeToSceneCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class ResponseModeToSceneTest extends CDAValidationTest {
 		};
 
 		validateResponseModeToSceneValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateResponseModeToSceneMoodCode() {
-		OperationsTestCase<ResponseModeToScene> validateResponseModeToSceneMoodCodeTestCase = new OperationsTestCase<ResponseModeToScene>(
-			"validateResponseModeToSceneMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_RESPONSE_MODE_TO_SCENE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ResponseModeToScene target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ResponseModeToScene target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResponseModeToSceneOperations.validateResponseModeToSceneMoodCode(
-					(ResponseModeToScene) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateResponseModeToSceneMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

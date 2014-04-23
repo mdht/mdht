@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.DrugUseIndication;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.DrugUseIndicationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DrugUseIndication#validateDrugUseIndicationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Use Indication Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DrugUseIndication#validateDrugUseIndicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Use Indication Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DrugUseIndication#validateDrugUseIndicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Use Indication Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DrugUseIndication#validateDrugUseIndicationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Use Indication Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DrugUseIndication#validateDrugUseIndicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Use Indication Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class DrugUseIndicationTest extends CDAValidationTest {
 		};
 
 		validateDrugUseIndicationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDrugUseIndicationMoodCode() {
+		OperationsTestCase<DrugUseIndication> validateDrugUseIndicationMoodCodeTestCase = new OperationsTestCase<DrugUseIndication>(
+			"validateDrugUseIndicationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_DRUG_USE_INDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DrugUseIndication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DrugUseIndication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DrugUseIndicationOperations.validateDrugUseIndicationMoodCode(
+					(DrugUseIndication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDrugUseIndicationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class DrugUseIndicationTest extends CDAValidationTest {
 		};
 
 		validateDrugUseIndicationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDrugUseIndicationMoodCode() {
-		OperationsTestCase<DrugUseIndication> validateDrugUseIndicationMoodCodeTestCase = new OperationsTestCase<DrugUseIndication>(
-			"validateDrugUseIndicationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_DRUG_USE_INDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DrugUseIndication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DrugUseIndication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DrugUseIndicationOperations.validateDrugUseIndicationMoodCode(
-					(DrugUseIndication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDrugUseIndicationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ChestAndLungsAssessmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ChestAndLungsAssessment#validateChestAndLungsAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chest And Lungs Assessment Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,6 +79,40 @@ public class ChestAndLungsAssessmentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateChestAndLungsAssessmentMoodCode() {
+		OperationsTestCase<ChestAndLungsAssessment> validateChestAndLungsAssessmentMoodCodeTestCase = new OperationsTestCase<ChestAndLungsAssessment>(
+			"validateChestAndLungsAssessmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CHEST_AND_LUNGS_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ChestAndLungsAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ChestAndLungsAssessment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ChestAndLungsAssessmentOperations.validateChestAndLungsAssessmentMoodCode(
+					(ChestAndLungsAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateChestAndLungsAssessmentMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateChestAndLungsAssessmentCode() {
 		OperationsTestCase<ChestAndLungsAssessment> validateChestAndLungsAssessmentCodeTestCase = new OperationsTestCase<ChestAndLungsAssessment>(
 			"validateChestAndLungsAssessmentCode",
@@ -112,43 +140,6 @@ public class ChestAndLungsAssessmentTest extends CDAValidationTest {
 		};
 
 		validateChestAndLungsAssessmentCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateChestAndLungsAssessmentValue() {
-		OperationsTestCase<ChestAndLungsAssessment> validateChestAndLungsAssessmentValueTestCase = new OperationsTestCase<ChestAndLungsAssessment>(
-			"validateChestAndLungsAssessmentValue",
-			operationsForOCL.getOCLValue("VALIDATE_CHEST_AND_LUNGS_ASSESSMENT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ChestAndLungsAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ChestAndLungsAssessment target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ChestAndLungsAssessmentOperations.validateChestAndLungsAssessmentValue(
-					(ChestAndLungsAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateChestAndLungsAssessmentValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -193,10 +184,10 @@ public class ChestAndLungsAssessmentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateChestAndLungsAssessmentMoodCode() {
-		OperationsTestCase<ChestAndLungsAssessment> validateChestAndLungsAssessmentMoodCodeTestCase = new OperationsTestCase<ChestAndLungsAssessment>(
-			"validateChestAndLungsAssessmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CHEST_AND_LUNGS_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateChestAndLungsAssessmentValue() {
+		OperationsTestCase<ChestAndLungsAssessment> validateChestAndLungsAssessmentValueTestCase = new OperationsTestCase<ChestAndLungsAssessment>(
+			"validateChestAndLungsAssessmentValue",
+			operationsForOCL.getOCLValue("VALIDATE_CHEST_AND_LUNGS_ASSESSMENT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -208,18 +199,21 @@ public class ChestAndLungsAssessmentTest extends CDAValidationTest {
 			protected void updateToPass(ChestAndLungsAssessment target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ChestAndLungsAssessmentOperations.validateChestAndLungsAssessmentMoodCode(
+				return ChestAndLungsAssessmentOperations.validateChestAndLungsAssessmentValue(
 					(ChestAndLungsAssessment) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateChestAndLungsAssessmentMoodCodeTestCase.doValidationTest();
+		validateChestAndLungsAssessmentValueTestCase.doValidationTest();
 	}
 
 	/**

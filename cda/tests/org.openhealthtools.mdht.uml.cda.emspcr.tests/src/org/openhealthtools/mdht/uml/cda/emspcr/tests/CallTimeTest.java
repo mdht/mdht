@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.CallTime;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.CallTimeOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CallTime#validateCallTimeTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Call Time Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CallTime#validateCallTimeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Call Time Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CallTime#validateCallTimeCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Call Time Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CallTime#validateCallTimeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Call Time Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CallTime#validateCallTimeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Call Time Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CallTime#validateCallTimeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Call Time Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +71,38 @@ public class CallTimeTest extends CDAValidationTest {
 		};
 
 		validateCallTimeTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCallTimeMoodCode() {
+		OperationsTestCase<CallTime> validateCallTimeMoodCodeTestCase = new OperationsTestCase<CallTime>(
+			"validateCallTimeMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CALL_TIME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(CallTime target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CallTime target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CallTimeOperations.validateCallTimeMoodCode((CallTime) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCallTimeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -132,6 +159,13 @@ public class CallTimeTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(CallTime target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.CallTimeCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return CallTimeOperations.validateCallTimeCode((CallTime) objectToTest, diagnostician, map);
@@ -175,38 +209,6 @@ public class CallTimeTest extends CDAValidationTest {
 		};
 
 		validateCallTimeValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateCallTimeMoodCode() {
-		OperationsTestCase<CallTime> validateCallTimeMoodCodeTestCase = new OperationsTestCase<CallTime>(
-			"validateCallTimeMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CALL_TIME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(CallTime target) {
-
-			}
-
-			@Override
-			protected void updateToPass(CallTime target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return CallTimeOperations.validateCallTimeMoodCode((CallTime) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateCallTimeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

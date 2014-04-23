@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.PatientLocationInVehicle;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PatientLocationInVehicleOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientLocationInVehicle#validatePatientLocationInVehicleTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Location In Vehicle Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientLocationInVehicle#validatePatientLocationInVehicleMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Location In Vehicle Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientLocationInVehicle#validatePatientLocationInVehicleCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Location In Vehicle Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientLocationInVehicle#validatePatientLocationInVehicleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Location In Vehicle Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientLocationInVehicle#validatePatientLocationInVehicleMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Location In Vehicle Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class PatientLocationInVehicleTest extends CDAValidationTest {
 		};
 
 		validatePatientLocationInVehicleTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePatientLocationInVehicleMoodCode() {
+		OperationsTestCase<PatientLocationInVehicle> validatePatientLocationInVehicleMoodCodeTestCase = new OperationsTestCase<PatientLocationInVehicle>(
+			"validatePatientLocationInVehicleMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_LOCATION_IN_VEHICLE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientLocationInVehicle target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientLocationInVehicle target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientLocationInVehicleOperations.validatePatientLocationInVehicleMoodCode(
+					(PatientLocationInVehicle) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientLocationInVehicleMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class PatientLocationInVehicleTest extends CDAValidationTest {
 		};
 
 		validatePatientLocationInVehicleValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientLocationInVehicleMoodCode() {
-		OperationsTestCase<PatientLocationInVehicle> validatePatientLocationInVehicleMoodCodeTestCase = new OperationsTestCase<PatientLocationInVehicle>(
-			"validatePatientLocationInVehicleMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_LOCATION_IN_VEHICLE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientLocationInVehicle target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientLocationInVehicle target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientLocationInVehicleOperations.validatePatientLocationInVehicleMoodCode(
-					(PatientLocationInVehicle) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientLocationInVehicleMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

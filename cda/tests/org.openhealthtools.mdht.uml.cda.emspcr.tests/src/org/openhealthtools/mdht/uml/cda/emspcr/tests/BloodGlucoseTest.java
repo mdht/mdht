@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.BloodGlucoseOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,11 +29,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucose#validateBloodGlucoseValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Blood Glucose Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +74,40 @@ public class BloodGlucoseTest extends CDAValidationTest {
 		};
 
 		validateBloodGlucoseTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateBloodGlucoseMoodCode() {
+		OperationsTestCase<BloodGlucose> validateBloodGlucoseMoodCodeTestCase = new OperationsTestCase<BloodGlucose>(
+			"validateBloodGlucoseMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_BLOOD_GLUCOSE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(BloodGlucose target) {
+
+			}
+
+			@Override
+			protected void updateToPass(BloodGlucose target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return BloodGlucoseOperations.validateBloodGlucoseMoodCode(
+					(BloodGlucose) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateBloodGlucoseMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class BloodGlucoseTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(BloodGlucose target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.BloodGlucoseCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return BloodGlucoseOperations.validateBloodGlucoseCode((BloodGlucose) objectToTest, diagnostician, map);
@@ -144,41 +180,6 @@ public class BloodGlucoseTest extends CDAValidationTest {
 		};
 
 		validateBloodGlucoseCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateBloodGlucoseValue() {
-		OperationsTestCase<BloodGlucose> validateBloodGlucoseValueTestCase = new OperationsTestCase<BloodGlucose>(
-			"validateBloodGlucoseValue",
-			operationsForOCL.getOCLValue("VALIDATE_BLOOD_GLUCOSE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(BloodGlucose target) {
-
-			}
-
-			@Override
-			protected void updateToPass(BloodGlucose target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return BloodGlucoseOperations.validateBloodGlucoseValue((BloodGlucose) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateBloodGlucoseValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -223,11 +224,10 @@ public class BloodGlucoseTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateBloodGlucoseMoodCode() {
-		OperationsTestCase<BloodGlucose> validateBloodGlucoseMoodCodeTestCase = new OperationsTestCase<BloodGlucose>(
-			"validateBloodGlucoseMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_BLOOD_GLUCOSE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+	public void testValidateBloodGlucoseValue() {
+		OperationsTestCase<BloodGlucose> validateBloodGlucoseValueTestCase = new OperationsTestCase<BloodGlucose>(
+			"validateBloodGlucoseValue",
+			operationsForOCL.getOCLValue("VALIDATE_BLOOD_GLUCOSE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(BloodGlucose target) {
@@ -238,18 +238,20 @@ public class BloodGlucoseTest extends CDAValidationTest {
 			protected void updateToPass(BloodGlucose target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return BloodGlucoseOperations.validateBloodGlucoseMoodCode(
-					(BloodGlucose) objectToTest, diagnostician, map);
+				return BloodGlucoseOperations.validateBloodGlucoseValue((BloodGlucose) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateBloodGlucoseMoodCodeTestCase.doValidationTest();
+		validateBloodGlucoseValueTestCase.doValidationTest();
 	}
 
 	/**

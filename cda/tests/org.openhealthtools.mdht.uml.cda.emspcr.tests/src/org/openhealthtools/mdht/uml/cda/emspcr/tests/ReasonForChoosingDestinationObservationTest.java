@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ReasonForChoosingDestinationObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation#validateReasonForChoosingDestinationObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Choosing Destination Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation#validateReasonForChoosingDestinationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Choosing Destination Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation#validateReasonForChoosingDestinationObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Choosing Destination Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation#validateReasonForChoosingDestinationObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Choosing Destination Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation#validateReasonForChoosingDestinationObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Choosing Destination Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation#validateReasonForChoosingDestinationObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Choosing Destination Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservation#validateReasonForChoosingDestinationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Choosing Destination Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ReasonForChoosingDestinationObservationTest extends CDAValidationTe
 		};
 
 		validateReasonForChoosingDestinationObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReasonForChoosingDestinationObservationMoodCode() {
+		OperationsTestCase<ReasonForChoosingDestinationObservation> validateReasonForChoosingDestinationObservationMoodCodeTestCase = new OperationsTestCase<ReasonForChoosingDestinationObservation>(
+			"validateReasonForChoosingDestinationObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_CHOOSING_DESTINATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReasonForChoosingDestinationObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReasonForChoosingDestinationObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReasonForChoosingDestinationObservationOperations.validateReasonForChoosingDestinationObservationMoodCode(
+					(ReasonForChoosingDestinationObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReasonForChoosingDestinationObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,14 @@ public class ReasonForChoosingDestinationObservationTest extends CDAValidationTe
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(ReasonForChoosingDestinationObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put(
+					"org.openhealthtools.mdht.uml.cda.emspcr.ReasonForChoosingDestinationObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +257,6 @@ public class ReasonForChoosingDestinationObservationTest extends CDAValidationTe
 		};
 
 		validateReasonForChoosingDestinationObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateReasonForChoosingDestinationObservationMoodCode() {
-		OperationsTestCase<ReasonForChoosingDestinationObservation> validateReasonForChoosingDestinationObservationMoodCodeTestCase = new OperationsTestCase<ReasonForChoosingDestinationObservation>(
-			"validateReasonForChoosingDestinationObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_CHOOSING_DESTINATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ReasonForChoosingDestinationObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ReasonForChoosingDestinationObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ReasonForChoosingDestinationObservationOperations.validateReasonForChoosingDestinationObservationMoodCode(
-					(ReasonForChoosingDestinationObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateReasonForChoosingDestinationObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

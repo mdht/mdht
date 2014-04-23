@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.MedicationPriorAdministrationObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.MedicationPriorAdministrationObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationPriorAdministrationObservation#validateMedicationPriorAdministrationObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Prior Administration Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationPriorAdministrationObservation#validateMedicationPriorAdministrationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Prior Administration Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationPriorAdministrationObservation#validateMedicationPriorAdministrationObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Prior Administration Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationPriorAdministrationObservation#validateMedicationPriorAdministrationObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Prior Administration Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationPriorAdministrationObservation#validateMedicationPriorAdministrationObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Prior Administration Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationPriorAdministrationObservation#validateMedicationPriorAdministrationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Prior Administration Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +71,40 @@ public class MedicationPriorAdministrationObservationTest extends CDAValidationT
 		};
 
 		validateMedicationPriorAdministrationObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationPriorAdministrationObservationMoodCode() {
+		OperationsTestCase<MedicationPriorAdministrationObservation> validateMedicationPriorAdministrationObservationMoodCodeTestCase = new OperationsTestCase<MedicationPriorAdministrationObservation>(
+			"validateMedicationPriorAdministrationObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRIOR_ADMINISTRATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationPriorAdministrationObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationPriorAdministrationObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationPriorAdministrationObservationOperations.validateMedicationPriorAdministrationObservationMoodCode(
+					(MedicationPriorAdministrationObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationPriorAdministrationObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -185,40 +213,6 @@ public class MedicationPriorAdministrationObservationTest extends CDAValidationT
 		};
 
 		validateMedicationPriorAdministrationObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationPriorAdministrationObservationMoodCode() {
-		OperationsTestCase<MedicationPriorAdministrationObservation> validateMedicationPriorAdministrationObservationMoodCodeTestCase = new OperationsTestCase<MedicationPriorAdministrationObservation>(
-			"validateMedicationPriorAdministrationObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRIOR_ADMINISTRATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationPriorAdministrationObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationPriorAdministrationObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationPriorAdministrationObservationOperations.validateMedicationPriorAdministrationObservationMoodCode(
-					(MedicationPriorAdministrationObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationPriorAdministrationObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProcedureComplicationsObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservation#validateProcedureComplicationsObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Complications Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservation#validateProcedureComplicationsObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Complications Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservation#validateProcedureComplicationsObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Complications Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservation#validateProcedureComplicationsObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Complications Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservation#validateProcedureComplicationsObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Complications Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservation#validateProcedureComplicationsObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Complications Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class ProcedureComplicationsObservationTest extends CDAValidationTest {
 		};
 
 		validateProcedureComplicationsObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureComplicationsObservationMoodCode() {
+		OperationsTestCase<ProcedureComplicationsObservation> validateProcedureComplicationsObservationMoodCodeTestCase = new OperationsTestCase<ProcedureComplicationsObservation>(
+			"validateProcedureComplicationsObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_COMPLICATIONS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureComplicationsObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureComplicationsObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureComplicationsObservationOperations.validateProcedureComplicationsObservationMoodCode(
+					(ProcedureComplicationsObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureComplicationsObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -139,6 +168,13 @@ public class ProcedureComplicationsObservationTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(ProcedureComplicationsObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ProcedureComplicationsObservationCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ProcedureComplicationsObservationOperations.validateProcedureComplicationsObservationCode(
@@ -185,40 +221,6 @@ public class ProcedureComplicationsObservationTest extends CDAValidationTest {
 		};
 
 		validateProcedureComplicationsObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProcedureComplicationsObservationMoodCode() {
-		OperationsTestCase<ProcedureComplicationsObservation> validateProcedureComplicationsObservationMoodCodeTestCase = new OperationsTestCase<ProcedureComplicationsObservation>(
-			"validateProcedureComplicationsObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_COMPLICATIONS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureComplicationsObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProcedureComplicationsObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureComplicationsObservationOperations.validateProcedureComplicationsObservationMoodCode(
-					(ProcedureComplicationsObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureComplicationsObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

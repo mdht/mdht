@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationName;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.DispatchLocationNameOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationName#validateDispatchLocationNameTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Name Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationName#validateDispatchLocationNameMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Name Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationName#validateDispatchLocationNameCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Name Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationName#validateDispatchLocationNameValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Name Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchLocationName#validateDispatchLocationNameMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Location Name Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class DispatchLocationNameTest extends CDAValidationTest {
 		};
 
 		validateDispatchLocationNameTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDispatchLocationNameMoodCode() {
+		OperationsTestCase<DispatchLocationName> validateDispatchLocationNameMoodCodeTestCase = new OperationsTestCase<DispatchLocationName>(
+			"validateDispatchLocationNameMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_LOCATION_NAME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DispatchLocationName target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DispatchLocationName target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DispatchLocationNameOperations.validateDispatchLocationNameMoodCode(
+					(DispatchLocationName) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDispatchLocationNameMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class DispatchLocationNameTest extends CDAValidationTest {
 		};
 
 		validateDispatchLocationNameValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDispatchLocationNameMoodCode() {
-		OperationsTestCase<DispatchLocationName> validateDispatchLocationNameMoodCodeTestCase = new OperationsTestCase<DispatchLocationName>(
-			"validateDispatchLocationNameMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_LOCATION_NAME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DispatchLocationName target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DispatchLocationName target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DispatchLocationNameOperations.validateDispatchLocationNameMoodCode(
-					(DispatchLocationName) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDispatchLocationNameMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

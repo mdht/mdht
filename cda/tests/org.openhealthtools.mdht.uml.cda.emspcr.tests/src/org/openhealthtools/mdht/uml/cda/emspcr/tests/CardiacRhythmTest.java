@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.CardiacRhythmOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -35,14 +30,14 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmParticipant1(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Participant1</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Method Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmMethodCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Method Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Method Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythm#validateCardiacRhythmMethodCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Rhythm Method Code P</em>}</li>
  * </ul>
  * </p>
  *
@@ -124,6 +119,40 @@ public class CardiacRhythmTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateCardiacRhythmMoodCode() {
+		OperationsTestCase<CardiacRhythm> validateCardiacRhythmMoodCodeTestCase = new OperationsTestCase<CardiacRhythm>(
+			"validateCardiacRhythmMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CardiacRhythm target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CardiacRhythm target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CardiacRhythmOperations.validateCardiacRhythmMoodCode(
+					(CardiacRhythm) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCardiacRhythmMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateCardiacRhythmCodeP() {
 		OperationsTestCase<CardiacRhythm> validateCardiacRhythmCodePTestCase = new OperationsTestCase<CardiacRhythm>(
 			"validateCardiacRhythmCodeP",
@@ -175,6 +204,13 @@ public class CardiacRhythmTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(CardiacRhythm target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.CardiacRhythmCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return CardiacRhythmOperations.validateCardiacRhythmCode(
@@ -191,10 +227,10 @@ public class CardiacRhythmTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateCardiacRhythmMethodCode() {
-		OperationsTestCase<CardiacRhythm> validateCardiacRhythmMethodCodeTestCase = new OperationsTestCase<CardiacRhythm>(
-			"validateCardiacRhythmMethodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateCardiacRhythmEffectiveTime() {
+		OperationsTestCase<CardiacRhythm> validateCardiacRhythmEffectiveTimeTestCase = new OperationsTestCase<CardiacRhythm>(
+			"validateCardiacRhythmEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -206,52 +242,21 @@ public class CardiacRhythmTest extends CDAValidationTest {
 			protected void updateToPass(CardiacRhythm target) {
 				target.init();
 
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return CardiacRhythmOperations.validateCardiacRhythmMethodCode(
-					(CardiacRhythm) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateCardiacRhythmMethodCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateCardiacRhythmMethodCodeP() {
-		OperationsTestCase<CardiacRhythm> validateCardiacRhythmMethodCodePTestCase = new OperationsTestCase<CardiacRhythm>(
-			"validateCardiacRhythmMethodCodeP",
-			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_METHOD_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(CardiacRhythm target) {
-
-			}
-
-			@Override
-			protected void updateToPass(CardiacRhythm target) {
-				target.init();
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return CardiacRhythmOperations.validateCardiacRhythmMethodCodeP(
+				return CardiacRhythmOperations.validateCardiacRhythmEffectiveTime(
 					(CardiacRhythm) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateCardiacRhythmMethodCodePTestCase.doValidationTest();
+		validateCardiacRhythmEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**
@@ -330,10 +335,10 @@ public class CardiacRhythmTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateCardiacRhythmEffectiveTime() {
-		OperationsTestCase<CardiacRhythm> validateCardiacRhythmEffectiveTimeTestCase = new OperationsTestCase<CardiacRhythm>(
-			"validateCardiacRhythmEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateCardiacRhythmMethodCode() {
+		OperationsTestCase<CardiacRhythm> validateCardiacRhythmMethodCodeTestCase = new OperationsTestCase<CardiacRhythm>(
+			"validateCardiacRhythmMethodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -345,21 +350,18 @@ public class CardiacRhythmTest extends CDAValidationTest {
 			protected void updateToPass(CardiacRhythm target) {
 				target.init();
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return CardiacRhythmOperations.validateCardiacRhythmEffectiveTime(
+				return CardiacRhythmOperations.validateCardiacRhythmMethodCode(
 					(CardiacRhythm) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateCardiacRhythmEffectiveTimeTestCase.doValidationTest();
+		validateCardiacRhythmMethodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -367,10 +369,10 @@ public class CardiacRhythmTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateCardiacRhythmMoodCode() {
-		OperationsTestCase<CardiacRhythm> validateCardiacRhythmMoodCodeTestCase = new OperationsTestCase<CardiacRhythm>(
-			"validateCardiacRhythmMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateCardiacRhythmMethodCodeP() {
+		OperationsTestCase<CardiacRhythm> validateCardiacRhythmMethodCodePTestCase = new OperationsTestCase<CardiacRhythm>(
+			"validateCardiacRhythmMethodCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_RHYTHM_METHOD_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -387,13 +389,13 @@ public class CardiacRhythmTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return CardiacRhythmOperations.validateCardiacRhythmMoodCode(
+				return CardiacRhythmOperations.validateCardiacRhythmMethodCodeP(
 					(CardiacRhythm) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateCardiacRhythmMoodCodeTestCase.doValidationTest();
+		validateCardiacRhythmMethodCodePTestCase.doValidationTest();
 	}
 
 	/**

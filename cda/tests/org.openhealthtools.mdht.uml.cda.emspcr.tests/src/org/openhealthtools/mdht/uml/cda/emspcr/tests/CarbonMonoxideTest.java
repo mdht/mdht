@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.CarbonMonoxideOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,11 +29,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxide#validateCarbonMonoxideValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Carbon Monoxide Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +74,40 @@ public class CarbonMonoxideTest extends CDAValidationTest {
 		};
 
 		validateCarbonMonoxideTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCarbonMonoxideMoodCode() {
+		OperationsTestCase<CarbonMonoxide> validateCarbonMonoxideMoodCodeTestCase = new OperationsTestCase<CarbonMonoxide>(
+			"validateCarbonMonoxideMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CARBON_MONOXIDE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CarbonMonoxide target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CarbonMonoxide target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CarbonMonoxideOperations.validateCarbonMonoxideMoodCode(
+					(CarbonMonoxide) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCarbonMonoxideMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -138,6 +167,13 @@ public class CarbonMonoxideTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(CarbonMonoxide target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.CarbonMonoxideCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return CarbonMonoxideOperations.validateCarbonMonoxideCode(
@@ -147,43 +183,6 @@ public class CarbonMonoxideTest extends CDAValidationTest {
 		};
 
 		validateCarbonMonoxideCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateCarbonMonoxideValue() {
-		OperationsTestCase<CarbonMonoxide> validateCarbonMonoxideValueTestCase = new OperationsTestCase<CarbonMonoxide>(
-			"validateCarbonMonoxideValue",
-			operationsForOCL.getOCLValue("VALIDATE_CARBON_MONOXIDE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(CarbonMonoxide target) {
-
-			}
-
-			@Override
-			protected void updateToPass(CarbonMonoxide target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return CarbonMonoxideOperations.validateCarbonMonoxideValue(
-					(CarbonMonoxide) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateCarbonMonoxideValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -228,10 +227,10 @@ public class CarbonMonoxideTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateCarbonMonoxideMoodCode() {
-		OperationsTestCase<CarbonMonoxide> validateCarbonMonoxideMoodCodeTestCase = new OperationsTestCase<CarbonMonoxide>(
-			"validateCarbonMonoxideMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CARBON_MONOXIDE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateCarbonMonoxideValue() {
+		OperationsTestCase<CarbonMonoxide> validateCarbonMonoxideValueTestCase = new OperationsTestCase<CarbonMonoxide>(
+			"validateCarbonMonoxideValue",
+			operationsForOCL.getOCLValue("VALIDATE_CARBON_MONOXIDE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -243,18 +242,21 @@ public class CarbonMonoxideTest extends CDAValidationTest {
 			protected void updateToPass(CarbonMonoxide target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return CarbonMonoxideOperations.validateCarbonMonoxideMoodCode(
+				return CarbonMonoxideOperations.validateCarbonMonoxideValue(
 					(CarbonMonoxide) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateCarbonMonoxideMoodCodeTestCase.doValidationTest();
+		validateCarbonMonoxideValueTestCase.doValidationTest();
 	}
 
 	/**

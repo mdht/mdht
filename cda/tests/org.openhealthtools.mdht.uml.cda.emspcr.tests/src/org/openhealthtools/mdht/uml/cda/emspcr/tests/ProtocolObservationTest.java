@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProtocolObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation#validateProtocolObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation#validateProtocolObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation#validateProtocolObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation#validateProtocolObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation#validateProtocolObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation#validateProtocolObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservation#validateProtocolObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ProtocolObservationTest extends CDAValidationTest {
 		};
 
 		validateProtocolObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProtocolObservationMoodCode() {
+		OperationsTestCase<ProtocolObservation> validateProtocolObservationMoodCodeTestCase = new OperationsTestCase<ProtocolObservation>(
+			"validateProtocolObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROTOCOL_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProtocolObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProtocolObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProtocolObservationOperations.validateProtocolObservationMoodCode(
+					(ProtocolObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProtocolObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,13 @@ public class ProtocolObservationTest extends CDAValidationTest {
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(ProtocolObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ProtocolObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +256,6 @@ public class ProtocolObservationTest extends CDAValidationTest {
 		};
 
 		validateProtocolObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProtocolObservationMoodCode() {
-		OperationsTestCase<ProtocolObservation> validateProtocolObservationMoodCodeTestCase = new OperationsTestCase<ProtocolObservation>(
-			"validateProtocolObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROTOCOL_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProtocolObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProtocolObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProtocolObservationOperations.validateProtocolObservationMoodCode(
-					(ProtocolObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProtocolObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

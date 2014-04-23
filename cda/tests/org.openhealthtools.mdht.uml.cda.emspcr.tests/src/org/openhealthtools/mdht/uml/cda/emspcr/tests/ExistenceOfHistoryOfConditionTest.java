@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfHistoryOfCondition;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ExistenceOfHistoryOfConditionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfHistoryOfCondition#validateExistenceOfHistoryOfConditionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of History Of Condition Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfHistoryOfCondition#validateExistenceOfHistoryOfConditionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of History Of Condition Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfHistoryOfCondition#validateExistenceOfHistoryOfConditionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of History Of Condition Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfHistoryOfCondition#validateExistenceOfHistoryOfConditionValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of History Of Condition Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfHistoryOfCondition#validateExistenceOfHistoryOfConditionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of History Of Condition Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class ExistenceOfHistoryOfConditionTest extends CDAValidationTest {
 		};
 
 		validateExistenceOfHistoryOfConditionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateExistenceOfHistoryOfConditionMoodCode() {
+		OperationsTestCase<ExistenceOfHistoryOfCondition> validateExistenceOfHistoryOfConditionMoodCodeTestCase = new OperationsTestCase<ExistenceOfHistoryOfCondition>(
+			"validateExistenceOfHistoryOfConditionMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_EXISTENCE_OF_HISTORY_OF_CONDITION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExistenceOfHistoryOfCondition target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ExistenceOfHistoryOfCondition target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ExistenceOfHistoryOfConditionOperations.validateExistenceOfHistoryOfConditionMoodCode(
+					(ExistenceOfHistoryOfCondition) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateExistenceOfHistoryOfConditionMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class ExistenceOfHistoryOfConditionTest extends CDAValidationTest {
 		};
 
 		validateExistenceOfHistoryOfConditionValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateExistenceOfHistoryOfConditionMoodCode() {
-		OperationsTestCase<ExistenceOfHistoryOfCondition> validateExistenceOfHistoryOfConditionMoodCodeTestCase = new OperationsTestCase<ExistenceOfHistoryOfCondition>(
-			"validateExistenceOfHistoryOfConditionMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_EXISTENCE_OF_HISTORY_OF_CONDITION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ExistenceOfHistoryOfCondition target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ExistenceOfHistoryOfCondition target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ExistenceOfHistoryOfConditionOperations.validateExistenceOfHistoryOfConditionMoodCode(
-					(ExistenceOfHistoryOfCondition) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateExistenceOfHistoryOfConditionMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

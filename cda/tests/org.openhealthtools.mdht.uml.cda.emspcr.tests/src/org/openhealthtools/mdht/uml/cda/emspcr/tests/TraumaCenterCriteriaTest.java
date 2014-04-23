@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.TraumaCenterCriteria;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.TraumaCenterCriteriaOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TraumaCenterCriteria#validateTraumaCenterCriteriaTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Trauma Center Criteria Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TraumaCenterCriteria#validateTraumaCenterCriteriaMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Trauma Center Criteria Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TraumaCenterCriteria#validateTraumaCenterCriteriaCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Trauma Center Criteria Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TraumaCenterCriteria#validateTraumaCenterCriteriaValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Trauma Center Criteria Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TraumaCenterCriteria#validateTraumaCenterCriteriaMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Trauma Center Criteria Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class TraumaCenterCriteriaTest extends CDAValidationTest {
 		};
 
 		validateTraumaCenterCriteriaTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateTraumaCenterCriteriaMoodCode() {
+		OperationsTestCase<TraumaCenterCriteria> validateTraumaCenterCriteriaMoodCodeTestCase = new OperationsTestCase<TraumaCenterCriteria>(
+			"validateTraumaCenterCriteriaMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_TRAUMA_CENTER_CRITERIA_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TraumaCenterCriteria target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TraumaCenterCriteria target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TraumaCenterCriteriaOperations.validateTraumaCenterCriteriaMoodCode(
+					(TraumaCenterCriteria) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTraumaCenterCriteriaMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class TraumaCenterCriteriaTest extends CDAValidationTest {
 		};
 
 		validateTraumaCenterCriteriaValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateTraumaCenterCriteriaMoodCode() {
-		OperationsTestCase<TraumaCenterCriteria> validateTraumaCenterCriteriaMoodCodeTestCase = new OperationsTestCase<TraumaCenterCriteria>(
-			"validateTraumaCenterCriteriaMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_TRAUMA_CENTER_CRITERIA_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(TraumaCenterCriteria target) {
-
-			}
-
-			@Override
-			protected void updateToPass(TraumaCenterCriteria target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return TraumaCenterCriteriaOperations.validateTraumaCenterCriteriaMoodCode(
-					(TraumaCenterCriteria) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateTraumaCenterCriteriaMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

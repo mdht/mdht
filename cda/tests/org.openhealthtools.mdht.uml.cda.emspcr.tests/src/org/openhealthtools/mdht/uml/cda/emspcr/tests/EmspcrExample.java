@@ -11,18 +11,12 @@ import java.io.IOException;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrPackage;
 import org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport;
@@ -35,12 +29,12 @@ import org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport;
  */
 public class EmspcrExample {
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
-	* @param args the file paths or URIs.
-	* @generated
-	*/
+	 * @param args the file paths or URIs.
+	 * @generated
+	 */
 	public static void main(String[] args) {
 		// Create a resource set to hold the resources.
 		//
@@ -103,13 +97,13 @@ public class EmspcrExample {
 	}
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * Prints diagnostics with indentation.
 	 * <!-- end-user-doc -->
-	* @param diagnostic the diagnostic to print.
-	* @param indent the indentation for printing.
-	* @generated
-	*/
+	 * @param diagnostic the diagnostic to print.
+	 * @param indent the indentation for printing.
+	 * @generated
+	 */
 	protected static void printDiagnostic(Diagnostic diagnostic, String indent) {
 		System.out.print(indent);
 		System.out.println(diagnostic.getMessage());

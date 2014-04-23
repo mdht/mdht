@@ -8,7 +8,6 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
 
 /**
@@ -20,19 +19,19 @@ import junit.textui.TestRunner;
 public class emspcr_EcoreAllTests extends TestSuite {
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static void main(String[] args) {
 		TestRunner.run(suite());
 	}
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static Test suite() {
 		TestSuite suite = new emspcr_EcoreAllTests("emspcr_Ecore Tests");
 		suite.addTest(EmspcrTests.suite());
@@ -40,10 +39,10 @@ public class emspcr_EcoreAllTests extends TestSuite {
 	}
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public emspcr_EcoreAllTests(String name) {
 		super(name);
 	}

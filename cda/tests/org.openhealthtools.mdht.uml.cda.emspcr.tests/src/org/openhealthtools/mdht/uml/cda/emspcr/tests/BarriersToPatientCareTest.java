@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.BarriersToPatientCareOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare#validateBarriersToPatientCareTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Barriers To Patient Care Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare#validateBarriersToPatientCareMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Barriers To Patient Care Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare#validateBarriersToPatientCareCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Barriers To Patient Care Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare#validateBarriersToPatientCareCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Barriers To Patient Care Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare#validateBarriersToPatientCareValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Barriers To Patient Care Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare#validateBarriersToPatientCareValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Barriers To Patient Care Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCare#validateBarriersToPatientCareMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Barriers To Patient Care Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class BarriersToPatientCareTest extends CDAValidationTest {
 		};
 
 		validateBarriersToPatientCareTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateBarriersToPatientCareMoodCode() {
+		OperationsTestCase<BarriersToPatientCare> validateBarriersToPatientCareMoodCodeTestCase = new OperationsTestCase<BarriersToPatientCare>(
+			"validateBarriersToPatientCareMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_BARRIERS_TO_PATIENT_CARE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(BarriersToPatientCare target) {
+
+			}
+
+			@Override
+			protected void updateToPass(BarriersToPatientCare target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return BarriersToPatientCareOperations.validateBarriersToPatientCareMoodCode(
+					(BarriersToPatientCare) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateBarriersToPatientCareMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class BarriersToPatientCareTest extends CDAValidationTest {
 			protected void updateToPass(BarriersToPatientCare target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(BarriersToPatientCare target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.BarriersToPatientCareCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class BarriersToPatientCareTest extends CDAValidationTest {
 		};
 
 		validateBarriersToPatientCareValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateBarriersToPatientCareMoodCode() {
-		OperationsTestCase<BarriersToPatientCare> validateBarriersToPatientCareMoodCodeTestCase = new OperationsTestCase<BarriersToPatientCare>(
-			"validateBarriersToPatientCareMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_BARRIERS_TO_PATIENT_CARE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(BarriersToPatientCare target) {
-
-			}
-
-			@Override
-			protected void updateToPass(BarriersToPatientCare target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return BarriersToPatientCareOperations.validateBarriersToPatientCareMoodCode(
-					(BarriersToPatientCare) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateBarriersToPatientCareMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
