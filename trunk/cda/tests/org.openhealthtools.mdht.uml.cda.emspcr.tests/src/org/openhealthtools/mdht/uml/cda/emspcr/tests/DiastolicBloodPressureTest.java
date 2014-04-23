@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.DiastolicBloodPressureOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -33,10 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateDiastolicBloodPressureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diastolic Blood Pressure Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateDiastolicBloodPressureValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diastolic Blood Pressure Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateDiastolicBloodPressureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diastolic Blood Pressure Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateDiastolicBloodPressureMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diastolic Blood Pressure Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateDiastolicBloodPressureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diastolic Blood Pressure Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateDiastolicBloodPressureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diastolic Blood Pressure Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateDiastolicBloodPressureValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diastolic Blood Pressure Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DiastolicBloodPressure#validateVitalSignObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Template Id</em>}</li>
  * </ul>
  * </p>
@@ -45,6 +39,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class DiastolicBloodPressureTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDiastolicBloodPressureMoodCode() {
+		OperationsTestCase<DiastolicBloodPressure> validateDiastolicBloodPressureMoodCodeTestCase = new OperationsTestCase<DiastolicBloodPressure>(
+			"validateDiastolicBloodPressureMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_DIASTOLIC_BLOOD_PRESSURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiastolicBloodPressure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DiastolicBloodPressure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiastolicBloodPressureOperations.validateDiastolicBloodPressureMoodCode(
+					(DiastolicBloodPressure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiastolicBloodPressureMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -78,43 +106,6 @@ public class DiastolicBloodPressureTest extends CDAValidationTest {
 		};
 
 		validateDiastolicBloodPressureCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDiastolicBloodPressureValue() {
-		OperationsTestCase<DiastolicBloodPressure> validateDiastolicBloodPressureValueTestCase = new OperationsTestCase<DiastolicBloodPressure>(
-			"validateDiastolicBloodPressureValue",
-			operationsForOCL.getOCLValue("VALIDATE_DIASTOLIC_BLOOD_PRESSURE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DiastolicBloodPressure target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DiastolicBloodPressure target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DiastolicBloodPressureOperations.validateDiastolicBloodPressureValue(
-					(DiastolicBloodPressure) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDiastolicBloodPressureValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -159,10 +150,10 @@ public class DiastolicBloodPressureTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateDiastolicBloodPressureMoodCode() {
-		OperationsTestCase<DiastolicBloodPressure> validateDiastolicBloodPressureMoodCodeTestCase = new OperationsTestCase<DiastolicBloodPressure>(
-			"validateDiastolicBloodPressureMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_DIASTOLIC_BLOOD_PRESSURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateDiastolicBloodPressureValue() {
+		OperationsTestCase<DiastolicBloodPressure> validateDiastolicBloodPressureValueTestCase = new OperationsTestCase<DiastolicBloodPressure>(
+			"validateDiastolicBloodPressureValue",
+			operationsForOCL.getOCLValue("VALIDATE_DIASTOLIC_BLOOD_PRESSURE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -174,18 +165,21 @@ public class DiastolicBloodPressureTest extends CDAValidationTest {
 			protected void updateToPass(DiastolicBloodPressure target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DiastolicBloodPressureOperations.validateDiastolicBloodPressureMoodCode(
+				return DiastolicBloodPressureOperations.validateDiastolicBloodPressureValue(
 					(DiastolicBloodPressure) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDiastolicBloodPressureMoodCodeTestCase.doValidationTest();
+		validateDiastolicBloodPressureValueTestCase.doValidationTest();
 	}
 
 	/**

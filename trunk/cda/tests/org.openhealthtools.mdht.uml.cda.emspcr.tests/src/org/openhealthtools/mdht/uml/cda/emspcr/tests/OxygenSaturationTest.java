@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.OxygenSaturation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.OxygenSaturationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.OxygenSaturation#validateOxygenSaturationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Oxygen Saturation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.OxygenSaturation#validateOxygenSaturationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Oxygen Saturation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.OxygenSaturation#validateOxygenSaturationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Oxygen Saturation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.OxygenSaturation#validateOxygenSaturationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Oxygen Saturation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.OxygenSaturation#validateOxygenSaturationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Oxygen Saturation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class OxygenSaturationTest extends CDAValidationTest {
 		};
 
 		validateOxygenSaturationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateOxygenSaturationMoodCode() {
+		OperationsTestCase<OxygenSaturation> validateOxygenSaturationMoodCodeTestCase = new OperationsTestCase<OxygenSaturation>(
+			"validateOxygenSaturationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_OXYGEN_SATURATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(OxygenSaturation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(OxygenSaturation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return OxygenSaturationOperations.validateOxygenSaturationMoodCode(
+					(OxygenSaturation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateOxygenSaturationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class OxygenSaturationTest extends CDAValidationTest {
 		};
 
 		validateOxygenSaturationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateOxygenSaturationMoodCode() {
-		OperationsTestCase<OxygenSaturation> validateOxygenSaturationMoodCodeTestCase = new OperationsTestCase<OxygenSaturation>(
-			"validateOxygenSaturationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_OXYGEN_SATURATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(OxygenSaturation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(OxygenSaturation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return OxygenSaturationOperations.validateOxygenSaturationMoodCode(
-					(OxygenSaturation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateOxygenSaturationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

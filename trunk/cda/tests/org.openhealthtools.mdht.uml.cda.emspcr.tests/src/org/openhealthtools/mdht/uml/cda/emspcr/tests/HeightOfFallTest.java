@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.HeightOfFall;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.HeightOfFallOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeightOfFall#validateHeightOfFallTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Height Of Fall Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeightOfFall#validateHeightOfFallMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Height Of Fall Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeightOfFall#validateHeightOfFallCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Height Of Fall Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeightOfFall#validateHeightOfFallValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Height Of Fall Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeightOfFall#validateHeightOfFallMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Height Of Fall Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class HeightOfFallTest extends CDAValidationTest {
 		};
 
 		validateHeightOfFallTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHeightOfFallMoodCode() {
+		OperationsTestCase<HeightOfFall> validateHeightOfFallMoodCodeTestCase = new OperationsTestCase<HeightOfFall>(
+			"validateHeightOfFallMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_HEIGHT_OF_FALL_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HeightOfFall target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HeightOfFall target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HeightOfFallOperations.validateHeightOfFallMoodCode(
+					(HeightOfFall) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHeightOfFallMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -144,40 +172,6 @@ public class HeightOfFallTest extends CDAValidationTest {
 		};
 
 		validateHeightOfFallValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHeightOfFallMoodCode() {
-		OperationsTestCase<HeightOfFall> validateHeightOfFallMoodCodeTestCase = new OperationsTestCase<HeightOfFall>(
-			"validateHeightOfFallMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_HEIGHT_OF_FALL_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(HeightOfFall target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HeightOfFall target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HeightOfFallOperations.validateHeightOfFallMoodCode(
-					(HeightOfFall) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHeightOfFallMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

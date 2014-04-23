@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndication;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ExistenceOfDrugUseIndicationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndication#validateExistenceOfDrugUseIndicationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Use Indication Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndication#validateExistenceOfDrugUseIndicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Use Indication Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndication#validateExistenceOfDrugUseIndicationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Use Indication Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndication#validateExistenceOfDrugUseIndicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Use Indication Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndication#validateExistenceOfDrugUseIndicationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Use Indication Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndication#validateExistenceOfDrugUseIndicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Existence Of Drug Use Indication Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class ExistenceOfDrugUseIndicationTest extends CDAValidationTest {
 		};
 
 		validateExistenceOfDrugUseIndicationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateExistenceOfDrugUseIndicationMoodCode() {
+		OperationsTestCase<ExistenceOfDrugUseIndication> validateExistenceOfDrugUseIndicationMoodCodeTestCase = new OperationsTestCase<ExistenceOfDrugUseIndication>(
+			"validateExistenceOfDrugUseIndicationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_EXISTENCE_OF_DRUG_USE_INDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExistenceOfDrugUseIndication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ExistenceOfDrugUseIndication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ExistenceOfDrugUseIndicationOperations.validateExistenceOfDrugUseIndicationMoodCode(
+					(ExistenceOfDrugUseIndication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateExistenceOfDrugUseIndicationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class ExistenceOfDrugUseIndicationTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(ExistenceOfDrugUseIndication target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ExistenceOfDrugUseIndicationCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ExistenceOfDrugUseIndicationOperations.validateExistenceOfDrugUseIndicationCode(
@@ -182,40 +218,6 @@ public class ExistenceOfDrugUseIndicationTest extends CDAValidationTest {
 		};
 
 		validateExistenceOfDrugUseIndicationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateExistenceOfDrugUseIndicationMoodCode() {
-		OperationsTestCase<ExistenceOfDrugUseIndication> validateExistenceOfDrugUseIndicationMoodCodeTestCase = new OperationsTestCase<ExistenceOfDrugUseIndication>(
-			"validateExistenceOfDrugUseIndicationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_EXISTENCE_OF_DRUG_USE_INDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ExistenceOfDrugUseIndication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ExistenceOfDrugUseIndication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ExistenceOfDrugUseIndicationOperations.validateExistenceOfDrugUseIndicationMoodCode(
-					(ExistenceOfDrugUseIndication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateExistenceOfDrugUseIndicationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

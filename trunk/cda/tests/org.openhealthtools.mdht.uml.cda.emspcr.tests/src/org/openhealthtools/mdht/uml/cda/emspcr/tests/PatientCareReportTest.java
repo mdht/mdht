@@ -1,32 +1,31 @@
-/**
- * <copyright>
- * </copyright>
- *
- * $Id$
- */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.emspcr.AllergiesAndAdverseReactionsSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.DispatchSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.DispositionSection;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSAllergiesAndAdverseReactionsSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSBillingSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSDispatchSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSDispositionSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSInjuryIncidentDescriptionSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSMedicationsAdministeredSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSPastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSPatientCareNarrativeSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSPersonnelAdverseEventSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSPhysicalAssessmentSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSProceduresPerformedSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSProtocolSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSResponseSection;
+import org.openhealthtools.mdht.uml.cda.emspcr.EMSSceneSection;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-import org.openhealthtools.mdht.uml.cda.emspcr.InjuryIncidentDescriptionSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport;
-import org.openhealthtools.mdht.uml.cda.emspcr.PersonnelAdverseEventSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.PhysicalAssessmentSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.ProceduresPerformedSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.ProtocolSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.ResponseSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.SceneSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.SituationSection;
 import org.openhealthtools.mdht.uml.cda.emspcr.TimesSection;
-import org.openhealthtools.mdht.uml.cda.emspcr.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PatientCareReportOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -44,71 +43,71 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Title</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportVersionNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Version Number</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportConfidentialityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Confidentiality Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Record Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportBilling(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Billing</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportCurrentMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Current Medication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportCardiacArrestEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Cardiac Arrest Event</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportAdvanceDirectives(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Advance Directives</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportAllergiesAndAdverseReactionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Allergies And Adverse Reactions Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportPastMedicalHistory(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Past Medical History</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportSocialHistory(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Social History</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportPhysicalAssessmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Physical Assessment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportMedicationsAdministeredSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Medications Administered Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportProceduresPerformedSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Procedures Performed Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportPatientCareNarrative(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Patient Care Narrative</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSAllergiesAndAdverseReactionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Allergies And Adverse Reactions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportPastMedicalHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Past Medical History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportSocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSPhysicalAssessmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Physical Assessment Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSMedicationsAdministeredSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Medications Administered Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSProceduresPerformedSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Procedures Performed Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSPatientCareNarrativeSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Patient Care Narrative Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportSceneSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Scene Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Component Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportDispatchSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Dispatch Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportDispositionSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Disposition Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportPersonnelAdverseEventSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Personnel Adverse Event Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportProtocolSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Protocol Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportResponseSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Response Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportSituationSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Situation Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSDispatchSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Dispatch Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSDispositionSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Disposition Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSPersonnelAdverseEventSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Personnel Adverse Event Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSProtocolSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Protocol Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSResponseSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Response Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSSceneSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Situation Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportTimesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Times Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Vital Signs Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportAuthorParticipation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Author Participation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportCustodian(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Custodian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Documentation Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportRelatedDocument(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Related Document</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportParticipant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportInjuryIncidentDescriptionSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Injury Incident Description Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getBilling() <em>Get Billing</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSInjuryIncidentDescriptionSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report Injury Incident Description Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validatePatientCareReportEMSBillingSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Care Report EMS Billing Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getCurrentMedication() <em>Get Current Medication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getCardiacArrestEvent() <em>Get Cardiac Arrest Event</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getAdvanceDirectives() <em>Get Advance Directives</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getAllergiesAndAdverseReactionsSection() <em>Get Allergies And Adverse Reactions Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getPastMedicalHistory() <em>Get Past Medical History</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getSocialHistory() <em>Get Social History</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getPhysicalAssessmentSection() <em>Get Physical Assessment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getMedicationsAdministeredSection() <em>Get Medications Administered Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getProceduresPerformedSection() <em>Get Procedures Performed Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getPatientCareNarrative() <em>Get Patient Care Narrative</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSAllergiesAndAdverseReactionsSection() <em>Get Allergies And Adverse Reactions Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getPastMedicalHistorySection() <em>Get Past Medical History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getSocialHistorySection() <em>Get Social History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSPhysicalAssessmentSection() <em>Get Physical Assessment Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSMedicationsAdministeredSection() <em>Get Medications Administered Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSProceduresPerformedSection() <em>Get Procedures Performed Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSPatientCareNarrativeSection() <em>Get Patient Care Narrative Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getSceneSection() <em>Get Scene Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getDispatchSection() <em>Get Dispatch Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getDispositionSection() <em>Get Disposition Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getPersonnelAdverseEventSection() <em>Get Personnel Adverse Event Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getProtocolSection() <em>Get Protocol Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getResponseSection() <em>Get Response Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getSituationSection() <em>Get Situation Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSDispatchSection() <em>Get Dispatch Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSDispositionSection() <em>Get Disposition Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSPersonnelAdverseEventSection() <em>Get Personnel Adverse Event Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSProtocolSection() <em>Get Protocol Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSResponseSection() <em>Get Response Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSSceneSection() <em>Get Situation Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getTimesSection() <em>Get Times Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getVitalSignsSection() <em>Get Vital Signs Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getInjuryIncidentDescriptionSection() <em>Get Injury Incident Description Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSInjuryIncidentDescriptionSection() <em>Get Injury Incident Description Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#getEMSBillingSections() <em>Get EMS Billing Sections</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validateGeneralHeaderConstraintsId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validateGeneralHeaderConstraintsTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validateGeneralHeaderConstraintsVersionNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Version Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validateGeneralHeaderConstraintsComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Component Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReport#validateGeneralHeaderConstraintsCustodian(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Custodian</em>}</li>
  * </ul>
  * </p>
  *
- * @generated
+ * @generated not
  */
 
 public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportClassCode() {
@@ -142,7 +141,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportMoodCode() {
@@ -176,7 +175,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportCodeP() {
@@ -210,7 +209,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportCode() {
@@ -231,6 +230,13 @@ public class PatientCareReportTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(PatientCareReport target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.PatientCareReportCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PatientCareReportOperations.validatePatientCareReportCode(
@@ -244,112 +250,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientCareReportTitle() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportTitleTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportTitle",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientCareReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientCareReport target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientCareReportOperations.validatePatientCareReportTitle(
-					(PatientCareReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientCareReportTitleTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientCareReportVersionNumber() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportVersionNumberTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportVersionNumber",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_VERSION_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientCareReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientCareReport target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientCareReportOperations.validatePatientCareReportVersionNumber(
-					(PatientCareReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientCareReportVersionNumberTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientCareReportId() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportIdTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportId",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientCareReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientCareReport target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientCareReportOperations.validatePatientCareReportId(
-					(PatientCareReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientCareReportIdTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportConfidentialityCode() {
@@ -383,7 +284,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportRecordTarget() {
@@ -417,41 +318,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientCareReportBilling() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportBillingTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportBilling",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_BILLING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientCareReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientCareReport target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientCareReportOperations.validatePatientCareReportBilling(
-					(PatientCareReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientCareReportBillingTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportCurrentMedication() {
@@ -485,7 +352,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportCardiacArrestEvent() {
@@ -519,7 +386,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportAdvanceDirectives() {
@@ -553,12 +420,12 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportAllergiesAndAdverseReactionsSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportAllergiesAndAdverseReactionsSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportAllergiesAndAdverseReactionsSection",
+	public void testValidatePatientCareReportEMSAllergiesAndAdverseReactionsSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSAllergiesAndAdverseReactionsSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSAllergiesAndAdverseReactionsSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_ALLERGIES_AND_ADVERSE_REACTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -571,10 +438,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* AllergiesAndAdverseReactionsSection */
-				AllergiesAndAdverseReactionsSection section =
+				/* EMSAllergiesAndAdverseReactionsSection */
+				EMSAllergiesAndAdverseReactionsSection section =
 
-				EmspcrFactory.eINSTANCE.createAllergiesAndAdverseReactionsSection().init();
+				EmspcrFactory.eINSTANCE.createEMSAllergiesAndAdverseReactionsSection().init();
 
 				target.addSection(section);
 
@@ -589,18 +456,18 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportAllergiesAndAdverseReactionsSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSAllergiesAndAdverseReactionsSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportPastMedicalHistory() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportPastMedicalHistoryTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportPastMedicalHistory",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PAST_MEDICAL_HISTORY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidatePatientCareReportPastMedicalHistorySection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportPastMedicalHistorySectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportPastMedicalHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -612,29 +479,36 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
+				/* PastMedicalHistorySection */
+				EMSPastMedicalHistorySection section =
+
+				EmspcrFactory.eINSTANCE.createEMSPastMedicalHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PatientCareReportOperations.validatePatientCareReportPastMedicalHistory(
+				return PatientCareReportOperations.validatePatientCareReportPastMedicalHistorySection(
 					(PatientCareReport) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePatientCareReportPastMedicalHistoryTestCase.doValidationTest();
+		validatePatientCareReportPastMedicalHistorySectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not not
 	*/
 	@Test
-	public void testValidatePatientCareReportSocialHistory() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportSocialHistoryTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportSocialHistory",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_SOCIAL_HISTORY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidatePatientCareReportSocialHistorySection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportSocialHistorySectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportSocialHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -646,28 +520,35 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
+				/* SocialHistorySection */
+				SocialHistorySection section =
+
+				ConsolFactory.eINSTANCE.createSocialHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PatientCareReportOperations.validatePatientCareReportSocialHistory(
+				return PatientCareReportOperations.validatePatientCareReportSocialHistorySection(
 					(PatientCareReport) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePatientCareReportSocialHistoryTestCase.doValidationTest();
+		validatePatientCareReportSocialHistorySectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportPhysicalAssessmentSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportPhysicalAssessmentSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportPhysicalAssessmentSection",
+	public void testValidatePatientCareReportEMSPhysicalAssessmentSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSPhysicalAssessmentSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSPhysicalAssessmentSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PHYSICAL_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -680,10 +561,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* PhysicalAssessmentSection */
-				PhysicalAssessmentSection section =
+				/* EMSPhysicalAssessmentSection */
+				EMSPhysicalAssessmentSection section =
 
-				EmspcrFactory.eINSTANCE.createPhysicalAssessmentSection().init();
+				EmspcrFactory.eINSTANCE.createEMSPhysicalAssessmentSection().init();
 
 				target.addSection(section);
 
@@ -698,17 +579,17 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportPhysicalAssessmentSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSPhysicalAssessmentSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportMedicationsAdministeredSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportMedicationsAdministeredSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportMedicationsAdministeredSection",
+	public void testValidatePatientCareReportEMSMedicationsAdministeredSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSMedicationsAdministeredSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSMedicationsAdministeredSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_MEDICATIONS_ADMINISTERED_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -721,10 +602,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* MedicationsAdministeredSection */
-				MedicationsAdministeredSection section =
+				/* EMSMedicationsAdministeredSection */
+				EMSMedicationsAdministeredSection section =
 
-				EmspcrFactory.eINSTANCE.createMedicationsAdministeredSection().init();
+				EmspcrFactory.eINSTANCE.createEMSMedicationsAdministeredSection().init();
 
 				target.addSection(section);
 
@@ -739,17 +620,17 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportMedicationsAdministeredSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSMedicationsAdministeredSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportProceduresPerformedSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportProceduresPerformedSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportProceduresPerformedSection",
+	public void testValidatePatientCareReportEMSProceduresPerformedSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSProceduresPerformedSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSProceduresPerformedSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PROCEDURES_PERFORMED_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -762,10 +643,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* ProceduresPerformedSection */
-				ProceduresPerformedSection section =
+				/* EMSProceduresPerformedSection */
+				EMSProceduresPerformedSection section =
 
-				EmspcrFactory.eINSTANCE.createProceduresPerformedSection().init();
+				EmspcrFactory.eINSTANCE.createEMSProceduresPerformedSection().init();
 
 				target.addSection(section);
 
@@ -780,18 +661,18 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportProceduresPerformedSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSProceduresPerformedSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportPatientCareNarrative() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportPatientCareNarrativeTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportPatientCareNarrative",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PATIENT_CARE_NARRATIVE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidatePatientCareReportEMSPatientCareNarrativeSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSPatientCareNarrativeSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSPatientCareNarrativeSection",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PATIENT_CARE_NARRATIVE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -803,23 +684,30 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
+				/* EMSPatientCareNarrativeSection */
+				EMSPatientCareNarrativeSection section =
+
+				EmspcrFactory.eINSTANCE.createEMSPatientCareNarrativeSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PatientCareReportOperations.validatePatientCareReportPatientCareNarrative(
+				return PatientCareReportOperations.validatePatientCareReportPatientCareNarrativeSection(
 					(PatientCareReport) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePatientCareReportPatientCareNarrativeTestCase.doValidationTest();
+		validatePatientCareReportEMSPatientCareNarrativeSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportSceneSection() {
@@ -837,10 +725,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* SceneSection */
-				SceneSection section =
+				/* EMSSceneSection */
+				EMSSceneSection section =
 
-				EmspcrFactory.eINSTANCE.createSceneSection().init();
+				EmspcrFactory.eINSTANCE.createEMSSceneSection().init();
 
 				target.addSection(section);
 
@@ -860,46 +748,12 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportComponentOf() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportComponentOfTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportComponentOf",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_COMPONENT_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientCareReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientCareReport target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientCareReportOperations.validatePatientCareReportComponentOf(
-					(PatientCareReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientCareReportComponentOfTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientCareReportDispatchSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportDispatchSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportDispatchSection",
+	public void testValidatePatientCareReportEMSDispatchSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSDispatchSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSDispatchSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_DISPATCH_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -912,10 +766,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* DispatchSection */
-				DispatchSection section =
+				/* EMSDispatchSection */
+				EMSDispatchSection section =
 
-				EmspcrFactory.eINSTANCE.createDispatchSection().init();
+				EmspcrFactory.eINSTANCE.createEMSDispatchSection().init();
 
 				target.addSection(section);
 
@@ -930,17 +784,17 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportDispatchSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSDispatchSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportDispositionSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportDispositionSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportDispositionSection",
+	public void testValidatePatientCareReportEMSDispositionSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSDispositionSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSDispositionSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_DISPOSITION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -953,10 +807,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* DispositionSection */
-				DispositionSection section =
+				/* EMSDispositionSection */
+				EMSDispositionSection section =
 
-				EmspcrFactory.eINSTANCE.createDispositionSection().init();
+				EmspcrFactory.eINSTANCE.createEMSDispositionSection().init();
 
 				target.addSection(section);
 
@@ -971,17 +825,17 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportDispositionSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSDispositionSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportPersonnelAdverseEventSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportPersonnelAdverseEventSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportPersonnelAdverseEventSection",
+	public void testValidatePatientCareReportEMSPersonnelAdverseEventSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSPersonnelAdverseEventSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSPersonnelAdverseEventSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PERSONNEL_ADVERSE_EVENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -994,10 +848,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* PersonnelAdverseEventSection */
-				PersonnelAdverseEventSection section =
+				/* EMSPersonnelAdverseEventSection */
+				EMSPersonnelAdverseEventSection section =
 
-				EmspcrFactory.eINSTANCE.createPersonnelAdverseEventSection().init();
+				EmspcrFactory.eINSTANCE.createEMSPersonnelAdverseEventSection().init();
 
 				target.addSection(section);
 
@@ -1012,17 +866,17 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportPersonnelAdverseEventSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSPersonnelAdverseEventSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportProtocolSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportProtocolSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportProtocolSection",
+	public void testValidatePatientCareReportEMSProtocolSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSProtocolSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSProtocolSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_PROTOCOL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -1035,10 +889,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* ProtocolSection */
-				ProtocolSection section =
+				/* EMSProtocolSection */
+				EMSProtocolSection section =
 
-				EmspcrFactory.eINSTANCE.createProtocolSection().init();
+				EmspcrFactory.eINSTANCE.createEMSProtocolSection().init();
 
 				target.addSection(section);
 
@@ -1053,17 +907,17 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportProtocolSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSProtocolSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportResponseSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportResponseSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportResponseSection",
+	public void testValidatePatientCareReportEMSResponseSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSResponseSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSResponseSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_RESPONSE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -1076,10 +930,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* ResponseSection */
-				ResponseSection section =
+				/* EMSResponseSection */
+				EMSResponseSection section =
 
-				EmspcrFactory.eINSTANCE.createResponseSection().init();
+				EmspcrFactory.eINSTANCE.createEMSResponseSection().init();
 
 				target.addSection(section);
 
@@ -1094,17 +948,17 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportResponseSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSResponseSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportSituationSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportSituationSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportSituationSection",
+	public void testValidatePatientCareReportEMSSceneSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSSceneSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSSceneSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_SITUATION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -1117,10 +971,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* SituationSection */
-				SituationSection section =
+				/* EMSSceneSection */
+				EMSSceneSection section =
 
-				EmspcrFactory.eINSTANCE.createSituationSection().init();
+				EmspcrFactory.eINSTANCE.createEMSSceneSection().init();
 
 				target.addSection(section);
 
@@ -1129,18 +983,18 @@ public class PatientCareReportTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PatientCareReportOperations.validatePatientCareReportSituationSection(
+				return PatientCareReportOperations.validatePatientCareReportSceneSection(
 					(PatientCareReport) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePatientCareReportSituationSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSSceneSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportTimesSection() {
@@ -1181,7 +1035,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not not
 	*/
 	@Test
 	public void testValidatePatientCareReportVitalSignsSection() {
@@ -1202,7 +1056,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 				/* VitalSignsSection */
 				VitalSignsSection section =
 
-				EmspcrFactory.eINSTANCE.createVitalSignsSection().init();
+				ConsolFactory.eINSTANCE.createVitalSignsSection().init();
 
 				target.addSection(section);
 
@@ -1222,7 +1076,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportAuthorParticipation() {
@@ -1256,41 +1110,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientCareReportCustodian() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportCustodianTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportCustodian",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_CUSTODIAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientCareReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientCareReport target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientCareReportOperations.validatePatientCareReportCustodian(
-					(PatientCareReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientCareReportCustodianTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportDocumentationOf() {
@@ -1324,7 +1144,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportRelatedDocument() {
@@ -1358,7 +1178,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePatientCareReportParticipant() {
@@ -1392,12 +1212,12 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testValidatePatientCareReportInjuryIncidentDescriptionSection() {
-		OperationsTestCase<PatientCareReport> validatePatientCareReportInjuryIncidentDescriptionSectionTestCase = new OperationsTestCase<PatientCareReport>(
-			"validatePatientCareReportInjuryIncidentDescriptionSection",
+	public void testValidatePatientCareReportEMSInjuryIncidentDescriptionSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSInjuryIncidentDescriptionSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSInjuryIncidentDescriptionSection",
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_INJURY_INCIDENT_DESCRIPTION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -1410,10 +1230,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 			protected void updateToPass(PatientCareReport target) {
 				target.init();
 
-				/* InjuryIncidentDescriptionSection */
-				InjuryIncidentDescriptionSection section =
+				/* EMSInjuryIncidentDescriptionSection */
+				EMSInjuryIncidentDescriptionSection section =
 
-				EmspcrFactory.eINSTANCE.createInjuryIncidentDescriptionSection().init();
+				EmspcrFactory.eINSTANCE.createEMSInjuryIncidentDescriptionSection().init();
 
 				target.addSection(section);
 
@@ -1428,24 +1248,53 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 		};
 
-		validatePatientCareReportInjuryIncidentDescriptionSectionTestCase.doValidationTest();
+		validatePatientCareReportEMSInjuryIncidentDescriptionSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetBilling() {
+	public void testValidatePatientCareReportEMSBillingSection() {
+		OperationsTestCase<PatientCareReport> validatePatientCareReportEMSBillingSectionTestCase = new OperationsTestCase<PatientCareReport>(
+			"validatePatientCareReportEMSBillingSection",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CARE_REPORT_EMS_BILLING_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-		PatientCareReport target = objectFactory.create();
-		target.getBilling();
+			@Override
+			protected void updateToFail(PatientCareReport target) {
 
+			}
+
+			@Override
+			protected void updateToPass(PatientCareReport target) {
+				target.init();
+
+				/* EMSBillingSection */
+				EMSBillingSection section =
+
+				EmspcrFactory.eINSTANCE.createEMSBillingSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientCareReportOperations.validatePatientCareReportEMSBillingSection(
+					(PatientCareReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientCareReportEMSBillingSectionTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testGetCurrentMedication() {
@@ -1457,7 +1306,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testGetCardiacArrestEvent() {
@@ -1469,7 +1318,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testGetAdvanceDirectives() {
@@ -1481,10 +1330,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetAllergiesAndAdverseReactionsSection() {
+	public void testGetEMSAllergiesAndAdverseReactionsSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getAllergiesAndAdverseReactionsSection();
@@ -1493,34 +1342,34 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetPastMedicalHistory() {
+	public void testGetPastMedicalHistorySection() {
 
 		PatientCareReport target = objectFactory.create();
-		target.getPastMedicalHistory();
+		target.getPastMedicalHistorySection();
 
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetSocialHistory() {
+	public void testGetSocialHistorySection() {
 
 		PatientCareReport target = objectFactory.create();
-		target.getSocialHistory();
+		target.getSocialHistorySection();
 
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetPhysicalAssessmentSection() {
+	public void testGetEMSPhysicalAssessmentSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getPhysicalAssessmentSection();
@@ -1529,10 +1378,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetMedicationsAdministeredSection() {
+	public void testGetEMSMedicationsAdministeredSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getMedicationsAdministeredSection();
@@ -1541,10 +1390,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetProceduresPerformedSection() {
+	public void testGetEMSProceduresPerformedSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getProceduresPerformedSection();
@@ -1553,19 +1402,19 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetPatientCareNarrative() {
+	public void testGetEMSPatientCareNarrativeSection() {
 
 		PatientCareReport target = objectFactory.create();
-		target.getPatientCareNarrative();
+		target.getPatientCareNarrativeSection();
 
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testGetSceneSection() {
@@ -1577,10 +1426,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetDispatchSection() {
+	public void testGetEMSDispatchSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getDispatchSection();
@@ -1589,10 +1438,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetDispositionSection() {
+	public void testGetEMSDispositionSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getDispositionSection();
@@ -1601,10 +1450,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetPersonnelAdverseEventSection() {
+	public void testGetEMSPersonnelAdverseEventSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getPersonnelAdverseEventSection();
@@ -1613,10 +1462,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetProtocolSection() {
+	public void testGetEMSProtocolSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getProtocolSection();
@@ -1625,10 +1474,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetResponseSection() {
+	public void testGetEMSResponseSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getResponseSection();
@@ -1637,19 +1486,19 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetSituationSection() {
+	public void testGetEMSSceneSection() {
 
 		PatientCareReport target = objectFactory.create();
-		target.getSituationSection();
+		target.getSceneSection();
 
 	}
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testGetTimesSection() {
@@ -1661,7 +1510,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testGetVitalSignsSection() {
@@ -1673,10 +1522,10 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetInjuryIncidentDescriptionSection() {
+	public void testGetEMSInjuryIncidentDescriptionSection() {
 
 		PatientCareReport target = objectFactory.create();
 		target.getInjuryIncidentDescriptionSection();
@@ -1685,7 +1534,19 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
+	*/
+	@Test
+	public void testGetEMSBillingSections() {
+
+		PatientCareReport target = objectFactory.create();
+		target.getEMSBillingSections();
+
+	}
+
+	/**
+	*
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
@@ -1719,7 +1580,180 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsId() {
+		OperationsTestCase<PatientCareReport> validateGeneralHeaderConstraintsIdTestCase = new OperationsTestCase<PatientCareReport>(
+			"validateGeneralHeaderConstraintsId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientCareReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientCareReport target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientCareReportOperations.validateGeneralHeaderConstraintsId(
+					(PatientCareReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsTitle() {
+		OperationsTestCase<PatientCareReport> validateGeneralHeaderConstraintsTitleTestCase = new OperationsTestCase<PatientCareReport>(
+			"validateGeneralHeaderConstraintsTitle",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientCareReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientCareReport target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientCareReportOperations.validateGeneralHeaderConstraintsTitle(
+					(PatientCareReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsVersionNumber() {
+		OperationsTestCase<PatientCareReport> validateGeneralHeaderConstraintsVersionNumberTestCase = new OperationsTestCase<PatientCareReport>(
+			"validateGeneralHeaderConstraintsVersionNumber",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_VERSION_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientCareReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientCareReport target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientCareReportOperations.validateGeneralHeaderConstraintsVersionNumber(
+					(PatientCareReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsVersionNumberTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsComponentOf() {
+		OperationsTestCase<PatientCareReport> validateGeneralHeaderConstraintsComponentOfTestCase = new OperationsTestCase<PatientCareReport>(
+			"validateGeneralHeaderConstraintsComponentOf",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_COMPONENT_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientCareReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientCareReport target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientCareReportOperations.validateGeneralHeaderConstraintsComponentOf(
+					(PatientCareReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsComponentOfTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsCustodian() {
+		OperationsTestCase<PatientCareReport> validateGeneralHeaderConstraintsCustodianTestCase = new OperationsTestCase<PatientCareReport>(
+			"validateGeneralHeaderConstraintsCustodian",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CUSTODIAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientCareReport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientCareReport target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientCareReportOperations.validateGeneralHeaderConstraintsCustodian(
+					(PatientCareReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsCustodianTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
 	*/
 	private static class OperationsForOCL extends PatientCareReportOperations {
 		public String getOCLValue(String fieldName) {
@@ -1737,7 +1771,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PatientCareReport> {
 		public PatientCareReport create() {
@@ -1747,26 +1781,26 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
 	* Tests Operations Constructor for 100% coverage
-	* @generated
+	* @generated not
 	*/
 	private static class ConstructorTestClass extends PatientCareReportOperations {
 	};
 
 	/**
 	* Tests Operations Constructor for 100% coverage
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testConstructor() {
@@ -1776,7 +1810,7 @@ public class PatientCareReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Override
 	protected EObject getObjectToTest() {

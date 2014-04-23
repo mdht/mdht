@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.AdverseEventTypeObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation#validateAdverseEventTypeObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Type Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation#validateAdverseEventTypeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Type Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation#validateAdverseEventTypeObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Type Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation#validateAdverseEventTypeObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Type Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation#validateAdverseEventTypeObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Type Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation#validateAdverseEventTypeObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Type Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservation#validateAdverseEventTypeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Type Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class AdverseEventTypeObservationTest extends CDAValidationTest {
 		};
 
 		validateAdverseEventTypeObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAdverseEventTypeObservationMoodCode() {
+		OperationsTestCase<AdverseEventTypeObservation> validateAdverseEventTypeObservationMoodCodeTestCase = new OperationsTestCase<AdverseEventTypeObservation>(
+			"validateAdverseEventTypeObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADVERSE_EVENT_TYPE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdverseEventTypeObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdverseEventTypeObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdverseEventTypeObservationOperations.validateAdverseEventTypeObservationMoodCode(
+					(AdverseEventTypeObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdverseEventTypeObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,13 @@ public class AdverseEventTypeObservationTest extends CDAValidationTest {
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(AdverseEventTypeObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventTypeObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +256,6 @@ public class AdverseEventTypeObservationTest extends CDAValidationTest {
 		};
 
 		validateAdverseEventTypeObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAdverseEventTypeObservationMoodCode() {
-		OperationsTestCase<AdverseEventTypeObservation> validateAdverseEventTypeObservationMoodCodeTestCase = new OperationsTestCase<AdverseEventTypeObservation>(
-			"validateAdverseEventTypeObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVERSE_EVENT_TYPE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AdverseEventTypeObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AdverseEventTypeObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AdverseEventTypeObservationOperations.validateAdverseEventTypeObservationMoodCode(
-					(AdverseEventTypeObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAdverseEventTypeObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

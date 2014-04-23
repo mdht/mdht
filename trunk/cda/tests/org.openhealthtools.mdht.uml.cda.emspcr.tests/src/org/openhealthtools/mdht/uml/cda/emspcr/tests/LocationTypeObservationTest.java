@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.LocationTypeObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.LocationTypeObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -34,6 +28,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LocationTypeObservation#validateLocationTypeObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Location Type Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LocationTypeObservation#validateLocationTypeObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Location Type Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LocationTypeObservation#validateLocationTypeObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Location Type Observation Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,6 +106,43 @@ public class LocationTypeObservationTest extends CDAValidationTest {
 		};
 
 		validateLocationTypeObservationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateLocationTypeObservationValue() {
+		OperationsTestCase<LocationTypeObservation> validateLocationTypeObservationValueTestCase = new OperationsTestCase<LocationTypeObservation>(
+			"validateLocationTypeObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_LOCATION_TYPE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(LocationTypeObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(LocationTypeObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return LocationTypeObservationOperations.validateLocationTypeObservationValue(
+					(LocationTypeObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateLocationTypeObservationValueTestCase.doValidationTest();
 	}
 
 	/**

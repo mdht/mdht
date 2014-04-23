@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReading;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ResponseOnSceneOdometerReadingOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReading#validateResponseOnSceneOdometerReadingTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response On Scene Odometer Reading Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReading#validateResponseOnSceneOdometerReadingMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response On Scene Odometer Reading Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReading#validateResponseOnSceneOdometerReadingCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response On Scene Odometer Reading Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReading#validateResponseOnSceneOdometerReadingCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response On Scene Odometer Reading Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReading#validateResponseOnSceneOdometerReadingValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response On Scene Odometer Reading Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReading#validateResponseOnSceneOdometerReadingMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response On Scene Odometer Reading Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class ResponseOnSceneOdometerReadingTest extends CDAValidationTest {
 		};
 
 		validateResponseOnSceneOdometerReadingTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResponseOnSceneOdometerReadingMoodCode() {
+		OperationsTestCase<ResponseOnSceneOdometerReading> validateResponseOnSceneOdometerReadingMoodCodeTestCase = new OperationsTestCase<ResponseOnSceneOdometerReading>(
+			"validateResponseOnSceneOdometerReadingMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESPONSE_ON_SCENE_ODOMETER_READING_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ResponseOnSceneOdometerReading target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ResponseOnSceneOdometerReading target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResponseOnSceneOdometerReadingOperations.validateResponseOnSceneOdometerReadingMoodCode(
+					(ResponseOnSceneOdometerReading) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResponseOnSceneOdometerReadingMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class ResponseOnSceneOdometerReadingTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(ResponseOnSceneOdometerReading target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ResponseOnSceneOdometerReadingCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ResponseOnSceneOdometerReadingOperations.validateResponseOnSceneOdometerReadingCode(
@@ -182,40 +218,6 @@ public class ResponseOnSceneOdometerReadingTest extends CDAValidationTest {
 		};
 
 		validateResponseOnSceneOdometerReadingValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateResponseOnSceneOdometerReadingMoodCode() {
-		OperationsTestCase<ResponseOnSceneOdometerReading> validateResponseOnSceneOdometerReadingMoodCodeTestCase = new OperationsTestCase<ResponseOnSceneOdometerReading>(
-			"validateResponseOnSceneOdometerReadingMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_RESPONSE_ON_SCENE_ODOMETER_READING_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ResponseOnSceneOdometerReading target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ResponseOnSceneOdometerReading target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResponseOnSceneOdometerReadingOperations.validateResponseOnSceneOdometerReadingMoodCode(
-					(ResponseOnSceneOdometerReading) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateResponseOnSceneOdometerReadingMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

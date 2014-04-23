@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ReturnOfSpontaneousCirculation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ReturnOfSpontaneousCirculationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReturnOfSpontaneousCirculation#validateReturnOfSpontaneousCirculationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Return Of Spontaneous Circulation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReturnOfSpontaneousCirculation#validateReturnOfSpontaneousCirculationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Return Of Spontaneous Circulation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReturnOfSpontaneousCirculation#validateReturnOfSpontaneousCirculationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Return Of Spontaneous Circulation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReturnOfSpontaneousCirculation#validateReturnOfSpontaneousCirculationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Return Of Spontaneous Circulation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReturnOfSpontaneousCirculation#validateReturnOfSpontaneousCirculationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Return Of Spontaneous Circulation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReturnOfSpontaneousCirculation#validateReturnOfSpontaneousCirculationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Return Of Spontaneous Circulation Value P</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +71,40 @@ public class ReturnOfSpontaneousCirculationTest extends CDAValidationTest {
 		};
 
 		validateReturnOfSpontaneousCirculationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReturnOfSpontaneousCirculationMoodCode() {
+		OperationsTestCase<ReturnOfSpontaneousCirculation> validateReturnOfSpontaneousCirculationMoodCodeTestCase = new OperationsTestCase<ReturnOfSpontaneousCirculation>(
+			"validateReturnOfSpontaneousCirculationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RETURN_OF_SPONTANEOUS_CIRCULATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReturnOfSpontaneousCirculation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReturnOfSpontaneousCirculation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReturnOfSpontaneousCirculationOperations.validateReturnOfSpontaneousCirculationMoodCode(
+					(ReturnOfSpontaneousCirculation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReturnOfSpontaneousCirculationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -154,10 +183,10 @@ public class ReturnOfSpontaneousCirculationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateReturnOfSpontaneousCirculationMoodCode() {
-		OperationsTestCase<ReturnOfSpontaneousCirculation> validateReturnOfSpontaneousCirculationMoodCodeTestCase = new OperationsTestCase<ReturnOfSpontaneousCirculation>(
-			"validateReturnOfSpontaneousCirculationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_RETURN_OF_SPONTANEOUS_CIRCULATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateReturnOfSpontaneousCirculationValueP() {
+		OperationsTestCase<ReturnOfSpontaneousCirculation> validateReturnOfSpontaneousCirculationValuePTestCase = new OperationsTestCase<ReturnOfSpontaneousCirculation>(
+			"validateReturnOfSpontaneousCirculationValueP",
+			operationsForOCL.getOCLValue("VALIDATE_RETURN_OF_SPONTANEOUS_CIRCULATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -174,13 +203,13 @@ public class ReturnOfSpontaneousCirculationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ReturnOfSpontaneousCirculationOperations.validateReturnOfSpontaneousCirculationMoodCode(
+				return ReturnOfSpontaneousCirculationOperations.validateReturnOfSpontaneousCirculationValueP(
 					(ReturnOfSpontaneousCirculation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateReturnOfSpontaneousCirculationMoodCodeTestCase.doValidationTest();
+		validateReturnOfSpontaneousCirculationValuePTestCase.doValidationTest();
 	}
 
 	/**

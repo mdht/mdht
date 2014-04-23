@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.InitialPatientAcuityOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity#validateInitialPatientAcuityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Initial Patient Acuity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity#validateInitialPatientAcuityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Initial Patient Acuity Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity#validateInitialPatientAcuityCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Initial Patient Acuity Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity#validateInitialPatientAcuityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Initial Patient Acuity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity#validateInitialPatientAcuityValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Initial Patient Acuity Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity#validateInitialPatientAcuityValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Initial Patient Acuity Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuity#validateInitialPatientAcuityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Initial Patient Acuity Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class InitialPatientAcuityTest extends CDAValidationTest {
 		};
 
 		validateInitialPatientAcuityTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateInitialPatientAcuityMoodCode() {
+		OperationsTestCase<InitialPatientAcuity> validateInitialPatientAcuityMoodCodeTestCase = new OperationsTestCase<InitialPatientAcuity>(
+			"validateInitialPatientAcuityMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_INITIAL_PATIENT_ACUITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(InitialPatientAcuity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(InitialPatientAcuity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InitialPatientAcuityOperations.validateInitialPatientAcuityMoodCode(
+					(InitialPatientAcuity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInitialPatientAcuityMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class InitialPatientAcuityTest extends CDAValidationTest {
 			protected void updateToPass(InitialPatientAcuity target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(InitialPatientAcuity target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.InitialPatientAcuityCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class InitialPatientAcuityTest extends CDAValidationTest {
 		};
 
 		validateInitialPatientAcuityValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateInitialPatientAcuityMoodCode() {
-		OperationsTestCase<InitialPatientAcuity> validateInitialPatientAcuityMoodCodeTestCase = new OperationsTestCase<InitialPatientAcuity>(
-			"validateInitialPatientAcuityMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_INITIAL_PATIENT_ACUITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(InitialPatientAcuity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(InitialPatientAcuity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return InitialPatientAcuityOperations.validateInitialPatientAcuityMoodCode(
-					(InitialPatientAcuity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateInitialPatientAcuityMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ComplaintTypeOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType#validateComplaintTypeTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType#validateComplaintTypeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType#validateComplaintTypeCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType#validateComplaintTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType#validateComplaintTypeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType#validateComplaintTypeValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ComplaintType#validateComplaintTypeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ComplaintTypeTest extends CDAValidationTest {
 		};
 
 		validateComplaintTypeTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateComplaintTypeMoodCode() {
+		OperationsTestCase<ComplaintType> validateComplaintTypeMoodCodeTestCase = new OperationsTestCase<ComplaintType>(
+			"validateComplaintTypeMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_TYPE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ComplaintType target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ComplaintType target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplaintTypeOperations.validateComplaintTypeMoodCode(
+					(ComplaintType) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplaintTypeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -133,6 +162,13 @@ public class ComplaintTypeTest extends CDAValidationTest {
 			protected void updateToPass(ComplaintType target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ComplaintType target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ComplaintTypeCodeP", passToken);
 			}
 
 			@Override
@@ -216,40 +252,6 @@ public class ComplaintTypeTest extends CDAValidationTest {
 		};
 
 		validateComplaintTypeValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateComplaintTypeMoodCode() {
-		OperationsTestCase<ComplaintType> validateComplaintTypeMoodCodeTestCase = new OperationsTestCase<ComplaintType>(
-			"validateComplaintTypeMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_TYPE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ComplaintType target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ComplaintType target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ComplaintTypeOperations.validateComplaintTypeMoodCode(
-					(ComplaintType) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateComplaintTypeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

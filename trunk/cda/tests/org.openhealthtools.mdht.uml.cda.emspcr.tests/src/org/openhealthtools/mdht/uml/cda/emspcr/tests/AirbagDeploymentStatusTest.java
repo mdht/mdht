@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.AirbagDeploymentStatus;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.AirbagDeploymentStatusOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -34,9 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirbagDeploymentStatus#validateAirbagDeploymentStatusTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airbag Deployment Status Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirbagDeploymentStatus#validateAirbagDeploymentStatusMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airbag Deployment Status Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirbagDeploymentStatus#validateAirbagDeploymentStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airbag Deployment Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirbagDeploymentStatus#validateAirbagDeploymentStatusValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airbag Deployment Status Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirbagDeploymentStatus#validateAirbagDeploymentStatusMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airbag Deployment Status Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AirbagDeploymentStatus#validateAirbagDeploymentStatusValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Airbag Deployment Status Value P</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class AirbagDeploymentStatusTest extends CDAValidationTest {
 		};
 
 		validateAirbagDeploymentStatusTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAirbagDeploymentStatusMoodCode() {
+		OperationsTestCase<AirbagDeploymentStatus> validateAirbagDeploymentStatusMoodCodeTestCase = new OperationsTestCase<AirbagDeploymentStatus>(
+			"validateAirbagDeploymentStatusMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_AIRBAG_DEPLOYMENT_STATUS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AirbagDeploymentStatus target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AirbagDeploymentStatus target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AirbagDeploymentStatusOperations.validateAirbagDeploymentStatusMoodCode(
+					(AirbagDeploymentStatus) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAirbagDeploymentStatusMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -158,10 +187,10 @@ public class AirbagDeploymentStatusTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateAirbagDeploymentStatusMoodCode() {
-		OperationsTestCase<AirbagDeploymentStatus> validateAirbagDeploymentStatusMoodCodeTestCase = new OperationsTestCase<AirbagDeploymentStatus>(
-			"validateAirbagDeploymentStatusMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_AIRBAG_DEPLOYMENT_STATUS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateAirbagDeploymentStatusValueP() {
+		OperationsTestCase<AirbagDeploymentStatus> validateAirbagDeploymentStatusValuePTestCase = new OperationsTestCase<AirbagDeploymentStatus>(
+			"validateAirbagDeploymentStatusValueP",
+			operationsForOCL.getOCLValue("VALIDATE_AIRBAG_DEPLOYMENT_STATUS_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -178,13 +207,13 @@ public class AirbagDeploymentStatusTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AirbagDeploymentStatusOperations.validateAirbagDeploymentStatusMoodCode(
+				return AirbagDeploymentStatusOperations.validateAirbagDeploymentStatusValueP(
 					(AirbagDeploymentStatus) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAirbagDeploymentStatusMoodCodeTestCase.doValidationTest();
+		validateAirbagDeploymentStatusValuePTestCase.doValidationTest();
 	}
 
 	/**

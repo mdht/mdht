@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnScene;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.FirstUnitOnSceneOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnScene#validateFirstUnitOnSceneTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit On Scene Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnScene#validateFirstUnitOnSceneMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit On Scene Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnScene#validateFirstUnitOnSceneCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit On Scene Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnScene#validateFirstUnitOnSceneCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit On Scene Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnScene#validateFirstUnitOnSceneValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit On Scene Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnScene#validateFirstUnitOnSceneMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit On Scene Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class FirstUnitOnSceneTest extends CDAValidationTest {
 		};
 
 		validateFirstUnitOnSceneTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFirstUnitOnSceneMoodCode() {
+		OperationsTestCase<FirstUnitOnScene> validateFirstUnitOnSceneMoodCodeTestCase = new OperationsTestCase<FirstUnitOnScene>(
+			"validateFirstUnitOnSceneMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_FIRST_UNIT_ON_SCENE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FirstUnitOnScene target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FirstUnitOnScene target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FirstUnitOnSceneOperations.validateFirstUnitOnSceneMoodCode(
+					(FirstUnitOnScene) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFirstUnitOnSceneMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class FirstUnitOnSceneTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(FirstUnitOnScene target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitOnSceneCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return FirstUnitOnSceneOperations.validateFirstUnitOnSceneCode(
@@ -182,40 +218,6 @@ public class FirstUnitOnSceneTest extends CDAValidationTest {
 		};
 
 		validateFirstUnitOnSceneValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFirstUnitOnSceneMoodCode() {
-		OperationsTestCase<FirstUnitOnScene> validateFirstUnitOnSceneMoodCodeTestCase = new OperationsTestCase<FirstUnitOnScene>(
-			"validateFirstUnitOnSceneMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_FIRST_UNIT_ON_SCENE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FirstUnitOnScene target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FirstUnitOnScene target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FirstUnitOnSceneOperations.validateFirstUnitOnSceneMoodCode(
-					(FirstUnitOnScene) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFirstUnitOnSceneMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

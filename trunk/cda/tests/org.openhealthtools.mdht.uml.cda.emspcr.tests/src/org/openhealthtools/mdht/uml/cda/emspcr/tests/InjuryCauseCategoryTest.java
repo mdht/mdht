@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.InjuryCauseCategory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.InjuryCauseCategoryOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryCauseCategory#validateInjuryCauseCategoryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Cause Category Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryCauseCategory#validateInjuryCauseCategoryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Cause Category Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryCauseCategory#validateInjuryCauseCategoryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Cause Category Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryCauseCategory#validateInjuryCauseCategoryValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Cause Category Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.InjuryCauseCategory#validateInjuryCauseCategoryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Injury Cause Category Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class InjuryCauseCategoryTest extends CDAValidationTest {
 		};
 
 		validateInjuryCauseCategoryTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateInjuryCauseCategoryMoodCode() {
+		OperationsTestCase<InjuryCauseCategory> validateInjuryCauseCategoryMoodCodeTestCase = new OperationsTestCase<InjuryCauseCategory>(
+			"validateInjuryCauseCategoryMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_INJURY_CAUSE_CATEGORY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(InjuryCauseCategory target) {
+
+			}
+
+			@Override
+			protected void updateToPass(InjuryCauseCategory target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InjuryCauseCategoryOperations.validateInjuryCauseCategoryMoodCode(
+					(InjuryCauseCategory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInjuryCauseCategoryMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class InjuryCauseCategoryTest extends CDAValidationTest {
 		};
 
 		validateInjuryCauseCategoryValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateInjuryCauseCategoryMoodCode() {
-		OperationsTestCase<InjuryCauseCategory> validateInjuryCauseCategoryMoodCodeTestCase = new OperationsTestCase<InjuryCauseCategory>(
-			"validateInjuryCauseCategoryMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_INJURY_CAUSE_CATEGORY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(InjuryCauseCategory target) {
-
-			}
-
-			@Override
-			protected void updateToPass(InjuryCauseCategory target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return InjuryCauseCategoryOperations.validateInjuryCauseCategoryMoodCode(
-					(InjuryCauseCategory) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateInjuryCauseCategoryMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTime;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.UnitBackInServiceTimeOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTime#validateUnitBackInServiceTimeTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Back In Service Time Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTime#validateUnitBackInServiceTimeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Back In Service Time Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTime#validateUnitBackInServiceTimeCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Back In Service Time Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTime#validateUnitBackInServiceTimeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Back In Service Time Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTime#validateUnitBackInServiceTimeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Back In Service Time Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTime#validateUnitBackInServiceTimeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Back In Service Time Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class UnitBackInServiceTimeTest extends CDAValidationTest {
 		};
 
 		validateUnitBackInServiceTimeTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnitBackInServiceTimeMoodCode() {
+		OperationsTestCase<UnitBackInServiceTime> validateUnitBackInServiceTimeMoodCodeTestCase = new OperationsTestCase<UnitBackInServiceTime>(
+			"validateUnitBackInServiceTimeMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_UNIT_BACK_IN_SERVICE_TIME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnitBackInServiceTime target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnitBackInServiceTime target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnitBackInServiceTimeOperations.validateUnitBackInServiceTimeMoodCode(
+					(UnitBackInServiceTime) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnitBackInServiceTimeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class UnitBackInServiceTimeTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(UnitBackInServiceTime target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.UnitBackInServiceTimeCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return UnitBackInServiceTimeOperations.validateUnitBackInServiceTimeCode(
@@ -182,40 +218,6 @@ public class UnitBackInServiceTimeTest extends CDAValidationTest {
 		};
 
 		validateUnitBackInServiceTimeValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateUnitBackInServiceTimeMoodCode() {
-		OperationsTestCase<UnitBackInServiceTime> validateUnitBackInServiceTimeMoodCodeTestCase = new OperationsTestCase<UnitBackInServiceTime>(
-			"validateUnitBackInServiceTimeMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_UNIT_BACK_IN_SERVICE_TIME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(UnitBackInServiceTime target) {
-
-			}
-
-			@Override
-			protected void updateToPass(UnitBackInServiceTime target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return UnitBackInServiceTimeOperations.validateUnitBackInServiceTimeMoodCode(
-					(UnitBackInServiceTime) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateUnitBackInServiceTimeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

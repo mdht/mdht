@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.IncidentDispositionObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation#validateIncidentDispositionObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Incident Disposition Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation#validateIncidentDispositionObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Incident Disposition Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation#validateIncidentDispositionObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Incident Disposition Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation#validateIncidentDispositionObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Incident Disposition Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation#validateIncidentDispositionObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Incident Disposition Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation#validateIncidentDispositionObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Incident Disposition Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservation#validateIncidentDispositionObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Incident Disposition Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class IncidentDispositionObservationTest extends CDAValidationTest {
 		};
 
 		validateIncidentDispositionObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIncidentDispositionObservationMoodCode() {
+		OperationsTestCase<IncidentDispositionObservation> validateIncidentDispositionObservationMoodCodeTestCase = new OperationsTestCase<IncidentDispositionObservation>(
+			"validateIncidentDispositionObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_INCIDENT_DISPOSITION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(IncidentDispositionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(IncidentDispositionObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IncidentDispositionObservationOperations.validateIncidentDispositionObservationMoodCode(
+					(IncidentDispositionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIncidentDispositionObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,13 @@ public class IncidentDispositionObservationTest extends CDAValidationTest {
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(IncidentDispositionObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.IncidentDispositionObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +256,6 @@ public class IncidentDispositionObservationTest extends CDAValidationTest {
 		};
 
 		validateIncidentDispositionObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateIncidentDispositionObservationMoodCode() {
-		OperationsTestCase<IncidentDispositionObservation> validateIncidentDispositionObservationMoodCodeTestCase = new OperationsTestCase<IncidentDispositionObservation>(
-			"validateIncidentDispositionObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_INCIDENT_DISPOSITION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(IncidentDispositionObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(IncidentDispositionObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return IncidentDispositionObservationOperations.validateIncidentDispositionObservationMoodCode(
-					(IncidentDispositionObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateIncidentDispositionObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

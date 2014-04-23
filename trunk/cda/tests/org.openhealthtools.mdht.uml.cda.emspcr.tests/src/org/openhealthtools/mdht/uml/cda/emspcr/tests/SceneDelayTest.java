@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.SceneDelayOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay#validateSceneDelayTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Delay Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay#validateSceneDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Delay Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay#validateSceneDelayCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Delay Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay#validateSceneDelayCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Delay Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay#validateSceneDelayValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Delay Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay#validateSceneDelayValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Delay Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SceneDelay#validateSceneDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Delay Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,39 @@ public class SceneDelayTest extends CDAValidationTest {
 		};
 
 		validateSceneDelayTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSceneDelayMoodCode() {
+		OperationsTestCase<SceneDelay> validateSceneDelayMoodCodeTestCase = new OperationsTestCase<SceneDelay>(
+			"validateSceneDelayMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SCENE_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SceneDelay target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SceneDelay target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SceneDelayOperations.validateSceneDelayMoodCode((SceneDelay) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSceneDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -130,6 +158,13 @@ public class SceneDelayTest extends CDAValidationTest {
 			protected void updateToPass(SceneDelay target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(SceneDelay target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.SceneDelayCodeP", passToken);
 			}
 
 			@Override
@@ -208,39 +243,6 @@ public class SceneDelayTest extends CDAValidationTest {
 		};
 
 		validateSceneDelayValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSceneDelayMoodCode() {
-		OperationsTestCase<SceneDelay> validateSceneDelayMoodCodeTestCase = new OperationsTestCase<SceneDelay>(
-			"validateSceneDelayMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_SCENE_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SceneDelay target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SceneDelay target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SceneDelayOperations.validateSceneDelayMoodCode((SceneDelay) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSceneDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

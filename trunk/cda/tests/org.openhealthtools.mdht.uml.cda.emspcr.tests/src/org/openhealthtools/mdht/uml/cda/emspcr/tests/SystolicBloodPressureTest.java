@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.SystolicBloodPressureOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -33,11 +27,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure#validateSystolicBloodPressureMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Systolic Blood Pressure Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure#validateSystolicBloodPressureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Systolic Blood Pressure Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure#validateSystolicBloodPressureValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Systolic Blood Pressure Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure#validateSystolicBloodPressureMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Systolic Blood Pressure Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure#validateSystolicBloodPressureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Systolic Blood Pressure Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure#validateVitalSignObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SystolicBloodPressure#validateVitalSignObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Effective Time</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +39,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class SystolicBloodPressureTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSystolicBloodPressureMoodCode() {
+		OperationsTestCase<SystolicBloodPressure> validateSystolicBloodPressureMoodCodeTestCase = new OperationsTestCase<SystolicBloodPressure>(
+			"validateSystolicBloodPressureMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SYSTOLIC_BLOOD_PRESSURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SystolicBloodPressure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SystolicBloodPressure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SystolicBloodPressureOperations.validateSystolicBloodPressureMoodCode(
+					(SystolicBloodPressure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSystolicBloodPressureMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -122,77 +150,6 @@ public class SystolicBloodPressureTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateSystolicBloodPressureMoodCode() {
-		OperationsTestCase<SystolicBloodPressure> validateSystolicBloodPressureMoodCodeTestCase = new OperationsTestCase<SystolicBloodPressure>(
-			"validateSystolicBloodPressureMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_SYSTOLIC_BLOOD_PRESSURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SystolicBloodPressure target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SystolicBloodPressure target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SystolicBloodPressureOperations.validateSystolicBloodPressureMoodCode(
-					(SystolicBloodPressure) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSystolicBloodPressureMoodCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSystolicBloodPressureEffectiveTime() {
-		OperationsTestCase<SystolicBloodPressure> validateSystolicBloodPressureEffectiveTimeTestCase = new OperationsTestCase<SystolicBloodPressure>(
-			"validateSystolicBloodPressureEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_SYSTOLIC_BLOOD_PRESSURE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SystolicBloodPressure target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SystolicBloodPressure target) {
-				target.init();
-
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SystolicBloodPressureOperations.validateSystolicBloodPressureEffectiveTime(
-					(SystolicBloodPressure) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSystolicBloodPressureEffectiveTimeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidateVitalSignObservationTemplateId() {
 		OperationsTestCase<SystolicBloodPressure> validateVitalSignObservationTemplateIdTestCase = new OperationsTestCase<SystolicBloodPressure>(
 			"validateVitalSignObservationTemplateId",
@@ -220,6 +177,43 @@ public class SystolicBloodPressureTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVitalSignObservationEffectiveTime() {
+		OperationsTestCase<SystolicBloodPressure> validateVitalSignObservationEffectiveTimeTestCase = new OperationsTestCase<SystolicBloodPressure>(
+			"validateVitalSignObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SystolicBloodPressure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SystolicBloodPressure target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SystolicBloodPressureOperations.validateVitalSignObservationEffectiveTime(
+					(SystolicBloodPressure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVitalSignObservationEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**

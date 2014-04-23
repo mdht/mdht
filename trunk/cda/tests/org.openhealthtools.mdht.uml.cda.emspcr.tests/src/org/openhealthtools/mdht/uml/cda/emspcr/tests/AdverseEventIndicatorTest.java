@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicator;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.AdverseEventIndicatorOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicator#validateAdverseEventIndicatorTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Indicator Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicator#validateAdverseEventIndicatorMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Indicator Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicator#validateAdverseEventIndicatorCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Indicator Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicator#validateAdverseEventIndicatorCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Indicator Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicator#validateAdverseEventIndicatorValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Indicator Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicator#validateAdverseEventIndicatorMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Adverse Event Indicator Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class AdverseEventIndicatorTest extends CDAValidationTest {
 		};
 
 		validateAdverseEventIndicatorTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAdverseEventIndicatorMoodCode() {
+		OperationsTestCase<AdverseEventIndicator> validateAdverseEventIndicatorMoodCodeTestCase = new OperationsTestCase<AdverseEventIndicator>(
+			"validateAdverseEventIndicatorMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADVERSE_EVENT_INDICATOR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdverseEventIndicator target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdverseEventIndicator target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdverseEventIndicatorOperations.validateAdverseEventIndicatorMoodCode(
+					(AdverseEventIndicator) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdverseEventIndicatorMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class AdverseEventIndicatorTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(AdverseEventIndicator target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.AdverseEventIndicatorCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return AdverseEventIndicatorOperations.validateAdverseEventIndicatorCode(
@@ -182,40 +218,6 @@ public class AdverseEventIndicatorTest extends CDAValidationTest {
 		};
 
 		validateAdverseEventIndicatorValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAdverseEventIndicatorMoodCode() {
-		OperationsTestCase<AdverseEventIndicator> validateAdverseEventIndicatorMoodCodeTestCase = new OperationsTestCase<AdverseEventIndicator>(
-			"validateAdverseEventIndicatorMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVERSE_EVENT_INDICATOR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AdverseEventIndicator target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AdverseEventIndicator target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AdverseEventIndicatorOperations.validateAdverseEventIndicatorMoodCode(
-					(AdverseEventIndicator) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAdverseEventIndicatorMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

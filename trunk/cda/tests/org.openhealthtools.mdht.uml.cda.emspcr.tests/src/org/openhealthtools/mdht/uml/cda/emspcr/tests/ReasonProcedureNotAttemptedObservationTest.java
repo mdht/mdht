@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ReasonProcedureNotAttemptedObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ReasonProcedureNotAttemptedObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonProcedureNotAttemptedObservation#validateReasonProcedureNotAttemptedObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason Procedure Not Attempted Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonProcedureNotAttemptedObservation#validateReasonProcedureNotAttemptedObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason Procedure Not Attempted Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonProcedureNotAttemptedObservation#validateReasonProcedureNotAttemptedObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason Procedure Not Attempted Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonProcedureNotAttemptedObservation#validateReasonProcedureNotAttemptedObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason Procedure Not Attempted Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonProcedureNotAttemptedObservation#validateReasonProcedureNotAttemptedObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason Procedure Not Attempted Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ReasonProcedureNotAttemptedObservation#validateReasonProcedureNotAttemptedObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason Procedure Not Attempted Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +71,40 @@ public class ReasonProcedureNotAttemptedObservationTest extends CDAValidationTes
 		};
 
 		validateReasonProcedureNotAttemptedObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReasonProcedureNotAttemptedObservationMoodCode() {
+		OperationsTestCase<ReasonProcedureNotAttemptedObservation> validateReasonProcedureNotAttemptedObservationMoodCodeTestCase = new OperationsTestCase<ReasonProcedureNotAttemptedObservation>(
+			"validateReasonProcedureNotAttemptedObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_REASON_PROCEDURE_NOT_ATTEMPTED_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReasonProcedureNotAttemptedObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReasonProcedureNotAttemptedObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReasonProcedureNotAttemptedObservationOperations.validateReasonProcedureNotAttemptedObservationMoodCode(
+					(ReasonProcedureNotAttemptedObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReasonProcedureNotAttemptedObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -185,40 +213,6 @@ public class ReasonProcedureNotAttemptedObservationTest extends CDAValidationTes
 		};
 
 		validateReasonProcedureNotAttemptedObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateReasonProcedureNotAttemptedObservationMoodCode() {
-		OperationsTestCase<ReasonProcedureNotAttemptedObservation> validateReasonProcedureNotAttemptedObservationMoodCodeTestCase = new OperationsTestCase<ReasonProcedureNotAttemptedObservation>(
-			"validateReasonProcedureNotAttemptedObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_PROCEDURE_NOT_ATTEMPTED_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ReasonProcedureNotAttemptedObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ReasonProcedureNotAttemptedObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ReasonProcedureNotAttemptedObservationOperations.validateReasonProcedureNotAttemptedObservationMoodCode(
-					(ReasonProcedureNotAttemptedObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateReasonProcedureNotAttemptedObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

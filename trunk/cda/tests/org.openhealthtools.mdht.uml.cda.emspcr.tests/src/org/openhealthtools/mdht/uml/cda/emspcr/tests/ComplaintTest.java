@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.Complaint;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ComplaintOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -37,13 +32,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintTypeRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Type Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintOrganSystemRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Organ System Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintTargetSiteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Target Site Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.Complaint#validateComplaintMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complaint Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -192,6 +187,38 @@ public class ComplaintTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateComplaintMoodCode() {
+		OperationsTestCase<Complaint> validateComplaintMoodCodeTestCase = new OperationsTestCase<Complaint>(
+			"validateComplaintMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Complaint target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Complaint target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplaintOperations.validateComplaintMoodCode((Complaint) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplaintMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateComplaintCodeP() {
 		OperationsTestCase<Complaint> validateComplaintCodePTestCase = new OperationsTestCase<Complaint>(
 			"validateComplaintCodeP",
@@ -241,6 +268,13 @@ public class ComplaintTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(Complaint target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ComplaintCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ComplaintOperations.validateComplaintCode((Complaint) objectToTest, diagnostician, map);
@@ -249,6 +283,42 @@ public class ComplaintTest extends CDAValidationTest {
 		};
 
 		validateComplaintCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateComplaintEffectiveTime() {
+		OperationsTestCase<Complaint> validateComplaintEffectiveTimeTestCase = new OperationsTestCase<Complaint>(
+			"validateComplaintEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Complaint target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Complaint target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplaintOperations.validateComplaintEffectiveTime((Complaint) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplaintEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**
@@ -351,74 +421,6 @@ public class ComplaintTest extends CDAValidationTest {
 		};
 
 		validateComplaintTargetSiteCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateComplaintEffectiveTime() {
-		OperationsTestCase<Complaint> validateComplaintEffectiveTimeTestCase = new OperationsTestCase<Complaint>(
-			"validateComplaintEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Complaint target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Complaint target) {
-				target.init();
-
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ComplaintOperations.validateComplaintEffectiveTime((Complaint) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateComplaintEffectiveTimeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateComplaintMoodCode() {
-		OperationsTestCase<Complaint> validateComplaintMoodCodeTestCase = new OperationsTestCase<Complaint>(
-			"validateComplaintMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_COMPLAINT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(Complaint target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Complaint target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ComplaintOperations.validateComplaintMoodCode((Complaint) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateComplaintMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

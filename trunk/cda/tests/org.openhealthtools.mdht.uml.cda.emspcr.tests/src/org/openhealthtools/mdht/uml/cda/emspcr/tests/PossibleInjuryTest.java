@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjury;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PossibleInjuryOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjury#validatePossibleInjuryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Possible Injury Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjury#validatePossibleInjuryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Possible Injury Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjury#validatePossibleInjuryCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Possible Injury Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjury#validatePossibleInjuryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Possible Injury Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjury#validatePossibleInjuryValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Possible Injury Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjury#validatePossibleInjuryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Possible Injury Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class PossibleInjuryTest extends CDAValidationTest {
 		};
 
 		validatePossibleInjuryTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePossibleInjuryMoodCode() {
+		OperationsTestCase<PossibleInjury> validatePossibleInjuryMoodCodeTestCase = new OperationsTestCase<PossibleInjury>(
+			"validatePossibleInjuryMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_POSSIBLE_INJURY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PossibleInjury target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PossibleInjury target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PossibleInjuryOperations.validatePossibleInjuryMoodCode(
+					(PossibleInjury) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePossibleInjuryMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class PossibleInjuryTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(PossibleInjury target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.PossibleInjuryCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PossibleInjuryOperations.validatePossibleInjuryCode(
@@ -182,40 +218,6 @@ public class PossibleInjuryTest extends CDAValidationTest {
 		};
 
 		validatePossibleInjuryValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePossibleInjuryMoodCode() {
-		OperationsTestCase<PossibleInjury> validatePossibleInjuryMoodCodeTestCase = new OperationsTestCase<PossibleInjury>(
-			"validatePossibleInjuryMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_POSSIBLE_INJURY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PossibleInjury target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PossibleInjury target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PossibleInjuryOperations.validatePossibleInjuryMoodCode(
-					(PossibleInjury) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePossibleInjuryMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

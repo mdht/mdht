@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotal;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.GlasgowTotalOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotal#validateGlasgowTotalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Total Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotal#validateGlasgowTotalMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Total Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotal#validateGlasgowTotalCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Total Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotal#validateGlasgowTotalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Total Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotal#validateGlasgowTotalValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Total Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotal#validateGlasgowTotalMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Total Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class GlasgowTotalTest extends CDAValidationTest {
 		};
 
 		validateGlasgowTotalTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateGlasgowTotalMoodCode() {
+		OperationsTestCase<GlasgowTotal> validateGlasgowTotalMoodCodeTestCase = new OperationsTestCase<GlasgowTotal>(
+			"validateGlasgowTotalMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_GLASGOW_TOTAL_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GlasgowTotal target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GlasgowTotal target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GlasgowTotalOperations.validateGlasgowTotalMoodCode(
+					(GlasgowTotal) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGlasgowTotalMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class GlasgowTotalTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(GlasgowTotal target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.GlasgowTotalCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return GlasgowTotalOperations.validateGlasgowTotalCode((GlasgowTotal) objectToTest, diagnostician, map);
@@ -177,40 +213,6 @@ public class GlasgowTotalTest extends CDAValidationTest {
 		};
 
 		validateGlasgowTotalValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateGlasgowTotalMoodCode() {
-		OperationsTestCase<GlasgowTotal> validateGlasgowTotalMoodCodeTestCase = new OperationsTestCase<GlasgowTotal>(
-			"validateGlasgowTotalMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_GLASGOW_TOTAL_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GlasgowTotal target) {
-
-			}
-
-			@Override
-			protected void updateToPass(GlasgowTotal target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GlasgowTotalOperations.validateGlasgowTotalMoodCode(
-					(GlasgowTotal) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGlasgowTotalMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

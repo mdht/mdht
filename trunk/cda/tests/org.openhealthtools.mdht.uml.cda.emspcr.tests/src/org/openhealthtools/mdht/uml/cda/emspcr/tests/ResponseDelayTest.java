@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ResponseDelayOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay#validateResponseDelayTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Delay Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay#validateResponseDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Delay Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay#validateResponseDelayCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Delay Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay#validateResponseDelayCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Delay Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay#validateResponseDelayValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Delay Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay#validateResponseDelayValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Delay Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelay#validateResponseDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Response Delay Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ResponseDelayTest extends CDAValidationTest {
 		};
 
 		validateResponseDelayTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResponseDelayMoodCode() {
+		OperationsTestCase<ResponseDelay> validateResponseDelayMoodCodeTestCase = new OperationsTestCase<ResponseDelay>(
+			"validateResponseDelayMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESPONSE_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ResponseDelay target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ResponseDelay target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResponseDelayOperations.validateResponseDelayMoodCode(
+					(ResponseDelay) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResponseDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -133,6 +162,13 @@ public class ResponseDelayTest extends CDAValidationTest {
 			protected void updateToPass(ResponseDelay target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ResponseDelay target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ResponseDelayCodeP", passToken);
 			}
 
 			@Override
@@ -216,40 +252,6 @@ public class ResponseDelayTest extends CDAValidationTest {
 		};
 
 		validateResponseDelayValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateResponseDelayMoodCode() {
-		OperationsTestCase<ResponseDelay> validateResponseDelayMoodCodeTestCase = new OperationsTestCase<ResponseDelay>(
-			"validateResponseDelayMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_RESPONSE_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ResponseDelay target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ResponseDelay target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResponseDelayOperations.validateResponseDelayMoodCode(
-					(ResponseDelay) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateResponseDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

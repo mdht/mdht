@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.HeadAssessmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,11 +29,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessment#validateHeadAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Assessment Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +74,40 @@ public class HeadAssessmentTest extends CDAValidationTest {
 		};
 
 		validateHeadAssessmentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHeadAssessmentMoodCode() {
+		OperationsTestCase<HeadAssessment> validateHeadAssessmentMoodCodeTestCase = new OperationsTestCase<HeadAssessment>(
+			"validateHeadAssessmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_HEAD_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HeadAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HeadAssessment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HeadAssessmentOperations.validateHeadAssessmentMoodCode(
+					(HeadAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHeadAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -138,6 +167,13 @@ public class HeadAssessmentTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(HeadAssessment target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.HeadAssessmentCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return HeadAssessmentOperations.validateHeadAssessmentCode(
@@ -147,43 +183,6 @@ public class HeadAssessmentTest extends CDAValidationTest {
 		};
 
 		validateHeadAssessmentCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHeadAssessmentValue() {
-		OperationsTestCase<HeadAssessment> validateHeadAssessmentValueTestCase = new OperationsTestCase<HeadAssessment>(
-			"validateHeadAssessmentValue",
-			operationsForOCL.getOCLValue("VALIDATE_HEAD_ASSESSMENT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(HeadAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HeadAssessment target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HeadAssessmentOperations.validateHeadAssessmentValue(
-					(HeadAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHeadAssessmentValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -228,10 +227,10 @@ public class HeadAssessmentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateHeadAssessmentMoodCode() {
-		OperationsTestCase<HeadAssessment> validateHeadAssessmentMoodCodeTestCase = new OperationsTestCase<HeadAssessment>(
-			"validateHeadAssessmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_HEAD_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateHeadAssessmentValue() {
+		OperationsTestCase<HeadAssessment> validateHeadAssessmentValueTestCase = new OperationsTestCase<HeadAssessment>(
+			"validateHeadAssessmentValue",
+			operationsForOCL.getOCLValue("VALIDATE_HEAD_ASSESSMENT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -243,18 +242,21 @@ public class HeadAssessmentTest extends CDAValidationTest {
 			protected void updateToPass(HeadAssessment target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return HeadAssessmentOperations.validateHeadAssessmentMoodCode(
+				return HeadAssessmentOperations.validateHeadAssessmentValue(
 					(HeadAssessment) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateHeadAssessmentMoodCodeTestCase.doValidationTest();
+		validateHeadAssessmentValueTestCase.doValidationTest();
 	}
 
 	/**

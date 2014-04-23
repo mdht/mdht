@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicator;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProcedurePriorIndicatorOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicator#validateProcedurePriorIndicatorTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Prior Indicator Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicator#validateProcedurePriorIndicatorMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Prior Indicator Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicator#validateProcedurePriorIndicatorCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Prior Indicator Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicator#validateProcedurePriorIndicatorCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Prior Indicator Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicator#validateProcedurePriorIndicatorValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Prior Indicator Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicator#validateProcedurePriorIndicatorMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Prior Indicator Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class ProcedurePriorIndicatorTest extends CDAValidationTest {
 		};
 
 		validateProcedurePriorIndicatorTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedurePriorIndicatorMoodCode() {
+		OperationsTestCase<ProcedurePriorIndicator> validateProcedurePriorIndicatorMoodCodeTestCase = new OperationsTestCase<ProcedurePriorIndicator>(
+			"validateProcedurePriorIndicatorMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_PRIOR_INDICATOR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedurePriorIndicator target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedurePriorIndicator target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedurePriorIndicatorOperations.validateProcedurePriorIndicatorMoodCode(
+					(ProcedurePriorIndicator) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedurePriorIndicatorMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class ProcedurePriorIndicatorTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(ProcedurePriorIndicator target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ProcedurePriorIndicatorCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ProcedurePriorIndicatorOperations.validateProcedurePriorIndicatorCode(
@@ -182,40 +218,6 @@ public class ProcedurePriorIndicatorTest extends CDAValidationTest {
 		};
 
 		validateProcedurePriorIndicatorValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProcedurePriorIndicatorMoodCode() {
-		OperationsTestCase<ProcedurePriorIndicator> validateProcedurePriorIndicatorMoodCodeTestCase = new OperationsTestCase<ProcedurePriorIndicator>(
-			"validateProcedurePriorIndicatorMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_PRIOR_INDICATOR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedurePriorIndicator target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProcedurePriorIndicator target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedurePriorIndicatorOperations.validateProcedurePriorIndicatorMoodCode(
-					(ProcedurePriorIndicator) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedurePriorIndicatorMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

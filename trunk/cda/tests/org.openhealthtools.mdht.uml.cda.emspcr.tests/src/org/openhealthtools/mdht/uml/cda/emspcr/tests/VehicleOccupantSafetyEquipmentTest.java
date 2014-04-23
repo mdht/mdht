@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.VehicleOccupantSafetyEquipment;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.VehicleOccupantSafetyEquipmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VehicleOccupantSafetyEquipment#validateVehicleOccupantSafetyEquipmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vehicle Occupant Safety Equipment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VehicleOccupantSafetyEquipment#validateVehicleOccupantSafetyEquipmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vehicle Occupant Safety Equipment Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VehicleOccupantSafetyEquipment#validateVehicleOccupantSafetyEquipmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vehicle Occupant Safety Equipment Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VehicleOccupantSafetyEquipment#validateVehicleOccupantSafetyEquipmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vehicle Occupant Safety Equipment Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.VehicleOccupantSafetyEquipment#validateVehicleOccupantSafetyEquipmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vehicle Occupant Safety Equipment Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class VehicleOccupantSafetyEquipmentTest extends CDAValidationTest {
 		};
 
 		validateVehicleOccupantSafetyEquipmentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVehicleOccupantSafetyEquipmentMoodCode() {
+		OperationsTestCase<VehicleOccupantSafetyEquipment> validateVehicleOccupantSafetyEquipmentMoodCodeTestCase = new OperationsTestCase<VehicleOccupantSafetyEquipment>(
+			"validateVehicleOccupantSafetyEquipmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_VEHICLE_OCCUPANT_SAFETY_EQUIPMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VehicleOccupantSafetyEquipment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VehicleOccupantSafetyEquipment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VehicleOccupantSafetyEquipmentOperations.validateVehicleOccupantSafetyEquipmentMoodCode(
+					(VehicleOccupantSafetyEquipment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVehicleOccupantSafetyEquipmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class VehicleOccupantSafetyEquipmentTest extends CDAValidationTest {
 		};
 
 		validateVehicleOccupantSafetyEquipmentValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVehicleOccupantSafetyEquipmentMoodCode() {
-		OperationsTestCase<VehicleOccupantSafetyEquipment> validateVehicleOccupantSafetyEquipmentMoodCodeTestCase = new OperationsTestCase<VehicleOccupantSafetyEquipment>(
-			"validateVehicleOccupantSafetyEquipmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_VEHICLE_OCCUPANT_SAFETY_EQUIPMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VehicleOccupantSafetyEquipment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VehicleOccupantSafetyEquipment target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VehicleOccupantSafetyEquipmentOperations.validateVehicleOccupantSafetyEquipmentMoodCode(
-					(VehicleOccupantSafetyEquipment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVehicleOccupantSafetyEquipmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

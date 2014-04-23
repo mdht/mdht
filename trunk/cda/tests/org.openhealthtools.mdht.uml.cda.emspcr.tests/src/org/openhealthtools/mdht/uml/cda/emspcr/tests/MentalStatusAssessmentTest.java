@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessment;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.MentalStatusAssessmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessment#validateMentalStatusAssessmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mental Status Assessment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessment#validateMentalStatusAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mental Status Assessment Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessment#validateMentalStatusAssessmentCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mental Status Assessment Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessment#validateMentalStatusAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mental Status Assessment Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessment#validateMentalStatusAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mental Status Assessment Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessment#validateMentalStatusAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mental Status Assessment Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class MentalStatusAssessmentTest extends CDAValidationTest {
 		};
 
 		validateMentalStatusAssessmentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMentalStatusAssessmentMoodCode() {
+		OperationsTestCase<MentalStatusAssessment> validateMentalStatusAssessmentMoodCodeTestCase = new OperationsTestCase<MentalStatusAssessment>(
+			"validateMentalStatusAssessmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_MENTAL_STATUS_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MentalStatusAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MentalStatusAssessment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MentalStatusAssessmentOperations.validateMentalStatusAssessmentMoodCode(
+					(MentalStatusAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMentalStatusAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class MentalStatusAssessmentTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(MentalStatusAssessment target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.MentalStatusAssessmentCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MentalStatusAssessmentOperations.validateMentalStatusAssessmentCode(
@@ -182,40 +218,6 @@ public class MentalStatusAssessmentTest extends CDAValidationTest {
 		};
 
 		validateMentalStatusAssessmentValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMentalStatusAssessmentMoodCode() {
-		OperationsTestCase<MentalStatusAssessment> validateMentalStatusAssessmentMoodCodeTestCase = new OperationsTestCase<MentalStatusAssessment>(
-			"validateMentalStatusAssessmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_MENTAL_STATUS_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MentalStatusAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MentalStatusAssessment target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MentalStatusAssessmentOperations.validateMentalStatusAssessmentMoodCode(
-					(MentalStatusAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMentalStatusAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

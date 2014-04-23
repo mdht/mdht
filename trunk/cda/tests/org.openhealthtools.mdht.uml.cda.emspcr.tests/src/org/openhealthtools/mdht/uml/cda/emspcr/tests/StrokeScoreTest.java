@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.StrokeScoreOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,14 +29,14 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Value P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Method Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreMethodCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Method Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.StrokeScore#validateStrokeScoreMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Stroke Score Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,6 +77,39 @@ public class StrokeScoreTest extends CDAValidationTest {
 		};
 
 		validateStrokeScoreTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateStrokeScoreMoodCode() {
+		OperationsTestCase<StrokeScore> validateStrokeScoreMoodCodeTestCase = new OperationsTestCase<StrokeScore>(
+			"validateStrokeScoreMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_STROKE_SCORE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StrokeScore target) {
+
+			}
+
+			@Override
+			protected void updateToPass(StrokeScore target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StrokeScoreOperations.validateStrokeScoreMoodCode((StrokeScore) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStrokeScoreMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -138,6 +166,13 @@ public class StrokeScoreTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(StrokeScore target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.StrokeScoreCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return StrokeScoreOperations.validateStrokeScoreCode((StrokeScore) objectToTest, diagnostician, map);
@@ -146,6 +181,43 @@ public class StrokeScoreTest extends CDAValidationTest {
 		};
 
 		validateStrokeScoreCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateStrokeScoreEffectiveTime() {
+		OperationsTestCase<StrokeScore> validateStrokeScoreEffectiveTimeTestCase = new OperationsTestCase<StrokeScore>(
+			"validateStrokeScoreEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_STROKE_SCORE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StrokeScore target) {
+
+			}
+
+			@Override
+			protected void updateToPass(StrokeScore target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StrokeScoreOperations.validateStrokeScoreEffectiveTime(
+					(StrokeScore) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStrokeScoreEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**
@@ -282,76 +354,6 @@ public class StrokeScoreTest extends CDAValidationTest {
 		};
 
 		validateStrokeScoreMethodCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateStrokeScoreEffectiveTime() {
-		OperationsTestCase<StrokeScore> validateStrokeScoreEffectiveTimeTestCase = new OperationsTestCase<StrokeScore>(
-			"validateStrokeScoreEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_STROKE_SCORE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(StrokeScore target) {
-
-			}
-
-			@Override
-			protected void updateToPass(StrokeScore target) {
-				target.init();
-
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StrokeScoreOperations.validateStrokeScoreEffectiveTime(
-					(StrokeScore) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateStrokeScoreEffectiveTimeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateStrokeScoreMoodCode() {
-		OperationsTestCase<StrokeScore> validateStrokeScoreMoodCodeTestCase = new OperationsTestCase<StrokeScore>(
-			"validateStrokeScoreMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_STROKE_SCORE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(StrokeScore target) {
-
-			}
-
-			@Override
-			protected void updateToPass(StrokeScore target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StrokeScoreOperations.validateStrokeScoreMoodCode((StrokeScore) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateStrokeScoreMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

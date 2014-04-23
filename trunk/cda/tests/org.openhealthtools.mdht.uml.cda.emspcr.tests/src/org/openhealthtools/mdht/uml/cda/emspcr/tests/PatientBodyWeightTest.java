@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.PatientBodyWeight;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PatientBodyWeightOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientBodyWeight#validatePatientBodyWeightTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Body Weight Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientBodyWeight#validatePatientBodyWeightMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Body Weight Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientBodyWeight#validatePatientBodyWeightCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Body Weight Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientBodyWeight#validatePatientBodyWeightValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Body Weight Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientBodyWeight#validatePatientBodyWeightMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Body Weight Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class PatientBodyWeightTest extends CDAValidationTest {
 		};
 
 		validatePatientBodyWeightTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePatientBodyWeightMoodCode() {
+		OperationsTestCase<PatientBodyWeight> validatePatientBodyWeightMoodCodeTestCase = new OperationsTestCase<PatientBodyWeight>(
+			"validatePatientBodyWeightMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_BODY_WEIGHT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientBodyWeight target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientBodyWeight target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientBodyWeightOperations.validatePatientBodyWeightMoodCode(
+					(PatientBodyWeight) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientBodyWeightMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class PatientBodyWeightTest extends CDAValidationTest {
 		};
 
 		validatePatientBodyWeightValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientBodyWeightMoodCode() {
-		OperationsTestCase<PatientBodyWeight> validatePatientBodyWeightMoodCodeTestCase = new OperationsTestCase<PatientBodyWeight>(
-			"validatePatientBodyWeightMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_BODY_WEIGHT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientBodyWeight target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientBodyWeight target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientBodyWeightOperations.validatePatientBodyWeightMoodCode(
-					(PatientBodyWeight) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientBodyWeightMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

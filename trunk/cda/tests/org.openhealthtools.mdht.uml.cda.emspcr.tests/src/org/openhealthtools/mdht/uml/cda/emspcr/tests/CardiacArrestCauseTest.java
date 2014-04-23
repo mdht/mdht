@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.CardiacArrestCause;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.CardiacArrestCauseOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,9 +27,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacArrestCause#validateCardiacArrestCauseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Arrest Cause Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacArrestCause#validateCardiacArrestCauseMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Arrest Cause Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacArrestCause#validateCardiacArrestCauseCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Arrest Cause Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacArrestCause#validateCardiacArrestCauseValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Arrest Cause Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.CardiacArrestCause#validateCardiacArrestCauseMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cardiac Arrest Cause Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +70,40 @@ public class CardiacArrestCauseTest extends CDAValidationTest {
 		};
 
 		validateCardiacArrestCauseTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCardiacArrestCauseMoodCode() {
+		OperationsTestCase<CardiacArrestCause> validateCardiacArrestCauseMoodCodeTestCase = new OperationsTestCase<CardiacArrestCause>(
+			"validateCardiacArrestCauseMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_ARREST_CAUSE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CardiacArrestCause target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CardiacArrestCause target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CardiacArrestCauseOperations.validateCardiacArrestCauseMoodCode(
+					(CardiacArrestCause) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCardiacArrestCauseMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -147,40 +175,6 @@ public class CardiacArrestCauseTest extends CDAValidationTest {
 		};
 
 		validateCardiacArrestCauseValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateCardiacArrestCauseMoodCode() {
-		OperationsTestCase<CardiacArrestCause> validateCardiacArrestCauseMoodCodeTestCase = new OperationsTestCase<CardiacArrestCause>(
-			"validateCardiacArrestCauseMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_CARDIAC_ARREST_CAUSE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(CardiacArrestCause target) {
-
-			}
-
-			@Override
-			protected void updateToPass(CardiacArrestCause target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return CardiacArrestCauseOperations.validateCardiacArrestCauseMoodCode(
-					(CardiacArrestCause) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateCardiacArrestCauseMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

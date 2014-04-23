@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.AbandonedProcedureReasonObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation#validateAbandonedProcedureReasonObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abandoned Procedure Reason Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation#validateAbandonedProcedureReasonObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abandoned Procedure Reason Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation#validateAbandonedProcedureReasonObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abandoned Procedure Reason Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation#validateAbandonedProcedureReasonObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abandoned Procedure Reason Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation#validateAbandonedProcedureReasonObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abandoned Procedure Reason Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation#validateAbandonedProcedureReasonObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abandoned Procedure Reason Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservation#validateAbandonedProcedureReasonObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abandoned Procedure Reason Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class AbandonedProcedureReasonObservationTest extends CDAValidationTest {
 		};
 
 		validateAbandonedProcedureReasonObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAbandonedProcedureReasonObservationMoodCode() {
+		OperationsTestCase<AbandonedProcedureReasonObservation> validateAbandonedProcedureReasonObservationMoodCodeTestCase = new OperationsTestCase<AbandonedProcedureReasonObservation>(
+			"validateAbandonedProcedureReasonObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_ABANDONED_PROCEDURE_REASON_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AbandonedProcedureReasonObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AbandonedProcedureReasonObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AbandonedProcedureReasonObservationOperations.validateAbandonedProcedureReasonObservationMoodCode(
+					(AbandonedProcedureReasonObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAbandonedProcedureReasonObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,13 @@ public class AbandonedProcedureReasonObservationTest extends CDAValidationTest {
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(AbandonedProcedureReasonObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.AbandonedProcedureReasonObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +256,6 @@ public class AbandonedProcedureReasonObservationTest extends CDAValidationTest {
 		};
 
 		validateAbandonedProcedureReasonObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAbandonedProcedureReasonObservationMoodCode() {
-		OperationsTestCase<AbandonedProcedureReasonObservation> validateAbandonedProcedureReasonObservationMoodCodeTestCase = new OperationsTestCase<AbandonedProcedureReasonObservation>(
-			"validateAbandonedProcedureReasonObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ABANDONED_PROCEDURE_REASON_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AbandonedProcedureReasonObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AbandonedProcedureReasonObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AbandonedProcedureReasonObservationOperations.validateAbandonedProcedureReasonObservationMoodCode(
-					(AbandonedProcedureReasonObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAbandonedProcedureReasonObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

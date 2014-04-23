@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.DispatchDelayOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay#validateDispatchDelayTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Delay Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay#validateDispatchDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Delay Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay#validateDispatchDelayCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Delay Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay#validateDispatchDelayCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Delay Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay#validateDispatchDelayValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Delay Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay#validateDispatchDelayValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Delay Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelay#validateDispatchDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Delay Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class DispatchDelayTest extends CDAValidationTest {
 		};
 
 		validateDispatchDelayTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDispatchDelayMoodCode() {
+		OperationsTestCase<DispatchDelay> validateDispatchDelayMoodCodeTestCase = new OperationsTestCase<DispatchDelay>(
+			"validateDispatchDelayMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DispatchDelay target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DispatchDelay target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DispatchDelayOperations.validateDispatchDelayMoodCode(
+					(DispatchDelay) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDispatchDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -133,6 +162,13 @@ public class DispatchDelayTest extends CDAValidationTest {
 			protected void updateToPass(DispatchDelay target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(DispatchDelay target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.DispatchDelayCodeP", passToken);
 			}
 
 			@Override
@@ -216,40 +252,6 @@ public class DispatchDelayTest extends CDAValidationTest {
 		};
 
 		validateDispatchDelayValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDispatchDelayMoodCode() {
-		OperationsTestCase<DispatchDelay> validateDispatchDelayMoodCodeTestCase = new OperationsTestCase<DispatchDelay>(
-			"validateDispatchDelayMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DispatchDelay target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DispatchDelay target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DispatchDelayOperations.validateDispatchDelayMoodCode(
-					(DispatchDelay) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDispatchDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

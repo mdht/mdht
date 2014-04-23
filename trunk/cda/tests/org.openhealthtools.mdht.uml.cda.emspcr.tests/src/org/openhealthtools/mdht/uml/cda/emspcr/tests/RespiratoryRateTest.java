@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.RespiratoryRateOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -33,10 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateRespiratoryRateCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory Rate Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateRespiratoryRateValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory Rate Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateRespiratoryRateEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory Rate Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateRespiratoryRateMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory Rate Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateRespiratoryRateCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory Rate Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateRespiratoryRateEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory Rate Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateRespiratoryRateValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory Rate Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.RespiratoryRate#validateVitalSignObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Template Id</em>}</li>
  * </ul>
  * </p>
@@ -45,6 +39,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class RespiratoryRateTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateRespiratoryRateMoodCode() {
+		OperationsTestCase<RespiratoryRate> validateRespiratoryRateMoodCodeTestCase = new OperationsTestCase<RespiratoryRate>(
+			"validateRespiratoryRateMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_RATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(RespiratoryRate target) {
+
+			}
+
+			@Override
+			protected void updateToPass(RespiratoryRate target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return RespiratoryRateOperations.validateRespiratoryRateMoodCode(
+					(RespiratoryRate) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateRespiratoryRateMoodCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -78,43 +106,6 @@ public class RespiratoryRateTest extends CDAValidationTest {
 		};
 
 		validateRespiratoryRateCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateRespiratoryRateValue() {
-		OperationsTestCase<RespiratoryRate> validateRespiratoryRateValueTestCase = new OperationsTestCase<RespiratoryRate>(
-			"validateRespiratoryRateValue",
-			operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_RATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(RespiratoryRate target) {
-
-			}
-
-			@Override
-			protected void updateToPass(RespiratoryRate target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return RespiratoryRateOperations.validateRespiratoryRateValue(
-					(RespiratoryRate) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateRespiratoryRateValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -159,10 +150,10 @@ public class RespiratoryRateTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateRespiratoryRateMoodCode() {
-		OperationsTestCase<RespiratoryRate> validateRespiratoryRateMoodCodeTestCase = new OperationsTestCase<RespiratoryRate>(
-			"validateRespiratoryRateMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_RATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateRespiratoryRateValue() {
+		OperationsTestCase<RespiratoryRate> validateRespiratoryRateValueTestCase = new OperationsTestCase<RespiratoryRate>(
+			"validateRespiratoryRateValue",
+			operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_RATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -174,18 +165,21 @@ public class RespiratoryRateTest extends CDAValidationTest {
 			protected void updateToPass(RespiratoryRate target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return RespiratoryRateOperations.validateRespiratoryRateMoodCode(
+				return RespiratoryRateOperations.validateRespiratoryRateValue(
 					(RespiratoryRate) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateRespiratoryRateMoodCodeTestCase.doValidationTest();
+		validateRespiratoryRateValueTestCase.doValidationTest();
 	}
 
 	/**

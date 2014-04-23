@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindications;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ThrombolyticContraindicationsOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindications#validateThrombolyticContraindicationsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thrombolytic Contraindications Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindications#validateThrombolyticContraindicationsMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thrombolytic Contraindications Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindications#validateThrombolyticContraindicationsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thrombolytic Contraindications Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindications#validateThrombolyticContraindicationsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thrombolytic Contraindications Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindications#validateThrombolyticContraindicationsValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thrombolytic Contraindications Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindications#validateThrombolyticContraindicationsMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thrombolytic Contraindications Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class ThrombolyticContraindicationsTest extends CDAValidationTest {
 		};
 
 		validateThrombolyticContraindicationsTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateThrombolyticContraindicationsMoodCode() {
+		OperationsTestCase<ThrombolyticContraindications> validateThrombolyticContraindicationsMoodCodeTestCase = new OperationsTestCase<ThrombolyticContraindications>(
+			"validateThrombolyticContraindicationsMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_THROMBOLYTIC_CONTRAINDICATIONS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ThrombolyticContraindications target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ThrombolyticContraindications target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ThrombolyticContraindicationsOperations.validateThrombolyticContraindicationsMoodCode(
+					(ThrombolyticContraindications) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateThrombolyticContraindicationsMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class ThrombolyticContraindicationsTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(ThrombolyticContraindications target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ThrombolyticContraindicationsCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ThrombolyticContraindicationsOperations.validateThrombolyticContraindicationsCode(
@@ -182,40 +218,6 @@ public class ThrombolyticContraindicationsTest extends CDAValidationTest {
 		};
 
 		validateThrombolyticContraindicationsValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateThrombolyticContraindicationsMoodCode() {
-		OperationsTestCase<ThrombolyticContraindications> validateThrombolyticContraindicationsMoodCodeTestCase = new OperationsTestCase<ThrombolyticContraindications>(
-			"validateThrombolyticContraindicationsMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_THROMBOLYTIC_CONTRAINDICATIONS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ThrombolyticContraindications target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ThrombolyticContraindications target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ThrombolyticContraindicationsOperations.validateThrombolyticContraindicationsMoodCode(
-					(ThrombolyticContraindications) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateThrombolyticContraindicationsMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

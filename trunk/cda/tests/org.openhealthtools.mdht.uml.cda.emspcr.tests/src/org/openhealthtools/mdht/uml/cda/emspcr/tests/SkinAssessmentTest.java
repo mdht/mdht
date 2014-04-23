@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.SkinAssessmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment#validateSkinAssessmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Skin Assessment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment#validateSkinAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Skin Assessment Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment#validateSkinAssessmentCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Skin Assessment Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment#validateSkinAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Skin Assessment Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment#validateSkinAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Skin Assessment Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment#validateSkinAssessmentValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Skin Assessment Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessment#validateSkinAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Skin Assessment Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class SkinAssessmentTest extends CDAValidationTest {
 		};
 
 		validateSkinAssessmentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSkinAssessmentMoodCode() {
+		OperationsTestCase<SkinAssessment> validateSkinAssessmentMoodCodeTestCase = new OperationsTestCase<SkinAssessment>(
+			"validateSkinAssessmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SKIN_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SkinAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SkinAssessment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SkinAssessmentOperations.validateSkinAssessmentMoodCode(
+					(SkinAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSkinAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class SkinAssessmentTest extends CDAValidationTest {
 			protected void updateToPass(SkinAssessment target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(SkinAssessment target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.SkinAssessmentCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class SkinAssessmentTest extends CDAValidationTest {
 		};
 
 		validateSkinAssessmentValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSkinAssessmentMoodCode() {
-		OperationsTestCase<SkinAssessment> validateSkinAssessmentMoodCodeTestCase = new OperationsTestCase<SkinAssessment>(
-			"validateSkinAssessmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_SKIN_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SkinAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SkinAssessment target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SkinAssessmentOperations.validateSkinAssessmentMoodCode(
-					(SkinAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSkinAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.MedicationNotAdministeredReasonObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.MedicationNotAdministeredReasonObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationNotAdministeredReasonObservation#validateMedicationNotAdministeredReasonObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Not Administered Reason Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationNotAdministeredReasonObservation#validateMedicationNotAdministeredReasonObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Not Administered Reason Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationNotAdministeredReasonObservation#validateMedicationNotAdministeredReasonObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Not Administered Reason Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationNotAdministeredReasonObservation#validateMedicationNotAdministeredReasonObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Not Administered Reason Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationNotAdministeredReasonObservation#validateMedicationNotAdministeredReasonObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Not Administered Reason Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.MedicationNotAdministeredReasonObservation#validateMedicationNotAdministeredReasonObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Not Administered Reason Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +71,40 @@ public class MedicationNotAdministeredReasonObservationTest extends CDAValidatio
 		};
 
 		validateMedicationNotAdministeredReasonObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationNotAdministeredReasonObservationMoodCode() {
+		OperationsTestCase<MedicationNotAdministeredReasonObservation> validateMedicationNotAdministeredReasonObservationMoodCodeTestCase = new OperationsTestCase<MedicationNotAdministeredReasonObservation>(
+			"validateMedicationNotAdministeredReasonObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_NOT_ADMINISTERED_REASON_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationNotAdministeredReasonObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationNotAdministeredReasonObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationNotAdministeredReasonObservationOperations.validateMedicationNotAdministeredReasonObservationMoodCode(
+					(MedicationNotAdministeredReasonObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationNotAdministeredReasonObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -185,40 +213,6 @@ public class MedicationNotAdministeredReasonObservationTest extends CDAValidatio
 		};
 
 		validateMedicationNotAdministeredReasonObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationNotAdministeredReasonObservationMoodCode() {
-		OperationsTestCase<MedicationNotAdministeredReasonObservation> validateMedicationNotAdministeredReasonObservationMoodCodeTestCase = new OperationsTestCase<MedicationNotAdministeredReasonObservation>(
-			"validateMedicationNotAdministeredReasonObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_NOT_ADMINISTERED_REASON_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationNotAdministeredReasonObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationNotAdministeredReasonObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationNotAdministeredReasonObservationOperations.validateMedicationNotAdministeredReasonObservationMoodCode(
-					(MedicationNotAdministeredReasonObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationNotAdministeredReasonObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

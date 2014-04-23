@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.PriorCPR;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PriorCPROperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -34,9 +28,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorCPR#validatePriorCPRProviderParticipation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior CPR Provider Participation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorCPR#validatePriorCPRTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior CPR Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorCPR#validatePriorCPRMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior CPR Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorCPR#validatePriorCPRCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior CPR Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorCPR#validatePriorCPRValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior CPR Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorCPR#validatePriorCPRMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior CPR Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,6 +111,38 @@ public class PriorCPRTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidatePriorCPRMoodCode() {
+		OperationsTestCase<PriorCPR> validatePriorCPRMoodCodeTestCase = new OperationsTestCase<PriorCPR>(
+			"validatePriorCPRMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PRIOR_CPR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(PriorCPR target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PriorCPR target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PriorCPROperations.validatePriorCPRMoodCode((PriorCPR) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePriorCPRMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidatePriorCPRCode() {
 		OperationsTestCase<PriorCPR> validatePriorCPRCodeTestCase = new OperationsTestCase<PriorCPR>(
 			"validatePriorCPRCode",
@@ -177,38 +203,6 @@ public class PriorCPRTest extends CDAValidationTest {
 		};
 
 		validatePriorCPRValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePriorCPRMoodCode() {
-		OperationsTestCase<PriorCPR> validatePriorCPRMoodCodeTestCase = new OperationsTestCase<PriorCPR>(
-			"validatePriorCPRMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PRIOR_CPR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(PriorCPR target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PriorCPR target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PriorCPROperations.validatePriorCPRMoodCode((PriorCPR) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePriorCPRMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

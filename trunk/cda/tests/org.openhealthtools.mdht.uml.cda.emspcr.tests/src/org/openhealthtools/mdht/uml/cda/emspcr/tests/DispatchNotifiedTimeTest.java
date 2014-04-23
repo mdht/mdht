@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTime;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.DispatchNotifiedTimeOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTime#validateDispatchNotifiedTimeTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Notified Time Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTime#validateDispatchNotifiedTimeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Notified Time Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTime#validateDispatchNotifiedTimeCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Notified Time Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTime#validateDispatchNotifiedTimeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Notified Time Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTime#validateDispatchNotifiedTimeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Notified Time Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTime#validateDispatchNotifiedTimeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Dispatch Notified Time Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class DispatchNotifiedTimeTest extends CDAValidationTest {
 		};
 
 		validateDispatchNotifiedTimeTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDispatchNotifiedTimeMoodCode() {
+		OperationsTestCase<DispatchNotifiedTime> validateDispatchNotifiedTimeMoodCodeTestCase = new OperationsTestCase<DispatchNotifiedTime>(
+			"validateDispatchNotifiedTimeMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_NOTIFIED_TIME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DispatchNotifiedTime target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DispatchNotifiedTime target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DispatchNotifiedTimeOperations.validateDispatchNotifiedTimeMoodCode(
+					(DispatchNotifiedTime) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDispatchNotifiedTimeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class DispatchNotifiedTimeTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(DispatchNotifiedTime target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.DispatchNotifiedTimeCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return DispatchNotifiedTimeOperations.validateDispatchNotifiedTimeCode(
@@ -182,40 +218,6 @@ public class DispatchNotifiedTimeTest extends CDAValidationTest {
 		};
 
 		validateDispatchNotifiedTimeValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDispatchNotifiedTimeMoodCode() {
-		OperationsTestCase<DispatchNotifiedTime> validateDispatchNotifiedTimeMoodCodeTestCase = new OperationsTestCase<DispatchNotifiedTime>(
-			"validateDispatchNotifiedTimeMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISPATCH_NOTIFIED_TIME_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DispatchNotifiedTime target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DispatchNotifiedTime target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DispatchNotifiedTimeOperations.validateDispatchNotifiedTimeMoodCode(
-					(DispatchNotifiedTime) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDispatchNotifiedTimeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

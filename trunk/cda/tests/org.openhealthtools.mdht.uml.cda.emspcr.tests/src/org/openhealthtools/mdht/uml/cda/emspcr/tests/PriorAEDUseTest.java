@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.PriorAEDUse;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PriorAEDUseOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -34,9 +28,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorAEDUse#validatePriorAEDUsePriorAEDProviderParticipation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior AED Use Prior AED Provider Participation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorAEDUse#validatePriorAEDUseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior AED Use Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorAEDUse#validatePriorAEDUseMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior AED Use Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorAEDUse#validatePriorAEDUseCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior AED Use Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorAEDUse#validatePriorAEDUseValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior AED Use Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PriorAEDUse#validatePriorAEDUseMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prior AED Use Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -118,6 +112,39 @@ public class PriorAEDUseTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidatePriorAEDUseMoodCode() {
+		OperationsTestCase<PriorAEDUse> validatePriorAEDUseMoodCodeTestCase = new OperationsTestCase<PriorAEDUse>(
+			"validatePriorAEDUseMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PRIOR_AED_USE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PriorAEDUse target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PriorAEDUse target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PriorAEDUseOperations.validatePriorAEDUseMoodCode((PriorAEDUse) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePriorAEDUseMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidatePriorAEDUseCode() {
 		OperationsTestCase<PriorAEDUse> validatePriorAEDUseCodeTestCase = new OperationsTestCase<PriorAEDUse>(
 			"validatePriorAEDUseCode",
@@ -178,39 +205,6 @@ public class PriorAEDUseTest extends CDAValidationTest {
 		};
 
 		validatePriorAEDUseValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePriorAEDUseMoodCode() {
-		OperationsTestCase<PriorAEDUse> validatePriorAEDUseMoodCodeTestCase = new OperationsTestCase<PriorAEDUse>(
-			"validatePriorAEDUseMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PRIOR_AED_USE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PriorAEDUse target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PriorAEDUse target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PriorAEDUseOperations.validatePriorAEDUseMoodCode((PriorAEDUse) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePriorAEDUseMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

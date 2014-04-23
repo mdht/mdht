@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.PatientAge;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PatientAgeOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientAge#validatePatientAgeTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Age Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientAge#validatePatientAgeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Age Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientAge#validatePatientAgeCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Age Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientAge#validatePatientAgeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Age Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientAge#validatePatientAgeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Age Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PatientAge#validatePatientAgeMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Age Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +71,39 @@ public class PatientAgeTest extends CDAValidationTest {
 		};
 
 		validatePatientAgeTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePatientAgeMoodCode() {
+		OperationsTestCase<PatientAge> validatePatientAgeMoodCodeTestCase = new OperationsTestCase<PatientAge>(
+			"validatePatientAgeMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_AGE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientAge target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientAge target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientAgeOperations.validatePatientAgeMoodCode((PatientAge) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientAgeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -132,6 +160,13 @@ public class PatientAgeTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(PatientAge target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.PatientAgeCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PatientAgeOperations.validatePatientAgeCode((PatientAge) objectToTest, diagnostician, map);
@@ -175,39 +210,6 @@ public class PatientAgeTest extends CDAValidationTest {
 		};
 
 		validatePatientAgeValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePatientAgeMoodCode() {
-		OperationsTestCase<PatientAge> validatePatientAgeMoodCodeTestCase = new OperationsTestCase<PatientAge>(
-			"validatePatientAgeMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_AGE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PatientAge target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PatientAge target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PatientAgeOperations.validatePatientAgeMoodCode((PatientAge) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePatientAgeMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

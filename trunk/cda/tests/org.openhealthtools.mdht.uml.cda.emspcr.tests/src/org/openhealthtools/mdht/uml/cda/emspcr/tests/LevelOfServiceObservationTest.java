@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.LevelOfServiceObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation#validateLevelOfServiceObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Level Of Service Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation#validateLevelOfServiceObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Level Of Service Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation#validateLevelOfServiceObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Level Of Service Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation#validateLevelOfServiceObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Level Of Service Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation#validateLevelOfServiceObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Level Of Service Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation#validateLevelOfServiceObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Level Of Service Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservation#validateLevelOfServiceObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Level Of Service Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class LevelOfServiceObservationTest extends CDAValidationTest {
 		};
 
 		validateLevelOfServiceObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateLevelOfServiceObservationMoodCode() {
+		OperationsTestCase<LevelOfServiceObservation> validateLevelOfServiceObservationMoodCodeTestCase = new OperationsTestCase<LevelOfServiceObservation>(
+			"validateLevelOfServiceObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_LEVEL_OF_SERVICE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(LevelOfServiceObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(LevelOfServiceObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return LevelOfServiceObservationOperations.validateLevelOfServiceObservationMoodCode(
+					(LevelOfServiceObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateLevelOfServiceObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,13 @@ public class LevelOfServiceObservationTest extends CDAValidationTest {
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(LevelOfServiceObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.LevelOfServiceObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +256,6 @@ public class LevelOfServiceObservationTest extends CDAValidationTest {
 		};
 
 		validateLevelOfServiceObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateLevelOfServiceObservationMoodCode() {
-		OperationsTestCase<LevelOfServiceObservation> validateLevelOfServiceObservationMoodCodeTestCase = new OperationsTestCase<LevelOfServiceObservation>(
-			"validateLevelOfServiceObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_LEVEL_OF_SERVICE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(LevelOfServiceObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(LevelOfServiceObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return LevelOfServiceObservationOperations.validateLevelOfServiceObservationMoodCode(
-					(LevelOfServiceObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateLevelOfServiceObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

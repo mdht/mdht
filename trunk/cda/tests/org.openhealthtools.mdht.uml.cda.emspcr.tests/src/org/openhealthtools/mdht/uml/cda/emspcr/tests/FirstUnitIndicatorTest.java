@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicator;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.FirstUnitIndicatorOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicator#validateFirstUnitIndicatorTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit Indicator Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicator#validateFirstUnitIndicatorMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit Indicator Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicator#validateFirstUnitIndicatorCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit Indicator Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicator#validateFirstUnitIndicatorCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit Indicator Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicator#validateFirstUnitIndicatorValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit Indicator Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicator#validateFirstUnitIndicatorMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate First Unit Indicator Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class FirstUnitIndicatorTest extends CDAValidationTest {
 		};
 
 		validateFirstUnitIndicatorTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFirstUnitIndicatorMoodCode() {
+		OperationsTestCase<FirstUnitIndicator> validateFirstUnitIndicatorMoodCodeTestCase = new OperationsTestCase<FirstUnitIndicator>(
+			"validateFirstUnitIndicatorMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_FIRST_UNIT_INDICATOR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FirstUnitIndicator target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FirstUnitIndicator target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FirstUnitIndicatorOperations.validateFirstUnitIndicatorMoodCode(
+					(FirstUnitIndicator) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFirstUnitIndicatorMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class FirstUnitIndicatorTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(FirstUnitIndicator target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.FirstUnitIndicatorCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return FirstUnitIndicatorOperations.validateFirstUnitIndicatorCode(
@@ -182,40 +218,6 @@ public class FirstUnitIndicatorTest extends CDAValidationTest {
 		};
 
 		validateFirstUnitIndicatorValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFirstUnitIndicatorMoodCode() {
-		OperationsTestCase<FirstUnitIndicator> validateFirstUnitIndicatorMoodCodeTestCase = new OperationsTestCase<FirstUnitIndicator>(
-			"validateFirstUnitIndicatorMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_FIRST_UNIT_INDICATOR_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FirstUnitIndicator target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FirstUnitIndicator target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FirstUnitIndicatorOperations.validateFirstUnitIndicatorMoodCode(
-					(FirstUnitIndicator) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFirstUnitIndicatorMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCount;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ScenePatientCountOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCount#validateScenePatientCountTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Patient Count Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCount#validateScenePatientCountMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Patient Count Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCount#validateScenePatientCountCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Patient Count Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCount#validateScenePatientCountCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Patient Count Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCount#validateScenePatientCountValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Patient Count Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCount#validateScenePatientCountMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scene Patient Count Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class ScenePatientCountTest extends CDAValidationTest {
 		};
 
 		validateScenePatientCountTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateScenePatientCountMoodCode() {
+		OperationsTestCase<ScenePatientCount> validateScenePatientCountMoodCodeTestCase = new OperationsTestCase<ScenePatientCount>(
+			"validateScenePatientCountMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SCENE_PATIENT_COUNT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ScenePatientCount target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ScenePatientCount target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ScenePatientCountOperations.validateScenePatientCountMoodCode(
+					(ScenePatientCount) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateScenePatientCountMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -136,6 +165,13 @@ public class ScenePatientCountTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(ScenePatientCount target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ScenePatientCountCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ScenePatientCountOperations.validateScenePatientCountCode(
@@ -182,40 +218,6 @@ public class ScenePatientCountTest extends CDAValidationTest {
 		};
 
 		validateScenePatientCountValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateScenePatientCountMoodCode() {
-		OperationsTestCase<ScenePatientCount> validateScenePatientCountMoodCodeTestCase = new OperationsTestCase<ScenePatientCount>(
-			"validateScenePatientCountMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_SCENE_PATIENT_COUNT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ScenePatientCount target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ScenePatientCount target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ScenePatientCountOperations.validateScenePatientCountMoodCode(
-					(ScenePatientCount) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateScenePatientCountMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

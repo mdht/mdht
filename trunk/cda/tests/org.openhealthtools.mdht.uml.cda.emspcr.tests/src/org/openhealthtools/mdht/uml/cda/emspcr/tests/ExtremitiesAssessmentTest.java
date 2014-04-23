@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ExtremitiesAssessmentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,13 +29,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentTargetSiteCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Target Site Code P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessment#validateExtremitiesAssessmentMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Assessment Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +76,40 @@ public class ExtremitiesAssessmentTest extends CDAValidationTest {
 		};
 
 		validateExtremitiesAssessmentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateExtremitiesAssessmentMoodCode() {
+		OperationsTestCase<ExtremitiesAssessment> validateExtremitiesAssessmentMoodCodeTestCase = new OperationsTestCase<ExtremitiesAssessment>(
+			"validateExtremitiesAssessmentMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExtremitiesAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ExtremitiesAssessment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ExtremitiesAssessmentOperations.validateExtremitiesAssessmentMoodCode(
+					(ExtremitiesAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateExtremitiesAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -140,6 +169,13 @@ public class ExtremitiesAssessmentTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(ExtremitiesAssessment target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ExtremitiesAssessmentCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ExtremitiesAssessmentOperations.validateExtremitiesAssessmentCode(
@@ -149,6 +185,80 @@ public class ExtremitiesAssessmentTest extends CDAValidationTest {
 		};
 
 		validateExtremitiesAssessmentCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateExtremitiesAssessmentEffectiveTime() {
+		OperationsTestCase<ExtremitiesAssessment> validateExtremitiesAssessmentEffectiveTimeTestCase = new OperationsTestCase<ExtremitiesAssessment>(
+			"validateExtremitiesAssessmentEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_ASSESSMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExtremitiesAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ExtremitiesAssessment target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ExtremitiesAssessmentOperations.validateExtremitiesAssessmentEffectiveTime(
+					(ExtremitiesAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateExtremitiesAssessmentEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateExtremitiesAssessmentValue() {
+		OperationsTestCase<ExtremitiesAssessment> validateExtremitiesAssessmentValueTestCase = new OperationsTestCase<ExtremitiesAssessment>(
+			"validateExtremitiesAssessmentValue",
+			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_ASSESSMENT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExtremitiesAssessment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ExtremitiesAssessment target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ExtremitiesAssessmentOperations.validateExtremitiesAssessmentValue(
+					(ExtremitiesAssessment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateExtremitiesAssessmentValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -217,114 +327,6 @@ public class ExtremitiesAssessmentTest extends CDAValidationTest {
 		};
 
 		validateExtremitiesAssessmentTargetSiteCodePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateExtremitiesAssessmentValue() {
-		OperationsTestCase<ExtremitiesAssessment> validateExtremitiesAssessmentValueTestCase = new OperationsTestCase<ExtremitiesAssessment>(
-			"validateExtremitiesAssessmentValue",
-			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_ASSESSMENT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ExtremitiesAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ExtremitiesAssessment target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ExtremitiesAssessmentOperations.validateExtremitiesAssessmentValue(
-					(ExtremitiesAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateExtremitiesAssessmentValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateExtremitiesAssessmentEffectiveTime() {
-		OperationsTestCase<ExtremitiesAssessment> validateExtremitiesAssessmentEffectiveTimeTestCase = new OperationsTestCase<ExtremitiesAssessment>(
-			"validateExtremitiesAssessmentEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_ASSESSMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ExtremitiesAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ExtremitiesAssessment target) {
-				target.init();
-
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ExtremitiesAssessmentOperations.validateExtremitiesAssessmentEffectiveTime(
-					(ExtremitiesAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateExtremitiesAssessmentEffectiveTimeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateExtremitiesAssessmentMoodCode() {
-		OperationsTestCase<ExtremitiesAssessment> validateExtremitiesAssessmentMoodCodeTestCase = new OperationsTestCase<ExtremitiesAssessment>(
-			"validateExtremitiesAssessmentMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_ASSESSMENT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ExtremitiesAssessment target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ExtremitiesAssessment target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ExtremitiesAssessmentOperations.validateExtremitiesAssessmentMoodCode(
-					(ExtremitiesAssessment) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateExtremitiesAssessmentMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

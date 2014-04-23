@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation;
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.EmergencyMedicalDispatchObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation#validateEmergencyMedicalDispatchObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Emergency Medical Dispatch Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation#validateEmergencyMedicalDispatchObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Emergency Medical Dispatch Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation#validateEmergencyMedicalDispatchObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Emergency Medical Dispatch Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation#validateEmergencyMedicalDispatchObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Emergency Medical Dispatch Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation#validateEmergencyMedicalDispatchObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Emergency Medical Dispatch Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation#validateEmergencyMedicalDispatchObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Emergency Medical Dispatch Observation Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservation#validateEmergencyMedicalDispatchObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Emergency Medical Dispatch Observation Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class EmergencyMedicalDispatchObservationTest extends CDAValidationTest {
 		};
 
 		validateEmergencyMedicalDispatchObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEmergencyMedicalDispatchObservationMoodCode() {
+		OperationsTestCase<EmergencyMedicalDispatchObservation> validateEmergencyMedicalDispatchObservationMoodCodeTestCase = new OperationsTestCase<EmergencyMedicalDispatchObservation>(
+			"validateEmergencyMedicalDispatchObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_EMERGENCY_MEDICAL_DISPATCH_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EmergencyMedicalDispatchObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EmergencyMedicalDispatchObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EmergencyMedicalDispatchObservationOperations.validateEmergencyMedicalDispatchObservationMoodCode(
+					(EmergencyMedicalDispatchObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEmergencyMedicalDispatchObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -137,6 +166,13 @@ public class EmergencyMedicalDispatchObservationTest extends CDAValidationTest {
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
+			}
+
+			@Override
+			protected void setDependency(EmergencyMedicalDispatchObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.EmergencyMedicalDispatchObservationCodeP", passToken);
 			}
 
 			@Override
@@ -220,40 +256,6 @@ public class EmergencyMedicalDispatchObservationTest extends CDAValidationTest {
 		};
 
 		validateEmergencyMedicalDispatchObservationValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateEmergencyMedicalDispatchObservationMoodCode() {
-		OperationsTestCase<EmergencyMedicalDispatchObservation> validateEmergencyMedicalDispatchObservationMoodCodeTestCase = new OperationsTestCase<EmergencyMedicalDispatchObservation>(
-			"validateEmergencyMedicalDispatchObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_EMERGENCY_MEDICAL_DISPATCH_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(EmergencyMedicalDispatchObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(EmergencyMedicalDispatchObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EmergencyMedicalDispatchObservationOperations.validateEmergencyMedicalDispatchObservationMoodCode(
-					(EmergencyMedicalDispatchObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateEmergencyMedicalDispatchObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

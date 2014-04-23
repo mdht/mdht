@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.TransportDelayOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay#validateTransportDelayTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Delay Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay#validateTransportDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Delay Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay#validateTransportDelayCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Delay Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay#validateTransportDelayCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Delay Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay#validateTransportDelayValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Delay Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay#validateTransportDelayValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Delay Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TransportDelay#validateTransportDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Transport Delay Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class TransportDelayTest extends CDAValidationTest {
 		};
 
 		validateTransportDelayTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateTransportDelayMoodCode() {
+		OperationsTestCase<TransportDelay> validateTransportDelayMoodCodeTestCase = new OperationsTestCase<TransportDelay>(
+			"validateTransportDelayMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_TRANSPORT_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TransportDelay target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TransportDelay target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TransportDelayOperations.validateTransportDelayMoodCode(
+					(TransportDelay) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTransportDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class TransportDelayTest extends CDAValidationTest {
 			protected void updateToPass(TransportDelay target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(TransportDelay target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.TransportDelayCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class TransportDelayTest extends CDAValidationTest {
 		};
 
 		validateTransportDelayValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateTransportDelayMoodCode() {
-		OperationsTestCase<TransportDelay> validateTransportDelayMoodCodeTestCase = new OperationsTestCase<TransportDelay>(
-			"validateTransportDelayMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_TRANSPORT_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(TransportDelay target) {
-
-			}
-
-			@Override
-			protected void updateToPass(TransportDelay target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return TransportDelayOperations.validateTransportDelayMoodCode(
-					(TransportDelay) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateTransportDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

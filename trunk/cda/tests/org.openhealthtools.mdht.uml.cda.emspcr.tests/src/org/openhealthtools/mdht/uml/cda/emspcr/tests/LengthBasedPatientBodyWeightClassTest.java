@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.LengthBasedPatientBodyWeightClassOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,11 +29,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClass#validateLengthBasedPatientBodyWeightClassValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Length Based Patient Body Weight Class Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +74,40 @@ public class LengthBasedPatientBodyWeightClassTest extends CDAValidationTest {
 		};
 
 		validateLengthBasedPatientBodyWeightClassTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateLengthBasedPatientBodyWeightClassMoodCode() {
+		OperationsTestCase<LengthBasedPatientBodyWeightClass> validateLengthBasedPatientBodyWeightClassMoodCodeTestCase = new OperationsTestCase<LengthBasedPatientBodyWeightClass>(
+			"validateLengthBasedPatientBodyWeightClassMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_LENGTH_BASED_PATIENT_BODY_WEIGHT_CLASS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(LengthBasedPatientBodyWeightClass target) {
+
+			}
+
+			@Override
+			protected void updateToPass(LengthBasedPatientBodyWeightClass target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return LengthBasedPatientBodyWeightClassOperations.validateLengthBasedPatientBodyWeightClassMoodCode(
+					(LengthBasedPatientBodyWeightClass) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateLengthBasedPatientBodyWeightClassMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -138,6 +167,13 @@ public class LengthBasedPatientBodyWeightClassTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(LengthBasedPatientBodyWeightClass target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.LengthBasedPatientBodyWeightClassCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return LengthBasedPatientBodyWeightClassOperations.validateLengthBasedPatientBodyWeightClassCode(
@@ -147,43 +183,6 @@ public class LengthBasedPatientBodyWeightClassTest extends CDAValidationTest {
 		};
 
 		validateLengthBasedPatientBodyWeightClassCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateLengthBasedPatientBodyWeightClassValue() {
-		OperationsTestCase<LengthBasedPatientBodyWeightClass> validateLengthBasedPatientBodyWeightClassValueTestCase = new OperationsTestCase<LengthBasedPatientBodyWeightClass>(
-			"validateLengthBasedPatientBodyWeightClassValue",
-			operationsForOCL.getOCLValue("VALIDATE_LENGTH_BASED_PATIENT_BODY_WEIGHT_CLASS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(LengthBasedPatientBodyWeightClass target) {
-
-			}
-
-			@Override
-			protected void updateToPass(LengthBasedPatientBodyWeightClass target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return LengthBasedPatientBodyWeightClassOperations.validateLengthBasedPatientBodyWeightClassValue(
-					(LengthBasedPatientBodyWeightClass) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateLengthBasedPatientBodyWeightClassValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -228,10 +227,10 @@ public class LengthBasedPatientBodyWeightClassTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateLengthBasedPatientBodyWeightClassMoodCode() {
-		OperationsTestCase<LengthBasedPatientBodyWeightClass> validateLengthBasedPatientBodyWeightClassMoodCodeTestCase = new OperationsTestCase<LengthBasedPatientBodyWeightClass>(
-			"validateLengthBasedPatientBodyWeightClassMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_LENGTH_BASED_PATIENT_BODY_WEIGHT_CLASS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateLengthBasedPatientBodyWeightClassValue() {
+		OperationsTestCase<LengthBasedPatientBodyWeightClass> validateLengthBasedPatientBodyWeightClassValueTestCase = new OperationsTestCase<LengthBasedPatientBodyWeightClass>(
+			"validateLengthBasedPatientBodyWeightClassValue",
+			operationsForOCL.getOCLValue("VALIDATE_LENGTH_BASED_PATIENT_BODY_WEIGHT_CLASS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -243,18 +242,21 @@ public class LengthBasedPatientBodyWeightClassTest extends CDAValidationTest {
 			protected void updateToPass(LengthBasedPatientBodyWeightClass target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return LengthBasedPatientBodyWeightClassOperations.validateLengthBasedPatientBodyWeightClassMoodCode(
+				return LengthBasedPatientBodyWeightClassOperations.validateLengthBasedPatientBodyWeightClassValue(
 					(LengthBasedPatientBodyWeightClass) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateLengthBasedPatientBodyWeightClassMoodCodeTestCase.doValidationTest();
+		validateLengthBasedPatientBodyWeightClassValueTestCase.doValidationTest();
 	}
 
 	/**

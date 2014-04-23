@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.TurnaroundDelayOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay#validateTurnaroundDelayTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Turnaround Delay Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay#validateTurnaroundDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Turnaround Delay Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay#validateTurnaroundDelayCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Turnaround Delay Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay#validateTurnaroundDelayCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Turnaround Delay Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay#validateTurnaroundDelayValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Turnaround Delay Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay#validateTurnaroundDelayValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Turnaround Delay Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelay#validateTurnaroundDelayMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Turnaround Delay Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class TurnaroundDelayTest extends CDAValidationTest {
 		};
 
 		validateTurnaroundDelayTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateTurnaroundDelayMoodCode() {
+		OperationsTestCase<TurnaroundDelay> validateTurnaroundDelayMoodCodeTestCase = new OperationsTestCase<TurnaroundDelay>(
+			"validateTurnaroundDelayMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_TURNAROUND_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TurnaroundDelay target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TurnaroundDelay target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return TurnaroundDelayOperations.validateTurnaroundDelayMoodCode(
+					(TurnaroundDelay) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateTurnaroundDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class TurnaroundDelayTest extends CDAValidationTest {
 			protected void updateToPass(TurnaroundDelay target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(TurnaroundDelay target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.TurnaroundDelayCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class TurnaroundDelayTest extends CDAValidationTest {
 		};
 
 		validateTurnaroundDelayValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateTurnaroundDelayMoodCode() {
-		OperationsTestCase<TurnaroundDelay> validateTurnaroundDelayMoodCodeTestCase = new OperationsTestCase<TurnaroundDelay>(
-			"validateTurnaroundDelayMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_TURNAROUND_DELAY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(TurnaroundDelay target) {
-
-			}
-
-			@Override
-			protected void updateToPass(TurnaroundDelay target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return TurnaroundDelayOperations.validateTurnaroundDelayMoodCode(
-					(TurnaroundDelay) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateTurnaroundDelayMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

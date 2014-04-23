@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbal;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.GlasgowVerbalOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbal#validateGlasgowVerbalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Verbal Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbal#validateGlasgowVerbalMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Verbal Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbal#validateGlasgowVerbalCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Verbal Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbal#validateGlasgowVerbalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Verbal Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbal#validateGlasgowVerbalValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Verbal Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbal#validateGlasgowVerbalMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Glasgow Verbal Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +72,40 @@ public class GlasgowVerbalTest extends CDAValidationTest {
 		};
 
 		validateGlasgowVerbalTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateGlasgowVerbalMoodCode() {
+		OperationsTestCase<GlasgowVerbal> validateGlasgowVerbalMoodCodeTestCase = new OperationsTestCase<GlasgowVerbal>(
+			"validateGlasgowVerbalMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_GLASGOW_VERBAL_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GlasgowVerbal target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GlasgowVerbal target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GlasgowVerbalOperations.validateGlasgowVerbalMoodCode(
+					(GlasgowVerbal) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGlasgowVerbalMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -135,6 +164,13 @@ public class GlasgowVerbalTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(GlasgowVerbal target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.GlasgowVerbalCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return GlasgowVerbalOperations.validateGlasgowVerbalCode(
@@ -181,40 +217,6 @@ public class GlasgowVerbalTest extends CDAValidationTest {
 		};
 
 		validateGlasgowVerbalValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateGlasgowVerbalMoodCode() {
-		OperationsTestCase<GlasgowVerbal> validateGlasgowVerbalMoodCodeTestCase = new OperationsTestCase<GlasgowVerbal>(
-			"validateGlasgowVerbalMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_GLASGOW_VERBAL_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GlasgowVerbal target) {
-
-			}
-
-			@Override
-			protected void updateToPass(GlasgowVerbal target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GlasgowVerbalOperations.validateGlasgowVerbalMoodCode(
-					(GlasgowVerbal) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGlasgowVerbalMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

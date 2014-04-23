@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.PrearrivalActivationObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -34,11 +29,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservation#validatePrearrivalActivationObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prearrival Activation Observation Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +74,40 @@ public class PrearrivalActivationObservationTest extends CDAValidationTest {
 		};
 
 		validatePrearrivalActivationObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePrearrivalActivationObservationMoodCode() {
+		OperationsTestCase<PrearrivalActivationObservation> validatePrearrivalActivationObservationMoodCodeTestCase = new OperationsTestCase<PrearrivalActivationObservation>(
+			"validatePrearrivalActivationObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREARRIVAL_ACTIVATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PrearrivalActivationObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PrearrivalActivationObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PrearrivalActivationObservationOperations.validatePrearrivalActivationObservationMoodCode(
+					(PrearrivalActivationObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePrearrivalActivationObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -141,6 +170,13 @@ public class PrearrivalActivationObservationTest extends CDAValidationTest {
 			}
 
 			@Override
+			protected void setDependency(PrearrivalActivationObservation target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.PrearrivalActivationObservationCodeP", passToken);
+			}
+
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PrearrivalActivationObservationOperations.validatePrearrivalActivationObservationCode(
@@ -150,43 +186,6 @@ public class PrearrivalActivationObservationTest extends CDAValidationTest {
 		};
 
 		validatePrearrivalActivationObservationCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePrearrivalActivationObservationValue() {
-		OperationsTestCase<PrearrivalActivationObservation> validatePrearrivalActivationObservationValueTestCase = new OperationsTestCase<PrearrivalActivationObservation>(
-			"validatePrearrivalActivationObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_PREARRIVAL_ACTIVATION_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PrearrivalActivationObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PrearrivalActivationObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PrearrivalActivationObservationOperations.validatePrearrivalActivationObservationValue(
-					(PrearrivalActivationObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePrearrivalActivationObservationValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -231,10 +230,10 @@ public class PrearrivalActivationObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidatePrearrivalActivationObservationMoodCode() {
-		OperationsTestCase<PrearrivalActivationObservation> validatePrearrivalActivationObservationMoodCodeTestCase = new OperationsTestCase<PrearrivalActivationObservation>(
-			"validatePrearrivalActivationObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PREARRIVAL_ACTIVATION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidatePrearrivalActivationObservationValue() {
+		OperationsTestCase<PrearrivalActivationObservation> validatePrearrivalActivationObservationValueTestCase = new OperationsTestCase<PrearrivalActivationObservation>(
+			"validatePrearrivalActivationObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_PREARRIVAL_ACTIVATION_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -246,18 +245,21 @@ public class PrearrivalActivationObservationTest extends CDAValidationTest {
 			protected void updateToPass(PrearrivalActivationObservation target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PrearrivalActivationObservationOperations.validatePrearrivalActivationObservationMoodCode(
+				return PrearrivalActivationObservationOperations.validatePrearrivalActivationObservationValue(
 					(PrearrivalActivationObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePrearrivalActivationObservationMoodCodeTestCase.doValidationTest();
+		validatePrearrivalActivationObservationValueTestCase.doValidationTest();
 	}
 
 	/**

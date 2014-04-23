@@ -6,21 +6,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.emspcr.tests;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.EmspcrFactory;
 import org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory;
-
 import org.openhealthtools.mdht.uml.cda.emspcr.operations.ProtocolAgeCategoryOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory#validateProtocolAgeCategoryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Age Category Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory#validateProtocolAgeCategoryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Age Category Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory#validateProtocolAgeCategoryCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Age Category Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory#validateProtocolAgeCategoryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Age Category Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory#validateProtocolAgeCategoryValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Age Category Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory#validateProtocolAgeCategoryValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Age Category Value P</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategory#validateProtocolAgeCategoryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Protocol Age Category Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +73,40 @@ public class ProtocolAgeCategoryTest extends CDAValidationTest {
 		};
 
 		validateProtocolAgeCategoryTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProtocolAgeCategoryMoodCode() {
+		OperationsTestCase<ProtocolAgeCategory> validateProtocolAgeCategoryMoodCodeTestCase = new OperationsTestCase<ProtocolAgeCategory>(
+			"validateProtocolAgeCategoryMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROTOCOL_AGE_CATEGORY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProtocolAgeCategory target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProtocolAgeCategory target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProtocolAgeCategoryOperations.validateProtocolAgeCategoryMoodCode(
+					(ProtocolAgeCategory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProtocolAgeCategoryMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -134,6 +163,13 @@ public class ProtocolAgeCategoryTest extends CDAValidationTest {
 			protected void updateToPass(ProtocolAgeCategory target) {
 				target.init();
 
+			}
+
+			@Override
+			protected void setDependency(ProtocolAgeCategory target) {
+				Collection<Object> passToken = new java.util.ArrayList<Object>(3);
+				passToken.add(target);
+				map.put("org.openhealthtools.mdht.uml.cda.emspcr.ProtocolAgeCategoryCodeP", passToken);
 			}
 
 			@Override
@@ -217,40 +253,6 @@ public class ProtocolAgeCategoryTest extends CDAValidationTest {
 		};
 
 		validateProtocolAgeCategoryValuePTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProtocolAgeCategoryMoodCode() {
-		OperationsTestCase<ProtocolAgeCategory> validateProtocolAgeCategoryMoodCodeTestCase = new OperationsTestCase<ProtocolAgeCategory>(
-			"validateProtocolAgeCategoryMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROTOCOL_AGE_CATEGORY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProtocolAgeCategory target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProtocolAgeCategory target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProtocolAgeCategoryOperations.validateProtocolAgeCategoryMoodCode(
-					(ProtocolAgeCategory) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProtocolAgeCategoryMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
