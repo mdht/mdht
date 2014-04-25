@@ -37,6 +37,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.ant.internal.launching.launchConfigurations.AntHomeClasspathEntry;
 import org.eclipse.ant.internal.launching.launchConfigurations.ContributedClasspathEntriesEntry;
 import org.eclipse.ant.launching.IAntLaunchConstants;
@@ -199,8 +200,8 @@ public class DitaUtil {
 		antProperties.put("ditaMapFileRoot", ditaMapFileRoot);
 
 		String fileName = getFileNameFromMap(ditaMapFile.getLocation().toOSString());
-		if (fileName == null) {
-			fileName = ditaProject.getName();
+		if (StringUtils.isEmpty(fileName)) {
+			fileName = ditaMapFile.getName().replace("." + ditaMapFile.getFileExtension(), "");
 		}
 
 		antProperties.put("fileName", fileName);
@@ -309,7 +310,19 @@ public class DitaUtil {
 				expr = xpath.compile("/bookmap");
 				prodNameNode = (Node) expr.evaluate(doc, XPathConstants.NODE);
 				if (prodNameNode != null) {
-					fileName.append(prodNameNode.getAttributes().getNamedItem("id").getTextContent());
+					Node node = prodNameNode.getAttributes().getNamedItem("id");
+					if (node != null) {
+						fileName.append(node.getTextContent());
+					}
+				} else {
+					expr = xpath.compile("/map");
+					prodNameNode = (Node) expr.evaluate(doc, XPathConstants.NODE);
+					if (prodNameNode != null) {
+						Node node = prodNameNode.getAttributes().getNamedItem("title");
+						if (node != null) {
+							fileName.append(node.getTextContent());
+						}
+					}
 				}
 			}
 		} catch (FileNotFoundException e) {
