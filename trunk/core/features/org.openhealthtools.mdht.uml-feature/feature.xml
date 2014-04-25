@@ -21,6 +21,10 @@
       <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates/integration"/>
    </url>
 
+   <requires>
+      <import plugin="com.google.guava"/>
+   </requires>
+
    <plugin
          id="org.openhealthtools.mdht.emf.runtime"
          download-size="0"
