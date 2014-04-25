@@ -127,12 +127,15 @@ public class DitaUtil {
 			// get before ;
 			Bundle requiredBundle = Platform.getBundle(requiredBundleSymbolicName.split(";")[0]);
 
-			File file = FileLocator.getBundleFile(requiredBundle);
+			// Assume the bundle is optional if null
+			if (requiredBundle != null) {
+				File file = FileLocator.getBundleFile(requiredBundle);
 
-			IRuntimeClasspathEntry requiredBundleEntry = JavaRuntime.newArchiveRuntimeClasspathEntry(new Path(
-				file.getPath()));
-			requiredBundleEntry.setClasspathProperty(IRuntimeClasspathEntry.USER_CLASSES);
-			classpath.add(requiredBundleEntry.getMemento());
+				IRuntimeClasspathEntry requiredBundleEntry = JavaRuntime.newArchiveRuntimeClasspathEntry(new Path(
+					file.getPath()));
+				requiredBundleEntry.setClasspathProperty(IRuntimeClasspathEntry.USER_CLASSES);
+				classpath.add(requiredBundleEntry.getMemento());
+			}
 		}
 
 		for (String classPath : ditaClassPath.split(",")) {
