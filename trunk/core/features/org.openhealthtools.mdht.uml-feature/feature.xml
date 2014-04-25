@@ -21,10 +21,6 @@
       <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates/integration"/>
    </url>
 
-   <requires>
-      <import feature="org.apache.commons.httpclient" version="3.1.0" match="greaterOrEqual"/>
-   </requires>
-
    <plugin
          id="org.openhealthtools.mdht.emf.runtime"
          download-size="0"
