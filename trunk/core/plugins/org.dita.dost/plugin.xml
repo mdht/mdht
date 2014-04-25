@@ -18,6 +18,10 @@
 
 <extension point="org.eclipse.ui.commands">
 
+	<command  id="org.dita.dost.commands.compare" name="COMPARE" defaultHandler="org.dita.dost.handlers.CompareDitaHandler" >
+		
+    </command>
+    
 	<command  id="org.dita.dost.commands.publishaspdf" name="PDF" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
@@ -74,10 +78,60 @@
   
    </extension>
  
+ 
+ <extension point="org.eclipse.core.expressions.definitions">
+   <definition id="org.eclipse.example.testExtension">
+      <adapt type="org.eclipse.core.resources.IResource">
+         <or>
+             <test property="org.eclipse.core.resources.extension"
+                   value="emx">
+             </test>
+             <test property="org.eclipse.core.resources.extension"
+                   value="uml">
+             </test>
+         </or>
+      </adapt>
+   </definition>
+</extension>
+
+
+
+
+ 
      <extension point="org.eclipse.ui.menus">   
 
 
+
+
+         <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    
+
+      <command commandId="org.dita.dost.commands.compare" label="Compare Models (DITA)" id="org.dita.dost.menu.compare" mnemonic="C">
       
+      <visibleWhen>
+      <and>
+   <and>
+      <with variable="selection">
+         <iterate ifEmtpy="false">
+           <reference definitionId="org.eclipse.example.testExtension"/>
+         </iterate>
+      </with>   
+   </and>
+   
+    <and>
+      <with variable="selection">                  <count
+                        value="2">
+                  </count>
+      
+      </with>   
+   </and>
+   </and>
+</visibleWhen>
+      
+      </command>    
+      
+    </menuContribution>  
+    
 
    <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
     
