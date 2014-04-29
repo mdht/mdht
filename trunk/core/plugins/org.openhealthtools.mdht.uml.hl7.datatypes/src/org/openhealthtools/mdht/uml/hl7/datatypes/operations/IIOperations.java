@@ -63,7 +63,7 @@ public class IIOperations extends ANYOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "(self.isNullFlavorDefined() or self.isDefined('root')) and not(self.isNullFlavorDefined() and self.isDefined('root'))";
+	protected static final String VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isNullFlavorDefined() or self.isDefined('root')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateII(II, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate II</em>}' invariant operation.
