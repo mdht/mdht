@@ -273,7 +273,7 @@
       <ownedRule xmi:id="_5OACwE8yEeCPKdtRJ_I6Zg" name="II">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_6crcYE8yEeCPKdtRJ_I6Zg">
           <language>OCL</language>
-          <body>(self.isNullFlavorDefined() or self.isDefined('root')) and not(self.isNullFlavorDefined() and self.isDefined('root'))</body>
+          <body>self.isNullFlavorDefined() or self.isDefined('root')</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_fJZtkDxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>

@@ -145,7 +145,7 @@ public interface II extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(self.isNullFlavorDefined() or self.isDefined(\'root\')) and not(self.isNullFlavorDefined() and self.isDefined(\'root\'))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isNullFlavorDefined() or self.isDefined(\'root\')'"
 	 * @generated
 	 */
 	boolean validateII(DiagnosticChain diagnostics, Map<Object, Object> context);
