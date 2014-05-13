@@ -275,7 +275,7 @@ fragment@org.openhealthtools.mdht.uml.hl7.vocab.test=SVN,trunk,https://www.proje
 
 plugin@org.openhealthtools.mdht.uml.cda.hitsp.test=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.hitsp.test,force
 
-plugin@org.openhealthtools.mdht.uml.cda.consol.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.consol.tests,force
+plugin@org.openhealthtools.mdht.uml.cda.consol.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,tests/org.openhealthtools.mdht.uml.cda.consol.tests,force
 
 plugin@org.openhealthtools.mdht.uml.cda.mu2consol.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.mu2consol.tests,force
 
