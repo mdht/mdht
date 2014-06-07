@@ -6,7 +6,6 @@ Bundle-Version: 2.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.openhealthtools.mdht.uml.validation,
  org.openhealthtools.mdht.uml.validation.internal,
  org.openhealthtools.mdht.uml.validation.internal.impl,
