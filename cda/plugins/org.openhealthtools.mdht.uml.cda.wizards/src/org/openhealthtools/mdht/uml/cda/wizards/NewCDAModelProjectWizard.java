@@ -676,7 +676,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			writer.println("Bundle-ClassPath: .");
 			writer.println("Bundle-Vendor: %providerName");
 			writer.println("Bundle-Localization: plugin");
-			writer.println("Bundle-RequiredExecutionEnvironment: J2SE-1.5");
+			writer.println("Bundle-RequiredExecutionEnvironment: JavaSE-1.7");
 
 			String requiredBundles = attributes.getValue("Require-Bundle");
 

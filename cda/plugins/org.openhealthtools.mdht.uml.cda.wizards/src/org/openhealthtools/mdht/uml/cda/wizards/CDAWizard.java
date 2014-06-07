@@ -248,7 +248,7 @@ public abstract class CDAWizard extends Wizard {
 		fPluginData.setUIPlugin(false);
 		fPluginData.setHasBundleStructure(true);
 		fPluginData.setTargetVersion("3.5");
-		fPluginData.setExecutionEnvironment("J2SE-1.5");
+		fPluginData.setExecutionEnvironment("JavaSE-1.7");
 
 		fProjectProvider = new IProjectProvider() {
 
