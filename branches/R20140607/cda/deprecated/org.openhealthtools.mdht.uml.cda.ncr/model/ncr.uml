@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:CDA_1="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+  <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ncr">
+    <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_8zZJ4GD8Ed6bFO5yxRh3Nw">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_qQyD8jxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_pMrdQHu8Ed6jfbAJq2V82w">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_tV7QUIhOEd6UrJD25cKDew">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVbeUDcEd6xYZuu1VKCVw"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="NeonatalCareReport">
+      <ownedComment xmi:id="_p4NQgPyzEd6S5szBt2gpEA">
+        <body>The CDA the Neonatal Care Report (NCR) constrains CDA to express the data elements identified by CHNC. This NCR CDA R2 document template defines the data elements that belong in the header of the NCR CDA document and prescribes the sections that belong in the NCR. Within the NCR document is an initial segment of data elements from the CHNC Neonatal Intensive Care Unit (NICU) Core Data Set (CDS). This NCR CDA will send these data elements from Neonatal Intensive Care providers to the CHNC database in standardized CDA format for analysis and performance improvement work.&#xD;
+A complete NCR is created and sent after an infant is discharged. An initial NCR may be created and sent shortly after the infant is born. Many data elements in this initial NCR will have null values for the many values that are unknown or not applicable at this point. The complete NCR sent after discharge will replace the first NCR document.</body>
+      </ownedComment>
+      <generalization xmi:id="_ZyMtMKX2Ed6JRdOhEffuGA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_v0rX0aX0Ed6JRdOhEffuGA" name="patientData" visibility="private" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_v0rX0KX0Ed6JRdOhEffuGA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v0rX06X0Ed6JRdOhEffuGA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0rX0qX0Ed6JRdOhEffuGA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9YKX0Ed6JRdOhEffuGA" name="NeonatalICUEncounterActivity">
+      <ownedComment xmi:id="_Ucv9YaX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <body>The neonatal ICU encounter contains selected data specific to each admission and discharge in an encounter. This template captures data for the current encounter being reported and may capture data from historical encounters.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_O42U0Py4Ed6S5szBt2gpEA" name="NeonatalICUEncounterActivityEqualId" constrainedElement="_IHjAJPy4Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Hl8vwP75Ed62UeYFRagr9A">
+          <language>Analysis</language>
+          <body>The encounter that is the same encounter as the encompassingEncounter SHALL contain an encounter/id that equals the encompassingEncounter id.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_v-Ad8P_QEd6Y8ICOr4M99Q" name="NeonatalICUEncounterActivityLocation" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zeaCkP_QEd6Y8ICOr4M99Q">
+          <language>OCL</language>
+          <language>Analysis</language>
+          <body>self.participant->one(participant : cda::Participant2 | participant.typeCode=vocab::ParticipationType::LOC and participant.oclIsKindOf(ncr::NeonatalICULocation))</body>
+          <body>This participant SHALL contain [1..1] @typeCode=&quot;LOC&quot;, and participant SHALL contain [1..1] Neonatal ICU location</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_Pl-JwKX2Ed6JRdOhEffuGA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_mO8KEHJWEd6cacuAk5qrhg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_Ucv9Z6X0Ed6JRdOhEffuGA" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYEDcEd6xYZuu1VKCVw"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1g_UsPy3Ed6S5szBt2gpEA" value="ENC"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ucv9aaX0Ed6JRdOhEffuGA" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Ucv9aqX0Ed6JRdOhEffuGA" name="EVN">
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW30DcEd6xYZuu1VKCVw"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ucv9a6X0Ed6JRdOhEffuGA" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_IHjAIPy4Ed6S5szBt2gpEA" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IHjAIfy4Ed6S5szBt2gpEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IHjAIvy4Ed6S5szBt2gpEA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_D4_loIj0Ed66cKocspyVOg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_IHjAJPy4Ed6S5szBt2gpEA" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IHjAJfy4Ed6S5szBt2gpEA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IHjAJvy4Ed6S5szBt2gpEA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_lpoEAIjzEd66cKocspyVOg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9baX0Ed6JRdOhEffuGA" name="PatientDataSectionNCR">
+      <ownedComment xmi:id="_Ucv9bqX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <body>Represents the specific reason for which the summarization was generated, such as in response to a request.&#xD;
+The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific purpose such as a transfer, referral, or patient request.</body>
+      </ownedComment>
+      <generalization xmi:id="_Ucv9b6X0Ed6JRdOhEffuGA" general="_IMw0IPy0Ed6S5szBt2gpEA"/>
+      <ownedAttribute xmi:id="_R_SzQPy2Ed6S5szBt2gpEA" name="encountersSection" type="_P2DEQPy1Ed6S5szBt2gpEA" aggregation="composite" association="_R_SzQfy2Ed6S5szBt2gpEA"/>
+      <ownedAttribute xmi:id="_kpGnAPy2Ed6S5szBt2gpEA" name="acuityDataSection" type="_wnPCYPy1Ed6S5szBt2gpEA" aggregation="composite" association="_kpGnAfy2Ed6S5szBt2gpEA"/>
+      <ownedAttribute xmi:id="_wbmkkP4-Ed6S5szBt2gpEA" name="birthWeight" type="_SwqQkP48Ed6S5szBt2gpEA" aggregation="composite" association="_wbmkkf4-Ed6S5szBt2gpEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_v0rX0KX0Ed6JRdOhEffuGA" memberEnd="_v0rX0aX0Ed6JRdOhEffuGA _v01I0KX0Ed6JRdOhEffuGA">
+      <ownedEnd xmi:id="_v01I0KX0Ed6JRdOhEffuGA" name="" visibility="private" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_v0rX0KX0Ed6JRdOhEffuGA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v01I0qX0Ed6JRdOhEffuGA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v01I0aX0Ed6JRdOhEffuGA"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IMw0IPy0Ed6S5szBt2gpEA" name="PatientDataSection">
+      <ownedComment xmi:id="_UvAMsPy0Ed6S5szBt2gpEA">
+        <body>The patient data section contains clinically significant patient data and may contain patient data elements and measure-specific grouping data elements as defined by particular measure(s).</body>
+      </ownedComment>
+      <generalization xmi:id="_IMw0Ify0Ed6S5szBt2gpEA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_KuXOMPy0Ed6S5szBt2gpEA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uF6xoPy0Ed6S5szBt2gpEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uF6xofy0Ed6S5szBt2gpEA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9lgCcErmEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_KuXOM_y0Ed6S5szBt2gpEA" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u1qzkPy0Ed6S5szBt2gpEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u1qzkfy0Ed6S5szBt2gpEA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_KuXONvy0Ed6S5szBt2gpEA" name="title" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wJ6CoPy0Ed6S5szBt2gpEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wJ6Cofy0Ed6S5szBt2gpEA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_AP-EoErnEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_P2DEQPy1Ed6S5szBt2gpEA" name="EncountersSection">
+      <ownedComment xmi:id="_nWcMcPy1Ed6S5szBt2gpEA">
+        <body>This section contains administrative encounter information and selected data specific to each admission and discharge in an encounter. This section contains data for the current encounter being reported and may contain information about historical encounters.</body>
+      </ownedComment>
+      <generalization xmi:id="_P2DEQfy1Ed6S5szBt2gpEA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_rJDcIHDAEd6eItyqb1FoWg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_WJRV0Py1Ed6S5szBt2gpEA" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_buKhwPy1Ed6S5szBt2gpEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_buKhwfy1Ed6S5szBt2gpEA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_WJRV0_y1Ed6S5szBt2gpEA" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_qATQsIjwEd66cKocspyVOg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_KWADUP46Ed6S5szBt2gpEA" name="neonatalICUEncounterActivity" type="_Ucv9YKX0Ed6JRdOhEffuGA" aggregation="composite" association="_KWADUf46Ed6S5szBt2gpEA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lk44UP46Ed6S5szBt2gpEA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lk44Uf46Ed6S5szBt2gpEA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wnPCYPy1Ed6S5szBt2gpEA" name="AcuityDataSection">
+      <ownedComment xmi:id="_6i0hwPy1Ed6S5szBt2gpEA">
+        <body>The patient data section in the NCR contains data collected during a neonatal intensive care unit (NICU) inpatient stay. This section contains data that could be used in endorsed quality measures, and it may inform the creation of NICU quality measures. It contains significant basic data about the infant's birth and two subsections: an encounter section and an acuity assessment section.</body>
+      </ownedComment>
+      <generalization xmi:id="_wnPCYfy1Ed6S5szBt2gpEA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_R_SzQfy2Ed6S5szBt2gpEA" memberEnd="_R_SzQPy2Ed6S5szBt2gpEA _R_SzQvy2Ed6S5szBt2gpEA">
+      <ownedEnd xmi:id="_R_SzQvy2Ed6S5szBt2gpEA" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_R_SzQfy2Ed6S5szBt2gpEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_kpGnAfy2Ed6S5szBt2gpEA" memberEnd="_kpGnAPy2Ed6S5szBt2gpEA _kpMtoPy2Ed6S5szBt2gpEA">
+      <ownedEnd xmi:id="_kpMtoPy2Ed6S5szBt2gpEA" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_kpGnAfy2Ed6S5szBt2gpEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KWADUf46Ed6S5szBt2gpEA" memberEnd="_KWADUP46Ed6S5szBt2gpEA _KWADUv46Ed6S5szBt2gpEA">
+      <ownedEnd xmi:id="_KWADUv46Ed6S5szBt2gpEA" type="_P2DEQPy1Ed6S5szBt2gpEA" association="_KWADUf46Ed6S5szBt2gpEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SwqQkP48Ed6S5szBt2gpEA" name="BirthWeight">
+      <ownedComment xmi:id="_dWSrIP4_Ed6S5szBt2gpEA">
+        <body>This observation represents a birth weight.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_f2-qsP75Ed62UeYFRagr9A" name="valueUnit" constrainedElement="_TH4BQP49Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_hzk6QP75Ed62UeYFRagr9A">
+          <language>Analysis</language>
+          <body>value contains [1..1] @unit=&quot;g&quot; gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_SwwXMP48Ed6S5szBt2gpEA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_YjB30P48Ed6S5szBt2gpEA" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVecEDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_i1oJAP48Ed6S5szBt2gpEA" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_YjB30v48Ed6S5szBt2gpEA" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoCEDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_lwuoMP48Ed6S5szBt2gpEA" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_YjB30f48Ed6S5szBt2gpEA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_WEYp4Eo8Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_YjB30_48Ed6S5szBt2gpEA" name="statusCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YjB31P48Ed6S5szBt2gpEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YjB31f48Ed6S5szBt2gpEA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_c-D3cEo8Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TH4BQP49Ed6S5szBt2gpEA" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_3mPzYD59Ed6cla2oXsPtlA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_gX1x4K6xEd6_ioDelDcPPg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_wbmkkf4-Ed6S5szBt2gpEA" memberEnd="_wbmkkP4-Ed6S5szBt2gpEA _wbmkkv4-Ed6S5szBt2gpEA">
+      <ownedEnd xmi:id="_wbmkkv4-Ed6S5szBt2gpEA" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_wbmkkf4-Ed6S5szBt2gpEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vQdVMP5AEd6S5szBt2gpEA" name="NeonatalICULocation">
+      <ownedComment xmi:id="_VILIQP5BEd6S5szBt2gpEA">
+        <body>This template restricts the CCD location participation template to a Neonatal ICU.</body>
+      </ownedComment>
+      <generalization xmi:id="_vQdVMf5AEd6S5szBt2gpEA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_2QJRIIiBEd66cKocspyVOg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_-9EYAP5AEd6S5szBt2gpEA" name="typeCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BakDcEd6xYZuu1VKCVw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DTRjQP5BEd6S5szBt2gpEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DTRjQf5BEd6S5szBt2gpEA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_PY9loEo6Ed6c3qsAxlFHaQ"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_-9EYA_5AEd6S5szBt2gpEA" name="LOC">
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BakDcEd6xYZuu1VKCVw"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7Ba0DcEd6xYZuu1VKCVw"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
+      <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_SMdMMJmzEd6BO7rW3XxHIA">
+      <eAnnotations xmi:id="_SMdzQJmzEd6BO7rW3XxHIA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" message="NCR Neonatal Care Report SHALL contain the template identifier 2.16.840.1.113883.10.20.17.1.1" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.10.20.17.1.1" assigningAuthorityName="HL7"/>
+  <CDA:CodegenSupport xmi:id="_THvvwJmzEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ncr" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr" packageName="ncr" prefix="NCR" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" message="NCR Neonatal ICU Encounter Activity SHALL contain the template identifier 2.16.840.1.113883.10.20.17.3.15" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.17.3.15" assigningAuthorityName="Example"/>
+  <Default:Documentation xmi:id="_Uc5uYaX0Ed6JRdOhEffuGA" base_Comment="_Ucv9YaX0Ed6JRdOhEffuGA"/>
+  <CDA:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" message="NCR Neonatal ICU Encounter Activity SHALL contain [1..1] @classCode = &quot;ENC&quot;" base_Property="_Ucv9Z6X0Ed6JRdOhEffuGA"/>
+  <CDA:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" message="NCR Neonatal ICU Encounter Activity SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_Ucv9aaX0Ed6JRdOhEffuGA"/>
+  <CDA_1:VocabSpecification xmi:id="_Uc5uZ6X0Ed6JRdOhEffuGA" message="My Activity SHALL contain exactly one Act / statusCode. The value for 'Act / statusCode' in a My Activity SHALL be 'completed' 2.16.840.1.113883.5.14 ActStatus STATIC." code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" message="NCR Patient Data Section NCR SHALL contain the template identifier 2.16.840.1.113883.10.20.17.2.5" base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.17.2.5" assigningAuthorityName="HL7"/>
+  <Default:Documentation xmi:id="_Uc5uaqX0Ed6JRdOhEffuGA" base_Comment="_Ucv9bqX0Ed6JRdOhEffuGA"/>
+  <CDA_1:VocabSpecification xmi:id="_Uc5ua6X0Ed6JRdOhEffuGA" message="The value for My Activity code SHALL be 48764-5' 'Summary purpose' 2.16.840.1.113883.6.1 LOINC STATIC." code="48764-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summary purpose"/>
+  <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="NCR Neonatal Care Report SHALL contain [1..1] component such that it, SHALL contain [1..1] Patient Data Section NCR (templateId: 2.16.840.1.113883.10.20.17.2.5)" base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
+  <CDA_1:Entry xmi:id="_auV_cK0UEd6_kOk8Ilc2Dw" message="My Section SHOULD contain one or more My Activity." severity="WARNING"/>
+  <CDA_1:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="My Section SHALL contain a title."/>
+  <CDA:TextValue xmi:id="_je4hgPy0Ed6S5szBt2gpEA" message="NCR Patient Data Section SHALL contain [1..1] title" base_Property="_KuXONvy0Ed6S5szBt2gpEA" value="PATIENT DATA"/>
+  <CDA:PropertyValidation xmi:id="_zCVBQPy0Ed6S5szBt2gpEA" message="NCR Patient Data Section SHALL contain [1..1] text" base_Property="_KuXOM_y0Ed6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_4O3-oPy0Ed6S5szBt2gpEA" message="NCR Patient Data Section SHALL contain the template identifier 2.16.840.1.113883.10.20.17.2.4" base_Class="_IMw0IPy0Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.4"/>
+  <CDA:TextValue xmi:id="_ahMYUPy1Ed6S5szBt2gpEA" message="NCR Encounters Section SHALL contain [1..1] title" base_Property="_WJRV0_y1Ed6S5szBt2gpEA" value="Encounters"/>
+  <CDA:CDATemplate xmi:id="_3Gfk0Py1Ed6S5szBt2gpEA" message="NCR Acuity Data Section SHALL contain the template identifier 2.16.840.1.113883.10.20.17.2.3" base_Class="_wnPCYPy1Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.3"/>
+  <CDA:Entry xmi:id="_YWJAkPy2Ed6S5szBt2gpEA" message="NCR Patient Data Section NCR SHALL contain [1..1] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] Encounters Section (templateId: 2.16.840.1.113883.10.20.17.2.2)" base_Association="_R_SzQfy2Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:PropertyValidation xmi:id="_m5swoPy2Ed6S5szBt2gpEA" base_Property="_kpGnAPy2Ed6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_utkVkPy2Ed6S5szBt2gpEA" message="NCR Encounters Section SHALL contain the template identifier 2.16.840.1.113883.10.20.17.2.2" base_Class="_P2DEQPy1Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.2"/>
+  <CDA:Entry xmi:id="_IHWBQPy3Ed6S5szBt2gpEA" message="NCR Patient Data Section NCR SHALL contain [1..1] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] Acuity Data Section (templateId: 2.16.840.1.113883.10.20.17.2.3)" base_Association="_kpGnAfy2Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:PropertyValidation xmi:id="_IHjAI_y4Ed6S5szBt2gpEA" message="NCR Neonatal ICU Encounter Activity SHOULD contain [0..1] effectiveTime" severity="WARNING" base_Property="_IHjAIPy4Ed6S5szBt2gpEA"/>
+  <CDA:Entry xmi:id="_RC0goP46Ed6S5szBt2gpEA" message="NCR Encounters Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] Neonatal ICU Encounter Activity (templateId: 2.16.840.1.113883.10.20.17.3.15)" base_Association="_KWADUf46Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:PropertyValidation xmi:id="_TH4BQf49Ed6S5szBt2gpEA" message="NCR Birth Weight SHALL contain [1..1] value, where its data type is PQ" base_Property="_TH4BQP49Ed6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_ryS3IP4-Ed6S5szBt2gpEA" message="NCR Birth Weight SHALL contain the template identifier 2.16.840.1.113883.10.20.17.3.1" base_Class="_SwqQkP48Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.1"/>
+  <CDA:Entry xmi:id="_x0zMIP4-Ed6S5szBt2gpEA" message="NCR Patient Data Section NCR SHALL contain [1..1] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] Birth Weight (templateId: 2.16.840.1.113883.10.20.17.3.1)" base_Association="_wbmkkf4-Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:PropertyValidation xmi:id="_BJvq8P5BEd6S5szBt2gpEA" message="NCR Neonatal ICU Location SHALL contain [1..1] @typeCode = &quot;LOC&quot;" base_Property="_-9EYAP5AEd6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_SFD8kP5BEd6S5szBt2gpEA" message="NCR Neonatal ICU Location SHALL contain the template identifier 2.16.840.1.113883.10.20.17.3.14" base_Class="_vQdVMP5AEd6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.14"/>
+  <CDA_1:AssociationValidation xmi:id="__1CsYP5BEd6S5szBt2gpEA" message="NCR Neonatal ICU Encounter Activity SHALL contain [1..1] entryRelationship such that it, SHALL contain [1..1] NeonatalICULocation (templateId: 2.16.840.1.113883.10.20.17.3.14)"/>
+  <CDA:ConstraintValidation xmi:id="_JHh3QP75Ed62UeYFRagr9A" message="NCR Neonatal ICU Encounter Activity SHALL satisfy: The encounter that is the same encounter as the encompassingEncounter SHALL contain an encounter/id that equals the encompassingEncounter id." base_Constraint="_O42U0Py4Ed6S5szBt2gpEA"/>
+  <CDA:ConstraintValidation xmi:id="_iK5OEP75Ed62UeYFRagr9A" message="NCR Birth Weight SHALL satisfy: value contains [1..1] @unit=&quot;g&quot; gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC" base_Constraint="_f2-qsP75Ed62UeYFRagr9A"/>
+  <CDA:PropertyValidation xmi:id="_0RLMEP77Ed62UeYFRagr9A" message="NCR Encounters Section SHALL contain [1..1] text" base_Property="_WJRV0Py1Ed6S5szBt2gpEA"/>
+  <CDA:PropertyValidation xmi:id="_3d0HMP77Ed62UeYFRagr9A" message="NCR Birth Weight SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_YjB30P48Ed6S5szBt2gpEA"/>
+  <CDA:PropertyValidation xmi:id="_3-OsoP77Ed62UeYFRagr9A" message="NCR Birth Weight SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_YjB30v48Ed6S5szBt2gpEA"/>
+  <CDA:PropertyValidation xmi:id="_DbXdgP8sEd6PLOlEGPkSFw" message="NCR Neonatal ICU Encounter Activity SHALL contain [1..*] id" base_Property="_IHjAJPy4Ed6S5szBt2gpEA"/>
+  <CDA:ConstraintValidation xmi:id="_DiIS8P_TEd6Y8ICOr4M99Q" message="NCR Neonatal ICU Encounter Activity SHALL satisfy: This participant SHALL contain [1..1] @typeCode=&quot;LOC&quot;, and participant SHALL contain [1..1] Neonatal ICU location" base_Constraint="_v-Ad8P_QEd6Y8ICOr4M99Q"/>
+  <CDA:CodeSystemConstraint xmi:id="_EN2-YCfREd--4oFVyIcevA" code="IMP" displayName="Inpatient encounter" base_Property="_Ucv9a6X0Ed6JRdOhEffuGA" message="NCR Neonatal ICU Encounter Activity SHALL contain [1..1] code/@code = &quot;IMP&quot; Inpatient encounter (CodeSystem: 2.16.840.1.113883.5.4 ActCode STATIC V3NE08)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_4AnRQCYWEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_EN4MgCfREd--4oFVyIcevA" code="55188-7" displayName="Clinical Information" base_Property="_KuXOMPy0Ed6S5szBt2gpEA" message="NCR Patient Data Section SHALL contain [1..1] code/@code = &quot;55188-7&quot; Clinical Information (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_EN724CfREd--4oFVyIcevA" code="47340003" displayName="Birth weight" base_Property="_YjB30f48Ed6S5szBt2gpEA" message="NCR Birth Weight SHALL contain [1..1] code/@code = &quot;47340003&quot; Birth weight (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_EN9FACfREd--4oFVyIcevA" code="completed" displayName="Completed" base_Property="_YjB30_48Ed6S5szBt2gpEA" message="NCR Birth Weight SHALL contain [0..1] statusCode/@code = &quot;completed&quot; Completed (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+</xmi:XMI>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Hospital Course Section</title>
+<shortdesc conref="generated/_HospitalCourseSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_HospitalCourseSection.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_HospitalCourseSection.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_HospitalCourseSection.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_HospitalCourseSection.dita#classId/aggregate">
+<li></li>
+</ol>
+<p></p>
+<fig>
+<title>Hospital Course Section example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_HospitalCourseSection.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>

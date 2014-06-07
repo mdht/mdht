@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_81B34D3F8C61450BB8D9303159C0CF7D"> 
+  <title>Analysis language constraint</title> 
+  <shortdesc>Add informal constraint definition in human readable text.
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_6F979F72D74941A3B9F243A9F6411A36"> 
+		<step id="step_F81E212B8C7C4ED6ABC73A93E24335CB"> 
+		  <cmd>Select the table row for the template class that is context for
+			 the new constraint. 
+		  </cmd> 
+		</step>
+		<step id="step_2643A9CB9A5F40B3847EB165D8CD7849">
+		  <cmd>To add a new constraint, right-click on the table row and select 
+			 <menucascade><uicontrol>Add
+				  UML</uicontrol><uicontrol>Constraint</uicontrol></menucascade>
+		  </cmd> 
+		  <stepresult><image placement="break"
+			 id="image_B03B87E4D00A461B9894EE574175D802"
+			 href="../images/TableAddConstraint.png"></image>
+		  </stepresult>
+		</step> 
+		<step id="step_82EE78CA1B064B1282BE089066A4D77A">
+		  <cmd>Select the table row with the new constraint (it has the general
+			 label 'Constraint'), as shown here. Enter the constraint name, select
+			 'Analysis' from the Language pull-down list, and enter the constraint body.
+		  </cmd>
+		  <stepresult><image placement="break"
+			 id="image_8CE6B1BF41D0497C830AC8CFD5D27695"
+			 href="../images/TableAddConstraintResult.png"></image>
+		  </stepresult>
+		</step>
+	 </steps> 
+	 <result id="result_75F3D3B74C9D449D90F0CC532F7C3692">This is an example of
+		a completed constraint within the Neonatal ICU Encounter Activity class.<image
+		placement="break" id="image_2B82ECB2499E4B7E8193D0F0DFE96ACC"
+		href="../images/TableConstraintAnalysis.png"></image>
+	 </result>
+  </taskbody>
+</task>

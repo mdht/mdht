@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>Acknowledgments</title>
+	<body>
+		<p>This Draft Standard for Trial Use (DSTU) was produced and developed
+			through the efforts of the Health Story Project. The project was
+			initiated by the Association for Healthcare Documentation Integrity
+			(AHDI), Medical Transcription Industry Association (MTIA), American
+			Health Information Management Association (AHIMA), and M*Modal and is
+			being managed by Alschuler Associates, LLC and Optimal Accords, LLC.
+			Promoter members include A-Life Medical, Emdat, Fujitsu, GE
+			Healthcare IT, InfraWare, MedQuist, Nuance, Osmosyz, Spheris, 3M, and
+			Webmedx. Without their support and participation, this DSTU would not
+			have been possible.</p>
+		<p>In addition, this project has benefited from the participation of
+			volunteers from MedFlow, Inc; Individual Care Standards Collaborative
+			Working Group; Children's Hospital of Philadelphia (CHOP); FEI
+			Behavioral Health; XML Modeling; MTWerks; American Dental Association
+			(ADA); and Wayne State University Physician Group. Alschuler
+			Associates, LLC provided project management.</p>
+		<p>The co-editors appreciate the support and sponsorship of the HL7
+			Structured Documents Work Group (SDWG).</p>
+		<p>Finally, we acknowledge the foundational work by Health Level Seven
+			(HL7) Version 3, the Reference Information Model (RIM), and the HL7
+			domain committees, especially Patient Care, and the work done on
+			Clinical Document Architecture (CDA) itself. We also acknowledge the
+			development of the Care Record Summary (CRS) (the first published
+			implementation guide for CDA), the development of a series of
+			implementation profiles based on CRS by Integrating the Healthcare
+			Enterprise (IHE) Patient Care Coordination (PCC), and the
+			collaborative effort of ASTM (originally known as American Society
+			for Testing and Materials) and HL7, which produced the Continuity of
+			Care Document (CCD). All these efforts were critical ingredients to
+			the development of this DSTU; the degree to which this DSTU reflects
+			these efforts will foster interoperability across the spectrum of
+			health care.</p>
+		<p>This material contains content from LOINC&#174; (http://loinc.org) and
+			SNOMED CT&#174; (http://www.ihtsdo.org/snomed-ct/). The LOINC table and
+			LOINC codes are copyright &#169; 1995-2010, Regenstrief Institute, Inc.
+			and the Logical Observation Identifiers Names and Codes (LOINC)
+			Committee. SNOMED CT is a registered trademark of the International
+			Health Terminology Standard Development Organisation (IHTSDO).</p>
+	</body>
+</topic>

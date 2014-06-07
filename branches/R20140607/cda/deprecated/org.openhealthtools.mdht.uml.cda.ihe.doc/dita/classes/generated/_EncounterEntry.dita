@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Encounter Entry - conformance rules</title>
+<shortdesc id="shortdesc">[Encounter: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Encounter</category></metadata>
+<resourceid id="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Encounter</li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
+<li><b>SHOULD</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.4 ActEncounterCode STATIC)<ul><li>Developers should take care to check that rational combinations of encounter.code and encounter.moodCode are used , but this profile does not restrict any combination.</li></ul></li>
+<li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Encounter</li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
+<li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_DocumentEncounterMood</li>
+<li>[IHE] <b>SHOULD</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.4 ActEncounterCode STATIC)<ul><li>Developers should take care to check that rational combinations of encounter.code and encounter.moodCode are used , but this profile does not restrict any combination.</li></ul></li>
+<li>[IHE] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>

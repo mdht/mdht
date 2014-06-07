@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "dtd/topic.dtd">
+<topic id="gettingstartedtopic" xml:lang="en-us">
+	<title>Getting Started with MDHT for <keyword keyref="usertype" />s </title>
+	<body>
+		<p>This getting started guide will walk you through the installation of MDHT <keyword keyref="relversion" /> All-In-One, and the exercise of setting up a new health care information model project based on Consolidate CDA model. Installation instructions apply to Windows XP, Vista and Windows 7 operating systems.</p>
+		<p audience="standards" >This guide is meant for CDA Implementation Guide Developers who need to create CDA Implementation Guides based on CDA R2. For a more complete walk through of the feaures see the CDA Implementation Guide Developer Users Guide</p>
+		<p audience="developer" >This guide is meant for CDA Implementers who need to create, consume, and validate CDA document instances based on a CDA R2 Implementation Guides</p> 
+	</body>
+</topic>

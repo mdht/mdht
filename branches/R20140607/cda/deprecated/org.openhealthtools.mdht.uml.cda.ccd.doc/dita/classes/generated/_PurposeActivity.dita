@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Purpose Activity - conformance rules</title>
+<shortdesc id="shortdesc">[Act: templateId <tt>2.16.840.1.113883.10.20.1.30</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Act</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.30"/>
+</prolog>
+<body>
+<section id="description">
+<p>
+    CCD represents the ASTM CCR &lt;Purpose&gt; object as a relationship between two classes -- the source
+    represents the act of creating a summary document, the target is the reason for creating the document, and the
+    relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,
+    and it may represent an order, an event, etc.
+</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Act</li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-21)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-22)</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC) (CONF-25)</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-23, CONF-24)</li>
+<li><b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD. (CONF-26)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</codeblock></li></ul></li>
+<li><b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply. (CONF-27)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( 
+  not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()
+       and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()
+       and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))</codeblock></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Act</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-21)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-22)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC) (CONF-25)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-23, CONF-24)</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD. (CONF-26)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</codeblock></li></ul></li>
+<li>[CCD] <b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply. (CONF-27)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( 
+  not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()
+       and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()
+       and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))</codeblock></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.30" assigningAuthorityName="CCD Purpose Activity"/>
+              <code code="23745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Documentation procedure"/>
+              <statusCode code="completed"/>
+            </act>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

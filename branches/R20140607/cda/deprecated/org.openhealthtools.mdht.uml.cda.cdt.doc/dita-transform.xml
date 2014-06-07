@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="UML to DITA Transformation" default="uml2dita" basedir=".">
+
+	<property file="dita.properties" />
+
+    <target name="uml2dita" description="Generate DITA from UML">
+    	<mkdir dir="${ditaFilePath}"/>
+    	<mkdir dir="${ditaFilePath}/classes"/>
+        <mkdir dir="${ditaFilePath}/classes/generated"/>
+    	<mkdir dir="${ditaFilePath}/terminology"/>
+    	
+        <cdatools model="${modelPath.uml}">
+        	<model file="${vocabPath.uml}"/>
+            <transformToDita ditaFilePath="${ditaFilePath}" />
+        </cdatools>
+
+    	<antcall target="refresh"/>
+    </target>
+
+	<target name="refresh" if="eclipse.running" description="Refresh this folder.">
+	  <eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
+	  <eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
+	</target>
+</project>

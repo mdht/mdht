@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="modeltomodeltransformationconcept" xml:lang="en-us">
+<title>Model-to-Model Transformation</title>
+<conbody>
+<p>Input: domain template model (UML)</p>
+<p>Process UML model elements to produce:
+<ul>
+<li>OCL constraints for validating template instance</li>
+<li>Annotations for instance population and validation support</li>
+<li>Additional directives to EMF for model import / code generation</li>
+</ul>
+</p>
+<p>Output: implementation model (UML)</p>
+</conbody>
+</concept>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_vdd_dlv_dj" xml:lang="en-us">
+    <title>Validate CDA</title>
+    <shortdesc>Using general API’s to validate instance against constraints in the
+        model.</shortdesc>
+    <taskbody>
+       
+        <steps>
+
+            <step>
+
+                <cmd> </cmd>
+                <choices>
+                    <choice>Validate using general API’s to validate instance against constraints
+                        <codeblock>
+// validate on load
+// create validation result to hold diagnostics
+ValidationResult result = new ValidationResult();
+		
+ContinuityOfCareDocument ccdDocument = (ContinuityOfCareDocument) CDAUtil.load(new FileInputStream("resources/SampleCCDDocument.xml"), result);
+for (Diagnostic diagnostic : result.getWarningDiagnostics()) {
+	System.out.println(diagnostic.getMessage());
+}
+                    </codeblock>
+                    </choice>
+                    <choice>Validate using Basic Validation Handler
+                        <codeblock>
+// validation on clinical document object
+CDAUtil.validate(ccdDocument, new BasicValidationHandler() {
+	public void handleError(Diagnostic diagnostic) {
+		System.out.println("ERROR: " + diagnostic.getMessage());
+	}
+			
+	public void handleWarning(Diagnostic diagnostic) {
+		System.out.println("WARNING: " + diagnostic.getMessage());
+	}
+});
+</codeblock>
+                    </choice>
+                </choices>
+
+                <info>
+                    <p>There are two types of validation at work. Schema validation takes place on a
+                        DOM-based representation of the document to ensure the document is
+                        conformant to the base CDA standard. The results of schema validation are
+                        stored in the validation result object. Then the EMF deserializer converts
+                        the DOM-based representation into an EMF representation. After conversion,
+                        EMF validation is performed. This ensures the EMF-based representation is
+                        conformant to the constraints defined in the template model. These two types
+                        of validation are used together to achieve complete validation. Different
+                        Validators process the content tree and produce diagnostics. Diagnostics
+                        contain information about a constraint that was violated. This includes
+                        severity, source, target and message. Severity of the constraint violation
+                        is one of ERROR, WARNING or INFO. Source is the fully-qualified name of the
+                        Validator that produced the diagnostic. Target is the object being
+                        validated. Message is a human-readable informational message related to the
+                        constraint that was violated. Typically this would be in the form of a
+                        structured English conformance statement such as: <q> CCD Medication
+                            Activity SHOULD satisfy: Contains exactly one doseQuantity or
+                            rateQuantity. (CONF-311)</q>
+                    </p>
+                    <p>Another option is to validate a clinical document object after it has been
+                        deserialized. This will check the document against IG-specific constraints
+                        defined in the template model and will check partial base schema
+                        conformance. The BasicValidationHandler class allows the developer to
+                        implement which diagnostics to respond to by overriding the handleError,
+                        handleWarning and handleInfo methods.</p>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

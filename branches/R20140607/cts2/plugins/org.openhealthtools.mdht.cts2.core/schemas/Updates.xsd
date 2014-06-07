@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core"
+	xmlns:association="http://schema.omg.org/spec/CTS2/1.0/Association" xmlns:codesystem="http://schema.omg.org/spec/CTS2/1.0/CodeSystem"
+	xmlns:codesystemversion="http://schema.omg.org/spec/CTS2/1.0/CodeSystemVersion"
+	xmlns:conceptdomain="http://schema.omg.org/spec/CTS2/1.0/ConceptDomain"
+	xmlns:conceptdomainbinding="http://schema.omg.org/spec/CTS2/1.0/ConceptDomainBinding" xmlns:entity="http://schema.omg.org/spec/CTS2/1.0/Entity"
+	xmlns:map="http://schema.omg.org/spec/CTS2/1.0/MapCatalog" xmlns:mapversion="http://schema.omg.org/spec/CTS2/1.0/MapVersion"
+	xmlns:stmt="http://schema.omg.org/spec/CTS2/1.0/Statement" xmlns:valueset="http://schema.omg.org/spec/CTS2/1.0/ValueSet"
+	xmlns:valuesetdefinition="http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition" xmlns="http://schema.omg.org/spec/CTS2/1.0/Updates"
+	targetNamespace="http://schema.omg.org/spec/CTS2/1.0/Updates" elementFormDefault="qualified">
+
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Association" schemaLocation="Association.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/CodeSystem" schemaLocation="CodeSystem.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/CodeSystemVersion" schemaLocation="CodeSystemVersion.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/ConceptDomain" schemaLocation="ConceptDomain.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/ConceptDomainBinding" schemaLocation="ConceptDomainBinding.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Entity" schemaLocation="Entity.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/MapCatalog" schemaLocation="Map.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/MapVersion" schemaLocation="MapVersion.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Statement" schemaLocation="Statement.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/ValueSet" schemaLocation="ValueSet.xsd"/>
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition" schemaLocation="ValueSetDefinition.xsd"/>
+
+	<xs:element name="ChangeSet" type="ChangeSet"/>
+	<xs:complexType name="ChangeSet">
+		<xs:annotation>
+			<xs:documentation>An ordered collection of changes that, when applied, will transform a service instance from one consistent state to
+				another. A <i>ChangeSet</i> is viewed as an atomic unit of change - either all of the <i>Changeable</i> elements in a change set will
+				be applied or none of them will be applied. It is anticipated that service implementations will provide a mechanism by which it can
+				apply local business rules to the validation and application of change sets. These rules may include the option to selectively apply,
+				reject, modify or ignore the elements of change sets as they arrive. In this case, it is up to the developers of the business rules to
+				determine what constitutes a "complete" change set that can be applied.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="core:ChangeSetElementGroup"/>
+			<xs:element name="member" type="ChangeableResource" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="core:ChangeSetAttributeGroup"/>
+		<xs:attribute name="state" type="core:FinalizableState" default="FINAL"/>
+	</xs:complexType>
+
+	<xs:complexType name="ChangeableResource">
+		<xs:annotation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:choice minOccurs="1">
+			<xs:element name="association" type="association:Association"/>
+			<xs:element name="codeSystem" type="codesystem:CodeSystemCatalogEntry"/>
+			<xs:element name="codeSystemVersion" type="codesystemversion:CodeSystemVersionCatalogEntry"/>
+			<xs:element name="conceptDomain" type="conceptdomain:ConceptDomainCatalogEntry"/>
+			<xs:element name="conceptDomainBinding" type="conceptdomainbinding:ConceptDomainBinding"/>
+			<xs:element name="entityDescription" type="entity:EntityDescription"/>
+			<xs:element name="map" type="map:MapCatalogEntry"/>
+			<xs:element name="mapVersion" type="mapversion:MapVersion"/>
+			<xs:element name="mapEntry" type="mapversion:MapEntry"/>
+			<xs:element name="statement" type="stmt:Statement"/>
+			<xs:element name="valueSet" type="valueset:ValueSetCatalogEntry"/>
+			<xs:element name="valueSetDefinition" type="valuesetdefinition:ValueSetDefinition"/>
+		</xs:choice>
+		<xs:attributeGroup ref="core:Ordered"/>
+	</xs:complexType>
+
+
+	<!-- ====================================================
+		ChangeSet PSM
+		======================================================-->
+	<xs:element name="ChangeSetMsg" type="ChangeSetMsg"/>
+	<xs:complexType name="ChangeSetMsg">
+		<xs:annotation>
+			<xs:documentation>An ordered collection of changes that, when applied, will transform a service instance from one consistent state to
+				another. A <i>ChangeSet</i> is viewed as an atomic unit of change - either all of the <i>Changeable</i> elements in a change set will
+				be applied or none of them will be applied. It is anticipated that service implementations will provide a mechanism by which it can
+				apply local business rules to the validation and application of change sets. These rules may include the option to selectively apply,
+				reject, modify or ignore the elements of change sets as they arrive. In this case, it is up to the developers of the business rules to
+				determine what constitutes a "complete" change set that can be applied.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="changeSet" type="ChangeSet" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>	
+	</xs:complexType>
+
+	<!-- ==============================================
+		IterableChangeSet
+		=============================================== -->
+	<xs:element name="IteratableChangeSet" type="IteratableChangeSet"/>
+	<xs:complexType name="IteratableChangeSet">
+		<xs:annotation>
+			<xs:documentation>A change set whose contents is available as a set of directory entries that allows iteration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:group ref="core:ChangeSetElementGroup"/>
+					<xs:element name="entry" type="ChangeableAsDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="core:ChangeSetAttributeGroup"/>
+				<xs:attribute name="state" type="core:FinalizableState" default="FINAL"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ChangeableAsDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A changeable element that occurs in an <i>IterableChangeSet</i></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ChangeableResource">
+				<xs:group ref="core:DirectoryEntryElementGroup"/>
+				<xs:attributeGroup ref="core:DirectoryEntryAttributeGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

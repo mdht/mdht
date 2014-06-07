@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>TB Result Observation - conformance rules</title>
+<shortdesc id="shortdesc">[Observation: templateId <tt>2.16.840.1.113883.10.20.15.3.13</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Observation</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.15.3.13"/>
+</prolog>
+<body>
+<section id="description">
+<p>This clinical statement represents the name of the laboratory test, the date that the specimen for the laboratory test was taken from the subject of the case report, the date that the laboratory test was performed on the specimen, and the result of the laboratory test. If applicable, it may capture the physical body location from where the specimen for the lab report was taken from the subject. In addition, it captures the name of organization where the specimen was collected. This tuberculosis result observation also contains a susceptibility clinical statement.</p>
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultObservation.html">CCD Result Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) STATIC 1</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultObservation.html">CCD Result Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li>
+<li>[TBPN] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul></li>
+<li>[TBPN] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li>[TBPN] <b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) STATIC 1</li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>methodCode</tt><ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul></li>
+<li>[CCD] <b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt><ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>value</tt></li>
+<li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12).</li>
+<li>[CCD] <b>SHALL</b> satisfy: The methodCode SHALL NOT conflict with the method inherent in code</li>
+<li>[CCD] <b>SHALL</b> satisfy: Where value is a physical quantity, the unit of measure SHALL be expressed using a valid Unified Code for Units of Measure (UCUM) expression.</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Contain one or more referenceRange to show the normal range of values for the observation result</li>
+<li>[CCD] <b>SHALL</b> satisfy: SHALL NOT contain referenceRange / observationRange / code, as this attribute is not used by the HL7 Clinical Statement or Lab Committee models.</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information.</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
+              <templateId root="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="PILOT TB Result Observation"/>
+              <id root="69ea4254-1d28-4a31-8db5-9838121d3a34"/>
+              <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="1972"/>
+                <high value="2008"/>
+              </effectiveTime>
+              <interpretationCode/>
+              <methodCode/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

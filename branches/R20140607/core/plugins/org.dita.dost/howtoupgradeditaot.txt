@@ -1,0 +1,9 @@
+Step 1 - Make a local copy of all custom the DITA Plugins (for instance /org.dita.dost/DITA-OT/plugins/org.openhealthtools.mdht.cda)
+Step 2 - Delete existing DITA-OT folder and contents 
+Step 3 - Import from file system the latest DITA-OT Minimal Build and rename to DITA-OT
+Step 4 - Import/Add 3rd Party Saxon Libs (currently under lib/saxon)
+Step 5 - Update Bundle Version in MANIFEST.MF to appropriate version
+Step 6 - Update Bundle-ClassPath in MANIFEST.MF - Add all jar files under lib
+Step 7 - Add in any 3rd party publishing plugins
+Step 8 - Copy into the plugins all the custom plugins from step 1
+ 

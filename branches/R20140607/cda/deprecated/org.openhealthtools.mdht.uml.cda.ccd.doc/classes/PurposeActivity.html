@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Purpose Activity"/>
+<meta name="abstract" content="[Act: templateId 2.16.840.1.113883.10.20.1.30]"/>
+<meta name="description" content="[Act: templateId 2.16.840.1.113883.10.20.1.30]"/>
+<meta name="DC.Coverage" content="Act"/>
+<meta name="DC.Relation" scheme="URI" content="../content/ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Purpose Activity</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="title topictitle1">Purpose Activity</h1>
+
+
+
+<div class="body"><p class="shortdesc">[Act: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.30</tt>]</p>
+
+
+<div class="section">
+<p class="p">
+    CCD represents the ASTM CCR &lt;Purpose&gt; object as a relationship between two classes -- the source
+    represents the act of creating a summary document, the target is the reason for creating the document, and the
+    relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,
+    and it may represent an order, an event, etc.
+</p>
+
+</div>
+
+
+<ol class="ol">
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Act</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT" (CONF-21)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-22)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "23745001" <em class="ph i">Documentation procedure</em> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC) (CONF-25)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-23, CONF-24)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD. (CONF-26)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply. (CONF-27)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( 
+  not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()
+       and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()
+       and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))</pre>
+</li>
+</ul>
+</li>
+
+</ol>
+
+
+<div class="fig fignone"><span class="figcap">Figure 1. Purpose Activity example</span>
+
+
+
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
+  &lt;component&gt;
+    &lt;structuredBody&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;entry&gt;
+            &lt;act classCode="ACT" moodCode="EVN"&gt;
+              &lt;templateId root="2.16.840.1.113883.10.20.1.30" assigningAuthorityName="CCD Purpose Activity"/&gt;
+              &lt;code code="23745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Documentation procedure"/&gt;
+              &lt;statusCode code="completed"/&gt;
+            &lt;/act&gt;
+          &lt;/entry&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+    &lt;/structuredBody&gt;
+  &lt;/component&gt;
+&lt;/ClinicalDocument&gt;</pre>
+
+</div>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

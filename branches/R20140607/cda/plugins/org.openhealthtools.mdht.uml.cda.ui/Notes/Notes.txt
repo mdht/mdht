@@ -1,0 +1,14 @@
+shortname = lowercase of model file name without extension
+
+basePackage = org.openhealthtools.mdht.uml.cda.shortname
+nsPrefix = shortname
+nsURI = http://www.openhealthtools.org/mdht/uml/cda/shortname
+packageName = shortname
+prefix = capitalized shortname
+first time CodegenSupport is applied UI tab fills this in these defaults
+if no Codegen is specified
+then this happens in model to model (as you do now but for all attributes not just nsURI)
+
+actual prefix can be original model file name with first letter capitalized that way 
+if the model file name is all caps the prefix will remain call caps (some might like this)
+

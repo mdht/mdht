@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE learningContent PUBLIC "-//OASIS//DTD DITA Learning Content//EN" "learningContent.dtd">
+<learningContent id="content_t4y_2l3_z3" xml:lang="en-us">
+    <title>Understanding the Example Model</title>
+    <shortdesc/>
+    <learningContentbody>
+        <lcIntro>
+            <ol>
+                <li>Every CDA template is represented as a UML class. <ol>
+                        <li>In a CDA implementation guide, every class must be derived from a
+                            subclass of the CDA base model</li>
+                        <li>The UML model containing all the different classes is the CDA base model </li>
+                        <li>There is a class for every complex type in the CDA schema.</li>
+                        <li>Every implementation guide needs to be specialized with a specific
+                            clinical document.</li>
+                        <li>The purpose of the example UML is to illustrate the basic structures
+                            that most every CDA implementation guide has. </li>
+                    </ol>
+                </li>
+                <li>Notice that there are subclasses of classes <ol>
+                        <li>Every implementation guide takes the CDA model and specializes it for a
+                            particular type of clinical document.</li>
+                        <li>Template classes are often times reused </li>
+                        <li>A document also contains sections such as history of present illness,
+                            past medical history, review of systems, etc. Each of these sections
+                            might be where the physician would include the corresponding
+                            information.</li>
+                        <li>These domains are named ending with Section. For example: A History
+                            &amp; Physical contains at least one section which could be Past Medical
+                            History section.</li>
+                        <li>This will be revisited again when we discuss re-using existing
+                            templates.</li>
+                        <li>Keep in mind that CDA is the least restrictive model.</li>
+                        <li>Notice the "Open" headed arrow - denotes a "subclass of" and it denotes
+                            which existing template it derives from.</li>
+                        <li>Every implementation guide has at least one template class derive from a
+                            Clinical Document.</li>
+                        <li>Notice the "Solid" headed arrow denotes the UML association from one
+                            class to another -i.e. the relationship between templates - contains -
+                            representing a constraints.</li>
+                    </ol>
+                </li>
+                
+                    <li>The multiplicity domain in the editor can describe the requirements for each
+                        document and the conformance rules <ol>
+
+                            <li>This domain provides information about how many sections the
+                                document must contain</li>
+                            <li>The severity of the constraint is described with conformance rules
+                                in one of the following ways: SHALL (required) contain, SHOULD
+                                (suggested) contain or MAY (allowed) contain a specific section</li>
+                            <li>A problem is constrained for a particular purpose to make it easier
+                                to solve</li>
+                            <li>The number in the multiplicity domain denotes the minimum and
+                                maximum number of observations.</li>
+                            <li>In the case of 1.*, this denotes that there must be at least one but
+                                that it can be multiple.</li>
+                        </ol></li>
+                
+            </ol>
+        </lcIntro>
+    </learningContentbody>
+</learningContent>

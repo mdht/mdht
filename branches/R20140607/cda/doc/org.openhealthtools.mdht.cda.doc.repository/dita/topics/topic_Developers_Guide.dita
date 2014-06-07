@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "dtd/topic.dtd">
+<topic id="topic_rhl_l3b_2j" xml:lang="en-us">
+  <title>MDHT Developers Guide</title>
+  <body>
+    <p>This document provides instructions to use the MDHT Java API&apos;s for creating and parsing CDA
+      based documents. An EMR (Electronic Medical Record) system or a EHRS (Electronic Health Record
+      System) stores the patient and related healthcare information in a proprietary format. In
+      order to create  translate the information from a standard document like the CDA (Clinical
+      Document Architecture), a deep knowledge of the internal details of the standards are a
+      pre-requisite. MDHT Java API&apos;s can help bridge the gap in this transformation to  from a
+      standard CDA based document.</p>
+  </body>
+</topic>

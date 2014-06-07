@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. -->
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" []>
+<topic id="topicId" xml:lang="en-us">
+  <title>Revision History</title>
+  <body>
+    <table>
+      <tgroup cols="4">
+        <thead>
+          <row>
+            <entry>Rev</entry>
+            <entry>Date</entry>
+            <entry>By Whom</entry>
+            <entry>Changes</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>First draft for posting</entry>
+            <entry>August 31, 2010</entry>
+            <entry>Dave Carlson</entry>
+            <entry>Updated model content and publication format</entry>
+          </row>
+          <row>
+            <entry>First draft for IG consolidation project</entry>
+            <entry>December 29, 2010</entry>
+            <entry>Dave Carlson</entry>
+            <entry></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+    
+  <topic id="notes" xml:lang="en-us">
+	<title>Notes on draft status</title>
+	<body>
+	<p><b>December 29, 2010:</b>
+	This is a first draft of HITSP/IHE/HL7 implementation guide consolidation for C32 and CCD.
+	This draft includes all template sections defined in C83, some of which are not part of C32 summaries.
+	The next draft will limit content to templates used in C32.
+	</p>
+	</body>
+  </topic>
+</topic>

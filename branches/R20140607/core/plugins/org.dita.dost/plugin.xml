@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+ Copyright (c) 2012 JKM Software
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+     Sean Muir, JKM Software - initial API and implementation
+
+ $Id$
+-->
+
+<plugin>
+
+<extension point="org.eclipse.ui.commands">
+
+	<command  id="org.dita.dost.commands.compare" name="COMPARE" defaultHandler="org.dita.dost.handlers.CompareDitaHandler" >
+		
+    </command>
+    
+	<command  id="org.dita.dost.commands.publishaspdf" name="PDF" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+    
+    <command  id="org.dita.dost.commands.publishaswordrtf" name="RTF" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+ 
+      <command  id="org.dita.dost.commands.publishasxhtml" name="XHTML" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+    
+     <command  id="org.dita.dost.commands.publishaseclipsehelp" name="ECLIPSE HELP" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+
+     <command  id="org.dita.dost.commands.publishaseclipsecontent" name="ECLIPSE CONTENT" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+
+     <command  id="org.dita.dost.commands.publishasjavahelp" name="JAVA HELP" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+
+     <command  id="org.dita.dost.commands.publishashtmlhelp" name="HTML HELP" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+
+     <command  id="org.dita.dost.commands.publishaspdf2" name="PDF2" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+
+
+     <command  id="org.dita.dost.commands.publishastroff" name="TROFF" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+
+     <command  id="org.dita.dost.commands.publishasdocbook" name="DOCBOOK" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+
+     <command  id="org.dita.dost.commands.publishasodt" name="ODT" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+    
+ 
+     <command  id="org.dita.dost.commands.publishasepub" name="EPUB" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+    
+    <command  id="org.dita.dost.commands.publishall" name="ALL" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+  
+   </extension>
+ 
+ 
+ <extension point="org.eclipse.core.expressions.definitions">
+   <definition id="org.eclipse.example.testExtension">
+      <adapt type="org.eclipse.core.resources.IResource">
+         <or>
+             <test property="org.eclipse.core.resources.extension"
+                   value="emx">
+             </test>
+             <test property="org.eclipse.core.resources.extension"
+                   value="uml">
+             </test>
+         </or>
+      </adapt>
+   </definition>
+</extension>
+
+
+
+
+ 
+     <extension point="org.eclipse.ui.menus">   
+
+
+
+
+         <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    
+
+      <command commandId="org.dita.dost.commands.compare" label="Compare Models (DITA)" id="org.dita.dost.menu.compare" mnemonic="C">
+      
+      <visibleWhen>
+      <and>
+   <and>
+      <with variable="selection">
+         <iterate ifEmtpy="false">
+           <reference definitionId="org.eclipse.example.testExtension"/>
+         </iterate>
+      </with>   
+   </and>
+   
+    <and>
+      <with variable="selection">                  <count
+                        value="2">
+                  </count>
+      
+      </with>   
+   </and>
+   </and>
+</visibleWhen>
+      
+      </command>    
+      
+    </menuContribution>  
+    
+
+   <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    
+
+      <command commandId="org.dita.dost.commands.publishaspdf" label="Publish As PDF" id="org.dita.dost.menu.publishaspdf" mnemonic="S">
+      	<parameter name="org.dita.dost.parameter.target" value="pdf" />
+      	<visibleWhen>
+               <with variable="selection">
+                  <iterate>
+                     <adapt type="org.eclipse.core.resources.IResource">
+                     	<test property="org.eclipse.core.resources.extension" value="ditamap" />
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>         
+      </command>    
+      
+    </menuContribution>  
+      
+      
+    <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=org.dita.dost.menu.publishaspdf">
+    
+     <menu label="Publish As...">
+
+            <visibleWhen>
+               <with variable="selection">
+                  <iterate>
+                     <adapt type="org.eclipse.core.resources.IResource">
+                     	<test property="org.eclipse.core.resources.extension" value="ditamap" />
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>         
+
+      <command commandId="org.dita.dost.commands.publishaspdf" >
+      	<parameter name="org.dita.dost.parameter.target" value="pdf" />
+      </command>    
+ 
+      <command commandId="org.dita.dost.commands.publishaswordrtf" >
+      	<parameter name="org.dita.dost.parameter.target" value="wordrtf" />
+      </command>    
+
+      <command commandId="org.dita.dost.commands.publishasxhtml" >
+      	<parameter name="org.dita.dost.parameter.target" value="xhtml" />
+      </command>    
+
+    <command commandId="org.dita.dost.commands.publishaseclipsehelp" >
+      	<parameter name="org.dita.dost.parameter.target" value="eclipsehelp" />
+      </command>    
+
+    <command commandId="org.dita.dost.commands.publishaseclipsecontent" >
+      	<parameter name="org.dita.dost.parameter.target" value="eclipsecontent" />
+      </command>    
+
+    <command commandId="org.dita.dost.commands.publishasjavahelp" >
+      	<parameter name="org.dita.dost.parameter.target" value="javahelp" />
+      </command>    
+
+    <command commandId="org.dita.dost.commands.publishashtmlhelp" >
+      	<parameter name="org.dita.dost.parameter.target" value="htmlhelp" />
+      </command>    
+
+    <command commandId="org.dita.dost.commands.publishaspdf2" >
+      	<parameter name="org.dita.dost.parameter.target" value="pdf2" />
+      </command>    
+
+<!--
+    <command commandId="org.dita.dost.commands.publishastroff" >
+      	<parameter name="org.dita.dost.parameter.target" value="troff" />
+      </command>    
+-->
+
+    <command commandId="org.dita.dost.commands.publishasdocbook" >
+      	<parameter name="org.dita.dost.parameter.target" value="docbook" />
+      </command>    
+
+    <command commandId="org.dita.dost.commands.publishasodt" >
+      	<parameter name="org.dita.dost.parameter.target" value="odt" />
+      </command>    
+
+<!--
+      <command commandId="org.dita.dost.commands.publishasepub" >
+      	<parameter name="org.dita.dost.parameter.target" value="epub" />
+      </command>    
+-->
+
+ 
+
+      <command commandId="org.dita.dost.commands.publishall" >
+      	<parameter name="org.dita.dost.parameter.target" value="xhtml,eclipsehelp,eclipsecontent,javahelp,htmlhelp,pdf,pdf2,docbook,wordrtf,odt" />
+      </command>    
+ 
+     </menu>
+      
+      </menuContribution>
+      
+   </extension>
+   
+   
+</plugin>

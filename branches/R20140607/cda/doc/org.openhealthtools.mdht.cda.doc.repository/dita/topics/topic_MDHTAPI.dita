@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ffp_nvc_cj" xml:lang="en-us">
+  <title>MDHT APIs</title>
+  <shortdesc>API’s delivered by the MDHT Runtime API Jars can be divided into three different
+    levels. Each level builds upon the other. API’s are an artifact that get generated or delivered
+    by MDHT. You don’t need the user interface to be installed to be able to see the runtime
+    API’s.</shortdesc>
+
+  <body>
+    <section>
+      <title>Low-level Technology APIs</title>
+      <p> These APIs come from the technology decisions made by the MDHT project. MDHT is based on
+        Eclipse and the Eclipse Modeling Framework. APIs at this level are related to the underlying
+        EMF model and allow the programmer to manipulate EMF objects in a uniform way and access
+        metamodel information (e.g. EClasses, EAnnotations, etc.). Typically, client code would not
+        use the low-level APIs directly, however, there are certain circumstances where the EMF
+        reflection API is useful. </p>
+    </section>
+    <section><title>Generated CDA Base Model APIs</title>
+      <p> The base model APIs are generated from the MDHT base models for CDA. This includes HL7 CDA
+        R2, HL7 Datatypes R1, HL7 Vocabulary and HL7 RIM. MDHT uses class inheritance in the CDA
+        template models. All methods defined at this level are inherited and available at higher
+        levels. For example, a convenience method “addSection” has been added to the
+        ClinicalDocument class. This method can be used to add a Section object directly to a
+        ClinicalDocument object (without going through component.structuredBody.component). This
+        method is available in all subclasses of ClinicalDocument (e.g. ContinuityOfCareDocument and
+        HITSP PatientSummary). </p></section>
+    <section>
+      <title>Generated CDA Template Model APIs</title>
+      <p> This APIs, exist (logically) at a higher level in the stack as they are built on top of
+        the APIs below them. They typically include domain-specific class names that follow the CDA
+        templates that they represent (e.g. CCD ProblemAct, HITSP Condition). They also include
+        “getter” methods to access subordinate templates. For example, if a document-level template
+        has an association to a section-level template in the model, then a “getter’ method for the
+        section-level template exists in the document-level template class. </p></section>
+    <section><title>Utility / Convenience APIs</title>
+      <p> There are additional Utility APIs that facilitate the process of producing, consuming and
+        validating CDA documents. The CDAUtil class contains load/save/validate methods, a
+        Query/Filter API, OCL check/query and a CDAXPath adapter API. The details of these APIs will
+        be discussed later in the document. </p></section>
+  </body>
+</topic>

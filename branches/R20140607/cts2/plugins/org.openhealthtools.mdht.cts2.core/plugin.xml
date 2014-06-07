@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.6"?>
+
+<!--
+ Copyright (c) 2012 David A Carlson
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ 	 David A Carlson (XMLmodeling.com) - initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/Association"
+            class="org.openhealthtools.mdht.cts2.association.AssociationPackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="association"
+            class="org.openhealthtools.mdht.cts2.association.util.AssociationResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/Core"
+            class="org.openhealthtools.mdht.cts2.core.CorePackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="core"
+            class="org.openhealthtools.mdht.cts2.core.util.CoreResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/CodeSystem"
+            class="org.openhealthtools.mdht.cts2.codesystem.CodeSystemPackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="codesystem"
+            class="org.openhealthtools.mdht.cts2.codesystem.util.CodeSystemResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/CodeSystemVersion"
+            class="org.openhealthtools.mdht.cts2.codesystemversion.CodeSystemVersionPackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="codesystemversion"
+            class="org.openhealthtools.mdht.cts2.codesystemversion.util.CodeSystemVersionResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/Entity"
+            class="org.openhealthtools.mdht.cts2.entity.EntityPackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="entity"
+            class="org.openhealthtools.mdht.cts2.entity.util.EntityResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/Statement"
+            class="org.openhealthtools.mdht.cts2.statement.StatementPackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="statement"
+            class="org.openhealthtools.mdht.cts2.statement.util.StatementResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/ValueSet"
+            class="org.openhealthtools.mdht.cts2.valueset.ValueSetPackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="valueset"
+            class="org.openhealthtools.mdht.cts2.valueset.util.ValueSetResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition"
+            class="org.openhealthtools.mdht.cts2.valuesetdefinition.ValueSetDefinitionPackage"
+            genModel="model/cts2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="valuesetdefinition"
+            class="org.openhealthtools.mdht.cts2.valuesetdefinition.util.ValueSetDefinitionResourceFactoryImpl"/>
+   </extension>
+   
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type base-type="org.eclipse.emf.ecore.xmi" default-charset="UTF-8" file-extensions="xml" 
+  				id="org.openhealthtools.mdht.cts2.entity" name="CTS2 Entity" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://schema.omg.org/spec/CTS2/1.0/Entity"/>
+         </describer>
+      </content-type>
+      <content-type base-type="org.eclipse.emf.ecore.xmi" default-charset="UTF-8" file-extensions="xml" 
+  				id="org.openhealthtools.mdht.cts2.codesystemv" name="CTS2 Code System" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://schema.omg.org/spec/CTS2/1.0/CodeSystem"/>
+         </describer>
+      </content-type>
+      <content-type base-type="org.eclipse.emf.ecore.xmi" default-charset="UTF-8" file-extensions="xml" 
+  				id="org.openhealthtools.mdht.cts2.codesystemversion" name="CTS2 Code System Version" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://schema.omg.org/spec/CTS2/1.0/CodeSystemVersion"/>
+         </describer>
+      </content-type>
+      <content-type base-type="org.eclipse.emf.ecore.xmi" default-charset="UTF-8" file-extensions="xml" 
+  				id="org.openhealthtools.mdht.cts2.association" name="CTS2 Association" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://schema.omg.org/spec/CTS2/1.0/Association"/>
+         </describer>
+      </content-type>
+      <content-type base-type="org.eclipse.emf.ecore.xmi" default-charset="UTF-8" file-extensions="xml" 
+  				id="org.openhealthtools.mdht.cts2.valuesetdefinition" name="CTS2 Value Set Definition" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition"/>
+         </describer>
+      </content-type>
+      <content-type base-type="org.eclipse.emf.ecore.xmi" default-charset="UTF-8" file-extensions="xml" 
+  				id="org.openhealthtools.mdht.cts2.valueset" name="CTS2 Value Set" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://schema.omg.org/spec/CTS2/1.0/ValueSet"/>
+         </describer>
+      </content-type>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="org.openhealthtools.mdht.cts2.entity"
+            class="org.openhealthtools.mdht.cts2.entity.util.EntityResourceFactoryImpl" />
+      <parser
+            contentTypeIdentifier="org.openhealthtools.mdht.cts2.codesystem"
+            class="org.openhealthtools.mdht.cts2.codesystem.util.CodeSystemResourceFactoryImpl" />
+      <parser
+            contentTypeIdentifier="org.openhealthtools.mdht.cts2.codesystemversion"
+            class="org.openhealthtools.mdht.cts2.codesystemversion.util.CodeSystemVersionResourceFactoryImpl" />
+      <parser
+            contentTypeIdentifier="org.openhealthtools.mdht.cts2.association"
+            class="org.openhealthtools.mdht.cts2.association.util.AssociationResourceFactoryImpl" />
+      <parser
+            contentTypeIdentifier="org.openhealthtools.mdht.cts2.valueset"
+            class="org.openhealthtools.mdht.cts2.valueset.util.ValueSetResourceFactoryImpl" />
+      <parser
+            contentTypeIdentifier="org.openhealthtools.mdht.cts2.valuesetdefinition"
+            class="org.openhealthtools.mdht.cts2.valuesetdefinition.util.ValueSetDefinitionResourceFactoryImpl" />
+   </extension>
+   
+</plugin>

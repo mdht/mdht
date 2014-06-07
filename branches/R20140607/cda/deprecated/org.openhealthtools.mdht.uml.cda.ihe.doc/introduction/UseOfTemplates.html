@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Use of Templates"/>
+<meta name="DC.Relation" scheme="URI" content="../introduction/Introduction.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topicId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Use of Templates</title>
+</head>
+<body id="topicId"><a name="topicId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+	<h1 class="title topictitle1">Use of Templates</h1>
+
+	<div class="body">
+		<p class="p">When valued in an instance, the template identifier (<tt class="ph tt">templateId</tt>)
+			signals the imposition of a set of template-defined constraints. The
+			value of this attribute provides a unique identifier for the
+			templates in question.</p>
+
+	</div>
+
+	<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../introduction/Introduction.html">INTRODUCTION</a></div>
+</div>
+</div>
+<div class="topic nested1" id="originator"><a name="originator"><!-- --></a>
+		<h2 class="title topictitle2">Originator Responsibilities</h2>
+
+		<div class="body">
+			<p class="p">An originator can apply a <tt class="ph tt">templateId</tt> to assert conformance with a
+				particular template.</p>
+
+			<p class="p">In the most general forms of CDA exchange, an originator need not
+				apply a <tt class="ph tt">templateId</tt> for every template that an object in an instance
+				document conforms to. This implementation guide asserts when
+				<tt class="ph tt">templateId</tt>s are required for conformance.</p>
+
+		</div>
+
+	</div>
+
+	<div class="topic nested1" id="recipient"><a name="recipient"><!-- --></a>
+		<h2 class="title topictitle2">Recipient Responsibilities</h2>
+
+		<div class="body">
+			<p class="p">A recipient may reject an instance that does not contain a
+				particular <tt class="ph tt">templateId</tt> (e.g., a recipient looking to receive only CCD
+				documents can reject an instance without the appropriate
+				<tt class="ph tt">templateId</tt>).</p>
+
+			<p class="p">A recipient may process objects in an instance document that do
+				not contain a <tt class="ph tt">templateId</tt> (e.g., a recipient can process entries that
+				contain Observation acts within a Problems section, even if the
+				entries do not have <tt class="ph tt">templateId</tt>s).</p>
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>

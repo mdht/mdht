@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_C52363CBD6C146B8B59FF9AB9599239A"> 
+  <title>Association type code constraint</title> 
+  <shortdesc>Add a 
+	 <tt>typeCode</tt> constraint for the relationship connecting two template
+	 classes.
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_441C996AF99145AF80937FE32DAD9122"> 
+		<step id="step_F81E212B8C7C4ED6ABC73A93E24335CB"> 
+		  <cmd>Select the table row for an association.
+		  </cmd> 
+		</step>
+		<step id="step_CCEF48925D6F4B8D9778C5DA60F3F228"> 
+		  <cmd>In the Properties view CDA Tools tab, the 
+			 <uicontrol>Entry Type Code</uicontrol> field will be visible if this
+			 tooling supports 
+			 <tt>typeCode</tt> constraint for the source/target association you
+			 have selected. Select the desired type code from the pull-down list.
+		  </cmd> 
+		</step> 
+	 </steps> 
+	 <result id="result_570E6F60897842DC8B7DCB2EE35D8DC0">This example adds an
+		association from PatientDataSectionNCR to BirthHeadCircumference, with
+		multiplicity 1..1 and 
+		<tt>typeCode</tt> 
+		<tt>DRIV</tt>.<image placement="break"
+		id="image_1821760F3BA24BD5A75D1B1A9427CC32"
+		href="../images/TableAssociationTypeCode.png"></image>
+	 </result>
+  </taskbody>
+  <related-links>
+	 <link format="dita" type="concept" scope="local"
+	  href="c_Severity_and_message.dita#concept_AEA4AFEB0B7749ACB785A68FBBCCAD7E"><?xm-replace_text Severity and message?>
+	 </link>
+  </related-links>
+</task>

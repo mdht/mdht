@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="generatejava" xml:lang="en-us">
+    <title>Manual Java Generation Process</title>
+    <shortdesc>These steps will walk you through the process to manual generate the java source
+        code.</shortdesc>
+    <taskbody>
+       <prereq>The Java project must not have the CDABuilder active. Check the builders by Right
+            Clickin on Java Project and select <menucascade>
+                <uicontrol>properties</uicontrol>
+                <uicontrol>Builders</uicontrol>
+            </menucascade>. If the CDA Project Builder is listed with a check mark hit Cancel then
+            Right Click on Java Project and select Add/Remove CDA Builder if the builder is
+            active.</prereq>
+        <context>
+            <p>MDHT provides an automated build but you can always manually build parts of the project</p>
+        </context>
+        
+        <steps>
+            <step>
+                <cmd>Run Model Transformation</cmd>
+                <choices>
+                    <choice>First Time Running</choice>
+                </choices>
+                <substeps>
+                    <substep>
+                        <cmd>Right Click on the transform.xml file in the Java project</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select Run as Ant Task...</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select the JRE Tab</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Set Runtime JRE option to <userinput>Run in the same JRE as the
+                                workspace</userinput></cmd>
+                    </substep>
+                </substeps>
+                <choices>
+                    <choice>All Other Times</choice>
+                </choices>
+                <substeps>
+                    <substep>
+                        <cmd>Right Click on the transform.xml file in the Java project</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select Run as Ant Task</cmd>
+                    </substep>
+                </substeps>
+                <stepresult>The transform takes the structural constraints defined in the source UML
+                    model and generates a series of OCL constraints in the target model. The new UML
+                    model will be in the model folder in the java project. </stepresult>
+            </step>
+            <step>
+                <cmd>Generate Model Classes (Java APIs) from the EMF model</cmd>
+                <substeps>
+                    <substep>
+                        <cmd> Right-click on the mytestmodel.genmodel file in the model folder and
+                            select "Reload" from the context menu.</cmd>
+                    </substep>
+
+                    <substep>
+                        <cmd> Select "UML model" and then select "Next".</cmd>
+                    </substep>
+
+                    <substep>
+                        <cmd> Select "next" again. (This tells it to pull the information from the
+                            mytestmodel_Ecore.uml file that was just created from the
+                            transform.</cmd>
+                    </substep>
+
+                    <substep>
+                        <cmd> Select "Finish" </cmd>
+
+                    </substep>
+                </substeps>
+                <stepresult>When this is finished, it will open the mytestmodel.genModel in the
+                    eclipse editor. It will have regenerated mytestmodel.ecore and
+                    mytestmodel.genmodel files.</stepresult>
+            </step>
+            <step>
+                <cmd>In the eclipse editor, right-click on the mytestmodel node (in the editor
+                    window and not the project window) and select "Generate Model Code" from the
+                    context menu.</cmd>
+            </step>
+            <step>
+                <note>If you encouter errors in the compiled Java source code, here are some steps
+                    to fix the issue</note>
+                <cmd>How to Fix Source Code</cmd>
+                <substeps>
+                    <substep>
+                        <cmd>Expand the "src" folder in the project.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Delete the org.openhealthtools.mdht.uml.cda.consol.mytestmodel package
+                            and sub-packages</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Re-Generate the model code</cmd>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+        <postreq>The Java source code has been generated and compiled without any errors. You are
+            ready to use the Java source to create, consume, and validate CDA documents.</postreq>
+    </taskbody>
+</task>

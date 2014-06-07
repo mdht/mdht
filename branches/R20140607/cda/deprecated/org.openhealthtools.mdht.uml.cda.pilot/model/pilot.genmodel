@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.pilot/src"
+    editDirectory="/org.openhealthtools.mdht.uml.cda.pilot.edit/src" editorDirectory="/org.openhealthtools.mdht.uml.cda.pilot.editor/src"
+    modelPluginID="org.openhealthtools.mdht.uml.cda.pilot" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Pilot" modelPluginClass="PilotPlugin"
+    editPluginClass="org.openhealthtools.mdht.uml.cda.pilot.provider.PilotEditPlugin"
+    editorPluginClass="org.openhealthtools.mdht.uml.cda.pilot.presentation.PilotEditorPlugin"
+    testSuiteClass="org.openhealthtools.mdht.uml.cda.pilot.tests.PilotAllTests" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.genmodel#//ccd ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim"
+    pluralizedGetters="true" invariantPrefix="validate">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>pilot_Ecore.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="TBPN" basePackage="org.openhealthtools.mdht.uml.cda"
+      disposableProviderFactory="true" ecorePackage="pilot.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.pilot.operations">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="pilot.ecore#//TuberculosisFollowUpProgressNote">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNotePatientNames">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNotePatientNames/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNotePatientNames/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTBResultsSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTBResultsSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTBResultsSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TuberculosisFollowUpProgressNote/getTbResultsSection"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="pilot.ecore#//TBResultsSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultsSection/TBResultsSectionText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultsSection/TBResultsSectionTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionTitle/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultsSection/TBResultsSectionTBResultOrganizer">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionTBResultOrganizer/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionTBResultOrganizer/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultsSection/TBResultsSectionTBResultObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionTBResultObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultsSection/TBResultsSectionTBResultObservation/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultsSection/getTbResultOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultsSection/getTbResultObservations"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="pilot.ecore#//TBResultOrganizer">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTBResultObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTBResultObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTBResultObservation/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultOrganizer/getTbResultObservation"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="pilot.ecore#//TBResultObservation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultObservation/TBResultObservationClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationClassCode/context"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Getting Started">
+    <topicref href="../topics/topic_Developers_Guide.dita"> 
+        <topicref href="../tasks/t_Install.dita" />
+        <topicref href="../topics/topic_MDHTAPI.dita" />
+        <topicref href="../concepts/c_ApiPatterns.dita" />
+        <topicref href="../tasks/t_Produce_Goal.dita" />
+        <topicref href="../tasks/t_Consume_CDA.dita" />
+        <topicref href="../tasks/t_Validate_CDA.dita" />
+        <topicref href="../tasks/t_Query_CDA.dita" />
+        <topicref href="../tasks/t_Create_Runtime_Library.dita" />
+     
+    </topicref>
+</map>
+

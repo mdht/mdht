@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "dtd/topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>Audience</title>
+	<body>
+		<p>The audience for this document includes software developers and
+			implementers who wish to develop...</p>
+	</body>
+</topic>

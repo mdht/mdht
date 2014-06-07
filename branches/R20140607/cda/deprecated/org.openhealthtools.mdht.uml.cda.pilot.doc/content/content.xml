@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc topic="DocumentTemplates.html">
+   <topic label="DOCUMENT TEMPLATES" href="DocumentTemplates.html">
+      <topic label="Tuberculosis Follow Up Progress Note"
+             href="../classes/TuberculosisFollowUpProgressNote.html"/>
+   </topic>
+   <topic label="SECTION TEMPLATES" href="SectionTemplates.html">
+      <topic label="TB Results Section" href="../classes/TBResultsSection.html"/>
+   </topic>
+   <topic label="CLINICAL STATEMENT TEMPLATES" href="ClinicalStatementTemplates.html">
+      <topic label="TB Result Observation" href="../classes/TBResultObservation.html"/>
+      <topic label="TB Result Organizer" href="../classes/TBResultOrganizer.html"/>
+   </topic>
+   <topic label="OTHER CLASSES" href="OtherClasses.html"/>
+   <topic label="VALUE SETS" href="ValueSets.html"/>
+</toc>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.omg.org/spec/CTS2/1.0/ConceptDomainBinding" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core"
+	targetNamespace="http://schema.omg.org/spec/CTS2/1.0/ConceptDomainBinding" elementFormDefault="qualified">
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+	<!-- ====================================================
+        ValueSetCatalogEntry
+        ======================================================-->
+	<xs:element name="ConceptDomainBinding" type="ConceptDomainBinding">
+		<xs:annotation>
+			<xs:documentation>The binding of a <i>ConceptDomain </i>and a <i>ValueSet</i> that supplies the set of permissible value meanings in a given context. <i>ConceptDomainBinding</i> can also bind specific value set definitions
+				and/or specific code system versions where desired. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConceptDomainBinding">
+		<xs:annotation>
+			<xs:documentation>The binding of a <i>ConceptDomain </i>and a <i>ValueSet</i> that supplies the set of permissible value meanings in a given context. <i>ConceptDomainBinding</i> can also bind specific value set definitions
+				and/or specific code system versions where desired. </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Changeable">
+				<xs:sequence>
+					<xs:element name="bindingURI" type="core:DocumentURI" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The unique identifier of this particular binding instance.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bindingFor" type="core:ConceptDomainReference" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the <i>ConceptDomain</i> being bound to a value set.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="boundValueSet" type="core:ValueSetReference" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the bound value set</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="applicableContext" type="core:ContextReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a realm or context in which the particular binding applies. If not present, the binding applies in any context not stated in another binding</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="boundValueSetDefinition" type="core:ValueSetDefinitionReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the specific definition of the value set to be bound. If not specified, the definition that is used to determine the permissible values is specified when the concept domain is applied in the
+								context.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="useCodeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the specific version(s) of the code systems to be used in the resolution of the value set definition. Note that it is also possible for value set definitions themselves to state which version of
+								a code system is to be used. When this is the case, the code system version(s) specified in the <i>ConceptDomainBinding</i> do not override those stated in the value set definition - the value set definition
+								version information takes precedence.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bindingQualifier" type="core:BindingQualifierReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>additional information that qualifies the intent or purpose of the binding. In the HL7 case, this is intended to indicate "whether the binding is 'overall', 'minimum' or 'maximum'." The actual
+								interpretation of the qualifier is outside of the scope of the CTS<sub>2</sub> specification but, if present, <i>bindingQualifier</i> contributes to the identity of the specific binding.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================
+        ConceptDomainBinding PSM
+        ======================================================-->
+	<xs:element name="ConceptDomainBindingMsg" type="ConceptDomainBindingMsg"/>
+	<xs:complexType name="ConceptDomainBindingMsg">
+		<xs:annotation>
+			<xs:documentation>A <i>ConceptDomainBinding</i> read from a service instance.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="conceptDomainBinding" type="ConceptDomainBinding"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<!-- ====================================================
+        ConceptDomainBindingDirectory
+        ======================================================-->
+	<xs:element name="ConceptDomainBindingDirectory" type="ConceptDomainBindingDirectory"/>
+	<xs:complexType name="ConceptDomainBindingDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory that summarizes a set of concept domain bindings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="ConceptDomainBindingDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ConceptDomainBindingDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A synopsis of a <i>ConceptDomainBinding</i> along with information about how to access the complete resource.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:ResourceDescriptionDirectoryEntry">
+				<xs:sequence>
+					<xs:element name="bindingFor" type="core:ConceptDomainReference">
+						<xs:annotation>
+							<xs:documentation>the <i>ConceptDomain</i> being bound to a value set</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="boundValueSet" type="core:ValueSetReference">
+						<xs:annotation>
+							<xs:documentation>the <i>ValueSet</i> being bound</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bindingQualifier" type="core:BindingQualifierReference" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>additional information that qualifies the intent or purpose of the binding. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="applicableContext" type="core:ContextReference" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the context or realm in which the binding applies</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="ConceptDomainBindingList" type="ConceptDomainBindingList"/>
+	<xs:complexType name="ConceptDomainBindingList">
+		<xs:annotation>
+			<xs:documentation>A collection of complete <i>ConceptDomainBinding</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="ConceptDomainBindingListEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ConceptDomainBindingListEntry">
+		<xs:annotation>
+			<xs:documentation>A directory of a set of concept domain bindings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="entry" type="ConceptDomainBinding"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

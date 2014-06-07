@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TestProfile="http:///schemas/TestProfile/_9QbhgMecEeGqxu7wQcYvBQ/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/TestProfile/_9QbhgMecEeGqxu7wQcYvBQ/0 TestProfile.profile.uml#_9Qd9wcecEeGqxu7wQcYvBQ">
+  <uml:Model xmi:id="_6iteYMeZEeGqxu7wQcYvBQ" name="TestModel">
+    <packagedElement xmi:type="uml:Class" xmi:id="_C50TQMeaEeGqxu7wQcYvBQ" name="Foo">
+      <ownedAttribute xmi:id="_MaFvoMeaEeGqxu7wQcYvBQ" name="bar" type="_GBP-QMeaEeGqxu7wQcYvBQ" association="_Y_BvgMedEeGqxu7wQcYvBQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RbRKgMeaEeGqxu7wQcYvBQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RBYq4MeaEeGqxu7wQcYvBQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GBP-QMeaEeGqxu7wQcYvBQ" name="Bar">
+      <ownedAttribute xmi:id="_ahMNMMeaEeGqxu7wQcYvBQ" name="foo" type="_C50TQMeaEeGqxu7wQcYvBQ" association="_Y_BvgMedEeGqxu7wQcYvBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dLf3UMeaEeGqxu7wQcYvBQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oUeW4MeaEeGqxu7wQcYvBQ" name="SubFoo">
+      <generalization xmi:id="_qUDB8MeaEeGqxu7wQcYvBQ" general="_C50TQMeaEeGqxu7wQcYvBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ldp1MMedEeGqxu7wQcYvBQ" name="SubBar">
+      <generalization xmi:id="_Ldp1McedEeGqxu7wQcYvBQ" general="_GBP-QMeaEeGqxu7wQcYvBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Y_BvgMedEeGqxu7wQcYvBQ" memberEnd="_MaFvoMeaEeGqxu7wQcYvBQ _ahMNMMeaEeGqxu7wQcYvBQ"/>
+    <profileApplication xmi:id="_IWw8wMedEeGqxu7wQcYvBQ">
+      <eAnnotations xmi:id="_IWw8wcedEeGqxu7wQcYvBQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="TestProfile.profile.uml#_9Qd9wcecEeGqxu7wQcYvBQ"/>
+      </eAnnotations>
+      <appliedProfile href="TestProfile.profile.uml#_ulMuEMeaEeGqxu7wQcYvBQ"/>
+    </profileApplication>
+  </uml:Model>
+  <TestProfile:Constrained xmi:id="_QPWCkMedEeGqxu7wQcYvBQ" base_Class="_C50TQMeaEeGqxu7wQcYvBQ"/>
+  <TestProfile:Constrained xmi:id="_R2XDsMedEeGqxu7wQcYvBQ" mayBeSpecialized="false" base_Class="_GBP-QMeaEeGqxu7wQcYvBQ"/>
+</xmi:XMI>

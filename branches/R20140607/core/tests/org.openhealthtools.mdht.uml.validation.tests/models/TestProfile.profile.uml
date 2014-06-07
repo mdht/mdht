@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:validation="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0">
+  <uml:Profile xmi:id="_ulMuEMeaEeGqxu7wQcYvBQ" name="TestProfile" metaclassReference="_3DDEIMeaEeGqxu7wQcYvBQ _3DDEIceaEeGqxu7wQcYvBQ _HEAw4MecEeGqxu7wQcYvBQ">
+    <eAnnotations xmi:id="_9Qd9wMecEeGqxu7wQcYvBQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <contents xmi:type="ecore:EPackage" xmi:id="_9Qd9wcecEeGqxu7wQcYvBQ" name="TestProfile" nsURI="http:///schemas/TestProfile/_9QbhgMecEeGqxu7wQcYvBQ/0" nsPrefix="TestProfile">
+        <eAnnotations xmi:id="_9Qd9wsecEeGqxu7wQcYvBQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_9Qd9w8ecEeGqxu7wQcYvBQ" key="documentation" value="org.openhealthtools.mdht.uml.validation.tests.constraints.AssociationConstraints&#xA;org.openhealthtools.mdht.uml.validation.tests.constraints.NamedElementConstraints"/>
+        </eAnnotations>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_9Qd9xMecEeGqxu7wQcYvBQ" name="Constrained">
+          <eAnnotations xmi:id="_9Qd9xcecEeGqxu7wQcYvBQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_5iuLkMeaEeGqxu7wQcYvBQ"/>
+          <eAnnotations xmi:id="_9Qd9xsecEeGqxu7wQcYvBQ" source="http://www.eclipse.org/emf/2002/GenModel">
+            <details xmi:id="_9Qd9x8ecEeGqxu7wQcYvBQ" key="documentation" value="not self.mayBeSpecialized implies&#xA;    uml::Class.allInstances()->forAll(general->excludes(self.base_Class))"/>
+          </eAnnotations>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_9Qd9yMecEeGqxu7wQcYvBQ" name="mayBeSpecialized" ordered="false" lowerBound="1" defaultValueLiteral="true">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_9Qd9ysecEeGqxu7wQcYvBQ" name="base_Class" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_3DDEIMeaEeGqxu7wQcYvBQ">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Association"/>
+    </elementImport>
+    <elementImport xmi:id="_3DDEIceaEeGqxu7wQcYvBQ">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </elementImport>
+    <elementImport xmi:id="_HEAw4MecEeGqxu7wQcYvBQ">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+    </elementImport>
+    <elementImport xmi:id="_O_--YMebEeGqxu7wQcYvBQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </elementImport>
+    <ownedRule xmi:id="_ySrP8MebEeGqxu7wQcYvBQ" name="assocIsDirected">
+      <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Association"/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="_zrI3sMebEeGqxu7wQcYvBQ">
+        <language>Java</language>
+        <body>org.openhealthtools.mdht.uml.validation.tests.constraints.AssociationConstraints</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="_P3oioMecEeGqxu7wQcYvBQ" name="mustHaveName">
+      <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="_P3oiocecEeGqxu7wQcYvBQ">
+        <language>Java</language>
+        <body>org.openhealthtools.mdht.uml.validation.tests.constraints.NamedElementConstraints</body>
+      </specification>
+    </ownedRule>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_5iuLkMeaEeGqxu7wQcYvBQ" name="Constrained">
+      <ownedRule xmi:id="_Y0Ri8MebEeGqxu7wQcYvBQ" name="specialization">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_dAazQMebEeGqxu7wQcYvBQ">
+          <language>OCL</language>
+          <body>not self.mayBeSpecialized implies
+    uml::Class.allInstances()->forAll(general->excludes(self.base_Class))</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:id="_Iq8u8MebEeGqxu7wQcYvBQ" name="mayBeSpecialized">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_S8FAgMebEeGqxu7wQcYvBQ" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_WKF0osebEeGqxu7wQcYvBQ" name="base_Class" association="_WKF0oMebEeGqxu7wQcYvBQ">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_WKF0oMebEeGqxu7wQcYvBQ" name="Class_Constrained" memberEnd="_WKF0ocebEeGqxu7wQcYvBQ _WKF0osebEeGqxu7wQcYvBQ">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_WKF0ocebEeGqxu7wQcYvBQ" name="extension_Constrained" type="_5iuLkMeaEeGqxu7wQcYvBQ" aggregation="composite" association="_WKF0oMebEeGqxu7wQcYvBQ"/>
+    </packagedElement>
+    <profileApplication xmi:id="_eJ3SIMecEeGqxu7wQcYvBQ">
+      <eAnnotations xmi:id="_eJ3SIcecEeGqxu7wQcYvBQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_VALIDATION/Validation.profile.uml#profile"/>
+    </profileApplication>
+  </uml:Profile>
+  <validation:ConstraintProvider xmi:id="_gb4_IMecEeGqxu7wQcYvBQ" base_Namespace="_ulMuEMeaEeGqxu7wQcYvBQ" diagnosticSource="org.openhealthtools.mdht.uml.validation.tests" categoryID="" bundleName="org.openhealthtools.mdht.uml.validation.tests"/>
+  <validation:Diagnostic xmi:id="_o6-rUMecEeGqxu7wQcYvBQ" base_Constraint="_ySrP8MebEeGqxu7wQcYvBQ" severity="warn" code="1" message="Association {0} should be directed from a source to a target."/>
+  <validation:Diagnostic xmi:id="_xqn8AMecEeGqxu7wQcYvBQ" base_Constraint="_P3oioMecEeGqxu7wQcYvBQ" evaluationMode="live" code="2" message="Element must have a name."/>
+  <validation:Diagnostic xmi:id="_2PWEYMecEeGqxu7wQcYvBQ" base_Constraint="_Y0Ri8MebEeGqxu7wQcYvBQ" code="3" message="The class {0} may not be specialized by other classes."/>
+</xmi:XMI>

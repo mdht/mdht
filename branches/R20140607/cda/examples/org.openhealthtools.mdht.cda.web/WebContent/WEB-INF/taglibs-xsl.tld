@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+
+
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+  <tlibversion>1.0.1</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>xsl</shortname>
+  <uri>http://jakarta.apache.org/taglibs/xsl-1.0</uri>
+  <info>A simple tag library for transforming XML input sources
+    with XSL stylesheetsThis tag library uses version 1 of both the Xerces XML parser
+     and the Xalan XSLT processor. For production use we recommend
+     you use the XTAGS tag library or the Standard tag library.
+     Both of these use TRAX API compatible XSLT processors such
+     as Xalan 2 and have more features.</info>
+  <tag>
+    <name>apply</name>
+    <tagclass>org.apache.taglibs.xsl.ApplyTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>nameXml</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>nameXsl</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>propertyXml</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>propertyXsl</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>xml</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>xsl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>export</name>
+    <tagclass>org.apache.taglibs.xsl.ExportTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>import</name>
+    <tagclass>org.apache.taglibs.xsl.ImportTag</tagclass>
+    <teiclass>org.apache.taglibs.xsl.ImportTei</teiclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>include</name>
+    <tagclass>org.apache.taglibs.xsl.IncludeTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>ShowSource</name>
+    <tagclass>org.apache.taglibs.xsl.ShowSource</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>jspFile</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>
+
+
+
+
+
+
+
+

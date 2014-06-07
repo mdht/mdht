@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core" xmlns="http://schema.omg.org/spec/CTS2/1.0/MapVersion" targetNamespace="http://schema.omg.org/spec/CTS2/1.0/MapVersion"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+
+	<!-- ====================================================
+        MapVersion
+        ======================================================-->
+	<xs:element name="MapVersion" type="MapVersion">
+		<xs:annotation>
+			<xs:documentation>A specific version of a <i>Map. MapVersion</i> is bound to specific code system versions and/or value set versions and references a set of mapping entries (<i>mapSet</i>) that, if the resource is <i>FINAL</i>,
+				are fixed with respect to this version.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MapVersion">
+		<xs:annotation>
+			<xs:documentation>A specific version of a <i>Map. MapVersion</i> is bound to specific code system versions and/or value set versions and references a set of mapping entries (<i>mapSet</i>) that, if the resource is <i>FINAL</i>,
+				are fixed with respect to this version.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:ResourceVersionDescription">
+				<xs:sequence>
+					<xs:element name="versionOf" type="core:MapReference" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a reference to the <i>Map</i> resource that this is a version of</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fromValueSetDefinition" type="core:ValueSetDefinitionReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the specific value set definition that was used to resolve the <i>from</i> entities in this map</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fromCodeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the specific code system version that provided the <i>from</i> entities in this map</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="toValueSetDefinition" type="core:ValueSetDefinitionReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the specific value set definition that was used to resolve the <i>to</i> entities in this map</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="toCodeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the specific code system version that provided the <i>to </i>entities in this map</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="useCodeSystemVersion" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a list of code system versions that should be used in the resolution of \\ <i>fromValueSetDefinition</i> and/or <i>toValueSetDefinition.</i> If present, this states that, for these code systems,
+								these specific versions are to be used.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="applicableContext" type="core:ContextReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>references to the realm, context or other external factor that determines the applicability of this particular map version</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="versionTag" type="core:MapVersionReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a version tag assigned to this <i>MapVersion</i> instance by the implementing service</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="entries" type="core:MapEntryDirectoryURI" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a DirectoryURI that resolves to the set of <i>MapEntries</i> that are contained in this <i>MapVersion</i>.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="mapVersionName" type="core:MapVersionName" use="required">
+					<xs:annotation>
+						<xs:documentation>a local identifier that uniquely names this version within the context of the CTS<sub>2</sub> service implementation</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ====================================================
+        MapVersion PSM
+        ======================================================-->
+	<xs:element name="MapVersionMsg" type="MapVersionMsg"></xs:element>
+	<xs:complexType name="MapVersionMsg">
+		<xs:annotation>
+			<xs:documentation>A <i>MapVersion</i> read from a service instance.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="mapVersion" type="MapVersion"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ====================================================
+        MapVersionDirectory
+        ======================================================-->
+	<xs:element name="MapVersionDirectory" type="MapVersionDirectory"/>
+	<xs:complexType name="MapVersionDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory of <i>MapVersion</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="MapVersionDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="MapVersionDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A synopsis of a <i>MapVersion</i> along with information about how to access the complete resource.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:ResourceVersionDescriptionDirectoryEntry">
+				<xs:sequence>
+					<xs:element name="versionOf" type="core:MapReference" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a reference to the map that this is a version of</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="versionTag" type="core:MapVersionReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a reference to a version tag assigned to this entry by the implementing service</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="mapVersionName" type="core:MapVersionName" use="required">
+					<xs:annotation>
+						<xs:documentation>a name that uniquely identifies the map version within the context of the service</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="MapVersionList" type="MapVersionList"/>
+	<xs:complexType name="MapVersionList">
+		<xs:annotation>
+			<xs:documentation>A collection of complete <i>MapVersion</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="MapVersionListEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="MapVersionListEntry">
+		<xs:annotation>
+			<xs:documentation>An instance of <i>MapVersion </i> that meets a specified filter criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="entry" type="MapVersion"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ====================================================
+        MapEntry
+        ======================================================-->
+	<xs:element name="MapEntry" type="MapEntry">
+		<xs:annotation>
+			<xs:documentation><i>MapEntry</i> defines a set of rules that identify how a single <i>mapFrom </i>Entity maps to zero or more <i>mapTo </i>target Entities. A <i>MapEntry</i> instance is uniquely identified by the combination of
+				the <i>assertedBy</i>
+				<i>MapVersionReference</i> and the <i>mapFrom</i> entity identifier.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MapEntry">
+		<xs:annotation>
+			<xs:documentation><i>MapEntry</i> defines a set of rules that identify how a single <i>mapFrom </i>Entity maps to zero or more <i>mapTo </i>target Entities. A <i>MapEntry</i> instance is uniquely identified by the combination of
+				the <i>assertedBy</i>
+				<i>MapVersionReference</i> and the <i>mapFrom</i> entity identifier.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Changeable">
+				<xs:sequence>
+					<xs:element name="assertedBy" type="core:MapVersionReference" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the mapping version that asserts this entry</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="mapFrom" type="core:URIAndEntityName" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the name and URI of the "from" or "source" side of the map. There can be at most one <i>mapFrom</i> entry for every unique entity in a given <i>MapVersion</i>.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="source" type="core:SourceAndRoleReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a list individuals or organizations and the role(s) they played in this entry</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sourceStatements" type="core:StatementDirectoryURI" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a URI that resolves to the set of statements that were used to construct this entry</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="mapSet" type="MapSet" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="processingRule" type="MapProcessingRule" use="required">
+					<xs:annotation>
+						<xs:documentation>an indicator that etermines how the <i>MapSet</i> entries are evaluated. The first <i>MapSet</i> is evaluated and, if no match is found, the second set is evaluated, etc. If a match is found
+								<i>and</i>
+							<i>processingRule </i>is set to <i>FIRST_MATCH </i>then processing terminates. Processing continues until all <i>MatchSet</i>s have been evaluated in all other cases</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="MapSet">
+		<xs:annotation>
+			<xs:documentation>An set of map target rules that, when evaluated, result in zero or qualifying map targets. The setting of <i>MapSet.stopOnMatch</i> determines whether at most one qualifying target is returned or whether many
+				qualifying targets are returned. <i>MapSets</i> are evaulated in the order that they appear in a <i>MapEntry. </i>If the evaluation results in one or more qualifying <i>MapTargets </i>and <i>MapEntry.processingRule </i>is
+					<i>FIRST_MATCH</i>, the MapEntry is considered resolved. If, however, \\ <i>MapEntry.processingRule </i>is <i>ALL_MATCHES</i>, all <i>MapSets</i> in the <i>MapEntry </i>are evaluated.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="mapTarget" type="MapTarget" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="processingRule" type="MapProcessingRule" use="required">
+			<xs:annotation>
+				<xs:documentation>an indicator that states whether processing is to stop at the first matching <i>MapTarget</i> or whether all <i>MapTargets</i> in the set are to be evaluated</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="core:Ordered"/>
+	</xs:complexType>
+
+	<xs:simpleType name="MapProcessingRule">
+		<xs:annotation>
+			<xs:documentation>An indicator that states whether processing is to continue if a condition is satisfied or it is to terminate. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="core:String">
+			<xs:enumeration value="ALL_MATCHES">
+				<xs:annotation>
+					<xs:documentation>processing continues whether a match is found in the current set or not. This potentially can return a match from every set.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FIRST_MATCH">
+				<xs:annotation>
+					<xs:documentation>processing is to stop if a match is found. This mode returns the first match in a set.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="MapTarget">
+		<xs:annotation>
+			<xs:documentation>A rule / target entry in a <i>MapSet.</i> The entries in a <i>MapSet</i> are evaluated in <i>entry </i>order. For each entry, <i>rule</i> is evaluated. If <i>rule</i> returns FALSE, then evaluation moves on to
+				the next <i>MapTarget</i> in the set. If <i>rule</i> returns TRUE, the <i>MapTarget</i> is returned as a qualifying map in the associated <i>MapSet</i> and corresponding <i>MapEntry</i>. The setting of <i>processingRule
+				</i>in the <i>MapSet</i> determines whether subsequent <i>MapTargets</i> are evaluated. If <i>processingRule </i>is set to <i>FIRST_MATCH</i>, the first matching <i>MapTarget</i> terminates the evaluation of the
+					<i>MapSet</i>. If <i>processingRule </i>is set to <i>ALL_MATCHES</i>, then processing continues until all <i>MapTargets</i> in the set have been evaluated.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="rule" type="MapRule" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a predicate of some sort that can be used to determine whether this entry meets the mapping criteria. If absent, the mapping is considered unconditional.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mapTo" type="core:URIAndEntityName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the target entity to be used if the rule is satisfied. If not present, the assumption is that the source entity maps to nothing in this set / rule</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="targetDescription" type="core:OpaqueData" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a description of the resulting rule. Can be used to carry text to instruct human beings how to do the mapping as well as additional machine readable instructions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="targetExpression" type="core:EntityExpression" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a formal expression that, when interpreted, results in the map target. This expression could carry an RDF fragment, an expression in the SNOMED-CT compositional grammar or something
+						else.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="correlation" type="core:MapCorrelationReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a reference to how well the mapping correlates. Example correlations might be Exact, not mappable, partial overlap, narrower than, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="externalEntryId" type="core:String" use="optional">
+			<xs:annotation>
+				<xs:documentation>an identifier assigned to this particular source/set/target tuple by an outside body</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="core:Ordered"/>
+	</xs:complexType>
+
+	<xs:complexType name="MapRule">
+		<xs:annotation>
+			<xs:documentation>A set of instructions that, when interpreted in the proper context, returns a true/false value, where true means that the context meets the requirements set forth by the rule and false means that it doesn't.
+				Neither the syntax nor the semantics of map rules are included as part of the CTS<sub>2</sub> specification.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:OpaqueData">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ====================================================
+        MapEntry PSM
+        ======================================================-->
+	<xs:element name="MapEntryMsg" type="MapEntryMsg"/>
+	<xs:complexType name="MapEntryMsg">
+		<xs:annotation>
+			<xs:documentation>A <i>MapEntry</i> read from a service instance.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="entry" type="MapEntry"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ====================================================
+        MapEntryDirectory
+        ======================================================-->
+	<xs:element name="MapEntryDirectory" type="MapEntryDirectory"/>
+	<xs:complexType name="MapEntryDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory of <i>MapEntries</i> that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="MapEntryDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="MapEntryDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A synopsis of a <i>MapEntry</i> along with information about how to access the complete resource.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="assertedBy" type="core:MapVersionReference">
+						<xs:annotation>
+							<xs:documentation>a reference to the <i>MapVersion</i> that contains or asserts this entry</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="mapFrom" type="core:URIAndEntityName">
+						<xs:annotation>
+							<xs:documentation>the URI and name of the source entity for this entry.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="MapEntryList" type="MapEntryList"/>
+	<xs:complexType name="MapEntryList">
+		<xs:annotation>
+			<xs:documentation>A collection of complete <i>MapEntries</i> that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="MapEntryListEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="MapEntryListEntry">
+		<xs:annotation>
+			<xs:documentation>An instance of <i>MapEntry</i> that meets a specified filter criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="entry" type="MapEntry"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+</xs:schema>

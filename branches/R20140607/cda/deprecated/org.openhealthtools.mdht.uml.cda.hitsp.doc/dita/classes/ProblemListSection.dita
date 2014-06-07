@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Problem List Section</title>
+<shortdesc conref="generated/_ProblemListSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_ProblemListSection.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<p>This CCD diagram will be updated to show all consolidated constraints from IHE and HITSP.</p>
+<image href="../images/ProblemSection.png" width="550pt"/>
+<section conref="generated/_ProblemListSection.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_ProblemListSection.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_ProblemListSection.dita#classId/aggregate">
+<li></li>
+</ol>
+<p></p>
+<fig>
+<title>Problem List Section example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_ProblemListSection.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>

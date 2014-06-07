@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="modeldrivendevelopmentconcept" xml:lang="en-us"> 
+  <title>Model-Driven Development Process Overview</title> 
+  <conbody> 
+	 <p>A model-driven development process is used to produce source code from
+		UML models. 
+	 </p> 
+	 <p><image href="../images/Process.png"
+		id="image_5F6C2FA7A51C42578B0723AD1F65AB21" placement="break"/> 
+	 </p>
+	 <p>The standards developer is responsible for creating the 
+		<i>domain template model</i>. This model is input to the model-to-model
+		transformation process. The template model is ultimately converted into an 
+		<i>implementation model</i>. The implementation model has been
+		restructured and prepared for code generation. We use the Eclipse Modeling
+		Framework (EMF) to generate Java source code. Once the implementation model has
+		been created, it is imported into EMF. The final step of the process is to
+		produce source code from the EMF model.
+	 </p> 
+  </conbody> 
+</concept> 

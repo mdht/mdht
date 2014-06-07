@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Support - conformance rules</title>
+<body>
+<section id="description">
+<p>At a minimum, key support contacts relative to healthcare decisions, including next of kin, should be included. If no healthcare providers are supplied, the reason should be supplied as free text in the narrative block (e.g., Unknown, etc).</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/PatientContact.dita">IHE Patient Contact</xref></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/Support.dita">CCD Support</xref></li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/PatientContact.dita">IHE Patient Contact</xref></li>
+<li></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>

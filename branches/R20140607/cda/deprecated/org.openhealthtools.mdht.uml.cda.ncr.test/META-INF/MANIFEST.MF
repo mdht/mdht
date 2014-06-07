@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CDA NCR JUnit 4 Test Cases
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.ncr.test
+Bundle-Version: 0.7.0.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.junit4,
+ org.openhealthtools.mdht.uml.cda.ncr,
+ org.openhealthtools.mdht.uml.cda.ccd.test,
+ org.openhealthtools.mdht.uml.cda.test

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Section Templates">
+<topicref href="ActiveProblemsSection.dita" type="topic" />
+<topicref href="AdmissionMedicationHistorySection.dita" type="topic" />
+<topicref href="AdvanceDirectivesSection.dita" type="topic" />
+<topicref href="AllergiesReactionsSection.dita" type="topic" />
+<topicref href="AssessmentAndPlanSection.dita" type="topic" />
+<topicref href="CarePlanSection.dita" type="topic" />
+<topicref href="ChiefComplaintSection.dita" type="topic" />
+<topicref href="CodedAdvanceDirectivesSection.dita" type="topic" />
+<topicref href="CodedResultsSection.dita" type="topic" />
+<topicref href="CodedSurgeriesSection.dita" type="topic" />
+<topicref href="CodedVitalSignsSection.dita" type="topic" />
+<topicref href="DischargeDiagnosisSection.dita" type="topic" />
+<topicref href="EncounterHistorySection.dita" type="topic" />
+<topicref href="FamilyMedicalHistorySection.dita" type="topic" />
+<topicref href="HistoryOfPastIllnessSection.dita" type="topic" />
+<topicref href="HistoryOfPresentIllness.dita" type="topic" />
+<topicref href="HospitalAdmissionDiagnosisSection.dita" type="topic" />
+<topicref href="HospitalCourseSection.dita" type="topic" />
+<topicref href="HospitalDischargeMedicationsSection.dita" type="topic" />
+<topicref href="ImmunizationsSection.dita" type="topic" />
+<topicref href="IntakeOutputSection.dita" type="topic" />
+<topicref href="MedicalDevicesSection.dita" type="topic" />
+<topicref href="MedicationsAdministeredSection.dita" type="topic" />
+<topicref href="MedicationsSection.dita" type="topic" />
+<topicref href="PayersSection.dita" type="topic" />
+<topicref href="PhysicalExamNarrativeSection.dita" type="topic" />
+<topicref href="PhysicalExamSection.dita" type="topic" />
+<topicref href="PregnancyHistorySection.dita" type="topic" />
+<topicref href="ReasonForReferralSection.dita" type="topic" />
+<topicref href="ReviewOfSystemsSection.dita" type="topic" />
+<topicref href="SocialHistorySection.dita" type="topic" />
+<topicref href="SurgeriesSection.dita" type="topic" />
+<topicref href="VitalSignsSection.dita" type="topic" />
+</map>

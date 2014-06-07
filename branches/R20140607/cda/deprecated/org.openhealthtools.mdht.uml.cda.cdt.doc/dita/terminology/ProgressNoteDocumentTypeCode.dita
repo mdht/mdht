@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Progress Note Document Type Code</title>
+<shortdesc id="shortdesc">[OID <tt>2.16.840.1.113883.11.20.8.1</tt> from code system: LOINC]</shortdesc>
+<prolog id="prolog">
+<resourceid id="2.16.840.1.113883.11.20.8.1"/>
+</prolog>
+<body>
+<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->
+<section id="description">
+</section>
+<p>OID: 2.16.840.1.113883.11.20.8.1</p>
+<p>Name: Progress Note Document Type Code</p>
+<p>Code System: 2.16.840.1.113883.6.1</p>
+<p>Code System Name: LOINC</p>
+<p>This value set includes the preferred code and pre-coordinated LOINC codes that have the scale DOC (document) and a 'component' referring to "subsequent evaluation notes".  Although these pre-coordinated LOINC codes are available for use, we recommend the preferred code (11506-3  Progress Note). When these pre-coordinated codes are used, any coded values describing the author or performer of the service act or the practice setting must be consistent with the LOINC document type. Note: "Subsequent evaluation note" is equivalent to Progress Note.</p>
+</body>
+</topic>

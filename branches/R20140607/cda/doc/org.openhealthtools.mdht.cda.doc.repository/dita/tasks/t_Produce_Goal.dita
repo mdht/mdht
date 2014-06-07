@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_nrt_3dd_cj" xml:lang="en-us">
+    <title>Produce CDA Content using MDHT API</title>
+    <shortdesc>An example utilizing the MDHT Java API to create a CDA document</shortdesc>
+
+    <taskbody>
+        <context> Using the APIs to programmatically construct an instance. When someone needs to
+            produce an instance they have clinical data and want to get it into CDA format. They
+            will use Java APIs to programmatically construct a CDA in XML format. </context>
+
+
+
+        <steps>
+            <stepsection> In this example, we are creating the ContinuityOfCareDocument object using
+                the generated CCD template model API. The first line of code uses the Factory method
+                pattern discussed in Section 2.6 to create an instance of the
+                ContinuityOfCareDocument class. In the same line, there is a call to the init()
+                method which initializes the object with default/fixed values present in the model.
+                For example, the template identifier is always fixed for the CCD document-level
+                template. Therefore, it is auto-populated by the call to the init() method. Figure
+                xx also shows the creation of the PatientRole and Patient objects. These are created
+                using the CDAFactory class from the generated CDA base model API. Attributes of the
+                objects are created using the HL7 Datatypes base model API. For example, the
+                administrative gender code is created and added to the patient object. </stepsection>
+            <step>
+                <cmd>Create CCD Document</cmd>
+                <stepxmp>
+                    <codeblock>      // create and initialize an instance of the ContinuityOfCareDocument class
+        ContinuityOfCareDocument ccdDocument = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
+        
+        // create a patient role object and add it to the document
+        PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+        ccdDocument.addPatientRole(patientRole);
+        II id = DatatypesFactory.eINSTANCE.createII();
+        patientRole.getIds().add(id);
+        id.setRoot("996-756-495");
+        id.setExtension("2.16.840.1.113883.19.5");
+        
+        // create an address object and add it to patient role
+        AD addr = DatatypesFactory.eINSTANCE.createAD();
+        patientRole.getAddrs().add(addr);
+        addr.getUses().add(PostalAddressUse.H);
+        addr.addStreetAddressLine("1313 Mockingbird Lane");
+        addr.addCity("Janesville");
+        addr.addState("WI");
+        addr.addPostalCode("53545");
+        
+        // create a patient object and add it to patient role
+        Patient patient = CDAFactory.eINSTANCE.createPatient();
+        patientRole.setPatient(patient);
+        PN name = DatatypesFactory.eINSTANCE.createPN();
+        patient.getNames().add(name);
+        name.addGiven("Henry");
+        name.addFamily("Levin");
+        
+        CE administrativeGenderCode = DatatypesFactory.eINSTANCE.createCE();
+        
+        patient.setAdministrativeGenderCode(administrativeGenderCode);
+        administrativeGenderCode.setCode("M");
+        administrativeGenderCode.setCodeSystem("2.16.840.1.113883.5.1");
+        
+        TS birthTime = DatatypesFactory.eINSTANCE.createTS();
+        patient.setBirthTime(birthTime);
+        birthTime.setValue("19320924");</codeblock>
+                </stepxmp>
+            </step>
+            <stepsection> Next we create the CCD Alerts Section also using the CCD API and add it to
+                the document using a convenience method named addSection from the ClinicalDocument
+                class. This method will create the intermediate objects (component, structuredBody,
+                component) required to add a section. Once the alert section is created, we must
+                create the narrative block portion of the document. In CDA, this is HTML-like markup
+                that captures the human-readable portion of the document. Typically it is this
+                portion which is rendered in web browser using a stylesheet. MDHT treats the
+                narrative text as an opaque chunk of XML. Therefore it must be constructed as such.
+                In the example, we build up the narrative block using a Java StringBuffer and then
+                use it to construct the narrative block with a call to
+                createSrucDocText.</stepsection>
+            <step>
+
+                <cmd> Create Alerts Section </cmd>
+                <stepxmp>
+                    <codeblock>      // create and initialize the CCD alerts section
+        AlertsSection alertsSection = CCDFactory.eINSTANCE.createAlertsSection().init();
+        ccdDocument.addSection(alertsSection);
+        
+        // set up the narrative (human-readable) text portion of the alerts section
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("<![CDATA[<table border=\"1\" width=\"100%\">]]>");
+            buffer.append("<![CDATA[<thead>]]>");
+            buffer.append("<![CDATA[<tr>]]>");
+            buffer.append("<![CDATA[<th>Substance</th>]]>");
+            buffer.append("<![CDATA[<th>Reaction</th>]]>");
+            buffer.append(<![CDATA["<th>Status</th>]]>");
+            buffer.append("<![CDATA[</tr>]]>");
+            buffer.append("<![CDATA[</thead>]]>");
+            buffer.append("<![CDATA[<tbody>]]>");
+            buffer.append("<![CDATA[<tr>]]>");
+            buffer.append("<![CDATA[<td>Penicillin</td>]]>");
+            buffer.append("<![CDATA[<td>Hives</td>]]>");
+            buffer.append("<![CDATA[<td>Active</td>]]>");
+            buffer.append("<![CDATA[</tr>]]>");
+            buffer.append("<![CDATA[</tbody>]]>");
+            buffer.append("<![CDATA[</table>]]>");
+            alertsSection.createStrucDocText(buffer.toString());</codeblock></stepxmp>
+            </step>
+
+            <stepsection> The Alert Section contains an enclosing problem act entry which we create
+                using the CCDFactory as seen in Figure xx. We also add an id to the problem act
+                using the Datatypes API and Java utility class UU(ID. </stepsection>
+            <step>
+                <cmd>Creating Problem Act</cmd>
+                <stepxmp>
+                    <codeblock>        // create and initialize a CCD problem act
+            ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
+            alertsSection.addAct(problemAct);
+            
+            id = DatatypesFactory.eINSTANCE.createII();
+            problemAct.getIds().add(id);
+            id.setRoot(UUID.randomUUID().toString());
+            </codeblock></stepxmp>
+            </step>
+
+            <stepsection> An alert observation is then added to the problem act as a subordinate
+                entry using the convenience method addObservation from the CDA ClinicalStatement
+                class. This method will add the intermediate entry relationship object and then the
+                subordinate observation. Because addObservation creates the EntryRelationshp for us,
+                we must go back and set the type code (if necessary) per the model. In this case we
+                want the type code to be SUBJ. Therefore we use the Ecore Reflection API (part of
+                the low-level technology APIs) to get the container of the Alert Observation
+                instance and downcast it to an EntryRelationship object which we then use to the set
+                type code. In Figure xx above, we also create the id, code, statusCode and value
+                attributes using the DatatypesFactory class. </stepsection>
+            <step>
+                <cmd>Creating Alert Observation</cmd>
+                <stepxmp>
+                    <codeblock>     // create and initialize an alert observation within the problem act
+            AlertObservation alertObservation = CCDFactory.eINSTANCE.createAlertObservation().init();
+            problemAct.addObservation(alertObservation);
+            ((EntryRelationship) alertObservation.eContainer()).setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+            
+            id = DatatypesFactory.eINSTANCE.createII();
+            alertObservation.getIds().add(id);
+            id.setRoot(UUID.randomUUID().toString());
+            
+            CD code = DatatypesFactory.eINSTANCE.createCD();
+            alertObservation.setCode(code);
+            code.setCode("ASSERTION");
+            code.setCodeSystem("2.16.840.1.113883.5.4");
+            
+            CS statusCode = DatatypesFactory.eINSTANCE.createCS();
+            alertObservation.setStatusCode(statusCode);
+            statusCode.setCode("completed");
+            
+            CD value = DatatypesFactory.eINSTANCE.createCD();
+            alertObservation.getValues().add(value);
+            value.setCode("282100009");
+            value.setCodeSystem("2.16.840.1.113883.6.96");
+            value.setDisplayName("Adverse reaction to substance");</codeblock></stepxmp>
+            </step>
+            <stepsection> Next we need to say something about the allergic substance. We do so by
+                using the Playing Entity class. Playing Entity is nested under Participant and
+                Participant Role – objects that we create using CDAFactory. In Playing Entity, we
+                set the code for Penicillin from RxNorm. </stepsection>
+            <step>
+                <cmd>Creating Playing Entity</cmd>
+                <stepxmp>
+                    <codeblock>       // playing entity contains coded information on the substance
+            Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
+            alertObservation.getParticipants().add(participant);
+            participant.setTypeCode(ParticipationType.CSM);
+            
+            ParticipantRole participantRole = CDAFactory.eINSTANCE.createParticipantRole();
+            participant.setParticipantRole(participantRole);
+            participantRole.setClassCode(RoleClassRoot.MANU);
+            
+            PlayingEntity playingEntity = CDAFactory.eINSTANCE.createPlayingEntity();
+            participantRole.setPlayingEntity(playingEntity);
+            playingEntity.setClassCode(EntityClassRoot.MMAT);
+            CE playingEntityCode = DatatypesFactory.eINSTANCE.createCE();
+            playingEntity.setCode(playingEntityCode);
+            playingEntityCode.setCode("70618");
+            playingEntityCode.setCodeSystem("2.16.840.1.113883.6.88");
+            playingEntityCode.setDisplayName("Penicillin");</codeblock></stepxmp>
+            </step>
+
+            <stepsection> The AlertObservation also has a place for conveying reaction information.
+                A Reaction Observation instance is created using CCDFactory and added to alert
+                observation using the addObservation method. Again this creates the intermediate
+                entry relationship object that we immediately access using ehe eContainer method
+                from Ecore Reflection API to set the type code. We also set the code to ASSERTION
+                the status code to “completed” and the value of the observation to the code for
+                “Hives” from SNOMED. </stepsection>
+            <step>
+                <cmd>Creating Reaction Observation</cmd>
+                <stepxmp>
+                    <codeblock>        // reaction observation contains coded information on the adverse reaction
+            ReactionObservation reactionObservation = CCDFactory.eINSTANCE.createReactionObservation().init();
+            alertObservation.addObservation(reactionObservation);
+            ((EntryRelationship) reactionObservation.eContainer()).setTypeCode(x_ActRelationshipEntryRelationship.MFST);
+            ((EntryRelationship) reactionObservation.eContainer()).setInversionInd(Boolean.TRUE);
+            
+            code = DatatypesFactory.eINSTANCE.createCD();
+            reactionObservation.setCode(code);
+            code.setCode("ASSERTION");
+            code.setCodeSystem("2.16.840.1.113883.5.4");
+            
+            statusCode = DatatypesFactory.eINSTANCE.createCS();
+            reactionObservation.setStatusCode(statusCode);
+            statusCode.setCode("completed");
+            
+            value = DatatypesFactory.eINSTANCE.createCD();
+            reactionObservation.getValues().add(value);
+            value.setCode("247472004");
+            value.setCodeSystem("2.16.840.1.113883.6.96");
+            value.setDisplayName("Hives");</codeblock></stepxmp>
+            </step>
+
+            <stepsection> Finally, we want to add information about the status of the allergy using
+                Alert Status. This is another clinical statement template from CCD named Alert
+                Status Observation. We create and instance of the Alert Status Observation class
+                using CCDFactory. Then we set the type code in a similar fashion to reaction
+                observation and we set the value to code for “Active” from SNOMED. </stepsection>
+            <step>
+                <cmd>Creating Alert Status</cmd>
+                <stepxmp>
+                    <codeblock>      
+            // alert status contains information about whether allergy is currently active
+            AlertStatusObservation alertStatusObservation = CCDFactory.eINSTANCE.createAlertStatusObservation().init();
+            alertObservation.addObservation(alertStatusObservation);
+            ((EntryRelationship) alertStatusObservation.eContainer()).setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+            
+            CE alertStatusObservationValue = DatatypesFactory.eINSTANCE.createCE();
+            alertStatusObservation.getValues().add(alertStatusObservationValue);
+            alertStatusObservationValue.setCode("55561003");
+            alertStatusObservationValue.setCodeSystem("2.16.840.1.113883.6.96");
+            alertStatusObservationValue.setDisplayName("Active");</codeblock></stepxmp>
+            </step>
+            <stepsection> Once we have constructed our document using the various APIs, typically we
+                want to serialize the Java objects to XML. In Figure xx above, we using the CDAUtil
+                class to save the ccdDocument to a Java output stream. In this example, we use
+                System.out which prints the XML representation to the console. </stepsection>
+            <step>
+                <cmd>Serializing the Document to XML</cmd>
+                <stepxmp><codeblock>         // write the document out to the console
+            CDAUtil.save(ccdDocument, System.out);
+            </codeblock></stepxmp>
+
+            </step>
+
+        </steps>
+        <result>
+            <codeblock>
+<![CDATA[           
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+    <templateId root="2.16.840.1.113883.10.20.1"/>
+    <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of episode note"/>
+    <recordTarget>
+        <patientRole>
+            <id root="996-756-495" extension="2.16.840.1.113883.19.5"/>
+            <addr use="H"><streetAddressLine>1313 Mockingbird Lane</streetAddressLine><city>Janesville</city><state>WI</state><postalCode>53545</postalCode></addr>
+            <patient>
+                <name><given>Henry</given><family>Levin</family></name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19320924"/>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.2"/>
+                    <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+                    <text><table border="1" width="100%"><thead><tr><th>Substance</th><th>Reaction</th><th>Status</th></tr></thead><tbody><tr><td>Penicillin</td><td>Hives</td><td>Active</td></tr></tbody></table></text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <id root="a7140229-4a87-457a-b63e-50b79c57dfa1"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <id root="85d9039f-d254-4d5b-86d1-7500279f0454"/>
+                                    <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" code="282100009" codeSystem="2.16.840.1.113883.6.96" displayName="Adverse reaction to substance"/>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <code code="70618" codeSystem="2.16.840.1.113883.6.88" displayName="Penicillin"/>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship typeCode="MFST" inversionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                            <statusCode code="completed"/>
+                                            <value xsi:type="CD" code="247472004" codeSystem="2.16.840.1.113883.6.96" displayName="Hives"/>
+                                        </observation>
+                                    </entryRelationship>
+                                    <entryRelationship typeCode="REFR">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.57"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.39"/>
+                                            <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                                            <statusCode code="completed"/>
+                                            <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>
+
+]]>
+            </codeblock>
+            <note>Note that many of the fixed/default values for the various templates (document,
+                section and entry-level) have been filled in automatically from the model. This
+                reduces the amount of client code necessary to create a conformant instance. </note>
+        </result>
+    </taskbody>
+</task>

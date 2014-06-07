@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="codegenerationtask" xml:lang="en-us"> 
+  <title>Code Generation</title> 
+  <prolog> 
+  </prolog> 
+  <taskbody> 
+	 <context id="context_0D0BF750011B46CEB2F870F954797151"> 
+		<p>The implementation model is imported from UML into an Eclipse Modeling
+		  Framework (EMF) model using standard model import functionality. An EMF model
+		  is the aggregation of two different models. The first model is an Ecore model
+		  which contains annotations with constraints from the original UML model. The
+		  second model is the generator model. The generator model contains information
+		  on how to generate Java code from the Ecore model. It essentially "decorates"
+		  the Ecore model with additional information. The Generator model points to a
+		  set of custom code generation templates to generate all Java classes/packages.
+		  The code generation templates were augmented to use annotations added during
+		  the model-to-model transformation step. 
+		</p> 
+	 </context> 
+	 <steps id="steps_D1B06B9EEC86410F8B1E49963EF79CE8"> 
+		<step id="step_E0554393DB964EA7A29B7ACB2386FDD3"> 
+		  <cmd>Reload GenModel Reload GenModel context menu "Reload..." 
+			 <image href="../images/ReloadContextMenu.png"
+			  id="image_1B430DC4A23C4D129BC280FC0B6BE9BF" placement="break"/> Reload Model
+			 Importer: 
+			 <image href="../images/ReloadModelImporter.png"
+			  id="image_C5ACFDB519204AEF9726AB7128D28273" placement="break"/> Reload UML
+			 Import 
+			 <image href="../images/ReloadUMLImport.png"
+			  id="image_2F723309FE5448C39C20336A38E7C19B" placement="break"/> Reload Package
+			 Selection: 
+			 <image href="../images/ReloadPackageSelection.png"
+			  id="image_E9C3F4498533414CBDFB8BEA1CEBF276" placement="break"/> 
+		  </cmd> 
+		</step> 
+		<step id="step_4F79AEF95873466DABFE93ADE3870863"> 
+		  <cmd>Generate Model Code Generate Model Code Context Menu: 
+			 <image href="../images/GenerateModelCode.png"
+			  id="image_FD760BBDE28942BCB22E90D909CB532A" placement="break"/> 
+		  </cmd> 
+		</step> 
+	 </steps> 
+  </taskbody> 
+</task>

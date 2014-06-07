@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Package xmi:id="_KnCD4CFjEd-3s7f6mWX-3A" name="cdt-vocab">
+    <packageImport xmi:id="_2Ce8sCTOEd-ZbpoADxtvhg">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ZjRAYGg1Ed-ilOLYnIx0jA" name="ConsultDocumentTypeCodes"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_MJuksGg7Ed-ilOLYnIx0jA" name="PersonalRelationshipRoleType">
+      <ownedComment xmi:id="_TAADgGg8Ed-ilOLYnIx0jA">
+        <body>Provides more information about the link between two people in a personal relationship.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_XKjcgGj5Ed-tUpkWYQgJlQ" name="HPDocumentType"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_npnkkMvhEd-hi-1hHmWxvw" name="ProgressNoteDocumentTypeCode"/>
+    <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
+      <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <term:ValueSetVersion xmi:id="_ZjSOgGg1Ed-ilOLYnIx0jA" source="Health Level Seven (HL7)" definition="LOINC codes whose scale is DOC, and whose type of service (component) is Consultation Note. Document type codes for &quot;Blood Bank Consultation,&quot; &quot;Confirmatory Consultation Note,&quot; or those codes giving &quot;Hospital Consultation&quot; as type of service (18841-7 and 8647-0) are not allowed as document type codes. In their place, the code 34104-0 with types of service = Consultation Note and setting = hospital should be used." type="Intensional" binding="Dynamic" base_Enumeration="_ZjRAYGg1Ed-ilOLYnIx0jA">
+    <codeSystem href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_MJvLwGg7Ed-ilOLYnIx0jA" source="Health Level Seven (HL7)" base_Enumeration="_MJuksGg7Ed-ilOLYnIx0jA">
+    <codeSystem href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_ywdZ4Gg7Ed-ilOLYnIx0jA"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_XKjcgWj5Ed-tUpkWYQgJlQ" identifier="2.16.840.1.113883.1.11.20.22" source="Health Level Seven (HL7)" definition="Valid codes are those whose scale is DOC and whose type of service is some variation of History and Physical." type="Intensional" binding="Dynamic" base_Enumeration="_XKjcgGj5Ed-tUpkWYQgJlQ">
+    <codeSystem href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_nuh5wMvhEd-hi-1hHmWxvw" identifier="2.16.840.1.113883.11.20.8.1" fullName="Progress Note Document Type Code" source="HL7" definition="This value set includes the preferred code and pre-coordinated LOINC codes that have the scale DOC (document) and a 'component' referring to &quot;subsequent evaluation notes&quot;.  Although these pre-coordinated LOINC codes are available for use, we recommend the preferred code (11506-3  Progress Note). When these pre-coordinated codes are used, any coded values describing the author or performer of the service act or the practice setting must be consistent with the LOINC document type. Note: &quot;Subsequent evaluation note&quot; is equivalent to Progress Note." binding="Dynamic" base_Enumeration="_npnkkMvhEd-hi-1hHmWxvw">
+    <codeSystem href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+</xmi:XMI>

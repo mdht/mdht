@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_6F4898FF3BF74EE6BAD821AC0E1C0B71"> 
+  <title>Add template constraints</title> 
+  <shortdesc>Describes all the kinds of constraints that may be added to a
+	 template class.
+  </shortdesc> 
+  <conbody>
+	 <p><?xm-replace_text Paragraph?>
+	 </p>
+  </conbody>
+</concept>

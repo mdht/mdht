@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_301B27AB7E8C453A8E7A5C62B78F743D"> 
+  <title>Standards Developers and Users</title> 
+  <shortdesc>Introduction to roles and requirements of CDA standards
+	 development and use.
+  </shortdesc> 
+  <conbody>
+	 <p>TODO: need to expand description of CDA template and IG development
+		process.
+	 </p>
+	 <p>Roles of the standards developer and user:
+	 </p>
+	 <ul id="ul_78F9799CDF5347E1B790D74EEE29DD5B"> 
+		<li id="li_ABA66CB993A849E1A6A3106105E56091">Create new models/templates 
+		</li> 
+		<li id="li_25FF7F0BA08F4C9C8BDCDE4DCD89C5BB">Combine and extend existing
+		  models 
+		</li> 
+		<li id="li_70EB2D173BDC49E5BF93A78792E1111F">Publish Implementation
+		  Guides (IG), IHE Profiles, Data Dictionaries 
+		</li> 
+	 </ul>
+  </conbody>
+</concept>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_nqc_mvc_cj" xml:lang="en-us">
+ <title>Java Design Patterns</title>
+ <shortdesc>Patterns used in the document are important to notice.  There will be patterns that are dictated by the technology.  This determines the way the generated code looks and how the API’s are used to produce, consume and validate CDA documents.
+ </shortdesc>
+ <conbody>
+
+  
+ <section>  <title>Interface/Implementation Classes</title>
+   
+   For every class defined in a CDA template UML model, there is a Java interface and Java implementation class generated. For example, the ContinuityOfCareDocument class becomes ContinuityOfCareDocument interface and ContinuityOfCareDocumentImpl class. Any client code that needs to use the ContinuityOfCareDocument will do so via the ContinuityOfCareDocument interface.
+</section>   
+<section>   <title>Singleton Factory Class to Create Instances</title>
+   
+ <p>  In order to create an instance of a class, client code must do so via a singleton factory class. Each CDA template model generates an EMF Package which corresponds to a set of generated Java packages. Each EMF Package also gets a singleton Factory class to create instances of classes in that package.
+ </p>  
+ <codeblock>  ContinuityOfCareDocument ccdDocument = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();	// create an initialize an instance of ContinuityOfCareDocument</codeblock>
+   
+ <p>  This pattern applies to the generated base model APIs as well as the CDA template model APIs. In this example above, there is an additional method call to init(). This method is called to initialize the object where all default/fixed values get automatically populated. This reduces the amount of code necessary to create a conformant object. The init() method is only found in the generated CDA template model APIs</p>
+ </section>  
+   <section><title>EMF Package Registration for Deserialization</title>
+   
+<p>   In order to deserialize a CDA document into the appropriate template classes based on template identifiers in the template instance, EMF Package Registry needs to know what models exist in the environment. When using MDHT in standalone Java applications, the generated singleton Package class must but “touched” once at the beginning of the code:
+</p>   
+   <codeblock>CCDPackage.eINSTANCE.eClass();	// static package registration</codeblock>
+   
+<p>   In this example, we are telling the EMF Package registry that we have CCD (and all of it’s dependent) models available in the environment. If the deserializer encounters a template id from CCD, it will deserialize that part of the XML instance into the template class that corresponds to that template id.
+</p> </section>
+ </conbody>
+</concept>

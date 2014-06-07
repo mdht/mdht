@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Healthcare Providers Pharmacies - conformance rules</title>
+<shortdesc id="shortdesc">[Performer1: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.2.3</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Performer1</category></metadata>
+<resourceid id="1.3.6.1.4.1.19376.1.5.3.1.2.3"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Performer1</li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Performer1</li>
+<li>[CDA] Contains [1..1] <tt>@typeCode</tt>, where its data type is x_ServiceEventPerformer</li>
+<li>[CDA] Contains [1..1] <tt>assignedEntity</tt>, where its type is CDA Assigned Entity</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>

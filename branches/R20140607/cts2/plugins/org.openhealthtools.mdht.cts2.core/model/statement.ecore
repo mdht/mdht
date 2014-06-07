@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="statement"
+    nsURI="http://schema.omg.org/spec/CTS2/1.0/Statement" nsPrefix="statement">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xMLNSPrefixMap" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xmlns:prefix"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xSISchemaLocation" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xsi:schemaLocation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" upperBound="-2"
+        eType="#//Statement" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An assertion about a CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>2&lt;/sub> model element. "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Statement"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementDirectory" upperBound="-2"
+        eType="#//StatementDirectory" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="StatementDirectory"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementList" upperBound="-2"
+        eType="#//StatementList" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="StatementList"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementMsg" upperBound="-2"
+        eType="#//StatementMsg" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="StatementMsg"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" eSuperTypes="core.ecore#//Changeable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An assertion about a CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>2&lt;/sub> model element. "/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Statement"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statementURI" lowerBound="1"
+        eType="ecore:EDataType core.ecore#//URI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The unique statement identifier.  Must be globally unique if information is to be exchanged and updated on the statement leve."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="statementURI"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" lowerBound="1"
+        eType="#//StatementSubject" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the subject of the statement - either a resource or a reference to a terminological entity. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>subject&lt;/i> may reference a specific &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>Association&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>CodeSystem&lt;/i>,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>CodeSystemVersion&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>Map&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>MapEntry&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>MapVersion&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>EntityDescription,&lt;/i>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>ValueSet&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>ValueSetDefinition&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>ConceptDomain&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>ConceptDomainBinding&lt;/i>, "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="subject"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" lowerBound="1"
+        eType="ecore:EClass core.ecore#//URIAndEntityName" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the predicate of the statement. Note that this is type &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>URIAndEntityName &lt;/i>as, while it serves as a predicate in the statement itself it is not necessary that it be formally recognized as a&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;predicate by the CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>2&lt;/sub> service - it may have been translated or transformed by the load process."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="predicate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+        eType="ecore:EClass core.ecore#//StatementTarget" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="target"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedAttribute" eType="ecore:EClass core.ecore#//ModelAttributeReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the identifier and name of the CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>2&lt;/sub> attribute or element that renders this statement, if any"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="associatedAttribute"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
+        eType="ecore:EClass core.ecore#//SourceAndRoleReference" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the source(s) of the statement and the role(s) they played"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="source"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertedBy" lowerBound="1"
+        eType="ecore:EClass core.ecore#//CodeSystemVersionReference" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the code system version that is asserting this particular statement. In the case of ontologies that import other ontologies, this is the outermost importing ontology."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="assertedBy"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertedIn" eType="ecore:EClass core.ecore#//CodeSystemVersionReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the code system version (ontology) that actually makes this statement. In the case of ontologies, this is the innermost imported ontology."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="assertedIn"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifier" upperBound="-1"
+        eType="#//StatementQualifier" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="qualifier"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementDirectory" eSuperTypes="core.ecore#//Directory">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A directory of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>Statement&lt;/i> resources that meet a specified criteria."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatementDirectory"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//StatementDirectoryEntry" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementDirectoryEntry" eSuperTypes="#//Statement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A synopsis of a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>Statement&lt;/i> along with information about how to access the complete resource."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatementDirectoryEntry"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" eType="ecore:EDataType core.ecore#//RenderingURI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>LocalURI &lt;/i>that resolves to the full resource described by the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>DirectoryEntry&lt;/i>. This should be present if the service either (a) supports the &lt;b xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>Read&lt;/b> functional profile for the specified&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>type &lt;/i>or (b) is aware of another service that does."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="href"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchStrength" eType="ecore:EDataType core.ecore#//MatchStrength"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a relative measure of the &quot;goodness of fit&quot; of the directory entry within the context of the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>directoryFilter&lt;/i> in the containing &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>Directory.&lt;/i>&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="matchStrength"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceName" eType="ecore:EDataType core.ecore#//LocalIdentifier">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a local identifier that names a unique resource within the context of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>type&lt;/i> and the service context. This attribute must be present if the corresponding element has a local name. Note, however, that&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;some elements (e.g. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>Association&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>ValueSetDefinition&lt;/i>, etc.) do not local names and are identified exclusively by their &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>href&lt;/i>."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="resourceName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementList" eSuperTypes="core.ecore#//Directory">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A collection of complete &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>Statement &lt;/i>resources that meet a specified criteria."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatementList"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//StatementListEntry" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementListEntry" eSuperTypes="core.ecore#//DirectoryEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An instance of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>Statement &lt;/i>that meets a specified filter criteria."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatementListEntry"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" lowerBound="1" eType="#//Statement"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementMsg" eSuperTypes="core.ecore#//Message">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatementMsg"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" lowerBound="1"
+        eType="#//Statement" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="statement"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementQualifier">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Metadata about a statement including provenance, external identity, validity, etc. The subject of a qualifier is the statement itself, not the statement subject."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatementQualifier"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifierPredicate" lowerBound="1"
+        eType="ecore:EClass core.ecore#//URIAndEntityName" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A reference to the statement qualifier predicate. "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="qualifierPredicate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedAttribute" eType="ecore:EClass core.ecore#//ModelAttributeReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>2&lt;/sub> model attribute that represents this particular statement qualifier"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="associatedAttribute"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass core.ecore#//StatementTarget" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="target"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementSubject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The subject of a statement, which may either be a resource URI or an entity reference, which includes both the URI and the namespace/name."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatementSubject"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resource" eType="ecore:EDataType core.ecore#//ExternalURI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A non-entity statement subject such as the URI of a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>CodeSystem&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>CodeSystemVersion&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Statement&quot;>ValueSet&lt;/i>, etc."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resource"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="ecore:EClass core.ecore#//URIAndEntityName"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The subject of a statement about a class, role or individual."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

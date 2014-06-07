@@ -1,0 +1,321 @@
+<%@ jet package="org.eclipse.uml2.codegen.ecore.templates.model" imports="org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.uml2.codegen.ecore.genmodel.util.UML2GenModelUtil org.eclipse.emf.ecore.EClass org.eclipse.emf.ecore.EAnnotation org.eclipse.emf.ecore.util.EcoreUtil java.util.Arrays java.util.Map" class="OperationsClass" version="$Id: OperationsClass.javajet,v 1.11 2008/04/10 19:08:31 khussey Exp $" %>
+<%
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2005, 2012 IBM Corporation, Embarcadero Technologies, and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   IBM - initial API and implementation
+ *   Kenn Hussey (Embarcadero Technologies) - 206636, 224693
+ *   Kenn Hussey - ensuring methods aren't generated for operations with Java bodies
+ *   Christian W. Damus - fix return result from query-style constraint validation operations (artf3100)
+ *                      - implement terminology constraint dependencies (artf3030)
+ *   
+ * </copyright>
+ */
+%>
+<%GenClass genClass = (GenClass)argument; GenPackage genPackage = genClass.getGenPackage(); GenModel genModel=genPackage.getGenModel();%>
+<%@ include file="../Header.jetinc"%>
+package <%=UML2GenModelUtil.getOperationsPackageName(genPackage)%>;
+
+<%genModel.markImportLocation(stringBuffer, genPackage);%>
+
+/**
+ * <!-- begin-user-doc -->
+ * A static utility class that provides operations related to '<em><b><%=genClass.getFormattedName()%></b></em>' model objects.
+ * <!-- end-user-doc -->
+ *
+<%if (!UML2GenModelUtil.getOperationsClassGenOperations(genClass).isEmpty()) { boolean first = true;%>
+  <%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+  <%if (!genOperation.hasBody()) {%>
+    <%if (first) { first = false;%>
+ * <p>
+ * The following operations are supported:
+ * <ul>
+    <%}%>
+ *   <li>{@link <%=genOperation.getGenClass().getQualifiedInterfaceName()%>#<%=genOperation.getName()%>(<%=genOperation.getParameterTypes(", ")%>) <em><%=genOperation.getFormattedName()%></em>}</li>
+  <%}%>
+  <%}%>
+  <% if (!first) {%>
+ * </ul>
+ * </p>
+  <%}%>
+<%}%>
+ *
+ * @generated
+ */
+public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenModelUtil.getOperationsClassExtends(genClass)%>
+{
+<%if (genModel.hasCopyrightField()) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final <%=genModel.getImportedName("java.lang.String")%> copyright = "<%=genModel.getCopyrightFieldLiteral()%>";<%=genModel.getNonNLS()%>
+
+<%}%>
+<%if (UML2GenModelUtil.hasOCLOperationBodies(genClass) && (!UML2GenModelUtil.hasOCLOperationBodies(genClass.getClassExtendsGenClass()) || !UML2GenModelUtil.isOperationsClasses(genClass.getClassExtendsGenClass().getGenPackage()))) {%>
+	/**
+	 * The cached environment for evaluating OCL expressions.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected static final <%=genModel.getImportedName("org.eclipse.ocl.ecore.OCL")%> EOCL_ENV = <%=genModel.getImportedName("org.eclipse.ocl.ecore.OCL")%>.newInstance();
+
+<%}%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected <%=UML2GenModelUtil.getOperationsClassName(genClass)%>() {
+		super();
+	}
+
+<%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {
+    String constraintName = genOperation.getName().replaceFirst("^validate", "");
+    boolean isQueryConstraint = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(constraintName);
+    String dependency = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.dependOn." + constraintName);
+	boolean hasDependents = false;
+	EAnnotation cdaAnnotation = genClass.getEcoreClass().getEAnnotation("http://www.openhealthtools.org/mdht/uml/cda/annotation");
+	if (cdaAnnotation != null) {
+		for (Map.Entry<String, String> next : cdaAnnotation.getDetails().entrySet()) {
+			if (next.getKey().startsWith("constraints.validation.dependOn.") && constraintName.equals(next.getValue())) {
+				hasDependents = true;
+				break;
+			}
+		}
+	} 
+if (!genOperation.hasBody()) {%>
+<%@ include file="Operations/genOperation.override.javajetinc" fail="alternative" %>
+<%@ start %>
+<%if (UML2GenModelUtil.hasOCLBody(genOperation)) {%>
+	/**
+	 * The cached OCL expression body for the '{@link #<%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameterTypes(", ")%>) <em><%=genOperation.getFormattedName()%></em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #<%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameterTypes(", ")%>)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final <%=genModel.getImportedName("java.lang.String")%> <%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP = "<%=UML2GenModelUtil.getOCLBody(genOperation)%>";<%=genModel.getNonNLS()%>
+
+  <%if (genOperation.isInvariant()) {%>
+	/**
+	 * The cached OCL invariant for the '{@link #<%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameterTypes(", ")%>) <em><%=genOperation.getFormattedName()%></em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #<%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameterTypes(", ")%>)
+	 * @generated
+	 * @ordered
+	 */
+	<%if (isQueryConstraint) {%>
+	protected static <%=genModel.getImportedName("org.eclipse.ocl.Query")%><?, ?, ?> <%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_QRY;
+	<%} else {%>
+	protected static <%=genModel.getImportedName("org.eclipse.ocl.ecore.Constraint")%> <%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_INV;
+	<%}%>
+
+  <%} else {%>
+	/**
+	 * The cached OCL query for the '{@link #<%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameterTypes(", ")%>) <em><%=genOperation.getFormattedName()%></em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #<%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameterTypes(", ")%>)
+	 * @generated
+	 * @ordered
+	 */
+	protected static <%=genModel.getImportedName("org.eclipse.ocl.expressions.OCLExpression")%><%if (genModel.getComplianceLevel().getValue() >= GenJDKLevel.JDK50) {%><<%=genModel.getImportedName("org.eclipse.emf.ecore.EClassifier")%>><%}%> <%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_QRY;
+
+  <%}%>
+<%}%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+  <%if (genOperation.hasDocumentation() || genOperation.hasParameterDocumentation()) {%>
+	 * <!-- begin-model-doc -->
+    <%if (genOperation.hasDocumentation()) {%>
+	 * <%=genOperation.getDocumentation(genModel.getIndentation(stringBuffer))%>
+    <%}%>
+	 * @param <%=genClass.safeName(genClass.getUncapName())%> The receiving '<em><b><%=genClass.getFormattedName()%></b></em>' model object.
+    <%for (GenParameter genParameter : genOperation.getGenParameters()) {%>
+      <%if (genParameter.hasDocumentation()) { String documentation = genParameter.getDocumentation("");%>
+        <%if (documentation.contains("\n") || documentation.contains("\r")) {%>
+	 * @param <%=genParameter.getName()%>
+	 *   <%=genParameter.getDocumentation(genModel.getIndentation(stringBuffer))%>
+        <%} else {%>
+	 * @param <%=genParameter.getName()%> <%=genParameter.getDocumentation(genModel.getIndentation(stringBuffer))%>
+        <%}%>
+      <%}%>
+    <%}%>
+	 * <!-- end-model-doc -->
+  <%}%>
+	 * @generated
+	 */
+	<%if (isQueryConstraint) {%>@SuppressWarnings("unchecked")<%}%>
+	public static <%=genClass.getTypeParameters().length() > 0 && genOperation.getTypeParameters(genClass).length() > 0 ? genClass.getTypeParameters().substring(0, genClass.getTypeParameters().length() - 2) + ", " + genOperation.getTypeParameters(genClass).trim().substring(1) : genClass.getTypeParameters().trim() + genOperation.getTypeParameters(genClass).trim()%> <%=genOperation.getImportedType(genClass)%> <%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%=genClass.getTypeParameters().trim()%> <%=genClass.safeName(genClass.getUncapName())%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameters(genClass)%>)<%=genOperation.getThrows(genClass)%>
+	{
+  <%if (genOperation.hasBody()) {%>
+		<%=genOperation.getBody(genModel.getIndentation(stringBuffer))%>
+  <%} else if (genOperation.isInvariant()) {
+  		GenClass opClass = genOperation.getGenClass(); 
+  		String target = genClass.safeName(genClass.getUncapName());
+  		String diagnostics = genOperation.getGenParameters().get(0).getName(); 
+  		String context = genOperation.getGenParameters().get(1).getName();%>
+  	  <%if ((dependency != null) && !isQueryConstraint) {%>
+		Object passToken = (<%=context%> == null) ? null : <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=dependency%>");<%=genModel.getNonNLS()%>
+		if ((passToken instanceof <%=genModel.getImportedName("java.util.Collection")%><?>) && ((<%=genModel.getImportedName("java.util.Collection")%><?>) passToken).contains(<%=target%>)) {
+			// I have a free pass to short-circuit
+			return true;
+		}
+  	  <%}%>
+      <%if (UML2GenModelUtil.hasOCLBody(genOperation)) {
+      	String oclInv = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_INV";
+      	if (isQueryConstraint) {
+       		oclInv = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_QRY";
+       	}%>
+		if (<%=oclInv%> == null) {
+			<%=genModel.getImportedName("org.eclipse.ocl.ecore.OCL")%>.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(<%=opClass.getQualifiedClassifierAccessor()%>);
+			try
+			{<%if (isQueryConstraint) {%>
+				<%=genModel.getImportedName("org.eclipse.ocl.expressions.OCLExpression") %><<%=genModel.getImportedName("org.eclipse.emf.ecore.EClassifier") %>> oclExpression = helper.createQuery(<%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP);
+				<%=oclInv%> = EOCL_ENV.createQuery(oclExpression);<%} else {%>
+				<%=oclInv%> = helper.createInvariant(<%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP);<%}%>
+			}
+			catch (<%=genModel.getImportedName("org.eclipse.ocl.ParserException")%> pe)
+			{
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+        <%if (isQueryConstraint) {%>
+		Object oclResult = <%=oclInv%>.evaluate(<%=genClass.safeName(genClass.getUncapName())%>);		
+		if (oclResult != null && oclResult instanceof <%=genModel.getImportedName("java.util.Collection") %>) {
+			<%=genModel.getImportedName("java.util.Collection")%><? extends EObject> oclResultSet = (<%=genModel.getImportedName("java.util.Collection")%><? extends EObject>) oclResult;
+  			<%if (dependency != null) {%>
+			Object passFilter = (<%=context%> == null) ? null : <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=dependency%>");<%=genModel.getNonNLS()%>
+			if (passFilter instanceof <%=genModel.getImportedName("java.util.Collection")%><?>) {
+				// filter my query results
+				oclResultSet = new <%=genModel.getImportedName("java.util.ArrayList")%><EObject>(oclResultSet);
+				oclResultSet.removeAll((<%=genModel.getImportedName("java.util.Collection")%><?>) passFilter);
+			}
+	  		<%}%>
+			if (<%=diagnostics%> != null) {
+				for (<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject : oclResultSet) {
+<%@ include file="OperationsClass/query.insert.javajetinc"%>
+				}
+				<%if (hasDependents) {%>
+				if (<%=context%> != null) {
+					// generate a pass token for my dependent constraints to short-circuit or filter results
+					<%=genModel.getImportedName("java.util.Collection")%><Object> passToken = (<%=genModel.getImportedName("java.util.Collection")%><Object>) <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>");<%=genModel.getNonNLS()%>
+					if (passToken == null) {
+						// anticipate a reasonably healthy model
+						passToken = new java.util.ArrayList<Object>(3);
+						<%=context%>.put("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>", passToken);<%=genModel.getNonNLS()%>
+					}
+					passToken.addAll(oclResultSet);
+				}
+				<%}%> 
+			}
+			return oclResultSet.isEmpty();
+		}<%} else {%>
+		if (!EOCL_ENV.createQuery(<%=oclInv%>).check(<%=genClass.safeName(genClass.getUncapName())%>))
+		{
+			if (<%=diagnostics%> != null)
+			{
+<%@ include file="OperationsClass/diagnostics.insert.javajetinc"%>
+			}
+			<%if (hasDependents) {%>
+			if (<%=context%> != null) {
+				// generate a pass token for my dependent constraints to short-circuit or filter results
+				@SuppressWarnings("unchecked")
+				<%=genModel.getImportedName("java.util.Collection")%><Object> passToken = (<%=genModel.getImportedName("java.util.Collection")%><Object>) <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>");<%=genModel.getNonNLS()%>
+				if (passToken == null) {
+					// anticipate a reasonably healthy model
+					passToken = new java.util.ArrayList<Object>(3);
+					<%=context%>.put("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>", passToken);<%=genModel.getNonNLS()%>
+				}
+				passToken.add(<%=target%>);
+			}
+			<%}%> 
+			return false;
+		}<%}%>
+      <%} else {%>
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false)
+		{
+			if (<%=diagnostics%> != null)
+			{
+<%@ include file="OperationsClass/diagnostics.insert.javajetinc"%>
+			}
+			return false;
+		}<%}%>
+		return true;
+    <%} else if (UML2GenModelUtil.hasOCLBody(genOperation)) { String oclQry = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_QRY";
+		GenOperation redefinedGenOperation = genOperation;
+		while (UML2GenModelUtil.isDuplicate(redefinedGenOperation)) {
+			java.util.List<GenOperation> redefinedGenOperations = UML2GenModelUtil.getRedefinedGenOperations(redefinedGenOperation);
+			if (redefinedGenOperations.size() > 0) {
+				redefinedGenOperation = redefinedGenOperations.get(0);
+			} else {
+				break;
+			}
+		}
+		int index = genOperation.getGenClass().getAllGenOperations().indexOf(redefinedGenOperation);%>
+		if (<%=oclQry%> == null)
+		{
+			<%=genModel.getImportedName("org.eclipse.ocl.ecore.OCL")%>.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(<%=genOperation.getGenClass().getQualifiedClassifierAccessor()%>, <%=genOperation.getGenClass().getQualifiedClassifierAccessor()%>.getEAllOperations().get(<%=index%>));
+			try
+			{
+				<%=oclQry%> = helper.createQuery(<%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP);
+			}
+			catch (<%=genModel.getImportedName("org.eclipse.ocl.ParserException")%> pe)
+			{
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		<%=genModel.getImportedName("org.eclipse.ocl.ecore.OCL")%>.Query query = EOCL_ENV.createQuery(<%=oclQry%>);
+      <%if (!genOperation.getGenParameters().isEmpty()) {%>
+		<%=genModel.getImportedName("org.eclipse.ocl.EvaluationEnvironment")%><%if (genModel.getComplianceLevel().getValue() >= GenJDKLevel.JDK50) {%><?, ?, ?, ?, ?><%}%> environment = query.getEvaluationEnvironment();
+        <%for (GenParameter genParameter : genOperation.getGenParameters()) {%>
+		environment.add("<%=genParameter.getName()%>", <%=genParameter.getName()%>);<%=genModel.getNonNLS()%>
+        <%}%>
+      <%}%>
+      <%if (genOperation.isListType()) {%>
+        <%if (genModel.getComplianceLevel().getValue() >= GenJDKLevel.JDK50) {%>
+		@SuppressWarnings("unchecked")
+        <%}%>
+		<%=genModel.getImportedName("java.util.Collection")%><<%=genOperation.getListItemType(null)%>> result = (<%=genModel.getImportedName("java.util.Collection")%><<%=genOperation.getListItemType(null)%>>) query.evaluate(<%=genClass.safeName(genClass.getUncapName())%>);
+		return new <%=genModel.getImportedName("org.eclipse.emf.common.util.BasicEList")%>.UnmodifiableEList<<%=genOperation.getListItemType(null)%>>(result.size(), result.toArray());
+      <%} else if (genOperation.isPrimitiveType()) {%>
+		return ((<%=genOperation.getObjectType(null)%>) query.evaluate(<%=genClass.safeName(genClass.getUncapName())%>)).<%=genOperation.getPrimitiveValueFunction()%>();
+      <%} else {%>
+		return (<%=genOperation.getImportedType(null)%>) query.evaluate(<%=genClass.safeName(genClass.getUncapName())%>);
+      <%}%>
+  <%} else {%>
+<%@ include file="Operations/genOperation.TODO.override.javajetinc" fail="alternative" %>
+<%@ start %>
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+<%@ end %><%//Operations/genOperation.todo.override.javajetinc%>
+  <%}%>
+	}
+
+<%@ include file="Operations/genOperation.insert.javajetinc" fail="silent" %>
+<%@ end %><%//Operations/genOperation.override.javajetinc%>
+<%}%>
+<%}%>
+} // <%=UML2GenModelUtil.getOperationsClassName(genClass)%>
+<%genModel.emitSortedImports();%>

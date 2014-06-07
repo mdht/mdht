@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Covered Party - conformance rules</title>
+<shortdesc id="shortdesc">[ParticipantRole: templateId <tt>null</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>ParticipantRole</category></metadata>
+<resourceid id="null"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Participant Role</li>
+<li><b>SHOULD</b> contain [1..*] <tt>id</tt> (CONF-59)</li>
+<li><b>SHOULD</b> contain [1..1] <tt>code</tt> (CONF-60)</li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Participant Role</li>
+<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>id</tt> (CONF-59)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>code</tt> (CONF-60)</li>
+<li>[CDA] <b>SHALL</b> satisfy: playingEntityChoice<ul><li><codeblock>[OCL]: self.playingDevice.oclIsUndefined() or self.playingEntity.oclIsUndefined()</codeblock></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>
