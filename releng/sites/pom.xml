@@ -24,11 +24,13 @@
 	<distributionManagement>
 		<repository>
 			<id>release</id>
-			<url>sftp://frs.sourceforge.net/home/frs/project/oht-modeling/Nightly Builds/UpdateSite/twodotoh</url>
+			<name>release</name>
+			<url>sftp://frs.sourceforge.net/home/users/s/se/seanmuir</url>
 		</repository>
 		<snapshotRepository>
 			<id>nightly</id>
-			<url>sftp://frs.sourceforge.net/home/frs/project/oht-modeling/Nightly Builds/UpdateSite/twodotoh</url>
+			<name>nightly</name>
+			<url>sftp://frs.sourceforge.net/home/users/s/se/seanmuir</url>
 		</snapshotRepository>
 	</distributionManagement>
 
