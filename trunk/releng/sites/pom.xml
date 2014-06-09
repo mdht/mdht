@@ -17,18 +17,21 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/kepler</url>
 		</repository>
+
+
 	</repositories>
 
 	<distributionManagement>
 		<repository>
 			<id>release</id>
-			<url>sftp://frs.sourceforge.net/home/project-web/oht-modeling/htdocs/updates/twodotoh/release</url>
+			<url>sftp://frs.sourceforge.net/home/frs/project/oht-modeling/Nightly Builds/UpdateSite/twodotoh</url>
 		</repository>
 		<snapshotRepository>
 			<id>nightly</id>
-			<url>sftp://frs.sourceforge.net/home/project-web/oht-modeling/htdocs/updates/twodotoh/nightly</url>
+			<url>sftp://frs.sourceforge.net/home/frs/project/oht-modeling/Nightly Builds/UpdateSite/twodotoh</url>
 		</snapshotRepository>
 	</distributionManagement>
+
 
 	<modules>
 		<module>org.openhealthtools.mdht.site</module>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.dita.dost_1.6.3.qualifier.jar" id="org.dita.dost" version="1.6.3.qualifier">
+   <feature url="org.dita.dost_1.6.3.qualifier.jar" id="org.dita.dost" version="1.6.3.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature>
    <category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA Design"/>
