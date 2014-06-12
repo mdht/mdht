@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.openhealthtools.mdht</groupId>
-  <artifactId>core</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  
-  	<properties>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.openhealthtools.mdht</groupId>
+	<artifactId>core</artifactId>
+	<version>2.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
 		<tycho-version>0.19.0</tycho-version>
 	</properties>
 	<repositories>
@@ -15,28 +16,28 @@
 			<id>kepler</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/kepler</url>
-		</repository>	
+		</repository>
 	</repositories>
-	
-  <modules>
-    <module>org.dita.dost</module>
-    <module>org.openhealthtools.mdht.emf.runtime</module>
-    <module>org.openhealthtools.mdht.transform.core</module>
-    <module>org.openhealthtools.mdht.uml.common</module>
-    <module>org.openhealthtools.mdht.uml.common.ui</module>
-    <module>org.openhealthtools.mdht.uml.edit</module>
-    <module>org.openhealthtools.mdht.uml.term.core</module>
-    <module>org.openhealthtools.mdht.uml.term.transform</module>
-    <module>org.openhealthtools.mdht.uml.term.ui</module>
-    <module>org.openhealthtools.mdht.uml.transform</module>
-    <module>org.openhealthtools.mdht.uml.transform.ui</module>
-    <module>org.openhealthtools.mdht.uml.ui</module>
-    <module>org.openhealthtools.mdht.uml.ui.ide</module>
-    <module>org.openhealthtools.mdht.uml.ui.navigator</module>
-    <module>org.openhealthtools.mdht.uml.ui.properties</module>
-    <module>org.openhealthtools.mdht.uml.validation</module>
-  </modules>
-  	<build>
+
+	<modules>
+		<module>org.dita.dost</module>
+		<module>org.openhealthtools.mdht.emf.runtime</module>
+		<module>org.openhealthtools.mdht.transform.core</module>
+		<module>org.openhealthtools.mdht.uml.common</module>
+		<module>org.openhealthtools.mdht.uml.common.ui</module>
+		<module>org.openhealthtools.mdht.uml.edit</module>
+		<module>org.openhealthtools.mdht.uml.term.core</module>
+		<module>org.openhealthtools.mdht.uml.term.transform</module>
+		<module>org.openhealthtools.mdht.uml.term.ui</module>
+		<module>org.openhealthtools.mdht.uml.transform</module>
+		<module>org.openhealthtools.mdht.uml.transform.ui</module>
+		<module>org.openhealthtools.mdht.uml.ui</module>
+		<module>org.openhealthtools.mdht.uml.ui.ide</module>
+		<module>org.openhealthtools.mdht.uml.ui.navigator</module>
+		<module>org.openhealthtools.mdht.uml.ui.properties</module>
+		<module>org.openhealthtools.mdht.uml.validation</module>
+	</modules>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -77,9 +78,23 @@
 							<arch>x86_64</arch>
 						</environment>
 					</environments>
-					 <dependency-resolution>
-        				<optionalDependencies>ignore</optionalDependencies>
-      </dependency-resolution>
+					
+					<dependency-resolution>
+						<optionalDependencies>ignore</optionalDependencies>
+					</dependency-resolution>
+
+					<filters>
+						<filter>
+							<type>eclipse-plugin</type>
+							<id>org.eclipse.jdt.core</id>
+							<restrictTo>
+								<!-- this is the version for Kepler SR1, have to adapt for other 
+									release trains/service releases -->
+								<version>3.9.1.v20130905-0837</version>
+							</restrictTo>
+						</filter>
+					</filters>
+
 				</configuration>
 			</plugin>
 		</plugins>
