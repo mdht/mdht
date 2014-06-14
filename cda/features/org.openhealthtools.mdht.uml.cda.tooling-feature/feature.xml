@@ -22,9 +22,7 @@
    </url>
 
    <requires>
-      <import feature="org.eclipse.platform" version="3.5.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.uml2" version="3.0.0" match="greaterOrEqual"/>
-      <import feature="org.openhealthtools.mdht.uml.cda" version="2.0.0.qualifier" match="greaterOrEqual"/>
+      <import feature="org.openhealthtools.mdht.uml.cda.basic" version="2.0.0.qualifier" match="greaterOrEqual"/>
    </requires>
 
    <plugin
