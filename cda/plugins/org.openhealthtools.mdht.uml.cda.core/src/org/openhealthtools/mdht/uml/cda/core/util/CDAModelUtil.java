@@ -54,7 +54,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
+import org.openhealthtools.mdht.uml.common.util.PropertyList;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
@@ -951,13 +951,16 @@ public class CDAModelUtil {
 		writer.print(ol[0]);
 
 		boolean hasRules = false;
-		for (Generalization generalization : umlClass.getGeneralizations()) {
-			Classifier general = generalization.getGeneral();
-			if (!RIMModelUtil.isRIMModel(general) && !CDAModelUtil.isCDAModel(general)) {
-				String message = CDAModelUtil.computeConformanceMessage(generalization, true);
-				if (message.length() > 0) {
-					hasRules = true;
-					writer.print(li[0] + prefix + message + li[1]);
+
+		if (!CDAModelUtil.isInlineClass(umlClass)) {
+			for (Generalization generalization : umlClass.getGeneralizations()) {
+				Classifier general = generalization.getGeneral();
+				if (!RIMModelUtil.isRIMModel(general) && !CDAModelUtil.isCDAModel(general)) {
+					String message = CDAModelUtil.computeConformanceMessage(generalization, true);
+					if (message.length() > 0) {
+						hasRules = true;
+						writer.print(li[0] + prefix + message + li[1]);
+					}
 				}
 			}
 		}
@@ -992,26 +995,30 @@ public class CDAModelUtil {
 			}
 		}
 
-		List<Property> allProperties = new ArrayList<Property>(umlClass.getOwnedAttributes());
-		List<Property> allAttributes = new ArrayList<Property>();
-		for (Property property : allProperties) {
-			if (CDAModelUtil.isXMLAttribute(property)) {
-				allAttributes.add(property);
+		PropertyList propertyList = new PropertyList(umlClass, CDAModelUtil.isInlineClass(umlClass));
+
+		// List<Property> allProperties = new ArrayList<Property>(umlClass.getOwnedAttributes());
+		// List<Property> allAttributes = new ArrayList<Property>();
+		// for (Property property : allProperties) {
+		// if (CDAModelUtil.isXMLAttribute(property)) {
+		// allAttributes.add(property);
+		// }
+		// }
+		// allProperties.removeAll(allAttributes);
+		// Collections.sort(allAttributes, new NamedElementComparator());
+		// XML attributes
+		for (Property property : propertyList.getAttributes()) {
+			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property)) {
+				hasRules = true;
+				writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
+				appendPropertyComments(writer, property, markup);
+				appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints, markup);
+				writer.print(li[1]);
 			}
 		}
-		allProperties.removeAll(allAttributes);
-		Collections.sort(allAttributes, new NamedElementComparator());
-		// XML attributes
-		for (Property property : allAttributes) {
-			hasRules = true;
-			writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
-			appendPropertyComments(writer, property, markup);
-			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints, markup);
-			writer.print(li[1]);
-		}
 		// XML elements
-		for (Property property : allProperties) {
-			if (!property.getOwner().equals((property.getType()))) {
+		for (Property property : propertyList.getAssociationEnds()) {
+			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property)) {
 				hasRules = true;
 				writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
 				appendPropertyComments(writer, property, markup);
@@ -2091,6 +2098,27 @@ public class CDAModelUtil {
 		return mandatory
 				? ", where the @code "
 				: ", which ";
+	}
+
+	public static boolean isInlineClass(Class _class) {
+
+		if (_class.getOwner() instanceof Class) {
+			return true;
+		}
+
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(_class, ICDAProfileConstants.INLINE);
+		if (stereotype != null) {
+			return true;
+		}
+
+		for (Comment comment : _class.getOwnedComments()) {
+			if (comment.getBody().startsWith("INLINE")) {
+				return true;
+			}
+		}
+
+		return false;
+
 	}
 
 }
