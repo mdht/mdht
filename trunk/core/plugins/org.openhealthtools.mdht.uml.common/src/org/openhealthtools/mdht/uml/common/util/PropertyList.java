@@ -38,6 +38,11 @@ public class PropertyList {
 		this.clazz = clazz;
 	}
 
+	public PropertyList(Class clazz, boolean isAllSuperclasses) {
+		this.clazz = clazz;
+		this.isAllSuperclasses = isAllSuperclasses;
+	}
+
 	public List<Property> getAttributes() {
 		if (attributes == null) {
 			fillPropertyLists();
