@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2012 David A Carlson and others.
+ * Copyright (c) 2009, 2012, 2014 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - add validateModel sub-task (artf3037)
+ *     Sean Muir (National E-Health Transition Authority (NEHTA)) - add Path Map Support
  *     
  * $Id$
  *******************************************************************************/
@@ -27,6 +28,7 @@ import org.apache.tools.ant.taskdefs.Delete;
 import org.apache.tools.ant.taskdefs.Echo;
 import org.apache.tools.ant.taskdefs.Property;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -144,6 +146,10 @@ public class CDAModelingTask extends Task {
 		try {
 			resourceSet = new ResourceSetImpl();
 			resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+
+			org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
+
+			resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
 
 			// load the models
 			URI uri = null;
