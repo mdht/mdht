@@ -73,22 +73,28 @@ public class TermProfileUtil {
 	 */
 	public static Stereotype getAppliedStereotype(Element element, String stereotypeName) {
 		Stereotype stereotype = null;
-		Profile profile = getTerminologyProfile(element.eResource().getResourceSet());
-		if (profile != null) {
-			stereotype = profile.getOwnedStereotype(stereotypeName);
-			if (stereotype != null) {
-				if (!element.isStereotypeApplied(stereotype)) {
-					List<Stereotype> stereotypes = element.getAppliedSubstereotypes(stereotype);
-					if (!stereotypes.isEmpty()) {
-						stereotype = stereotypes.get(0);
+
+		if (element != null && element.eResource() != null) {
+
+			Profile profile = getTerminologyProfile(element.eResource().getResourceSet());
+			if (profile != null) {
+				stereotype = profile.getOwnedStereotype(stereotypeName);
+				if (stereotype != null) {
+					if (!element.isStereotypeApplied(stereotype)) {
+						List<Stereotype> stereotypes = element.getAppliedSubstereotypes(stereotype);
+						if (!stereotypes.isEmpty()) {
+							stereotype = stereotypes.get(0);
+						}
 					}
 				}
 			}
-		}
 
-		return element.isStereotypeApplied(stereotype)
-				? stereotype
-				: null;
+			return element.isStereotypeApplied(stereotype)
+					? stereotype
+					: null;
+		} else {
+			return null;
+		}
 	}
 
 	public static CodeSystemConstraint getCodeSystemConstraint(Property property) {
