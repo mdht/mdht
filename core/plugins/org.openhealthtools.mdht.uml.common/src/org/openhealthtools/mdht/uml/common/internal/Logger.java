@@ -25,9 +25,7 @@ import org.osgi.framework.Bundle;
  * plugin. Other plugins should make their own copy, with appropriate ID.
  */
 public class Logger {
-	private static final String PLUGIN_ID = (Activator.getDefault() != null)
-			? Activator.getDefault().getBundle().getSymbolicName()
-			: "NotLoaded";
+	private static final String PLUGIN_ID = org.openhealthtools.mdht.uml.common.UmlPlugin.PLUGIN_ID;
 
 	public static final int ERROR = IStatus.ERROR; // 4
 
