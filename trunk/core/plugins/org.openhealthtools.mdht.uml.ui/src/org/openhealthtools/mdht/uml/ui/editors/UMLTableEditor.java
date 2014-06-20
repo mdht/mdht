@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2012 David A Carlson and others.
+ * Copyright (c) 2006, 2012, 2014 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,7 @@
  *     Christian W. Damus - Async runnable flood causes drag-and-drop issues (artf3182)
  *                        - Editors leaking via operation-history listeners (artf3225)
  *                        - Two menus appear when right-clicking the cursor (artf3276)
+ *     Sean Muir (National E-Health Transition Authority (NEHTA)) - Added Path map support to Table Editor
  *     
  * $Id$
  *******************************************************************************/
@@ -49,6 +50,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -451,6 +453,10 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		adapterFactoryLabelProvider = new DecoratorAdapterFactoryLabelProvider(adapterFactory);
 
 		getOperationHistory().addOperationHistoryListener(historyListener);
+
+		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
+
+		editingDomain.getResourceSet().getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
 
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(
 			resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
