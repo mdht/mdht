@@ -9,16 +9,15 @@
    <launcherArgs>
    </launcherArgs>
 
-
    <plugins>
    </plugins>
 
    <features>
-      <feature id="org.dita.dost" version="1.6.3.qualifier"/>
-      <feature id="org.openhealthtools.mdht"  version="2.0.0.qualifier"/>
-      <feature id="org.openhealthtools.mdht.uml"  version="2.0.0.qualifier"/>
-      <feature id="org.openhealthtools.mdht.uml.cda.basic"  version="2.0.0.qualifier"/>  
-      <feature id="org.openhealthtools.mdht.uml.cda.tooling" version="2.0.0.qualifier"/>
+      <feature id="org.dita.dost"/>
+      <feature id="org.openhealthtools.mdht"/>
+      <feature id="org.openhealthtools.mdht.uml"/>
+      <feature id="org.openhealthtools.mdht.uml.cda.basic"/>
+      <feature id="org.openhealthtools.mdht.uml.cda.tooling"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.rcp"/>
