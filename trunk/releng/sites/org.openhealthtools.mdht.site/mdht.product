@@ -9,8 +9,28 @@
    <launcherArgs>
    </launcherArgs>
 
+
    <plugins>
    </plugins>
+
+   <features>
+      <feature id="org.dita.dost" version="1.6.3.qualifier"/>
+      <feature id="org.openhealthtools.mdht"  version="2.0.0.qualifier"/>
+      <feature id="org.openhealthtools.mdht.uml"  version="2.0.0.qualifier"/>
+      <feature id="org.openhealthtools.mdht.uml.cda.basic"  version="2.0.0.qualifier"/>  
+      <feature id="org.openhealthtools.mdht.uml.cda.tooling" version="2.0.0.qualifier"/>
+      <feature id="org.eclipse.equinox.p2.core.feature"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.uml2"/>
+      <feature id="org.eclipse.help"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.e4.rcp"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
+      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature"/>
+   </features>
 
    <configurations>
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
