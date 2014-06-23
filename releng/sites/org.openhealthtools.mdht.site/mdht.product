@@ -48,8 +48,6 @@
       <feature id="org.eclipse.egit"/>
       <feature id="org.eclipse.jgit"/>
       <feature id="org.eclipse.team.svn"/>
-      <feature id="org.polarion.eclipse.team.svn.connector"/>
-      <feature id="org.polarion.eclipse.team.svn.connector.svnkit17"/>
    </features>
 
    <configurations>
