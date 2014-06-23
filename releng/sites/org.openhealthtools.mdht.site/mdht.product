@@ -7,7 +7,23 @@
    </configIni>
 
    <launcherArgs>
+      <vmArgs>-Xmx512m 
+-XX:PermSize=512m</vmArgs>
+      <vmArgsLin>-XX:MaxPermSize=4096m</vmArgsLin>
+      <vmArgsMac>-XX:MaxPermSize=4096m</vmArgsMac>
+      <vmArgsSol>-XX:MaxPermSize=4096m</vmArgsSol>
+      <vmArgsWin>-XX:MaxPermSize=512m</vmArgsWin>
    </launcherArgs>
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
 
    <plugins>
    </plugins>
@@ -29,6 +45,11 @@
       <feature id="org.eclipse.equinox.p2.rcp.feature"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.equinox.p2.extras.feature"/>
+      <feature id="org.eclipse.egit"/>
+      <feature id="org.eclipse.jgit"/>
+      <feature id="org.eclipse.team.svn"/>
+      <feature id="org.polarion.eclipse.team.svn.connector"/>
+      <feature id="org.polarion.eclipse.team.svn.connector.svnkit17"/>
    </features>
 
    <configurations>
