@@ -468,7 +468,7 @@ public class CDAModelUtil {
 
 		if (endType != null) {
 
-			if (markup && endType.getOwner() instanceof Class) {
+			if (markup && isInlineClass(endType)) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
 
@@ -567,7 +567,7 @@ public class CDAModelUtil {
 		if (property.getType() instanceof Class) {
 			Class inlinedClass = (Class) property.getType();
 
-			if (markup && inlinedClass.getOwner() instanceof Class) {
+			if (markup && isInlineClass(inlinedClass)) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
 
@@ -664,7 +664,7 @@ public class CDAModelUtil {
 		}
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
-		if (endType != null && getCDAClass(endType) != null && !(endType.getOwner() instanceof Class)) {
+		if (endType != null && getCDAClass(endType) != null && !(isInlineClass(endType))) {
 			message.append(markup
 					? "\n<li>"
 					: " ");
