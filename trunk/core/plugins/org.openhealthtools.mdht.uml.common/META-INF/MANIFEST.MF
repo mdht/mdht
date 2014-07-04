@@ -16,5 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Export-Package: org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.common.modelfilter,
  org.openhealthtools.mdht.uml.common.notation,
+ org.openhealthtools.mdht.uml.common.search,
  org.openhealthtools.mdht.uml.common.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
