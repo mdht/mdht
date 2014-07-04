@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.common.ui.search;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -82,7 +83,8 @@ public class ModelSearch {
 
 	public static List<Element> findAllOf(ResourceSet resourceSet, IElementFilter filter) {
 		List<Element> elementList = new ArrayList<Element>();
-		TreeIterator<EObject> iterator = EcoreUtil.getAllProperContents(resourceSet.getResources(), true);
+		// TreeIterator<EObject> iterator = EcoreUtil.getAllProperContents(resourceSet.getResources(), true);
+		TreeIterator<Notifier> iterator = resourceSet.getAllContents();
 
 		while (iterator != null && iterator.hasNext()) {
 			Object element = iterator.next();
@@ -114,8 +116,9 @@ public class ModelSearch {
 					// else if (UMLResource.JAVA_PRIMITIVE_TYPES_LIBRARY_URI.equals(
 					// ((Package)element).eResource().getURI().toString()))
 					// iterator.prune();
+				} else if (filter.accept((Element) element)) {
+					elementList.add((Element) element);
 				}
-
 			}
 
 			else if (element instanceof Element && filter.accept((Element) element)) {
