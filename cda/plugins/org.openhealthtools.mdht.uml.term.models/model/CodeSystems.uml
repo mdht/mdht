@@ -102,6 +102,10 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_JR9mMJpCEeKCjtM-Tjpk1g" name="HL7DischargeDisposition"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_H5J7cIkcEeOJGtGyq_dBbA" name="HL7NullFlavor"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_mLNNEI9QEeOB0eBUISUB4Q" name="Source of Payment Typology (PHDSC)"/>
+    
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_WsbMUOHNEeO04sHNODkHmQ" name="orderableDrugForm"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_iloDYOHXEeO04sHNODkHmQ" name="CDC Vaccine Code (CVX)"/>
+
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -170,4 +174,8 @@
   <term:CodeSystemVersion xmi:id="_JR-NQJpCEeKCjtM-Tjpk1g" identifier="2.16.840.1.113883.12.112" base_Enumeration="_JR9mMJpCEeKCjtM-Tjpk1g"/>
   <term:CodeSystemVersion xmi:id="_H5J7cYkcEeOJGtGyq_dBbA" identifier="2.16.840.1.113883.5.1008" base_Enumeration="_H5J7cIkcEeOJGtGyq_dBbA"/>
   <term:CodeSystemVersion xmi:id="_mLN0II9QEeOB0eBUISUB4Q" identifier="2.16.840.1.113883.3.221.5" fullName="Source of Payment Typology (PHDSC)" base_Enumeration="_mLNNEI9QEeOB0eBUISUB4Q"/>
+
+   <term:CodeSystemVersion xmi:id="_WsbMUeHNEeO04sHNODkHmQ" identifier="2.16.840.1.113883.5.85" base_Enumeration="_WsbMUOHNEeO04sHNODkHmQ"/>
+   <term:CodeSystemVersion xmi:id="_iloDYeHXEeO04sHNODkHmQ" identifier="2.16.840.1.113883.12.292" base_Enumeration="_iloDYOHXEeO04sHNODkHmQ"/>
+
 </xmi:XMI>
