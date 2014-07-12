@@ -39,7 +39,7 @@
       <feature id="org.openhealthtools.mdht"/>
       <feature id="org.openhealthtools.mdht.uml"/>
       <feature id="org.openhealthtools.mdht.uml.cda.basic"/>
-      <feature id="org.openhealthtools.mdht.uml.cda.tooling"/>
+      <feature id="org.openhealthtools.mdht.uml.cda.models"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.rcp"/>
