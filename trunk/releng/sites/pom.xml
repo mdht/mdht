@@ -35,6 +35,7 @@
 
 	<modules>
 		<module>org.openhealthtools.mdht.site</module>
+		<module>org.openhealthtools.mdht.cda.runtime.site</module>
 	</modules>
 	<build>
 		<plugins>
