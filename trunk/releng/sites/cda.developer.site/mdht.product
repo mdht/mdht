@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="CDA Runtime" uid="org.openhealthtools.mdht.cda.developer.product.id" id="cda.developer.product" application="org.eclipse.ui.ide.workbench" version="2.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgs>-Xmx512m 
+-XX:PermSize=512m</vmArgs>
+      <vmArgsLin>-XX:MaxPermSize=4096m</vmArgsLin>
+      <vmArgsMac>-XX:MaxPermSize=4096m</vmArgsMac>
+      <vmArgsSol>-XX:MaxPermSize=4096m</vmArgsSol>
+      <vmArgsWin>-XX:MaxPermSize=512m</vmArgsWin>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.dita.dost"/>
+      <feature id="org.openhealthtools.mdht"/>
+      <feature id="org.openhealthtools.mdht.uml"/>
+      <feature id="org.openhealthtools.mdht.uml.cda.basic"/>
+      <feature id="org.openhealthtools.mdht.uml.cda.models"/>
+      <feature id="org.eclipse.equinox.p2.core.feature"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.uml2"/>
+      <feature id="org.eclipse.help"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.e4.rcp"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
+      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature"/>
+      <feature id="org.eclipse.egit"/>
+      <feature id="org.eclipse.jgit"/>
+      <feature id="org.eclipse.team.svn"/>
+      <feature id="org.eclipse.wst.xml.xpath2.processor.feature"/>
+      <feature id="org.eclipse.wst.xml_core.feature"/>
+      <feature id="org.eclipse.wst.xml_ui.feature"/>
+      <feature id="org.eclipse.wst.xml_userdoc.feature"/>
+      <feature id="org.eclipse.sapphire.java"/>
+      <feature id="org.eclipse.sapphire.java.jdt"/>
+      <feature id="org.eclipse.jdt"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
+      <property name="org.eclipse.update.reconcile" value="false" />
+   </configurations>
+
+</product>
