@@ -54,8 +54,6 @@
       <feature id="org.eclipse.wst.xml_core.feature"/>
       <feature id="org.eclipse.wst.xml_ui.feature"/>
       <feature id="org.eclipse.wst.xml_userdoc.feature"/>
-      <feature id="org.eclipse.sapphire.java"/>
-      <feature id="org.eclipse.sapphire.java.jdt"/>
       <feature id="org.eclipse.jdt"/>
    </features>
 
