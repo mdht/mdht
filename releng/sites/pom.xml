@@ -34,8 +34,9 @@
 
 
 	<modules>
-		<module>org.openhealthtools.mdht.site</module>
-		<module>org.openhealthtools.mdht.cda.runtime.site</module>
+		<module>cda.design.site</module>
+		<module>cda.analyst.site</module>
+		<module>cda.developer.site</module>
 	</modules>
 	<build>
 		<plugins>
