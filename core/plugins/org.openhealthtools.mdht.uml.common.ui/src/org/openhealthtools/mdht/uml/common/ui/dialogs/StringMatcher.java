@@ -12,7 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.dialogs;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * A string pattern matcher, suppporting * and ? wildcards.
@@ -59,8 +59,8 @@ public class StringMatcher {
 
 	/**
 	 * StringMatcher constructor takes in a String object that is a simple
-	 * pattern which may contain ‘*’ for 0 and many characters and
-	 * ‘?’ for exactly one character.
+	 * pattern which may contain * for 0 and many characters and
+	 * ? for exactly one character.
 	 * 
 	 * Literal '*' and '?' characters must be escaped in the pattern
 	 * e.g., "\*" means literal "*", etc.
@@ -273,7 +273,7 @@ public class StringMatcher {
 	 * Parses the given pattern into segments seperated by wildcard '*' characters.
 	 * 
 	 * @param p
-	 *            , a String object that is a simple regular expression with ‘*’ and/or ‘?’
+	 *            , a String object that is a simple regular expression with ï¿½*ï¿½ and/or ï¿½?ï¿½
 	 */
 	private void parseWildCards() {
 		if (fPattern.startsWith("*")) {
