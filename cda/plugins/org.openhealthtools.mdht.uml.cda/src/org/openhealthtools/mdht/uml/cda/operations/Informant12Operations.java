@@ -73,7 +73,6 @@ public class Informant12Operations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.assignedEntity.oclIsUndefined() xor self.relatedEntity.oclIsUndefined()
 	 * @param informant12 The receiving '<em><b>Informant12</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -131,7 +130,6 @@ public class Informant12Operations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::INF
 	 * @param informant12 The receiving '<em><b>Informant12</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -189,7 +187,6 @@ public class Informant12Operations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP
 	 * @param informant12 The receiving '<em><b>Informant12</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

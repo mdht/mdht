@@ -72,7 +72,6 @@ public class ConsentOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClass::CONS
 	 * @param consent The receiving '<em><b>Consent</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -129,7 +128,6 @@ public class ConsentOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
 	 * @param consent The receiving '<em><b>Consent</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

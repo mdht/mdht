@@ -71,7 +71,6 @@ public class PreconditionOperations extends ActRelationshipOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::PRCN
 	 * @param precondition The receiving '<em><b>Precondition</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

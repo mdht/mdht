@@ -27,7 +27,7 @@ public interface RegistryDelegate extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false" contextRequired="true" contextOrdered="false"
+	 * @model required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false" contextRequired="true" contextOrdered="false"
 	 * @generated
 	 */
 	EClass getEClass(String templateId, Object context);

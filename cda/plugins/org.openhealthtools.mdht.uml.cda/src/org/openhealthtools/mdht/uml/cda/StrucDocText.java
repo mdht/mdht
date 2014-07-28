@@ -77,7 +77,7 @@ public interface StrucDocText extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStrucDocText_ID()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 *        extendedMetaData="name='ID' kind='attribute'"
 	 * @generated
 	 */
@@ -96,7 +96,7 @@ public interface StrucDocText extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model textRequired="true" textOrdered="false"
+	 * @model textDataType="org.eclipse.uml2.types.String" textRequired="true" textOrdered="false"
 	 * @generated
 	 */
 	void addText(String text);
@@ -104,7 +104,7 @@ public interface StrucDocText extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getText();
@@ -112,7 +112,7 @@ public interface StrucDocText extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" idRequired="true" idOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false" idDataType="org.eclipse.uml2.types.String" idRequired="true" idOrdered="false"
 	 * @generated
 	 */
 	String getText(String id);

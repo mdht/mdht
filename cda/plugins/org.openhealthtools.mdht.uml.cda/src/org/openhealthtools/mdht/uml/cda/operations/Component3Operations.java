@@ -72,7 +72,6 @@ public class Component3Operations extends ActRelationshipOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP
 	 * @param component3 The receiving '<em><b>Component3</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -130,7 +129,6 @@ public class Component3Operations extends ActRelationshipOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true
 	 * @param component3 The receiving '<em><b>Component3</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

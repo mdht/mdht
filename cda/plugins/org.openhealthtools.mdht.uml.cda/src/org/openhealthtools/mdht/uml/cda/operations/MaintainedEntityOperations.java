@@ -71,7 +71,6 @@ public class MaintainedEntityOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::MNT
 	 * @param maintainedEntity The receiving '<em><b>Maintained Entity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

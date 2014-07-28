@@ -336,7 +336,6 @@ public interface Place extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::EntityClassPlace::PLC
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -349,7 +348,6 @@ public interface Place extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -361,9 +359,6 @@ public interface Place extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Bag { self.name }
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.name }'"
 	 * @generated
@@ -373,9 +368,6 @@ public interface Place extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Bag { self.addr }
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.addr }'"
 	 * @generated

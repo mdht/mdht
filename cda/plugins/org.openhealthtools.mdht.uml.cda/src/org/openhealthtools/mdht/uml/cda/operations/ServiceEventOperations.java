@@ -71,7 +71,6 @@ public class ServiceEventOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
 	 * @param serviceEvent The receiving '<em><b>Service Event</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

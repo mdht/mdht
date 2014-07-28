@@ -70,7 +70,6 @@ public class SubstanceAdministrationOperations extends ClinicalStatementOperatio
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClass::SBADM
 	 * @param substanceAdministration The receiving '<em><b>Substance Administration</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

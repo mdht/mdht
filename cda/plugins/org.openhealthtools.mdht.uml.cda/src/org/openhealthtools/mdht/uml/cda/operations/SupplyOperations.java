@@ -70,7 +70,6 @@ public class SupplyOperations extends ClinicalStatementOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClassSupply::SPLY
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

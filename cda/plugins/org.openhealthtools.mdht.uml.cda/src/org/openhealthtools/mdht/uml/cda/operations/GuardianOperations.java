@@ -72,7 +72,6 @@ public class GuardianOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.guardianPerson.oclIsUndefined() xor self.guardianOrganization.oclIsUndefined()
 	 * @param guardian The receiving '<em><b>Guardian</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -130,7 +129,6 @@ public class GuardianOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::GUARD
 	 * @param guardian The receiving '<em><b>Guardian</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

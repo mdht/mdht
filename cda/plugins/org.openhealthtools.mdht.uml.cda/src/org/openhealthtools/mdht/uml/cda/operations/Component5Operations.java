@@ -72,7 +72,6 @@ public class Component5Operations extends ActRelationshipOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP
 	 * @param component5 The receiving '<em><b>Component5</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -130,7 +129,6 @@ public class Component5Operations extends ActRelationshipOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true
 	 * @param component5 The receiving '<em><b>Component5</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

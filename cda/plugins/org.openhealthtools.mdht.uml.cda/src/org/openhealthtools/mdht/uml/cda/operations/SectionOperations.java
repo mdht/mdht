@@ -141,7 +141,6 @@ public class SectionOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCSECT
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -198,7 +197,6 @@ public class SectionOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -396,10 +394,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.act->select(act : cda::Act | not act.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Act> getActs(Section section) {
@@ -452,10 +446,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Encounter> getEncounters(Section section) {
@@ -498,10 +488,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Observation> getObservations(Section section) {
@@ -544,10 +530,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<ObservationMedia> getObservationMedia(Section section) {
@@ -590,10 +572,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Organizer> getOrganizers(Section section) {
@@ -636,10 +614,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Procedure> getProcedures(Section section) {
@@ -682,10 +656,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<RegionOfInterest> getRegionsOfInterest(Section section) {
@@ -728,10 +698,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.component.section
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Section> getSections(Section section) {
@@ -785,10 +751,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<SubstanceAdministration> getSubstanceAdministrations(Section section) {
@@ -831,10 +793,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Supply> getSupplies(Section section) {
@@ -877,10 +835,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasActTemplate(Section section, String templateId) {
@@ -923,10 +877,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasCode(Section section, String code, String codeSystem, String codeSystemName) {
@@ -971,10 +921,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasEncounterTemplate(Section section, String templateId) {
@@ -1017,10 +963,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasObservationMediaTemplate(Section section, String templateId) {
@@ -1063,10 +1005,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasObservationTemplate(Section section, String templateId) {
@@ -1109,10 +1047,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasOrganizerTemplate(Section section, String templateId) {
@@ -1155,10 +1089,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasProcedureTemplate(Section section, String templateId) {
@@ -1201,10 +1131,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasRegionOfInterestTemplate(Section section, String templateId) {
@@ -1247,10 +1173,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSubstanceAdministrationTemplate(Section section, String templateId) {
@@ -1293,10 +1215,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSectionTemplate(Section section, String templateId) {
@@ -1339,10 +1257,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSupplyTemplate(Section section, String templateId) {
@@ -1385,10 +1299,6 @@ public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
-	 * @param section The receiving '<em><b>Section</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasTemplateId(Section section, String templateId) {

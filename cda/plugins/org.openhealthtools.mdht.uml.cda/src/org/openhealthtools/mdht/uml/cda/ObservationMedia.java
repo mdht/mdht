@@ -359,7 +359,7 @@ public interface ObservationMedia extends ClinicalStatement {
 	 * @return the value of the '<em>Observation Media Id</em>' attribute.
 	 * @see #setObservationMediaId(String)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationMedia_ObservationMediaId()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 *        extendedMetaData="name='ID' kind='attribute'"
 	 * @generated
 	 */

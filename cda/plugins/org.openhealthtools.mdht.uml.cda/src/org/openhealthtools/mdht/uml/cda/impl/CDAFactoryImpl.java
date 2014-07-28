@@ -124,7 +124,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 */
 	public static CDAFactory init() {
 		try {
-			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory("urn:hl7-org:v3");
+			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory(CDAPackage.eNS_URI);
 			if (theCDAFactory != null) {
 				return theCDAFactory;
 			}

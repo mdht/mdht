@@ -433,10 +433,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasActTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -496,10 +492,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasEncounterTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -543,10 +535,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasObservationMediaTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -590,10 +578,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasObservationTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -637,10 +621,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasOrganizerTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -684,10 +664,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasProcedureTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -731,10 +707,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasRegionOfInterestTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -778,10 +750,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSubstanceAdministrationTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -825,10 +793,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSupplyTemplate(ClinicalStatement clinicalStatement, String templateId) {
@@ -888,10 +852,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.participant.participantRole->excluding(null)
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<ParticipantRole> getParticipantRoles(ClinicalStatement clinicalStatement) {
@@ -935,10 +895,6 @@ public class ClinicalStatementOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.performer.assignedEntity->excluding(null)
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<AssignedEntity> getAssignedEntities(ClinicalStatement clinicalStatement) {

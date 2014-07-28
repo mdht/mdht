@@ -302,7 +302,6 @@ public interface Component5 extends ActRelationship {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -315,7 +314,6 @@ public interface Component5 extends ActRelationship {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->

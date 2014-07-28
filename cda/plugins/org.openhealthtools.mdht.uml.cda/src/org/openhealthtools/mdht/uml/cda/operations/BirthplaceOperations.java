@@ -71,7 +71,6 @@ public class BirthplaceOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::BIRTHPL
 	 * @param birthplace The receiving '<em><b>Birthplace</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

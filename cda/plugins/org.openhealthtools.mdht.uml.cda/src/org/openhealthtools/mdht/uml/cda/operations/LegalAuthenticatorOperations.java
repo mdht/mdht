@@ -72,7 +72,6 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::LA
 	 * @param legalAuthenticator The receiving '<em><b>Legal Authenticator</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -132,7 +131,6 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP
 	 * @param legalAuthenticator The receiving '<em><b>Legal Authenticator</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
