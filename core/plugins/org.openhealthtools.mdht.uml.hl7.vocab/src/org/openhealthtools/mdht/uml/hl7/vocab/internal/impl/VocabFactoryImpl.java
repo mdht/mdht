@@ -93,7 +93,7 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public static VocabFactory init() {
 		try {
-			VocabFactory theVocabFactory = (VocabFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/vocab");
+			VocabFactory theVocabFactory = (VocabFactory) EPackage.Registry.INSTANCE.getEFactory(VocabPackage.eNS_URI);
 			if (theVocabFactory != null) {
 				return theVocabFactory;
 			}
