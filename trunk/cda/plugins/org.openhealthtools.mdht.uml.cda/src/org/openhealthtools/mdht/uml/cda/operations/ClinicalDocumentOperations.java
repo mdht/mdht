@@ -99,7 +99,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode=vocab::ActClinicalDocument::DOCCLIN
 	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -159,7 +158,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode=vocab::ActMood::EVN
 	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -253,10 +251,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.recordTarget.patientRole.patient
-	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Patient> getPatients(ClinicalDocument clinicalDocument) {
@@ -300,10 +294,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.recordTarget.patientRole
-	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<PatientRole> getPatientRoles(ClinicalDocument clinicalDocument) {
@@ -347,10 +337,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif
-	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Section> getSections(ClinicalDocument clinicalDocument) {
@@ -404,10 +390,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasCode(ClinicalDocument clinicalDocument, String code, String codeSystem,
@@ -454,10 +436,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
-	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSectionTemplate(ClinicalDocument clinicalDocument, String templateId) {
@@ -501,10 +479,6 @@ public class ClinicalDocumentOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
-	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasTemplateId(ClinicalDocument clinicalDocument, String templateId) {

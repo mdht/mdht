@@ -389,7 +389,7 @@ public interface Section extends Act {
 	 * @see #unsetSectionId()
 	 * @see #setSectionId(String)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_SectionId()
-	 * @model unsettable="true" ordered="false"
+	 * @model unsettable="true" dataType="org.eclipse.uml2.types.String" ordered="false"
 	 *        extendedMetaData="name='ID' kind='attribute'"
 	 * @generated
 	 */
@@ -604,7 +604,6 @@ public interface Section extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCSECT
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -617,7 +616,6 @@ public interface Section extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -709,7 +707,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" xmlStringRequired="true" xmlStringOrdered="false"
+	 * @model required="true" ordered="false" xmlStringDataType="org.eclipse.uml2.types.String" xmlStringRequired="true" xmlStringOrdered="false"
 	 * @generated
 	 */
 	StrucDocText createStrucDocText(String xmlString);
@@ -717,9 +715,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.act->select(act : cda::Act | not act.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.act->select(act : cda::Act | not act.oclIsUndefined())'"
 	 * @generated
@@ -737,9 +732,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())'"
 	 * @generated
@@ -749,9 +741,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())'"
 	 * @generated
@@ -761,9 +750,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())'"
 	 * @generated
@@ -773,9 +759,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())'"
 	 * @generated
@@ -785,9 +768,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())'"
 	 * @generated
@@ -797,9 +777,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())'"
 	 * @generated
@@ -809,9 +786,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.component.section
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.section'"
 	 * @generated
@@ -829,9 +803,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())'"
 	 * @generated
@@ -841,9 +812,6 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())'"
 	 * @generated
@@ -853,10 +821,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -865,10 +830,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameRequired="true" codeSystemNameOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" codeDataType="org.eclipse.uml2.types.String" codeRequired="true" codeOrdered="false" codeSystemDataType="org.eclipse.uml2.types.String" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameDataType="org.eclipse.uml2.types.String" codeSystemNameRequired="true" codeSystemNameOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName'"
 	 * @generated
 	 */
@@ -877,10 +839,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -889,10 +848,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -901,10 +857,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -913,10 +866,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -925,10 +875,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -937,10 +884,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -949,10 +893,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -961,10 +902,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -973,10 +911,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -985,10 +920,7 @@ public interface Section extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = templateId)'"
 	 * @generated
 	 */

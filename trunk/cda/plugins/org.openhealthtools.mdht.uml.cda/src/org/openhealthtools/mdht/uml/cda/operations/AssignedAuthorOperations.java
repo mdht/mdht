@@ -72,7 +72,6 @@ public class AssignedAuthorOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.assignedPerson.oclIsUndefined() or self.assignedAuthoringDevice.oclIsUndefined()
 	 * @param assignedAuthor The receiving '<em><b>Assigned Author</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -131,7 +130,6 @@ public class AssignedAuthorOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED
 	 * @param assignedAuthor The receiving '<em><b>Assigned Author</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

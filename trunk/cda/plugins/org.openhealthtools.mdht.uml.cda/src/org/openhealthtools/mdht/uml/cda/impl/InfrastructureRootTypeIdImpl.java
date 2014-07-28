@@ -279,6 +279,10 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__ROOT:
+				return isSetRoot();
+			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__EXTENSION:
+				return isSetExtension();
 			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT:
 				return isSetRedefinedRoot();
 			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION:

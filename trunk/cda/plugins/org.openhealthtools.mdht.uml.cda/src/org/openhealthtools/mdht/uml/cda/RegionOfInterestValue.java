@@ -41,7 +41,7 @@ public interface RegionOfInterestValue extends INT {
 	 * @return the value of the '<em>Unsorted</em>' attribute.
 	 * @see #setUnsorted(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterestValue_Unsorted()
-	 * @model default="false" required="true" ordered="false"
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isUnsorted();

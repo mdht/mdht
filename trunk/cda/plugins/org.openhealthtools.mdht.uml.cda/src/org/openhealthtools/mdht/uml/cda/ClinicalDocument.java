@@ -854,7 +854,6 @@ public interface ClinicalDocument extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode=vocab::ActClinicalDocument::DOCCLIN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -867,7 +866,6 @@ public interface ClinicalDocument extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode=vocab::ActMood::EVN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -895,9 +893,6 @@ public interface ClinicalDocument extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.recordTarget.patientRole.patient
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget.patientRole.patient'"
 	 * @generated
@@ -907,9 +902,6 @@ public interface ClinicalDocument extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.recordTarget.patientRole
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget.patientRole'"
 	 * @generated
@@ -919,9 +911,6 @@ public interface ClinicalDocument extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif
-	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif'"
 	 * @generated
@@ -939,10 +928,7 @@ public interface ClinicalDocument extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameRequired="true" codeSystemNameOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" codeDataType="org.eclipse.uml2.types.String" codeRequired="true" codeOrdered="false" codeSystemDataType="org.eclipse.uml2.types.String" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameDataType="org.eclipse.uml2.types.String" codeSystemNameRequired="true" codeSystemNameOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName'"
 	 * @generated
 	 */
@@ -951,10 +937,7 @@ public interface ClinicalDocument extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
 	 * @generated
 	 */
@@ -963,10 +946,7 @@ public interface ClinicalDocument extends Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = templateId)'"
 	 * @generated
 	 */

@@ -75,7 +75,6 @@ public class AuthorOperations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::AUT
 	 * @param author The receiving '<em><b>Author</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -132,7 +131,6 @@ public class AuthorOperations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP
 	 * @param author The receiving '<em><b>Author</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

@@ -83,7 +83,6 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::EntityClassOrganization::ORG
 	 * @param custodianOrganization The receiving '<em><b>Custodian Organization</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -141,7 +140,6 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE
 	 * @param custodianOrganization The receiving '<em><b>Custodian Organization</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -199,10 +197,6 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Bag { self.name }
-	 * @param custodianOrganization The receiving '<em><b>Custodian Organization</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<EN> getNames(CustodianOrganization custodianOrganization) {
@@ -246,10 +240,6 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Bag { self.telecom }
-	 * @param custodianOrganization The receiving '<em><b>Custodian Organization</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<TEL> getTelecoms(CustodianOrganization custodianOrganization) {
@@ -293,10 +283,6 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Bag { self.addr }
-	 * @param custodianOrganization The receiving '<em><b>Custodian Organization</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<AD> getAddrs(CustodianOrganization custodianOrganization) {

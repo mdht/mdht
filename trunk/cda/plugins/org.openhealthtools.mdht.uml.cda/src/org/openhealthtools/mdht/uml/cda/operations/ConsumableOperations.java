@@ -71,7 +71,6 @@ public class ConsumableOperations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::CSM
 	 * @param consumable The receiving '<em><b>Consumable</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

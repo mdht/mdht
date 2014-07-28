@@ -351,7 +351,7 @@ public interface RegionOfInterest extends ClinicalStatement {
 	 * @return the value of the '<em>Region Of Interest Id</em>' attribute.
 	 * @see #setRegionOfInterestId(String)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_RegionOfInterestId()
-	 * @model required="true" ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 *        extendedMetaData="name='ID' kind='attribute'"
 	 * @generated
 	 */
@@ -541,7 +541,6 @@ public interface RegionOfInterest extends ClinicalStatement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClass::ROIOVL
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
@@ -554,7 +553,6 @@ public interface RegionOfInterest extends ClinicalStatement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
