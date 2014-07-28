@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datatypes"
-    nsURI="http://www.openhealthtools.org/mdht/uml/hl7/datatypes" nsPrefix="datatypes">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datatypes" nsURI="http://www.openhealthtools.org/mdht/uml/hl7/datatypes"
+    nsPrefix="datatypes">
   <eClassifiers xsi:type="ecore:EClass" name="ANY" abstract="true">
-    <eOperations name="isNullFlavorDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="isNullFlavorUndefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="hasContent" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="isDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="featureName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="isNullFlavorDefined" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eOperations name="isNullFlavorUndefined" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eOperations name="hasContent" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eOperations name="isDefined" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eParameters name="featureName" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
-    <eOperations name="matches" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="featureName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="regularExpression" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="matches" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eParameters name="featureName" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eParameters name="regularExpression" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
@@ -53,15 +52,15 @@
       </eParameters>
     </eOperations>
     <eOperations name="addText" ordered="false" lowerBound="1" eType="#//ED">
-      <eParameters name="text" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="text" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
-    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="matches" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="regularExpression" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eOperations name="matches" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eParameters name="regularExpression" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
-    <eOperations name="getCDATA" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getCDATA" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eOperations name="addCDATA" ordered="false" lowerBound="1" eType="#//ED">
-      <eParameters name="cdata" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="cdata" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
@@ -133,7 +132,7 @@
       </eParameters>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SXCM_TS" eSuperTypes="#//TS">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
@@ -293,18 +292,18 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="isCompressionDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="isCompressionDefined" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.isDefined('compression')"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="isIntegrityCheckAlgorithmDefined" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.isDefined('integrityCheckAlgorithm')"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="isRepresentationDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="isRepresentationDefined" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.isDefined('representation')"/>
       </eAnnotations>
@@ -388,7 +387,8 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inverted" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CV" eSuperTypes="#//CE">
     <eOperations name="translation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1032,96 +1032,96 @@
       </eParameters>
     </eOperations>
     <eOperations name="addDelimiter" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="delimiter" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="delimiter" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addCountry" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="country" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="country" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addState" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="state" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="state" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addCounty" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="county" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="county" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addCity" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="city" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="city" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addPostalCode" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="postalCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="postalCode" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addStreetAddressLine" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="streetAddressLine" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="streetAddressLine" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addHouseNumber" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="houseNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="houseNumber" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addHouseNumberNumeric" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="houseNumberNumeric" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="houseNumberNumeric" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addDirection" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="direction" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="direction" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addStreetName" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="streetName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="streetName" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addStreetNameBase" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="streetNameBase" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="streetNameBase" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addStreetNameType" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="streetNameType" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="streetNameType" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addAdditionalLocator" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="additionalLocator" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="additionalLocator" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addUnitID" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="unitID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="unitID" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addUnitType" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="unitType" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="unitType" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addCareOf" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="careOf" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="careOf" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addCensusTract" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="censusTract" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="censusTract" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addDeliveryAddressLine" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="deliveryAddressLine" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="deliveryAddressLine" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addDeliveryInstallationType" ordered="false" lowerBound="1"
         eType="#//AD">
       <eParameters name="deliveryInstallationType" ordered="false" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addDeliveryInstallationArea" ordered="false" lowerBound="1"
         eType="#//AD">
       <eParameters name="deliveryInstallationArea" ordered="false" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addDeliveryInstallationQualifier" ordered="false" lowerBound="1"
         eType="#//AD">
       <eParameters name="deliveryInstallationQualifier" ordered="false" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addDeliveryMode" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="deliveryMode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="deliveryMode" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addDeliveryModeIdentifier" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="deliveryModeIdentifier" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="deliveryModeIdentifier" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addBuildingNumberSuffix" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="buildingNumberSuffix" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="buildingNumberSuffix" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addPostBox" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="postBox" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="postBox" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addPrecinct" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="precinct" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="precinct" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addText" ordered="false" lowerBound="1" eType="#//AD">
-      <eParameters name="text" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="text" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
-    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delimiter" upperBound="-1"
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
@@ -1503,26 +1503,26 @@
       </eParameters>
     </eOperations>
     <eOperations name="addDelimiter" ordered="false" lowerBound="1" eType="#//EN">
-      <eParameters name="delimiter" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="delimiter" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addFamily" ordered="false" lowerBound="1" eType="#//EN">
-      <eParameters name="family" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="family" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addGiven" ordered="false" lowerBound="1" eType="#//EN">
-      <eParameters name="given" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="given" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addPrefix" ordered="false" lowerBound="1" eType="#//EN">
-      <eParameters name="prefix" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="prefix" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addSuffix" ordered="false" lowerBound="1" eType="#//EN">
-      <eParameters name="suffix" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="suffix" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
     <eOperations name="addText" ordered="false" lowerBound="1" eType="#//EN">
-      <eParameters name="text" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="text" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     </eOperations>
-    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eParameters name="trim" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+      <eParameters name="trim" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delimiter" upperBound="-1"
         eType="#//ENXP" volatile="true" transient="true" derived="true" containment="true"

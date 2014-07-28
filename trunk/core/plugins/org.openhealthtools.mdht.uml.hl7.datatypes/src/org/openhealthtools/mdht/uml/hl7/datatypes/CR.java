@@ -99,7 +99,7 @@ public interface CR extends ANY {
 	 * @return the value of the '<em>Inverted</em>' attribute.
 	 * @see #setInverted(boolean)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCR_Inverted()
-	 * @model default="false" ordered="false"
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
 	 * @generated
 	 */
 	boolean isInverted();

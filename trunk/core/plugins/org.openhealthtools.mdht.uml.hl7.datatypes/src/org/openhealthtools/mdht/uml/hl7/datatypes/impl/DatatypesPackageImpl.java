@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.uml2.types.TypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -435,6 +436,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		isInited = true;
 
 		// Initialize simple dependencies
+		TypesPackage.eINSTANCE.eClass();
 		VocabPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -2235,6 +2237,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		// Obtain other dependent packages
 		VocabPackage theVocabPackage = (VocabPackage) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2295,18 +2298,19 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		addEOperation(anyEClass, ecorePackage.getEBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(anyEClass, theTypesPackage.getBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(anyEClass, ecorePackage.getEBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(anyEClass, theTypesPackage.getBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(anyEClass, ecorePackage.getEBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(anyEClass, theTypesPackage.getBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		EOperation op = addEOperation(anyEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		EOperation op = addEOperation(
+			anyEClass, theTypesPackage.getBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = addEOperation(anyEClass, ecorePackage.getEBoolean(), "matches", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "regularExpression", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = addEOperation(anyEClass, theTypesPackage.getBoolean(), "matches", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "regularExpression", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			binEClass, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, "BIN", IS_ABSTRACT, !IS_INTERFACE,
@@ -2363,17 +2367,17 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(edEClass, this.getED(), "addText", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(edEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(edEClass, theTypesPackage.getString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = addEOperation(edEClass, ecorePackage.getEBoolean(), "matches", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "regularExpression", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = addEOperation(edEClass, theTypesPackage.getBoolean(), "matches", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "regularExpression", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(edEClass, ecorePackage.getEString(), "getCDATA", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(edEClass, theTypesPackage.getString(), "getCDATA", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(edEClass, this.getED(), "addCDATA", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "cdata", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "cdata", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			telEClass, org.openhealthtools.mdht.uml.hl7.datatypes.TEL.class, "TEL", !IS_ABSTRACT, !IS_INTERFACE,
@@ -2391,7 +2395,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			urlEClass, org.openhealthtools.mdht.uml.hl7.datatypes.URL.class, "URL", IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(
-			getURL_Value(), ecorePackage.getEString(), "value", null, 0, 1,
+			getURL_Value(), theTypesPackage.getString(), "value", null, 0, 1,
 			org.openhealthtools.mdht.uml.hl7.datatypes.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -2491,12 +2495,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(stEClass, ecorePackage.getEBoolean(), "isCompressionDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(stEClass, theTypesPackage.getBoolean(), "isCompressionDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(
-			stEClass, ecorePackage.getEBoolean(), "isIntegrityCheckAlgorithmDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+			stEClass, theTypesPackage.getBoolean(), "isIntegrityCheckAlgorithmDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(stEClass, ecorePackage.getEBoolean(), "isRepresentationDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(stEClass, theTypesPackage.getBoolean(), "isRepresentationDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			cdEClass, org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, "CD", !IS_ABSTRACT, !IS_INTERFACE,
@@ -2553,7 +2557,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			org.openhealthtools.mdht.uml.hl7.datatypes.CR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(
-			getCR_Inverted(), ecorePackage.getEBoolean(), "inverted", "false", 0, 1,
+			getCR_Inverted(), theTypesPackage.getBoolean(), "inverted", "false", 0, 1,
 			org.openhealthtools.mdht.uml.hl7.datatypes.CR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -3035,90 +3039,90 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDelimiter", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "delimiter", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "delimiter", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addCountry", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "country", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "country", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addState", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "state", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "state", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addCounty", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "county", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "county", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addCity", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "city", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "city", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addPostalCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "postalCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "postalCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addStreetAddressLine", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "streetAddressLine", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "streetAddressLine", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addHouseNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "houseNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "houseNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addHouseNumberNumeric", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "houseNumberNumeric", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "houseNumberNumeric", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDirection", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "direction", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "direction", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addStreetName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "streetName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "streetName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addStreetNameBase", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "streetNameBase", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "streetNameBase", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addStreetNameType", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "streetNameType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "streetNameType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addAdditionalLocator", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "additionalLocator", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "additionalLocator", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addUnitID", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "unitID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "unitID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addUnitType", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "unitType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "unitType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addCareOf", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "careOf", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "careOf", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addCensusTract", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "censusTract", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "censusTract", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDeliveryAddressLine", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "deliveryAddressLine", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "deliveryAddressLine", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDeliveryInstallationType", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "deliveryInstallationType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "deliveryInstallationType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDeliveryInstallationArea", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "deliveryInstallationArea", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "deliveryInstallationArea", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDeliveryInstallationQualifier", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "deliveryInstallationQualifier", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "deliveryInstallationQualifier", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDeliveryMode", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "deliveryMode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "deliveryMode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addDeliveryModeIdentifier", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "deliveryModeIdentifier", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "deliveryModeIdentifier", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addBuildingNumberSuffix", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "buildingNumberSuffix", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "buildingNumberSuffix", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addPostBox", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "postBox", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "postBox", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addPrecinct", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "precinct", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "precinct", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(adEClass, this.getAD(), "addText", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(adEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(adEClass, theTypesPackage.getString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			adxpEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ADXP.class, "ADXP", !IS_ABSTRACT, !IS_INTERFACE,
@@ -3214,27 +3218,27 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(enEClass, this.getEN(), "addDelimiter", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "delimiter", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "delimiter", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(enEClass, this.getEN(), "addFamily", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "family", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "family", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(enEClass, this.getEN(), "addGiven", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "given", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "given", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(enEClass, this.getEN(), "addPrefix", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "prefix", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "prefix", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(enEClass, this.getEN(), "addSuffix", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "suffix", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "suffix", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(enEClass, this.getEN(), "addText", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(enEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(enEClass, theTypesPackage.getString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = addEOperation(enEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "trim", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = addEOperation(enEClass, theTypesPackage.getString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getBoolean(), "trim", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			enxpEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, "ENXP", !IS_ABSTRACT, !IS_INTERFACE,

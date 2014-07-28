@@ -101,7 +101,7 @@ public interface ST extends ED {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'compression\')'"
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface ST extends ED {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'integrityCheckAlgorithm\')'"
 	 * @generated
 	 */
@@ -119,7 +119,7 @@ public interface ST extends ED {
 	/**
 	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'representation\')'"
 	 * @generated
 	 */

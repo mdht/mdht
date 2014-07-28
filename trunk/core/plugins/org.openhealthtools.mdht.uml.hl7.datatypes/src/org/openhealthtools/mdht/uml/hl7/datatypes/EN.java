@@ -293,7 +293,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" delimiterRequired="true" delimiterOrdered="false"
+	 * @model required="true" ordered="false" delimiterDataType="org.eclipse.uml2.types.String" delimiterRequired="true" delimiterOrdered="false"
 	 * @generated
 	 */
 	EN addDelimiter(String delimiter);
@@ -301,7 +301,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" familyRequired="true" familyOrdered="false"
+	 * @model required="true" ordered="false" familyDataType="org.eclipse.uml2.types.String" familyRequired="true" familyOrdered="false"
 	 * @generated
 	 */
 	EN addFamily(String family);
@@ -309,7 +309,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" givenRequired="true" givenOrdered="false"
+	 * @model required="true" ordered="false" givenDataType="org.eclipse.uml2.types.String" givenRequired="true" givenOrdered="false"
 	 * @generated
 	 */
 	EN addGiven(String given);
@@ -317,7 +317,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" prefixRequired="true" prefixOrdered="false"
+	 * @model required="true" ordered="false" prefixDataType="org.eclipse.uml2.types.String" prefixRequired="true" prefixOrdered="false"
 	 * @generated
 	 */
 	EN addPrefix(String prefix);
@@ -325,7 +325,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" suffixRequired="true" suffixOrdered="false"
+	 * @model required="true" ordered="false" suffixDataType="org.eclipse.uml2.types.String" suffixRequired="true" suffixOrdered="false"
 	 * @generated
 	 */
 	EN addSuffix(String suffix);
@@ -333,7 +333,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" textRequired="true" textOrdered="false"
+	 * @model required="true" ordered="false" textDataType="org.eclipse.uml2.types.String" textRequired="true" textOrdered="false"
 	 * @generated
 	 */
 	EN addText(String text);
@@ -341,7 +341,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getText();
@@ -349,7 +349,7 @@ public interface EN extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" trimRequired="true" trimOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false" trimDataType="org.eclipse.uml2.types.Boolean" trimRequired="true" trimOrdered="false"
 	 * @generated
 	 */
 	String getText(boolean trim);
