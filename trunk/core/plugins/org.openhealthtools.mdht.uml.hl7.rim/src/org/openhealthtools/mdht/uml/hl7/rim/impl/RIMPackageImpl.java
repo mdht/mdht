@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.uml2.types.TypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
@@ -283,6 +284,7 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		DatatypesPackage theDatatypesPackage = (DatatypesPackage) EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
 		VocabPackage theVocabPackage = (VocabPackage) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI);
 
@@ -313,9 +315,9 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(actEClass, this.getActRelationship(), "getInboundRelationships", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(actEClass, ecorePackage.getEBoolean(), "isClassCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, theTypesPackage.getBoolean(), "isClassCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(actEClass, ecorePackage.getEBoolean(), "isMoodCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, theTypesPackage.getBoolean(), "isMoodCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			infrastructureRootEClass, InfrastructureRoot.class, "InfrastructureRoot", IS_ABSTRACT, !IS_INTERFACE,
@@ -333,16 +335,18 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 			infrastructureRootEClass, theVocabPackage.getNullFlavor(), "getNullFlavor", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(
-			infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+			infrastructureRootEClass, theTypesPackage.getBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(
-			infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+			infrastructureRootEClass, theTypesPackage.getBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE,
+			!IS_ORDERED);
 
-		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			infrastructureRootEClass, theTypesPackage.getBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		EOperation op = addEOperation(
-			infrastructureRootEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+			infrastructureRootEClass, theTypesPackage.getBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			participationEClass, Participation.class, "Participation", IS_ABSTRACT, !IS_INTERFACE,
@@ -355,10 +359,10 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		addEOperation(participationEClass, this.getRole(), "getRole", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(
-			participationEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+			participationEClass, theTypesPackage.getBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(
-			participationEClass, ecorePackage.getEBoolean(), "isContextControlCodeDefined", 1, 1, IS_UNIQUE,
+			participationEClass, theTypesPackage.getBoolean(), "isContextControlCodeDefined", 1, 1, IS_UNIQUE,
 			!IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -375,7 +379,7 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(roleEClass, this.getRoleLink(), "getInboundLinks", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(roleEClass, ecorePackage.getEBoolean(), "isClassCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleEClass, theTypesPackage.getBoolean(), "isClassCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -387,9 +391,10 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(entityEClass, this.getRole(), "getScopedRoles", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(entityEClass, ecorePackage.getEBoolean(), "isClassCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(entityEClass, theTypesPackage.getBoolean(), "isClassCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(entityEClass, ecorePackage.getEBoolean(), "isDeterminerCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			entityEClass, theTypesPackage.getBoolean(), "isDeterminerCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roleLinkEClass, RoleLink.class, "RoleLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -399,7 +404,7 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(roleLinkEClass, this.getRole(), "getSource", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(roleLinkEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleLinkEClass, theTypesPackage.getBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			actRelationshipEClass, ActRelationship.class, "ActRelationship", IS_ABSTRACT, !IS_INTERFACE,
@@ -412,7 +417,7 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		addEOperation(actRelationshipEClass, this.getAct(), "getSource", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(
-			actRelationshipEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+			actRelationshipEClass, theTypesPackage.getBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

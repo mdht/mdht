@@ -33,7 +33,7 @@ public class RIMFactoryImpl extends EFactoryImpl implements RIMFactory {
 	 */
 	public static RIMFactory init() {
 		try {
-			RIMFactory theRIMFactory = (RIMFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/rim");
+			RIMFactory theRIMFactory = (RIMFactory) EPackage.Registry.INSTANCE.getEFactory(RIMPackage.eNS_URI);
 			if (theRIMFactory != null) {
 				return theRIMFactory;
 			}
