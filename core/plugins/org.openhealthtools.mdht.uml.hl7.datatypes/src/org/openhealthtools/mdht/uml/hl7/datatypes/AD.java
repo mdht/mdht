@@ -970,7 +970,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" delimiterRequired="true" delimiterOrdered="false"
+	 * @model required="true" ordered="false" delimiterDataType="org.eclipse.uml2.types.String" delimiterRequired="true" delimiterOrdered="false"
 	 * @generated
 	 */
 	AD addDelimiter(String delimiter);
@@ -978,7 +978,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" countryRequired="true" countryOrdered="false"
+	 * @model required="true" ordered="false" countryDataType="org.eclipse.uml2.types.String" countryRequired="true" countryOrdered="false"
 	 * @generated
 	 */
 	AD addCountry(String country);
@@ -986,7 +986,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" stateRequired="true" stateOrdered="false"
+	 * @model required="true" ordered="false" stateDataType="org.eclipse.uml2.types.String" stateRequired="true" stateOrdered="false"
 	 * @generated
 	 */
 	AD addState(String state);
@@ -994,7 +994,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" countyRequired="true" countyOrdered="false"
+	 * @model required="true" ordered="false" countyDataType="org.eclipse.uml2.types.String" countyRequired="true" countyOrdered="false"
 	 * @generated
 	 */
 	AD addCounty(String county);
@@ -1002,7 +1002,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" cityRequired="true" cityOrdered="false"
+	 * @model required="true" ordered="false" cityDataType="org.eclipse.uml2.types.String" cityRequired="true" cityOrdered="false"
 	 * @generated
 	 */
 	AD addCity(String city);
@@ -1010,7 +1010,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" postalCodeRequired="true" postalCodeOrdered="false"
+	 * @model required="true" ordered="false" postalCodeDataType="org.eclipse.uml2.types.String" postalCodeRequired="true" postalCodeOrdered="false"
 	 * @generated
 	 */
 	AD addPostalCode(String postalCode);
@@ -1018,7 +1018,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" streetAddressLineRequired="true" streetAddressLineOrdered="false"
+	 * @model required="true" ordered="false" streetAddressLineDataType="org.eclipse.uml2.types.String" streetAddressLineRequired="true" streetAddressLineOrdered="false"
 	 * @generated
 	 */
 	AD addStreetAddressLine(String streetAddressLine);
@@ -1026,7 +1026,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" houseNumberRequired="true" houseNumberOrdered="false"
+	 * @model required="true" ordered="false" houseNumberDataType="org.eclipse.uml2.types.String" houseNumberRequired="true" houseNumberOrdered="false"
 	 * @generated
 	 */
 	AD addHouseNumber(String houseNumber);
@@ -1034,7 +1034,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" houseNumberNumericRequired="true" houseNumberNumericOrdered="false"
+	 * @model required="true" ordered="false" houseNumberNumericDataType="org.eclipse.uml2.types.String" houseNumberNumericRequired="true" houseNumberNumericOrdered="false"
 	 * @generated
 	 */
 	AD addHouseNumberNumeric(String houseNumberNumeric);
@@ -1042,7 +1042,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" directionRequired="true" directionOrdered="false"
+	 * @model required="true" ordered="false" directionDataType="org.eclipse.uml2.types.String" directionRequired="true" directionOrdered="false"
 	 * @generated
 	 */
 	AD addDirection(String direction);
@@ -1050,7 +1050,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" streetNameRequired="true" streetNameOrdered="false"
+	 * @model required="true" ordered="false" streetNameDataType="org.eclipse.uml2.types.String" streetNameRequired="true" streetNameOrdered="false"
 	 * @generated
 	 */
 	AD addStreetName(String streetName);
@@ -1058,7 +1058,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" streetNameBaseRequired="true" streetNameBaseOrdered="false"
+	 * @model required="true" ordered="false" streetNameBaseDataType="org.eclipse.uml2.types.String" streetNameBaseRequired="true" streetNameBaseOrdered="false"
 	 * @generated
 	 */
 	AD addStreetNameBase(String streetNameBase);
@@ -1066,7 +1066,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" streetNameTypeRequired="true" streetNameTypeOrdered="false"
+	 * @model required="true" ordered="false" streetNameTypeDataType="org.eclipse.uml2.types.String" streetNameTypeRequired="true" streetNameTypeOrdered="false"
 	 * @generated
 	 */
 	AD addStreetNameType(String streetNameType);
@@ -1074,7 +1074,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" additionalLocatorRequired="true" additionalLocatorOrdered="false"
+	 * @model required="true" ordered="false" additionalLocatorDataType="org.eclipse.uml2.types.String" additionalLocatorRequired="true" additionalLocatorOrdered="false"
 	 * @generated
 	 */
 	AD addAdditionalLocator(String additionalLocator);
@@ -1082,7 +1082,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" unitIDRequired="true" unitIDOrdered="false"
+	 * @model required="true" ordered="false" unitIDDataType="org.eclipse.uml2.types.String" unitIDRequired="true" unitIDOrdered="false"
 	 * @generated
 	 */
 	AD addUnitID(String unitID);
@@ -1090,7 +1090,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" unitTypeRequired="true" unitTypeOrdered="false"
+	 * @model required="true" ordered="false" unitTypeDataType="org.eclipse.uml2.types.String" unitTypeRequired="true" unitTypeOrdered="false"
 	 * @generated
 	 */
 	AD addUnitType(String unitType);
@@ -1098,7 +1098,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" careOfRequired="true" careOfOrdered="false"
+	 * @model required="true" ordered="false" careOfDataType="org.eclipse.uml2.types.String" careOfRequired="true" careOfOrdered="false"
 	 * @generated
 	 */
 	AD addCareOf(String careOf);
@@ -1106,7 +1106,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" censusTractRequired="true" censusTractOrdered="false"
+	 * @model required="true" ordered="false" censusTractDataType="org.eclipse.uml2.types.String" censusTractRequired="true" censusTractOrdered="false"
 	 * @generated
 	 */
 	AD addCensusTract(String censusTract);
@@ -1114,7 +1114,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" deliveryAddressLineRequired="true" deliveryAddressLineOrdered="false"
+	 * @model required="true" ordered="false" deliveryAddressLineDataType="org.eclipse.uml2.types.String" deliveryAddressLineRequired="true" deliveryAddressLineOrdered="false"
 	 * @generated
 	 */
 	AD addDeliveryAddressLine(String deliveryAddressLine);
@@ -1122,7 +1122,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" deliveryInstallationTypeRequired="true" deliveryInstallationTypeOrdered="false"
+	 * @model required="true" ordered="false" deliveryInstallationTypeDataType="org.eclipse.uml2.types.String" deliveryInstallationTypeRequired="true" deliveryInstallationTypeOrdered="false"
 	 * @generated
 	 */
 	AD addDeliveryInstallationType(String deliveryInstallationType);
@@ -1130,7 +1130,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" deliveryInstallationAreaRequired="true" deliveryInstallationAreaOrdered="false"
+	 * @model required="true" ordered="false" deliveryInstallationAreaDataType="org.eclipse.uml2.types.String" deliveryInstallationAreaRequired="true" deliveryInstallationAreaOrdered="false"
 	 * @generated
 	 */
 	AD addDeliveryInstallationArea(String deliveryInstallationArea);
@@ -1138,7 +1138,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" deliveryInstallationQualifierRequired="true" deliveryInstallationQualifierOrdered="false"
+	 * @model required="true" ordered="false" deliveryInstallationQualifierDataType="org.eclipse.uml2.types.String" deliveryInstallationQualifierRequired="true" deliveryInstallationQualifierOrdered="false"
 	 * @generated
 	 */
 	AD addDeliveryInstallationQualifier(String deliveryInstallationQualifier);
@@ -1146,7 +1146,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" deliveryModeRequired="true" deliveryModeOrdered="false"
+	 * @model required="true" ordered="false" deliveryModeDataType="org.eclipse.uml2.types.String" deliveryModeRequired="true" deliveryModeOrdered="false"
 	 * @generated
 	 */
 	AD addDeliveryMode(String deliveryMode);
@@ -1154,7 +1154,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" deliveryModeIdentifierRequired="true" deliveryModeIdentifierOrdered="false"
+	 * @model required="true" ordered="false" deliveryModeIdentifierDataType="org.eclipse.uml2.types.String" deliveryModeIdentifierRequired="true" deliveryModeIdentifierOrdered="false"
 	 * @generated
 	 */
 	AD addDeliveryModeIdentifier(String deliveryModeIdentifier);
@@ -1162,7 +1162,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" buildingNumberSuffixRequired="true" buildingNumberSuffixOrdered="false"
+	 * @model required="true" ordered="false" buildingNumberSuffixDataType="org.eclipse.uml2.types.String" buildingNumberSuffixRequired="true" buildingNumberSuffixOrdered="false"
 	 * @generated
 	 */
 	AD addBuildingNumberSuffix(String buildingNumberSuffix);
@@ -1170,7 +1170,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" postBoxRequired="true" postBoxOrdered="false"
+	 * @model required="true" ordered="false" postBoxDataType="org.eclipse.uml2.types.String" postBoxRequired="true" postBoxOrdered="false"
 	 * @generated
 	 */
 	AD addPostBox(String postBox);
@@ -1178,7 +1178,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" precinctRequired="true" precinctOrdered="false"
+	 * @model required="true" ordered="false" precinctDataType="org.eclipse.uml2.types.String" precinctRequired="true" precinctOrdered="false"
 	 * @generated
 	 */
 	AD addPrecinct(String precinct);
@@ -1186,7 +1186,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" textRequired="true" textOrdered="false"
+	 * @model required="true" ordered="false" textDataType="org.eclipse.uml2.types.String" textRequired="true" textOrdered="false"
 	 * @generated
 	 */
 	AD addText(String text);
@@ -1194,7 +1194,7 @@ public interface AD extends ANY {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getText();

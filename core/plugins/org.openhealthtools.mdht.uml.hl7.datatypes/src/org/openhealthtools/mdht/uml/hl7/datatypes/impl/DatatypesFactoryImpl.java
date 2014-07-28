@@ -82,7 +82,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public static DatatypesFactory init() {
 		try {
-			DatatypesFactory theDatatypesFactory = (DatatypesFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/datatypes");
+			DatatypesFactory theDatatypesFactory = (DatatypesFactory) EPackage.Registry.INSTANCE.getEFactory(DatatypesPackage.eNS_URI);
 			if (theDatatypesFactory != null) {
 				return theDatatypesFactory;
 			}
