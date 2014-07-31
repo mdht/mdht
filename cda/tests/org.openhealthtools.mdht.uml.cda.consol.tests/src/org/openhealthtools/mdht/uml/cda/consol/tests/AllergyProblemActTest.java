@@ -466,7 +466,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(AllergyProblemAct target) {
 						// Concern (new)
-						// code element with @codeSystem = ‘2.16.840.1.113883.5.6’ and @code = ‘CONC’
+						// code element with @codeSystem = ???2.16.840.1.113883.5.6??? and @code = ???CONC???
 						target.init();
 						target.setCode(DatatypesFactory.eINSTANCE.createCD("CONC", "2.16.840.1.113883.5.6"));
 					}
@@ -476,7 +476,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(AllergyProblemAct target) {
 						// 48765-2 (old)
-						// code element with @codeSystem = ‘2.16.840.1.113883.6.1’ and @code = ‘48765-2’
+						// code element with @codeSystem = ???2.16.840.1.113883.6.1??? and @code = ???48765-2???
 						target.init();
 						target.setCode(DatatypesFactory.eINSTANCE.createCD("48765-2", CDAValidationTest.LOINC_ID));
 					}
@@ -629,8 +629,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+		new ConstructorTestClass();
 	} // testConstructor
 
 	/**

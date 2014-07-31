@@ -15,6 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.rim;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport,
+ org.eclipse.uml2.types;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport,
  org.openhealthtools.mdht.uml.cda.test

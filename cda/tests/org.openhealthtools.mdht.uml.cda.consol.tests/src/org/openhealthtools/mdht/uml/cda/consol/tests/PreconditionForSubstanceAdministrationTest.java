@@ -280,8 +280,7 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+		new ConstructorTestClass();
 	} // testConstructor
 
 	/**
