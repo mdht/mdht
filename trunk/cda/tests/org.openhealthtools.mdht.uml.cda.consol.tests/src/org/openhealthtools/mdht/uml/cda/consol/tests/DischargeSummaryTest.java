@@ -1705,7 +1705,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 					public void updateToPass(DischargeSummary target) {
 						// Pass for ignored constraint so that we don't fail one if the other passes.
 						// Implemented based off of the following preliminary rule as part of Errata 240:
-						// If it’s not equal to the codeSystem (if it’s the valueSet already or if it is an incorrect OID altogether),
+						// If it???s not equal to the codeSystem (if it???s the valueSet already or if it is an incorrect OID altogether),
 						// then it must be equal to the valueSet. The constraints are separated since they have different severities.
 						// In this passing case, it is already equal to the codeSystem, so doesn't check the rest.
 						target.init();
@@ -1775,7 +1775,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 					public void updateToPass(DischargeSummary target) {
 						// Pass for ignored constraint so that we don't fail one if the other passes.
 						// Implemented like this:
-						// If it’s not equal to the valueSet (if it’s the codeSystem already or if it is an incorrect OID altogether),
+						// If it???s not equal to the valueSet (if it???s the codeSystem already or if it is an incorrect OID altogether),
 						// then it must be equal to the codeSystem. The constraints are separated since they have different severities.
 						// In this passing case, it is already equal to the valueSet, so doesn't check the rest.
 						target.init();
@@ -2432,8 +2432,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+		new ConstructorTestClass();
 	} // testConstructor
 
 	/**

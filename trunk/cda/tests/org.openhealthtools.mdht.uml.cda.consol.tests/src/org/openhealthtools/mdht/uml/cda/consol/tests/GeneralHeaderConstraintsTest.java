@@ -3203,8 +3203,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
 						// f1
-						// <assignedPerson> exists and there is an id and the id/@root does NOT = ‘2.16.840.1.113883.4.6’
-						// and the id’s/@extension exists)
+						// <assignedPerson> exists and there is an id and the id/@root does NOT = ???2.16.840.1.113883.4.6???
+						// and the id???s/@extension exists)
 						// expect fail because assigned person exists and the root (NPI) is incorrect
 						System.out.println("\nf1");
 						target.init();
@@ -3222,8 +3222,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
 						// f2
-						// -<assignedPerson> exists and there is an id and (the id/@root = ‘2.16.840.1.113883.4.6’
-						// and the id’s/@extension DOES NOT EXIST)
+						// -<assignedPerson> exists and there is an id and (the id/@root = ???2.16.840.1.113883.4.6???
+						// and the id???s/@extension DOES NOT EXIST)
 						// expect fail because assigned person exists and the id/@extension does not exist
 						System.out.println("\nf2");
 						target.init();
@@ -3241,8 +3241,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToFail(GeneralHeaderConstraints target) {
 						// f3
-						// -<assignedPerson> exists and there is an id and (the id/@root does NOT = ‘2.16.840.1.113883.4.6’
-						// and the id’s/@extension DOES NOT EXIST)
+						// -<assignedPerson> exists and there is an id and (the id/@root does NOT = ???2.16.840.1.113883.4.6???
+						// and the id???s/@extension DOES NOT EXIST)
 						// expect fail because assigned person exists and the root (NPI) is incorrect and
 						// the id/@extension does not exist
 						System.out.println("\nf3");
@@ -3389,8 +3389,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
 						// p1
-						// <assignedPerson> exists and there is an id and (the id/@root = ‘2.16.840.1.113883.4.6’
-						// and the id’s/@extension exists)
+						// <assignedPerson> exists and there is an id and (the id/@root = ???2.16.840.1.113883.4.6???
+						// and the id???s/@extension exists)
 						System.out.println("\np1");
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
@@ -3426,7 +3426,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
 						// p3
-						// If <assignedPerson> DOES NOT exist (we don’t enforce the id/@root or id/@extension NPI warning at all
+						// If <assignedPerson> DOES NOT exist (we don???t enforce the id/@root or id/@extension NPI warning at all
 						// For the example we have an incorrect NPI, which is NOT checked.
 						System.out.println("\np3");
 						target.init();
@@ -3443,9 +3443,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 					@Override
 					public void updateToPass(GeneralHeaderConstraints target) {
 						// p4
-						// If <assignedPerson> DOES NOT exist (we don’t enforce the id/@root or id/@extension NPI warning at all
+						// If <assignedPerson> DOES NOT exist (we don???t enforce the id/@root or id/@extension NPI warning at all
 						// For the example we have an incorrect NPI, which is NOT checked, and,
-						// we don’t have an extension, which is NOT checked.
+						// we don???t have an extension, which is NOT checked.
 						System.out.println("\np4");
 						target.init();
 						Author author = CDAFactory.eINSTANCE.createAuthor();
@@ -13705,8 +13705,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+		new ConstructorTestClass();
 	} // testConstructor
 
 	/**
