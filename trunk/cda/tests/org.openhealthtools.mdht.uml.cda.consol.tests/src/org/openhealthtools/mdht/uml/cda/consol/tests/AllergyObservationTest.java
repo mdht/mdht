@@ -38,7 +38,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
-import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
@@ -1570,20 +1569,15 @@ public class AllergyObservationTest extends CDAValidationTest {
 			"validateAllergyObservationParticipantTypeCode",
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
 			@Override
 			protected void updateToFail(AllergyObservation target) {
-				target.init();
-				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
 
-				target.getParticipants().add(par);
 			}
 
 			@Override
 			protected void updateToPass(AllergyObservation target) {
-				target.getParticipants().clear();
-				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
-				par.setTypeCode(ParticipationType.CSM);
-				target.getParticipants().add(par);
+				target.init();
 
 			}
 
