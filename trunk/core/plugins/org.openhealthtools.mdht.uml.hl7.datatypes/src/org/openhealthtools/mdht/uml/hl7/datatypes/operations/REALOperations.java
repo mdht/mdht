@@ -93,20 +93,20 @@ public class REALOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.REAL);
 			try {
 				VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(real)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.REAL__REAL,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateREAL", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(real, context) }),
-						 new Object [] { real }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.REAL__REAL,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateREAL",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(real, context) }),
+					new Object[] { real }));
 			}
 			return false;
 		}

@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
-import org.openhealthtools.mdht.uml.hl7.datatypes.*;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
@@ -761,7 +760,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return DatatypesPackage.eINSTANCE;
+		return DatatypesPackage.eINSTANCE;
 	}
 
 	/**
@@ -774,105 +773,105 @@ public class DatatypesValidator extends EObjectValidator {
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
 			case DatatypesPackage.ANY:
-				return validateANY((ANY)value, diagnostics, context);
+				return validateANY((ANY) value, diagnostics, context);
 			case DatatypesPackage.BIN:
-				return validateBIN((BIN)value, diagnostics, context);
+				return validateBIN((BIN) value, diagnostics, context);
 			case DatatypesPackage.ED:
-				return validateED((ED)value, diagnostics, context);
+				return validateED((ED) value, diagnostics, context);
 			case DatatypesPackage.TEL:
-				return validateTEL((TEL)value, diagnostics, context);
+				return validateTEL((TEL) value, diagnostics, context);
 			case DatatypesPackage.URL:
-				return validateURL((URL)value, diagnostics, context);
+				return validateURL((URL) value, diagnostics, context);
 			case DatatypesPackage.SXCM_TS:
-				return validateSXCM_TS((SXCM_TS)value, diagnostics, context);
+				return validateSXCM_TS((SXCM_TS) value, diagnostics, context);
 			case DatatypesPackage.TS:
-				return validateTS((TS)value, diagnostics, context);
+				return validateTS((TS) value, diagnostics, context);
 			case DatatypesPackage.QTY:
-				return validateQTY((QTY)value, diagnostics, context);
+				return validateQTY((QTY) value, diagnostics, context);
 			case DatatypesPackage.ST:
-				return validateST((ST)value, diagnostics, context);
+				return validateST((ST) value, diagnostics, context);
 			case DatatypesPackage.CD:
-				return validateCD((CD)value, diagnostics, context);
+				return validateCD((CD) value, diagnostics, context);
 			case DatatypesPackage.CR:
-				return validateCR((CR)value, diagnostics, context);
+				return validateCR((CR) value, diagnostics, context);
 			case DatatypesPackage.CV:
-				return validateCV((CV)value, diagnostics, context);
+				return validateCV((CV) value, diagnostics, context);
 			case DatatypesPackage.CE:
-				return validateCE((CE)value, diagnostics, context);
+				return validateCE((CE) value, diagnostics, context);
 			case DatatypesPackage.II:
-				return validateII((II)value, diagnostics, context);
+				return validateII((II) value, diagnostics, context);
 			case DatatypesPackage.BL:
-				return validateBL((BL)value, diagnostics, context);
+				return validateBL((BL) value, diagnostics, context);
 			case DatatypesPackage.BN:
-				return validateBN((BN)value, diagnostics, context);
+				return validateBN((BN) value, diagnostics, context);
 			case DatatypesPackage.AD:
-				return validateAD((AD)value, diagnostics, context);
+				return validateAD((AD) value, diagnostics, context);
 			case DatatypesPackage.ADXP:
-				return validateADXP((ADXP)value, diagnostics, context);
+				return validateADXP((ADXP) value, diagnostics, context);
 			case DatatypesPackage.EN:
-				return validateEN((EN)value, diagnostics, context);
+				return validateEN((EN) value, diagnostics, context);
 			case DatatypesPackage.ENXP:
-				return validateENXP((ENXP)value, diagnostics, context);
+				return validateENXP((ENXP) value, diagnostics, context);
 			case DatatypesPackage.IVL_TS:
-				return validateIVL_TS((IVL_TS)value, diagnostics, context);
+				return validateIVL_TS((IVL_TS) value, diagnostics, context);
 			case DatatypesPackage.IVXB_TS:
-				return validateIVXB_TS((IVXB_TS)value, diagnostics, context);
+				return validateIVXB_TS((IVXB_TS) value, diagnostics, context);
 			case DatatypesPackage.PQ:
-				return validatePQ((PQ)value, diagnostics, context);
+				return validatePQ((PQ) value, diagnostics, context);
 			case DatatypesPackage.PQR:
-				return validatePQR((PQR)value, diagnostics, context);
+				return validatePQR((PQR) value, diagnostics, context);
 			case DatatypesPackage.ON:
-				return validateON((ON)value, diagnostics, context);
+				return validateON((ON) value, diagnostics, context);
 			case DatatypesPackage.PN:
-				return validatePN((PN)value, diagnostics, context);
+				return validatePN((PN) value, diagnostics, context);
 			case DatatypesPackage.TN:
-				return validateTN((TN)value, diagnostics, context);
+				return validateTN((TN) value, diagnostics, context);
 			case DatatypesPackage.INT:
-				return validateINT((INT)value, diagnostics, context);
+				return validateINT((INT) value, diagnostics, context);
 			case DatatypesPackage.REAL:
-				return validateREAL((REAL)value, diagnostics, context);
+				return validateREAL((REAL) value, diagnostics, context);
 			case DatatypesPackage.CS:
-				return validateCS((CS)value, diagnostics, context);
+				return validateCS((CS) value, diagnostics, context);
 			case DatatypesPackage.CO:
-				return validateCO((CO)value, diagnostics, context);
+				return validateCO((CO) value, diagnostics, context);
 			case DatatypesPackage.SC:
-				return validateSC((SC)value, diagnostics, context);
+				return validateSC((SC) value, diagnostics, context);
 			case DatatypesPackage.RTO_QTY_QTY:
-				return validateRTO_QTY_QTY((RTO_QTY_QTY)value, diagnostics, context);
+				return validateRTO_QTY_QTY((RTO_QTY_QTY) value, diagnostics, context);
 			case DatatypesPackage.MO:
-				return validateMO((MO)value, diagnostics, context);
+				return validateMO((MO) value, diagnostics, context);
 			case DatatypesPackage.RTO:
-				return validateRTO((RTO)value, diagnostics, context);
+				return validateRTO((RTO) value, diagnostics, context);
 			case DatatypesPackage.SXCM_INT:
-				return validateSXCM_INT((SXCM_INT)value, diagnostics, context);
+				return validateSXCM_INT((SXCM_INT) value, diagnostics, context);
 			case DatatypesPackage.IVXB_INT:
-				return validateIVXB_INT((IVXB_INT)value, diagnostics, context);
+				return validateIVXB_INT((IVXB_INT) value, diagnostics, context);
 			case DatatypesPackage.IVL_INT:
-				return validateIVL_INT((IVL_INT)value, diagnostics, context);
+				return validateIVL_INT((IVL_INT) value, diagnostics, context);
 			case DatatypesPackage.IVXB_PQ:
-				return validateIVXB_PQ((IVXB_PQ)value, diagnostics, context);
+				return validateIVXB_PQ((IVXB_PQ) value, diagnostics, context);
 			case DatatypesPackage.SXCM_PQ:
-				return validateSXCM_PQ((SXCM_PQ)value, diagnostics, context);
+				return validateSXCM_PQ((SXCM_PQ) value, diagnostics, context);
 			case DatatypesPackage.IVL_PQ:
-				return validateIVL_PQ((IVL_PQ)value, diagnostics, context);
+				return validateIVL_PQ((IVL_PQ) value, diagnostics, context);
 			case DatatypesPackage.RTO_PQ_PQ:
-				return validateRTO_PQ_PQ((RTO_PQ_PQ)value, diagnostics, context);
+				return validateRTO_PQ_PQ((RTO_PQ_PQ) value, diagnostics, context);
 			case DatatypesPackage.PIVL_TS:
-				return validatePIVL_TS((PIVL_TS)value, diagnostics, context);
+				return validatePIVL_TS((PIVL_TS) value, diagnostics, context);
 			case DatatypesPackage.EIVL_EVENT:
-				return validateEIVL_event((EIVL_event)value, diagnostics, context);
+				return validateEIVL_event((EIVL_event) value, diagnostics, context);
 			case DatatypesPackage.EIVL_TS:
-				return validateEIVL_TS((EIVL_TS)value, diagnostics, context);
+				return validateEIVL_TS((EIVL_TS) value, diagnostics, context);
 			case DatatypesPackage.BINARY_DATA_ENCODING:
-				return validateBinaryDataEncoding((BinaryDataEncoding)value, diagnostics, context);
+				return validateBinaryDataEncoding((BinaryDataEncoding) value, diagnostics, context);
 			case DatatypesPackage.TS_TYPE:
-				return validatetsType((String)value, diagnostics, context);
+				return validatetsType((String) value, diagnostics, context);
 			case DatatypesPackage.CS_TYPE:
-				return validatecsType((String)value, diagnostics, context);
+				return validatecsType((String) value, diagnostics, context);
 			case DatatypesPackage.UID:
-				return validateuid((String)value, diagnostics, context);
+				return validateuid((String) value, diagnostics, context);
 			case DatatypesPackage.ST_TYPE:
-				return validatestType((String)value, diagnostics, context);
+				return validatestType((String) value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -902,16 +901,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateED(ED ed, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ed, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ed, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validateED_validateThumbnailThumbnail(ed, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ed, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ed, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ed, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ed, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ed, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ed, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ed, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateED_validateThumbnailThumbnail(ed, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -931,16 +948,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTEL(TEL tel, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(tel, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(tel, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(tel, diagnostics, context);
-		if (result || diagnostics != null) result &= validateURL_validateURL(tel, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(tel, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(tel, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(tel, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(tel, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(tel, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(tel, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(tel, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateURL_validateURL(tel, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -950,16 +985,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateURL(URL url, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(url, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(url, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(url, diagnostics, context);
-		if (result || diagnostics != null) result &= validateURL_validateURL(url, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(url, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(url, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(url, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(url, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(url, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(url, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(url, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateURL_validateURL(url, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1006,23 +1059,55 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateST(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(st, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(st, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateED_validateThumbnailThumbnail(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateThumbnail(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateReference(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateRepresentation(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateST(st, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateED_validateThumbnailThumbnail(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateThumbnail(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateReference(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheck(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheckAlgorithm(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateCompression(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateRepresentation(st, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateST(st, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1112,16 +1197,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCR(CR cr, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(cr, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(cr, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cr, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCR_validateCR(cr, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(cr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(cr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(cr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(cr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(cr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(cr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(cr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCR_validateCR(cr, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1141,17 +1244,37 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCV(CV cv, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(cv, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(cv, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCE_validateQualifier(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCV_validateTranslation(cv, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCE_validateQualifier(cv, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCV_validateTranslation(cv, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1171,16 +1294,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCE(CE ce, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ce, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ce, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCE_validateQualifier(ce, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ce, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ce, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ce, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ce, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ce, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ce, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ce, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCE_validateQualifier(ce, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1200,16 +1341,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateII(II ii, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ii, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ii, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ii, diagnostics, context);
-		if (result || diagnostics != null) result &= validateII_validateII(ii, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ii, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ii, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ii, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ii, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ii, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ii, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ii, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateII_validateII(ii, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1229,16 +1388,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBL(BL bl, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(bl, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(bl, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(bl, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBL_validateBL(bl, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(bl, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(bl, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(bl, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(bl, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(bl, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(bl, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(bl, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateBL_validateBL(bl, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1258,17 +1435,37 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBN(BN bn, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(bn, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(bn, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBL_validateBL(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBN_validateNullFlavor(bn, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateBL_validateBL(bn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateBN_validateNullFlavor(bn, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1288,42 +1485,112 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAD(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ad, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ad, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDelimiter(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateCountry(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateState(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateCounty(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateCity(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validatePostalCode(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateStreetAddressLine(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateHouseNumber(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateHouseNumberNumeric(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDirection(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateStreetName(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateStreetNameBase(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateStreetNameType(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateAdditionalLocator(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateUnitID(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateUnitType(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateCareOf(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateCensusTract(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDeliveryAddressLine(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDeliveryInstallationType(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDeliveryInstallationArea(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDeliveryInstallationQualifier(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDeliveryMode(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateDeliveryModeIdentifier(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validateBuildingNumberSuffix(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validatePostBox(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_validatePrecinct(ad, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDelimiter(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateCountry(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateState(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateCounty(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateCity(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validatePostalCode(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateStreetAddressLine(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateHouseNumber(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateHouseNumberNumeric(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDirection(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateStreetName(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateStreetNameBase(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateStreetNameType(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateAdditionalLocator(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateUnitID(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateUnitType(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateCareOf(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateCensusTract(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDeliveryAddressLine(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDeliveryInstallationType(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDeliveryInstallationArea(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDeliveryInstallationQualifier(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDeliveryMode(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateDeliveryModeIdentifier(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validateBuildingNumberSuffix(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validatePostBox(ad, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAD_validatePrecinct(ad, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1609,23 +1876,55 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateADXP(ADXP adxp, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(adxp, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(adxp, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateED_validateThumbnailThumbnail(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateThumbnail(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateReference(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateRepresentation(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateST(adxp, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateED_validateThumbnailThumbnail(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateThumbnail(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateReference(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheck(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheckAlgorithm(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateCompression(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateRepresentation(adxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateST(adxp, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1635,20 +1934,46 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEN(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(en, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(en, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateDelimiter(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateFamily(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateGiven(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validatePrefix(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateSuffix(en, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateDelimiter(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateFamily(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateGiven(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validatePrefix(en, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateSuffix(en, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1708,19 +2033,43 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateIVL_TS(IVL_TS ivL_TS, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ivL_TS, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ivL_TS, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_TS_validateOptionsContainingLow(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_TS_validateOptionsContainingCenter(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_TS_validateOptionsContainingHigh(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_TS_validateOptionsContainingWidth(ivL_TS, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_TS_validateOptionsContainingLow(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_TS_validateOptionsContainingCenter(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_TS_validateOptionsContainingHigh(ivL_TS, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_TS_validateOptionsContainingWidth(ivL_TS, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1792,17 +2141,37 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePQR(PQR pqr, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(pqr, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(pqr, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCE_validateQualifier(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCV_validateTranslation(pqr, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCE_validateQualifier(pqr, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCV_validateTranslation(pqr, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1812,23 +2181,55 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateENXP(ENXP enxp, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(enxp, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(enxp, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateED_validateThumbnailThumbnail(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateThumbnail(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateReference(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateRepresentation(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateST(enxp, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateED_validateThumbnailThumbnail(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateThumbnail(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateReference(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheck(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheckAlgorithm(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateCompression(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateRepresentation(enxp, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateST(enxp, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1838,21 +2239,49 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateON(ON on, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(on, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(on, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateDelimiter(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateFamily(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateGiven(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validatePrefix(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateSuffix(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateON_validateInvariant(on, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateDelimiter(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateFamily(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateGiven(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validatePrefix(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateSuffix(on, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateON_validateInvariant(on, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1872,21 +2301,49 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePN(PN pn, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(pn, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(pn, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateDelimiter(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateFamily(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateGiven(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validatePrefix(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateSuffix(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePN_validateInvariant(pn, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateDelimiter(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateFamily(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateGiven(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validatePrefix(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateSuffix(pn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validatePN_validateInvariant(pn, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1906,21 +2363,49 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTN(TN tn, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(tn, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(tn, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateDelimiter(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateFamily(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateGiven(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validatePrefix(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_validateSuffix(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTN_validateInvariant(tn, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateDelimiter(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateFamily(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateGiven(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validatePrefix(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEN_validateSuffix(tn, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateTN_validateInvariant(tn, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1940,16 +2425,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateINT(INT int_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(int_, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(int_, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(int_, diagnostics, context);
-		if (result || diagnostics != null) result &= validateINT_validateINT(int_, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(int_, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(int_, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(int_, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(int_, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(int_, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(int_, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(int_, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateINT_validateINT(int_, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1969,16 +2472,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateREAL(REAL real, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(real, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(real, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(real, diagnostics, context);
-		if (result || diagnostics != null) result &= validateREAL_validateREAL(real, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(real, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(real, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(real, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(real, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(real, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(real, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(real, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateREAL_validateREAL(real, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1998,22 +2519,52 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCS(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(cs, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(cs, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCE_validateQualifier(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCV_validateTranslation(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCS_validateOriginalText(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCS_validateCodeSystem(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCS_validateCodeSystemName(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCS_validateCodeSystemVersion(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCS_validateDisplayName(cs, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCE_validateQualifier(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCV_validateTranslation(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCS_validateOriginalText(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCS_validateCodeSystem(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCS_validateCodeSystemName(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCS_validateCodeSystemVersion(cs, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCS_validateDisplayName(cs, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2073,17 +2624,37 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCO(CO co, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(co, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(co, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCE_validateQualifier(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCV_validateTranslation(co, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCE_validateQualifier(co, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCV_validateTranslation(co, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2093,23 +2664,55 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSC(SC sc, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(sc, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(sc, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateED_validateThumbnailThumbnail(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateThumbnail(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateReference(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateRepresentation(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateST(sc, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateED_validateThumbnailThumbnail(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateThumbnail(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateReference(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheck(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateIntegrityCheckAlgorithm(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateCompression(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateRepresentation(sc, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateST_validateST(sc, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2119,16 +2722,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRTO_QTY_QTY(RTO_QTY_QTY rtO_QTY_QTY, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(rtO_QTY_QTY, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(rtO_QTY_QTY, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRTO_QTY_QTY_validateDenominator(rtO_QTY_QTY, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(rtO_QTY_QTY, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(rtO_QTY_QTY, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(rtO_QTY_QTY, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(rtO_QTY_QTY, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(rtO_QTY_QTY, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(rtO_QTY_QTY, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(rtO_QTY_QTY, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateRTO_QTY_QTY_validateDenominator(rtO_QTY_QTY, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2149,16 +2770,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMO(MO mo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(mo, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(mo, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMO_validateMO(mo, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(mo, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(mo, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(mo, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(mo, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(mo, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(mo, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(mo, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateMO_validateMO(mo, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2178,16 +2817,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRTO(RTO rto, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(rto, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(rto, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRTO_QTY_QTY_validateDenominator(rto, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(rto, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(rto, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(rto, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(rto, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(rto, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(rto, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(rto, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateRTO_QTY_QTY_validateDenominator(rto, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2197,16 +2854,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSXCM_INT(SXCM_INT sxcM_INT, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(sxcM_INT, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(sxcM_INT, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sxcM_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validateINT_validateINT(sxcM_INT, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(sxcM_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(sxcM_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(sxcM_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(sxcM_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(sxcM_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(sxcM_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(sxcM_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateINT_validateINT(sxcM_INT, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2216,16 +2891,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateIVXB_INT(IVXB_INT ivxB_INT, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ivxB_INT, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ivxB_INT, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ivxB_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validateINT_validateINT(ivxB_INT, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ivxB_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ivxB_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ivxB_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ivxB_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ivxB_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ivxB_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ivxB_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateINT_validateINT(ivxB_INT, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2235,20 +2928,46 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateIVL_INT(IVL_INT ivL_INT, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ivL_INT, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ivL_INT, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_INT_validateINT(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_INT_validateOptionsContainingLow(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_INT_validateOptionsContainingCenter(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_INT_validateOptionsContainingHigh(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_INT_validateOptionsContainingWidth(ivL_INT, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_INT_validateINT(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_INT_validateOptionsContainingLow(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_INT_validateOptionsContainingCenter(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_INT_validateOptionsContainingHigh(ivL_INT, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_INT_validateOptionsContainingWidth(ivL_INT, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2330,19 +3049,43 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateIVL_PQ(IVL_PQ ivL_PQ, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ivL_PQ, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(ivL_PQ, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_PQ_validateOptionsContainingLow(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_PQ_validateOptionsContainingCenter(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_PQ_validateOptionsContainingHigh(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIVL_PQ_validateOptionsContainingWidth(ivL_PQ, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_PQ_validateOptionsContainingLow(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_PQ_validateOptionsContainingCenter(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_PQ_validateOptionsContainingHigh(ivL_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateIVL_PQ_validateOptionsContainingWidth(ivL_PQ, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2396,16 +3139,34 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRTO_PQ_PQ(RTO_PQ_PQ rtO_PQ_PQ, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(rtO_PQ_PQ, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(rtO_PQ_PQ, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRTO_PQ_PQ_validateDenominator(rtO_PQ_PQ, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(rtO_PQ_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(rtO_PQ_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(rtO_PQ_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(rtO_PQ_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(rtO_PQ_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(rtO_PQ_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(rtO_PQ_PQ, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateRTO_PQ_PQ_validateDenominator(rtO_PQ_PQ, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2435,21 +3196,49 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEIVL_event(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(eivL_event, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(eivL_event, diagnostics, context)) {
+			return false;
+		}
 		boolean result = validate_EveryMultiplicityConforms(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCE_validateQualifier(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEIVL_event_validateOriginalText(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEIVL_event_validateTranslation(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEIVL_event_validateCodeSystem(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEIVL_event_validateCodeSystemName(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEIVL_event_validateCode(eivL_event, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateCE_validateQualifier(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEIVL_event_validateOriginalText(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEIVL_event_validateTranslation(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEIVL_event_validateCodeSystem(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEIVL_event_validateCodeSystemName(eivL_event, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateEIVL_event_validateCode(eivL_event, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -2543,11 +3332,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validatecsType_Pattern
 	 */
-	public static final PatternMatcher [][] CS_TYPE__PATTERN__VALUES = new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[^\\s]+")
-			}
-		};
+	public static final PatternMatcher[][] CS_TYPE__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[^\\s]+") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>cs Type</em>'.
@@ -2556,7 +3341,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatecsType_Pattern(String csType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validatePattern(DatatypesPackage.Literals.CS_TYPE, csType, CS_TYPE__PATTERN__VALUES, diagnostics, context);
+		return validatePattern(
+			DatatypesPackage.Literals.CS_TYPE, csType, CS_TYPE__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**
@@ -2575,13 +3361,10 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateuid_Pattern
 	 */
-	public static final PatternMatcher [][] UID__PATTERN__VALUES = new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[0-2](\\.(0|[1-9][0-9]*))*"),
-				XMLTypeUtil.createPatternMatcher("[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}"),
-				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9\\-]*")
-			}
-		};
+	public static final PatternMatcher[][] UID__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] {
+			XMLTypeUtil.createPatternMatcher("[0-2](\\.(0|[1-9][0-9]*))*"),
+			XMLTypeUtil.createPatternMatcher("[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}"),
+			XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9\\-]*") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>uid</em>'.
@@ -2609,11 +3392,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validatestType_Pattern
 	 */
-	public static final PatternMatcher [][] ST_TYPE__PATTERN__VALUES = new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher(".+")
-			}
-		};
+	public static final PatternMatcher[][] ST_TYPE__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher(".+") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>st Type</em>'.
@@ -2622,7 +3401,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatestType_Pattern(String stType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validatePattern(DatatypesPackage.Literals.ST_TYPE, stType, ST_TYPE__PATTERN__VALUES, diagnostics, context);
+		return validatePattern(
+			DatatypesPackage.Literals.ST_TYPE, stType, ST_TYPE__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**
@@ -2641,11 +3421,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validatetsType_Pattern
 	 */
-	public static final PatternMatcher [][] TS_TYPE__PATTERN__VALUES = new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\\.[0-9]+)([+\\-][0-9]{1,4})?")
-			}
-		};
+	public static final PatternMatcher[][] TS_TYPE__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\\.[0-9]+)([+\\-][0-9]{1,4})?") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>ts Type</em>'.
@@ -2654,7 +3430,8 @@ public class DatatypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatetsType_Pattern(String tsType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validatePattern(DatatypesPackage.Literals.TS_TYPE, tsType, TS_TYPE__PATTERN__VALUES, diagnostics, context);
+		return validatePattern(
+			DatatypesPackage.Literals.TS_TYPE, tsType, TS_TYPE__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**

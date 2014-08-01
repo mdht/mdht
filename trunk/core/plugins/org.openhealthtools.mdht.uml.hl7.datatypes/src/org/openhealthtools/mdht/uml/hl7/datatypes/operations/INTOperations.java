@@ -93,20 +93,20 @@ public class INTOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.INT);
 			try {
 				VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(int_)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.INT__INT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateINT", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(int_, context) }),
-						 new Object [] { int_ }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.INT__INT,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateINT",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(int_, context) }),
+					new Object[] { int_ }));
 			}
 			return false;
 		}
