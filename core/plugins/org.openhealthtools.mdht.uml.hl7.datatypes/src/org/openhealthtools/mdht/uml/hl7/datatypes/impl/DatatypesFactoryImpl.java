@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.xml.type.XMLTypeFactory;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.*;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
@@ -82,11 +83,12 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public static DatatypesFactory init() {
 		try {
-			DatatypesFactory theDatatypesFactory = (DatatypesFactory) EPackage.Registry.INSTANCE.getEFactory(DatatypesPackage.eNS_URI);
+			DatatypesFactory theDatatypesFactory = (DatatypesFactory)EPackage.Registry.INSTANCE.getEFactory(DatatypesPackage.eNS_URI);
 			if (theDatatypesFactory != null) {
 				return theDatatypesFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DatatypesFactoryImpl();
@@ -110,88 +112,47 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DatatypesPackage.ED:
-				return createED();
-			case DatatypesPackage.TEL:
-				return createTEL();
-			case DatatypesPackage.SXCM_TS:
-				return createSXCM_TS();
-			case DatatypesPackage.TS:
-				return createTS();
-			case DatatypesPackage.ST:
-				return createST();
-			case DatatypesPackage.CD:
-				return createCD();
-			case DatatypesPackage.CR:
-				return createCR();
-			case DatatypesPackage.CV:
-				return createCV();
-			case DatatypesPackage.CE:
-				return createCE();
-			case DatatypesPackage.II:
-				return createII();
-			case DatatypesPackage.BL:
-				return createBL();
-			case DatatypesPackage.BN:
-				return createBN();
-			case DatatypesPackage.AD:
-				return createAD();
-			case DatatypesPackage.ADXP:
-				return createADXP();
-			case DatatypesPackage.EN:
-				return createEN();
-			case DatatypesPackage.ENXP:
-				return createENXP();
-			case DatatypesPackage.IVL_TS:
-				return createIVL_TS();
-			case DatatypesPackage.IVXB_TS:
-				return createIVXB_TS();
-			case DatatypesPackage.PQ:
-				return createPQ();
-			case DatatypesPackage.PQR:
-				return createPQR();
-			case DatatypesPackage.ON:
-				return createON();
-			case DatatypesPackage.PN:
-				return createPN();
-			case DatatypesPackage.TN:
-				return createTN();
-			case DatatypesPackage.INT:
-				return createINT();
-			case DatatypesPackage.REAL:
-				return createREAL();
-			case DatatypesPackage.CS:
-				return createCS();
-			case DatatypesPackage.CO:
-				return createCO();
-			case DatatypesPackage.SC:
-				return createSC();
-			case DatatypesPackage.RTO_QTY_QTY:
-				return createRTO_QTY_QTY();
-			case DatatypesPackage.MO:
-				return createMO();
-			case DatatypesPackage.RTO:
-				return createRTO();
-			case DatatypesPackage.SXCM_INT:
-				return createSXCM_INT();
-			case DatatypesPackage.IVXB_INT:
-				return createIVXB_INT();
-			case DatatypesPackage.IVL_INT:
-				return createIVL_INT();
-			case DatatypesPackage.IVXB_PQ:
-				return createIVXB_PQ();
-			case DatatypesPackage.SXCM_PQ:
-				return createSXCM_PQ();
-			case DatatypesPackage.IVL_PQ:
-				return createIVL_PQ();
-			case DatatypesPackage.RTO_PQ_PQ:
-				return createRTO_PQ_PQ();
-			case DatatypesPackage.PIVL_TS:
-				return createPIVL_TS();
-			case DatatypesPackage.EIVL_EVENT:
-				return createEIVL_event();
-			case DatatypesPackage.EIVL_TS:
-				return createEIVL_TS();
+			case DatatypesPackage.ED: return createED();
+			case DatatypesPackage.TEL: return createTEL();
+			case DatatypesPackage.SXCM_TS: return createSXCM_TS();
+			case DatatypesPackage.TS: return createTS();
+			case DatatypesPackage.ST: return createST();
+			case DatatypesPackage.CD: return createCD();
+			case DatatypesPackage.CR: return createCR();
+			case DatatypesPackage.CV: return createCV();
+			case DatatypesPackage.CE: return createCE();
+			case DatatypesPackage.II: return createII();
+			case DatatypesPackage.BL: return createBL();
+			case DatatypesPackage.BN: return createBN();
+			case DatatypesPackage.AD: return createAD();
+			case DatatypesPackage.ADXP: return createADXP();
+			case DatatypesPackage.EN: return createEN();
+			case DatatypesPackage.ENXP: return createENXP();
+			case DatatypesPackage.IVL_TS: return createIVL_TS();
+			case DatatypesPackage.IVXB_TS: return createIVXB_TS();
+			case DatatypesPackage.PQ: return createPQ();
+			case DatatypesPackage.PQR: return createPQR();
+			case DatatypesPackage.ON: return createON();
+			case DatatypesPackage.PN: return createPN();
+			case DatatypesPackage.TN: return createTN();
+			case DatatypesPackage.INT: return createINT();
+			case DatatypesPackage.REAL: return createREAL();
+			case DatatypesPackage.CS: return createCS();
+			case DatatypesPackage.CO: return createCO();
+			case DatatypesPackage.SC: return createSC();
+			case DatatypesPackage.RTO_QTY_QTY: return createRTO_QTY_QTY();
+			case DatatypesPackage.MO: return createMO();
+			case DatatypesPackage.RTO: return createRTO();
+			case DatatypesPackage.SXCM_INT: return createSXCM_INT();
+			case DatatypesPackage.IVXB_INT: return createIVXB_INT();
+			case DatatypesPackage.IVL_INT: return createIVL_INT();
+			case DatatypesPackage.IVXB_PQ: return createIVXB_PQ();
+			case DatatypesPackage.SXCM_PQ: return createSXCM_PQ();
+			case DatatypesPackage.IVL_PQ: return createIVL_PQ();
+			case DatatypesPackage.RTO_PQ_PQ: return createRTO_PQ_PQ();
+			case DatatypesPackage.PIVL_TS: return createPIVL_TS();
+			case DatatypesPackage.EIVL_EVENT: return createEIVL_event();
+			case DatatypesPackage.EIVL_TS: return createEIVL_TS();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -216,8 +177,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.ST_TYPE:
 				return createstTypeFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -240,8 +200,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.ST_TYPE:
 				return convertstTypeToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -792,10 +751,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public BinaryDataEncoding createBinaryDataEncodingFromString(EDataType eDataType, String initialValue) {
 		BinaryDataEncoding result = BinaryDataEncoding.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
-					eDataType.getName() + "'");
-		}
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -805,9 +761,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String convertBinaryDataEncodingToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null
-				? null
-				: instanceValue.toString();
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -816,7 +770,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createcsTypeFromString(EDataType eDataType, String initialValue) {
-		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
 	}
 
 	/**
@@ -834,7 +788,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createuidFromString(EDataType eDataType, String initialValue) {
-		return (String) super.createFromString(eDataType, initialValue);
+		return (String)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -852,7 +806,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createstTypeFromString(EDataType eDataType, String initialValue) {
-		return (String) super.createFromString(eDataType, initialValue);
+		return (String)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -870,7 +824,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createtsTypeFromString(EDataType eDataType, String initialValue) {
-		return (String) super.createFromString(eDataType, initialValue);
+		return (String)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -888,7 +842,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public DatatypesPackage getDatatypesPackage() {
-		return (DatatypesPackage) getEPackage();
+		return (DatatypesPackage)getEPackage();
 	}
 
 	/**

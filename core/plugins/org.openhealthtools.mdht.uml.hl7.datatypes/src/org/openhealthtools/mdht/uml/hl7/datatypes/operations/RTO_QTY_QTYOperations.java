@@ -92,21 +92,20 @@ public class RTO_QTY_QTYOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.RTO_QTY_QTY);
 			try {
 				VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
+			}
+			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(rtO_QTY_QTY)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(
-					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
-					DatatypesValidator.RTO_QTY_QTY__DENOMINATOR,
-					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-						"_UI_GenericInvariant_diagnostic",
-						new Object[] {
-								"validateDenominator",
-								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(rtO_QTY_QTY, context) }),
-					new Object[] { rtO_QTY_QTY }));
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.RTO_QTY_QTY__DENOMINATOR,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDenominator", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(rtO_QTY_QTY, context) }),
+						 new Object [] { rtO_QTY_QTY }));
 			}
 			return false;
 		}

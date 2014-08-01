@@ -153,9 +153,8 @@ public class IIImpl extends ANYImpl implements II {
 	public void setRoot(String newRoot) {
 		String oldRoot = root;
 		root = newRoot;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.II__ROOT, oldRoot, root));
-		}
 	}
 
 	/**
@@ -175,10 +174,8 @@ public class IIImpl extends ANYImpl implements II {
 	public void setExtension(String newExtension) {
 		String oldExtension = extension;
 		extension = newExtension;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.II__EXTENSION, oldExtension, extension));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.II__EXTENSION, oldExtension, extension));
 	}
 
 	/**
@@ -198,11 +195,8 @@ public class IIImpl extends ANYImpl implements II {
 	public void setAssigningAuthorityName(String newAssigningAuthorityName) {
 		String oldAssigningAuthorityName = assigningAuthorityName;
 		assigningAuthorityName = newAssigningAuthorityName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.II__ASSIGNING_AUTHORITY_NAME, oldAssigningAuthorityName,
-				assigningAuthorityName));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.II__ASSIGNING_AUTHORITY_NAME, oldAssigningAuthorityName, assigningAuthorityName));
 	}
 
 	/**
@@ -222,10 +216,8 @@ public class IIImpl extends ANYImpl implements II {
 	public void setDisplayable(Boolean newDisplayable) {
 		Boolean oldDisplayable = displayable;
 		displayable = newDisplayable;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.II__DISPLAYABLE, oldDisplayable, displayable));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.II__DISPLAYABLE, oldDisplayable, displayable));
 	}
 
 	/**
@@ -266,16 +258,16 @@ public class IIImpl extends ANYImpl implements II {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.II__ROOT:
-				setRoot((String) newValue);
+				setRoot((String)newValue);
 				return;
 			case DatatypesPackage.II__EXTENSION:
-				setExtension((String) newValue);
+				setExtension((String)newValue);
 				return;
 			case DatatypesPackage.II__ASSIGNING_AUTHORITY_NAME:
-				setAssigningAuthorityName((String) newValue);
+				setAssigningAuthorityName((String)newValue);
 				return;
 			case DatatypesPackage.II__DISPLAYABLE:
-				setDisplayable((Boolean) newValue);
+				setDisplayable((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -314,21 +306,13 @@ public class IIImpl extends ANYImpl implements II {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.II__ROOT:
-				return ROOT_EDEFAULT == null
-						? root != null
-						: !ROOT_EDEFAULT.equals(root);
+				return ROOT_EDEFAULT == null ? root != null : !ROOT_EDEFAULT.equals(root);
 			case DatatypesPackage.II__EXTENSION:
-				return EXTENSION_EDEFAULT == null
-						? extension != null
-						: !EXTENSION_EDEFAULT.equals(extension);
+				return EXTENSION_EDEFAULT == null ? extension != null : !EXTENSION_EDEFAULT.equals(extension);
 			case DatatypesPackage.II__ASSIGNING_AUTHORITY_NAME:
-				return ASSIGNING_AUTHORITY_NAME_EDEFAULT == null
-						? assigningAuthorityName != null
-						: !ASSIGNING_AUTHORITY_NAME_EDEFAULT.equals(assigningAuthorityName);
+				return ASSIGNING_AUTHORITY_NAME_EDEFAULT == null ? assigningAuthorityName != null : !ASSIGNING_AUTHORITY_NAME_EDEFAULT.equals(assigningAuthorityName);
 			case DatatypesPackage.II__DISPLAYABLE:
-				return DISPLAYABLE_EDEFAULT == null
-						? displayable != null
-						: !DISPLAYABLE_EDEFAULT.equals(displayable);
+				return DISPLAYABLE_EDEFAULT == null ? displayable != null : !DISPLAYABLE_EDEFAULT.equals(displayable);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -340,9 +324,7 @@ public class IIImpl extends ANYImpl implements II {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (root: ");

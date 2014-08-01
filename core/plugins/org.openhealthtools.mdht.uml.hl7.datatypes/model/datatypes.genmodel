@@ -4,7 +4,7 @@
     modelDirectory="/org.openhealthtools.mdht.uml.hl7.datatypes/src"
     modelPluginID="org.openhealthtools.mdht.uml.hl7.datatypes" modelName="Datatypes"
     modelPluginClass="DatatypesPlugin" importerID="org.eclipse.uml2.uml.ecore.importer"
-    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.5" usedGenPackages="../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
+    complianceLevel="7.0" copyrightFields="false" runtimeVersion="2.9" usedGenPackages="../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
     pluralizedGetters="true" invariantPrefix="validate">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
