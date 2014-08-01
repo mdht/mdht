@@ -86,10 +86,8 @@ public class IVXB_INTImpl extends INTImpl implements IVXB_INT {
 	public void setInclusive(Boolean newInclusive) {
 		Boolean oldInclusive = inclusive;
 		inclusive = newInclusive;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.IVXB_INT__INCLUSIVE, oldInclusive, inclusive));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVXB_INT__INCLUSIVE, oldInclusive, inclusive));
 	}
 
 	/**
@@ -115,7 +113,7 @@ public class IVXB_INTImpl extends INTImpl implements IVXB_INT {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.IVXB_INT__INCLUSIVE:
-				setInclusive((Boolean) newValue);
+				setInclusive((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -145,9 +143,7 @@ public class IVXB_INTImpl extends INTImpl implements IVXB_INT {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.IVXB_INT__INCLUSIVE:
-				return INCLUSIVE_EDEFAULT == null
-						? inclusive != null
-						: !INCLUSIVE_EDEFAULT.equals(inclusive);
+				return INCLUSIVE_EDEFAULT == null ? inclusive != null : !INCLUSIVE_EDEFAULT.equals(inclusive);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,9 +155,7 @@ public class IVXB_INTImpl extends INTImpl implements IVXB_INT {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (inclusive: ");

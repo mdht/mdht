@@ -2,8 +2,9 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     modelDirectory="/org.openhealthtools.mdht.uml.cda/src" modelPluginID="org.openhealthtools.mdht.uml.cda"
-    modelName="Cda" modelPluginClass="CDAPlugin" importerID="org.eclipse.uml2.uml.ecore.importer"
-    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.5" usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab ../../org.eclipse.uml2.types/model/Types.genmodel#//types"
+    modelName="Cda" modelPluginClass="CDAPlugin" testsDirectory="/org.openhealthtools.mdht.uml.cda.test/src"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="7.0" copyrightFields="false"
+    testsPluginID="org.openhealthtools.mdht.uml.cda.test" runtimeVersion="2.9" usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab ../../org.eclipse.uml2.types/model/Types.genmodel#//types"
     pluralizedGetters="true" invariantPrefix="validate">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>

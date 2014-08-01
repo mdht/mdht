@@ -1287,6 +1287,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(assignedAuthor, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(assignedAuthor, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(assignedAuthor, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -1347,6 +1350,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(assignedCustodian, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(assignedCustodian, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(assignedCustodian, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -1391,6 +1397,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(assignedEntity, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(assignedEntity, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(assignedEntity, diagnostics, context);
@@ -1449,6 +1458,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(authenticator, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(authenticator, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(authenticator, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -1492,6 +1504,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(author, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(author, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(author, diagnostics, context);
@@ -1554,6 +1569,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(authoringDevice, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(authoringDevice, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(authoringDevice, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -1614,6 +1632,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(authorization, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(authorization, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(authorization, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -1657,6 +1678,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(birthplace, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(birthplace, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(birthplace, diagnostics, context);
@@ -1703,6 +1727,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(clinicalDocument, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(clinicalDocument, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(clinicalDocument, diagnostics, context);
@@ -1774,6 +1801,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(component1, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(component1, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(component1, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -1817,6 +1847,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(component2, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(component2, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(component2, diagnostics, context);
@@ -1892,6 +1925,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(component3, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(component3, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(component3, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -1949,6 +1985,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(component4, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(component4, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(component4, diagnostics, context);
@@ -2024,6 +2063,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(component5, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(component5, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(component5, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2081,6 +2123,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(consent, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(consent, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(consent, diagnostics, context);
@@ -2142,6 +2187,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(consumable, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(consumable, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(consumable, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2185,6 +2233,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(criterion, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(criterion, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(criterion, diagnostics, context);
@@ -2232,6 +2283,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(custodian, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(custodian, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(custodian, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2276,6 +2330,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(custodianOrganization, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(custodianOrganization, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(custodianOrganization, diagnostics, context);
@@ -2337,6 +2394,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(dataEnterer, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(dataEnterer, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(dataEnterer, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2396,6 +2456,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(device, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(device, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(device, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2440,6 +2503,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(documentationOf, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(documentationOf, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(documentationOf, diagnostics, context);
@@ -2496,6 +2562,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(encompassingEncounter, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(encompassingEncounter, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(encompassingEncounter, diagnostics, context);
@@ -2576,6 +2645,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(entity, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(entity, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(entity, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2619,6 +2691,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(entry, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(entry, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(entry, diagnostics, context);
@@ -2681,6 +2756,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(entryRelationship, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(entryRelationship, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(entryRelationship, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2724,6 +2802,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(externalAct, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(externalAct, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(externalAct, diagnostics, context);
@@ -2772,6 +2853,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(externalDocument, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(externalDocument, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(externalDocument, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2818,6 +2902,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(externalObservation, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(externalObservation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(externalObservation, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -2862,6 +2949,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(externalProcedure, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(externalProcedure, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(externalProcedure, diagnostics, context);
@@ -2921,6 +3011,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(guardian, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(guardian, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(guardian, diagnostics, context);
@@ -2990,6 +3083,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(informant12, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(informant12, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(informant12, diagnostics, context);
@@ -3076,6 +3172,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(infrastructureRootTypeId, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(infrastructureRootTypeId, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(infrastructureRootTypeId, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3153,6 +3252,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(inFulfillmentOf, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(inFulfillmentOf, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(inFulfillmentOf, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3206,6 +3308,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(labeledDrug, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(labeledDrug, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(labeledDrug, diagnostics, context);
@@ -3278,6 +3383,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(legalAuthenticator, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(legalAuthenticator, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(legalAuthenticator, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3337,6 +3445,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(location, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(location, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(location, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3383,6 +3494,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(maintainedEntity, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(maintainedEntity, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(maintainedEntity, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3427,6 +3541,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(manufacturedProduct, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(manufacturedProduct, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(manufacturedProduct, diagnostics, context);
@@ -3489,6 +3606,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(material, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(material, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(material, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3546,6 +3666,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(nonXMLBody, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(nonXMLBody, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(nonXMLBody, diagnostics, context);
@@ -3627,6 +3750,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(observationRange, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(observationRange, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(observationRange, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3672,6 +3798,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(order, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(order, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(order, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3715,6 +3844,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(organization, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(organization, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(organization, diagnostics, context);
@@ -3777,6 +3909,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(organizationPartOf, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(organizationPartOf, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(organizationPartOf, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3830,6 +3965,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(parentDocument, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(parentDocument, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(parentDocument, diagnostics, context);
@@ -3892,6 +4030,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(participant1, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(participant1, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(participant1, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -3936,6 +4077,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(participant2, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(participant2, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(participant2, diagnostics, context);
@@ -3984,6 +4128,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(participantRole, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(participantRole, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(participantRole, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4027,6 +4174,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(patient, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(patient, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(patient, diagnostics, context);
@@ -4088,6 +4238,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(patientRole, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(patientRole, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(patientRole, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4142,6 +4295,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(performer2, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(performer2, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(performer2, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4185,6 +4341,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(person, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(person, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(person, diagnostics, context);
@@ -4246,6 +4405,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(place, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(place, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(place, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4305,6 +4467,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(playingEntity, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(playingEntity, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(playingEntity, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4349,6 +4514,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(precondition, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(precondition, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(precondition, diagnostics, context);
@@ -4405,6 +4573,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(product, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(product, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(product, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4449,6 +4620,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(recordTarget, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(recordTarget, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(recordTarget, diagnostics, context);
@@ -4510,6 +4684,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(reference, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(reference, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(reference, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4556,6 +4733,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(referenceRange, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(referenceRange, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(referenceRange, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4600,6 +4780,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(regionOfInterest, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(regionOfInterest, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(regionOfInterest, diagnostics, context);
@@ -4660,6 +4843,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(regionOfInterestValue, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(regionOfInterestValue, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(regionOfInterestValue, diagnostics, context);
@@ -4737,6 +4923,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(responsibleParty, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(responsibleParty, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(responsibleParty, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4789,6 +4978,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(section, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(section, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(section, diagnostics, context);
@@ -4851,6 +5043,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(serviceEvent, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(serviceEvent, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(serviceEvent, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -4894,6 +5089,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(specimen, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(specimen, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(specimen, diagnostics, context);
@@ -4940,6 +5138,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(specimenRole, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(specimenRole, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(specimenRole, diagnostics, context);
@@ -4996,6 +5197,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(structuredBody, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(structuredBody, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(structuredBody, diagnostics, context);
@@ -5055,6 +5259,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(subject, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(subject, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(subject, diagnostics, context);
@@ -5117,6 +5324,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(subjectPerson, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(subjectPerson, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(subjectPerson, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -5177,6 +5387,9 @@ public class CDAValidator extends EObjectValidator {
 			result &= validate_EveryReferenceIsContained(substanceAdministration, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(substanceAdministration, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(substanceAdministration, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
@@ -5220,6 +5433,9 @@ public class CDAValidator extends EObjectValidator {
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(supply, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(supply, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(supply, diagnostics, context);

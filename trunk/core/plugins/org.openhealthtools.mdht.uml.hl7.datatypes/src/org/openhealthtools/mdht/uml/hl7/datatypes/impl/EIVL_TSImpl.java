@@ -92,13 +92,8 @@ public class EIVL_TSImpl extends SXCM_TSImpl implements EIVL_TS {
 		EIVL_event oldEvent = event;
 		event = newEvent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.EIVL_TS__EVENT, oldEvent, newEvent);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.EIVL_TS__EVENT, oldEvent, newEvent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -111,21 +106,15 @@ public class EIVL_TSImpl extends SXCM_TSImpl implements EIVL_TS {
 	public void setEvent(EIVL_event newEvent) {
 		if (newEvent != event) {
 			NotificationChain msgs = null;
-			if (event != null) {
-				msgs = ((InternalEObject) event).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.EIVL_TS__EVENT, null, msgs);
-			}
-			if (newEvent != null) {
-				msgs = ((InternalEObject) newEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.EIVL_TS__EVENT, null, msgs);
-			}
+			if (event != null)
+				msgs = ((InternalEObject)event).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.EIVL_TS__EVENT, null, msgs);
+			if (newEvent != null)
+				msgs = ((InternalEObject)newEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.EIVL_TS__EVENT, null, msgs);
 			msgs = basicSetEvent(newEvent, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EIVL_TS__EVENT, newEvent, newEvent));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EIVL_TS__EVENT, newEvent, newEvent));
 	}
 
 	/**
@@ -146,13 +135,8 @@ public class EIVL_TSImpl extends SXCM_TSImpl implements EIVL_TS {
 		IVL_PQ oldOffset = offset;
 		offset = newOffset;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.EIVL_TS__OFFSET, oldOffset, newOffset);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.EIVL_TS__OFFSET, oldOffset, newOffset);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -165,22 +149,15 @@ public class EIVL_TSImpl extends SXCM_TSImpl implements EIVL_TS {
 	public void setOffset(IVL_PQ newOffset) {
 		if (newOffset != offset) {
 			NotificationChain msgs = null;
-			if (offset != null) {
-				msgs = ((InternalEObject) offset).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.EIVL_TS__OFFSET, null, msgs);
-			}
-			if (newOffset != null) {
-				msgs = ((InternalEObject) newOffset).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
-						DatatypesPackage.EIVL_TS__OFFSET, null, msgs);
-			}
+			if (offset != null)
+				msgs = ((InternalEObject)offset).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.EIVL_TS__OFFSET, null, msgs);
+			if (newOffset != null)
+				msgs = ((InternalEObject)newOffset).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.EIVL_TS__OFFSET, null, msgs);
 			msgs = basicSetOffset(newOffset, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.EIVL_TS__OFFSET, newOffset, newOffset));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EIVL_TS__OFFSET, newOffset, newOffset));
 	}
 
 	/**
@@ -224,10 +201,10 @@ public class EIVL_TSImpl extends SXCM_TSImpl implements EIVL_TS {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.EIVL_TS__EVENT:
-				setEvent((EIVL_event) newValue);
+				setEvent((EIVL_event)newValue);
 				return;
 			case DatatypesPackage.EIVL_TS__OFFSET:
-				setOffset((IVL_PQ) newValue);
+				setOffset((IVL_PQ)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -242,10 +219,10 @@ public class EIVL_TSImpl extends SXCM_TSImpl implements EIVL_TS {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.EIVL_TS__EVENT:
-				setEvent((EIVL_event) null);
+				setEvent((EIVL_event)null);
 				return;
 			case DatatypesPackage.EIVL_TS__OFFSET:
-				setOffset((IVL_PQ) null);
+				setOffset((IVL_PQ)null);
 				return;
 		}
 		super.eUnset(featureID);
