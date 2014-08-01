@@ -93,20 +93,20 @@ public class STOperations extends EDOperations {
 			helper.setContext(DatatypesPackage.Literals.ST);
 			try {
 				VALIDATE_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ST__THUMBNAIL,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateThumbnail", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
-						 new Object [] { st }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.ST__THUMBNAIL,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateThumbnail",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+					new Object[] { st }));
 			}
 			return false;
 		}
@@ -149,20 +149,20 @@ public class STOperations extends EDOperations {
 			helper.setContext(DatatypesPackage.Literals.ST);
 			try {
 				VALIDATE_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ST__REFERENCE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateReference", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
-						 new Object [] { st }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.ST__REFERENCE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateReference",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+					new Object[] { st }));
 			}
 			return false;
 		}
@@ -205,20 +205,20 @@ public class STOperations extends EDOperations {
 			helper.setContext(DatatypesPackage.Literals.ST);
 			try {
 				VALIDATE_INTEGRITY_CHECK__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INTEGRITY_CHECK__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_INTEGRITY_CHECK__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ST__INTEGRITY_CHECK,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateIntegrityCheck", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
-						 new Object [] { st }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.ST__INTEGRITY_CHECK,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateIntegrityCheck",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+					new Object[] { st }));
 			}
 			return false;
 		}
@@ -281,20 +281,20 @@ public class STOperations extends EDOperations {
 			helper.setContext(DatatypesPackage.Literals.ST);
 			try {
 				VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ST__COMPRESSION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCompression", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
-						 new Object [] { st }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.ST__COMPRESSION,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateCompression",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+					new Object[] { st }));
 			}
 			return false;
 		}
@@ -337,20 +337,20 @@ public class STOperations extends EDOperations {
 			helper.setContext(DatatypesPackage.Literals.ST);
 			try {
 				VALIDATE_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ST__REPRESENTATION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateRepresentation", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
-						 new Object [] { st }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.ST__REPRESENTATION,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateRepresentation",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+					new Object[] { st }));
 			}
 			return false;
 		}
@@ -393,20 +393,20 @@ public class STOperations extends EDOperations {
 			helper.setContext(DatatypesPackage.Literals.ST);
 			try {
 				VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ST__ST,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateST", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
-						 new Object [] { st }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.ST__ST,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic", new Object[] {
+								"validateST", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+					new Object[] { st }));
 			}
 			return false;
 		}
@@ -441,11 +441,11 @@ public class STOperations extends EDOperations {
 	public static boolean isCompressionDefined(ST st) {
 		if (IS_COMPRESSION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(18));
+			helper.setOperationContext(
+				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(18));
 			try {
 				IS_COMPRESSION_DEFINED__EOCL_QRY = helper.createQuery(IS_COMPRESSION_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
@@ -481,11 +481,11 @@ public class STOperations extends EDOperations {
 	public static boolean isIntegrityCheckAlgorithmDefined(ST st) {
 		if (IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(19));
+			helper.setOperationContext(
+				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(19));
 			try {
 				IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY = helper.createQuery(IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
@@ -521,11 +521,11 @@ public class STOperations extends EDOperations {
 	public static boolean isRepresentationDefined(ST st) {
 		if (IS_REPRESENTATION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(20));
+			helper.setOperationContext(
+				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(20));
 			try {
 				IS_REPRESENTATION_DEFINED__EOCL_QRY = helper.createQuery(IS_REPRESENTATION_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
@@ -550,20 +550,21 @@ public class STOperations extends EDOperations {
 			helper.setContext(DatatypesPackage.Literals.ST);
 			try {
 				VALIDATE_INTEGRITY_CHECK_ALGORITHM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INTEGRITY_CHECK_ALGORITHM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_INTEGRITY_CHECK_ALGORITHM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ST__INTEGRITY_CHECK_ALGORITHM,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateIntegrityCheckAlgorithm", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
-						 new Object [] { st }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.ST__INTEGRITY_CHECK_ALGORITHM,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateIntegrityCheckAlgorithm",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+					new Object[] { st }));
 			}
 			return false;
 		}

@@ -118,8 +118,13 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 		IVXB_PQ oldLow = low;
 		low = newLow;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__LOW, oldLow, newLow);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_PQ__LOW, oldLow, newLow);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -132,15 +137,21 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	public void setLow(IVXB_PQ newLow) {
 		if (newLow != low) {
 			NotificationChain msgs = null;
-			if (low != null)
-				msgs = ((InternalEObject)low).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__LOW, null, msgs);
-			if (newLow != null)
-				msgs = ((InternalEObject)newLow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__LOW, null, msgs);
+			if (low != null) {
+				msgs = ((InternalEObject) low).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__LOW, null, msgs);
+			}
+			if (newLow != null) {
+				msgs = ((InternalEObject) newLow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__LOW, null, msgs);
+			}
 			msgs = basicSetLow(newLow, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__LOW, newLow, newLow));
+		}
 	}
 
 	/**
@@ -161,8 +172,13 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 		PQ oldCenter = center;
 		center = newCenter;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__CENTER, oldCenter, newCenter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_PQ__CENTER, oldCenter, newCenter);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -175,15 +191,21 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	public void setCenter(PQ newCenter) {
 		if (newCenter != center) {
 			NotificationChain msgs = null;
-			if (center != null)
-				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__CENTER, null, msgs);
-			if (newCenter != null)
-				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__CENTER, null, msgs);
+			if (center != null) {
+				msgs = ((InternalEObject) center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__CENTER, null, msgs);
+			}
+			if (newCenter != null) {
+				msgs = ((InternalEObject) newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__CENTER, null, msgs);
+			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__CENTER, newCenter, newCenter));
+		}
 	}
 
 	/**
@@ -204,8 +226,13 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 		IVXB_PQ oldHigh = high;
 		high = newHigh;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__HIGH, oldHigh, newHigh);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_PQ__HIGH, oldHigh, newHigh);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -218,15 +245,21 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	public void setHigh(IVXB_PQ newHigh) {
 		if (newHigh != high) {
 			NotificationChain msgs = null;
-			if (high != null)
-				msgs = ((InternalEObject)high).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__HIGH, null, msgs);
-			if (newHigh != null)
-				msgs = ((InternalEObject)newHigh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__HIGH, null, msgs);
+			if (high != null) {
+				msgs = ((InternalEObject) high).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__HIGH, null, msgs);
+			}
+			if (newHigh != null) {
+				msgs = ((InternalEObject) newHigh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__HIGH, null, msgs);
+			}
 			msgs = basicSetHigh(newHigh, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__HIGH, newHigh, newHigh));
+		}
 	}
 
 	/**
@@ -247,8 +280,13 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 		PQ oldWidth = width;
 		width = newWidth;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__WIDTH, oldWidth, newWidth);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_PQ__WIDTH, oldWidth, newWidth);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -261,15 +299,21 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	public void setWidth(PQ newWidth) {
 		if (newWidth != width) {
 			NotificationChain msgs = null;
-			if (width != null)
-				msgs = ((InternalEObject)width).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__WIDTH, null, msgs);
-			if (newWidth != null)
-				msgs = ((InternalEObject)newWidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_PQ__WIDTH, null, msgs);
+			if (width != null) {
+				msgs = ((InternalEObject) width).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__WIDTH, null, msgs);
+			}
+			if (newWidth != null) {
+				msgs = ((InternalEObject) newWidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_PQ__WIDTH, null, msgs);
+			}
 			msgs = basicSetWidth(newWidth, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__WIDTH, newWidth, newWidth));
+		}
 	}
 
 	/**
@@ -357,16 +401,16 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.IVL_PQ__LOW:
-				setLow((IVXB_PQ)newValue);
+				setLow((IVXB_PQ) newValue);
 				return;
 			case DatatypesPackage.IVL_PQ__CENTER:
-				setCenter((PQ)newValue);
+				setCenter((PQ) newValue);
 				return;
 			case DatatypesPackage.IVL_PQ__HIGH:
-				setHigh((IVXB_PQ)newValue);
+				setHigh((IVXB_PQ) newValue);
 				return;
 			case DatatypesPackage.IVL_PQ__WIDTH:
-				setWidth((PQ)newValue);
+				setWidth((PQ) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -381,16 +425,16 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.IVL_PQ__LOW:
-				setLow((IVXB_PQ)null);
+				setLow((IVXB_PQ) null);
 				return;
 			case DatatypesPackage.IVL_PQ__CENTER:
-				setCenter((PQ)null);
+				setCenter((PQ) null);
 				return;
 			case DatatypesPackage.IVL_PQ__HIGH:
-				setHigh((IVXB_PQ)null);
+				setHigh((IVXB_PQ) null);
 				return;
 			case DatatypesPackage.IVL_PQ__WIDTH:
-				setWidth((PQ)null);
+				setWidth((PQ) null);
 				return;
 		}
 		super.eUnset(featureID);

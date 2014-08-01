@@ -91,20 +91,21 @@ public class URLOperations extends ANYOperations {
 			helper.setContext(DatatypesPackage.Literals.URL);
 			try {
 				VALIDATE_URL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_URL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_URL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(url)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.URL__URL,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateURL", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(url, context) }),
-						 new Object [] { url }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.URL__URL,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateURL", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(url, context) }),
+					new Object[] { url }));
 			}
 			return false;
 		}

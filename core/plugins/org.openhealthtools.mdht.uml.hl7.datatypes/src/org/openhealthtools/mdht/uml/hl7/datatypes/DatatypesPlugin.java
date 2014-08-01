@@ -43,7 +43,7 @@ public final class DatatypesPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public DatatypesPlugin() {
-		super(new ResourceLocator [] {});
+		super(new ResourceLocator[] {});
 	}
 
 	/**
