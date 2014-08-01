@@ -103,6 +103,7 @@ Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in t
       <feature id="org.eclipse.wst.xml_ui.feature"/>
       <feature id="org.eclipse.wst.xml_userdoc.feature"/>
       <feature id="org.eclipse.jdt"/>
+      <feature id="org.eclipse.m2e.feature"/>
    </features>
 
    <configurations>
