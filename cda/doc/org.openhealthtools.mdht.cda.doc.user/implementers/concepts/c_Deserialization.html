@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en-us" xml:lang="en-us">
+<html xml:lang="en-us" lang="en-us">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="copyright" content="(C) Copyright 2005"/>
@@ -15,46 +15,46 @@
 <link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
 <title>Consuming an XML instance (deserialization)</title>
 </head>
-<body id="deserializationconcept"><a name="deserializationconcept"><!-- --></a>
+<body id="deserializationconcept">
 
 
-<h1 class="topictitle1">Consuming an XML instance (deserialization)</h1>
+<h1 class="title topictitle1">Consuming an XML instance (deserialization)</h1>
 
-<div><div class="p">
-<ul>
-<li>XML instance loaded from input stream into DOM</li>
+<div class="body conbody"><div class="p">
+<ul class="ul">
+<li class="li">XML instance loaded from input stream into DOM</li>
 
-<li>XML instance contains template ids</li>
+<li class="li">XML instance contains template ids</li>
 
-<li>DOM handed to EMF deserializer</li>
+<li class="li">DOM handed to EMF deserializer</li>
 
-<li>Loading mechanism is intercepted to inject type information
-<ul>
-<li>DOM gives us look ahead access to get template id</li>
+<li class="li">Loading mechanism is intercepted to inject type information
+<ul class="ul">
+<li class="li">DOM gives us look ahead access to get template id</li>
 
-<li>Template id is used to look up Ecore package/class information from CDA template registry (uses Eclipse plugin extension registry)</li>
+<li class="li">Template id is used to look up Ecore package/class information from CDA template registry (uses Eclipse plugin extension registry)</li>
 
-<li>xsi:type information is dynamically added to DOM element</li>
+<li class="li">xsi:type information is dynamically added to DOM element</li>
 
 </ul>
 
 </li>
 
-<li>Augmented DOM element is then handed back to EMF to construct Ecore model instance of the correct type according to template model</li>
+<li class="li">Augmented DOM element is then handed back to EMF to construct Ecore model instance of the correct type according to template model</li>
 
 </ul>
 </div>
 
-<pre class="codeblock">
+<pre class="pre codeblock">
 ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("resources/SampleCDADocument.xml"));
 System.out.println(clinicalDocument);
 </pre>
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
 </div>
 </div>
 
