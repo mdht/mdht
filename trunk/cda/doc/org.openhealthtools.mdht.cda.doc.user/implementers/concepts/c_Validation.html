@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en-us" xml:lang="en-us">
+<html xml:lang="en-us" lang="en-us">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="copyright" content="(C) Copyright 2005"/>
@@ -15,46 +15,46 @@
 <link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
 <title>Validation</title>
 </head>
-<body id="validationconcept"><a name="validationconcept"><!-- --></a>
+<body id="validationconcept">
 
 
-<h1 class="topictitle1">Validation</h1>
+<h1 class="title topictitle1">Validation</h1>
 
-<div>
-<p>Constraints specified in the form of standard UML constructs such as cardinality are automatically validated as part of the EMF framework</p>
+<div class="body conbody">
+<p class="p">Constraints specified in the form of standard UML constructs such as cardinality are automatically validated as part of the EMF framework</p>
 
-<p>OCL constraints specified by the modeler or generated during the model-to-model transformation are carried through to the EMF model and Java source code</p>
+<p class="p">OCL constraints specified by the modeler or generated during the model-to-model transformation are carried through to the EMF model and Java source code</p>
 
 
-<p>EMF validation mechanism</p>
+<p class="p">EMF validation mechanism</p>
 
 <div class="p">
-<ul>
-<li>Uses OCL interpreter at run time to validate these constraints</li>
+<ul class="ul">
+<li class="li">Uses OCL interpreter at run time to validate these constraints</li>
 
-<li>Each Ecore model gets a separate validator (e.g. datatypes, CDA, CCD, etc.)</li>
+<li class="li">Each Ecore model gets a separate validator (e.g. datatypes, CDA, CCD, etc.)</li>
 
-<li>Validators work together to validate Ecore model instance</li>
+<li class="li">Validators work together to validate Ecore model instance</li>
 
 </ul>
 
 </div>
 
 
-<p>Output of validation is a diagnostic tree</p>
+<p class="p">Output of validation is a diagnostic tree</p>
 
 <div class="p">
-<ul>
-	<li>Validation severity and message specified in the model are used at runtime</li>
+<ul class="ul">
+	<li class="li">Validation severity and message specified in the model are used at runtime</li>
 
-	<li>Diagnostic tree can be processed using CDA utility class</li>
+	<li class="li">Diagnostic tree can be processed using CDA utility class</li>
 
 </ul>
 
 </div>
 
 
-<pre class="codeblock">
+<pre class="pre codeblock">
 boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 	@Override
 	public void handleError(Diagnostic diagnostic) {
@@ -79,9 +79,9 @@ if (valid) {
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
 </div>
 </div>
 

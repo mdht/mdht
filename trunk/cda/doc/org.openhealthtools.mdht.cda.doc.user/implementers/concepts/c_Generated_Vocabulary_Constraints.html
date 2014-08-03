@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en-us" xml:lang="en-us">
+<html xml:lang="en-us" lang="en-us">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="copyright" content="(C) Copyright 2005"/>
@@ -15,17 +15,17 @@
 <link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
 <title>Generated Property Constraints</title>
 </head>
-<body id="generatedpropertyconstraintsconcept"><a name="generatedpropertyconstraintsconcept"><!-- --></a>
+<body id="generatedpropertyconstraintsconcept">
 
 
-<h1 class="topictitle1">Generated Property Constraints</h1>
+<h1 class="title topictitle1">Generated Property Constraints</h1>
 
-<div>
-<p>Vocabulary constraints are those constraints that involve coded attributes.</p>
+<div class="body conbody">
+<p class="p">Vocabulary constraints are those constraints that involve coded attributes.</p>
 
-<p>An example of a constraint generated from template model using information specified in the vocab specification stereotype. The code system and code value have been fixed in this example taken form Neonatal Care Report (NCR)</p>
+<p class="p">An example of a constraint generated from template model using information specified in the vocab specification stereotype. The code system and code value have been fixed in this example taken form Neonatal Care Report (NCR)</p>
 
-<pre class="codeblock">
+<pre class="pre codeblock">
 
 not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (value.code = '47340003' and value.codeSystem = '2.16.840.1.113883.6.96')
 
@@ -33,9 +33,9 @@ not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and let 
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../../implementers/concepts/c_Generated_Constraints.html">Generated OCL Constraints</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Generated_Constraints.html">Generated OCL Constraints</a></div>
 </div>
 </div>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en-us" xml:lang="en-us">
+<html xml:lang="en-us" lang="en-us">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="copyright" content="(C) Copyright 2005"/>
@@ -15,14 +15,14 @@
 <link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
 <title>Producing an XML instance (serialization)</title>
 </head>
-<body id="serializationconcept"><a name="serializationconcept"><!-- --></a>
+<body id="serializationconcept">
 
 
-<h1 class="topictitle1">Producing an XML instance (serialization)</h1>
+<h1 class="title topictitle1">Producing an XML instance (serialization)</h1>
 
-<div><p>Client code uses the runtime API to build instance of template model. All template models get serialized according to the underlying CDA model. EMF uses annotations at runtime to properly serialize Ecore model instance to XML document. The EMF serializer has been customized to omit xsi:type information and put all serialized elements into one namespace (as per CDA XML schema). CDA schema defines templateId element to identify places in the document where templates are used</p>
+<div class="body conbody"><p class="p">Client code uses the runtime API to build instance of template model. All template models get serialized according to the underlying CDA model. EMF uses annotations at runtime to properly serialize Ecore model instance to XML document. The EMF serializer has been customized to omit xsi:type information and put all serialized elements into one namespace (as per CDA XML schema). CDA schema defines templateId element to identify places in the document where templates are used</p>
 
-<pre class="codeblock">
+<pre class="pre codeblock">
 NeonatalCareReport clinicalDocument = NCRFactory.eINSTANCE.createNeonatalCareReport().init();
 PatientDataSectionNCR patientData = NCRFactory.eINSTANCE.createPatientDataSectionNCR().init();
 EncountersSection encounters = NCRFactory.eINSTANCE.createEncountersSection().init();
@@ -38,9 +38,9 @@ CDAUtil.save(clinicalDocument, System.out);
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
 </div>
 </div>
 
