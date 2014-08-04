@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.internal;
@@ -37,7 +37,10 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	public int compare(Viewer viewer, Object e1, Object e2) {
 		if (e1 instanceof UMLNavigatorGroup && e2 instanceof UMLDomainNavigatorItem) {
 			return -1;
+		} else if (e1 instanceof UMLDomainNavigatorItem && e2 instanceof UMLNavigatorGroup) {
+			return +1;
 		}
+
 		if (e1 instanceof UMLDomainNavigatorItem && e2 instanceof UMLDomainNavigatorItem) {
 			EClass e1Class = ((UMLDomainNavigatorItem) e1).getEObject().eClass();
 			EClass e2Class = ((UMLDomainNavigatorItem) e2).getEObject().eClass();
