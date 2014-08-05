@@ -23,7 +23,7 @@
 		<module>org.openhealthtools.mdht.uml.cda.basic-feature</module>
 		<module>org.openhealthtools.mdht.uml.cda.tooling-feature</module>
 		<module>org.openhealthtools.mdht.uml.cda.models-feature</module>
-		<module>oorg.openhealthtools.mdht.uml.cda.models.doc-feature</module>
+		<module>org.openhealthtools.mdht.uml.cda.models.doc-feature</module>
 	</modules>
 
 	<build>
