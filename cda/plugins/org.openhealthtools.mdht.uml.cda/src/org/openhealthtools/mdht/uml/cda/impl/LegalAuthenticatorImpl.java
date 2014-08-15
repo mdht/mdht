@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.LegalAuthenticator;
 import org.openhealthtools.mdht.uml.cda.operations.LegalAuthenticatorOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.rim.impl.ParticipationImpl;
@@ -51,6 +52,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.LegalAuthenticatorImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.LegalAuthenticatorImpl#getTypeCode <em>Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.LegalAuthenticatorImpl#getContextControlCode <em>Context Control Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.LegalAuthenticatorImpl#getSDTCSignatureText <em>SDTC Signature Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -203,6 +205,16 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 	 * @ordered
 	 */
 	protected boolean contextControlCodeESet;
+
+	/**
+	 * The cached value of the '{@link #getSDTCSignatureText() <em>SDTC Signature Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCSignatureText()
+	 * @generated
+	 * @ordered
+	 */
+	protected ED sDTCSignatureText;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -643,6 +655,63 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ED getSDTCSignatureText() {
+		return sDTCSignatureText;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCSignatureText(ED newSDTCSignatureText, NotificationChain msgs) {
+		ED oldSDTCSignatureText = sDTCSignatureText;
+		sDTCSignatureText = newSDTCSignatureText;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT, oldSDTCSignatureText,
+				newSDTCSignatureText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCSignatureText(ED newSDTCSignatureText) {
+		if (newSDTCSignatureText != sDTCSignatureText) {
+			NotificationChain msgs = null;
+			if (sDTCSignatureText != null) {
+				msgs = ((InternalEObject) sDTCSignatureText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT, null, msgs);
+			}
+			if (newSDTCSignatureText != null) {
+				msgs = ((InternalEObject) newSDTCSignatureText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT, null, msgs);
+			}
+			msgs = basicSetSDTCSignatureText(newSDTCSignatureText, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT, newSDTCSignatureText,
+				newSDTCSignatureText));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return LegalAuthenticatorOperations.validateTypeCode(this, diagnostics, context);
 	}
@@ -676,6 +745,8 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 				return basicSetSignatureCode(null, msgs);
 			case CDAPackage.LEGAL_AUTHENTICATOR__ASSIGNED_ENTITY:
 				return basicSetAssignedEntity(null, msgs);
+			case CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				return basicSetSDTCSignatureText(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -706,6 +777,8 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 				return getTypeCode();
 			case CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE:
 				return getContextControlCode();
+			case CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				return getSDTCSignatureText();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -748,6 +821,9 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 			case CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE:
 				setContextControlCode((ContextControl) newValue);
 				return;
+			case CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				setSDTCSignatureText((ED) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -787,6 +863,9 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 			case CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE:
 				unsetContextControlCode();
 				return;
+			case CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				setSDTCSignatureText((ED) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -817,6 +896,8 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 				return isSetTypeCode();
 			case CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE:
 				return isSetContextControlCode();
+			case CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				return sDTCSignatureText != null;
 		}
 		return super.eIsSet(featureID);
 	}

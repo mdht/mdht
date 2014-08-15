@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.operations.AuthenticatorOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.rim.impl.ParticipationImpl;
@@ -49,6 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getAssignedEntity <em>Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTypeCode <em>Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getSDTCSignatureText <em>SDTC Signature Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -172,6 +174,16 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 	 * @ordered
 	 */
 	protected boolean typeCodeESet;
+
+	/**
+	 * The cached value of the '{@link #getSDTCSignatureText() <em>SDTC Signature Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCSignatureText()
+	 * @generated
+	 * @ordered
+	 */
+	protected ED sDTCSignatureText;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -552,6 +564,63 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ED getSDTCSignatureText() {
+		return sDTCSignatureText;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCSignatureText(ED newSDTCSignatureText, NotificationChain msgs) {
+		ED oldSDTCSignatureText = sDTCSignatureText;
+		sDTCSignatureText = newSDTCSignatureText;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT, oldSDTCSignatureText,
+				newSDTCSignatureText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCSignatureText(ED newSDTCSignatureText) {
+		if (newSDTCSignatureText != sDTCSignatureText) {
+			NotificationChain msgs = null;
+			if (sDTCSignatureText != null) {
+				msgs = ((InternalEObject) sDTCSignatureText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT, null, msgs);
+			}
+			if (newSDTCSignatureText != null) {
+				msgs = ((InternalEObject) newSDTCSignatureText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT, null, msgs);
+			}
+			msgs = basicSetSDTCSignatureText(newSDTCSignatureText, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT, newSDTCSignatureText,
+				newSDTCSignatureText));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return AuthenticatorOperations.validateTypeCode(this, diagnostics, context);
 	}
@@ -576,6 +645,8 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				return basicSetSignatureCode(null, msgs);
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
 				return basicSetAssignedEntity(null, msgs);
+			case CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				return basicSetSDTCSignatureText(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -604,6 +675,8 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				return getNullFlavor();
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:
 				return getTypeCode();
+			case CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				return getSDTCSignatureText();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -643,6 +716,9 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:
 				setTypeCode((ParticipationType) newValue);
 				return;
+			case CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				setSDTCSignatureText((ED) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -679,6 +755,9 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:
 				unsetTypeCode();
 				return;
+			case CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				setSDTCSignatureText((ED) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -707,6 +786,8 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				return isSetNullFlavor();
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:
 				return isSetTypeCode();
+			case CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT:
+				return sDTCSignatureText != null;
 		}
 		return super.eIsSet(featureID);
 	}
