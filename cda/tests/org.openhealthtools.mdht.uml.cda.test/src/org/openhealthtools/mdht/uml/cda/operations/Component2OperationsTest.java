@@ -63,7 +63,7 @@ public class Component2OperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		Component2Operations obj = new Component2Operations();
+		new Component2Operations();
 		assertTrue(true);
 	} // testConstructor
 

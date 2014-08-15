@@ -42,7 +42,7 @@ public abstract class ClinicalStatementOperationsTest extends CDAValidationTest 
 	@SuppressWarnings("unused")
 	@Test
 	public void testConstructor() {
-		ClinicalStatementOperations obj = new ClinicalStatementOperations();
+		new ClinicalStatementOperations();
 		assertTrue(true);
 	} // testConstructor
 

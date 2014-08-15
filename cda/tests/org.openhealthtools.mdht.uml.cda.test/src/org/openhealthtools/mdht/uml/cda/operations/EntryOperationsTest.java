@@ -60,7 +60,7 @@ public class EntryOperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		EntryOperations obj = new EntryOperations();
+		new EntryOperations();
 		assertTrue(true);
 	} // testConstructor
 

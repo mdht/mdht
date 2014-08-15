@@ -42,7 +42,7 @@ public class Informant12OperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		Informant12Operations obj = new Informant12Operations();
+		new Informant12Operations();
 		assertTrue(true);
 	} // testConstructor
 

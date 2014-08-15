@@ -42,7 +42,7 @@ public class GuardianOperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		GuardianOperations obj = new GuardianOperations();
+		new GuardianOperations();
 		assertTrue(true);
 	} // testConstructor
 
