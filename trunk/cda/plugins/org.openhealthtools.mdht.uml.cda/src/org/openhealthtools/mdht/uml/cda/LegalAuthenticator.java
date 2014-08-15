@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.rim.Participation;
@@ -39,6 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getTypeCode <em>Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getContextControlCode <em>Context Control Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getSDTCSignatureText <em>SDTC Signature Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -358,6 +360,33 @@ public interface LegalAuthenticator extends Participation {
 	 * @generated
 	 */
 	boolean isSetContextControlCode();
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Signature Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Signature Text</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Signature Text</em>' containment reference.
+	 * @see #setSDTCSignatureText(ED)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLegalAuthenticator_SDTCSignatureText()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='signatureText' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	ED getSDTCSignatureText();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getSDTCSignatureText <em>SDTC Signature Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Signature Text</em>' containment reference.
+	 * @see #getSDTCSignatureText()
+	 * @generated
+	 */
+	void setSDTCSignatureText(ED value);
 
 	/**
 	 * <!-- begin-user-doc -->

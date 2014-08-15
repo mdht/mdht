@@ -2910,13 +2910,22 @@ public interface CDAPackage extends EPackage {
 	int LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Signature Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Legal Authenticator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 9;
+	int LEGAL_AUTHENTICATOR_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl <em>Authenticator</em>}' class.
@@ -3001,13 +3010,22 @@ public interface CDAPackage extends EPackage {
 	int AUTHENTICATOR__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Signature Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATOR__SDTC_SIGNATURE_TEXT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Authenticator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
+	int AUTHENTICATOR_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Participant1Impl <em>Participant1</em>}' class.
@@ -13521,6 +13539,17 @@ public interface CDAPackage extends EPackage {
 	EAttribute getLegalAuthenticator_ContextControlCode();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getSDTCSignatureText <em>SDTC Signature Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Signature Text</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getSDTCSignatureText()
+	 * @see #getLegalAuthenticator()
+	 * @generated
+	 */
+	EReference getLegalAuthenticator_SDTCSignatureText();
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.Authenticator <em>Authenticator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13617,6 +13646,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAuthenticator_TypeCode();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getSDTCSignatureText <em>SDTC Signature Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Signature Text</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getSDTCSignatureText()
+	 * @see #getAuthenticator()
+	 * @generated
+	 */
+	EReference getAuthenticator_SDTCSignatureText();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.Participant1 <em>Participant1</em>}'.
@@ -24158,6 +24198,14 @@ public interface CDAPackage extends EPackage {
 		EAttribute LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = eINSTANCE.getLegalAuthenticator_ContextControlCode();
 
 		/**
+		 * The meta object literal for the '<em><b>SDTC Signature Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT = eINSTANCE.getLegalAuthenticator_SDTCSignatureText();
+
+		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl <em>Authenticator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -24230,6 +24278,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AUTHENTICATOR__TYPE_CODE = eINSTANCE.getAuthenticator_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Signature Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__SDTC_SIGNATURE_TEXT = eINSTANCE.getAuthenticator_SDTCSignatureText();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Participant1Impl <em>Participant1</em>}' class.

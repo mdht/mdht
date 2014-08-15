@@ -49,5 +49,6 @@
     <xs:element name="deceasedTime" type="cda:TS"/>
     <xs:element name="raceCode" type="cda:CE" />
     <xs:element name="birthTime" type="cda:TS" />
+    <xs:element name="signatureText" type="cda:ED" />
     
 </xs:schema>

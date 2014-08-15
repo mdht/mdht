@@ -3415,6 +3415,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLegalAuthenticator_SDTCSignatureText() {
+		return (EReference) getLegalAuthenticator().getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAuthenticator() {
 		if (authenticatorEClass == null) {
 			authenticatorEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(
@@ -3493,6 +3502,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EAttribute getAuthenticator_TypeCode() {
 		return (EAttribute) getAuthenticator().getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAuthenticator_SDTCSignatureText() {
+		return (EReference) getAuthenticator().getEStructuralFeatures().get(8);
 	}
 
 	/**

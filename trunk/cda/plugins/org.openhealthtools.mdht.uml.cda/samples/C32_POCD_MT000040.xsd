@@ -149,6 +149,7 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
 			<xs:element name="templateId" type="II" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="time" type="TS"/>
 			<xs:element name="signatureCode" type="CS"/>
+			<xs:element ref="sdtc:signatureText" xmlns:sdtc="urn:hl7-org:sdtc" minOccurs="0" maxOccurs="1" />			
 			<xs:element name="assignedEntity" type="sdtc:SdtcAssignedEntity"/>
 		</xs:sequence>
 		<xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
@@ -675,6 +676,7 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
 			<xs:element name="templateId" type="II" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="time" type="TS"/>
 			<xs:element name="signatureCode" type="CS"/>
+			<xs:element ref="sdtc:signatureText" xmlns:sdtc="urn:hl7-org:sdtc" minOccurs="0" maxOccurs="1" />
 			<xs:element name="assignedEntity" type="sdtc:SdtcAssignedEntity"/>
 		</xs:sequence>
 		<xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>

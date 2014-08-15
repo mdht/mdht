@@ -3006,6 +3006,11 @@
           <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BsUDcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_vHSJgBzlEeSMr-NWzQuDBw" name="sDTCSignatureText" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vHSJgRzlEeSMr-NWzQuDBw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vHSJghzlEeSMr-NWzQuDBw" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ChEisEcEEd6besF9iFIJkQ" name="Author">
       <ownedRule xmi:id="__t9lECWLEeCrtN9McWFciw" name="typeCode" constrainedElement="_ChEisEcEEd6besF9iFIJkQ">
@@ -5034,6 +5039,11 @@
           <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yenMkDcEd6xYZuu1VKCVw"/>
           <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yenN0DcEd6xYZuu1VKCVw"/>
         </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tvz1sBzkEeSMr-NWzQuDBw" name="sDTCSignatureText" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tv0cwBzkEeSMr-NWzQuDBw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tv0cwRzkEeSMr-NWzQuDBw" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_il6LoEcZEd6besF9iFIJkQ" name="Location">
@@ -9031,4 +9041,6 @@
   <Ecore:EReference xmi:id="_wjqvUFZvEeGCdLgBm6VHOQ" xmlName="id" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_jSS_4FZvEeGCdLgBm6VHOQ"/>
   <Ecore:EReference xmi:id="_utLkkI_8EeKDcJPVSJHobw" xmlName="dischargeDispositionCode" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_eCTm4I_1EeKDcJPVSJHobw"/>
   <Ecore:EAttribute xmi:id="_g7DKcONLEeKLC7zu0C2K8Q" xmlName="ID" xmlFeatureKind="Attribute" base_Property="_pFDz8ONKEeKLC7zu0C2K8Q"/>
+  <Ecore:EReference xmi:id="_ACvagBzlEeSMr-NWzQuDBw" xmlName="signatureText" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_tvz1sBzkEeSMr-NWzQuDBw"/>
+  <Ecore:EReference xmi:id="_4Q-R4BzlEeSMr-NWzQuDBw" xmlName="signatureText" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_vHSJgBzlEeSMr-NWzQuDBw"/>
 </xmi:XMI>

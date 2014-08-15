@@ -709,6 +709,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/typeCode.1"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/contextControlCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//LegalAuthenticator/sDTCSignatureText"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//LegalAuthenticator/typeCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LegalAuthenticator/typeCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LegalAuthenticator/typeCode/context"/>
@@ -733,6 +735,8 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Authenticator/assignedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authenticator/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authenticator/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Authenticator/sDTCSignatureText"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Authenticator/typeCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Authenticator/typeCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Authenticator/typeCode/context"/>
