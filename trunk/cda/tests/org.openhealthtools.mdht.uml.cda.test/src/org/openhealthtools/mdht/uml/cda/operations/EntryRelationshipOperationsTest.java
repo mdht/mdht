@@ -33,7 +33,7 @@ public class EntryRelationshipOperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		EntryRelationshipOperations obj = new EntryRelationshipOperations();
+		new EntryRelationshipOperations();
 		assertTrue(true);
 	} // testConstructor
 

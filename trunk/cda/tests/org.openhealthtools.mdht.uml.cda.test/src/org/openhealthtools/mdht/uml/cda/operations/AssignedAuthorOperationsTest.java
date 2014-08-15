@@ -64,7 +64,7 @@ public class AssignedAuthorOperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		AssignedAuthorOperations obj = new AssignedAuthorOperations();
+		new AssignedAuthorOperations();
 		assertTrue(true);
 	} // testConstructor
 

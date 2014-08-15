@@ -45,7 +45,7 @@ public class ReferenceOperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		ReferenceOperations obj = new ReferenceOperations();
+		new ReferenceOperations();
 		assertTrue(true);
 	} // testConstructor
 

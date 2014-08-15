@@ -42,7 +42,7 @@ public class ParticipantRoleOperationsTest extends CDAValidationTest {
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
-		ParticipantRoleOperations obj = new ParticipantRoleOperations();
+		new ParticipantRoleOperations();
 		assertTrue(true);
 	} // testConstructor
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2013 Dan Brown (Drajer/Ai).
+ * Copyright (c) 2013/2014 Dan Brown (Drajer/Ai).
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.LegalAuthenticator;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Patient;
@@ -44,6 +45,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 
@@ -581,6 +583,27 @@ public class SDTCExtensionTest {
 		assertEquals(
 			"The codeSystemName has changed after serialization.", "sdtc:raceCode codeSystemName",
 			patient.getSDTCRaceCodes().get(0).getCodeSystemName());
+	}
+
+	/**
+	 * Ensures a generated document instance with sdtc:signatureText can be properly serialized.
+	 */
+	@Test
+	public void testSignatureTextSerializationOfGeneratedDoc() {
+		final String sigTextText = "omSJUEdmde9j44zmMiromSJUEdmde9j44zmMirdMDSsWdIJdksIJR3373jeu83";
+		ClinicalDocument doc = CDAFactory.eINSTANCE.createClinicalDocument();
+		ED sigText = DatatypesFactory.eINSTANCE.createED(sigTextText);
+		LegalAuthenticator la = CDAFactory.eINSTANCE.createLegalAuthenticator();
+		la.setSDTCSignatureText(sigText);
+		doc.setLegalAuthenticator(la);
+
+		if (!serializeDocument(
+			doc, "\n\n---testSignatureTestSerializationOfGeneratedDoc extension document serialization---")) {
+			fail("Unable to save/serialize sdtc:signatureText within a generated document.");
+		}
+
+		// check after serialization that sdtc specific properties are the same
+		assertEquals("The text has changed after serialization.", sigTextText, la.getSDTCSignatureText().getText()); // msg, expected, actual
 	}
 
 	/**
