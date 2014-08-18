@@ -150,10 +150,24 @@ public class CDAModelUtil {
 		return false;
 	}
 
+	/**
+	 * isCDAModel - use get top package to support nested uml packages within CDA model
+	 * primarily used for extensions
+	 * 
+	 */
 	public static boolean isCDAModel(Element element) {
-		return CDA_PACKAGE_NAME.equals((element.getNearestPackage() != null)
-				? element.getNearestPackage().getName()
-				: "");
+		if (element != null) {
+			Package neareastPackage = element.getNearestPackage();
+			if (neareastPackage != null) {
+				Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(neareastPackage);
+				return CDA_PACKAGE_NAME.equals((topPackage != null)
+						? topPackage.getName()
+						: "");
+			}
+
+		}
+
+		return false;
 	}
 
 	public static Class getCDADatatype(Classifier datatype) {
