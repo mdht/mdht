@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Yann TANGUY (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *  David Carlson (XMLmodeling.com) - modified from Eclipse Papyrus source
- *  
+ *
  *****************************************************************************/
 package org.openhealthtools.mdht.uml.common.notation;
 
@@ -33,7 +33,7 @@ public class PropertyNotationUtil {
 	/**
 	 * Get all properties that can be subset by this {@link Property} checks the
 	 * type and the multiplicity.
-	 * 
+	 *
 	 * @return all properties that can be subset
 	 */
 	public static List<Property> getSubsettablesProperties(Property property) {
@@ -77,7 +77,7 @@ public class PropertyNotationUtil {
 
 	/**
 	 * Get all properties that can be redefined by this {@link Property}.
-	 * 
+	 *
 	 * @return all properties that can be redefined
 	 */
 	public static List<Property> getRedefinableProperties(Property property) {
@@ -100,7 +100,7 @@ public class PropertyNotationUtil {
 
 	/**
 	 * return the full label of the property, given UML2 specification.
-	 * 
+	 *
 	 * @return the string corresponding to the label of the property
 	 */
 	public static String getLabel(Property property) {
@@ -150,10 +150,10 @@ public class PropertyNotationUtil {
 	/**
 	 * return the custom label of the property, given UML2 specification and a
 	 * custom style.
-	 * 
+	 *
 	 * @param style
 	 *            the integer representing the style of the label
-	 * 
+	 *
 	 * @return the string corresponding to the label of the property
 	 */
 	public static String getCustomLabel(Property property, int style) {
@@ -229,11 +229,11 @@ public class PropertyNotationUtil {
 	 * Returns the modifier of the property, separated by a comma, as as single
 	 * line if <code>multiline</code> is <code>false</code> or as a multiline
 	 * string if <code>multiline</code> is <code>false</code>.
-	 * 
+	 *
 	 * @param multiLine
 	 *            boolean that indicates if the string should have several lines
 	 *            when set to <code>true</code> or only one line when set to <code>false</code>.
-	 * 
+	 *
 	 * @return a string giving all modifiers for the property
 	 */
 	protected static String getModifiersAsString(Property property, boolean multiLine) {
@@ -256,12 +256,12 @@ public class PropertyNotationUtil {
 			buffer.append("union");
 			needsComma = true;
 		}
-		if (property.isOrdered()) {
+		if (!property.isOrdered() && property.upperBound() != 1 && property.upperBound() != 0) {
 			if (needsComma) {
 				buffer.append(",");
 				buffer.append(NL);
 			}
-			buffer.append("ordered");
+			buffer.append("unordered");
 			needsComma = true;
 		}
 		if (property.isUnique() && property.getUpper() > 1) {
