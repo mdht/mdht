@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -78,6 +79,12 @@ public class CDAModelUtil {
 	public static final String SEVERITY_WARNING = "WARNING";
 
 	public static final String SEVERITY_INFO = "INFO";
+
+	private static final String EPACKAGE = "Ecore::EPackage";
+
+	private static final String NSPREFIX = "nsPrefix";
+
+	private static final String NSURI = "nsURI";
 
 	// This message may change in the future to specify certain nullFlavor Types (such as the implementation, NI)
 	private static final String NULLFLAVOR_SECTION_MESSAGE = "If section/@nullFlavor is not present, ";
@@ -1615,6 +1622,28 @@ public class CDAModelUtil {
 		return navigableEnd;
 	}
 
+	/**
+	 * getExtensionNamespace returns the name space from a extension package in the CDA model
+	 * 
+	 * @param type
+	 * @return
+	 */
+	private static String getExtensionNamespace(Type type) {
+		String nameSpace = null;
+
+		if (type != null && type.getNearestPackage() != null &&
+				!CDA_PACKAGE_NAME.equals(type.getNearestPackage().getName())) {
+			Stereotype ecoreStereotype = type.getNearestPackage().getAppliedStereotype(EPACKAGE);
+			if (ecoreStereotype != null) {
+				Object object = type.getNearestPackage().getValue(ecoreStereotype, NSPREFIX);
+				if (object instanceof String) {
+					nameSpace = (String) object;
+				}
+			}
+		}
+		return nameSpace;
+	}
+
 	public static String getCDAElementName(Property property) {
 		String elementName = null;
 		if (property.getType() instanceof Class) {
@@ -1624,7 +1653,10 @@ public class CDAModelUtil {
 				Property cdaProperty = cdaSourceClass.getOwnedAttribute(
 					null, getCDAClass((Classifier) property.getType()));
 				if (cdaProperty != null && cdaProperty.getName() != null) {
-					elementName = cdaProperty.getName();
+					String modelPrefix = getExtensionNamespace(cdaProperty.getType());
+					elementName = !StringUtils.isEmpty(modelPrefix)
+							? modelPrefix + ":" + cdaProperty.getName()
+							: cdaProperty.getName();
 				}
 			}
 		}
@@ -1637,6 +1669,7 @@ public class CDAModelUtil {
 		if (elementName == null) {
 			elementName = property.getName();
 		}
+
 		return elementName;
 	}
 
