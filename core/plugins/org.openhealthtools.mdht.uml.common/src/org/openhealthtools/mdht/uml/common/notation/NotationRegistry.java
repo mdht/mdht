@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.notation;
@@ -83,9 +83,22 @@ public class NotationRegistry {
 	}
 
 	public INotationProvider getNotationProvider(Element element) {
+		if (providers == null) {
+			load();
+		}
 		// package is null for deleted elements. fixes runtime NPE during table refresh.
 		if (element.getNearestPackage() != null) {
 			for (Profile profile : element.getNearestPackage().getAllAppliedProfiles()) {
+				if (profile.getDefinition() != null && profile.getDefinition().getNsURI() != null) {
+					String profileURI = profile.getDefinition().getNsURI().toLowerCase();
+					for (String providerURI : providers.keySet()) {
+						if (profileURI.startsWith(providerURI)) {
+							return providers.get(providerURI);
+						}
+					}
+				}
+
+				// TODO deprecated use of resource URI
 				// eResource is null for unresolved eProxyURI, missing profiles
 				if (profile.eResource() != null) {
 					// use the first notation provider found for an applied profile, ignore others
