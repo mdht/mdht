@@ -4,20 +4,24 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.notation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 
 /**
  * @author dcarlson
- * 
+ *
  */
 public class NotationUtil {
 
@@ -38,7 +42,7 @@ public class NotationUtil {
 	 * }
 	 * return namespaces;
 	 * }
-	 * 
+	 *
 	 * public static List<String> getDesignations(Element element) {
 	 * List<String> designations = null;
 	 * if (element != null) {
@@ -49,7 +53,7 @@ public class NotationUtil {
 	 * }
 	 * return designations;
 	 * }
-	 * 
+	 *
 	 * public static List<String> getDesignations(Element element, String language) {
 	 * List<String> designations = null;
 	 * if (element != null) {
@@ -60,7 +64,7 @@ public class NotationUtil {
 	 * }
 	 * return designations;
 	 * }
-	 * 
+	 *
 	 * public static List<String> getDesignations(Element element, Object namespace) {
 	 * List<String> designations = null;
 	 * if (element != null) {
@@ -71,7 +75,7 @@ public class NotationUtil {
 	 * }
 	 * return designations;
 	 * }
-	 * 
+	 *
 	 * public static List<String> getDesignations(Element element, Object namespace, String language) {
 	 * List<String> designations = null;
 	 * if (element != null) {
@@ -142,6 +146,21 @@ public class NotationUtil {
 		return annotation;
 	}
 
+	public static String getShortAnnotation(Element element) {
+		String annotation = null;
+
+		if (element != null) {
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+			if (provider instanceof IExtendedNotationProvider) {
+				annotation = ((IExtendedNotationProvider) provider).getShortAnnotation(element);
+			} else {
+				annotation = getAnnotation(element);
+			}
+		}
+
+		return annotation;
+	}
+
 	public static Object getAnnotationImage(Element element) {
 		if (element != null) {
 			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
@@ -153,6 +172,19 @@ public class NotationUtil {
 		return null;
 	}
 
+	public static List<Classifier> getTypeChoice(Property property) {
+		List<Classifier> types = new ArrayList<Classifier>();
+
+		if (property != null) {
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(property);
+			if (provider instanceof IExtendedNotationProvider) {
+				types = ((IExtendedNotationProvider) provider).getTypeChoice(property);
+			}
+		}
+
+		return types;
+	}
+
 	/*
 	 * public static AdapterFactory getAdapterFactory(Element element) {
 	 * if (element != null) {
@@ -161,7 +193,7 @@ public class NotationUtil {
 	 * return provider.getAdapterFactory(element);
 	 * }
 	 * }
-	 * 
+	 *
 	 * return null;
 	 * }
 	 */
