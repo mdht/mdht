@@ -107,7 +107,8 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 			if (nodeList.item(i) instanceof Element) {
 				Element e = (Element) nodeList.item(i);
 				if ("templateId".equals(e.getLocalName())) {
-					EClass eClass = getEClass(e.getAttributeNS(null, "root"), element);
+					EClass eClass = getEClass(
+						e.getAttributeNS(null, "root"), e.getAttributeNS(null, "extension"), element);
 					if ((eClass != null) && !eClass.isAbstract() && conformsTo(eClass, type) &&
 							(eClass.getEAllSuperTypes().size() > last)) {
 						result = eClass;
@@ -170,16 +171,22 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 		return eNamedElement.getName();
 	}
 
-	public EClass getEClass(String templateId, Object context) {
+	private EClass getEClass(String templateId, String versionId, Object context) {
 		if (documentClass != null && context instanceof Element &&
 				((Element) context).getLocalName().equals("ClinicalDocument")) {
 			return documentClass;
 		}
 
-		EClass eClass = classes.get(templateId);
+		String key = null;
+		if (!isEmpty(versionId)) {
+			key = templateId + "v" + versionId;
+		} else {
+			key = templateId;
+		}
+		EClass eClass = classes.get(key);
 		if (delegates.containsKey(eClass)) {
 			RegistryDelegate delegate = delegates.get(eClass);
-			eClass = delegate.getEClass(templateId, context);
+			eClass = delegate.getEClass(key, context);
 		}
 		return eClass;
 	}
