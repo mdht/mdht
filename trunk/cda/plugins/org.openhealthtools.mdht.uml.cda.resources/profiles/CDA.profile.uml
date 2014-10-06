@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:validation="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:validation="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Profile xmi:id="_cxOJEIEVEd6H8o-hO3-B4Q" name="CDA" metaclassReference="_egRPYIEWEd6H8o-hO3-B4Q _egRPYYEWEd6H8o-hO3-B4Q _egRPYoEWEd6H8o-hO3-B4Q _9ks2IJmTEd6OiP9GTesZug _CxDn0KFLEd6NOYTVzzK9uw _S6oGUB10Ed-N4c96fT7fpQ _vJNUYCcWEd-F25YcmQx-uw _4EGqENdUEeGhHO1Bx5wUGA">
     <eAnnotations xmi:id="_uMwWYIEWEd6H8o-hO3-B4Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <contents xmi:type="ecore:EPackage" xmi:id="_l1U9sKFdEd6NOYTVzzK9uw" name="CDA" nsURI="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" nsPrefix="CDA">
@@ -544,8 +544,8 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
       </ownedAttribute>
       <ownedAttribute xmi:id="_OKXZIB1wEd-DaIarnYb4TQ" name="ruleId">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R2QcEB1wEd-DaIarnYb4TQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qn-EAB1wEd-DaIarnYb4TQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R2QcEB1wEd-DaIarnYb4TQ" value="*"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_n7pd0EhmEeCAwtsXrgwZCA" name="mandatory">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
@@ -651,6 +651,10 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Cje1kB1wEd-DaIarnYb4TQ"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_EZiYQB1wEd-DaIarnYb4TQ"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_2wjhIEx-EeS4r_8vH5A4uw" name="templateVersion">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2wkIMEx-EeS4r_8vH5A4uw"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_4AuRwKFKEd6NOYTVzzK9uw" name="ConstraintValidation">
       <generalization xmi:id="_9VbFkKFKEd6NOYTVzzK9uw" general="_e_WLgJmVEd6OiP9GTesZug"/>
@@ -731,8 +735,8 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_Qn_HQJ8qEeOOYab0d1qVDg" name="LogicalConstraint">
       <generalization xmi:id="_VQimwJ8qEeOOYab0d1qVDg" general="_4AuRwKFKEd6NOYTVzzK9uw"/>
       <ownedAttribute xmi:id="_J7hZ0J8rEeOOYab0d1qVDg" name="operation" type="_kvtDcJ8qEeOOYab0d1qVDg">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ODCo0J8rEeOOYab0d1qVDg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ODDP4J8rEeOOYab0d1qVDg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ODCo0J8rEeOOYab0d1qVDg" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_kvtDcJ8qEeOOYab0d1qVDg" name="LogicalOperator">
@@ -748,8 +752,8 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
       </ownedAttribute>
       <ownedAttribute xmi:id="_WXx-wJ_yEeOfUpjpN-rP2g" name="filter">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WXyl0J_yEeOfUpjpN-rP2g" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WXx-wZ_yEeOfUpjpN-rP2g"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WXyl0J_yEeOfUpjpN-rP2g" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_U_R6wJ_yEeOfUpjpN-rP2g" name="Class_Inline" memberEnd="_U_R6wZ_yEeOfUpjpN-rP2g _U_Sh0J_yEeOfUpjpN-rP2g">
