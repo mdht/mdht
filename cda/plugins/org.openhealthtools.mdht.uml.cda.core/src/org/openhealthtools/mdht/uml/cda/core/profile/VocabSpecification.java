@@ -44,7 +44,7 @@ public interface VocabSpecification extends PropertyValidation {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getVocabSpecification_Code()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getCode();
@@ -60,7 +60,7 @@ public interface VocabSpecification extends PropertyValidation {
 	 * @return the value of the '<em>Code System</em>' attribute.
 	 * @see #setCodeSystem(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getVocabSpecification_CodeSystem()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getCodeSystem();
@@ -76,7 +76,7 @@ public interface VocabSpecification extends PropertyValidation {
 	 * @return the value of the '<em>Code System Name</em>' attribute.
 	 * @see #setCodeSystemName(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getVocabSpecification_CodeSystemName()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getCodeSystemName();
@@ -92,7 +92,7 @@ public interface VocabSpecification extends PropertyValidation {
 	 * @return the value of the '<em>Code System Version</em>' attribute.
 	 * @see #setCodeSystemVersion(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getVocabSpecification_CodeSystemVersion()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getCodeSystemVersion();
@@ -108,7 +108,7 @@ public interface VocabSpecification extends PropertyValidation {
 	 * @return the value of the '<em>Display Name</em>' attribute.
 	 * @see #setDisplayName(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getVocabSpecification_DisplayName()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getDisplayName();

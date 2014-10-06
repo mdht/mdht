@@ -23,6 +23,7 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateId <em>Template Id</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getAssigningAuthorityName <em>Assigning Authority Name</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#isContextDependent <em>Context Dependent</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion <em>Template Version</em>}</li>
  * </ul>
  * </p>
  * 
@@ -42,7 +43,7 @@ public interface CDATemplate extends ClassValidation {
 	 * @return the value of the '<em>Assigning Authority Name</em>' attribute.
 	 * @see #setAssigningAuthorityName(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate_AssigningAuthorityName()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getAssigningAuthorityName();
@@ -58,7 +59,7 @@ public interface CDATemplate extends ClassValidation {
 	 * @return the value of the '<em>Template Id</em>' attribute.
 	 * @see #setTemplateId(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate_TemplateId()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getTemplateId();
@@ -75,7 +76,7 @@ public interface CDATemplate extends ClassValidation {
 	 * @return the value of the '<em>Context Dependent</em>' attribute.
 	 * @see #setContextDependent(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate_ContextDependent()
-	 * @model default="false" ordered="false"
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
 	 * @generated
 	 */
 	boolean isContextDependent();
@@ -105,6 +106,35 @@ public interface CDATemplate extends ClassValidation {
 	 * @generated
 	 */
 	void setContextDependent(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Template Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Template Version</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Template Version</em>' attribute.
+	 * @see #setTemplateVersion(String)
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getCDATemplate_TemplateVersion()
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @generated
+	 */
+	String getTemplateVersion();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion <em>Template Version</em>}'
+	 * attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Template Version</em>' attribute.
+	 * @see #getTemplateVersion()
+	 * @generated
+	 */
+	void setTemplateVersion(String value);
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateId <em>Template Id</em>}' attribute.
