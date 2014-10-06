@@ -14,6 +14,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Generalization;
@@ -60,11 +61,20 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		constraint.getConstrainedElements().add(umlClass);
 
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+
+		String templateVersion = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_VERSION);
+
 		OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(
 			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
-		// String body = "self.hasTemplateId('" + templateId + "')";
-		String body = "self.templateId->exists(id : datatypes::II | id.root = '" + templateId + "')";
+
+		String versionBody = " and id.extension = '" + templateVersion + "'";
+
+		String body = "self.templateId->exists(id : datatypes::II | id.root = '" + templateId + "'" +
+				(StringUtils.isEmpty(templateVersion)
+						? ""
+						: versionBody) + ")";
+
 		expression.getBodies().add(body);
 
 		String message = CDAModelUtil.getValidationMessage(umlClass);
@@ -116,6 +126,9 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+
+		String templateVersion = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_VERSION);
+
 		Boolean contextDependent = false;
 		try {
 			contextDependent = (Boolean) umlClass.getValue(
@@ -125,6 +138,10 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 
 		AnnotationsUtil annotationsUtil = getEcoreProfile().annotate(umlClass);
 		annotationsUtil.setAnnotation("templateId.root", templateId);
+
+		if (!StringUtils.isEmpty(templateVersion)) {
+			annotationsUtil.setAnnotation("templateId.extension", templateVersion);
+		}
 		if (contextDependent) {
 			createRegistryDelegate(umlClass);
 			annotationsUtil.setAnnotation("contextDependent", "true");
