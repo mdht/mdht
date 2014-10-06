@@ -56,6 +56,10 @@ public class TemplateSection extends ValidationSection {
 
 	private boolean templateIdModified = false;
 
+	private Text templateVersionText;
+
+	private boolean templateVersionModified = false;
+
 	private Text assigningAuthorityText;
 
 	private boolean assigningAuthorityModified = false;
@@ -67,6 +71,9 @@ public class TemplateSection extends ValidationSection {
 			}
 			if (assigningAuthorityText == event.getSource()) {
 				assigningAuthorityModified = true;
+			}
+			if (templateVersionText == event.getSource()) {
+				templateVersionModified = true;
 			}
 		}
 	};
@@ -113,7 +120,7 @@ public class TemplateSection extends ValidationSection {
 	protected void modifyFields() {
 		super.modifyFields();
 
-		if (!(templateIdModified || assigningAuthorityModified)) {
+		if (!(templateIdModified || templateVersionModified || assigningAuthorityModified)) {
 			return;
 		}
 
@@ -141,6 +148,19 @@ public class TemplateSection extends ValidationSection {
 										: null);
 
 						}
+					} else if (templateVersionModified) {
+						templateVersionModified = false;
+						this.setLabel("Set CDA Template Version");
+
+						if (stereotype != null) {
+							String value = templateVersionText.getText().trim();
+							modelElement.setValue(
+								stereotype, ICDAProfileConstants.CDA_TEMPLATE_VERSION, value.length() > 0
+										? value
+										: null);
+
+						}
+
 					} else if (assigningAuthorityModified) {
 						assigningAuthorityModified = false;
 						this.setLabel("Set CDA Template Authority");
@@ -182,6 +202,7 @@ public class TemplateSection extends ValidationSection {
 
 		FormData data = null;
 
+		// Template ID
 		templateIdText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
 		CLabel templateIdLabel = getWidgetFactory().createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
@@ -195,10 +216,25 @@ public class TemplateSection extends ValidationSection {
 		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		templateIdText.setLayoutData(data);
 
+		// Template Version
+		templateVersionText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
+		CLabel templateVersionLabel = getWidgetFactory().createCLabel(composite, "Template Version:"); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(templateIdText, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(templateVersionText, 0, SWT.CENTER);
+		templateVersionLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(templateVersionLabel, 0);
+		data.width = 100;
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
+		templateVersionText.setLayoutData(data);
+
+		// Assigning Authority
 		assigningAuthorityText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
 		CLabel assigningAuthorityLabel = getWidgetFactory().createCLabel(composite, "Assigning Authority:"); //$NON-NLS-1$
 		data = new FormData();
-		data.left = new FormAttachment(templateIdText, ITabbedPropertyConstants.HSPACE);
+		data.left = new FormAttachment(templateVersionText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(assigningAuthorityText, 0, SWT.CENTER);
 		assigningAuthorityLabel.setLayoutData(data);
 
@@ -240,6 +276,21 @@ public class TemplateSection extends ValidationSection {
 		templateIdText.addKeyListener(keyListener);
 		templateIdText.addFocusListener(focusListener);
 
+		templateVersionText.removeModifyListener(modifyListener);
+		templateVersionText.removeKeyListener(keyListener);
+		templateVersionText.removeFocusListener(focusListener);
+		if (stereotype != null) {
+			String version = (String) modelElement.getValue(stereotype, ICDAProfileConstants.CDA_TEMPLATE_VERSION);
+			templateVersionText.setText(version != null
+					? version
+					: "");
+		} else {
+			templateVersionText.setText("");
+		}
+		templateVersionText.addModifyListener(modifyListener);
+		templateVersionText.addKeyListener(keyListener);
+		templateVersionText.addFocusListener(focusListener);
+
 		assigningAuthorityText.removeModifyListener(modifyListener);
 		assigningAuthorityText.removeKeyListener(keyListener);
 		assigningAuthorityText.removeFocusListener(focusListener);
@@ -258,10 +309,12 @@ public class TemplateSection extends ValidationSection {
 
 		if (isReadOnly()) {
 			templateIdText.setEnabled(false);
+			templateVersionText.setEnabled(false);
 			assigningAuthorityText.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
 		} else {
 			templateIdText.setEnabled(true);
+			templateVersionText.setEnabled(true);
 			assigningAuthorityText.setEnabled(true);
 			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
