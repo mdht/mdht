@@ -44,6 +44,8 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 
 	private static final String TEMPLATE_ID_ROOT = "templateId.root";
 
+	private static final String TEMPLATE_ID_EXTENSION = "templateId.extension";
+
 	private static final String CONTEXT_DEPENDENT = "contextDependent";
 
 	private static final String REGISTRY_DELEGATE = "registryDelegate";
@@ -193,6 +195,11 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 		return documentClass;
 	}
 
+	// lifted from string utils
+	private static boolean isEmpty(String str) {
+		return str == null || str.length() == 0;
+	}
+
 	private void load() {
 		EPackage.Registry registry = EPackage.Registry.INSTANCE;
 		EClass clinicalDocumentClass = (EClass) CDAPackage.eINSTANCE.getEClassifier("ClinicalDocument");
@@ -210,22 +217,33 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 							String templateId = EcoreUtil.getAnnotation(
 								eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
 
-							// Fix for artf3397 : Check if the templateId has already been resolved to an EClass
-							// If already exists in classes map, do not add to the map
-							if ((templateId != null) && (!(classes.keySet().contains(templateId)))) {
-								String contextDependent = EcoreUtil.getAnnotation(
-									eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
-								if ("true".equals(contextDependent)) {
-									String registryDelegate = EcoreUtil.getAnnotation(
-										ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
-									EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
-									classes.put(templateId, eClass);
-									if (!delegates.containsKey(eClass)) {
-										delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
-									}
-								} else {
-									classes.put(templateId, (EClass) eClassifier);
+							if (!isEmpty(templateId)) {
+
+								String templateVersion = EcoreUtil.getAnnotation(
+									eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_EXTENSION);
+
+								if (!isEmpty(templateVersion)) {
+									templateId = templateId + "v" + templateVersion;
 								}
+
+								// Fix for artf3397 : Check if the templateId has already been resolved to an EClass
+								// If already exists in classes map, do not add to the map
+								if ((!(classes.keySet().contains(templateId)))) {
+									String contextDependent = EcoreUtil.getAnnotation(
+										eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
+									if ("true".equals(contextDependent)) {
+										String registryDelegate = EcoreUtil.getAnnotation(
+											ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
+										EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
+										classes.put(templateId, eClass);
+										if (!delegates.containsKey(eClass)) {
+											delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
+										}
+									} else {
+										classes.put(templateId, (EClass) eClassifier);
+									}
+								}
+
 							}
 						}
 					} catch (Exception e) {
@@ -235,5 +253,4 @@ public class CDAXSITypeProvider implements XSITypeProvider {
 			}
 		}
 	}
-
 }
