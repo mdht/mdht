@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateId <em>Template Id</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getAssigningAuthorityName <em>Assigning Authority Name</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#isContextDependent <em>Context Dependent</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateVersion <em>Template Version</em>}</li>
  * </ul>
  * </p>
  * 
@@ -101,6 +102,28 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	protected boolean contextDependent = CONTEXT_DEPENDENT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getTemplateVersion() <em>Template Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getTemplateVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEMPLATE_VERSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTemplateVersion() <em>Template Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getTemplateVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String templateVersion = TEMPLATE_VERSION_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -125,6 +148,8 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 				return getAssigningAuthorityName();
 			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
 				return isContextDependent();
+			case CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION:
+				return getTemplateVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,6 +173,10 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 						: !ASSIGNING_AUTHORITY_NAME_EDEFAULT.equals(assigningAuthorityName);
 			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
 				return contextDependent != CONTEXT_DEPENDENT_EDEFAULT;
+			case CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION:
+				return TEMPLATE_VERSION_EDEFAULT == null
+						? templateVersion != null
+						: !TEMPLATE_VERSION_EDEFAULT.equals(templateVersion);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -169,6 +198,9 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 				return;
 			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
 				setContextDependent((Boolean) newValue);
+				return;
+			case CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION:
+				setTemplateVersion((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,6 +234,9 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 				return;
 			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
 				setContextDependent(CONTEXT_DEPENDENT_EDEFAULT);
+				return;
+			case CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION:
+				setTemplateVersion(TEMPLATE_VERSION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -275,6 +310,31 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * 
 	 * @generated
 	 */
+	public String getTemplateVersion() {
+		return templateVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setTemplateVersion(String newTemplateVersion) {
+		String oldTemplateVersion = templateVersion;
+		templateVersion = newTemplateVersion;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_VERSION, oldTemplateVersion, templateVersion));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public void setTemplateId(String newTemplateId) {
 		String oldTemplateId = templateId;
 		templateId = newTemplateId;
@@ -303,6 +363,8 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 		result.append(assigningAuthorityName);
 		result.append(", contextDependent: ");
 		result.append(contextDependent);
+		result.append(", templateVersion: ");
+		result.append(templateVersion);
 		result.append(')');
 		return result.toString();
 	}
