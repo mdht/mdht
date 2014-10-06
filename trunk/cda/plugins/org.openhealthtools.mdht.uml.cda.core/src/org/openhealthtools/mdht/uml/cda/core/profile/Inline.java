@@ -61,7 +61,7 @@ public interface Inline extends EObject {
 	 * @return the value of the '<em>Filter</em>' attribute.
 	 * @see #setFilter(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getInline_Filter()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getFilter();

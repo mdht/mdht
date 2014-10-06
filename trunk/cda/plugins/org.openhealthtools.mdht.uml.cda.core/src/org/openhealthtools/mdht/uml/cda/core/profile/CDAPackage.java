@@ -424,6 +424,15 @@ public interface CDAPackage extends EPackage {
 		EAttribute CDA_TEMPLATE__CONTEXT_DEPENDENT = eINSTANCE.getCDATemplate_ContextDependent();
 
 		/**
+		 * The meta object literal for the '<em><b>Template Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute CDA_TEMPLATE__TEMPLATE_VERSION = eINSTANCE.getCDATemplate_TemplateVersion();
+
+		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl
 		 * <em>Constraint Validation</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1658,6 +1667,16 @@ public interface CDAPackage extends EPackage {
 	int CDA_TEMPLATE__CONTEXT_DEPENDENT = CLASS_VALIDATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Template Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CDA_TEMPLATE__TEMPLATE_VERSION = CLASS_VALIDATION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1665,7 +1684,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CDA_TEMPLATE_FEATURE_COUNT = CLASS_VALIDATION_FEATURE_COUNT + 3;
+	int CDA_TEMPLATE_FEATURE_COUNT = CLASS_VALIDATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConstraintValidationImpl <em>Constraint Validation</em>}'
@@ -2628,6 +2647,19 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCDATemplate_ContextDependent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion
+	 * <em>Template Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Template Version</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateVersion()
+	 * @see #getCDATemplate()
+	 * @generated
+	 */
+	EAttribute getCDATemplate_TemplateVersion();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate#getTemplateId <em>Template Id</em>}
