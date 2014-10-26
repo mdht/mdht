@@ -28,6 +28,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceVisitor;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -1553,6 +1557,59 @@ public class CDAModelUtil {
 		return output;
 	}
 
+
+	/**
+	 * FindResourcesByNameVisitor searches the resource for resources of a particular name
+	 * You would think there was a method for this already but i could not find it
+	 * 
+	 * @author seanmuir
+	 * 
+	 */
+	private static class FindResourcesByNameVisitor implements IResourceVisitor {
+
+		private String resourceName;
+
+		private ArrayList<IResource> resources = new ArrayList<IResource>();
+
+		/**
+		 * @return the resources
+		 */
+		public ArrayList<IResource> getResources() {
+			return resources;
+		}
+
+		/**
+		 * @param resourceName
+		 */
+		public FindResourcesByNameVisitor(String resourceName) {
+			super();
+			this.resourceName = resourceName;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
+		 */
+		public boolean visit(IResource arg0) throws CoreException {
+
+			if (resourceName != null && resourceName.equals(arg0.getName())) {
+				resources.add(arg0);
+			}
+			return true;
+		}
+
+	}
+
+	/**
+	 * computeXref returns the XREF for DITA publication
+	 * 
+	 * TODO Refactor and move out of model util
+	 * 
+	 * @param source
+	 * @param target
+	 * @return
+	 */
 	public static String computeXref(Element source, Classifier target) {
 		if (target == null) {
 			return null;
@@ -1561,17 +1618,40 @@ public class CDAModelUtil {
 			return computeTerminologyXref(source, (Enumeration) target);
 		}
 
-		String href = null;
 		if (UMLUtil.isSameProject(source, target)) {
-			href = "../" + normalizeCodeName(target.getName()) + ".dita";
-		} else if (isCDAModel(target)) {
-			// no xref to CDA available at this time
-		} else {
+			return "../" + normalizeCodeName(target.getName()) + ".dita";
+		}
+
+		if (!isCDAModel(target)) {
+			IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
+
+			try {
+
+				Package p = UMLUtil.getTopPackage(target);
+				if (p.eResource() != null) {
+
+					// Locate the targets project
+					FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor(
+						p.eResource().getURI().lastSegment());
+
+					iw.getRoot().accept(visitor);
+					if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+
+						// If found - assume the corresponding dita was copied to a local directory - "<<docproject>>/classes"
+						return "../" + visitor.getResources().get(0).getProject().getName() + ".doc/classes/" +
+								normalizeCodeName(target.getName()) + ".dita";
+
+					}
+
+				}
+
+			} catch (CoreException e) {
+				// Ignore any workspace issues and use remote reference
+			}
+
 			String pathFolder = "classes";
 			String basePackage = "";
 			String prefix = "";
-			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.doc/classes/Act.html
-			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.ccd.doc/classes/ProblemAct.html
 
 			String packageName = target.getNearestPackage().getName();
 			if (RIMModelUtil.RIM_PACKAGE_NAME.equals(packageName)) {
@@ -1590,14 +1670,11 @@ public class CDAModelUtil {
 				prefix += ".";
 			}
 
-			href = INFOCENTER_URL + "/topic/" + basePackage + "." + prefix + "doc/" + pathFolder + "/" +
+			return INFOCENTER_URL + "/topic/" + basePackage + "." + prefix + "doc/" + pathFolder + "/" +
 					normalizeCodeName(target.getName()) + ".html";
-
-			// pathFolder = "dita/classes";
-			// href = "../../../../" + basePackage + "."
-			// + prefix + "doc/" + pathFolder + "/" + normalizeCodeName(target.getName()) + ".dita";
 		}
-		return href;
+
+		return null;
 	}
 
 	protected static String computeTerminologyXref(Element source, Enumeration target) {
@@ -1762,16 +1839,18 @@ public class CDAModelUtil {
 
 	public static String getModelPrefix(Element element) {
 		String prefix = null;
-		Package model = UMLUtil.getTopPackage(element);
-		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(model, ICDAProfileConstants.CODEGEN_SUPPORT);
-		if (codegenSupport != null) {
-			prefix = (String) model.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX);
-		} else if (CDA_PACKAGE_NAME.equals(model.getName())) {
-			prefix = "CDA";
-		} else if (RIMModelUtil.RIM_PACKAGE_NAME.equals(model.getName())) {
-			prefix = "RIM";
+		Package thePackage = UMLUtil.getTopPackage(element);
+		if (thePackage != null) {
+			Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(
+				thePackage, ICDAProfileConstants.CODEGEN_SUPPORT);
+			if (codegenSupport != null) {
+				prefix = (String) thePackage.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX);
+			} else if (CDA_PACKAGE_NAME.equals(thePackage.getName())) {
+				prefix = "CDA";
+			} else if (RIMModelUtil.RIM_PACKAGE_NAME.equals(thePackage.getName())) {
+				prefix = "RIM";
+			}
 		}
-
 		return prefix != null
 				? prefix
 				: "";
