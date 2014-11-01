@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
@@ -989,7 +990,9 @@ public abstract class CDAValidationTest {
 			} finally {
 
 				try {
-					String testName = String.format("test%s", getTestTargetDescription().substring(0, 1).toUpperCase() +
+
+					String testName = String.format("%stest%s", StringUtils.split(this.getClass().getName(), "$")[0] +
+							".", getTestTargetDescription().substring(0, 1).toUpperCase() +
 							getTestTargetDescription().substring(1));
 
 					if (testLogDir != null) {
