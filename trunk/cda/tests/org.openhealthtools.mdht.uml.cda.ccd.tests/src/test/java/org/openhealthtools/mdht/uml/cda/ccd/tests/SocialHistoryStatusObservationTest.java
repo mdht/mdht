@@ -47,43 +47,6 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateSocialHistoryStatusObservationValue() {
-		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationValueTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
-			"validateSocialHistoryStatusObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistoryStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistoryStatusObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationValue(
-					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistoryStatusObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidateStatusObservationTemplateId() {
 		OperationsTestCase<SocialHistoryStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateStatusObservationTemplateId",
