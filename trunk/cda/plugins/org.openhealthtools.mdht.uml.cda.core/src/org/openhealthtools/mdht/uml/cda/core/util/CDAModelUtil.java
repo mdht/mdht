@@ -1557,7 +1557,6 @@ public class CDAModelUtil {
 		return output;
 	}
 
-
 	/**
 	 * FindResourcesByNameVisitor searches the resource for resources of a particular name
 	 * You would think there was a method for this already but i could not find it
@@ -1565,7 +1564,7 @@ public class CDAModelUtil {
 	 * @author seanmuir
 	 * 
 	 */
-	private static class FindResourcesByNameVisitor implements IResourceVisitor {
+	public static class FindResourcesByNameVisitor implements IResourceVisitor {
 
 		private String resourceName;
 
@@ -1638,8 +1637,8 @@ public class CDAModelUtil {
 					if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
 
 						// If found - assume the corresponding dita was copied to a local directory - "<<docproject>>/classes"
-						return "../" + visitor.getResources().get(0).getProject().getName() + ".doc/classes/" +
-								normalizeCodeName(target.getName()) + ".dita";
+						return "../" + visitor.getResources().get(0).getProject().getName().replace(".model", ".doc") +
+								"/classes/" + normalizeCodeName(target.getName()) + ".dita";
 
 					}
 
