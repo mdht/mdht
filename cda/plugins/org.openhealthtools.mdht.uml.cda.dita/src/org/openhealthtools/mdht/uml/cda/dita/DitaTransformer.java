@@ -126,6 +126,7 @@ public class DitaTransformer {
 			transformerOptions.getClinicalStatementList());
 		writeMapFile("classes", "classes", "Other Classes", transformerOptions.getClassList());
 		writeMapFile("terminology", "valueset", "Value Sets", transformerOptions.getValueSetList());
+		writeMapFile("classes", "references", "References", transformerOptions.getReferencesList());
 
 	}
 
