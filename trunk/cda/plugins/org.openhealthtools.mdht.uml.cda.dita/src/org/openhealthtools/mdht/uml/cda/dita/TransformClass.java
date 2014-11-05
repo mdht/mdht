@@ -18,9 +18,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil.FindResourcesByNameVisitor;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
@@ -90,6 +97,37 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<prolog conref=\"generated/_" + normalizedClassName + ".dita#classId/prolog\"></prolog>");
 	}
 
+	private void addReference(Class source, NamedElement target) {
+
+		if (!UMLUtil.isSameProject(source, target) && !CDAModelUtil.isCDAModel(target)) {
+
+			IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
+
+			try {
+
+				Package p = UMLUtil.getTopPackage(target);
+				if (p.eResource() != null) {
+
+					// Locate the targets project
+					FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor(
+						p.eResource().getURI().lastSegment());
+
+					iw.getRoot().accept(visitor);
+					if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+						transformerOptions.addReference(
+							target.getQualifiedName(),
+							visitor.getResources().get(0).getProject().getName().replace(".model", ".doc") +
+									"/classes/" + normalizeCodeName(target.getName()) + ".dita");
+					}
+
+				}
+
+			} catch (CoreException e) {
+				// Ignore any workspace issues and use remote reference
+			}
+		}
+	}
+
 	@Override
 	public Object caseClass(Class umlClass) {
 		String normalizedClassName = normalizeCodeName(umlClass.getName());
@@ -122,6 +160,18 @@ public class TransformClass extends TransformAbstract {
 
 		List<String> packageContent = transformerOptions.getPackageContentList(umlClass.getNearestPackage());
 		packageContent.add(fileName);
+
+		// Loop over properties and generalizations - create references ditamap
+		for (Property property : umlClass.getOwnedAttributes()) {
+			if (property.getType() != null && property.getAssociation() != null) {
+				addReference(umlClass, property.getType());
+			}
+		}
+
+		for (Generalization generalization : umlClass.getGeneralizations()) {
+			addReference(umlClass, generalization.getGeneral());
+
+		}
 
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		if (cdaClass != null) {

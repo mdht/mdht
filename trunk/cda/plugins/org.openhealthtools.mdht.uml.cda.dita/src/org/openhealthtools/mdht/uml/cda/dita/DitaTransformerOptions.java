@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -83,6 +84,8 @@ public class DitaTransformerOptions {
 	private List<String> classList = new Vector<String>();
 
 	private List<String> valueSetList = new Vector<String>();
+
+	private HashMap<String, String> referenceList = new HashMap<String, String>();
 
 	private List<Classifier> pubClassifiers = new Vector<Classifier>();
 
@@ -176,6 +179,14 @@ public class DitaTransformerOptions {
 		return sectionList;
 	}
 
+	protected void addReference(String key, String value) {
+
+		if (!referenceList.containsKey(key)) {
+			referenceList.put(key, value);
+		}
+
+	}
+
 	protected List<String> getClinicalStatementList() {
 		return clinicalStatementList;
 	}
@@ -203,6 +214,15 @@ public class DitaTransformerOptions {
 		} catch (Exception e) {
 			// ignore, leave as null
 		}
+	}
+
+	/**
+	 * @return
+	 */
+	public List<String> getReferencesList() {
+		List<String> ls = new ArrayList<String>();
+		ls.addAll(referenceList.values());
+		return ls;
 	}
 
 }
