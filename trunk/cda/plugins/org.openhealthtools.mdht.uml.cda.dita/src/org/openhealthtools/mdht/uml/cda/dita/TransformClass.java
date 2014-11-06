@@ -18,16 +18,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil.FindResourcesByNameVisitor;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
@@ -101,29 +100,23 @@ public class TransformClass extends TransformAbstract {
 
 		if (!UMLUtil.isSameProject(source, target) && !CDAModelUtil.isCDAModel(target)) {
 
-			IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
+			IProject sourceProject = CDAModelUtil.getElementModelProject(source);
 
-			try {
+			sourceProject = CDAModelUtil.getModelDocProject(sourceProject);
 
-				Package p = UMLUtil.getTopPackage(target);
-				if (p.eResource() != null) {
+			IProject targetProject = CDAModelUtil.getElementModelProject(target);
 
-					// Locate the targets project
-					FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor(
-						p.eResource().getURI().lastSegment());
+			targetProject = CDAModelUtil.getModelDocProject(targetProject);
 
-					iw.getRoot().accept(visitor);
-					if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
-						transformerOptions.addReference(
-							target.getQualifiedName(),
-							visitor.getResources().get(0).getProject().getName().replace(".model", ".doc") +
-									"/classes/" + normalizeCodeName(target.getName()) + ".dita");
-					}
+			if (targetProject != null) {
 
+				IPath projectPath = new Path("/dita/classes/" + targetProject.getName());
+
+				IFolder referenceDitaFolder = sourceProject.getFolder(projectPath);
+				if (referenceDitaFolder.exists()) {
+					transformerOptions.addReference(target.getQualifiedName(), targetProject.getName() + "/classes/" +
+							normalizeCodeName(target.getName()) + ".dita");
 				}
-
-			} catch (CoreException e) {
-				// Ignore any workspace issues and use remote reference
 			}
 		}
 	}
