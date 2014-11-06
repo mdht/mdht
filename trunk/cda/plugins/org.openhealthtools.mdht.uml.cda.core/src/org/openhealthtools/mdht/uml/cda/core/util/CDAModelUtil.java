@@ -28,10 +28,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -1600,6 +1604,37 @@ public class CDAModelUtil {
 
 	}
 
+	public static IProject getElementModelProject(Element element) {
+		try {
+			Package elementPackage = UMLUtil.getTopPackage(element);
+			if (elementPackage.eResource() != null) {
+				FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor(
+					elementPackage.eResource().getURI().lastSegment());
+
+				IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
+
+				iw.getRoot().accept(visitor);
+
+				if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+					return visitor.getResources().get(0).getProject();
+				}
+			}
+		} catch (CoreException e) {
+			// If there is an issue with the workspace - return null
+		}
+		return null;
+	}
+
+	public static IProject getModelDocProject(IProject modelProject) {
+
+		if (modelProject != null && modelProject.exists()) {
+			return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().getProject(
+				modelProject.getName().replace(".model", ".doc"));
+		}
+		return null;
+
+	}
+
 	/**
 	 * computeXref returns the XREF for DITA publication
 	 * 
@@ -1621,31 +1656,25 @@ public class CDAModelUtil {
 			return "../" + normalizeCodeName(target.getName()) + ".dita";
 		}
 
+		// If the model project is available (should be) and the dita content is part of the doc project
 		if (!isCDAModel(target)) {
-			IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
+			IProject sourceProject = getElementModelProject(source);
 
-			try {
+			sourceProject = getModelDocProject(sourceProject);
 
-				Package p = UMLUtil.getTopPackage(target);
-				if (p.eResource() != null) {
+			IProject targetProject = getElementModelProject(target);
 
-					// Locate the targets project
-					FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor(
-						p.eResource().getURI().lastSegment());
+			targetProject = getModelDocProject(targetProject);
 
-					iw.getRoot().accept(visitor);
-					if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+			if (targetProject != null) {
 
-						// If found - assume the corresponding dita was copied to a local directory - "<<docproject>>/classes"
-						return "../" + visitor.getResources().get(0).getProject().getName().replace(".model", ".doc") +
-								"/classes/" + normalizeCodeName(target.getName()) + ".dita";
+				IPath projectPath = new Path("/dita/classes/" + targetProject.getName());
 
-					}
-
+				IFolder referenceDitaFolder = sourceProject.getFolder(projectPath);
+				if (referenceDitaFolder.exists()) {
+					return "../" + targetProject.getName() + "/classes/" + normalizeCodeName(target.getName()) +
+							".dita";
 				}
-
-			} catch (CoreException e) {
-				// Ignore any workspace issues and use remote reference
 			}
 
 			String pathFolder = "classes";
