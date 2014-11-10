@@ -238,6 +238,9 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 							modelName);
 						monitor.worked(1);
 
+						monitor.setTaskName("Create Model Plugin");
+						createModelPlugin(modelProject, modelName);
+
 						monitor.setTaskName("Create Transformation XML");
 						createTransformation(generatedProject, modelName);
 						monitor.worked(1);
@@ -530,6 +533,28 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		createFile(project, "transform.xml", is);
 
+	}
+
+	/*
+	 * Model plugin is to leverage the URI mapping
+	 */
+	void createModelPlugin(IProject project, String modelName) throws Exception {
+
+		StringWriter swriter = new StringWriter();
+
+		PrintWriter writer = new PrintWriter(swriter);
+		writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+		writer.println("<?eclipse version=\"3.0\"?>");
+		writer.println("<plugin>");
+		writer.println("<extension point=\"org.eclipse.emf.ecore.uri_mapping\">");
+		writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL\" target=\"model\">");
+		writer.println("</mapping>");
+		writer.println("</extension>");
+		writer.println("</plugin>");
+		writer.flush();
+		swriter.close();
+		InputStream is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
+		createFile(project, "plugin.xml", is);
 	}
 
 	void createDitaProperties(IProject project, String basePackage, String modelName) throws Exception {
