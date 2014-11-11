@@ -952,6 +952,9 @@ public class UMLUtil {
 		// there is good chance they are in the same project within eclipse
 		// TODO Move this to a plugin which supports ResourcePlugin
 
+		if (first == null || first.eResource() == null || second == null || second.eResource() == null) {
+			return false;
+		}
 		URI firstURI = first.eResource().getURI();
 
 		URI secondURI = second.eResource().getURI();
