@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.openhealthtools.mdht.uml.cda.tests</groupId>
+	<artifactId>org.openhealthtools.mdht.uml.cda.mu2consol.tests</artifactId>
+	<parent>
+		<groupId>org.openhealthtools.mdht.cda</groupId>
+		<artifactId>tests</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
+	</parent>
+	<version>2.0.0-SNAPSHOT</version>
+	<packaging>eclipse-plugin</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<configuration>
+							<includes>
+								<include>**/*Test.java</include>
+							</includes>
+						</configuration>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<executions>
+					<execution>
+						<id>compiletests</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+					<systemPropertyVariables>
+						<testlogdir>target/surefire-reports</testlogdir>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.5</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>test-reports</id>
+						<phase>test</phase>
+						<configuration>
+							<tasks>
+								<concat destfile="target/surefire-reports/allvalidationresults.xml"
+									force="no">
+									<filelist dir="src/test/resource"
+										files="start.tag" />
+									<fileset dir="target/surefire-reports" includes="test*.xml" />
+									<filelist dir="src/test/resource"
+										files="end.tag" />
+								</concat>
+								<junitreport todir="target/surefire-reports">
+									<fileset dir="target/surefire-reports">
+										<include name="TEST-*.xml" />
+									</fileset>
+									<report  styledir="."
+										format="frames" todir="target/surefire-reports">
+									</report>
+								</junitreport>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant</groupId>
+						<artifactId>ant-junit</artifactId>
+						<version>1.6.2</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+
+
+	</build>
+
+
+</project>

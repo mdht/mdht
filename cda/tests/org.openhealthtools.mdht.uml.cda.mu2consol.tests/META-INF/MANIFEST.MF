@@ -2,12 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.mu2consol.tests;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 2.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.openhealthtools.mdht.uml.cda.mu2consol.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.cda.mu2consol;visibility:=reexport,
  org.openhealthtools.mdht.uml.cda;visibility:=reexport,
