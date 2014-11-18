@@ -13,5 +13,4 @@ Require-Bundle: org.junit,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.apache.commons.lang;visibility:=reexport
-Export-Package: org.openhealthtools.mdht.uml.cda.operations,
- org.openhealthtools.mdht.uml.cda.tests
+Export-Package: org.openhealthtools.mdht.uml.cda.operations
