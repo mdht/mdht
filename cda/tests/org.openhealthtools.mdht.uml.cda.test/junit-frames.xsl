@@ -944,11 +944,11 @@ h6 {
     <xsl:param name="value"/>   
     <p>
 	<xsl:choose>
-  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
-			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
+  		<xsl:when test="starts-with(substring ('target/surefire-reports/', 2),':')">
+			<xsl:copy-of select="document( concat(substring ('target/surefire-reports/', 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
   		</xsl:when>
   		<xsl:otherwise>
-			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
+			<xsl:copy-of select="document( concat('target/surefire-reports/','allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
   		</xsl:otherwise>
 	</xsl:choose>
     </p>  	
@@ -958,11 +958,11 @@ h6 {
     <xsl:param name="value"/>   
     <p>
 	<xsl:choose>
-  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
-			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
+  		<xsl:when test="starts-with(substring ('target/surefire-reports/', 2),':')">
+			<xsl:copy-of select="document( concat(substring ('target/surefire-reports/', 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
   		</xsl:when>
   		<xsl:otherwise>
-			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
+			<xsl:copy-of select="document( concat('target/surefire-reports/','allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
   		</xsl:otherwise>
 	</xsl:choose>
     </p>  	
@@ -972,11 +972,11 @@ h6 {
     <xsl:param name="value"/>   
     <p>
 	<xsl:choose>
-  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
-			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
+  		<xsl:when test="starts-with(substring ('target/surefire-reports/', 2),':')">
+			<xsl:copy-of select="document( concat(substring ('target/surefire-reports/', 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
   		</xsl:when>
   		<xsl:otherwise>
-			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
+			<xsl:copy-of select="document( concat('target/surefire-reports/','allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
   		</xsl:otherwise>
 	</xsl:choose>
     </p>  	
@@ -987,11 +987,11 @@ h6 {
     <p>
 
 	<xsl:choose>
-  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
-			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
+  		<xsl:when test="starts-with(substring ('target/surefire-reports/', 2),':')">
+			<xsl:copy-of select="document( concat(substring ('target/surefire-reports/', 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
   		</xsl:when>
   		<xsl:otherwise>
-			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
+			<xsl:copy-of select="document( concat('target/surefire-reports/','allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
   		</xsl:otherwise>
 	</xsl:choose>
     </p>  	
