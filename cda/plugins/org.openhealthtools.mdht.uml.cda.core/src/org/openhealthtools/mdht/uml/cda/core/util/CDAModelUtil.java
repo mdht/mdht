@@ -90,6 +90,10 @@ public class CDAModelUtil {
 
 	private static final String EPACKAGE = "Ecore::EPackage";
 
+	private static final String EREFERENCE = "Ecore::EReference";
+
+	public static final String XMLNAMESPACE = "xmlNamespace";
+
 	private static final String NSPREFIX = "nsPrefix";
 
 	private static final String NSURI = "nsURI";
@@ -743,6 +747,35 @@ public class CDAModelUtil {
 		return computeConformanceMessage(property, markup, UMLUtil.getTopPackage(property));
 	}
 
+	private static String getNameSpacePrefix(Property property) {
+
+		Property cdaBaseProperty = CDAModelUtil.getCDAProperty(property);
+		String nameSpacePrefix = null;
+		if (cdaBaseProperty != null) {
+			Stereotype eReferenceStereoetype = cdaBaseProperty.getAppliedStereotype(CDAModelUtil.EREFERENCE);
+			if (eReferenceStereoetype != null) {
+				String nameSpace = (String) cdaBaseProperty.getValue(eReferenceStereoetype, CDAModelUtil.XMLNAMESPACE);
+				if (!StringUtils.isEmpty(nameSpace)) {
+					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(cdaBaseProperty.getNearestPackage());
+					Stereotype ePackageStereoetype = topPackage.getApplicableStereotype(CDAModelUtil.EPACKAGE);
+					if (ePackageStereoetype != null) {
+						if (nameSpace.equals(topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
+							nameSpacePrefix = (String) topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSPREFIX);
+						} else {
+							for (Package nestedPackage : topPackage.getNestedPackages()) {
+								if (nameSpace.equals(nestedPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
+									nameSpacePrefix = (String) nestedPackage.getValue(
+										ePackageStereoetype, CDAModelUtil.NSPREFIX);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return nameSpacePrefix;
+	}
+
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
 
 		if (property.getType() == null) {
@@ -781,7 +814,12 @@ public class CDAModelUtil {
 		if (isXMLAttribute(property)) {
 			message.append("@");
 		}
-		message.append(property.getName());
+
+		String propertyPrefix = getNameSpacePrefix(property);
+
+		message.append(propertyPrefix != null
+				? propertyPrefix + ":" + property.getName()
+				: property.getName());
 		message.append(markup
 				? "</b>"
 				: "");
