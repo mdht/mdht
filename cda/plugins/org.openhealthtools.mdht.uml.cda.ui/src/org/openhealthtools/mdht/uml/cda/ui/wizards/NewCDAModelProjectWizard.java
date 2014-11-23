@@ -495,7 +495,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		writer.println("<?eclipse version=\"3.0\"?>");
 		writer.println("<project name=\"CDA Model Transformation\"  basedir=\".\" default=\"all\">");
-		writer.println("<property name=\"cdaPluginPath\" location=\"${basedir}/../org.openhealthtools.mdht.uml.cda\"/>");
+
+		writer.println("<eclipse.convertPath resourcePath=\"org.openhealthtools.mdht.uml.cda\" property=\"cdaPluginPath\"/>");
 		writer.println("<property name=\"modelName\" value=\"" + modelName.toLowerCase() + "\"/>");
 		writer.println("<macrodef name=\"convertEcorePaths\">");
 		writer.println("<attribute name=\"filePath\"/>");
