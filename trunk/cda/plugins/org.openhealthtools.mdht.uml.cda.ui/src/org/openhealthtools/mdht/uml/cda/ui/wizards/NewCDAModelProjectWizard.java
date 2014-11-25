@@ -476,9 +476,6 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			Package documentPackage = documentClass.getNearestPackage();
 			EcoreUtil.resolveAll(documentPackage);
 			templatePackage.createPackageImport(documentClass.getNearestPackage());
-			for (Package importedPackage : documentPackage.getImportedPackages()) {
-				templatePackage.createPackageImport(importedPackage);
-			}
 		}
 
 		templatePackage.createPackageImport(vocabPackage);
