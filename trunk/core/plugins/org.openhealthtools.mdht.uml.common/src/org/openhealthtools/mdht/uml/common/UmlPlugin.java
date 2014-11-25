@@ -129,6 +129,44 @@ public class UmlPlugin extends EMFPlugin {
 		}
 	}
 
+	public static URI getPathMap(InputStream pluginStream) throws SAXException, IOException,
+			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
+			NoSuchFieldException {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+		factory.setNamespaceAware(true);
+
+		DocumentBuilder builder;
+
+		Document doc = null;
+
+		XPathExpression expr = null;
+
+		builder = factory.newDocumentBuilder();
+
+		doc = builder.parse(new InputSource(pluginStream));
+
+		XPathFactory xFactory = XPathFactory.newInstance();
+
+		XPath xpath = xFactory.newXPath();
+
+		expr = xpath.compile("//plugin/extension[@point='org.eclipse.emf.ecore.uri_mapping']/mapping");
+
+		Object result = expr.evaluate(doc, XPathConstants.NODESET);
+
+		URI key = null;
+		NodeList nodes = (NodeList) result;
+		for (int i = 0; i < nodes.getLength(); i++) {
+			String source = nodes.item(i).getAttributes().getNamedItem("source").getNodeValue();
+			String target = nodes.item(i).getAttributes().getNamedItem("target").getNodeValue();
+			key = URI.createURI(source + "/");
+			// URI value = URI.createURI("platform:/plugin/" + projectName + "/" + target + "/");
+			// org.eclipse.emf.ecore.resource.URIConverter.URI_MAP.put(key, value);
+		}
+
+		return key;
+	}
+
 	/**
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
