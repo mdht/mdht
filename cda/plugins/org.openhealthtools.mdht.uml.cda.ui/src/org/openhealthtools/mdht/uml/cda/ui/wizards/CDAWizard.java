@@ -314,6 +314,9 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 	}
 
 	void loadCDAModelsfromWorkspace() {
+
+		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
+
 		ResourceSet resourceSet = new ResourceSetImpl();
 
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -323,12 +326,23 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 		Path model = new Path("model");
 
 		for (IProject project : root.getProjects()) {
-			if (project.exists(model)) {
+			if (project.isOpen() && project.exists(model)) {
+
+				final IFile plugin = project.getFile("plugin.xml");
+
 				IFolder folder = project.getFolder(model);
 				try {
 					for (IResource resource : folder.members()) {
 						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore")) {
-							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+
+							URI modelFile = null;
+							if (plugin.exists()) {
+								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(plugin.getContents());
+								modelFile = pathMap.appendSegment(resource.getName());
+							} else {
+								modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							}
+
 							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(
 								resourceSet.getResource(modelFile, true).getContents(),
 								UMLPackage.eINSTANCE.getPackageableElement());
