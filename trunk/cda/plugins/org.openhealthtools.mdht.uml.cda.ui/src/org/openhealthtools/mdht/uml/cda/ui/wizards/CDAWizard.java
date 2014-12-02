@@ -338,7 +338,11 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 							URI modelFile = null;
 							if (plugin.exists()) {
 								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(plugin.getContents());
-								modelFile = pathMap.appendSegment(resource.getName());
+								if (pathMap != null) {
+									modelFile = pathMap.appendSegment(resource.getName());
+								} else {
+									modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+								}
 							} else {
 								modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
 							}
