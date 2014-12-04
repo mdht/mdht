@@ -35,6 +35,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -318,6 +319,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
 
 		ResourceSet resourceSet = new ResourceSetImpl();
+
+		resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
 
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
