@@ -69,6 +69,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
 import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil.FindResourcesByNameVisitor;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
@@ -486,6 +487,19 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 	void createTransformation(IProject project, String modelName) throws Exception {
 
+		FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor("transform-common.xml");
+
+		IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
+
+		iw.getRoot().accept(visitor);
+
+		// Default transform file location to cda
+		String transformCommonProject = "org.openhealthtools.mdht.uml.cda";
+		// Search for it in the case of an extension
+		if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+			transformCommonProject = visitor.getResources().get(0).getProject().getName();
+		}
+
 		StringWriter swriter = new StringWriter();
 
 		PrintWriter writer = new PrintWriter(swriter);
@@ -493,7 +507,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("<?eclipse version=\"3.0\"?>");
 		writer.println("<project name=\"CDA Model Transformation\"  basedir=\".\" default=\"all\">");
 
-		writer.println("<eclipse.convertPath resourcePath=\"org.openhealthtools.mdht.uml.cda\" property=\"cdaPluginPath\"/>");
+		writer.println("<eclipse.convertPath resourcePath=\"" + transformCommonProject +
+				"\" property=\"cdaPluginPath\"/>");
 		writer.println("<property name=\"modelName\" value=\"" + modelName.toLowerCase() + "\"/>");
 		writer.println("<macrodef name=\"convertEcorePaths\">");
 		writer.println("<attribute name=\"filePath\"/>");
