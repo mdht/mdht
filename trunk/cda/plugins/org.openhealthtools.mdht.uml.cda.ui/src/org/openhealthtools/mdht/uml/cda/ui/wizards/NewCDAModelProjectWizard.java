@@ -212,11 +212,11 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Manifest for Generated Project");
-						createManifest(generatedProject, newCDATemplatePage.getBasePackage(), modelName);
+						createGeneratedProjectManifest(generatedProject, newCDATemplatePage.getBasePackage(), modelName);
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Manifest for Doc Project");
-						createManifest(docProject, newCDATemplatePage.getBasePackage(), modelName);
+						createDocumentProjectManifest(docProject, newCDATemplatePage.getBasePackage(), modelName);
 						monitor.worked(1);
 
 						monitor.setTaskName("Create css");
@@ -241,6 +241,10 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 						monitor.setTaskName("Create Model Plugin");
 						createModelPlugin(modelProject, modelName);
+
+						monitor.setTaskName("Create Manifest for Model Project");
+						createModelProjectManifest(modelProject, newCDATemplatePage.getBasePackage(), modelName);
+						monitor.worked(1);
 
 						monitor.setTaskName("Create Transformation XML");
 						createTransformation(generatedProject, modelName);
@@ -298,13 +302,13 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			ErrorDialog.openError(
 				getShell(), "MDHT CDA Project Wizard Exception", "Unable to create new CDA Project", status);
 
-			try {
-				docProject.delete(true, null);
-				modelProject.delete(true, null);
-				generatedProject.delete(true, null);
-			} catch (CoreException coreException) {
-				Logger.logException(coreException);
-			}
+			// try {
+			// docProject.delete(true, null);
+			// modelProject.delete(true, null);
+			// generatedProject.delete(true, null);
+			// } catch (CoreException coreException) {
+			// Logger.logException(coreException);
+			// }
 
 		} catch (InterruptedException interruptedException) {
 			Logger.logException(interruptedException);
@@ -631,84 +635,79 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 	}
 
-	void createManifest(IProject project, String basePackage, String modelName) throws Exception {
+	void createGeneratedProjectManifest(IProject project, String basePackage, String modelName) throws Exception {
 
 		IFile manfiestFile = cdaDocumentsManifest.get(newCDATemplatePage.getCDADocument());
-
 		InputStream input = new FileInputStream(manfiestFile.getRawLocation().toOSString());
-
 		Manifest projectManifest = new Manifest(input);
-
 		Attributes attributes = projectManifest.getMainAttributes();
-
 		IFile manifest = CDAUIUtil.getManifest(project);
-
 		StringWriter swriter = new StringWriter();
 
 		PrintWriter writer = new PrintWriter(swriter);
-
 		writer.println("Bundle-Name: %pluginName");
-
-		if (project.equals(generatedProject)) {
-			writer.println(String.format("Bundle-SymbolicName: %s.%s;singleton:=true", basePackage, modelName));
-			writer.println("Bundle-ActivationPolicy: lazy");
-			writer.println(String.format(
-				"Bundle-Activator: %s.%s.%sPlugin$Implementation", basePackage, modelName,
-				modelName.substring(0, 1).toUpperCase() + modelName.substring(1)));
-		} else if (project.equals(docProject)) {
-			writer.println(String.format("Bundle-SymbolicName: %s.%s.doc;singleton:=true", basePackage, modelName));
-		}
-
-		// writer.println("Bundle-Version: 0.7.0.qualifier");
-
+		writer.println(String.format("Bundle-SymbolicName: %s;singleton:=true", project.getName()));
+		writer.println("Bundle-ActivationPolicy: lazy");
+		writer.println(String.format(
+			"Bundle-Activator: %s.%s.%sPlugin$Implementation", basePackage, modelName,
+			modelName.substring(0, 1).toUpperCase() + modelName.substring(1)));
 		writer.println("Bundle-ClassPath: .");
 		writer.println("Bundle-Vendor: %providerName");
 		writer.println("Bundle-Localization: plugin");
-		// writer.println("Bundle-RequiredExecutionEnvironment: JavaSE-1.7");
 
 		String requiredBundles = attributes.getValue("Require-Bundle");
+		String sourceBundle = attributes.getValue("Bundle-SymbolicName");
+		String rb[] = requiredBundles.split(",");
+		String sb[] = sourceBundle.split(";");
 
-		if (!project.getName().endsWith(".doc")) {
+		for (int index = 0; index < rb.length; index++) {
+			if (index == 0) {
+				writer.print("Require-Bundle: " + rb[index]);
+			} else {
 
-			String sourceBundle = attributes.getValue("Bundle-SymbolicName");
-
-			String rb[] = requiredBundles.split(",");
-
-			String sb[] = sourceBundle.split(";");
-
-			for (int index = 0; index < rb.length; index++) {
-
-				if (index == 0) {
-					writer.print("Require-Bundle: " + rb[index]);
-				} else {
-
-					if (index > 0) {
-						writer.println(",");
-						writer.print(" " + rb[index]);
-					}
+				if (index > 0) {
+					writer.println(",");
+					writer.print(" " + rb[index]);
 				}
-
 			}
 
-			if (sb.length > 0) {
-				writer.println(",");
-				writer.println(" " + sb[0] + ";visibility:=reexport");
-			}
-
-			writer.println(String.format("Export-Package: %s.%s,", basePackage, modelName));
-			writer.println(String.format(" %s.%s.impl,", basePackage, modelName));
-			writer.println(String.format(" %s.%s.operations,", basePackage, modelName));
-			writer.println(String.format(" %s.%s.util", basePackage, modelName));
 		}
-
+		if (sb.length > 0) {
+			writer.println(",");
+			writer.println(" " + sb[0] + ";visibility:=reexport");
+		}
+		writer.println(String.format("Export-Package: %s.%s,", basePackage, modelName));
+		writer.println(String.format(" %s.%s.impl,", basePackage, modelName));
+		writer.println(String.format(" %s.%s.operations,", basePackage, modelName));
+		writer.println(String.format(" %s.%s.util", basePackage, modelName));
 		writer.flush();
-
 		swriter.close();
-
 		InputStream is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
-
 		manifest.appendContents(is, true, false, null);
-
 	}
 
+	void createDocumentProjectManifest(IProject project, String basePackage, String modelName) throws Exception {
+		IFile manifest = CDAUIUtil.getManifest(project);
+		StringWriter swriter = new StringWriter();
+		PrintWriter writer = new PrintWriter(swriter);
+		writer.println("Bundle-Name: Document Bundle " + modelName);
+		writer.println(String.format("Bundle-SymbolicName: %s;singleton:=true", project.getName()));
+		writer.flush();
+		swriter.close();
+		InputStream is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
+		manifest.appendContents(is, true, false, null);
+	}
+
+	void createModelProjectManifest(IProject project, String basePackage, String modelName) throws Exception {
+		IFile manifest = CDAUIUtil.getManifest(project);
+		StringWriter swriter = new StringWriter();
+		PrintWriter writer = new PrintWriter(swriter);
+		writer.println("Bundle-Name: Model Bundle " + modelName);
+		writer.println(String.format("Bundle-SymbolicName: %s;singleton:=true", project.getName()));
+		writer.flush();
+		swriter.close();
+		InputStream is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
+		createFolder(project, "META-INF");
+		createFile(project, manifest.getProjectRelativePath().toString(), is);
+	}
 }
