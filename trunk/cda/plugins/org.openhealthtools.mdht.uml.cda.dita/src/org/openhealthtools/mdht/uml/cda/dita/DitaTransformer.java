@@ -95,14 +95,18 @@ public class DitaTransformer {
 
 					transformPackage.doSwitch(child);
 
-					// omit nested classes
-					if (child instanceof Class && ((Class) child).getOwner() instanceof Package) {
-						if (useTemplates) {
-							generateSections.doSwitch(child);
-						} else {
-							transformClass.doSwitch(child);
+					// omit nested classesCDA
+					if (child instanceof Class) {
+
+						if (!CDAModelUtil.isInlineClass((Class) child) ||
+								CDAModelUtil.isPublishSeperately((Class) child)) {
+							if (useTemplates) {
+								generateSections.doSwitch(child);
+							} else {
+								transformClass.doSwitch(child);
+							}
+							transformClassProperties.doSwitch(child);
 						}
-						transformClassProperties.doSwitch(child);
 					}
 
 					transformValueSet.doSwitch(child);
