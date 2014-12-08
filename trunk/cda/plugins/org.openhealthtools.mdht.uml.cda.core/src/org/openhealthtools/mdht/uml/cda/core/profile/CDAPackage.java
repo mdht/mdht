@@ -647,6 +647,15 @@ public interface CDAPackage extends EPackage {
 		EAttribute INLINE__FILTER = eINSTANCE.getInline_Filter();
 
 		/**
+		 * The meta object literal for the '<em><b>Publish Seperately</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute INLINE__PUBLISH_SEPERATELY = eINSTANCE.getInline_PublishSeperately();
+
+		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl <em>Unimplementable</em>}'
 		 * class.
 		 * <!-- begin-user-doc -->
@@ -2431,6 +2440,16 @@ public interface CDAPackage extends EPackage {
 	int INLINE__FILTER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Publish Seperately</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE__PUBLISH_SEPERATELY = 2;
+
+	/**
 	 * The number of structural features of the '<em>Inline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2438,7 +2457,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_FEATURE_COUNT = 2;
+	int INLINE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.UnimplementableImpl <em>Unimplementable</em>}' class.
@@ -3092,6 +3111,19 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInline_Filter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately
+	 * <em>Publish Seperately</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Publish Seperately</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately()
+	 * @see #getInline()
+	 * @generated
+	 */
+	EAttribute getInline_PublishSeperately();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Unimplementable <em>Unimplementable</em>}'.
