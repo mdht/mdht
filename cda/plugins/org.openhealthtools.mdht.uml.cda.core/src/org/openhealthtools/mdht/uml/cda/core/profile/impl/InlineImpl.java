@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#getBase_Class <em>Base Class</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#getFilter <em>Filter</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.InlineImpl#isPublishSeperately <em>Publish Seperately</em>}</li>
  * </ul>
  * </p>
  * 
@@ -60,6 +61,28 @@ public class InlineImpl extends EObjectImpl implements Inline {
 	 * @ordered
 	 */
 	protected String filter = FILTER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isPublishSeperately() <em>Publish Seperately</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #isPublishSeperately()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PUBLISH_SEPERATELY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isPublishSeperately() <em>Publish Seperately</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #isPublishSeperately()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean publishSeperately = PUBLISH_SEPERATELY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,6 +180,31 @@ public class InlineImpl extends EObjectImpl implements Inline {
 	 * 
 	 * @generated
 	 */
+	public boolean isPublishSeperately() {
+		return publishSeperately;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setPublishSeperately(boolean newPublishSeperately) {
+		boolean oldPublishSeperately = publishSeperately;
+		publishSeperately = newPublishSeperately;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INLINE__PUBLISH_SEPERATELY, oldPublishSeperately, publishSeperately));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -167,6 +215,8 @@ public class InlineImpl extends EObjectImpl implements Inline {
 				return basicGetBase_Class();
 			case CDAPackage.INLINE__FILTER:
 				return getFilter();
+			case CDAPackage.INLINE__PUBLISH_SEPERATELY:
+				return isPublishSeperately();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,6 +235,9 @@ public class InlineImpl extends EObjectImpl implements Inline {
 				return;
 			case CDAPackage.INLINE__FILTER:
 				setFilter((String) newValue);
+				return;
+			case CDAPackage.INLINE__PUBLISH_SEPERATELY:
+				setPublishSeperately((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,6 +258,9 @@ public class InlineImpl extends EObjectImpl implements Inline {
 			case CDAPackage.INLINE__FILTER:
 				setFilter(FILTER_EDEFAULT);
 				return;
+			case CDAPackage.INLINE__PUBLISH_SEPERATELY:
+				setPublishSeperately(PUBLISH_SEPERATELY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -224,6 +280,8 @@ public class InlineImpl extends EObjectImpl implements Inline {
 				return FILTER_EDEFAULT == null
 						? filter != null
 						: !FILTER_EDEFAULT.equals(filter);
+			case CDAPackage.INLINE__PUBLISH_SEPERATELY:
+				return publishSeperately != PUBLISH_SEPERATELY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -243,6 +301,8 @@ public class InlineImpl extends EObjectImpl implements Inline {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (filter: ");
 		result.append(filter);
+		result.append(", publishSeperately: ");
+		result.append(publishSeperately);
 		result.append(')');
 		return result.toString();
 	}

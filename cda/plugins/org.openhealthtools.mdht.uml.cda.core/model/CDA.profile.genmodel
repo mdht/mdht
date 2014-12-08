@@ -158,6 +158,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//Inline/base_Class"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Inline/filter"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Inline/publishSeperately"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//Unimplementable">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

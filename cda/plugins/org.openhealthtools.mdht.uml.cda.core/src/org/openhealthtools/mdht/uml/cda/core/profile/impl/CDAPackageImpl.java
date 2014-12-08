@@ -441,6 +441,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		inlineEClass = createEClass(INLINE);
 		createEReference(inlineEClass, INLINE__BASE_CLASS);
 		createEAttribute(inlineEClass, INLINE__FILTER);
+		createEAttribute(inlineEClass, INLINE__PUBLISH_SEPERATELY);
 
 		unimplementableEClass = createEClass(UNIMPLEMENTABLE);
 		createEReference(unimplementableEClass, UNIMPLEMENTABLE__BASE_CONSTRAINT);
@@ -929,6 +930,16 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * 
 	 * @generated
 	 */
+	public EAttribute getInline_PublishSeperately() {
+		return (EAttribute) inlineEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getUnimplementable() {
 		return unimplementableEClass;
 	}
@@ -1385,6 +1396,9 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEAttribute(
 			getInline_Filter(), theTypesPackage.getString(), "filter", null, 0, 1, Inline.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(
+			getInline_PublishSeperately(), theTypesPackage.getBoolean(), "publishSeperately", null, 0, 1, Inline.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			unimplementableEClass, Unimplementable.class, "Unimplementable", !IS_ABSTRACT, !IS_INTERFACE,

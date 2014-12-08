@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class <em>Base Class</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter <em>Filter</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately <em>Publish Seperately</em>}</li>
  * </ul>
  * </p>
  * 
@@ -77,5 +78,33 @@ public interface Inline extends EObject {
 	 * @generated
 	 */
 	void setFilter(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Publish Seperately</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Publish Seperately</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Publish Seperately</em>' attribute.
+	 * @see #setPublishSeperately(boolean)
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getInline_PublishSeperately()
+	 * @model dataType="org.eclipse.uml2.types.Boolean" ordered="false"
+	 * @generated
+	 */
+	boolean isPublishSeperately();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately <em>Publish Seperately</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Publish Seperately</em>' attribute.
+	 * @see #isPublishSeperately()
+	 * @generated
+	 */
+	void setPublishSeperately(boolean value);
 
 } // Inline

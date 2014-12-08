@@ -457,7 +457,12 @@ public class CDAModelUtil {
 	}
 
 	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
-		if (getTemplateId(property.getClass_()) != null) {
+
+		Class endType = (property.getType() instanceof Class)
+				? (Class) property.getType()
+				: null;
+
+		if (!isInlineClass(endType) && getTemplateId(property.getClass_()) != null) {
 			return computeTemplateAssociationConformanceMessage(property, markup, xrefSource);
 		}
 
@@ -495,13 +500,9 @@ public class CDAModelUtil {
 
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
-		Class endType = (property.getType() instanceof Class)
-				? (Class) property.getType()
-				: null;
-
 		if (endType != null) {
 
-			if (markup && isInlineClass(endType)) {
+			if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
 
@@ -2310,6 +2311,20 @@ public class CDAModelUtil {
 		}
 
 		return false;
+
+	}
+
+	public static boolean isPublishSeperately(Class _class) {
+
+		boolean publish = false;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(_class, ICDAProfileConstants.INLINE);
+
+		if (stereotype != null) {
+			Boolean result = (Boolean) _class.getValue(stereotype, "publishSeperately");
+			publish = result.booleanValue();
+		}
+
+		return publish;
 
 	}
 
