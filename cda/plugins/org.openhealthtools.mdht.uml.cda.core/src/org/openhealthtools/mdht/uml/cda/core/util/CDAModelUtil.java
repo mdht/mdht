@@ -886,32 +886,107 @@ public class CDAModelUtil {
 				? null
 				: redefinedProperties.get(0);
 
-		if (property.getType() != null &&
-				(redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
-			message.append(" with " + "@xsi:type=\"");
+		if (property.getType() != null) {
 
-			String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
-				property, property.getType()))
-					? computeXref(xrefSource, (Classifier) property.getType())
-					: null;
-			boolean showXref = markup && (xref != null);
-
-			if (showXref) {
-				String format = showXref && xref.endsWith(".html")
-						? "format=\"html\" "
-						: "";
-				message.append(showXref
-						? "<xref " + format + "href=\"" + xref + "\">"
-						: "");
-				message.append(UMLUtil.splitName(property.getType()));
-				message.append(showXref
-						? "</xref>"
-						: "");
-			} else {
+			if ((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
+				message.append(" with " + "@xsi:type=\"");
 				message.append(property.getType().getName());
+				message.append("\"");
+
 			}
-			message.append("\"");
+
+			if (property.getType() instanceof Class) {
+				if (isInlineClass((Class) property.getType())) {
+
+					if (isPublishSeperately((Class) property.getType())) {
+
+						String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
+							property, property.getType()))
+								? computeXref(xrefSource, (Classifier) property.getType())
+								: null;
+						boolean showXref = markup && (xref != null);
+
+						if (showXref) {
+							String format = showXref && xref.endsWith(".html")
+									? "format=\"html\" "
+									: "";
+							message.append(showXref
+									? "<xref " + format + "href=\"" + xref + "\">"
+									: "");
+							message.append(UMLUtil.splitName(property.getType()));
+							message.append(showXref
+									? "</xref>"
+									: "");
+						}
+
+					} else {
+						StringWriter sw = new StringWriter();
+						PrintWriter pw = new PrintWriter(sw);
+
+						// appendConformanceRuleIds(association, message, markup);
+
+						appendPropertyComments(pw, property, markup);
+
+						appendConformanceRules(
+							pw, (Class) property.getType(), String.format(" %s%s%s ", (property.getUpper() == 1
+									? "This "
+									: "Such "), property.getName(), (property.getUpper() == 1
+									? ""
+									: "s")), markup);
+						message.append(" " + sw.getBuffer() + " ");
+					}
+
+				}
+
+			}
+			// else {
+			// message.append(property.getType().getName());
+			// }
 		}
+
+		// if (property.getType() != null &&
+		// (redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
+		// message.append(" with " + "@xsi:type=\"");
+		//
+		// String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
+		// property, property.getType()))
+		// ? computeXref(xrefSource, (Classifier) property.getType())
+		// : null;
+		// boolean showXref = markup && (xref != null);
+		//
+		// if (showXref) {
+		// String format = showXref && xref.endsWith(".html")
+		// ? "format=\"html\" "
+		// : "";
+		// message.append(showXref
+		// ? "<xref " + format + "href=\"" + xref + "\">"
+		// : "");
+		// message.append(UMLUtil.splitName(property.getType()));
+		// message.append(showXref
+		// ? "</xref>"
+		// : "");
+		// } else {
+		// message.append(property.getType().getName());
+		// }
+		// message.append("\"");
+		// }
+
+		// if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
+		// StringWriter sw = new StringWriter();
+		// PrintWriter pw = new PrintWriter(sw);
+		//
+		// appendConformanceRuleIds(association, message, markup);
+		//
+		// appendPropertyComments(pw, property, markup);
+		//
+		// appendConformanceRules(pw, endType, String.format(" %s%s%s ", (property.getUpper() == 1
+		// ? "This "
+		// : "Such "), elementName, (property.getUpper() == 1
+		// ? ""
+		// : "s")), markup);
+		// message.append(" " + sw.getBuffer() + " ");
+		//
+		// }
 
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
 		if (isHL7VocabAttribute(property)) {
@@ -1076,7 +1151,8 @@ public class CDAModelUtil {
 		// Collections.sort(allAttributes, new NamedElementComparator());
 		// XML attributes
 		for (Property property : propertyList.getAttributes()) {
-			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property)) {
+			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property) &&
+					!CDAModelUtil.isDatatypeModel(property)) {
 				hasRules = true;
 				writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
 				appendPropertyComments(writer, property, markup);
@@ -1086,7 +1162,8 @@ public class CDAModelUtil {
 		}
 		// XML elements
 		for (Property property : propertyList.getAssociationEnds()) {
-			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property)) {
+			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property) &&
+					!CDAModelUtil.isDatatypeModel(property)) {
 				hasRules = true;
 				writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
 				appendPropertyComments(writer, property, markup);
