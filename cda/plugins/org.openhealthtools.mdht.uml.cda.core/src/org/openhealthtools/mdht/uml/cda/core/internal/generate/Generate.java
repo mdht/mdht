@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -32,6 +33,7 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.common.UmlPlugin;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class Generate {
@@ -86,6 +88,10 @@ public class Generate {
 			org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage.eNS_URI, URI.createURI(cdaProfileLocation));
 
 		// Load the CDA Packages
+		UmlPlugin.computeModelPathMapExtensions();
+
+		resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
+
 		CDAUtil.loadPackages();
 
 		// Open the model
