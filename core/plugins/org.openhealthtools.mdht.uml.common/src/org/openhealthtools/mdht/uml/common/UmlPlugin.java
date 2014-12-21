@@ -11,8 +11,10 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.StringTokenizer;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -69,34 +71,77 @@ public class UmlPlugin extends EMFPlugin {
 
 	public static void computeModelPathMapExtensions() {
 
-		IWorkspaceRoot root = EcorePlugin.getWorkspaceRoot();
-		if (root != null) {
-			IProject[] projects = root.getProjects();
-			if (projects != null) {
+		if (EcorePlugin.IS_ECLIPSE_RUNNING) {
+			IWorkspaceRoot root = EcorePlugin.getWorkspaceRoot();
+			if (root != null) {
+				IProject[] projects = root.getProjects();
+				if (projects != null) {
 
-				for (int i = 0, size = projects.length; i < size; ++i) {
-					IProject project = projects[i];
-					if (project.isOpen()) {
+					for (int i = 0, size = projects.length; i < size; ++i) {
+						IProject project = projects[i];
+						if (project.isOpen()) {
 
-						final IFile plugin = project.getFile("plugin.xml");
-						if (plugin.exists()) {
-							try {
-								processPluginXML(project.getName(), plugin.getContents(true));
-							} catch (Exception exception) {
+							final IFile plugin = project.getFile("plugin.xml");
+							if (plugin.exists()) {
+								try {
+									processPluginXML(project.getName(), plugin.getContents(true));
+								} catch (Exception exception) {
 
+								}
 							}
-						}
 
+						}
 					}
 				}
 			}
+		} else {
+			computeModelPathMapsFromPath();
 		}
 
 	}
 
-	private static void processPluginXML(String projectName, InputStream pluginStream) throws SAXException,
-			IOException, ParserConfigurationException, XPathExpressionException, ClassNotFoundException,
-			SecurityException, NoSuchFieldException {
+	private static void computeModelPathMapsFromPath() {
+
+		final String PATH_SEPARATOR = System.getProperty("path.separator");
+
+		final String JAVA_CLASSPATH = System.getProperty("java.class.path");
+
+		final String BIN = "bin";
+
+		final String PLUGINXML = "plugin.xml";
+
+		StringTokenizer st = new StringTokenizer(JAVA_CLASSPATH, PATH_SEPARATOR);
+
+		while (st.hasMoreTokens()) {
+
+			String path = st.nextToken();
+
+			if (path.endsWith(".jar") || (path.endsWith(".zip"))) {
+				// try {
+				// processPluginXML(new ZipFile(path));
+				// } catch (Exception e) {
+				// e.printStackTrace();
+				// // If there is an issue loading the plugin jar - we let
+				// // normal processing continue
+				// }
+			} else if (path.endsWith(BIN)) {
+
+				String pluginPath = path.substring(0, path.lastIndexOf(BIN)) + PLUGINXML;
+				try {
+					FileInputStream pluginInputSteam = new FileInputStream(pluginPath);
+					processPluginXML(pluginPath.substring(0, pluginPath.lastIndexOf(PLUGINXML)), pluginInputSteam);
+				} catch (Exception e) {
+
+				}
+
+			}
+		}
+		return;
+	}
+
+	private static void processPluginXML(String location, InputStream pluginStream) throws SAXException, IOException,
+			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
+			NoSuchFieldException {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 		factory.setNamespaceAware(true);
@@ -120,11 +165,20 @@ public class UmlPlugin extends EMFPlugin {
 		Object result = expr.evaluate(doc, XPathConstants.NODESET);
 
 		NodeList nodes = (NodeList) result;
+
 		for (int i = 0; i < nodes.getLength(); i++) {
 			String source = nodes.item(i).getAttributes().getNamedItem("source").getNodeValue();
 			String target = nodes.item(i).getAttributes().getNamedItem("target").getNodeValue();
-			URI key = URI.createURI(source + "/");
-			URI value = URI.createURI("platform:/plugin/" + projectName + "/" + target + "/");
+			URI key = URI.createURI(source);
+
+			URI value = null;
+			if (EcorePlugin.IS_ECLIPSE_RUNNING) {
+				value = URI.createURI("platform:/plugin/" + location + "/" + target);
+			} else {
+
+				value = URI.createURI("file://" + location + target);
+			}
+
 			org.eclipse.emf.ecore.resource.URIConverter.URI_MAP.put(key, value);
 		}
 	}
@@ -160,8 +214,6 @@ public class UmlPlugin extends EMFPlugin {
 			String source = nodes.item(i).getAttributes().getNamedItem("source").getNodeValue();
 			String target = nodes.item(i).getAttributes().getNamedItem("target").getNodeValue();
 			key = URI.createURI(source + "/");
-			// URI value = URI.createURI("platform:/plugin/" + projectName + "/" + target + "/");
-			// org.eclipse.emf.ecore.resource.URIConverter.URI_MAP.put(key, value);
 		}
 
 		return key;
