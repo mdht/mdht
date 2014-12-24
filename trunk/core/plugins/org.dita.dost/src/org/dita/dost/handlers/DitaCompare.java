@@ -45,6 +45,10 @@ import org.openhealthtools.mdht.uml.common.util.CompareResultVisitor;
 
 public class DitaCompare implements CompareResultVisitor {
 
+	private static String getEscapedElementName(NamedElement ne) {
+		return StringEscapeUtils.escapeHtml(ne.getName());
+	}
+
 	static class DeltaDisplay extends org.eclipse.uml2.uml.util.UMLSwitch<String> {
 		static final DeltaDisplay DELTADISPLAY = new DeltaDisplay();
 
@@ -93,7 +97,7 @@ public class DitaCompare implements CompareResultVisitor {
 		 */
 		@Override
 		public String caseClass(Class object) {
-			return object.getName();
+			return getEscapedElementName(object);
 		}
 
 		/*
@@ -120,7 +124,7 @@ public class DitaCompare implements CompareResultVisitor {
 		 */
 		@Override
 		public String caseProperty(Property object) {
-			return "Property " + object.getName();
+			return "Property " + getEscapedElementName(object);
 		}
 
 		/*
@@ -150,7 +154,7 @@ public class DitaCompare implements CompareResultVisitor {
 		 */
 		@Override
 		public String caseEnumeration(Enumeration object) {
-			return "Enumeration " + object.getName();
+			return "Enumeration " + getEscapedElementName(object);
 		}
 
 		/*
@@ -160,7 +164,7 @@ public class DitaCompare implements CompareResultVisitor {
 		 */
 		@Override
 		public String caseNamedElement(NamedElement object) {
-			return object.getName();
+			return getEscapedElementName(object);
 		}
 
 		/*
@@ -186,7 +190,7 @@ public class DitaCompare implements CompareResultVisitor {
 		@Override
 		public String caseNamedElement(NamedElement object) {
 			if (object.getName() != null) {
-				return object.getName();
+				return getEscapedElementName(object);
 			} else {
 				return super.caseNamedElement(object);
 			}
@@ -200,7 +204,7 @@ public class DitaCompare implements CompareResultVisitor {
 		 */
 		@Override
 		public String caseClassifier(Classifier object) {
-			return "Class " + object.getName();
+			return "Class " + getEscapedElementName(object);
 		}
 
 		/*
@@ -210,7 +214,7 @@ public class DitaCompare implements CompareResultVisitor {
 		 */
 		@Override
 		public String casePackage(Package object) {
-			return "Package " + object.getName();
+			return "Package " + getEscapedElementName(object);
 		}
 
 		/*
@@ -220,11 +224,12 @@ public class DitaCompare implements CompareResultVisitor {
 		 */
 		@Override
 		public String caseProperty(Property object) {
-			return "Property " + object.getName() + " [" + object.getLower() + ".." + (object.getUpper() >= 0
-					? object.getUpper()
-					: "*") + "] " + (object.getType() != null
-					? object.getType().getName()
-					: "NULL");
+			return "Property " + getEscapedElementName(object) + " [" + object.getLower() + ".." +
+					(object.getUpper() >= 0
+							? object.getUpper()
+							: "*") + "] " + (object.getType() != null
+							? object.getType().getName()
+							: "NULL");
 		}
 
 		/*
@@ -240,9 +245,9 @@ public class DitaCompare implements CompareResultVisitor {
 				if (!StringUtils.isEmpty(p.getName())) {
 					result.append("Association from ");
 					result.append((p.getOwner() instanceof Class
-							? ((Class) p.getOwner()).getName() + " "
+							? (getEscapedElementName((Class) p.getOwner())) + " "
 							: ""));
-					result.append("::" + p.getName() + " to ").append(p.getType().getName());
+					result.append("::" + getEscapedElementName(p) + " to ").append(getEscapedElementName(p.getType()));
 				}
 			}
 
@@ -326,7 +331,15 @@ public class DitaCompare implements CompareResultVisitor {
 
 	public DitaCompare(String version1, String version2, IProgressMonitor monitor) {
 		buffer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-		buffer.append("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
+		buffer.append("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\" [ ");
+		buffer.append("<!ENTITY rsquo \"&#160;\"> ");
+		buffer.append("<!ENTITY ldquo \"&#160;\"> ");
+		buffer.append("<!ENTITY rdquo \"&#160;\"> ");
+		buffer.append("<!ENTITY ndash \"&#160;\"> ");
+		buffer.append("<!ENTITY lsquo \"&#160;\"> ");
+
+		buffer.append("]>");
+
 		buffer.append("<topic id=\"modelupdates\" xml:lang=\"en-us\">");
 		buffer.append("<title id=\"title\">Model Updates</title>");
 		buffer.append("<shortdesc>Model Updates</shortdesc>");
@@ -372,18 +385,18 @@ public class DitaCompare implements CompareResultVisitor {
 		if (owner instanceof Package && element instanceof Class) {
 			DeltaDisplay.DELTADISPLAY.leftElement = null;
 			buffer.append(
-				"<row><entry>" + owner.getNearestPackage().getQualifiedName() + "</entry><entry>" +
-						ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(element) +
+				"<row><entry>" + StringEscapeUtils.escapeHtml(owner.getNearestPackage().getQualifiedName()) +
+						"</entry><entry>" + ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(element) +
 						"</entry><entry>Added</entry><entry></entry></row>").append(
 				System.getProperty("line.separator"));
 			;
 		} else if (owner instanceof Class) {
 			DeltaDisplay.DELTADISPLAY.leftElement = null;
 			buffer.append(
-				"<row><entry>" + owner.getNearestPackage().getQualifiedName() + "</entry><entry>" +
-						ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(owner) + "</entry><entry>Added</entry><entry>" +
-						DeltaDisplay.DELTADISPLAY.doSwitch(element) + "</entry></row>").append(
-				System.getProperty("line.separator"));
+				"<row><entry>" + StringEscapeUtils.escapeHtml(owner.getNearestPackage().getQualifiedName()) +
+						"</entry><entry>" + ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(owner) +
+						"</entry><entry>Added</entry><entry>" + DeltaDisplay.DELTADISPLAY.doSwitch(element) +
+						"</entry></row>").append(System.getProperty("line.separator"));
 			;
 		}
 
@@ -399,16 +412,16 @@ public class DitaCompare implements CompareResultVisitor {
 		if (owner instanceof Package && element instanceof Class) {
 			DeltaDisplay.DELTADISPLAY.leftElement = null;
 			buffer.append(
-				"<row><entry>" + owner.getNearestPackage().getQualifiedName() + "</entry><entry>" +
-						ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(element) +
+				"<row><entry>" + StringEscapeUtils.escapeHtml(owner.getNearestPackage().getQualifiedName()) +
+						"</entry><entry>" + ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(element) +
 						"</entry><entry>Deleted</entry><entry></entry></row>").append(
 				System.getProperty("line.separator"));
 			;
 		} else if (owner instanceof Class) {
 			DeltaDisplay.DELTADISPLAY.leftElement = null;
 			buffer.append(
-				"<row><entry>" + owner.getNearestPackage().getQualifiedName() + "</entry><entry>" +
-						ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(owner) +
+				"<row><entry>" + StringEscapeUtils.escapeHtml(owner.getNearestPackage().getQualifiedName()) +
+						"</entry><entry>" + ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(owner) +
 						"</entry><entry>Deleted</entry><entry>" + DeltaDisplay.DELTADISPLAY.doSwitch(element) +
 						"</entry></row>").append(System.getProperty("line.separator"));
 			;
@@ -425,8 +438,8 @@ public class DitaCompare implements CompareResultVisitor {
 		if (owner instanceof Class) {
 			DeltaDisplay.DELTADISPLAY.leftElement = origialElement;
 			buffer.append(
-				"<row><entry>" + owner.getNearestPackage().getQualifiedName() + "</entry><entry>" +
-						ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(owner) +
+				"<row><entry>" + StringEscapeUtils.escapeHtml(owner.getNearestPackage().getQualifiedName()) +
+						"</entry><entry>" + ElementDisplay.ELEMENTDISPLAYINSTANCE.doSwitch(owner) +
 						"</entry><entry>Updated</entry><entry>" + DeltaDisplay.DELTADISPLAY.doSwitch(upatedElement) +
 						"</entry></row>").append(System.getProperty("line.separator"));
 			;
