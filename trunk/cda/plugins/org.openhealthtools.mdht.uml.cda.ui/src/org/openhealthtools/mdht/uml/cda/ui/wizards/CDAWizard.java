@@ -61,6 +61,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.osgi.framework.Bundle;
@@ -403,7 +404,7 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 			for (Package ps : cdaPackages.values()) {
 
 				for (Type type : ps.getOwnedTypes()) {
-					if (type.conformsTo(clinicalDocument)) {
+					if (CDAModelUtil.isClinicalDocument(type)) {
 						cdaDocuments.put(type.getQualifiedName(), type);
 						cdaDocumentsManifest.put(
 							type.getQualifiedName(), cdaDocumentsManifest.get(ps.getQualifiedName()));
