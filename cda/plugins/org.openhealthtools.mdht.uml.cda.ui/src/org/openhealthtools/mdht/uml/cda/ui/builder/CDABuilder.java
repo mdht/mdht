@@ -11,9 +11,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.builder;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -533,14 +535,51 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 	}
 
+	/**
+	 * Opens .modelStatus file which is created by the validateModel ant task
+	 * This is needed currently because unable to get anything other then success from
+	 * ant tasks running during build
+	 * 
+	 * @param modelProject
+	 * @return
+	 */
+	boolean isModelValid(IProject modelProject) {
+
+		boolean status = true;
+		IFile statusFile = modelProject.getFile(new Path("model/.modelStatus"));
+
+		if (statusFile != null) {
+			try {
+				statusFile.refreshLocal(IResource.DEPTH_ZERO, null);
+				BufferedReader reader = new BufferedReader(new InputStreamReader(statusFile.getContents()));
+				StringBuilder out = new StringBuilder();
+				String line;
+				while ((line = reader.readLine()) != null) {
+					out.append(line);
+				}
+				if (Integer.valueOf(out.toString()) > 1) {
+					status = false;
+				}
+				reader.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+		return status;
+
+	}
+
 	@Override
 	@SuppressWarnings("rawtypes")
 	protected IProject[] build(int kind, Map args, IProgressMonitor monitor) throws CoreException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
+		boolean isDocumentProject = false;
 		String modelProjectName = null;
 		if (getProject().getName().endsWith(".doc")) {
 			modelProjectName = getProject().getName().replace(".doc", ".model");
+			isDocumentProject = true;
 		} else {
 			modelProjectName = getProject().getName() + ".model";
 		}
@@ -558,8 +597,13 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		}
 
 		if (cfmc.hasModelChanged || checkBuildStatus(modelProject, getProject())) {
-			runTransformation(getProject(), monitor);
-			runGenerate(IncrementalProjectBuilder.FULL_BUILD == kind, getProject(), monitor);
+			// If this is clean or generate project, always run,
+			// if increment build and Document project make sure the model is valid; This way the modeler can see the issues
+			//
+			if (IncrementalProjectBuilder.FULL_BUILD == kind || !isDocumentProject || isModelValid(modelProject)) {
+				runTransformation(getProject(), monitor);
+				runGenerate(IncrementalProjectBuilder.FULL_BUILD == kind, getProject(), monitor);
+			}
 		}
 
 		return projects;
