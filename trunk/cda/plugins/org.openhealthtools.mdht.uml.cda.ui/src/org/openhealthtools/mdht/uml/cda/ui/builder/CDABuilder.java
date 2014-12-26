@@ -76,6 +76,7 @@ import org.eclipse.uml2.codegen.ecore.genmodel.GenModelFactory;
 import org.eclipse.uml2.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ecore.importer.UMLImporter;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil.FindResourcesByNameVisitor;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -158,6 +159,33 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 	}
 
+	/**
+	 * getTemplatesDirectory returns the templates directory where the cda.uml model is found
+	 * This is to support extensions
+	 * 
+	 * @return
+	 */
+	private static String getTemplatesDirectory() {
+
+		try {
+			FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor("cda.uml");
+
+			IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
+
+			iw.getRoot().accept(visitor);
+
+			if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+				return "/" + visitor.getResources().get(0).getProject().getName() + "/templates";
+			}
+
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return TEMPLATESDIR;
+	}
+
 	public static void createGenModel(IProject project, IProgressMonitor monitor) {
 
 		EPackage.Registry.INSTANCE.put(GenModelPackage.eNS_URI, GenModelPackage.eINSTANCE);
@@ -202,7 +230,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		genmodel.setCopyrightFields(false);
 		genmodel.setComplianceLevel(GenJDKLevel.JDK50_LITERAL);
 		genmodel.setRuntimeVersion(GenRuntimeVersion.EMF25);
-		genmodel.setTemplateDirectory(TEMPLATESDIR);
+		genmodel.setTemplateDirectory(getTemplatesDirectory());
 		genmodel.setDynamicTemplates(true);
 		genmodel.getForeignModel().add(String.format("%s.uml", genmodel.getModelName()));
 		genmodel.setPluralizedGetters(true);
