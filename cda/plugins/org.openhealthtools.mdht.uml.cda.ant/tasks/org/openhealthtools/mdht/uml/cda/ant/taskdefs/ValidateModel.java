@@ -14,6 +14,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.apache.tools.ant.BuildException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -67,12 +70,23 @@ public class ValidateModel extends CDAModelingSubTask {
 			throw new BuildException(e);
 		}
 
+		// Write out the model status - This is for other build processes to use in particular the automated build process
+		//
+		org.eclipse.emf.common.util.URI modelPath = umlResource.getURI();
+		FileWriter fr;
+		try {
+			fr = new FileWriter(modelPath.toFileString().replaceFirst(
+				modelPath.segment(modelPath.segmentCount() - 1), ".modelStatus"));
+			fr.write(String.valueOf(health.getSeverity()));
+			fr.close();
+		} catch (IOException e) {
+
+		}
+
 		if ((health.getSeverity() >= Diagnostic.ERROR) && isFailOnError()) {
 			throw new BuildException("Validation found one or more errors in the UML model.");
 		}
 	}
-
-	// ANT task attributes -----------------------------------------------------
 
 	public void setFailOnError(boolean failOnError) {
 		this.failOnError = failOnError;
@@ -81,8 +95,5 @@ public class ValidateModel extends CDAModelingSubTask {
 	public boolean isFailOnError() {
 		return failOnError;
 	}
-
-	// ANT task child elements
-	// --------------------------------------------------
 
 }
