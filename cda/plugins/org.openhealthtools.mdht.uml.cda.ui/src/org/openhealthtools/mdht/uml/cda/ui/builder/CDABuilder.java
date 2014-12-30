@@ -228,7 +228,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		genmodel.setImporterID(ECOREIMPORTER);
 		genmodel.setInvariantPrefix(VALIDATEPREFIX);
 		genmodel.setCopyrightFields(false);
-		genmodel.setComplianceLevel(GenJDKLevel.JDK50_LITERAL);
+		genmodel.setComplianceLevel(GenJDKLevel.JDK70_LITERAL);
 		genmodel.setRuntimeVersion(GenRuntimeVersion.EMF25);
 		genmodel.setTemplateDirectory(getTemplatesDirectory());
 		genmodel.setDynamicTemplates(true);
