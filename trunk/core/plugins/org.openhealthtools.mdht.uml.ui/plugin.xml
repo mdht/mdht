@@ -570,4 +570,148 @@
       </action>
     </editorContribution>
   </extension>
+  
+  
+  
+  
+    <extension
+         point="org.eclipse.ui.menus">
+               <menuContribution
+            allPopups="false"
+            locationURI="popup:org.openhealthtools.mdht.uml.ui.UMLTableEditorID?after=group.new">
+         <menu
+               icon="icons/SC16x16.png"
+               id="org.openhealthtools.mdht.uml.ui.popups.smartconstraint"
+               label="Localise Class"
+               tooltip="Create a local a extention of the reference model &apos;s class">
+ 
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate ifEmpty="false">
+                      <and>
+                         <or>
+                            <adapt
+                                  type="org.eclipse.emf.ecore.EObject">
+                               <instanceof
+                                     value="org.eclipse.uml2.uml.Association">
+                               </instanceof>
+                            </adapt>
+                            <test
+                                  property="org.openhealthtools.mdht.uml.ui.instanceOf"
+                                  value="org.eclipse.uml2.uml.Association">
+                            </test>
+                         </or>
+                         <test
+                               property="org.openhealthtools.mdht.uml.ui.fromLocal">
+                         </test>
+                      </and>
+                  </iterate>
+               </with>
+            </visibleWhen>
+      
+           
+            <command
+                  commandId="org.openhealthtools.mdht.uml.ui.cmd.smartconstraint.localiseclass"
+                  label="Nested Class"
+                  style="push"
+                  tooltip="Create sub classes of reference model&apos;s classes as nested classes">
+           <parameter
+                     name="org.openhealthtools.mdht.uml.ui.commands.AddLocalizedClassCommand.nestclass"
+                     value="true">
+               </parameter> 
+            </command>
+            <command
+                  commandId="org.openhealthtools.mdht.uml.ui.cmd.smartconstraint.localiseclass"
+                  label="Top Level Class"
+                  style="push"
+                  tooltip="Create sub classes of reference model&apos;s classes as top level classes">
+             <parameter
+                     name="org.openhealthtools.mdht.uml.ui.commands.AddLocalizedClassCommand.nestclass"
+                     value="false">
+               </parameter> -
+            </command>
+   
+         </menu>
+      </menuContribution>
+  
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.openhealthtools.mdht.uml.ui.category.cmd.smartconstraint"
+            id="org.openhealthtools.mdht.uml.ui.cmd.smartconstraint.localiseclass"
+            name="Create Localised Class">
+       <commandParameter
+               id="org.openhealthtools.mdht.uml.ui.commands.AddLocalizedClassCommand.nestclass"
+               name="OPT_NESTCLASS"
+               optional="true"
+               typeId="org.openhealthtools.mdht.uml.ui.cmd.paramtype.Boolean"
+               values="org.openhealthtools.mdht.uml.ui.propertytesters.BooleanValues">
+         </commandParameter> 
+      </command>
+      <category
+            description="Smart Constraint Commands"
+            id="org.openhealthtools.mdht.uml.ui.category.cmd.smartconstraint"
+            name="Smart Constraint Commands">
+      </category>
+     <commandParameterType
+            converter="org.openhealthtools.mdht.uml.ui.propertytesters.BooleanValueConverter"
+            id="org.openhealthtools.mdht.uml.ui.cmd.paramtype.Boolean"
+            type="java.lang.Boolean">
+      </commandParameterType> 
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.openhealthtools.mdht.uml.ui.commands.AddLocalizedClassCommand"
+            commandId="org.openhealthtools.mdht.uml.ui.cmd.smartconstraint.localiseclass">
+      <!--      <enabledWhen>
+	                <with variable="selection">
+	                  <iterate
+	                        ifEmpty="false">
+	                  	<not>
+	                        <test
+                               forcePluginActivation="false"
+                               property="org.openhealthtools.mdht.uml.ui.isLocalised">
+	                        </test>
+	                  	</not>
+	                  </iterate>
+	               </with>         
+          </enabledWhen> -->
+        
+          
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="org.openhealthtools.mdht.uml.ui.cmd.smartconstraint.localiseclass"
+            icon="icons/SC16x16.png">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
+            id="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider"
+            namespace="org.openhealthtools.mdht.uml.ui"
+            properties="instanceOf, isLocalised, fromLocal"
+            type="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider">
+      </propertyTester>
+      <propertyTester
+            class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
+            id="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            namespace="org.openhealthtools.mdht.uml.ui"
+            properties="instanceOf, isLocalised, fromLocal"
+            type="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem">
+      </propertyTester>
+   </extension>
+  
+  
+  
+  
+  
+  
 </plugin>
