@@ -510,11 +510,11 @@ public class CDAModelUtil {
 
 				appendPropertyComments(pw, property, markup);
 
-				appendConformanceRules(pw, endType, String.format(" %s%s%s ", (property.getUpper() == 1
+				appendConformanceRules(pw, endType, (property.getUpper() == 1
 						? "This "
-						: "Such "), elementName, (property.getUpper() == 1
-						? ""
-						: "s")), markup);
+						: "Such ") + (property.getUpper() == 1
+						? elementName
+						: NameUtilities.pluralize(elementName)), markup);
 				message.append(" " + sw.getBuffer() + " ");
 
 			} else {
@@ -607,11 +607,11 @@ public class CDAModelUtil {
 
 				appendPropertyComments(pw, property, markup);
 
-				appendConformanceRules(pw, inlinedClass, String.format(" %s%s%s ", (property.getUpper() == 1
+				appendConformanceRules(pw, inlinedClass, (property.getUpper() == 1
 						? "This "
-						: "Such "), elementName, (property.getUpper() == 1
-						? ""
-						: "s")), markup);
+						: "Such ") + (property.getUpper() == 1
+						? elementName
+						: NameUtilities.pluralize(elementName)), markup);
 				message.append(" " + sw.getBuffer());
 
 			}
@@ -925,14 +925,11 @@ public class CDAModelUtil {
 
 						// appendConformanceRuleIds(association, message, markup);
 
+						Class baseDatatype = CDAModelUtil.getCDADatatype((Classifier) property.getType());
+
 						appendPropertyComments(pw, property, markup);
 
-						appendConformanceRules(
-							pw, (Class) property.getType(), String.format(" %s%s%s ", (property.getUpper() == 1
-									? "This "
-									: "Such "), property.getName(), (property.getUpper() == 1
-									? ""
-									: "s")), markup);
+						appendConformanceRules(pw, (Class) property.getType(), "", markup);
 						message.append(" " + sw.getBuffer() + " ");
 					}
 
