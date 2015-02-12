@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>MDHT Installations</title>
+</head>
+
+<body>
+
+<div class="h1">
+<h1 style="text-align: center">Model-Driven Health Tools (MDHT)
+Downloads</h1>
+</div>
+
+
+
+<div class="h4">
+<h4>A note about these Installations</h4>
+
+<p>The MDHT installation process has two distinct parts, a <b>UML
+Tooling</b> configuration and an <b>MDHT Workspace</b> configuration. You
+must complete both steps completely to properly utilize the MDHT tools.
+See <a href="#umltoolingconfiguration">UML Tooling Installations</a> and
+<a href="#workspaceconfigurations">MDHT Workspace Configurations</a></p>
+
+</div>
+
+
+<div class="h2">
+<h2>Project Releases</h2>
+<h3>MDHT Milestone 0.7 M6 &ndash; 25 August 2010</h3>
+<ul><li><a href="http://oht-modeling.sourceforge.net/zips/MDHT_CDATools_M6-win32.zip">Designers: All-in-one ZIP, quick and easy! (~200MB)</a></li>
+</ul>
+
+<h3>MDHT Milestone 0.7 M5 &ndash; 2 June 2010</h3>
+
+<ul><li><a href="http://oht-modeling.sourceforge.net/zips/MDHT_CDATools_M5-win32.zip">Designers: All-in-one ZIP, quick and easy! (~200MB)</a></li>
+<li><a href="http://oht-modeling.sourceforge.net/zips/MDHT_CDATools_M5_runtime.zip">Developers: Runtime binaries for application developers (~5MB)</a>
+  <ul><li><a href="http://oht-modeling.sourceforge.net/zips/MDHT_CDATools_M5_runtime-source.zip">Developers: Runtime binaries source code (~2MB)</a></li></ul></li>
+</ul>
+<p>The all-in-one ZIP is our recommended download for both new and
+existing users. The ZIP archive (approximately 200MB) is for Windows and
+contains a complete Eclipse 3.5.2 workbench with MDHT plug-ins and all
+prerequisites installed. A pre-configured workspace is included with
+current copies of CDA model projects. Simply unpack the ZIP anywhere on
+your computer, then double-click the /eclipse/eclipse.exe command.</p>
+<p>With this all-in-one download, you will not need any of the
+installation instructions on the remainder of this page. This is
+pre-configured with our MDHT Subversion location to update models; all
+you'll need is a general OHT site account to login to Subversion.</p>
+<p>The runtime binaries ZIP contains JAR files with generated Java
+code from template models, plus all necessary EMF/OCL dependencies. We
+will add a link to example Java code snippets for application
+developers.</p>
+
+<p><b><i>Use the following links only if you are installing into an existing Eclipse workbench and have also
+completed the MDHT Workspace configuration.</i></b></p>
+
+<table width="75%">
+	<tbody>
+		<tr>
+			<td style='border-style: solid; width: 50%; text-align: center;'><a
+				href="http://oht-modeling.sourceforge.net/updates"
+				onclick="javascript:return false;"><b>Update Site Location</b></a></td>
+
+			<td style='border-style: solid; width: 50%; text-align: center;'><a
+				href="http://oht-modeling.sourceforge.net/zips/org.openhealthtools.mdht.site.M5_0.7.0.201005281655.zip"><b>Archived
+			Update Site</b></a></td>
+		</tr>
+		<tr>
+			<td colspan="2"
+				style='border-style: solid; width: 50%; text-align: center;'><a
+				href="mdhtforeclipse.html">Eclipse Update and Archive Site
+			Installation Instructions</a></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="2" style='text-align: left;'>Also available <a
+				href="previous.html">Previous Releases</a></td>
+		</tr>
+	</tfoot>
+</table>
+</div>
+
+
+
+<div class="h2">
+<h2><a name="umltoolingconfiguration">UML Tooling Installations</a></h2>
+
+
+<p>MDHT project releases are provided under the terms and conditions
+of the <a
+	href="http://openhealthtools.osuosl.org/Documents/OHT_Software_User_Agreement_2008_05_08.doc">Open
+Health Tools Software User Agreement</a> unless otherwise noted. MDHT
+libraries are licensed under the <a
+	href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse
+Public License v1.0</a>. Third-party libraries are distributed under the
+terms and conditions of their respective licenses.</p>
+
+<!-- <div class="h4">
+<h4>Windows Download</h4>
+The Windows Downloads is an archived version of the completely
+configured Eclipse UML Tooling Installation for Windows. The files
+themselves can be rather large but represent the easiest option for
+installing MDHT.
+<p></p>
+</div>
+ -->
+
+
+
+
+<div class="h4">
+<h4>Update Manager</h4>
+<p>All project builds are intended to be installed in your Eclipse
+platform using the Eclipse Update Manager, accessed using the <b>Help
+&gt; Software Updates...</b> menu in eclipse 3.4 or <b>Help &gt; Install
+New Software...</b> menu in eclipse 3.5 . The update sites are currently
+located on a SourceForge server where we have access to web file
+directories (unavailable on the OHT server). The update sites contain
+release and milestone builds, but not integration development builds.</p>
+</div>
+
+
+<div class="h4">
+<h4>Archived Update Site</h4>
+<p>Under some circumstances with firewall and other security
+constraints, it will be necessary to download an archived version of the
+Eclipse Update Site. The installation process is generally the same as
+the Update Manager Installation process but instead of installing from a
+remote site you install from a local instance. The disadvantage of this
+approach is updates to the plugins will not be managed automatically by
+the eclipse platform. Organizations or individuals using this option
+will have to download updates to keep software updated.</p>
+</div>
+
+
+
+
+<table>
+	<thead>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<table width="80%">
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						<div class="h3">
+						<h3>UML Tooling Installation Options</h3>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>
+						These options are for CDA and HL7 RIM UML modelers and CDA Application developers. CDA UML modelers must use this installation using Eclipse 3.5 (Galileo). </p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<table width="100%">
+							<thead>
+								<tr>
+									<th colspan="4">UML Tooling Installation Options</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+
+									<td
+										style='border-style: solid; width: 33%; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/updates"
+										onclick="javascript:return false;"><b>Update Site
+									Location</b></a></td>
+
+									<td
+										style='border-style: solid; width: 33%; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/zips/org.openhealthtools.mdht.site.M4_0.7.0.201003302145.zip"><b>Archived
+									Update Site</b></a></td>
+<!-- 								<td
+										style='border-style: solid; width: 34%; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/zips/eclipse-3.5.1-win32_CDATools-M3.zip"><b>Windows</b></a></td> -->
+								</tr>
+								<tr>
+									<td colspan="3"
+										style='border-style: solid; width: 50%; text-align: center;'><a
+										href="mdhtforeclipse.html">Eclipse Update and Archive Site
+									Installation Instructions</a></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								
+							</tfoot>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+<!-- 
+		<tr>
+			<td>
+			<table width="80%">
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						<div class="h3">
+						<h3>Rational Software Modeler UML Tooling Installation
+						Options</h3>
+
+						</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+						<p>These options are for users who have Rational Software
+						Modeler (RSM) installed. RSM User can install the complete suite of HL7 RIM UML Tools and CDA Runtime for Application Development.  CDA for Implementation Guide Modeling requires Eclipse 3.5 (Galileo) and RSM is currently at Eclipse 3.4.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<table width="100%">
+							<thead>
+								<tr>
+									<th colspan="2">Rational Software Modeler UML Tooling
+									Installation Options</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+
+									<td
+										style='border-style: solid; width: 50%; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/updates"
+										onclick="javascript:return false;"><b>Update Site
+									Location</b></a></td>
+
+									<td
+										style='border-style: solid; width: 50%; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/zips/org.openhealthtools.mdht.site.M4_0.7.0.201003302145.zip"><b>Archived
+									Update Site</b></a></td>
+								</tr>
+
+								<tr>
+									<td colspan="2"
+										style='border-style: solid; width: 50%; text-align: center;'><a
+										href="mdhtforeclipse.html">Eclipse Update and Archive Site
+									Installation Instructions</a></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+-->
+<!-- <tr>
+			<td>
+			<table width="80%">
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						<div class="h3">
+						<h3>Papyrus UML Tooling Installation Options</h3>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>These options are for users wishing to use the <a
+							href="http://wiki.eclipse.org/MDT/Papyrus">Eclipse Papyrus
+						UML Tooling</a> . Papyrus is an open source UML modeling tool that is
+						under development at Eclipse.org. It is incomplete at this time,
+						however it may be of interest if you wish to test the MDHT
+						modeling tools in a full UML modeling tool but do not have an RSM
+						license. The Papyrus UML Tooling is recommended only for advanced
+						users who have experience with Eclipse development tools. The
+						models are 100% compatible with the other UML Tooling
+						installations.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<table width="100%">
+							<thead>
+								<tr>
+									<th colspan="4">Papyrus UML Tooling Installation Options</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+
+									<td
+										style='border-style: solid; width: 33%; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/updates"
+										onclick="javascript:return false;"><b>Update Site
+									Location</b></a></td>
+
+									<td
+										style='border-style: solid; width: 33%; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/zips/org.openhealthtools.mdht.site_M3.201001141942.zip"><b>Archived
+									Update Site</b></a></td>
+									<td
+										style='width: 34%; border-style: solid; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/papyrus_m2/eclipse-3.5.1-win32_MDHTPapyrus-M2.zip"><b>Windows</b></a></td>
+								</tr>
+								<tr>
+									<td colspan="3"
+										style='border-style: solid; width: 50%; text-align: center;'><a
+										href="mdhtforeclipse.html">Eclipse Update and Archive Site
+									Installation Instructions</a></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								
+							</tfoot>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+ -->		
+	</tbody>
+	<tfoot></tfoot>
+</table>
+</div>
+
+<div class="h2">
+<h2><a name="workspaceconfigurations">MDHT Workspace
+Configurations</a></h2>
+<div class="h3">
+<h3>MDHT Workspace Options</h3>
+<p>The following configurations will allow you to download and open
+the projects and models associated with the respective tool.</p>
+</div>
+
+<div class="h4">
+<h4>Project Set File</h4>
+<p>Project set files allow you to quickly import projects from
+Subversion into your workspace. This approach requires you have
+Subversion install but is the simplest approach to getting and
+maintaining the latest projects from MDHT. Here are instructions to
+install <a href="subversion.html">Subversion</a> <br />
+You have to download the PSF file on to your local disk, and then you
+can import projects in Eclipse using the Team Project Set Wizard by
+
+selecting <b>File-&gt;Import-&gt;Team-&gt;Team Project Set</b> and
+following the steps to import a PSF.</p>
+</div>
+
+<div class="h4">
+<h4>Archived Project Workspace</h4>
+<p>Archived Project Workspace will contain a completely configured
+Eclipse Workspace including all the necessary projects and plugin
+configurations from the time of the release of the MDHT project. These
+projects will be detached from the MDHT Subversion site. This option is
+currently the best option for Simple and Papyrus tool configurations to
+get started quickly and without having too configure the workspace.</p>
+<p>You have to download the Workspace Archive and extract the contents to a location on your computer
+before starting Eclipse. On start up, Browse using Select Workspace dialog <a
+	href="images/EclipseSelectWorkspace.png">(Screen Shot)</a> and select 
+the location of the extracted workspace. The extracted workspace is
+considered the directory containing the projects.</p>
+
+<!-- 
+Project import text - M2 release use complete workspace archives
+<p>Archived Project Workspace will contain a complete set of eclipse
+projects <i>containing the UML Models ( and not the tool source
+code)</i> from the time of the release. These projects will be detached from
+the MDHT Subversion site. This option is best suited for individuals who
+can not/will not install Subversion or due to firewall/security
+constraints are required to download and install locally. The draw back
+with this option is the project themselves will require manual updates
+versus automated updates. <br />
+You have to download the Workspace Archive on your local disk, and then
+you can import projects in Eclipse using the Import Projects Wizard be
+selecting <b>File-&gt;Import-&gt;General-&gt;Existing Projects into
+Workspace </b> and following the steps to import projects from an archive.</p>
+
+ --></div>
+
+<div class="h4">
+<h4>Subversion Repository</h4>
+<p>The Subversion Repository option requires the user to understand
+and use the Subversion plugin. It is recomended for experienced eclipse
+users who know and understand how to switch perspectives and potentiall
+add views. Here are instructions to install <a href="subversion.html">Subversion</a></p>
+</div>
+
+<table>
+	<thead>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<table width="80%">
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						<div class="h3">
+						<h3>CDA for Implementation Guide Modeling Workspace</h3>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>This workspace includes a series of Eclipse
+						UML Model Projects containing CDA based models such as C32 and
+						IHE. The projects also contain an example CDA extension model and
+						test code.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<table width="100%">
+							<thead>
+								<tr>
+									<th colspan="6">Workspace Installation Options</th>
+								</tr>
+							</thead>
+							<tbody>
+							
+							
+								<tr>
+								<td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>									
+									<td colspan=2
+										style='width: 33%; border-style: solid; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/zips/cda.model.M4.zip"><b>Archived
+									CDA Model Workspace</b></a></td>
+									
+									<td colspan=3
+										style='width: 50%; border-style: solid; text-align: center;'><a
+										href="https://mdht.projects.openhealthtools.org/source/browse/*checkout*/mdht/trunk/psf/cda.psf"><b>Project
+									Set File</b></a></td>
+								
+									<td colspan=3
+										style='width: 50%; border-style: solid; text-align: center;'><a
+										href="cdamanualsvn.html"><b>Manual Subversion</b></a></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+
+
+			<table width="80%">
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						<div class="h3">
+						<h3>CDA Runtime for Application Development Workspace</h3>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>This workspace includes a sample eclipse java project using the CDA run time environment.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<table width="100%">
+							<thead>
+								<tr>
+									<th colspan="6">Workspace Installation Options</th>
+								</tr>
+							</thead>
+							<tbody>
+							
+							
+								<tr>
+								<td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>									
+									<td colspan=2
+										style='width: 33%; border-style: solid; text-align: center;'><a
+										href="http://oht-modeling.sourceforge.net/zips/cda.dev.M4.zip"><b>Archived
+									CDA Application Development Workspace</b></a></td>
+									
+									<td colspan=3
+										style='width: 50%; border-style: solid; text-align: center;'><a
+										href="https://mdht.projects.openhealthtools.org/source/browse/*checkout*/mdht/trunk/psf/cda.dev.psf"><b>Project
+									Set File</b></a></td>
+								
+									<td colspan=3
+										style='width: 50%; border-style: solid; text-align: center;'><a
+										href="cdamanualsvn.html"><b>Manual Subversion</b></a></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+
+<!--  		<tr>
+			<td>
+			<table width="80%">
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						<div class="h3">
+						<h3>RIM Tools - Tools supporting UML based HL7 Reference
+						Information Model</h3>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p>The RIM Tools configuration includes a series of Eclipse
+						UML Model Projects containing RIM based models imported from the
+						HL7 ballot MIF content.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<table width="100%">
+							<thead>
+								<tr>
+									<th colspan="3">Tooling Configuration Options - Under
+									Construction</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td
+										style='width: 33%; border-style: solid; text-align: center;'><a
+										onclick="javascript:return false;" href="tbd.html"><b>Project
+									Set File</b></a></td>
+
+									<td
+										style='width: 34%; border-style: solid; text-align: center;'><a
+										onclick="javascript:return false;" href="tbd.html"><b>Archived
+									Project Workspace</b></a></td>
+									<td
+										style='width: 33%; border-style: solid; text-align: center;'><a
+										onclick="javascript:return false;" href="tbd.html"><b>Manual
+									Subversion</b></a></td>
+
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		-->
+	</tbody>
+	<tfoot></tfoot>
+</table>
+</div>
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11131278-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

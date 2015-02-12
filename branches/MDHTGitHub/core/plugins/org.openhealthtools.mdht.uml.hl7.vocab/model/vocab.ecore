@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vocab" nsURI="http://www.openhealthtools.org/mdht/uml/hl7/vocab"
+    nsPrefix="vocab">
+  <eClassifiers xsi:type="ecore:EEnum" name="ActClass">
+    <eLiterals name="ACCM"/>
+    <eLiterals name="ACCT" value="1"/>
+    <eLiterals name="ACSN" value="2"/>
+    <eLiterals name="ACT" value="3"/>
+    <eLiterals name="ACTN" value="4"/>
+    <eLiterals name="ADJUD" value="5"/>
+    <eLiterals name="ALRT" value="6"/>
+    <eLiterals name="BATTERY" value="7"/>
+    <eLiterals name="CACT" value="8"/>
+    <eLiterals name="CASE" value="9"/>
+    <eLiterals name="CATEGORY" value="10"/>
+    <eLiterals name="CDALVLONE" value="11"/>
+    <eLiterals name="CLNTRL" value="12"/>
+    <eLiterals name="CLUSTER" value="13"/>
+    <eLiterals name="CNOD" value="14"/>
+    <eLiterals name="CNTRCT" value="15"/>
+    <eLiterals name="COMPOSITION" value="16"/>
+    <eLiterals name="COND" value="17"/>
+    <eLiterals name="CONS" value="18"/>
+    <eLiterals name="CONTREG" value="19"/>
+    <eLiterals name="COV" value="20"/>
+    <eLiterals name="CTTEVENT" value="21"/>
+    <eLiterals name="DGIMG" value="22"/>
+    <eLiterals name="DIET" value="23"/>
+    <eLiterals name="DISPACT" value="24"/>
+    <eLiterals name="DOC" value="25"/>
+    <eLiterals name="DOCBODY" value="26"/>
+    <eLiterals name="DOCCLIN" value="27"/>
+    <eLiterals name="DOCSECT" value="28"/>
+    <eLiterals name="EHR" value="29"/>
+    <eLiterals name="ENC" value="30"/>
+    <eLiterals name="ENTRY" value="31"/>
+    <eLiterals name="EXTRACT" value="32"/>
+    <eLiterals name="FCNTRCT" value="33"/>
+    <eLiterals name="FOLDER" value="34"/>
+    <eLiterals name="INC" value="35"/>
+    <eLiterals name="INFO" value="36"/>
+    <eLiterals name="INFRM" value="37"/>
+    <eLiterals name="INVE" value="38"/>
+    <eLiterals name="INVSTG" value="39"/>
+    <eLiterals name="LIST" value="40"/>
+    <eLiterals name="MPROT" value="41"/>
+    <eLiterals name="OBS" value="42"/>
+    <eLiterals name="OBSCOR" value="43"/>
+    <eLiterals name="OBSSER" value="44"/>
+    <eLiterals name="ORGANIZER" value="45"/>
+    <eLiterals name="OUTB" value="46"/>
+    <eLiterals name="PCPR" value="47"/>
+    <eLiterals name="PROC" value="48"/>
+    <eLiterals name="REG" value="49"/>
+    <eLiterals name="REV" value="50"/>
+    <eLiterals name="ROIBND" value="51"/>
+    <eLiterals name="ROIOVL" value="52"/>
+    <eLiterals name="SBADM" value="53"/>
+    <eLiterals name="SEQ" value="54"/>
+    <eLiterals name="SEQVAR" value="55"/>
+    <eLiterals name="SFWL" value="56"/>
+    <eLiterals name="SIT" value="57"/>
+    <eLiterals name="SPCOBS" value="58"/>
+    <eLiterals name="SPCTRT" value="59"/>
+    <eLiterals name="SPECCOLLECT" value="60"/>
+    <eLiterals name="SPLY" value="61"/>
+    <eLiterals name="STC" value="62"/>
+    <eLiterals name="STDPOL" value="63"/>
+    <eLiterals name="SUBST" value="64"/>
+    <eLiterals name="TOPIC" value="65"/>
+    <eLiterals name="TRNS" value="66"/>
+    <eLiterals name="VERIF" value="67"/>
+    <eLiterals name="XACT" value="68"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActClinicalDocument">
+    <eLiterals name="CDALVLONE"/>
+    <eLiterals name="DOCCLIN" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActClassDocument">
+    <eLiterals name="CDALVLONE"/>
+    <eLiterals name="DOC" value="1"/>
+    <eLiterals name="DOCCLIN" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActClassObservation">
+    <eLiterals name="ALRT"/>
+    <eLiterals name="CASE" value="1"/>
+    <eLiterals name="CLNTRL" value="2"/>
+    <eLiterals name="CNOD" value="3"/>
+    <eLiterals name="COND" value="4"/>
+    <eLiterals name="DGIMG" value="5"/>
+    <eLiterals name="INVSTG" value="6"/>
+    <eLiterals name="OBS" value="7"/>
+    <eLiterals name="OBSCOR" value="8"/>
+    <eLiterals name="OBSSER" value="9"/>
+    <eLiterals name="OUTB" value="10"/>
+    <eLiterals name="ROIBND" value="11"/>
+    <eLiterals name="ROIOVL" value="12"/>
+    <eLiterals name="SPCOBS" value="13"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActClassRoot">
+    <eLiterals name="ACCM"/>
+    <eLiterals name="ACCT" value="1"/>
+    <eLiterals name="ACSN" value="2"/>
+    <eLiterals name="ACT" value="3"/>
+    <eLiterals name="ACTN" value="4"/>
+    <eLiterals name="ADJUD" value="5"/>
+    <eLiterals name="ALRT" value="6"/>
+    <eLiterals name="BATTERY" value="7"/>
+    <eLiterals name="CACT" value="8"/>
+    <eLiterals name="CASE" value="9"/>
+    <eLiterals name="CATEGORY" value="10"/>
+    <eLiterals name="CDALVLONE" value="11"/>
+    <eLiterals name="CLNTRL" value="12"/>
+    <eLiterals name="CLUSTER" value="13"/>
+    <eLiterals name="CNOD" value="14"/>
+    <eLiterals name="CNTRCT" value="15"/>
+    <eLiterals name="COMPOSITION" value="16"/>
+    <eLiterals name="COND" value="17"/>
+    <eLiterals name="CONS" value="18"/>
+    <eLiterals name="CONTREG" value="19"/>
+    <eLiterals name="COV" value="20"/>
+    <eLiterals name="CTTEVENT" value="21"/>
+    <eLiterals name="DGIMG" value="22"/>
+    <eLiterals name="DIET" value="23"/>
+    <eLiterals name="DISPACT" value="24"/>
+    <eLiterals name="DOC" value="25"/>
+    <eLiterals name="DOCBODY" value="26"/>
+    <eLiterals name="DOCCLIN" value="27"/>
+    <eLiterals name="DOCSECT" value="28"/>
+    <eLiterals name="EHR" value="29"/>
+    <eLiterals name="ENC" value="30"/>
+    <eLiterals name="ENTRY" value="31"/>
+    <eLiterals name="EXTRACT" value="32"/>
+    <eLiterals name="FCNTRCT" value="33"/>
+    <eLiterals name="FOLDER" value="34"/>
+    <eLiterals name="INC" value="35"/>
+    <eLiterals name="INFO" value="36"/>
+    <eLiterals name="INFRM" value="37"/>
+    <eLiterals name="INVE" value="38"/>
+    <eLiterals name="INVSTG" value="39"/>
+    <eLiterals name="LIST" value="40"/>
+    <eLiterals name="MPROT" value="41"/>
+    <eLiterals name="OBS" value="42"/>
+    <eLiterals name="OBSCOR" value="43"/>
+    <eLiterals name="OBSSER" value="44"/>
+    <eLiterals name="ORGANIZER" value="45"/>
+    <eLiterals name="OUTB" value="46"/>
+    <eLiterals name="PCPR" value="47"/>
+    <eLiterals name="PROC" value="48"/>
+    <eLiterals name="REG" value="49"/>
+    <eLiterals name="REV" value="50"/>
+    <eLiterals name="ROIBND" value="51"/>
+    <eLiterals name="ROIOVL" value="52"/>
+    <eLiterals name="SBADM" value="53"/>
+    <eLiterals name="SPCOBS" value="54"/>
+    <eLiterals name="SPCTRT" value="55"/>
+    <eLiterals name="SPLY" value="56"/>
+    <eLiterals name="STC" value="57"/>
+    <eLiterals name="SUBST" value="58"/>
+    <eLiterals name="TOPIC" value="59"/>
+    <eLiterals name="TRNS" value="60"/>
+    <eLiterals name="VERIF" value="61"/>
+    <eLiterals name="XACT" value="62"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActClassSupply">
+    <eLiterals name="DIET"/>
+    <eLiterals name="SPLY" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActMood">
+    <eLiterals name="APT"/>
+    <eLiterals name="ARQ" value="1"/>
+    <eLiterals name="DEF" value="2"/>
+    <eLiterals name="EVN" value="3"/>
+    <eLiterals name="EVNCRT" value="4" literal="EVN.CRT"/>
+    <eLiterals name="GOL" value="5"/>
+    <eLiterals name="INT" value="6"/>
+    <eLiterals name="OPT" value="7"/>
+    <eLiterals name="PERM" value="8"/>
+    <eLiterals name="PERMRQ" value="9"/>
+    <eLiterals name="PRMS" value="10"/>
+    <eLiterals name="PRP" value="11"/>
+    <eLiterals name="RQO" value="12"/>
+    <eLiterals name="SLOT" value="13"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActRelationshipFulfills">
+    <eLiterals name="FLFS"/>
+    <eLiterals name="OCCR" value="1"/>
+    <eLiterals name="OREF" value="2"/>
+    <eLiterals name="SCH" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActRelationshipHasComponent">
+    <eLiterals name="ARR"/>
+    <eLiterals name="COMP" value="1"/>
+    <eLiterals name="CTRLV" value="2"/>
+    <eLiterals name="DEP" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActRelationshipType">
+    <eLiterals name="APND"/>
+    <eLiterals name="ARR" value="1"/>
+    <eLiterals name="AUTH" value="2"/>
+    <eLiterals name="CAUS" value="3"/>
+    <eLiterals name="CHRG" value="4"/>
+    <eLiterals name="CIND" value="5"/>
+    <eLiterals name="COMP" value="6"/>
+    <eLiterals name="COST" value="7"/>
+    <eLiterals name="COVBY" value="8"/>
+    <eLiterals name="CREDIT" value="9"/>
+    <eLiterals name="CTRLV" value="10"/>
+    <eLiterals name="DEBIT" value="11"/>
+    <eLiterals name="DEP" value="12"/>
+    <eLiterals name="DOC" value="13"/>
+    <eLiterals name="DRIV" value="14"/>
+    <eLiterals name="ELNK" value="15"/>
+    <eLiterals name="EXPL" value="16"/>
+    <eLiterals name="FLFS" value="17"/>
+    <eLiterals name="GEN" value="18"/>
+    <eLiterals name="GEVL" value="19"/>
+    <eLiterals name="GOAL" value="20"/>
+    <eLiterals name="INST" value="21"/>
+    <eLiterals name="ITEMSLOC" value="22"/>
+    <eLiterals name="LIMIT" value="23"/>
+    <eLiterals name="MFST" value="24"/>
+    <eLiterals name="MITGT" value="25"/>
+    <eLiterals name="MTCH" value="26"/>
+    <eLiterals name="NAME" value="27"/>
+    <eLiterals name="OBJC" value="28"/>
+    <eLiterals name="OBJF" value="29"/>
+    <eLiterals name="OCCR" value="30"/>
+    <eLiterals name="OPTN" value="31"/>
+    <eLiterals name="OREF" value="32"/>
+    <eLiterals name="OUTC" value="33"/>
+    <eLiterals name="PERT" value="34"/>
+    <eLiterals name="PRCN" value="35"/>
+    <eLiterals name="PREV" value="36"/>
+    <eLiterals name="REFR" value="37"/>
+    <eLiterals name="REFV" value="38"/>
+    <eLiterals name="REV" value="39"/>
+    <eLiterals name="RISK" value="40"/>
+    <eLiterals name="RPLC" value="41"/>
+    <eLiterals name="RSON" value="42"/>
+    <eLiterals name="SAS" value="43"/>
+    <eLiterals name="SCH" value="44"/>
+    <eLiterals name="SEQL" value="45"/>
+    <eLiterals name="SPRT" value="46"/>
+    <eLiterals name="SPRTBND" value="47"/>
+    <eLiterals name="SUBJ" value="48"/>
+    <eLiterals name="SUCC" value="49"/>
+    <eLiterals name="SUMM" value="50"/>
+    <eLiterals name="TRIG" value="51"/>
+    <eLiterals name="UPDT" value="52"/>
+    <eLiterals name="VRXCRPT" value="53"/>
+    <eLiterals name="XCRPT" value="54"/>
+    <eLiterals name="XFRM" value="55"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AddressPartType">
+    <eLiterals name="ADL"/>
+    <eLiterals name="BNN" value="1"/>
+    <eLiterals name="BNR" value="2"/>
+    <eLiterals name="BNS" value="3"/>
+    <eLiterals name="CAR" value="4"/>
+    <eLiterals name="CEN" value="5"/>
+    <eLiterals name="CNT" value="6"/>
+    <eLiterals name="CPA" value="7"/>
+    <eLiterals name="CTY" value="8"/>
+    <eLiterals name="DAL" value="9"/>
+    <eLiterals name="DEL" value="10"/>
+    <eLiterals name="DINST" value="11"/>
+    <eLiterals name="DINSTA" value="12"/>
+    <eLiterals name="DINSTQ" value="13"/>
+    <eLiterals name="DIR" value="14"/>
+    <eLiterals name="DMOD" value="15"/>
+    <eLiterals name="DMODID" value="16"/>
+    <eLiterals name="POB" value="17"/>
+    <eLiterals name="PRE" value="18"/>
+    <eLiterals name="SAL" value="19"/>
+    <eLiterals name="STA" value="20"/>
+    <eLiterals name="STB" value="21"/>
+    <eLiterals name="STR" value="22"/>
+    <eLiterals name="STTYP" value="23"/>
+    <eLiterals name="UNID" value="24"/>
+    <eLiterals name="UNIT" value="25"/>
+    <eLiterals name="ZIP" value="26"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CalendarCycle">
+    <eLiterals name="CD"/>
+    <eLiterals name="CH" value="1"/>
+    <eLiterals name="CM" value="2"/>
+    <eLiterals name="CN" value="3"/>
+    <eLiterals name="CS" value="4"/>
+    <eLiterals name="CW" value="5"/>
+    <eLiterals name="CY" value="6"/>
+    <eLiterals name="D" value="7"/>
+    <eLiterals name="DM" value="8"/>
+    <eLiterals name="DW" value="9"/>
+    <eLiterals name="DY" value="10"/>
+    <eLiterals name="H" value="11"/>
+    <eLiterals name="HD" value="12"/>
+    <eLiterals name="J" value="13"/>
+    <eLiterals name="M" value="14"/>
+    <eLiterals name="MY" value="15"/>
+    <eLiterals name="N" value="16"/>
+    <eLiterals name="NH" value="17"/>
+    <eLiterals name="S" value="18"/>
+    <eLiterals name="SN" value="19"/>
+    <eLiterals name="W" value="20"/>
+    <eLiterals name="WY" value="21"/>
+    <eLiterals name="Y" value="22"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompressionAlgorithm">
+    <eLiterals name="DF"/>
+    <eLiterals name="GZ" value="1"/>
+    <eLiterals name="Z" value="2"/>
+    <eLiterals name="ZL" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContextControl">
+    <eLiterals name="AN"/>
+    <eLiterals name="AP" value="1"/>
+    <eLiterals name="ON" value="2"/>
+    <eLiterals name="OP" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityClass">
+    <eLiterals name="ANM"/>
+    <eLiterals name="CER" value="1"/>
+    <eLiterals name="CHEM" value="2"/>
+    <eLiterals name="CITY" value="3"/>
+    <eLiterals name="CONT" value="4"/>
+    <eLiterals name="COUNTRY" value="5"/>
+    <eLiterals name="COUNTY" value="6"/>
+    <eLiterals name="DEV" value="7"/>
+    <eLiterals name="ENT" value="8"/>
+    <eLiterals name="FOOD" value="9"/>
+    <eLiterals name="HCE" value="10"/>
+    <eLiterals name="HOLD" value="11"/>
+    <eLiterals name="LIV" value="12"/>
+    <eLiterals name="MAT" value="13"/>
+    <eLiterals name="MIC" value="14"/>
+    <eLiterals name="MMAT" value="15"/>
+    <eLiterals name="MODDV" value="16"/>
+    <eLiterals name="NAT" value="17"/>
+    <eLiterals name="NLIV" value="18"/>
+    <eLiterals name="ORG" value="19"/>
+    <eLiterals name="PLC" value="20"/>
+    <eLiterals name="PLNT" value="21"/>
+    <eLiterals name="PROVINCE" value="22"/>
+    <eLiterals name="PSN" value="23"/>
+    <eLiterals name="PUB" value="24"/>
+    <eLiterals name="RGRP" value="25"/>
+    <eLiterals name="STATE" value="26"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityClassDevice">
+    <eLiterals name="CER"/>
+    <eLiterals name="DEV" value="1"/>
+    <eLiterals name="MODDV" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityClassManufacturedMaterial">
+    <eLiterals name="CER"/>
+    <eLiterals name="CONT" value="1"/>
+    <eLiterals name="DEV" value="2"/>
+    <eLiterals name="HOLD" value="3"/>
+    <eLiterals name="MMAT" value="4"/>
+    <eLiterals name="MODDV" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityClassOrganization">
+    <eLiterals name="NAT"/>
+    <eLiterals name="ORG" value="1"/>
+    <eLiterals name="PUB" value="2"/>
+    <eLiterals name="STATE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityClassPlace">
+    <eLiterals name="CITY"/>
+    <eLiterals name="COUNTRY" value="1"/>
+    <eLiterals name="COUNTY" value="2"/>
+    <eLiterals name="PLC" value="3"/>
+    <eLiterals name="PROVINCE" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityClassRoot">
+    <eLiterals name="ANM"/>
+    <eLiterals name="CER" value="1"/>
+    <eLiterals name="CHEM" value="2"/>
+    <eLiterals name="CITY" value="3"/>
+    <eLiterals name="CONT" value="4"/>
+    <eLiterals name="COUNTRY" value="5"/>
+    <eLiterals name="COUNTY" value="6"/>
+    <eLiterals name="DEV" value="7"/>
+    <eLiterals name="ENT" value="8"/>
+    <eLiterals name="FOOD" value="9"/>
+    <eLiterals name="HCE" value="10"/>
+    <eLiterals name="HOLD" value="11"/>
+    <eLiterals name="LIV" value="12"/>
+    <eLiterals name="MAT" value="13"/>
+    <eLiterals name="MIC" value="14"/>
+    <eLiterals name="MMAT" value="15"/>
+    <eLiterals name="MODDV" value="16"/>
+    <eLiterals name="NAT" value="17"/>
+    <eLiterals name="NLIV" value="18"/>
+    <eLiterals name="ORG" value="19"/>
+    <eLiterals name="PLC" value="20"/>
+    <eLiterals name="PLNT" value="21"/>
+    <eLiterals name="PROVINCE" value="22"/>
+    <eLiterals name="PSN" value="23"/>
+    <eLiterals name="PUB" value="24"/>
+    <eLiterals name="RGRP" value="25"/>
+    <eLiterals name="STATE" value="26"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityDeterminer">
+    <eLiterals name="INSTANCE"/>
+    <eLiterals name="KIND" value="1"/>
+    <eLiterals name="QUANTIFIEDKIND" value="2" literal="QUANITFIED_KIND"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityDeterminerDetermined">
+    <eLiterals name="KIND"/>
+    <eLiterals name="QUANTIFIEDKIND" value="1" literal="QUANITFIED_KIND"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityNamePartQualifier">
+    <eLiterals name="AC"/>
+    <eLiterals name="AD" value="1"/>
+    <eLiterals name="BR" value="2"/>
+    <eLiterals name="CL" value="3"/>
+    <eLiterals name="IN" value="4"/>
+    <eLiterals name="LS" value="5"/>
+    <eLiterals name="NB" value="6"/>
+    <eLiterals name="PR" value="7"/>
+    <eLiterals name="SP" value="8"/>
+    <eLiterals name="TITLE" value="9"/>
+    <eLiterals name="VV" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityNamePartType">
+    <eLiterals name="DEL"/>
+    <eLiterals name="FAM" value="1"/>
+    <eLiterals name="GIV" value="2"/>
+    <eLiterals name="PFX" value="3"/>
+    <eLiterals name="SFX" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityNameUse">
+    <eLiterals name="A"/>
+    <eLiterals name="ABC" value="1"/>
+    <eLiterals name="ASGN" value="2"/>
+    <eLiterals name="C" value="3"/>
+    <eLiterals name="I" value="4"/>
+    <eLiterals name="IDE" value="5"/>
+    <eLiterals name="L" value="6"/>
+    <eLiterals name="P" value="7"/>
+    <eLiterals name="PHON" value="8"/>
+    <eLiterals name="R" value="9"/>
+    <eLiterals name="SNDX" value="10"/>
+    <eLiterals name="SRCH" value="11"/>
+    <eLiterals name="SYL" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IntegrityCheckAlgorithm">
+    <eLiterals name="SHA1" literal="SHA-1"/>
+    <eLiterals name="SHA256" value="1" literal="SHA-256"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NullFlavor">
+    <eLiterals name="ASKU"/>
+    <eLiterals name="MSK" value="1"/>
+    <eLiterals name="NA" value="2"/>
+    <eLiterals name="NASK" value="3"/>
+    <eLiterals name="NAV" value="4"/>
+    <eLiterals name="NI" value="5"/>
+    <eLiterals name="NINF" value="6"/>
+    <eLiterals name="OTH" value="7"/>
+    <eLiterals name="PINF" value="8"/>
+    <eLiterals name="TRC" value="9"/>
+    <eLiterals name="UNK" value="10"/>
+    <eLiterals name="NP" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParticipationPhysicalPerformer">
+    <eLiterals name="DIST"/>
+    <eLiterals name="PPRF" value="1"/>
+    <eLiterals name="PRF" value="2"/>
+    <eLiterals name="SPRF" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParticipationTargetLocation">
+    <eLiterals name="DST"/>
+    <eLiterals name="ELOC" value="1"/>
+    <eLiterals name="LOC" value="2"/>
+    <eLiterals name="ORG" value="3"/>
+    <eLiterals name="RML" value="4"/>
+    <eLiterals name="VIA" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParticipationTargetSubject">
+    <eLiterals name="SBJ"/>
+    <eLiterals name="SPC" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParticipationType">
+    <eLiterals name="ADM"/>
+    <eLiterals name="ATND" value="1"/>
+    <eLiterals name="AUT" value="2"/>
+    <eLiterals name="AUTHEN" value="3"/>
+    <eLiterals name="BBY" value="4"/>
+    <eLiterals name="BEN" value="5"/>
+    <eLiterals name="CALLBCK" value="6"/>
+    <eLiterals name="CON" value="7"/>
+    <eLiterals name="COV" value="8"/>
+    <eLiterals name="CSM" value="9"/>
+    <eLiterals name="CST" value="10"/>
+    <eLiterals name="DEV" value="11"/>
+    <eLiterals name="DIR" value="12"/>
+    <eLiterals name="DIS" value="13"/>
+    <eLiterals name="DIST" value="14"/>
+    <eLiterals name="DON" value="15"/>
+    <eLiterals name="DST" value="16"/>
+    <eLiterals name="ELOC" value="17"/>
+    <eLiterals name="ENT" value="18"/>
+    <eLiterals name="ESC" value="19"/>
+    <eLiterals name="HLD" value="20"/>
+    <eLiterals name="IND" value="21"/>
+    <eLiterals name="INF" value="22"/>
+    <eLiterals name="IRCP" value="23"/>
+    <eLiterals name="LA" value="24"/>
+    <eLiterals name="LOC" value="25"/>
+    <eLiterals name="NOT" value="26"/>
+    <eLiterals name="NRD" value="27"/>
+    <eLiterals name="ORG" value="28"/>
+    <eLiterals name="PPRF" value="29"/>
+    <eLiterals name="PRCP" value="30"/>
+    <eLiterals name="PRD" value="31"/>
+    <eLiterals name="PRF" value="32"/>
+    <eLiterals name="RCT" value="33"/>
+    <eLiterals name="RCV" value="34"/>
+    <eLiterals name="RDV" value="35"/>
+    <eLiterals name="REF" value="36"/>
+    <eLiterals name="REFB" value="37"/>
+    <eLiterals name="REFT" value="38"/>
+    <eLiterals name="RESP" value="39"/>
+    <eLiterals name="RML" value="40"/>
+    <eLiterals name="SBJ" value="41"/>
+    <eLiterals name="SPC" value="42"/>
+    <eLiterals name="SPRF" value="43"/>
+    <eLiterals name="TRC" value="44"/>
+    <eLiterals name="VIA" value="45"/>
+    <eLiterals name="VRF" value="46"/>
+    <eLiterals name="WIT" value="47"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PostalAddressUse">
+    <eLiterals name="ABC"/>
+    <eLiterals name="BAD" value="1"/>
+    <eLiterals name="DIR" value="2"/>
+    <eLiterals name="H" value="3"/>
+    <eLiterals name="HP" value="4"/>
+    <eLiterals name="HV" value="5"/>
+    <eLiterals name="IDE" value="6"/>
+    <eLiterals name="PHYS" value="7"/>
+    <eLiterals name="PST" value="8"/>
+    <eLiterals name="PUB" value="9"/>
+    <eLiterals name="SYL" value="10"/>
+    <eLiterals name="TMP" value="11"/>
+    <eLiterals name="WP" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClass">
+    <eLiterals name="ACCESS"/>
+    <eLiterals name="ACTI" value="1"/>
+    <eLiterals name="ACTM" value="2"/>
+    <eLiterals name="ADTV" value="3"/>
+    <eLiterals name="AGNT" value="4"/>
+    <eLiterals name="ALQT" value="5"/>
+    <eLiterals name="ASSIGNED" value="6"/>
+    <eLiterals name="BASE" value="7"/>
+    <eLiterals name="BIRTHPL" value="8"/>
+    <eLiterals name="CAREGIVER" value="9"/>
+    <eLiterals name="CASESBJ" value="10"/>
+    <eLiterals name="CIT" value="11"/>
+    <eLiterals name="COLR" value="12"/>
+    <eLiterals name="COMPAR" value="13"/>
+    <eLiterals name="CON" value="14"/>
+    <eLiterals name="CONT" value="15"/>
+    <eLiterals name="COVPTY" value="16"/>
+    <eLiterals name="CRINV" value="17"/>
+    <eLiterals name="CRSPNSR" value="18"/>
+    <eLiterals name="DSDLOC" value="19"/>
+    <eLiterals name="DST" value="20"/>
+    <eLiterals name="ECON" value="21"/>
+    <eLiterals name="EMP" value="22"/>
+    <eLiterals name="EXPR" value="23"/>
+    <eLiterals name="FLVR" value="24"/>
+    <eLiterals name="GEN" value="25"/>
+    <eLiterals name="GRIC" value="26"/>
+    <eLiterals name="GUAR" value="27"/>
+    <eLiterals name="GUARD" value="28"/>
+    <eLiterals name="HLD" value="29"/>
+    <eLiterals name="HLTHCHRT" value="30"/>
+    <eLiterals name="IACT" value="31"/>
+    <eLiterals name="IDENT" value="32"/>
+    <eLiterals name="INGR" value="33"/>
+    <eLiterals name="INST" value="34"/>
+    <eLiterals name="INVSBJ" value="35"/>
+    <eLiterals name="ISDLOC" value="36"/>
+    <eLiterals name="ISLT" value="37"/>
+    <eLiterals name="LIC" value="38"/>
+    <eLiterals name="LOCE" value="39"/>
+    <eLiterals name="MANU" value="40"/>
+    <eLiterals name="MBR" value="41"/>
+    <eLiterals name="MIL" value="42"/>
+    <eLiterals name="MNT" value="43"/>
+    <eLiterals name="NOK" value="44"/>
+    <eLiterals name="NOT" value="45"/>
+    <eLiterals name="OWN" value="46"/>
+    <eLiterals name="PART" value="47"/>
+    <eLiterals name="PAT" value="48"/>
+    <eLiterals name="PAYEE" value="49"/>
+    <eLiterals name="PAYOR" value="50"/>
+    <eLiterals name="POLHOLD" value="51"/>
+    <eLiterals name="PROV" value="52"/>
+    <eLiterals name="PRS" value="53"/>
+    <eLiterals name="PRSV" value="54"/>
+    <eLiterals name="QUAL" value="55"/>
+    <eLiterals name="RESBJ" value="56"/>
+    <eLiterals name="RET" value="57"/>
+    <eLiterals name="RGPR" value="58"/>
+    <eLiterals name="ROL" value="59"/>
+    <eLiterals name="SDLOC" value="60"/>
+    <eLiterals name="SGNOFF" value="61"/>
+    <eLiterals name="SPEC" value="62"/>
+    <eLiterals name="SPNSR" value="63"/>
+    <eLiterals name="STBL" value="64"/>
+    <eLiterals name="STD" value="65"/>
+    <eLiterals name="STOR" value="66"/>
+    <eLiterals name="SUBS" value="67"/>
+    <eLiterals name="SUBY" value="68"/>
+    <eLiterals name="TERR" value="69"/>
+    <eLiterals name="THER" value="70"/>
+    <eLiterals name="UNDWRT" value="71"/>
+    <eLiterals name="WRTE" value="72"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClassAssignedEntity">
+    <eLiterals name="ASSIGNED"/>
+    <eLiterals name="COMPAR" value="1"/>
+    <eLiterals name="CON" value="2"/>
+    <eLiterals name="ECON" value="3"/>
+    <eLiterals name="NOK" value="4"/>
+    <eLiterals name="SGNOFF" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClassAssociative">
+    <eLiterals name="ACCESS"/>
+    <eLiterals name="AGNT" value="1"/>
+    <eLiterals name="ASSIGNED" value="2"/>
+    <eLiterals name="BIRTHPL" value="3"/>
+    <eLiterals name="CAREGIVER" value="4"/>
+    <eLiterals name="CASESBJ" value="5"/>
+    <eLiterals name="CIT" value="6"/>
+    <eLiterals name="COMPAR" value="7"/>
+    <eLiterals name="CON" value="8"/>
+    <eLiterals name="COVPTY" value="9"/>
+    <eLiterals name="CRINV" value="10"/>
+    <eLiterals name="CRSPNSR" value="11"/>
+    <eLiterals name="DSDLOC" value="12"/>
+    <eLiterals name="DST" value="13"/>
+    <eLiterals name="ECON" value="14"/>
+    <eLiterals name="EMP" value="15"/>
+    <eLiterals name="EXPR" value="16"/>
+    <eLiterals name="GUAR" value="17"/>
+    <eLiterals name="GUARD" value="18"/>
+    <eLiterals name="HLD" value="19"/>
+    <eLiterals name="HLTHCHRT" value="20"/>
+    <eLiterals name="IDENT" value="21"/>
+    <eLiterals name="INVSBJ" value="22"/>
+    <eLiterals name="ISDLOC" value="23"/>
+    <eLiterals name="LIC" value="24"/>
+    <eLiterals name="MANU" value="25"/>
+    <eLiterals name="MIL" value="26"/>
+    <eLiterals name="MNT" value="27"/>
+    <eLiterals name="NOK" value="28"/>
+    <eLiterals name="NOT" value="29"/>
+    <eLiterals name="OWN" value="30"/>
+    <eLiterals name="PAT" value="31"/>
+    <eLiterals name="PAYEE" value="32"/>
+    <eLiterals name="PAYOR" value="33"/>
+    <eLiterals name="POLHOLD" value="34"/>
+    <eLiterals name="PROV" value="35"/>
+    <eLiterals name="PRS" value="36"/>
+    <eLiterals name="QUAL" value="37"/>
+    <eLiterals name="RESBJ" value="38"/>
+    <eLiterals name="RET" value="39"/>
+    <eLiterals name="RGPR" value="40"/>
+    <eLiterals name="SDLOC" value="41"/>
+    <eLiterals name="SGNOFF" value="42"/>
+    <eLiterals name="SPNSR" value="43"/>
+    <eLiterals name="STD" value="44"/>
+    <eLiterals name="TERR" value="45"/>
+    <eLiterals name="THER" value="46"/>
+    <eLiterals name="UNDWRT" value="47"/>
+    <eLiterals name="WRTE" value="48"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClassManufacturedProduct">
+    <eLiterals name="MANU"/>
+    <eLiterals name="THER" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClassMutualRelationship">
+    <eLiterals name="AGNT"/>
+    <eLiterals name="ASSIGNED" value="1"/>
+    <eLiterals name="CAREGIVER" value="2"/>
+    <eLiterals name="CASESBJ" value="3"/>
+    <eLiterals name="CIT" value="4"/>
+    <eLiterals name="COMPAR" value="5"/>
+    <eLiterals name="CON" value="6"/>
+    <eLiterals name="COVPTY" value="7"/>
+    <eLiterals name="CRINV" value="8"/>
+    <eLiterals name="CRSPNSR" value="9"/>
+    <eLiterals name="ECON" value="10"/>
+    <eLiterals name="EMP" value="11"/>
+    <eLiterals name="GUAR" value="12"/>
+    <eLiterals name="GUARD" value="13"/>
+    <eLiterals name="INVSBJ" value="14"/>
+    <eLiterals name="LIC" value="15"/>
+    <eLiterals name="MIL" value="16"/>
+    <eLiterals name="NOK" value="17"/>
+    <eLiterals name="NOT" value="18"/>
+    <eLiterals name="PAT" value="19"/>
+    <eLiterals name="PAYEE" value="20"/>
+    <eLiterals name="PAYOR" value="21"/>
+    <eLiterals name="POLHOLD" value="22"/>
+    <eLiterals name="PROV" value="23"/>
+    <eLiterals name="PRS" value="24"/>
+    <eLiterals name="QUAL" value="25"/>
+    <eLiterals name="RESBJ" value="26"/>
+    <eLiterals name="SGNOFF" value="27"/>
+    <eLiterals name="SPNSR" value="28"/>
+    <eLiterals name="STD" value="29"/>
+    <eLiterals name="UNDWRT" value="30"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClassRoot">
+    <eLiterals name="ACCESS"/>
+    <eLiterals name="ACTI" value="1"/>
+    <eLiterals name="ACTM" value="2"/>
+    <eLiterals name="ADTV" value="3"/>
+    <eLiterals name="AGNT" value="4"/>
+    <eLiterals name="ALQT" value="5"/>
+    <eLiterals name="ASSIGNED" value="6"/>
+    <eLiterals name="BASE" value="7"/>
+    <eLiterals name="BIRTHPL" value="8"/>
+    <eLiterals name="CAREGIVER" value="9"/>
+    <eLiterals name="CASESBJ" value="10"/>
+    <eLiterals name="CIT" value="11"/>
+    <eLiterals name="COLR" value="12"/>
+    <eLiterals name="COMPAR" value="13"/>
+    <eLiterals name="CON" value="14"/>
+    <eLiterals name="CONT" value="15"/>
+    <eLiterals name="COVPTY" value="16"/>
+    <eLiterals name="CRINV" value="17"/>
+    <eLiterals name="CRSPNSR" value="18"/>
+    <eLiterals name="DSDLOC" value="19"/>
+    <eLiterals name="DST" value="20"/>
+    <eLiterals name="ECON" value="21"/>
+    <eLiterals name="EMP" value="22"/>
+    <eLiterals name="EXPR" value="23"/>
+    <eLiterals name="FLVR" value="24"/>
+    <eLiterals name="GEN" value="25"/>
+    <eLiterals name="GRIC" value="26"/>
+    <eLiterals name="GUAR" value="27"/>
+    <eLiterals name="GUARD" value="28"/>
+    <eLiterals name="HLD" value="29"/>
+    <eLiterals name="HLTHCHRT" value="30"/>
+    <eLiterals name="IACT" value="31"/>
+    <eLiterals name="IDENT" value="32"/>
+    <eLiterals name="INGR" value="33"/>
+    <eLiterals name="INST" value="34"/>
+    <eLiterals name="INVSBJ" value="35"/>
+    <eLiterals name="ISDLOC" value="36"/>
+    <eLiterals name="ISLT" value="37"/>
+    <eLiterals name="LIC" value="38"/>
+    <eLiterals name="LOCE" value="39"/>
+    <eLiterals name="MANU" value="40"/>
+    <eLiterals name="MBR" value="41"/>
+    <eLiterals name="MIL" value="42"/>
+    <eLiterals name="MNT" value="43"/>
+    <eLiterals name="NOK" value="44"/>
+    <eLiterals name="NOT" value="45"/>
+    <eLiterals name="OWN" value="46"/>
+    <eLiterals name="PART" value="47"/>
+    <eLiterals name="PAT" value="48"/>
+    <eLiterals name="PAYEE" value="49"/>
+    <eLiterals name="PAYOR" value="50"/>
+    <eLiterals name="POLHOLD" value="51"/>
+    <eLiterals name="PROV" value="52"/>
+    <eLiterals name="PRS" value="53"/>
+    <eLiterals name="PRSV" value="54"/>
+    <eLiterals name="QUAL" value="55"/>
+    <eLiterals name="RESBJ" value="56"/>
+    <eLiterals name="RET" value="57"/>
+    <eLiterals name="RGPR" value="58"/>
+    <eLiterals name="ROL" value="59"/>
+    <eLiterals name="SDLOC" value="60"/>
+    <eLiterals name="SGNOFF" value="61"/>
+    <eLiterals name="SPEC" value="62"/>
+    <eLiterals name="SPNSR" value="63"/>
+    <eLiterals name="STBL" value="64"/>
+    <eLiterals name="STD" value="65"/>
+    <eLiterals name="STOR" value="66"/>
+    <eLiterals name="SUBS" value="67"/>
+    <eLiterals name="SUBY" value="68"/>
+    <eLiterals name="TERR" value="69"/>
+    <eLiterals name="THER" value="70"/>
+    <eLiterals name="UNDWRT" value="71"/>
+    <eLiterals name="WRTE" value="72"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClassServiceDeliveryLocation">
+    <eLiterals name="DSDLOC"/>
+    <eLiterals name="ISDLOC" value="1"/>
+    <eLiterals name="SDLOC" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleClassSpecimen">
+    <eLiterals name="ALQT"/>
+    <eLiterals name="ISLT" value="1"/>
+    <eLiterals name="SPEC" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SetOperator">
+    <eLiterals name="A"/>
+    <eLiterals name="E" value="1"/>
+    <eLiterals name="H" value="2"/>
+    <eLiterals name="I" value="3"/>
+    <eLiterals name="P" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TelecommunicationAddressUse">
+    <eLiterals name="AS"/>
+    <eLiterals name="BAD" value="1"/>
+    <eLiterals name="DIR" value="2"/>
+    <eLiterals name="EC" value="3"/>
+    <eLiterals name="H" value="4"/>
+    <eLiterals name="HP" value="5"/>
+    <eLiterals name="HV" value="6"/>
+    <eLiterals name="MC" value="7"/>
+    <eLiterals name="PG" value="8"/>
+    <eLiterals name="PUB" value="9"/>
+    <eLiterals name="TMP" value="10"/>
+    <eLiterals name="WP" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ActClassDocumentEntryAct">
+    <eLiterals name="ACCM"/>
+    <eLiterals name="ACT" value="1"/>
+    <eLiterals name="CONS" value="2"/>
+    <eLiterals name="CTTEVENT" value="3"/>
+    <eLiterals name="INC" value="4"/>
+    <eLiterals name="INFRM" value="5"/>
+    <eLiterals name="PCPR" value="6"/>
+    <eLiterals name="REG" value="7"/>
+    <eLiterals name="SPCTRT" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ActClassDocumentEntryOrganizer">
+    <eLiterals name="BATTERY"/>
+    <eLiterals name="CLUSTER" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ActMoodDocumentObservation">
+    <eLiterals name="DEF"/>
+    <eLiterals name="EVN" value="1"/>
+    <eLiterals name="GOL" value="2"/>
+    <eLiterals name="INT" value="3"/>
+    <eLiterals name="PRMS" value="4"/>
+    <eLiterals name="PRP" value="5"/>
+    <eLiterals name="RQO" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ActRelationshipDocument">
+    <eLiterals name="APND"/>
+    <eLiterals name="RPLC" value="1"/>
+    <eLiterals name="XFRM" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ActRelationshipEntry">
+    <eLiterals name="COMP"/>
+    <eLiterals name="DRIV" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ActRelationshipEntryRelationship">
+    <eLiterals name="CAUS"/>
+    <eLiterals name="COMP" value="1"/>
+    <eLiterals name="GEVL" value="2"/>
+    <eLiterals name="MFST" value="3"/>
+    <eLiterals name="REFR" value="4"/>
+    <eLiterals name="RSON" value="5"/>
+    <eLiterals name="SAS" value="6"/>
+    <eLiterals name="SPRT" value="7"/>
+    <eLiterals name="SUBJ" value="8"/>
+    <eLiterals name="XCRPT" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ActRelationshipExternalReference">
+    <eLiterals name="ELNK"/>
+    <eLiterals name="REFR" value="1"/>
+    <eLiterals name="RPLC" value="2"/>
+    <eLiterals name="SPRT" value="3"/>
+    <eLiterals name="SUBJ" value="4"/>
+    <eLiterals name="XCRPT" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_DocumentActMood">
+    <eLiterals name="APT"/>
+    <eLiterals name="ARQ" value="1"/>
+    <eLiterals name="DEF" value="2"/>
+    <eLiterals name="EVN" value="3"/>
+    <eLiterals name="INT" value="4"/>
+    <eLiterals name="PRMS" value="5"/>
+    <eLiterals name="PRP" value="6"/>
+    <eLiterals name="RQO" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_DocumentEncounterMood">
+    <eLiterals name="APT"/>
+    <eLiterals name="ARQ" value="1"/>
+    <eLiterals name="EVN" value="2"/>
+    <eLiterals name="INT" value="3"/>
+    <eLiterals name="PRMS" value="4"/>
+    <eLiterals name="PRP" value="5"/>
+    <eLiterals name="RQO" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_DocumentProcedureMood">
+    <eLiterals name="APT"/>
+    <eLiterals name="ARQ" value="1"/>
+    <eLiterals name="DEF" value="2"/>
+    <eLiterals name="EVN" value="3"/>
+    <eLiterals name="INT" value="4"/>
+    <eLiterals name="PRMS" value="5"/>
+    <eLiterals name="PRP" value="6"/>
+    <eLiterals name="RQO" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_DocumentSubject">
+    <eLiterals name="PAT"/>
+    <eLiterals name="PRS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_DocumentSubstanceMood">
+    <eLiterals name="EVN"/>
+    <eLiterals name="INT" value="1"/>
+    <eLiterals name="PRMS" value="2"/>
+    <eLiterals name="PRP" value="3"/>
+    <eLiterals name="RQO" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_EncounterParticipant">
+    <eLiterals name="ADM"/>
+    <eLiterals name="ATND" value="1"/>
+    <eLiterals name="CON" value="2"/>
+    <eLiterals name="DIS" value="3"/>
+    <eLiterals name="REF" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_InformationRecipient">
+    <eLiterals name="PRCP"/>
+    <eLiterals name="TRC" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_InformationRecipientRole">
+    <eLiterals name="ASSIGNED"/>
+    <eLiterals name="HLTHCHRT" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="x_ServiceEventPerformer">
+    <eLiterals name="PRF"/>
+    <eLiterals name="PPRF" value="1"/>
+    <eLiterals name="SPRF" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimingEvent">
+    <eLiterals name="AC"/>
+    <eLiterals name="ACD" value="1"/>
+    <eLiterals name="ACM" value="2"/>
+    <eLiterals name="ACV" value="3"/>
+    <eLiterals name="HS" value="4"/>
+    <eLiterals name="IC" value="5"/>
+    <eLiterals name="ICD" value="6"/>
+    <eLiterals name="ICM" value="7"/>
+    <eLiterals name="ICV" value="8"/>
+    <eLiterals name="PC" value="9"/>
+    <eLiterals name="PCD" value="10"/>
+    <eLiterals name="PCM" value="11"/>
+    <eLiterals name="PCV" value="12"/>
+  </eClassifiers>
+</ecore:EPackage>

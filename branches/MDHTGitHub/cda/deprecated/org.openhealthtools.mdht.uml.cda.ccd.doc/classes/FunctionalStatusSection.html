@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Functional Status Section"/>
+<meta name="abstract" content="[Section: templateId 2.16.840.1.113883.10.20.1.5]"/>
+<meta name="description" content="[Section: templateId 2.16.840.1.113883.10.20.1.5]"/>
+<meta name="DC.Coverage" content="Section"/>
+<meta name="DC.Relation" scheme="URI" content="../content/SectionTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Functional Status Section</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="title topictitle1">Functional Status Section</h1>
+
+
+
+<div class="body"><p class="shortdesc">[Section: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.5</tt>]</p>
+
+
+<div class="section">
+<p class="p">
+    <em class="ph i">Functional Status</em> describes the patient's status of normal functioning at the time the Care Record
+    was created. Functional statuses include information regarding the patient relative to:
+</p>
+
+
+    <ul class="ul"><li class="li">Ambulatory ability</li>
+
+       <li class="li">Mental status or competency</li>
+
+        <li class="li">Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming</li>
+
+        <li class="li">Home / living situation having an effect on the health status of the patient</li>
+
+        <li class="li">Ability to care for self</li>
+
+        <li class="li">Social activity, including issues with social cognition, participation with
+        friends and acquaintances other than family members</li>
+
+       <li class="li">Occupation activity, including activities partly or directly related to working, housework or volunteering, family
+        and home responsibilities or activities related to home and family</li>
+
+      <li class="li">Communication ability, including issues with speech, writing or cognition required for communication</li>
+
+       <li class="li"> Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or
+        balance</li>
+
+</ul>
+
+<p class="p">
+    Any
+    deviation from normal function that the patient displays and is recorded in the record should be included. Of
+    particular interest are those limitations that would in any way interfere with self care or the medical therapeutic
+    process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also
+    valid for inclusion.
+</p>
+
+<p class="p">Functional Statuses can be expressed in 3 different forms. They can occur as a Problem, a Result or as text. Text can be employed if and only if the Functional Status is neither a Problem nor a Result. Functional Statuses expressed as Problems include relevant clinical conditions, diagnoses, symptoms and findings. Results are the interpretation or conclusion derived from a clinical assessment or test battery, such as the Instrumental Activities of Daily Living (IADL) scale or the Functional Status Index (FSI).
+</p>
+
+</div>
+
+
+<ol class="ol">
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Section</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "47420-5" <em class="ph i">Functional status assessment</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt></li>
+
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Contains one or more Problem Act and/or Result Organizer (CONF-123)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryTargets(ccd::ProblemAct)-&gt;size() &gt; 0
+  or self.getEntryTargets(ccd::ResultOrganizer)-&gt;size() &gt; 0</pre>
+</li>
+</ul>
+</li>
+
+</ol>
+
+
+<div class="fig fignone"><span class="figcap">Figure 1. Functional Status Section example</span>
+
+
+
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
+  &lt;component&gt;
+    &lt;structuredBody&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.1.5" assigningAuthorityName="CCD Functional Status Section"/&gt;
+          &lt;code code="47420-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Functional status assessment"/&gt;
+          &lt;title&gt;Functional status assessment&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+    &lt;/structuredBody&gt;
+  &lt;/component&gt;
+&lt;/ClinicalDocument&gt;</pre>
+
+</div>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

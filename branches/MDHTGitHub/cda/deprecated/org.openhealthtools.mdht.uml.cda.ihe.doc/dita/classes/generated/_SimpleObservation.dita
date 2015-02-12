@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Simple Observation - conformance rules</title>
+<shortdesc id="shortdesc">[Observation: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Observation</category></metadata>
+<resourceid id="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+</prolog>
+<body>
+<section id="description">
+<p>The simple observation entry is meant to be an abstract representation of many of the observations used in this
+specification. It can be made concrete by the specification of a few additional constraints, namely the vocabulary used for
+codes, and the value representation. A simple observation may also inherit constraints from other specifications (e.g.,
+ASTM/HL7 Continuity of Care Document).</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Observation</li>
+<li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Observation</li>
+<li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClassObservation</li>
+<li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_ActMoodDocumentObservation</li>
+<li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
+<li>[IHE] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>

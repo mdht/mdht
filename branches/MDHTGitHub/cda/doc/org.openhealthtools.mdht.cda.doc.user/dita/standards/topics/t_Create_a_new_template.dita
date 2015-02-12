@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_C70BE17E3B634504822AEE39C4181D84"> 
+  <title>Create a new template</title> 
+  <shortdesc>Create a new template class, choose its base type, and select
+	 initial set of constrained attributes. 
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_4866EB8CA5FB47239AB880F747469A1F"> 
+		<step id="step_F81E212B8C7C4ED6ABC73A93E24335CB">
+		  <cmd>Select the table row for the top model package.
+		  </cmd>
+		</step>
+		<step id="step_0C7C66786E584619BB455307493DC8F5"> 
+		  <cmd>To add a new template, right-click on the model Package (e.g.
+			 'ncr' or 'hitsp'), select 
+			 <menucascade><uicontrol>Add
+				  CDA</uicontrol><uicontrol>Template</uicontrol></menucascade> 
+		  </cmd> 
+		  <stepresult><image id="image_2AC7D8152079474A9A3D9A91CB6DB114"
+			 href="../images/NewTemplateMenu.png"></image> 
+		  </stepresult> 
+		</step> 
+		<step id="step_63E1D0D253D04E93B9290D821B393E18"> 
+		  <cmd>Enter the new template class name, using UpperCamelCase format. 
+		  </cmd> 
+		  <stepresult><image id="image_609CD27E374C4B1B9727BC6B2EDFF914"
+			 href="../images/NewTemplateName.png"></image> 
+		  </stepresult> 
+		</step> 
+		<step id="step_8BE22C22B5E24EE0BB192D81DA3942CD"> 
+		  <cmd>Select the base class that this template restricts, either a class
+			 from CDA or a parent template that this new template must conform to. You can
+			 type the first few characters of a class name and the Matching elements list
+			 will be limited to a few choices. Classes from all 
+			 <i>currently open models</i> will be shown in this list. If
+			 necessary, open the model containing the base class you are searching for
+			 before invoking this dialog. 
+		  </cmd> 
+		  <stepresult><image id="image_075922BA127247AEB12DEF182F348192"
+			 href="../images/NewTemplateBaseType.png"></image> 
+		  </stepresult> 
+		</step> 
+		<step id="step_C94C1193AE1E4EA28FF0448AC713B781"> 
+		  <cmd>Add a check mark beside each inherited attribute that you want to
+			 constrain in this new template. 
+		  </cmd> 
+		  <stepresult><image id="image_284E7BF4F4154346881CE3BACCF0A92B"
+			 href="../images/NewTemplateAttributes.png"></image> 
+		  </stepresult> 
+		</step> 
+		<step id="step_787AD3E26A8F4622B7D17D8EA9F9D458">
+		  <cmd>Enter the Template ID in the CDA Tools tab of the Properties view.
+		  </cmd>
+		  <stepresult><image placement="break"
+			 id="image_B957F0F19E144F6FA91232151AFBF530"
+			 href="../images/TableTemplateId.png"></image>
+		  </stepresult>
+		</step>
+	 </steps> 
+	 <result id="result_9C47436A003341D7BAE3B85281EF448F">The following screen
+		shows the new template class displayed in the table editor.<image
+		placement="break" id="image_704C33E83C514861850F80337A175C01"
+		href="../images/NewTemplateResult.png"></image>
+	 </result>
+  </taskbody>
+</task>

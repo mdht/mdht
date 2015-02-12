@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Problem Observation - conformance rules</title>
+<shortdesc id="shortdesc">[Observation: templateId <tt>2.16.840.1.113883.10.20.1.28</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Observation</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.28"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Observation (CONF-154)</li>
+<li>Contains [1..1] <tt>@classCode</tt> = "OBS"</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-155)</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-156, CONF-157)</li>
+<li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-158)<ul><li>Indicates the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition).</li></ul></li>
+<li><b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017 (CONF-159)<ul><li>code SHALL be present (per CDA schema), by MAY use specified value set.</li></ul></li>
+<li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
+<li>contains <xref href="../ProblemStatusObservation.dita">CCD Problem Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.50</tt>) (CONF-162)</li></ol></li>
+<li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
+<li>contains <xref href="../ProblemHealthStatusObservation.dita">CCD Problem Health Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.51</tt>) (CONF-165)</li></ol></li>
+<li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
+<li>contains <xref href="../AgeObservation.dita">CCD Age Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.38</tt>) (CONF-160)</li></ol></li>
+<li><b>SHALL</b> satisfy: Contains one or more sources of information. (CONF-161)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+   and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
+<li><b>MAY</b> satisfy: Contains exactly one Patient Awareness (CONF-180)<ul><li><codeblock>[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</codeblock></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Observation</li>
+<li>[CCD] Contains [1..1] <tt>@classCode</tt> = "OBS"</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-155)</li>
+<li>[CCD] <b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017 (CONF-159)<ul><li>code SHALL be present (per CDA schema), by MAY use specified value set.</li></ul></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-156, CONF-157)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-158)<ul><li>Indicates the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition).</li></ul></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
+<li>contains <xref href="../ProblemStatusObservation.dita">CCD Problem Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.50</tt>) (CONF-162)</li></ol></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
+<li>contains <xref href="../ProblemHealthStatusObservation.dita">CCD Problem Health Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.51</tt>) (CONF-165)</li></ol></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
+<li>contains <xref href="../AgeObservation.dita">CCD Age Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.38</tt>) (CONF-160)</li></ol></li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information. (CONF-161)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+   and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Contains exactly one Patient Awareness (CONF-180)<ul><li><codeblock>[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</codeblock></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD Problem Observation"/>
+              <code/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="1972"/>
+                <high value="2008"/>
+              </effectiveTime>
+              <entryRelationship>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.50" assigningAuthorityName="CCD Problem Status Observation"/>
+                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                  <statusCode code="completed"/>
+                  <value xsi:type="CE"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.51" assigningAuthorityName="CCD Problem Health Status Observation"/>
+                  <code code="11323-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health status"/>
+                  <statusCode code="completed"/>
+                  <value xsi:type="CE"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.38" assigningAuthorityName="CCD Age Observation"/>
+                  <code code="397659008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Age"/>
+                  <statusCode code="completed"/>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

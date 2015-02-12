@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="generatedpropertyconstraintsconcept" xml:lang="en-us">
+<title>Generated Property Constraints</title>
+<conbody>
+<p>Property constraints are those constraints that involve attributes with fixed or default values, attributes that have a more restrictive cardinality than in the base CDA model, and attributes that have a more restrictive type.</p>
+<p>An example of a constraint generated from template model that uses UML property redefinition to specify a more restrictive type. The ANY type of the value attribute has been restricted to PQ (Physical Quantity)</p>
+<codeblock><![CDATA[
+self.value->forAll(element | element.oclIsTypeOf(datatypes::PQ))
+]]>
+</codeblock>
+</conbody>
+</concept>

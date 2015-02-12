@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Concern Entry Status</title>
+<shortdesc id="shortdesc">[OID <tt>null</tt>]</shortdesc>
+<prolog id="prolog">
+<resourceid id="null"/>
+</prolog>
+<body>
+<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->
+<section id="description">
+<p>A concern in the "active" state represents one for which some ongoing clinical activity is expected, and that no activity is expected in other states. Specific uses of the suspended and aborted states are left to the implementation.</p>
+</section>
+<p>OID: null</p>
+<p>Name: null</p>
+<table><tgroup cols="4"><thead><row>
+<entry>Code</entry><entry>Display Name</entry><entry>Code System</entry><entry>Code System Name</entry>
+</row></thead><tbody>
+<row><entry>active</entry><entry>null</entry><entry></entry><entry></entry></row>
+<row><entry>suspended</entry><entry>null</entry><entry></entry><entry></entry></row>
+<row><entry>aborted</entry><entry>null</entry><entry></entry><entry></entry></row>
+<row><entry>completed</entry><entry>null</entry><entry></entry><entry></entry></row>
+</tbody></tgroup></table>
+</body>
+</topic>

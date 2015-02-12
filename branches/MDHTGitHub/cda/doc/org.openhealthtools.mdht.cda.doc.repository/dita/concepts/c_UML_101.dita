@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="cdatemplateconcept" xml:lang="en-us">
+ <title>UML 101</title>
+ <shortdesc>Unified Modeling Language (UML) is a standardized general-purpose language. Object
+  Management Group created and manages the standard.</shortdesc>
+ <conbody>
+  <p>UML is used in generating artifacts of an object-oriented software-intensive system along with
+   offering a way to view a system's architectural blueprint.</p>
+  <p>UML is not a development method by itself. It was designed to be compatible with the leading
+   object-oriented software development methods of its time. Since UML has evolved, some of these
+   methods have been recast to take advantage of the new notations (for example OMT), and new
+   methods have been created based on UML, such as IBM Rational Unified Process (RUP). Others
+   include Abstraction Method and Dynamic Systems Development Method.</p>
+  <p><b>Modeling</b></p>
+  <p>It is important to distinguish between the UML model and the set of diagrams of a system. A
+   diagram is a partial graphic representation of a system's model. The model also contains
+   documentation that drives the model elements and diagrams UML Diagrams represent two different
+   views of a system model.</p>
+  <p><b>Static (structural) view:</b> emphasizes the static structure of the system using objects,
+   attributes, operations and relationships. The structural view includes class diagrams and
+   composite structure diagrams.</p>
+  <p><b>Dynamic (behavioral) view:</b> emphasizes the dynamic behavior of the system by showing
+   collaborations among objects and changes to the internal states of objects. This view includes
+   sequence diagrams, activity diagrams and state machine diagrams.</p>
+  <p> Models can be exchanged among UML tools by using the Extensive Markup Language interchange
+   (XMI) format. There are different versions of the XMI standard and that there are different
+   levels of compatibility between the various UML tools.</p>
+ </conbody>
+</concept>

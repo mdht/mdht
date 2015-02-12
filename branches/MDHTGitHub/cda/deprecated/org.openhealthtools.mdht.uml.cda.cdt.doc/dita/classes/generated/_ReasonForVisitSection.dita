@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Reason For Visit Section - conformance rules</title>
+<shortdesc id="shortdesc">[Section: templateId <tt>2.16.840.1.113883.10.20.2.8</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Section</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.2.8"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Section</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29299-5" <i>Reason for visit</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-74)</li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Section</li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29299-5" <i>Reason for visit</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-74)</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.2.8"/>
+          <code code="29299-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Reason for visit"/>
+          <title>Reason for visit</title>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

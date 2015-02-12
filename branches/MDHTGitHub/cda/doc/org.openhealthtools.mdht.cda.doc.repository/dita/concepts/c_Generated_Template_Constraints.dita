@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="generatedtemplateconstraints" xml:lang="en-us">
+<title>Generated Template Constraint</title>
+<conbody>
+<p>A template ID constraint is generated from information specified in the CDA Template stereotype as applied to classes in the template model. It is used to check whether all of the appropriate template IDs have been added to the instance</p>
+<p>In this example, we check for the template ID associated with ncr::BirthWeight</p>
+<codeblock>
+<![CDATA[
+self.hasTemplateId('2.16.840.1.113883.10.20.17.3.1')
+]]>
+</codeblock>
+<p>A template relationship constraint is generated from directed associations (and information from stereotypes applied to those assciations) in the template model. It is used to enforce the "has-a" or containtment relationship between templates</p>
+<p>In this example, the constraint is used to enforce the relationship between the ncr::EncountersSection and the ncr::NeonatalICUEncounterActivity. Also, note that stereotype properties where used to specify the value of typeCode used in the generated constraint.</p>
+<codeblock>
+<![CDATA[
+self.entry->exists(entry : cda::Entry | entry.encounter.oclIsKindOf(ncr::NeonatalICUEncounterActivity) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
+]]>
+</codeblock>
+
+</conbody>
+</concept>

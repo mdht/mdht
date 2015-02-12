@@ -1,0 +1,464 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../org.openhealthtools.mdht.uml.cda/samples/CDA.xsd">
+	<!-- Note that some versions of the CDA.xsl stylesheet do not differentiate sections and nested sections; if that is the case, the PHYSICAL EXAMINATION section of this document will appear empty when in fact, it contains nested sections. For updated versions of the stylesheet, see the HL7 wiki, http://wiki.hl7.org/index.php?title=Structured_Documents_TC --> 
+	<!--
+********************************************************
+  CDA Header
+********************************************************
+-->
+	<realmCode code="US"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="2.16.840.1.113883.10.20.3"/>
+	<!-- conforms to the general header constraints -->
+	<templateId root="2.16.840.1.113883.10.20.4"/>
+	<!-- conforms to the guidance of the DSTU -->
+	<templateId root="2.16.840.1.113883.10.20.30"/>
+	<!-- indicates that there are Level 3 entries -->
+	<!-- general header constraints -->
+	<id extension="999021" root="2.16.840.1.113883.19"/>
+	<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="11488-4"
+		displayName="CONSULTATION NOTE"/>
+	<title>Good Health Pain Management Consultants Consultation Note</title>
+	<effectiveTime value="20070303171504+0500"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<setId extension="999021" root="2.16.840.1.113883.19"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="12345" root="2.16.840.1.113883.19.5"/>
+			<addr>
+				<streetAddressLine>17 Daws Rd.</streetAddressLine>
+				<city>Blue Bell</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(555)555-1212" use="HP"/>
+			<patient>
+				<name>
+					<given>Adam</given>
+					<family>Everyman</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19301125"/>
+				<guardian>
+					<!-- Although this is a 77 year old man, a guardian is included here as an example. -->
+					<id extension="23456" root="2.16.840.1.113883.19.5"/>
+					<addr>
+						<streetAddressLine>17 Daws Rd.</streetAddressLine>
+						<city>Blue Bell</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>USA</country>
+					</addr>
+					<telecom value="tel:(555)555-1212" use="HP"/>
+					<guardianPerson>
+						<name>
+							<given>Ralph</given>
+							<family>Relative</family>
+						</name>
+					</guardianPerson>
+				</guardian>
+			</patient>
+			<providerOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>Good Health Clinic</name>
+				<telecom value="tel:(555)555-1212" use="WP"/>
+				<addr>
+					<streetAddressLine>2120-A South Ave</streetAddressLine>
+					<city>Burlington</city>
+					<state>MA</state>
+					<postalCode>01803</postalCode>
+					<country>USA</country>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20070329224411+0500"/>
+		<assignedAuthor>
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<addr>
+				<streetAddressLine>21 North Ave</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>01803</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(555)555-1003" use="WP"/>
+			<assignedPerson>
+				<name>
+					<given>Harold</given>
+					<family>Hippocrates</family>
+					<suffix>H</suffix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>Good Health Hospital</name>
+				<telecom value="tel:(999)555-1212" use="WP"/>
+				<addr>
+					<streetAddressLine>21 North Ave</streetAddressLine>
+					<city>Burlington</city>
+					<state>MA</state>
+					<postalCode>01803</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<participant typeCode="IND">
+		<associatedEntity classCode="NOK">
+			<code code="MTH" codeSystem="2.16.840.1.113883.5.111"/>
+			<addr>
+				<streetAddressLine>4444 Home Street</streetAddressLine>
+				<city>Blue Bell</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(555)555-2006" use="WP"/>
+			<associatedPerson>
+				<name>
+					<prefix>Mrs.</prefix>
+					<given>Martha</given>
+					<family>Mum</family>
+				</name>
+			</associatedPerson>
+		</associatedEntity>
+	</participant>
+	<inFulfillmentOf typeCode="FLFS">
+		<order classCode="ACT" moodCode="RQO">
+			<id root="2.16.840.1.113883.19" extension="12345-6789081"/>
+		</order>
+	</inFulfillmentOf>
+	<documentationOf>
+		<serviceEvent classCode="ENC">
+			<effectiveTime value="20070329"/>
+			<performer typeCode="PRF">
+				<functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+				<time>
+					<low value="1998"/>
+					<high value="2007"/>
+				</time>
+				<assignedEntity>
+					<id extension="1234" root="2.16.840.1.113883.19"/>
+					<code code="59058001" codeSystem="2.16.840.1.113883.6.96"
+						codeSystemName="SNOMED CT" displayName="General Physician"/>
+					<addr>
+						<streetAddressLine>21 North Ave</streetAddressLine>
+						<city>Burlington</city>
+						<state>MA</state>
+						<postalCode>01803</postalCode>
+						<country>USA</country>
+					</addr>
+					<telecom value="tel:(999)555-1212"/>
+					<assignedPerson>
+						<name>
+							<prefix>Dr.</prefix>
+							<given>Harold</given>
+							<family>Hippocrates</family>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<componentOf>
+		<encompassingEncounter>
+			<id extension="993701281" root="2.16.840.1.113883.19"/>
+			<code codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" code="99213"
+				displayName="Evaluation and Management"/>
+			<effectiveTime value="20070329"/>
+		</encompassingEncounter>
+	</componentOf>
+	<!-- ********************************************************
+     CDA Body
+     ******************************************************** -->
+	<component>
+		<structuredBody>
+			<!-- Required Sections -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.4.8"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="42349-1"
+						displayName="REASON FOR REFERRAL"/>
+					<title>REASON FOR REFERRAL</title>
+					<text>
+						<paragraph>Lumbar spinal stenosis with radiculopathy.</paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.4"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="10164-2"
+						displayName="HISTORY OF PRESENT ILLNESS"/>
+					<title>HISTORY OF PRESENT ILLNESS</title>
+					<text>
+						<paragraph>Thank you for referring this patient to the Good Health Pain
+							Management Consultants. The patient is a pleasant 77-year-old gentleman
+							who has had persistent low back pain with lower extremity radicular pain
+							since July 2005. He does not recall any specific injury or accident. He
+							had been traveling to Italy and was on vacation when he felt an increase
+							in pain both in the lower back radiating into the hip and left lower
+							back into the left lower extremity stopping at the level of the ankle.
+							The pain has been progressive and he tried nonsteroidal
+							anti-inflammatories as well as oral prednisone without any improvement.
+							He is ambulating with assistance of a cane. He was in Italy. He had two
+							injections. He does not know what the injections were, however, they
+							were not helpful for him. He has been on Tylenol for pain control. He
+							has sharp aching pain worse if he is walking, slightly improved with
+							heat and rest. He has had MRI, which does show multilevel degenerative
+							changes, most to moderate disc bulging and ridging with left lateral
+							foraminal narrowing of the exiting L5 nerve root at the L5-S1 level with
+							marked stenosis at this level.</paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.2.10"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="29545-1"
+						displayName="PHYSICAL FINDINGS"/>
+					<title>PHYSICAL EXAMINATION</title>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.4.4"/>
+							<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+								code="8716-3" displayName="VITAL SIGNS"/>
+							<title>VITAL SIGNS</title>
+							<text>
+								<paragraph>Heart Rate: 78; Respiratory Rate: 12 ; Temp (degF): 96.7
+									; Oxygen Sat (%): 100.</paragraph>
+								<paragraph>Non-invasive Blood Pressure: Systolic: 107 ; Diastolic:
+									51; Mean: 64.</paragraph>
+							</text>
+						</section>
+					</component>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.2.5"/>
+							<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+								code="10210-3" displayName="GENERAL STATUS "/>
+							<title>GENERAL STATUS</title>
+							<text>
+								<paragraph> Alert and in good spirits, no acute
+								distress."</paragraph>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+			<!-- Optional Sections -->
+			<component>
+				<section>
+					<!-- 
+					<templateId root="2.16.840.1.113883.10.20.1.114"/>
+					 -->
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" displayName="PROBLEMS"/>
+					<title>PROBLEMS</title>
+					<text>Negative.</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.12"/>
+					<code codeSystem="2.16.840.1.113883.6.1" code="47519-4"
+						displayName="HISTORY OF PROCEDURES"/>
+					<title>PROCEDURES</title>
+					<text>
+						<table border="1">
+							<thead>
+								<tr>
+									<th>Procedure</th>
+									<th>Date</th>
+									<th>Location</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Laparoscopic Cholecystectomy</td>
+									<td>9/28/2002</td>
+									<td>City Hospital</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.4.9"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="11348-0"
+						displayName="HISTORY OF PAST ILLNESS"/>
+					<title>PAST MEDICAL HISTORY</title>
+					<text>
+						<paragraph>Colon cancer.</paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="10160-0"
+						displayName="HISTORY OF MEDICATION USE"/>
+					<title>MEDICATIONS</title>
+					<text>
+						<list listType="ordered">
+							<item>Lisinopril 5 mg 1 tablet once a day </item>
+							<item><content ID="m2">Atenolol 25 mg</content> 1 tablet once a day
+							</item>
+						</list>
+						<paragraph>The patient has just completed a 4-week course of Vancomycin and
+							Rifampin for a MRSA UTI.</paragraph>
+						<paragraph>I note that this patient has been on Prednisone for adrenal
+							insufficiency in the past.</paragraph>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code codeSystem="2.16.840.1.113883.6.69"
+											codeSystemName="NDC" code="00006-0019-58"
+											displayName="LISINOPRIL (PRINIVIL)--PO 5MG TAB">
+											<originalText>
+												<reference value="#m1"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code codeSystem="2.16.840.1.113883.6.69"
+											codeSystemName="NDC" code="00781-1078-01"
+											displayName="ATENOLOL--PO 25MG TAB">
+											<originalText>
+												<reference value="#m2"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.2"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="48765-2"
+						displayName="ALLERGIES, ADVERSE REACTIONS, ALERTS"/>
+					<title>ALLERGIES AND ADVERSE REACTIONS</title>
+					<text>
+						<list listType="unordered">
+							<item>NO KNOWN DRUG ALLERGIES.</item>
+						</list>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.15"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="29762-2"
+						displayName="SOCIAL HISTORY"/>
+					<title>SOCIAL HISTORY</title>
+					<text>
+						<paragraph>He is married. He is a retired carpenter. He had been a smoker,
+							quit in 1985. Social ETOH, no other drug use. </paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.4"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="10157-6"
+						displayName="HISTORY OF FAMILY MEMBER DISEASES"/>
+					<title>FAMILY HISTORY</title>
+					<text>
+						<paragraph>Negative.</paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.4.10"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="10187-3"
+						displayName="REVIEW OF SYSTEMS"/>
+					<title>REVIEW OF SYSTEMS</title>
+					<text>
+						<paragraph>No fever, chills, weight changes, loss of bowel or bladder
+							function, shortness of breath, or chest pain.</paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.14"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="30954-2"
+						displayName="RELEVANT DIAGNOSTIC TESTS AND/OR LABORATORY DATA"/>
+					<title>DIAGNOSTIC FINDINGS</title>
+					<text>
+						<table>
+							<tbody>
+								<tr>
+									<td colspan="2">LABORATORY INFORMATION</td>
+								</tr>
+								<tr>
+									<td colspan="2">Chemistries and drug levels</td>
+								</tr>
+								<tr>
+									<td>Sodium</td>
+									<td>138</td>
+								</tr>
+								<tr>
+									<td colspan="2">ELECTROCARDIOGRAM (EKG) INFORMATION</td>
+								</tr>
+								<tr>
+									<td>EKG</td>
+									<td>Sinus rhythm without acute changes.</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.2.7"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="51847-2"
+						displayName="ASSESSMENT AND PLAN"/>
+					<title>ASSESSMENT AND PLAN</title>
+					<text>
+						<paragraph>The patient has a history of lumbar spinal stenosis with
+							radiculopathy with most of the changes prominent at the L5-S1 level on
+							the left side. We did discuss a trial of lumbar epidural steroids to
+							reduce inflammation in the nerve root and improve symptoms. He will
+							follow up with us at the next available opening for a lumbar epidural
+							steroid injection. Since there is a several-week wait for the procedure
+							at our office at the hospital location, he was offered an appointment in
+							several days at the other office location. We will see him then for his
+							first procedure. </paragraph>
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

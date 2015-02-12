@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="cdabook">
+    <title>MDHT Example IG</title>
+    
+	<frontmatter>
+		<preface>
+			<topicref href="preface/Acknowledgments.dita" navtitle="Acknowledgments" type="topic"/>
+		</preface>
+	</frontmatter>
+	
+    <chapter format="ditamap" href="introduction/introduction.ditamap"/>
+    
+	<chapter format="ditamap" href="content/content.ditamap"/>
+
+</bookmap>

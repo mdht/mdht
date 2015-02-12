@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_gty_qkx_cj" xml:lang="en-us">
+    <title>Consume CDA Content using MDHT API</title>
+    <shortdesc/>
+    <taskbody>
+        <context>
+            <p>Someone sends standard compliance document and you need to extract data and save to
+                the system. You can use the MDHT API’s to extract specific information. </p>
+        </context>
+        <steps>
+            <stepsection>The first step in reading a CDA document is to initialize the runtime
+                environment. MDHT extends the Eclipse Modeling Framework (EMF) XML serialization
+                which enables the system to properly identify the appropriate Java classes to
+                instantiate. So the first step is to let the system know which CDA runtime
+                environments to use when opening the CDA XML document.</stepsection>
+            <step>
+
+                <cmd>Initialize Runtime Environment</cmd>
+                <info>You can either <i>implicitly</i> or <i>explicitly</i> initialize the
+                    environment</info>
+                <choices>
+
+                    <choice>
+                        <p><b>Implicit Initialization</b> uses the available CDA runtime in the
+                            class path and runs the initialzation code. This is the preffered
+                            approach to initializing the environment.</p>
+                        <codeblock>
+// Implicit initialization
+CDAUtil.loadPackages();
+                        </codeblock>
+                    </choice>
+                    <choice>
+                        <p><b>Explicit Initialization </b>invokes the appropriate initialization
+                            using the corresponding ECore package for the CDA runtime</p>
+                        <codeblock>
+// Explicit initialization
+CCDPackage.eINSTANCE.eClass();
+                        </codeblock>
+                        <note> This line of code initializes the CCDPackage instance as well as its
+                            dependencies (e.g. CDA, HL7 Datatypes, etc.) In order to use another CDA
+                            runtime packages such as IHE or Consolidated, you will need to have a
+                            corresponding line for each. This option should be used when you want to
+                            control what is available at runtime. </note>
+                    </choice>
+                </choices>
+
+            </step>
+            <stepsection>Then we use the CDAUtil class to read the document in from a Java input
+                stream. In this case, we are reading the SampleCCDDocument.xml file that comes with
+                the CCD specification. </stepsection>
+            <step>
+                <cmd>Load CDA Document</cmd>
+                <stepxmp>
+                    <codeblock>
+// load sample continuity of care document from file
+ContinuityOfCareDocument ccdDocument = (ContinuityOfCareDocument) CDAUtil.load(new FileInputStream("resources/SampleCCDDocument.xml"));
+                    </codeblock>
+                </stepxmp>
+                <tutorialinfo>We can downcast to ContinuityOfCareDocument because we expect that
+                    type to be returned (as opposed to a generic instance of the ClinicalDocument
+                    class).</tutorialinfo>
+            </step>
+            <stepsection>The domain-specific API that is generated contains getter methods for
+                section and entry-level templates based on associations in the model. In the CCD
+                model, we have an association between the ContinuityOfCareDocument class and the
+                AlertsSection. Therefore a “getter” method is generated named
+                getAlertsSection.</stepsection>
+            <step>
+                <cmd>Get Alerts Sections from Document</cmd>
+                <stepxmp>
+                    <codeblock>
+// get the alerts section from the document using domain-specific "getter" method
+AlertsSection alertsSection = ccdDocument.getAlertsSection();
+                    </codeblock>
+                </stepxmp>
+                <tutorialinfo> The method is a “query” method in that it is read-only and
+                    implemented using OCL.</tutorialinfo>
+            </step>
+
+            <stepsection>The domain-specific method getProblemActs returns all Acts that are also
+                ProblemActs per the CCD model. We want to loop through these problem acts and
+                process their subordinate observation entries. Due to the structure of the CCD
+                model, we do not have a method named getAlertObservation though this could be
+                implemented manually at design-time. Instead we must iterate over all entry
+                relationships and check to see which ones are Alert Observations using the Java
+                instanceof operator.</stepsection>
+            <step>
+                <cmd>Get Problem Acts</cmd>
+                <stepxmp>
+                    <codeblock>
+// for each enclosing problem act
+for (ProblemAct problemAct : alertsSection.getProblemActs()) {
+    // look at subordinate observations
+    //     we don't have a domain-specific "getter" method here so we use
+    //     entry relationship
+    for (EntryRelationship entryRelationship : problemAct.getEntryRelationships()) {
+        // check for alert observation
+        if (entryRelationship.getObservation() instanceof AlertObservation) {
+            AlertObservation alertObservation = (AlertObservation) entryRelationship.getObservation();
+            if (!alertObservation.getValues().isEmpty() &amp; alertObservation.getValues().get(0) instanceof CD) {
+                CD value = (CD) alertObservation.getValues().get(0);
+                System.out.println("alert observation value: " + value.getCode() + ", " + value.getCodeSystem() + ", " + value.getDisplayName());
+            }
+        }
+    }
+}
+                    </codeblock>
+                </stepxmp>
+                <stepresult> Once we have found an Alert Observation instance, we print the value
+                    out to the console. The values list is type ANY so it is appropriate to check to
+                    make sure it is non-empty and conforms to the correct CD data type. This allows
+                    us to downcast and access CD methods (e.g. getCode). </stepresult>
+            </step>
+            <stepsection>We can use a domain-specific method named getReactionObservations to get
+                the reaction observations from an alert observation. Iterating over the reaction
+                observations, we process the value ensuring that we test for non-empty and the
+                expected data type (CD).</stepsection>
+            <step>
+                <cmd>Getting Reaction Observations</cmd>
+                <stepxmp>
+                    <codeblock>
+// get reaction observations using domain-specific "getter" method
+for (ReactionObservation reactionObservation : alertObservation.getReactionObservations()) {
+    if (!reactionObservation.getValues().isEmpty() &amp; alertObservation.getValues().get(0) instanceof CD) {
+        CD value = (CD) reactionObservation.getValues().get(0);
+        System.out.println("reaction observation value: " + value.getCode() + ", " + value.getCodeSystem() + ", " + value.getDisplayName());
+}
+                        
+                    </codeblock>
+                </stepxmp>
+            </step>
+            <stepsection>We can use getAlertStatusObservation to get the current status of the
+                allergy. This follows a similar pattern to the reaction observation
+                example</stepsection>
+            <step>
+                <cmd>Getting Alert Status Observations</cmd>
+                <stepxmp>
+                    <codeblock>
+ 
+// get alert status observation using domain-specific "getter" method
+AlertStatusObservation alertStatusObservation = alertObservation.getAlertStatusObservation();
+if (alertStatusObservation != null &amp; !alertStatusObservation.getValues().isEmpty() 
+    &amp; alertObservation.getValues().get(0) instanceof CD) {
+    CD value = (CD) alertStatusObservation.getValues().get(0);
+    System.out.println("alert status observation value: " + value.getCode() + ", " + value.getCodeSystem() + ", " + value.getDisplayName());
+}
+                       
+                        
+                    </codeblock>
+                </stepxmp>
+            </step>
+
+        </steps>
+    </taskbody>
+</task>

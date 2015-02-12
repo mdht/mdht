@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>HP Document Type</title>
+<shortdesc id="shortdesc">[OID <tt>2.16.840.1.113883.1.11.20.22</tt> from code system: LOINC]</shortdesc>
+<prolog id="prolog">
+<resourceid id="2.16.840.1.113883.1.11.20.22"/>
+</prolog>
+<body>
+<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->
+<section id="description">
+</section>
+<p>OID: 2.16.840.1.113883.1.11.20.22</p>
+<p>Name: null</p>
+<p>Code System: 2.16.840.1.113883.6.1</p>
+<p>Code System Name: LOINC</p>
+<p>Valid codes are those whose scale is DOC and whose type of service is some variation of History and Physical.</p>
+</body>
+</topic>

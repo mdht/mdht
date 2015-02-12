@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>Acknowledgments</title>
+	<body>
+		<p>This document contains an example of healthcare standards and specifications publication
+			generated from UML models, using the OHT Model Driven Health Tools (MDHT). Some portions of this
+			document may not be publicly available but are included for demonstration purposes only,
+			therefore this version of the document is to be treated as CONFIDENTIAL by the project
+			participants.</p>
+
+		<p>This demonstration document contains informtion from the following sources:</p>
+
+		<p>&#169;2010 ANSI. This material may be copied without permission from ANSI only if and to the
+			extent that the text is not altered in any fashion and ANSI’s copyright is clearly noted.</p>
+
+		<p>SNOMED CT&#174; is the registered trademark of the International Health Terminology Standard
+			Development Organization (IHTSDO).</p>
+			
+		<p>This material contains content from LOINC&#174; (http://loinc.org). The LOINC table, LOINC codes, and
+		LOINC panels and forms file are copyright &#169; 1995-2010, Regenstrief Institute, Inc. and the Logical
+		Observation Identifiers Names and Codes (LOINC) Committee and available at no cost under the
+		license at http://loinc.org/terms-of-use .</p>
+
+		<p>Certain materials contained in this Interoperability Specification
+			are reproduced from Health Level Seven (HL7) HL7 Implementation
+			Guide: CDA Release 2 – Continuity of Care Document (CCD), HL7
+			Implementation Guide for CDA Release 2: History and Physical (H&amp;P)
+			Notes, HL7 Implementation Guide for CDA Release 2: Consult Notes, or
+			HL7 Implementation Guide for CDA Release 2: Operative Notes with
+			permission of Health Level Seven, Inc. No part of the material may be
+			copied or reproduced in any form outside of the Interoperability
+			Specification documents, including an electronic retrieval system, or
+			made available on the Internet without the prior written permission
+			of Health Level Seven, Inc. Copies of standards included in this
+			Interoperability Specification may be purchased from the Health Level
+			Seven, Inc. Material drawn from these standards is credited where used.</p>
+	</body>
+</topic>

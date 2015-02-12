@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_57263FDAB6D34DD5AB335E12E5963D32"> 
+  <title>Vocabulary constraint</title> 
+  <shortdesc>Specify the code system or value set ID and name, and optionally
+	 an individual code for coded attribute constraints. 
+  </shortdesc> 
+  <taskbody> 
+	 <prereq id="prereq_7E11FD4506B249D29124A6E9F0BE1F7B"> 
+		<p>The vocabulary constraint user interface fields are visible only when
+		  an attribute is selected with a data type that is a kind of 
+		  <tt>CD</tt>. 
+		</p> 
+	 </prereq> 
+	 <steps id="steps_655063464BA94EA6B3B8A99EF31760AF"> 
+		<step id="step_BB730C813C19465DB8981AA04C43818C"> 
+		  <cmd>Select the table row for the attribute you want to constrain. 
+		  </cmd> 
+		  <stepresult><image placement="break"
+			 id="image_98753BFCEB514223A819C9D160EBDE6B"
+			 href="../images/TableVocabSelectRow.png"></image> 
+		  </stepresult> 
+		</step> 
+		<step id="step_76CEB0CEFE254384A60ABD5597588077"> 
+		  <cmd>In the Properties view CDA Tools tab, enter the vocabulary
+			 constraints. 
+		  </cmd> 
+		</step> 
+	 </steps> 
+	 <result id="result_CB265DC0E5614FF1A958DF6863D8D18B">In this example, the 
+		<tt>code</tt> attribute is constrained to a specified code value from
+		SNOMED CT. Notice that the table Annotation cell for the 
+		<tt>code</tt> attribute is automatically updated to show the vocabulary
+		constraint that was entered in the Properties view. The icon proceeding the
+		annotation indicates the constraint severity: Error, Warning, or Info.<image
+		placement="break" id="image_90932F5A50CE4F9689F35229B4870B49"
+		href="../images/TableVocabConstraint.png"></image> 
+	 </result> 
+  </taskbody>
+  <related-links>
+	 <link format="dita" type="concept" scope="local"
+	  href="c_Severity_and_message.dita#concept_AEA4AFEB0B7749ACB785A68FBBCCAD7E"><?xm-replace_text Severity and message?>
+	 </link>
+  </related-links>
+</task>

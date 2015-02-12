@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_zdm_rnv_dj" xml:lang="en-us">
+    <title>Query CDA Content</title>
+    <shortdesc>Programatically query CDA Document instances using OCL or XPath</shortdesc>
+    <taskbody>
+        <context>
+            <p>CDAUtil can evaluate OCL query expressions against the in-memory EMF representation.
+                CDAUtil also contains a query/filter mechanism that aggregates parts of the document
+                and then filters them by type and/or user-defined filters. CDAUtil also contains a
+                query/filter mechanism that aggregates parts of the document and then filters them
+                by type and/or user-defined filters. </p>
+        </context>
+        <steps>
+
+            <step>
+                <cmd>Query CDA</cmd>
+                <choices>
+                    <choice>Query using OCL
+                        <codeblock>
+// Using CDAUtil OCL Support (for OCL gurus)
+System.out.println("\nUsing CDAUtil OCL Support (for OCL gurus)");
+section = (AdvanceDirectivesSection) CDAUtil.query(ccdDocument,
+	"self.getAllSections()->select(sect : cda::Section | sect.oclIsKindOf(ccd::AdvanceDirectivesSection))->asSequence()->first().oclAsType(ccd::AdvanceDirectivesSection)");
+System.out.println(section);
+observations = new ArrayList&lt;AdvanceDirectiveObservation&gt;(
+	(Collection&lt;AdvanceDirectiveObservation&gt;) CDAUtil.query(section,
+	"self.getObservations()->select(obs : cda::Observation | obs.oclIsKindOf(ccd::AdvanceDirectiveObservation))->collect(oclAsType(ccd::AdvanceDirectiveObservation))"));
+System.out.println(observations);
+
+                    </codeblock>
+                    </choice>
+
+                    <choice>Use Query/Filter Operations <codeblock>
+// Using CDAUtil Query/Filter Operations (programmatic access for Java gurus)
+System.out.println("\nUsing CDAUtil Query/Filter Operations (programmatic access for Java gurus)");
+Query query = new Query(ccdDocument);
+section = query.getSection(AdvanceDirectivesSection.class);
+System.out.println(section);
+observations = query.getClinicalStatements(AdvanceDirectiveObservation.class);
+System.out.println(observations);
+
+                        </codeblock>
+                        <p>We are filtering document sections by type and filtering observations
+                            by type.</p>
+                    </choice>
+
+                    <choice>Query using XPath <codeblock>
+// Using CDAUtil CDA XPath Support (for XML gurus)
+System.out.println("\nUsing CDAUtil CDA XPath Support (for XML gurus)");
+CDAXPath xpath = new CDAXPath(ccdDocument);
+section = xpath.selectSingleNode(		"//cda:section[cda:templateId[@root='2.16.840.1.113883.10.20.1.1']]",
+	AdvanceDirectivesSection.class);
+System.out.println(section);
+observations = xpath.selectNodes(	"//cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.1.17']]",
+	AdvanceDirectiveObservation.class);
+System.out.println(observations);
+
+                    </codeblock>
+                        
+                        <p>We have an XPath adapter that allows the user to query the document
+                            using XPath expressions. The relationship between DOM nodes and EMF
+                            objects is stored allowing for access to both representations as the
+                            result of an XPath query.</p>
+                    </choice>
+                </choices>
+            </step>
+        </steps>
+    </taskbody>
+</task>

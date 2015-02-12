@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="install" xml:lang="en-us">
+	<title> Install MDHT <keyword keyref="relversion"/> All-In-One </title>
+	<taskbody>
+		<context>
+			<p> MDHT Rel <keyword keyref="relversion"/> .0 The ZIP archive (approximately 293 MB) is
+				for Windows and contains a complete Eclipse 3.6 (Helios) workbench with MDHT
+				plug-ins and all pre-requisites. The all-in-one is pre-configured with MDHT
+				Subversion location to update models. You will need is an OHT site account to login
+				to Subversion. </p>
+		</context>
+		<steps>
+			<step>
+				<cmd> Download the MDHT Release <keyword keyref="relversion"/>
+					<xref audience="standards"
+						href="http://sourceforge.net/projects/oht-modeling/files/Releases/All-in-One/MDHT_CDATools_1.2.0-win32.zip/download"
+						> All-In-One Zip File (<keyword keyref="allinonename"/>_<keyword
+							keyref="relversion"/>.0-win32.zip) </xref>
+					<xref audience="analyst developer"
+						href="http://sourceforge.net/projects/oht-modeling/files/Releases/All-in-One/MDHT_CDAAnalyst_1.2.0-win32.zip/download"
+						> All-In-One Zip File (<keyword keyref="allinonename"/>_<keyword
+							keyref="relversion"/>.0-win32.zip) </xref>
+				</cmd>
+			</step>
+			<step>
+				<cmd>Unzip this to a local directory using a utility such as 7-Zip. Windows
+					Compressed Folders Extraction Wizard has problems with some of the large file
+					names.</cmd>
+				<info>Please ensure that the directory name does not contain space, - , #
+					etc.</info>
+			</step>
+			<step>
+				<cmd>Start Eclipse by double clicking &lt;unzip-directory&gt;\<keyword
+						keyref="allinonename"/>_ <keyword keyref="relversion"/>
+					.0\eclipse\eclipse.exe. Select the pre-configured workspace ‘workspace-console’
+					in the Workspace Launcher. </cmd>
+				<info>
+					<p audience="standards"> <keyword keyref="allinonename"/>_<keyword keyref="relversion"/> is pre-configured with
+						two workspace options Workspace-consol: Incorporated consolidated CDA model
+						in support of US Meaningful Use stage 2 Workspace-ccd: incorporates legacy
+						models including C-32 and IHE PCC </p>
+					<p audience="developer"> <keyword keyref="allinonename"/>_<keyword keyref="relversion"/> is pre-configured with
+						two workspace options Workspace-consol: Incorporated consolidated CDA model
+						in support of US Meaningful Use stage 2 Workspace-ccd: incorporates legacy
+						models including C-32 and IHE PCC </p>
+					<p audience="analyst"> <keyword keyref="allinonename"/>_<keyword keyref="relversion"/> is pre-configured with
+						two workspace options Workspace-consol: Incorporated consolidated CDA model
+						in support of US Meaningful Use stage 2 Workspace-ccd: incorporates legacy
+						models including C-32 and IHE PCC </p>
+					
+				</info>
+			</step>
+		</steps>
+
+	</taskbody>
+
+</task>

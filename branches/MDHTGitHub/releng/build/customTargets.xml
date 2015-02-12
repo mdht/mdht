@@ -1,0 +1,897 @@
+<project name="Build specific targets and properties" default="noDefault" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+	<property name="basews" value="win32" />
+	<property name="baseos" value="win32" />
+	<property name="basearch" value="x86" />
+	<property name="basenl" value="en_US" />
+
+	<property name="artifactory.url" value="http://www.cdatools.com:8081/artifactory" />
+
+	<property name="artifactory.user" value="admin" />
+
+	<property name="artifactory.password" value="MDHTmavens!" />
+
+
+
+
+<!-- <system-property javax.xml.parsers.DocumentBuilderFactory= "org.apache.xerces.jaxp.DocumentBuilderFactoryImpl"/>
+ <system-property javax.xml.parsers.SAXParserFactory= "org.apache.xerces.jaxp.SAXParserFactoryImpl"/>
+ <system-property javax.xml.transform.TransformerFactory= "org.apache.xalan.processor.TransformerFactoryImpl"/> -->
+
+	<path id="ant.classpath">
+		<fileset dir="${ANT_HOME}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Subversion Ant Task Definition -->
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="ant.classpath" />
+
+	<!-- Code Coverage (EMMA) Ant Task Definition -->
+	<taskdef resource="emma_ant.properties" classpathref="ant.classpath" />
+
+	<!-- JUnit Ant Task Definition -->
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="ant.classpath" />
+
+	<!-- Conditional Support (ie <if> )  Ant Task Definitions -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="ant.classpath" />
+
+  <path id="maven-ant-tasks.classpath" path="/usr/share/ant/lib/maven-ant-tasks-2.1.3.jar" />
+  <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+           uri="antlib:org.apache.maven.artifact.ant"
+           classpathref="maven-ant-tasks.classpath" />
+	<property name="emma.enabled" value="true" />
+
+
+	<!-- ===================================================================== -->
+	<!-- Run a given ${target} on all elements being built -->
+	<!-- Add on <ant> task for each top level element being built. -->
+	<!-- ===================================================================== -->
+
+<!--	<target name="UMLTooling">
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.dita.dost" />
+		</ant> 
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht" />
+		</ant>
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml" />
+		</ant>		
+	</target>
+
+
+	<target name="RIM">
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.hdf" />
+		</ant>
+	</target>
+-->
+
+
+	<target name="CDATooling">
+	<!--	<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda" />
+		</ant>
+-->
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.tooling" />
+		</ant>
+	</target>
+
+
+<!--	<target name="CDAMODELSDOC">
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.models.doc" />
+		</ant>
+	</target>
+-->
+
+
+	<target name="CDARUNTIME">
+
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda" />
+		</ant>
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.runtime" />
+		</ant>
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.test" />
+		</ant>
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.models.doc" />
+		</ant>
+
+	</target>
+
+
+	<target name="CDAALL">
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.tooling" />
+		</ant>
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.runtime" />
+		</ant>
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.emspcr.runtime" />
+		</ant>
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.models.doc" />
+		</ant>
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.test" />
+		</ant>
+	</target>
+
+
+<!--	<target name="CDAMODELS">
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.models" />
+		</ant>
+
+	</target>
+-->
+
+	<target name="xxxallElements">
+
+
+	</target>
+
+	<target name="allElements">
+
+		<!--
+	<ant antfile="${genericTargets}" target="${target}" >
+		<property name="type" value="<feature | plugin | fragment>" />
+		<property name="id" value="<element.id>" />
+	</ant>
+	-->
+
+		<!--  Target Build Logic
+		Targets are RIM, CDA, CDAMODEL
+		Default is to build all
+		Did not use ant "depends" to prevent multiple invocations resulting in multiple plugin version being built, SWM
+         -->
+
+
+		<if>
+			<equals arg1="${mdhtcomponent}" arg2="CDARuntime" />
+			<then>
+				<echo message="Building CDA Runtime" />
+				<antcall target="CDARUNTIME" />
+			</then>
+			<else>
+				
+				<if>
+							<equals arg1="${mdhtcomponent}" arg2="CDATooling" />
+							<then>
+								<echo message="Building CDA Tooling" />							
+								<antcall target="CDATooling" />
+							</then>
+							 <else>								
+										<echo message="Bulding All" />
+										<antcall target="CDAALL" />
+								
+							</else> 
+
+						</if>
+				
+			</else>
+		</if>
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Targets to assemble the built elements for particular configurations  -->
+	<!-- These generally call the generated assemble scripts (named in -->
+	<!-- ${assembleScriptName}) but may also add pre and post processing -->
+	<!-- Add one target for each root element and each configuration -->
+	<!-- ===================================================================== -->
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.tooling">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.runtime">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.emspcr.runtime">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+		<target name="assemble.net.sourceforge.xmlmodeling.uml.xsd">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.dita.dost">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.hdf">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<!--	<target name="assemble.org.openhealthtools.mdht.uml.papyrus">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target> -->
+
+	<target name="assemble.org.openhealthtools.mdht.uml.rsm">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.models">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<!--	<target name="assemble.org.openhealthtools.mdht.uml.cda.models.source">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target>
+-->
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.rsm">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.test">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.models.doc">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+
+
+	<!--	<target name="assemble.org.openhealthtools.mdht.uml.cda.papyrus">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target> -->
+	<!-- ===================================================================== -->
+	<!-- Check out map files from correct repository -->
+	<!-- Replace values for cvsRoot, package and mapVersionTag as desired. -->
+	<!-- ===================================================================== -->
+	<target name="getMapFiles" unless="skipMaps">
+
+
+
+		<echo message="getMapFiles ${buildDirectory}" />
+
+
+		<property name="mapsCheckoutTag" value="HEAD" />
+
+
+		<svn username="${svnuser}" password="${svnpasswd}">
+			<checkout url="${maps.URL}" revision="${maps.revision}" destpath="${buildDirectory}/maps" />
+		</svn>
+
+
+		<svn username="${svnuser}" password="${svnpasswd}">
+			<checkout url="${cdafeatures.URL}/org.openhealthtools.mdht.uml.cda.source-feature"  destpath="${buildDirectory}/features/org.openhealthtools.mdht.uml.cda.source" />
+		</svn>
+
+		<svn username="${svnuser}" password="${svnpasswd}">
+			<checkout url="${cdafeatures.URL}/org.openhealthtools.mdht.uml.cda.runtime.source-feature"  destpath="${buildDirectory}/features/org.openhealthtools.mdht.uml.cda.runtime.source" />
+		</svn>
+
+	<svn username="${svnuser}" password="${svnpasswd}">
+			<checkout url="${cdafeatures.URL}/org.openhealthtools.mdht.uml.cda.emspcr.runtime.source-feature"  destpath="${buildDirectory}/features/org.openhealthtools.mdht.uml.cda.emspcr.runtime.source" />
+		</svn>
+
+		<svn username="${svnuser}" password="${svnpasswd}">
+			<checkout url="${cdafeatures.URL}/org.openhealthtools.mdht.test.source-feature" destpath="${buildDirectory}/features/org.openhealthtools.mdht.test.source" />
+		</svn>
+
+	</target>
+
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do before setup -->
+	<!-- ===================================================================== -->
+	<target name="preSetup">
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do after setup but before starting the build proper -->
+	<!-- ===================================================================== -->
+	<target name="postSetup">
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do before fetching the build elements -->
+	<!-- ===================================================================== -->
+	<target name="preFetch">
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do after fetching the build elements -->
+	<!-- ===================================================================== -->
+	<target name="postFetch">
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do before generating the build scripts. -->
+	<!-- ===================================================================== -->
+	<target name="preGenerate">
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do after generating the build scripts. -->
+	<!-- ===================================================================== -->
+	<target name="postGenerate">
+
+	</target>
+
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do before running the build.xmls for the elements being built. -->
+	<!-- ===================================================================== -->
+	<target name="preProcess">
+		<!-- Fetch source feature -->
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do after running the build.xmls for the elements being built. -->
+	<!-- ===================================================================== -->
+	<target name="postProcess">
+	</target>
+
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do before running assemble. -->
+	<!-- ===================================================================== -->
+	<target name="preAssemble">
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do after  running assemble. -->
+	<!-- ===================================================================== -->
+	<target name="postAssemble">
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/docs" />
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do after the build is done. -->
+	<!-- ===================================================================== -->
+	<target name="postBuild">
+
+	<loadproperties srcFile="${buildDirectory}/finalPluginsVersions.properties" />
+
+	<antcall target="runTests" /> 
+
+	<antcall target="createRunTimeZip" /> 
+
+	<zip destfile="/home/seanmuir/org.openhealthtools.mdht.site.${buildLabel}.zip" basedir="${p2.repo.dir}" />
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do to test the build results -->
+	<!-- ===================================================================== -->
+	<target name="test">
+	</target>
+
+	<target name="checkIsRunTimeBuild">
+		<condition property="IsRunTimeBuild">
+			<or>
+				<equals arg1="${mdhtcomponent}" arg2="CDARuntime" />
+				<equals arg1="${mdhtcomponent}" arg2="CDAALL" />
+			</or>
+		</condition>
+	</target>
+
+
+
+<target name="createRunTimeZip" depends="checkIsRunTimeBuild" if="IsRunTimeBuild">
+
+<zip destfile="/home/seanmuir/org.openhealthtools.mdht.uml.cda.runtime.${buildLabel}.zip" >
+		<fileset dir="/home/seanmuir/releng/runtime"  includes="*" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda_${org.openhealthtools.mdht.uml.cda}.jar" />	
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.vocab_${org.openhealthtools.mdht.uml.hl7.vocab}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.rim_${org.openhealthtools.mdht.uml.hl7.rim}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.datatypes_${org.openhealthtools.mdht.uml.hl7.datatypes}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.source_${org.openhealthtools.mdht.uml.cda}.jar" />	
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.vocab.source_${org.openhealthtools.mdht.uml.hl7.vocab}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.rim.source_${org.openhealthtools.mdht.uml.hl7.rim}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.datatypes.source_${org.openhealthtools.mdht.uml.hl7.datatypes}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.ccd_${org.openhealthtools.mdht.uml.cda.ccd}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.ihe_${org.openhealthtools.mdht.uml.cda.ihe}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.hitsp_${org.openhealthtools.mdht.uml.cda.hitsp}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.cdt_${org.openhealthtools.mdht.uml.cda.cdt}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.ccd.source_${org.openhealthtools.mdht.uml.cda.ccd}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.ihe.source_${org.openhealthtools.mdht.uml.cda.ihe}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.hitsp.source_${org.openhealthtools.mdht.uml.cda.hitsp}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.cdt.source_${org.openhealthtools.mdht.uml.cda.cdt}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.consol_${org.openhealthtools.mdht.uml.cda.consol}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.mu2consol_${org.openhealthtools.mdht.uml.cda.mu2consol}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.consol.source_${org.openhealthtools.mdht.uml.cda.consol}.jar" />
+
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.mu2consol.source_${org.openhealthtools.mdht.uml.cda.mu2consol}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.emf.runtime_${org.openhealthtools.mdht.emf.runtime}.jar" />
+	</zip>
+
+
+
+<zip destfile="/home/seanmuir/org.openhealthtools.mdht.uml.cda.esmpcr.runtime.${buildLabel}.zip" >
+		<fileset dir="/home/seanmuir/releng/runtime"  includes="*" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda_${org.openhealthtools.mdht.uml.cda}.jar" />	
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.vocab_${org.openhealthtools.mdht.uml.hl7.vocab}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.rim_${org.openhealthtools.mdht.uml.hl7.rim}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.datatypes_${org.openhealthtools.mdht.uml.hl7.datatypes}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.source_${org.openhealthtools.mdht.uml.cda}.jar" />	
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.vocab.source_${org.openhealthtools.mdht.uml.hl7.vocab}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.rim.source_${org.openhealthtools.mdht.uml.hl7.rim}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.hl7.datatypes.source_${org.openhealthtools.mdht.uml.hl7.datatypes}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.consol_${org.openhealthtools.mdht.uml.cda.consol}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.consol.source_${org.openhealthtools.mdht.uml.cda.consol}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.emspcr_${org.openhealthtools.mdht.uml.cda.emspcr}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.uml.cda.emspcr.source_${org.openhealthtools.mdht.uml.cda.emspcr}.jar" />
+		<fileset  dir="${p2.repo.dir}/plugins/"  includes="org.openhealthtools.mdht.emf.runtime_${org.openhealthtools.mdht.emf.runtime}.jar" />
+</zip>
+
+</target>
+
+	<target name="runTests" depends="checkIsRunTimeBuild" if="IsRunTimeBuild" >
+
+
+
+		<echo message="${ANT_HOME}" />
+
+		<loadproperties srcFile="${buildDirectory}/finalPluginsVersions.properties" />
+
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/testlogs" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/reports" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/emma" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/emma/instrumentation" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/emma/coverage" />
+
+		<!-- If using emma- use instrumented location - else use repository for jars -->
+		<condition property="junittestdirectory" value="${buildDirectory}/${buildLabel}/emma/instrumentation/lib">
+			<equals arg1="${emma.enabled}" arg2="true" />
+		</condition>
+
+		<condition property="junittestdirectory" value="${p2.repo.dir}/plugins">
+			<not>
+				<equals arg1="${emma.enabled}" arg2="true" />
+			</not>
+		</condition>
+
+
+
+		<echo message="${buildDirectory}/${buildLabel}/emma/coverage/metadata.emma" />
+
+		<echo message="${buildDirectory}/${buildLabel}/emma/instrumentation" />
+
+		<echo message="${buildDirectory}/${buildLabel}/emma/instrumentation" />
+
+		<echo message="${p2.repo.dir}/plugins" />
+
+		<echo message="**/*_${org.openhealthtools.mdht.uml.cda}.jar" />
+
+
+
+	
+
+
+		<emma enabled="${emma.enabled}">
+
+
+
+			<instr mode="fullcopy" metadatafile="${buildDirectory}/${buildLabel}/emma/coverage/metadata.emma" outdir="${buildDirectory}/${buildLabel}/emma/instrumentation" merge="true">
+				<instrpath>
+					<fileset dir="${p2.repo.dir}/plugins" includes="**/*.jar" />
+				</instrpath>
+
+				<filter includes="org.openhealthtools.*.operations.*" excludes="com.*, net.*, org.openhealthtools.mdht.uml.*.operations.*Test*, org.openhealthtools.mdht.uml.edit.*" />
+
+			</instr>
+
+
+		</emma>
+
+
+
+<!-- forkmode="once" clonevm="no" -->
+
+		<!-- <junit printsummary="yes" fork="no" showoutput="true"> -->
+
+		<junit printsummary="yes" showoutput="true" fork="true" forkmode="perBatch" >
+
+ 			<sysproperty key="testlogdir" value="${buildDirectory}/${buildLabel}/testlogs"/>
+			
+			<!-- TODO Need to generate runtime classpath -->
+
+			<classpath>
+
+
+		<fileset dir="${ANT_HOME}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+
+		<fileset dir="/home/seanmuir/releng/runtime"  >
+			<include name="**/*.jar" />
+		</fileset>
+
+<!--
+   	<pathelement path="/home/eclipse/helios/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.junit_4.8.1.v4_8_1_v20100427-1100/junit.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.openhealthtools.mdht.uml.hl7.rim.test_0.7.0.201105141219.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.core.runtime_3.6.0.v20100505.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.osgi_3.6.1.R36x_v20100806.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.equinox.common_3.6.0.v20100503.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.core.jobs_3.5.1.R36x_v20100824.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.3.0.v20100520/runtime_registry_compatibility.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.equinox.registry_3.5.0.v20100503.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.equinox.preferences_3.3.0.v20100503.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.core.contenttype_3.4.100.v20100505-1235.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.equinox.app_1.3.1.R36x_v20100803.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.emf.ecore_2.6.1.v20100914-1218.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.emf.common_2.6.0.v20100914-1218.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v20100521-1846.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.ocl.ecore_3.0.2.R30x_v201101110610.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.ocl_3.0.2.R30x_v201101110610.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/lpg.runtime.java_2.0.17.v201004271640.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.apache.commons.lang_2.3.0.v201005080501.jar" />
+        <pathelement path="/home/eclipse/helios/eclipse/plugins/org.eclipse.emf_2.6.0.v20100914-1218.jar" />
+	-->
+							
+		
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.emf.runtime_${org.openhealthtools.mdht.emf.runtime}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.common_${org.openhealthtools.mdht.uml.common}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.common.test_${org.openhealthtools.mdht.uml.common.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.cdt_${org.openhealthtools.mdht.uml.cda.cdt}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda_${org.openhealthtools.mdht.uml.cda}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.util.test_${org.openhealthtools.mdht.uml.cda.util.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.vocab_${org.openhealthtools.mdht.uml.hl7.vocab}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.rim_${org.openhealthtools.mdht.uml.hl7.rim}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.vocab.test_${org.openhealthtools.mdht.uml.hl7.vocab.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.vocab_${org.openhealthtools.mdht.uml.hl7.vocab}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.datatypes_${org.openhealthtools.mdht.uml.hl7.datatypes}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.datatypes.test_${org.openhealthtools.mdht.uml.hl7.datatypes.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hdf.test_${org.openhealthtools.mdht.uml.hdf.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.test_${org.openhealthtools.mdht.uml.cda.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.util.test_${org.openhealthtools.mdht.uml.cda.util.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ccd_${org.openhealthtools.mdht.uml.cda.ccd}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.consol_${org.openhealthtools.mdht.uml.cda.consol}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.mu2consol_${org.openhealthtools.mdht.uml.cda.mu2consol}.jar" />
+
+
+
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.consoltoc_${org.openhealthtools.mdht.uml.cda.consoltoc}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ccd.test_${org.openhealthtools.mdht.uml.cda.ccd.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ccd.tests_${org.openhealthtools.mdht.uml.cda.ccd.tests}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.cdt.tests_${org.openhealthtools.mdht.uml.cda.cdt.tests}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.cdt_${org.openhealthtools.mdht.uml.cda.cdt}.jar" />
+				
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.cdt.test_${org.openhealthtools.mdht.uml.cda.cdt.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.test_${org.openhealthtools.mdht.uml.cda.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ihe_${org.openhealthtools.mdht.uml.cda.ihe}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.hitsp_${org.openhealthtools.mdht.uml.cda.hitsp}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.toc_${org.openhealthtools.mdht.uml.cda.toc}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ihe.test_${org.openhealthtools.mdht.uml.cda.ihe.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.hitsp.test_${org.openhealthtools.mdht.uml.cda.hitsp.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.rim.test_${org.openhealthtools.mdht.uml.hl7.rim.test}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ihe.tests_${org.openhealthtools.mdht.uml.cda.ihe.tests}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.hitsp.tests_${org.openhealthtools.mdht.uml.cda.hitsp.tests}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.consol.tests_${org.openhealthtools.mdht.uml.cda.consol.tests}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.mu2consol.tests_${org.openhealthtools.mdht.uml.cda.mu2consol.tests}.jar" />
+
+	<!--	<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.emspcr.tests_${org.openhealthtools.mdht.uml.cda.emspcr.tests}.jar" /> -->
+
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tests_${org.openhealthtools.mdht.uml.cda.phcr.tests}.jar" />				
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.emspcr_${org.openhealthtools.mdht.uml.cda.emspcr}.jar" />
+
+				<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr_${org.openhealthtools.mdht.uml.cda.phcr}.jar" />	
+
+
+			<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr_${org.openhealthtools.mdht.uml.cda.phcr}.jar"/>
+		<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.anthrax_${org.openhealthtools.mdht.uml.cda.phcr.anthrax}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.anthrax.tests_${org.openhealthtools.mdht.uml.cda.phcr.anthrax.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis_${org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis.tests_${org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.cocci_${org.openhealthtools.mdht.uml.cda.phcr.cocci}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.cocci.tests_${org.openhealthtools.mdht.uml.cda.phcr.cocci.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.hepb_${org.openhealthtools.mdht.uml.cda.phcr.hepb}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.hepb.tests_${org.openhealthtools.mdht.uml.cda.phcr.hepb.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.pertussis_${org.openhealthtools.mdht.uml.cda.phcr.pertussis}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.pertussis.tests_${org.openhealthtools.mdht.uml.cda.phcr.pertussis.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.salmonellosis_${org.openhealthtools.mdht.uml.cda.phcr.salmonellosis}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.salmonellosis.tests_${org.openhealthtools.mdht.uml.cda.phcr.salmonellosis.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.silicosis_${org.openhealthtools.mdht.uml.cda.phcr.silicosis}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.silicosis.tests_${org.openhealthtools.mdht.uml.cda.phcr.silicosis.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.streppneumo_${org.openhealthtools.mdht.uml.cda.phcr.streppneumo}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.streppneumo.tests_${org.openhealthtools.mdht.uml.cda.phcr.streppneumo.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tests_${org.openhealthtools.mdht.uml.cda.phcr.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tss_${org.openhealthtools.mdht.uml.cda.phcr.tss}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tss.tests_${org.openhealthtools.mdht.uml.cda.phcr.tss.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tuberculosis_${org.openhealthtools.mdht.uml.cda.phcr.tuberculosis}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tuberculosis.tests_${org.openhealthtools.mdht.uml.cda.phcr.tuberculosis.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tularemia_${org.openhealthtools.mdht.uml.cda.phcr.tularemia}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tularemia.tests_${org.openhealthtools.mdht.uml.cda.phcr.tularemia.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.wnv_${org.openhealthtools.mdht.uml.cda.phcr.wnv}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.wnv.tests_${org.openhealthtools.mdht.uml.cda.phcr.wnv.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phmr_${org.openhealthtools.mdht.uml.cda.phmr}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phmr.tests_${org.openhealthtools.mdht.uml.cda.phmr.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.qrda_${org.openhealthtools.mdht.uml.cda.qrda}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.qrda.tests_${org.openhealthtools.mdht.uml.cda.qrda.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.sdtm_${org.openhealthtools.mdht.uml.cda.sdtm}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.sdtm.tests_${org.openhealthtools.mdht.uml.cda.sdtm.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.vsbr_${org.openhealthtools.mdht.uml.cda.vsbr}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.vsbr.tests_${org.openhealthtools.mdht.uml.cda.vsbr.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.vsdr_${org.openhealthtools.mdht.uml.cda.vsdr}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.vsdr.tests_${org.openhealthtools.mdht.uml.cda.vsdr.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.qrda_${org.openhealthtools.mdht.uml.cda.qrda}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.qrda.tests_${org.openhealthtools.mdht.uml.cda.qrda.tests}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.sdtm_${org.openhealthtools.mdht.uml.cda.sdtm}.jar"/>
+<pathelement path="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.sdtm.tests_${org.openhealthtools.mdht.uml.cda.sdtm.tests}.jar"/>
+
+				<pathelement path="/usr/share/ant/lib/emma_ant.jar" />
+
+				<pathelement path="/usr/share/ant/lib/emma.jar" />
+
+			</classpath>
+
+			<formatter type="xml" />
+
+
+	<batchtest todir="${buildDirectory}/${buildLabel}/testlogs" fork="true">
+
+
+	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.datatypes.test_${org.openhealthtools.mdht.uml.hl7.datatypes.test}.jar">
+            <include name="**/*ALLDatatypeOperationsTests.class"/>
+        </zipfileset> 
+
+
+	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.hl7.rim.test_${org.openhealthtools.mdht.uml.hl7.rim.test}.jar">
+            <include name="**/*AllRIMOperationsTests.class"/>
+        </zipfileset> 
+
+	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.test_${org.openhealthtools.mdht.uml.cda.test}.jar">
+            <include name="**/*AllCDAOperationsTests.class"/>
+	    <include name="**/*AllCDATests.class"/>
+        </zipfileset> 
+
+	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.cdt.tests_${org.openhealthtools.mdht.uml.cda.cdt.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+
+	 <zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ccd.tests_${org.openhealthtools.mdht.uml.cda.ccd.tests}.jar">
+	            <include name="**/*Test.class"/>
+        </zipfileset> 
+
+ 	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ihe.tests_${org.openhealthtools.mdht.uml.cda.ihe.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+
+ 	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.hitsp.tests_${org.openhealthtools.mdht.uml.cda.hitsp.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+
+	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.consol.tests_${org.openhealthtools.mdht.uml.cda.consol.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+
+	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.mu2consol.tests_${org.openhealthtools.mdht.uml.cda.mu2consol.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+
+<!--
+ 	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.emspcr.tests_${org.openhealthtools.mdht.uml.cda.emspcr.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+-->
+
+
+<!--
+
+
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.toc.tests_${org.openhealthtools.mdht.uml.cda.toc.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+
+	
+
+
+
+
+
+
+
+
+-->
+
+
+<!--
+ 	<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tests_${org.openhealthtools.mdht.uml.cda.phcr.tests}.jar">
+            <include name="**/*Test.class"/>
+        </zipfileset> 
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.anthrax.tests_${org.openhealthtools.mdht.uml.cda.phcr.anthrax.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.streppneumo.tests_${org.openhealthtools.mdht.uml.cda.phcr.streppneumo.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.qrda.tests_${org.openhealthtools.mdht.uml.cda.qrda.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.cdt.tests_${org.openhealthtools.mdht.uml.cda.cdt.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis.tests_${org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tests_${org.openhealthtools.mdht.uml.cda.phcr.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.sdtm.tests_${org.openhealthtools.mdht.uml.cda.sdtm.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.cocci.tests_${org.openhealthtools.mdht.uml.cda.phcr.cocci.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tss.tests_${org.openhealthtools.mdht.uml.cda.phcr.tss.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.toc.tests_${org.openhealthtools.mdht.uml.cda.toc.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.hepb.tests_${org.openhealthtools.mdht.uml.cda.phcr.hepb.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tuberculosis.tests_${org.openhealthtools.mdht.uml.cda.phcr.tuberculosis.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.vsbr.tests_${org.openhealthtools.mdht.uml.cda.vsbr.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.hitsp.tests_${org.openhealthtools.mdht.uml.cda.hitsp.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.pertussis.tests_${org.openhealthtools.mdht.uml.cda.phcr.pertussis.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.tularemia.tests_${org.openhealthtools.mdht.uml.cda.phcr.tularemia.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.vsdr.tests_${org.openhealthtools.mdht.uml.cda.vsdr.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.ihe.tests_${org.openhealthtools.mdht.uml.cda.ihe.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.salmonellosis.tests_${org.openhealthtools.mdht.uml.cda.phcr.salmonellosis.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.wnv.tests_${org.openhealthtools.mdht.uml.cda.phcr.wnv.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.mu2consol.tests_${org.openhealthtools.mdht.uml.cda.mu2consol.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phcr.silicosis.tests_${org.openhealthtools.mdht.uml.cda.phcr.silicosis.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+<zipfileset src="${junittestdirectory}/org.openhealthtools.mdht.uml.cda.phmr.tests_${org.openhealthtools.mdht.uml.cda.phmr.tests}.jar"><include name="**/*Test.class"/></zipfileset>
+-->
+
+     
+  </batchtest>
+
+			
+			<jvmarg value="-Demma.coverage.out.file=${buildDirectory}/${buildLabel}/emma/coverage/coverage.ec" />
+
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+
+		</junit>
+
+
+<!-- destfile="${buildDirectory}/${buildLabel}/testlogs/alltestvalidations.xml" force="yes" -->
+
+	<concat destfile="${buildDirectory}/${buildLabel}/testlogs/allvalidationresults.xml" force="no">
+ 			<filelist dir="/home/seanmuir/releng/build"  files="start.tag"/>
+		     <fileset  dir="${buildDirectory}/${buildLabel}/testlogs" includes="test*.xml" />
+			<filelist dir="/home/seanmuir/releng/build"  files="end.tag"/>
+		 </concat>
+
+		<junitreport todir="${buildDirectory}/${buildLabel}/reports">
+
+			
+
+			<fileset dir="${buildDirectory}/${buildLabel}/testlogs">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report styledir="/home/seanmuir/releng/build" format="frames" todir="${buildDirectory}/${buildLabel}/reports/html" >
+				<param name="testlogdir" expression="${buildDirectory}/${buildLabel}/testlogs/"/>
+			</report>
+		</junitreport> 
+
+ 
+	
+
+
+
+		<emma enabled="${emma.enabled}">
+
+			<report>
+
+				<sourcepath>
+					<dirset dir="/home/seanmuir/releng/build/src/plugins">
+						<include name="**/src" />
+					</dirset>
+				</sourcepath>
+
+				<fileset dir="${buildDirectory}/${buildLabel}/emma/coverage">
+					<include name="*.ec" />
+					<include name="*.emma" />
+
+				</fileset>
+
+				<txt outfile="${buildDirectory}/${buildLabel}/reports/coverage.txt" />
+				<html outfile="${buildDirectory}/${buildLabel}/reports/coverage.html" />
+			
+			</report>
+			
+		</emma>
+
+		<zip destfile="/home/seanmuir/org.openhealthtools.mdht.reports.${buildLabel}.zip" basedir="${buildDirectory}/${buildLabel}/reports" />
+
+		<!-- <zip destfile="/home/seanmuir/org.openhealthtools.mdht.runtime.${buildLabel}.zip" basedir="${buildDirectory}/${buildLabel}/reports" />
+
+		<zip destfile="/home/seanmuir/org.openhealthtools.mdht.sourcecode.${buildLabel}.zip" basedir="${buildDirectory}/${buildLabel}/reports" />  -->
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Steps to do to publish the build results -->
+	<!-- ===================================================================== -->
+	<target name="publish">
+	
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- Default target                                                        -->
+	<!-- ===================================================================== -->
+	<target name="noDefault">
+		<echo message="You must specify a target when invoking this file" />
+	</target>
+
+</project>

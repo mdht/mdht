@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Using the MDHT UML Editor"/>
+<meta name="abstract" content="Describes using the MDHT UML Editor to review the HL7 Continuity of Care (CCD) template model."/>
+<meta name="description" content="Describes using the MDHT UML Editor to review the HL7 Continuity of Care (CCD) template model."/>
+<meta name="DC.Relation" scheme="URI" content="../../standards/topics/c_Review_CDA_templates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="concept_EF47DCEF772A45E9BD77B9090CB009DB"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Using the MDHT UML Editor</title>
+</head>
+<body id="concept_EF47DCEF772A45E9BD77B9090CB009DB">
+
+ 
+  <h1 class="title topictitle1">Using the MDHT UML Editor</h1>
+ 
+   
+  <div class="body conbody"><p class="shortdesc">Describes using the MDHT UML Editor to review the HL7 Continuity
+	 of Care (CCD) template model. 
+  </p>
+ 
+	 <p class="p">Let's start with an example of using the MDHT UML Editor to browse the
+		HL7 Continuity of Care (CCD) template model. This is intended to be an 
+		<em class="ph i">easy</em> UML editor, so not every aspect of UML is visible or
+		editable, but we attempted to make all characteristics important to CDA
+		template design easily accessible. We have more enhancements planned, but
+		please let us know what would make it easier to use! 
+	 </p>
+ 
+	 <ul class="ul" id="concept_EF47DCEF772A45E9BD77B9090CB009DB__ul_9455F60A889C4A309AB293393A2FD2DD"> 
+		<li class="li" id="concept_EF47DCEF772A45E9BD77B9090CB009DB__li_7BE2B5D2088741AEB226942F198D3377">Select a model element in
+		  either the Project Explorer navigator or in the UML Table Editor. The detailed
+		  properties of that element are shown in the Properties view. The properties are
+		  split into several tabs, one of which displays extended metadata that is
+		  specific to CDA template models. 
+		</li>
+ 
+	 </ul>
+ 
+	 <img class="image" id="concept_EF47DCEF772A45E9BD77B9090CB009DB__image_9DE1304F9B9D493281A7119C848DE93F" src="../images/TableEditorProjectExplorer.png"/> 
+	 <br/><img class="image" id="concept_EF47DCEF772A45E9BD77B9090CB009DB__image_737594C0E82E434A88B5E6008CF6AC74" src="../images/TableEditorProperties.png"/><br/>
+	 <p class="p">The Annotations table column shows a summary of HL7 metadata that is
+		applied to a model element using UML stereotypes. Using the MDHT UML Editor,
+		you don't need to know the details of how UML stereotypes are used. The CDA
+		Tools properties tab displays entry fields for values that are appropriate for
+		the selected model element. In the example below, a code system constraint is
+		assigned to the 'code' attribute, and a severity of Warning (a.k.a. SHOULD) is
+		specified along with a message to be displayed when CDA documents are validated
+		that don't satisfy this constraint. The severity level is shown as a graphical
+		icon in the Annotation column.
+	 </p>
+ 
+	 <br/><img class="image" id="concept_EF47DCEF772A45E9BD77B9090CB009DB__image_6ED814CECF65438E9176AF15AA63C839" src="../images/TableEditorFull.png"/><br/> 
+	 <p class="p">Many of the model element properties may be edited within the table
+		cells. To activate editing (if allowable), either double-click on a cell or
+		press the Enter key (NOTE: the table row must be selected/highlighted 
+		<em class="ph i">before</em> editing a cell within that row). In the example shown
+		below, a class attribute's multiplicity is edited using a pull-down list.
+		Values shown in the Annotations column are a summary of more advanced HL7
+		metadata; these may be modified using the CDA Tools tab in the Properties view.
+		
+	 </p>
+ 
+	 <img class="image" id="concept_EF47DCEF772A45E9BD77B9090CB009DB__image_9B7678F2618943EAA2F61783E66B1EFC" src="../images/TableEditorMultiplicity.png"/> 
+	 <p class="p">The data type of a class attribute may be modified in either the table
+		cell or using the General tab in the Properties view. The attribute type is
+		selected using a dialog that allows searching for any model element in one of
+		the 
+		<em class="ph i">currently open model(s)</em>. If several models are open
+		simultaneously, then classes from all models are included in the dialog list.
+		You can quickly narrow the selection by typing the first few characters of the
+		class name you are searching for. 
+	 </p>
+ 
+  </div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../standards/topics/c_Review_CDA_templates.html" title="The MDHT UML Editor provides a simplified approach to browsing and editing UML models that is especially well suited to CDA template design.">Review CDA templates</a></div>
+</div>
+</div>
+
+</body>
+</html>

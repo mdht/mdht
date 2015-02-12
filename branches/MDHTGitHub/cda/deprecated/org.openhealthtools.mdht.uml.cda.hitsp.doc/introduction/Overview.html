@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Overview"/>
+<meta name="DC.Relation" scheme="URI" content="../introduction/Introduction.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topicId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Overview</title>
+</head>
+<body id="topicId"><a name="topicId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+	<h1 class="title topictitle1">Overview</h1>
+
+	<div class="body">
+		<p class="p">This implementation guide is generated from UML models developed in
+			the Open Health Tools (OHT) Model-Driven Health Tools (MDHT) project.
+			The HITSP specifications have been formalized into computational
+			models expressed in UML. These models are used by automated tooling
+			to generate this publication, plus validation tools and Java libraries
+			for implementers.</p>
+
+		<p class="p">This document combines specifications from several HITSP
+			documents, as summarized in the following sections. For the authoritative
+			source, please refer to the approved specifications from HITSP.</p>
+
+	</div>
+
+	<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../introduction/Introduction.html">INTRODUCTION</a></div>
+</div>
+</div>
+<div class="topic nested1" xml:lang="en-us" id="c32"><a name="c32"><!-- --></a>
+		<h2 class="title topictitle2">C32 Patient Summary</h2>
+
+		<div class="body">
+			<p class="p">The HITSP Summary Documents Using HL7 Continuity of Care Document
+				(CCD) Component describes the document content summarizing a
+				consumer's medical status for the purpose of information exchange. The
+				content may include administrative (e.g., registration, demographics,
+				insurance, etc.) and clinical (problem list, medication list,
+				allergies, test results, etc) information. Any specific use of this
+				Component by another HITSP specification may constrain the content
+				further based upon the requirements and context of the document
+				exchange. This specification defines content in order to promote
+				interoperability between participating systems. Any given system
+				creating or consuming the document may contain much more information
+				than conveyed by this specification. Such systems may include Personal
+				Health Record Systems (.1.s), Electronic Health Record Systems (EHRs),
+				Practice Management Applications and other persons and systems as
+				identified and permitted.</p>
+
+			<p class="p">This Component is essentially a subset of the healthcare data that
+				has been developed for specific business Use Cases. This subset
+				contains the minimum critical or pertinent medical information
+				sections as specified by the business case. Information conveyed
+				according to the Component Construct is a representative extract of
+				the information available on the creating system. The information in
+				the HITSP Summary Documents Using HL7 Continuity of Care Document
+				(CCD) Component and the creating systems must be consistent.
+				Furthermore there should be no data elsewhere in the creating
+				systemthat would contradict the meaning of any data in this construct.
+				The expectation is that consuming systems will be able to use this
+				specification as a source of information to input and/or update
+				information in their instantiation of the healthcare record. This
+				specification does not define the policies applicable to the import of
+				this information.</p>
+
+			<p class="p">It is anticipated and desirable that some implementers of the HITSP
+				Summary Documents Using HL7 Continuity of Care Document (CCD)
+				Component will want to add data and sections to permit greater
+				communication between systems. The underlying standards (primarily HL7
+				CCD – Continuity of Care Document) have additional modules that may
+				serve such purposes. This practice is beyond the scope of this HITSP
+				Component. Implementers should be aware that they must assume that
+				receivers of the document may only be able to view or process content
+				modules as described in this specification, and may not be able to use
+				the additional modules in the document. This means that the HITSP
+				Summary Documents Using HL7 Continuity of Care Document (CCD)
+				Component must be able to stand-alone. Applications may wish to
+				display the document in two different user-selected views, one of
+				which is restricted to the minimal dataset contents of this component.
+				Adding optional sections and data elements should not generate errors.
+				Optional data should be used if understood by the receiving system,
+				but must not change the meaning of the document.</p>
+
+			<p class="p">This Component refers to the HITSP 2008 work cycle. It expands upon
+				the prior version of the specification for a consumer’s
+				registration/medication history information to include content to
+				support the consumer's access to clinical information, medication
+				management activities and supportive information for quality of care
+				assessment.</p>
+
+		</div>
+
+	</div>
+
+	<div class="topic nested1" xml:lang="en-us" id="c83"><a name="c83"><!-- --></a>
+		<h2 class="title topictitle2">C83 Content Modules</h2>
+
+		<div class="body">
+			<p class="p">The purpose of the Healthcare Information Technology Standards
+				Panel (HITSP) CDA Content Modules Component is to define the library
+				of Components that may be used by CDA-based constructs developed by
+				HITSP and others in standards based exchanges. The Components are
+				organized into modules to simplify navigation. These modules are
+				organized along the same principals as the HL7 Continuity of Care
+				Document.</p>
+
+			<p class="p">The data elements found in these modules are based on HL7 CDA
+				Implementation Guides and the IHE PCC Technical Framework Volume II,
+				Release 5 and its related supplements. These guides contain
+				specifications for document sections that are consistent with all
+				clinical documents currently selected for HITSP constructs.</p>
+
+		</div>
+
+	</div>
+
+	<div class="topic nested1" xml:lang="en-us" id="c80"><a name="c80"><!-- --></a>
+		<h2 class="title topictitle2">C80 Clinical Document and Message Terminology</h2>
+
+	<div class="body">
+		<p class="p">The purpose of the Health Information Technology Standards Panel
+			(HITSP) Clinical Document and Message Terminology Component is to
+			define the vocabulary for either document-based or message-based
+			HITSP constructs such as Clinical Document Architecture (CDA)
+			documents, HL7 V2 messages, etc. For more in-depth information about
+			how this Component relates to other HITSP constructs, see HITSP/TN901
+			Clinical Documents.</p>
+
+	</div>
+
+	</div>
+
+
+</body>
+</html>

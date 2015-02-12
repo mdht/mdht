@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Clinical Statement Templates">
+<topicref href="AllergyIntolerance.dita" type="topic" />
+<topicref href="AllergyIntoleranceConcern.dita" type="topic" />
+<topicref href="CombinationMedication.dita" type="topic" />
+<topicref href="Comment.dita" type="topic" />
+<topicref href="ConcernEntry.dita" type="topic" />
+<topicref href="ConditionalDose.dita" type="topic" />
+<topicref href="CoverageEntry.dita" type="topic" />
+<topicref href="EncounterActivity.dita" type="topic" />
+<topicref href="EncounterEntry.dita" type="topic" />
+<topicref href="EncounterPlanOfCare.dita" type="topic" />
+<topicref href="ExternalReference.dita" type="topic" />
+<topicref href="HealthStatusObservation.dita" type="topic" />
+<topicref href="Immunization.dita" type="topic" />
+<topicref href="Medication.dita" type="topic" />
+<topicref href="NormalDose.dita" type="topic" />
+<topicref href="ObservationRequestEntry.dita" type="topic" />
+<topicref href="PayerEntry.dita" type="topic" />
+<topicref href="PregnancyObservation.dita" type="topic" />
+<topicref href="ProblemConcernEntry.dita" type="topic" />
+<topicref href="ProblemEntry.dita" type="topic" />
+<topicref href="ProblemStatusObservation.dita" type="topic" />
+<topicref href="ProcedureEntryPlanOfCareActivityProcedure.dita" type="topic" />
+<topicref href="ProcedureEntryProcedureActivityProcedure.dita" type="topic" />
+<topicref href="Severity.dita" type="topic" />
+<topicref href="SimpleObservation.dita" type="topic" />
+<topicref href="SplitDose.dita" type="topic" />
+<topicref href="SupplyEntry.dita" type="topic" />
+<topicref href="TaperedDose.dita" type="topic" />
+<topicref href="VitalSignObservation.dita" type="topic" />
+<topicref href="VitalSignsOrganizer.dita" type="topic" />
+</map>

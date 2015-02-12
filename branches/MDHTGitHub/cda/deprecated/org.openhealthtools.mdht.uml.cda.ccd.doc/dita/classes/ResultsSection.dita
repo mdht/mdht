@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Results Section</title>
+<shortdesc conref="generated/_ResultsSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_ResultsSection.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<image href="../images/ResultSection.png" width="420pt"/>
+<section conref="generated/_ResultsSection.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_ResultsSection.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_ResultsSection.dita#classId/aggregate">
+<li></li>
+</ol>
+<fig>
+<title>Results Section example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_ResultsSection.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>

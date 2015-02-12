@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+
+   <extension point="com.ibm.xtools.uml.msl.UMLProfiles"
+         name="CDA Profile">
+      <UMLProfile
+            name="CDA Profile"
+            path="pathmap://CDA_PROFILES/CDA.profile.uml"
+            visible="true"
+            required="false"
+            id="CDAProfile">
+      </UMLProfile>
+   </extension>
+   
+  <!-- 
+    - Navigator Properties
+    -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="com.ibm.xtools.modeler.ui.properties">   
+         <propertyTab
+               category="Core"
+               label="%CDAPropertyTab.label"
+               afterTab="modeler.property.tab.StereotypesSection"
+               id="property.tab.CDAPropertySection">           
+         </propertyTab> 
+      </propertyTabs>
+   </extension>
+ 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
+	 	     id="property.section.CodeSystemVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
+	 	     id="property.section.ValueSetVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
+	 	     id="property.section.ValueSetCodeSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
+	      </propertySection>
+	      
+	      
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ValidationSection" 
+	 	     id="property.section.cda.ValidationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
+	 	     id="property.section.ValueSetConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
+	 	     id="property.section.CodeSystemConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
+	 	     id="property.section.ConceptDomainConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
+	      </propertySection>
+	      
+	      <!-- must use cda.ui.properties.VocabularyConstraintsSection because we are applying CDA stereotypes -->
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularyConstraintsSection" 
+	 	     id="property.section.VocabularyConstraintsSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.TemplateSection"
+             id="property.section.cda.TemplateSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularySpecificationSection" 
+	 	     id="property.section.cda.VocabularyConstraintSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.VocabSpecificationFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
+	 	     id="property.section.cda.TextValueSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntrySection" 
+	 	     id="property.section.cda.EntrySection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.EntryFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntryRelationshipSection" 
+	 	     id="property.section.cda.EntryRelationshipSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.EntryRelationshipFilter"/>
+      </propertySections>
+   </extension> 
+ 
+ 
+ <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="org.openhealthtools.mdht.uml.cda.ui.rsm.providers.RSMCustomUMLParserProvider">
+         <Priority name="High"/>
+      </ParserProvider>
+   </extension>
+   
+</plugin>

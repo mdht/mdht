@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Clinical Statement Templates">
+<topicref href="AllergyDrugSensitivity.dita" type="topic" />
+<topicref href="Comment.dita" type="topic" />
+<topicref href="Condition.dita" type="topic" />
+<topicref href="ConditionEntry.dita" type="topic" />
+<topicref href="Encounter.dita" type="topic" />
+<topicref href="Immunization.dita" type="topic" />
+<topicref href="InsuranceProvider.dita" type="topic" />
+<topicref href="Medication.dita" type="topic" />
+<topicref href="MedicationCombinationMedication.dita" type="topic" />
+<topicref href="MedicationConditionalDose.dita" type="topic" />
+<topicref href="MedicationNormalDose.dita" type="topic" />
+<topicref href="MedicationSplitDose.dita" type="topic" />
+<topicref href="MedicationTaperedDose.dita" type="topic" />
+<topicref href="Procedure.dita" type="topic" />
+<topicref href="Result.dita" type="topic" />
+<topicref href="VitalSign.dita" type="topic" />
+</map>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Create a new Implementation Guide"/>
+<meta name="abstract" content="Create a project for a new implementation guide model."/>
+<meta name="description" content="Create a project for a new implementation guide model."/>
+<meta name="DC.Relation" scheme="URI" content="../../standards/topics/c_Standards_Developers_and_Users.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="task_BF0033088D4A46149B2A3075A8025E2C"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Create a new Implementation Guide</title>
+</head>
+<body id="task_BF0033088D4A46149B2A3075A8025E2C">
+
+ 
+  <h1 class="title topictitle1">Create a new Implementation Guide</h1>
+ 
+   
+  <div class="body taskbody"><p class="shortdesc">Create a project for a new implementation guide model. 
+  </p>
+ 
+	 <div class="section context" id="task_BF0033088D4A46149B2A3075A8025E2C__context_664A985212B34E90ABC7A343E44A99E4"> 
+		<p class="p"><strong class="ph b">NOTE: we will work on replacing this process with a Wizard in the
+			 next milestone.</strong>
+		</p>
+
+		<p class="p">The best way to create a new project is to copy the provided example
+		  project and run the 
+		  <span class="ph filepath">refactor.xml</span> Ant script to rename it. This can be
+		  accomplished by following these steps. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="task_BF0033088D4A46149B2A3075A8025E2C__steps_45339D40C6E84155B22A8233B6F0BD00"><li class="li step" id="task_BF0033088D4A46149B2A3075A8025E2C__step_766AB5962A3844D093395F12C182521E"> 
+		  <span class="ph cmd">Download and disconnect the example project from the MDHT SVN
+			 repository 
+		  </span> 
+		  <ol type="a" class="ol substeps" id="task_BF0033088D4A46149B2A3075A8025E2C__substeps_5394692F851D497D9DDDE98C914E4D7C"> 
+			 <li class="li substep" id="task_BF0033088D4A46149B2A3075A8025E2C__substep_19CBFFAE855C4B0D9E1218682D0D2575"> 
+				<span class="ph cmd">Check out 
+				  <tt class="ph tt">cda/example/org.openhealthtools.mdht.uml.cda.example</tt>.
+				  Please check out a new unmodified project, don't start with an example you have
+				  changed. 
+				</span> 
+			 </li>
+ 
+			 <li class="li substep" id="task_BF0033088D4A46149B2A3075A8025E2C__substep_1304813B75DB41ED8C655C1A08A4037C"> 
+				<span class="ph cmd">Right-click on this new project and select 
+				  <span class="ph menucascade"><span class="ph uicontrol">Team</span> &gt; <span class="ph uicontrol">Disconnect</span></span>,
+				  and select the option: 'Also delete SVN meta-information from file system' 
+				</span> 
+			 </li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="li step" id="task_BF0033088D4A46149B2A3075A8025E2C__step_71D3E8187C5A4F15B4235123147C526A"> 
+		  <span class="ph cmd">Rename the project. Right-click on the new project and select 
+			 <span class="ph menucascade"><span class="ph uicontrol">Refactor</span> &gt; <span class="ph uicontrol">Rename</span></span>.
+			 For example, enter the new project name 'org.openhealthtools.mdht.uml.cda.ncr'.
+			 
+		  </span> 
+		</li>
+<li class="li step" id="task_BF0033088D4A46149B2A3075A8025E2C__step_F20A63796D07445789C10636B3291D9E"> 
+		  <span class="ph cmd">Edit and run the 
+			 <span class="ph filepath">refactor.xml</span> script. 
+		  </span> 
+		  <ol type="a" class="ol substeps" id="task_BF0033088D4A46149B2A3075A8025E2C__substeps_FDB6ECBFA901460BBE62DBCE9041A0DE"> 
+			 <li class="li substep" id="task_BF0033088D4A46149B2A3075A8025E2C__substep_2CCF496745A446B2B4FAF47A64CACEEA"> 
+				<span class="ph cmd">Open the refactor.xml script in the Ant or text editor. 
+				</span> 
+			 </li>
+ 
+			 <li class="li substep" id="task_BF0033088D4A46149B2A3075A8025E2C__substep_C36C7A747C6141C5B8D2CCAE0B3DA815"> 
+				<span class="ph cmd">Change the property values for the following properties:
+				  basePackage (e.g. org.openhealthtools.mdht.uml.cda), packageName (e.g. ncr),
+				  prefix (NCR), and nsURI (e.g. http://www.openhealthtools.org/mdht/uml/cda/ncr).
+				  
+				</span> 
+			 </li>
+ 
+			 <li class="li substep" id="task_BF0033088D4A46149B2A3075A8025E2C__substep_21C28D4B09CE420BBFD2D30D46A0D974"> 
+				<span class="ph cmd">Run the 
+				  <span class="ph filepath">refactor.xml</span> script as an Ant build. Make
+				  sure to run in the same JRE as the workpace. 
+				</span> 
+			 </li>
+ 
+		  </ol>
+ 
+		</li>
+</ol>
+ 
+  </div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../standards/topics/c_Standards_Developers_and_Users.html" title="Introduction to roles and requirements of CDA standards development and use.">Standards Developers and Users</a></div>
+</div>
+</div>
+
+</body>
+</html>

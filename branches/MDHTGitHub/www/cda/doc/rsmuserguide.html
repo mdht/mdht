@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>RSM Users Guide</title>
+<style type="">
+img {
+	border: 0;
+}
+
+a:link {
+	color: #0000FF
+}
+</style>
+</head>
+
+<body lang="EN-US">
+
+<div class="h1">
+<h1>CDA Tools Guide for Rational Software Modeler</h1>
+</div>
+
+<p>John T.E. Timm, IBM Research</p>
+
+<p>David A. Carlson, Veterans Health Administration</p>
+
+<p></p>
+
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+<div class="h2">
+<h2>Getting started with the Example project</h2>
+</div>
+
+<p>&nbsp;</p>
+
+<p>The purpose of this section is to describe the example project.
+The example project that is available for download from the MDHT
+software repository at:</p>
+
+<p>&nbsp;</p>
+
+<p>cda/examples/org.openhealthtools.mdht.uml.cda.example</p>
+
+<p>&nbsp;</p>
+
+<p>The example project contains a simple template model that further
+constrains the CCD (Continuity of Care Document) model. The model
+contains three templates: MyDocument, MySection, and MyActivity. The
+following class diagram captures the relationships between the
+MyDocument and MySection classes and classes in CCD and the base CDA
+model. Additionally, it displays the relationship between MyDocument and
+MySection. The MyDocument and MySection templates both contain the
+&lt;&lt;cdaTemplate&gt;&gt; stereotype. This indicates, in the diagram,
+that they further constraint the ClinicalDocument and Section classes,
+respectively, from CDA. The &lt;&lt;cdaTemplate&gt;&gt; stereotype also
+holds the value of the template identifier in standard HL7 OID format.</p>
+
+<p>&nbsp;</p>
+
+<p><img width="576" height="273" src="rsmimages/image005.jpg" alt="" /></p>
+
+<p>&nbsp;</p>
+
+<p>The diagram below captures the relationships between MySection
+and MyActivity.</p>
+
+<p>&nbsp;</p>
+
+<p><img width="576" height="257" src="rsmimages/image006.jpg" alt="" /></p>
+
+<p>&nbsp;</p>
+
+<p>These diagrams should give you a feel for the various classes,
+properties, and relationships in a CDA template model. You will notice
+that the attributes defined in MyDocument, MySection, and MyActivity
+mirror those defined in their parent classes from CCD and CDA. These
+attributes are used to further constrain the attribute definitions from
+the parent. For example, if a code is optional in the parent, defining
+an attribute with the same name and type as the parent but specifying a
+minimum cardinality of 1 makes the attribute required. This type of <i>property
+redefinition</i> is used during the model-to-model transformation step to
+generate OCL constraints that are attached to the template model
+classes.</p>
+
+<p>&nbsp;</p>
+
+<p>Relationships between classes that specialize
+cda::ClinicalDocument and classes that specialize cda::Section, use
+directed associations to indicate a relationships between two templates
+in an implementation guide.  This type of relationship models
+conformance rules such as:</p>
+
+<p>&nbsp;</p>
+
+<p>MyDocument SHALL contain exactly one MySection</p>
+
+<p>&nbsp;</p>
+
+<p>and</p>
+
+<p>&nbsp;</p>
+
+<p>MySection SHOULD contain one or more MyActivity</p>
+
+<p>&nbsp;</p>
+
+<p>Additional information about the conformance rule can be
+specified in property values for the
+&lt;&lt;associationValidation&gt;&gt;, &lt;&lt;entry&gt;&gt;, and
+&lt;&lt;entryRelationship&gt;&gt; stereotypes. The CDA Tools property
+tab is a convenient mechanism for entering such data:</p>
+
+<p>&nbsp;</p>
+
+<p><img width="473" height="153" src="rsmimages/image007.jpg" alt="" /></p>
+
+<p>&nbsp;</p>
+
+<p>The tab is context-sensitive and will only display the data
+fields available for the element selected in the model diagram or tree
+view.</p>
+
+<p>&nbsp;</p>
+
+<p>Validation <i>severity</i> (a property of the
+&lt;&lt;associationValidation&gt;&gt; stereotype) is used to
+differentiate whether the relationship is strictly required for an
+instance to be considered valid. Validation severity may take on one of
+three possible values ERROR (strictly required, SHALL), WARNING
+(recommended/best practice, SHOULD), and INFO (optional, MAY).</p>
+
+<p>&nbsp;</p>
+
+<p>UML properties defined in the template model are used to place
+further constraints on those defined in the parent template model and
+base CDA model. For example, MySection.code defines a fixed value for
+the section code using stereotype values from the
+&lt;&lt;vocabSpecification&gt;&gt; stereotype. The CDA Tools property
+tab for MySection.code is shown below. This tab can be used to specify
+the Code, Code System, Code System Version, etc. for a particular coded
+attribute.</p>
+
+<p>&nbsp;</p>
+
+<p><img width="549" height="155" src="rsmimages/image008.jpg" alt="" /></p>
+
+<p>&nbsp;</p>
+
+<p>In addition to constraints on coded attributes, structural
+attributes such as classCode, typeCode, and moodCode can be defined with
+a fixed or default value in the template model. MyActivity.classCode and
+MyActivity.moodCode are used to illustrate this type of constraint.
+Fixed or default value constraints can also be applied to attributes
+that use text-based datatypes such as ED or ST as illustrated by the
+MySection.title attribute.</p>
+
+<p>&nbsp;</p>
+
+<p><img width="390" height="135" src="rsmimages/image009.jpg" alt="" /></p>
+
+
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11131278-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+</body>
+
+</html>

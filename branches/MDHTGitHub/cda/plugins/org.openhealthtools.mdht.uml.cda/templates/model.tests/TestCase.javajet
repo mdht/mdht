@@ -1,0 +1,2 @@
+<%@ jet package="org.eclipse.uml2.codegen.ecore.templates.model.tests" imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.uml2.codegen.ecore.genmodel.util.UML2GenModelUtil org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.uml2.codegen.ecore.genmodel.util.UML2GenModelUtil org.eclipse.emf.ecore.EClass org.eclipse.emf.ecore.EAnnotation org.eclipse.emf.ecore.util.EcoreUtil java.util.Arrays java.util.Map" class="TestCase" version="$$" %>
+<%@ include file="CDATestCase.javajet"%>

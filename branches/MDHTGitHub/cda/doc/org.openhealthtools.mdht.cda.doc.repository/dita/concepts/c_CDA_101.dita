@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="cdatemplateconcept" xml:lang="en-us">
+ <title> CDA 101</title>
+ <shortdesc>Clinical Documentation Architecture (CDA) supplies a framework for specifying the full
+  semantics of a clinical document. CDA defines a clinical document as having the following six
+  characteristics: <keyword>Persistence</keyword>
+  <keyword>Stewardship </keyword>
+  <keyword>Potential for authentication</keyword>
+  <keyword>Context</keyword>
+  <keyword>Wholeness</keyword>
+  <keyword>Human readability</keyword>.</shortdesc>
+ <conbody>
+  <p>Any type of clinical content can be included in the CDA. Some types of typical CDA documents
+   include Discharge Summary, Imaging Report, Admission and Physical, Pathology Report, etc. CDA is
+   being used world-wide. The most popular use is for inter-enterprise information exchange such as
+   what is envisioned for the United States Regional Health Information Organizations (RHIO). Most
+   users are currently in countries such as Finland, Greece and Germany where RHIO type exchange is
+   well established. Future plans in the US include using CDA in the US RHIO(s) and in the US
+   military Health System.</p>
+  <p>In addition to use by the Regional Health Information Organizations, CDA is the basis of a
+   variety of experimental work within academic medical centers and research institutions. Examples
+   of this are the project on CDA note generation with knowledge management and controlled
+   vocabulary at Columbia-Presbyterian in New York, the work on CDA for decision support at Queen
+   Elizabeth II Hospital/Dalhousie University and the Single Source Proof of Concept at Duke
+   Clinical Research Institute.</p>
+  <p>CDA-compliant applications have been created by many vendors for document management, viewing
+   and creation. Since CDA uses Extensible Markup Language (XML), it allows for a non-XML body
+   (word, jpg) for simpler implementation. Therefore any web browser such as Microsoft Internet
+   Explorer and Firefox can parse a CDA document and using XSL style sheet covert in to HTML for
+   display. CDA can also be managed by an XML repository.</p>
+  <p>Implementers have a variety of choices when it comes to document generation. Many
+   dictation/transcription vendors have CDA as an output option. Many EHR vendors can produce CDA
+   documents. E-Form applications have also been produced for use with CDA. One of the biggest
+   existing barriers to CDA generation is when insufficient information is available at the source
+   for conversion. This however has not been a problem thus far from voice-interface or keyboard
+   entry applications.</p>
+  <p>CDA introduces the concept of "incremental" semantic interoperability. This means that there is
+   a range of complexity allowed within the specification and that users must set their own
+   compliance. The minimum clinical data architecture required are small XML metadata fields
+   including provider name, document type, document id, etc). </p>
+  <p>The body must also be any commonly used Multipurpose Internet Mail Exchange (MIME) type such
+   as a .doc, a .pdf or even a scanned image. The minimal standard metadata set and display
+   characteristics mean that documents could be filed and categorized. They would also be searchable
+   and could be retrieved along with more richly encoded documents. This would make them all easily
+   readable at the point of care.</p>
+ </conbody>
+</concept>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Association constraints"/>
+<meta name="abstract" content="Describes constraints on relationships between two template classes, e.g. that a Section template is required to contain a particular templated Observation."/>
+<meta name="description" content="Describes constraints on relationships between two template classes, e.g. that a Section template is required to contain a particular templated Observation."/>
+<meta name="DC.Relation" scheme="URI" content="../../standards/topics/c_Add_template_constraints.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../standards/topics/t_Create_a_new_association.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../standards/topics/t_Type_code_constraint.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="concept_DFF2E746B15045979B11C6D19D25D0E2"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Association constraints</title>
+</head>
+<body id="concept_DFF2E746B15045979B11C6D19D25D0E2">
+
+ 
+  <h1 class="title topictitle1">Association constraints</h1>
+ 
+   
+  <div class="body conbody"><p class="shortdesc">Describes constraints on relationships between two template
+	 classes, e.g. that a Section template is required to contain a particular
+	 templated Observation. 
+  </p>
+ 
+	 <p class="p">Most CDA classes are derived from the RIM Act, so associations between
+		templates (i.e. CDA classes that have been restricted via template
+		specifications) must be connected using an ActRelationship. In our CDA modeling
+		tools, the association is represented directly between two template classes and
+		later implementation transformations will add the necessary ActRelationship
+		intermediary. 
+	 </p>
+
+	 <p class="p">As part of defining the template association, a typeCode may be added as
+		a restriction constraint, which will be used to generate the complete
+		ActRelationship implementation. The CDA Tools do not yet support all types of
+		act relationships in the CDA R2 base model; these are currently included:
+	 </p>
+ 
+	 <ul class="ul" id="concept_DFF2E746B15045979B11C6D19D25D0E2__ul_C9DEF8218384479197D2BBDB4CCCCA32">
+		<li class="li" id="concept_DFF2E746B15045979B11C6D19D25D0E2__li_4F7A7A68688E4BA5BEFF27CA1066D8EE">ClinicalDocument to Section
+		  (component)
+		</li>
+
+		<li class="li" id="concept_DFF2E746B15045979B11C6D19D25D0E2__li_622D2875B68248D48B438081579C0B87">Section to ClinicalStatement
+		  (entry)
+		</li>
+
+		<li class="li" id="concept_DFF2E746B15045979B11C6D19D25D0E2__li_450782C123DD47BA8F30336066D31CB5">ClinicalStatement to
+		  ClinicalStatement (actRelationship)
+		</li>
+
+	 </ul>
+
+  </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../../standards/topics/t_Create_a_new_association.html">Create a new association</a></strong><br/>
+Create a new association constraint between two template classes.   </li>
+<li class="link ulchildlink"><strong><a href="../../standards/topics/t_Type_code_constraint.html">Association type code constraint</a></strong><br/>
+Add a  	 <tt class="ph tt">typeCode</tt> constraint for the relationship connecting two template 	 classes.   </li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../standards/topics/c_Add_template_constraints.html" title="Describes all the kinds of constraints that may be added to a template class.">Add template constraints</a></div>
+</div>
+</div>
+
+</body>
+</html>

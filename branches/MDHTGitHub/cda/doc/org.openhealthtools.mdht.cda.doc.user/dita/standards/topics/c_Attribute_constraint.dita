@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_18B02F59BD81430EB92980D766786CD7"> 
+  <title>Attribute constraints</title> 
+  <shortdesc>Describes each kind of constraint that may be applied to template
+	 attributes. 
+  </shortdesc> 
+  <conbody> 
+	 <p>A template class contains attributes that restrict the content allowed
+		by a parent template or CDA base type. A template attribute may define one or
+		more constraints on the redefined attribute. 
+	 </p> 
+  </conbody>
+</concept>

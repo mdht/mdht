@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Scanned Document</title>
+<shortdesc conref="generated/_ScannedDocument.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_ScannedDocument.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_ScannedDocument.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_ScannedDocument.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_ScannedDocument.dita#classId/aggregate">
+<li></li>
+</ol>
+<p></p>
+<fig>
+<title>Scanned Document example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_ScannedDocument.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>

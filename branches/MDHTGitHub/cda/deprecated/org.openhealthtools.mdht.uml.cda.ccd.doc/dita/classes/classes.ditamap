@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Other Classes">
+<topicref href="AdvanceDirectiveVerification.dita" type="topic" />
+<topicref href="CoveredParty.dita" type="topic" />
+<topicref href="EncounterLocation.dita" type="topic" />
+<topicref href="PatientAwareness.dita" type="topic" />
+<topicref href="PayerEntity.dita" type="topic" />
+<topicref href="PlanOfCareActivity.dita" type="topic" />
+<topicref href="PolicySubscriber.dita" type="topic" />
+<topicref href="ProcedureActivity.dita" type="topic" />
+<topicref href="Product.dita" type="topic" />
+<topicref href="ProductInstance.dita" type="topic" />
+<topicref href="Support.dita" type="topic" />
+<topicref href="SupportGuardian.dita" type="topic" />
+<topicref href="SupportParticipant.dita" type="topic" />
+</map>

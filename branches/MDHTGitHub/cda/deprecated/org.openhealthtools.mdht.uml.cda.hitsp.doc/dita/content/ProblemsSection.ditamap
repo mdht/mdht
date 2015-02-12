@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="cdabook">
+
+	<chapter navtitle="Consolidated Problems" type="topic">
+		<topicref href="../classes/ProblemListSection.dita" type="topic" />
+		<topicref href="../classes/Condition.dita" type="topic" />
+		<topicref href="../classes/ConditionEntry.dita" type="topic" />
+
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ProblemStatusObservation.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/HealthStatusObservation.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/EpisodeObservation.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/AgeObservation.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/Severity.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/Comment.dita" type="topic" />
+		
+	</chapter>
+	
+	<chapter navtitle="CCD Problems" type="topic">
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemSection.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemAct.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemObservation.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemStatusObservation.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemHealthStatusObservation.dita" type="topic" />
+
+	</chapter>
+	
+	<chapter navtitle="Value Sets" type="topic">
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/terminology/ConcernEntryStatus.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/terminology/HealthStatusValue.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/terminology/ProblemStatusValue.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/terminology/SeverityObservation.dita" type="topic" />
+	
+	</chapter>
+</bookmap>

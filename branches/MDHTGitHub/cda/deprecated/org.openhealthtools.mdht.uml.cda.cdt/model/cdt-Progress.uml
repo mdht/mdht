@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_cLoVAMs2Ed-4F-UmZXrAdw" name="Progress Note">
+  <elementImport xmi:id="_j3sE8Ms6Ed-ovv6NesloGA">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_Xijk8MviEd-hi-1hHmWxvw"/>
+  </elementImport>
+  <elementImport xmi:id="_1wbuQMvhEd-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Enumeration" href="cdt-vocab.uml#_npnkkMvhEd-hi-1hHmWxvw"/>
+  </elementImport>
+  <elementImport xmi:id="_a1uPoM1zEd-vXaTiMV1__g">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_MwGRIGeLEd-ilOLYnIx0jA"/>
+  </elementImport>
+  <elementImport xmi:id="_048v0MvlEd-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_SMDJgMzCEd-RYrNQjqkPtg"/>
+  </elementImport>
+  <elementImport xmi:id="_2M2nsMvlEd-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_Yt8JMMzCEd-RYrNQjqkPtg"/>
+  </elementImport>
+  <elementImport xmi:id="_3KGTEMvlEd-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_o9nLAKPTEd6t_4WfM070fA"/>
+  </elementImport>
+  <elementImport xmi:id="_5eeJcMvlEd-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_PgsSAHrREd68l9lQ-TLEBQ"/>
+  </elementImport>
+  <elementImport xmi:id="_GqfhAMv1Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_uRytQMvzEd-hi-1hHmWxvw"/>
+  </elementImport>
+  <elementImport xmi:id="_Wi8VgMv3Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_OvmR4HfUEd6ZeOKq_2_a9g"/>
+  </elementImport>
+  <elementImport xmi:id="_Xr7W0Mv3Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_qVRtAMv2Ed-hi-1hHmWxvw"/>
+  </elementImport>
+  <elementImport xmi:id="_J2i0AMv6Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_yN6rgGhREd-ilOLYnIx0jA"/>
+  </elementImport>
+  <elementImport xmi:id="_M_808Mv6Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_vjPMEGaGEd6Hk_bPOfEjYA"/>
+  </elementImport>
+  <elementImport xmi:id="_OOoOkMv6Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_7TVToIiAEd66cKocspyVOg"/>
+  </elementImport>
+  <elementImport xmi:id="_R5BcsMv6Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_hnvnYGjpEd-tUpkWYQgJlQ"/>
+  </elementImport>
+  <elementImport xmi:id="_TTFm8Mv6Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_3j9eUJvyEd-IotBrVd7ICA"/>
+  </elementImport>
+  <elementImport xmi:id="_WZy5MMv6Ed-hi-1hHmWxvw">
+    <importedElement xmi:type="uml:Class" href="cdt.uml#_W3syoMv5Ed-hi-1hHmWxvw"/>
+  </elementImport>
+</uml:Package>

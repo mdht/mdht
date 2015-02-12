@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>Approach</title>
+	<body>
+		<p>In the development of this specification, we reviewed existing
+			draft and final specifications or implementation guides for similar
+			artifacts in the U.S.:</p>
+		<ul>
+			<li>Clinical LOINC&#174; document and section codes</li>
+			<li>HL7 Clinical Document Architecture, Release 2 Normative Web
+				Edition, 2005</li>
+			<li>CDA Release 2 – CCD: Continuity of Care Document (CCD)</li>
+			<li>HL7 Implementation Guide for CDA Release 2: History and
+				Physical (H&amp;P) Notes</li>
+			<li>HL7 Implementation Guide for CDA Release 2: Care Record
+				Summary</li>
+			<li>HL7 Implementation Guide for CDA Release 2: Procedure Note</li>
+			<li>Non-CDA sample documents supplied by participating providers
+				and vendors</li>
+		</ul>
+		<p>In addition, M*Modal provided statistical analysis of
+			approximately 25,000 sample Progress Notes. The HL7 Structured Documents
+			Work Group reviewed the design. While current divergent industry
+			practices cannot be perfectly reflected in any consensus model, we
+			designed this specification to increase consistency with minimal
+			disruption to current practice and workflow.</p>
+	</body>
+</topic>

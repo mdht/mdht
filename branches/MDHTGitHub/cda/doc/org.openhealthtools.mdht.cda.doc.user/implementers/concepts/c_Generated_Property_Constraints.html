@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Generated Property Constraints"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Generated_Constraints.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="generatedpropertyconstraintsconcept"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Generated Property Constraints</title>
+</head>
+<body id="generatedpropertyconstraintsconcept">
+
+
+<h1 class="title topictitle1">Generated Property Constraints</h1>
+
+<div class="body conbody">
+<p class="p">Property constraints are those constraints that involve attributes with fixed or default values, attributes that have a more restrictive cardinality than in the base CDA model, and attributes that have a more restrictive type.</p>
+
+<p class="p">An example of a constraint generated from template model that uses UML property redefinition to specify a more restrictive type. The ANY type of the value attribute has been restricted to PQ (Physical Quantity)</p>
+
+<pre class="pre codeblock">
+self.value-&gt;forAll(element | element.oclIsTypeOf(datatypes::PQ))
+
+</pre>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Generated_Constraints.html">Generated OCL Constraints</a></div>
+</div>
+</div>
+
+</body>
+</html>

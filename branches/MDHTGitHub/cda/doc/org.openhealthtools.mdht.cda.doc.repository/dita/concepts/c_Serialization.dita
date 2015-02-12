@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="serializationconcept" xml:lang="en-us">
+<title>Producing an XML instance (serialization)</title>
+<conbody><p>Client code uses the runtime API to build instance of template model. All template models get serialized according to the underlying CDA model. EMF uses annotations at runtime to properly serialize Ecore model instance to XML document. The EMF serializer has been customized to omit xsi:type information and put all serialized elements into one namespace (as per CDA XML schema). CDA schema defines templateId element to identify places in the document where templates are used</p>
+<codeblock><![CDATA[
+NeonatalCareReport clinicalDocument = NCRFactory.eINSTANCE.createNeonatalCareReport().init();
+PatientDataSectionNCR patientData = NCRFactory.eINSTANCE.createPatientDataSectionNCR().init();
+EncountersSection encounters = NCRFactory.eINSTANCE.createEncountersSection().init();
+
+clinicalDocument.addSection(patientData);
+patientData.addSection(encounters);
+
+NeonatalICUEncounterActivity encounter = NCRFactory.eINSTANCE.createNeonatalICUEncounterActivity().init();
+encounters.addEncounter(encounter);
+
+CDAUtil.save(clinicalDocument, System.out);
+]]></codeblock>
+</conbody>
+</concept>

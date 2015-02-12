@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="deserializationconcept" xml:lang="en-us">
+<title>Consuming an XML instance (deserialization)</title>
+<conbody><p>
+<ul>
+<li>XML instance loaded from input stream into DOM</li>
+<li>XML instance contains template ids</li>
+<li>DOM handed to EMF deserializer</li>
+<li>Loading mechanism is intercepted to inject type information
+<ul>
+<li>DOM gives us look ahead access to get template id</li>
+<li>Template id is used to look up Ecore package/class information from CDA template registry (uses Eclipse plugin extension registry)</li>
+<li>xsi:type information is dynamically added to DOM element</li>
+</ul>
+</li>
+<li>Augmented DOM element is then handed back to EMF to construct Ecore model instance of the correct type according to template model</li>
+</ul></p>
+<codeblock><![CDATA[
+ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("resources/SampleCDADocument.xml"));
+System.out.println(clinicalDocument);
+]]></codeblock>
+</conbody>
+</concept>

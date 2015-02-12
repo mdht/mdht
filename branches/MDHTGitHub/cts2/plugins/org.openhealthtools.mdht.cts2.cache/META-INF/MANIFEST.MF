@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CTS2 Cache
+Bundle-SymbolicName: org.openhealthtools.mdht.cts2.cache
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.openhealthtools.mdht.cts2.cache.internal.Activator
+Bundle-Vendor: XMLmodeling.com
+Require-Bundle: org.eclipse.core.runtime,
+ org.openhealthtools.mdht.cts2.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openhealthtools.mdht.cts2.cache,
+ org.openhealthtools.mdht.cts2.cache.search,
+ org.openhealthtools.mdht.cts2.cache.util

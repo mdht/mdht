@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Code Generation"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Runtime_API.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="codegenerationtask"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Code Generation</title>
+</head>
+<body id="codegenerationtask">
+
+ 
+  <h1 class="title topictitle1">Code Generation</h1>
+ 
+   
+  <div class="body taskbody"> 
+	 <div class="section context" id="codegenerationtask__context_0D0BF750011B46CEB2F870F954797151"> 
+		<p class="p">The implementation model is imported from UML into an Eclipse Modeling
+		  Framework (EMF) model using standard model import functionality. An EMF model
+		  is the aggregation of two different models. The first model is an Ecore model
+		  which contains annotations with constraints from the original UML model. The
+		  second model is the generator model. The generator model contains information
+		  on how to generate Java code from the Ecore model. It essentially "decorates"
+		  the Ecore model with additional information. The Generator model points to a
+		  set of custom code generation templates to generate all Java classes/packages.
+		  The code generation templates were augmented to use annotations added during
+		  the model-to-model transformation step. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="codegenerationtask__steps_D1B06B9EEC86410F8B1E49963EF79CE8"><li class="li step" id="codegenerationtask__step_E0554393DB964EA7A29B7ACB2386FDD3"> 
+		  <span class="ph cmd">Reload GenModel Reload GenModel context menu "Reload..." 
+			 <br/><img class="image" id="codegenerationtask__image_1B430DC4A23C4D129BC280FC0B6BE9BF" src="../images/ReloadContextMenu.png"/><br/> Reload Model
+			 Importer: 
+			 <br/><img class="image" id="codegenerationtask__image_C5ACFDB519204AEF9726AB7128D28273" src="../images/ReloadModelImporter.png"/><br/> Reload UML
+			 Import 
+			 <br/><img class="image" id="codegenerationtask__image_2F723309FE5448C39C20336A38E7C19B" src="../images/ReloadUMLImport.png"/><br/> Reload Package
+			 Selection: 
+			 <br/><img class="image" id="codegenerationtask__image_E9C3F4498533414CBDFB8BEA1CEBF276" src="../images/ReloadPackageSelection.png"/><br/> 
+		  </span> 
+		</li>
+<li class="li step" id="codegenerationtask__step_4F79AEF95873466DABFE93ADE3870863"> 
+		  <span class="ph cmd">Generate Model Code Generate Model Code Context Menu: 
+			 <br/><img class="image" id="codegenerationtask__image_FD760BBDE28942BCB22E90D909CB532A" src="../images/GenerateModelCode.png"/><br/> 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+ 
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
+</div>
+</div>
+
+</body>
+</html>

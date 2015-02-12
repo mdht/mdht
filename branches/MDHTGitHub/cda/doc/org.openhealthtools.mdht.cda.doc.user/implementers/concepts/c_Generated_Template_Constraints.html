@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Generated Template Constraint"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Generated_Constraints.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="generatedtemplateconstraints"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Generated Template Constraint</title>
+</head>
+<body id="generatedtemplateconstraints">
+
+
+<h1 class="title topictitle1">Generated Template Constraint</h1>
+
+<div class="body conbody">
+<p class="p">A template ID constraint is generated from information specified in the CDA Template stereotype as applied to classes in the template model. It is used to check whether all of the appropriate template IDs have been added to the instance</p>
+
+<p class="p">In this example, we check for the template ID associated with ncr::BirthWeight</p>
+
+<pre class="pre codeblock">
+
+self.hasTemplateId('2.16.840.1.113883.10.20.17.3.1')
+
+</pre>
+
+<p class="p">A template relationship constraint is generated from directed associations (and information from stereotypes applied to those assciations) in the template model. It is used to enforce the "has-a" or containtment relationship between templates</p>
+
+<p class="p">In this example, the constraint is used to enforce the relationship between the ncr::EncountersSection and the ncr::NeonatalICUEncounterActivity. Also, note that stereotype properties where used to specify the value of typeCode used in the generated constraint.</p>
+
+<pre class="pre codeblock">
+
+self.entry-&gt;exists(entry : cda::Entry | entry.encounter.oclIsKindOf(ncr::NeonatalICUEncounterActivity) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
+
+</pre>
+
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Generated_Constraints.html">Generated OCL Constraints</a></div>
+</div>
+</div>
+
+</body>
+</html>

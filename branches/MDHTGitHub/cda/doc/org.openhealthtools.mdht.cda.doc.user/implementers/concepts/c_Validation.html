@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Validation"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Runtime_API.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="validationconcept"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Validation</title>
+</head>
+<body id="validationconcept">
+
+
+<h1 class="title topictitle1">Validation</h1>
+
+<div class="body conbody">
+<p class="p">Constraints specified in the form of standard UML constructs such as cardinality are automatically validated as part of the EMF framework</p>
+
+<p class="p">OCL constraints specified by the modeler or generated during the model-to-model transformation are carried through to the EMF model and Java source code</p>
+
+
+<p class="p">EMF validation mechanism</p>
+
+<div class="p">
+<ul class="ul">
+<li class="li">Uses OCL interpreter at run time to validate these constraints</li>
+
+<li class="li">Each Ecore model gets a separate validator (e.g. datatypes, CDA, CCD, etc.)</li>
+
+<li class="li">Validators work together to validate Ecore model instance</li>
+
+</ul>
+
+</div>
+
+
+<p class="p">Output of validation is a diagnostic tree</p>
+
+<div class="p">
+<ul class="ul">
+	<li class="li">Validation severity and message specified in the model are used at runtime</li>
+
+	<li class="li">Diagnostic tree can be processed using CDA utility class</li>
+
+</ul>
+
+</div>
+
+
+<pre class="pre codeblock">
+boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+	@Override
+	public void handleError(Diagnostic diagnostic) {
+		System.out.println("ERROR: " + diagnostic.getMessage());
+	}
+	@Override
+	public void handleWarning(Diagnostic diagnostic) {
+		System.out.println("WARNING: " + diagnostic.getMessage());
+	}
+	@Override
+	public void handleInfo(Diagnostic diagnostic) {
+		System.out.println("INFO: " + diagnostic.getMessage());
+	}
+});
+
+if (valid) {
+	System.out.println("Document is valid");
+} else {
+	System.out.println("Document is invalid");
+}
+</pre>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Runtime_API.html">Runtime API</a></div>
+</div>
+</div>
+
+</body>
+</html>

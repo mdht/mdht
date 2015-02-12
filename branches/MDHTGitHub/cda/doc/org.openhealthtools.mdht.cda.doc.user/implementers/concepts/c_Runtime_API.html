@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Runtime API"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Implementers.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/tasks/t_Code_Generation.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Serialization.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Deserialization.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../implementers/concepts/c_Validation.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="runtimeapiconcept"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../../css/commonltr.css"/>
+<title>Runtime API</title>
+</head>
+<body id="runtimeapiconcept">
+
+
+<h1 class="title topictitle1">Runtime API</h1>
+
+<div class="body conbody">
+<p class="p">The Runtime API is comprised of:</p>
+
+<ul class="ul">
+<li class="li">CDA, data types, and vocabulary runtime APIs with helper methods to assist in writing constraints</li>
+
+<li class="li">Java classes/packages generated for template model</li>
+
+<li class="li">Utility class with convenience methods to save, load, and validate documents</li>
+
+</ul>
+
+<p class="p">Additional UML operations specified in the template model are carried through to the Java source code and can be implemented directly in the model using OCL or by specifying the method body in the generated code. This gives the modeler the ability to add convenience to the runtime API at design-time. Annotations generated from the template model are used to populate the runtime instance for default/fixed values. This reduces the number of method calls required to build a document.</p>
+
+<p class="p">Path expression support (experimental) has also been added to construct parts of a document efficiently. This is mainly intended to be a transitional API for those familiar with the XML structure of a CDA document.</p>
+
+<pre class="pre codeblock">
+CDAUtil.create("/component/structuredBody/component/section", CCDPackage.Literals.PROBLEM_SECTION);
+</pre>
+</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../../implementers/tasks/t_Code_Generation.html">Code Generation</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="../../implementers/concepts/c_Serialization.html">Producing an XML instance (serialization)</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="../../implementers/concepts/c_Deserialization.html">Consuming an XML instance (deserialization)</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="../../implementers/concepts/c_Validation.html">Validation</a></strong><br/>
+</li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../implementers/concepts/c_Implementers.html">Standards Implementers</a></div>
+</div>
+</div>
+
+</body>
+</html>

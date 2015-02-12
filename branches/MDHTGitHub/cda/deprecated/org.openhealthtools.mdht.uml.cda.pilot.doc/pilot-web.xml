@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="CDA Tools Design Pilot" topic="introduction/Introduction.html">
+   <topic label="INTRODUCTION" href="introduction/Introduction.html">
+      <topic label="Purpose" href="introduction/Purpose.html"/>
+      <topic label="Approach" href="introduction/Approach.html"/>
+      <topic label="Scope" href="introduction/Scope.html"/>
+      <topic label="Audience" href="introduction/Audience.html"/>
+      <topic label="Organization of This Guide" href="introduction/OrganizationOfGuide.html"/>
+      <topic label="Use of Templates" href="introduction/UseOfTemplates.html"/>
+      <topic label="Conventions Used in This Guide" href="introduction/ConventionsUsed.html"/>
+      <topic label="Contents of the DSTU Ballot Package"
+             href="introduction/ContentsOfBallotPackage.html"/>
+   </topic>
+   <topic label="DOCUMENT TEMPLATES" href="content/DocumentTemplates.html">
+      <topic label="Tuberculosis Follow Up Progress Note"
+             href="classes/TuberculosisFollowUpProgressNote.html"/>
+   </topic>
+   <topic label="SECTION TEMPLATES" href="content/SectionTemplates.html">
+      <topic label="TB Results Section" href="classes/TBResultsSection.html"/>
+   </topic>
+   <topic label="CLINICAL STATEMENT TEMPLATES"
+          href="content/ClinicalStatementTemplates.html">
+      <topic label="TB Result Observation" href="classes/TBResultObservation.html"/>
+      <topic label="TB Result Organizer" href="classes/TBResultOrganizer.html"/>
+   </topic>
+   <topic label="OTHER CLASSES" href="content/OtherClasses.html"/>
+   <topic label="VALUE SETS" href="content/ValueSets.html"/>
+</toc>

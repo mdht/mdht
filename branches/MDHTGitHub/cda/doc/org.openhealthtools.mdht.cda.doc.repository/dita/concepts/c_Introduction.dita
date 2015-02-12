@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_786B7EB1BBA048BE8699376180173664"> 
+  <title>Introduction</title> 
+  <shortdesc>Overview of the Model-Driven Health Tools (MDHT) CDA Tools 
+  </shortdesc> 
+  <conbody> 
+	 <p>CDA Tools is a component within the Model-Driven Health Tools (MDHT)
+		project and provides UML-based tools for constraining HL7 Clinical Document
+		Architecture (CDA) to create reusable templates and implementation guides.
+		Tooling for consumers and implementers of CDA is produced by generating runtime
+		components from models of implementation guides. Objectives of the CDA Tools
+		are to: 
+	 </p> 
+	 <ul id="ul_839DB4B9E5B349698C488EF00A8FCBF7"> 
+		<li id="li_963CD23DB4A141078E307291B62D5540">Accelerate and lower cost of
+		  adopting CDAr2 standard. 
+		</li> 
+		<li id="li_1ECCC7F2DDC84E32BF1EBC060887D1EC">Provide a model-driven
+		  framework for generating runtime API that supports: 
+		  <ul id="ul_66DCC8F66F65471EB3623C05123F34C8"> 
+			 <li id="li_90287EBB9D8E4E63BF8D96F66EB39D96">Domain specific API
+				(e.g. BloodPressureReading instead of Observation) 
+			 </li> 
+			 <li id="li_3551D74228254B249100DD4AB618BC10">Construction of
+				instances that conform to one or more templates 
+			 </li> 
+			 <li id="li_020A2E4F10DC46D58CA692FC63655D6B">Consumption of XML
+				instances that deserialize into appropriate template 
+			 </li> 
+		  </ul> 
+		</li> 
+		<li id="li_66517330900545498AD3423AA09EB3FF">Support the validation of
+		  instances against constraints defined in model. 
+		</li> 
+	 </ul> 
+	 <p>User Roles: 
+	 </p> 
+	 <ul id="ul_D533EE0ABFD544C09F957DD8CB44E26B"> 
+		<li id="li_CDC8BFC99A704D70BC906F0ADDCCD0EA">Healthcare IT Standards
+		  Developer/Publisher 
+		  <ul id="ul_78F9799CDF5347E1B790D74EEE29DD5B"> 
+			 <li id="li_ABA66CB993A849E1A6A3106105E56091">Create new
+				models/templates 
+			 </li> 
+			 <li id="li_25FF7F0BA08F4C9C8BDCDE4DCD89C5BB">Combine and extend
+				existing models 
+			 </li> 
+			 <li id="li_70EB2D173BDC49E5BF93A78792E1111F">Publish Implementation
+				Guides (IG), IHE Profiles, Data Dictionaries 
+			 </li> 
+		  </ul> 
+		</li> 
+		<li id="li_BAE07915440F4F09B308AD66182363C5">Healthcare IT Standards
+		  User/Implementer 
+		  <ul id="ul_22BC14C2EEE642BBAC3BEEF74FD5B1DD"> 
+			 <li id="li_AD91748E133947D5BA4350A5A8C0E3F8">Use generated runtime
+				API in healthcare data exchange applications (e.g. EMR adapters to
+				export/import CDA instances) 
+			 </li> 
+			 <li id="li_727A71AF588946C4A85318758670C7BC">Minor modifications to
+				existing models/templates 
+			 </li> 
+		  </ul> 
+		</li> 
+	 </ul> 
+	 <p><image alt="CDA Tools Process Flow" href="images/ProcessFlow.png"
+		id="image_417A05BAD58B44B9AA095B5BB3CD3DC5"/> 
+	 </p> 
+  </conbody>
+</concept>

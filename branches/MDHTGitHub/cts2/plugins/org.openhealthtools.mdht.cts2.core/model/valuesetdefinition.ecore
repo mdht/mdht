@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="valuesetdefinition"
+    nsURI="http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition" nsPrefix="valuesetdefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="AssociatedEntitiesReference">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The description of a set of entities that are associated with a referenced entity. This description names a reference entity and an association predicate, which identifies a set of entities that are related to&#xA;&#x9;&#x9;&#x9;&#x9;the reference entity according to a given code system. The description can reference the direct targets of the association (children), the direct sources of the association (parents), the transitive closure of the&#xA;&#x9;&#x9;&#x9;&#x9;association targets (descendants), the transitive closure of the association sources (ancestors) and can state whether all intermediate nodes are included in the closure or just the leaf nodes.Note that the terms &quot;parent&quot;&#xA;&#x9;&#x9;&#x9;&#x9;and &quot;children&quot; are asserted in reference to the predicate itself. As an example, in the association &quot;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>arm subClassOf bodyPart&lt;/i>&quot;, the &quot;parent&quot; is &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>arm&lt;/i> and the &quot;child&quot; is &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>bodyPart&lt;/i>."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AssociatedEntitiesReference"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedEntity" lowerBound="1"
+        eType="ecore:EClass core.ecore#//URIAndEntityName" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the entity reference that is the root of the association description. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>referencedEntity&lt;/i> is not considered to be part of the resolution of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>AssociatedEntitiesReference&lt;/i>. If it is to be&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;included in the final set, it must be explicitly named in a second &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>SpecificEntityList&lt;/i> construct."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="referencedEntity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeSystem" lowerBound="1"
+        eType="ecore:EClass core.ecore#//CodeSystemReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the code system that makes the association assertions"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="codeSystem"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeSystemVersion" eType="ecore:EClass core.ecore#//CodeSystemVersionReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the version of the code system that makes the association assertions. If present, \\&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>codeSystemVersion&lt;/i> must be a version of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>codeSystem&lt;/i>. If this attribute is present, the referenced version&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;of the code system will always be used to resolve the associations. If absent, the specific version of the code system to be used in resolution is determined in the resolve value set definition call&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;itself."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="codeSystemVersion"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" lowerBound="1"
+        eType="ecore:EClass core.ecore#//PredicateReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the association predicate to be used in resolving the definition entry."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="predicate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="ecore:EEnum core.ecore#//AssociationDirection" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="an indicator that determines whether the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>referencedEntity&lt;/i> serves in the source (&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>SOURCE_TO_TARGET&lt;/i>) or target (&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>TARGET_TO_SOURCE&lt;/i>) role."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="direction"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="leafOnly" eType="#//LeafOrAll"
+        defaultValueLiteral="ALL_INTERMEDIATE_NODES" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="an indicator that determines whether all nodes in the transitive closure are to be included in the resulting set or only the nodes that terminate the closure. This indicator is ignored if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>transitivity&lt;/i> is not &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>TRANSITIVE_CLOSURE&lt;/i>. Note that nodes that participate in cycles are not included if &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>leafOnly&lt;/i> is set to &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>LEAF_ONLY&lt;/i>."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="leafOnly"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitivity" eType="#//TransitiveClosure"
+        defaultValueLiteral="DIRECTLY_ASSOCIATED" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="an indicator that determines whether only entity references that participate in a direct association with the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>referencedEntity&lt;/i> are considered to be a part of the definition or whether all entity&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;references that appear on the transitive closure of entity reference are to be included. Note that &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>leafOnly&lt;/i> further qualifies this result."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="transitivity"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompleteCodeSystemReference">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An entry that, when resolved, returns all of the active entity references in a given code system. This includes all entity references that appear as the source of one or more statements in the code system,&#xA;&#x9;&#x9;&#x9;&#x9;whether the assertions are made directly by a version of the code system or indirectly by a version of a different code system that is imported. Note that targets are not included to prevent codes from rdf, rdfs, owl, etc&#xA;&#x9;&#x9;&#x9;&#x9;being included in this resolution set."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CompleteCodeSystemReference"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeSystem" lowerBound="1"
+        eType="ecore:EClass core.ecore#//CodeSystemReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A reference to the code system whose codes are to be included."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="codeSystem"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeSystemVersion" eType="ecore:EClass core.ecore#//CodeSystemVersionReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A reference to the specific version of the code system to include. If not supplied, the specific version of the code system is determined in the resolution call itself."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="codeSystemVersion"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompleteValueSetReference">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A reference to a value set that, when resolved, results in a set of entity references that are included in this entry. An entry of this type can just name a value set, meaning that the specific definition is&#xA;&#x9;&#x9;&#x9;&#x9;determined in the resolve value set call, can name both a value set and value set definition, meaning that the specific definition is always used in the resolution. It can also specify one or more code system versions to be&#xA;&#x9;&#x9;&#x9;&#x9;used in the resolution of the named value set."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CompleteValueSetReference"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSet" lowerBound="1"
+        eType="ecore:EClass core.ecore#//ValueSetReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a reference to the value set whose definition supplies a set of entity references."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="valueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSetDefinition" eType="ecore:EClass core.ecore#//ValueSetReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a reference to a particular definition of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>valueSet&lt;/i> that is to be used in resolving this reference. If absent, the specific definition is determined by the resolve value set call. If present,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>valueSetDefinition&lt;/i> must be a definition of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>valueSet&lt;/i> and will always be used to resolve this entity set."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="valueSetDefinition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceCodeSystemVersion"
+        eType="ecore:EClass core.ecore#//CodeSystemVersionReference" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a reference to a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>CodeSystemVersion&lt;/i> that will be used to resolve this call. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>referenceCodeSystemVersion&lt;/i> will only be used if one or more components of the resolution of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>valueSet&lt;/i>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;identify a code system without specifying a specific version. At most, only one version of a given code system may appear in the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>referenceCodeSystemVersion&lt;/i> list. While CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>2&lt;/sub> service implementations&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;must resolve resolution calls for definitions that carry unused &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>referenceCodeSystemVersion&lt;/i> entries, they may choose to issue a warning at the time the definition is created or loaded."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="referenceCodeSystemVersion"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xMLNSPrefixMap" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xmlns:prefix"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xSISchemaLocation" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xsi:schemaLocation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iteratableResolvedValueSet"
+        upperBound="-2" eType="#//IteratableResolvedValueSet" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IteratableResolvedValueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedValueSet" upperBound="-2"
+        eType="#//ResolvedValueSet" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The result of resolving a specific value set definition against a known set of code system versions. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ResolvedValueSet&lt;/i> consists of a header that carries sufficient information that the resolution&#xA;&#x9;&#x9;&#x9;&#x9;operation would be repeatable and the result of the resolution, which consists of set of EntityReferences."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResolvedValueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedValueSetDirectory"
+        upperBound="-2" eType="#//ResolvedValueSetDirectory" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResolvedValueSetDirectory"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedValueSetMsg" upperBound="-2"
+        eType="#//ResolvedValueSetMsg" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResolvedValueSetMsg"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedValueSetSummary"
+        upperBound="-2" eType="#//ResolvedValueSetSummary" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResolvedValueSetSummary"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSetDefinition" upperBound="-2"
+        eType="#//ValueSetDefinition" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ValueSetDefinition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSetDefinitionDirectory"
+        upperBound="-2" eType="#//ValueSetDefinitionDirectory" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ValueSetDefinitionDirectory"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSetDefinitionEntry"
+        upperBound="-2" eType="#//ValueSetDefinitionEntry" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An element of a value set definition that, when resolved yields a set of entity references that are to be included in, excluded from or intersected with the set of elements that represent the full resolution of&#xA;&#x9;&#x9;&#x9;&#x9;the definition.Note that only &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ACTIVE&lt;/i> entity references are included. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>INACTIVE&lt;/i> entity references may never be considered for inclusion or exclusion in the resolution of a value set definition."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ValueSetDefinitionEntry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSetDefinitionList"
+        upperBound="-2" eType="#//ValueSetDefinitionList" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ValueSetDefinitionList"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSetDefinitionMsg"
+        upperBound="-2" eType="#//ValueSetDefinitionMsg" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ValueSetDefinitionMsg"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalValueSetDefinition" eSuperTypes="core.ecore#//OpaqueData">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A definition of a value set whose format and semantics is specified outside of the core CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>2&lt;/sub> specification. If a given CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>2&lt;/sub> service recognizes the syntax and semantics of this definition,&#xA;&#x9;&#x9;&#x9;&#x9;it may call the appropriate process to resolve it. If the definition is not recognized, a CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>2&lt;/sub> service implementation must not process the containing value set definition and, instead, return an&#xA;&#x9;&#x9;&#x9;&#x9;error."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ExternalValueSetDefinition"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IteratableResolvedValueSet" eSuperTypes="core.ecore#//Directory">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ResolvedValueSet whose contents are available as a set of directory entries that allows iteration."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="IteratableResolvedValueSet"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolutionInfo" lowerBound="1"
+        eType="#//ResolvedValueSetHeader" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the set of parameters that were used in the resolution of this set. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>resolutionInfo&lt;/i> provides all the information necessary to recreate the actual &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>resolution&lt;/i> when presented to a&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>2&lt;/sub> service instance that contains all of the necessary definitions and code system versions."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resolutionInfo"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="ecore:EClass core.ecore#//EntitySynopsis" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a synopsis of the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>EntityDescription&lt;/i> that has been determined to be a member of the value set named in &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>resolutionInfo&lt;/i> according to the stated criteria or &quot;bindings&quot;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LeafOrAll">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Indicates whether intermediate nodes in a transitive closure are to be included in the result or only the &quot;leaf&quot; nodes."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="LeafOrAll"/>
+    </eAnnotations>
+    <eLiterals name="LEAFONLY" literal="LEAF_ONLY">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="only nodes who can be inferred to participate as a source but not a target of an association if &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>direction &lt;/i>is &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>SOURCE_TO_TARGET&lt;/i>, or a target but not a source if &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>direction&lt;/i> is&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>TARGET_TO_SOURCE&lt;/i>, are included in the set of entity references."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ALLINTERMEDIATENODES" value="1" literal="ALL_INTERMEDIATE_NODES">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="all (active) nodes are to be included in the transitive closure. "/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="LeafOrAllObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="LeafOrAll:Object"/>
+      <details key="baseType" value="LeafOrAll"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyQueryReference">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A description of a set of entity references that are determined by applying a filter to the attribute(s) or property(s) that appear in an &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>EntityDescription&lt;/i> in a specified code system."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PropertyQueryReference"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeSystem" lowerBound="1"
+        eType="ecore:EClass core.ecore#//CodeSystemReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The code system that contains the assertions that form the attributes or properties to be tested."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="codeSystem"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeSystemVersion" eType="ecore:EClass core.ecore#//CodeSystemVersionReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The version of the code system that makes the assertions. If present, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>codeSystemVersion&lt;/i> must be a version of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>codeSystem&lt;/i>. If this attribute is present, the referenced version of the code&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;system will always be used to resolve the attributes or properties. If absent, the specific version of the code system to be used in resolution is determined in the resolve value set definition call&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;itself."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="codeSystemVersion"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" lowerBound="1"
+        eType="ecore:EClass core.ecore#//FilterComponent" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The filter to be applied to entities in the referenced code system. "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="filter"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResolvedValueSet">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The result of resolving a specific value set definition against a known set of code system versions. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ResolvedValueSet&lt;/i> consists of a header that carries sufficient information that the resolution&#xA;&#x9;&#x9;&#x9;&#x9;operation would be repeatable and the result of the resolution, which consists of set of EntityReferences."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResolvedValueSet"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolutionInfo" lowerBound="1"
+        eType="#//ResolvedValueSetHeader" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the set of parameters that were used in the resolution of this set. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>resolutionInfo&lt;/i> provides all the information necessary to recreate the actual &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>resolution&lt;/i> when presented to a&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;CTS&lt;sub xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>2&lt;/sub> service instance that contains all of the necessary definitions and code system versions."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resolutionInfo"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" upperBound="-1"
+        eType="ecore:EClass core.ecore#//EntitySynopsis" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a synopsis of the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>EntityDescription&lt;/i> that has been determined to be a member of the value set named in &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>resolutionInfo&lt;/i> according to the stated criteria or &quot;bindings&quot;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="member"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResolvedValueSetDirectory" eSuperTypes="core.ecore#//Directory">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A directory of resolved value sets."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResolvedValueSetDirectory"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//ResolvedValueSetDirectoryEntry" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResolvedValueSetDirectoryEntry" eSuperTypes="#//ResolvedValueSetSummary">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An entry in a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ResolvedValueSetDirectory&lt;/i>."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResolvedValueSetDirectoryEntry"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" eType="ecore:EDataType core.ecore#//RenderingURI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>LocalURI &lt;/i>that resolves to the full resource described by the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>DirectoryEntry&lt;/i>. This should be present if the service either (a) supports the &lt;b xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>Read&lt;/b> functional profile for the specified&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>type &lt;/i>or (b) is aware of another service that does."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="href"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchStrength" eType="ecore:EDataType core.ecore#//MatchStrength"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a relative measure of the &quot;goodness of fit&quot; of the directory entry within the context of the &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>directoryFilter&lt;/i> in the containing &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>Directory.&lt;/i>&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="matchStrength"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceName" eType="ecore:EDataType core.ecore#//LocalIdentifier">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a local identifier that names a unique resource within the context of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>type&lt;/i> and the service context. This attribute must be present if the corresponding element has a local name. Note, however, that&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;some elements (e.g. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>Association&lt;/i>, &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>ValueSetDefinition&lt;/i>, etc.) do not local names and are identified exclusively by their &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/Core&quot;>href&lt;/i>."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="resourceName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResolvedValueSetHeader">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The information required to completely resolve a value set definition. "/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResolvedValueSetHeader"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolutionOf" lowerBound="1"
+        eType="ecore:EClass core.ecore#//ValueSetDefinitionReference" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the specific value set definition that was resolved"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resolutionOf"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedUsingCodeSystem"
+        upperBound="-1" eType="ecore:EClass core.ecore#//CodeSystemVersionReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a reference to a code system version that was used in the resolution of this value set definition"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resolvedUsingCodeSystem"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includesResolvedValueSet"
+        upperBound="-1" eType="#//ResolvedValueSetHeader" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the value set includes other value sets, this contains the resolution information used to resolve the inner value sets."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="includesResolvedValueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResolvedValueSetMsg" eSuperTypes="core.ecore#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ResolvedValueSet&lt;/i> read from a service instance."/>
+    </eAnnotations>
+    <eAnnotations>
+      <details key="appinfo" value="PSM"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResolvedValueSetMsg"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedValueSet" lowerBound="1"
+        eType="#//ResolvedValueSet" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resolvedValueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResolvedValueSetSummary">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResolvedValueSetSummary"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedHeader" lowerBound="1"
+        eType="#//ResolvedValueSetHeader" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resolvedHeader"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolvedValueSetURI" lowerBound="1"
+        eType="ecore:EDataType core.ecore#//LocalURI">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="resolvedValueSetURI"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SetOperator">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="General set operators that specify set union, difference or intersection in various contexts"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SetOperator"/>
+    </eAnnotations>
+    <eLiterals name="UNION">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Include all members of both sets in the result"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="INTERSECT" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="include only members common to both sets in the result"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SUBTRACT" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="remove all members in the second set from the first set"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="SetOperatorObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SetOperator:Object"/>
+      <details key="baseType" value="SetOperator"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificEntityList">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="a list of specific entity references that are to be included in the definition. When specified in this form, the service must include all entities in this list whether they are known to the service or not, and&#xA;&#x9;&#x9;&#x9;&#x9;whether they are currently &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ACTIVE&lt;/i> or not."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SpecificEntityList"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedEntity" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass core.ecore#//URIAndEntityName" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the namespace / name or URI of an entity to be included"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="referencedEntity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransitiveClosure">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Indicates whether only directly associated nodes or the transitive closure over the supplied predicate is to be used in the resolution of an entity reference and predicate. "/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="TransitiveClosure"/>
+    </eAnnotations>
+    <eLiterals name="DIRECTLYASSOCIATED" literal="DIRECTLY_ASSOCIATED">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="oOnly entity references that are explicitly assert to be directly associated with the source entity are included. Associations whose &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>derivation&lt;/i> is &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>INFERRED&lt;/i> are not considered when this&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;setting is used."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TRANSITIVECLOSURE" value="1" literal="TRANSITIVE_CLOSURE">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="both entity references that are explicitly asserted to be directly associated with the source entity are included and entities that can be inferred to participate in the association named by&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>predicate&lt;/i> are included as candidates for the set, although the final resolution may depend on other factors such as a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>LeafOrAll&lt;/i> setting."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="TransitiveClosureObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="TransitiveClosure:Object"/>
+      <details key="baseType" value="TransitiveClosure"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetDefinition" eSuperTypes="core.ecore#//ResourceVersionDescription">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ValueSetDefinition"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedValueSet" lowerBound="1"
+        eType="ecore:EClass core.ecore#//ValueSetReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a reference to the value set being defined"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="definedValueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionTag" upperBound="-1"
+        eType="ecore:EClass core.ecore#//VersionTagReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a version tag assigned to this definition by the implementing service"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="versionTag"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" lowerBound="1" upperBound="-1"
+        eType="#//ValueSetDefinitionEntry" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetDefinitionDirectory" eSuperTypes="core.ecore#//Directory">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A directory of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ValueSetDefinition&lt;/i> resources that meet a specified criteria."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ValueSetDefinitionDirectory"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//ValueSetDefinitionDirectoryEntry" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetDefinitionDirectoryEntry" eSuperTypes="core.ecore#//ResourceVersionDescriptionDirectoryEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A synopsis of a &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ValueSetDefinition&lt;/i> along with information about how to access the complete resource."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ValueSetDefinitionDirectoryEntry"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedValueSet" lowerBound="1"
+        eType="ecore:EClass core.ecore#//ValueSetReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the value set that this definition applies to"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="definedValueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionTag" upperBound="-1"
+        eType="ecore:EClass core.ecore#//VersionTagReference" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a version tag assigned to this entry by the service instance"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="versionTag"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetDefinitionEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An element of a value set definition that, when resolved yields a set of entity references that are to be included in, excluded from or intersected with the set of elements that represent the full resolution of&#xA;&#x9;&#x9;&#x9;&#x9;the definition.Note that only &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ACTIVE&lt;/i> entity references are included. &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>INACTIVE&lt;/i> entity references may never be considered for inclusion or exclusion in the resolution of a value set definition."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ValueSetDefinitionEntry"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedEntities" eType="#//AssociatedEntitiesReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="associatedEntities"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="completeCodeSystem" eType="#//CompleteCodeSystemReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="completeCodeSystem"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="completeValueSet" eType="#//CompleteValueSetReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="completeValueSet"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalValueSetDefinition"
+        eType="#//ExternalValueSetDefinition" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="externalValueSetDefinition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyQuery" eType="#//PropertyQueryReference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="propertyQuery"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityList" eType="#//SpecificEntityList"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entityList"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entryOrder" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//PositiveInteger">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="entryOrder"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EEnum core.ecore#//SetOperator" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="instructions for how the results of the entry evaluation will be applied to the set of entities in the base definition. Results can be added to the set (&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>UNION&lt;/i>), intersected with members already in&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;the set (&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>INTERSECT&lt;/i>) or be removed from the set (&lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>DIFFERENCE&lt;/i>)"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="operator"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetDefinitionList" eSuperTypes="core.ecore#//Directory">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A collection of complete &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ValueSetDefinition &lt;/i> resources that meet a specified criteria."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ValueSetDefinitionList"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//ValueSetDefinitionListEntry" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetDefinitionListEntry" eSuperTypes="core.ecore#//DirectoryEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An instance of &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ValueSetDefinition &lt;/i>that meets a specified filter criteria."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ValueSetDefinitionListEntry"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//ValueSetDefinition" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="entry"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetDefinitionMsg" eSuperTypes="core.ecore#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A &lt;i xmlns=&quot;http://schema.omg.org/spec/CTS2/1.0/ValueSetDefinition&quot;>ValueSetDefinition&lt;/i> read from a service instance."/>
+    </eAnnotations>
+    <eAnnotations>
+      <details key="appinfo" value="PSM"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ValueSetDefinitionMsg"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSetDefinition" lowerBound="1"
+        eType="#//ValueSetDefinition" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="valueSetDefinition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

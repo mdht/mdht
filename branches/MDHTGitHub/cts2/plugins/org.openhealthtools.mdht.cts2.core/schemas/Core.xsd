@@ -1,0 +1,2106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.omg.org/spec/CTS2/1.0/Core" targetNamespace="http://schema.omg.org/spec/CTS2/1.0/Core" elementFormDefault="qualified">
+
+
+	<!-- ===============================================
+		 DataTypes
+		 =============================================== -->
+	<xs:simpleType name="String">
+		<xs:annotation>
+			<xs:documentation>a non-empty sequence of characters. As terminological resourcesare often multilingual, it is expected that most CTS<sub>2</sub> Platform SpecificModels (PSMs) will require that the <i>String </i>implementation
+				supportinternational character sets.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- TODO: Need to map this to a less restrictive type (?) -->
+	<xs:simpleType name="DateAndTime">
+		<xs:annotation>
+			<xs:documentation>represents an "Instant" as defined in the <a href="//http://www.w3.org/TR/owl-time/">OWL Time Specification</a>.CTS<sub>2</sub> implementations must be able to support temporal units of <i>second</i>,
+					<i>minute</i>, <i>hour</i>, <i>day</i>, <i>month</i>, and <i>year</i>, and be able to represent and compare instances represented in any of these units. <i>DateAndTime</i> can only provide a partial ordering and, as a
+				consequence, is never used as an index, unique identifier or to sequence data or events.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="Enumeration">
+		<xs:annotation>
+			<xs:documentation>"An enumeration defines a set of literals that can beused as its values" <i><sub>UML Infrastructure, Version 2.3, Section 10.3.2</sub></i>. Because enumeration is a built in part of the UML meta model, the
+				\guillemotleft enumeration \guillemotright ~stereotype is used to represent them in the UML rendering.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- TODO: create a match pattern that corresponds with the reference spec -->
+	<xs:simpleType name="LocalIdentifier">
+		<xs:annotation>
+			<xs:documentation>an identifier that uniquely references a class, individual, property or other resource within the context of a specific CTS<sub>2</sub> service implementation. <i>LocalIdentifier</i> syntax must match the <a
+					href="//http://www.w3.org/TR/rdf-sparql-query/#rPNAME_LN">PNAME_LN</a> production as defined in the <a href="//http://www.w3.org/TR/rdf-sparql-query/">SPARQL Query Specification</a> . <i>LocalIdentifiers</i> may begin
+				with leading digits, where XML Local Identifiers and <i>NameSpaceIdentifier</i>s may not</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NamespaceIdentifier">
+		<xs:annotation>
+			<xs:documentation>an identifier that uniquely references thescoping namespace of an <i>Entity</i> (class, role or individual) within a the context of a CTS<sub>2</sub> service. <i>NamespaceIdentifier </i>syntax must match the <a
+					href="//http://www.w3.org/TR/rdf-sparql-query/#rPNAME_NS">PNAME_NS</a> production as defined in the <a href="//http://www.w3.org/TR/rdf-sparql-query/">SPARQL Query Specification - meaning that it must begin alphabetic
+					character.</a></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NCName">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="URI">
+		<xs:annotation>
+			<xs:documentation>a Universal Resource Identifier (URI) as defined in <a href="//http://www.ietf.org/rfc/rfc3986.txt">IETF RFC 3986</a>. CTS<sub>2</sub> implementations are encouraged to consider implementing this data type
+				using the IRI (<a href="//http://www.ietf.org/rfc/rfc3987.txt">RFC3987</a>) specification.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="MatchStrength">
+		<xs:annotation>
+			<xs:documentation>represents the relative strength of the result of a search. Represented as a real number $\mathbb{R}$ such that $0.0 &amp;lt; MatchStrength \leq 1.0$.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0.0"/>
+			<xs:maxInclusive value="1.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NaturalNumber">
+		<xs:annotation>
+			<xs:documentation>a non-negative integer ($\nat$). <i>NaturalNumber</i> is used exclusively for representing quantities in this specification.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="AmountOfTime">
+		<xs:annotation>
+			<xs:documentation>a quantity of time. <i>AmountOfTime</i> is used exclusively to represent service timeout limits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger"/>
+	</xs:simpleType>
+
+	<!-- ===============================================
+		OpaqueData
+		=============================================== -->
+	<xs:complexType mixed="true" name="tsAnyType">
+		<xs:annotation>
+			<xs:documentation>An opaque inner type that can contain any well-formed, but arbitrary information.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OpaqueData">
+		<xs:annotation>
+			<xs:documentation>Opaque data is the equivalent of an ASN.1 External Type <i><sub>ISO/IEC 8824-1:2008 Information technology -- Abstract Syntax Notation One (ASN.1): Specification of basic notion. Clause 37 - Notation for the
+						external type</sub></i> or the XML Schema <a href="//http://www.w3.org/TR/xmlschema-0/\#anyType">anyType</a>. An <i>OpaqueData</i> instance may represent text with an optional spoken or written language code or a
+				formal structure such as embedded HTML, XML or MIME encoded data. When a formal structure is included, its type should be specified in the <i>format</i> attribute and, when the type is an XML variant, the corresponding
+				schema (or DTD) should be included in the <i>schema</i> parameter.The <i>OpaqueData</i> data type must be encoded in such a way that the content can be represented by a character string. Binary data is not permitted,although
+				hyperlinks <i>to</i> binary data are.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="value" type="tsAnyType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the instance value. Note that instance value should be encoded in such a way that it allows embedded structures. As an example, in XML Schema, this encoding should be to xs:anyType or an
+						equivalent.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="format" type="FormatReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the format or encoding for <i>value. </i>This is typically recorded as the URI of a <a href="//http://www.ietf.org/rfc/rfc2046.txt">Mime Type</a>.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="language" type="LanguageReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a reference to the written or spoken language used in <i>value</i>.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="schema" type="DocumentURI" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>if the format of the document involves an XML encoding, this contains the URI of a document that carries the corresponding XML Schema or DTD.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="EntryDescription">
+		<xs:annotation>
+			<xs:documentation><i>EntryDescription</i> is a subclass of <i>OpaqueData</i>. The purpose behind this is that there are certain textual fields that some CTS<sub>2</sub> service implementations may want constrain. As an example,
+					<i>Designation</i> text is of type \\ <i>EntryDescription</i>, but implementations may want to restrict the <i>OpaqueData</i>
+				<i>value </i>attribute to a simple string rather than xs:anyType. When <i>OpaqueData</i> appears directly as a model element, implementations must be able to support the full <i>OpaqueData</i> model. <i>EntryDescription</i>,
+				however, may be constrained by implementations or specialized PSMs.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="OpaqueData"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ===============================================
+		TypesOfURI
+		=============================================== -->
+	<xs:simpleType name="PersistentURI">
+		<xs:annotation>
+			<xs:documentation>a Universal Resource Identifier (URI) that persists across service instances. Persistent URI's have enduring reference and meaning.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="URI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="ChangeSetURI">
+		<xs:annotation>
+			<xs:documentation>the unique identifier of a set of change instructions that can potentially transform the contents of CTS<sub>2</sub> service instance from one state to another. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="PersistentURI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="DocumentURI">
+		<xs:annotation>
+			<xs:documentation>a reference to a "work" in the bibliographic sense. It is not necessary that a <i>DocumentURI</i> be directly or indirectly resolvable to a digital resource - it may simply be the name of a book, publication or
+				other abstraction.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="PersistentURI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="ExternalURI">
+		<xs:annotation>
+			<xs:documentation>a URI that names a unique resource. CTS<sub>2</sub> implementations should never assume that <i>ExternalURI</i> is resolvable via an http: GET operation - <i>ExternalURI</i>s should always be passed as
+				parameters to service implementations to get the sanctioned equivalent in a given service context</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="PersistentURI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="LocalURI">
+		<xs:annotation>
+			<xs:documentation>a URI or handle whose scope is local to the implementing service. <i>LocalURI</i> cannot be used as a permanent identifier in a message or a data record.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="URI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="DirectoryURI">
+		<xs:annotation>
+			<xs:documentation>the unique name of a query that, when executed results in a list of resources that, in the context of a given service, satisfy the query.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalURI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="RenderingURI">
+		<xs:annotation>
+			<xs:documentation>a URI or handle that is directly readable by a specific instance of a CTS<sub>2</sub> service implementation. <i>RenderingURI </i>must resolve to <i>Changeable</i> CTS<sub>2</sub> element. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalURI"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="ServiceURI">
+		<xs:annotation>
+			<xs:documentation>the URI or handle of a service implementation. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalURI"/>
+	</xs:simpleType>
+
+	<!-- ====================================================
+		Updates
+		======================================================-->
+	<xs:group name="ChangeableElementGroup">
+		<xs:sequence>
+			<xs:element name="status" type="StatusReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the state of this model element in an externally defined workflow</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="changeDescription" type="ChangeDescription" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Detailed information about the last change that resulted in this changeable element being in the state that it is now. changeDescription is only present in services that support the HISTORY profile and then only when specifically requested.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:attributeGroup name="ChangeableAttributeGroup">
+		<xs:attribute name="entryState" type="EntryState" default="ACTIVE">
+			<xs:annotation>
+				<xs:documentation>an indicator that states whether the <i>Changeable</i> element is <i>ACTIVE</i>, and subject to searching and browsing access or <i>INACTIVE</i>, meaning that it is only accessible if its identity is
+					already known or if the service calls specifically state that they want to see inactive service elements</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+
+	<xs:complexType name="Changeable" abstract="true">
+		<xs:annotation>
+			<xs:documentation>An element that can evolve over time. All <i>Changeable</i> elements must have identity.</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="ChangeableElementGroup"/>
+		<xs:attributeGroup ref="ChangeableAttributeGroup"/>
+	</xs:complexType>
+
+	<xs:simpleType name="EntryState">
+		<xs:annotation>
+			<xs:documentation>the current state of the <i>Changeable</i> element. Note that <i>entryState</i> represents the state of the element itself - <i>not</i> the state of a given change. The applicability of a given change is
+				identified by its <i>effectiveDate,</i> not <i>entryState</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="INACTIVE">
+				<xs:annotation>
+					<xs:documentation>the <i>ChangeAble</i> element is no longer considered to be an active component. The element may still be retrieved if its <i>entryID</i> is known, but it does not appear in search and browse operations
+						unless specifically requested.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ACTIVE">
+				<xs:annotation>
+					<xs:documentation>the <i>Changeable</i> element is considered to be an active member of the containing resource and may appear in any search, browse or query operations.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="ChangeDescription">
+		<xs:annotation>
+			<xs:documentation>The detailed description of what happened to a changeable resource. <i>ChangeDescription</i> will only be present in service profiles that support either the <b>History</b> or <b>MAINTENANCE </b>profiles.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="prevImage" type="Changeable" minOccurs="0" maxOccurs="1"> </xs:element>
+			<xs:element name="changeNotes" type="OpaqueData" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a note, set of instructions and other information about the nature and purpose of this change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="changeSource" type="SourceReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the person or organization responsible for this change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="clonedResource" type="NameAndMeaningReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the local identifier and URI of the resource that was cloned in this change if this is a <i>CLONE</i> operation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="changeType" type="ChangeType" use="required">
+			<xs:annotation>
+				<xs:documentation>the type of change that occurred to cause the associated <i>Changeable</i> element to reach the state it is in</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="committed" type="ChangeCommitted" default="COMMITTED">
+			<xs:annotation>
+				<xs:documentation>an indicator that states whether the change has been committed and is available to service consumers or is still pending while further authoring may occur. <i>committed</i> must always be <i>COMMITTED</i>
+					in services that do not support the <b>MAINTENANCE</b> profile</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="containingChangeSet" type="ChangeSetURI" use="required">
+			<xs:annotation>
+				<xs:documentation>the URI of the <i>ChangeSet</i> that contains the described change</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="prevChangeSet" type="ChangeSetURI" use="optional">
+			<xs:annotation>
+				<xs:documentation>the URI of the <i>ChangeSet</i> that contains the change that immediately preceded this change, if any</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="changeDate" type="DateAndTime" use="required">
+			<xs:annotation>
+				<xs:documentation>the date and time when this change was applied to the <i>local service instance</i>. <i>changeDate</i> is only present on committed changes.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="effectiveDate" type="DateAndTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>the date and time that this change is (or was) scheduled to take effect in the <i>local service instance</i>. Typically this attribute is used to schedule a component to become active on a given date.A
+					change having a future <i>effectiveDate</i> will not be visible to service calls whose reference time is earlier to this time. This attribute may only be present in committed changes. A compliant CTS<sub>2</sub> service
+					implementation MUST not allow a change to be written with a <i>effectiveDate</i> that is earlier than <i>changeDate</i>. The purpose of this requirement is to prevent the "rewriting of history" - making a change
+					effective in the past.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:simpleType name="ChangeType">
+		<xs:annotation>
+			<xs:documentation>An indicator that shows the type of change that occurred that transformed a <i>Changeable</i> element from its immediately previous state to the state that the <i>ChangeType</i> is associated
+				with.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="CREATE">
+				<xs:annotation>
+					<xs:documentation>the element was newly created.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="UPDATE">
+				<xs:annotation>
+					<xs:documentation>one or more non-identifying attributes of the element changed. Note that <i>UPDATE</i> does not include changes to the <i>Changeable</i> attributes (<i>entryState</i>, <i>status</i>, and <i>owner</i>).
+						These are considered to be <i>METADATA</i> changes.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="METADATA">
+				<xs:annotation>
+					<xs:documentation>a change occurred to the <i>entryState</i> or <i>status</i> attributes. <i>METADATA</i> changes are separated because they may often be service specific. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DELETE">
+				<xs:annotation>
+					<xs:documentation>the changeable element was completely removed from the service and may no longer be retrieved by id <i>or</i> search. Service implementations may choose to disable and/or map <i>DELETE</i> operations to
+						some other form, but this exists to allow the complete removal of errors and historically irrelevant information.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CLONE">
+				<xs:annotation>
+					<xs:documentation>create the new versionable resource and create a (virtual) copy of all of the resource's dependents </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IMPORT">
+				<xs:annotation>
+					<xs:documentation>include the contents of an external resource version as a read-only part of the importing version</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ChangeCommitted">
+		<xs:annotation>
+			<xs:documentation>the commitment state of an individual change</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="PENDING">
+				<xs:annotation>
+					<xs:documentation>the specific change is part of an OPEN change set and has not yet been committed to the database. The change is only visible through queries that carry the <i>ChangeSetURI</i> of the open
+							<i>ChangeSet.</i></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="COMMITTED">
+				<xs:annotation>
+					<xs:documentation>the specific change is a part of a <i>ChangeSet</i> that has reached a <i>FINAL</i> state, meaning that it is (or will be) considered an official part of the service content.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="ChangeSetBase">
+		<xs:annotation>
+			<xs:documentation>A common base for various change set elements. This exists to allow ChangeSet to be represented as a choice in the "Updates" module</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Finalizable">
+				<xs:sequence>
+					<!-- Member type is constrained in the Updates module -->
+					<xs:group ref="ChangeSetElementGroup"/>
+					<xs:element name="member" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="ChangeSetAttributeGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:group name="ChangeSetElementGroup">
+		<xs:sequence>
+			<xs:element name="creator" type="SourceReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the person or organization who initially created the change set</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="changeInstructions" type="OpaqueData" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>documentation and instructions about the purpose and application of the change set</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:attributeGroup name="ChangeSetAttributeGroup">
+		<xs:attribute name="changeSetURI" type="ChangeSetURI" use="required">
+			<xs:annotation>
+				<xs:documentation>a globally unique identifier that signifies this particular change set</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="creationDate" type="DateAndTime" use="required">
+			<xs:annotation>
+				<xs:documentation>the date and time that the change set was initially created</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="officialEffectiveDate" type="DateAndTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>the date and time that this set of changes became (or should become) effective <i>from the perspective of the authors</i>. This parameter enables history queries from both the perspective of the service
+					("What did the service return on July 1") and the perspective of the resource author ("What would the state of the terminology have been on July 1 had it been loaded prior to that date and not been locally modified?").
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="closeDate" type="DateAndTime" use="optional">
+			<xs:annotation>
+				<xs:documentation>the date and time that this change set was finalized (<i>state</i> = <i>FINAL</i>). Once finalized, a change set cannot be further modified.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="entryCount" type="NaturalNumber" use="optional">
+			<xs:annotation>
+				<xs:documentation>the number of <i>Changeable</i> members in the set</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+
+	<xs:complexType name="Finalizable" abstract="true">
+		<xs:annotation>
+			<xs:documentation>The <i>Finalizable</i> mixin determines whether a resource version or a change set is still undergoing change (<i>OPEN</i>) or has reached its final state (<i>FINAL</i>). </xs:documentation>
+		</xs:annotation>
+		<xs:sequence/>
+		<xs:attribute name="state" type="FinalizableState" default="FINAL">
+			<xs:annotation>
+				<xs:documentation>the state of the inheriting resource</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:simpleType name="FinalizableState">
+		<xs:annotation>
+			<xs:documentation>possible states of a <i>Finalizable</i> resource</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="OPEN">
+				<xs:annotation>
+					<xs:documentation>the contents of a <i>ChangeSet</i> or <i>ResourceVersionDescription </i>may change, meaning that the contents cannot be determined by using the <i>ChangeSetURI </i>or
+						<i>DocumentURI.</i></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FINAL">
+				<xs:annotation>
+					<xs:documentation>the contents of a <i>ChangeSet</i> or <i>ResourceVersionDescription </i>cannot be changed, meaning that they can be unambiguously referenced via the corresponding URI.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ====================================================
+		ChangeSetIteration - contained in Updates.xsd
+		======================================================-->
+	<!-- ===============================================
+		Directory
+		=============================================== -->
+
+	<!-- SubSection: Directory -->
+	<xs:complexType name="Directory" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Provides a directory or list of resources that match a specific filter and are ordered in a specified order. A directory is read-only and is not necessarily immutable.Note that the name of the link to
+					<i>DirectoryEntry</i> is called "entries" rather than "entry". This allows subclasses to use "entry" without type collisions in the Z.</xs:documentation>
+		</xs:annotation>
+
+		<xs:complexContent>
+			<xs:extension base="Message">
+				<xs:sequence>
+					<xs:element name="directoryFilter" type="Filter" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the filter(s) that were applied to generate this directory</xs:documentation>
+						</xs:annotation>
+
+					</xs:element>
+					<xs:element name="sortCriteria" type="SortCriteria" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the sort criteria used in the directory. When this is left as optional, there is the possibility that some directories may not be ordered. Some PSMs may chose to make <i>sortCriteria</i>
+								mandatory, meaning that all directory listings must reflect some sort order.</xs:documentation>
+						</xs:annotation>
+
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="complete" type="CompleteDirectory" use="required">
+					<xs:annotation>
+						<xs:documentation>an indicator that states whether the complete directory listing is included in <i>entries</i> or whether additional retrievals are needed to get the full listing.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="numEntries" type="NaturalNumber" use="required">
+					<xs:annotation>
+						<xs:documentation>the number of entries in this directory segment. Note that this is <i>not</i> the total number of entries in the complete directory listing - just the number of entries in this
+							segment.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="prev" type="DirectoryURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>a URI that, when de-referenced, produces the preceding set of entries in the directory.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="next" type="DirectoryURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>a URI that, when de-referenced, produces the next set of entries in the directory.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:group name="DirectoryEntryElementGroup">
+		<xs:sequence/>
+	</xs:group>
+	<xs:attributeGroup name="DirectoryEntryAttributeGroup">
+		<xs:attribute name="href" type="RenderingURI" use="optional">
+			<xs:annotation>
+				<xs:documentation>a <i>LocalURI </i>that resolves to the full resource described by the <i>DirectoryEntry</i>. This should be present if the service either (a) supports the <b>Read</b> functional profile for the specified
+						<i>type </i>or (b) is aware of another service that does.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="resourceName" type="LocalIdentifier" use="optional">
+			<xs:annotation>
+				<xs:documentation>a local identifier that names a unique resource within the context of <i>type</i> and the service context. This attribute must be present if the corresponding element has a local name. Note, however, that
+					some elements (e.g. <i>Association</i>, <i>ValueSetDefinition</i>, etc.) do not local names and are identified exclusively by their <i>href</i>.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="matchStrength" type="MatchStrength" use="optional">
+			<xs:annotation>
+				<xs:documentation>a relative measure of the "goodness of fit" of the directory entry within the context of the <i>directoryFilter</i> in the containing <i>Directory.</i></xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+
+	<xs:complexType name="DirectoryEntry" abstract="true">
+		<xs:annotation>
+			<xs:documentation>an entry in a directory. <i>DirectoryEntry</i> is a mixin that identifies the attributes that must or may be present in any element that can be represented as an entry in a <i>Directory</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="DirectoryEntryElementGroup"/>
+		<xs:attributeGroup ref="DirectoryEntryAttributeGroup"/>
+	</xs:complexType>
+
+	<xs:simpleType name="CompleteDirectory">
+		<xs:annotation>
+			<xs:documentation>An indicator that determines whether a <i>Directory</i> contains all of the qualifying entries or only some.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="COMPLETE">
+				<xs:annotation>
+					<xs:documentation>the <i>Directory</i> contains all of the qualifying entries</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PARTIAL">
+				<xs:annotation>
+					<xs:documentation>the directory contains only a partial listing of the qualifying entries</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ===============================================
+		DirectoryTypes
+		=============================================== -->
+	<xs:simpleType name="AssociationDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>Associations.</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="ChangeSetDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>ChangeSets.</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="CodeSystemCatalogEntryDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>CodeSystemCatalogEntries</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="CodeSystemVersionCatalogEntryDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>CodeSystemVersionCatalogEntries</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="ConceptDomainCatalogEntryDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI</i> that references a set of <i>ConceptDomainCatalogEntries</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="ConceptDomainBindingDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>ConceptDomainBindings.</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="EntityDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>EntityDescriptionDirectory</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="MapCatalogEntryDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>MapCatalogEntries</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="MapVersionDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>MapVersions</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="MapEntryDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>MapEntrie</i>s</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="StatementDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>Statements</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="ValueSetCatalogEntryDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>ValueSetCatalogEntries</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="ValueSetDefinitionDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>ValueSetDefinitions</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResolvedValueSetDirectoryURI">
+		<xs:annotation>
+			<xs:documentation>a <i>DirectoryURI </i>that references a set of <i>ResolvedValueSets</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="DirectoryURI"/>
+	</xs:simpleType>
+
+
+	<!-- ===============================================
+		EntityReference
+		=============================================== -->
+	<xs:complexType name="EntitySynopsis">
+		<xs:annotation>
+			<xs:documentation>The URI, local namespace and name and optional designation of an <i>EntityDescription</i>. <i>EntitySynopsis</i> represents entities when they are referenced from the context of a single code system, such as
+				the resolution of value sets and association graphs.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="URIAndEntityName">
+				<xs:sequence>
+					<xs:element name="designation" type="String" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a designation considered appropriate for the entity in the specific context of use</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EntityReference">
+		<xs:annotation>
+			<xs:documentation>The URI, namespace/name (if known) and a list of code systems that make assertions about the entity.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="ScopedEntityName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the namespace and name by which this entity is known within the context of the service implementation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="knownEntityDescription" type="DescriptionInCodeSystem" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a reference to a version of a code system that makes one or more assertions about the referenced entity. Note that only one version of a given code system is allowed in the <i>describingCodeSystem</i>
+						list. Unless specified otherwise in a specific call, the code system version with the tag "CURRENT" must be used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="about" type="URI" use="required">
+			<xs:annotation>
+				<xs:documentation>the entity URI. This is an <i>ExternalURI</i> if the <i>entityReferenceType </i>is <i>NAMED_ENTITY</i> and a <i>LocalURI</i> is the <i>entityReferenceType</i> is <i>ANONYMOUS_ENTITY.</i></xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="DescriptionInCodeSystem">
+		<xs:annotation>
+			<xs:documentation>A reference to specific version of a code system that contains assertions about a given entity, including the namespace and name by which the entity is referenced, an optional designation appropriate to the
+				given usage context and an optional <i>RenderingURI</i> that references the full <i>EntityDescription</i> contained in the specific code system version.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="describingCodeSystemVersion" type="CodeSystemVersionReference" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a reference to the code system version that describes the entity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="designation" type="String" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a contextually appropriate designation for the entity derived from the \\ <i>describingCodeSystemVersion</i></xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="href" type="RenderingURI" use="optional">
+			<xs:annotation>
+				<xs:documentation>a <i>RenderingURI</i> that, if followed, will provide a full CTS<sub>2</sub>
+					<i>EntityDescription</i> derived from the corresponding code system version</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:complexType name="EntityReferenceList">
+		<xs:annotation>
+			<xs:documentation>A list (set) of zero or more entity references</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="entry" type="EntityReference" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="AnonymousEntityReference">
+		<xs:annotation>
+			<xs:documentation>A reference to an entity whose name and description is local to the containing code system and service. Information about anonymous entities cannot be shared between services or across code
+				systems</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="EntityReference">
+				<xs:sequence>
+					<xs:element name="name" type="ScopedEntityName" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the namespace and name by which this entity is known within the context of the service implementation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="knownEntityDescription" type="DescriptionInCodeSystem" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a reference to a version of a code system that makes one or more assertions about the referenced entity. Note that only one version of a given code system is allowed in the <i>describingCodeSystem</i>
+								list. Unless specified otherwise in a specific call, the code system version with the tag "CURRENT" must be used.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="about" type="LocalURI" use="required">
+					<xs:annotation>
+						<xs:documentation>the local URI that identifies this entity within the context of the particular service</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="NamedEntityReference">
+		<xs:annotation>
+			<xs:documentation>A reference to an entity that is identified through a globally unique URI.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="EntityReference">
+				<xs:sequence>
+					<xs:element name="name" type="ScopedEntityName" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the namespace and name by which this entity is known within the context of the service implementation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="knownEntityDescription" type="DescriptionInCodeSystem" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a reference to a version of a code system that makes one or more assertions about the referenced entity. Note that only one version of a given code system is allowed in the <i>describingCodeSystem</i>
+								list. Unless specified otherwise in a specific call, the code system version with the tag "CURRENT" must be used.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="about" type="ExternalURI" use="required">
+					<xs:annotation>
+						<xs:documentation>a URI that identifies a unique entity in a global context</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+
+	<xs:complexType name="ScopedEntityName">
+		<xs:annotation>
+			<xs:documentation>The combination of a namespace identifier and a local name. Scoped entity names are not portable - they only work within the context of a single service instance, as different services may assign different
+				namespace identifiers to the same namespace and different services may make different choices of the appropriate local identifier to use to represent an entity. As an example, one service may choose to use the entity code
+				while a second may use another designation that is known to be unique.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="namespace" type="NamespaceIdentifier" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>an identifier that references a unique namespace URI within the context of the service</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="String" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the local entity name within the context of the namespace. What is chosen for the entity name is service specific</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="URIAndEntityName">
+		<xs:annotation>
+			<xs:documentation>The combination of a URI and/or and ScopedEntityName. </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="namespace" type="NamespaceIdentifier" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>an identifier that references a unique namespace URI within the context of the service</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="String" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the local entity name within the context of the namespace. What is chosen for the entity name is service specific</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="uri" type="ExternalURI" use="required">
+			<xs:annotation>
+				<xs:documentation>a URI that uniquely references the target entity</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="href" type="RenderingURI" use="optional">
+			<xs:annotation>
+				<xs:documentation>a URI that resolves to the full <i>EntityDescription</i> represented by this resource</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:element name="EntityExpression" type="EntityExpression">
+		<xs:annotation>
+			<xs:documentation>An expression in a given ontology language and syntax that describes or defines an entity. Examples might include descriptions of entities in Manchester OWL Syntax, RDF, SNOMED Concept Expression,
+				etc.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="EntityExpression">
+		<xs:annotation>
+			<xs:documentation>An expression in a given ontology language and syntax that describes or defines an entity. Examples might include descriptions of entities in Manchester OWL Syntax, RDF, SNOMED Concept Expression,
+				etc.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ontologyLanguageAndSyntax" type="OntologyLanguageAndSyntax" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the ontology language and syntax of the expression</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expression" type="OpaqueData">
+				<xs:annotation>
+					<xs:documentation>the actual expression</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- ===============================================
+		Reference
+		=============================================== -->
+
+	<xs:complexType name="AssociationReference">
+		<xs:annotation>
+			<xs:documentation>a name or identifier that uniquely names an association instance in a code system</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OntologyEngineeringToolReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a tool that can be used to create an ontology</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OntologyEngineeringMethodologyReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a method model that can be used to create an ontology</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NameAndMeaningReference">
+		<xs:annotation>
+			<xs:documentation>A <i>NameAndMeaningReference</i> consists of a local identifier that references a unique meaning within the context of a given domain in a CTS<sub>2</sub> service instance and a globally unique URI that
+				identifies the intended meaning of the identifier. </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="String">
+				<xs:attribute name="uri" type="ExternalURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>an <i>ExternalURI</i> that references the meaning of a <i>name</i>. <i>Meaning</i> is optional only because the meaning of some of the elements have not been fully specified in some legacy
+							terminology resources. If <i>meaning</i> is not supplied, the intent of a reference cannot be shared among services or between other resources.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="href" type="RenderingURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>a <i>RenderingURI</i> that, when dereferenced, results in a CTS<sub>2</sub> compliant representation of the meaning of the given <i>NameAndMeaningReference</i>. This must be present if the
+							implementing CTS<sub>2</sub> service is aware of a CTS<sub>2</sub> resource that carries the definition. </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="BindingQualifierReference">
+		<xs:annotation>
+			<xs:documentation>a reference to an entity that describes the role that a given value set binding plays for a concept domain. Typical values represent "overall", "minimum" or "maximum", the significance of which can be found in
+				HL7 Version 3 documentation.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="FormalityLevelReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a description of the relative formality an ontology</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CaseSignificanceReference">
+		<xs:annotation>
+			<xs:documentation>a reference to an entity that describes significance of the case in term or designation</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CodeSystemCategoryReference">
+		<xs:annotation>
+			<xs:documentation>a reference to information about a paradigm model used to create an ontology (aka. knowledge representation paradigm</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CodeSystemReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a code system or ontology</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CodeSystemVersionReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a specific version of code system and, if known, the code system which it is a version of</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="version" type="NameAndMeaningReference" minOccurs="1"> </xs:element>
+			<xs:element name="codeSystem" type="CodeSystemReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A reference to the code system that the version is a version of. Must be present if this information is known to the CTS<sub>2</sub> service implementation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ConceptDomainReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a concept domain</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ContextReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a realm or context</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DesignationFidelityReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a description about designation faithfulness or accuracy</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DesignationTypeReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a designation type or form such as "short name", "abbreviation", "eponym"</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="FormatReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a particular way that information is encoded for storage or transmission</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="LanguageReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a spoken or written human language</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="MapReference">
+		<xs:annotation>
+			<xs:documentation>a reference to an abstract map</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="MapVersionReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a map version and the corresponding map, if known</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="mapVersion" type="NameAndMeaningReference" minOccurs="1"> </xs:element>
+			<xs:element name="map" type="MapReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a reference to the corresponding map. Must be present if it is known the implementing CTS<sub>2</sub> service</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MapCorrelationReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a way that the source and target in a map can be related or assessed</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="MatchAlgorithmReference">
+		<xs:annotation>
+			<xs:documentation>a reference to an algorithm used for selecting and filtering data</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ModelAttributeReference">
+		<xs:annotation>
+			<xs:documentation>a reference to an attribute defined in the CTS<sub>2</sub> specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="NamespaceReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a conceptual space that groups identifiers to avoid conflict with items that have the same name but different meanings</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OntologyDomainReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a subject domain for an ontology</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OntologyLanguageReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a language in which an ontology may be implemented</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OntologySyntaxReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a syntax in which an ontology may be represented</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OntologyTaskReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a purpose for which an ontology can be designed</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OntologyTypeReference">
+		<xs:annotation>
+			<xs:documentation>a reference to the nature of the content of an ontology</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PredicateReference">
+		<xs:annotation>
+			<xs:documentation>An <i>EntityReference</i> that serves the role of predicate. Note that this varies slightly from the base class of <i>NameAndMeaningReference</i> because the <i>name</i> attribute is a namespace/name
+				combination rather than a simple name scoped exclusively by the domain.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="URIAndEntityName"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ReasoningAlgorithmReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a formal algorithm for making inferences about an ontology</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="RoleReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a role that an individual, organization or bibliographic reference can play in the construction of a resource or resource component</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="SourceReference">
+		<xs:annotation>
+			<xs:documentation>a reference to an individual, organization of bibliographic reference</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="SourceAndRoleReference" mixed="true">
+		<xs:annotation>
+			<xs:documentation>a reference to a source that also includes the role that the source played and/or fixes the particular chapter, page or other element within the reference</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="source" type="SourceReference" minOccurs="1"> </xs:element>
+			<xs:element name="role" type="RoleReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a role that the source played in the creation of the containing resource</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bibliographicLink" type="OpaqueData" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>additional bibliographic information such as page number, edition, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="StatusReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a state in an external ontology authoring workflow</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ValueSetReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a named set of entity references</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ValueSetDefinitionReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a set of rules for constructing a value set along with the corresponding value set if known</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="valueSetDefinition" type="NameAndMeaningReference" minOccurs="1"> </xs:element>
+			<xs:element name="valueSet" type="ValueSetReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A reference to the corresponding value set. Must be present if known to the implementing CTS<sub>2</sub> service</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="VersionTagReference">
+		<xs:annotation>
+			<xs:documentation>a reference to a tag that can be assigned to versionable resources within the context of a service implementation</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NameAndMeaningReference"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+
+	<!-- Subsection: SetOperator -->
+	<xs:simpleType name="SetOperator">
+		<xs:annotation>
+			<xs:documentation>General set operators that specify set union, difference or intersection in various contexts</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="UNION">
+				<xs:annotation>
+					<xs:documentation>Include all members of both sets in the result</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INTERSECT">
+				<xs:annotation>
+					<xs:documentation>include only members common to both sets in the result</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SUBTRACT">
+				<xs:annotation>
+					<xs:documentation>remove all members in the second set from the first set</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+
+	<!-- ===============================================
+		FiltersAndSorting
+		=============================================== -->
+
+	<xs:complexType name="Filter">
+		<xs:annotation>
+			<xs:documentation>A collection of one or more filters. The result of applying a <i>Filter</i> component is the <i>intersection</i> of the sets of qualifying elements. As an example, a filter having two components - one which
+				says that the <i>rights</i> attribute must exist and a second that says that the text "SNOMED" must appear in the synopsis would return all resources having BOTH a <i>rights</i> attribute and "SNOMED" in the
+				description.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="component" type="FilterComponent" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FilterComponent">
+		<xs:annotation>
+			<xs:documentation>A restriction on an attribute, property or special field</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PropertyReference">
+				<xs:sequence>
+					<xs:element name="matchAlgorithm" type="MatchAlgorithmReference" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the algorithm to be used for testing the referenced component. Examples might include "starts with", "regular expression match", "exists", "inRange", etc. NOTE: The CTS<sub>2</sub> specification
+								needs to establish a core set of match algorithms that all compliant implementations must support.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="matchValue" type="String" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the value to be used in comparison. The structure and format of <i>matchValue</i> depends on the specific <i>matchAlgorithm</i>. As an example, a "startsWith" algorithm would be plain text, a
+								"regularExpression" algorithm would have a regular expression while an "exists" algorithm would have nothing in the <i>matchValue</i> attribute.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="SortCriterion">
+		<xs:annotation>
+			<xs:documentation>The particular attribute, property or special element to be sorted along with the sort direction</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sortElement" type="PropertyReference" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the type and name of the attribute, property or special element to be sorted</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="Ordered"/>
+		<xs:attribute name="sortDirection" type="SortDirection" default="ASCENDING">
+			<xs:annotation>
+				<xs:documentation>the sort order</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="SortDirection">
+		<xs:annotation>
+			<xs:documentation>The collating order of a sort.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="ASCENDING">
+				<xs:annotation>
+					<xs:documentation>sort in ascending collation order</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DESCENDING">
+				<xs:annotation>
+					<xs:documentation>sort in descending collation order</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="SortCriteria">
+		<xs:annotation>
+			<xs:documentation>An ordered list of sort criterion. The first entry in the list identifies the primary sort order, the second entry the sub sort order, etc. </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="entry" type="SortCriterion" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="AssociationDirection">
+		<xs:annotation>
+			<xs:documentation>An indicator that determines whether an entity reference / predicate combination is to be evaluated with the entity reference in the source (left hand side) position of the association query or the target
+				(right hand side or "object") position.<i>Note:</i>
+				<i>AssociationDirection</i> doesn't strictly belong in this diagram, but it is kind of an orphan class and we didn't want to create an entire new diagram just for one element.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="SOURCE_TO_TARGET">
+				<xs:annotation>
+					<xs:documentation>the statement is to be resolved with the entity reference in the role of <i>source</i>.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TARGET_TO_SOURCE">
+				<xs:annotation>
+					<xs:documentation>the statement is to be resolved with the entity reference in the role of <i>target</i>.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="PropertyReference">
+		<xs:annotation>
+			<xs:documentation>A reference to a CTS<sub>2</sub> model element. <i>PropertyReference</i> may reference a model attribute, a <i>Property</i> or a special element such as match strength.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="referenceTarget" type="URIAndEntityName"/>
+		</xs:sequence>
+		<xs:attribute name="referenceType" type="TargetReferenceType" use="required">
+			<xs:annotation>
+				<xs:documentation>the type of thing being referenced</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>	
+	</xs:complexType>
+
+	<xs:simpleType name="TargetReferenceType">
+		<xs:annotation>
+			<xs:documentation>the possible types of property references</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="ATTRIBUTE">
+				<xs:annotation>
+					<xs:documentation>a reference to an attribute in a CTS<sub>2</sub> model such as <i>formalName</i>, <i>designation</i>, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PROPERTY">
+				<xs:annotation>
+					<xs:documentation>a reference to a model <i>Property</i>. The reference target carries the namespace/name or URI of the property predicate. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SPECIAL">
+				<xs:annotation>
+					<xs:documentation>the target of the reference is a special element such as the match strength of a search</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<!-- ===============================================
+		Naming
+		=============================================== -->
+	<xs:simpleType name="CodeSystemName">
+		<xs:annotation>
+			<xs:documentation>a local identifier for a <i>CodeSystem</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalIdentifier"/>
+	</xs:simpleType>
+	<xs:simpleType name="CodeSystemVersionName">
+		<xs:annotation>
+			<xs:documentation>a local identifier for a <i>CodeSystemVersion</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalIdentifier"/>
+	</xs:simpleType>
+	<xs:simpleType name="ConceptDomainName">
+		<xs:annotation>
+			<xs:documentation>a local identifier for a <i>ConceptDomain.</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalIdentifier"/>
+	</xs:simpleType>
+	<xs:simpleType name="MapName">
+		<xs:annotation>
+			<xs:documentation>a local identifier for a <i>Map</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalIdentifier"/>
+	</xs:simpleType>
+	<xs:simpleType name="MapVersionName">
+		<xs:annotation>
+			<xs:documentation>a local identifier for a <i>MapVersion</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalIdentifier"/>
+	</xs:simpleType>
+	<xs:simpleType name="ValueSetName">
+		<xs:annotation>
+			<xs:documentation>a local identifier for a <i>ValueSet</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalIdentifier"/>
+	</xs:simpleType>
+	<xs:simpleType name="VersionTagName">
+		<xs:annotation>
+			<xs:documentation>a local identifier for a <i>VersionTag</i></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="LocalIdentifier"/>
+	</xs:simpleType>
+
+
+	<!-- ===============================================
+		Note
+		=============================================== -->
+	<xs:complexType name="Note" abstract="true">
+		<xs:annotation>
+			<xs:documentation><i>Note</i> corresponds to the target of <a href="//http://www.w3.org/TR/skos-reference/#notes">skos:note</a>. It contains an attributed literal that may include a language, format and, when appropriate,
+				schema. </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntryDescription">
+				<xs:attribute name="assertedInCodeSystemVersion" type="CodeSystemVersionName" use="optional">
+					<xs:annotation>
+						<xs:documentation>the code system version that contains the assertion(s) represented in the <i>Note</i></xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="correspondingStatement" type="RenderingURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>the URI of the <i>Statement</i> from which this note was derived. This will only be present in services that support the <b>Statement</b> profile.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="externalIdentifier" type="String" use="optional">
+					<xs:annotation>
+						<xs:documentation>an external identifier assigned to this note by an outside party</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="Definition">
+		<xs:annotation>
+			<xs:documentation>Text or other representation that is intended to communicate the intended meaning of the associated entity to a human being. While this is intended to be very close in meaning to <a
+					href="//http://www.w3.org/TR/skos-reference/#definition">skos:definition</a>, its intent is slightly different in that the CTS<sub>2</sub> specification does not treat <i>definition</i> as a subproperty of <i>note</i> -
+				rather it views comments, examples and definitions as separate entities.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Note">
+				<xs:sequence>
+					<xs:element name="usageContext" type="ContextReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the context(s) in which the definition is considered applicable</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="definitionRole" type="DefinitionRole" default="NORMATIVE">
+					<xs:annotation>
+						<xs:documentation>the role that the definition plays with respect to the defined entity</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Example">
+		<xs:annotation>
+			<xs:documentation>An example. See: <a href="//http://www.w3.org/TR/skos-reference/#L1693">skos:example</a></xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Note"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="Comment">
+		<xs:annotation>
+			<xs:documentation>A <i>Note</i> about the history, scope or provenance of the containing element. <i>Comment</i> is differentiated from <i>Example</i> and <i>Definition</i> specifically because it is frequently searched and
+				displayed under different circumstances and usage contexts. <i>Example</i> and <i>Definition</i> are frequently made available to the end users of a code system while <i>Comment</i>s are typically consumed by authors and
+				editors.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Note">
+				<xs:attribute name="type" type="NoteType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="NoteType">
+		<xs:restriction base="String">
+			<xs:enumeration value="ChangeNote">
+				<xs:annotation>
+					<xs:documentation>A change note. See: skos:changeNote</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EditorialNote">
+				<xs:annotation>
+					<xs:documentation>An editorial note. See skos:editorialNote</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="HistoryNote">
+				<xs:annotation>
+					<xs:documentation>A history note. See: skos:historyNote</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ScopeNote">
+				<xs:annotation>
+					<xs:documentation>A scope note. See: skos:scopeNote</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Note">
+				<xs:annotation>
+					<xs:documentation>Undifferentiated See: skos:Note, but do not use for Definition or Example</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="DefinitionRole">
+		<xs:annotation>
+			<xs:documentation>The role that a given definition plays for a given entity.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="NORMATIVE">
+				<xs:annotation>
+					<xs:documentation>the definition is considered to be official or normative by the assigning body</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INFORMATIVE">
+				<xs:annotation>
+					<xs:documentation>the definition is considered to be of value, but not completely normative</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="OntologyLanguageAndSyntax">
+		<xs:annotation>
+			<xs:documentation>The language and syntax of an expression in an ontology. Language identifies the expression semantics (e.g. OWL 2.0, RDF, SNOMED Compositional Expression, etc) and syntax identifies how it is represnted (e.g.
+				XML, text/plain, xml/rdf, manchester syntax, etc)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ontologyLanguage" type="OntologyLanguageReference" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The formal language (semantics) of the expression.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ontologySyntax" type="OntologySyntaxReference" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The syntax of the expression.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<!-- ===============================================
+		ResourceDescription
+		=============================================== -->
+	<!-- ===============================================
+		Note: resourceType, while required, has a minOccurs of 0 in this implementation on
+		      the basis that, in many cases, there is only one choice for a mandatory element and,
+		      in other cases, we will default to the most appropriate unless the alternative is supplied.
+		 =============================================== -->
+	<xs:complexType name="ResourceDescription" abstract="true">
+		<xs:annotation>
+			<xs:documentation><i>ResourceDescription </i>represents the shared characteristics common to both abstract and resource version descriptions. <i>ResourceDescription </i>is an abstract type and, as such, cannot be directly
+				created. Resource descriptions are <i>Changeable</i>, meaning that they have identity and can be created, updated and deleted.</xs:documentation>
+		</xs:annotation>
+
+		<xs:complexContent>
+			<xs:extension base="Changeable">
+				<xs:sequence>
+					<xs:element name="keyword" type="String" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>additional identifiers that are used to index and locatethe resource</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="resourceType" type="URIAndEntityName" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>the class(es) that this resource instantiates</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="resourceSynopsis" type="EntryDescription" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a textual summary of the resource - what it is, what it is for, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="additionalDocumentation" type="PersistentURI" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a reference to a document thatprovide additional information about the resource</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sourceAndRole" type="SourceAndRoleReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a reference to an individual, organization of bibliographic reference that participated in the creation, validation, review, dissemination of this resource and therole(s) they
+								played</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rights" type="OpaqueData" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>copyright and IP information. Note that <i>rights</i> applies to the source resource, not the CTS<sub>2</sub> rendering.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="note" type="Comment" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>an additional note or comment about the resource</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>additional information about the resource that doesnot fit into any of the attributes described above</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="alternateID" type="ExternalURI" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>an alternative identifier that uniquely names this resource in other environments as contexts. As an example, if a resource had both an ISO Object Identifier and a DNS name, the DNS name might
+								be assigned as the <i>entryID</i> of the resource by one service while the ISO OID would be recorded as an <i>alternateURI </i>using the "urn:oid" prefix. Note that <i>alternateId</i>s can be added or removed
+								during resource updates.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sourceStatements" type="StatementDirectoryURI" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a <i>DirectoryURI</i> that references the set of statements that were used to construct the containing resource. This attribute must (may?) be present if and only if the service supports the
+									<b>Statement</b> profile </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="about" type="ExternalURI" use="required">
+					<xs:annotation>
+						<xs:documentation>the (or a) definitive URI that represents the resource being described. Note that this is NOT the URI of the resource description in the CTS2 format, but of the resource itself. As an example, the
+								<i>about </i>URI for the Wine ontology would be "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#". The <a href="//http://ncit.nci.nih.gov/ncitbrowser/">NCI Thesaurus</a> has, amongst others, the
+								<i>about </i>URI of http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#. HL7 uses ISO Object Identifiers (OIDs) to label resources so, from the HL7 perspective, the <i>about</i> URI of the NCI Thesaurus would
+							be "urn:oid:2.16.840.1.113883.3.26.1.1"</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="formalName" type="String" use="optional">
+					<xs:annotation>
+						<xs:documentation>the formal or officially assigned name of this resource, if any</xs:documentation>
+					</xs:annotation>
+
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Subsection: ResourceDescription/ResourceDescription -->
+	<xs:simpleType name="CTS2ResourceType">
+		<xs:annotation>
+			<xs:documentation>the resource types that can be described in a CTS<sub>2</sub> service</xs:documentation>
+		</xs:annotation>
+
+		<xs:restriction base="Enumeration">
+			<xs:enumeration value="CODE_SYSTEM">
+				<xs:annotation>
+					<xs:documentation>an ontology, classification scheme, thesaurus or code system</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CODE_SYSTEM_VERSION">
+				<xs:annotation>
+					<xs:documentation>a specific release or version of an ontology, classification scheme, thesaurus or code system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CONCEPT_DOMAIN">
+				<xs:annotation>
+					<xs:documentation>a "data element concept" - a specification of the conceptual domain of an element in a database, form, message, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MAP">
+				<xs:annotation>
+					<xs:documentation>a set of rules for transforming a set of entity references into a second set of entity references, drawn from a different code system or value set.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MAP_VERSION">
+				<xs:annotation>
+					<xs:documentation>a specific version or release of a MAP</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VALUE_SET">
+				<xs:annotation>
+					<xs:documentation>a set of entity references</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VALUE_SET_DEFINITION">
+				<xs:annotation>
+					<xs:documentation>a set of rules for establishing which entity references belong to a value set at a given point in time</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ===============================================
+		ResourceDescriptionDirectory
+		=============================================== -->
+	<xs:complexType name="ResourceDescriptionDirectoryEntry" abstract="true">
+		<xs:annotation>
+			<xs:documentation><i>A</i>
+				<i>DirectoryEntry </i>that identifies the elements of a resource description that appear in every directory of resources of a particular type. <i>ResourceDescriptionDirectoryEntry </i>is an abstract type and is realized in
+				the implementing subtypes listed in <i>CTS2ResourceType</i></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexContent>
+			<xs:extension base="DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="resourceSynopsis" type="EntryDescription" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a textual summary of the resource - what it is, what it is for, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="about" type="ExternalURI" use="required">
+					<xs:annotation>
+						<xs:documentation>the (or a) definitive URI that represents the resource being described. </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<!-- resourceID is supplied by the particular entry type -->
+				<xs:attribute name="formalName" type="String" use="optional">
+					<xs:annotation>
+						<xs:documentation>the formal or officially assigned name of this resource</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AbstractResourceDescriptionDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>a summary of an abstract resource description</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResourceDescriptionDirectoryEntry"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ResourceVersionDescriptionDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A summary of a resource version.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResourceDescriptionDirectoryEntry">
+				<xs:sequence>
+					<xs:element name="officialResourceVersionId" type="String" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a label or identifier that was assigned to this version by its publisher</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="officialReleaseDate" type="DateAndTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>information about the source, format, release date, version identifier, etc. of a specific version of an abstract resource</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="documentURI" type="DocumentURI" use="required">
+					<xs:annotation>
+						<xs:documentation>a URI that identifies the specific version, language and notation of the <i>about</i> resource</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ===============================================
+		ResourceDescriptionDetail
+		=============================================== -->
+	<xs:complexType name="AbstractResourceDescription" abstract="true">
+		<xs:annotation>
+			<xs:documentation>the description of the characteristics of a resource that are independent of the resource content</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResourceDescription">
+				<xs:sequence>
+					<xs:element name="releaseDocumentation" type="OpaqueData" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>documentation about the frequency and natureof releases (version) of this resource.<i><sub>OMV 2.4.1 pp 18</sub></i></xs:documentation>
+						</xs:annotation>
+
+					</xs:element>
+					<xs:element name="releaseFormat" type="SourceAndNotation" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a format and notation that thereleases (versions) of this resource are published in</xs:documentation>
+						</xs:annotation>
+
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+
+	<xs:complexType name="ResourceVersionDescription" abstract="true">
+		<xs:annotation>
+			<xs:documentation>information about the source, format, release date, version identifier, etc. of a specific version of an abstract resource</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResourceDescription">
+				<xs:sequence>
+					<xs:element name="sourceAndNotation" type="SourceAndNotation" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>a description of where the (or a) source of the version may be found, what format and language it is available in, etc. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="predecessor" type="NameAndMeaningReference" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>a reference to the name and URI version of the resource from which this current version is derived - the version of the resource that immediately preceded it</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="officialResourceVersionId" type="String" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>an official label or identifier that was assigned to this version by its publisher</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="officialReleaseDate" type="DateAndTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the date that this version of the resource officially became available</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="officialActivationDate" type="DateAndTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the date that this version of the resource is stated by its publishers to go into effect</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="documentURI" type="DocumentURI" use="required">
+					<xs:annotation>
+						<xs:documentation>a URI that identifies the specific version, language and notation of the <i>about</i> resource. This URI needs to be constructed in such a way that, if necessary, it will be possible to
+							differentiate resource versions that were loaded from different document syntaxes. As an example, if an image of a the wine ontology was loaded from a resource that was in Manchester Syntax, it should be given a
+							different URI than the image loaded from the RDF/XML syntax. The reasoning behind this is, even in cases where different syntaxes are 100% compatible the transformation into the CTS<sub>2</sub> model may not be
+							identical.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="state" type="FinalizableState" default="FINAL"> </xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="SourceAndNotation">
+		<xs:annotation>
+			<xs:documentation>A description of the source from which the <i>ResourceVersionDescription</i> was derived. When possible, <i>SourceAndNotation</i> should include a reference to the actual source document from which it was
+				derived. As an example, if the resource was derived from the W3C Wine Ontology, the URI http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine would unambiguously name the document. In the cases, however, when a definitive
+				source document is not available, a textual description should be provided, instead, in <i>sourceAndNotationDescription</i>. Where possible, the ontology language and ontology syntax should also be provided. In the case of
+				the Wine Ontology above, the ontology language would be http://www.w3.org/2002/07/owl# (OWL) and the syntax would be application/rdf+xml.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sourceAndNotationDescription" type="String" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a textual description of where the specified resource version was derived from. This parameter must be supplied if a reasonable <i>PersistentURI</i> for the source document is not
+						available.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sourceDocument" type="PersistentURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a persistent URI that references the document from which the resource version was derived. This URI may be resolvable to a digital resource or may be the name of a book, publication or other external
+						document.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sourceLanguage" type="OntologyLanguageReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the formal language, if any, that the source for the resource version is expressed in. Examples include Common Logic, OWL, OWL-DL, <a href="//http://esearch.cen.eu/Details.aspx?id=4244858">CLAML</a>,
+						etc.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sourceDocumentSyntax" type="OntologySyntaxReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the syntax of the source of the resource version, if known. Examples might include rdf/xml, Turtle, Manchester Syntax, CSV, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- ===============================================
+		StatementTarget
+		=============================================== -->
+	<xs:complexType name="StatementTarget">
+		<xs:annotation>
+			<xs:documentation>the target of a <i>Statement. StatementTarget</i> represents one of a literal value, a reference to a non-entity type <i>resource</i>, an <i>entity, </i> or an anonymous blank <i>BNODE</i>.</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="1">
+			<xs:element name="entity" type="URIAndEntityName">
+				<xs:annotation>
+					<xs:documentation>the URI and optional namespace/name when the target type is <i>ENTITY</i></xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="literal" type="OpaqueData">
+				<xs:annotation>
+					<xs:documentation>the literal target when the statement type is <i>LITERAL.</i></xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resource" type="ExternalURI">
+				<xs:annotation>
+					<xs:documentation>the resource URI when the statement type is <i>RESOURCE</i></xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bnode" type="AnonymousStatement" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a collection of statements about an anonymous subject</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="externalIdentifier" type="String" use="optional">
+			<xs:annotation>
+				<xs:documentation>an external identifier that has been assigned to the statement with this particular target by the authoring body. As an example, this would carry the SctId if the authoring body were
+					SNOMED-CT</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="AnonymousStatement">
+		<xs:annotation>
+			<xs:documentation>A statement lacking a named subject. </xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element name="predicate" type="PredicateReference" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the predicate of the anonymous statement</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="target" type="StatementTarget" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>the target of the anonymous statement</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="statmentQualifier" type="Property" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>assertions whose subject is the anonymous statement </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Property">
+		<xs:annotation>
+			<xs:documentation>A tag/value pair that does not have a corresponding model attribute. <i>Property</i> represent any statement about a resource (e.g. CodeSystem, Entity, etc.) that does not have a corresponding attribute in the
+					CTS<sub>2</sub> model. As an example, the NCI Thesaurus uses a tag named <i>BioCarta_ID</i> (C43677) to associate appropriate thesaurus entities with Bio Carta pathway references. This would be represented by a property,
+				whose predicate is the URI for C436777 and the value is the actual id.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="predicate" type="PredicateReference" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>the name and URI of the property predicate</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="StatementTarget" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>the target(s) of the property. Note that this can only represent the literal format of the property. The details about the original property will be found in the <i>correspondingStatement </i>if the
+							CTS<sub>2</sub> implementation supports the<b> Statement</b> profile.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="propertyQualifier" type="Property" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>an assertion whose subject is the assertion in the property instead of the property subject</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="correspondingStatement" type="RenderingURI" use="optional">
+			<xs:annotation>
+				<xs:documentation>a link to the original statement from which this <i>Property</i> is derived. Will only be present in CTS<sub>2</sub> implementations that support the <b>Statement</b> profile.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<!-- ===============================================
+		Computational Model - MiscInterface
+		=============================================== -->
+	<xs:simpleType name="Boolean">
+		<xs:annotation>
+			<xs:documentation>a return type that indicates a positive or negative answer to the specific question that was posed.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+
+	<!-- ===============================================
+		REST PSM-specific additions
+		=============================================== -->
+	<xs:complexType name="Parameter">
+		<xs:annotation>
+			<xs:documentation>A parameter in a REST Resource</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="val" type="String"/>
+		</xs:sequence>
+		<xs:attribute name="arg" type="xs:NCName"/>
+	</xs:complexType>
+
+	<xs:complexType name="RESTResource">
+		<xs:annotation>
+			<xs:documentation>The header information for any REST resource retrieval</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="resourceRoot" type="ServiceURI">
+				<xs:annotation>
+					<xs:documentation>The URI of the REST service.  As an example, if the resource URI
+						was "http://informatics.mayo.edu/cts2/rest/codesystems", the resourceRoot would be
+						"http://informatics.mayo.edu/cts2/rest/"</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceURI" type="RenderingURI">
+				<xs:annotation>
+					<xs:documentation>The <i>relative</i> URI of the resource with respect to the resourceRoot.  As an example,
+						if the resource URI was "http://informatics.mayo.edu/cts2/rest/codesystems", the resourceURI would
+						be "codesystems".  Fragment and query identifiers should also be included.</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="parameter" type="Parameter" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The paramaters that were used in executing the query. This carries all of the parameters that
+					are needed to reconstruct the complete query in either a RESTful or procedural environment. The service provider
+					may or may not include non-CTS2 related parameters such as security tokens, routing requests, etc.</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="accessDate" type="DateAndTime">
+				<xs:annotation>
+					<xs:documentation>The date and time that the resource was accessed.</xs:documentation>
+					<xs:appinfo>PSM</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Message">
+		<xs:annotation>
+			<xs:documentation>Message header that wraps all returns.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="heading" type="RESTResource" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:attributeGroup name="Ordered">
+		<xs:attribute name="entryOrder" type="xs:positiveInteger" use="required"/>
+	</xs:attributeGroup>
+
+</xs:schema>

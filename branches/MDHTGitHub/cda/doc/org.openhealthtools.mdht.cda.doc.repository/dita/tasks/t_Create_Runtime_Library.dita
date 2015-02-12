@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_ypn_ts1_2j" xml:lang="en-us">
+    <title>Creating the MDHT Runtime Library</title>
+    <shortdesc>This describes the steps for creating the java libraries from the MDHT models and
+        packaging them up with the set of EMF and OCL run-time dependency libraries that are needed
+        to provide a basic runtime library for using MDHT artifacts.</shortdesc>
+    <taskbody>
+        <context>
+            <p>Context for the current task</p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Open the MDHT Workspace containing the models for which the run-time
+                    environment is needed.</cmd>
+            </step>
+            <step>
+                <cmd>Right-click on one of the projects and select "Export…" from the menu.</cmd>
+                <stepxmp><image href="../images/Export_Menu.png"></image></stepxmp>
+            </step>
+            <step>
+                <cmd>Expand the "Plug-in Development" folder</cmd>
+               
+            </step>
+            <step>
+                <cmd>Select "Deployable plug-ins and fragments" and then click on "Next".</cmd>
+                <stepxmp><image href="../images/Export_Plugin_Selection.png"></image></stepxmp>
+            </step>
+            <step>
+                <cmd>Select the runtime projects that are to be exported as jar files</cmd>
+            </step>
+            <step>
+                <cmd>Enter a directory for where to place the jar files on the "Destination" tab.
+                        <option> Under the Options tab, check the option ‘Qualifier Replacement’
+                    </option> Click on "Finish" </cmd>
+                <stepxmp><image href="../images/Export_Plugin_Destination.png"></image></stepxmp>
+                <stepresult>This will create a jar file for each of the libraries in the location
+                    you specified. The current naming of the jar files will be &lt;roject-name&gt;_
+                    &lt;version&gt;.&lt;timestamp&lt;.jar&lt;/stepresult&gt; </stepresult>
+
+            </step>
+            <stepsection>Once the libraries are generated for the MDHT models, you will need some
+                additional eclipse libraries in order to use these generated libraries in stand-alone mode. These
+                libraries can be found in the eclipse environment. If you are using the all-in-one
+                download, then these will be in the eclipse\plugins folder. </stepsection>
+            <step>
+                <cmd>Package Eclipse Runtime </cmd>
+               <choices>
+                   <choice>For Eclipse 3.4 Runtime Jars, the following is the list of libraries that are needed:
+                       <itemgroup> 
+                          <ul>
+                               <li>lpg.runtime.java_2.0.17.v201004271640.jar</li>
+                               <li>org.eclipse.emf.common_2.6.0.v20100914-1218.jar</li>
+                               <li> org.eclipse.emf.ecore_2.6.1.v20100914-1218.jar</li>
+                               <li> org.eclipse.emf.ecore.xmi_2.5.0.v20100521-1846.jar</li>
+                               <li> org.eclipse.ocl_3.0.1.R30x_v201008251030.jar</li>
+                               <li> org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030.jar</li>
+                           </ul>
+                       </itemgroup>
+                   </choice>
+               </choices>
+                
+               
+            </step>
+        </steps>
+    </taskbody>
+</task>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Physical Examination Section - conformance rules</title>
+<shortdesc id="shortdesc">[Section: templateId <tt>2.16.840.1.113883.10.20.2.10</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Section</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.2.10"/>
+</prolog>
+<body>
+<section id="description">
+<p>The Physical Examination section includes direct observations made by the clinician.
+The examination may include the use of simple instruments and may also describe
+simple maneuvers performed directly on the patient's body. This section only includes
+observations made by the examining clinician using inspection, palpation, auscultation,
+and percussion; it does not include laboratory or imaging findings. The exam may be
+limited to pertinent body systems based on the patient's chief complaint or it may
+include a comprehensive examination. The examination may be reported as a collection
+of random clinical statements or it may be reported categorically. Categorical report
+formats may be divided into multiple subsections, including Vital Signs, General Status,
+and any of the subsections listed in Appendix D: List of Additional Physical
+Examination Subsections. Note that Vital Signs can be a top-level section or subsection
+of Physical Exam.</p>
+
+<p>The physical findings included in this section describe direct observations made by the
+clinician divided by organ or body system and may be included under appropriate
+subsections to Physical Exam. Systems are typically listed cephalic to caudal (i.e.,
+starting with the head) and may include all body systems or only those pertinent to the
+chief complaint. The head, eyes, ears, nose, throat, mouth, and teeth may be described
+separately or combined into a single subsection labeled "HEENT." Other subsections
+may include Skin, Neck, Lymph Nodes, Thorax (Chest) and Lungs, Cardiovascular,
+Breasts, Abdomen, Pelvic, Genitourinary, Musculoskeletal, Extremities including
+Peripheral Vascular, and Neurologic. A detailed Mental Status Examination may be
+included when pertinent.</p>
+
+<p>The Physical Examination section may contain multiple nested subsections: Vital Signs,
+General Status, and those listed in Appendix D: List of Additional Physical
+Examination Subsections.</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Section</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29545-1" <i>PHYSICAL FINDINGS</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-85)</li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Section</li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29545-1" <i>PHYSICAL FINDINGS</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-85)</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.2.10" assigningAuthorityName="CDT Physical Examination Section"/>
+          <code code="29545-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PHYSICAL FINDINGS"/>
+          <title>PHYSICAL FINDINGS</title>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

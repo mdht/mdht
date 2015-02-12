@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: #pluginName
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.term.transform
+Bundle-Version: 2.0.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.core.runtime,
+ org.openhealthtools.mdht.uml.transform;visibility:=reexport,
+ org.openhealthtools.mdht.uml.term.core;visibility:=reexport
+Export-Package: org.openhealthtools.mdht.uml.term.transform.ecore
+Bundle-Activator: org.openhealthtools.mdht.uml.term.transform.internal.Activator

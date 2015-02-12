@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Episode Observation"/>
+<meta name="abstract" content="[Observation: templateId 2.16.840.1.113883.10.20.1.41]"/>
+<meta name="description" content="[Observation: templateId 2.16.840.1.113883.10.20.1.41]"/>
+<meta name="DC.Coverage" content="Observation"/>
+<meta name="DC.Relation" scheme="URI" content="../content/ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Episode Observation</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="title topictitle1">Episode Observation</h1>
+
+
+
+<div class="body"><p class="shortdesc">[Observation: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.41</tt>]</p>
+
+
+<div class="section">
+<p class="p">Episode observations are used to distinguish among multiple occurrences of a problem or social history item. An episode observation is used to indicate that a problem act represents a new episode, distinct from other episodes of a similar concern.</p>
+
+</div>
+
+
+<ol class="ol">
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Observation (CONF-169)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "OBS" (CONF-170)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-171)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-172, CONF-173)</li>
+
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "ASSERTION"  (CodeSystem: 2.16.840.1.113883.5.4 ActCode STATIC V3NE08) (CONF-174)</li>
+
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">value</tt><tt class="ph tt">/@code</tt> = "404684003" <em class="ph i">Clinical finding</em> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC), where its data type is CD (CONF-175)</li>
+
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Value in an episode observation SHOULD be the following SNOMED CT expression:
+&lt;codeblock&gt;&lt;value xsi:type="CD" code="404684003" codeSystem="2.16.840.1.113883.6.96" displayName="Clinical finding"&gt;
+  &lt;qualifier&gt;
+    &lt;name code="246456000" displayName="Episodicity"/&gt;
+    &lt;value code="288527008" displayName="New episode"/&gt;
+  &lt;/qualifier&gt;
+&lt;/value&gt;&lt;/codeblock&gt; (CONF-175)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Source of exactly one entryRelationship whose typeCode is 'SUBJ'. This is used to link the episode observation to the target problem act or social history observation. (CONF-176)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::ProblemAct)-&gt;size() = 1
+  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::SocialHistoryObservation)-&gt;size() = 1</pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Source of one or more entryRelationship whose typeCode is 'SAS'. The target of the entryRelationship SHALL be a problem act or social history observation. This is used to represent the temporal sequence of episodes. (CONF-177)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::ProblemAct)-&gt;size() &gt;0
+  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::SocialHistoryObservation)-&gt;size() &gt; 0</pre>
+</li>
+</ul>
+</li>
+
+</ol>
+
+
+<div class="fig fignone"><span class="figcap">Figure 1. Episode Observation example</span>
+
+
+
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
+  &lt;component&gt;
+    &lt;structuredBody&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;entry&gt;
+            &lt;observation classCode="OBS" moodCode="EVN"&gt;
+              &lt;templateId root="2.16.840.1.113883.10.20.1.41" assigningAuthorityName="CCD Episode Observation"/&gt;
+              &lt;code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/&gt;
+              &lt;statusCode code="completed"/&gt;
+              &lt;value xsi:type="CD"/&gt;
+            &lt;/observation&gt;
+          &lt;/entry&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+    &lt;/structuredBody&gt;
+  &lt;/component&gt;
+&lt;/ClinicalDocument&gt;</pre>
+
+</div>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

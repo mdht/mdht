@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Language Spoken - conformance rules</title>
+<shortdesc id="shortdesc">[LanguageCommunication: templateId <tt>2.16.840.1.113883.3.88.11.83.2</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>LanguageCommunication</category></metadata>
+<resourceid id="2.16.840.1.113883.3.88.11.83.2"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/LanguageCommunication.dita">IHE Language Communication</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.1</tt>) (C83-[DE-2.01-CDA-3])</li>
+<li><b>SHALL</b> contain [1..1] <tt>languageCode</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.1.11.11526 Language DYNAMIC 200609 (C154-[DE-2.01-1])</li>
+<li><b>SHALL</b> contain [0..1] <tt>modeCode</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.1.11.12249 LanguageAbilityMode Value Set STATIC 1 (C83-[DE-2.01-CDA-4])<ul><li>Mode codes SHALL be appropriate to the type of language. Thus English, as spoken in the U.S. SHOULD use the code en-US and SHOULD only use mode codes for written and verbal communications. On the other hand, American Sign Language would be represented using the code sign-US, and would only use mode codes for signed communication.</li></ul></li>
+<li><b>SHALL</b> satisfy: Languages spoken shall be recorded using the &lt;languageCommunication&gt; infrastructure class associated with the patient. The &lt;languageCommunication&gt; element describes the primary and secondary languages of communication for a person. (C83-[DE-2.01-CDA-1])</li>
+<li><b>SHALL</b> satisfy: Sign language is treated as a separate language. (C154-[DE-2.01-2])</li>
+<li><b>SHOULD</b> satisfy: CDA allows for use of proficiencyLevelCode element, but this element SHOULD NOT be used. (C83-[DE-2.01-CDA-5])<ul><li>Judgments about language proficiency are subjective, and could have a negative impact on consumers.</li></ul><ul><li><codeblock>[OCL]: self.proficiencyLevelCode.oclIsUndefined()</codeblock></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Language Communication</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/LanguageCommunication.dita">IHE Language Communication</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.1</tt>)</li>
+<li>[HITSP] <b>SHALL</b> contain [1..1] <tt>languageCode</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.1.11.11526 Language DYNAMIC 200609 (C154-[DE-2.01-1])</li>
+<li>[HITSP] <b>SHALL</b> contain [0..1] <tt>modeCode</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.1.11.12249 LanguageAbilityMode Value Set STATIC 1 (C83-[DE-2.01-CDA-4])<ul><li>Mode codes SHALL be appropriate to the type of language. Thus English, as spoken in the U.S. SHOULD use the code en-US and SHOULD only use mode codes for written and verbal communications. On the other hand, American Sign Language would be represented using the code sign-US, and would only use mode codes for signed communication.</li></ul></li>
+<li>[HITSP] <b>SHALL</b> satisfy: Languages spoken shall be recorded using the &lt;languageCommunication&gt; infrastructure class associated with the patient. The &lt;languageCommunication&gt; element describes the primary and secondary languages of communication for a person. (C83-[DE-2.01-CDA-1])</li>
+<li>[HITSP] <b>SHALL</b> satisfy: Sign language is treated as a separate language. (C154-[DE-2.01-2])</li>
+<li>[HITSP] <b>SHOULD</b> satisfy: CDA allows for use of proficiencyLevelCode element, but this element SHOULD NOT be used. (C83-[DE-2.01-CDA-5])<ul><li>Judgments about language proficiency are subjective, and could have a negative impact on consumers.</li></ul><ul><li><codeblock>[OCL]: self.proficiencyLevelCode.oclIsUndefined()</codeblock></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>

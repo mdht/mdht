@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Episode Observation - conformance rules</title>
+<shortdesc id="shortdesc">[Observation: templateId <tt>2.16.840.1.113883.10.20.1.41</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Observation</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.41"/>
+</prolog>
+<body>
+<section id="description">
+<p>Episode observations are used to distinguish among multiple occurrences of a problem or social history item. An episode observation is used to indicate that a problem act represents a new episode, distinct from other episodes of a similar concern.</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Observation (CONF-169)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS" (CONF-170)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-171)</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-172, CONF-173)</li>
+<li><b>SHOULD</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "ASSERTION"  (CodeSystem: 2.16.840.1.113883.5.4 ActCode STATIC V3NE08) (CONF-174)</li>
+<li><b>SHOULD</b> contain [1..1] <tt>value</tt><tt>/@code</tt> = "404684003" <i>Clinical finding</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC), where its data type is CD (CONF-175)</li>
+<li><b>SHOULD</b> satisfy: Value in an episode observation SHOULD be the following SNOMED CT expression:
+&lt;codeblock&gt;&lt;value xsi:type="CD" code="404684003" codeSystem="2.16.840.1.113883.6.96" displayName="Clinical finding"&gt;
+  &lt;qualifier&gt;
+    &lt;name code="246456000" displayName="Episodicity"/&gt;
+    &lt;value code="288527008" displayName="New episode"/&gt;
+  &lt;/qualifier&gt;
+&lt;/value&gt;&lt;/codeblock&gt; (CONF-175)</li>
+<li><b>SHALL</b> satisfy: Source of exactly one entryRelationship whose typeCode is 'SUBJ'. This is used to link the episode observation to the target problem act or social history observation. (CONF-176)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::ProblemAct)-&gt;size() = 1
+  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::SocialHistoryObservation)-&gt;size() = 1</codeblock></li></ul></li>
+<li><b>MAY</b> satisfy: Source of one or more entryRelationship whose typeCode is 'SAS'. The target of the entryRelationship SHALL be a problem act or social history observation. This is used to represent the temporal sequence of episodes. (CONF-177)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::ProblemAct)-&gt;size() &gt;0
+  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::SocialHistoryObservation)-&gt;size() &gt; 0</codeblock></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Observation</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS" (CONF-170)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-171)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "ASSERTION"  (CodeSystem: 2.16.840.1.113883.5.4 ActCode STATIC V3NE08) (CONF-174)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-172, CONF-173)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>value</tt><tt>/@code</tt> = "404684003" <i>Clinical finding</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC), where its data type is CD (CONF-175)</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Value in an episode observation SHOULD be the following SNOMED CT expression:
+&lt;codeblock&gt;&lt;value xsi:type="CD" code="404684003" codeSystem="2.16.840.1.113883.6.96" displayName="Clinical finding"&gt;
+  &lt;qualifier&gt;
+    &lt;name code="246456000" displayName="Episodicity"/&gt;
+    &lt;value code="288527008" displayName="New episode"/&gt;
+  &lt;/qualifier&gt;
+&lt;/value&gt;&lt;/codeblock&gt; (CONF-175)</li>
+<li>[CCD] <b>SHALL</b> satisfy: Source of exactly one entryRelationship whose typeCode is 'SUBJ'. This is used to link the episode observation to the target problem act or social history observation. (CONF-176)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::ProblemAct)-&gt;size() = 1
+  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::SocialHistoryObservation)-&gt;size() = 1</codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Source of one or more entryRelationship whose typeCode is 'SAS'. The target of the entryRelationship SHALL be a problem act or social history observation. This is used to represent the temporal sequence of episodes. (CONF-177)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::ProblemAct)-&gt;size() &gt;0
+  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::SocialHistoryObservation)-&gt;size() &gt; 0</codeblock></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.41" assigningAuthorityName="CCD Episode Observation"/>
+              <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+              <statusCode code="completed"/>
+              <value xsi:type="CD"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Copyright (c) 2009, 2012 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson - initial API and implementation
+      Sean Muir - Updated and refactored to use within Dita plugin
+      
+  $Id$
+  
+  xhtml, eclipsehelp, eclipsecontent, javahelp, htmlhelp, pdf, pdf2, troff, docbook, wordrtf, odt.
+  
+-->
+
+<project name="Publish DITA">
+
+	<import file="${dita.dir}/integrator.xml" />
+
+
+	<target name="troff" depends="integrate">
+	
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="troff" />			
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />			
+			<property name="dita.ext" value=".dita" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+			<property name="args.csspath" value="css" />
+			<property name="args.copycss" value="no" />
+			<property name="dita.eclipse.plugin" value="no" />
+		</ant>
+
+	</target>
+
+	
+	<target name="htmlhelp" depends="integrate">
+	
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="htmlhelp" />			
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />			
+			<property name="dita.ext" value=".dita" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+			<property name="args.csspath" value="css" />
+			<property name="args.copycss" value="no" />
+			<property name="dita.eclipse.plugin" value="no" />
+		</ant>
+
+	</target>
+
+	<target name="eclipsecontent" depends="integrate">
+	
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="eclipsecontent" />			
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />			
+			<property name="dita.ext" value=".dita" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+			<property name="args.csspath" value="css" />
+			<property name="args.copycss" value="no" />
+			<property name="dita.eclipse.plugin" value="no" />
+		</ant>
+
+	</target>
+
+	<target name="javahelp" depends="integrate">
+	
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="javahelp" />			
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />			
+			<property name="dita.ext" value=".dita" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+			<property name="args.csspath" value="css" />
+			<property name="args.copycss" value="no" />
+			<property name="dita.eclipse.plugin" value="no" />
+		</ant>
+
+	</target>
+	
+	<target name="eclipsehelp" depends="integrate">
+	
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="eclipsehelp" />			
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />			
+			<property name="dita.ext" value=".dita" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+			<property name="args.csspath" value="css" />
+			<property name="args.copycss" value="no" />
+			<property name="dita.eclipse.plugin" value="no" />
+		</ant>
+
+	</target>
+
+	<target name="pdf" depends="integrate">
+		
+
+		<delete file="./${fileName}.pdf" />
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="pdf" />
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />
+		</ant>
+		
+		<move file="./${ditaMapFileName}pdf" tofile="./${fileName}.pdf" />
+		
+		
+	</target>
+	
+	<target name="odt" depends="integrate">
+			
+
+			<delete file="./${fileName}.odt" />
+			
+			<ant antfile="${dita.dir}/build.xml" target="init">
+				<property name="transtype" value="odt" />
+				<property name="args.input" value="${ditaMapFile}" />
+				<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+				<property name="dita.temp.dir" location="${tempFilePath}" />
+				<property name="clean.temp" value="true" />
+				<property name="output.dir" value="." />
+			</ant>
+			
+			<move file="./${ditaMapFileName}odt" tofile="./${fileName}.odt" />
+			
+			
+		</target>
+	
+
+	<target name="docbook" depends="integrate">
+		
+
+		<delete file="./${fileName}.docbook" />
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="docbook" />
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />
+		</ant>
+		
+		<move file="./${ditaMapFileName}xml" tofile="./${fileName}.xml" />
+		
+		
+	</target>
+	
+
+	<target name="pdf2" depends="integrate">
+		
+
+		<delete file="./${fileName}.pdf" />
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="pdf2" />
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="dita.temp.dir" location="${tempFilePath}" />
+			<property name="clean.temp" value="true" />
+			<property name="output.dir" value="." />
+		</ant>
+		
+		<move file="./${ditaMapFileName}pdf" tofile="./${fileName}.pdf" />
+		
+		
+	</target>
+
+	
+
+
+	<target name="xhtml" depends="integrate">
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="xhtml" />
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="output.dir" value="." />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+		</ant>
+		
+		
+	</target>
+	
+	<target name="epub" depends="integrate">
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="epub" />
+			
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="output.dir" value="." />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+				
+		</ant>
+		
+<!--		<delete dir="temp"/>
+		<delete file="${epub.output}/dita.list"/>
+		<delete file="${epub.output}/dita.xml.properties"/>
+		<delete file="${epub.output}/delta.gif"/>
+		<delete file="${epub.output}/deltaend.gif"/>
+		-->
+		
+	</target>
+
+	<target name="wordrtf" depends="integrate">
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="wordrtf" />
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="output.dir" value="." />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+		</ant>
+		
+		<move file="./${ditaMapFileName}rtf" tofile="./${fileName}.rtf" />
+		
+	
+		
+	</target>
+
+</project>

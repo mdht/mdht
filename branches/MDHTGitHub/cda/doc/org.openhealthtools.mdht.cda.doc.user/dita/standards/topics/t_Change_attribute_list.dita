@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_2E498DAC927448FD8CEE5B12F41A526C"> 
+  <title>Change attribute list</title> 
+  <shortdesc>Change the list of constrained attributes in an existing template.
+	 
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_BE4773733C914068AFBE8219E6A147B0"> 
+		<step id="step_D30837EFA0FE40DF95280F6D6F10D330"> 
+		  <cmd>To change the list of constrained attributes in an existing
+			 template, right-click on a template class, select 
+			 <menucascade><uicontrol>CDA Tools</uicontrol><uicontrol>Open Template
+				  Editor</uicontrol></menucascade> 
+		  </cmd> 
+		  <info> 
+			 <p>In the example below, a VitalSign template in the HITSP model
+				specializes a VitalSignObservation template in the IHE model, which specializes
+				ResultObservation in the CCD model, which specializes Observation in CDA. The
+				HITSP template adds an attribute constraint for 'code', but other attributes
+				have been constrained in the IHE and CCD templates. This dialog shows the icons
+				for info/warning/error beside inherited constraints so that you can see the
+				aggregate effect of all templates. 
+			 </p> 
+			 <image href="../images/TemplateEditorDialog.png"
+			  id="image_B1DE0D8285724DA39E6B4B77EBC97781" placement="break"></image> 
+		  </info> 
+		</step> 
+	 </steps> 
+  </taskbody>
+</task>

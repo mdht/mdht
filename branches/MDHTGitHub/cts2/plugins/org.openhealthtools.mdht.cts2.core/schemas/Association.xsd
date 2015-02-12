@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:assoc="http://schema.omg.org/spec/CTS2/1.0/Association" xmlns:core="http://schema.omg.org/spec/CTS2/1.0/Core" xmlns="http://schema.omg.org/spec/CTS2/1.0/Association"
+	targetNamespace="http://schema.omg.org/spec/CTS2/1.0/Association" elementFormDefault="qualified">
+	<xs:import namespace="http://schema.omg.org/spec/CTS2/1.0/Core" schemaLocation="Core.xsd"/>
+
+	<!-- ====================================================
+		Association
+		======================================================-->
+	<xs:element name="Association" type="Association">
+		<xs:annotation>
+			<xs:documentation>A "semantic" assertion about a relationship between a <i>subject</i> entity and a target entity, literal or compound expression as represented by an unnamed blank node ("bnode"). </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Association">
+		<xs:annotation>
+			<xs:documentation>A "semantic" assertion about a relationship between a <i>subject</i> entity and a target entity, literal or compound expression as represented by an unnamed blank node ("bnode"). </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Changeable">
+				<xs:sequence>
+					<xs:element name="subject" type="core:URIAndEntityName" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the subject of the association statement. <i>subject </i>must reference an <i>Entity </i>- i.e. a class, predicate and/or individual.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="predicate" type="core:PredicateReference" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the predicate of the association statement.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="target" type="core:StatementTarget" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>the target (object) of the association statement. A target may be a reference to an entity, an external resource URI, a literal or a compound expression (bnode) or a set of
+								targets.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="associationQualifier" type="core:Property" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>additional tag/value attributes that qualify the association statement itself as opposed to the statement subject.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assertedBy" type="core:CodeSystemVersionReference" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the code system version that is making this assertion. A code system version makes an assertion when (a) it contains the assertion, (b) it imports a code system version that contains the
+								assertion or (c) the assertion is inferred from other assertions.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assertedIn" type="core:CodeSystemVersionReference" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the code system version that actually contains this assertion. If absent, it is the same resource as <i>assertedBy</i>.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="derivationReasoningAlgorithm" type="core:ReasoningAlgorithmReference" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>a reasoning algorithm that was used to derive an association of <i>derivation</i>
+								<i>INFERRED</i>. Note that more than one reasoning algorithm may be present for the same association.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sourceStatements" type="core:StatementDirectoryURI" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>detail about the provenance and history of the statement(s) from which this particular association is derived. This attribute will only be present in CTS<sub>2</sub> service implementations that
+								support the statements model.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="associationID" type="core:URI" use="required">
+					<xs:annotation>
+						<xs:documentation>the unique identifier of the association instance. While the update mechanism of the CTS<sub>2</sub> specifications requires that all <i>Changeable</i> elements have unique identifiers, the rules
+							and mechanism for assigning unique identifiers to statements and associations are non-trivial. At the moment, the CTS<sub>2</sub> specification remains silent when it comes to arriving at how this identifier is
+							generated except to note that, if two service implementations do not generate the same unique identifier for the same assertion, then the <i>prevImage</i> element in <i>Changeable</i> becomes the only way to
+							identify which Association instance is being updated or deleted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="localID" type="core:String" use="optional">
+					<xs:annotation>
+						<xs:documentation>the local identifier of the association instance. If externalStatementID is present, it will be used
+						for the localId. If not, the localID will be generated by the service.</xs:documentation>
+						<xs:appinfo>PSM</xs:appinfo>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="derivation" type="AssociationDerivation" default="ASSERTED">
+					<xs:annotation>
+						<xs:documentation>how this association was derived. <i>ASSERTED </i>takes precedence over <i>DERIVED </i>, meaning that an assertion that is both asserted and derived is marked as asserted.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="AssociationDerivation">
+		<xs:annotation>
+			<xs:documentation>The derivation of a given statement - whether it is directly asserted by the source, is derived by the application of a reasoner or is unknown because the reasoner or source does not supply such
+				information.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ASSERTED">
+				<xs:annotation>
+					<xs:documentation>The statement was explicitly asserted by the asserting code system version.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INFERRED">
+				<xs:annotation>
+					<xs:documentation>The statement was <i>not</i> asserted by the code system version, but was logically inferred by the application of one ormore reasoning algorithms to other statements within the code system
+						version.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AssociationRendering">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="languageAndSyntax" type="core:OntologyLanguageAndSyntax" minOccurs="1"> </xs:element>
+			<xs:element name="representation" type="core:OpaqueData" minOccurs="1"> </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- ====================================================
+		Association PSM
+		======================================================-->
+	<xs:element name="AssociationMsg" type="AssociationMsg"/>
+	<xs:complexType name="AssociationMsg">
+		<xs:annotation>
+			<xs:documentation>A <i>Association</i> read from a service instance.</xs:documentation>
+			<xs:appinfo>PSM</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Message">
+				<xs:sequence>
+					<xs:element name="association" type="Association"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<!-- ====================================================
+		AssociationDirectory
+		======================================================-->
+	<xs:element name="AssociationDirectory" type="AssociationDirectory"/>
+	<xs:complexType name="AssociationDirectory">
+		<xs:annotation>
+			<xs:documentation>A directory of <i>Association</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="AssociationDirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AssociationDirectoryEntry">
+		<xs:annotation>
+			<xs:documentation>A synopsis of an <i>Association</i> along with information about how to access the complete resource.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:DirectoryEntry">
+				<xs:sequence>
+					<xs:element name="subject" type="core:URIAndEntityName" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the subject of the association statement</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="predicate" type="core:PredicateReference" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the predicate of the association statement</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="target" type="core:StatementTarget" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the target (object) of the association statement</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assertedBy" type="core:CodeSystemVersionReference" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the code system version that is making this assertion</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="AssociationList" type="AssociationList"/>
+	<xs:complexType name="AssociationList">
+		<xs:annotation>
+			<xs:documentation>A collection of complete <i>Association</i> resources that meet a specified criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="entry" type="AssociationListEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+		
+	</xs:complexType>
+
+	<xs:complexType name="AssociationListEntry">
+		<xs:annotation>
+			<xs:documentation>An instance of <i>Association</i> that meets a specified filter criteria.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Association">
+				<xs:sequence>
+					<xs:group ref="core:DirectoryEntryElementGroup"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="core:DirectoryEntryAttributeGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<!-- ====================================================
+		AssociationGraph
+		======================================================-->
+	<xs:element name="AssociationGraph" type="AssociationGraph"/>
+	<xs:complexType name="AssociationGraph">
+		<xs:annotation>
+			<xs:documentation>An augmented rendering of a set of <i>Associations </i>where the linkage between subject and target nodes has been normalized for easier traversal.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="core:Directory">
+				<xs:sequence>
+					<xs:element name="focusEntity" type="core:URIAndEntityName" minOccurs="0"/>
+					<xs:element name="entry" type="GraphNode" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="expansionDepth" type="core:NaturalNumber" use="optional"/>
+				<xs:attribute name="expansionDirection" type="GraphDirection" use="required"/>
+				<xs:attribute name="graphFocus" type="GraphFocus" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:simpleType name="GraphDirection">
+		<xs:annotation>
+			<xs:documentation>An indicator that states whether the graph represents a graph at which the focus is in the subject role, the target role or both.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FORWARD">
+				<xs:annotation>
+					<xs:documentation>Indicates that graph is based the graph focus in the source role - the graph is drawn from source to target with the source at the root.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="REVERSE">
+				<xs:annotation>
+					<xs:documentation>Indicates that graph is based the graph focus in the target role - the graph is drawn from target source with the source at the bottom.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BOTH">
+				<xs:annotation>
+					<xs:documentation>Indicates that graph is based the graph focus in both the source and the target role - the graph represents all associations in which the focus is either in the source or target role.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="GraphFocus">
+		<xs:annotation>
+			<xs:documentation>Identifies the root of an association graph</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SPECIFIC_ENTITY">
+				<xs:annotation>
+					<xs:documentation>The focus on the graph is contained in <i>focusEntity</i></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TOP_NODE">
+				<xs:annotation>
+					<xs:documentation>The focus of the graph is on the <i>TOP</i> or "universe" node</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BOTTOM_NODE">
+				<xs:annotation>
+					<xs:documentation>The focus of the graph is on the <i>BOTTOM</i> or empty node</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="GraphNode">
+		<xs:annotation>
+			<xs:documentation>The summary of an association as represented in a flattened graph structure. </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AssociationDirectoryEntry">
+				<xs:sequence>
+					<xs:element name="nodeEntity" type="core:EntitySynopsis" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>the URI, name and a designation for the <i>EntityReference</i> represented by this node. <i>nodeEntity</i> represents the association <i>subject</i> when <i>direction</i> is
+									<i>SOURCE_TO_TARGET</i> and (one of the) targets when <i>direction</i> is <i>TARGET_TO_SOURCE.</i></xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="nodeNumber" type="core:NaturalNumber" use="required">
+					<xs:annotation>
+						<xs:documentation>an integer that corresponds to the particular <i>EntityReference</i> in <i>nodeEntity</i>. Every instance of the same <i>EntityReference</i> will be represented by the same <i>nodeNumber</i>. There
+							will be graph node for every <i>source predicate target </i>combination in the association, with multiple GraphNodes being generated for <i>targets</i> that are of type set or BNode.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="direction" type="core:AssociationDirection" use="required">
+					<xs:annotation>
+						<xs:documentation>an indicator whether <i>nodeEntity</i> plays a source or a target role in the accompanying <i>AssociationDirectory</i> instance</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="nextNodeNumber" type="core:NaturalNumber" use="optional">
+					<xs:annotation>
+						<xs:documentation>an integer that represents the next graph node that is reached by traversing the specified <i>predicate</i> in the specified <i>direction</i>. This number will only be present if the result of
+							traversing <i>predicate</i> results in an <i>EntityReference</i>. Target nodes of type <i>ResourceReference</i> or <i>Literal</i> will not be assigned node numbers. Note that each <i>EntityReference</i> target of
+							a nested BNODE will be represented by a different <i>GraphNode</i>.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+</xs:schema>

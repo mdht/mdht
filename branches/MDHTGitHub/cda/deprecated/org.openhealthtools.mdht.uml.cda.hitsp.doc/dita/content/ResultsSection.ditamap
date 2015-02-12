@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="cdabook">
+
+	<chapter navtitle="Consolidated Results" type="topic">
+		<topicref href="../classes/DiagnosticResultsSection.dita" type="topic" />
+		<topicref href="../classes/Procedure.dita" type="topic" />
+		<topicref href="../classes/Result.dita" type="topic" />
+		
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ExternalReference.dita" type="topic" />
+
+	</chapter>
+	
+	<chapter navtitle="CCD Results" type="topic">
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ResultsSection.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ResultOrganizer.dita" type="topic" />
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ResultObservation.dita" type="topic" />
+
+	</chapter>
+	
+</bookmap>

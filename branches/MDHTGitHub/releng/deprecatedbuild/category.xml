@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+<!-- XML Modeling Feature -->
+   <feature url="features/net.sourceforge.xmlmodeling.uml.xsd_3.0.0.qualifier.jar" id="net.sourceforge.xmlmodeling.uml.xsd" version="3.0.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.hdf.papyrus.cat"/>
+     <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
+   </feature>
+
+<!-- MDHT UML Feature -->
+  <feature url="features/org.openhealthtools.mdht.uml_0.5.0.qualifier.jar" id="org.openhealthtools.mdht.uml" version="0.5.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.papyrus.cat"/>
+     <category name="org.openhealthtools.mdht.uml.cda.rsm.cat"/>
+       <category name="org.openhealthtools.mdht.uml.hdf.papyrus.cat"/>
+      <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/> 
+   </feature>
+
+<!-- MDHT HDF Features -->
+
+  <feature url="features/org.openhealthtools.mdht.uml.hdf_0.5.0.qualifier.jar" id="org.openhealthtools.mdht.uml.hdf" version="0.5.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.hdf.papyrus.cat"/>
+      <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
+   </feature>
+
+
+   <feature url="features/org.openhealthtools.mdht.uml.rsm_0.5.0.qualifier.jar" id="org.openhealthtools.mdht.uml.rsm" version="0.5.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
+   </feature>
+
+  <feature url="features/org.openhealthtools.mdht.uml.papyrus_0.5.0.qualifier.jar" id="org.openhealthtools.mdht.uml.papyrus" version="0.5.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.hdf.papyrus.cat"/>
+   </feature>
+
+
+<!-- MDHT CDA Features -->
+  <feature url="features/org.openhealthtools.mdht.uml.cda_0.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda" version="0.1.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.papyrus.cat"/>
+     <category name="org.openhealthtools.mdht.uml.cda.rsm.cat"/>
+   </feature>
+
+  <feature url="features/org.openhealthtools.mdht.uml.cda.rsm_0.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.rsm" version="0.1.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.rsm.cat"/>
+   </feature>
+
+  <feature url="features/org.openhealthtools.mdht.uml.cda.papyrus_0.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.papyrus" version="0.1.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.cda.papyrus.cat"/>
+   </feature>
+
+
+<!-- MDHT HDF Categories -->
+   <category-def name="org.openhealthtools.mdht.uml.hdf.papyrus.cat" label="UML Modeling Platform for HL7 Development Framework (HDF); Papyrus Edition"/>
+
+   <category-def name="org.openhealthtools.mdht.uml.hdf.rsm.cat" label="UML Modeling Platform for HL7 Development Framework (HDF); RSM Edition"/>
+
+
+<!-- MDHT CDA Categories -->
+   <category-def name="org.openhealthtools.mdht.uml.cda.papyrus.cat" label="UML Modeling Platform for Clinical Document Architecture (CDA); Papyrus Edition"/>
+
+   <category-def name="org.openhealthtools.mdht.uml.cda.rsm.cat" label="UML Modeling Platform for Clinical Document Architecture (CDA); RSM Edition"/>
+
+</site>

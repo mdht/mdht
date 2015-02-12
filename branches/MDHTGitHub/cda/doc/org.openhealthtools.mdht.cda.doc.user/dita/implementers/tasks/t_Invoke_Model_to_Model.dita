@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="invokemodeltomodeltask" xml:lang="en-us">
+<title>Invoke the Model-to-Model Transformation via Ant</title>
+<prolog></prolog>
+<taskbody>
+<context><p>An Ant build script is used to invoke the model-to-model transformation</p></context>
+<steps>
+<step><cmd>Right-click on build.xml and select Run As > Ant Build...</cmd></step>
+<step><cmd>Click on the JRE tab and make sure "Run in the same JRE as the workspace" is selected</cmd></step>
+<step><cmd>Click the "Run" button</cmd><stepresult>The console will display log messages as the transformation executes</stepresult></step>
+</steps>
+</taskbody>
+</task>

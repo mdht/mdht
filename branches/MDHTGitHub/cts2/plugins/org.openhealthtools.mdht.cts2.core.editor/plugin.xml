@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.6"?>
+
+<!--
+ Copyright (c) 2012 David A Carlson
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ 	 David A Carlson (XMLmodeling.com) - initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.association.presentation.AssociationModelWizardID"
+            name="%_UI_AssociationModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.association.presentation.AssociationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AssociationModelFile.gif">
+         <description>%_UI_AssociationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.association.presentation.AssociationEditorID"
+            name="%_UI_AssociationEditor_label"
+            icon="icons/full/obj16/AssociationModelFile.gif"
+            extensions="association"
+            class="org.openhealthtools.mdht.cts2.association.presentation.AssociationEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.association.presentation.AssociationActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.core.presentation.CoreModelWizardID"
+            name="%_UI_CoreModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.core.presentation.CoreModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CoreModelFile.gif">
+         <description>%_UI_CoreModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.core.presentation.CoreEditorID"
+            name="%_UI_CoreEditor_label"
+            icon="icons/full/obj16/CoreModelFile.gif"
+            extensions="core"
+            class="org.openhealthtools.mdht.cts2.core.presentation.CoreEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.core.presentation.CoreActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.codesystem.presentation.CodeSystemModelWizardID"
+            name="%_UI_CodeSystemModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.codesystem.presentation.CodeSystemModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CodeSystemModelFile.gif">
+         <description>%_UI_CodeSystemModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.codesystem.presentation.CodeSystemEditorID"
+            name="%_UI_CodeSystemEditor_label"
+            icon="icons/full/obj16/CodeSystemModelFile.gif"
+            extensions="codesystem"
+            class="org.openhealthtools.mdht.cts2.codesystem.presentation.CodeSystemEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.codesystem.presentation.CodeSystemActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.codesystemversion.presentation.CodeSystemVersionModelWizardID"
+            name="%_UI_CodeSystemVersionModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.codesystemversion.presentation.CodeSystemVersionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CodeSystemVersionModelFile.gif">
+         <description>%_UI_CodeSystemVersionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.codesystemversion.presentation.CodeSystemVersionEditorID"
+            name="%_UI_CodeSystemVersionEditor_label"
+            icon="icons/full/obj16/CodeSystemVersionModelFile.gif"
+            extensions="codesystemversion"
+            class="org.openhealthtools.mdht.cts2.codesystemversion.presentation.CodeSystemVersionEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.codesystemversion.presentation.CodeSystemVersionActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.entity.presentation.EntityModelWizardID"
+            name="%_UI_EntityModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.entity.presentation.EntityModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EntityModelFile.gif">
+         <description>%_UI_EntityModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.entity.presentation.EntityEditorID"
+            name="%_UI_EntityEditor_label"
+            icon="icons/full/obj16/EntityModelFile.gif"
+            extensions="entity"
+            class="org.openhealthtools.mdht.cts2.entity.presentation.EntityEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.entity.presentation.EntityActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.statement.presentation.StatementModelWizardID"
+            name="%_UI_StatementModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.statement.presentation.StatementModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StatementModelFile.gif">
+         <description>%_UI_StatementModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.statement.presentation.StatementEditorID"
+            name="%_UI_StatementEditor_label"
+            icon="icons/full/obj16/StatementModelFile.gif"
+            extensions="statement"
+            class="org.openhealthtools.mdht.cts2.statement.presentation.StatementEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.statement.presentation.StatementActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.valueset.presentation.ValueSetModelWizardID"
+            name="%_UI_ValueSetModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.valueset.presentation.ValueSetModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ValueSetModelFile.gif">
+         <description>%_UI_ValueSetModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.valueset.presentation.ValueSetEditorID"
+            name="%_UI_ValueSetEditor_label"
+            icon="icons/full/obj16/ValueSetModelFile.gif"
+            extensions="valueset"
+            class="org.openhealthtools.mdht.cts2.valueset.presentation.ValueSetEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.valueset.presentation.ValueSetActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.openhealthtools.mdht.cts2.valuesetdefinition.presentation.ValueSetDefinitionModelWizardID"
+            name="%_UI_ValueSetDefinitionModelWizard_label"
+            class="org.openhealthtools.mdht.cts2.valuesetdefinition.presentation.ValueSetDefinitionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ValueSetDefinitionModelFile.gif">
+         <description>%_UI_ValueSetDefinitionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.openhealthtools.mdht.cts2.valuesetdefinition.presentation.ValueSetDefinitionEditorID"
+            name="%_UI_ValueSetDefinitionEditor_label"
+            icon="icons/full/obj16/ValueSetDefinitionModelFile.gif"
+            extensions="valuesetdefinition"
+            class="org.openhealthtools.mdht.cts2.valuesetdefinition.presentation.ValueSetDefinitionEditor"
+            contributorClass="org.openhealthtools.mdht.cts2.valuesetdefinition.presentation.ValueSetDefinitionActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

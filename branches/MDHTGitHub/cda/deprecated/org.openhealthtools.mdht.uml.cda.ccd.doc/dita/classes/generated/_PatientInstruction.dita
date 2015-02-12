@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Patient Instruction - conformance rules</title>
+<shortdesc id="shortdesc">[Act: templateId <tt>2.16.840.1.113883.10.20.1.49</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Act</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.49"/>
+</prolog>
+<body>
+<section id="description">
+<p>
+    Patient instructions are additional information provided to a patient related to one of their
+    medications (e.g. "take on an empty stomach").
+</p>
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> conform to CDA Act (CONF-331)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "INT" (CONF-332)</li>
+</ol>
+<ol id="aggregate">
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Act</li>
+<li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is x_ActClassDocumentEntryAct</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "INT" (CONF-332)</li>
+<li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <act classCode="ACT" moodCode="INT">
+              <templateId root="2.16.840.1.113883.10.20.1.49" assigningAuthorityName="CCD Patient Instruction"/>
+            </act>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

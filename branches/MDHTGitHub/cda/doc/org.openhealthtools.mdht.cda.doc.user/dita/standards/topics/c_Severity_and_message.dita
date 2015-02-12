@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_AEA4AFEB0B7749ACB785A68FBBCCAD7E"> 
+  <title>Severity and message</title> 
+  <shortdesc>A template constraint may be assigned a severity level and a
+	 message string that describes the constraint.
+  </shortdesc> 
+  <conbody>
+	 <p>Each template constraint may be assigned a severity level chosen from:
+		Error, Warning, or Info. If not specified, Error is the default. These values
+		correspond to typical requirement specification modes of SHALL, SHOULD, and
+		MAY.
+	 </p>
+	 <p>Each constraint also has a message that is displayed by generated Java
+		code when CDA document instances are validated using these template
+		definitions. Although a custom message can be entered for each constraint, it
+		is easiest to calculate the message text from the model. The messages may be
+		assigned as shown below. 
+	 </p><image placement="break" id="image_03B1E277140E44E5B81FF351E1C3C414"
+	 href="../images/TableSeverityMessage.png"></image>
+	 <p>After assigning calculated messages for this class, the association
+		message looks like this:
+	 </p><image placement="break" id="image_0E8032BA1D9A44208E04703F4C0D19E5"
+	 href="../images/TableSeverityMessageTab.png"></image>
+  </conbody>
+</concept>
