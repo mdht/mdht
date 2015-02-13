@@ -84,47 +84,35 @@
 	</xsl:variable>
 
 
+<!-- 
 
+Page 2                                                                   HL7 CDA R2 IG Birth and Fetal Death Report, Release 1- US Realm
+© 2015 Health Level Seven International.  All rights reserved.                                                              February 2015
+ -->
 
 	<xsl:template name="insertBodyOddFooter">
 		<fo:static-content flow-name="odd-body-footer">
+		 <fo:block xsl:use-attribute-sets="__body__odd__footer">
 			<fo:table table-layout="fixed" inline-progression-dimension="100%">
-				<fo:table-column column-width="33.3%" />
-				<fo:table-column column-width="33.3%" />
-				<fo:table-column column-width="33.3%" />
+				<fo:table-column column-width="50%" />
+				<fo:table-column column-width="50%" />
 				<fo:table-body>
-					<fo:table-row>
+					<fo:table-row>				
 						<fo:table-cell>
 							<fo:block text-align="start">
-								<xsl:value-of select="$productBrand" />
-							</fo:block>
-							<fo:block text-align="start">
-								<xsl:value-of select="$productSeries" />
-							</fo:block>
-						</fo:table-cell>
-						<fo:table-cell>
-							<fo:block text-align="center">
-								<xsl:value-of
-									select="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]" />
-								(
-								<xsl:value-of select="$productPlatform" />
-								)
-							</fo:block>
-						</fo:table-cell>
-						<fo:table-cell>
-							<fo:block text-align="end">
 								Page
 								<fo:page-number />
 							</fo:block>
-							<fo:block text-align="end">
-								<xsl:value-of
-									select="format-dateTime(current-dateTime(),'[MNn] [Y0001]')" />
+						</fo:table-cell>	
+						<fo:table-cell>
+						<fo:block text-align="end">
+								<xsl:value-of select="$productBrand" /><xsl:text> </xsl:text><xsl:value-of select="$map//*[contains(@class,' bookmap/booktitlealt ')][1]" /><xsl:text> - </xsl:text><xsl:value-of select="$productPlatform" />
 							</fo:block>
 						</fo:table-cell>
 					</fo:table-row>
-					<fo:table-row>
-						<fo:table-cell number-columns-spanned="3">
-							<fo:block text-align="center">
+					<fo:table-row>	
+						<fo:table-cell >
+							<fo:block text-align="left">
 								<xsl:choose>
 									<xsl:when test="$map/bookmeta/bookrights/bookowner/organization">
 										<xsl:for-each
@@ -144,66 +132,71 @@
 								</xsl:choose>
 							</fo:block>
 						</fo:table-cell>
-					</fo:table-row>
-				</fo:table-body>
-			</fo:table>
-		</fo:static-content>
-	</xsl:template>
-
-	<xsl:template name="insertBodyEvenFooter">
-		<fo:static-content flow-name="even-body-footer">
-			<fo:table table-layout="fixed" inline-progression-dimension="100%">
-				<fo:table-column column-width="33.3%" />
-				<fo:table-column column-width="33.3%" />
-				<fo:table-column column-width="33.3%" />
-				<fo:table-body>
-					<fo:table-row>
 						<fo:table-cell>
-							<fo:block text-align="start">
-								<xsl:value-of select="$productBrand" />
-							</fo:block>
-							<fo:block text-align="start">
-								<xsl:value-of select="$productSeries" />
-							</fo:block>
-						</fo:table-cell>
-						<fo:table-cell>
-							<fo:block text-align="center">
-								<xsl:value-of
-									select="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]" />
-								(
-								<xsl:value-of select="$productPlatform" />
-								)
-							</fo:block>
-						</fo:table-cell>
-						<fo:table-cell>
-							<fo:block text-align="end">
-								Page
-								<fo:page-number />
-							</fo:block>
 							<fo:block text-align="end">
 								<xsl:value-of
 									select="format-dateTime(current-dateTime(),'[MNn] [Y0001]')" />
 							</fo:block>
 						</fo:table-cell>
 					</fo:table-row>
-					<fo:table-row>
-						<fo:table-cell number-columns-spanned="3">
+				</fo:table-body>
+			</fo:table>
+			</fo:block>
+		</fo:static-content>
+	</xsl:template>
 
-							<fo:block text-align="center">
-								<xsl:for-each select="$map/bookmeta/bookrights/bookowner/organization">
-									&#xA9;
-									<xsl:text />
-									<xsl:value-of select="$map/bookmeta/bookrights/copyrlast/year" />
-									<xsl:text />
-									<xsl:value-of select="." />
-									<xsl:text />
-								</xsl:for-each>
+	<xsl:template name="insertBodyEvenFooter">
+		<fo:static-content flow-name="even-body-footer">
+		   <fo:block xsl:use-attribute-sets="__body__even__footer">
+				<fo:table table-layout="fixed" inline-progression-dimension="100%">
+				<fo:table-column column-width="50%" />
+				<fo:table-column column-width="50%" />
+				<fo:table-body>
+					<fo:table-row>				
+						<fo:table-cell>
+							<fo:block text-align="start">
+								Page
+								<fo:page-number />
 							</fo:block>
-
+						</fo:table-cell>	
+						<fo:table-cell>
+						<fo:block text-align="end">
+								<xsl:value-of select="$productBrand" /><xsl:text> </xsl:text><xsl:value-of select="$map//*[contains(@class,' bookmap/booktitlealt ')][1]" /><xsl:text> - </xsl:text><xsl:value-of select="$productPlatform" />
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row>	
+						<fo:table-cell >
+							<fo:block text-align="left">
+								<xsl:choose>
+									<xsl:when test="$map/bookmeta/bookrights/bookowner/organization">
+										<xsl:for-each
+											select="$map/bookmeta/bookrights/bookowner/organization">
+											<xsl:text>&#xA9; </xsl:text>
+											<xsl:value-of select="$map/bookmeta/bookrights/copyrlast/year" />
+											<xsl:text> </xsl:text>
+											<xsl:value-of select="." />
+											<xsl:text>. All rights reserved</xsl:text>
+										</xsl:for-each>
+									</xsl:when>
+									<xsl:otherwise>
+										Missing Book Rights Organization (Health Level Seven
+										International) in BookMap
+										(bookmap/bookmeta/bookrights/bookowner/organization)
+									</xsl:otherwise>
+								</xsl:choose>
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="end">
+								<xsl:value-of
+									select="format-dateTime(current-dateTime(),'[MNn] [Y0001]')" />
+							</fo:block>
 						</fo:table-cell>
 					</fo:table-row>
 				</fo:table-body>
 			</fo:table>
+			</fo:block>
 		</fo:static-content>
 	</xsl:template>
 
@@ -560,77 +553,6 @@
 			</fo:flow>
 		</fo:page-sequence>
 
-	<fo:page-sequence master-reference="body-odd">
-		<fo:static-content flow-name="odd-body-header">
-			<fo:block xsl:use-attribute-sets="__body__odd__header">
-				<xsl:value-of select="$productName" />
-			</fo:block>
-		</fo:static-content>
-		
-				<fo:static-content flow-name="odd-body-footer">
-				<fo:table table-layout="fixed"
-					inline-progression-dimension="100%">
-					<fo:table-column column-width="10%" />
-					<fo:table-column column-width="80%" />
-					<fo:table-column column-width="10%" />
-					<fo:table-body>
-						<fo:table-row>
-							<fo:table-cell>
-
-							</fo:table-cell>
-							<fo:table-cell>
-								<fo:block xsl:use-attribute-sets="tm__content">
-									Copyright &#169;
-									<xsl:value-of select="$map/bookmeta/bookrights/copyrlast/year" />
-									Health Level Seven International &#174; ALL RIGHTS
-									RESERVED. The
-									reproduction of this material in any form
-									is strictly
-									forbidden
-									without the written permission of the
-									publisher. HL7
-									International
-									and Health Level Seven are registered
-									trademarks of
-									Health Level
-									Seven International. Reg. U.S. Pat &amp;
-									TM Off.
-								</fo:block>
-							</fo:table-cell>
-							<fo:table-cell>
-
-							</fo:table-cell>
-						</fo:table-row>
-
-						<fo:table-row>
-							<fo:table-cell>
-
-							</fo:table-cell>
-							<fo:table-cell>
-								<fo:block xsl:use-attribute-sets="tm__content">
-									Use of this material is governed by HL7's
-									<fo:basic-link external-destination="http://www.hl7.org/legal/ippolicy.cfm">IP Compliance
-										Policy
-									</fo:basic-link>
-									.
-								</fo:block>
-							</fo:table-cell>
-							<fo:table-cell>
-
-							</fo:table-cell>
-						</fo:table-row>
-
-					</fo:table-body>
-				</fo:table>
-
-			</fo:static-content>
-
-		<fo:flow flow-name="xsl-region-body">
-			<fo:block xsl:use-attribute-sets="__frontmatter">
-			</fo:block>
-		</fo:flow>
-				
-	</fo:page-sequence>
 			
 	</xsl:template>
 
