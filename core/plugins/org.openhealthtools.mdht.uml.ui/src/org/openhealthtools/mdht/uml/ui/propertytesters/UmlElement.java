@@ -1,14 +1,12 @@
 package org.openhealthtools.mdht.uml.ui.propertytesters;
 
 import org.eclipse.core.expressions.PropertyTester;
-import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IWorkbenchPart;
@@ -24,49 +22,72 @@ public class UmlElement extends PropertyTester {
 
 	public boolean test(Object receiver, String propertyName, Object[] args, Object value) {
 
-		boolean ret = false;
-
-		try {
-			EObject obj = unwrap(receiver);
-
-			if (obj == null)
-				;
-			else if ("instanceOf".equals(propertyName)) {
-				ret = Class.forName(value.toString()).isAssignableFrom(obj.getClass());
-			} else if ("isLocalised".equals(propertyName)) {
+		switch (propertyName) {
+			case "fromLocal":
+				return true;
+			case "isLocalised":
+				EObject obj = unwrap(receiver);
 				if (obj instanceof Association) {
-					Property memberEnd = ((Association) obj).getMemberEnds().get(0);
-					try {
-
-						IWorkbenchPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPartService().getActivePart();
-						IViewerProvider view = (IViewerProvider) part.getAdapter(IViewerProvider.class);
-						TreeViewer tree = (TreeViewer) view.getViewer();
-						// isLocalType(getCurrentModel(receiver),
-						// memberEnd.getType()) &&
-						ret = isLocalised(
-							(ITreeContentProvider) tree.getContentProvider(), getCurrentMDHTModel(), receiver, null);
-					} catch (Throwable e) {
+					Association association = (Association) obj;
+					for (Property property : association.getMemberEnds()) {
+						if (property.getType() != null && property.getType().getOwner().equals(property.getOwner())) {
+							return true;
+						}
 					}
-
 				}
-			} else if ("fromLocal".equals(propertyName)) {
+				return false;
+			case "instanceOf":
+				return false;
+			case "isAnAssociation":
+				return unwrap(receiver) instanceof Association;
+			default:
+				return false;
 
-				try {
-					IWorkbenchPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPartService().getActivePart();
-					IViewerProvider view = (IViewerProvider) part.getAdapter(IViewerProvider.class);
-					TreeViewer tree = (TreeViewer) view.getViewer();
-					ret = fromCurrentModel(
-						(ITreeContentProvider) tree.getContentProvider(), getCurrentMDHTModel(), receiver);
-				} catch (Throwable e) {
-				}
-
-			}
-
-		} catch (Throwable e) {
-			e.printStackTrace(System.err);
 		}
-
-		return true;
+		//
+		// boolean ret = false;
+		//
+		// try {
+		// EObject obj = unwrap(receiver);
+		//
+		// if (obj == null)
+		// ;
+		// else if ("instanceOf".equals(propertyName)) {
+		// ret = Class.forName(value.toString()).isAssignableFrom(obj.getClass());
+		// } else if ("isLocalised".equals(propertyName)) {
+		// if (obj instanceof Association) {
+		// Property memberEnd = ((Association) obj).getMemberEnds().get(0);
+		// try {
+		//
+		// IWorkbenchPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPartService().getActivePart();
+		// IViewerProvider view = (IViewerProvider) part.getAdapter(IViewerProvider.class);
+		// TreeViewer tree = (TreeViewer) view.getViewer();
+		// // isLocalType(getCurrentModel(receiver),
+		// // memberEnd.getType()) &&
+		// ret = isLocalised(
+		// (ITreeContentProvider) tree.getContentProvider(), getCurrentMDHTModel(), receiver, null);
+		// } catch (Throwable e) {
+		// }
+		//
+		// }
+		// } else if ("fromLocal".equals(propertyName)) {
+		//
+		// try {
+		// IWorkbenchPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPartService().getActivePart();
+		// IViewerProvider view = (IViewerProvider) part.getAdapter(IViewerProvider.class);
+		// TreeViewer tree = (TreeViewer) view.getViewer();
+		// ret = fromCurrentModel(
+		// (ITreeContentProvider) tree.getContentProvider(), getCurrentMDHTModel(), receiver);
+		// } catch (Throwable e) {
+		// }
+		//
+		// }
+		//
+		// } catch (Throwable e) {
+		// e.printStackTrace(System.err);
+		// }
+		//
+		// return true;
 	}
 
 	private static EObject unwrap(Object wrapper) {
