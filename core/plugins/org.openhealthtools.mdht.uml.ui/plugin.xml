@@ -591,21 +591,8 @@
                      variable="selection">
                   <iterate ifEmpty="false">
                       <and>
-                         <or>
-                            <adapt
-                                  type="org.eclipse.emf.ecore.EObject">
-                               <instanceof
-                                     value="org.eclipse.uml2.uml.Association">
-                               </instanceof>
-                            </adapt>
-                            <test
-                                  property="org.openhealthtools.mdht.uml.ui.instanceOf"
-                                  value="org.eclipse.uml2.uml.Association">
-                            </test>
-                         </or>
-                         <test
-                               property="org.openhealthtools.mdht.uml.ui.fromLocal">
-                         </test>
+                          <test property="org.openhealthtools.mdht.uml.ui.isAnAssociation">
+                         </test>	
                       </and>
                   </iterate>
                </with>
@@ -667,7 +654,7 @@
       <handler
             class="org.openhealthtools.mdht.uml.ui.commands.AddLocalizedClassCommand"
             commandId="org.openhealthtools.mdht.uml.ui.cmd.smartconstraint.localiseclass">
-      <!--      <enabledWhen>
+          <enabledWhen>
 	                <with variable="selection">
 	                  <iterate
 	                        ifEmpty="false">
@@ -679,7 +666,7 @@
 	                  	</not>
 	                  </iterate>
 	               </with>         
-          </enabledWhen> -->
+          </enabledWhen> 
         
           
       </handler>
@@ -697,14 +684,14 @@
             class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
             id="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider"
             namespace="org.openhealthtools.mdht.uml.ui"
-            properties="instanceOf, isLocalised, fromLocal"
+            properties="instanceOf, isLocalised, fromLocal,isAnAssociation"
             type="org.eclipse.emf.edit.provider.DelegatingWrapperItemProvider">
       </propertyTester>
       <propertyTester
             class="org.openhealthtools.mdht.uml.ui.propertytesters.UmlElement"
             id="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             namespace="org.openhealthtools.mdht.uml.ui"
-            properties="instanceOf, isLocalised, fromLocal"
+            properties="instanceOf, isLocalised, fromLocal,isAnAssociation"
             type="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem">
       </propertyTester>
    </extension>
