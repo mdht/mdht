@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 NEHTA.
+ * Copyright (c) 2015 NEHTA.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -114,6 +114,22 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 			namedElement = unwrap(treeElement);
 		}
 
+		// Hack to handle issue with editor not correctly populating navigator parent
+		// This happens on associations on classes owned by the package
+		if (namedElementsStack.namedElements.size() == 1) {
+			namedElement = unwrap(selectedItem);
+			if (namedElement instanceof Association) {
+				Association association = (Association) namedElement;
+				for (Property p : association.getMemberEnds()) {
+					if (p.getOwner() instanceof Class) {
+						namedElementsStack.doSwitch(p.getOwner());
+						break;
+					}
+				}
+
+			}
+		}
+
 		// Find the class
 		while (!namedElementsStack.namedElements.isEmpty() &&
 				!(namedElementsStack.namedElements.peek() instanceof Class)) {
@@ -145,14 +161,14 @@ public class AddLocalizedClassCommand extends AbstractHandler {
 			newClass.createGeneralization((Classifier) property.getType());
 
 			// First time through use the existing association
-			if (ifFirst) {
+			if (ifFirst && property.getOwner().equals(owningClass)) {
 				property.setType(newClass);
-				ifFirst = false;
 			} else {
 				owningClass.createAssociation(
 					true, property.getAggregation(), property.getName(), property.getLower(), property.getUpper(),
 					newClass, false, AggregationKind.NONE_LITERAL, "", 0, 1);
 			}
+			ifFirst = false;
 			owningClass = newClass;
 
 		}
