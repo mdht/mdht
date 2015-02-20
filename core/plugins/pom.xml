@@ -78,7 +78,7 @@
 							<arch>x86_64</arch>
 						</environment>
 					</environments>
-					
+
 					<dependency-resolution>
 						<optionalDependencies>ignore</optionalDependencies>
 					</dependency-resolution>
@@ -97,6 +97,22 @@
 
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.1</version>
+			</plugin>
+
 		</plugins>
 	</build>
+
+	<scm>
+		<connection>scm:git:git@github.com:mdht/mdht.git</connection>
+		<url>scm:git:git@github.com:mdht/mdht.git</url>
+		<developerConnection>scm:git:git@github.com:mdht/mdht.git</developerConnection>
+	</scm>
+
+
+
 </project>
