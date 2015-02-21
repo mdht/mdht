@@ -125,7 +125,7 @@
 		<connection>scm:git:git@github.com:mdht/mdht.git</connection>
 		<url>scm:git:git@github.com:mdht/mdht.git</url>
 		<developerConnection>scm:git:git@github.com:mdht/mdht.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>MDHT.2.0.2</tag>
   </scm>
 
 
