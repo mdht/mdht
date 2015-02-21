@@ -8,7 +8,6 @@
   </parent>
   <groupId>org.openhealthtools.mdht</groupId>
   <artifactId>org.dita.dost</artifactId>
-  <version>1.6.4-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 	<build>
 		<plugins>

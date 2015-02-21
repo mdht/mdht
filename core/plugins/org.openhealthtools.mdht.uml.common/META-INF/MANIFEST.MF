@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.common;singleton:=true
 Bundle-Activator: org.openhealthtools.mdht.uml.common.UmlPlugin.Implementation
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 2.0.2.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
@@ -13,9 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.mapping.ecore2xml;bundle-version="2.5.0",
  org.apache.commons.lang;visibility:=reexport,
  org.eclipse.core.resources
-Export-Package: org.openhealthtools.mdht.uml.common,
- org.openhealthtools.mdht.uml.common.modelfilter,
- org.openhealthtools.mdht.uml.common.notation,
- org.openhealthtools.mdht.uml.common.search,
- org.openhealthtools.mdht.uml.common.util
+Export-Package: org.openhealthtools.mdht.uml.common,org.openhealthtool
+ s.mdht.uml.common.modelfilter,org.openhealthtools.mdht.uml.common.not
+ ation,org.openhealthtools.mdht.uml.common.search,org.openhealthtools.
+ mdht.uml.common.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
