@@ -16,6 +16,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>${org.apache.maven.version}</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -29,6 +30,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${org.apache.maven.version}</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
