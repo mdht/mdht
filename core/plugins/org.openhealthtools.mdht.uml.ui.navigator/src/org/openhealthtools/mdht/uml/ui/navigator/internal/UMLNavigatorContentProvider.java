@@ -115,7 +115,15 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 					}
 
 					fireSaveablesDirtyChanged(saveables.toArray(new Saveable[] {}));
-					viewer.refresh();
+
+					Display.getDefault().syncExec(new Runnable() {
+						public void run() {
+							if (!viewer.getControl().isDisposed()) {
+								viewer.refresh();
+							}
+						}
+					});
+
 				}
 			}
 		}
@@ -553,9 +561,15 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 				if (saveable != null) {
 					fireSaveablesDirtyChanged(new Saveable[] { saveable });
 				}
-				if (viewer != null && !viewer.getControl().isDisposed()) {
-					viewer.refresh();
-				}
+
+				Display.getDefault().syncExec(new Runnable() {
+					public void run() {
+						if (viewer != null && !viewer.getControl().isDisposed()) {
+							viewer.refresh();
+						}
+					}
+				});
+
 			}
 		}
 	}

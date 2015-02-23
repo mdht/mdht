@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.openhealthtools.mdht.features</groupId>
-  <artifactId>features</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-   	<properties>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.openhealthtools.mdht.features</groupId>
+	<artifactId>features</artifactId>
+	<version>2.5.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<properties>
 		<tycho-version>0.19.0</tycho-version>
+		<org.apache.maven.version>2.4</org.apache.maven.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<repositories>
 		<repository>
 			<id>kepler</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/kepler</url>
-		</repository>	
+		</repository>
 	</repositories>
-  <modules>
-   <module>org.dita.dost-feature</module> 
-    <module>org.openhealthtools.mdht-feature</module>
- <!-- <module>org.openhealthtools.mdht.test-feature</module> -->
-    <module>org.openhealthtools.mdht.uml-feature</module>
- <!--  <module>org.openhealthtools.mdht.uml.hdf-feature</module> -->
-  </modules>
-  	<build>
+	<modules>
+		<module>org.dita.dost-feature</module>
+		<module>org.openhealthtools.mdht-feature</module>
+		<!-- <module>org.openhealthtools.mdht.test-feature</module> -->
+		<module>org.openhealthtools.mdht.uml-feature</module>
+		<!-- <module>org.openhealthtools.mdht.uml.hdf-feature</module> -->
+	</modules>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -31,6 +34,22 @@
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>versions</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>update-pom</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
 
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.edit;singleton:=true
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 2.5.0.201502231533
 Bundle-Activator: org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -14,9 +14,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.workspace,
  org.openhealthtools.mdht.uml.common
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.edit,
- org.openhealthtools.mdht.uml.edit.command,
- org.openhealthtools.mdht.uml.edit.provider,
- org.openhealthtools.mdht.uml.edit.reflection
+Export-Package: org.openhealthtools.mdht.uml.edit,org.openhealthtools.
+ mdht.uml.edit.command,org.openhealthtools.mdht.uml.edit.provider,org.
+ openhealthtools.mdht.uml.edit.reflection
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.eclipse.ui.plugin

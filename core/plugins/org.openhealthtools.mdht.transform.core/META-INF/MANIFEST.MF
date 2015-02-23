@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.transform.core
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 2.5.0.201502231533
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport
-Export-Package: org.openhealthtools.mdht.transform.core,
- org.openhealthtools.mdht.transform.core.impl
+Export-Package: org.openhealthtools.mdht.transform.core,org.openhealth
+ tools.mdht.transform.core.impl

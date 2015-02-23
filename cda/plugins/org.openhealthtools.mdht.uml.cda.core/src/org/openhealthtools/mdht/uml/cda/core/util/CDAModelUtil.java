@@ -484,7 +484,13 @@ public class CDAModelUtil {
 					: "");
 			message.append(" contain ");
 		} else {
-			message.append("Contains ");
+
+			if (property.getUpper() < 0 || property.getUpper() > 1) {
+				message.append("contains ");
+			} else {
+				message.append("contain ");
+			}
+
 		}
 
 		message.append(getMultiplicityString(property)).append(" ");
@@ -514,7 +520,7 @@ public class CDAModelUtil {
 						? "This "
 						: "Such ") + (property.getUpper() == 1
 						? elementName
-						: NameUtilities.pluralize(elementName)), markup);
+						: NameUtilities.pluralize(elementName)) + " ", markup);
 				message.append(" " + sw.getBuffer() + " ");
 
 			} else {
@@ -583,7 +589,11 @@ public class CDAModelUtil {
 					: "");
 			message.append(" contain ");
 		} else {
-			message.append("Contains ");
+			if (property.getUpper() < 0 || property.getUpper() > 1) {
+				message.append("contains ");
+			} else {
+				message.append("contain ");
+			}
 		}
 
 		message.append(getMultiplicityString(property)).append(" ");
@@ -611,7 +621,7 @@ public class CDAModelUtil {
 						? "This "
 						: "Such ") + (property.getUpper() == 1
 						? elementName
-						: NameUtilities.pluralize(elementName)), markup);
+						: NameUtilities.pluralize(elementName)) + " ", markup);
 				message.append(" " + sw.getBuffer());
 
 			}
@@ -803,7 +813,11 @@ public class CDAModelUtil {
 					: "");
 			message.append(" contain ");
 		} else {
-			message.append("Contains ");
+			if (property.getUpper() < 0 || property.getUpper() > 1) {
+				message.append("contains ");
+			} else {
+				message.append("contain ");
+			}
 		}
 
 		message.append(getMultiplicityString(property)).append(" ");
