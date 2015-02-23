@@ -34,6 +34,22 @@
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>versions</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>update-pom</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
 
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
