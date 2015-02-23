@@ -21,6 +21,18 @@
 		</repository>
 	</repositories>
 
+	<distributionManagement>
+		<repository>
+			<id>org.openhealthtools.mdht.artifactory</id>
+			<name>cdatools.com-releases</name>
+			<url>http://www.cdatools.com:8081/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>cdatools.com</id>
+			<name>cdatools.com-snapshots</name>
+			<url>http://www.cdatools.com:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<modules>
 		<module>org.openhealthtools.mdht.uml.hl7.vocab</module>
@@ -80,7 +92,7 @@
 					<dependency-resolution>
 						<optionalDependencies>ignore</optionalDependencies>
 					</dependency-resolution>
-					<!--  See https://bugs.eclipse.org/bugs/show_bug.cgi?id=350133 -->
+					<!-- See https://bugs.eclipse.org/bugs/show_bug.cgi?id=350133 -->
 					<filters>
 						<filter>
 							<type>eclipse-plugin</type>
