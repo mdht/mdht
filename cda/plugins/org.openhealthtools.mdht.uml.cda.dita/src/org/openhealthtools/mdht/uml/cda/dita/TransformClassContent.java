@@ -446,6 +446,7 @@ public class TransformClassContent extends TransformAbstract {
 		writer.println("</title>");
 
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
+		String prefix = getExtensionName(cdaClass);
 		String cdaClassName = cdaClass != null
 				? cdaClass.getName()
 				: "MISSING_CDA_CLASS";
@@ -454,7 +455,8 @@ public class TransformClassContent extends TransformAbstract {
 			writer.print("<i>Abstract</i> ");
 		}
 		if (cdaClass != null && !umlClass.equals(cdaClass)) {
-			writer.print("[" + cdaClassName + ": templateId <tt>" + CDAModelUtil.getTemplateId(umlClass) + "</tt>]");
+			writer.print("[" + prefix + cdaClassName + ": templateId <tt>" + CDAModelUtil.getTemplateId(umlClass) +
+					"</tt>]");
 		}
 		writer.println("</shortdesc>");
 
@@ -464,6 +466,13 @@ public class TransformClassContent extends TransformAbstract {
 			writer.println("<resourceid id=\"" + CDAModelUtil.getTemplateId(umlClass) + "\"/>");
 		}
 		writer.println("</prolog>");
+	}
+
+	private String getExtensionName(Class cdaClass) {
+		String name = CDAModelUtil.getNameSpacePrefix(cdaClass);
+		return name == null || name.isEmpty()
+				? ""
+				: name + ":";
 	}
 
 	private void appendPropertyComments(PrintWriter writer, Property property) {
