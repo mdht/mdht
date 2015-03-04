@@ -1876,6 +1876,20 @@ public class CDAModelUtil {
 		return nameSpace;
 	}
 
+	public static String getNameSpacePrefix(Class cdaSourceClass) {
+		if (cdaSourceClass != null && cdaSourceClass.getPackage() != null &&
+				!CDA_PACKAGE_NAME.equals(cdaSourceClass.getPackage().getName())) {
+			Stereotype ecoreStereotype = cdaSourceClass.getPackage().getAppliedStereotype(EPACKAGE);
+			if (ecoreStereotype != null) {
+				Object object = cdaSourceClass.getPackage().getValue(ecoreStereotype, NSPREFIX);
+				if (object instanceof String) {
+					return (String) object;
+				}
+			}
+		}
+		return null;
+	}
+
 	public static String getCDAElementName(Property property) {
 		String elementName = null;
 		if (property.getType() instanceof Class) {
