@@ -27,6 +27,11 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceVisitor;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -946,36 +951,87 @@ public class UMLUtil {
 		return false;
 	}
 
+	/**
+	 * FindResourcesByNameVisitor searches the resource for resources of a particular name
+	 * You would think there was a method for this already but i could not find it
+	 * 
+	 * @author seanmuir
+	 * 
+	 */
+	public static class FindResourcesByNameVisitor implements IResourceVisitor {
+
+		private String resourceName;
+
+		private ArrayList<IResource> resources = new ArrayList<IResource>();
+
+		/**
+		 * @return the resources
+		 */
+		public ArrayList<IResource> getResources() {
+			return resources;
+		}
+
+		/**
+		 * @param resourceName
+		 */
+		public FindResourcesByNameVisitor(String resourceName) {
+			super();
+			this.resourceName = resourceName;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
+		 */
+		public boolean visit(IResource arg0) throws CoreException {
+
+			if (resourceName != null && resourceName.equals(arg0.getName())) {
+				resources.add(arg0);
+			}
+			return true;
+		}
+
+	}
+
 	public static boolean isSameProject(Element first, Element second) {
-		// This approach does not guarantee the same project but path
-		// Walk the shorter of the segments up until file name, if the paths have matched up to that point
-		// there is good chance they are in the same project within eclipse
 		// TODO Move this to a plugin which supports ResourcePlugin
+		// This is not fool proof - if a resource with the same name exists in multiple projects
+		// we will return not the same however this is unlikely
 
 		if (first == null || first.eResource() == null || second == null || second.eResource() == null) {
 			return false;
 		}
-		URI firstURI = first.eResource().getURI();
+		try {
 
-		URI secondURI = second.eResource().getURI();
+			FindResourcesByNameVisitor firstVisitor = new FindResourcesByNameVisitor(
+				first.eResource().getURI().lastSegment());
 
-		boolean isSameProject = true;
+			IWorkspace iw = org.eclipse.core.resources.ResourcesPlugin.getWorkspace();
 
-		if (firstURI.segmentCount() <= secondURI.segmentCount()) {
-			for (int ctr = 0; ctr < firstURI.segmentCount() - 1; ctr++) {
-				if (!firstURI.segment(ctr).equals(secondURI.segment(ctr))) {
-					isSameProject = false;
+			iw.getRoot().accept(firstVisitor);
+
+			FindResourcesByNameVisitor secondVisitor = new FindResourcesByNameVisitor(
+				second.eResource().getURI().lastSegment());
+
+			iw.getRoot().accept(secondVisitor);
+
+			if ((!firstVisitor.getResources().isEmpty() && firstVisitor.getResources().size() == 1) &&
+					(!secondVisitor.getResources().isEmpty() && secondVisitor.getResources().size() == 1)) {
+				IProject firstProject = firstVisitor.getResources().get(0).getProject();
+				IProject secondProject = secondVisitor.getResources().get(0).getProject();
+
+				if (firstProject.equals(secondProject)) {
+					return true;
+				} else {
+					return false;
 				}
 			}
-		} else {
-			for (int ctr = 0; ctr < secondURI.segmentCount() - 1; ctr++) {
-				if (!firstURI.segment(ctr).equals(secondURI.segment(ctr))) {
-					isSameProject = false;
-				}
-			}
+
+		} catch (CoreException e) {
+
 		}
-		return isSameProject;
-
+		return false;
 	}
 
 	/**
