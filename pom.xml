@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.openhealthtools.mdht</groupId>
+	<artifactId>root</artifactId>
+	<version>${build_version}</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<build_version>2.5.0-SNAPSHOT</build_version>
+		<tycho-version>0.19.0</tycho-version>
+	</properties>
+
+	<modules>
+		<module>core/plugins</module>
+		<module>core/features</module>
+		<module>cda/plugins</module>
+		<module>cda/features</module>
+	</modules>
+	<profiles>
+		<profile>
+			<id>mdht_build</id>
+			<repositories>
+				<repository>
+					<id>kepler</id>
+					<layout>p2</layout>
+					<url>http://download.eclipse.org/releases/kepler</url>
+				</repository>
+			</repositories>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-maven-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<extensions>true</extensions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>target-platform-configuration</artifactId>
+						<version>${tycho-version}</version>
+						<configuration>
+							<environments>
+								<environment>
+									<os>linux</os>
+									<ws>gtk</ws>
+									<arch>x86</arch>
+								</environment>
+								<environment>
+									<os>linux</os>
+									<ws>gtk</ws>
+									<arch>x86_64</arch>
+								</environment>
+								<environment>
+									<os>win32</os>
+									<ws>win32</ws>
+									<arch>x86</arch>
+								</environment>
+								<environment>
+									<os>win32</os>
+									<ws>win32</ws>
+									<arch>x86_64</arch>
+								</environment>
+								<environment>
+									<os>macosx</os>
+									<ws>cocoa</ws>
+									<arch>x86_64</arch>
+								</environment>
+							</environments>
+
+							<dependency-resolution>
+								<optionalDependencies>ignore</optionalDependencies>
+							</dependency-resolution>
+
+							<filters>
+								<filter>
+									<type>eclipse-plugin</type>
+									<id>org.eclipse.jdt.core</id>
+									<restrictTo>
+										<!-- this is the version for Kepler SR1, have to adapt for other 
+											release trains/service releases -->
+										<version>3.9.1.v20130905-0837</version>
+									</restrictTo>
+								</filter>
+							</filters>
+
+						</configuration>
+					</plugin>
+					
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>2.5.1</version>
+					</plugin>
+					
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	
+	<scm>
+		<connection>scm:git:git@github.com:mdht/mdht.git</connection>
+		<url>scm:git:git@github.com:mdht/mdht.git</url>
+		<developerConnection>scm:git:git@github.com:mdht/mdht.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	
+</project>
