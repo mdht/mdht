@@ -29,5 +29,10 @@
             type="cda"
             class="org.openhealthtools.mdht.uml.cda.internal.resource.CDAResourceFactoryImpl"/>
    </extension>
+   
+     <extension point="org.eclipse.emf.ecore.uri_mapping">
+		<mapping source="pathmap://CDA_MODEL/" target="model/">
+		</mapping>
+	</extension>
 
 </plugin>

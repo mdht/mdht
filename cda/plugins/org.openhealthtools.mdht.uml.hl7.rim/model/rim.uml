@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Package xmi:id="_ii81kjxVEd6JwqSGecoePg" name="rim">
     <packageImport xmi:id="_3JZ8MDxVEd6JwqSGecoePg">
-      <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
+      <importedPackage href="pathmap://DATATYPES_MODEL/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_YiANsDxYEd6JwqSGecoePg" name="Act" isAbstract="true">
       <generalization xmi:id="_m3CcAIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
@@ -67,28 +67,28 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_TNdfQIVdEd-AiaWHb2ykDw" name="InfrastructureRoot" isAbstract="true">
       <ownedOperation xmi:id="_N2kLcIX_Ed-kaPURbz5lmQ" name="getRealmCodes" isQuery="true">
         <ownedParameter xmi:id="_QP4MMIX_Ed-kaPURbz5lmQ" name="return" direction="return">
-          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+          <type xmi:type="uml:Class" href="pathmap://DATATYPES_MODEL/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3VxQIX_Ed-kaPURbz5lmQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3VKMIX_Ed-kaPURbz5lmQ" value="*"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_beNs4IX_Ed-kaPURbz5lmQ" name="getTypeId" isQuery="true">
         <ownedParameter xmi:id="_c9gVYIX_Ed-kaPURbz5lmQ" name="return" direction="return">
-          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
+          <type xmi:type="uml:Class" href="pathmap://DATATYPES_MODEL/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wolY4IX_Ed-kaPURbz5lmQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wokx0IX_Ed-kaPURbz5lmQ" value="1"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_b5XX0IX_Ed-kaPURbz5lmQ" name="getTemplateIds" isQuery="true">
         <ownedParameter xmi:id="_dsMnYIX_Ed-kaPURbz5lmQ" name="return" direction="return">
-          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
+          <type xmi:type="uml:Class" href="pathmap://DATATYPES_MODEL/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xGp08YX_Ed-kaPURbz5lmQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xGp08IX_Ed-kaPURbz5lmQ" value="*"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_cR8P4IX_Ed-kaPURbz5lmQ" name="getNullFlavor" isQuery="true">
         <ownedParameter xmi:id="_eLcvMIX_Ed-kaPURbz5lmQ" name="return" direction="return">
-          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>
+          <type xmi:type="uml:Enumeration" href="pathmap://VOCAB_MODEL/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zMQPgIX_Ed-kaPURbz5lmQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zMPocIX_Ed-kaPURbz5lmQ" value="1"/>
         </ownedParameter>

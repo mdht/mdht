@@ -22,5 +22,10 @@
             class="org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage"
             genModel="model/vocab.genmodel"/>
    </extension>
+   
+   <extension point="org.eclipse.emf.ecore.uri_mapping">
+		<mapping source="pathmap://VOCAB_MODEL/" target="model/">
+		</mapping>
+	</extension>
 
 </plugin>
