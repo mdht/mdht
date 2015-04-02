@@ -708,7 +708,9 @@ public class CDAModelUtil {
 		}
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
-		if (endType != null && getCDAClass(endType) != null && !(isInlineClass(endType))) {
+		if (endType != null && getCDAClass(endType) != null && !(isInlineClass(endType))
+		/* && !getCDAClass(property.getClass_()).getName().startsWith("Entry") */&&
+				!isInlineClass(property.getClass_())) {
 			message.append(markup
 					? "\n<li>"
 					: " ");
