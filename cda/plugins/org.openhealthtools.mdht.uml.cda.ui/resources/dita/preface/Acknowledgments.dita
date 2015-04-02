@@ -24,11 +24,11 @@
 		license at http://loinc.org/terms-of-use .</p>
 
 		<p>Certain materials contained in this Interoperability Specification
-			are reproduced from Health Level Seven (HL7) HL7 Implementation
-			Guide: CDA Release 2 – Continuity of Care Document (CCD), HL7
-			Implementation Guide for CDA Release 2: History and Physical (H&amp;P)
-			Notes, HL7 Implementation Guide for CDA Release 2: Consult Notes, or
-			HL7 Implementation Guide for CDA Release 2: Operative Notes with
+			are reproduced from Health Level Seven (HL7<tm tmtype="reg"/>) HL7<tm tmtype="reg"/> Implementation
+			Guide: CDA<tm tmtype="reg"/> Release 2 – Continuity of Care Document (CCD), HL7<tm tmtype="reg"/>
+			Implementation Guide for CDA<tm tmtype="reg"/> Release 2: History and Physical (H&amp;P)
+			Notes, HL7<tm tmtype="reg"/> Implementation Guide for CDA<tm tmtype="reg"/> Release 2: Consult Notes, or
+			HL7<tm tmtype="reg"/> Implementation Guide for CDA<tm tmtype="reg"/> Release 2: Operative Notes with
 			permission of Health Level Seven, Inc. No part of the material may be
 			copied or reproduced in any form outside of the Interoperability
 			Specification documents, including an electronic retrieval system, or
@@ -36,5 +36,6 @@
 			of Health Level Seven, Inc. Copies of standards included in this
 			Interoperability Specification may be purchased from the Health Level
 			Seven, Inc. Material drawn from these standards is credited where used.</p>
+		<p>HL7<tm tmtype="reg"/> and CDA<tm tmtype="reg"/> are the registered trademarks of Health Level Seven International.</p>
 	</body>
 </topic>

@@ -54,7 +54,7 @@
     1..* as one or more present
     0..* as zero to many present
     </lines>
-      <p>Value set bindings adhere to HL7 Vocabulary Working Group best
+      <p>Value set bindings adhere to HL7<tm tmtype="reg"/> Vocabulary Working Group best
     practices, and include both a conformance verb (
     <b>SHALL</b>
     ,
@@ -68,7 +68,7 @@
     binding. The use of
     <b>SHALL</b>
     requires that the component be valued with a member from the cited
-    value set; however, in every case any HL7 &quot;null&quot; value
+    value set; however, in every case any HL7<tm tmtype="reg"/> &quot;null&quot; value
     such as other (OTH) or unknown (UNK) may be used.
    </p>
       <p>Each constraint is uniquely identified (e.g.,
@@ -112,7 +112,7 @@
   <topic id="keywords">
     <title>Keywords</title>
     <body>
-      <p>The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as described in the <xref href="http://www.hl7.org/v3ballot/html/help/pfg/pfg.htm" format="html">HL7 Version 3 Publishing Facilitator&apos;s Guide</xref>:</p>
+      <p>The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as described in the <xref href="http://www.hl7.org/v3ballot/html/help/pfg/pfg.htm" format="html">HL7<tm tmtype="reg"/> Version 3 Publishing Facilitator&apos;s Guide</xref>:</p>
       <ul>
         <li><b>SHALL</b>: an absolute requirement</li>
         <li><b>SHALL NOT</b>: an absolute prohibition against inclusion</li>
