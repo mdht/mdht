@@ -63,6 +63,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.PropertyList;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
@@ -840,6 +841,11 @@ public class CDAModelUtil {
 		message.append(markup
 				? "</b>"
 				: "");
+
+		String businessName = NamedElementUtil.getBusinessName(property);
+		if (!property.getName().equals(businessName)) {
+			message.append(" (" + businessName + ") ");
+		}
 
 		if (isXMLAttribute(property) && property.getDefault() != null) {
 			message.append("=\"").append(property.getDefault()).append("\" ");
