@@ -108,6 +108,7 @@
         <body>This value set contains codes for the representation of language names as defined by the Library of Congress, the ISO 639-2 registration authority. This value set contains a subset of the ISO 639-2 alpha-3 code set, limited to those that have a corresponding ISO 639-1 alpha-2 code as required for representing a patient's language under Meaningful Use Stage 2.</body>
       </ownedComment>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_pgbhwM2JEeSEZ8MJJ3ZzLg" name="HITSP-CS-83"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -178,4 +179,5 @@
   <term:CodeSystemVersion xmi:id="_mLN0II9QEeOB0eBUISUB4Q" identifier="2.16.840.1.113883.3.221.5" fullName="Source of Payment Typology (PHDSC)" base_Enumeration="_mLNNEI9QEeOB0eBUISUB4Q"/>
   <term:CodeSystemVersion xmi:id="_vbHVcEgcEeSfpbeq3Ftc1g" identifier="2.16.840.1.113883.6.301.5" base_Enumeration="_vbGuYEgcEeSfpbeq3Ftc1g"/>
   <term:CodeSystemVersion xmi:id="_M_9VALC4EeSVMPnHsd38Lg" identifier="2.16.840.1.113883.6.121" source="http://www.loc.gov/standards/iso639-2/php/code_list.php" base_Enumeration="_M_8G4LC4EeSVMPnHsd38Lg"/>
+  <term:CodeSystemVersion xmi:id="_pgcI0M2JEeSEZ8MJJ3ZzLg" identifier="2.16.840.1.113883.5.83" base_Enumeration="_pgbhwM2JEeSEZ8MJJ3ZzLg"/>
 </xmi:XMI>
