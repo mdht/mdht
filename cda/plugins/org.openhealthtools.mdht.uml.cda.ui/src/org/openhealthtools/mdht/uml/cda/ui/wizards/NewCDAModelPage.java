@@ -44,7 +44,7 @@ public class NewCDAModelPage extends WizardPage {
 
 	Text modelName;
 
-	Text cdaDocumentName;
+	public Text cdaDocumentName;
 
 	Text templateID;
 
@@ -116,7 +116,7 @@ public class NewCDAModelPage extends WizardPage {
 
 	}
 
-	Text basePackage;
+	public Text basePackage;
 
 	Text nsPrefix;
 

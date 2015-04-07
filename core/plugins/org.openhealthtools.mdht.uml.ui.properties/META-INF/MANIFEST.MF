@@ -18,6 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.validation
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.ui.properties.filters,
+ org.openhealthtools.mdht.uml.ui.properties.internal.sections,
  org.openhealthtools.mdht.uml.ui.properties.sections
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
