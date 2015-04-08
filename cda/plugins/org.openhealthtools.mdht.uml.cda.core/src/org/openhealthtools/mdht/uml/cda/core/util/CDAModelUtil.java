@@ -457,6 +457,14 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
+	private static String getBusinessName(NamedElement property) {
+		String businessName = NamedElementUtil.getBusinessName(property);
+		if (!property.getName().equals(businessName)) {
+			return (" (" + businessName + ") ");
+		}
+		return "";
+	}
+
 	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
 
 		Class endType = (property.getType() instanceof Class)
@@ -505,10 +513,7 @@ public class CDAModelUtil {
 				? "</b></tt>"
 				: "");
 
-		String businessName = NamedElementUtil.getBusinessName(property);
-		if (!property.getName().equals(businessName)) {
-			message.append(" (" + businessName + ") ");
-		}
+		message.append(getBusinessName(property));
 
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
@@ -847,10 +852,7 @@ public class CDAModelUtil {
 				? "</b>"
 				: "");
 
-		String businessName = NamedElementUtil.getBusinessName(property);
-		if (!property.getName().equals(businessName)) {
-			message.append(" (" + businessName + ") ");
-		}
+		message.append(getBusinessName(property));
 
 		if (isXMLAttribute(property) && property.getDefault() != null) {
 			message.append("=\"").append(property.getDefault()).append("\" ");
