@@ -505,6 +505,11 @@ public class CDAModelUtil {
 				? "</b></tt>"
 				: "");
 
+		String businessName = NamedElementUtil.getBusinessName(property);
+		if (!property.getName().equals(businessName)) {
+			message.append(" (" + businessName + ") ");
+		}
+
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
 		if (endType != null) {
