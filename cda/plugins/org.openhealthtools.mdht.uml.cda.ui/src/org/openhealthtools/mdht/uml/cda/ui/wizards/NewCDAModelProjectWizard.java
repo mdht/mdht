@@ -77,7 +77,7 @@ import org.osgi.framework.Bundle;
 
 public class NewCDAModelProjectWizard extends CDAWizard {
 
-	NewCDAModelPage newCDATemplatePage;
+	protected NewCDAModelPage newCDATemplatePage;
 
 	private boolean checkForSpaces() {
 		Bundle bundle = Platform.getBundle(org.openhealthtools.mdht.uml.cda.ui.internal.Activator.PLUGIN_ID);
@@ -319,7 +319,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		return true;
 	}
 
-	private void setupWorkspace(IProject modelProject, String modelName) throws Exception {
+	protected void setupWorkspace(IProject modelProject, String modelName) throws Exception {
 		IWorkbench workbench = PlatformUI.getWorkbench();
 		final IWorkbenchPage activePage = workbench.getActiveWorkbenchWindow().getActivePage();
 		activePage.closeEditors(activePage.getEditorReferences(), true);
