@@ -192,6 +192,22 @@
                  menubarPath="additions">
            </action>
         </objectContribution>
+        
+        
+        <objectContribution
+              adaptable="true"
+              id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
+              nameFilter="*"
+              objectClass="org.eclipse.core.resources.IProject">
+           <action
+                 class="org.openhealthtools.mdht.uml.cda.ui.actions.ImportDitaReferences"
+                 enablesFor="+"
+                 id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
+                 label="Import Dita References"
+                 menubarPath="additions">
+           </action>
+        </objectContribution>
+        
 	</extension>
 	
 	<extension point="org.eclipse.ui.commands">
