@@ -505,15 +505,18 @@ public class CDAModelUtil {
 		message.append(getMultiplicityString(property)).append(" ");
 
 		String elementName = getCDAElementName(property);
+
 		message.append(markup
 				? "<tt><b>"
 				: "");
 		message.append(elementName);
 		message.append(markup
-				? "</b></tt>"
+				? "</b>"
 				: "");
-
 		message.append(getBusinessName(property));
+		message.append(markup
+				? "</tt>"
+				: "");
 
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
@@ -598,12 +601,12 @@ public class CDAModelUtil {
 			message.append(markup
 					? "</b>"
 					: "");
-			message.append(" contain ");
+			message.append(" containNBR ");
 		} else {
 			if (property.getUpper() < 0 || property.getUpper() > 1) {
-				message.append("contains ");
+				message.append("containsNBR ");
 			} else {
-				message.append("contain ");
+				message.append("containNBR ");
 			}
 		}
 
