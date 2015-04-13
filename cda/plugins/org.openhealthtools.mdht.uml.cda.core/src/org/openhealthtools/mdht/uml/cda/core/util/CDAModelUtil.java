@@ -505,15 +505,18 @@ public class CDAModelUtil {
 		message.append(getMultiplicityString(property)).append(" ");
 
 		String elementName = getCDAElementName(property);
+
 		message.append(markup
 				? "<tt><b>"
 				: "");
 		message.append(elementName);
 		message.append(markup
-				? "</b></tt>"
+				? "</b>"
 				: "");
-
 		message.append(getBusinessName(property));
+		message.append(markup
+				? "</tt>"
+				: "");
 
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
