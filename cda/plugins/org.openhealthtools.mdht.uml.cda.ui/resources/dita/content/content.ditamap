@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap id="cdabook">
-
 	<chapter href="DocumentTemplates.dita" navtitle="DOCUMENT TEMPLATES" type="topic">
 		<!-- document.ditamap is generated from the model -->
 		<topicref format="ditamap" href="../classes/document.ditamap" navtitle="Document Templates"/>
@@ -18,9 +17,12 @@
 		<!-- classes.ditamap is generated from the model -->
 		<topicref format="ditamap" href="../classes/classes.ditamap" navtitle="Other Classes"/>
 	</chapter>
+	<chapter href="References.dita" navtitle="CLASS REFERENCES" type="topic">
+		<!-- valueset.ditamap is generated from the model -->
+		<topicref format="ditamap" href="../classes/references.ditamap" navtitle="Class References"/>
+	</chapter>
 	<chapter href="ValueSets.dita" navtitle="VALUE SETS" type="topic">
 		<!-- valueset.ditamap is generated from the model -->
 		<topicref format="ditamap" href="../terminology/valueset.ditamap" navtitle="Value Sets"/>
 	</chapter>
-
 </bookmap>
