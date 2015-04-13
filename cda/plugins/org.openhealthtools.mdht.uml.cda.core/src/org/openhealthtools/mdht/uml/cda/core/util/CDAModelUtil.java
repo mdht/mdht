@@ -601,12 +601,12 @@ public class CDAModelUtil {
 			message.append(markup
 					? "</b>"
 					: "");
-			message.append(" containNBR ");
+			message.append(" contain ");
 		} else {
 			if (property.getUpper() < 0 || property.getUpper() > 1) {
-				message.append("containsNBR ");
+				message.append("contains ");
 			} else {
-				message.append("containNBR ");
+				message.append("contain ");
 			}
 		}
 
