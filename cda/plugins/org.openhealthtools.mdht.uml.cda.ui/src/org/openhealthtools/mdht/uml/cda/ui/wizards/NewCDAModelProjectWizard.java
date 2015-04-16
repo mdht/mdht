@@ -47,6 +47,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -439,6 +440,10 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 
+		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
+
+		resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
+
 		Map<String, String> options = new HashMap<String, String>();
 
 		Package templatePackage = cloneModel(
@@ -564,7 +569,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("<?eclipse version=\"3.0\"?>");
 		writer.println("<plugin>");
 		writer.println("<extension point=\"org.eclipse.emf.ecore.uri_mapping\">");
-		writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL\" target=\"model\">");
+		writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL/\" target=\"model/\">");
 		writer.println("</mapping>");
 		writer.println("</extension>");
 		writer.println("</plugin>");

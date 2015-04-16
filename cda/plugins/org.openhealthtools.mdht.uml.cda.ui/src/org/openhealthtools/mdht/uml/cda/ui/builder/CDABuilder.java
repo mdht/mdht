@@ -446,7 +446,9 @@ public class CDABuilder extends IncrementalProjectBuilder {
 					EcoreUtil.resolveAll(ePackage);
 				}
 				umlImporter.prepareGenModelAndEPackages(umlImportMonitor);
+
 				umlImporter.saveGenModelAndEPackages(umlImportMonitor);
+
 				org.eclipse.emf.codegen.ecore.genmodel.GenModel genmodel = umlImporter.getGenModel();
 
 				genmodel.setUpdateClasspath(false);
