@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004, 2011 David A Carlson and others.
+ * Copyright (c) 2004, 2015 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Sean Muir (NEHTA) - modified model search to use path maps
  *     
  * $Id$
  *******************************************************************************/
@@ -15,13 +16,23 @@ package org.openhealthtools.mdht.uml.common.ui.search;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
@@ -232,58 +243,98 @@ public class ModelSearch {
 		return classList;
 	}
 
-	public static List<Element> findAllOf(ResourceSet resourceSet, Class<?> type) {
+	/**
+	 * findAllOf search the set of open models within the workspace and returns using corresponding path map uri
+	 * 
+	 * TODO replace the loop with a resource visitor
+	 * 
+	 * @param resourceSetold
+	 * @param type
+	 * @return
+	 */
+	public static List<Element> findAllOf(ResourceSet resourceSetold, Class<?> type) {
 		List<Element> elementList = new ArrayList<Element>();
-		TreeIterator<Object> iterator = EcoreUtil.getAllProperContents(resourceSet.getResources(), true);
 
-		while (iterator != null && iterator.hasNext()) {
-			Object element = iterator.next();
-			if (Resource.class.isInstance(element)) {
-				continue;
-			}
+		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
 
-			// prune profile and metamodel contents
-			if (ProfileApplication.class.isInstance(element)) {
-				// ignore the the applied profiles
-				iterator.prune();
-				continue;
-			} else if (Profile.class.isInstance(element) && Stereotype.class != type) {
-				// ignore the the applied profiles
-				iterator.prune();
-				continue;
-			} else if (EAnnotation.class.isInstance(element)) {
-				iterator.prune();
-				continue;
-			} else if (Package.class.isInstance(element)) {
-				// if ("uml2".equals(((Package)element).getQualifiedName()))
-				// iterator.prune();
-				if (UMLResource.UML_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
-					iterator.prune();
-					continue;
-				} else if (UMLResource.ECORE_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
-					iterator.prune();
-					continue;
+		ResourceSet resourceSet = new ResourceSetImpl();
 
-					// else if (UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-					// ((Package)element).eResource().getURI().toString()))
-					// iterator.prune();
-					// else if (UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-					// ((Package)element).eResource().getURI().toString()))
-					// iterator.prune();
-					// else if (UMLResource.JAVA_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-					// ((Package)element).eResource().getURI().toString()))
-					// iterator.prune();
+		resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
+
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+
+		IWorkspaceRoot root = workspace.getRoot();
+
+		Path model = new Path("model");
+
+		for (IProject project : root.getProjects()) {
+			if (project.isOpen() && project.exists(model)) {
+
+				final IFile plugin = project.getFile("plugin.xml");
+
+				IFolder folder = project.getFolder(model);
+				try {
+					for (IResource resource : folder.members()) {
+						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore")) {
+
+							URI modelFile = null;
+							if (plugin.exists()) {
+								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(plugin.getContents());
+								if (pathMap != null) {
+									modelFile = pathMap.appendSegment(resource.getName());
+								} else {
+									modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+								}
+							} else {
+								modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							}
+
+							TreeIterator<Object> iterator = EcoreUtil.getAllProperContents(
+								resourceSet.getResource(modelFile, true), true);
+
+							while (iterator != null && iterator.hasNext()) {
+								Object element = iterator.next();
+
+								if (Resource.class.isInstance(element)) {
+									continue;
+								}
+
+								// prune profile and metamodel contents
+								if (ProfileApplication.class.isInstance(element)) {
+									// ignore the the applied profiles
+									iterator.prune();
+									continue;
+								} else if (Profile.class.isInstance(element) && Stereotype.class != type) {
+									// ignore the the applied profiles
+									iterator.prune();
+									continue;
+								} else if (EAnnotation.class.isInstance(element)) {
+									iterator.prune();
+									continue;
+								} else if (Package.class.isInstance(element)) {
+									if (UMLResource.UML_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
+										iterator.prune();
+										continue;
+									} else if (UMLResource.ECORE_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
+										iterator.prune();
+										continue;
+									}
+								}
+
+								// select based on filter
+								if (type.isInstance(element) && element instanceof Element) {
+									elementList.add((Element) element);
+								} else if (!Package.class.isInstance(element)) {
+									iterator.prune();
+								}
+
+							}
+						}
+					}
+				} catch (Exception e) {
 				}
 			}
-
-			// select based on filter
-			if (type.isInstance(element) && element instanceof Element) {
-				elementList.add((Element) element);
-			} else if (!Package.class.isInstance(element)) {
-				iterator.prune();
-			}
 		}
-
 		return elementList;
 	}
 
