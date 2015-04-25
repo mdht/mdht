@@ -77,6 +77,7 @@ import org.eclipse.uml2.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ecore.importer.UMLImporter;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil.FindResourcesByNameVisitor;
+import org.openhealthtools.mdht.uml.cda.ui.actions.ImportDitaReferences;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -96,6 +97,20 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			IResource resource = delta.getResource();
 			if (delta.getKind() == IResourceDelta.CHANGED && resource.getName().endsWith(".uml")) {
 				hasModelChanged = true;
+			}
+			return true;
+		}
+	}
+
+	class CheckForDitaDelete implements IResourceDeltaVisitor {
+
+		public ArrayList<String> deletedDitaFolders = new ArrayList<String>();
+
+		public boolean visit(IResourceDelta delta) throws CoreException {
+			IResource resource = delta.getResource();
+			if (delta.getKind() == IResourceDelta.REMOVED && resource instanceof IFolder &&
+					resource.getName().endsWith(".doc")) {
+				deletedDitaFolders.add(resource.getName());
 			}
 			return true;
 		}
@@ -481,7 +496,13 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		}
 	}
 
+	private static final ArrayList<String> EMPTYLIST = new ArrayList<String>();
+
 	public static void runTransformation(IProject project, IProgressMonitor monitor) {
+		runTransformation(project, monitor, EMPTYLIST);
+	}
+
+	private static void runTransformation(IProject project, IProgressMonitor monitor, ArrayList<String> deleteDitaFolder) {
 
 		try {
 			String antFileName = null;
@@ -563,6 +584,27 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			e.printStackTrace();
 		}
 
+		// Reimport dita references
+		if (project.getName().endsWith(".doc")) {
+			IFolder ditaGeneratedFolder = project.getFolder("dita/classes");
+			if (ditaGeneratedFolder.exists()) {
+				try {
+					for (IResource member : ditaGeneratedFolder.members()) {
+						if (member.exists() && member instanceof IFolder &&
+								!deleteDitaFolder.contains(member.getName())) {
+							IProject sourceProject = project.getWorkspace().getRoot().getProject(member.getName());
+							if (sourceProject.exists() && sourceProject.isOpen()) {
+								ImportDitaReferences.importDitaProject(project.getWorkspace(), sourceProject, project);
+							}
+						}
+					}
+				} catch (CoreException e) {
+					// If issues, ignore
+				}
+
+			}
+		}
+
 	}
 
 	/**
@@ -592,7 +634,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 				}
 				reader.close();
 			} catch (Exception e) {
-				e.printStackTrace();
+				// e.printStackTrace();
 			}
 
 		}
@@ -607,7 +649,13 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		boolean isDocumentProject = false;
 		String modelProjectName = null;
+		IResourceDelta docProjectDelta = null;
+		CheckForDitaDelete cfdd = new CheckForDitaDelete();
 		if (getProject().getName().endsWith(".doc")) {
+			docProjectDelta = getDelta(getProject());
+			if (docProjectDelta != null) {
+				docProjectDelta.accept(cfdd);
+			}
 			modelProjectName = getProject().getName().replace(".doc", ".model");
 			isDocumentProject = true;
 		} else {
@@ -631,7 +679,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			// if increment build and Document project make sure the model is valid; This way the modeler can see the issues
 			//
 			if (IncrementalProjectBuilder.FULL_BUILD == kind || !isDocumentProject || isModelValid(modelProject)) {
-				runTransformation(getProject(), monitor);
+				runTransformation(getProject(), monitor, cfdd.deletedDitaFolders);
 				runGenerate(IncrementalProjectBuilder.FULL_BUILD == kind, getProject(), monitor);
 			}
 		}

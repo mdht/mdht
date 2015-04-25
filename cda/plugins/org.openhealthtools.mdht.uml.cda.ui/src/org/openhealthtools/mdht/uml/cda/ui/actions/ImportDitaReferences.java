@@ -56,6 +56,34 @@ public class ImportDitaReferences implements IObjectActionDelegate {
 
 	private ISelection selection;
 
+	public static void importDitaProject(IWorkspace workspace, IProject includeFrom, IProject selectedProject) {
+
+		IFolder ditaFolder = selectedProject.getFolder("dita/classes/" + includeFrom.getName());
+
+		if (includeFrom.getFolder("dita/classes/").exists()) {
+
+			try {
+				// Do a delete and copy to make sure content is up todate
+				if (ditaFolder.exists()) {
+					ditaFolder.delete(true, null);
+				}
+				ditaFolder.create(true, true, null);
+				IResource[] resources = new IResource[1];
+				resources[0] = includeFrom.getFolder("dita/classes/");
+				workspace.copy(
+					resources, workspace.getRoot().getFolder(ditaFolder.getFullPath()).getFullPath(), true, null);
+
+				// Refresh
+				selectedProject.refreshLocal(IResource.DEPTH_INFINITE, null);
+
+			} catch (CoreException e) {
+
+			}
+
+		}
+
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -112,34 +140,7 @@ public class ImportDitaReferences implements IObjectActionDelegate {
 					if (dialog.getReturnCode() == ElementListSelectionDialog.OK) {
 
 						for (Object object : dialog.getResult()) {
-
-							IProject includeFrom = (IProject) object;
-							IFolder ditaFolder = selectedProject.getFolder("dita/classes/" + includeFrom.getName());
-
-							if (includeFrom.getFolder("dita/classes/").exists()) {
-
-								try {
-									// Do a delete and copy to make sure content is up todate
-									if (ditaFolder.exists()) {
-										ditaFolder.delete(true, null);
-									}
-									ditaFolder.create(true, true, null);
-									IResource[] resources = new IResource[1];
-									resources[0] = includeFrom.getFolder("dita/classes/");
-									workspace.copy(
-										resources,
-										workspace.getRoot().getFolder(ditaFolder.getFullPath()).getFullPath(), true,
-										null);
-
-									// Refresh
-									selectedProject.refreshLocal(IResource.DEPTH_INFINITE, null);
-
-								} catch (CoreException e) {
-
-								}
-
-							}
-
+							importDitaProject(workspace, (IProject) object, selectedProject);
 						}
 
 						try {
