@@ -45,6 +45,11 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<!-- TODO: insert non-model class description markup here -->");
 		writer.println("<section conref=\"generated/_" + normalizedClassName + ".dita#classId/description\">");
 		writer.println("</section>");
+
+		writer.println("<section audience=\"contextTable\" conref=\"generated/_" + normalizedClassName +
+				".dita#classId/contextTable\">");
+		writer.println("</section>");
+
 		writer.println("<!-- TODO: insert UML class diagram here -->");
 
 		writer.println();

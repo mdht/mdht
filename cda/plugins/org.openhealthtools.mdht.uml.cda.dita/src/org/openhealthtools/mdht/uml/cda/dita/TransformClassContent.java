@@ -616,6 +616,10 @@ public class TransformClassContent extends TransformAbstract {
 			if (table != null && table.length() > 0) {
 				writer.println(table);
 			}
+			table = tableGenerator.createTable2(umlClass);
+			if (table != null && table.length() > 0) {
+				writer.println(table);
+			}
 		}
 
 	}
