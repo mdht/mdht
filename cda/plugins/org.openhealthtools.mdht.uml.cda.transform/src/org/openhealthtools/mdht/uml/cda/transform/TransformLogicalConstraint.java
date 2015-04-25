@@ -11,9 +11,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.getInlineFilter;
-import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.isInlineClass;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -273,9 +270,9 @@ public class TransformLogicalConstraint extends TransformConstraint {
 
 		// if we still don't have a template ID and we're a nested class (which will get tossed away),
 		// then the nearest non-nested parent
-		if (!getEcoreProfile().isPrimaryEClass(constraintTarget) && isInlineClass(constraintTarget)) {
+		if (!getEcoreProfile().isPrimaryEClass(constraintTarget) && CDAModelUtil.isInlineClass(constraintTarget)) {
 			for (Classifier next : constraintTarget.allParents()) {
-				if ((next instanceof Class) && !isInlineClass((Class) next)) {
+				if ((next instanceof Class) && !CDAModelUtil.isInlineClass((Class) next)) {
 					constraintTarget = (Class) next;
 					break;
 				}
@@ -322,7 +319,7 @@ public class TransformLogicalConstraint extends TransformConstraint {
 				return null;
 			}
 
-			final String selector = !isInlineClass(targetClass)
+			final String selector = !CDAModelUtil.isInlineClass(targetClass)
 					? null
 					: getInlineFilter(targetClass);
 
@@ -481,6 +478,15 @@ public class TransformLogicalConstraint extends TransformConstraint {
 		// removeModelElement(association);
 
 		return constraintBody.toString();
+	}
+
+	/**
+	 * @param targetClass
+	 * @return
+	 */
+	private String getInlineFilter(Class targetClass) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private boolean isTypeString(Type type) {
