@@ -188,7 +188,7 @@
                  class="org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction"
                  enablesFor="+"
                  id="org.openhealthtools.mdht.uml.cda.ui.addRemoveNatureAction"
-                 label="Add/Remove CDA Builder"
+                 label="%addRemoveNatureAction.label"
                  menubarPath="additions">
            </action>
         </objectContribution>
@@ -197,13 +197,13 @@
         <objectContribution
               adaptable="true"
               id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
-              nameFilter="*"
+              nameFilter="*.doc"
               objectClass="org.eclipse.core.resources.IProject">
            <action
                  class="org.openhealthtools.mdht.uml.cda.ui.actions.ImportDitaReferences"
-                 enablesFor="+"
+                 enablesFor="1"
                  id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
-                 label="Import Dita References"
+                 label="%importDitaReferences.label"
                  menubarPath="additions">
            </action>
         </objectContribution>
