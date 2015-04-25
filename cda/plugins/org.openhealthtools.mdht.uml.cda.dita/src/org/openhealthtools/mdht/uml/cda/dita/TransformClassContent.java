@@ -59,6 +59,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformClassContent extends TransformAbstract {
@@ -441,7 +442,15 @@ public class TransformClassContent extends TransformAbstract {
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(UMLUtil.splitName(umlClass));
+
+		String businessName = NamedElementUtil.getBusinessName(umlClass);
+
+		if (businessName.compareTo(umlClass.getName()) == 0) {
+			writer.print(UMLUtil.splitName(umlClass));
+		} else {
+			writer.print(businessName);
+		}
+
 		writer.print(" - conformance rules");
 		writer.println("</title>");
 

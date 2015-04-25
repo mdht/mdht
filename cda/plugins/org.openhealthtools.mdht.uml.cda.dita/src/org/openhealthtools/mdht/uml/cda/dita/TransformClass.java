@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformClass extends TransformAbstract {
@@ -94,7 +95,15 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(UMLUtil.splitName(umlClass));
+
+		String businessName = NamedElementUtil.getBusinessName(umlClass);
+
+		if (businessName.compareTo(umlClass.getName()) == 0) {
+			writer.print(UMLUtil.splitName(umlClass));
+		} else {
+			writer.print(businessName);
+		}
+
 		writer.println("</title>");
 		writer.println("<shortdesc conref=\"generated/_" + normalizedClassName +
 				".dita#classId/shortdesc\"></shortdesc>");
