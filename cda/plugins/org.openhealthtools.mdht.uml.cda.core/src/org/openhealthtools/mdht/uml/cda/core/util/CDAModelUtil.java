@@ -1761,7 +1761,7 @@ public class CDAModelUtil {
 
 				iw.getRoot().accept(visitor);
 
-				if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+				if (!visitor.getResources().isEmpty()) {
 					return visitor.getResources().get(0).getProject();
 				}
 			}
