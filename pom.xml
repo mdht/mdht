@@ -17,6 +17,7 @@
 		<module>core/features</module>
 		<module>cda/plugins</module>
 		<module>cda/features</module>
+		<module>releng/sites</module>
 	</modules>
 	<profiles>
 		<profile>
