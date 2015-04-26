@@ -36,6 +36,11 @@
  
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+       
+         <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.InlineSection"
+             id="property.section.cda.InlineSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.InlineFilter"/>
              
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ActRelationshipSection" 
@@ -89,11 +94,16 @@
              id="property.section.cda.TemplateSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
              
+             
+             
           <propertySection tab="property.tab.CDAPropertySection"
              class="org.openhealthtools.mdht.uml.cda.ui.properties.ConformanceRuleSection"
              id="property.section.cda.ConformanceRuleSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
              
+    
+ 
+ 
       </propertySections>
    </extension> 
  
