@@ -23,14 +23,14 @@
 
 	<distributionManagement>
 		<repository>
-			<id>org.openhealthtools.mdht.artifactory</id>
-			<name>cdatools.com-releases</name>
-			<url>http://www.cdatools.com:8081/artifactory/libs-release-local</url>
+			<id>remote.nexus</id>
+			<name>mdht-releases</name>
+			<url>http://54.187.96.27:8081/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
-			<id>org.openhealthtools.mdht.artifactory</id>
-			<name>cdatools.com-snapshots</name>
-			<url>http://www.cdatools.com:8081/artifactory/libs-snapshot-local</url>
+			<id>remote.nexus</id>
+			<name>mdht-snapshots</name>
+			<url>http://54.187.96.27:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
