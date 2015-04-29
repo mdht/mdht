@@ -380,10 +380,22 @@ public class CDAModelUtil {
 
 	public static String computeConformanceMessage(Class template, boolean markup) {
 
-		String templateConstraint = markup
-				? CDAConstraints.CDATemplateIdConstraintMarkup
-				: CDAConstraints.CDATemplateIdConstraint;
 		String templateId = getTemplateId(template);
+		String templateVersion = getTemplateVersion(template);
+
+		String templateConstraint = "";
+
+		if (StringUtils.isEmpty(templateVersion)) {
+			templateConstraint = markup
+					? CDAConstraints.CDATemplateIdConstraintMarkup
+					: CDAConstraints.CDATemplateIdConstraint;
+
+		} else {
+			templateConstraint = markup
+					? CDAConstraints.CDAVersionTemplateIdConstraintMarkup
+					: CDAConstraints.CDAVersionTemplateIdConstraint;
+		}
+
 		String ruleIds = getConformanceRuleIds(template);
 		templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
 				? templateId
@@ -391,6 +403,11 @@ public class CDAModelUtil {
 		templateConstraint = templateConstraint.replaceAll("%ruleId%", (ruleIds != null
 				? ruleIds
 				: ""));
+
+		templateConstraint = templateConstraint.replaceAll("%templateVersion%", (templateVersion != null
+				? templateVersion
+				: ""));
+
 		return templateConstraint;
 	}
 
@@ -2023,6 +2040,23 @@ public class CDAModelUtil {
 		}
 
 		return templateId;
+	}
+
+	public static String getTemplateVersion(Class template) {
+		String templateVersion = null;
+		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
+		if (hl7Template != null) {
+			templateVersion = (String) template.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_VERSION);
+		} else {
+			for (Classifier parent : template.getGenerals()) {
+				templateVersion = getTemplateId((Class) parent);
+				if (templateVersion != null) {
+					break;
+				}
+			}
+		}
+
+		return templateVersion;
 	}
 
 	public static String getModelPrefix(Element element) {
