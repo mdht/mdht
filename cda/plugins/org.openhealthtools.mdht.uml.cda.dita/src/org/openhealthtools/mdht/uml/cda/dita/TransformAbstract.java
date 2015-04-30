@@ -13,9 +13,13 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
  * Abstract base class for model transformations.
@@ -50,4 +54,15 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return result;
 	}
 
+	public static String getPublicationName(NamedElement namedElement) {
+		if (namedElement != null) {
+			String businessName = NamedElementUtil.getBusinessName(namedElement);
+			if (!StringUtils.isEmpty(businessName) && businessName.compareTo(namedElement.getName()) == 0) {
+				return UMLUtil.splitName(namedElement);
+			} else {
+				return businessName;
+			}
+		}
+		return "";
+	}
 }

@@ -28,7 +28,6 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
-import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformClass extends TransformAbstract {
@@ -74,9 +73,7 @@ public class TransformClass extends TransformAbstract {
 			}
 
 			writer.println("<p> </p>"); // need a blank line before example code block
-			// writer.println("<fig>");
-			// writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
-			writer.println("<p><b>" + UMLUtil.splitName(umlClass) + " example</b></p>");
+			writer.println("<p><b>" + TransformAbstract.getPublicationName(umlClass) + " example</b></p>");
 			writer.println("<!-- TODO: insert custom instance example here -->");
 			writer.println("<!-- generated instance example follows -->");
 			writer.println("<codeblock conref=\"generated/_" + normalizedClassName + ".dita#classId/example\">");
@@ -96,13 +93,7 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
 
-		String businessName = NamedElementUtil.getBusinessName(umlClass);
-
-		if (businessName.compareTo(umlClass.getName()) == 0) {
-			writer.print(UMLUtil.splitName(umlClass));
-		} else {
-			writer.print(businessName);
-		}
+		writer.print(TransformAbstract.getPublicationName(umlClass));
 
 		writer.println("</title>");
 		writer.println("<shortdesc conref=\"generated/_" + normalizedClassName +

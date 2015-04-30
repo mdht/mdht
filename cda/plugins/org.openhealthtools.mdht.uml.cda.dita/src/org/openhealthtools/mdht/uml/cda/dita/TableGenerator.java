@@ -716,7 +716,7 @@ public class TableGenerator {
 				? "format=\"html\" "
 				: "";
 
-		return "<xref " + format + "href=\"" + xref + "\">" + UMLUtil.splitName(aClass) + "</xref>";
+		return "<xref " + format + "href=\"" + xref + "\">" + TransformAbstract.getPublicationName(aClass) + "</xref>";
 
 	}
 

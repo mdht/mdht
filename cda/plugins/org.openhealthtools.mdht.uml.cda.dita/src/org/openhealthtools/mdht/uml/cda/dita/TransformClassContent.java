@@ -59,7 +59,6 @@ import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
-import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformClassContent extends TransformAbstract {
@@ -255,7 +254,7 @@ public class TransformClassContent extends TransformAbstract {
 		appendExample(writer, umlClass);
 		appendChanges(writer, umlClass);
 
-		writer.println("<p><ph id=\"classformalname\">" + UMLUtil.splitName(umlClass) + "</ph></p>");
+		writer.println("<p><ph id=\"classformalname\">" + TransformAbstract.getPublicationName(umlClass) + "</ph></p>");
 
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		String cdaClassName = cdaClass != null
@@ -293,7 +292,7 @@ public class TransformClassContent extends TransformAbstract {
 							: "";
 
 					writer.append("<xref " + format + "href=\"" + xref + "\">");
-					writer.append(UMLUtil.splitName(subclass));
+					writer.append(TransformAbstract.getPublicationName(subclass));
 					writer.append("</xref>");
 
 					if (iterator.hasNext()) {
@@ -443,13 +442,7 @@ public class TransformClassContent extends TransformAbstract {
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
 
-		String businessName = NamedElementUtil.getBusinessName(umlClass);
-
-		if (businessName.compareTo(umlClass.getName()) == 0) {
-			writer.print(UMLUtil.splitName(umlClass));
-		} else {
-			writer.print(businessName);
-		}
+		writer.print(TransformAbstract.getPublicationName(umlClass));
 
 		writer.print(" - conformance rules");
 		writer.println("</title>");
