@@ -87,10 +87,6 @@ public class CDAProfileUtil {
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(theClass, ICDAProfileConstants.INLINE);
 		if (stereotype != null) {
 			inline = (Inline) theClass.getStereotypeApplication(stereotype);
-		} else {
-			for (Stereotype s : theClass.getAppliedStereotypes()) {
-				System.out.println(theClass.getQualifiedName() + "  " + s.getName());
-			}
 		}
 		return inline;
 	}
