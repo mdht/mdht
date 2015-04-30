@@ -182,7 +182,7 @@ public class InlineSection extends ResettableModelerPropertySection {
 		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		filterText.setLayoutData(data);
 
-		isInlinePublication = getWidgetFactory().createButton(composite, "Publish As Seperate Topic", SWT.CHECK);
+		isInlinePublication = getWidgetFactory().createButton(composite, "Publish As Separate Topic", SWT.CHECK);
 
 		isInlinePublication.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
