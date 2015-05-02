@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
 import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
 import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
@@ -79,6 +80,15 @@ public class CDAProfileUtil {
 			conformsTo = (ConformsTo) generalization.getStereotypeApplication(stereotype);
 		}
 		return conformsTo;
+	}
+
+	public static Inline getInline(org.eclipse.uml2.uml.Class theClass) {
+		Inline inline = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(theClass, ICDAProfileConstants.INLINE);
+		if (stereotype != null) {
+			inline = (Inline) theClass.getStereotypeApplication(stereotype);
+		}
+		return inline;
 	}
 
 	public static EntryRelationship getEntryRelationship(Association association) {

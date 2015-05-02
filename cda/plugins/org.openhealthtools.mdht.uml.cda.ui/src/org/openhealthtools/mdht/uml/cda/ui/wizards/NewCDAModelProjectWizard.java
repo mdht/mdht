@@ -47,6 +47,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -77,7 +78,7 @@ import org.osgi.framework.Bundle;
 
 public class NewCDAModelProjectWizard extends CDAWizard {
 
-	NewCDAModelPage newCDATemplatePage;
+	protected NewCDAModelPage newCDATemplatePage;
 
 	private boolean checkForSpaces() {
 		Bundle bundle = Platform.getBundle(org.openhealthtools.mdht.uml.cda.ui.internal.Activator.PLUGIN_ID);
@@ -319,7 +320,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		return true;
 	}
 
-	private void setupWorkspace(IProject modelProject, String modelName) throws Exception {
+	protected void setupWorkspace(IProject modelProject, String modelName) throws Exception {
 		IWorkbench workbench = PlatformUI.getWorkbench();
 		final IWorkbenchPage activePage = workbench.getActiveWorkbenchWindow().getActivePage();
 		activePage.closeEditors(activePage.getEditorReferences(), true);
@@ -438,6 +439,10 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 	void createUMLModel(IProject project, String namespaceURI, String basePackage, String modelName) throws Exception {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
+
+		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
+
+		resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
 
 		Map<String, String> options = new HashMap<String, String>();
 
@@ -564,7 +569,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("<?eclipse version=\"3.0\"?>");
 		writer.println("<plugin>");
 		writer.println("<extension point=\"org.eclipse.emf.ecore.uri_mapping\">");
-		writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL\" target=\"model\">");
+		writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL/\" target=\"model/\">");
 		writer.println("</mapping>");
 		writer.println("</extension>");
 		writer.println("</plugin>");

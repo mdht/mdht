@@ -2,17 +2,15 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.2.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.openhealthtools.mdht.uml.cda,
- org.openhealthtools.mdht.uml.cda.impl,
- org.openhealthtools.mdht.uml.cda.internal.resource;x-internal:=true,
- org.openhealthtools.mdht.uml.cda.operations,
- org.openhealthtools.mdht.uml.cda.util,
- org.openhealthtools.mdht.uml.cda.validate
+Export-Package: org.openhealthtools.mdht.uml.cda,org.openhealthtools.m
+ dht.uml.cda.impl,org.openhealthtools.mdht.uml.cda.internal.resource;x
+ -internal:=true,org.openhealthtools.mdht.uml.cda.operations,org.openh
+ ealthtools.mdht.uml.cda.util,org.openhealthtools.mdht.uml.cda.validate
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

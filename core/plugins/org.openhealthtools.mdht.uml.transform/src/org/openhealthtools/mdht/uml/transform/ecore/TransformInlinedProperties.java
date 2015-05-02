@@ -98,8 +98,15 @@ public class TransformInlinedProperties extends TransformAbstract {
 		return inlinedConstraint;
 	}
 
-	public static boolean isInlineClass(Class _class) {
-
+	/**
+	 * This will be removed once we have a constraint based profle
+	 * 
+	 * @deprecated
+	 * @param _class
+	 * @return
+	 */
+	@Deprecated
+	protected static boolean isInlineClassLocal(Class _class) {
 		boolean inline = false;
 		for (Comment comment : _class.getOwnedComments()) {
 			if (comment.getBody().startsWith("INLINE")) {
@@ -112,7 +119,19 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 	}
 
-	public static String getInlineFilter(Class inlineClass) {
+	public boolean isInlineClass(Class _class) {
+		return isInlineClassLocal(_class);
+	}
+
+	/**
+	 * This will be removed once we establish a constraint based profile
+	 * 
+	 * @deprecated
+	 * @param inlineClass
+	 * @return
+	 */
+	@Deprecated
+	protected static String getInlineFilterLocal(Class inlineClass) {
 		String filter = "";
 		for (Comment comment : inlineClass.getOwnedComments()) {
 			if (comment.getBody().startsWith("INLINE&")) {
@@ -128,7 +147,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 			// search hierarchy
 			for (Classifier next : inlineClass.getGenerals()) {
 				if (next instanceof Class) {
-					filter = getInlineFilter((Class) next);
+					filter = getInlineFilterLocal((Class) next);
 					if (!"".equals(filter)) {
 						break;
 					}
@@ -138,6 +157,10 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 		return filter;
 
+	}
+
+	public String getInlineFilter(Class inlineClass) {
+		return getInlineFilterLocal(inlineClass);
 	}
 
 	@Override

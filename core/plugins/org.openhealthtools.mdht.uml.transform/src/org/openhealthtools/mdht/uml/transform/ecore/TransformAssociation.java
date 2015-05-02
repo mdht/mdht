@@ -16,9 +16,6 @@
  */
 package org.openhealthtools.mdht.uml.transform.ecore;
 
-import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.getInlineFilter;
-import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.isInlineClass;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,9 +100,10 @@ public abstract class TransformAssociation extends TransformAbstract {
 
 		// if we still don't have a template ID and we're a nested class (which will get tossed away),
 		// then the nearest non-nested parent
-		if (!getEcoreProfile().isPrimaryEClass(constraintTarget) && isInlineClass(constraintTarget)) {
+		if (!getEcoreProfile().isPrimaryEClass(constraintTarget) &&
+				TransformInlinedProperties.isInlineClassLocal(constraintTarget)) {
 			for (Classifier next : constraintTarget.allParents()) {
-				if ((next instanceof Class) && !isInlineClass((Class) next)) {
+				if ((next instanceof Class) && !TransformInlinedProperties.isInlineClassLocal((Class) next)) {
 					constraintTarget = (Class) next;
 					break;
 				}
@@ -152,9 +150,9 @@ public abstract class TransformAssociation extends TransformAbstract {
 				return null;
 			}
 
-			final String selector = !isInlineClass(targetClass)
+			final String selector = !TransformInlinedProperties.isInlineClassLocal(targetClass)
 					? null
-					: getInlineFilter(targetClass);
+					: TransformInlinedProperties.getInlineFilterLocal(targetClass);
 
 			//
 			// The only associations that can have a 0 lower bound are those that implement

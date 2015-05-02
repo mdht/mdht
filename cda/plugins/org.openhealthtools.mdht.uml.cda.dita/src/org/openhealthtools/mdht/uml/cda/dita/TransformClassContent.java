@@ -254,7 +254,7 @@ public class TransformClassContent extends TransformAbstract {
 		appendExample(writer, umlClass);
 		appendChanges(writer, umlClass);
 
-		writer.println("<p><ph id=\"classformalname\">" + UMLUtil.splitName(umlClass) + "</ph></p>");
+		writer.println("<p><ph id=\"classformalname\">" + TransformAbstract.getPublicationName(umlClass) + "</ph></p>");
 
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		String cdaClassName = cdaClass != null
@@ -292,7 +292,7 @@ public class TransformClassContent extends TransformAbstract {
 							: "";
 
 					writer.append("<xref " + format + "href=\"" + xref + "\">");
-					writer.append(UMLUtil.splitName(subclass));
+					writer.append(TransformAbstract.getPublicationName(subclass));
 					writer.append("</xref>");
 
 					if (iterator.hasNext()) {
@@ -441,7 +441,9 @@ public class TransformClassContent extends TransformAbstract {
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(UMLUtil.splitName(umlClass));
+
+		writer.print(TransformAbstract.getPublicationName(umlClass));
+
 		writer.print(" - conformance rules");
 		writer.println("</title>");
 
@@ -613,6 +615,10 @@ public class TransformClassContent extends TransformAbstract {
 
 		if (tableGenerator != null) {
 			String table = tableGenerator.createTable(umlClass);
+			if (table != null && table.length() > 0) {
+				writer.println(table);
+			}
+			table = tableGenerator.createTable2(umlClass);
 			if (table != null && table.length() > 0) {
 				writer.println(table);
 			}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 ramakrishnanr.
+ * Copyright (c) 2012,2015 ramakrishnanr, NEHTA.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,8 @@
  * Contributors:
  *     Rama Ramakrishnan - initial API and implementation
  *     					 - Generated OCL for subclassed datatypes does not check nullFlavor(artf3450)
- *     Sean Muir		 - Refactored to extend the underlying inline transformation
+ *     Sean Muir (JKMSOFWARE)		 - Refactored to extend the underlying inline transformation
+ *     Sean Muir (NEHTA)		 - Added use of Inline stereotype
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
@@ -16,6 +17,7 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -126,6 +128,39 @@ public class TransformCDAInlineProperties extends TransformInlinedProperties {
 			}
 		}
 		return result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#isInlineClass(org.eclipse.uml2.uml.Class)
+	 */
+	@Override
+	public boolean isInlineClass(Class _class) {
+		Inline inline = CDAProfileUtil.getInline(_class);
+		if (inline != null) {
+			return true;
+		} else {
+			return super.isInlineClass(_class);
+		}
+	}
+
+	/**
+	 * TODO Move the Inline Stereotype to general purpose UML constraint profile
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties#getInlineFilter(org.eclipse.uml2.uml.Class)
+	 */
+	@Override
+	public String getInlineFilter(Class inlineClass) {
+		Inline inline = CDAProfileUtil.getInline(inlineClass);
+		if (inline != null) {
+			return inline.getFilter() != null
+					? inline.getFilter()
+					: "";
+		} else {
+			return super.getInlineFilter(inlineClass);
+		}
 	}
 
 }

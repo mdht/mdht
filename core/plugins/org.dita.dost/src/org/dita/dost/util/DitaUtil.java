@@ -36,6 +36,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import javax.xml.xpath.XPathFactoryConfigurationException;
 
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.ant.internal.launching.launchConfigurations.AntHomeClasspathEntry;
@@ -275,7 +276,9 @@ public class DitaUtil {
 
 			doc = builder.parse(new InputSource(ditaMapStream));
 
-			XPathFactory xFactory = XPathFactory.newInstance();
+			XPathFactory xFactory = XPathFactory.newInstance(
+				XPathFactory.DEFAULT_OBJECT_MODEL_URI, "net.sf.saxon.xpath.XPathFactoryImpl",
+				ClassLoader.getSystemClassLoader());
 
 			XPath xpath = xFactory.newXPath();
 
@@ -333,6 +336,7 @@ public class DitaUtil {
 		} catch (SAXException e) {
 		} catch (IOException e) {
 		} catch (XPathExpressionException e) {
+		} catch (XPathFactoryConfigurationException e) {
 		}
 		return fileName.toString();
 	}

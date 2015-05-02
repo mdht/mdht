@@ -25,7 +25,6 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Generalization;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformCDA extends TransformAbstract {
 
@@ -69,7 +68,7 @@ public class TransformCDA extends TransformAbstract {
 		templateParameters[4] = CLASSNAME;
 
 		templateParameters[1] = umlClass.getName();
-		templateParameters[3] = UMLUtil.splitName(umlClass);
+		templateParameters[3] = TransformAbstract.getPublicationName(umlClass);
 		templateParameters[5] = umlClass.getName();
 
 		return templateParameters;

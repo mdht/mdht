@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openhealthtools.mdht</groupId>
 	<artifactId>root</artifactId>
-	<version>${build_version}</version>
+	<version>2.5.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<build_version>2.5.0-SNAPSHOT</build_version>
+		<build_version>2.5.2-SNAPSHOT</build_version>
 		<tycho-version>0.19.0</tycho-version>
 	</properties>
 
@@ -17,6 +17,7 @@
 		<module>core/features</module>
 		<module>cda/plugins</module>
 		<module>cda/features</module>
+		<module>releng/sites</module>
 	</modules>
 	<profiles>
 		<profile>

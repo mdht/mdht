@@ -20,8 +20,11 @@ public class CDAConstraints extends NLS {
 
 	public static String CDATemplateIdConstraintMarkup;
 
+	public static String CDAVersionTemplateIdConstraint;
+
+	public static String CDAVersionTemplateIdConstraintMarkup;
+
 	static {
-		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, CDAConstraints.class);
 	}
 

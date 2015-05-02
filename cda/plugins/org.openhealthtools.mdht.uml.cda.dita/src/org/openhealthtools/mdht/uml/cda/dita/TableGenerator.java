@@ -34,9 +34,11 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
@@ -55,6 +57,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -620,5 +623,152 @@ public class TableGenerator {
 		}
 		return;
 
+	}
+
+	private static class AssociationSwitch extends UMLSwitch<String> {
+
+		/**
+		 * @return the containedBy
+		 */
+		public ArrayList<Type> getContainedBy() {
+			return containedBy;
+		}
+
+		/**
+		 * @return the contains
+		 */
+		public ArrayList<Type> getContains() {
+			return contains;
+		}
+
+		Class umlClass;
+
+		/**
+		 * @param umlClass
+		 */
+		public AssociationSwitch(Class umlClass) {
+			super();
+			this.umlClass = umlClass;
+		}
+
+		public void sort() {
+			Comparator<? super Type> compare = new Comparator<Type>() {
+
+				public int compare(Type o1, Type o2) {
+					return o1.getName().compareTo(o2.getName());
+				}
+			};
+			Collections.sort(containedBy, compare);
+			Collections.sort(contains, compare);
+		}
+
+		ArrayList<Type> containedBy = new ArrayList<Type>();
+
+		ArrayList<Type> contains = new ArrayList<Type>();
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseAssociation(org.eclipse.uml2.uml.Association)
+		 */
+		@Override
+		public String caseAssociation(Association association) {
+			// && umlClass.getQualifiedName().equals(p.getType().getQualifiedName())
+			Type from = null;
+			Type to = null;
+			for (NamedElement ne : association.getMembers()) {
+				if (ne instanceof Property) {
+					Property p = (Property) ne;
+					if (p.getType() != null) {
+						if (p.getName() == null) {
+							from = p.getType();
+						} else {
+							to = p.getType();
+						}
+					}
+				} else {
+
+				}
+			}
+
+			if (from != null && from.getQualifiedName().equals(umlClass.getQualifiedName())) {
+				if (to instanceof Class && CDAModelUtil.getTemplateId((Class) to) != null) {
+					contains.add(to);
+				}
+			}
+
+			if (to != null && to.getQualifiedName().equals(umlClass.getQualifiedName())) {
+				if (from instanceof Class && CDAModelUtil.getTemplateId((Class) from) != null) {
+					containedBy.add(from);
+				}
+			}
+
+			// System.out.println(from + " <<<<>>>>> " + to);
+			return super.caseAssociation(association);
+
+		}
+	};
+
+	String getAnXref(Package aPackage, Class aClass) {
+
+		String xref = CDAModelUtil.computeXref(aPackage, aClass);
+		String format = xref != null && xref.endsWith(".html")
+				? "format=\"html\" "
+				: "";
+
+		return "<xref " + format + "href=\"" + xref + "\">" + TransformAbstract.getPublicationName(aClass) + "</xref>";
+
+	}
+
+	public String createTable2(Class umlClass) {
+
+		org.eclipse.uml2.uml.Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
+		if (cdaClass == null || umlClass.isAbstract()) {
+			return "";
+		}
+
+		StringBuffer tableBuffer = new StringBuffer();
+
+		tableBuffer.append("<section id=\"contextTable\"><p><table frame=\"all\" scale=\"80\" pgwide=\"1\" ><tgroup cols=\"2\" align=\"left\" colsep = \"1\" rowsep = \"1\" > ");
+
+		tableBuffer.append("<colspec colname=\"col0\" colnum=\"0\" />");
+		tableBuffer.append("<colspec colname=\"col1\" colnum=\"1\" />");
+
+		tableBuffer.append("<thead><row><entry namest=\"col0\" nameend=\"col0\" >Contained By</entry><entry namest=\"col1\" nameend=\"col1\" >Contains</entry></row></thead><tbody>");
+
+		AssociationSwitch associationSwitch = new AssociationSwitch(umlClass);
+
+		org.eclipse.uml2.uml.Package topPackage = UMLUtil.getTopPackage(umlClass);
+
+		for (Element element : topPackage.getOwnedElements()) {
+
+			associationSwitch.doSwitch(element);
+
+		}
+
+		associationSwitch.sort();
+
+		int maxRows = associationSwitch.getContainedBy().size();
+
+		if (associationSwitch.getContains().size() > maxRows) {
+			maxRows = associationSwitch.getContains().size();
+		}
+
+		for (int rowCtr = 0; rowCtr < maxRows; rowCtr++) {
+			String containedBy = "";
+			String contains = "";
+			if (rowCtr < associationSwitch.getContainedBy().size()) {
+				containedBy = getAnXref(topPackage, (Class) associationSwitch.getContainedBy().get(rowCtr));
+			}
+			if (rowCtr < associationSwitch.getContains().size()) {
+				contains = getAnXref(topPackage, (Class) associationSwitch.getContains().get(rowCtr));
+
+			}
+			tableBuffer.append("<row><entry>" + containedBy + "</entry><entry>" + contains + "</entry></row>");
+		}
+
+		tableBuffer.append("</tbody></tgroup></table></p></section>");
+
+		return tableBuffer.toString();
 	}
 }

@@ -2,18 +2,16 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.validation;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.2.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: org.openhealthtools.mdht.uml.validation,
- org.openhealthtools.mdht.uml.validation.internal,
- org.openhealthtools.mdht.uml.validation.internal.impl,
- org.openhealthtools.mdht.uml.validation.internal.operations,
- org.openhealthtools.mdht.uml.validation.internal.provider,
- org.openhealthtools.mdht.uml.validation.ocl,
- org.openhealthtools.mdht.uml.validation.provider,
- org.openhealthtools.mdht.uml.validation.util
+Export-Package: org.openhealthtools.mdht.uml.validation,org.openhealth
+ tools.mdht.uml.validation.internal,org.openhealthtools.mdht.uml.valid
+ ation.internal.impl,org.openhealthtools.mdht.uml.validation.internal.
+ operations,org.openhealthtools.mdht.uml.validation.internal.provider,
+ org.openhealthtools.mdht.uml.validation.ocl,org.openhealthtools.mdht.
+ uml.validation.provider,org.openhealthtools.mdht.uml.validation.util
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
