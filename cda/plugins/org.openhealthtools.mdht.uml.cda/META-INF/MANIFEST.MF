@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda;singleton:=true
 Bundle-Version: 2.5.2.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ schema/
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

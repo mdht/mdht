@@ -370,10 +370,11 @@ public class TransformInlinedProperties extends TransformAbstract {
 				 * incomplete message in qualified key
 				 * This pass then get the incomplete message and prepends the path messsage to create the complete message
 				 */
-				String constraintMessage = properties.getProperty(generateQualifiedConstraintName(
-					inlineClass, constraint.getName()));
+				String constraintMessage = properties.getProperty(inlineClass.getName() + constraint.getName());
 				if (constraintMessage != null) {
 					constraintMessage = constraintMessage.replaceAll(splitName, associationName);
+				} else {
+					System.out.println("Unable to find constraint ---> " + inlineClass.getName() + constraint.getName());
 				}
 
 				/*
@@ -396,5 +397,4 @@ public class TransformInlinedProperties extends TransformAbstract {
 		}
 
 	}
-
 }
