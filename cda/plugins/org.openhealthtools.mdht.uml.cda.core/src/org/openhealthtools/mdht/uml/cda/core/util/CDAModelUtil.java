@@ -991,9 +991,7 @@ public class CDAModelUtil {
 						PrintWriter pw = new PrintWriter(sw);
 
 						// appendConformanceRuleIds(association, message, markup);
-
-						CDAModelUtil.getCDADatatype((Classifier) property.getType());
-
+						
 						appendPropertyComments(pw, property, markup);
 
 						appendConformanceRules(pw, (Class) property.getType(), "", markup);
