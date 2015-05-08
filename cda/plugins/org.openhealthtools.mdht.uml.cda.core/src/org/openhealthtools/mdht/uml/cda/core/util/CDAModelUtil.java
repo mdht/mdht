@@ -14,7 +14,7 @@
  *     								 as part of artf3549, artf3577, errata 156 and errata 72
  *     								 - changed output from 'data type CD' to '@xsi:type="CD"' as per errata 177
  *     								 - added message support for errata 384 as per artf3818 No Information Section Fix
- *     								 - support templateId extension attribute value in generalization messages
+ *     								 - support templateId extension attribute value in generalization and association messages
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -777,12 +777,20 @@ public class CDAModelUtil {
 					: "");
 
 			String templateId = getTemplateId(endType);
+			String templateVersion = getTemplateVersion(endType);
+
 			if (templateId != null) {
 				message.append(" (templateId: ");
 				message.append(markup
 						? "<tt>"
 						: "");
 				message.append(templateId);
+
+				// if there is an extension, add a colon followed by its value
+				if (!StringUtils.isEmpty(templateVersion)) {
+					message.append(":" + templateVersion);
+				}
+
 				message.append(markup
 						? "</tt>"
 						: "");
