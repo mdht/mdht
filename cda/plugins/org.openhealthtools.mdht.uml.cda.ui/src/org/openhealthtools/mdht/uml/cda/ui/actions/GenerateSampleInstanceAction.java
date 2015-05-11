@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010,2015 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,12 +8,15 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Rama Ramakrishnan - modifications to the URL handling for instance generation.
+ *     Sean Muir (NEHTA) - modifications to add cda.core to manifest on the fly
  *    
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.jar.Attributes;
@@ -42,23 +45,14 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.console.ConsolePlugin;
 import org.eclipse.ui.console.IConsole;
-import org.eclipse.ui.console.IConsoleConstants;
 import org.eclipse.ui.console.IConsoleManager;
-import org.eclipse.ui.console.IConsoleView;
 import org.eclipse.ui.console.MessageConsole;
-import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.uml2.uml.Class;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.osgi.framework.Bundle;
 
@@ -75,6 +69,10 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 		super();
 	}
 
+	/**
+	 * @throws IOException
+	 * @throws CoreException
+	 */
 	private void createInstance() throws IOException, CoreException {
 
 		if (selectedElement != null) {
@@ -107,7 +105,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 						IProject generateProject = root.getProject(generateProjectLocation);
 
 						// Need to have CDA Core to run in workspace mode -
-						boolean hasCDACore = false;
+						boolean neededCore = false;
 
 						if (generateProject.exists() && generateProject.isOpen()) {
 							Manifest projectManifest = new Manifest(
@@ -117,13 +115,24 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 
 							String requiredBundles = attributes.getValue("Require-Bundle");
 
-							if (requiredBundles.contains("org.openhealthtools.mdht.uml.cda.core")) {
-								hasCDACore = true;
+							/*
+							 * The org.openhealthtools.mdht.uml.cda.core bundle is required for the generate class
+							 * If the org.openhealthtools.mdht.uml.cda.core bundle is not present add to the manifest on the fly
+							 */
+							if (!requiredBundles.contains("org.openhealthtools.mdht.uml.cda.core")) {
+								neededCore = true;
+
+								attributes.putValue("Require-Bundle", attributes.getValue("Require-Bundle") +
+										",org.openhealthtools.mdht.uml.cda.core");
+								ByteArrayOutputStream out = new ByteArrayOutputStream();
+								projectManifest.write(out);
+								InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
+								CDAUIUtil.getManifest(generateProject).setContents(inputStream, true, true, null);
 							}
 						}
 						// If the generation project is in the workspace -
 						// launch as java
-						if (hasCDACore && index >= 0 && generateProject.exists() && generateProject.isOpen()) {
+						if (index >= 0 && generateProject.exists() && generateProject.isOpen()) {
 
 							ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
 
@@ -156,53 +165,30 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							} catch (CoreException e1) {
 								e1.printStackTrace();
 							}
-						} else {
+						}
+						/*
+						 * If we add the core - remove it
+						 */
+						if (neededCore) {
 
-							MessageConsole myConsole = findConsole("GENERATEXML");
+							Manifest projectManifest = new Manifest(
+								CDAUIUtil.getManifest(generateProject).getContents());
 
-							myConsole.clearConsole();
+							Attributes attributes = projectManifest.getMainAttributes();
 
-							MessageConsoleStream out = myConsole.newMessageStream();
+							String requiredBundles = attributes.getValue("Require-Bundle");
 
-							out.println("Generated Sample XML for " + selectedElement.getName());
-							out.println();
-							if (generateProject.exists() && generateProject.isOpen()) {
-								out.println("****************************");
-								out.println("Not Running Workspace Mode! \nTemporarily add 'org.openhealthtools.mdht.uml.cda.core;visibility:=reexport' \nto the 'Require-Bundle:' section of project " +
-										generateProject.getName() +
-										" MANIFEST.MF file  \nto enable workspace projects versus installed plugins ");
-								out.println("****************************");
-							}
-
-							out.println();
-							out.println();
-							InstanceGenerator generator = new InstanceGenerator(false);
-							EObject instance = generator.createInstance(selectedElement, 50);
-							PrintWriter writer = new PrintWriter(out);
-							generator.save(instance, writer);
-
-							out.println();
-							out.println();
-							out.println();
-							out.println("Done Generating");
-
-							writer.close();
-
-							try {
-
-								IWorkbench wb = PlatformUI.getWorkbench();
-								IWorkbenchWindow win = wb.getActiveWorkbenchWindow();
-								IWorkbenchPage page = win.getActivePage();
-								String id = IConsoleConstants.ID_CONSOLE_VIEW;
-								IConsoleView view;
-								view = (IConsoleView) page.showView(id);
-								view.display(myConsole);
-
-							} catch (PartInitException e) {
-							}
+							attributes.putValue(
+								"Require-Bundle", requiredBundles.replace(",org.openhealthtools.mdht.uml.cda.core", ""));
+							ByteArrayOutputStream out = new ByteArrayOutputStream();
+							projectManifest.write(out);
+							InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
+							CDAUIUtil.getManifest(generateProject).setContents(inputStream, true, true, null);
 
 						}
+
 					}
+
 				}
 
 			}

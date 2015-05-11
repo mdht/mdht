@@ -54,7 +54,9 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Substitution;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
@@ -372,11 +374,27 @@ public class TransformClassContent extends TransformAbstract {
 
 		List<Property> allProperties = new ArrayList<Property>(umlClass.getOwnedAttributes());
 		List<Property> allAttributes = new ArrayList<Property>();
+
 		for (Property property : allProperties) {
 			if (CDAModelUtil.isXMLAttribute(property)) {
 				allAttributes.add(property);
 			}
+
+			// Check to see if the property is part of a logical constraint - if so do not create process as a property
+
 		}
+
+		for (Constraint constraint : umlClass.getOwnedRules()) {
+			LogicalConstraint logicConstraint = CDAProfileUtil.getLogicalConstraint(constraint);
+			if (logicConstraint != null) {
+				for (Element constrainedElement : constraint.getConstrainedElements()) {
+					if (constrainedElement instanceof Property) {
+						allProperties.remove(constrainedElement);
+					}
+				}
+			}
+		}
+
 		allProperties.removeAll(allAttributes);
 		Collections.sort(allAttributes, new NamedElementComparator());
 		// XML attributes

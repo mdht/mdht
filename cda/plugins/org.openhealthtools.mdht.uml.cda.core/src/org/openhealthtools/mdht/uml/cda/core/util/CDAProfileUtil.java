@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
@@ -37,6 +38,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
@@ -53,6 +55,16 @@ public class CDAProfileUtil {
 			actRelationship = (ActRelationship) association.getStereotypeApplication(stereotype);
 		}
 		return actRelationship;
+	}
+
+	public static LogicalConstraint getLogicalConstraint(Constraint constraint) {
+		LogicalConstraint logicalClassifier = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			constraint, ICDAProfileConstants.LOGICAL_CONSTRAINT);
+		if (stereotype != null) {
+			logicalClassifier = (LogicalConstraint) constraint.getStereotypeApplication(stereotype);
+		}
+		return logicalClassifier;
 	}
 
 	public static Participation getParticipation(Association association) {

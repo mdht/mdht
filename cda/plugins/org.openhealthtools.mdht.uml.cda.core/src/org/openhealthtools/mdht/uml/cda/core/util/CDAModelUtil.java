@@ -63,6 +63,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
@@ -991,7 +992,7 @@ public class CDAModelUtil {
 						PrintWriter pw = new PrintWriter(sw);
 
 						// appendConformanceRuleIds(association, message, markup);
-						
+
 						appendPropertyComments(pw, property, markup);
 
 						appendConformanceRules(pw, (Class) property.getType(), "", markup);
@@ -1619,10 +1620,23 @@ public class CDAModelUtil {
 	}
 
 	public static String computeConformanceMessage(Constraint constraint, boolean markup) {
+
+		LogicalConstraint logicConstraint = CDAProfileUtil.getLogicalConstraint(constraint);
+		if (logicConstraint != null) {
+			return computeLogicalConformanceMessage(constraint, logicConstraint, markup);
+		} else {
+			return computeCustomConformanceMessage(constraint, markup);
+		}
+
+	}
+
+	private static String computeCustomConformanceMessage(Constraint constraint, boolean markup) {
 		StringBuffer message = new StringBuffer();
 		String strucTextBody = null;
 		String analysisBody = null;
 		Map<String, String> langBodyMap = new HashMap<String, String>();
+
+		CDAProfileUtil.getLogicalConstraint(constraint);
 
 		ValueSpecification spec = constraint.getSpecification();
 		if (spec instanceof OpaqueExpression) {
@@ -1719,6 +1733,162 @@ public class CDAModelUtil {
 				}
 			}
 		}
+
+		return message.toString();
+	}
+
+	private static String computeLogicalConformanceMessage(Constraint constraint, LogicalConstraint logicConstraint,
+			boolean markup) {
+		StringBuffer message = new StringBuffer();
+
+		logicConstraint.getMessage();
+
+		String keyword = getValidationKeyword(constraint);
+		if (keyword == null) {
+			keyword = "SHALL";
+		}
+
+		message.append(markup
+				? "<b>"
+				: "");
+		message.append(keyword);
+		message.append(markup
+				? "</b>"
+				: "");
+		message.append(" satisfy the following ");
+
+		// message.append(logicConstraint.getMessage());
+
+		// message.append("<ul>");
+		// for (Comment comment : constraint.getOwnedComments()) {
+		// message.append("<li>");
+		// message.append(fixNonXMLCharacters(comment.getBody()));
+		// message.append("</li>");
+		// }
+		// message.append("</ul>");
+
+		boolean appendLogic = false;
+		message.append("<ul>");
+		for (Element element : constraint.getConstrainedElements()) {
+			message.append("<li>");
+			if (appendLogic) {
+				message.append(markup
+						? "<b>"
+						: " ");
+				message.append(" " + logicConstraint.getOperation() + " ");
+				message.append(markup
+						? "</b>"
+						: " ");
+			} else {
+				appendLogic = true;
+			}
+
+			message.append(computeConformanceMessage(element, markup));
+			message.append("</li>");
+		}
+		message.append("</ul>");
+
+		appendConformanceRuleIds(constraint, message, markup);
+
+		// String strucTextBody = null;
+		// String analysisBody = null;
+		// Map<String, String> langBodyMap = new HashMap<String, String>();
+		//
+		// ValueSpecification spec = constraint.getSpecification();
+		// if (spec instanceof OpaqueExpression) {
+		// for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
+		// String lang = ((OpaqueExpression) spec).getLanguages().get(i);
+		// String body = ((OpaqueExpression) spec).getBodies().get(i);
+		//
+		// if ("StrucText".equals(lang)) {
+		// strucTextBody = body;
+		// } else if ("Analysis".equals(lang)) {
+		// analysisBody = body;
+		// } else {
+		// langBodyMap.put(lang, body);
+		// }
+		// }
+		// }
+		//
+		// String displayBody = null;
+		// if (strucTextBody != null && strucTextBody.trim().length() > 0) {
+		// // TODO if markup, parse strucTextBody and insert DITA markup
+		// displayBody = strucTextBody;
+		// } else if (analysisBody != null && analysisBody.trim().length() > 0) {
+		// if (markup) {
+		// // escape non-dita markup in analysis text
+		// displayBody = escapeMarkupCharacters(analysisBody);
+		// // change severity words to bold text
+		// displayBody = replaceSeverityWithBold(displayBody);
+		// } else {
+		// displayBody = analysisBody;
+		// }
+		// }
+		//
+		// if (!markup) {
+		// message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
+		// }
+		//
+		// if (displayBody == null || !containsSeverityWord(displayBody)) {
+		// String keyword = getValidationKeyword(constraint);
+		// if (keyword == null) {
+		// keyword = "SHALL";
+		// }
+		//
+		// message.append(markup
+		// ? "<b>"
+		// : "");
+		// message.append(keyword);
+		// message.append(markup
+		// ? "</b>"
+		// : "");
+		// message.append(" satisfy: ");
+		// }
+		//
+		// if (displayBody == null) {
+		// message.append(constraint.getName());
+		// } else {
+		// message.append(displayBody);
+		// }
+		// appendConformanceRuleIds(constraint, message, markup);
+		//
+		// // include comment text only in markup output
+		// if (false && markup && constraint.getOwnedComments().size() > 0) {
+		// message.append("<ul>");
+		// for (Comment comment : constraint.getOwnedComments()) {
+		// message.append("<li>");
+		// message.append(fixNonXMLCharacters(comment.getBody()));
+		// message.append("</li>");
+		// }
+		// message.append("</ul>");
+		// }
+		//
+		// // Include other constraint languages, e.g. OCL or XPath
+		// if (false && langBodyMap.size() > 0) {
+		// message.append("<ul>");
+		// for (String lang : langBodyMap.keySet()) {
+		// message.append("<li>");
+		// message.append("<codeblock>[" + lang + "]: ");
+		// message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
+		// message.append("</codeblock>");
+		// message.append("</li>");
+		// }
+		// message.append("</ul>");
+		// }
+		//
+		// if (!markup) {
+		// // remove line feeds
+		// int index;
+		// while ((index = message.indexOf("\r")) >= 0) {
+		// message.deleteCharAt(index);
+		// }
+		// while ((index = message.indexOf("\n")) >= 0) {
+		// message.deleteCharAt(index);
+		// if (message.charAt(index) != ' ') {
+		// message.insert(index, " ");
+		// }
+		// }
+		// }
 
 		return message.toString();
 	}
