@@ -10,6 +10,8 @@
 	<properties>
 		<build_version>2.5.4-SNAPSHOT</build_version>
 		<tycho-version>0.19.0</tycho-version>
+		<org.apache.maven.version>2.4</org.apache.maven.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<release_url>http://54.187.96.27:8081/nexus/content/repositories/releases</release_url>
 		<snapshot_url>http://54.187.96.27:8081/nexus/content/repositories/snapshots</snapshot_url>
 		<site_url>http://54.187.96.27:8081/nexus/content/repositories/snapshots</site_url>
@@ -34,11 +36,6 @@
 			<name>mdht-snapshots</name>
 			<url>${snapshot_url}</url>
 		</snapshotRepository>
-		<site>
-			<id>remote.nexus</id>
-			<name>mdht-site</name>
-			<url>${site_url}</url>
-		</site>
 	</distributionManagement>
 	
 	<modules>
@@ -46,7 +43,7 @@
 		<module>core/features</module>
 		<module>cda/plugins</module>
 		<module>cda/features</module>
-		
+		<module>releng/sites</module>
 	</modules>
 	<profiles>
 		<profile>

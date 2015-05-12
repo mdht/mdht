@@ -8,12 +8,6 @@
 	<version>2.5.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<properties>
-		<tycho-version>0.19.0</tycho-version>
-		<org.apache.maven.version>2.4</org.apache.maven.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 	<parent>
 		<groupId>org.openhealthtools.mdht</groupId>
 		<artifactId>root</artifactId>
