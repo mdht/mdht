@@ -14,26 +14,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>kepler</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/kepler</url>
-		</repository>
-	</repositories>
-	
-	<distributionManagement>
-		<repository>
-			<id>remote.nexus</id>
-			<name>mdht-releases</name>
-			<url>http://54.187.96.27:8081/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>remote.nexus</id>
-			<name>mdht-snapshots</name>
-			<url>http://54.187.96.27:8081/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+	<parent>
+		<groupId>org.openhealthtools.mdht</groupId>
+		<artifactId>root</artifactId>
+		<version>${build_version}</version>
+		<relativePath>../../</relativePath>
+	</parent>
 
 	<modules>
 		<module>org.openhealthtools.mdht.uml.cda.basic-feature</module>
