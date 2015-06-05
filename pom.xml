@@ -12,8 +12,8 @@
 		<tycho-version>0.22.0</tycho-version>
 		<org.apache.maven.version>2.4</org.apache.maven.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<release_url>http://54.187.96.27:8081/nexus/content/repositories/releases</release_url>
-		<snapshot_url>http://54.187.96.27:8081/nexus/content/repositories/snapshots</snapshot_url>
+		<release_url>http://52.26.42.198:8081/nexus/content/repositories/releases</release_url>
+		<snapshot_url>http://52.26.42.198:8081/nexus/content/repositories/snapshots</snapshot_url>
 		<repository_id>remote.nexus</repository_id>
 	</properties>
 	
