@@ -86,11 +86,11 @@ public class TransformConstraint extends TransformAbstract {
 			return null;
 		}
 
-		String constraintName = normalizeConstraintName(constraint.getName());
-		String constraintPrefix = createConstraintName(constrainedClass, null);
-		if (!constraintName.startsWith(constraintPrefix)) {
-			constraintName = constraintPrefix + constraintName;
-		}
+		String constraintName = createConstraintName(constraint); // normalizeConstraintName(constraint.getName());
+		// String constraintPrefix = createConstraintName(constraint);
+		// if (!constraintName.startsWith(constraintPrefix)) {
+		// constraintName = constraintPrefix + constraintName;
+		// }
 		constraint.setName(constraintName);
 
 		if (isQueryConstraint(constraint)) {

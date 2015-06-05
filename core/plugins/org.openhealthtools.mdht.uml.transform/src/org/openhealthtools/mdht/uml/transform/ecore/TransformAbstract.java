@@ -20,14 +20,15 @@ package org.openhealthtools.mdht.uml.transform.ecore;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.AbstractTransform;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
@@ -123,42 +124,17 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 		PluginPropertiesUtil properties = transformerOptions.getPluginPropertiesUtil();
 		if (properties != null) {
-			properties.addProperty(constrainedClass.getName() + constraintName, message);
+			properties.addProperty(generatePropertyMessageKey(constrainedClass, constraintName), message);
 		}
 	}
 
-	/*
-	 * TODO - Revisit approach to naming constraints -
-	 * Current approach uses nearest package to differentiate from inherited class methods for
-	 * hierarchies with the same class name
-	 */
-	protected String generateQualifiedConstraintName(Class constrainedClass, String constraintName) {
-		String prefix = constrainedClass.getQualifiedName().replace("::", "").replace(
-			constrainedClass.getNearestPackage().getName(), "");
-
-		String packagePrefix = "";
-
-		if (!(constrainedClass.getOwner() instanceof Class)) {
-
-			for (Classifier g : UMLUtil.getAllGeneralizations(constrainedClass)) {
-
-				if (g.getName().equals(constrainedClass.getName()) &&
-						(!g.getQualifiedName().equals(constrainedClass.getQualifiedName()))) {
-
-					packagePrefix = constrainedClass.getNearestPackage().getName().toUpperCase();
-					break;
-				}
-
-			}
+	protected String generatePropertyMessageKey(Class constrainedClass, String constraintName) {
+		String propertyMessageKey = constrainedClass.getQualifiedName() + constraintName;
+		if (constrainedClass.getNearestPackage() != null) {
+			propertyMessageKey = propertyMessageKey.replaceFirst(
+				constrainedClass.getNearestPackage().getName() + "::", "");
 		}
-
-		if (constraintName != null && (constraintName.startsWith(packagePrefix + prefix))) {
-			return constraintName;
-		} else {
-			return packagePrefix + prefix + (constraintName != null
-					? constraintName
-					: "");
-		}
+		return propertyMessageKey.replace("::", "");
 
 	}
 
@@ -224,6 +200,8 @@ public abstract class TransformAbstract extends AbstractTransform {
 
 		addValidationSupport(property, stereotype, constraintName);
 
+		result.getConstrainedElements().add(property);
+
 		return result;
 	}
 
@@ -256,14 +234,68 @@ public abstract class TransformAbstract extends AbstractTransform {
 		return c;
 	}
 
-	protected String createConstraintName(Property property) {
-		return createConstraintName(
-			getInitialTemplateClass(property), property.getName().substring(0, 1).toUpperCase() +
-					property.getName().substring(1));
+	Property getInitialProperty(Property property) {
+
+		Property pp = property;
+
+		for (Property p : property.getRedefinedProperties()) {
+			if (!isBaseModel(property.getClass_(), p) && !isDatatypesModelElement(property.getClass_(), p)) {
+				pp = getInitialProperty(p);
+			}
+		}
+
+		return pp;
 	}
 
-	protected String createConstraintName(Class umlClass, String suffix) {
-		return generateQualifiedConstraintName(umlClass, suffix);
+	private String generatePrefix(NamedElement constrainedClass) {
+		String prefix = constrainedClass.getQualifiedName().replace("::", "").replace(
+			constrainedClass.getNearestPackage().getName(), "");
+		return prefix;
+	}
+
+	private static String reverseCamelCase(String name) {
+		if (!StringUtils.isEmpty(name)) {
+			return StringUtils.capitalise(name);
+		}
+		return name;
+	}
+
+	protected String createConstraintName(NamedElement property, String suffix) {
+		return createConstraintName(property) + suffix;
+	}
+
+	public static Constraint getConstraintByName(Constraint constraint) {
+
+		for (Classifier parent : ((Classifier) constraint.getOwner()).allParents()) {
+			for (Constraint c : parent.getOwnedRules()) {
+				if (constraint.getName().equals(c.getName())) {
+					return c;
+				}
+			}
+		}
+
+		return constraint;
+	}
+
+	protected String createConstraintName(NamedElement namedElement) {
+		String constraintName = "";
+
+		NamedElement baseNamedElement = null;
+		if (namedElement instanceof Property) {
+			baseNamedElement = getInitialProperty((Property) namedElement);
+		} else if (namedElement instanceof Constraint) {
+			baseNamedElement = getConstraintByName((Constraint) namedElement);
+		} else {
+			baseNamedElement = namedElement;
+		}
+		if (baseNamedElement != null) {
+			if (baseNamedElement.getOwner() instanceof NamedElement) {
+				constraintName = generatePrefix((NamedElement) baseNamedElement.getOwner());
+			}
+			constraintName = constraintName + reverseCamelCase(baseNamedElement.getName());
+		}
+		return constraintName;
+
 	}
 
 	protected String getConstraintDependency(AnnotationsUtil annotations, String constraintName) {
