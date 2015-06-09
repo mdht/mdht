@@ -5,38 +5,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openhealthtools.mdht.site</groupId>
 	<artifactId>sites</artifactId>
-	<version>2.5.2-SNAPSHOT</version>
+	<version>2.5.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<properties>
-		<tycho-version>0.19.0</tycho-version>
-		<org.apache.maven.version>2.4</org.apache.maven.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
-	<repositories>
-		<repository>
-			<id>kepler</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/kepler</url>
-		</repository>
-
-
-	</repositories>
-	
-	<distributionManagement>
-		<repository>
-			<id>remote.nexus</id>
-			<name>mdht-releases</name>
-			<url>http://54.187.96.27:8081/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>remote.nexus</id>
-			<name>mdht-snapshots</name>
-			<url>http://54.187.96.27:8081/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
-	
+	<parent>
+		<groupId>org.openhealthtools.mdht</groupId>
+		<artifactId>root</artifactId>
+		<version>${build_version}</version>
+		<relativePath>../../</relativePath>
+	</parent>
 
 	<modules>
 		<module>cda.design.site</module>

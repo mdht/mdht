@@ -385,8 +385,9 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 						// constraintName = class_.getName() + "_" + property.getName() + "_nullFlavor";
 						// constraintName = class_.getName() + property.getName().substring(0, 1).toUpperCase() +
 						// property.getName().substring(1) + "NullFlavor";
-						constraintName = createConstraintName(class_, property.getName().substring(0, 1).toUpperCase() +
-								property.getName().substring(1) + "NullFlavor");
+						constraintName = createConstraintName(property, "NullFlavor");
+						// class_, property.getName().substring(0, 1).toUpperCase() +
+						// property.getName().substring(1) + "NullFlavor", "");
 					}
 				}
 			}

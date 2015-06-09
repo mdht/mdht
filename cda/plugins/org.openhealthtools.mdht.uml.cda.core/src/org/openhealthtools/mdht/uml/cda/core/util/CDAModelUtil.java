@@ -1955,7 +1955,7 @@ public class CDAModelUtil {
 	public static IProject getElementModelProject(Element element) {
 		try {
 			Package elementPackage = UMLUtil.getTopPackage(element);
-			if (elementPackage.eResource() != null) {
+			if (elementPackage != null && elementPackage.eResource() != null) {
 				FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor(
 					elementPackage.eResource().getURI().lastSegment());
 
@@ -2014,7 +2014,7 @@ public class CDAModelUtil {
 
 			targetProject = getModelDocProject(targetProject);
 
-			if (targetProject != null) {
+			if (targetProject != null && sourceProject != null) {
 
 				IPath projectPath = new Path("/dita/classes/" + targetProject.getName());
 
