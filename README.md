@@ -11,7 +11,7 @@ If you've already got Eclipse installed, add the update site (http://oht-modelin
 Otherwise, you can download pre-packaged Eclipse versions from [here](https://sourceforge.net/projects/oht-modeling/files/Releases/Products/):
 * The Designer version is for users interested in modeling CDA Implementation guides (if you don't know what to pick, pick this)
 * The Developer version is for users interested in developing applications using the MDHT Java API
-* The Analyst version is for users interest in validating and viewing CDA document instances
+* The Analyst version is for users interested in validating and viewing CDA document instances
 
 ### Nightly
 These are occasional nightly builds (manual-triggered) with the latest code of MDHT. This is not recommended for production work.
