@@ -523,7 +523,7 @@ public class CDAUtil {
 			DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
 			root.setClinicalDocument(clinicalDocument);
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
-			root.getXSISchemaLocation().put(CDAPackage.eNS_URI, "CDA.xsd");
+			root.getXSISchemaLocation().put(CDAPackage.eNS_URI, SCHEMA_NAME);
 			resource.getContents().add(root);
 		} else {
 			DocumentRoot root = (DocumentRoot) clinicalDocument.eContainer();
@@ -643,7 +643,7 @@ public class CDAUtil {
 
 		((EMap<String, String>) documentRootInstance.eGet(xmlnsPrefixMap)).put("", CDAPackage.eNS_URI);
 
-		((EMap<String, String>) documentRootInstance.eGet(xsiSchemaLocation)).put(CDAPackage.eNS_URI, "CDA.xsd");
+		((EMap<String, String>) documentRootInstance.eGet(xsiSchemaLocation)).put(CDAPackage.eNS_URI, SCHEMA_NAME);
 
 		((List) documentRootInstance.eGet(snippetReference)).add(cdaSnippet);
 
@@ -768,7 +768,7 @@ public class CDAUtil {
 
 	public static String SCHEMA_LOADER = "org.mdht.cda.schemaloader";
 
-	public static String SCHEMA_NAME = "CDA.xsd";
+	public static String SCHEMA_NAME = "infrastructure/cda/CDA_SDTC.xsd";
 
 	private static String SCHEMA_PROPERTY = "cdaSchema";
 
