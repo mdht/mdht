@@ -264,16 +264,15 @@ public abstract class TransformAbstract extends AbstractTransform {
 		return createConstraintName(property) + suffix;
 	}
 
-	public static Constraint getConstraintByName(Constraint constraint) {
-
+	public Constraint getConstraintByName(Constraint constraint) {
 		for (Classifier parent : ((Classifier) constraint.getOwner()).allParents()) {
 			for (Constraint c : parent.getOwnedRules()) {
-				if (constraint.getName().equals(c.getName())) {
+				String inheritedName = generatePrefix(parent) + constraint.getName();
+				if (constraint.getName().equalsIgnoreCase(c.getName()) || inheritedName.equalsIgnoreCase(c.getName())) {
 					return c;
 				}
 			}
 		}
-
 		return constraint;
 	}
 
@@ -292,7 +291,12 @@ public abstract class TransformAbstract extends AbstractTransform {
 			if (baseNamedElement.getOwner() instanceof NamedElement) {
 				constraintName = generatePrefix((NamedElement) baseNamedElement.getOwner());
 			}
-			constraintName = constraintName + reverseCamelCase(baseNamedElement.getName());
+			// If the constraint is a cusomt ocl override - it will have the correct prefix already
+			if (baseNamedElement.getName().startsWith(constraintName)) {
+				constraintName = reverseCamelCase(baseNamedElement.getName());
+			} else {
+				constraintName = constraintName + reverseCamelCase(baseNamedElement.getName());
+			}
 		}
 		return constraintName;
 
