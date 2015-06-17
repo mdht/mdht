@@ -420,7 +420,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 			Constraint result = null;
 
 			/*
-			 * Only add OCL constraint if severity level is set.
+			 * add OCL constraint if severity level is set else assume it is an override and add a constriant that will not fire
 			 */
 			ValidationSeverityKind severity = getEcoreProfile().getValidationSeverity(
 				property, ValidationStereotypeKind.PROPERTY);
@@ -443,6 +443,10 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 					}
 					result = addConstraint(context, ValidationStereotypeKind.PROPERTY, constraintName, body);
 				}
+			} else {
+				body = new StringBuffer();
+				body.append("true");
+				result = addConstraint(context, ValidationStereotypeKind.PROPERTY, constraintName, body);
 			}
 
 			return result;

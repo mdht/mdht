@@ -433,6 +433,13 @@ public abstract class TransformPropertyConstraint extends TransformAbstract {
 				return null;
 			}
 
+			ValidationSeverityKind severity = getEcoreProfile().getValidationSeverity(
+				property, ValidationStereotypeKind.PROPERTY);
+			if (severity == null) {
+				body = new StringBuffer();
+				body.append("true");
+			}
+
 			/*
 			 * Fix for defect artf3329. Using inherited constraint name is causing redefined property constraint
 			 * to replace message string in plugin.properties redefined message. May be several sub-templates
