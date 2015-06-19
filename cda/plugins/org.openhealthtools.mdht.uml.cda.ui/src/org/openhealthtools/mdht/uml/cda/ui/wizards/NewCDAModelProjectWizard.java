@@ -264,6 +264,11 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.createGenModel(generatedProject, monitor);
 						monitor.worked(1);
 
+						monitor.setTaskName("Run MDHT Transformation");
+						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runTransformation(
+							generatedProject, monitor);
+						monitor.worked(1);
+
 						monitor.setTaskName("Generate");
 						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runGenerate(
 							false, generatedProject, monitor);
@@ -523,18 +528,40 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("<attribute name=\"filePath\"/>");
 		writer.println("<sequential>");
 
+		// writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL///\" target=\"model/\">");
+
+		writer.println("<replace file=\"@{filePath}\" token=\"pathmap://" + modelName.toUpperCase() + "_MODEL///" +
+				modelName + ".uml\" value=\"" + modelName + "_Ecore.uml\"/>");
+
 		for (String cdaPackage : cdaPackages.keySet()) {
+
+			Package aPackage = cdaPackages.get(cdaPackage);
+
 			if (!"cda".equals(cdaPackage)) {
-				writer.println("<replace file=\"@{filePath}\" token=\".model/model/" + cdaPackage +
-						".uml\" value=\"/model/" + cdaPackage + "_Ecore.uml\"/>");
+
+				FindResourcesByNameVisitor ecoreModel = new FindResourcesByNameVisitor(cdaPackage + "_Ecore.uml");
+
+				iw.getRoot().accept(ecoreModel);
+
+				if (aPackage.eResource() != null && aPackage.eResource().getURI() != null &&
+						ecoreModel.getResources().size() == 1) {
+
+					writer.println("<replace file=\"@{filePath}\" token=\"" + aPackage.eResource().getURI() +
+							"\" value=\"" + "../.." + ecoreModel.getResources().get(0).getFullPath().toFile() + "\"/> ");
+				}
 
 				if (cdaPackages.get(cdaPackage).eResource() != null) {
 					for (Resource controlledResource : org.openhealthtools.mdht.uml.common.util.UMLUtil.getControlledResources(cdaPackages.get(
 						cdaPackage).eResource())) {
 
-						writer.println(String.format(
-							"<replace file=\"@{filePath}\" token=\".model/model/.controlled/%s\" value=\"/model/%s_Ecore.uml\"/>",
-							controlledResource.getURI().lastSegment(), cdaPackage));
+						if (controlledResource != null && controlledResource.getURI() != null &&
+								ecoreModel.getResources().size() == 1) {
+
+							writer.println("<replace file=\"@{filePath}\" token=\"" + controlledResource.getURI() +
+									"\" value=\"" + "../.." + ecoreModel.getResources().get(0).getFullPath().toFile() +
+									"\"/> ");
+						}
+
 					}
 				}
 

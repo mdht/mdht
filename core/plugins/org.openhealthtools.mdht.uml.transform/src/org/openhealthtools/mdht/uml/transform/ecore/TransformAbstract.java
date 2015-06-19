@@ -80,16 +80,21 @@ public abstract class TransformAbstract extends AbstractTransform {
 		String message = getEcoreProfile().getValidationMessage(property, kind);
 
 		Class constrainedClass = property.getClass_();
-		switch (severity) {
-			case INFO:
-				addValidationInfo(constrainedClass, constraintName, message);
-				break;
-			case WARNING:
-				addValidationWarning(constrainedClass, constraintName, message);
-				break;
-			default:
-				addValidationError(constrainedClass, constraintName, message);
-				break;
+		if (severity != null) {
+
+			switch (severity) {
+				case INFO:
+					addValidationInfo(constrainedClass, constraintName, message);
+					break;
+				case WARNING:
+					addValidationWarning(constrainedClass, constraintName, message);
+					break;
+				default:
+					addValidationError(constrainedClass, constraintName, message);
+					break;
+			}
+		} else {
+			addValidationError(constrainedClass, constraintName, message);
 		}
 	}
 

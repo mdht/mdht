@@ -147,6 +147,14 @@ public class TransformPropertyTerminologyConstraint extends TransformPropertyCon
 			if (codeSystemConstraint != null) {
 				result = addVocabConstraint(
 					context, ValidationStereotypeKind.CODE_SYSTEM, CodeSystemConstraintUtil.getOCL(property));
+			} else {
+				for (Property override : property.getRedefinedProperties()) {
+					CodeSystemConstraint redfineCodeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(override);
+					if (redfineCodeSystemConstraint != null) {
+						result = addVocabConstraint(context, ValidationStereotypeKind.CODE_SYSTEM, "true");
+						break;
+					}
+				}
 			}
 
 			return result;
@@ -196,6 +204,14 @@ public class TransformPropertyTerminologyConstraint extends TransformPropertyCon
 			if (valueSetConstraint != null) {
 				result = addVocabConstraint(
 					context, ValidationStereotypeKind.VALUE_SET, ValueSetConstraintUtil.getOCL(property));
+			} else {
+				for (Property override : property.getRedefinedProperties()) {
+					ValueSetConstraint redfineValueSetConstraint = TermProfileUtil.getValueSetConstraint(override);
+					if (redfineValueSetConstraint != null) {
+						result = addVocabConstraint(context, ValidationStereotypeKind.VALUE_SET, "true");
+						break;
+					}
+				}
 			}
 
 			return result;
