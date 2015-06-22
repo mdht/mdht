@@ -402,8 +402,9 @@ public class CDAModelUtil {
 		templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
 				? templateId
 				: ""));
-		templateConstraint = templateConstraint.replaceAll("%ruleId%", (ruleIds != null
-				? ruleIds
+		templateConstraint = templateConstraint.replaceAll("\\( %ruleId% \\) ", (ruleIds != null &&
+				!ruleIds.trim().isEmpty()
+				? "( " + ruleIds + " ) "
 				: ""));
 
 		templateConstraint = templateConstraint.replaceAll("%templateVersion%", (templateVersion != null
