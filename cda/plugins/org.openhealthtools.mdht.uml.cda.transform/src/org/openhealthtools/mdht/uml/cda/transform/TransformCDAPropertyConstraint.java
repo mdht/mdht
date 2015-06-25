@@ -14,6 +14,7 @@
  *                        - implement terminology constraint dependencies (artf3030)
  *                        - ensure terminology initializer for property constraints (artf3233)
  *                        - support nested datatype subclasses (artf3350)
+ *     Dan Brown (Ai)     - update constraint override logic
  *     
  * $Id$
  *******************************************************************************/
@@ -444,9 +445,19 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 					result = addConstraint(context, ValidationStereotypeKind.PROPERTY, constraintName, body);
 				}
 			} else {
-				body = new StringBuffer();
-				body.append("true");
-				result = addConstraint(context, ValidationStereotypeKind.PROPERTY, constraintName, body);
+				// property severity is empty
+				ValidationSeverityKind csSeverity = getEcoreProfile().getValidationSeverity(
+					property, ValidationStereotypeKind.CODE_SYSTEM);
+				ValidationSeverityKind vsSeverity = getEcoreProfile().getValidationSeverity(
+					property, ValidationStereotypeKind.VALUE_SET);
+				if (csSeverity == null && vsSeverity == null) {
+					// property and terminology (codeSystem/valueSet) severities are empty
+					// so we can safely override the property for the sake of removal
+					// note: w/o this check we would generate a pointless true property for every constraint which includes a terminology check only
+					body = new StringBuffer();
+					body.append("true");
+					result = addConstraint(context, ValidationStereotypeKind.PROPERTY, constraintName, body);
+				}
 			}
 
 			return result;
