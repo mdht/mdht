@@ -750,7 +750,15 @@ public class CDAUtil {
 					if (schemaLocation == null) {
 						schemaLocation = SCHEMA_NAME;
 					}
+
+					// Look for the schema location using class path
 					URL url = CDAUtil.class.getClassLoader().getResource(schemaLocation);
+					if (url == null) {
+						// If null, prefix with "../" to account when running within eclipse environment, the class path does not include
+						// the root directory of the project - just the bin and selected folders
+						url = CDAUtil.class.getClassLoader().getResource("../" + schemaLocation);
+					}
+
 					SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 					if (url == null) {
 						throw new RuntimeException("Unable to load CDA Schema " + schemaLocation);
