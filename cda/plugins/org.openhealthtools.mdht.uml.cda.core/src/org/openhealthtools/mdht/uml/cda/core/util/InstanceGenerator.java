@@ -457,7 +457,9 @@ public class InstanceGenerator {
 									datatypesInit.setCurrentFeature(structuralFeature);
 									datatypesInit.doSwitch(objectToSet);
 								}
-								eObject.eSet(structuralFeature, objectToSet);
+								if (!(structuralFeature.getEType().getName() + structuralFeature.getName()).equals("CDcode")) {
+									eObject.eSet(structuralFeature, objectToSet);
+								}
 							} catch (Exception cce) {
 								System.out.println("Unable to set " + eClass.getName() + "." +
 										structuralFeature.getEType().getName() + structuralFeature.getName());
