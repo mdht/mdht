@@ -316,6 +316,9 @@ public class InstanceGenerator {
 						Property cdaProperty = null;
 						if (cdaSourceClass != null) {
 							cdaProperty = cdaSourceClass.getAttribute(null, cdaTypeClass);
+							cdaProperty = cdaProperty == null
+									? cdaSourceClass.getAttribute(cdaTypeClass.getName(), null, true, null)
+									: cdaProperty;
 						}
 
 						if (cdaProperty != null) {
