@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap id="cdabook">
 	<booktitle>
-		<booklibrary>Implementation Guide for CDA Release 2</booklibrary>
+		<booklibrary>Implementation Guide for CDA<tm tmtype="reg"/> Release 2</booklibrary>
 		<mainbooktitle>MDHT Example Project</mainbooktitle>
 		<booktitlealt>Optional Subtitle</booktitlealt>
 		<booktitlealt><image href="images/CDAToolsLogo.png"/></booktitlealt>

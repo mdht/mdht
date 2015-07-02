@@ -47,6 +47,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -77,7 +78,7 @@ import org.osgi.framework.Bundle;
 
 public class NewCDAModelProjectWizard extends CDAWizard {
 
-	NewCDAModelPage newCDATemplatePage;
+	protected NewCDAModelPage newCDATemplatePage;
 
 	private boolean checkForSpaces() {
 		Bundle bundle = Platform.getBundle(org.openhealthtools.mdht.uml.cda.ui.internal.Activator.PLUGIN_ID);
@@ -263,6 +264,11 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.createGenModel(generatedProject, monitor);
 						monitor.worked(1);
 
+						monitor.setTaskName("Run MDHT Transformation");
+						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runTransformation(
+							generatedProject, monitor);
+						monitor.worked(1);
+
 						monitor.setTaskName("Generate");
 						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runGenerate(
 							false, generatedProject, monitor);
@@ -319,7 +325,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		return true;
 	}
 
-	private void setupWorkspace(IProject modelProject, String modelName) throws Exception {
+	protected void setupWorkspace(IProject modelProject, String modelName) throws Exception {
 		IWorkbench workbench = PlatformUI.getWorkbench();
 		final IWorkbenchPage activePage = workbench.getActiveWorkbenchWindow().getActivePage();
 		activePage.closeEditors(activePage.getEditorReferences(), true);
@@ -439,6 +445,10 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 
+		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
+
+		resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(false));
+
 		Map<String, String> options = new HashMap<String, String>();
 
 		Package templatePackage = cloneModel(
@@ -518,18 +528,40 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("<attribute name=\"filePath\"/>");
 		writer.println("<sequential>");
 
+		// writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL///\" target=\"model/\">");
+
+		writer.println("<replace file=\"@{filePath}\" token=\"pathmap://" + modelName.toUpperCase() + "_MODEL///" +
+				modelName + ".uml\" value=\"" + modelName + "_Ecore.uml\"/>");
+
 		for (String cdaPackage : cdaPackages.keySet()) {
+
+			Package aPackage = cdaPackages.get(cdaPackage);
+
 			if (!"cda".equals(cdaPackage)) {
-				writer.println("<replace file=\"@{filePath}\" token=\".model/model/" + cdaPackage +
-						".uml\" value=\"/model/" + cdaPackage + "_Ecore.uml\"/>");
+
+				FindResourcesByNameVisitor ecoreModel = new FindResourcesByNameVisitor(cdaPackage + "_Ecore.uml");
+
+				iw.getRoot().accept(ecoreModel);
+
+				if (aPackage.eResource() != null && aPackage.eResource().getURI() != null &&
+						ecoreModel.getResources().size() == 1) {
+
+					writer.println("<replace file=\"@{filePath}\" token=\"" + aPackage.eResource().getURI() +
+							"\" value=\"" + "../.." + ecoreModel.getResources().get(0).getFullPath().toFile() + "\"/> ");
+				}
 
 				if (cdaPackages.get(cdaPackage).eResource() != null) {
 					for (Resource controlledResource : org.openhealthtools.mdht.uml.common.util.UMLUtil.getControlledResources(cdaPackages.get(
 						cdaPackage).eResource())) {
 
-						writer.println(String.format(
-							"<replace file=\"@{filePath}\" token=\".model/model/.controlled/%s\" value=\"/model/%s_Ecore.uml\"/>",
-							controlledResource.getURI().lastSegment(), cdaPackage));
+						if (controlledResource != null && controlledResource.getURI() != null &&
+								ecoreModel.getResources().size() == 1) {
+
+							writer.println("<replace file=\"@{filePath}\" token=\"" + controlledResource.getURI() +
+									"\" value=\"" + "../.." + ecoreModel.getResources().get(0).getFullPath().toFile() +
+									"\"/> ");
+						}
+
 					}
 				}
 
@@ -564,7 +596,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		writer.println("<?eclipse version=\"3.0\"?>");
 		writer.println("<plugin>");
 		writer.println("<extension point=\"org.eclipse.emf.ecore.uri_mapping\">");
-		writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL\" target=\"model\">");
+		writer.println("<mapping source=\"pathmap://" + modelName.toUpperCase() + "_MODEL/\" target=\"model/\">");
 		writer.println("</mapping>");
 		writer.println("</extension>");
 		writer.println("</plugin>");

@@ -14,6 +14,7 @@
  *                        - implement terminology constraint dependencies (artf3030)
  *                        - ensure terminology initializer for property constraints (artf3233)
  *                        - support nested datatype subclasses (artf3350)
+ *     Dan Brown (Ai)     - update constraint override logic
  *     
  * $Id$
  *******************************************************************************/
@@ -385,8 +386,9 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 						// constraintName = class_.getName() + "_" + property.getName() + "_nullFlavor";
 						// constraintName = class_.getName() + property.getName().substring(0, 1).toUpperCase() +
 						// property.getName().substring(1) + "NullFlavor";
-						constraintName = createConstraintName(class_, property.getName().substring(0, 1).toUpperCase() +
-								property.getName().substring(1) + "NullFlavor");
+						constraintName = createConstraintName(property, "NullFlavor");
+						// class_, property.getName().substring(0, 1).toUpperCase() +
+						// property.getName().substring(1) + "NullFlavor", "");
 					}
 				}
 			}
@@ -419,7 +421,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 			Constraint result = null;
 
 			/*
-			 * Only add OCL constraint if severity level is set.
+			 * add OCL constraint if severity level is set else assume it is an override and add a constriant that will not fire
 			 */
 			ValidationSeverityKind severity = getEcoreProfile().getValidationSeverity(
 				property, ValidationStereotypeKind.PROPERTY);
@@ -440,6 +442,20 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 						// body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
 						body.append("not " + selfName + "->isEmpty()");
 					}
+					result = addConstraint(context, ValidationStereotypeKind.PROPERTY, constraintName, body);
+				}
+			} else {
+				// property severity is empty
+				ValidationSeverityKind csSeverity = getEcoreProfile().getValidationSeverity(
+					property, ValidationStereotypeKind.CODE_SYSTEM);
+				ValidationSeverityKind vsSeverity = getEcoreProfile().getValidationSeverity(
+					property, ValidationStereotypeKind.VALUE_SET);
+				if (csSeverity == null && vsSeverity == null) {
+					// property and terminology (codeSystem/valueSet) severities are empty
+					// so we can safely override the property for the sake of removal
+					// note: w/o this check we would generate a pointless true property for every constraint which includes a terminology check only
+					body = new StringBuffer();
+					body.append("true");
 					result = addConstraint(context, ValidationStereotypeKind.PROPERTY, constraintName, body);
 				}
 			}

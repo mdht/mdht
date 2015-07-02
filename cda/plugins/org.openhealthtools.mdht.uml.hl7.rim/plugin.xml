@@ -20,5 +20,11 @@
             class="org.openhealthtools.mdht.uml.hl7.rim.RIMPackage"
             genModel="model/rim.genmodel"/>
    </extension>
+   
+   
+     <extension point="org.eclipse.emf.ecore.uri_mapping">
+		<mapping source="pathmap://RIM_MODEL/" target="model/">
+		</mapping>
+	</extension>
 
 </plugin>

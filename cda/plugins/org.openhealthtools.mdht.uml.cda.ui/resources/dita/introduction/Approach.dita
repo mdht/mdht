@@ -14,10 +14,10 @@
 		<p>This project supports reusability and ease of data collection
 			through a standard data representation harmonized with work developed
 			through Health Information Technology Expert Panel (HITEP), balloted
-			through Health Level Seven (HL7) and/or recognized by the Health
+			through Health Level Seven (HL7<tm tmtype="reg"/>) and/or recognized by the Health
 			Information Technology Standards Panel (HITSP).</p>
 		<p>This implementation guide (IG) specifies a standard for electronic
-			submission of NCRs in a Clinical Document Architecture (CDA), Release
+			submission of NCRs in a Clinical Document Architecture (CDA<tm tmtype="reg"/>), Release
 			2 format.</p>
 	</body>
 </topic>

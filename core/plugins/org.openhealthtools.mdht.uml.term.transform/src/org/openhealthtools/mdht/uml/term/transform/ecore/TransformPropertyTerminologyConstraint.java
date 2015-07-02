@@ -14,7 +14,7 @@
  *                        - implement terminology constraint dependencies (artf3030)
  *                        - ensure terminology initializer for property constraints (artf3233)
  *                        - support nested datatype subclasses (artf3350)
- *     
+ *     Dan Brown (Ai)     - update constraint override logic
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.transform.ecore;
@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ValueSetConstraintUtil;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationSeverityKind;
 import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationStereotypeKind;
 import org.openhealthtools.mdht.uml.transform.ecore.TransformPropertyConstraint;
 
@@ -92,6 +93,17 @@ public class TransformPropertyTerminologyConstraint extends TransformPropertyCon
 		return TermProfileUtil.isCSType(property);
 	}
 
+	private boolean isPropAndTermNull(Property property) {
+		ValidationSeverityKind propSeverity = getEcoreProfile().getValidationSeverity(
+			property, ValidationStereotypeKind.PROPERTY);
+		ValidationSeverityKind csSeverity = getEcoreProfile().getValidationSeverity(
+			property, ValidationStereotypeKind.CODE_SYSTEM);
+		ValidationSeverityKind vsSeverity = getEcoreProfile().getValidationSeverity(
+			property, ValidationStereotypeKind.VALUE_SET);
+		// if all severities are empty, then it is considered an override for the sake of removal
+		return propSeverity == null && csSeverity == null && vsSeverity == null;
+	}
+
 	//
 	// Nested types
 	//
@@ -147,6 +159,16 @@ public class TransformPropertyTerminologyConstraint extends TransformPropertyCon
 			if (codeSystemConstraint != null) {
 				result = addVocabConstraint(
 					context, ValidationStereotypeKind.CODE_SYSTEM, CodeSystemConstraintUtil.getOCL(property));
+			} else {
+				if (isPropAndTermNull(property)) {
+					for (Property override : property.getRedefinedProperties()) {
+						CodeSystemConstraint redfineCodeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(override);
+						if (redfineCodeSystemConstraint != null) {
+							result = addVocabConstraint(context, ValidationStereotypeKind.CODE_SYSTEM, "true");
+							break;
+						}
+					}
+				}
 			}
 
 			return result;
@@ -196,6 +218,16 @@ public class TransformPropertyTerminologyConstraint extends TransformPropertyCon
 			if (valueSetConstraint != null) {
 				result = addVocabConstraint(
 					context, ValidationStereotypeKind.VALUE_SET, ValueSetConstraintUtil.getOCL(property));
+			} else {
+				if (isPropAndTermNull(property)) {
+					for (Property override : property.getRedefinedProperties()) {
+						ValueSetConstraint redfineValueSetConstraint = TermProfileUtil.getValueSetConstraint(override);
+						if (redfineValueSetConstraint != null) {
+							result = addVocabConstraint(context, ValidationStereotypeKind.VALUE_SET, "true");
+							break;
+						}
+					}
+				}
 			}
 
 			return result;

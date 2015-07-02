@@ -71,19 +71,19 @@ import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactor
  */
 public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
-	private Constraint constraint;
+	public Constraint constraint;
 
-	private String[] languages = { "Analysis", "OCL", "Java", "XPath", "StrucText" };
+	protected String[] languages = { "Analysis", "OCL", "Java", "XPath", "StrucText" };
 
-	private CCombo languageCombo;
+	public CCombo languageCombo;
 
 	private boolean languageModified = false;
 
 	private CLabel currentLanguagesLabel;
 
-	private Text bodyText;
+	protected Text bodyText;
 
-	private boolean bodyModified = false;
+	public boolean bodyModified = false;
 
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -143,7 +143,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		}
 	}
 
-	private void modifyFields() {
+	public void modifyFields() {
 		if (!(bodyModified || languageModified)) {
 			return;
 		}

@@ -14,7 +14,7 @@
 		<body>
 			<p>An originator can apply a <tt>templateId</tt> to assert conformance with a
 				particular template.</p>
-			<p>In the most general forms of CDA exchange, an originator need not
+			<p>In the most general forms of CDA<tm tmtype="reg"/> exchange, an originator need not
 				apply a <tt>templateId</tt> for every template that an object in an instance
 				document conforms to. This implementation guide asserts when
 				<tt>templateId</tt>s are required for conformance.</p>
