@@ -55,7 +55,8 @@ public class NameUtilities
     public static String pluralize(String name) {
         
         // first check for already in plural form
-        if (name.endsWith("List") || (name.endsWith("s") && !name.endsWith("ss"))) {
+        if (name.endsWith("List") || (name.endsWith("s") && !name.endsWith("ss") || 
+        		Character.isDigit(name.charAt(name.length() - 1)))) {
             return name;
         }
             

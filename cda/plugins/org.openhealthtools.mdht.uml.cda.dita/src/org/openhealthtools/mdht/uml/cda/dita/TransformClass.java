@@ -45,6 +45,11 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<!-- TODO: insert non-model class description markup here -->");
 		writer.println("<section conref=\"generated/_" + normalizedClassName + ".dita#classId/description\">");
 		writer.println("</section>");
+
+		writer.println("<section audience=\"contextTable\" conref=\"generated/_" + normalizedClassName +
+				".dita#classId/contextTable\">");
+		writer.println("</section>");
+
 		writer.println("<!-- TODO: insert UML class diagram here -->");
 
 		writer.println();
@@ -68,9 +73,7 @@ public class TransformClass extends TransformAbstract {
 			}
 
 			writer.println("<p> </p>"); // need a blank line before example code block
-			// writer.println("<fig>");
-			// writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
-			writer.println("<p><b>" + UMLUtil.splitName(umlClass) + " example</b></p>");
+			writer.println("<p><b>" + TransformAbstract.getPublicationName(umlClass) + " example</b></p>");
 			writer.println("<!-- TODO: insert custom instance example here -->");
 			writer.println("<!-- generated instance example follows -->");
 			writer.println("<codeblock conref=\"generated/_" + normalizedClassName + ".dita#classId/example\">");
@@ -89,7 +92,9 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(UMLUtil.splitName(umlClass));
+
+		writer.print(TransformAbstract.getPublicationName(umlClass));
+
 		writer.println("</title>");
 		writer.println("<shortdesc conref=\"generated/_" + normalizedClassName +
 				".dita#classId/shortdesc\"></shortdesc>");

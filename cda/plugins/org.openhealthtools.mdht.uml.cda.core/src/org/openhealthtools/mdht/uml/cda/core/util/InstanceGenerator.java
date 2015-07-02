@@ -50,6 +50,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -316,6 +317,9 @@ public class InstanceGenerator {
 						Property cdaProperty = null;
 						if (cdaSourceClass != null) {
 							cdaProperty = cdaSourceClass.getAttribute(null, cdaTypeClass);
+							cdaProperty = cdaProperty == null
+									? cdaSourceClass.getAttribute(cdaTypeClass.getName(), null, true, null)
+									: cdaProperty;
 						}
 
 						if (cdaProperty != null) {
@@ -364,46 +368,51 @@ public class InstanceGenerator {
 			}
 		}
 
-		for (EOperation eOperation : eClass.getEOperations()) {
-			if (eOperation.getName().startsWith("get") && eOperation.getEType() instanceof EClass &&
-					!((EClass) eOperation.getEType()).isAbstract()) {
+		if (eClass.getEPackage().getNsURI() != null &&
+				!(eClass.getEPackage().getNsURI().equals(CDAPackage.eINSTANCE.getNsURI()))) {
 
-				EOperation addOperation = findAddOperation(eClass, eOperation);
-				if (addOperation != null) {
-					EObject objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
-						(EClass) eOperation.getEGenericType().getEClassifier());
-					if (!eClass.equals(objectToAdd.eClass())) {
-						if (UMLUtil.getTopPackage(umlClass) != null) {
+			for (EOperation eOperation : eClass.getEOperations()) {
+				if (eOperation.getName().startsWith("get") && eOperation.getEType() instanceof EClass &&
+						!((EClass) eOperation.getEType()).isAbstract()) {
 
-							// Search for UML class
-							Class operationClass = UMLUtil.getClassByName(
-								UMLUtil.getTopPackage(umlClass),
-								eOperation.getEGenericType().getEClassifier().getName());
+					EOperation addOperation = findAddOperation(eClass, eOperation);
+					if (addOperation != null) {
+						EObject objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
+							(EClass) eOperation.getEGenericType().getEClassifier());
+						if (!eClass.equals(objectToAdd.eClass())) {
+							if (UMLUtil.getTopPackage(umlClass) != null) {
 
-							// If not found -search for Class with Spaces
-							if (operationClass == null) {
-								StringBuffer buffer = new StringBuffer();
-								for (String token : UMLUtil.splitName(eOperation.getEGenericType().getEClassifier().getName())) {
-									buffer.append(buffer.length() > 0
-											? " "
-											: "");
-									buffer.append(token);
-									operationClass = UMLUtil.getClassByName(
-										UMLUtil.getTopPackage(umlClass), buffer.toString());
+								// Search for UML class
+								Class operationClass = UMLUtil.getClassByName(
+									UMLUtil.getTopPackage(umlClass),
+									eOperation.getEGenericType().getEClassifier().getName());
+
+								// If not found -search for Class with Spaces
+								if (operationClass == null) {
+									StringBuffer buffer = new StringBuffer();
+									for (String token : UMLUtil.splitName(eOperation.getEGenericType().getEClassifier().getName())) {
+										buffer.append(buffer.length() > 0
+												? " "
+												: "");
+										buffer.append(token);
+										operationClass = UMLUtil.getClassByName(
+											UMLUtil.getTopPackage(umlClass), buffer.toString());
+									}
+								}
+
+								// If we can find a corresponding UML class - use it to initalize eObjectToAdd
+								if (operationClass != null) {
+
+									sampleInstanceInitialization(
+										operationClass, objectToAdd, shallShouldMayProperties, level - 1);
 								}
 							}
-
-							// If we can find a corresponding UML class - use it to initalize eObjectToAdd
-							if (operationClass != null) {
-
-								sampleInstanceInitialization(
-									operationClass, objectToAdd, shallShouldMayProperties, level - 1);
-							}
+							addObject(eClass, addOperation, eObject, objectToAdd);
 						}
-						addObject(eClass, addOperation, eObject, objectToAdd);
 					}
 				}
 			}
+
 		}
 
 		DatatypesInit datatypesInit = new DatatypesInit();

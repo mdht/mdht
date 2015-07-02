@@ -7,7 +7,7 @@
 		<p>
 			The requirements as laid out in the body of this document are subject
 			to change per the policy on implementation guides (see section 13.02"
-			Draft Standard for Trial Use Documents" within the HL7 Governance and
+			Draft Standard for Trial Use Documents" within the HL7<tm tmtype="reg"/> Governance and
 			Operations Manual,
 			<xref format="pdf"
 				href="http://www.hl7.org/documentcenter/public/membership/HL7_Governance_and_Operations_Manual.pdf">http://www.hl7.org/documentcenter/public/membership/HL7_Governance_and_Operations_Manual.pdf
@@ -33,7 +33,7 @@
 		<body>
 			<p>Vocabularies recommended in this guide are from standard
 				vocabularies. When SNOMED codes are used, rules defined in Using
-				SNOMED CT in HL7 Version 3 are adhered to. In many cases, these
+				SNOMED CT in HL7<tm tmtype="reg"/> Version 3 are adhered to. In many cases, these
 				vocabularies are further constrained into value sets for use within
 				this guide. Value set names and OIDs are summarized in the table
 				Summary of Value Sets. Each named value set in this summary table is

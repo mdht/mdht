@@ -36,6 +36,11 @@
  
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+       
+         <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.InlineSection"
+             id="property.section.cda.InlineSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.InlineFilter"/>
              
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ActRelationshipSection" 
@@ -89,11 +94,16 @@
              id="property.section.cda.TemplateSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
              
+             
+             
           <propertySection tab="property.tab.CDAPropertySection"
              class="org.openhealthtools.mdht.uml.cda.ui.properties.ConformanceRuleSection"
              id="property.section.cda.ConformanceRuleSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
              
+    
+ 
+ 
       </propertySections>
    </extension> 
  
@@ -188,10 +198,26 @@
                  class="org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction"
                  enablesFor="+"
                  id="org.openhealthtools.mdht.uml.cda.ui.addRemoveNatureAction"
-                 label="Add/Remove CDA Builder"
+                 label="%addRemoveNatureAction.label"
                  menubarPath="additions">
            </action>
         </objectContribution>
+        
+        
+        <objectContribution
+              adaptable="true"
+              id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
+              nameFilter="*.doc"
+              objectClass="org.eclipse.core.resources.IProject">
+           <action
+                 class="org.openhealthtools.mdht.uml.cda.ui.actions.ImportDitaReferences"
+                 enablesFor="1"
+                 id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
+                 label="%importDitaReferences.label"
+                 menubarPath="additions">
+           </action>
+        </objectContribution>
+        
 	</extension>
 	
 	<extension point="org.eclipse.ui.commands">

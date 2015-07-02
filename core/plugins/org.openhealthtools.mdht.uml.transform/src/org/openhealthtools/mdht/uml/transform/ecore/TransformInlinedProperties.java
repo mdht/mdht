@@ -98,8 +98,15 @@ public class TransformInlinedProperties extends TransformAbstract {
 		return inlinedConstraint;
 	}
 
-	public static boolean isInlineClass(Class _class) {
-
+	/**
+	 * This will be removed once we have a constraint based profle
+	 * 
+	 * @deprecated
+	 * @param _class
+	 * @return
+	 */
+	@Deprecated
+	protected static boolean isInlineClassLocal(Class _class) {
 		boolean inline = false;
 		for (Comment comment : _class.getOwnedComments()) {
 			if (comment.getBody().startsWith("INLINE")) {
@@ -112,7 +119,19 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 	}
 
-	public static String getInlineFilter(Class inlineClass) {
+	public boolean isInlineClass(Class _class) {
+		return isInlineClassLocal(_class);
+	}
+
+	/**
+	 * This will be removed once we establish a constraint based profile
+	 * 
+	 * @deprecated
+	 * @param inlineClass
+	 * @return
+	 */
+	@Deprecated
+	protected static String getInlineFilterLocal(Class inlineClass) {
 		String filter = "";
 		for (Comment comment : inlineClass.getOwnedComments()) {
 			if (comment.getBody().startsWith("INLINE&")) {
@@ -128,7 +147,7 @@ public class TransformInlinedProperties extends TransformAbstract {
 			// search hierarchy
 			for (Classifier next : inlineClass.getGenerals()) {
 				if (next instanceof Class) {
-					filter = getInlineFilter((Class) next);
+					filter = getInlineFilterLocal((Class) next);
 					if (!"".equals(filter)) {
 						break;
 					}
@@ -138,6 +157,10 @@ public class TransformInlinedProperties extends TransformAbstract {
 
 		return filter;
 
+	}
+
+	public String getInlineFilter(Class inlineClass) {
+		return getInlineFilterLocal(inlineClass);
 	}
 
 	@Override
@@ -347,20 +370,68 @@ public class TransformInlinedProperties extends TransformAbstract {
 				 * incomplete message in qualified key
 				 * This pass then get the incomplete message and prepends the path messsage to create the complete message
 				 */
-				String constraintMessage = properties.getProperty(generateQualifiedConstraintName(
+
+				String calculatedConstraintName = null;
+				/*
+				 * This check is for inline classes using inline datatypes which results in the constraint name not being unique enough
+				 * If the constraint name starts with the stack - we do not need the stack to create unique names
+				 */
+				if (constraint.getName().startsWith(stack)) {
+					calculatedConstraintName = constraint.getName();
+				} else {
+
+					/*
+					 * Else we check to see if this is overide of a custom constraint
+					 */
+					boolean override = false;
+					if (constraint.getOwner() instanceof Classifier) {
+
+						for (Classifier parent : ((Classifier) constraint.getOwner()).allParents()) {
+							for (Constraint c : parent.getOwnedRules()) {
+								if (constraint.getName().equals(createConstraintName(c))) {
+									override = true;
+									break;
+								}
+							}
+						}
+
+					}
+
+					/*
+					 * Or this is redefinition of a property
+					 */
+
+					for (Element e : constraint.getConstrainedElements()) {
+						if (e instanceof Property) {
+							Property p = (Property) e;
+							if (!p.getRedefinedElements().isEmpty()) {
+								override = true;
+							}
+						}
+					}
+
+					/*
+					 * If it is an override - use the inherited name else use the calculated name to create teh unique constraint
+					 */
+
+					if (override) {
+						calculatedConstraintName = constraint.getName();
+					} else {
+						calculatedConstraintName = stack + constraint.getName();
+					}
+
+				}
+				String constraintMessage = properties.getProperty(generatePropertyMessageKey(
 					inlineClass, constraint.getName()));
 				if (constraintMessage != null) {
 					constraintMessage = constraintMessage.replaceAll(splitName, associationName);
+				} else {
+					constraintMessage = properties.getProperty(bucketClass.getName() + constraint.getName());
 				}
 
-				/*
-				 * Use the property owner to handle situations where the inlined class is defined someplace else (ie USRealm)
-				 */
-
 				Constraint inlinedConstraint = appendInlinedOCLConstraint(
-					bucketClass, generateQualifiedConstraintName((Class) theProperty.getOwner(), constraint.getName()),
-					constraintSeverity, message + " " + constraintMessage, path + getInlineFilter(inlineClass) +
-							"->reject(" + relativeOCL + ")");
+					bucketClass, calculatedConstraintName, constraintSeverity, message + " " + constraintMessage, path +
+							getInlineFilter(inlineClass) + "->reject(" + relativeOCL + ")");
 
 				// handle constraint dependencies
 				String dependency = getConstraintDependency(inlineClassAnnotations, constraint.getName());
@@ -373,5 +444,4 @@ public class TransformInlinedProperties extends TransformAbstract {
 		}
 
 	}
-
 }
