@@ -225,10 +225,11 @@ public class InstanceGenerator {
 
 		HashMap<String, String> shallShouldMayProperties = new HashMap<String, String>();
 
-		shallShouldMayProperties.put("id", "id");
-		shallShouldMayProperties.put("effectiveTime", "effectiveTime");
-		shallShouldMayProperties.put("time", "time");
-		shallShouldMayProperties.put("title", "title");
+		//ToDo Remove this block once hardcoded elements no longer appear
+//		shallShouldMayProperties.put("id", "id");
+//		shallShouldMayProperties.put("effectiveTime", "effectiveTime");
+//		shallShouldMayProperties.put("time", "time");
+//		shallShouldMayProperties.put("title", "title");
 
 		return shallShouldMayProperties;
 
