@@ -48,6 +48,8 @@ public class DitaTransformerOptions {
 	private boolean includeTableView = false;
 
 	private boolean includeUsageNotes = false;
+	
+	private boolean cardinalityAfterElement = false;
 
 	private boolean includeVocabularyConstraints = false;
 
@@ -110,6 +112,10 @@ public class DitaTransformerOptions {
 	public boolean isIncludeUsageNotes() {
 		return includeUsageNotes;
 	}
+	
+	private boolean isCardinalityAfterElement() {
+		return cardinalityAfterElement;
+	}
 
 	public boolean isIncludeTableView() {
 		return includeTableView;
@@ -121,6 +127,10 @@ public class DitaTransformerOptions {
 
 	public void setIncludeUsageNotes(boolean includeUsageNotes) {
 		this.includeUsageNotes = includeUsageNotes;
+	}
+	
+	public void setCardinalityAfterElement(boolean cardinalityAfterElement) {
+		this.cardinalityAfterElement = cardinalityAfterElement;
 	}
 
 	public boolean isIncludeVocabularyConstraints() {

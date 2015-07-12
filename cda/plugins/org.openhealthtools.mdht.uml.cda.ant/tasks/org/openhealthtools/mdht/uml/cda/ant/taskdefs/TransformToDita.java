@@ -47,6 +47,8 @@ public class TransformToDita extends CDAModelingSubTask {
 	private Boolean includeTableView = null;
 
 	private Boolean includeUsageNotes = null;
+	
+	private Boolean cardinalityAfterElement = null;
 
 	private Boolean includeVocabularyConstraints = null;
 
@@ -146,12 +148,12 @@ public class TransformToDita extends CDAModelingSubTask {
 		}
 		if (includeTableView == null && project.getProperty("includeTableView") != null) {
 			includeTableView = Boolean.valueOf(project.getProperty("includeTableView"));
-
 		}
-
 		if (includeUsageNotes == null && project.getProperty("includeUsageNotes") != null) {
 			includeUsageNotes = Boolean.valueOf(project.getProperty("includeUsageNotes"));
-
+		}
+		if (cardinalityAfterElement == null && project.getProperty("cardinalityAfterElement") != null) {
+			cardinalityAfterElement = Boolean.valueOf(project.getProperty("cardinalityAfterElement"));
 		}
 
 		Integer.getInteger(project.getProperty("exampleDepth"));
@@ -178,6 +180,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	public void setIncludeUsageNotes(boolean include) {
 		includeUsageNotes = new Boolean(include);
+	}
+	
+	public void setCardinalityAfterElement(boolean cardinalityAfter) {
+		cardinalityAfterElement = new Boolean(cardinalityAfter);
 	}
 
 	// ANT task child elements
@@ -221,6 +227,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 		if (includeUsageNotes != null) {
 			options.setIncludeUsageNotes(includeUsageNotes);
+		}
+		
+		if (cardinalityAfterElement != null) {
+			options.setCardinalityAfterElement(cardinalityAfterElement);
 		}
 
 		if (includeVocabularyConstraints != null) {
