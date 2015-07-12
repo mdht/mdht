@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.mdht.fhir.profile2uml.contribution1"
+            objectClass="org.eclipse.uml2.uml.Package"
+            adaptable="true">
+         <menu
+               label="FHIR"
+               path="additions"
+               id="org.eclipse.mdht.fhir.profile2uml.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Import Profile to UML"
+               class="org.eclipse.mdht.fhir.profile2uml.popup.actions.ImportProfileAction"
+               menubarPath="org.eclipse.mdht.fhir.profile2uml.menu1/group1"
+               enablesFor="1"
+               id="org.eclipse.mdht.fhir.profile2uml.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

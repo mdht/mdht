@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fhir-xsd -->
+      <package
+            uri="http://www.w3.org/1999/xhtml"
+            class="org.w3._1999.xhtml.XhtmlPackage"
+            genModel="model/fhir-xsd.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated fhir-xsd -->
+      <parser
+            type="xhtml"
+            class="org.w3._1999.xhtml.util.XhtmlResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fhir-xsd -->
+      <package
+            uri="http://hl7.org/fhir"
+            class="org.hl7.fhir.FhirPackage"
+            genModel="model/fhir-xsd.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated fhir-xsd -->
+      <parser
+            type="fhir"
+            class="org.hl7.fhir.util.FhirResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type base-type="org.eclipse.emf.ecore.xmi" default-charset="UTF-8" file-extensions="xml" 
+  				id="org.hl7.fhir" name="FHIR" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://hl7.org/fhir"/>
+         </describer>
+      </content-type>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="org.hl7.fhir"
+            class="org.hl7.fhir.util.FhirResourceFactoryImpl" />
+   </extension>
+
+</plugin>
