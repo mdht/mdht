@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added isEntry
  *     Christian W. Damus - discriminate multiple property constraints (artf3185)
  *                        - support nested datatype subclasses (artf3350)
- *     Dan Brown (Audacious Inquiry) - modified XML binding messages based on mandatory property 
+ *     Dan Brown (Audacious Inquiry) - modified XML binding messages based on mandatory property
  *     								 as part of artf3549, artf3577, errata 156 and errata 72
  *     								 - changed output from 'data type CD' to '@xsi:type="CD"' as per errata 177
  *     								 - added message support for errata 384 as per artf3818 No Information Section Fix
@@ -150,7 +150,7 @@ public class CDAModelUtil {
 
 	/**
 	 * Returns the nearest inherited property with the same name, or null if not found.
-	 * 
+	 *
 	 * @deprecated Use the {@link UMLUtil#getInheritedProperty(Property)} API, instead.
 	 */
 	@Deprecated
@@ -176,7 +176,7 @@ public class CDAModelUtil {
 	/**
 	 * isCDAModel - use get top package to support nested uml packages within CDA model
 	 * primarily used for extensions
-	 * 
+	 *
 	 */
 	public static boolean isCDAModel(Element element) {
 		if (element != null) {
@@ -318,14 +318,14 @@ public class CDAModelUtil {
 	/**
 	 * Obtains the user-specified validation message recorded in the given stereotype, or else
 	 * {@linkplain #computeConformanceMessage(Element, boolean) computes} a suitable conformance message if none.
-	 * 
+	 *
 	 * @param element
 	 *            an element on which a validation constraint stereotype is defined
 	 * @param validationStereotypeName
 	 *            the stereotype name (may be the abstract {@linkplain ICDAProfileConstants#VALIDATION Validation} stereotype)
-	 * 
+	 *
 	 * @return the most appropriate validation/conformance message
-	 * 
+	 *
 	 * @see #computeConformanceMessage(Element, boolean)
 	 */
 	public static String getValidationMessage(Element element, String validationStereotypeName) {
@@ -494,6 +494,34 @@ public class CDAModelUtil {
 		return "";
 	}
 
+	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
+		StringBuffer message = new StringBuffer();
+		boolean toggleForMultiplicity = false;
+		if (!toggleForMultiplicity) {
+			message.append(getMultiplicityRange(property)).append(" ");
+		} else {
+			message.append(" ");
+		}
+
+		message.append(markup
+				? "<tt><b>"
+				: "");
+		message.append(elementName);
+		message.append(markup
+				? "</b>"
+				: "");
+		message.append(getBusinessName(property));
+		message.append(markup
+				? "</tt>"
+				: "");
+
+		if (toggleForMultiplicity) {
+			message.append(getMultiplicityRange(property));
+		}
+
+		return message;
+	}
+
 	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
 
 		Class endType = (property.getType() instanceof Class)
@@ -531,21 +559,26 @@ public class CDAModelUtil {
 
 		}
 
-		message.append(getMultiplicityString(property)).append(" ");
-
 		String elementName = getCDAElementName(property);
 
-		message.append(markup
-				? "<tt><b>"
-				: "");
-		message.append(elementName);
-		message.append(markup
-				? "</b>"
-				: "");
-		message.append(getBusinessName(property));
-		message.append(markup
-				? "</tt>"
-				: "");
+		// message.append(getMultiplicityString(property)).append(" ");
+		//
+		//
+		//
+		// message.append(markup
+		// ? "<tt><b>"
+		// : "");
+		// message.append(elementName);
+		// message.append(markup
+		// ? "</b>"
+		// : "");
+		// message.append(getBusinessName(property));
+		// message.append(markup
+		// ? "</tt>"
+		// : "");
+
+		message.append(getMultiplicityText(property));
+		message.append(multiplicityElementToggle(property, markup, elementName));
 
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
@@ -639,15 +672,7 @@ public class CDAModelUtil {
 			}
 		}
 
-		message.append(getMultiplicityString(property)).append(" ");
-
-		message.append(markup
-				? "<tt><b>"
-				: "");
-		message.append(elementName);
-		message.append(markup
-				? "</b></tt>"
-				: "");
+		message.append(multiplicityElementToggle(property, markup, elementName));
 
 		appendConformanceRuleIds(association, message, markup);
 
@@ -872,8 +897,12 @@ public class CDAModelUtil {
 				message.append("contain ");
 			}
 		}
+		boolean toggleForMultiplicity = false;
 
-		message.append(getMultiplicityString(property)).append(" ");
+		message.append(getMultiplicityText(property));
+		if (!toggleForMultiplicity)
+			message.append(getMultiplicityRange(property));
+		message.append(" ");
 
 		message.append(markup
 				? "<tt><b>"
@@ -900,6 +929,9 @@ public class CDAModelUtil {
 		message.append(markup
 				? "</tt>"
 				: "");
+
+		if (toggleForMultiplicity)
+			message.append(getMultiplicityRange(property));
 
 		Stereotype nullFlavorSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 			property, ICDAProfileConstants.NULL_FLAVOR);
@@ -1913,9 +1945,9 @@ public class CDAModelUtil {
 	/**
 	 * FindResourcesByNameVisitor searches the resource for resources of a particular name
 	 * You would think there was a method for this already but i could not find it
-	 * 
+	 *
 	 * @author seanmuir
-	 * 
+	 *
 	 */
 	public static class FindResourcesByNameVisitor implements IResourceVisitor {
 
@@ -1986,9 +2018,9 @@ public class CDAModelUtil {
 
 	/**
 	 * computeXref returns the XREF for DITA publication
-	 * 
+	 *
 	 * TODO Refactor and move out of model util
-	 * 
+	 *
 	 * @param source
 	 * @param target
 	 * @return
@@ -2078,7 +2110,7 @@ public class CDAModelUtil {
 
 	/**
 	 * getExtensionNamespace returns the name space from a extension package in the CDA model
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */
@@ -2177,7 +2209,18 @@ public class CDAModelUtil {
 		return elementName;
 	}
 
-	public static String getMultiplicityString(Property property) {
+	public static String getMultiplicityRange(Property property) {
+
+		StringBuffer message = new StringBuffer();
+		String lower = Integer.toString(property.getLower());
+		String upper = property.getUpper() == -1
+				? "*"
+				: Integer.toString(property.getUpper());
+		message.append(" [").append(lower).append("..").append(upper).append("]");
+		return message.toString();
+	}
+
+	public static String getMultiplicityText(Property property) {
 
 		StringBuffer message = new StringBuffer();
 		if (property.getLower() == 1 && property.getUpper() == 1) {
@@ -2189,13 +2232,6 @@ public class CDAModelUtil {
 		} else if (property.getLower() == 1 && property.getUpper() == -1) {
 			message.append("at least one");
 		}
-
-		String lower = Integer.toString(property.getLower());
-		String upper = property.getUpper() == -1
-				? "*"
-				: Integer.toString(property.getUpper());
-		message.append(" [").append(lower).append("..").append(upper).append("]");
-
 		return message.toString();
 	}
 
