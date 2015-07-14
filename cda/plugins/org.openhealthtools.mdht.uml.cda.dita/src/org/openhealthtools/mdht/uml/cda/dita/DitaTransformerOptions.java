@@ -117,7 +117,7 @@ public class DitaTransformerOptions {
 		return includeUsageNotes;
 	}
 
-	private boolean isCardinalityAfterElement() {
+	public boolean isCardinalityAfterElement() {
 		return cardinalityAfterElement;
 	}
 

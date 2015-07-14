@@ -500,11 +500,10 @@ public class CDAModelUtil {
 	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
 		StringBuffer message = new StringBuffer();
 		if (!cardinalityAfterElement) {
-			message.append(getMultiplicityRange(property)).append(" ");
-		} else {
-			message.append(" ");
+			message.append(getMultiplicityRange(property));
 		}
 
+		message.append(" ");
 		message.append(markup
 				? "<tt><b>"
 				: "");
