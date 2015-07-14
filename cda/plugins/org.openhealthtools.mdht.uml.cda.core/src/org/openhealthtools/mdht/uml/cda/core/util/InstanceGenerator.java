@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -53,6 +54,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
+import org.openhealthtools.mdht.uml.cda.util.CDASwitch;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
@@ -70,6 +73,37 @@ import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 
 @SuppressWarnings("rawtypes")
 public class InstanceGenerator {
+
+	private static class CdaInit extends CDASwitch<Object> {
+
+		Random randomGenerator = new Random();
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.openhealthtools.mdht.uml.cda.util.CDASwitch#caseStrucDocText(org.openhealthtools.mdht.uml.cda.StrucDocText)
+		 */
+		@Override
+		public Object caseStrucDocText(StrucDocText object) {
+
+			int numberOfParagraphs = randomGenerator.nextInt(20) + 1;
+			StringBuffer sb = new StringBuffer();
+			for (int p = 0; p < numberOfParagraphs; p++) {
+				int numberOfSentences = randomGenerator.nextInt(9) + 2;
+				for (int s = 0; s < numberOfSentences; s++) {
+					int numberOfWords = randomGenerator.nextInt(5) + 5;
+					for (int w = 0; w < numberOfWords; w++) {
+						sb.append(RandomStringUtils.randomAlphabetic(randomGenerator.nextInt(5) + 5)).append(" ");
+					}
+				}
+				sb.append(System.getProperty("line.separator"));
+			}
+
+			object.addText(sb.toString());
+			return object;
+		}
+
+	}
 
 	/*
 	 * TODO Turn this into an extension point for non-cda "datatypes"
@@ -154,6 +188,25 @@ public class InstanceGenerator {
 						return object.addText(s.getCode().getDisplayName());
 					}
 				}
+
+				if (object.eContainer() instanceof ClinicalDocument &&
+						object.eContainingFeature().getName().equals("title")) {
+					ClinicalDocument cd = (ClinicalDocument) object.eContainer();
+					if (cd.getCode() != null && cd.getCode().getDisplayName() != null) {
+						return object.addText(cd.getCode().getDisplayName());
+					} else {
+
+						StringBuffer buffer = new StringBuffer();
+						for (String token : UMLUtil.splitName(cd.getClass().getCanonicalName())) {
+							buffer.append(buffer.length() > 0
+									? " "
+									: "");
+							buffer.append(token);
+						}
+						return object.addText(buffer.toString());
+					}
+				}
+
 			}
 
 			if (feature != null) {
@@ -225,11 +278,11 @@ public class InstanceGenerator {
 
 		HashMap<String, String> shallShouldMayProperties = new HashMap<String, String>();
 
-		//ToDo Remove this block once hardcoded elements no longer appear
-//		shallShouldMayProperties.put("id", "id");
-//		shallShouldMayProperties.put("effectiveTime", "effectiveTime");
-//		shallShouldMayProperties.put("time", "time");
-//		shallShouldMayProperties.put("title", "title");
+		// ToDo Remove this block once hardcoded elements no longer appear
+		// shallShouldMayProperties.put("id", "id");
+		// shallShouldMayProperties.put("effectiveTime", "effectiveTime");
+		// shallShouldMayProperties.put("time", "time");
+		shallShouldMayProperties.put("text", "text");
 
 		return shallShouldMayProperties;
 
@@ -380,6 +433,7 @@ public class InstanceGenerator {
 					if (addOperation != null) {
 						EObject objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
 							(EClass) eOperation.getEGenericType().getEClassifier());
+
 						if (!eClass.equals(objectToAdd.eClass())) {
 							if (UMLUtil.getTopPackage(umlClass) != null) {
 
@@ -418,6 +472,8 @@ public class InstanceGenerator {
 
 		DatatypesInit datatypesInit = new DatatypesInit();
 
+		CdaInit cdaInit = new CdaInit();
+
 		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures()) {
 
 			if (structuralFeature.getLowerBound() > 0 ||
@@ -443,6 +499,7 @@ public class InstanceGenerator {
 								datatypesInit.setCurrentFeature(structuralFeature);
 								datatypesInit.doSwitch(objectToAdd);
 							} else {
+
 								sampleInstanceInitialization(umlClass, objectToAdd, shallShouldMayProperties, level - 1);
 							}
 							try {
@@ -457,9 +514,10 @@ public class InstanceGenerator {
 						Object result = eObject.eGet(structuralFeature);
 						if (result == null && structuralFeature.getEType() instanceof EClass) {
 							try {
-
 								EObject objectToSet = structuralFeature.getEType().getEPackage().getEFactoryInstance().create(
 									(EClass) structuralFeature.getEType());
+
+								eObject.eSet(structuralFeature, objectToSet);
 
 								if (DatatypesPackage.eINSTANCE.getNsURI().equals(
 									objectToSet.eClass().getEPackage().getNsURI())) {
@@ -467,7 +525,13 @@ public class InstanceGenerator {
 									datatypesInit.setCurrentFeature(structuralFeature);
 									datatypesInit.doSwitch(objectToSet);
 								}
-								eObject.eSet(structuralFeature, objectToSet);
+
+								if (CDAPackage.eINSTANCE.getNsURI().equals(
+									objectToSet.eClass().getEPackage().getNsURI())) {
+									cdaInit.doSwitch(objectToSet);
+
+								}
+
 							} catch (Exception cce) {
 								System.out.println("Unable to set " + eClass.getName() + "." +
 										structuralFeature.getEType().getName() + structuralFeature.getName());
