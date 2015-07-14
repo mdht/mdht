@@ -15,6 +15,7 @@
  *     								 - changed output from 'data type CD' to '@xsi:type="CD"' as per errata 177
  *     								 - added message support for errata 384 as per artf3818 No Information Section Fix
  *     								 - support templateId extension attribute value in generalization and association messages
+ *     Sarp Kaya (NEHTA)
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -104,6 +105,8 @@ public class CDAModelUtil {
 
 	// This message may change in the future to specify certain nullFlavor Types (such as the implementation, NI)
 	private static final String NULLFLAVOR_SECTION_MESSAGE = "If section/@nullFlavor is not present, ";
+
+	public static boolean cardinalityAfterElement = false;
 
 	public static Class getCDAClass(Classifier templateClass) {
 		Class cdaClass = null;
@@ -496,8 +499,7 @@ public class CDAModelUtil {
 
 	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
 		StringBuffer message = new StringBuffer();
-		boolean toggleForMultiplicity = false;
-		if (!toggleForMultiplicity) {
+		if (!cardinalityAfterElement) {
 			message.append(getMultiplicityRange(property)).append(" ");
 		} else {
 			message.append(" ");
@@ -515,7 +517,7 @@ public class CDAModelUtil {
 				? "</tt>"
 				: "");
 
-		if (toggleForMultiplicity) {
+		if (cardinalityAfterElement) {
 			message.append(getMultiplicityRange(property));
 		}
 
@@ -897,10 +899,9 @@ public class CDAModelUtil {
 				message.append("contain ");
 			}
 		}
-		boolean toggleForMultiplicity = false;
 
 		message.append(getMultiplicityText(property));
-		if (!toggleForMultiplicity)
+		if (!cardinalityAfterElement)
 			message.append(getMultiplicityRange(property));
 		message.append(" ");
 
@@ -930,7 +931,7 @@ public class CDAModelUtil {
 				? "</tt>"
 				: "");
 
-		if (toggleForMultiplicity)
+		if (cardinalityAfterElement)
 			message.append(getMultiplicityRange(property));
 
 		Stereotype nullFlavorSpecification = CDAProfileUtil.getAppliedCDAStereotype(
