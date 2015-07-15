@@ -14,10 +14,6 @@ package org.openhealthtools.mdht.uml.cda.ui.editors;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -28,8 +24,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.PlatformUI;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 
-public class MDHTPreferences extends PreferencePage implements IWorkbenchPreferencePage, SelectionListener,
-		ModifyListener {
+public class MDHTPreferences extends PreferencePage implements IWorkbenchPreferencePage {
 
 	private static String CARDINALITY_CHECK_BOX_LABEL = "Show cardinality after the element name"
 			+ " in the Properties view";
@@ -39,7 +34,7 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 			+ "for that, dita-transform.xml needs to be adjusted to say "
 			+ "cardinalityAfterElement=\"true\" in <transformToDita>";
 
-	static String CARDINALITY_STORE_VALUE = "CardinalityCheckValue";
+	public static String CARDINALITY_STORE_VALUE = "CardinalityCheckValue";
 
 	private Button cardinalityCheckBox;
 
@@ -57,7 +52,6 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 		Button button = new Button(group, SWT.CHECK | SWT.LEFT);
 		button.setText(label);
 		button.setToolTipText(toolTip);
-		button.addSelectionListener(this);
 		GridData data = new GridData();
 		button.setLayoutData(data);
 		return button;
@@ -116,7 +110,6 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	}
 
 	public void init(IWorkbench workbench) {
-		// do nothing
 	}
 
 	/**
@@ -136,10 +129,6 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 		cardinalityCheckBox.setSelection(store.getBoolean(CARDINALITY_STORE_VALUE));
 	}
 
-	public void modifyText(ModifyEvent event) {
-		// Do nothing on a modification in this example
-	}
-
 	@Override
 	protected void performDefaults() {
 		super.performDefaults();
@@ -149,7 +138,6 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	@Override
 	public boolean performOk() {
 		storeValues();
-		// ReadmePlugin.getDefault().savePluginPreferences();
 		return true;
 	}
 
@@ -159,13 +147,5 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	private void storeValues() {
 		IPreferenceStore store = getPreferenceStore();
 		store.setValue(CARDINALITY_STORE_VALUE, cardinalityCheckBox.getSelection());
-	}
-
-	public void widgetDefaultSelected(SelectionEvent event) {
-		// Handle a default selection. Do nothing in this example
-	}
-
-	public void widgetSelected(SelectionEvent event) {
-		// Do nothing on selection in this example;
 	}
 }

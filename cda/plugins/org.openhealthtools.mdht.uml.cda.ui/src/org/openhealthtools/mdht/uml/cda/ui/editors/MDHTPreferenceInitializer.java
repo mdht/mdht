@@ -13,16 +13,30 @@ package org.openhealthtools.mdht.uml.cda.ui.editors;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 
 public class MDHTPreferenceInitializer extends AbstractPreferenceInitializer {
 
+	private IPropertyChangeListener changeListener = new IPropertyChangeListener() {
+		public void propertyChange(PropertyChangeEvent event) {
+			handleChanges(event);
+		}
+	};
+
 	@Override
 	public void initializeDefaultPreferences() {
-		// These settings will show up when the Readme preference page
-		// is shown for the first time.
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		store.setDefault(MDHTPreferences.CARDINALITY_STORE_VALUE, true);
+		store.setDefault(MDHTPreferences.CARDINALITY_STORE_VALUE, false);
+		Activator.getDefault().getPreferenceStore().addPropertyChangeListener(changeListener);
+	}
+
+	private void handleChanges(PropertyChangeEvent event) {
+		if (event.getProperty().equals(MDHTPreferences.CARDINALITY_STORE_VALUE)) {
+			CDAModelUtil.cardinalityAfterElement = (Boolean) event.getNewValue();
+		}
 	}
 
 }
