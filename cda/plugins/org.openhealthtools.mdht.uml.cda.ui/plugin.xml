@@ -470,30 +470,18 @@
    </extension>
    
    
- 
    <extension
-         point="org.eclipse.ui.editors">
-      <editor
-            class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            extensions="xml"
-            icon="icons/analyzer/sample.gif"
-            id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
-            name="CDA Analyzer">
-      </editor>
-      
-         <editor
-            class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            extensions="xml"
-            icon="icons/analyzer/sample.gif"
-            id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
-            name="CDA Metrics">
-      </editor>
-      
-      
+      point = "org.eclipse.ui.preferencePages">
+      <page id="org.openhealthtools.mdht.uml.cda.ui.editors.Page1"
+         class="org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferences"
+         name="MDHT">
+      </page>
    </extension>
- 
+   
+   <extension
+      point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferenceInitializer"/>
+   </extension>
  
  
             

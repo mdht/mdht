@@ -31,7 +31,13 @@ import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 public class MDHTPreferences extends PreferencePage implements IWorkbenchPreferencePage, SelectionListener,
 		ModifyListener {
 
-	private static String CARDINALITY_CHECK_BOX_LABEL = "Show cardinality after the element name in the Properties view";
+	private static String CARDINALITY_CHECK_BOX_LABEL = "Show cardinality after the element name"
+			+ " in the Properties view";
+
+	private static String CARDINALITY_CHECK_BOX_TOOLTIP = "Show cardinality after the element name in the"
+			+ " Properties view. This does not affect the DITA publication (PDF, Online) - "
+			+ "for that, dita-transform.xml needs to be adjusted to say "
+			+ "cardinalityAfterElement=\"true\" in <transformToDita>";
 
 	static String CARDINALITY_STORE_VALUE = "CardinalityCheckValue";
 
@@ -47,9 +53,10 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 	 *            the string to set into the checkbox
 	 * @return the new checkbox
 	 */
-	private Button createCheckBox(Composite group, String label) {
+	private Button createCheckBox(Composite group, String label, String toolTip) {
 		Button button = new Button(group, SWT.CHECK | SWT.LEFT);
 		button.setText(label);
+		button.setToolTipText(toolTip);
 		button.addSelectionListener(this);
 		GridData data = new GridData();
 		button.setLayoutData(data);
@@ -90,7 +97,8 @@ public class MDHTPreferences extends PreferencePage implements IWorkbenchPrefere
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(parent, "MDHTPreferences");
 
 		Composite composite_textField = createComposite(parent, 2);
-		cardinalityCheckBox = createCheckBox(composite_textField, CARDINALITY_CHECK_BOX_LABEL);
+		cardinalityCheckBox = createCheckBox(
+			composite_textField, CARDINALITY_CHECK_BOX_LABEL, CARDINALITY_CHECK_BOX_TOOLTIP);
 		initializeValues();
 
 		return new Composite(parent, SWT.NULL);
