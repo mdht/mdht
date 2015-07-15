@@ -39,7 +39,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.pde.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.cda.ui.filters,org.openhe
- althtools.mdht.uml.cda.ui.properties,org.openhealthtools.mdht.uml.cda
- .ui.providers,org.openhealthtools.mdht.uml.cda.ui.util,org.openhealth
- tools.mdht.uml.cda.ui.wizards
+Export-Package: org.openhealthtools.mdht.uml.cda.ui.editors,
+ org.openhealthtools.mdht.uml.cda.ui.filters,
+ org.openhealthtools.mdht.uml.cda.ui.internal,
+ org.openhealthtools.mdht.uml.cda.ui.properties,
+ org.openhealthtools.mdht.uml.cda.ui.providers,
+ org.openhealthtools.mdht.uml.cda.ui.util,
+ org.openhealthtools.mdht.uml.cda.ui.wizards

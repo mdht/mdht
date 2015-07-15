@@ -4,10 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *     Sarp Kaya (NEHTA)
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita.internal.preferences;
@@ -24,7 +25,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
 	@Override
@@ -33,6 +34,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
 		store.setDefault(DitaTransformerOptions.INCLUDE_TABLE_VIEW, false);
 		store.setDefault(DitaTransformerOptions.INCLUDE_VOCABULARY_CONSTRAINTS, false);
+		store.setDefault(DitaTransformerOptions.CARDINALITY_AFTER_ELEMENT, false);
 	}
 
 }

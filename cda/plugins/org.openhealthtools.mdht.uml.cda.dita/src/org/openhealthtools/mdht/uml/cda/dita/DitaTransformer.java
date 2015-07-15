@@ -4,11 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added support for TransformAssociation
- *     
+ *     Sarp Kaya (NEHTA)
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
@@ -52,6 +53,8 @@ public class DitaTransformer {
 
 	public void transformElement(Element element) {
 		// get list of published classifiers
+		Boolean prevCard = CDAModelUtil.cardinalityAfterElement;
+		CDAModelUtil.cardinalityAfterElement = transformerOptions.isCardinalityAfterElement();
 		UMLSwitch<Object> pubList = new UMLSwitch<Object>() {
 			@Override
 			public Object caseClassifier(Classifier classifier) {
@@ -131,7 +134,7 @@ public class DitaTransformer {
 		writeMapFile("classes", "classes", "Other Classes", transformerOptions.getClassList());
 		writeMapFile("terminology", "valueset", "Value Sets", transformerOptions.getValueSetList());
 		writeMapFile("classes", "references", "References", transformerOptions.getReferencesList());
-
+		CDAModelUtil.cardinalityAfterElement = prevCard;
 	}
 
 	private void writeMapFile(String folder, String name, String title, List<String> fileNames) {
