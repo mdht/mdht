@@ -4,10 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *     Sarp Kaya (NEHTA)
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
@@ -39,6 +40,8 @@ public class DitaTransformerOptions {
 
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 
+	public static final String CARDINALITY_AFTER_ELEMENT = "cardinalityAfterElement";
+
 	public static final String EXAMPLE_DEPTH = "exampleDepth";
 
 	private IPath outputPath = null;
@@ -48,6 +51,8 @@ public class DitaTransformerOptions {
 	private boolean includeTableView = false;
 
 	private boolean includeUsageNotes = false;
+
+	private boolean cardinalityAfterElement = false;
 
 	private boolean includeVocabularyConstraints = false;
 
@@ -102,6 +107,7 @@ public class DitaTransformerOptions {
 		includeTableView = store.getBoolean(INCLUDE_TABLE_VIEW);
 		includeUsageNotes = store.getBoolean(INCLUDE_USAGE_NOTES);
 		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
+		cardinalityAfterElement = store.getBoolean(CARDINALITY_AFTER_ELEMENT);
 
 		exampleDepth = store.getInt(EXAMPLE_DEPTH);
 
@@ -109,6 +115,10 @@ public class DitaTransformerOptions {
 
 	public boolean isIncludeUsageNotes() {
 		return includeUsageNotes;
+	}
+
+	public boolean isCardinalityAfterElement() {
+		return cardinalityAfterElement;
 	}
 
 	public boolean isIncludeTableView() {
@@ -121,6 +131,10 @@ public class DitaTransformerOptions {
 
 	public void setIncludeUsageNotes(boolean includeUsageNotes) {
 		this.includeUsageNotes = includeUsageNotes;
+	}
+
+	public void setCardinalityAfterElement(boolean cardinalityAfterElement) {
+		this.cardinalityAfterElement = cardinalityAfterElement;
 	}
 
 	public boolean isIncludeVocabularyConstraints() {

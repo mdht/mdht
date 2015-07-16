@@ -226,13 +226,9 @@ public class NewCDAModelPage extends WizardPage {
 		// basePackage.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		new Label(composite, SWT.NONE).setText("Namespace URI");
-		nsURI = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
-
-		// GridData.HORIZONTAL_ALIGN_FILL
-		GridData gd = new GridData();
-		gd.widthHint = 400;
-
-		nsURI.setLayoutData(gd);
+		
+		nsURI = new Text(composite, SWT.NONE);
+		nsURI.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		new Label(composite, SWT.NONE).setText("Document Namespace Prefix ");
 

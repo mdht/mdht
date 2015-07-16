@@ -75,7 +75,7 @@ public class TransformValueSet extends TransformAbstract {
 		if (!umlEnumeration.getOwnedLiterals().isEmpty()) {
 
 			if (transformerOptions.isIncludeUsageNotes()) {
-				writer.println("<table><tgroup cols=\"4\">");
+				writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"4\">");
 				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col3\" colwidth=\"1*\"/>");
@@ -84,7 +84,7 @@ public class TransformValueSet extends TransformAbstract {
 				writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry><entry>Usage Note</entry>");
 				writer.println("</row></thead><tbody>");
 			} else {
-				writer.println("<table><tgroup cols=\"3\">");
+				writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"3\">");
 				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col3\" colwidth=\"2*\"/>");
@@ -131,7 +131,7 @@ public class TransformValueSet extends TransformAbstract {
 	}
 
 	private static void appendDefinition(PrintWriter writer, Enumeration umlEnumeration) {
-		writer.println("<table><tgroup cols=\"2\">");
+		writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"2\">");
 		writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 		writer.println("<colspec colname=\"col2\" colwidth=\"4*\"/>");
 		writer.println("<tbody>");
