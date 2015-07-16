@@ -383,23 +383,40 @@ public class CDAModelUtil {
 		return (String) umlSwitch.doSwitch(element);
 	}
 
+	private static String getCDATemplateIdConstraint(boolean isTemplateVersionEmpty, boolean markup) {
+		String result = "";
+		if (isTemplateVersionEmpty) {
+			if (cardinalityAfterElement) {
+				result = markup
+						? CDAConstraints.CDATemplateIdConstraintMarkupDiffMultip
+						: CDAConstraints.CDATemplateIdConstraintDiffMultip;
+			} else {
+				result = markup
+						? CDAConstraints.CDATemplateIdConstraintMarkup
+						: CDAConstraints.CDATemplateIdConstraint;
+			}
+
+		} else {
+			if (cardinalityAfterElement) {
+				result = markup
+						? CDAConstraints.CDAVersionTemplateIdConstraintMarkupDiffMultip
+						: CDAConstraints.CDAVersionTemplateIdConstraintDiffMultip;
+			} else {
+				result = markup
+						? CDAConstraints.CDAVersionTemplateIdConstraintMarkup
+						: CDAConstraints.CDAVersionTemplateIdConstraint;
+			}
+		}
+
+		return result;
+	}
+
 	public static String computeConformanceMessage(Class template, boolean markup) {
 
 		String templateId = getTemplateId(template);
 		String templateVersion = getTemplateVersion(template);
 
-		String templateConstraint = "";
-
-		if (StringUtils.isEmpty(templateVersion)) {
-			templateConstraint = markup
-					? CDAConstraints.CDATemplateIdConstraintMarkup
-					: CDAConstraints.CDATemplateIdConstraint;
-
-		} else {
-			templateConstraint = markup
-					? CDAConstraints.CDAVersionTemplateIdConstraintMarkup
-					: CDAConstraints.CDAVersionTemplateIdConstraint;
-		}
+		String templateConstraint = getCDATemplateIdConstraint(StringUtils.isEmpty(templateVersion), markup);
 
 		String ruleIds = getConformanceRuleIds(template);
 		templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
