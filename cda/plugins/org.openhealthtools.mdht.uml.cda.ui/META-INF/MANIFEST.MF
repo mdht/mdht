@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.ui;singleton:=true
-Bundle-Version: 2.5.4.qualifier
+Bundle-Version: 2.5.6.qualifier
 Bundle-Activator: org.openhealthtools.mdht.uml.cda.ui.internal.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -39,7 +39,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.pde.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.cda.ui.filters,org.openhe
- althtools.mdht.uml.cda.ui.properties,org.openhealthtools.mdht.uml.cda
- .ui.providers,org.openhealthtools.mdht.uml.cda.ui.util,org.openhealth
- tools.mdht.uml.cda.ui.wizards
+Export-Package: org.openhealthtools.mdht.uml.cda.ui.editors,
+ org.openhealthtools.mdht.uml.cda.ui.filters,
+ org.openhealthtools.mdht.uml.cda.ui.internal,
+ org.openhealthtools.mdht.uml.cda.ui.properties,
+ org.openhealthtools.mdht.uml.cda.ui.providers,
+ org.openhealthtools.mdht.uml.cda.ui.util,
+ org.openhealthtools.mdht.uml.cda.ui.wizards

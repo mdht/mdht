@@ -430,7 +430,7 @@ public class TransformClassContent extends TransformAbstract {
 	}
 
 	private void appendExample(PrintWriter writer, Class umlClass) {
-		writer.print("<codeblock id=\"example\"><![CDATA[");
+		writer.print("<codeblock id=\"example\" outputclass=\"language-xml\"><![CDATA[");
 
 		if (instanceGenerator != null) {
 

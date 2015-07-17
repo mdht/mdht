@@ -12,9 +12,13 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -44,6 +48,7 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.osgi.framework.Bundle;
+import org.xml.sax.SAXException;
 
 public class CDAProjectUtil {
 
@@ -98,6 +103,9 @@ public class CDAProjectUtil {
 	}
 
 	public void loadCDAModelsfromWorkspace() {
+
+		org.openhealthtools.mdht.uml.common.UmlPlugin.computeModelPathMapExtensions();
+
 		ResourceSet resourceSet = new ResourceSetImpl();
 
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -109,10 +117,22 @@ public class CDAProjectUtil {
 		for (IProject project : root.getProjects()) {
 			if (project.exists(model)) {
 				IFolder folder = project.getFolder(model);
+
+				final IFile plugin = project.getFile("plugin.xml");
 				try {
 					for (IResource resource : folder.members()) {
 						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore")) {
-							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							URI modelFile = null;
+							if (plugin.exists()) {
+								URI pathMap = org.openhealthtools.mdht.uml.common.UmlPlugin.getPathMap(plugin.getContents());
+								if (pathMap != null) {
+									modelFile = pathMap.appendSegment(resource.getName());
+								} else {
+									modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+								}
+							} else {
+								modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							}
 							PackageableElement pe = null;
 							try {
 								pe = (PackageableElement) EcoreUtil.getObjectByType(
@@ -152,6 +172,20 @@ public class CDAProjectUtil {
 						}
 					}
 				} catch (CoreException e) {
+					e.printStackTrace();
+				} catch (XPathExpressionException e) {
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (SecurityException e) {
+					e.printStackTrace();
+				} catch (NoSuchFieldException e) {
+					e.printStackTrace();
+				} catch (SAXException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (ParserConfigurationException e) {
 					e.printStackTrace();
 				}
 			}
