@@ -4,12 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *     Sarp Kaya (NEHTA)
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
@@ -26,6 +27,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -63,6 +65,8 @@ public class TemplateSection extends ValidationSection {
 	private Text assigningAuthorityText;
 
 	private boolean assigningAuthorityModified = false;
+
+	private CCombo multiplicityCombo;
 
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -251,6 +255,22 @@ public class TemplateSection extends ValidationSection {
 		data.top = new FormAttachment(assigningAuthorityText, 0, SWT.CENTER);
 		restoreDefaultsButton.setLayoutData(data);
 
+		// templateId Multiplicity
+
+		CLabel multiplicityLabel = getWidgetFactory().createCLabel(composite, "templateId Multiplicity:"); //$NON-NLS-1$
+		multiplicityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
+		multiplicityCombo.setItems(new String[] { "*", "0..1", "1", "1..*" });
+
+		data = new FormData();
+		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.VSPACE);
+		multiplicityCombo.setLayoutData(data);
+
+		data = new FormData();
+		data.right = new FormAttachment(multiplicityCombo, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(multiplicityCombo, 0, SWT.CENTER);
+		multiplicityLabel.setLayoutData(data);
+
 		addValidationControls(composite, 1, 2);
 
 	}
@@ -318,6 +338,8 @@ public class TemplateSection extends ValidationSection {
 			assigningAuthorityText.setEnabled(true);
 			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
+
+		multiplicityCombo.setText("m");
 
 	}
 
