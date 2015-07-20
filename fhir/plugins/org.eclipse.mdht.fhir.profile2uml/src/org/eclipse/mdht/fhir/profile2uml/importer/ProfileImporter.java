@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -41,18 +42,34 @@ import org.hl7.fhir.util.FhirResourceFactoryImpl;
 public class ProfileImporter {
 	public static final String MDHT_ANNOTATION_SOURCE = "org.eclipse.mdht";
 	public static final String URI_ANNOTATION = "fhir.uri";
+
+	public static final String MDHT_URI_BASE = "http://eclipse.org/mdht/fhir/StructureDefinition/";
+	
+	// Create non-spec class for Base, abstract parent for Element and Resource, using MDHT_URI_BASE
+	public static final String BASE_CLASS_NAME = "Base";
+
+	// Create non-spec class DataType, abstract parent for all 'type' StructureDefinitions, using MDHT_URI_BASE
+	public static final String DATATYPE_CLASS_NAME = "DataType";
+
+	public static final String ELEMENT_CLASS_NAME = "Element";
+	public static final String BACKBONE_ELEMENT_CLASS_NAME = "BackboneElement";
+	public static final String RESOURCE_CLASS_NAME = "Resource";
 	
 	public static final String UML_LIBRARIES_PATH = "org.eclipse.uml2.uml.resources/libraries/";
 	public static final String XML_PRIMITIVE_TYPES_LIBRARY = UML_LIBRARIES_PATH + "XMLPrimitiveTypes.library.uml";
 	
 	private IContainer fhirProfileFolder;
+	
 	private Package model;
 	private Package xmlPrimitiveTypes;
 	
+	private Class baseClass;
+	private Class dataTypeClass;
+	private Class elementClass;
+	private Class resourceClass;
+	
 	private Map<String,Type> referenceModelTypeForName = new HashMap<String,Type>();
 	private Map<String,Type> referenceModelTypeForURI = new HashMap<String,Type>();
-	
-	private Map<String,Type> datatypeModelTypes = new HashMap<String,Type>();
 	
 	public ProfileImporter(Package model, IContainer cemlFolder) {
 		this.model = model;
@@ -60,6 +77,7 @@ public class ProfileImporter {
 
 		initializeLibraries(model);
 		catalogMembers(model);
+		initAbstractTypes(model);
 	}
 	
 	private void initializeLibraries(Package umlPackage) {
@@ -85,6 +103,40 @@ public class ProfileImporter {
 			if (libraryImport == null) {
 				model.createPackageImport(xmlPrimitiveTypes);
 			}
+		}
+	}
+	
+	private void initAbstractTypes(Package umlPackage) {
+		/* - create abstract type: Base
+		 * - import Element, add extends Base
+		 * - import Resource, add extends Base
+		 * - create abstract type: DataType, add extends Element
+		 */
+
+		baseClass = (Class) referenceModelTypeForURI.get(MDHT_URI_BASE + BASE_CLASS_NAME);
+		if (baseClass == null) {
+			baseClass = umlPackage.createOwnedClass(BASE_CLASS_NAME, true);
+			setURIAnnotation(baseClass, MDHT_URI_BASE + BASE_CLASS_NAME);
+		}
+		dataTypeClass = (Class) referenceModelTypeForURI.get(MDHT_URI_BASE + DATATYPE_CLASS_NAME);
+		if (dataTypeClass == null) {
+			dataTypeClass = umlPackage.createOwnedClass(DATATYPE_CLASS_NAME, true);
+			setURIAnnotation(dataTypeClass, MDHT_URI_BASE + DATATYPE_CLASS_NAME);
+		}
+		elementClass = importProfile(ELEMENT_CLASS_NAME);
+		resourceClass = importProfile(RESOURCE_CLASS_NAME);
+		
+		if (elementClass != null && elementClass.getGeneralizations().isEmpty()) {
+			elementClass.createGeneralization(baseClass);
+		}
+		if (resourceClass != null && resourceClass.getGeneralizations().isEmpty()) {
+			resourceClass.createGeneralization(baseClass);
+		}
+	
+		if (elementClass != null && dataTypeClass.getGeneralizations().isEmpty()) {
+			dataTypeClass.createGeneralization(elementClass);
+			// move DataType class to types package
+			dataTypeClass.setPackage(elementClass.getNearestPackage());
 		}
 	}
 	
@@ -212,10 +264,10 @@ public class ProfileImporter {
 		
 		String typePackageName = structureDef.getType().getValue().getName();
 		Package typePackage = model.getNestedPackage(typePackageName, true, UMLPackage.eINSTANCE.getPackage(), true);
-
+		
 		String profileClassName = structureDef.getId().getValue();
-		Class profileClass = typePackage.createOwnedClass(profileClassName, false);
-		profileClass.setIsAbstract(structureDef.getAbstract().isValue());
+		boolean isAbstract = structureDef.getAbstract().isValue();
+		Class profileClass = typePackage.createOwnedClass(profileClassName, isAbstract);
 		
 		setURIAnnotation(profileClass, structureDef.getUrl().getValue());
 		referenceModelTypeForName.put(profileClassName, profileClass);
@@ -234,26 +286,32 @@ public class ProfileImporter {
 		if (structureDef.getBase() != null
 				&& !structureDef.getUrl().getValue().equals(structureDef.getBase().getValue())) {
 			String base = structureDef.getBase().getValue();
-			Class baseClass = null;
+			Class baseProfileClass = null;
 			if (base.startsWith("http://")) {
-				baseClass = importProfileForURI(base);
+				baseProfileClass = importProfileForURI(base);
 			}
 			else {
-				baseClass = importProfile(base);
+				baseProfileClass = importProfile(base);
 			}
 			
-			if (baseClass != null) {
-				profileClass.createGeneralization(baseClass);
+			// Add "DataType" abstract superclass for all data types
+			if ("type".equals(typePackageName) && baseProfileClass != null 
+					&& ELEMENT_CLASS_NAME.equals(baseProfileClass.getName())) {
+				baseProfileClass = dataTypeClass;
+			}
+			
+			if (baseProfileClass != null) {
+				profileClass.createGeneralization(baseProfileClass);
 			}
 		}
 		
-		Map<String,Class> classMap = new HashMap<String,Class>();
+		Map<String,Class> nestedClassMap = new HashMap<String,Class>();
 
 		boolean isProfileElement = true;
 		for (ElementDefinition elementDef : structureDef.getDifferential().getElement()) {
 			// parse path segments to identify nested classes and property names
 			String path = elementDef.getPath().getValue();
-			String[] pathSegments = path.split("\\.");
+//			String[] pathSegments = path.split("\\.");
 			
 			// Create a typeList, then create a property, and maybe a nested class
 			List<Classifier> typeList = new ArrayList<Classifier>();
@@ -270,7 +328,11 @@ public class ProfileImporter {
 					//TODO clarify interpretation of comma-separated value, e.g. in date.profile.xml
 					for (int i = 0; i < typeCodes.length; i++) {
 						String typeName = typeCodes[i].trim();
-						if (typeName.startsWith("xs:")) {
+						if ("*".equals(typeName)) {
+							// TODO this should be limited to Open Type list, http://hl7.org/fhir/2015May/datatypes.html#open
+							typeClass = dataTypeClass;
+						}
+						else if (typeName.startsWith("xs:")) {
 							typeClass = getPrimitiveType(typeName);
 						}
 						else {
@@ -292,7 +354,7 @@ public class ProfileImporter {
 			if (isProfileElement) {
 				// the first ElementDefinition
 				isProfileElement = false;
-				classMap.put(path, profileClass);
+				nestedClassMap.put(path, profileClass);
 				
 				if (elementDef.getName() != null && elementDef.getName().getValue() != null) {
 					profileClass.setName(elementDef.getName().getValue());
@@ -303,6 +365,11 @@ public class ProfileImporter {
 					Classifier baseType = typeList.get(0);
 					//TODO Element has type Element, expand check for circular generalization references
 					if (!baseType.equals(profileClass)) {
+						// Add "DataType" abstract superclass for all data types
+						if ("type".equals(typePackageName) && ELEMENT_CLASS_NAME.equals(baseType.getName())) {
+							baseType = dataTypeClass;
+						}
+						
 						profileClass.createGeneralization(baseType);
 					}
 				}
@@ -318,32 +385,46 @@ public class ProfileImporter {
 			}
 			else {
 				String ownerClassPath = path.substring(0, path.lastIndexOf("."));
-				ownerClass = classMap.get(ownerClassPath);
+				ownerClass = nestedClassMap.get(ownerClassPath);
 
 				if (ownerClass == null) {
 					System.err.println("Owner class should never be null: " + ownerClassPath);
 					continue;
+					
+					//TODO for constraint profiles
+					// convert property to a nested class, then add new property to this nested class
+					// use previous property type as the superclass, e.g. CodeableConcept
+					
 				}
 			}
 			
 			Classifier propertyType = null;
+			// TODO this does not work for constraint profiles..........
 			if (typeList.isEmpty()) {
 				// create a new nested class
 				String nestedClassName = getClassName(elementDef);
 				propertyType = (Class) ownerClass.createNestedClassifier(nestedClassName, UMLPackage.eINSTANCE.getClass_());
-				classMap.put(path, (Class) propertyType);
+				nestedClassMap.put(path, (Class) propertyType);
+				
+				Class backboneElement = importProfile(BACKBONE_ELEMENT_CLASS_NAME);
+				if (backboneElement != null) {
+					propertyType.createGeneralization(backboneElement);
+				}
 			}
 			else if (typeList.size() == 1) {
 				propertyType = typeList.get(0);
 			}
 			else if (typeList.size() > 1) {
-				// TODO all types must be same kind, some elements mix Resource and CodeableConcept
-				// TODO there is no FHIR class that is superclass of all, both Element and Resource
-				if (isSubclassOf(typeList.get(0), "DomainResource")) {
-					propertyType = importProfile("DomainResource");
+				// All types must be same kind, some elements mix Resource and CodeableConcept
+				if (allSubclassOf(typeList, RESOURCE_CLASS_NAME)) {
+					propertyType = resourceClass;
 				}
-				else if (isSubclassOf(typeList.get(0), "Element")) {
-					propertyType = importProfile("Element");
+				else if (allSubclassOf(typeList, DATATYPE_CLASS_NAME)) {
+					propertyType = dataTypeClass;
+				}
+				else {
+					// TODO in FHIR profiles, Reference is a kind of DataType. Using Base is too general.
+					propertyType = baseClass;
 				}
 			}
 
@@ -446,6 +527,22 @@ public class ProfileImporter {
 //		return false;
 //	}
 
+	private boolean allSubclassOf(List<Classifier> typeList, String parentName) {
+		for (Classifier classifier : typeList) {
+			boolean foundIt = false;
+			for (Classifier parent : classifier.allParents()) {
+				if (parentName.equals(parent.getName())) {
+					foundIt = true;
+					break;
+				}
+			}
+			if (!foundIt) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	private boolean isSubclassOf(Classifier umlClass, String parentName) {
 		for (Classifier parent : umlClass.allParents()) {
 			if (parentName.equals(parent.getName())) {
@@ -460,22 +557,28 @@ public class ProfileImporter {
 	 */
 	private boolean isAssociation(Property property) {
 		if (property.getType() instanceof Classifier 
-				&& (isSubclassOf((Classifier)property.getType(), "DomainResource") || property.getType().getOwner() instanceof Class)) {
+				&& (isSubclassOf((Classifier)property.getType(), RESOURCE_CLASS_NAME) 
+						|| property.getType().getOwner() instanceof Class)) {
 			return true;
 		}
 		
 		return false;
 	}
 
-	private Property createAssociation(Class umlClass, Property targetProp) {
+	private Property createAssociation(Class sourceClass, Property targetProp) {
 		if (isAssociation(targetProp)) {
-			Association association = (Association) model.createOwnedType(null, UMLPackage.eINSTANCE.getAssociation());
+			Association association = (Association) sourceClass.getNearestPackage().createOwnedType(null, UMLPackage.eINSTANCE.getAssociation());
 			Property sourceProp = UMLFactory.eINSTANCE.createProperty();
-			sourceProp.setType(umlClass);
+			sourceProp.setType(sourceClass);
 			sourceProp.setLower(1);
 			sourceProp.setUpper(1);
 			association.getOwnedEnds().add(sourceProp);
 			association.getMemberEnds().add(targetProp);
+			
+			// associations to nested classes must be composite
+			if (targetProp.getType().getOwner() instanceof Class) {
+				targetProp.setAggregation(AggregationKind.COMPOSITE_LITERAL);
+			}
 		}
 		
 		return targetProp;

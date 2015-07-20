@@ -70,11 +70,11 @@ public class ImportProfileAction implements IObjectActionDelegate {
 					IContainer profileFolder = getProfileFolder();
 					if (profileFolder != null) {
 						ProfileImporter umlImporter = new ProfileImporter(umlPackage, profileFolder);
-//						umlImporter.importProfile("DomainResource");
 //						umlImporter.importProfile("Observation");
 						umlImporter.importProfile("Condition");
-//						umlImporter.importProfile("cda-organization");
-						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
+						umlImporter.importProfile("StructureDefinition");
+						umlImporter.importProfile("Conformance");
+//						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
 						
 //						umlImporter.importAllProfiles();
 					}

@@ -1,0 +1,66 @@
+Importing core model:
+
+BUGS and ISSUES:
+- Property type for TypeChoice
+  -- Issue: in FHIR, Reference is a kind of Type -> using Base
+
+--------------------
+
+- Dynagram
+  -- New menu: Expand References (true by default)
+     --- use to collapse Resource associations
+  -- Add to default preferences
+
+- Submit bug on Conformance.rest.interaction
+
+- Import profiles: prompt user to select profile file or folder (all)
+  -- filter by file name regex?  e.g. *daf*
+
+- Import filter to include only core spec
+  -- in current build only, base = null
+  -- include any constraint profiles referenced by another, e.g. Age
+  
+- Use DITA to publish FHIR model as Help plugin
+
+- Constraint paths, need to look ahead to determine if nested class
+  -- in current, anything without 'base' is a constraint or extension
+
+- Reuse of SD nested class, e.g. Questionnaire Group is reused (currently duplicated)
+
+- Add XML serialization metadata on import, e.g. ElementDefinition <representation value="xmlAttr"/>
+
+- Create stereotype
+  -- TypeChoice
+  -- StructureDef URI
+  
+- Add annotation UI, display TypeChoice
+
+- Assign element.id as Ecore Id
+  -- create derived model, test re-importing core w/o breaking references
+  -- Issue: no id for nested classes, also need id for all properties to enable redefine/subset
+     -- use path as Ecore Id, if no FHIR id?
+     
+- Import constraints
+
+- Import operations
+
+- Import value sets, assign binding constraint
+  -- first iteration: use existing terminology profile and UI
+  
+- Slicing, used in Conformance
+  -- property subsetting in UML
+
+- Extensions
+  -- It appears that extension structure is simply a *constraint* on the Extension datatype ???
+  -- With context type and context(s)
+
+CHANGES IN SEPT RELEASE
+
+- Change StructureDefinition.type, add StructureDefinition.constrainedType
+http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemEdit&tracker_id=677&tracker_item_id=6079
+
+COMPLETED
+
+- Abstract mother of all classes: Base
+- Abstract mother of all data types: Type extends Element
+
