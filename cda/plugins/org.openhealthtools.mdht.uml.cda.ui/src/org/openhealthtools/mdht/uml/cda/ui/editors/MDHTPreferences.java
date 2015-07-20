@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 
 public class MDHTPreferences extends PreferencePage implements IWorkbenchPreferencePage {
 
-	private static String CARDINALITY_CHECK_BOX_LABEL = "Show cardinality after the element name"
+	private static String CARDINALITY_CHECK_BOX_LABEL = "Show multiplicity after the element name"
 			+ " in the Properties view";
 
-	private static String CARDINALITY_CHECK_BOX_TOOLTIP = "Show cardinality after the element name in the"
+	private static String CARDINALITY_CHECK_BOX_TOOLTIP = "Show multiplicity after the element name in the"
 			+ " Properties view. This does not affect the DITA publication (PDF, Online) - "
 			+ "for that, dita-transform.xml needs to be adjusted to say "
 			+ "cardinalityAfterElement=\"true\" in <transformToDita>";
