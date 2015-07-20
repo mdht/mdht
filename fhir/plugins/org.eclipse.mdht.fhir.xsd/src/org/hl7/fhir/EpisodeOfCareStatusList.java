@@ -85,7 +85,7 @@ public enum EpisodeOfCareStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This episode of care is planned to start at the date specified in the period.start. During this status an organization may perform assessments to determine if they are eligible to receive services, or be organizing to make resources available to provide care services.
+	 * This episode of care is planned to start at the date specified in the period.start. During this status an organization may perform assessments to determine if they are eligible to receive services, or be organizing to make resources available to provide care services
 	 * <!-- end-model-doc -->
 	 * @see #PLANNED
 	 * @model name="planned"
@@ -99,7 +99,7 @@ public enum EpisodeOfCareStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This episode has been placed on a waitlist, pending the episode being made active (or cancelled).
+	 * This episode has been placed on a waitlist, pending the episode being made active (or cancelled)
 	 * <!-- end-model-doc -->
 	 * @see #WAITLIST
 	 * @model name="waitlist"
@@ -113,7 +113,7 @@ public enum EpisodeOfCareStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This episode of care is current.
+	 * This episode of care is current
 	 * <!-- end-model-doc -->
 	 * @see #ACTIVE
 	 * @model name="active"
@@ -127,7 +127,7 @@ public enum EpisodeOfCareStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This episode of care is on hold, the organization has limited responsibility for the patient (such as while on respite).
+	 * This episode of care is on hold, the organization has limited responsibility for the patient (such as while on respite)
 	 * <!-- end-model-doc -->
 	 * @see #ONHOLD
 	 * @model name="onhold"
@@ -141,7 +141,7 @@ public enum EpisodeOfCareStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This episode of care is finished at the organization is not expecting to be providing care to the patient. Can also be known as "closed", "completed" or other similar terms.
+	 * This episode of care is finished at the organization is not expecting to be providing care to the patient. Can also be known as "closed", "completed" or other similar terms
 	 * <!-- end-model-doc -->
 	 * @see #FINISHED
 	 * @model name="finished"
@@ -155,7 +155,7 @@ public enum EpisodeOfCareStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The episode of care was cancelled, or withdrawn from service, often selected during the planned stage as the patient may have gone elsewhere, or the circumstances have changed and the organization is unable to provide the care. It indicates that services terminated outside the planned/expected workflow.
+	 * The episode of care was cancelled, or withdrawn from service, often selected during the planned stage as the patient may have gone elsewhere, or the circumstances have changed and the organization is unable to provide the care. It indicates that services terminated outside the planned/expected workflow
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"

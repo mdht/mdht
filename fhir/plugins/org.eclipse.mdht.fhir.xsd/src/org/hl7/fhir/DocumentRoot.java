@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.hl7.fhir.DocumentRoot#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentRoot#getAccount <em>Account</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getAllergyIntolerance <em>Allergy Intolerance</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getAppointment <em>Appointment</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getAppointmentResponse <em>Appointment Response</em>}</li>
@@ -69,6 +70,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.hl7.fhir.DocumentRoot#getImagingStudy <em>Imaging Study</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getImmunization <em>Immunization</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getImmunizationRecommendation <em>Immunization Recommendation</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentRoot#getImplementationGuide <em>Implementation Guide</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getList <em>List</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getLocation <em>Location</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getMedia <em>Media</em>}</li>
@@ -110,6 +112,9 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.hl7.fhir.DocumentRoot#getSubscription <em>Subscription</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getSubstance <em>Substance</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getSupply <em>Supply</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentRoot#getSupplyDelivery <em>Supply Delivery</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentRoot#getSupplyRequest <em>Supply Request</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentRoot#getTestScript <em>Test Script</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getValueSet <em>Value Set</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getVisionPrescription <em>Vision Prescription</em>}</li>
  * </ul>
@@ -171,6 +176,32 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	EMap<String, String> getXSISchemaLocation();
+
+	/**
+	 * Returns the value of the '<em><b>Account</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centres, etc.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Account</em>' containment reference.
+	 * @see #setAccount(Account)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_Account()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='Account' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Account getAccount();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getAccount <em>Account</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Account</em>' containment reference.
+	 * @see #getAccount()
+	 * @generated
+	 */
+	void setAccount(Account value);
 
 	/**
 	 * Returns the value of the '<em><b>Allergy Intolerance</b></em>' containment reference.
@@ -749,7 +780,7 @@ public interface DocumentRoot extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.
+	 * This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.  Medical devices includes durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.  Non medical devices may includes things such as a machine, a cellphone, a computer, an application, etc.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Device</em>' containment reference.
 	 * @see #setDevice(Device)
@@ -1393,6 +1424,32 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	void setImmunizationRecommendation(ImmunizationRecommendation value);
+
+	/**
+	 * Returns the value of the '<em><b>Implementation Guide</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A set of rules or how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole, and to publish a computable definition of all the parts.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Implementation Guide</em>' containment reference.
+	 * @see #setImplementationGuide(ImplementationGuide)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_ImplementationGuide()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='ImplementationGuide' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	ImplementationGuide getImplementationGuide();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getImplementationGuide <em>Implementation Guide</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implementation Guide</em>' containment reference.
+	 * @see #getImplementationGuide()
+	 * @generated
+	 */
+	void setImplementationGuide(ImplementationGuide value);
 
 	/**
 	 * Returns the value of the '<em><b>List</b></em>' containment reference.
@@ -2461,6 +2518,84 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	void setSupply(Supply value);
+
+	/**
+	 * Returns the value of the '<em><b>Supply Delivery</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Record of delivery of what is supply.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Supply Delivery</em>' containment reference.
+	 * @see #setSupplyDelivery(SupplyDelivery)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_SupplyDelivery()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='SupplyDelivery' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	SupplyDelivery getSupplyDelivery();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getSupplyDelivery <em>Supply Delivery</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Supply Delivery</em>' containment reference.
+	 * @see #getSupplyDelivery()
+	 * @generated
+	 */
+	void setSupplyDelivery(SupplyDelivery value);
+
+	/**
+	 * Returns the value of the '<em><b>Supply Request</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A record of a request for a medication, substance or device used in the healthcare setting.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Supply Request</em>' containment reference.
+	 * @see #setSupplyRequest(SupplyRequest)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_SupplyRequest()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='SupplyRequest' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	SupplyRequest getSupplyRequest();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getSupplyRequest <em>Supply Request</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Supply Request</em>' containment reference.
+	 * @see #getSupplyRequest()
+	 * @generated
+	 */
+	void setSupplyRequest(SupplyRequest value);
+
+	/**
+	 * Returns the value of the '<em><b>Test Script</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Test Script</em>' containment reference.
+	 * @see #setTestScript(TestScript)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_TestScript()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='TestScript' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	TestScript getTestScript();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getTestScript <em>Test Script</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Test Script</em>' containment reference.
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	void setTestScript(TestScript value);
 
 	/**
 	 * Returns the value of the '<em><b>Value Set</b></em>' containment reference.

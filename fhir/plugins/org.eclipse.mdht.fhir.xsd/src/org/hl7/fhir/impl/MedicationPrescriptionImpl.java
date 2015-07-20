@@ -45,7 +45,8 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getReasonCodeableConcept <em>Reason Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getReasonReference <em>Reason Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getNote <em>Note</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getMedication <em>Medication</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getMedicationReference <em>Medication Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getDosageInstruction <em>Dosage Instruction</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getDispense <em>Dispense</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionImpl#getSubstitution <em>Substitution</em>}</li>
@@ -145,14 +146,24 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 	protected org.hl7.fhir.String note;
 
 	/**
-	 * The cached value of the '{@link #getMedication() <em>Medication</em>}' containment reference.
+	 * The cached value of the '{@link #getMedicationCodeableConcept() <em>Medication Codeable Concept</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMedication()
+	 * @see #getMedicationCodeableConcept()
 	 * @generated
 	 * @ordered
 	 */
-	protected Reference medication;
+	protected CodeableConcept medicationCodeableConcept;
+
+	/**
+	 * The cached value of the '{@link #getMedicationReference() <em>Medication Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMedicationReference()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reference medicationReference;
 
 	/**
 	 * The cached value of the '{@link #getDosageInstruction() <em>Dosage Instruction</em>}' containment reference list.
@@ -564,8 +575,8 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference getMedication() {
-		return medication;
+	public CodeableConcept getMedicationCodeableConcept() {
+		return medicationCodeableConcept;
 	}
 
 	/**
@@ -573,11 +584,11 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMedication(Reference newMedication, NotificationChain msgs) {
-		Reference oldMedication = medication;
-		medication = newMedication;
+	public NotificationChain basicSetMedicationCodeableConcept(CodeableConcept newMedicationCodeableConcept, NotificationChain msgs) {
+		CodeableConcept oldMedicationCodeableConcept = medicationCodeableConcept;
+		medicationCodeableConcept = newMedicationCodeableConcept;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION, oldMedication, newMedication);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT, oldMedicationCodeableConcept, newMedicationCodeableConcept);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -588,18 +599,61 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMedication(Reference newMedication) {
-		if (newMedication != medication) {
+	public void setMedicationCodeableConcept(CodeableConcept newMedicationCodeableConcept) {
+		if (newMedicationCodeableConcept != medicationCodeableConcept) {
 			NotificationChain msgs = null;
-			if (medication != null)
-				msgs = ((InternalEObject)medication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION, null, msgs);
-			if (newMedication != null)
-				msgs = ((InternalEObject)newMedication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION, null, msgs);
-			msgs = basicSetMedication(newMedication, msgs);
+			if (medicationCodeableConcept != null)
+				msgs = ((InternalEObject)medicationCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT, null, msgs);
+			if (newMedicationCodeableConcept != null)
+				msgs = ((InternalEObject)newMedicationCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT, null, msgs);
+			msgs = basicSetMedicationCodeableConcept(newMedicationCodeableConcept, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION, newMedication, newMedication));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT, newMedicationCodeableConcept, newMedicationCodeableConcept));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Reference getMedicationReference() {
+		return medicationReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMedicationReference(Reference newMedicationReference, NotificationChain msgs) {
+		Reference oldMedicationReference = medicationReference;
+		medicationReference = newMedicationReference;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE, oldMedicationReference, newMedicationReference);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMedicationReference(Reference newMedicationReference) {
+		if (newMedicationReference != medicationReference) {
+			NotificationChain msgs = null;
+			if (medicationReference != null)
+				msgs = ((InternalEObject)medicationReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE, null, msgs);
+			if (newMedicationReference != null)
+				msgs = ((InternalEObject)newMedicationReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE, null, msgs);
+			msgs = basicSetMedicationReference(newMedicationReference, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE, newMedicationReference, newMedicationReference));
 	}
 
 	/**
@@ -726,8 +780,10 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 				return basicSetReasonReference(null, msgs);
 			case FhirPackage.MEDICATION_PRESCRIPTION__NOTE:
 				return basicSetNote(null, msgs);
-			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION:
-				return basicSetMedication(null, msgs);
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT:
+				return basicSetMedicationCodeableConcept(null, msgs);
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE:
+				return basicSetMedicationReference(null, msgs);
 			case FhirPackage.MEDICATION_PRESCRIPTION__DOSAGE_INSTRUCTION:
 				return ((InternalEList<?>)getDosageInstruction()).basicRemove(otherEnd, msgs);
 			case FhirPackage.MEDICATION_PRESCRIPTION__DISPENSE:
@@ -764,8 +820,10 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 				return getReasonReference();
 			case FhirPackage.MEDICATION_PRESCRIPTION__NOTE:
 				return getNote();
-			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION:
-				return getMedication();
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT:
+				return getMedicationCodeableConcept();
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE:
+				return getMedicationReference();
 			case FhirPackage.MEDICATION_PRESCRIPTION__DOSAGE_INSTRUCTION:
 				return getDosageInstruction();
 			case FhirPackage.MEDICATION_PRESCRIPTION__DISPENSE:
@@ -813,8 +871,11 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 			case FhirPackage.MEDICATION_PRESCRIPTION__NOTE:
 				setNote((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION:
-				setMedication((Reference)newValue);
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT:
+				setMedicationCodeableConcept((CodeableConcept)newValue);
+				return;
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE:
+				setMedicationReference((Reference)newValue);
 				return;
 			case FhirPackage.MEDICATION_PRESCRIPTION__DOSAGE_INSTRUCTION:
 				getDosageInstruction().clear();
@@ -865,8 +926,11 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 			case FhirPackage.MEDICATION_PRESCRIPTION__NOTE:
 				setNote((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION:
-				setMedication((Reference)null);
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT:
+				setMedicationCodeableConcept((CodeableConcept)null);
+				return;
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE:
+				setMedicationReference((Reference)null);
 				return;
 			case FhirPackage.MEDICATION_PRESCRIPTION__DOSAGE_INSTRUCTION:
 				getDosageInstruction().clear();
@@ -907,8 +971,10 @@ public class MedicationPrescriptionImpl extends DomainResourceImpl implements Me
 				return reasonReference != null;
 			case FhirPackage.MEDICATION_PRESCRIPTION__NOTE:
 				return note != null;
-			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION:
-				return medication != null;
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_CODEABLE_CONCEPT:
+				return medicationCodeableConcept != null;
+			case FhirPackage.MEDICATION_PRESCRIPTION__MEDICATION_REFERENCE:
+				return medicationReference != null;
 			case FhirPackage.MEDICATION_PRESCRIPTION__DOSAGE_INSTRUCTION:
 				return dosageInstruction != null && !dosageInstruction.isEmpty();
 			case FhirPackage.MEDICATION_PRESCRIPTION__DISPENSE:

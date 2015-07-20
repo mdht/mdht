@@ -105,7 +105,7 @@ public enum NutritionOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request has been proposed.
+	 * The request has been proposed
 	 * <!-- end-model-doc -->
 	 * @see #PROPOSED
 	 * @model name="proposed"
@@ -119,7 +119,7 @@ public enum NutritionOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request is in preliminary form prior to being sent.
+	 * The request is in preliminary form prior to being sent
 	 * <!-- end-model-doc -->
 	 * @see #DRAFT
 	 * @model name="draft"
@@ -133,7 +133,7 @@ public enum NutritionOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request has been planned.
+	 * The request has been planned
 	 * <!-- end-model-doc -->
 	 * @see #PLANNED
 	 * @model name="planned"
@@ -147,7 +147,7 @@ public enum NutritionOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request has been placed.
+	 * The request has been placed
 	 * <!-- end-model-doc -->
 	 * @see #REQUESTED
 	 * @model name="requested"

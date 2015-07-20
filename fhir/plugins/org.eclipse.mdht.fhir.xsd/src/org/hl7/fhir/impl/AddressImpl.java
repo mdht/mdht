@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Address;
+import org.hl7.fhir.AddressType;
 import org.hl7.fhir.AddressUse;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Period;
@@ -31,6 +32,7 @@ import org.hl7.fhir.Period;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getUse <em>Use</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.AddressImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getLine <em>Line</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getCity <em>City</em>}</li>
@@ -52,6 +54,16 @@ public class AddressImpl extends ElementImpl implements Address {
 	 * @ordered
 	 */
 	protected AddressUse use;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected AddressType type;
 
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
@@ -183,6 +195,49 @@ public class AddressImpl extends ElementImpl implements Address {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ADDRESS__USE, newUse, newUse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AddressType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetType(AddressType newType, NotificationChain msgs) {
+		AddressType oldType = type;
+		type = newType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ADDRESS__TYPE, oldType, newType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(AddressType newType) {
+		if (newType != type) {
+			NotificationChain msgs = null;
+			if (type != null)
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ADDRESS__TYPE, null, msgs);
+			if (newType != null)
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ADDRESS__TYPE, null, msgs);
+			msgs = basicSetType(newType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ADDRESS__TYPE, newType, newType));
 	}
 
 	/**
@@ -465,6 +520,8 @@ public class AddressImpl extends ElementImpl implements Address {
 		switch (featureID) {
 			case FhirPackage.ADDRESS__USE:
 				return basicSetUse(null, msgs);
+			case FhirPackage.ADDRESS__TYPE:
+				return basicSetType(null, msgs);
 			case FhirPackage.ADDRESS__TEXT:
 				return basicSetText(null, msgs);
 			case FhirPackage.ADDRESS__LINE:
@@ -493,6 +550,8 @@ public class AddressImpl extends ElementImpl implements Address {
 		switch (featureID) {
 			case FhirPackage.ADDRESS__USE:
 				return getUse();
+			case FhirPackage.ADDRESS__TYPE:
+				return getType();
 			case FhirPackage.ADDRESS__TEXT:
 				return getText();
 			case FhirPackage.ADDRESS__LINE:
@@ -522,6 +581,9 @@ public class AddressImpl extends ElementImpl implements Address {
 		switch (featureID) {
 			case FhirPackage.ADDRESS__USE:
 				setUse((AddressUse)newValue);
+				return;
+			case FhirPackage.ADDRESS__TYPE:
+				setType((AddressType)newValue);
 				return;
 			case FhirPackage.ADDRESS__TEXT:
 				setText((org.hl7.fhir.String)newValue);
@@ -560,6 +622,9 @@ public class AddressImpl extends ElementImpl implements Address {
 			case FhirPackage.ADDRESS__USE:
 				setUse((AddressUse)null);
 				return;
+			case FhirPackage.ADDRESS__TYPE:
+				setType((AddressType)null);
+				return;
 			case FhirPackage.ADDRESS__TEXT:
 				setText((org.hl7.fhir.String)null);
 				return;
@@ -595,6 +660,8 @@ public class AddressImpl extends ElementImpl implements Address {
 		switch (featureID) {
 			case FhirPackage.ADDRESS__USE:
 				return use != null;
+			case FhirPackage.ADDRESS__TYPE:
+				return type != null;
 			case FhirPackage.ADDRESS__TEXT:
 				return text != null;
 			case FhirPackage.ADDRESS__LINE:

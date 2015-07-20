@@ -17,14 +17,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.hl7.fhir.Base64Binary;
 import org.hl7.fhir.Bundle;
 import org.hl7.fhir.BundleEntry;
 import org.hl7.fhir.BundleLink;
 import org.hl7.fhir.BundleType;
 import org.hl7.fhir.FhirPackage;
+import org.hl7.fhir.Signature;
 import org.hl7.fhir.UnsignedInt;
-import org.hl7.fhir.Uri;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +34,6 @@ import org.hl7.fhir.Uri;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.BundleImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.BundleImpl#getBase <em>Base</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.BundleImpl#getTotal <em>Total</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.BundleImpl#getLink <em>Link</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.BundleImpl#getEntry <em>Entry</em>}</li>
@@ -54,16 +52,6 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 	 * @ordered
 	 */
 	protected BundleType type;
-
-	/**
-	 * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBase()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uri base;
 
 	/**
 	 * The cached value of the '{@link #getTotal() <em>Total</em>}' containment reference.
@@ -103,7 +91,7 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 	 * @generated
 	 * @ordered
 	 */
-	protected Base64Binary signature;
+	protected Signature signature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,49 +153,6 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE__TYPE, newType, newType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Uri getBase() {
-		return base;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBase(Uri newBase, NotificationChain msgs) {
-		Uri oldBase = base;
-		base = newBase;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE__BASE, oldBase, newBase);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBase(Uri newBase) {
-		if (newBase != base) {
-			NotificationChain msgs = null;
-			if (base != null)
-				msgs = ((InternalEObject)base).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE__BASE, null, msgs);
-			if (newBase != null)
-				msgs = ((InternalEObject)newBase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE__BASE, null, msgs);
-			msgs = basicSetBase(newBase, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE__BASE, newBase, newBase));
 	}
 
 	/**
@@ -282,7 +227,7 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Base64Binary getSignature() {
+	public Signature getSignature() {
 		return signature;
 	}
 
@@ -291,8 +236,8 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSignature(Base64Binary newSignature, NotificationChain msgs) {
-		Base64Binary oldSignature = signature;
+	public NotificationChain basicSetSignature(Signature newSignature, NotificationChain msgs) {
+		Signature oldSignature = signature;
 		signature = newSignature;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE__SIGNATURE, oldSignature, newSignature);
@@ -306,7 +251,7 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSignature(Base64Binary newSignature) {
+	public void setSignature(Signature newSignature) {
 		if (newSignature != signature) {
 			NotificationChain msgs = null;
 			if (signature != null)
@@ -330,8 +275,6 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 		switch (featureID) {
 			case FhirPackage.BUNDLE__TYPE:
 				return basicSetType(null, msgs);
-			case FhirPackage.BUNDLE__BASE:
-				return basicSetBase(null, msgs);
 			case FhirPackage.BUNDLE__TOTAL:
 				return basicSetTotal(null, msgs);
 			case FhirPackage.BUNDLE__LINK:
@@ -354,8 +297,6 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 		switch (featureID) {
 			case FhirPackage.BUNDLE__TYPE:
 				return getType();
-			case FhirPackage.BUNDLE__BASE:
-				return getBase();
 			case FhirPackage.BUNDLE__TOTAL:
 				return getTotal();
 			case FhirPackage.BUNDLE__LINK:
@@ -380,9 +321,6 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 			case FhirPackage.BUNDLE__TYPE:
 				setType((BundleType)newValue);
 				return;
-			case FhirPackage.BUNDLE__BASE:
-				setBase((Uri)newValue);
-				return;
 			case FhirPackage.BUNDLE__TOTAL:
 				setTotal((UnsignedInt)newValue);
 				return;
@@ -395,7 +333,7 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 				getEntry().addAll((Collection<? extends BundleEntry>)newValue);
 				return;
 			case FhirPackage.BUNDLE__SIGNATURE:
-				setSignature((Base64Binary)newValue);
+				setSignature((Signature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -412,9 +350,6 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 			case FhirPackage.BUNDLE__TYPE:
 				setType((BundleType)null);
 				return;
-			case FhirPackage.BUNDLE__BASE:
-				setBase((Uri)null);
-				return;
 			case FhirPackage.BUNDLE__TOTAL:
 				setTotal((UnsignedInt)null);
 				return;
@@ -425,7 +360,7 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 				getEntry().clear();
 				return;
 			case FhirPackage.BUNDLE__SIGNATURE:
-				setSignature((Base64Binary)null);
+				setSignature((Signature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -441,8 +376,6 @@ public class BundleImpl extends ResourceImpl implements Bundle {
 		switch (featureID) {
 			case FhirPackage.BUNDLE__TYPE:
 				return type != null;
-			case FhirPackage.BUNDLE__BASE:
-				return base != null;
 			case FhirPackage.BUNDLE__TOTAL:
 				return total != null;
 			case FhirPackage.BUNDLE__LINK:

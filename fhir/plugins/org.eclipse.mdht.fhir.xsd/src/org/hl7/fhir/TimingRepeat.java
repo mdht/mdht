@@ -17,9 +17,12 @@ package org.hl7.fhir;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.TimingRepeat#getBounds <em>Bounds</em>}</li>
+ *   <li>{@link org.hl7.fhir.TimingRepeat#getBoundsDuration <em>Bounds Duration</em>}</li>
+ *   <li>{@link org.hl7.fhir.TimingRepeat#getBoundsRange <em>Bounds Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.TimingRepeat#getBoundsPeriod <em>Bounds Period</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getCount <em>Count</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getDuration <em>Duration</em>}</li>
+ *   <li>{@link org.hl7.fhir.TimingRepeat#getDurationMax <em>Duration Max</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getDurationUnits <em>Duration Units</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getFrequency <em>Frequency</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getFrequencyMax <em>Frequency Max</em>}</li>
@@ -35,30 +38,85 @@ package org.hl7.fhir;
  */
 public interface TimingRepeat extends Element {
 	/**
-	 * Returns the value of the '<em><b>Bounds</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Bounds Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bounds Duration</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Outer bounds for start and/or end limits of the timing schedule.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Bounds</em>' containment reference.
-	 * @see #setBounds(Period)
-	 * @see org.hl7.fhir.FhirPackage#getTimingRepeat_Bounds()
+	 * @return the value of the '<em>Bounds Duration</em>' containment reference.
+	 * @see #setBoundsDuration(Duration)
+	 * @see org.hl7.fhir.FhirPackage#getTimingRepeat_BoundsDuration()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='bounds' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='boundsDuration' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Period getBounds();
+	Duration getBoundsDuration();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.TimingRepeat#getBounds <em>Bounds</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.TimingRepeat#getBoundsDuration <em>Bounds Duration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bounds</em>' containment reference.
-	 * @see #getBounds()
+	 * @param value the new value of the '<em>Bounds Duration</em>' containment reference.
+	 * @see #getBoundsDuration()
 	 * @generated
 	 */
-	void setBounds(Period value);
+	void setBoundsDuration(Duration value);
+
+	/**
+	 * Returns the value of the '<em><b>Bounds Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bounds Range</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bounds Range</em>' containment reference.
+	 * @see #setBoundsRange(Range)
+	 * @see org.hl7.fhir.FhirPackage#getTimingRepeat_BoundsRange()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='boundsRange' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Range getBoundsRange();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.TimingRepeat#getBoundsRange <em>Bounds Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bounds Range</em>' containment reference.
+	 * @see #getBoundsRange()
+	 * @generated
+	 */
+	void setBoundsRange(Range value);
+
+	/**
+	 * Returns the value of the '<em><b>Bounds Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bounds Period</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bounds Period</em>' containment reference.
+	 * @see #setBoundsPeriod(Period)
+	 * @see org.hl7.fhir.FhirPackage#getTimingRepeat_BoundsPeriod()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='boundsPeriod' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Period getBoundsPeriod();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.TimingRepeat#getBoundsPeriod <em>Bounds Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bounds Period</em>' containment reference.
+	 * @see #getBoundsPeriod()
+	 * @generated
+	 */
+	void setBoundsPeriod(Period value);
 
 	/**
 	 * Returns the value of the '<em><b>Count</b></em>' containment reference.
@@ -111,6 +169,32 @@ public interface TimingRepeat extends Element {
 	 * @generated
 	 */
 	void setDuration(Decimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Duration Max</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The upper limit of how long this thing happens for when it happens.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Duration Max</em>' containment reference.
+	 * @see #setDurationMax(Decimal)
+	 * @see org.hl7.fhir.FhirPackage#getTimingRepeat_DurationMax()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='durationMax' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Decimal getDurationMax();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.TimingRepeat#getDurationMax <em>Duration Max</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Duration Max</em>' containment reference.
+	 * @see #getDurationMax()
+	 * @generated
+	 */
+	void setDurationMax(Decimal value);
 
 	/**
 	 * Returns the value of the '<em><b>Duration Units</b></em>' containment reference.
@@ -169,7 +253,8 @@ public interface TimingRepeat extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range.
+	 * If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period 
+	 * 						or period range.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Frequency Max</em>' containment reference.
 	 * @see #setFrequencyMax(org.hl7.fhir.Integer)

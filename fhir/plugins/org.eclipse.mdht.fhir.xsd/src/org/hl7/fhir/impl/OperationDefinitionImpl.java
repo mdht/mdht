@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Code;
-import org.hl7.fhir.ConformanceResourceStatus;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.OperationDefinition;
@@ -138,7 +137,7 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	 * @generated
 	 * @ordered
 	 */
-	protected ConformanceResourceStatus status;
+	protected Code status;
 
 	/**
 	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
@@ -544,7 +543,7 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConformanceResourceStatus getStatus() {
+	public Code getStatus() {
 		return status;
 	}
 
@@ -553,8 +552,8 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(ConformanceResourceStatus newStatus, NotificationChain msgs) {
-		ConformanceResourceStatus oldStatus = status;
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__STATUS, oldStatus, newStatus);
@@ -568,7 +567,7 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(ConformanceResourceStatus newStatus) {
+	public void setStatus(Code newStatus) {
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
@@ -1125,7 +1124,7 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 				setRequirements((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__STATUS:
-				setStatus((ConformanceResourceStatus)newValue);
+				setStatus((Code)newValue);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)newValue);
@@ -1196,7 +1195,7 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 				setRequirements((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__STATUS:
-				setStatus((ConformanceResourceStatus)null);
+				setStatus((Code)null);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)null);

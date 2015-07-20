@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ConformanceRest#getSecurity <em>Security</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getResource <em>Resource</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getInteraction <em>Interaction</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConformanceRest#getTransactionMode <em>Transaction Mode</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getDocumentMailbox <em>Document Mailbox</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getCompartment <em>Compartment</em>}</li>
@@ -141,6 +142,32 @@ public interface ConformanceRest extends BackboneElement {
 	 * @generated
 	 */
 	EList<ConformanceInteraction1> getInteraction();
+
+	/**
+	 * Returns the value of the '<em><b>Transaction Mode</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A code that indicates how transactions are supported.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Transaction Mode</em>' containment reference.
+	 * @see #setTransactionMode(TransactionMode)
+	 * @see org.hl7.fhir.FhirPackage#getConformanceRest_TransactionMode()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='transactionMode' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	TransactionMode getTransactionMode();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ConformanceRest#getTransactionMode <em>Transaction Mode</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Transaction Mode</em>' containment reference.
+	 * @see #getTransactionMode()
+	 * @generated
+	 */
+	void setTransactionMode(TransactionMode value);
 
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' containment reference list.

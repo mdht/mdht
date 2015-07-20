@@ -45,7 +45,7 @@ public enum LocationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Location resource represents a specific instance of a Location (e.g. Operating Theatre 1A).
+	 * The Location resource represents a specific instance of a Location (e.g. Operating Theatre 1A)
 	 * <!-- end-model-doc -->
 	 * @see #INSTANCE
 	 * @model name="instance"
@@ -59,7 +59,7 @@ public enum LocationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Location represents a class of Locations (e.g. Any Operating Theatre). Although this class of locations could be constrained within a specific boundary (such as organization, or parent location, address etc).
+	 * The Location represents a class of Locations (e.g. Any Operating Theatre). Although this class of locations could be constrained within a specific boundary (such as organization, or parent location, address etc)
 	 * <!-- end-model-doc -->
 	 * @see #KIND
 	 * @model name="kind"

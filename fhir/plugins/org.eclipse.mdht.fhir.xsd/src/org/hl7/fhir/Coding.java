@@ -21,7 +21,7 @@ package org.hl7.fhir;
  *   <li>{@link org.hl7.fhir.Coding#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.Coding#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.Coding#getDisplay <em>Display</em>}</li>
- *   <li>{@link org.hl7.fhir.Coding#getPrimary <em>Primary</em>}</li>
+ *   <li>{@link org.hl7.fhir.Coding#getUserSelected <em>User Selected</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getCoding()
@@ -134,29 +134,29 @@ public interface Coding extends Element {
 	void setDisplay(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary</b></em>' containment reference.
+	 * Returns the value of the '<em><b>User Selected</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Indicates that this code was chosen by a user directly - i.e. off a pick list of available items (codes or displays).
+	 * Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Primary</em>' containment reference.
-	 * @see #setPrimary(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getCoding_Primary()
+	 * @return the value of the '<em>User Selected</em>' containment reference.
+	 * @see #setUserSelected(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getCoding_UserSelected()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='primary' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='userSelected' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.Boolean getPrimary();
+	org.hl7.fhir.Boolean getUserSelected();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Coding#getPrimary <em>Primary</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Coding#getUserSelected <em>User Selected</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary</em>' containment reference.
-	 * @see #getPrimary()
+	 * @param value the new value of the '<em>User Selected</em>' containment reference.
+	 * @see #getUserSelected()
 	 * @generated
 	 */
-	void setPrimary(org.hl7.fhir.Boolean value);
+	void setUserSelected(org.hl7.fhir.Boolean value);
 
 } // Coding

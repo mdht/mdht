@@ -24,6 +24,7 @@ import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Instant;
 import org.hl7.fhir.Observation;
+import org.hl7.fhir.ObservationComponent;
 import org.hl7.fhir.ObservationReferenceRange;
 import org.hl7.fhir.ObservationRelated;
 import org.hl7.fhir.ObservationReliability;
@@ -45,6 +46,7 @@ import org.hl7.fhir.Time;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getValueQuantity <em>Value Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getValueCodeableConcept <em>Value Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getValueString <em>Value String</em>}</li>
@@ -58,8 +60,8 @@ import org.hl7.fhir.Time;
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getDataAbsentReason <em>Data Absent Reason</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getInterpretation <em>Interpretation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getAppliesDateTime <em>Applies Date Time</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getAppliesPeriod <em>Applies Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getEffectiveDateTime <em>Effective Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getEffectivePeriod <em>Effective Period</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getIssued <em>Issued</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getReliability <em>Reliability</em>}</li>
@@ -74,6 +76,7 @@ import org.hl7.fhir.Time;
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getReferenceRange <em>Reference Range</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getRelated <em>Related</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ObservationImpl#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +91,16 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * @ordered
 	 */
 	protected CodeableConcept code;
+
+	/**
+	 * The cached value of the '{@link #getCategory() <em>Category</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategory()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept category;
 
 	/**
 	 * The cached value of the '{@link #getValueQuantity() <em>Value Quantity</em>}' containment reference.
@@ -220,24 +233,24 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	protected org.hl7.fhir.String comments;
 
 	/**
-	 * The cached value of the '{@link #getAppliesDateTime() <em>Applies Date Time</em>}' containment reference.
+	 * The cached value of the '{@link #getEffectiveDateTime() <em>Effective Date Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAppliesDateTime()
+	 * @see #getEffectiveDateTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected DateTime appliesDateTime;
+	protected DateTime effectiveDateTime;
 
 	/**
-	 * The cached value of the '{@link #getAppliesPeriod() <em>Applies Period</em>}' containment reference.
+	 * The cached value of the '{@link #getEffectivePeriod() <em>Effective Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAppliesPeriod()
+	 * @see #getEffectivePeriod()
 	 * @generated
 	 * @ordered
 	 */
-	protected Period appliesPeriod;
+	protected Period effectivePeriod;
 
 	/**
 	 * The cached value of the '{@link #getIssued() <em>Issued</em>}' containment reference.
@@ -380,6 +393,16 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	protected EList<ObservationRelated> related;
 
 	/**
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ObservationComponent> component;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -439,6 +462,49 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__CODE, newCode, newCode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodeableConcept getCategory() {
+		return category;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCategory(CodeableConcept newCategory, NotificationChain msgs) {
+		CodeableConcept oldCategory = category;
+		category = newCategory;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__CATEGORY, oldCategory, newCategory);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCategory(CodeableConcept newCategory) {
+		if (newCategory != category) {
+			NotificationChain msgs = null;
+			if (category != null)
+				msgs = ((InternalEObject)category).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__CATEGORY, null, msgs);
+			if (newCategory != null)
+				msgs = ((InternalEObject)newCategory).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__CATEGORY, null, msgs);
+			msgs = basicSetCategory(newCategory, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__CATEGORY, newCategory, newCategory));
 	}
 
 	/**
@@ -1005,8 +1071,8 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DateTime getAppliesDateTime() {
-		return appliesDateTime;
+	public DateTime getEffectiveDateTime() {
+		return effectiveDateTime;
 	}
 
 	/**
@@ -1014,11 +1080,11 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAppliesDateTime(DateTime newAppliesDateTime, NotificationChain msgs) {
-		DateTime oldAppliesDateTime = appliesDateTime;
-		appliesDateTime = newAppliesDateTime;
+	public NotificationChain basicSetEffectiveDateTime(DateTime newEffectiveDateTime, NotificationChain msgs) {
+		DateTime oldEffectiveDateTime = effectiveDateTime;
+		effectiveDateTime = newEffectiveDateTime;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__APPLIES_DATE_TIME, oldAppliesDateTime, newAppliesDateTime);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME, oldEffectiveDateTime, newEffectiveDateTime);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -1029,18 +1095,18 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAppliesDateTime(DateTime newAppliesDateTime) {
-		if (newAppliesDateTime != appliesDateTime) {
+	public void setEffectiveDateTime(DateTime newEffectiveDateTime) {
+		if (newEffectiveDateTime != effectiveDateTime) {
 			NotificationChain msgs = null;
-			if (appliesDateTime != null)
-				msgs = ((InternalEObject)appliesDateTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__APPLIES_DATE_TIME, null, msgs);
-			if (newAppliesDateTime != null)
-				msgs = ((InternalEObject)newAppliesDateTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__APPLIES_DATE_TIME, null, msgs);
-			msgs = basicSetAppliesDateTime(newAppliesDateTime, msgs);
+			if (effectiveDateTime != null)
+				msgs = ((InternalEObject)effectiveDateTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME, null, msgs);
+			if (newEffectiveDateTime != null)
+				msgs = ((InternalEObject)newEffectiveDateTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME, null, msgs);
+			msgs = basicSetEffectiveDateTime(newEffectiveDateTime, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__APPLIES_DATE_TIME, newAppliesDateTime, newAppliesDateTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME, newEffectiveDateTime, newEffectiveDateTime));
 	}
 
 	/**
@@ -1048,8 +1114,8 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Period getAppliesPeriod() {
-		return appliesPeriod;
+	public Period getEffectivePeriod() {
+		return effectivePeriod;
 	}
 
 	/**
@@ -1057,11 +1123,11 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAppliesPeriod(Period newAppliesPeriod, NotificationChain msgs) {
-		Period oldAppliesPeriod = appliesPeriod;
-		appliesPeriod = newAppliesPeriod;
+	public NotificationChain basicSetEffectivePeriod(Period newEffectivePeriod, NotificationChain msgs) {
+		Period oldEffectivePeriod = effectivePeriod;
+		effectivePeriod = newEffectivePeriod;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__APPLIES_PERIOD, oldAppliesPeriod, newAppliesPeriod);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__EFFECTIVE_PERIOD, oldEffectivePeriod, newEffectivePeriod);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -1072,18 +1138,18 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAppliesPeriod(Period newAppliesPeriod) {
-		if (newAppliesPeriod != appliesPeriod) {
+	public void setEffectivePeriod(Period newEffectivePeriod) {
+		if (newEffectivePeriod != effectivePeriod) {
 			NotificationChain msgs = null;
-			if (appliesPeriod != null)
-				msgs = ((InternalEObject)appliesPeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__APPLIES_PERIOD, null, msgs);
-			if (newAppliesPeriod != null)
-				msgs = ((InternalEObject)newAppliesPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__APPLIES_PERIOD, null, msgs);
-			msgs = basicSetAppliesPeriod(newAppliesPeriod, msgs);
+			if (effectivePeriod != null)
+				msgs = ((InternalEObject)effectivePeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__EFFECTIVE_PERIOD, null, msgs);
+			if (newEffectivePeriod != null)
+				msgs = ((InternalEObject)newEffectivePeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OBSERVATION__EFFECTIVE_PERIOD, null, msgs);
+			msgs = basicSetEffectivePeriod(newEffectivePeriod, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__APPLIES_PERIOD, newAppliesPeriod, newAppliesPeriod));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION__EFFECTIVE_PERIOD, newEffectivePeriod, newEffectivePeriod));
 	}
 
 	/**
@@ -1569,11 +1635,25 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ObservationComponent> getComponent() {
+		if (component == null) {
+			component = new EObjectContainmentEList<ObservationComponent>(ObservationComponent.class, this, FhirPackage.OBSERVATION__COMPONENT);
+		}
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FhirPackage.OBSERVATION__CODE:
 				return basicSetCode(null, msgs);
+			case FhirPackage.OBSERVATION__CATEGORY:
+				return basicSetCategory(null, msgs);
 			case FhirPackage.OBSERVATION__VALUE_QUANTITY:
 				return basicSetValueQuantity(null, msgs);
 			case FhirPackage.OBSERVATION__VALUE_CODEABLE_CONCEPT:
@@ -1600,10 +1680,10 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 				return basicSetInterpretation(null, msgs);
 			case FhirPackage.OBSERVATION__COMMENTS:
 				return basicSetComments(null, msgs);
-			case FhirPackage.OBSERVATION__APPLIES_DATE_TIME:
-				return basicSetAppliesDateTime(null, msgs);
-			case FhirPackage.OBSERVATION__APPLIES_PERIOD:
-				return basicSetAppliesPeriod(null, msgs);
+			case FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME:
+				return basicSetEffectiveDateTime(null, msgs);
+			case FhirPackage.OBSERVATION__EFFECTIVE_PERIOD:
+				return basicSetEffectivePeriod(null, msgs);
 			case FhirPackage.OBSERVATION__ISSUED:
 				return basicSetIssued(null, msgs);
 			case FhirPackage.OBSERVATION__STATUS:
@@ -1632,6 +1712,8 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 				return ((InternalEList<?>)getReferenceRange()).basicRemove(otherEnd, msgs);
 			case FhirPackage.OBSERVATION__RELATED:
 				return ((InternalEList<?>)getRelated()).basicRemove(otherEnd, msgs);
+			case FhirPackage.OBSERVATION__COMPONENT:
+				return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1646,6 +1728,8 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 		switch (featureID) {
 			case FhirPackage.OBSERVATION__CODE:
 				return getCode();
+			case FhirPackage.OBSERVATION__CATEGORY:
+				return getCategory();
 			case FhirPackage.OBSERVATION__VALUE_QUANTITY:
 				return getValueQuantity();
 			case FhirPackage.OBSERVATION__VALUE_CODEABLE_CONCEPT:
@@ -1672,10 +1756,10 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 				return getInterpretation();
 			case FhirPackage.OBSERVATION__COMMENTS:
 				return getComments();
-			case FhirPackage.OBSERVATION__APPLIES_DATE_TIME:
-				return getAppliesDateTime();
-			case FhirPackage.OBSERVATION__APPLIES_PERIOD:
-				return getAppliesPeriod();
+			case FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME:
+				return getEffectiveDateTime();
+			case FhirPackage.OBSERVATION__EFFECTIVE_PERIOD:
+				return getEffectivePeriod();
 			case FhirPackage.OBSERVATION__ISSUED:
 				return getIssued();
 			case FhirPackage.OBSERVATION__STATUS:
@@ -1704,6 +1788,8 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 				return getReferenceRange();
 			case FhirPackage.OBSERVATION__RELATED:
 				return getRelated();
+			case FhirPackage.OBSERVATION__COMPONENT:
+				return getComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1719,6 +1805,9 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 		switch (featureID) {
 			case FhirPackage.OBSERVATION__CODE:
 				setCode((CodeableConcept)newValue);
+				return;
+			case FhirPackage.OBSERVATION__CATEGORY:
+				setCategory((CodeableConcept)newValue);
 				return;
 			case FhirPackage.OBSERVATION__VALUE_QUANTITY:
 				setValueQuantity((Quantity)newValue);
@@ -1759,11 +1848,11 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 			case FhirPackage.OBSERVATION__COMMENTS:
 				setComments((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.OBSERVATION__APPLIES_DATE_TIME:
-				setAppliesDateTime((DateTime)newValue);
+			case FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME:
+				setEffectiveDateTime((DateTime)newValue);
 				return;
-			case FhirPackage.OBSERVATION__APPLIES_PERIOD:
-				setAppliesPeriod((Period)newValue);
+			case FhirPackage.OBSERVATION__EFFECTIVE_PERIOD:
+				setEffectivePeriod((Period)newValue);
 				return;
 			case FhirPackage.OBSERVATION__ISSUED:
 				setIssued((Instant)newValue);
@@ -1811,6 +1900,10 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 				getRelated().clear();
 				getRelated().addAll((Collection<? extends ObservationRelated>)newValue);
 				return;
+			case FhirPackage.OBSERVATION__COMPONENT:
+				getComponent().clear();
+				getComponent().addAll((Collection<? extends ObservationComponent>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1825,6 +1918,9 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 		switch (featureID) {
 			case FhirPackage.OBSERVATION__CODE:
 				setCode((CodeableConcept)null);
+				return;
+			case FhirPackage.OBSERVATION__CATEGORY:
+				setCategory((CodeableConcept)null);
 				return;
 			case FhirPackage.OBSERVATION__VALUE_QUANTITY:
 				setValueQuantity((Quantity)null);
@@ -1865,11 +1961,11 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 			case FhirPackage.OBSERVATION__COMMENTS:
 				setComments((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.OBSERVATION__APPLIES_DATE_TIME:
-				setAppliesDateTime((DateTime)null);
+			case FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME:
+				setEffectiveDateTime((DateTime)null);
 				return;
-			case FhirPackage.OBSERVATION__APPLIES_PERIOD:
-				setAppliesPeriod((Period)null);
+			case FhirPackage.OBSERVATION__EFFECTIVE_PERIOD:
+				setEffectivePeriod((Period)null);
 				return;
 			case FhirPackage.OBSERVATION__ISSUED:
 				setIssued((Instant)null);
@@ -1913,6 +2009,9 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 			case FhirPackage.OBSERVATION__RELATED:
 				getRelated().clear();
 				return;
+			case FhirPackage.OBSERVATION__COMPONENT:
+				getComponent().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1927,6 +2026,8 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 		switch (featureID) {
 			case FhirPackage.OBSERVATION__CODE:
 				return code != null;
+			case FhirPackage.OBSERVATION__CATEGORY:
+				return category != null;
 			case FhirPackage.OBSERVATION__VALUE_QUANTITY:
 				return valueQuantity != null;
 			case FhirPackage.OBSERVATION__VALUE_CODEABLE_CONCEPT:
@@ -1953,10 +2054,10 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 				return interpretation != null;
 			case FhirPackage.OBSERVATION__COMMENTS:
 				return comments != null;
-			case FhirPackage.OBSERVATION__APPLIES_DATE_TIME:
-				return appliesDateTime != null;
-			case FhirPackage.OBSERVATION__APPLIES_PERIOD:
-				return appliesPeriod != null;
+			case FhirPackage.OBSERVATION__EFFECTIVE_DATE_TIME:
+				return effectiveDateTime != null;
+			case FhirPackage.OBSERVATION__EFFECTIVE_PERIOD:
+				return effectivePeriod != null;
 			case FhirPackage.OBSERVATION__ISSUED:
 				return issued != null;
 			case FhirPackage.OBSERVATION__STATUS:
@@ -1985,6 +2086,8 @@ public class ObservationImpl extends DomainResourceImpl implements Observation {
 				return referenceRange != null && !referenceRange.isEmpty();
 			case FhirPackage.OBSERVATION__RELATED:
 				return related != null && !related.isEmpty();
+			case FhirPackage.OBSERVATION__COMPONENT:
+				return component != null && !component.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

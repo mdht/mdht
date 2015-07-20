@@ -55,7 +55,7 @@ public enum FlagStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A current flag that should be displayed to a user. A system may use the category to determine which roles should view the flag.
+	 * A current flag that should be displayed to a user. A system may use the category to determine which roles should view the flag
 	 * <!-- end-model-doc -->
 	 * @see #ACTIVE
 	 * @model name="active"
@@ -69,7 +69,7 @@ public enum FlagStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The flag does not need to be displayed any more.
+	 * The flag does not need to be displayed any more
 	 * <!-- end-model-doc -->
 	 * @see #INACTIVE
 	 * @model name="inactive"
@@ -83,7 +83,7 @@ public enum FlagStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The flag was added in error, and should no longer be displayed.
+	 * The flag was added in error, and should no longer be displayed
 	 * <!-- end-model-doc -->
 	 * @see #ENTERED_IN_ERROR
 	 * @model name="enteredInError" literal="entered-in-error"

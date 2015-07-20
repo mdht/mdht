@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.List#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.List#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.hl7.fhir.List#getSource <em>Source</em>}</li>
+ *   <li>{@link org.hl7.fhir.List#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.List#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.List#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.List#getOrderedBy <em>Ordered By</em>}</li>
@@ -136,7 +137,7 @@ public interface List extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The entity responsible for deciding what the contents of the list were.
+	 * The entity responsible for deciding what the contents of the list were. Where the list was created by a human, this is the same as the author of the list.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Source</em>' containment reference.
 	 * @see #setSource(Reference)
@@ -156,6 +157,32 @@ public interface List extends DomainResource {
 	 * @generated
 	 */
 	void setSource(Reference value);
+
+	/**
+	 * Returns the value of the '<em><b>Encounter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The encounter that is the context in which this list was created.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Encounter</em>' containment reference.
+	 * @see #setEncounter(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getList_Encounter()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='encounter' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getEncounter();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.List#getEncounter <em>Encounter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encounter</em>' containment reference.
+	 * @see #getEncounter()
+	 * @generated
+	 */
+	void setEncounter(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.

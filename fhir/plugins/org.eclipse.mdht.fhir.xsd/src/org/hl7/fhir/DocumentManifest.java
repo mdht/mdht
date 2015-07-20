@@ -223,13 +223,13 @@ public interface DocumentManifest extends DomainResource {
 	 * The status of this document manifest.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(DocumentReferenceStatus)
+	 * @see #setStatus(Code)
 	 * @see org.hl7.fhir.FhirPackage#getDocumentManifest_Status()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DocumentReferenceStatus getStatus();
+	Code getStatus();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.DocumentManifest#getStatus <em>Status</em>}' containment reference.
@@ -239,7 +239,7 @@ public interface DocumentManifest extends DomainResource {
 	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatus(DocumentReferenceStatus value);
+	void setStatus(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.

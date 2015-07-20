@@ -65,7 +65,7 @@ public enum HTTPVerbList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * HTTP GET.
+	 * HTTP GET
 	 * <!-- end-model-doc -->
 	 * @see #GET
 	 * @model
@@ -79,7 +79,7 @@ public enum HTTPVerbList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * HTTP POST.
+	 * HTTP POST
 	 * <!-- end-model-doc -->
 	 * @see #POST
 	 * @model
@@ -93,7 +93,7 @@ public enum HTTPVerbList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * HTTP PUT.
+	 * HTTP PUT
 	 * <!-- end-model-doc -->
 	 * @see #PUT
 	 * @model
@@ -107,7 +107,7 @@ public enum HTTPVerbList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * HTTP DELETE.
+	 * HTTP DELETE
 	 * <!-- end-model-doc -->
 	 * @see #DELETE
 	 * @model

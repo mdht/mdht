@@ -23,7 +23,6 @@ import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.ImagingStudyInstance;
 import org.hl7.fhir.ImagingStudySeries;
 import org.hl7.fhir.InstanceAvailability;
-import org.hl7.fhir.Modality;
 import org.hl7.fhir.Oid;
 import org.hl7.fhir.UnsignedInt;
 import org.hl7.fhir.Uri;
@@ -70,7 +69,7 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	 * @generated
 	 * @ordered
 	 */
-	protected Modality modality;
+	protected Coding modality;
 
 	/**
 	 * The cached value of the '{@link #getUid() <em>Uid</em>}' containment reference.
@@ -229,7 +228,7 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Modality getModality() {
+	public Coding getModality() {
 		return modality;
 	}
 
@@ -238,8 +237,8 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModality(Modality newModality, NotificationChain msgs) {
-		Modality oldModality = modality;
+	public NotificationChain basicSetModality(Coding newModality, NotificationChain msgs) {
+		Coding oldModality = modality;
 		modality = newModality;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_SERIES__MODALITY, oldModality, newModality);
@@ -253,7 +252,7 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModality(Modality newModality) {
+	public void setModality(Coding newModality) {
 		if (newModality != modality) {
 			NotificationChain msgs = null;
 			if (modality != null)
@@ -704,7 +703,7 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 				setNumber((UnsignedInt)newValue);
 				return;
 			case FhirPackage.IMAGING_STUDY_SERIES__MODALITY:
-				setModality((Modality)newValue);
+				setModality((Coding)newValue);
 				return;
 			case FhirPackage.IMAGING_STUDY_SERIES__UID:
 				setUid((Oid)newValue);
@@ -750,7 +749,7 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 				setNumber((UnsignedInt)null);
 				return;
 			case FhirPackage.IMAGING_STUDY_SERIES__MODALITY:
-				setModality((Modality)null);
+				setModality((Coding)null);
 				return;
 			case FhirPackage.IMAGING_STUDY_SERIES__UID:
 				setUid((Oid)null);

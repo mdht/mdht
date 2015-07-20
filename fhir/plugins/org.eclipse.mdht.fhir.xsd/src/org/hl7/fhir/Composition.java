@@ -122,7 +122,7 @@ public interface Composition extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A categorization for the type of the composition. This may be implied by or derived from the code specified in the Composition Type.
+	 * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Class</em>' containment reference.
 	 * @see #setClass(CodeableConcept)

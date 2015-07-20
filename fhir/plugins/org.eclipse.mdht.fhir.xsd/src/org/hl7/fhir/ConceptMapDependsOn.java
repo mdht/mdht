@@ -57,7 +57,7 @@ public interface ConceptMapDependsOn extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that cross code systems).
+	 * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Code System</em>' containment reference.
 	 * @see #setCodeSystem(Uri)

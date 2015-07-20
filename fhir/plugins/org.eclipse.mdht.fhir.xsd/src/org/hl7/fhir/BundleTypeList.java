@@ -61,6 +61,26 @@ public enum BundleTypeList implements Enumerator {
 	TRANSACTION_RESPONSE(3, "transactionResponse", "transaction-response"),
 
 	/**
+	 * The '<em><b>Batch</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BATCH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	BATCH(4, "batch", "batch"),
+
+	/**
+	 * The '<em><b>Batch Response</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BATCH_RESPONSE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	BATCH_RESPONSE(5, "batchResponse", "batch-response"),
+
+	/**
 	 * The '<em><b>History</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,7 +88,7 @@ public enum BundleTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HISTORY(4, "history", "history"),
+	HISTORY(6, "history", "history"),
 
 	/**
 	 * The '<em><b>Searchset</b></em>' literal object.
@@ -78,7 +98,7 @@ public enum BundleTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SEARCHSET(5, "searchset", "searchset"),
+	SEARCHSET(7, "searchset", "searchset"),
 
 	/**
 	 * The '<em><b>Collection</b></em>' literal object.
@@ -88,14 +108,14 @@ public enum BundleTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COLLECTION(6, "collection", "collection");
+	COLLECTION(8, "collection", "collection");
 
 	/**
 	 * The '<em><b>Document</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The bundle is a document. The first resource is a Composition.
+	 * The bundle is a document. The first resource is a Composition
 	 * <!-- end-model-doc -->
 	 * @see #DOCUMENT
 	 * @model name="document"
@@ -109,7 +129,7 @@ public enum BundleTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The bundle is a message. The first resource is a MessageHeader.
+	 * The bundle is a message. The first resource is a MessageHeader
 	 * <!-- end-model-doc -->
 	 * @see #MESSAGE
 	 * @model name="message"
@@ -123,7 +143,7 @@ public enum BundleTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The bundle is a transaction - intended to be processed by a server as an atomic commit.
+	 * The bundle is a transaction - intended to be processed by a server as an atomic commit
 	 * <!-- end-model-doc -->
 	 * @see #TRANSACTION
 	 * @model name="transaction"
@@ -137,7 +157,7 @@ public enum BundleTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The bundle is a transaction response.
+	 * The bundle is a transaction response. Because the response is a transaction response, the transactionhas succeeded, and all responses are error free
 	 * <!-- end-model-doc -->
 	 * @see #TRANSACTION_RESPONSE
 	 * @model name="transactionResponse" literal="transaction-response"
@@ -147,46 +167,74 @@ public enum BundleTypeList implements Enumerator {
 	public static final int TRANSACTION_RESPONSE_VALUE = 3;
 
 	/**
+	 * The '<em><b>Batch</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The bundle is a transaction - intended to be processed by a server as a group of actions
+	 * <!-- end-model-doc -->
+	 * @see #BATCH
+	 * @model name="batch"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BATCH_VALUE = 4;
+
+	/**
+	 * The '<em><b>Batch Response</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The bundle is a batch response. Note that as a batch, some responses may indicate failure and others success
+	 * <!-- end-model-doc -->
+	 * @see #BATCH_RESPONSE
+	 * @model name="batchResponse" literal="batch-response"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BATCH_RESPONSE_VALUE = 5;
+
+	/**
 	 * The '<em><b>History</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The bundle is a list of resources from a _history interaction on a server.
+	 * The bundle is a list of resources from a _history interaction on a server
 	 * <!-- end-model-doc -->
 	 * @see #HISTORY
 	 * @model name="history"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HISTORY_VALUE = 4;
+	public static final int HISTORY_VALUE = 6;
 
 	/**
 	 * The '<em><b>Searchset</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The bundle is a list of resources returned as a result of a search/query interaction, operation, or message.
+	 * The bundle is a list of resources returned as a result of a search/query interaction, operation, or message
 	 * <!-- end-model-doc -->
 	 * @see #SEARCHSET
 	 * @model name="searchset"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SEARCHSET_VALUE = 5;
+	public static final int SEARCHSET_VALUE = 7;
 
 	/**
 	 * The '<em><b>Collection</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The bundle is a set of resources collected into a single document for ease of distribution.
+	 * The bundle is a set of resources collected into a single document for ease of distribution
 	 * <!-- end-model-doc -->
 	 * @see #COLLECTION
 	 * @model name="collection"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COLLECTION_VALUE = 6;
+	public static final int COLLECTION_VALUE = 8;
 
 	/**
 	 * An array of all the '<em><b>Bundle Type List</b></em>' enumerators.
@@ -200,6 +248,8 @@ public enum BundleTypeList implements Enumerator {
 			MESSAGE,
 			TRANSACTION,
 			TRANSACTION_RESPONSE,
+			BATCH,
+			BATCH_RESPONSE,
 			HISTORY,
 			SEARCHSET,
 			COLLECTION,
@@ -263,6 +313,8 @@ public enum BundleTypeList implements Enumerator {
 			case MESSAGE_VALUE: return MESSAGE;
 			case TRANSACTION_VALUE: return TRANSACTION;
 			case TRANSACTION_RESPONSE_VALUE: return TRANSACTION_RESPONSE;
+			case BATCH_VALUE: return BATCH;
+			case BATCH_RESPONSE_VALUE: return BATCH_RESPONSE;
 			case HISTORY_VALUE: return HISTORY;
 			case SEARCHSET_VALUE: return SEARCHSET;
 			case COLLECTION_VALUE: return COLLECTION;

@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getSubject <em>Subject</em>}</li>
@@ -27,8 +27,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getRequestDetail <em>Request Detail</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getServiceCategory <em>Service Category</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getDiagnosticDateTime <em>Diagnostic Date Time</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getDiagnosticPeriod <em>Diagnostic Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getEffectiveDateTime <em>Effective Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getEffectivePeriod <em>Effective Period</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getSpecimen <em>Specimen</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getResult <em>Result</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getImagingStudy <em>Imaging Study</em>}</li>
@@ -44,30 +44,30 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DiagnosticReport extends DomainResource {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A code or name that describes this diagnostic report.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Name</em>' containment reference.
-	 * @see #setName(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Name()
+	 * @return the value of the '<em>Code</em>' containment reference.
+	 * @see #setCode(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Code()
 	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='name' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='code' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CodeableConcept getName();
+	CodeableConcept getCode();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getName <em>Name</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' containment reference.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Code</em>' containment reference.
+	 * @see #getCode()
 	 * @generated
 	 */
-	void setName(CodeableConcept value);
+	void setCode(CodeableConcept value);
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
@@ -100,16 +100,16 @@ public interface DiagnosticReport extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The date and/or time that this version of the report was released from the source diagnostic service.
+	 * The date and time that this version of the report was released from the source diagnostic service.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Issued</em>' containment reference.
-	 * @see #setIssued(DateTime)
+	 * @see #setIssued(Instant)
 	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Issued()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='issued' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getIssued();
+	Instant getIssued();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}' containment reference.
@@ -119,7 +119,7 @@ public interface DiagnosticReport extends DomainResource {
 	 * @see #getIssued()
 	 * @generated
 	 */
-	void setIssued(DateTime value);
+	void setIssued(Instant value);
 
 	/**
 	 * Returns the value of the '<em><b>Subject</b></em>' containment reference.
@@ -258,58 +258,58 @@ public interface DiagnosticReport extends DomainResource {
 	void setServiceCategory(CodeableConcept value);
 
 	/**
-	 * Returns the value of the '<em><b>Diagnostic Date Time</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Effective Date Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Diagnostic Date Time</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Effective Date Time</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Diagnostic Date Time</em>' containment reference.
-	 * @see #setDiagnosticDateTime(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_DiagnosticDateTime()
+	 * @return the value of the '<em>Effective Date Time</em>' containment reference.
+	 * @see #setEffectiveDateTime(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_EffectiveDateTime()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='diagnosticDateTime' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='effectiveDateTime' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getDiagnosticDateTime();
+	DateTime getEffectiveDateTime();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getDiagnosticDateTime <em>Diagnostic Date Time</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getEffectiveDateTime <em>Effective Date Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Diagnostic Date Time</em>' containment reference.
-	 * @see #getDiagnosticDateTime()
+	 * @param value the new value of the '<em>Effective Date Time</em>' containment reference.
+	 * @see #getEffectiveDateTime()
 	 * @generated
 	 */
-	void setDiagnosticDateTime(DateTime value);
+	void setEffectiveDateTime(DateTime value);
 
 	/**
-	 * Returns the value of the '<em><b>Diagnostic Period</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Effective Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Diagnostic Period</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Effective Period</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Diagnostic Period</em>' containment reference.
-	 * @see #setDiagnosticPeriod(Period)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_DiagnosticPeriod()
+	 * @return the value of the '<em>Effective Period</em>' containment reference.
+	 * @see #setEffectivePeriod(Period)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_EffectivePeriod()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='diagnosticPeriod' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='effectivePeriod' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Period getDiagnosticPeriod();
+	Period getEffectivePeriod();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getDiagnosticPeriod <em>Diagnostic Period</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getEffectivePeriod <em>Effective Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Diagnostic Period</em>' containment reference.
-	 * @see #getDiagnosticPeriod()
+	 * @param value the new value of the '<em>Effective Period</em>' containment reference.
+	 * @see #getEffectivePeriod()
 	 * @generated
 	 */
-	void setDiagnosticPeriod(Period value);
+	void setEffectivePeriod(Period value);
 
 	/**
 	 * Returns the value of the '<em><b>Specimen</b></em>' containment reference list.

@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.
+ * This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.  Medical devices includes durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.  Non medical devices may includes things such as a machine, a cellphone, a computer, an application, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  * <!-- end-model-doc -->
  *
@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.hl7.fhir.Device#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.Device#getType <em>Type</em>}</li>
+ *   <li>{@link org.hl7.fhir.Device#getNote <em>Note</em>}</li>
  *   <li>{@link org.hl7.fhir.Device#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.Device#getManufacturer <em>Manufacturer</em>}</li>
  *   <li>{@link org.hl7.fhir.Device#getModel <em>Model</em>}</li>
@@ -81,6 +82,22 @@ public interface Device extends DomainResource {
 	 * @generated
 	 */
 	void setType(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Note</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Annotation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Descriptive information, usage information or implantation information that is not captured in an existing element.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Note</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getDevice_Note()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='note' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<Annotation> getNote();
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.

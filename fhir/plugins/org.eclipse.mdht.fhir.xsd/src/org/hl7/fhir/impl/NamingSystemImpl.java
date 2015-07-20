@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
-import org.hl7.fhir.ConformanceResourceStatus;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.NamingSystem;
@@ -92,7 +91,7 @@ public class NamingSystemImpl extends DomainResourceImpl implements NamingSystem
 	 * @generated
 	 * @ordered
 	 */
-	protected ConformanceResourceStatus status;
+	protected Code status;
 
 	/**
 	 * The cached value of the '{@link #getCountry() <em>Country</em>}' containment reference.
@@ -337,7 +336,7 @@ public class NamingSystemImpl extends DomainResourceImpl implements NamingSystem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConformanceResourceStatus getStatus() {
+	public Code getStatus() {
 		return status;
 	}
 
@@ -346,8 +345,8 @@ public class NamingSystemImpl extends DomainResourceImpl implements NamingSystem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(ConformanceResourceStatus newStatus, NotificationChain msgs) {
-		ConformanceResourceStatus oldStatus = status;
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NAMING_SYSTEM__STATUS, oldStatus, newStatus);
@@ -361,7 +360,7 @@ public class NamingSystemImpl extends DomainResourceImpl implements NamingSystem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(ConformanceResourceStatus newStatus) {
+	public void setStatus(Code newStatus) {
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
@@ -795,7 +794,7 @@ public class NamingSystemImpl extends DomainResourceImpl implements NamingSystem
 				setDate((DateTime)newValue);
 				return;
 			case FhirPackage.NAMING_SYSTEM__STATUS:
-				setStatus((ConformanceResourceStatus)newValue);
+				setStatus((Code)newValue);
 				return;
 			case FhirPackage.NAMING_SYSTEM__COUNTRY:
 				setCountry((Code)newValue);
@@ -848,7 +847,7 @@ public class NamingSystemImpl extends DomainResourceImpl implements NamingSystem
 				setDate((DateTime)null);
 				return;
 			case FhirPackage.NAMING_SYSTEM__STATUS:
-				setStatus((ConformanceResourceStatus)null);
+				setStatus((Code)null);
 				return;
 			case FhirPackage.NAMING_SYSTEM__COUNTRY:
 				setCountry((Code)null);

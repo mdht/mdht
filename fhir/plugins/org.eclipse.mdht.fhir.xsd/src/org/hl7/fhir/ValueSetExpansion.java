@@ -19,6 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.hl7.fhir.ValueSetExpansion#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSetExpansion#getTimestamp <em>Timestamp</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSetExpansion#getTotal <em>Total</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSetExpansion#getOffset <em>Offset</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSetExpansion#getParameter <em>Parameter</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSetExpansion#getContains <em>Contains</em>}</li>
  * </ul>
@@ -81,12 +83,64 @@ public interface ValueSetExpansion extends BackboneElement {
 	void setTimestamp(DateTime value);
 
 	/**
+	 * Returns the value of the '<em><b>Total</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The total nober of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Total</em>' containment reference.
+	 * @see #setTotal(org.hl7.fhir.Integer)
+	 * @see org.hl7.fhir.FhirPackage#getValueSetExpansion_Total()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='total' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Integer getTotal();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSetExpansion#getTotal <em>Total</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Total</em>' containment reference.
+	 * @see #getTotal()
+	 * @generated
+	 */
+	void setTotal(org.hl7.fhir.Integer value);
+
+	/**
+	 * Returns the value of the '<em><b>Offset</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If paging is being used, the offset at which this resource starts - e.g. this resource is a partial view into the expansion. If paging is not being used, this element SHALL not be present.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Offset</em>' containment reference.
+	 * @see #setOffset(org.hl7.fhir.Integer)
+	 * @see org.hl7.fhir.FhirPackage#getValueSetExpansion_Offset()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='offset' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Integer getOffset();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSetExpansion#getOffset <em>Offset</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Offset</em>' containment reference.
+	 * @see #getOffset()
+	 * @generated
+	 */
+	void setOffset(org.hl7.fhir.Integer value);
+
+	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.ValueSetParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A Parameter that controlled the expansion process. These paameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
+	 * A Parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getValueSetExpansion_Parameter()

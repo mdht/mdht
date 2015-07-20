@@ -28,6 +28,7 @@ import org.hl7.fhir.Timing;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getAdditionalInstructions <em>Additional Instructions</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getScheduleDateTime <em>Schedule Date Time</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getSchedulePeriod <em>Schedule Period</em>}</li>
@@ -46,6 +47,16 @@ import org.hl7.fhir.Timing;
  * @generated
  */
 public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl implements MedicationDispenseDosageInstruction {
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String text;
+
 	/**
 	 * The cached value of the '{@link #getAdditionalInstructions() <em>Additional Instructions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -193,6 +204,49 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	protected EClass eStaticClass() {
 		return FhirPackage.eINSTANCE.getMedicationDispenseDosageInstruction();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getText() {
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetText(org.hl7.fhir.String newText, NotificationChain msgs) {
+		org.hl7.fhir.String oldText = text;
+		text = newText;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, oldText, newText);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setText(org.hl7.fhir.String newText) {
+		if (newText != text) {
+			NotificationChain msgs = null;
+			if (text != null)
+				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, null, msgs);
+			if (newText != null)
+				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, null, msgs);
+			msgs = basicSetText(newText, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, newText, newText));
 	}
 
 	/**
@@ -762,6 +816,8 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+				return basicSetText(null, msgs);
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				return basicSetAdditionalInstructions(null, msgs);
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SCHEDULE_DATE_TIME:
@@ -800,6 +856,8 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+				return getText();
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				return getAdditionalInstructions();
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SCHEDULE_DATE_TIME:
@@ -838,6 +896,9 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+				setText((org.hl7.fhir.String)newValue);
+				return;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				setAdditionalInstructions((CodeableConcept)newValue);
 				return;
@@ -889,6 +950,9 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+				setText((org.hl7.fhir.String)null);
+				return;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				setAdditionalInstructions((CodeableConcept)null);
 				return;
@@ -940,6 +1004,8 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+				return text != null;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				return additionalInstructions != null;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SCHEDULE_DATE_TIME:

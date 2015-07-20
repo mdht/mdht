@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ValueSet#getExtensible <em>Extensible</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getLockedDate <em>Locked Date</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getDefine <em>Define</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getCodeSystem <em>Code System</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getCompose <em>Compose</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getExpansion <em>Expansion</em>}</li>
  * </ul>
@@ -49,7 +49,7 @@ public interface ValueSet extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute uri that is used to identify this value set when it is referenced in a specification, model, design or an instance (should be globally unique URI, and an be urn:uuid: or urn:oid:).
+	 * An absolute uri that is used to identify this value set when it is referenced in a specification, model, design or an instance (should be globally unique URI, and can be urn:uuid: or urn:oid:).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)
@@ -318,13 +318,13 @@ public interface ValueSet extends DomainResource {
 	 * The status of the value set.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(ConformanceResourceStatus)
+	 * @see #setStatus(Code)
 	 * @see org.hl7.fhir.FhirPackage#getValueSet_Status()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	ConformanceResourceStatus getStatus();
+	Code getStatus();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getStatus <em>Status</em>}' containment reference.
@@ -334,7 +334,7 @@ public interface ValueSet extends DomainResource {
 	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatus(ConformanceResourceStatus value);
+	void setStatus(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
@@ -441,30 +441,30 @@ public interface ValueSet extends DomainResource {
 	void setLockedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Define</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Code System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A definition of an code system, inlined into the value set.
+	 * A definition of an code system, inlined into the value set (as a packaging convenience). Note that the inline code system may be used from other value sets by referring to it's (codeSystem.system) directly.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Define</em>' containment reference.
-	 * @see #setDefine(ValueSetDefine)
-	 * @see org.hl7.fhir.FhirPackage#getValueSet_Define()
+	 * @return the value of the '<em>Code System</em>' containment reference.
+	 * @see #setCodeSystem(ValueSetCodeSystem)
+	 * @see org.hl7.fhir.FhirPackage#getValueSet_CodeSystem()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='define' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='codeSystem' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	ValueSetDefine getDefine();
+	ValueSetCodeSystem getCodeSystem();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getDefine <em>Define</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getCodeSystem <em>Code System</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Define</em>' containment reference.
-	 * @see #getDefine()
+	 * @param value the new value of the '<em>Code System</em>' containment reference.
+	 * @see #getCodeSystem()
 	 * @generated
 	 */
-	void setDefine(ValueSetDefine value);
+	void setCodeSystem(ValueSetCodeSystem value);
 
 	/**
 	 * Returns the value of the '<em><b>Compose</b></em>' containment reference.

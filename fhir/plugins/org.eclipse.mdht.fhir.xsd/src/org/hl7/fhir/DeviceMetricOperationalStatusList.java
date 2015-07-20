@@ -55,7 +55,7 @@ public enum DeviceMetricOperationalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The DeviceMetric is operating and will generate DeviceObservations.
+	 * The DeviceMetric is operating and will generate DeviceObservations
 	 * <!-- end-model-doc -->
 	 * @see #ON
 	 * @model name="on"
@@ -69,7 +69,7 @@ public enum DeviceMetricOperationalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The DeviceMetric is not operating.
+	 * The DeviceMetric is not operating
 	 * <!-- end-model-doc -->
 	 * @see #OFF
 	 * @model name="off"
@@ -83,7 +83,7 @@ public enum DeviceMetricOperationalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The DeviceMetric is operating, but will not generate any DeviceObservations.
+	 * The DeviceMetric is operating, but will not generate any DeviceObservations
 	 * <!-- end-model-doc -->
 	 * @see #STANDBY
 	 * @model name="standby"

@@ -18,7 +18,7 @@ package org.hl7.fhir;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.ElementDefinitionConstraint#getKey <em>Key</em>}</li>
- *   <li>{@link org.hl7.fhir.ElementDefinitionConstraint#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinitionConstraint#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinitionConstraint#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinitionConstraint#getHuman <em>Human</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinitionConstraint#getXpath <em>Xpath</em>}</li>
@@ -56,30 +56,30 @@ public interface ElementDefinitionConstraint extends Element {
 	void setKey(Id value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Used to label the constraint in OCL or in short displays incapable of displaying the full human description.
+	 * Description of why this constraint is necessary or appropriate.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Name</em>' containment reference.
-	 * @see #setName(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getElementDefinitionConstraint_Name()
+	 * @return the value of the '<em>Requirements</em>' containment reference.
+	 * @see #setRequirements(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinitionConstraint_Requirements()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='name' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='requirements' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getName();
+	org.hl7.fhir.String getRequirements();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinitionConstraint#getName <em>Name</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinitionConstraint#getRequirements <em>Requirements</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' containment reference.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Requirements</em>' containment reference.
+	 * @see #getRequirements()
 	 * @generated
 	 */
-	void setName(org.hl7.fhir.String value);
+	void setRequirements(org.hl7.fhir.String value);
 
 	/**
 	 * Returns the value of the '<em><b>Severity</b></em>' containment reference.

@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
@@ -37,8 +36,6 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getRequest <em>Request</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getWho <em>Who</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getAuthorityCodeableConcept <em>Authority Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getAuthorityReference <em>Authority Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getOrderStatus <em>Order Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderResponseImpl#getFulfillment <em>Fulfillment</em>}</li>
@@ -86,26 +83,6 @@ public class OrderResponseImpl extends DomainResourceImpl implements OrderRespon
 	 * @ordered
 	 */
 	protected Reference who;
-
-	/**
-	 * The cached value of the '{@link #getAuthorityCodeableConcept() <em>Authority Codeable Concept</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthorityCodeableConcept()
-	 * @generated
-	 * @ordered
-	 */
-	protected CodeableConcept authorityCodeableConcept;
-
-	/**
-	 * The cached value of the '{@link #getAuthorityReference() <em>Authority Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthorityReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected Reference authorityReference;
 
 	/**
 	 * The cached value of the '{@link #getOrderStatus() <em>Order Status</em>}' containment reference.
@@ -302,92 +279,6 @@ public class OrderResponseImpl extends DomainResourceImpl implements OrderRespon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getAuthorityCodeableConcept() {
-		return authorityCodeableConcept;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAuthorityCodeableConcept(CodeableConcept newAuthorityCodeableConcept, NotificationChain msgs) {
-		CodeableConcept oldAuthorityCodeableConcept = authorityCodeableConcept;
-		authorityCodeableConcept = newAuthorityCodeableConcept;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT, oldAuthorityCodeableConcept, newAuthorityCodeableConcept);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthorityCodeableConcept(CodeableConcept newAuthorityCodeableConcept) {
-		if (newAuthorityCodeableConcept != authorityCodeableConcept) {
-			NotificationChain msgs = null;
-			if (authorityCodeableConcept != null)
-				msgs = ((InternalEObject)authorityCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT, null, msgs);
-			if (newAuthorityCodeableConcept != null)
-				msgs = ((InternalEObject)newAuthorityCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT, null, msgs);
-			msgs = basicSetAuthorityCodeableConcept(newAuthorityCodeableConcept, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT, newAuthorityCodeableConcept, newAuthorityCodeableConcept));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Reference getAuthorityReference() {
-		return authorityReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAuthorityReference(Reference newAuthorityReference, NotificationChain msgs) {
-		Reference oldAuthorityReference = authorityReference;
-		authorityReference = newAuthorityReference;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE, oldAuthorityReference, newAuthorityReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthorityReference(Reference newAuthorityReference) {
-		if (newAuthorityReference != authorityReference) {
-			NotificationChain msgs = null;
-			if (authorityReference != null)
-				msgs = ((InternalEObject)authorityReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE, null, msgs);
-			if (newAuthorityReference != null)
-				msgs = ((InternalEObject)newAuthorityReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE, null, msgs);
-			msgs = basicSetAuthorityReference(newAuthorityReference, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE, newAuthorityReference, newAuthorityReference));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public OrderStatus getOrderStatus() {
 		return orderStatus;
 	}
@@ -497,10 +388,6 @@ public class OrderResponseImpl extends DomainResourceImpl implements OrderRespon
 				return basicSetDate(null, msgs);
 			case FhirPackage.ORDER_RESPONSE__WHO:
 				return basicSetWho(null, msgs);
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT:
-				return basicSetAuthorityCodeableConcept(null, msgs);
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE:
-				return basicSetAuthorityReference(null, msgs);
 			case FhirPackage.ORDER_RESPONSE__ORDER_STATUS:
 				return basicSetOrderStatus(null, msgs);
 			case FhirPackage.ORDER_RESPONSE__DESCRIPTION:
@@ -527,10 +414,6 @@ public class OrderResponseImpl extends DomainResourceImpl implements OrderRespon
 				return getDate();
 			case FhirPackage.ORDER_RESPONSE__WHO:
 				return getWho();
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT:
-				return getAuthorityCodeableConcept();
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE:
-				return getAuthorityReference();
 			case FhirPackage.ORDER_RESPONSE__ORDER_STATUS:
 				return getOrderStatus();
 			case FhirPackage.ORDER_RESPONSE__DESCRIPTION:
@@ -562,12 +445,6 @@ public class OrderResponseImpl extends DomainResourceImpl implements OrderRespon
 				return;
 			case FhirPackage.ORDER_RESPONSE__WHO:
 				setWho((Reference)newValue);
-				return;
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT:
-				setAuthorityCodeableConcept((CodeableConcept)newValue);
-				return;
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE:
-				setAuthorityReference((Reference)newValue);
 				return;
 			case FhirPackage.ORDER_RESPONSE__ORDER_STATUS:
 				setOrderStatus((OrderStatus)newValue);
@@ -603,12 +480,6 @@ public class OrderResponseImpl extends DomainResourceImpl implements OrderRespon
 			case FhirPackage.ORDER_RESPONSE__WHO:
 				setWho((Reference)null);
 				return;
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT:
-				setAuthorityCodeableConcept((CodeableConcept)null);
-				return;
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE:
-				setAuthorityReference((Reference)null);
-				return;
 			case FhirPackage.ORDER_RESPONSE__ORDER_STATUS:
 				setOrderStatus((OrderStatus)null);
 				return;
@@ -638,10 +509,6 @@ public class OrderResponseImpl extends DomainResourceImpl implements OrderRespon
 				return date != null;
 			case FhirPackage.ORDER_RESPONSE__WHO:
 				return who != null;
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_CODEABLE_CONCEPT:
-				return authorityCodeableConcept != null;
-			case FhirPackage.ORDER_RESPONSE__AUTHORITY_REFERENCE:
-				return authorityReference != null;
 			case FhirPackage.ORDER_RESPONSE__ORDER_STATUS:
 				return orderStatus != null;
 			case FhirPackage.ORDER_RESPONSE__DESCRIPTION:

@@ -69,7 +69,7 @@ public enum CarePlanStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The plan is intended to be followed and used as part of patient care.
+	 * The plan is intended to be followed and used as part of patient care
 	 * <!-- end-model-doc -->
 	 * @see #ACTIVE
 	 * @model name="active"
@@ -83,7 +83,7 @@ public enum CarePlanStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The plan is no longer in use and is not expected to be followed or used in patient care.
+	 * The plan is no longer in use and is not expected to be followed or used in patient care
 	 * <!-- end-model-doc -->
 	 * @see #COMPLETED
 	 * @model name="completed"

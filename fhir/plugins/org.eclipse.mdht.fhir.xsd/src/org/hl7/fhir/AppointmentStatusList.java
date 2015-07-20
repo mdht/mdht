@@ -85,7 +85,7 @@ public enum AppointmentStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Some or all of the participant(s) have not finalized their acceptance of the appointment request.
+	 * Some or all of the participant(s) have not finalized their acceptance of the appointment request
 	 * <!-- end-model-doc -->
 	 * @see #PENDING
 	 * @model name="pending"
@@ -99,7 +99,7 @@ public enum AppointmentStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * All participant(s) have been considered and the appointment is confirmed to go ahead at the date/times specified.
+	 * All participant(s) have been considered and the appointment is confirmed to go ahead at the date/times specified
 	 * <!-- end-model-doc -->
 	 * @see #BOOKED
 	 * @model name="booked"
@@ -113,7 +113,7 @@ public enum AppointmentStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Some of the patients have arrived.
+	 * Some of the patients have arrived
 	 * <!-- end-model-doc -->
 	 * @see #ARRIVED
 	 * @model name="arrived"
@@ -127,7 +127,7 @@ public enum AppointmentStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This appointment has completed and may have resulted in an encounter.
+	 * This appointment has completed and may have resulted in an encounter
 	 * <!-- end-model-doc -->
 	 * @see #FULFILLED
 	 * @model name="fulfilled"
@@ -141,7 +141,7 @@ public enum AppointmentStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The appointment has been cancelled.
+	 * The appointment has been cancelled
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"
@@ -155,7 +155,7 @@ public enum AppointmentStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Some or all of the participant(s) have not/did not appear for the appointment (usually the patient).
+	 * Some or all of the participant(s) have not/did not appear for the appointment (usually the patient)
 	 * <!-- end-model-doc -->
 	 * @see #NOSHOW
 	 * @model name="noshow"

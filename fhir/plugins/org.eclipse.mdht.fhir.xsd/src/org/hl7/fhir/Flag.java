@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Flag#getCategory <em>Category</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getPeriod <em>Period</em>}</li>
- *   <li>{@link org.hl7.fhir.Flag#getPatient <em>Patient</em>}</li>
+ *   <li>{@link org.hl7.fhir.Flag#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getAuthor <em>Author</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getCode <em>Code</em>}</li>
  * </ul>
@@ -127,30 +127,30 @@ public interface Flag extends DomainResource {
 	void setPeriod(Period value);
 
 	/**
-	 * Returns the value of the '<em><b>Patient</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Subject</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The patient record this flag is associated with.
+	 * The patient, location, group , organization , or practitioner this is about record this flag is associated with.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Patient</em>' containment reference.
-	 * @see #setPatient(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getFlag_Patient()
+	 * @return the value of the '<em>Subject</em>' containment reference.
+	 * @see #setSubject(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getFlag_Subject()
 	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='patient' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='subject' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Reference getPatient();
+	Reference getSubject();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Flag#getPatient <em>Patient</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Flag#getSubject <em>Subject</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Patient</em>' containment reference.
-	 * @see #getPatient()
+	 * @param value the new value of the '<em>Subject</em>' containment reference.
+	 * @see #getSubject()
 	 * @generated
 	 */
-	void setPatient(Reference value);
+	void setSubject(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>Author</b></em>' containment reference.

@@ -65,7 +65,7 @@ public enum NamingSystemIdentifierTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An ISO object identifier.  E.g. 1.2.3.4.5.
+	 * An ISO object identifier.  E.g. 1.2.3.4.5
 	 * <!-- end-model-doc -->
 	 * @see #OID
 	 * @model name="oid"
@@ -79,7 +79,7 @@ public enum NamingSystemIdentifierTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A universally unique identifier of the form a5afddf4-e880-459b-876e-e4591b0acc11.
+	 * A universally unique identifier of the form a5afddf4-e880-459b-876e-e4591b0acc11
 	 * <!-- end-model-doc -->
 	 * @see #UUID
 	 * @model name="uuid"
@@ -93,7 +93,7 @@ public enum NamingSystemIdentifierTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A uniform resource identifier (ideally a URL - uniform resource locator).  E.g. http://unitsofmeasure.org.
+	 * A uniform resource identifier (ideally a URL - uniform resource locator).  E.g. http://unitsofmeasure.org
 	 * <!-- end-model-doc -->
 	 * @see #URI
 	 * @model name="uri"
@@ -107,7 +107,7 @@ public enum NamingSystemIdentifierTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Some other type of unique identifier.  E.g HL7-assigned reserved string such as LN for LOINC.
+	 * Some other type of unique identifier.  E.g HL7-assigned reserved string such as LN for LOINC
 	 * <!-- end-model-doc -->
 	 * @see #OTHER
 	 * @model name="other"

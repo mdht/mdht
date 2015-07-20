@@ -69,13 +69,13 @@ public interface ImagingStudySeries extends BackboneElement {
 	 * The modality of this series sequence.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Modality</em>' containment reference.
-	 * @see #setModality(Modality)
+	 * @see #setModality(Coding)
 	 * @see org.hl7.fhir.FhirPackage#getImagingStudySeries_Modality()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='modality' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Modality getModality();
+	Coding getModality();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ImagingStudySeries#getModality <em>Modality</em>}' containment reference.
@@ -85,7 +85,7 @@ public interface ImagingStudySeries extends BackboneElement {
 	 * @see #getModality()
 	 * @generated
 	 */
-	void setModality(Modality value);
+	void setModality(Coding value);
 
 	/**
 	 * Returns the value of the '<em><b>Uid</b></em>' containment reference.
@@ -196,7 +196,7 @@ public interface ImagingStudySeries extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * WADO-RS resource where the Series is available.
+	 * URI/URL specifying the location of the referenced series using WADO-RS.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)

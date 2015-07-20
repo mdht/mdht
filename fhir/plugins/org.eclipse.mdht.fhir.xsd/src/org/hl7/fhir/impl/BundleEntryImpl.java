@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.BundleEntry;
 import org.hl7.fhir.BundleLink;
+import org.hl7.fhir.BundleRequest;
+import org.hl7.fhir.BundleResponse;
 import org.hl7.fhir.BundleSearch;
-import org.hl7.fhir.BundleTransaction;
-import org.hl7.fhir.BundleTransactionResponse;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.ResourceContainer;
 import org.hl7.fhir.Uri;
@@ -34,27 +34,17 @@ import org.hl7.fhir.Uri;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getBase <em>Base</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getLink <em>Link</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getFullUrl <em>Full Url</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getResource <em>Resource</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getSearch <em>Search</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getTransaction <em>Transaction</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getTransactionResponse <em>Transaction Response</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getRequest <em>Request</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.BundleEntryImpl#getResponse <em>Response</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry {
-	/**
-	 * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBase()
-	 * @generated
-	 * @ordered
-	 */
-	protected Uri base;
-
 	/**
 	 * The cached value of the '{@link #getLink() <em>Link</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -64,6 +54,16 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * @ordered
 	 */
 	protected EList<BundleLink> link;
+
+	/**
+	 * The cached value of the '{@link #getFullUrl() <em>Full Url</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFullUrl()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uri fullUrl;
 
 	/**
 	 * The cached value of the '{@link #getResource() <em>Resource</em>}' containment reference.
@@ -86,24 +86,24 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	protected BundleSearch search;
 
 	/**
-	 * The cached value of the '{@link #getTransaction() <em>Transaction</em>}' containment reference.
+	 * The cached value of the '{@link #getRequest() <em>Request</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTransaction()
+	 * @see #getRequest()
 	 * @generated
 	 * @ordered
 	 */
-	protected BundleTransaction transaction;
+	protected BundleRequest request;
 
 	/**
-	 * The cached value of the '{@link #getTransactionResponse() <em>Transaction Response</em>}' containment reference.
+	 * The cached value of the '{@link #getResponse() <em>Response</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTransactionResponse()
+	 * @see #getResponse()
 	 * @generated
 	 * @ordered
 	 */
-	protected BundleTransactionResponse transactionResponse;
+	protected BundleResponse response;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,8 +129,11 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Uri getBase() {
-		return base;
+	public EList<BundleLink> getLink() {
+		if (link == null) {
+			link = new EObjectContainmentEList<BundleLink>(BundleLink.class, this, FhirPackage.BUNDLE_ENTRY__LINK);
+		}
+		return link;
 	}
 
 	/**
@@ -138,11 +141,20 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBase(Uri newBase, NotificationChain msgs) {
-		Uri oldBase = base;
-		base = newBase;
+	public Uri getFullUrl() {
+		return fullUrl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFullUrl(Uri newFullUrl, NotificationChain msgs) {
+		Uri oldFullUrl = fullUrl;
+		fullUrl = newFullUrl;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__BASE, oldBase, newBase);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__FULL_URL, oldFullUrl, newFullUrl);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -153,30 +165,18 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBase(Uri newBase) {
-		if (newBase != base) {
+	public void setFullUrl(Uri newFullUrl) {
+		if (newFullUrl != fullUrl) {
 			NotificationChain msgs = null;
-			if (base != null)
-				msgs = ((InternalEObject)base).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__BASE, null, msgs);
-			if (newBase != null)
-				msgs = ((InternalEObject)newBase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__BASE, null, msgs);
-			msgs = basicSetBase(newBase, msgs);
+			if (fullUrl != null)
+				msgs = ((InternalEObject)fullUrl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__FULL_URL, null, msgs);
+			if (newFullUrl != null)
+				msgs = ((InternalEObject)newFullUrl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__FULL_URL, null, msgs);
+			msgs = basicSetFullUrl(newFullUrl, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__BASE, newBase, newBase));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<BundleLink> getLink() {
-		if (link == null) {
-			link = new EObjectContainmentEList<BundleLink>(BundleLink.class, this, FhirPackage.BUNDLE_ENTRY__LINK);
-		}
-		return link;
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__FULL_URL, newFullUrl, newFullUrl));
 	}
 
 	/**
@@ -270,8 +270,8 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BundleTransaction getTransaction() {
-		return transaction;
+	public BundleRequest getRequest() {
+		return request;
 	}
 
 	/**
@@ -279,11 +279,11 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTransaction(BundleTransaction newTransaction, NotificationChain msgs) {
-		BundleTransaction oldTransaction = transaction;
-		transaction = newTransaction;
+	public NotificationChain basicSetRequest(BundleRequest newRequest, NotificationChain msgs) {
+		BundleRequest oldRequest = request;
+		request = newRequest;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__TRANSACTION, oldTransaction, newTransaction);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__REQUEST, oldRequest, newRequest);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -294,18 +294,18 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTransaction(BundleTransaction newTransaction) {
-		if (newTransaction != transaction) {
+	public void setRequest(BundleRequest newRequest) {
+		if (newRequest != request) {
 			NotificationChain msgs = null;
-			if (transaction != null)
-				msgs = ((InternalEObject)transaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__TRANSACTION, null, msgs);
-			if (newTransaction != null)
-				msgs = ((InternalEObject)newTransaction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__TRANSACTION, null, msgs);
-			msgs = basicSetTransaction(newTransaction, msgs);
+			if (request != null)
+				msgs = ((InternalEObject)request).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__REQUEST, null, msgs);
+			if (newRequest != null)
+				msgs = ((InternalEObject)newRequest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__REQUEST, null, msgs);
+			msgs = basicSetRequest(newRequest, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__TRANSACTION, newTransaction, newTransaction));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__REQUEST, newRequest, newRequest));
 	}
 
 	/**
@@ -313,8 +313,8 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BundleTransactionResponse getTransactionResponse() {
-		return transactionResponse;
+	public BundleResponse getResponse() {
+		return response;
 	}
 
 	/**
@@ -322,11 +322,11 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTransactionResponse(BundleTransactionResponse newTransactionResponse, NotificationChain msgs) {
-		BundleTransactionResponse oldTransactionResponse = transactionResponse;
-		transactionResponse = newTransactionResponse;
+	public NotificationChain basicSetResponse(BundleResponse newResponse, NotificationChain msgs) {
+		BundleResponse oldResponse = response;
+		response = newResponse;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE, oldTransactionResponse, newTransactionResponse);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__RESPONSE, oldResponse, newResponse);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -337,18 +337,18 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTransactionResponse(BundleTransactionResponse newTransactionResponse) {
-		if (newTransactionResponse != transactionResponse) {
+	public void setResponse(BundleResponse newResponse) {
+		if (newResponse != response) {
 			NotificationChain msgs = null;
-			if (transactionResponse != null)
-				msgs = ((InternalEObject)transactionResponse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE, null, msgs);
-			if (newTransactionResponse != null)
-				msgs = ((InternalEObject)newTransactionResponse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE, null, msgs);
-			msgs = basicSetTransactionResponse(newTransactionResponse, msgs);
+			if (response != null)
+				msgs = ((InternalEObject)response).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__RESPONSE, null, msgs);
+			if (newResponse != null)
+				msgs = ((InternalEObject)newResponse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.BUNDLE_ENTRY__RESPONSE, null, msgs);
+			msgs = basicSetResponse(newResponse, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE, newTransactionResponse, newTransactionResponse));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.BUNDLE_ENTRY__RESPONSE, newResponse, newResponse));
 	}
 
 	/**
@@ -359,18 +359,18 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.BUNDLE_ENTRY__BASE:
-				return basicSetBase(null, msgs);
 			case FhirPackage.BUNDLE_ENTRY__LINK:
 				return ((InternalEList<?>)getLink()).basicRemove(otherEnd, msgs);
+			case FhirPackage.BUNDLE_ENTRY__FULL_URL:
+				return basicSetFullUrl(null, msgs);
 			case FhirPackage.BUNDLE_ENTRY__RESOURCE:
 				return basicSetResource(null, msgs);
 			case FhirPackage.BUNDLE_ENTRY__SEARCH:
 				return basicSetSearch(null, msgs);
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION:
-				return basicSetTransaction(null, msgs);
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE:
-				return basicSetTransactionResponse(null, msgs);
+			case FhirPackage.BUNDLE_ENTRY__REQUEST:
+				return basicSetRequest(null, msgs);
+			case FhirPackage.BUNDLE_ENTRY__RESPONSE:
+				return basicSetResponse(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -383,18 +383,18 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.BUNDLE_ENTRY__BASE:
-				return getBase();
 			case FhirPackage.BUNDLE_ENTRY__LINK:
 				return getLink();
+			case FhirPackage.BUNDLE_ENTRY__FULL_URL:
+				return getFullUrl();
 			case FhirPackage.BUNDLE_ENTRY__RESOURCE:
 				return getResource();
 			case FhirPackage.BUNDLE_ENTRY__SEARCH:
 				return getSearch();
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION:
-				return getTransaction();
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE:
-				return getTransactionResponse();
+			case FhirPackage.BUNDLE_ENTRY__REQUEST:
+				return getRequest();
+			case FhirPackage.BUNDLE_ENTRY__RESPONSE:
+				return getResponse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -408,12 +408,12 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.BUNDLE_ENTRY__BASE:
-				setBase((Uri)newValue);
-				return;
 			case FhirPackage.BUNDLE_ENTRY__LINK:
 				getLink().clear();
 				getLink().addAll((Collection<? extends BundleLink>)newValue);
+				return;
+			case FhirPackage.BUNDLE_ENTRY__FULL_URL:
+				setFullUrl((Uri)newValue);
 				return;
 			case FhirPackage.BUNDLE_ENTRY__RESOURCE:
 				setResource((ResourceContainer)newValue);
@@ -421,11 +421,11 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 			case FhirPackage.BUNDLE_ENTRY__SEARCH:
 				setSearch((BundleSearch)newValue);
 				return;
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION:
-				setTransaction((BundleTransaction)newValue);
+			case FhirPackage.BUNDLE_ENTRY__REQUEST:
+				setRequest((BundleRequest)newValue);
 				return;
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE:
-				setTransactionResponse((BundleTransactionResponse)newValue);
+			case FhirPackage.BUNDLE_ENTRY__RESPONSE:
+				setResponse((BundleResponse)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -439,11 +439,11 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.BUNDLE_ENTRY__BASE:
-				setBase((Uri)null);
-				return;
 			case FhirPackage.BUNDLE_ENTRY__LINK:
 				getLink().clear();
+				return;
+			case FhirPackage.BUNDLE_ENTRY__FULL_URL:
+				setFullUrl((Uri)null);
 				return;
 			case FhirPackage.BUNDLE_ENTRY__RESOURCE:
 				setResource((ResourceContainer)null);
@@ -451,11 +451,11 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 			case FhirPackage.BUNDLE_ENTRY__SEARCH:
 				setSearch((BundleSearch)null);
 				return;
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION:
-				setTransaction((BundleTransaction)null);
+			case FhirPackage.BUNDLE_ENTRY__REQUEST:
+				setRequest((BundleRequest)null);
 				return;
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE:
-				setTransactionResponse((BundleTransactionResponse)null);
+			case FhirPackage.BUNDLE_ENTRY__RESPONSE:
+				setResponse((BundleResponse)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -469,18 +469,18 @@ public class BundleEntryImpl extends BackboneElementImpl implements BundleEntry 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.BUNDLE_ENTRY__BASE:
-				return base != null;
 			case FhirPackage.BUNDLE_ENTRY__LINK:
 				return link != null && !link.isEmpty();
+			case FhirPackage.BUNDLE_ENTRY__FULL_URL:
+				return fullUrl != null;
 			case FhirPackage.BUNDLE_ENTRY__RESOURCE:
 				return resource != null;
 			case FhirPackage.BUNDLE_ENTRY__SEARCH:
 				return search != null;
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION:
-				return transaction != null;
-			case FhirPackage.BUNDLE_ENTRY__TRANSACTION_RESPONSE:
-				return transactionResponse != null;
+			case FhirPackage.BUNDLE_ENTRY__REQUEST:
+				return request != null;
+			case FhirPackage.BUNDLE_ENTRY__RESPONSE:
+				return response != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Code;
 import org.hl7.fhir.FhirPackage;
+import org.hl7.fhir.OperationDefinitionBinding;
 import org.hl7.fhir.OperationDefinitionParameter;
-import org.hl7.fhir.OperationDefinitionPart;
 import org.hl7.fhir.OperationParameterUse;
 import org.hl7.fhir.Reference;
 
@@ -39,6 +39,7 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionParameterImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionParameterImpl#getProfile <em>Profile</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OperationDefinitionParameterImpl#getBinding <em>Binding</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionParameterImpl#getPart <em>Part</em>}</li>
  * </ul>
  *
@@ -116,6 +117,16 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 	protected Reference profile;
 
 	/**
+	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBinding()
+	 * @generated
+	 * @ordered
+	 */
+	protected OperationDefinitionBinding binding;
+
+	/**
 	 * The cached value of the '{@link #getPart() <em>Part</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,7 +134,7 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<OperationDefinitionPart> part;
+	protected EList<OperationDefinitionParameter> part;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -450,9 +461,52 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<OperationDefinitionPart> getPart() {
+	public OperationDefinitionBinding getBinding() {
+		return binding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBinding(OperationDefinitionBinding newBinding, NotificationChain msgs) {
+		OperationDefinitionBinding oldBinding = binding;
+		binding = newBinding;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING, oldBinding, newBinding);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBinding(OperationDefinitionBinding newBinding) {
+		if (newBinding != binding) {
+			NotificationChain msgs = null;
+			if (binding != null)
+				msgs = ((InternalEObject)binding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING, null, msgs);
+			if (newBinding != null)
+				msgs = ((InternalEObject)newBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING, null, msgs);
+			msgs = basicSetBinding(newBinding, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING, newBinding, newBinding));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<OperationDefinitionParameter> getPart() {
 		if (part == null) {
-			part = new EObjectContainmentEList<OperationDefinitionPart>(OperationDefinitionPart.class, this, FhirPackage.OPERATION_DEFINITION_PARAMETER__PART);
+			part = new EObjectContainmentEList<OperationDefinitionParameter>(OperationDefinitionParameter.class, this, FhirPackage.OPERATION_DEFINITION_PARAMETER__PART);
 		}
 		return part;
 	}
@@ -479,6 +533,8 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 				return basicSetType(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PROFILE:
 				return basicSetProfile(null, msgs);
+			case FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING:
+				return basicSetBinding(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PART:
 				return ((InternalEList<?>)getPart()).basicRemove(otherEnd, msgs);
 		}
@@ -507,6 +563,8 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 				return getType();
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PROFILE:
 				return getProfile();
+			case FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING:
+				return getBinding();
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PART:
 				return getPart();
 		}
@@ -543,9 +601,12 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PROFILE:
 				setProfile((Reference)newValue);
 				return;
+			case FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING:
+				setBinding((OperationDefinitionBinding)newValue);
+				return;
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PART:
 				getPart().clear();
-				getPart().addAll((Collection<? extends OperationDefinitionPart>)newValue);
+				getPart().addAll((Collection<? extends OperationDefinitionParameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -580,6 +641,9 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PROFILE:
 				setProfile((Reference)null);
 				return;
+			case FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING:
+				setBinding((OperationDefinitionBinding)null);
+				return;
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PART:
 				getPart().clear();
 				return;
@@ -609,6 +673,8 @@ public class OperationDefinitionParameterImpl extends BackboneElementImpl implem
 				return type != null;
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PROFILE:
 				return profile != null;
+			case FhirPackage.OPERATION_DEFINITION_PARAMETER__BINDING:
+				return binding != null;
 			case FhirPackage.OPERATION_DEFINITION_PARAMETER__PART:
 				return part != null && !part.isEmpty();
 		}

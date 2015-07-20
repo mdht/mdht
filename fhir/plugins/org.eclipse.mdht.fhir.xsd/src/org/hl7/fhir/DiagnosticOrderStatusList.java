@@ -155,7 +155,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request has been proposed.
+	 * The request has been proposed
 	 * <!-- end-model-doc -->
 	 * @see #PROPOSED
 	 * @model name="proposed"
@@ -169,7 +169,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * the request is in preliminary form prior to being sent.
+	 * the request is in preliminary form prior to being sent
 	 * <!-- end-model-doc -->
 	 * @see #DRAFT
 	 * @model name="draft"
@@ -183,7 +183,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request has been planned.
+	 * The request has been planned
 	 * <!-- end-model-doc -->
 	 * @see #PLANNED
 	 * @model name="planned"
@@ -197,7 +197,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request has been placed.
+	 * The request has been placed
 	 * <!-- end-model-doc -->
 	 * @see #REQUESTED
 	 * @model name="requested"
@@ -211,7 +211,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The receiving system has received the order, but not yet decided whether it will be performed.
+	 * The receiving system has received the order, but not yet decided whether it will be performed
 	 * <!-- end-model-doc -->
 	 * @see #RECEIVED
 	 * @model name="received"
@@ -225,7 +225,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The receiving system has accepted the order, but work has not yet commenced.
+	 * The receiving system has accepted the order, but work has not yet commenced
 	 * <!-- end-model-doc -->
 	 * @see #ACCEPTED
 	 * @model name="accepted"
@@ -239,7 +239,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The work to fulfill the order is happening.
+	 * The work to fulfill the order is happening
 	 * <!-- end-model-doc -->
 	 * @see #IN_PROGRESS
 	 * @model name="inProgress" literal="in-progress"
@@ -253,7 +253,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The work is complete, and the outcomes are being reviewed for approval.
+	 * The work is complete, and the outcomes are being reviewed for approval
 	 * <!-- end-model-doc -->
 	 * @see #REVIEW
 	 * @model name="review"
@@ -267,7 +267,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The work has been complete, the report(s) released, and no further work is planned.
+	 * The work has been complete, the report(s) released, and no further work is planned
 	 * <!-- end-model-doc -->
 	 * @see #COMPLETED
 	 * @model name="completed"
@@ -281,7 +281,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * the request has been withdrawn.
+	 * the request has been withdrawn
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"
@@ -295,7 +295,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The request has been held by originating system/user request.
+	 * The request has been held by originating system/user request
 	 * <!-- end-model-doc -->
 	 * @see #SUSPENDED
 	 * @model name="suspended"
@@ -309,7 +309,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The receiving system has declined to fulfill the request.
+	 * The receiving system has declined to fulfill the request
 	 * <!-- end-model-doc -->
 	 * @see #REJECTED
 	 * @model name="rejected"
@@ -323,7 +323,7 @@ public enum DiagnosticOrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The diagnostic investigation was attempted, but due to some procedural error, it could not be completed.
+	 * The diagnostic investigation was attempted, but due to some procedural error, it could not be completed
 	 * <!-- end-model-doc -->
 	 * @see #FAILED
 	 * @model name="failed"

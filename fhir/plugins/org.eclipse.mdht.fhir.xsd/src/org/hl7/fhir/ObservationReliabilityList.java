@@ -95,7 +95,7 @@ public enum ObservationReliabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The result has no reliability concerns.
+	 * The result has no reliability concerns
 	 * <!-- end-model-doc -->
 	 * @see #OK
 	 * @model name="ok"
@@ -109,7 +109,7 @@ public enum ObservationReliabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An early estimate of value; measurement is still occurring.
+	 * An early estimate of value; measurement is still occurring
 	 * <!-- end-model-doc -->
 	 * @see #ONGOING
 	 * @model name="ongoing"
@@ -123,7 +123,7 @@ public enum ObservationReliabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An early estimate of value; processing is still occurring.
+	 * An early estimate of value; processing is still occurring
 	 * <!-- end-model-doc -->
 	 * @see #EARLY
 	 * @model name="early"
@@ -137,7 +137,7 @@ public enum ObservationReliabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The observation value should be treated with care.
+	 * The observation value should be treated with care
 	 * <!-- end-model-doc -->
 	 * @see #QUESTIONABLE
 	 * @model name="questionable"
@@ -151,7 +151,7 @@ public enum ObservationReliabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The result has been generated while calibration is occurring.
+	 * The result has been generated while calibration is occurring
 	 * <!-- end-model-doc -->
 	 * @see #CALIBRATING
 	 * @model name="calibrating"
@@ -165,7 +165,7 @@ public enum ObservationReliabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The observation could not be completed because of an error.
+	 * The observation could not be completed because of an error
 	 * <!-- end-model-doc -->
 	 * @see #ERROR
 	 * @model name="error"
@@ -179,7 +179,7 @@ public enum ObservationReliabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * No observation  reliability value was available.
+	 * No observation  reliability value was available
 	 * <!-- end-model-doc -->
 	 * @see #UNKNOWN
 	 * @model name="unknown"

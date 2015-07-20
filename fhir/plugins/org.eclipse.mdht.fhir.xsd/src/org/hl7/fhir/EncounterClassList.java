@@ -115,7 +115,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter during which the patient is hospitalized and stays overnight.
+	 * An encounter during which the patient is hospitalized and stays overnight
 	 * <!-- end-model-doc -->
 	 * @see #INPATIENT
 	 * @model name="inpatient"
@@ -129,7 +129,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter during which the patient is not hospitalized overnight.
+	 * An encounter during which the patient is not hospitalized overnight
 	 * <!-- end-model-doc -->
 	 * @see #OUTPATIENT
 	 * @model name="outpatient"
@@ -143,7 +143,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit.
+	 * An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit
 	 * <!-- end-model-doc -->
 	 * @see #AMBULATORY
 	 * @model name="ambulatory"
@@ -157,7 +157,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter where the patient needs urgent care.
+	 * An encounter where the patient needs urgent care
 	 * <!-- end-model-doc -->
 	 * @see #EMERGENCY
 	 * @model name="emergency"
@@ -171,7 +171,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter where the practitioner visits the patient at his/her home.
+	 * An encounter where the practitioner visits the patient at his/her home
 	 * <!-- end-model-doc -->
 	 * @see #HOME
 	 * @model name="home"
@@ -185,7 +185,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter taking place outside the regular environment for giving care.
+	 * An encounter taking place outside the regular environment for giving care
 	 * <!-- end-model-doc -->
 	 * @see #FIELD
 	 * @model name="field"
@@ -199,7 +199,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter where the patient needs more prolonged treatment or investigations than outpatients, but who do not need to stay in the hospital overnight.
+	 * An encounter where the patient needs more prolonged treatment or investigations than outpatients, but who do not need to stay in the hospital overnight
 	 * <!-- end-model-doc -->
 	 * @see #DAYTIME
 	 * @model name="daytime"
@@ -213,7 +213,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An encounter that takes place where the patient and practitioner do not physically meet but use electronic means for contact.
+	 * An encounter that takes place where the patient and practitioner do not physically meet but use electronic means for contact
 	 * <!-- end-model-doc -->
 	 * @see #VIRTUAL
 	 * @model name="virtual"
@@ -227,7 +227,7 @@ public enum EncounterClassList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Any other encounter type that is not described by one of the other values. Where this is used it is expected that an implementer will include an extension value to define what the actual other type is.
+	 * Any other encounter type that is not described by one of the other values. Where this is used it is expected that an implementer will include an extension value to define what the actual other type is
 	 * <!-- end-model-doc -->
 	 * @see #OTHER
 	 * @model name="other"

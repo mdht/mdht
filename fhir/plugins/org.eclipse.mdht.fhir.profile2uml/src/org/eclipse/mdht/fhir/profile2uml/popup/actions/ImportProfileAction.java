@@ -49,7 +49,7 @@ public class ImportProfileAction implements IObjectActionDelegate {
 	private IContainer getProfileFolder() {
 		IContainer profileFolder = null;
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/fhir-spec-xml");
+		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/current");
 		if (resource instanceof IContainer) {
 			profileFolder = (IContainer) resource;
 		}
@@ -74,7 +74,9 @@ public class ImportProfileAction implements IObjectActionDelegate {
 						umlImporter.importProfile("Condition");
 						umlImporter.importProfile("StructureDefinition");
 						umlImporter.importProfile("Conformance");
+						umlImporter.importProfile("ImplementationGuide");
 //						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
+//						umlImporter.importProfile("observation-hspc-standardlabobs-quantitative-stdqty");
 						
 //						umlImporter.importAllProfiles();
 					}

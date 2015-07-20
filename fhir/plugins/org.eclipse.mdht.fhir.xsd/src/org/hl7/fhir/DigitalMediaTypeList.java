@@ -55,7 +55,7 @@ public enum DigitalMediaTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The media consists of one or more unmoving images, including photographs, computer-generated graphs and charts, and scanned documents.
+	 * The media consists of one or more unmoving images, including photographs, computer-generated graphs and charts, and scanned documents
 	 * <!-- end-model-doc -->
 	 * @see #PHOTO
 	 * @model name="photo"
@@ -69,7 +69,7 @@ public enum DigitalMediaTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The media consists of a series of frames that capture a moving image.
+	 * The media consists of a series of frames that capture a moving image
 	 * <!-- end-model-doc -->
 	 * @see #VIDEO
 	 * @model name="video"
@@ -83,7 +83,7 @@ public enum DigitalMediaTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The media consists of a sound recording.
+	 * The media consists of a sound recording
 	 * <!-- end-model-doc -->
 	 * @see #AUDIO
 	 * @model name="audio"

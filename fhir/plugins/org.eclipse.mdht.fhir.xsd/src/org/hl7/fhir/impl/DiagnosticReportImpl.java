@@ -25,6 +25,7 @@ import org.hl7.fhir.DiagnosticReportImage;
 import org.hl7.fhir.DiagnosticReportStatus;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
+import org.hl7.fhir.Instant;
 import org.hl7.fhir.Period;
 import org.hl7.fhir.Reference;
 
@@ -36,7 +37,7 @@ import org.hl7.fhir.Reference;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getIssued <em>Issued</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getSubject <em>Subject</em>}</li>
@@ -45,8 +46,8 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getRequestDetail <em>Request Detail</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getServiceCategory <em>Service Category</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getDiagnosticDateTime <em>Diagnostic Date Time</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getDiagnosticPeriod <em>Diagnostic Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getEffectiveDateTime <em>Effective Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getEffectivePeriod <em>Effective Period</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getSpecimen <em>Specimen</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getResult <em>Result</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticReportImpl#getImagingStudy <em>Imaging Study</em>}</li>
@@ -60,14 +61,14 @@ import org.hl7.fhir.Reference;
  */
 public class DiagnosticReportImpl extends DomainResourceImpl implements DiagnosticReport {
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getCode()
 	 * @generated
 	 * @ordered
 	 */
-	protected CodeableConcept name;
+	protected CodeableConcept code;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
@@ -87,7 +88,7 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * @generated
 	 * @ordered
 	 */
-	protected DateTime issued;
+	protected Instant issued;
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' containment reference.
@@ -150,24 +151,24 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	protected CodeableConcept serviceCategory;
 
 	/**
-	 * The cached value of the '{@link #getDiagnosticDateTime() <em>Diagnostic Date Time</em>}' containment reference.
+	 * The cached value of the '{@link #getEffectiveDateTime() <em>Effective Date Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDiagnosticDateTime()
+	 * @see #getEffectiveDateTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected DateTime diagnosticDateTime;
+	protected DateTime effectiveDateTime;
 
 	/**
-	 * The cached value of the '{@link #getDiagnosticPeriod() <em>Diagnostic Period</em>}' containment reference.
+	 * The cached value of the '{@link #getEffectivePeriod() <em>Effective Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDiagnosticPeriod()
+	 * @see #getEffectivePeriod()
 	 * @generated
 	 * @ordered
 	 */
-	protected Period diagnosticPeriod;
+	protected Period effectivePeriod;
 
 	/**
 	 * The cached value of the '{@link #getSpecimen() <em>Specimen</em>}' containment reference list.
@@ -263,8 +264,8 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getName() {
-		return name;
+	public CodeableConcept getCode() {
+		return code;
 	}
 
 	/**
@@ -272,11 +273,11 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetName(CodeableConcept newName, NotificationChain msgs) {
-		CodeableConcept oldName = name;
-		name = newName;
+	public NotificationChain basicSetCode(CodeableConcept newCode, NotificationChain msgs) {
+		CodeableConcept oldCode = code;
+		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__NAME, oldName, newName);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__CODE, oldCode, newCode);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -287,18 +288,18 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(CodeableConcept newName) {
-		if (newName != name) {
+	public void setCode(CodeableConcept newCode) {
+		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__NAME, null, msgs);
-			msgs = basicSetName(newName, msgs);
+			if (code != null)
+				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__CODE, null, msgs);
+			if (newCode != null)
+				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__CODE, null, msgs);
+			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__NAME, newName, newName));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__CODE, newCode, newCode));
 	}
 
 	/**
@@ -349,7 +350,7 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DateTime getIssued() {
+	public Instant getIssued() {
 		return issued;
 	}
 
@@ -358,8 +359,8 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetIssued(DateTime newIssued, NotificationChain msgs) {
-		DateTime oldIssued = issued;
+	public NotificationChain basicSetIssued(Instant newIssued, NotificationChain msgs) {
+		Instant oldIssued = issued;
 		issued = newIssued;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__ISSUED, oldIssued, newIssued);
@@ -373,7 +374,7 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIssued(DateTime newIssued) {
+	public void setIssued(Instant newIssued) {
 		if (newIssued != issued) {
 			NotificationChain msgs = null;
 			if (issued != null)
@@ -588,8 +589,8 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DateTime getDiagnosticDateTime() {
-		return diagnosticDateTime;
+	public DateTime getEffectiveDateTime() {
+		return effectiveDateTime;
 	}
 
 	/**
@@ -597,11 +598,11 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDiagnosticDateTime(DateTime newDiagnosticDateTime, NotificationChain msgs) {
-		DateTime oldDiagnosticDateTime = diagnosticDateTime;
-		diagnosticDateTime = newDiagnosticDateTime;
+	public NotificationChain basicSetEffectiveDateTime(DateTime newEffectiveDateTime, NotificationChain msgs) {
+		DateTime oldEffectiveDateTime = effectiveDateTime;
+		effectiveDateTime = newEffectiveDateTime;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME, oldDiagnosticDateTime, newDiagnosticDateTime);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME, oldEffectiveDateTime, newEffectiveDateTime);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -612,18 +613,18 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDiagnosticDateTime(DateTime newDiagnosticDateTime) {
-		if (newDiagnosticDateTime != diagnosticDateTime) {
+	public void setEffectiveDateTime(DateTime newEffectiveDateTime) {
+		if (newEffectiveDateTime != effectiveDateTime) {
 			NotificationChain msgs = null;
-			if (diagnosticDateTime != null)
-				msgs = ((InternalEObject)diagnosticDateTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME, null, msgs);
-			if (newDiagnosticDateTime != null)
-				msgs = ((InternalEObject)newDiagnosticDateTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME, null, msgs);
-			msgs = basicSetDiagnosticDateTime(newDiagnosticDateTime, msgs);
+			if (effectiveDateTime != null)
+				msgs = ((InternalEObject)effectiveDateTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME, null, msgs);
+			if (newEffectiveDateTime != null)
+				msgs = ((InternalEObject)newEffectiveDateTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME, null, msgs);
+			msgs = basicSetEffectiveDateTime(newEffectiveDateTime, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME, newDiagnosticDateTime, newDiagnosticDateTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME, newEffectiveDateTime, newEffectiveDateTime));
 	}
 
 	/**
@@ -631,8 +632,8 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Period getDiagnosticPeriod() {
-		return diagnosticPeriod;
+	public Period getEffectivePeriod() {
+		return effectivePeriod;
 	}
 
 	/**
@@ -640,11 +641,11 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDiagnosticPeriod(Period newDiagnosticPeriod, NotificationChain msgs) {
-		Period oldDiagnosticPeriod = diagnosticPeriod;
-		diagnosticPeriod = newDiagnosticPeriod;
+	public NotificationChain basicSetEffectivePeriod(Period newEffectivePeriod, NotificationChain msgs) {
+		Period oldEffectivePeriod = effectivePeriod;
+		effectivePeriod = newEffectivePeriod;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD, oldDiagnosticPeriod, newDiagnosticPeriod);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD, oldEffectivePeriod, newEffectivePeriod);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -655,18 +656,18 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDiagnosticPeriod(Period newDiagnosticPeriod) {
-		if (newDiagnosticPeriod != diagnosticPeriod) {
+	public void setEffectivePeriod(Period newEffectivePeriod) {
+		if (newEffectivePeriod != effectivePeriod) {
 			NotificationChain msgs = null;
-			if (diagnosticPeriod != null)
-				msgs = ((InternalEObject)diagnosticPeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD, null, msgs);
-			if (newDiagnosticPeriod != null)
-				msgs = ((InternalEObject)newDiagnosticPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD, null, msgs);
-			msgs = basicSetDiagnosticPeriod(newDiagnosticPeriod, msgs);
+			if (effectivePeriod != null)
+				msgs = ((InternalEObject)effectivePeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD, null, msgs);
+			if (newEffectivePeriod != null)
+				msgs = ((InternalEObject)newEffectivePeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD, null, msgs);
+			msgs = basicSetEffectivePeriod(newEffectivePeriod, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD, newDiagnosticPeriod, newDiagnosticPeriod));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD, newEffectivePeriod, newEffectivePeriod));
 	}
 
 	/**
@@ -792,8 +793,8 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.DIAGNOSTIC_REPORT__NAME:
-				return basicSetName(null, msgs);
+			case FhirPackage.DIAGNOSTIC_REPORT__CODE:
+				return basicSetCode(null, msgs);
 			case FhirPackage.DIAGNOSTIC_REPORT__STATUS:
 				return basicSetStatus(null, msgs);
 			case FhirPackage.DIAGNOSTIC_REPORT__ISSUED:
@@ -810,10 +811,10 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 				return ((InternalEList<?>)getRequestDetail()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DIAGNOSTIC_REPORT__SERVICE_CATEGORY:
 				return basicSetServiceCategory(null, msgs);
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME:
-				return basicSetDiagnosticDateTime(null, msgs);
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD:
-				return basicSetDiagnosticPeriod(null, msgs);
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME:
+				return basicSetEffectiveDateTime(null, msgs);
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD:
+				return basicSetEffectivePeriod(null, msgs);
 			case FhirPackage.DIAGNOSTIC_REPORT__SPECIMEN:
 				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DIAGNOSTIC_REPORT__RESULT:
@@ -840,8 +841,8 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.DIAGNOSTIC_REPORT__NAME:
-				return getName();
+			case FhirPackage.DIAGNOSTIC_REPORT__CODE:
+				return getCode();
 			case FhirPackage.DIAGNOSTIC_REPORT__STATUS:
 				return getStatus();
 			case FhirPackage.DIAGNOSTIC_REPORT__ISSUED:
@@ -858,10 +859,10 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 				return getRequestDetail();
 			case FhirPackage.DIAGNOSTIC_REPORT__SERVICE_CATEGORY:
 				return getServiceCategory();
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME:
-				return getDiagnosticDateTime();
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD:
-				return getDiagnosticPeriod();
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME:
+				return getEffectiveDateTime();
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD:
+				return getEffectivePeriod();
 			case FhirPackage.DIAGNOSTIC_REPORT__SPECIMEN:
 				return getSpecimen();
 			case FhirPackage.DIAGNOSTIC_REPORT__RESULT:
@@ -889,14 +890,14 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.DIAGNOSTIC_REPORT__NAME:
-				setName((CodeableConcept)newValue);
+			case FhirPackage.DIAGNOSTIC_REPORT__CODE:
+				setCode((CodeableConcept)newValue);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__STATUS:
 				setStatus((DiagnosticReportStatus)newValue);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__ISSUED:
-				setIssued((DateTime)newValue);
+				setIssued((Instant)newValue);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__SUBJECT:
 				setSubject((Reference)newValue);
@@ -918,11 +919,11 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 			case FhirPackage.DIAGNOSTIC_REPORT__SERVICE_CATEGORY:
 				setServiceCategory((CodeableConcept)newValue);
 				return;
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME:
-				setDiagnosticDateTime((DateTime)newValue);
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME:
+				setEffectiveDateTime((DateTime)newValue);
 				return;
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD:
-				setDiagnosticPeriod((Period)newValue);
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD:
+				setEffectivePeriod((Period)newValue);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__SPECIMEN:
 				getSpecimen().clear();
@@ -963,14 +964,14 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.DIAGNOSTIC_REPORT__NAME:
-				setName((CodeableConcept)null);
+			case FhirPackage.DIAGNOSTIC_REPORT__CODE:
+				setCode((CodeableConcept)null);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__STATUS:
 				setStatus((DiagnosticReportStatus)null);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__ISSUED:
-				setIssued((DateTime)null);
+				setIssued((Instant)null);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__SUBJECT:
 				setSubject((Reference)null);
@@ -990,11 +991,11 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 			case FhirPackage.DIAGNOSTIC_REPORT__SERVICE_CATEGORY:
 				setServiceCategory((CodeableConcept)null);
 				return;
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME:
-				setDiagnosticDateTime((DateTime)null);
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME:
+				setEffectiveDateTime((DateTime)null);
 				return;
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD:
-				setDiagnosticPeriod((Period)null);
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD:
+				setEffectivePeriod((Period)null);
 				return;
 			case FhirPackage.DIAGNOSTIC_REPORT__SPECIMEN:
 				getSpecimen().clear();
@@ -1029,8 +1030,8 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.DIAGNOSTIC_REPORT__NAME:
-				return name != null;
+			case FhirPackage.DIAGNOSTIC_REPORT__CODE:
+				return code != null;
 			case FhirPackage.DIAGNOSTIC_REPORT__STATUS:
 				return status != null;
 			case FhirPackage.DIAGNOSTIC_REPORT__ISSUED:
@@ -1047,10 +1048,10 @@ public class DiagnosticReportImpl extends DomainResourceImpl implements Diagnost
 				return requestDetail != null && !requestDetail.isEmpty();
 			case FhirPackage.DIAGNOSTIC_REPORT__SERVICE_CATEGORY:
 				return serviceCategory != null;
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_DATE_TIME:
-				return diagnosticDateTime != null;
-			case FhirPackage.DIAGNOSTIC_REPORT__DIAGNOSTIC_PERIOD:
-				return diagnosticPeriod != null;
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME:
+				return effectiveDateTime != null;
+			case FhirPackage.DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD:
+				return effectivePeriod != null;
 			case FhirPackage.DIAGNOSTIC_REPORT__SPECIMEN:
 				return specimen != null && !specimen.isEmpty();
 			case FhirPackage.DIAGNOSTIC_REPORT__RESULT:

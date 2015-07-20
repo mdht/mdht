@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Address;
+import org.hl7.fhir.Annotation;
 import org.hl7.fhir.Attachment;
 import org.hl7.fhir.Base64Binary;
 import org.hl7.fhir.Code;
@@ -35,7 +36,6 @@ import org.hl7.fhir.Instant;
 import org.hl7.fhir.Meta;
 import org.hl7.fhir.Oid;
 import org.hl7.fhir.ParametersParameter;
-import org.hl7.fhir.ParametersPart;
 import org.hl7.fhir.Period;
 import org.hl7.fhir.PositiveInt;
 import org.hl7.fhir.Quantity;
@@ -76,6 +76,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueId <em>Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueUnsignedInt <em>Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValuePositiveInt <em>Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueAnnotation <em>Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueAttachment <em>Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueIdentifier <em>Value Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueCodeableConcept <em>Value Codeable Concept</em>}</li>
@@ -270,6 +271,16 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 	protected PositiveInt valuePositiveInt;
 
 	/**
+	 * The cached value of the '{@link #getValueAnnotation() <em>Value Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Annotation valueAnnotation;
+
+	/**
 	 * The cached value of the '{@link #getValueAttachment() <em>Value Attachment</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -447,7 +458,7 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ParametersPart> part;
+	protected EList<ParametersParameter> part;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1204,6 +1215,49 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Annotation getValueAnnotation() {
+		return valueAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValueAnnotation(Annotation newValueAnnotation, NotificationChain msgs) {
+		Annotation oldValueAnnotation = valueAnnotation;
+		valueAnnotation = newValueAnnotation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION, oldValueAnnotation, newValueAnnotation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValueAnnotation(Annotation newValueAnnotation) {
+		if (newValueAnnotation != valueAnnotation) {
+			NotificationChain msgs = null;
+			if (valueAnnotation != null)
+				msgs = ((InternalEObject)valueAnnotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION, null, msgs);
+			if (newValueAnnotation != null)
+				msgs = ((InternalEObject)newValueAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION, null, msgs);
+			msgs = basicSetValueAnnotation(newValueAnnotation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION, newValueAnnotation, newValueAnnotation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Attachment getValueAttachment() {
 		return valueAttachment;
 	}
@@ -1935,9 +1989,9 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ParametersPart> getPart() {
+	public EList<ParametersParameter> getPart() {
 		if (part == null) {
-			part = new EObjectContainmentEList<ParametersPart>(ParametersPart.class, this, FhirPackage.PARAMETERS_PARAMETER__PART);
+			part = new EObjectContainmentEList<ParametersParameter>(ParametersParameter.class, this, FhirPackage.PARAMETERS_PARAMETER__PART);
 		}
 		return part;
 	}
@@ -1984,6 +2038,8 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return basicSetValueUnsignedInt(null, msgs);
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				return basicSetValuePositiveInt(null, msgs);
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
+				return basicSetValueAnnotation(null, msgs);
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:
 				return basicSetValueAttachment(null, msgs);
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_IDENTIFIER:
@@ -2066,6 +2122,8 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return getValueUnsignedInt();
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				return getValuePositiveInt();
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
+				return getValueAnnotation();
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:
 				return getValueAttachment();
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_IDENTIFIER:
@@ -2166,6 +2224,9 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				setValuePositiveInt((PositiveInt)newValue);
 				return;
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
+				setValueAnnotation((Annotation)newValue);
+				return;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:
 				setValueAttachment((Attachment)newValue);
 				return;
@@ -2219,7 +2280,7 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return;
 			case FhirPackage.PARAMETERS_PARAMETER__PART:
 				getPart().clear();
-				getPart().addAll((Collection<? extends ParametersPart>)newValue);
+				getPart().addAll((Collection<? extends ParametersParameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -2283,6 +2344,9 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				setValuePositiveInt((PositiveInt)null);
+				return;
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
+				setValueAnnotation((Annotation)null);
 				return;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:
 				setValueAttachment((Attachment)null);
@@ -2384,6 +2448,8 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return valueUnsignedInt != null;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				return valuePositiveInt != null;
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
+				return valueAnnotation != null;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:
 				return valueAttachment != null;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_IDENTIFIER:

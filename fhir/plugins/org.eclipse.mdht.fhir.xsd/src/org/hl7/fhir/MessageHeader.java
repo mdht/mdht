@@ -94,7 +94,7 @@ public interface MessageHeader extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Code that identifies the event this message represents and connects it with its definition. Events defined as part of the FHIR specification have the system value "http://hl7.org/fhir/message-type".
+	 * Code that identifies the event this message represents and connects it with its definition. Events defined as part of the FHIR specification have the system value "http://hl7.org/fhir/message-events".
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Event</em>' containment reference.
 	 * @see #setEvent(Coding)

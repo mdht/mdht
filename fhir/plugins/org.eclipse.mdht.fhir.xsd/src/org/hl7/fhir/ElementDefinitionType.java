@@ -55,30 +55,20 @@ public interface ElementDefinitionType extends Element {
 	void setCode(Code value);
 
 	/**
-	 * Returns the value of the '<em><b>Profile</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Profile</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Uri}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Identifies a profile structure that SHALL hold for resources or datatypes referenced as the type of this element. Can be a local reference - to another structure in this profile, or a reference to a structure in another profile.
+	 * Identifies a profile structure that SHALL hold for resources or datatypes referenced as the type of this element. Can be a local reference - to another structure in this profile, or a reference to a structure in another profile. When more than one profile is specified, the content must conform to all of them.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Profile</em>' containment reference.
-	 * @see #setProfile(Uri)
+	 * @return the value of the '<em>Profile</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getElementDefinitionType_Profile()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='profile' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Uri getProfile();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinitionType#getProfile <em>Profile</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Profile</em>' containment reference.
-	 * @see #getProfile()
-	 * @generated
-	 */
-	void setProfile(Uri value);
+	EList<Uri> getProfile();
 
 	/**
 	 * Returns the value of the '<em><b>Aggregation</b></em>' containment reference list.

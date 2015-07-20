@@ -56,6 +56,8 @@ public enum ConformanceResourceStatusList implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This resource is still under development
+	 * черновик
+	 * ontwerp
 	 * <!-- end-model-doc -->
 	 * @see #DRAFT
 	 * @model name="draft"
@@ -70,6 +72,8 @@ public enum ConformanceResourceStatusList implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This resource is ready for normal use
+	 * активный
+	 * actief
 	 * <!-- end-model-doc -->
 	 * @see #ACTIVE
 	 * @model name="active"
@@ -83,7 +87,9 @@ public enum ConformanceResourceStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This resource has been withdrawn or superceded and should no longer be used
+	 * This resource has been withdrawn or superseded and should no longer be used
+	 * удалён
+	 * verouderd
 	 * <!-- end-model-doc -->
 	 * @see #RETIRED
 	 * @model name="retired"

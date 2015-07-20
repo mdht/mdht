@@ -85,7 +85,7 @@ public enum GroupTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Group contains "person" Patient resources.
+	 * Group contains "person" Patient resources
 	 * <!-- end-model-doc -->
 	 * @see #PERSON
 	 * @model name="person"
@@ -99,7 +99,7 @@ public enum GroupTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Group contains "animal" Patient resources.
+	 * Group contains "animal" Patient resources
 	 * <!-- end-model-doc -->
 	 * @see #ANIMAL
 	 * @model name="animal"
@@ -113,7 +113,7 @@ public enum GroupTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Group contains healthcare practitioner resources.
+	 * Group contains healthcare practitioner resources
 	 * <!-- end-model-doc -->
 	 * @see #PRACTITIONER
 	 * @model name="practitioner"
@@ -127,7 +127,7 @@ public enum GroupTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Group contains Device resources.
+	 * Group contains Device resources
 	 * <!-- end-model-doc -->
 	 * @see #DEVICE
 	 * @model name="device"
@@ -141,7 +141,7 @@ public enum GroupTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Group contains Medication resources.
+	 * Group contains Medication resources
 	 * <!-- end-model-doc -->
 	 * @see #MEDICATION
 	 * @model name="medication"
@@ -155,7 +155,7 @@ public enum GroupTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Group contains Substance resources.
+	 * Group contains Substance resources
 	 * <!-- end-model-doc -->
 	 * @see #SUBSTANCE
 	 * @model name="substance"

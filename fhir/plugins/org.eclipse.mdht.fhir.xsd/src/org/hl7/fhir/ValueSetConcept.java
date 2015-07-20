@@ -35,7 +35,7 @@ public interface ValueSetConcept extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Code that identifies concept.
+	 * A code - a text symbol - that uniquely identifies the concept within the code system.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Code</em>' containment reference.
 	 * @see #setCode(Code)
@@ -87,7 +87,7 @@ public interface ValueSetConcept extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Text to Display to the user.
+	 * A human readable string that is the recommended default way to present this concept to a user.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Display</em>' containment reference.
 	 * @see #setDisplay(org.hl7.fhir.String)
@@ -113,7 +113,7 @@ public interface ValueSetConcept extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The formal definition of the concept. Formal definitions are not required, because of the prevalence of legacy systems without them, but they are highly recommended, as without them there is no formal meaning associated with the concept.
+	 * The formal definition of the concept. The value set resource does not make formal definitions required, because of the prevalence of legacy systems. However, but they are highly recommended, as without them there is no formal meaning associated with the concept.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Definition</em>' containment reference.
 	 * @see #setDefinition(org.hl7.fhir.String)
@@ -140,7 +140,7 @@ public interface ValueSetConcept extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Additional representations for the concept - other languages, aliases, specialised purposes, used for particular purposes, etc.
+	 * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Designation</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getValueSetConcept_Designation()
@@ -156,7 +156,7 @@ public interface ValueSetConcept extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Child Concepts (is-a / contains).
+	 * Child Concepts (is-a / contains / categorises).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Concept</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getValueSetConcept_Concept()

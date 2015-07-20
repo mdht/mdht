@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.ConceptMap;
 import org.hl7.fhir.ConceptMapContact;
 import org.hl7.fhir.ConceptMapElement;
-import org.hl7.fhir.ConformanceResourceStatus;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
@@ -167,7 +167,7 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * @generated
 	 * @ordered
 	 */
-	protected ConformanceResourceStatus status;
+	protected Code status;
 
 	/**
 	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
@@ -631,7 +631,7 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConformanceResourceStatus getStatus() {
+	public Code getStatus() {
 		return status;
 	}
 
@@ -640,8 +640,8 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(ConformanceResourceStatus newStatus, NotificationChain msgs) {
-		ConformanceResourceStatus oldStatus = status;
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__STATUS, oldStatus, newStatus);
@@ -655,7 +655,7 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(ConformanceResourceStatus newStatus) {
+	public void setStatus(Code newStatus) {
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
@@ -1077,7 +1077,7 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 				setCopyright((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.CONCEPT_MAP__STATUS:
-				setStatus((ConformanceResourceStatus)newValue);
+				setStatus((Code)newValue);
 				return;
 			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)newValue);
@@ -1144,7 +1144,7 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 				setCopyright((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.CONCEPT_MAP__STATUS:
-				setStatus((ConformanceResourceStatus)null);
+				setStatus((Code)null);
 				return;
 			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)null);

@@ -45,7 +45,7 @@ public enum RestfulConformanceModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The application acts as a client for this resource.
+	 * The application acts as a client for this resource
 	 * <!-- end-model-doc -->
 	 * @see #CLIENT
 	 * @model name="client"
@@ -59,7 +59,7 @@ public enum RestfulConformanceModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The application acts as a server for this resource.
+	 * The application acts as a server for this resource
 	 * <!-- end-model-doc -->
 	 * @see #SERVER
 	 * @model name="server"

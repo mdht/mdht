@@ -16,6 +16,7 @@ package org.hl7.fhir;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.hl7.fhir.MedicationDispenseDosageInstruction#getText <em>Text</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationDispenseDosageInstruction#getAdditionalInstructions <em>Additional Instructions</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationDispenseDosageInstruction#getScheduleDateTime <em>Schedule Date Time</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationDispenseDosageInstruction#getSchedulePeriod <em>Schedule Period</em>}</li>
@@ -36,6 +37,32 @@ package org.hl7.fhir;
  * @generated
  */
 public interface MedicationDispenseDosageInstruction extends BackboneElement {
+	/**
+	 * Returns the value of the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Free text dosage instructions can be used for cases where the instructions are too complex to code. When coded instructions are present, the free text instructions may still be present for display to humans taking or administering the medication.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Text</em>' containment reference.
+	 * @see #setText(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationDispenseDosageInstruction_Text()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='text' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getText();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationDispenseDosageInstruction#getText <em>Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' containment reference.
+	 * @see #getText()
+	 * @generated
+	 */
+	void setText(org.hl7.fhir.String value);
+
 	/**
 	 * Returns the value of the '<em><b>Additional Instructions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

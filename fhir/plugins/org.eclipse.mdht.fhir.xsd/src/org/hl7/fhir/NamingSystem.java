@@ -124,13 +124,13 @@ public interface NamingSystem extends DomainResource {
 	 * Indicates whether the namingsystem is "ready for use" or not.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(ConformanceResourceStatus)
+	 * @see #setStatus(Code)
 	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Status()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	ConformanceResourceStatus getStatus();
+	Code getStatus();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getStatus <em>Status</em>}' containment reference.
@@ -140,7 +140,7 @@ public interface NamingSystem extends DomainResource {
 	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatus(ConformanceResourceStatus value);
+	void setStatus(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Country</b></em>' containment reference.

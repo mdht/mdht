@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ConformanceSearchParam#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceSearchParam#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceSearchParam#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConformanceSearchParam#getModifier <em>Modifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceSearchParam#getChain <em>Chain</em>}</li>
  * </ul>
  *
@@ -90,13 +91,13 @@ public interface ConformanceSearchParam extends BackboneElement {
 	 * The type of value a search parameter refers to, and how the content is interpreted.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(SearchParamType)
+	 * @see #setType(Code)
 	 * @see org.hl7.fhir.FhirPackage#getConformanceSearchParam_Type()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='type' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	SearchParamType getType();
+	Code getType();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ConformanceSearchParam#getType <em>Type</em>}' containment reference.
@@ -106,7 +107,7 @@ public interface ConformanceSearchParam extends BackboneElement {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(SearchParamType value);
+	void setType(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Documentation</b></em>' containment reference.
@@ -149,6 +150,22 @@ public interface ConformanceSearchParam extends BackboneElement {
 	 * @generated
 	 */
 	EList<Code> getTarget();
+
+	/**
+	 * Returns the value of the '<em><b>Modifier</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.SearchModifierCode}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A modifier supported for the search parameter.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Modifier</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getConformanceSearchParam_Modifier()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='modifier' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<SearchModifierCode> getModifier();
 
 	/**
 	 * Returns the value of the '<em><b>Chain</b></em>' containment reference list.

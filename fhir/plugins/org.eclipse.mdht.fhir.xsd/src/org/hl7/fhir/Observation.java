@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.Observation#getCode <em>Code</em>}</li>
+ *   <li>{@link org.hl7.fhir.Observation#getCategory <em>Category</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getValueQuantity <em>Value Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getValueCodeableConcept <em>Value Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getValueString <em>Value String</em>}</li>
@@ -32,8 +33,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Observation#getDataAbsentReason <em>Data Absent Reason</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getInterpretation <em>Interpretation</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getComments <em>Comments</em>}</li>
- *   <li>{@link org.hl7.fhir.Observation#getAppliesDateTime <em>Applies Date Time</em>}</li>
- *   <li>{@link org.hl7.fhir.Observation#getAppliesPeriod <em>Applies Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.Observation#getEffectiveDateTime <em>Effective Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.Observation#getEffectivePeriod <em>Effective Period</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getIssued <em>Issued</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getReliability <em>Reliability</em>}</li>
@@ -48,6 +49,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Observation#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getReferenceRange <em>Reference Range</em>}</li>
  *   <li>{@link org.hl7.fhir.Observation#getRelated <em>Related</em>}</li>
+ *   <li>{@link org.hl7.fhir.Observation#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getObservation()
@@ -60,7 +62,7 @@ public interface Observation extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Describes what was observed. Sometimes this is called the observation "code".
+	 * Describes what was observed. Sometimes this is called the observation "name".
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Code</em>' containment reference.
 	 * @see #setCode(CodeableConcept)
@@ -80,6 +82,32 @@ public interface Observation extends DomainResource {
 	 * @generated
 	 */
 	void setCode(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Category</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Describes the general type of observation being made and is used to group or limit searching of observations.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Category</em>' containment reference.
+	 * @see #setCategory(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getObservation_Category()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='category' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	CodeableConcept getCategory();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Observation#getCategory <em>Category</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Category</em>' containment reference.
+	 * @see #getCategory()
+	 * @generated
+	 */
+	void setCategory(CodeableConcept value);
 
 	/**
 	 * Returns the value of the '<em><b>Value Quantity</b></em>' containment reference.
@@ -430,58 +458,58 @@ public interface Observation extends DomainResource {
 	void setComments(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Applies Date Time</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Effective Date Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Applies Date Time</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Effective Date Time</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Applies Date Time</em>' containment reference.
-	 * @see #setAppliesDateTime(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getObservation_AppliesDateTime()
+	 * @return the value of the '<em>Effective Date Time</em>' containment reference.
+	 * @see #setEffectiveDateTime(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getObservation_EffectiveDateTime()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='appliesDateTime' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='effectiveDateTime' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getAppliesDateTime();
+	DateTime getEffectiveDateTime();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Observation#getAppliesDateTime <em>Applies Date Time</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Observation#getEffectiveDateTime <em>Effective Date Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Applies Date Time</em>' containment reference.
-	 * @see #getAppliesDateTime()
+	 * @param value the new value of the '<em>Effective Date Time</em>' containment reference.
+	 * @see #getEffectiveDateTime()
 	 * @generated
 	 */
-	void setAppliesDateTime(DateTime value);
+	void setEffectiveDateTime(DateTime value);
 
 	/**
-	 * Returns the value of the '<em><b>Applies Period</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Effective Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Applies Period</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Effective Period</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Applies Period</em>' containment reference.
-	 * @see #setAppliesPeriod(Period)
-	 * @see org.hl7.fhir.FhirPackage#getObservation_AppliesPeriod()
+	 * @return the value of the '<em>Effective Period</em>' containment reference.
+	 * @see #setEffectivePeriod(Period)
+	 * @see org.hl7.fhir.FhirPackage#getObservation_EffectivePeriod()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='appliesPeriod' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='effectivePeriod' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Period getAppliesPeriod();
+	Period getEffectivePeriod();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Observation#getAppliesPeriod <em>Applies Period</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Observation#getEffectivePeriod <em>Effective Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Applies Period</em>' containment reference.
-	 * @see #getAppliesPeriod()
+	 * @param value the new value of the '<em>Effective Period</em>' containment reference.
+	 * @see #getEffectivePeriod()
 	 * @generated
 	 */
-	void setAppliesPeriod(Period value);
+	void setEffectivePeriod(Period value);
 
 	/**
 	 * Returns the value of the '<em><b>Issued</b></em>' containment reference.
@@ -662,7 +690,7 @@ public interface Observation extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The patient, or group of patients, location, or device whose characteristics (direct or indirect) are described by the observation and into whose record the observation is placed.  Comments: Indirect characteristics may be those of a specimen, fetus,
+	 * The patient, or group of patients, location, or device whose characteristics (direct or indirect) are described by the observation and into whose record the observation is placed.  Comments: Indirect characteristics may be those of a specimen, fetus, donor, 
 	 * other observer (for example a relative or EMT), or any observation made about the subject.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Subject</em>' containment reference.
@@ -800,7 +828,7 @@ public interface Observation extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Related observations - either components, or previous observations, or statements of derivation.
+	 * A  reference to another resource ( usally another Observation but could  also be a QuestionnaireAnswer) whose relationship is defined by the relationship type code.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Related</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getObservation_Related()
@@ -809,5 +837,21 @@ public interface Observation extends DomainResource {
 	 * @generated
 	 */
 	EList<ObservationRelated> getRelated();
+
+	/**
+	 * Returns the value of the '<em><b>Component</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.ObservationComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Some observations have multiple component observations.  These component observations are expressed as separate code value pairs that share the same attributes.  Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for for genetics observations.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Component</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getObservation_Component()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='component' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<ObservationComponent> getComponent();
 
 } // Observation

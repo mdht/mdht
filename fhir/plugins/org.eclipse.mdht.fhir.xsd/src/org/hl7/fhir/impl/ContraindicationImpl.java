@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.Contraindication;
 import org.hl7.fhir.ContraindicationMitigation;
+import org.hl7.fhir.ContraindicationSeverity;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
@@ -78,7 +78,7 @@ public class ContraindicationImpl extends DomainResourceImpl implements Contrain
 	 * @generated
 	 * @ordered
 	 */
-	protected Code severity;
+	protected ContraindicationSeverity severity;
 
 	/**
 	 * The cached value of the '{@link #getImplicated() <em>Implicated</em>}' containment reference list.
@@ -260,7 +260,7 @@ public class ContraindicationImpl extends DomainResourceImpl implements Contrain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Code getSeverity() {
+	public ContraindicationSeverity getSeverity() {
 		return severity;
 	}
 
@@ -269,8 +269,8 @@ public class ContraindicationImpl extends DomainResourceImpl implements Contrain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSeverity(Code newSeverity, NotificationChain msgs) {
-		Code oldSeverity = severity;
+	public NotificationChain basicSetSeverity(ContraindicationSeverity newSeverity, NotificationChain msgs) {
+		ContraindicationSeverity oldSeverity = severity;
 		severity = newSeverity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONTRAINDICATION__SEVERITY, oldSeverity, newSeverity);
@@ -284,7 +284,7 @@ public class ContraindicationImpl extends DomainResourceImpl implements Contrain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSeverity(Code newSeverity) {
+	public void setSeverity(ContraindicationSeverity newSeverity) {
 		if (newSeverity != severity) {
 			NotificationChain msgs = null;
 			if (severity != null)
@@ -617,7 +617,7 @@ public class ContraindicationImpl extends DomainResourceImpl implements Contrain
 				setCategory((CodeableConcept)newValue);
 				return;
 			case FhirPackage.CONTRAINDICATION__SEVERITY:
-				setSeverity((Code)newValue);
+				setSeverity((ContraindicationSeverity)newValue);
 				return;
 			case FhirPackage.CONTRAINDICATION__IMPLICATED:
 				getImplicated().clear();
@@ -661,7 +661,7 @@ public class ContraindicationImpl extends DomainResourceImpl implements Contrain
 				setCategory((CodeableConcept)null);
 				return;
 			case FhirPackage.CONTRAINDICATION__SEVERITY:
-				setSeverity((Code)null);
+				setSeverity((ContraindicationSeverity)null);
 				return;
 			case FhirPackage.CONTRAINDICATION__IMPLICATED:
 				getImplicated().clear();

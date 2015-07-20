@@ -95,7 +95,7 @@ public enum CarePlanActivityCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Plan for the patient to consume food of a specified nature.
+	 * Plan for the patient to consume food of a specified nature
 	 * <!-- end-model-doc -->
 	 * @see #DIET
 	 * @model name="diet"
@@ -109,7 +109,7 @@ public enum CarePlanActivityCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Plan for the patient to consume/receive a drug, vaccine or other product.
+	 * Plan for the patient to consume/receive a drug, vaccine or other product
 	 * <!-- end-model-doc -->
 	 * @see #DRUG
 	 * @model name="drug"
@@ -123,7 +123,7 @@ public enum CarePlanActivityCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Plan to meet or communicate with the patient (in-patient, out-patient, phone call, etc.).
+	 * Plan to meet or communicate with the patient (in-patient, out-patient, phone call, etc.)
 	 * <!-- end-model-doc -->
 	 * @see #ENCOUNTER
 	 * @model name="encounter"
@@ -137,7 +137,7 @@ public enum CarePlanActivityCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Plan to capture information about a patient (vitals, labs, diagnostic images, etc.).
+	 * Plan to capture information about a patient (vitals, labs, diagnostic images, etc.)
 	 * <!-- end-model-doc -->
 	 * @see #OBSERVATION
 	 * @model name="observation"
@@ -151,7 +151,7 @@ public enum CarePlanActivityCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Plan to modify the patient in some way (surgery, physiotherapy, education, counseling, etc.).
+	 * Plan to modify the patient in some way (surgery, physiotherapy, education, counseling, etc.)
 	 * <!-- end-model-doc -->
 	 * @see #PROCEDURE
 	 * @model name="procedure"
@@ -165,7 +165,7 @@ public enum CarePlanActivityCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Plan to provide something to the patient (medication, medical supply, etc.).
+	 * Plan to provide something to the patient (medication, medical supply, etc.)
 	 * <!-- end-model-doc -->
 	 * @see #SUPPLY
 	 * @model name="supply"
@@ -179,7 +179,7 @@ public enum CarePlanActivityCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Some other form of action.
+	 * Some other form of action
 	 * <!-- end-model-doc -->
 	 * @see #OTHER
 	 * @model name="other"

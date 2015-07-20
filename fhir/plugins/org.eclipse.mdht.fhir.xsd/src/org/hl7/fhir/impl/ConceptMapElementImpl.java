@@ -18,9 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Code;
-import org.hl7.fhir.ConceptMapDependsOn;
 import org.hl7.fhir.ConceptMapElement;
-import org.hl7.fhir.ConceptMapMap;
+import org.hl7.fhir.ConceptMapTarget;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Uri;
 
@@ -34,8 +33,7 @@ import org.hl7.fhir.Uri;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapElementImpl#getCodeSystem <em>Code System</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapElementImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapElementImpl#getDependsOn <em>Depends On</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapElementImpl#getMap <em>Map</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConceptMapElementImpl#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,24 +60,14 @@ public class ConceptMapElementImpl extends BackboneElementImpl implements Concep
 	protected Code code;
 
 	/**
-	 * The cached value of the '{@link #getDependsOn() <em>Depends On</em>}' containment reference list.
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDependsOn()
+	 * @see #getTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ConceptMapDependsOn> dependsOn;
-
-	/**
-	 * The cached value of the '{@link #getMap() <em>Map</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMap()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConceptMapMap> map;
+	protected EList<ConceptMapTarget> target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,23 +179,11 @@ public class ConceptMapElementImpl extends BackboneElementImpl implements Concep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ConceptMapDependsOn> getDependsOn() {
-		if (dependsOn == null) {
-			dependsOn = new EObjectContainmentEList<ConceptMapDependsOn>(ConceptMapDependsOn.class, this, FhirPackage.CONCEPT_MAP_ELEMENT__DEPENDS_ON);
+	public EList<ConceptMapTarget> getTarget() {
+		if (target == null) {
+			target = new EObjectContainmentEList<ConceptMapTarget>(ConceptMapTarget.class, this, FhirPackage.CONCEPT_MAP_ELEMENT__TARGET);
 		}
-		return dependsOn;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConceptMapMap> getMap() {
-		if (map == null) {
-			map = new EObjectContainmentEList<ConceptMapMap>(ConceptMapMap.class, this, FhirPackage.CONCEPT_MAP_ELEMENT__MAP);
-		}
-		return map;
+		return target;
 	}
 
 	/**
@@ -222,10 +198,8 @@ public class ConceptMapElementImpl extends BackboneElementImpl implements Concep
 				return basicSetCodeSystem(null, msgs);
 			case FhirPackage.CONCEPT_MAP_ELEMENT__CODE:
 				return basicSetCode(null, msgs);
-			case FhirPackage.CONCEPT_MAP_ELEMENT__DEPENDS_ON:
-				return ((InternalEList<?>)getDependsOn()).basicRemove(otherEnd, msgs);
-			case FhirPackage.CONCEPT_MAP_ELEMENT__MAP:
-				return ((InternalEList<?>)getMap()).basicRemove(otherEnd, msgs);
+			case FhirPackage.CONCEPT_MAP_ELEMENT__TARGET:
+				return ((InternalEList<?>)getTarget()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -242,10 +216,8 @@ public class ConceptMapElementImpl extends BackboneElementImpl implements Concep
 				return getCodeSystem();
 			case FhirPackage.CONCEPT_MAP_ELEMENT__CODE:
 				return getCode();
-			case FhirPackage.CONCEPT_MAP_ELEMENT__DEPENDS_ON:
-				return getDependsOn();
-			case FhirPackage.CONCEPT_MAP_ELEMENT__MAP:
-				return getMap();
+			case FhirPackage.CONCEPT_MAP_ELEMENT__TARGET:
+				return getTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,13 +237,9 @@ public class ConceptMapElementImpl extends BackboneElementImpl implements Concep
 			case FhirPackage.CONCEPT_MAP_ELEMENT__CODE:
 				setCode((Code)newValue);
 				return;
-			case FhirPackage.CONCEPT_MAP_ELEMENT__DEPENDS_ON:
-				getDependsOn().clear();
-				getDependsOn().addAll((Collection<? extends ConceptMapDependsOn>)newValue);
-				return;
-			case FhirPackage.CONCEPT_MAP_ELEMENT__MAP:
-				getMap().clear();
-				getMap().addAll((Collection<? extends ConceptMapMap>)newValue);
+			case FhirPackage.CONCEPT_MAP_ELEMENT__TARGET:
+				getTarget().clear();
+				getTarget().addAll((Collection<? extends ConceptMapTarget>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,11 +259,8 @@ public class ConceptMapElementImpl extends BackboneElementImpl implements Concep
 			case FhirPackage.CONCEPT_MAP_ELEMENT__CODE:
 				setCode((Code)null);
 				return;
-			case FhirPackage.CONCEPT_MAP_ELEMENT__DEPENDS_ON:
-				getDependsOn().clear();
-				return;
-			case FhirPackage.CONCEPT_MAP_ELEMENT__MAP:
-				getMap().clear();
+			case FhirPackage.CONCEPT_MAP_ELEMENT__TARGET:
+				getTarget().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -313,10 +278,8 @@ public class ConceptMapElementImpl extends BackboneElementImpl implements Concep
 				return codeSystem != null;
 			case FhirPackage.CONCEPT_MAP_ELEMENT__CODE:
 				return code != null;
-			case FhirPackage.CONCEPT_MAP_ELEMENT__DEPENDS_ON:
-				return dependsOn != null && !dependsOn.isEmpty();
-			case FhirPackage.CONCEPT_MAP_ELEMENT__MAP:
-				return map != null && !map.isEmpty();
+			case FhirPackage.CONCEPT_MAP_ELEMENT__TARGET:
+				return target != null && !target.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

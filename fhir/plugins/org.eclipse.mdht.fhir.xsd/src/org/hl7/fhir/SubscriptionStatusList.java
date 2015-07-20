@@ -65,7 +65,7 @@ public enum SubscriptionStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The client has requested the subscription, and the server has not yet set it up.
+	 * The client has requested the subscription, and the server has not yet set it up
 	 * <!-- end-model-doc -->
 	 * @see #REQUESTED
 	 * @model name="requested"
@@ -79,7 +79,7 @@ public enum SubscriptionStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The subscription is active.
+	 * The subscription is active
 	 * <!-- end-model-doc -->
 	 * @see #ACTIVE
 	 * @model name="active"
@@ -93,7 +93,7 @@ public enum SubscriptionStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The server has an error executing the notification.
+	 * The server has an error executing the notification
 	 * <!-- end-model-doc -->
 	 * @see #ERROR
 	 * @model name="error"
@@ -107,7 +107,7 @@ public enum SubscriptionStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Too many errors have occurred or the subscription has expired.
+	 * Too many errors have occurred or the subscription has expired
 	 * <!-- end-model-doc -->
 	 * @see #OFF
 	 * @model name="off"

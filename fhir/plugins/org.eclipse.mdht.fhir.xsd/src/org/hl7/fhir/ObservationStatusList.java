@@ -95,7 +95,7 @@ public enum ObservationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The existence of the observation is registered, but there is no result yet available.
+	 * The existence of the observation is registered, but there is no result yet available
 	 * <!-- end-model-doc -->
 	 * @see #REGISTERED
 	 * @model name="registered"
@@ -109,7 +109,7 @@ public enum ObservationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This is an initial or interim observation: data may be incomplete or unverified.
+	 * This is an initial or interim observation: data may be incomplete or unverified
 	 * <!-- end-model-doc -->
 	 * @see #PRELIMINARY
 	 * @model name="preliminary"
@@ -123,7 +123,7 @@ public enum ObservationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The observation is complete and verified by an authorized person.
+	 * The observation is complete and verified by an authorized person
 	 * <!-- end-model-doc -->
 	 * @see #FINAL
 	 * @model name="final"
@@ -137,7 +137,7 @@ public enum ObservationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The observation has been modified subsequent to being Final, and is complete and verified by an authorized person.
+	 * The observation has been modified subsequent to being Final, and is complete and verified by an authorized person
 	 * <!-- end-model-doc -->
 	 * @see #AMENDED
 	 * @model name="amended"
@@ -151,7 +151,7 @@ public enum ObservationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The observation is unavailable because the measurement was not started or not completed (also sometimes called "aborted").
+	 * The observation is unavailable because the measurement was not started or not completed (also sometimes called "aborted")
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"
@@ -165,7 +165,7 @@ public enum ObservationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The observation has been withdrawn following previous Final release.
+	 * The observation has been withdrawn following previous Final release
 	 * <!-- end-model-doc -->
 	 * @see #ENTERED_IN_ERROR
 	 * @model name="enteredInError" literal="entered-in-error"
@@ -179,7 +179,7 @@ public enum ObservationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The observation status is unknown.  Note that "unknown" is a value of last resort and every attempt should be made to provide a meaningful value other than "unknown".
+	 * The observation status is unknown.  Note that "unknown" is a value of last resort and every attempt should be made to provide a meaningful value other than "unknown"
 	 * <!-- end-model-doc -->
 	 * @see #UNKNOWN
 	 * @model name="unknown"

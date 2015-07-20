@@ -91,13 +91,13 @@ public interface Person extends DomainResource {
 	 * Administrative Gender.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gender</em>' containment reference.
-	 * @see #setGender(AdministrativeGender)
+	 * @see #setGender(Code)
 	 * @see org.hl7.fhir.FhirPackage#getPerson_Gender()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='gender' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	AdministrativeGender getGender();
+	Code getGender();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.Person#getGender <em>Gender</em>}' containment reference.
@@ -107,7 +107,7 @@ public interface Person extends DomainResource {
 	 * @see #getGender()
 	 * @generated
 	 */
-	void setGender(AdministrativeGender value);
+	void setGender(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Birth Date</b></em>' containment reference.
@@ -117,13 +117,13 @@ public interface Person extends DomainResource {
 	 * The birth date for the person.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Birth Date</em>' containment reference.
-	 * @see #setBirthDate(DateTime)
+	 * @see #setBirthDate(Date)
 	 * @see org.hl7.fhir.FhirPackage#getPerson_BirthDate()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='birthDate' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getBirthDate();
+	Date getBirthDate();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.Person#getBirthDate <em>Birth Date</em>}' containment reference.
@@ -133,7 +133,7 @@ public interface Person extends DomainResource {
 	 * @see #getBirthDate()
 	 * @generated
 	 */
-	void setBirthDate(DateTime value);
+	void setBirthDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Address</b></em>' containment reference list.

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Code;
 import org.hl7.fhir.Coding;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
@@ -27,7 +28,6 @@ import org.hl7.fhir.PaymentReconciliationDetail;
 import org.hl7.fhir.PaymentReconciliationNote;
 import org.hl7.fhir.Period;
 import org.hl7.fhir.Reference;
-import org.hl7.fhir.RemittanceOutcome;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,7 +85,7 @@ public class PaymentReconciliationImpl extends DomainResourceImpl implements Pay
 	 * @generated
 	 * @ordered
 	 */
-	protected RemittanceOutcome outcome;
+	protected Code outcome;
 
 	/**
 	 * The cached value of the '{@link #getDisposition() <em>Disposition</em>}' containment reference.
@@ -286,7 +286,7 @@ public class PaymentReconciliationImpl extends DomainResourceImpl implements Pay
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemittanceOutcome getOutcome() {
+	public Code getOutcome() {
 		return outcome;
 	}
 
@@ -295,8 +295,8 @@ public class PaymentReconciliationImpl extends DomainResourceImpl implements Pay
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOutcome(RemittanceOutcome newOutcome, NotificationChain msgs) {
-		RemittanceOutcome oldOutcome = outcome;
+	public NotificationChain basicSetOutcome(Code newOutcome, NotificationChain msgs) {
+		Code oldOutcome = outcome;
 		outcome = newOutcome;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PAYMENT_RECONCILIATION__OUTCOME, oldOutcome, newOutcome);
@@ -310,7 +310,7 @@ public class PaymentReconciliationImpl extends DomainResourceImpl implements Pay
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOutcome(RemittanceOutcome newOutcome) {
+	public void setOutcome(Code newOutcome) {
 		if (newOutcome != outcome) {
 			NotificationChain msgs = null;
 			if (outcome != null)
@@ -879,7 +879,7 @@ public class PaymentReconciliationImpl extends DomainResourceImpl implements Pay
 				setRequest((Reference)newValue);
 				return;
 			case FhirPackage.PAYMENT_RECONCILIATION__OUTCOME:
-				setOutcome((RemittanceOutcome)newValue);
+				setOutcome((Code)newValue);
 				return;
 			case FhirPackage.PAYMENT_RECONCILIATION__DISPOSITION:
 				setDisposition((org.hl7.fhir.String)newValue);
@@ -938,7 +938,7 @@ public class PaymentReconciliationImpl extends DomainResourceImpl implements Pay
 				setRequest((Reference)null);
 				return;
 			case FhirPackage.PAYMENT_RECONCILIATION__OUTCOME:
-				setOutcome((RemittanceOutcome)null);
+				setOutcome((Code)null);
 				return;
 			case FhirPackage.PAYMENT_RECONCILIATION__DISPOSITION:
 				setDisposition((org.hl7.fhir.String)null);

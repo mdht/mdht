@@ -65,7 +65,7 @@ public enum IdentifierUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * the identifier recommended for display and use in real-world interactions.
+	 * the identifier recommended for display and use in real-world interactions
 	 * <!-- end-model-doc -->
 	 * @see #USUAL
 	 * @model name="usual"
@@ -79,7 +79,7 @@ public enum IdentifierUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * the identifier considered to be most trusted for the identification of this item.
+	 * the identifier considered to be most trusted for the identification of this item
 	 * <!-- end-model-doc -->
 	 * @see #OFFICIAL
 	 * @model name="official"
@@ -93,7 +93,7 @@ public enum IdentifierUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A temporary identifier.
+	 * A temporary identifier
 	 * <!-- end-model-doc -->
 	 * @see #TEMP
 	 * @model name="temp"
@@ -107,7 +107,7 @@ public enum IdentifierUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context.
+	 * An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context
 	 * <!-- end-model-doc -->
 	 * @see #SECONDARY
 	 * @model name="secondary"

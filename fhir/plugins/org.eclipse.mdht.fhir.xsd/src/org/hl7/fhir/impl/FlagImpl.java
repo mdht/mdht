@@ -37,7 +37,7 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getPeriod <em>Period</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.FlagImpl#getPatient <em>Patient</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.FlagImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getAuthor <em>Author</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getCode <em>Code</em>}</li>
  * </ul>
@@ -86,14 +86,14 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 	protected Period period;
 
 	/**
-	 * The cached value of the '{@link #getPatient() <em>Patient</em>}' containment reference.
+	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPatient()
+	 * @see #getSubject()
 	 * @generated
 	 * @ordered
 	 */
-	protected Reference patient;
+	protected Reference subject;
 
 	/**
 	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference.
@@ -280,8 +280,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference getPatient() {
-		return patient;
+	public Reference getSubject() {
+		return subject;
 	}
 
 	/**
@@ -289,11 +289,11 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPatient(Reference newPatient, NotificationChain msgs) {
-		Reference oldPatient = patient;
-		patient = newPatient;
+	public NotificationChain basicSetSubject(Reference newSubject, NotificationChain msgs) {
+		Reference oldSubject = subject;
+		subject = newSubject;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.FLAG__PATIENT, oldPatient, newPatient);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.FLAG__SUBJECT, oldSubject, newSubject);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -304,18 +304,18 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPatient(Reference newPatient) {
-		if (newPatient != patient) {
+	public void setSubject(Reference newSubject) {
+		if (newSubject != subject) {
 			NotificationChain msgs = null;
-			if (patient != null)
-				msgs = ((InternalEObject)patient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.FLAG__PATIENT, null, msgs);
-			if (newPatient != null)
-				msgs = ((InternalEObject)newPatient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.FLAG__PATIENT, null, msgs);
-			msgs = basicSetPatient(newPatient, msgs);
+			if (subject != null)
+				msgs = ((InternalEObject)subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.FLAG__SUBJECT, null, msgs);
+			if (newSubject != null)
+				msgs = ((InternalEObject)newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.FLAG__SUBJECT, null, msgs);
+			msgs = basicSetSubject(newSubject, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.FLAG__PATIENT, newPatient, newPatient));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.FLAG__SUBJECT, newSubject, newSubject));
 	}
 
 	/**
@@ -420,8 +420,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 				return basicSetStatus(null, msgs);
 			case FhirPackage.FLAG__PERIOD:
 				return basicSetPeriod(null, msgs);
-			case FhirPackage.FLAG__PATIENT:
-				return basicSetPatient(null, msgs);
+			case FhirPackage.FLAG__SUBJECT:
+				return basicSetSubject(null, msgs);
 			case FhirPackage.FLAG__AUTHOR:
 				return basicSetAuthor(null, msgs);
 			case FhirPackage.FLAG__CODE:
@@ -446,8 +446,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 				return getStatus();
 			case FhirPackage.FLAG__PERIOD:
 				return getPeriod();
-			case FhirPackage.FLAG__PATIENT:
-				return getPatient();
+			case FhirPackage.FLAG__SUBJECT:
+				return getSubject();
 			case FhirPackage.FLAG__AUTHOR:
 				return getAuthor();
 			case FhirPackage.FLAG__CODE:
@@ -478,8 +478,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 			case FhirPackage.FLAG__PERIOD:
 				setPeriod((Period)newValue);
 				return;
-			case FhirPackage.FLAG__PATIENT:
-				setPatient((Reference)newValue);
+			case FhirPackage.FLAG__SUBJECT:
+				setSubject((Reference)newValue);
 				return;
 			case FhirPackage.FLAG__AUTHOR:
 				setAuthor((Reference)newValue);
@@ -511,8 +511,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 			case FhirPackage.FLAG__PERIOD:
 				setPeriod((Period)null);
 				return;
-			case FhirPackage.FLAG__PATIENT:
-				setPatient((Reference)null);
+			case FhirPackage.FLAG__SUBJECT:
+				setSubject((Reference)null);
 				return;
 			case FhirPackage.FLAG__AUTHOR:
 				setAuthor((Reference)null);
@@ -540,8 +540,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 				return status != null;
 			case FhirPackage.FLAG__PERIOD:
 				return period != null;
-			case FhirPackage.FLAG__PATIENT:
-				return patient != null;
+			case FhirPackage.FLAG__SUBJECT:
+				return subject != null;
 			case FhirPackage.FLAG__AUTHOR:
 				return author != null;
 			case FhirPackage.FLAG__CODE:

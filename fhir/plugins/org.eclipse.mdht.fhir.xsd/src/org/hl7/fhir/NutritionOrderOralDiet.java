@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.NutritionOrderOralDiet#getType <em>Type</em>}</li>
- *   <li>{@link org.hl7.fhir.NutritionOrderOralDiet#getScheduled <em>Scheduled</em>}</li>
+ *   <li>{@link org.hl7.fhir.NutritionOrderOralDiet#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderOralDiet#getNutrient <em>Nutrient</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderOralDiet#getTexture <em>Texture</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderOralDiet#getFluidConsistencyType <em>Fluid Consistency Type</em>}</li>
@@ -47,30 +47,20 @@ public interface NutritionOrderOralDiet extends BackboneElement {
 	EList<CodeableConcept> getType();
 
 	/**
-	 * Returns the value of the '<em><b>Scheduled</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Schedule</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Timing}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The time period and frequency at which the diet should be given.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Scheduled</em>' containment reference.
-	 * @see #setScheduled(Timing)
-	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderOralDiet_Scheduled()
+	 * @return the value of the '<em>Schedule</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderOralDiet_Schedule()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='scheduled' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='schedule' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Timing getScheduled();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderOralDiet#getScheduled <em>Scheduled</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scheduled</em>' containment reference.
-	 * @see #getScheduled()
-	 * @generated
-	 */
-	void setScheduled(Timing value);
+	EList<Timing> getSchedule();
 
 	/**
 	 * Returns the value of the '<em><b>Nutrient</b></em>' containment reference list.

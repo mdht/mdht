@@ -55,7 +55,7 @@ public enum ParticipantRequiredList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant is required to attend the appointment.
+	 * The participant is required to attend the appointment
 	 * <!-- end-model-doc -->
 	 * @see #REQUIRED
 	 * @model name="required"
@@ -69,7 +69,7 @@ public enum ParticipantRequiredList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant may optionally attend the appointment.
+	 * The participant may optionally attend the appointment
 	 * <!-- end-model-doc -->
 	 * @see #OPTIONAL
 	 * @model name="optional"
@@ -83,7 +83,7 @@ public enum ParticipantRequiredList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant is excluded from the appointment, and may not be informed of the appointment taking place. (appointment is about them, not for them - such as 2 doctors discussing results about a patient's test).
+	 * The participant is excluded from the appointment, and may not be informed of the appointment taking place. (appointment is about them, not for them - such as 2 doctors discussing results about a patient's test)
 	 * <!-- end-model-doc -->
 	 * @see #INFORMATION_ONLY
 	 * @model name="informationOnly" literal="information-only"

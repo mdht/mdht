@@ -55,7 +55,7 @@ public enum SupplyDispenseStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Supply has been requested, but not dispensed.
+	 * Supply has been requested, but not dispensed
 	 * <!-- end-model-doc -->
 	 * @see #IN_PROGRESS
 	 * @model name="inProgress" literal="in-progress"
@@ -69,7 +69,7 @@ public enum SupplyDispenseStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Supply is part of a pharmacy order and has been dispensed.
+	 * Supply is part of a pharmacy order and has been dispensed
 	 * <!-- end-model-doc -->
 	 * @see #DISPENSED
 	 * @model name="dispensed"
@@ -83,7 +83,7 @@ public enum SupplyDispenseStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Dispensing was not completed.
+	 * Dispensing was not completed
 	 * <!-- end-model-doc -->
 	 * @see #ABANDONED
 	 * @model name="abandoned"

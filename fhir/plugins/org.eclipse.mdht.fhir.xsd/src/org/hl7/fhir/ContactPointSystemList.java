@@ -51,14 +51,24 @@ public enum ContactPointSystemList implements Enumerator {
 	EMAIL(2, "email", "email"),
 
 	/**
-	 * The '<em><b>Url</b></em>' literal object.
+	 * The '<em><b>Pager</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #URL_VALUE
+	 * @see #PAGER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	URL(3, "url", "url");
+	PAGER(3, "pager", "pager"),
+
+	/**
+	 * The '<em><b>Other</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OTHER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OTHER(4, "other", "other");
 
 	/**
 	 * The '<em><b>Phone</b></em>' literal value.
@@ -93,7 +103,7 @@ public enum ContactPointSystemList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The value is an email address.
+	 * The value is an email address
 	 * <!-- end-model-doc -->
 	 * @see #EMAIL
 	 * @model name="email"
@@ -103,18 +113,32 @@ public enum ContactPointSystemList implements Enumerator {
 	public static final int EMAIL_VALUE = 2;
 
 	/**
-	 * The '<em><b>Url</b></em>' literal value.
+	 * The '<em><b>Pager</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The value is a url. This is intended for various personal contacts including blogs, Twitter, Facebook, etc. Do not use for email addresses.
+	 * The value is a pager number. These may be local pager numbers that are only usable on a particular pager system
 	 * <!-- end-model-doc -->
-	 * @see #URL
-	 * @model name="url"
+	 * @see #PAGER
+	 * @model name="pager"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int URL_VALUE = 3;
+	public static final int PAGER_VALUE = 3;
+
+	/**
+	 * The '<em><b>Other</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A contact that is not a phone, fax, or email address. The format of the value SHOULD be a URL. This is intended for various personal contacts including blogs, Twitter, Facebook, etc. Do not use for email addresses. If this is not a URL, then it will require human interpretation
+	 * <!-- end-model-doc -->
+	 * @see #OTHER
+	 * @model name="other"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int OTHER_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Contact Point System List</b></em>' enumerators.
@@ -127,7 +151,8 @@ public enum ContactPointSystemList implements Enumerator {
 			PHONE,
 			FAX,
 			EMAIL,
-			URL,
+			PAGER,
+			OTHER,
 		};
 
 	/**
@@ -187,7 +212,8 @@ public enum ContactPointSystemList implements Enumerator {
 			case PHONE_VALUE: return PHONE;
 			case FAX_VALUE: return FAX;
 			case EMAIL_VALUE: return EMAIL;
-			case URL_VALUE: return URL;
+			case PAGER_VALUE: return PAGER;
+			case OTHER_VALUE: return OTHER;
 		}
 		return null;
 	}

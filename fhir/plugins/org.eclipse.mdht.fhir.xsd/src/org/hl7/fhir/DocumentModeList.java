@@ -45,7 +45,7 @@ public enum DocumentModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The application produces documents of the specified type.
+	 * The application produces documents of the specified type
 	 * <!-- end-model-doc -->
 	 * @see #PRODUCER
 	 * @model name="producer"
@@ -59,7 +59,7 @@ public enum DocumentModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The application consumes documents of the specified type.
+	 * The application consumes documents of the specified type
 	 * <!-- end-model-doc -->
 	 * @see #CONSUMER
 	 * @model name="consumer"

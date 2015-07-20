@@ -65,7 +65,7 @@ public enum ProcedureStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The procedure is still occurring.
+	 * The procedure is still occurring
 	 * <!-- end-model-doc -->
 	 * @see #IN_PROGRESS
 	 * @model name="inProgress" literal="in-progress"
@@ -79,7 +79,7 @@ public enum ProcedureStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The procedure was terminated without completing successfully.
+	 * The procedure was terminated without completing successfully
 	 * <!-- end-model-doc -->
 	 * @see #ABORTED
 	 * @model name="aborted"
@@ -93,7 +93,7 @@ public enum ProcedureStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * All actions involved in the procedure have taken place.
+	 * All actions involved in the procedure have taken place
 	 * <!-- end-model-doc -->
 	 * @see #COMPLETED
 	 * @model name="completed"
@@ -107,7 +107,7 @@ public enum ProcedureStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The statement was entered in error and Is not valid.
+	 * The statement was entered in error and Is not valid
 	 * <!-- end-model-doc -->
 	 * @see #ENTERED_IN_ERROR
 	 * @model name="enteredInError" literal="entered-in-error"

@@ -142,7 +142,7 @@ public interface DocumentReference extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A categorization for the type of document. The class is an abstraction from the type specifying the high-level kind of document  (e.g., Report, Summary, Images, Treatment Plan, Patient Preferences, Workflow) at a macro level.
+	 * A categorization for the type of document - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Class</em>' containment reference.
 	 * @see #setClass(CodeableConcept)
@@ -307,13 +307,13 @@ public interface DocumentReference extends DomainResource {
 	 * The status of this document reference.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(DocumentReferenceStatus)
+	 * @see #setStatus(Code)
 	 * @see org.hl7.fhir.FhirPackage#getDocumentReference_Status()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DocumentReferenceStatus getStatus();
+	Code getStatus();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.DocumentReference#getStatus <em>Status</em>}' containment reference.
@@ -323,7 +323,7 @@ public interface DocumentReference extends DomainResource {
 	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatus(DocumentReferenceStatus value);
+	void setStatus(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Doc Status</b></em>' containment reference.

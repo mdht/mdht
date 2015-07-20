@@ -65,7 +65,7 @@ public enum ProvenanceEntityRoleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a preexisting entity.
+	 * A transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a preexisting entity
 	 * <!-- end-model-doc -->
 	 * @see #DERIVATION
 	 * @model name="derivation"
@@ -93,7 +93,7 @@ public enum ProvenanceEntityRoleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The repeat of (some or all of) an entity, such as text or image, by someone who may or may not be its original author.
+	 * The repeat of (some or all of) an entity, such as text or image, by someone who may or may not be its original author
 	 * <!-- end-model-doc -->
 	 * @see #QUOTATION
 	 * @model name="quotation"

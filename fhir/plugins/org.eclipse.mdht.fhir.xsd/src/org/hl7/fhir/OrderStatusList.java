@@ -115,7 +115,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order is known, but no processing has occurred at this time.
+	 * The order is known, but no processing has occurred at this time
 	 * <!-- end-model-doc -->
 	 * @see #PENDING
 	 * @model name="pending"
@@ -129,7 +129,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order is undergoing initial processing to determine whether it will be accepted (usually this involves human review).
+	 * The order is undergoing initial processing to determine whether it will be accepted (usually this involves human review)
 	 * <!-- end-model-doc -->
 	 * @see #REVIEW
 	 * @model name="review"
@@ -143,7 +143,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order was rejected because of a workflow/business logic reason.
+	 * The order was rejected because of a workflow/business logic reason
 	 * <!-- end-model-doc -->
 	 * @see #REJECTED
 	 * @model name="rejected"
@@ -157,7 +157,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order was unable to be processed because of a technical error (i.e. unexpected error).
+	 * The order was unable to be processed because of a technical error (i.e. unexpected error)
 	 * <!-- end-model-doc -->
 	 * @see #ERROR
 	 * @model name="error"
@@ -171,7 +171,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order has been accepted, and work is in progress.
+	 * The order has been accepted, and work is in progress
 	 * <!-- end-model-doc -->
 	 * @see #ACCEPTED
 	 * @model name="accepted"
@@ -185,7 +185,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Processing the order was halted at the initiators request.
+	 * Processing the order was halted at the initiators request
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"
@@ -199,7 +199,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order has been cancelled and replaced by another.
+	 * The order has been cancelled and replaced by another
 	 * <!-- end-model-doc -->
 	 * @see #REPLACED
 	 * @model name="replaced"
@@ -213,7 +213,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Processing the order was stopped because of some workflow/business logic reason.
+	 * Processing the order was stopped because of some workflow/business logic reason
 	 * <!-- end-model-doc -->
 	 * @see #ABORTED
 	 * @model name="aborted"
@@ -227,7 +227,7 @@ public enum OrderStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order has been completed.
+	 * The order has been completed
 	 * <!-- end-model-doc -->
 	 * @see #COMPLETED
 	 * @model name="completed"

@@ -105,7 +105,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Search parameter SHALL be a number (a whole number, or a decimal).
+	 * Search parameter SHALL be a number (a whole number, or a decimal)
 	 * <!-- end-model-doc -->
 	 * @see #NUMBER
 	 * @model name="number"
@@ -119,7 +119,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Search parameter is on a date/time. The date format is the standard XML format, though other formats may be supported.
+	 * Search parameter is on a date/time. The date format is the standard XML format, though other formats may be supported
 	 * <!-- end-model-doc -->
 	 * @see #DATE
 	 * @model name="date"
@@ -133,7 +133,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Search parameter is a simple string, like a name part. Search is case-insensitive and accent-insensitive. May match just the start of a string. String parameters may contain spaces.
+	 * Search parameter is a simple string, like a name part. Search is case-insensitive and accent-insensitive. May match just the start of a string. String parameters may contain spaces
 	 * <!-- end-model-doc -->
 	 * @see #STRING
 	 * @model name="string"
@@ -147,7 +147,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Search parameter on a coded element or identifier. May be used to search through the text, displayname, code and code/codesystem (for codes) and label, system and key (for identifier). Its value is either a string or a pair of namespace and value, separated by a "|", depending on the modifier used.
+	 * Search parameter on a coded element or identifier. May be used to search through the text, displayname, code and code/codesystem (for codes) and label, system and key (for identifier). Its value is either a string or a pair of namespace and value, separated by a "|", depending on the modifier used
 	 * <!-- end-model-doc -->
 	 * @see #TOKEN
 	 * @model name="token"
@@ -161,7 +161,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A reference to another resource.
+	 * A reference to another resource
 	 * <!-- end-model-doc -->
 	 * @see #REFERENCE
 	 * @model name="reference"
@@ -175,7 +175,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A composite search parameter that combines a search on two values together.
+	 * A composite search parameter that combines a search on two values together
 	 * <!-- end-model-doc -->
 	 * @see #COMPOSITE
 	 * @model name="composite"
@@ -189,7 +189,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A search parameter that searches on a quantity.
+	 * A search parameter that searches on a quantity
 	 * <!-- end-model-doc -->
 	 * @see #QUANTITY
 	 * @model name="quantity"
@@ -203,7 +203,7 @@ public enum SearchParamTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A search parameter that searches on a URI (RFC 3986).
+	 * A search parameter that searches on a URI (RFC 3986)
 	 * <!-- end-model-doc -->
 	 * @see #URI
 	 * @model name="uri"

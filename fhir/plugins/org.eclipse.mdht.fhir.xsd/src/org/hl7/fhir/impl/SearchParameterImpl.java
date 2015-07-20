@@ -18,10 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Code;
-import org.hl7.fhir.ConformanceResourceStatus;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.SearchParamType;
 import org.hl7.fhir.SearchParameter;
 import org.hl7.fhir.SearchParameterContact;
 import org.hl7.fhir.Uri;
@@ -110,7 +108,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * @generated
 	 * @ordered
 	 */
-	protected ConformanceResourceStatus status;
+	protected Code status;
 
 	/**
 	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
@@ -150,7 +148,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * @generated
 	 * @ordered
 	 */
-	protected SearchParamType type;
+	protected Code type;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -390,7 +388,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConformanceResourceStatus getStatus() {
+	public Code getStatus() {
 		return status;
 	}
 
@@ -399,8 +397,8 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(ConformanceResourceStatus newStatus, NotificationChain msgs) {
-		ConformanceResourceStatus oldStatus = status;
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__STATUS, oldStatus, newStatus);
@@ -414,7 +412,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(ConformanceResourceStatus newStatus) {
+	public void setStatus(Code newStatus) {
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
@@ -562,7 +560,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchParamType getType() {
+	public Code getType() {
 		return type;
 	}
 
@@ -571,8 +569,8 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetType(SearchParamType newType, NotificationChain msgs) {
-		SearchParamType oldType = type;
+	public NotificationChain basicSetType(Code newType, NotificationChain msgs) {
+		Code oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__TYPE, oldType, newType);
@@ -586,7 +584,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(SearchParamType newType) {
+	public void setType(Code newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
@@ -800,7 +798,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				setRequirements((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__STATUS:
-				setStatus((ConformanceResourceStatus)newValue);
+				setStatus((Code)newValue);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)newValue);
@@ -812,7 +810,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				setBase((Code)newValue);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__TYPE:
-				setType((SearchParamType)newValue);
+				setType((Code)newValue);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)newValue);
@@ -852,7 +850,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				setRequirements((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__STATUS:
-				setStatus((ConformanceResourceStatus)null);
+				setStatus((Code)null);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)null);
@@ -864,7 +862,7 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				setBase((Code)null);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__TYPE:
-				setType((SearchParamType)null);
+				setType((Code)null);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)null);

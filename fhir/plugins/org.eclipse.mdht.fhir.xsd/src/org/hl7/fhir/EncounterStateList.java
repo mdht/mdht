@@ -85,7 +85,7 @@ public enum EncounterStateList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Encounter has not yet started.
+	 * The Encounter has not yet started
 	 * <!-- end-model-doc -->
 	 * @see #PLANNED
 	 * @model name="planned"
@@ -99,7 +99,7 @@ public enum EncounterStateList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Patient is present for the encounter, however is not currently meeting with a practitioner.
+	 * The Patient is present for the encounter, however is not currently meeting with a practitioner
 	 * <!-- end-model-doc -->
 	 * @see #ARRIVED
 	 * @model name="arrived"
@@ -113,7 +113,7 @@ public enum EncounterStateList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Encounter has begun and the patient is present / the practitioner and the patient are meeting.
+	 * The Encounter has begun and the patient is present / the practitioner and the patient are meeting
 	 * <!-- end-model-doc -->
 	 * @see #IN_PROGRESS
 	 * @model name="inProgress" literal="in-progress"
@@ -127,7 +127,7 @@ public enum EncounterStateList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Encounter has begun, but the patient is temporarily on leave.
+	 * The Encounter has begun, but the patient is temporarily on leave
 	 * <!-- end-model-doc -->
 	 * @see #ONLEAVE
 	 * @model name="onleave"
@@ -141,7 +141,7 @@ public enum EncounterStateList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Encounter has ended.
+	 * The Encounter has ended
 	 * <!-- end-model-doc -->
 	 * @see #FINISHED
 	 * @model name="finished"
@@ -155,7 +155,7 @@ public enum EncounterStateList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Encounter has ended before it has begun.
+	 * The Encounter has ended before it has begun
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"

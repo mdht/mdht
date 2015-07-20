@@ -265,7 +265,7 @@ public enum AuditEventObjectRoleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This object is the patient that is the subject of care related to this event.  It is identifiable by patient ID or equivalent.  The patient may be either human or animal.
+	 * This object is the patient that is the subject of care related to this event.  It is identifiable by patient ID or equivalent.  The patient may be either human or animal
 	 * <!-- end-model-doc -->
 	 * @see #_1
 	 * @model literal="1"
@@ -335,7 +335,7 @@ public enum AuditEventObjectRoleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A human participant not otherwise identified by some other category.
+	 * A human participant not otherwise identified by some other category
 	 * <!-- end-model-doc -->
 	 * @see #_6
 	 * @model literal="6"
@@ -349,7 +349,7 @@ public enum AuditEventObjectRoleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * (deprecated).
+	 * (deprecated)
 	 * <!-- end-model-doc -->
 	 * @see #_7
 	 * @model literal="7"
@@ -559,7 +559,7 @@ public enum AuditEventObjectRoleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * (Deprecated).
+	 * (Deprecated)
 	 * <!-- end-model-doc -->
 	 * @see #_22
 	 * @model literal="22"

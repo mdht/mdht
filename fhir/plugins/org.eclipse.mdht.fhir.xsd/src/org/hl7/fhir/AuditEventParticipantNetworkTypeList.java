@@ -75,7 +75,7 @@ public enum AuditEventParticipantNetworkTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Machine Name, including DNS name.
+	 * Machine Name, including DNS name
 	 * <!-- end-model-doc -->
 	 * @see #_1
 	 * @model literal="1"
@@ -89,7 +89,7 @@ public enum AuditEventParticipantNetworkTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * IP Address.
+	 * IP Address
 	 * <!-- end-model-doc -->
 	 * @see #_2
 	 * @model literal="2"
@@ -103,7 +103,7 @@ public enum AuditEventParticipantNetworkTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Telephone Number.
+	 * Telephone Number
 	 * <!-- end-model-doc -->
 	 * @see #_3
 	 * @model literal="3"
@@ -117,7 +117,7 @@ public enum AuditEventParticipantNetworkTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Email address.
+	 * Email address
 	 * <!-- end-model-doc -->
 	 * @see #_4
 	 * @model literal="4"
@@ -131,7 +131,7 @@ public enum AuditEventParticipantNetworkTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * URI (User directory, HTTP-PUT, ftp, etc.).
+	 * URI (User directory, HTTP-PUT, ftp, etc.)
 	 * <!-- end-model-doc -->
 	 * @see #_5
 	 * @model literal="5"

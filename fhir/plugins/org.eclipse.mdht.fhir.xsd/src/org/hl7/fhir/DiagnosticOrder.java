@@ -94,7 +94,7 @@ public interface DiagnosticOrder extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Identifiers assigned to this order by the order or by the receiver.
+	 * Identifiers assigned to this order by the orderer and/or  the receiver and/or order fulfiller.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Identifier</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrder_Identifier()

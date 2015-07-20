@@ -55,7 +55,7 @@ public enum ListModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This list is the master list, maintained in an ongoing fashion with regular updates as the real world list it is tracking changes.
+	 * This list is the master list, maintained in an ongoing fashion with regular updates as the real world list it is tracking changes
 	 * <!-- end-model-doc -->
 	 * @see #WORKING
 	 * @model name="working"
@@ -69,7 +69,7 @@ public enum ListModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This list was prepared as a snapshot. It should not be assumed to be current.
+	 * This list was prepared as a snapshot. It should not be assumed to be current
 	 * <!-- end-model-doc -->
 	 * @see #SNAPSHOT
 	 * @model name="snapshot"
@@ -83,7 +83,7 @@ public enum ListModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The list is prepared as a statement of changes that have been made or recommended.
+	 * A list that indicates where changes have been made or recommended
 	 * <!-- end-model-doc -->
 	 * @see #CHANGES
 	 * @model name="changes"

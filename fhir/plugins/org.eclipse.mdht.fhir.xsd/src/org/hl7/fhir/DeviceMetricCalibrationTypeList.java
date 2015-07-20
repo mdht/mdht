@@ -65,7 +65,7 @@ public enum DeviceMetricCalibrationTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * TODO.
+	 * TODO
 	 * <!-- end-model-doc -->
 	 * @see #UNSPECIFIED
 	 * @model name="unspecified"
@@ -79,7 +79,7 @@ public enum DeviceMetricCalibrationTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * TODO.
+	 * TODO
 	 * <!-- end-model-doc -->
 	 * @see #OFFSET
 	 * @model name="offset"
@@ -93,7 +93,7 @@ public enum DeviceMetricCalibrationTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * TODO.
+	 * TODO
 	 * <!-- end-model-doc -->
 	 * @see #GAIN
 	 * @model name="gain"
@@ -107,7 +107,7 @@ public enum DeviceMetricCalibrationTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * TODO.
+	 * TODO
 	 * <!-- end-model-doc -->
 	 * @see #TWO_POINT
 	 * @model name="twoPoint" literal="two-point"

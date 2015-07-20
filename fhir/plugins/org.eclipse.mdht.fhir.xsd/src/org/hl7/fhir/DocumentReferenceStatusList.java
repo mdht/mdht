@@ -31,14 +31,14 @@ public enum DocumentReferenceStatusList implements Enumerator {
 	CURRENT(0, "current", "current"),
 
 	/**
-	 * The '<em><b>Superceded</b></em>' literal object.
+	 * The '<em><b>Superseded</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SUPERCEDED_VALUE
+	 * @see #SUPERSEDED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SUPERCEDED(1, "superceded", "superceded"),
+	SUPERSEDED(1, "superseded", "superseded"),
 
 	/**
 	 * The '<em><b>Entered In Error</b></em>' literal object.
@@ -55,7 +55,7 @@ public enum DocumentReferenceStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This is the current reference for this document.
+	 * This is the current reference for this document
 	 * <!-- end-model-doc -->
 	 * @see #CURRENT
 	 * @model name="current"
@@ -65,25 +65,25 @@ public enum DocumentReferenceStatusList implements Enumerator {
 	public static final int CURRENT_VALUE = 0;
 
 	/**
-	 * The '<em><b>Superceded</b></em>' literal value.
+	 * The '<em><b>Superseded</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This reference has been superceded by another reference.
+	 * This reference has been superseded by another reference
 	 * <!-- end-model-doc -->
-	 * @see #SUPERCEDED
-	 * @model name="superceded"
+	 * @see #SUPERSEDED
+	 * @model name="superseded"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUPERCEDED_VALUE = 1;
+	public static final int SUPERSEDED_VALUE = 1;
 
 	/**
 	 * The '<em><b>Entered In Error</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This reference was created in error.
+	 * This reference was created in error
 	 * <!-- end-model-doc -->
 	 * @see #ENTERED_IN_ERROR
 	 * @model name="enteredInError" literal="entered-in-error"
@@ -101,7 +101,7 @@ public enum DocumentReferenceStatusList implements Enumerator {
 	private static final DocumentReferenceStatusList[] VALUES_ARRAY =
 		new DocumentReferenceStatusList[] {
 			CURRENT,
-			SUPERCEDED,
+			SUPERSEDED,
 			ENTERED_IN_ERROR,
 		};
 
@@ -160,7 +160,7 @@ public enum DocumentReferenceStatusList implements Enumerator {
 	public static DocumentReferenceStatusList get(int value) {
 		switch (value) {
 			case CURRENT_VALUE: return CURRENT;
-			case SUPERCEDED_VALUE: return SUPERCEDED;
+			case SUPERSEDED_VALUE: return SUPERSEDED;
 			case ENTERED_IN_ERROR_VALUE: return ENTERED_IN_ERROR;
 		}
 		return null;

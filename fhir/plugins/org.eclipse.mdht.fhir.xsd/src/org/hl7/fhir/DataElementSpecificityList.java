@@ -99,7 +99,7 @@ public enum DataElementSpecificityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The data element is fully specified down to a single value set, single unit of measure, single data type, etc.  Multiple pieces of data associated with this data element are fully compareable.
+	 * The data element is fully specified down to a single value set, single unit of measure, single data type, etc.  Multiple pieces of data associated with this data element are fully compareable
 	 * <!-- end-model-doc -->
 	 * @see #FULLY_SPECIFIED
 	 * @model name="fullySpecified" literal="fully-specified"
@@ -127,7 +127,7 @@ public enum DataElementSpecificityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The data element allows multiple units of measure that are convertable between each other (e.g. Inches and centimeters) and/or allows data to be captured in multiple value sets for which a known mapping exists allowing conversion of meaning.
+	 * The data element allows multiple units of measure that are convertable between each other (e.g. Inches and centimeters) and/or allows data to be captured in multiple value sets for which a known mapping exists allowing conversion of meaning
 	 * <!-- end-model-doc -->
 	 * @see #CONVERTABLE
 	 * @model name="convertable"
@@ -141,7 +141,7 @@ public enum DataElementSpecificityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A convertable data element where unit conversions are different only by a power of 10.  E.g. g, mg, kg.
+	 * A convertable data element where unit conversions are different only by a power of 10.  E.g. g, mg, kg
 	 * <!-- end-model-doc -->
 	 * @see #SCALEABLE
 	 * @model name="scaleable"

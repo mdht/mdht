@@ -89,7 +89,7 @@ public enum AuditEventActionList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Display or print data, such as a Doctor Census.
+	 * Display or print data, such as a Doctor Census
 	 * <!-- end-model-doc -->
 	 * @see #R
 	 * @model
@@ -103,7 +103,7 @@ public enum AuditEventActionList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Update data, such as Revise Patient Information.
+	 * Update data, such as Revise Patient Information
 	 * <!-- end-model-doc -->
 	 * @see #U
 	 * @model
@@ -117,7 +117,7 @@ public enum AuditEventActionList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Delete items, such as a doctor master file record.
+	 * Delete items, such as a doctor master file record
 	 * <!-- end-model-doc -->
 	 * @see #D
 	 * @model
@@ -131,7 +131,7 @@ public enum AuditEventActionList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Perform a system or application function such as log-on, program execution or use of an object's method, or perform a query/search operation.
+	 * Perform a system or application function such as log-on, program execution or use of an object's method, or perform a query/search operation
 	 * <!-- end-model-doc -->
 	 * @see #E
 	 * @model

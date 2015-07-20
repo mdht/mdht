@@ -55,7 +55,7 @@ public enum AggregationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The reference is a local reference to a contained resource.
+	 * The reference is a local reference to a contained resource
 	 * <!-- end-model-doc -->
 	 * @see #CONTAINED
 	 * @model name="contained"
@@ -69,7 +69,7 @@ public enum AggregationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The reference to a resource that has to be resolved externally to the resource that includes the reference.
+	 * The reference to a resource that has to be resolved externally to the resource that includes the reference
 	 * <!-- end-model-doc -->
 	 * @see #REFERENCED
 	 * @model name="referenced"
@@ -83,7 +83,7 @@ public enum AggregationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The resource the reference points to will be found in the same bundle as the resource that includes the reference.
+	 * The resource the reference points to will be found in the same bundle as the resource that includes the reference
 	 * <!-- end-model-doc -->
 	 * @see #BUNDLED
 	 * @model name="bundled"

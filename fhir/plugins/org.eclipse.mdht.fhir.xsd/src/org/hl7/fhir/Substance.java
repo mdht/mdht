@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.hl7.fhir.Substance#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.Substance#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.Substance#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.Substance#getInstance <em>Instance</em>}</li>
@@ -29,6 +30,22 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Substance extends DomainResource {
+	/**
+	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Identifier}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Unique identifier for the substance.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Identifier</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getSubstance_Identifier()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='identifier' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<Identifier> getIdentifier();
+
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -82,30 +99,20 @@ public interface Substance extends DomainResource {
 	void setDescription(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Instance</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Instance</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.SubstanceInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Instance</em>' containment reference.
-	 * @see #setInstance(SubstanceInstance)
+	 * @return the value of the '<em>Instance</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getSubstance_Instance()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='instance' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	SubstanceInstance getInstance();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Substance#getInstance <em>Instance</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instance</em>' containment reference.
-	 * @see #getInstance()
-	 * @generated
-	 */
-	void setInstance(SubstanceInstance value);
+	EList<SubstanceInstance> getInstance();
 
 	/**
 	 * Returns the value of the '<em><b>Ingredient</b></em>' containment reference list.

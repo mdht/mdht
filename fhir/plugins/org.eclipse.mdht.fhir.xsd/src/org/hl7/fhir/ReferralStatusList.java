@@ -95,7 +95,7 @@ public enum ReferralStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A draft referral that has yet to be send.
+	 * A draft referral that has yet to be send
 	 * <!-- end-model-doc -->
 	 * @see #DRAFT
 	 * @model name="draft"
@@ -109,7 +109,7 @@ public enum ReferralStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The referral has been transmitted, but not yet acknowledged by the recipient.
+	 * The referral has been transmitted, but not yet acknowledged by the recipient
 	 * <!-- end-model-doc -->
 	 * @see #REQUESTED
 	 * @model name="requested"
@@ -123,7 +123,7 @@ public enum ReferralStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The referral has been acknowledged by the recipient, and is in the process of being actioned.
+	 * The referral has been acknowledged by the recipient, and is in the process of being actioned
 	 * <!-- end-model-doc -->
 	 * @see #ACTIVE
 	 * @model name="active"
@@ -137,7 +137,7 @@ public enum ReferralStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The referral has been cancelled without being completed. For example it is no longer needed.
+	 * The referral has been cancelled without being completed. For example it is no longer needed
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"
@@ -151,7 +151,7 @@ public enum ReferralStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The recipient has agreed to deliver the care requested by the referral.
+	 * The recipient has agreed to deliver the care requested by the referral
 	 * <!-- end-model-doc -->
 	 * @see #ACCEPTED
 	 * @model name="accepted"
@@ -165,7 +165,7 @@ public enum ReferralStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The recipient has declined to accept the referral.
+	 * The recipient has declined to accept the referral
 	 * <!-- end-model-doc -->
 	 * @see #REJECTED
 	 * @model name="rejected"
@@ -179,7 +179,7 @@ public enum ReferralStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The referral has been completely actioned.
+	 * The referral has been completely actioned
 	 * <!-- end-model-doc -->
 	 * @see #COMPLETED
 	 * @model name="completed"

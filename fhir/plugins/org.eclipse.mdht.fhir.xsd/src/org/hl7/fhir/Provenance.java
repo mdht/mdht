@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Provenance#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.hl7.fhir.Provenance#getRecorded <em>Recorded</em>}</li>
  *   <li>{@link org.hl7.fhir.Provenance#getReason <em>Reason</em>}</li>
+ *   <li>{@link org.hl7.fhir.Provenance#getActivity <em>Activity</em>}</li>
  *   <li>{@link org.hl7.fhir.Provenance#getLocation <em>Location</em>}</li>
  *   <li>{@link org.hl7.fhir.Provenance#getPolicy <em>Policy</em>}</li>
  *   <li>{@link org.hl7.fhir.Provenance#getAgent <em>Agent</em>}</li>
@@ -103,30 +104,46 @@ public interface Provenance extends DomainResource {
 	void setRecorded(Instant value);
 
 	/**
-	 * Returns the value of the '<em><b>Reason</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Reason</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The reason that the activity was taking place.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Reason</em>' containment reference.
-	 * @see #setReason(CodeableConcept)
+	 * @return the value of the '<em>Reason</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getProvenance_Reason()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='reason' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CodeableConcept getReason();
+	EList<CodeableConcept> getReason();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Provenance#getReason <em>Reason</em>}' containment reference.
+	 * Returns the value of the '<em><b>Activity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reason</em>' containment reference.
-	 * @see #getReason()
+	 * <!-- begin-model-doc -->
+	 * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Activity</em>' containment reference.
+	 * @see #setActivity(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getProvenance_Activity()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='activity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	void setReason(CodeableConcept value);
+	CodeableConcept getActivity();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Provenance#getActivity <em>Activity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Activity</em>' containment reference.
+	 * @see #getActivity()
+	 * @generated
+	 */
+	void setActivity(CodeableConcept value);
 
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' containment reference.

@@ -83,7 +83,7 @@ public interface ClaimResponseAdjudication3 extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A non-monitary value for example a percentage. Mutually exclusive to the amount element above.
+	 * A non-monetary value for example a percentage. Mutually exclusive to the amount element above.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(Decimal)

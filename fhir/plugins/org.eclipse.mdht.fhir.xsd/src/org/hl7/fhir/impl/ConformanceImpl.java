@@ -23,7 +23,6 @@ import org.hl7.fhir.ConformanceContact;
 import org.hl7.fhir.ConformanceDocument;
 import org.hl7.fhir.ConformanceImplementation;
 import org.hl7.fhir.ConformanceMessaging;
-import org.hl7.fhir.ConformanceResourceStatus;
 import org.hl7.fhir.ConformanceRest;
 import org.hl7.fhir.ConformanceSoftware;
 import org.hl7.fhir.DateTime;
@@ -153,7 +152,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * @generated
 	 * @ordered
 	 */
-	protected ConformanceResourceStatus status;
+	protected Code status;
 
 	/**
 	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
@@ -602,7 +601,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConformanceResourceStatus getStatus() {
+	public Code getStatus() {
 		return status;
 	}
 
@@ -611,8 +610,8 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(ConformanceResourceStatus newStatus, NotificationChain msgs) {
-		ConformanceResourceStatus oldStatus = status;
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__STATUS, oldStatus, newStatus);
@@ -626,7 +625,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(ConformanceResourceStatus newStatus) {
+	public void setStatus(Code newStatus) {
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
@@ -1097,7 +1096,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 				setCopyright((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.CONFORMANCE__STATUS:
-				setStatus((ConformanceResourceStatus)newValue);
+				setStatus((Code)newValue);
 				return;
 			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)newValue);
@@ -1174,7 +1173,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 				setCopyright((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.CONFORMANCE__STATUS:
-				setStatus((ConformanceResourceStatus)null);
+				setStatus((Code)null);
 				return;
 			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)null);

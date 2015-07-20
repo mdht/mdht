@@ -21,7 +21,6 @@ import org.hl7.fhir.Coding;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
-import org.hl7.fhir.ImagingModality;
 import org.hl7.fhir.ImagingStudy;
 import org.hl7.fhir.ImagingStudySeries;
 import org.hl7.fhir.InstanceAvailability;
@@ -128,7 +127,7 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ImagingModality> modalityList;
+	protected EList<Coding> modalityList;
 
 	/**
 	 * The cached value of the '{@link #getReferrer() <em>Referrer</em>}' containment reference.
@@ -198,7 +197,7 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Coding> procedure;
+	protected EList<Reference> procedure;
 
 	/**
 	 * The cached value of the '{@link #getInterpreter() <em>Interpreter</em>}' containment reference.
@@ -450,9 +449,9 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ImagingModality> getModalityList() {
+	public EList<Coding> getModalityList() {
 		if (modalityList == null) {
-			modalityList = new EObjectContainmentEList<ImagingModality>(ImagingModality.class, this, FhirPackage.IMAGING_STUDY__MODALITY_LIST);
+			modalityList = new EObjectContainmentEList<Coding>(Coding.class, this, FhirPackage.IMAGING_STUDY__MODALITY_LIST);
 		}
 		return modalityList;
 	}
@@ -720,9 +719,9 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Coding> getProcedure() {
+	public EList<Reference> getProcedure() {
 		if (procedure == null) {
-			procedure = new EObjectContainmentEList<Coding>(Coding.class, this, FhirPackage.IMAGING_STUDY__PROCEDURE);
+			procedure = new EObjectContainmentEList<Reference>(Reference.class, this, FhirPackage.IMAGING_STUDY__PROCEDURE);
 		}
 		return procedure;
 	}
@@ -948,7 +947,7 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 				return;
 			case FhirPackage.IMAGING_STUDY__MODALITY_LIST:
 				getModalityList().clear();
-				getModalityList().addAll((Collection<? extends ImagingModality>)newValue);
+				getModalityList().addAll((Collection<? extends Coding>)newValue);
 				return;
 			case FhirPackage.IMAGING_STUDY__REFERRER:
 				setReferrer((Reference)newValue);
@@ -970,7 +969,7 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 				return;
 			case FhirPackage.IMAGING_STUDY__PROCEDURE:
 				getProcedure().clear();
-				getProcedure().addAll((Collection<? extends Coding>)newValue);
+				getProcedure().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case FhirPackage.IMAGING_STUDY__INTERPRETER:
 				setInterpreter((Reference)newValue);

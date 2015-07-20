@@ -22,8 +22,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.OrderResponse#getRequest <em>Request</em>}</li>
  *   <li>{@link org.hl7.fhir.OrderResponse#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.OrderResponse#getWho <em>Who</em>}</li>
- *   <li>{@link org.hl7.fhir.OrderResponse#getAuthorityCodeableConcept <em>Authority Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.OrderResponse#getAuthorityReference <em>Authority Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.OrderResponse#getOrderStatus <em>Order Status</em>}</li>
  *   <li>{@link org.hl7.fhir.OrderResponse#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.OrderResponse#getFulfillment <em>Fulfillment</em>}</li>
@@ -127,60 +125,6 @@ public interface OrderResponse extends DomainResource {
 	 * @generated
 	 */
 	void setWho(Reference value);
-
-	/**
-	 * Returns the value of the '<em><b>Authority Codeable Concept</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Authority Codeable Concept</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authority Codeable Concept</em>' containment reference.
-	 * @see #setAuthorityCodeableConcept(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getOrderResponse_AuthorityCodeableConcept()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='authorityCodeableConcept' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	CodeableConcept getAuthorityCodeableConcept();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.OrderResponse#getAuthorityCodeableConcept <em>Authority Codeable Concept</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authority Codeable Concept</em>' containment reference.
-	 * @see #getAuthorityCodeableConcept()
-	 * @generated
-	 */
-	void setAuthorityCodeableConcept(CodeableConcept value);
-
-	/**
-	 * Returns the value of the '<em><b>Authority Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Authority Reference</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authority Reference</em>' containment reference.
-	 * @see #setAuthorityReference(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getOrderResponse_AuthorityReference()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='authorityReference' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Reference getAuthorityReference();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.OrderResponse#getAuthorityReference <em>Authority Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authority Reference</em>' containment reference.
-	 * @see #getAuthorityReference()
-	 * @generated
-	 */
-	void setAuthorityReference(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Status</b></em>' containment reference.

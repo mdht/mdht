@@ -83,7 +83,7 @@ public enum AllergyIntoleranceCriticalityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Unable to assess the potential clinical impact with the information available.
+	 * Unable to assess the potential clinical impact with the information available
 	 * <!-- end-model-doc -->
 	 * @see #UNASSESSIBLE
 	 * @model name="unassessible"

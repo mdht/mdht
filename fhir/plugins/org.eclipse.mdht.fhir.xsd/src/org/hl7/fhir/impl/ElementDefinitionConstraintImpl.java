@@ -24,7 +24,7 @@ import org.hl7.fhir.Id;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionConstraintImpl#getKey <em>Key</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ElementDefinitionConstraintImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionConstraintImpl#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionConstraintImpl#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionConstraintImpl#getHuman <em>Human</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionConstraintImpl#getXpath <em>Xpath</em>}</li>
@@ -44,14 +44,14 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 	protected Id key;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getRequirements()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String name;
+	protected org.hl7.fhir.String requirements;
 
 	/**
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' containment reference.
@@ -150,8 +150,8 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getName() {
-		return name;
+	public org.hl7.fhir.String getRequirements() {
+		return requirements;
 	}
 
 	/**
@@ -159,11 +159,11 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetName(org.hl7.fhir.String newName, NotificationChain msgs) {
-		org.hl7.fhir.String oldName = name;
-		name = newName;
+	public NotificationChain basicSetRequirements(org.hl7.fhir.String newRequirements, NotificationChain msgs) {
+		org.hl7.fhir.String oldRequirements = requirements;
+		requirements = newRequirements;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME, oldName, newName);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS, oldRequirements, newRequirements);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -174,18 +174,18 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(org.hl7.fhir.String newName) {
-		if (newName != name) {
+	public void setRequirements(org.hl7.fhir.String newRequirements) {
+		if (newRequirements != requirements) {
 			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME, null, msgs);
-			msgs = basicSetName(newName, msgs);
+			if (requirements != null)
+				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS, null, msgs);
+			if (newRequirements != null)
+				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS, null, msgs);
+			msgs = basicSetRequirements(newRequirements, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME, newName, newName));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS, newRequirements, newRequirements));
 	}
 
 	/**
@@ -327,8 +327,8 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 		switch (featureID) {
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__KEY:
 				return basicSetKey(null, msgs);
-			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME:
-				return basicSetName(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS:
+				return basicSetRequirements(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__SEVERITY:
 				return basicSetSeverity(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__HUMAN:
@@ -349,8 +349,8 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 		switch (featureID) {
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__KEY:
 				return getKey();
-			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME:
-				return getName();
+			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS:
+				return getRequirements();
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__SEVERITY:
 				return getSeverity();
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__HUMAN:
@@ -372,8 +372,8 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__KEY:
 				setKey((Id)newValue);
 				return;
-			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME:
-				setName((org.hl7.fhir.String)newValue);
+			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS:
+				setRequirements((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__SEVERITY:
 				setSeverity((ConstraintSeverity)newValue);
@@ -399,8 +399,8 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__KEY:
 				setKey((Id)null);
 				return;
-			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME:
-				setName((org.hl7.fhir.String)null);
+			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS:
+				setRequirements((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__SEVERITY:
 				setSeverity((ConstraintSeverity)null);
@@ -425,8 +425,8 @@ public class ElementDefinitionConstraintImpl extends ElementImpl implements Elem
 		switch (featureID) {
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__KEY:
 				return key != null;
-			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__NAME:
-				return name != null;
+			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__REQUIREMENTS:
+				return requirements != null;
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__SEVERITY:
 				return severity != null;
 			case FhirPackage.ELEMENT_DEFINITION_CONSTRAINT__HUMAN:

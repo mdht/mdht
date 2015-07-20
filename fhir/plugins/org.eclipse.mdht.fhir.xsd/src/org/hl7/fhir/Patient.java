@@ -100,13 +100,13 @@ public interface Patient extends DomainResource {
 	 * Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gender</em>' containment reference.
-	 * @see #setGender(AdministrativeGender)
+	 * @see #setGender(Code)
 	 * @see org.hl7.fhir.FhirPackage#getPatient_Gender()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='gender' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	AdministrativeGender getGender();
+	Code getGender();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.Patient#getGender <em>Gender</em>}' containment reference.
@@ -116,7 +116,7 @@ public interface Patient extends DomainResource {
 	 * @see #getGender()
 	 * @generated
 	 */
-	void setGender(AdministrativeGender value);
+	void setGender(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Birth Date</b></em>' containment reference.
@@ -331,7 +331,7 @@ public interface Patient extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This element has a value if the patient is an animal.
+	 * This patient is known to be an animal.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Animal</em>' containment reference.
 	 * @see #setAnimal(PatientAnimal)

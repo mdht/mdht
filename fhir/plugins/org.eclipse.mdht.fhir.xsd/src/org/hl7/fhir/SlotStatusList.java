@@ -21,100 +21,100 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum SlotStatusList implements Enumerator {
 	/**
-	 * The '<em><b>BUSY</b></em>' literal object.
+	 * The '<em><b>Busy</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #BUSY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BUSY(0, "BUSY", "BUSY"),
+	BUSY(0, "busy", "busy"),
 
 	/**
-	 * The '<em><b>FREE</b></em>' literal object.
+	 * The '<em><b>Free</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #FREE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	FREE(1, "FREE", "FREE"),
+	FREE(1, "free", "free"),
 
 	/**
-	 * The '<em><b>BUSYUNAVAILABLE</b></em>' literal object.
+	 * The '<em><b>Busy Unavailable</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BUSYUNAVAILABLE_VALUE
+	 * @see #BUSY_UNAVAILABLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BUSYUNAVAILABLE(2, "BUSYUNAVAILABLE", "BUSY-UNAVAILABLE"),
+	BUSY_UNAVAILABLE(2, "busyUnavailable", "busy-unavailable"),
 
 	/**
-	 * The '<em><b>BUSYTENTATIVE</b></em>' literal object.
+	 * The '<em><b>Busy Tentative</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BUSYTENTATIVE_VALUE
+	 * @see #BUSY_TENTATIVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BUSYTENTATIVE(3, "BUSYTENTATIVE", "BUSY-TENTATIVE");
+	BUSY_TENTATIVE(3, "busyTentative", "busy-tentative");
 
 	/**
-	 * The '<em><b>BUSY</b></em>' literal value.
+	 * The '<em><b>Busy</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Indicates that the time interval is busy because one  or more events have been scheduled for that interval.
 	 * <!-- end-model-doc -->
 	 * @see #BUSY
-	 * @model
+	 * @model name="busy"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int BUSY_VALUE = 0;
 
 	/**
-	 * The '<em><b>FREE</b></em>' literal value.
+	 * The '<em><b>Free</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Indicates that the time interval is free for scheduling.
 	 * <!-- end-model-doc -->
 	 * @see #FREE
-	 * @model
+	 * @model name="free"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int FREE_VALUE = 1;
 
 	/**
-	 * The '<em><b>BUSYUNAVAILABLE</b></em>' literal value.
+	 * The '<em><b>Busy Unavailable</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Indicates that the time interval is busy and that the interval can not be scheduled.
 	 * <!-- end-model-doc -->
-	 * @see #BUSYUNAVAILABLE
-	 * @model literal="BUSY-UNAVAILABLE"
+	 * @see #BUSY_UNAVAILABLE
+	 * @model name="busyUnavailable" literal="busy-unavailable"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BUSYUNAVAILABLE_VALUE = 2;
+	public static final int BUSY_UNAVAILABLE_VALUE = 2;
 
 	/**
-	 * The '<em><b>BUSYTENTATIVE</b></em>' literal value.
+	 * The '<em><b>Busy Tentative</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Indicates that the time interval is busy because one or more events have been tentatively scheduled for that interval.
+	 * Indicates that the time interval is busy because one or more events have been tentatively scheduled for that interval
 	 * <!-- end-model-doc -->
-	 * @see #BUSYTENTATIVE
-	 * @model literal="BUSY-TENTATIVE"
+	 * @see #BUSY_TENTATIVE
+	 * @model name="busyTentative" literal="busy-tentative"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BUSYTENTATIVE_VALUE = 3;
+	public static final int BUSY_TENTATIVE_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Slot Status List</b></em>' enumerators.
@@ -126,8 +126,8 @@ public enum SlotStatusList implements Enumerator {
 		new SlotStatusList[] {
 			BUSY,
 			FREE,
-			BUSYUNAVAILABLE,
-			BUSYTENTATIVE,
+			BUSY_UNAVAILABLE,
+			BUSY_TENTATIVE,
 		};
 
 	/**
@@ -186,8 +186,8 @@ public enum SlotStatusList implements Enumerator {
 		switch (value) {
 			case BUSY_VALUE: return BUSY;
 			case FREE_VALUE: return FREE;
-			case BUSYUNAVAILABLE_VALUE: return BUSYUNAVAILABLE;
-			case BUSYTENTATIVE_VALUE: return BUSYTENTATIVE;
+			case BUSY_UNAVAILABLE_VALUE: return BUSY_UNAVAILABLE;
+			case BUSY_TENTATIVE_VALUE: return BUSY_TENTATIVE;
 		}
 		return null;
 	}

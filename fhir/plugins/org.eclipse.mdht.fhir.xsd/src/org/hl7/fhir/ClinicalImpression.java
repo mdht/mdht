@@ -48,7 +48,7 @@ public interface ClinicalImpression extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The patient being asssesed.
+	 * The patient being assessed.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Patient</em>' containment reference.
 	 * @see #setPatient(Reference)

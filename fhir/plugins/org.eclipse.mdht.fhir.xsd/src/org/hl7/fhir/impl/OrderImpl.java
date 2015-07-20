@@ -40,7 +40,6 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.OrderImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderImpl#getReasonCodeableConcept <em>Reason Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderImpl#getReasonReference <em>Reason Reference</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OrderImpl#getAuthority <em>Authority</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderImpl#getWhen <em>When</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrderImpl#getDetail <em>Detail</em>}</li>
  * </ul>
@@ -117,16 +116,6 @@ public class OrderImpl extends DomainResourceImpl implements Order {
 	 * @ordered
 	 */
 	protected Reference reasonReference;
-
-	/**
-	 * The cached value of the '{@link #getAuthority() <em>Authority</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthority()
-	 * @generated
-	 * @ordered
-	 */
-	protected Reference authority;
 
 	/**
 	 * The cached value of the '{@link #getWhen() <em>When</em>}' containment reference.
@@ -442,49 +431,6 @@ public class OrderImpl extends DomainResourceImpl implements Order {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference getAuthority() {
-		return authority;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAuthority(Reference newAuthority, NotificationChain msgs) {
-		Reference oldAuthority = authority;
-		authority = newAuthority;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ORDER__AUTHORITY, oldAuthority, newAuthority);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthority(Reference newAuthority) {
-		if (newAuthority != authority) {
-			NotificationChain msgs = null;
-			if (authority != null)
-				msgs = ((InternalEObject)authority).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORDER__AUTHORITY, null, msgs);
-			if (newAuthority != null)
-				msgs = ((InternalEObject)newAuthority).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORDER__AUTHORITY, null, msgs);
-			msgs = basicSetAuthority(newAuthority, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORDER__AUTHORITY, newAuthority, newAuthority));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public OrderWhen getWhen() {
 		return when;
 	}
@@ -557,8 +503,6 @@ public class OrderImpl extends DomainResourceImpl implements Order {
 				return basicSetReasonCodeableConcept(null, msgs);
 			case FhirPackage.ORDER__REASON_REFERENCE:
 				return basicSetReasonReference(null, msgs);
-			case FhirPackage.ORDER__AUTHORITY:
-				return basicSetAuthority(null, msgs);
 			case FhirPackage.ORDER__WHEN:
 				return basicSetWhen(null, msgs);
 			case FhirPackage.ORDER__DETAIL:
@@ -589,8 +533,6 @@ public class OrderImpl extends DomainResourceImpl implements Order {
 				return getReasonCodeableConcept();
 			case FhirPackage.ORDER__REASON_REFERENCE:
 				return getReasonReference();
-			case FhirPackage.ORDER__AUTHORITY:
-				return getAuthority();
 			case FhirPackage.ORDER__WHEN:
 				return getWhen();
 			case FhirPackage.ORDER__DETAIL:
@@ -629,9 +571,6 @@ public class OrderImpl extends DomainResourceImpl implements Order {
 				return;
 			case FhirPackage.ORDER__REASON_REFERENCE:
 				setReasonReference((Reference)newValue);
-				return;
-			case FhirPackage.ORDER__AUTHORITY:
-				setAuthority((Reference)newValue);
 				return;
 			case FhirPackage.ORDER__WHEN:
 				setWhen((OrderWhen)newValue);
@@ -673,9 +612,6 @@ public class OrderImpl extends DomainResourceImpl implements Order {
 			case FhirPackage.ORDER__REASON_REFERENCE:
 				setReasonReference((Reference)null);
 				return;
-			case FhirPackage.ORDER__AUTHORITY:
-				setAuthority((Reference)null);
-				return;
 			case FhirPackage.ORDER__WHEN:
 				setWhen((OrderWhen)null);
 				return;
@@ -708,8 +644,6 @@ public class OrderImpl extends DomainResourceImpl implements Order {
 				return reasonCodeableConcept != null;
 			case FhirPackage.ORDER__REASON_REFERENCE:
 				return reasonReference != null;
-			case FhirPackage.ORDER__AUTHORITY:
-				return authority != null;
 			case FhirPackage.ORDER__WHEN:
 				return when != null;
 			case FhirPackage.ORDER__DETAIL:

@@ -55,7 +55,7 @@ public enum ResponseTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The message was accepted and processed without error.
+	 * The message was accepted and processed without error
 	 * <!-- end-model-doc -->
 	 * @see #OK
 	 * @model name="ok"
@@ -69,7 +69,7 @@ public enum ResponseTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Some internal unexpected error occurred - wait and try again. Note - this is usually used for things like database unavailable, which may be expected to resolve, though human intervention may be required.
+	 * Some internal unexpected error occurred - wait and try again. Note - this is usually used for things like database unavailable, which may be expected to resolve, though human intervention may be required
 	 * <!-- end-model-doc -->
 	 * @see #TRANSIENT_ERROR
 	 * @model name="transientError" literal="transient-error"

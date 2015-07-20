@@ -257,13 +257,13 @@ public interface ClaimResponse extends DomainResource {
 	 * Transaction status: error, complete.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outcome</em>' containment reference.
-	 * @see #setOutcome(RemittanceOutcome)
+	 * @see #setOutcome(Code)
 	 * @see org.hl7.fhir.FhirPackage#getClaimResponse_Outcome()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='outcome' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	RemittanceOutcome getOutcome();
+	Code getOutcome();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ClaimResponse#getOutcome <em>Outcome</em>}' containment reference.
@@ -273,7 +273,7 @@ public interface ClaimResponse extends DomainResource {
 	 * @see #getOutcome()
 	 * @generated
 	 */
-	void setOutcome(RemittanceOutcome value);
+	void setOutcome(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Disposition</b></em>' containment reference.

@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.OperationDefinitionParameter#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinitionParameter#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinitionParameter#getProfile <em>Profile</em>}</li>
+ *   <li>{@link org.hl7.fhir.OperationDefinitionParameter#getBinding <em>Binding</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinitionParameter#getPart <em>Part</em>}</li>
  * </ul>
  *
@@ -215,8 +216,34 @@ public interface OperationDefinitionParameter extends BackboneElement {
 	void setProfile(Reference value);
 
 	/**
+	 * Returns the value of the '<em><b>Binding</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Binding</em>' containment reference.
+	 * @see #setBinding(OperationDefinitionBinding)
+	 * @see org.hl7.fhir.FhirPackage#getOperationDefinitionParameter_Binding()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='binding' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	OperationDefinitionBinding getBinding();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinitionParameter#getBinding <em>Binding</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Binding</em>' containment reference.
+	 * @see #getBinding()
+	 * @generated
+	 */
+	void setBinding(OperationDefinitionBinding value);
+
+	/**
 	 * Returns the value of the '<em><b>Part</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.OperationDefinitionPart}.
+	 * The list contents are of type {@link org.hl7.fhir.OperationDefinitionParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -228,6 +255,6 @@ public interface OperationDefinitionParameter extends BackboneElement {
 	 *        extendedMetaData="kind='element' name='part' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<OperationDefinitionPart> getPart();
+	EList<OperationDefinitionParameter> getPart();
 
 } // OperationDefinitionParameter

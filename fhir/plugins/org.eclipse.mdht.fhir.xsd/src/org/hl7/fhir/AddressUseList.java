@@ -65,7 +65,7 @@ public enum AddressUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A communication address at a home.
+	 * A communication address at a home
 	 * <!-- end-model-doc -->
 	 * @see #HOME
 	 * @model name="home"
@@ -79,7 +79,7 @@ public enum AddressUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An office address. First choice for business related contacts during business hours.
+	 * An office address. First choice for business related contacts during business hours
 	 * <!-- end-model-doc -->
 	 * @see #WORK
 	 * @model name="work"
@@ -93,7 +93,7 @@ public enum AddressUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A temporary address. The period can provide more detailed information.
+	 * A temporary address. The period can provide more detailed information
 	 * <!-- end-model-doc -->
 	 * @see #TEMP
 	 * @model name="temp"
@@ -107,7 +107,7 @@ public enum AddressUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This address is no longer in use (or was never correct, but retained for records).
+	 * This address is no longer in use (or was never correct, but retained for records)
 	 * <!-- end-model-doc -->
 	 * @see #OLD
 	 * @model name="old"

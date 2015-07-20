@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Annotation;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.ContactPoint;
 import org.hl7.fhir.DateTime;
@@ -37,6 +38,7 @@ import org.hl7.fhir.Uri;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.DeviceImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DeviceImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DeviceImpl#getNote <em>Note</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DeviceImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DeviceImpl#getManufacturer <em>Manufacturer</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DeviceImpl#getModel <em>Model</em>}</li>
@@ -74,6 +76,16 @@ public class DeviceImpl extends DomainResourceImpl implements Device {
 	 * @ordered
 	 */
 	protected CodeableConcept type;
+
+	/**
+	 * The cached value of the '{@link #getNote() <em>Note</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNote()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> note;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
@@ -277,6 +289,18 @@ public class DeviceImpl extends DomainResourceImpl implements Device {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DEVICE__TYPE, newType, newType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Annotation> getNote() {
+		if (note == null) {
+			note = new EObjectContainmentEList<Annotation>(Annotation.class, this, FhirPackage.DEVICE__NOTE);
+		}
+		return note;
 	}
 
 	/**
@@ -819,6 +843,8 @@ public class DeviceImpl extends DomainResourceImpl implements Device {
 				return ((InternalEList<?>)getIdentifier()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DEVICE__TYPE:
 				return basicSetType(null, msgs);
+			case FhirPackage.DEVICE__NOTE:
+				return ((InternalEList<?>)getNote()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DEVICE__STATUS:
 				return basicSetStatus(null, msgs);
 			case FhirPackage.DEVICE__MANUFACTURER:
@@ -861,6 +887,8 @@ public class DeviceImpl extends DomainResourceImpl implements Device {
 				return getIdentifier();
 			case FhirPackage.DEVICE__TYPE:
 				return getType();
+			case FhirPackage.DEVICE__NOTE:
+				return getNote();
 			case FhirPackage.DEVICE__STATUS:
 				return getStatus();
 			case FhirPackage.DEVICE__MANUFACTURER:
@@ -906,6 +934,10 @@ public class DeviceImpl extends DomainResourceImpl implements Device {
 				return;
 			case FhirPackage.DEVICE__TYPE:
 				setType((CodeableConcept)newValue);
+				return;
+			case FhirPackage.DEVICE__NOTE:
+				getNote().clear();
+				getNote().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case FhirPackage.DEVICE__STATUS:
 				setStatus((DeviceStatus)newValue);
@@ -965,6 +997,9 @@ public class DeviceImpl extends DomainResourceImpl implements Device {
 			case FhirPackage.DEVICE__TYPE:
 				setType((CodeableConcept)null);
 				return;
+			case FhirPackage.DEVICE__NOTE:
+				getNote().clear();
+				return;
 			case FhirPackage.DEVICE__STATUS:
 				setStatus((DeviceStatus)null);
 				return;
@@ -1020,6 +1055,8 @@ public class DeviceImpl extends DomainResourceImpl implements Device {
 				return identifier != null && !identifier.isEmpty();
 			case FhirPackage.DEVICE__TYPE:
 				return type != null;
+			case FhirPackage.DEVICE__NOTE:
+				return note != null && !note.isEmpty();
 			case FhirPackage.DEVICE__STATUS:
 				return status != null;
 			case FhirPackage.DEVICE__MANUFACTURER:

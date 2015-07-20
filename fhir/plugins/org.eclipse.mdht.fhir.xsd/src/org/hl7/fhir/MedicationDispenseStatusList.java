@@ -89,7 +89,7 @@ public enum MedicationDispenseStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called "suspended".
+	 * Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called "suspended"
 	 * <!-- end-model-doc -->
 	 * @see #ON_HOLD
 	 * @model name="onHold" literal="on-hold"

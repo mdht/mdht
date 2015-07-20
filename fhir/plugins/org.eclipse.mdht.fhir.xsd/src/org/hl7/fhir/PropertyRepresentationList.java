@@ -35,7 +35,7 @@ public enum PropertyRepresentationList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * In XML, this property is represented as an attribute not an element.
+	 * In XML, this property is represented as an attribute not an element
 	 * <!-- end-model-doc -->
 	 * @see #XML_ATTR
 	 * @model name="xmlAttr"

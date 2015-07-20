@@ -171,30 +171,22 @@ public interface Encounter extends DomainResource {
 	void setPatient(Reference value);
 
 	/**
-	 * Returns the value of the '<em><b>Episode Of Care</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Episode Of Care</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Reference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Where a specific encounter should be classified as a part of a specific episode of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, or issue tracking.
+	 * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, issue tracking, association via a common problem.
+	 * 
+	 * The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Episode Of Care</em>' containment reference.
-	 * @see #setEpisodeOfCare(Reference)
+	 * @return the value of the '<em>Episode Of Care</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getEncounter_EpisodeOfCare()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='episodeOfCare' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Reference getEpisodeOfCare();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Encounter#getEpisodeOfCare <em>Episode Of Care</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Episode Of Care</em>' containment reference.
-	 * @see #getEpisodeOfCare()
-	 * @generated
-	 */
-	void setEpisodeOfCare(Reference value);
+	EList<Reference> getEpisodeOfCare();
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Referral Request</b></em>' containment reference list.
@@ -202,7 +194,7 @@ public interface Encounter extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The referral request that this encounter is satisfies (incoming referral).
+	 * The referral request that this encounter satisfies (incoming referral).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Referral Request</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getEncounter_IncomingReferralRequest()

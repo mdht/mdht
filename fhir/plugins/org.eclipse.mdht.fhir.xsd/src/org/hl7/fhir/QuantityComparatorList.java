@@ -65,7 +65,7 @@ public enum QuantityComparatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The actual value is less than the given value.
+	 * The actual value is less than the given value
 	 * <!-- end-model-doc -->
 	 * @see #_
 	 * @model literal="<"
@@ -79,7 +79,7 @@ public enum QuantityComparatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The actual value is less than or equal to the given value.
+	 * The actual value is less than or equal to the given value
 	 * <!-- end-model-doc -->
 	 * @see #_1
 	 * @model literal="<="
@@ -93,7 +93,7 @@ public enum QuantityComparatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The actual value is greater than or equal to the given value.
+	 * The actual value is greater than or equal to the given value
 	 * <!-- end-model-doc -->
 	 * @see #_2
 	 * @model literal=">="
@@ -107,7 +107,7 @@ public enum QuantityComparatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The actual value is greater than the given value.
+	 * The actual value is greater than the given value
 	 * <!-- end-model-doc -->
 	 * @see #_3
 	 * @model literal=">"

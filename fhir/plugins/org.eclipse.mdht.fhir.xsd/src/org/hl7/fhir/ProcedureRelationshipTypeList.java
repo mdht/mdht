@@ -45,7 +45,7 @@ public enum ProcedureRelationshipTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This procedure had to be performed because of the related one.
+	 * This procedure had to be performed because of the related one
 	 * <!-- end-model-doc -->
 	 * @see #CAUSED_BY
 	 * @model name="causedBy" literal="caused-by"
@@ -59,7 +59,7 @@ public enum ProcedureRelationshipTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This procedure caused the related one to be performed.
+	 * This procedure caused the related one to be performed
 	 * <!-- end-model-doc -->
 	 * @see #BECAUSE_OF
 	 * @model name="becauseOf" literal="because-of"

@@ -117,7 +117,7 @@ public enum ContactPointUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This contact point is no longer in use (or was never correct, but retained for records).
+	 * This contact point is no longer in use (or was never correct, but retained for records)
 	 * <!-- end-model-doc -->
 	 * @see #OLD
 	 * @model name="old"
@@ -131,7 +131,7 @@ public enum ContactPointUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable for urgent matters, not the first choice for routine business.
+	 * A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable for urgent matters, not the first choice for routine business
 	 * <!-- end-model-doc -->
 	 * @see #MOBILE
 	 * @model name="mobile"

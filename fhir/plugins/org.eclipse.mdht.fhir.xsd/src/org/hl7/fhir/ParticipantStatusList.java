@@ -85,7 +85,7 @@ public enum ParticipantStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The appointment participant has accepted that they can attend the appointment at the time specified in the AppointmentResponse.
+	 * The appointment participant has accepted that they can attend the appointment at the time specified in the AppointmentResponse
 	 * <!-- end-model-doc -->
 	 * @see #ACCEPTED
 	 * @model name="accepted"
@@ -99,7 +99,7 @@ public enum ParticipantStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The appointment participant has declined the appointment.
+	 * The appointment participant has declined the appointment
 	 * <!-- end-model-doc -->
 	 * @see #DECLINED
 	 * @model name="declined"
@@ -113,7 +113,7 @@ public enum ParticipantStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The appointment participant has tentatively accepted the appointment.
+	 * The appointment participant has tentatively accepted the appointment
 	 * <!-- end-model-doc -->
 	 * @see #TENTATIVE
 	 * @model name="tentative"
@@ -127,7 +127,7 @@ public enum ParticipantStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant has in-process the appointment.
+	 * The participant has in-process the appointment
 	 * <!-- end-model-doc -->
 	 * @see #IN_PROCESS
 	 * @model name="inProcess" literal="in-process"
@@ -141,7 +141,7 @@ public enum ParticipantStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant has completed the appointment.
+	 * The participant has completed the appointment
 	 * <!-- end-model-doc -->
 	 * @see #COMPLETED
 	 * @model name="completed"
@@ -155,7 +155,7 @@ public enum ParticipantStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This is the intitial status of an appointment participant until a participant has replied. It implies that there is no commitment for the appointment.
+	 * This is the intitial status of an appointment participant until a participant has replied. It implies that there is no commitment for the appointment
 	 * <!-- end-model-doc -->
 	 * @see #NEEDS_ACTION
 	 * @model name="needsAction" literal="needs-action"

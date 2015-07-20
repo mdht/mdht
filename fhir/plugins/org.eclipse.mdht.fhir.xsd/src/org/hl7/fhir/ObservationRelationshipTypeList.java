@@ -21,16 +21,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ObservationRelationshipTypeList implements Enumerator {
 	/**
-	 * The '<em><b>Has Component</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HAS_COMPONENT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	HAS_COMPONENT(0, "hasComponent", "has-component"),
-
-	/**
 	 * The '<em><b>Has Member</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,7 +28,7 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HAS_MEMBER(1, "hasMember", "has-member"),
+	HAS_MEMBER(0, "hasMember", "has-member"),
 
 	/**
 	 * The '<em><b>Derived From</b></em>' literal object.
@@ -48,7 +38,7 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DERIVED_FROM(2, "derivedFrom", "derived-from"),
+	DERIVED_FROM(1, "derivedFrom", "derived-from"),
 
 	/**
 	 * The '<em><b>Sequel To</b></em>' literal object.
@@ -58,7 +48,7 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SEQUEL_TO(3, "sequelTo", "sequel-to"),
+	SEQUEL_TO(2, "sequelTo", "sequel-to"),
 
 	/**
 	 * The '<em><b>Replaces</b></em>' literal object.
@@ -68,7 +58,7 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REPLACES(4, "replaces", "replaces"),
+	REPLACES(3, "replaces", "replaces"),
 
 	/**
 	 * The '<em><b>Qualified By</b></em>' literal object.
@@ -78,7 +68,7 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	QUALIFIED_BY(5, "qualifiedBy", "qualified-by"),
+	QUALIFIED_BY(4, "qualifiedBy", "qualified-by"),
 
 	/**
 	 * The '<em><b>Interfered By</b></em>' literal object.
@@ -88,105 +78,91 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTERFERED_BY(6, "interferedBy", "interfered-by");
-
-	/**
-	 * The '<em><b>Has Component</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The target observation is a component of this observation (e.g. Systolic and Diastolic Blood Pressure).
-	 * <!-- end-model-doc -->
-	 * @see #HAS_COMPONENT
-	 * @model name="hasComponent" literal="has-component"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int HAS_COMPONENT_VALUE = 0;
+	INTERFERED_BY(5, "interferedBy", "interfered-by");
 
 	/**
 	 * The '<em><b>Has Member</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.
+	 * This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group
 	 * <!-- end-model-doc -->
 	 * @see #HAS_MEMBER
 	 * @model name="hasMember" literal="has-member"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HAS_MEMBER_VALUE = 1;
+	public static final int HAS_MEMBER_VALUE = 0;
 
 	/**
 	 * The '<em><b>Derived From</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The target observation is part of the information from which this observation value is derived (e.g. calculated anion gap, Apgar score).
+	 * The target resource (Observation or QuestionnaireAnswer) is part of the information from which this observation value is derived. (e.g. calculated anion gap, Apgar score)  NOTE:  "derived-from" is only logical choice when referencing QuestionnaireAnswer
 	 * <!-- end-model-doc -->
 	 * @see #DERIVED_FROM
 	 * @model name="derivedFrom" literal="derived-from"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DERIVED_FROM_VALUE = 2;
+	public static final int DERIVED_FROM_VALUE = 1;
 
 	/**
 	 * The '<em><b>Sequel To</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This observation follows the target observation (e.g. timed tests such as Glucose Tolerance Test).
+	 * This observation follows the target observation (e.g. timed tests such as Glucose Tolerance Test)
 	 * <!-- end-model-doc -->
 	 * @see #SEQUEL_TO
 	 * @model name="sequelTo" literal="sequel-to"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SEQUEL_TO_VALUE = 3;
+	public static final int SEQUEL_TO_VALUE = 2;
 
 	/**
 	 * The '<em><b>Replaces</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This observation replaces a previous observation (i.e. a revised value). The target observation is now obsolete.
+	 * This observation replaces a previous observation (i.e. a revised value). The target observation is now obsolete
 	 * <!-- end-model-doc -->
 	 * @see #REPLACES
 	 * @model name="replaces"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REPLACES_VALUE = 4;
+	public static final int REPLACES_VALUE = 3;
 
 	/**
 	 * The '<em><b>Qualified By</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The value of the target observation qualifies (refines) the semantics of the source observation (e.g. a lipaemia measure target from a plasma measure).
+	 * The value of the target observation qualifies (refines) the semantics of the source observation (e.g. a lipaemia measure target from a plasma measure)
 	 * <!-- end-model-doc -->
 	 * @see #QUALIFIED_BY
 	 * @model name="qualifiedBy" literal="qualified-by"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int QUALIFIED_BY_VALUE = 5;
+	public static final int QUALIFIED_BY_VALUE = 4;
 
 	/**
 	 * The '<em><b>Interfered By</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The value of the target observation interferes (degardes quality, or prevents valid observation) with the semantics of the source observation (e.g. a hemolysis measure target from a plasma potassium measure which has no value).
+	 * The value of the target observation interferes (degardes quality, or prevents valid observation) with the semantics of the source observation (e.g. a hemolysis measure target from a plasma potassium measure which has no value)
 	 * <!-- end-model-doc -->
 	 * @see #INTERFERED_BY
 	 * @model name="interferedBy" literal="interfered-by"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INTERFERED_BY_VALUE = 6;
+	public static final int INTERFERED_BY_VALUE = 5;
 
 	/**
 	 * An array of all the '<em><b>Observation Relationship Type List</b></em>' enumerators.
@@ -196,7 +172,6 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 */
 	private static final ObservationRelationshipTypeList[] VALUES_ARRAY =
 		new ObservationRelationshipTypeList[] {
-			HAS_COMPONENT,
 			HAS_MEMBER,
 			DERIVED_FROM,
 			SEQUEL_TO,
@@ -259,7 +234,6 @@ public enum ObservationRelationshipTypeList implements Enumerator {
 	 */
 	public static ObservationRelationshipTypeList get(int value) {
 		switch (value) {
-			case HAS_COMPONENT_VALUE: return HAS_COMPONENT;
 			case HAS_MEMBER_VALUE: return HAS_MEMBER;
 			case DERIVED_FROM_VALUE: return DERIVED_FROM;
 			case SEQUEL_TO_VALUE: return SEQUEL_TO;

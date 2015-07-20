@@ -23,14 +23,15 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.MedicationStatement#getInformationSource <em>Information Source</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getDateAsserted <em>Date Asserted</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationStatement#getWasNotGiven <em>Was Not Given</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationStatement#getReasonNotGiven <em>Reason Not Given</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationStatement#getWasNotTaken <em>Was Not Taken</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationStatement#getReasonNotTaken <em>Reason Not Taken</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getReasonForUseCodeableConcept <em>Reason For Use Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getReasonForUseReference <em>Reason For Use Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getEffectiveDateTime <em>Effective Date Time</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getEffectivePeriod <em>Effective Period</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getNote <em>Note</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationStatement#getMedication <em>Medication</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationStatement#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationStatement#getMedicationReference <em>Medication Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatement#getDosage <em>Dosage</em>}</li>
  * </ul>
  *
@@ -160,46 +161,46 @@ public interface MedicationStatement extends DomainResource {
 	void setStatus(MedicationStatementStatus value);
 
 	/**
-	 * Returns the value of the '<em><b>Was Not Given</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Was Not Taken</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Set this to true if the record is saying that the medication was NOT taken.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Was Not Given</em>' containment reference.
-	 * @see #setWasNotGiven(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_WasNotGiven()
+	 * @return the value of the '<em>Was Not Taken</em>' containment reference.
+	 * @see #setWasNotTaken(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_WasNotTaken()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='wasNotGiven' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='wasNotTaken' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.Boolean getWasNotGiven();
+	org.hl7.fhir.Boolean getWasNotTaken();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatement#getWasNotGiven <em>Was Not Given</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatement#getWasNotTaken <em>Was Not Taken</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Was Not Given</em>' containment reference.
-	 * @see #getWasNotGiven()
+	 * @param value the new value of the '<em>Was Not Taken</em>' containment reference.
+	 * @see #getWasNotTaken()
 	 * @generated
 	 */
-	void setWasNotGiven(org.hl7.fhir.Boolean value);
+	void setWasNotTaken(org.hl7.fhir.Boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Reason Not Given</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Reason Not Taken</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A code indicating why the medication was not taken.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Reason Not Given</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_ReasonNotGiven()
+	 * @return the value of the '<em>Reason Not Taken</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_ReasonNotTaken()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='reasonNotGiven' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='reasonNotTaken' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CodeableConcept> getReasonNotGiven();
+	EList<CodeableConcept> getReasonNotTaken();
 
 	/**
 	 * Returns the value of the '<em><b>Reason For Use Codeable Concept</b></em>' containment reference.
@@ -336,30 +337,58 @@ public interface MedicationStatement extends DomainResource {
 	void setNote(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Medication</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Medication Codeable Concept</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Medication Codeable Concept</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Medication</em>' containment reference.
-	 * @see #setMedication(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_Medication()
+	 * @return the value of the '<em>Medication Codeable Concept</em>' containment reference.
+	 * @see #setMedicationCodeableConcept(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_MedicationCodeableConcept()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='medication' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='medicationCodeableConcept' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Reference getMedication();
+	CodeableConcept getMedicationCodeableConcept();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatement#getMedication <em>Medication</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatement#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Medication</em>' containment reference.
-	 * @see #getMedication()
+	 * @param value the new value of the '<em>Medication Codeable Concept</em>' containment reference.
+	 * @see #getMedicationCodeableConcept()
 	 * @generated
 	 */
-	void setMedication(Reference value);
+	void setMedicationCodeableConcept(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Medication Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Medication Reference</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Medication Reference</em>' containment reference.
+	 * @see #setMedicationReference(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_MedicationReference()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='medicationReference' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getMedicationReference();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatement#getMedicationReference <em>Medication Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Medication Reference</em>' containment reference.
+	 * @see #getMedicationReference()
+	 * @generated
+	 */
+	void setMedicationReference(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>Dosage</b></em>' containment reference list.

@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.Bundle#getType <em>Type</em>}</li>
- *   <li>{@link org.hl7.fhir.Bundle#getBase <em>Base</em>}</li>
  *   <li>{@link org.hl7.fhir.Bundle#getTotal <em>Total</em>}</li>
  *   <li>{@link org.hl7.fhir.Bundle#getLink <em>Link</em>}</li>
  *   <li>{@link org.hl7.fhir.Bundle#getEntry <em>Entry</em>}</li>
@@ -56,32 +55,6 @@ public interface Bundle extends Resource {
 	 * @generated
 	 */
 	void setType(BundleType value);
-
-	/**
-	 * Returns the value of the '<em><b>Base</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The base URL for the service that provided these resources. All relative URLs are relative to this one (equivalent to xml:base).
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Base</em>' containment reference.
-	 * @see #setBase(Uri)
-	 * @see org.hl7.fhir.FhirPackage#getBundle_Base()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='base' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Uri getBase();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Bundle#getBase <em>Base</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base</em>' containment reference.
-	 * @see #getBase()
-	 * @generated
-	 */
-	void setBase(Uri value);
 
 	/**
 	 * Returns the value of the '<em><b>Total</b></em>' containment reference.
@@ -146,16 +119,16 @@ public interface Bundle extends Resource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * XML Digital Signature - base64 encoded.
+	 * Digital Signature - base64 encoded. XML DigSIg or a JWT.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Signature</em>' containment reference.
-	 * @see #setSignature(Base64Binary)
+	 * @see #setSignature(Signature)
 	 * @see org.hl7.fhir.FhirPackage#getBundle_Signature()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='signature' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Base64Binary getSignature();
+	Signature getSignature();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.Bundle#getSignature <em>Signature</em>}' containment reference.
@@ -165,6 +138,6 @@ public interface Bundle extends Resource {
 	 * @see #getSignature()
 	 * @generated
 	 */
-	void setSignature(Base64Binary value);
+	void setSignature(Signature value);
 
 } // Bundle

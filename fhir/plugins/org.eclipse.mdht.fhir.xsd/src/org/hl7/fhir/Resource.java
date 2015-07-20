@@ -33,7 +33,7 @@ public interface Resource extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The logical id of the resource, as used in the url for the resoure. Once assigned, this value never changes.
+	 * The logical id of the resource, as used in the url for the resource. Once assigned, this value never changes.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Id</em>' containment reference.
 	 * @see #setId(Id)

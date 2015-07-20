@@ -198,7 +198,7 @@ public interface DeviceMetric extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Describes the typical color of the representation of observations that have been generated for this DeviceMetric.
+	 * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Color</em>' containment reference.
 	 * @see #setColor(DeviceMetricColor)
@@ -250,9 +250,9 @@ public interface DeviceMetric extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Describes the measurement repetition time. This is not
-	 * necessarily the same as the update
-	 * period.
+	 * Describes the measurement repetition time. This is not necessarily the same as the update period.
+	 * The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour.
+	 * The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Measurement Period</em>' containment reference.
 	 * @see #setMeasurementPeriod(Timing)

@@ -65,7 +65,7 @@ public enum DiagnosticOrderPriorityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order has a normal priority.
+	 * The order has a normal priority
 	 * <!-- end-model-doc -->
 	 * @see #ROUTINE
 	 * @model name="routine"
@@ -79,7 +79,7 @@ public enum DiagnosticOrderPriorityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order should be urgently.
+	 * The order should be urgently
 	 * <!-- end-model-doc -->
 	 * @see #URGENT
 	 * @model name="urgent"
@@ -93,7 +93,7 @@ public enum DiagnosticOrderPriorityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order is time-critical.
+	 * The order is time-critical
 	 * <!-- end-model-doc -->
 	 * @see #STAT
 	 * @model name="stat"
@@ -107,7 +107,7 @@ public enum DiagnosticOrderPriorityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The order should be acted on as soon as possible.
+	 * The order should be acted on as soon as possible
 	 * <!-- end-model-doc -->
 	 * @see #ASAP
 	 * @model name="asap"

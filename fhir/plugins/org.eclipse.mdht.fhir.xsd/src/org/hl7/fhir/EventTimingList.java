@@ -165,7 +165,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] before the hour of sleep (or trying to).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #HS
 	 * @model
@@ -179,7 +179,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] after waking.
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #WAKE
 	 * @model
@@ -193,7 +193,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs at a meal (from the Latin cibus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #C
 	 * @model
@@ -207,7 +207,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs at breakfast (from the Latin cibus matutinus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #CM
 	 * @model
@@ -221,7 +221,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs at lunch (from the Latin cibus diurnus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #CD
 	 * @model
@@ -235,7 +235,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs at dinner (from the Latin ante cibus vespertinus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #CV
 	 * @model
@@ -249,7 +249,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] before a meal (from the Latin ante cibus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #AC
 	 * @model
@@ -263,7 +263,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] before breakfast (from the Latin ante cibus matutinus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #ACM
 	 * @model
@@ -277,7 +277,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] before lunch (from the Latin ante cibus diurnus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #ACD
 	 * @model
@@ -291,7 +291,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] before dinner (from the Latin ante cibus vespertinus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #ACV
 	 * @model
@@ -305,7 +305,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] after a meal (from the Latin post cibus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #PC
 	 * @model
@@ -319,7 +319,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] after breakfast (from the Latin post cibus matutinus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #PCM
 	 * @model
@@ -333,7 +333,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] after lunch (from the Latin post cibus diurnus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #PCD
 	 * @model
@@ -347,7 +347,7 @@ public enum EventTimingList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * event occurs [duration] after dinner (from the Latin post cibus vespertinus).
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #PCV
 	 * @model

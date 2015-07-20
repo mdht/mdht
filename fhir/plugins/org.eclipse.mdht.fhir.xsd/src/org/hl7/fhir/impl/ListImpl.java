@@ -40,6 +40,7 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.ListImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ListImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ListImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ListImpl#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ListImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ListImpl#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ListImpl#getOrderedBy <em>Ordered By</em>}</li>
@@ -101,6 +102,16 @@ public class ListImpl extends DomainResourceImpl implements List {
 	 * @ordered
 	 */
 	protected Reference source;
+
+	/**
+	 * The cached value of the '{@link #getEncounter() <em>Encounter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEncounter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reference encounter;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
@@ -373,6 +384,49 @@ public class ListImpl extends DomainResourceImpl implements List {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.LIST__SOURCE, newSource, newSource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Reference getEncounter() {
+		return encounter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEncounter(Reference newEncounter, NotificationChain msgs) {
+		Reference oldEncounter = encounter;
+		encounter = newEncounter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.LIST__ENCOUNTER, oldEncounter, newEncounter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEncounter(Reference newEncounter) {
+		if (newEncounter != encounter) {
+			NotificationChain msgs = null;
+			if (encounter != null)
+				msgs = ((InternalEObject)encounter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.LIST__ENCOUNTER, null, msgs);
+			if (newEncounter != null)
+				msgs = ((InternalEObject)newEncounter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.LIST__ENCOUNTER, null, msgs);
+			msgs = basicSetEncounter(newEncounter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.LIST__ENCOUNTER, newEncounter, newEncounter));
 	}
 
 	/**
@@ -663,6 +717,8 @@ public class ListImpl extends DomainResourceImpl implements List {
 				return basicSetSubject(null, msgs);
 			case FhirPackage.LIST__SOURCE:
 				return basicSetSource(null, msgs);
+			case FhirPackage.LIST__ENCOUNTER:
+				return basicSetEncounter(null, msgs);
 			case FhirPackage.LIST__STATUS:
 				return basicSetStatus(null, msgs);
 			case FhirPackage.LIST__DATE:
@@ -699,6 +755,8 @@ public class ListImpl extends DomainResourceImpl implements List {
 				return getSubject();
 			case FhirPackage.LIST__SOURCE:
 				return getSource();
+			case FhirPackage.LIST__ENCOUNTER:
+				return getEncounter();
 			case FhirPackage.LIST__STATUS:
 				return getStatus();
 			case FhirPackage.LIST__DATE:
@@ -741,6 +799,9 @@ public class ListImpl extends DomainResourceImpl implements List {
 				return;
 			case FhirPackage.LIST__SOURCE:
 				setSource((Reference)newValue);
+				return;
+			case FhirPackage.LIST__ENCOUNTER:
+				setEncounter((Reference)newValue);
 				return;
 			case FhirPackage.LIST__STATUS:
 				setStatus((ListStatus)newValue);
@@ -791,6 +852,9 @@ public class ListImpl extends DomainResourceImpl implements List {
 			case FhirPackage.LIST__SOURCE:
 				setSource((Reference)null);
 				return;
+			case FhirPackage.LIST__ENCOUNTER:
+				setEncounter((Reference)null);
+				return;
 			case FhirPackage.LIST__STATUS:
 				setStatus((ListStatus)null);
 				return;
@@ -834,6 +898,8 @@ public class ListImpl extends DomainResourceImpl implements List {
 				return subject != null;
 			case FhirPackage.LIST__SOURCE:
 				return source != null;
+			case FhirPackage.LIST__ENCOUNTER:
+				return encounter != null;
 			case FhirPackage.LIST__STATUS:
 				return status != null;
 			case FhirPackage.LIST__DATE:

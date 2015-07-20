@@ -66,7 +66,7 @@ public interface ConformanceResource extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A specification of the profile that describes the solution's support for the resource, including any constraints on cardinality, bindings, lengths or other limitations.
+	 * A specification of the profile that describes the solution's support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Profile</em>' containment reference.
 	 * @see #setProfile(Reference)
@@ -238,16 +238,16 @@ public interface ConformanceResource extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A flag that indicates that the server supports conditional delete.
+	 * A code that indicates how the server supports conditional delete.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Conditional Delete</em>' containment reference.
-	 * @see #setConditionalDelete(org.hl7.fhir.Boolean)
+	 * @see #setConditionalDelete(ConditionalDeleteStatus)
 	 * @see org.hl7.fhir.FhirPackage#getConformanceResource_ConditionalDelete()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='conditionalDelete' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.Boolean getConditionalDelete();
+	ConditionalDeleteStatus getConditionalDelete();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ConformanceResource#getConditionalDelete <em>Conditional Delete</em>}' containment reference.
@@ -257,7 +257,7 @@ public interface ConformanceResource extends BackboneElement {
 	 * @see #getConditionalDelete()
 	 * @generated
 	 */
-	void setConditionalDelete(org.hl7.fhir.Boolean value);
+	void setConditionalDelete(ConditionalDeleteStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Search Include</b></em>' containment reference list.

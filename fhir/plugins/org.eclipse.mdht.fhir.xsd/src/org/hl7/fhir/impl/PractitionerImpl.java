@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Address;
-import org.hl7.fhir.AdministrativeGender;
 import org.hl7.fhir.Attachment;
+import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.ContactPoint;
 import org.hl7.fhir.Date;
@@ -101,7 +101,7 @@ public class PractitionerImpl extends DomainResourceImpl implements Practitioner
 	 * @generated
 	 * @ordered
 	 */
-	protected AdministrativeGender gender;
+	protected Code gender;
 
 	/**
 	 * The cached value of the '{@link #getBirthDate() <em>Birth Date</em>}' containment reference.
@@ -256,7 +256,7 @@ public class PractitionerImpl extends DomainResourceImpl implements Practitioner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AdministrativeGender getGender() {
+	public Code getGender() {
 		return gender;
 	}
 
@@ -265,8 +265,8 @@ public class PractitionerImpl extends DomainResourceImpl implements Practitioner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGender(AdministrativeGender newGender, NotificationChain msgs) {
-		AdministrativeGender oldGender = gender;
+	public NotificationChain basicSetGender(Code newGender, NotificationChain msgs) {
+		Code oldGender = gender;
 		gender = newGender;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PRACTITIONER__GENDER, oldGender, newGender);
@@ -280,7 +280,7 @@ public class PractitionerImpl extends DomainResourceImpl implements Practitioner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGender(AdministrativeGender newGender) {
+	public void setGender(Code newGender) {
 		if (newGender != gender) {
 			NotificationChain msgs = null;
 			if (gender != null)
@@ -474,7 +474,7 @@ public class PractitionerImpl extends DomainResourceImpl implements Practitioner
 				getAddress().addAll((Collection<? extends Address>)newValue);
 				return;
 			case FhirPackage.PRACTITIONER__GENDER:
-				setGender((AdministrativeGender)newValue);
+				setGender((Code)newValue);
 				return;
 			case FhirPackage.PRACTITIONER__BIRTH_DATE:
 				setBirthDate((Date)newValue);
@@ -520,7 +520,7 @@ public class PractitionerImpl extends DomainResourceImpl implements Practitioner
 				getAddress().clear();
 				return;
 			case FhirPackage.PRACTITIONER__GENDER:
-				setGender((AdministrativeGender)null);
+				setGender((Code)null);
 				return;
 			case FhirPackage.PRACTITIONER__BIRTH_DATE:
 				setBirthDate((Date)null);

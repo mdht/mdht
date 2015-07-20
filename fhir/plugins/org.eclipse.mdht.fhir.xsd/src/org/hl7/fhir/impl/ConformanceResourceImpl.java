@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Code;
+import org.hl7.fhir.ConditionalDeleteStatus;
 import org.hl7.fhir.ConformanceInteraction;
 import org.hl7.fhir.ConformanceResource;
 import org.hl7.fhir.ConformanceSearchParam;
@@ -137,7 +138,7 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.Boolean conditionalDelete;
+	protected ConditionalDeleteStatus conditionalDelete;
 
 	/**
 	 * The cached value of the '{@link #getSearchInclude() <em>Search Include</em>}' containment reference list.
@@ -496,7 +497,7 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.Boolean getConditionalDelete() {
+	public ConditionalDeleteStatus getConditionalDelete() {
 		return conditionalDelete;
 	}
 
@@ -505,8 +506,8 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetConditionalDelete(org.hl7.fhir.Boolean newConditionalDelete, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldConditionalDelete = conditionalDelete;
+	public NotificationChain basicSetConditionalDelete(ConditionalDeleteStatus newConditionalDelete, NotificationChain msgs) {
+		ConditionalDeleteStatus oldConditionalDelete = conditionalDelete;
 		conditionalDelete = newConditionalDelete;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE_RESOURCE__CONDITIONAL_DELETE, oldConditionalDelete, newConditionalDelete);
@@ -520,7 +521,7 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConditionalDelete(org.hl7.fhir.Boolean newConditionalDelete) {
+	public void setConditionalDelete(ConditionalDeleteStatus newConditionalDelete) {
 		if (newConditionalDelete != conditionalDelete) {
 			NotificationChain msgs = null;
 			if (conditionalDelete != null)
@@ -661,7 +662,7 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 				setConditionalUpdate((org.hl7.fhir.Boolean)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_RESOURCE__CONDITIONAL_DELETE:
-				setConditionalDelete((org.hl7.fhir.Boolean)newValue);
+				setConditionalDelete((ConditionalDeleteStatus)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_INCLUDE:
 				getSearchInclude().clear();
@@ -708,7 +709,7 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 				setConditionalUpdate((org.hl7.fhir.Boolean)null);
 				return;
 			case FhirPackage.CONFORMANCE_RESOURCE__CONDITIONAL_DELETE:
-				setConditionalDelete((org.hl7.fhir.Boolean)null);
+				setConditionalDelete((ConditionalDeleteStatus)null);
 				return;
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_INCLUDE:
 				getSearchInclude().clear();

@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
-import org.hl7.fhir.ConformanceResourceStatus;
 import org.hl7.fhir.DataElement;
 import org.hl7.fhir.DataElementContact;
 import org.hl7.fhir.DataElementMapping;
@@ -124,7 +124,7 @@ public class DataElementImpl extends DomainResourceImpl implements DataElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected ConformanceResourceStatus status;
+	protected Code status;
 
 	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
@@ -447,7 +447,7 @@ public class DataElementImpl extends DomainResourceImpl implements DataElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConformanceResourceStatus getStatus() {
+	public Code getStatus() {
 		return status;
 	}
 
@@ -456,8 +456,8 @@ public class DataElementImpl extends DomainResourceImpl implements DataElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(ConformanceResourceStatus newStatus, NotificationChain msgs) {
-		ConformanceResourceStatus oldStatus = status;
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DATA_ELEMENT__STATUS, oldStatus, newStatus);
@@ -471,7 +471,7 @@ public class DataElementImpl extends DomainResourceImpl implements DataElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(ConformanceResourceStatus newStatus) {
+	public void setStatus(Code newStatus) {
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
@@ -802,7 +802,7 @@ public class DataElementImpl extends DomainResourceImpl implements DataElement {
 				setExperimental((org.hl7.fhir.Boolean)newValue);
 				return;
 			case FhirPackage.DATA_ELEMENT__STATUS:
-				setStatus((ConformanceResourceStatus)newValue);
+				setStatus((Code)newValue);
 				return;
 			case FhirPackage.DATA_ELEMENT__DATE:
 				setDate((DateTime)newValue);
@@ -859,7 +859,7 @@ public class DataElementImpl extends DomainResourceImpl implements DataElement {
 				setExperimental((org.hl7.fhir.Boolean)null);
 				return;
 			case FhirPackage.DATA_ELEMENT__STATUS:
-				setStatus((ConformanceResourceStatus)null);
+				setStatus((Code)null);
 				return;
 			case FhirPackage.DATA_ELEMENT__DATE:
 				setDate((DateTime)null);

@@ -19,8 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.hl7.fhir.ConceptMapElement#getCodeSystem <em>Code System</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMapElement#getCode <em>Code</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMapElement#getDependsOn <em>Depends On</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMapElement#getMap <em>Map</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConceptMapElement#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getConceptMapElement()
@@ -33,7 +32,7 @@ public interface ConceptMapElement extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute URI that identifies the Code System (if the source is a value value set that crosses more than one code system).
+	 * An absolute URI that identifies the Code System (if the source is a value set that crosses more than one code system).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Code System</em>' containment reference.
 	 * @see #setCodeSystem(Uri)
@@ -81,35 +80,19 @@ public interface ConceptMapElement extends BackboneElement {
 	void setCode(Code value);
 
 	/**
-	 * Returns the value of the '<em><b>Depends On</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.ConceptMapDependsOn}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Depends On</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getConceptMapElement_DependsOn()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='dependsOn' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<ConceptMapDependsOn> getDependsOn();
-
-	/**
-	 * Returns the value of the '<em><b>Map</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.ConceptMapMap}.
+	 * Returns the value of the '<em><b>Target</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.ConceptMapTarget}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A concept from the target value set that this concept maps to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Map</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getConceptMapElement_Map()
+	 * @return the value of the '<em>Target</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getConceptMapElement_Target()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='map' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='target' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<ConceptMapMap> getMap();
+	EList<ConceptMapTarget> getTarget();
 
 } // ConceptMapElement

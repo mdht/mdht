@@ -65,7 +65,7 @@ public enum InstanceAvailabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Resources are immediately available,.
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #ONLINE
 	 * @model
@@ -79,7 +79,7 @@ public enum InstanceAvailabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Resources need to be retrieved by manual intervention.
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #OFFLINE
 	 * @model
@@ -93,7 +93,7 @@ public enum InstanceAvailabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Resources need to be retrieved from relatively slow media.
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #NEARLINE
 	 * @model
@@ -107,7 +107,7 @@ public enum InstanceAvailabilityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Resources cannot be retrieved.
+	 * 
 	 * <!-- end-model-doc -->
 	 * @see #UNAVAILABLE
 	 * @model

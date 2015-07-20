@@ -10,7 +10,7 @@ import java.lang.String;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Any combination of lowercase letters, numerals, "-" and ".", with a length limit of 36 characters.  (This might be an integer, an unprefixed OID, UUID or any other identifier pattern that meets these constraints.)  Systems SHALL send ids as lower-case but SHOULD interpret them case-insensitively.
+ * Any combination of letters, numerals, "-" and ".", with a length limit of 64 characters.  (This might be an integer, an unprefixed OID, UUID or any other identifier pattern that meets these constraints.)  Ids are case-insensitive.
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  * <!-- end-model-doc -->
  *

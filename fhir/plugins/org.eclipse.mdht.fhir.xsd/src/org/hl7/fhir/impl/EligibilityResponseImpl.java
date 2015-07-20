@@ -17,13 +17,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Code;
 import org.hl7.fhir.Coding;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.EligibilityResponse;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Reference;
-import org.hl7.fhir.RemittanceOutcome;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public class EligibilityResponseImpl extends DomainResourceImpl implements Eligi
 	 * @generated
 	 * @ordered
 	 */
-	protected RemittanceOutcome outcome;
+	protected Code outcome;
 
 	/**
 	 * The cached value of the '{@link #getDisposition() <em>Disposition</em>}' containment reference.
@@ -227,7 +227,7 @@ public class EligibilityResponseImpl extends DomainResourceImpl implements Eligi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemittanceOutcome getOutcome() {
+	public Code getOutcome() {
 		return outcome;
 	}
 
@@ -236,8 +236,8 @@ public class EligibilityResponseImpl extends DomainResourceImpl implements Eligi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOutcome(RemittanceOutcome newOutcome, NotificationChain msgs) {
-		RemittanceOutcome oldOutcome = outcome;
+	public NotificationChain basicSetOutcome(Code newOutcome, NotificationChain msgs) {
+		Code oldOutcome = outcome;
 		outcome = newOutcome;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELIGIBILITY_RESPONSE__OUTCOME, oldOutcome, newOutcome);
@@ -251,7 +251,7 @@ public class EligibilityResponseImpl extends DomainResourceImpl implements Eligi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOutcome(RemittanceOutcome newOutcome) {
+	public void setOutcome(Code newOutcome) {
 		if (newOutcome != outcome) {
 			NotificationChain msgs = null;
 			if (outcome != null)
@@ -647,7 +647,7 @@ public class EligibilityResponseImpl extends DomainResourceImpl implements Eligi
 				setRequest((Reference)newValue);
 				return;
 			case FhirPackage.ELIGIBILITY_RESPONSE__OUTCOME:
-				setOutcome((RemittanceOutcome)newValue);
+				setOutcome((Code)newValue);
 				return;
 			case FhirPackage.ELIGIBILITY_RESPONSE__DISPOSITION:
 				setDisposition((org.hl7.fhir.String)newValue);
@@ -689,7 +689,7 @@ public class EligibilityResponseImpl extends DomainResourceImpl implements Eligi
 				setRequest((Reference)null);
 				return;
 			case FhirPackage.ELIGIBILITY_RESPONSE__OUTCOME:
-				setOutcome((RemittanceOutcome)null);
+				setOutcome((Code)null);
 				return;
 			case FhirPackage.ELIGIBILITY_RESPONSE__DISPOSITION:
 				setDisposition((org.hl7.fhir.String)null);

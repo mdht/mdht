@@ -40,6 +40,7 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ProvenanceImpl#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ProvenanceImpl#getRecorded <em>Recorded</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ProvenanceImpl#getReason <em>Reason</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ProvenanceImpl#getActivity <em>Activity</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ProvenanceImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ProvenanceImpl#getPolicy <em>Policy</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ProvenanceImpl#getAgent <em>Agent</em>}</li>
@@ -81,14 +82,24 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 	protected Instant recorded;
 
 	/**
-	 * The cached value of the '{@link #getReason() <em>Reason</em>}' containment reference.
+	 * The cached value of the '{@link #getReason() <em>Reason</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReason()
 	 * @generated
 	 * @ordered
 	 */
-	protected CodeableConcept reason;
+	protected EList<CodeableConcept> reason;
+
+	/**
+	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActivity()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept activity;
 
 	/**
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' containment reference.
@@ -262,7 +273,10 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getReason() {
+	public EList<CodeableConcept> getReason() {
+		if (reason == null) {
+			reason = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.PROVENANCE__REASON);
+		}
 		return reason;
 	}
 
@@ -271,11 +285,20 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetReason(CodeableConcept newReason, NotificationChain msgs) {
-		CodeableConcept oldReason = reason;
-		reason = newReason;
+	public CodeableConcept getActivity() {
+		return activity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetActivity(CodeableConcept newActivity, NotificationChain msgs) {
+		CodeableConcept oldActivity = activity;
+		activity = newActivity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PROVENANCE__REASON, oldReason, newReason);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PROVENANCE__ACTIVITY, oldActivity, newActivity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -286,18 +309,18 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReason(CodeableConcept newReason) {
-		if (newReason != reason) {
+	public void setActivity(CodeableConcept newActivity) {
+		if (newActivity != activity) {
 			NotificationChain msgs = null;
-			if (reason != null)
-				msgs = ((InternalEObject)reason).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PROVENANCE__REASON, null, msgs);
-			if (newReason != null)
-				msgs = ((InternalEObject)newReason).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PROVENANCE__REASON, null, msgs);
-			msgs = basicSetReason(newReason, msgs);
+			if (activity != null)
+				msgs = ((InternalEObject)activity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PROVENANCE__ACTIVITY, null, msgs);
+			if (newActivity != null)
+				msgs = ((InternalEObject)newActivity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PROVENANCE__ACTIVITY, null, msgs);
+			msgs = basicSetActivity(newActivity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.PROVENANCE__REASON, newReason, newReason));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.PROVENANCE__ACTIVITY, newActivity, newActivity));
 	}
 
 	/**
@@ -406,7 +429,9 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 			case FhirPackage.PROVENANCE__RECORDED:
 				return basicSetRecorded(null, msgs);
 			case FhirPackage.PROVENANCE__REASON:
-				return basicSetReason(null, msgs);
+				return ((InternalEList<?>)getReason()).basicRemove(otherEnd, msgs);
+			case FhirPackage.PROVENANCE__ACTIVITY:
+				return basicSetActivity(null, msgs);
 			case FhirPackage.PROVENANCE__LOCATION:
 				return basicSetLocation(null, msgs);
 			case FhirPackage.PROVENANCE__POLICY:
@@ -437,6 +462,8 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 				return getRecorded();
 			case FhirPackage.PROVENANCE__REASON:
 				return getReason();
+			case FhirPackage.PROVENANCE__ACTIVITY:
+				return getActivity();
 			case FhirPackage.PROVENANCE__LOCATION:
 				return getLocation();
 			case FhirPackage.PROVENANCE__POLICY:
@@ -471,7 +498,11 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 				setRecorded((Instant)newValue);
 				return;
 			case FhirPackage.PROVENANCE__REASON:
-				setReason((CodeableConcept)newValue);
+				getReason().clear();
+				getReason().addAll((Collection<? extends CodeableConcept>)newValue);
+				return;
+			case FhirPackage.PROVENANCE__ACTIVITY:
+				setActivity((CodeableConcept)newValue);
 				return;
 			case FhirPackage.PROVENANCE__LOCATION:
 				setLocation((Reference)newValue);
@@ -514,7 +545,10 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 				setRecorded((Instant)null);
 				return;
 			case FhirPackage.PROVENANCE__REASON:
-				setReason((CodeableConcept)null);
+				getReason().clear();
+				return;
+			case FhirPackage.PROVENANCE__ACTIVITY:
+				setActivity((CodeableConcept)null);
 				return;
 			case FhirPackage.PROVENANCE__LOCATION:
 				setLocation((Reference)null);
@@ -550,7 +584,9 @@ public class ProvenanceImpl extends DomainResourceImpl implements Provenance {
 			case FhirPackage.PROVENANCE__RECORDED:
 				return recorded != null;
 			case FhirPackage.PROVENANCE__REASON:
-				return reason != null;
+				return reason != null && !reason.isEmpty();
+			case FhirPackage.PROVENANCE__ACTIVITY:
+				return activity != null;
 			case FhirPackage.PROVENANCE__LOCATION:
 				return location != null;
 			case FhirPackage.PROVENANCE__POLICY:

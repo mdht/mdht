@@ -34,13 +34,14 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getPreAdmissionIdentifier <em>Pre Admission Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getOrigin <em>Origin</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getAdmitSource <em>Admit Source</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getAdmittingDiagnosis <em>Admitting Diagnosis</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getReAdmission <em>Re Admission</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getDietPreference <em>Diet Preference</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getSpecialCourtesy <em>Special Courtesy</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getSpecialArrangement <em>Special Arrangement</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getDestination <em>Destination</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getDischargeDisposition <em>Discharge Disposition</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getDischargeDiagnosis <em>Discharge Diagnosis</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.EncounterHospitalizationImpl#getReAdmission <em>Re Admission</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,14 +78,34 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 	protected CodeableConcept admitSource;
 
 	/**
-	 * The cached value of the '{@link #getDietPreference() <em>Diet Preference</em>}' containment reference.
+	 * The cached value of the '{@link #getAdmittingDiagnosis() <em>Admitting Diagnosis</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdmittingDiagnosis()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Reference> admittingDiagnosis;
+
+	/**
+	 * The cached value of the '{@link #getReAdmission() <em>Re Admission</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReAdmission()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept reAdmission;
+
+	/**
+	 * The cached value of the '{@link #getDietPreference() <em>Diet Preference</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDietPreference()
 	 * @generated
 	 * @ordered
 	 */
-	protected CodeableConcept dietPreference;
+	protected EList<CodeableConcept> dietPreference;
 
 	/**
 	 * The cached value of the '{@link #getSpecialCourtesy() <em>Special Courtesy</em>}' containment reference list.
@@ -127,24 +148,14 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 	protected CodeableConcept dischargeDisposition;
 
 	/**
-	 * The cached value of the '{@link #getDischargeDiagnosis() <em>Discharge Diagnosis</em>}' containment reference.
+	 * The cached value of the '{@link #getDischargeDiagnosis() <em>Discharge Diagnosis</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDischargeDiagnosis()
 	 * @generated
 	 * @ordered
 	 */
-	protected Reference dischargeDiagnosis;
-
-	/**
-	 * The cached value of the '{@link #getReAdmission() <em>Re Admission</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReAdmission()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.Boolean reAdmission;
+	protected EList<Reference> dischargeDiagnosis;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,8 +310,11 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getDietPreference() {
-		return dietPreference;
+	public EList<Reference> getAdmittingDiagnosis() {
+		if (admittingDiagnosis == null) {
+			admittingDiagnosis = new EObjectContainmentEList<Reference>(Reference.class, this, FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMITTING_DIAGNOSIS);
+		}
+		return admittingDiagnosis;
 	}
 
 	/**
@@ -308,11 +322,20 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDietPreference(CodeableConcept newDietPreference, NotificationChain msgs) {
-		CodeableConcept oldDietPreference = dietPreference;
-		dietPreference = newDietPreference;
+	public CodeableConcept getReAdmission() {
+		return reAdmission;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetReAdmission(CodeableConcept newReAdmission, NotificationChain msgs) {
+		CodeableConcept oldReAdmission = reAdmission;
+		reAdmission = newReAdmission;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE, oldDietPreference, newDietPreference);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, oldReAdmission, newReAdmission);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -323,18 +346,30 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDietPreference(CodeableConcept newDietPreference) {
-		if (newDietPreference != dietPreference) {
+	public void setReAdmission(CodeableConcept newReAdmission) {
+		if (newReAdmission != reAdmission) {
 			NotificationChain msgs = null;
-			if (dietPreference != null)
-				msgs = ((InternalEObject)dietPreference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE, null, msgs);
-			if (newDietPreference != null)
-				msgs = ((InternalEObject)newDietPreference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE, null, msgs);
-			msgs = basicSetDietPreference(newDietPreference, msgs);
+			if (reAdmission != null)
+				msgs = ((InternalEObject)reAdmission).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, null, msgs);
+			if (newReAdmission != null)
+				msgs = ((InternalEObject)newReAdmission).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, null, msgs);
+			msgs = basicSetReAdmission(newReAdmission, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE, newDietPreference, newDietPreference));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, newReAdmission, newReAdmission));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<CodeableConcept> getDietPreference() {
+		if (dietPreference == null) {
+			dietPreference = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE);
+		}
+		return dietPreference;
 	}
 
 	/**
@@ -452,85 +487,11 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference getDischargeDiagnosis() {
+	public EList<Reference> getDischargeDiagnosis() {
+		if (dischargeDiagnosis == null) {
+			dischargeDiagnosis = new EObjectContainmentEList<Reference>(Reference.class, this, FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS);
+		}
 		return dischargeDiagnosis;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDischargeDiagnosis(Reference newDischargeDiagnosis, NotificationChain msgs) {
-		Reference oldDischargeDiagnosis = dischargeDiagnosis;
-		dischargeDiagnosis = newDischargeDiagnosis;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS, oldDischargeDiagnosis, newDischargeDiagnosis);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDischargeDiagnosis(Reference newDischargeDiagnosis) {
-		if (newDischargeDiagnosis != dischargeDiagnosis) {
-			NotificationChain msgs = null;
-			if (dischargeDiagnosis != null)
-				msgs = ((InternalEObject)dischargeDiagnosis).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS, null, msgs);
-			if (newDischargeDiagnosis != null)
-				msgs = ((InternalEObject)newDischargeDiagnosis).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS, null, msgs);
-			msgs = basicSetDischargeDiagnosis(newDischargeDiagnosis, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS, newDischargeDiagnosis, newDischargeDiagnosis));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.Boolean getReAdmission() {
-		return reAdmission;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetReAdmission(org.hl7.fhir.Boolean newReAdmission, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldReAdmission = reAdmission;
-		reAdmission = newReAdmission;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, oldReAdmission, newReAdmission);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReAdmission(org.hl7.fhir.Boolean newReAdmission) {
-		if (newReAdmission != reAdmission) {
-			NotificationChain msgs = null;
-			if (reAdmission != null)
-				msgs = ((InternalEObject)reAdmission).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, null, msgs);
-			if (newReAdmission != null)
-				msgs = ((InternalEObject)newReAdmission).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, null, msgs);
-			msgs = basicSetReAdmission(newReAdmission, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION, newReAdmission, newReAdmission));
 	}
 
 	/**
@@ -547,8 +508,12 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 				return basicSetOrigin(null, msgs);
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMIT_SOURCE:
 				return basicSetAdmitSource(null, msgs);
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMITTING_DIAGNOSIS:
+				return ((InternalEList<?>)getAdmittingDiagnosis()).basicRemove(otherEnd, msgs);
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
+				return basicSetReAdmission(null, msgs);
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE:
-				return basicSetDietPreference(null, msgs);
+				return ((InternalEList<?>)getDietPreference()).basicRemove(otherEnd, msgs);
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__SPECIAL_COURTESY:
 				return ((InternalEList<?>)getSpecialCourtesy()).basicRemove(otherEnd, msgs);
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__SPECIAL_ARRANGEMENT:
@@ -558,9 +523,7 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DISPOSITION:
 				return basicSetDischargeDisposition(null, msgs);
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS:
-				return basicSetDischargeDiagnosis(null, msgs);
-			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
-				return basicSetReAdmission(null, msgs);
+				return ((InternalEList<?>)getDischargeDiagnosis()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -579,6 +542,10 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 				return getOrigin();
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMIT_SOURCE:
 				return getAdmitSource();
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMITTING_DIAGNOSIS:
+				return getAdmittingDiagnosis();
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
+				return getReAdmission();
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE:
 				return getDietPreference();
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__SPECIAL_COURTESY:
@@ -591,8 +558,6 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 				return getDischargeDisposition();
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS:
 				return getDischargeDiagnosis();
-			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
-				return getReAdmission();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -615,8 +580,16 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMIT_SOURCE:
 				setAdmitSource((CodeableConcept)newValue);
 				return;
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMITTING_DIAGNOSIS:
+				getAdmittingDiagnosis().clear();
+				getAdmittingDiagnosis().addAll((Collection<? extends Reference>)newValue);
+				return;
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
+				setReAdmission((CodeableConcept)newValue);
+				return;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE:
-				setDietPreference((CodeableConcept)newValue);
+				getDietPreference().clear();
+				getDietPreference().addAll((Collection<? extends CodeableConcept>)newValue);
 				return;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__SPECIAL_COURTESY:
 				getSpecialCourtesy().clear();
@@ -633,10 +606,8 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 				setDischargeDisposition((CodeableConcept)newValue);
 				return;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS:
-				setDischargeDiagnosis((Reference)newValue);
-				return;
-			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
-				setReAdmission((org.hl7.fhir.Boolean)newValue);
+				getDischargeDiagnosis().clear();
+				getDischargeDiagnosis().addAll((Collection<? extends Reference>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -659,8 +630,14 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMIT_SOURCE:
 				setAdmitSource((CodeableConcept)null);
 				return;
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMITTING_DIAGNOSIS:
+				getAdmittingDiagnosis().clear();
+				return;
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
+				setReAdmission((CodeableConcept)null);
+				return;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE:
-				setDietPreference((CodeableConcept)null);
+				getDietPreference().clear();
 				return;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__SPECIAL_COURTESY:
 				getSpecialCourtesy().clear();
@@ -675,10 +652,7 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 				setDischargeDisposition((CodeableConcept)null);
 				return;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS:
-				setDischargeDiagnosis((Reference)null);
-				return;
-			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
-				setReAdmission((org.hl7.fhir.Boolean)null);
+				getDischargeDiagnosis().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -698,8 +672,12 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 				return origin != null;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMIT_SOURCE:
 				return admitSource != null;
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__ADMITTING_DIAGNOSIS:
+				return admittingDiagnosis != null && !admittingDiagnosis.isEmpty();
+			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
+				return reAdmission != null;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DIET_PREFERENCE:
-				return dietPreference != null;
+				return dietPreference != null && !dietPreference.isEmpty();
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__SPECIAL_COURTESY:
 				return specialCourtesy != null && !specialCourtesy.isEmpty();
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__SPECIAL_ARRANGEMENT:
@@ -709,9 +687,7 @@ public class EncounterHospitalizationImpl extends BackboneElementImpl implements
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DISPOSITION:
 				return dischargeDisposition != null;
 			case FhirPackage.ENCOUNTER_HOSPITALIZATION__DISCHARGE_DIAGNOSIS:
-				return dischargeDiagnosis != null;
-			case FhirPackage.ENCOUNTER_HOSPITALIZATION__RE_ADMISSION:
-				return reAdmission != null;
+				return dischargeDiagnosis != null && !dischargeDiagnosis.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

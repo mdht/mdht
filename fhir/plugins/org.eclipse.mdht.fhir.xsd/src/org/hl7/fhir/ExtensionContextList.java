@@ -65,7 +65,7 @@ public enum ExtensionContextList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The context is all elements matching a particular resource element path.
+	 * The context is all elements matching a particular resource element path
 	 * <!-- end-model-doc -->
 	 * @see #RESOURCE
 	 * @model name="resource"
@@ -79,7 +79,7 @@ public enum ExtensionContextList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The context is all nodes matching a particular data type element path (root or repeating element) or all elements referencing a particular primitive data type (expressed as the datatype name).
+	 * The context is all nodes matching a particular data type element path (root or repeating element) or all elements referencing a particular primitive data type (expressed as the datatype name)
 	 * <!-- end-model-doc -->
 	 * @see #DATATYPE
 	 * @model name="datatype"
@@ -93,7 +93,7 @@ public enum ExtensionContextList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The context is all nodes whose mapping to a specified reference model corresponds to a particular mapping structure.  The context identifies the mapping target. The mapping should clearly identify where such an extension could be used.
+	 * The context is all nodes whose mapping to a specified reference model corresponds to a particular mapping structure.  The context identifies the mapping target. The mapping should clearly identify where such an extension could be used
 	 * <!-- end-model-doc -->
 	 * @see #MAPPING
 	 * @model name="mapping"
@@ -107,7 +107,7 @@ public enum ExtensionContextList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The context is a particular extension from a particular profile.  Expressed as uri#name, where uri identifies the profile and #name identifies the extension code.
+	 * The context is a particular extension from a particular profile.  Expressed as uri#name, where uri identifies the profile and #name identifies the extension code
 	 * <!-- end-model-doc -->
 	 * @see #EXTENSION
 	 * @model name="extension"

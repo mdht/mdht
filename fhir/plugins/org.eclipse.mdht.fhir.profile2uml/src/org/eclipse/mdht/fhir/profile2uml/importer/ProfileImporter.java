@@ -36,7 +36,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.hl7.fhir.ElementDefinition;
 import org.hl7.fhir.ElementDefinitionType;
 import org.hl7.fhir.StructureDefinition;
-import org.hl7.fhir.StructureDefinitionTypeList;
+import org.hl7.fhir.StructureDefinitionKindList;
+import org.hl7.fhir.Uri;
 import org.hl7.fhir.util.FhirResourceFactoryImpl;
 
 public class ProfileImporter {
@@ -256,18 +257,31 @@ public class ProfileImporter {
 	}
 	
 	public Class importProfile(StructureDefinition structureDef) {
-		//TODO until support implemented for extensions
-		StructureDefinitionTypeList structureType = null;
-		if (StructureDefinitionTypeList.EXTENSION == structureType) {
+		//TODO extensions are not supported in this iteration
+		if (structureDef.getContextType() != null) {
 			return null;
 		}
 		
-		String typePackageName = structureDef.getType().getValue().getName();
-		Package typePackage = model.getNestedPackage(typePackageName, true, UMLPackage.eINSTANCE.getPackage(), true);
+		//TODO temporary workaround for bug in FHIR build tool
+		if (StructureDefinitionKindList.DATATYPE == structureDef.getKind().getValue()
+				&& structureDef.getBase() != null && "http://hl7.org/fhir/StructureDefinition/Element".equals(structureDef.getBase().getValue())) {
+			structureDef.setBase(null);
+		}
+		
+		String kindPackageName = structureDef.getKind().getValue().getName();
+		if (structureDef.getBase() != null) {
+			if (structureDef.getContextType() != null) {
+				kindPackageName = "extension";
+			}
+			else {
+				kindPackageName = "constraint";
+			}
+		}
+		Package kindPackage = model.getNestedPackage(kindPackageName, true, UMLPackage.eINSTANCE.getPackage(), true);
 		
 		String profileClassName = structureDef.getId().getValue();
 		boolean isAbstract = structureDef.getAbstract().isValue();
-		Class profileClass = typePackage.createOwnedClass(profileClassName, isAbstract);
+		Class profileClass = kindPackage.createOwnedClass(profileClassName, isAbstract);
 		
 		setURIAnnotation(profileClass, structureDef.getUrl().getValue());
 		referenceModelTypeForName.put(profileClassName, profileClass);
@@ -295,7 +309,7 @@ public class ProfileImporter {
 			}
 			
 			// Add "DataType" abstract superclass for all data types
-			if ("type".equals(typePackageName) && baseProfileClass != null 
+			if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindPackageName) && baseProfileClass != null 
 					&& ELEMENT_CLASS_NAME.equals(baseProfileClass.getName())) {
 				baseProfileClass = dataTypeClass;
 			}
@@ -317,9 +331,15 @@ public class ProfileImporter {
 			List<Classifier> typeList = new ArrayList<Classifier>();
 			for (ElementDefinitionType elementDefType : elementDef.getType()) {
 				Classifier typeClass = null;
-				if (elementDefType.getProfile() != null && elementDefType.getProfile().getValue() != null) {
-					String profileURI = elementDefType.getProfile().getValue();
-					typeClass = importProfileForURI(profileURI);
+				if (!elementDefType.getProfile().isEmpty()) {
+					for (Uri profileURI : elementDefType.getProfile()) {
+						typeClass = importProfileForURI(profileURI.getValue());
+
+						//TODO for now, use only first profile type
+						if (typeClass != null) {
+							break;
+						}
+					}
 				}
 				if (typeClass == null && elementDefType.getCode() != null && elementDefType.getCode().getValue() != null) {
 					String typeCode = elementDefType.getCode().getValue();
@@ -366,7 +386,7 @@ public class ProfileImporter {
 					//TODO Element has type Element, expand check for circular generalization references
 					if (!baseType.equals(profileClass)) {
 						// Add "DataType" abstract superclass for all data types
-						if ("type".equals(typePackageName) && ELEMENT_CLASS_NAME.equals(baseType.getName())) {
+						if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindPackageName) && ELEMENT_CLASS_NAME.equals(baseType.getName())) {
 							baseType = dataTypeClass;
 						}
 						
@@ -431,6 +451,7 @@ public class ProfileImporter {
 			String propertyName = getPropertyName(elementDef);
 			Property property = ownerClass.createOwnedAttribute(propertyName, propertyType);
 			assignMultiplicity(property, elementDef);
+			property.setIsOrdered(true);
 			if (isAssociation(property)) {
 				createAssociation(ownerClass, property);
 			}

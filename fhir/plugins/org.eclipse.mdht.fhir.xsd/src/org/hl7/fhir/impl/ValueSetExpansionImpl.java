@@ -34,6 +34,8 @@ import org.hl7.fhir.ValueSetParameter;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.ValueSetExpansionImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ValueSetExpansionImpl#getTimestamp <em>Timestamp</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ValueSetExpansionImpl#getTotal <em>Total</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ValueSetExpansionImpl#getOffset <em>Offset</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ValueSetExpansionImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ValueSetExpansionImpl#getContains <em>Contains</em>}</li>
  * </ul>
@@ -60,6 +62,26 @@ public class ValueSetExpansionImpl extends BackboneElementImpl implements ValueS
 	 * @ordered
 	 */
 	protected DateTime timestamp;
+
+	/**
+	 * The cached value of the '{@link #getTotal() <em>Total</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotal()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Integer total;
+
+	/**
+	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOffset()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Integer offset;
 
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
@@ -191,6 +213,92 @@ public class ValueSetExpansionImpl extends BackboneElementImpl implements ValueS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.hl7.fhir.Integer getTotal() {
+		return total;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTotal(org.hl7.fhir.Integer newTotal, NotificationChain msgs) {
+		org.hl7.fhir.Integer oldTotal = total;
+		total = newTotal;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.VALUE_SET_EXPANSION__TOTAL, oldTotal, newTotal);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTotal(org.hl7.fhir.Integer newTotal) {
+		if (newTotal != total) {
+			NotificationChain msgs = null;
+			if (total != null)
+				msgs = ((InternalEObject)total).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.VALUE_SET_EXPANSION__TOTAL, null, msgs);
+			if (newTotal != null)
+				msgs = ((InternalEObject)newTotal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.VALUE_SET_EXPANSION__TOTAL, null, msgs);
+			msgs = basicSetTotal(newTotal, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.VALUE_SET_EXPANSION__TOTAL, newTotal, newTotal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.Integer getOffset() {
+		return offset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOffset(org.hl7.fhir.Integer newOffset, NotificationChain msgs) {
+		org.hl7.fhir.Integer oldOffset = offset;
+		offset = newOffset;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.VALUE_SET_EXPANSION__OFFSET, oldOffset, newOffset);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOffset(org.hl7.fhir.Integer newOffset) {
+		if (newOffset != offset) {
+			NotificationChain msgs = null;
+			if (offset != null)
+				msgs = ((InternalEObject)offset).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.VALUE_SET_EXPANSION__OFFSET, null, msgs);
+			if (newOffset != null)
+				msgs = ((InternalEObject)newOffset).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.VALUE_SET_EXPANSION__OFFSET, null, msgs);
+			msgs = basicSetOffset(newOffset, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.VALUE_SET_EXPANSION__OFFSET, newOffset, newOffset));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ValueSetParameter> getParameter() {
 		if (parameter == null) {
 			parameter = new EObjectContainmentEList<ValueSetParameter>(ValueSetParameter.class, this, FhirPackage.VALUE_SET_EXPANSION__PARAMETER);
@@ -222,6 +330,10 @@ public class ValueSetExpansionImpl extends BackboneElementImpl implements ValueS
 				return basicSetIdentifier(null, msgs);
 			case FhirPackage.VALUE_SET_EXPANSION__TIMESTAMP:
 				return basicSetTimestamp(null, msgs);
+			case FhirPackage.VALUE_SET_EXPANSION__TOTAL:
+				return basicSetTotal(null, msgs);
+			case FhirPackage.VALUE_SET_EXPANSION__OFFSET:
+				return basicSetOffset(null, msgs);
 			case FhirPackage.VALUE_SET_EXPANSION__PARAMETER:
 				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
 			case FhirPackage.VALUE_SET_EXPANSION__CONTAINS:
@@ -242,6 +354,10 @@ public class ValueSetExpansionImpl extends BackboneElementImpl implements ValueS
 				return getIdentifier();
 			case FhirPackage.VALUE_SET_EXPANSION__TIMESTAMP:
 				return getTimestamp();
+			case FhirPackage.VALUE_SET_EXPANSION__TOTAL:
+				return getTotal();
+			case FhirPackage.VALUE_SET_EXPANSION__OFFSET:
+				return getOffset();
 			case FhirPackage.VALUE_SET_EXPANSION__PARAMETER:
 				return getParameter();
 			case FhirPackage.VALUE_SET_EXPANSION__CONTAINS:
@@ -264,6 +380,12 @@ public class ValueSetExpansionImpl extends BackboneElementImpl implements ValueS
 				return;
 			case FhirPackage.VALUE_SET_EXPANSION__TIMESTAMP:
 				setTimestamp((DateTime)newValue);
+				return;
+			case FhirPackage.VALUE_SET_EXPANSION__TOTAL:
+				setTotal((org.hl7.fhir.Integer)newValue);
+				return;
+			case FhirPackage.VALUE_SET_EXPANSION__OFFSET:
+				setOffset((org.hl7.fhir.Integer)newValue);
 				return;
 			case FhirPackage.VALUE_SET_EXPANSION__PARAMETER:
 				getParameter().clear();
@@ -291,6 +413,12 @@ public class ValueSetExpansionImpl extends BackboneElementImpl implements ValueS
 			case FhirPackage.VALUE_SET_EXPANSION__TIMESTAMP:
 				setTimestamp((DateTime)null);
 				return;
+			case FhirPackage.VALUE_SET_EXPANSION__TOTAL:
+				setTotal((org.hl7.fhir.Integer)null);
+				return;
+			case FhirPackage.VALUE_SET_EXPANSION__OFFSET:
+				setOffset((org.hl7.fhir.Integer)null);
+				return;
 			case FhirPackage.VALUE_SET_EXPANSION__PARAMETER:
 				getParameter().clear();
 				return;
@@ -313,6 +441,10 @@ public class ValueSetExpansionImpl extends BackboneElementImpl implements ValueS
 				return identifier != null;
 			case FhirPackage.VALUE_SET_EXPANSION__TIMESTAMP:
 				return timestamp != null;
+			case FhirPackage.VALUE_SET_EXPANSION__TOTAL:
+				return total != null;
+			case FhirPackage.VALUE_SET_EXPANSION__OFFSET:
+				return offset != null;
 			case FhirPackage.VALUE_SET_EXPANSION__PARAMETER:
 				return parameter != null && !parameter.isEmpty();
 			case FhirPackage.VALUE_SET_EXPANSION__CONTAINS:

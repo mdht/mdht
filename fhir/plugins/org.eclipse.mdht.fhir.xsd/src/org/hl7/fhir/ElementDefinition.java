@@ -49,6 +49,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueId <em>Default Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueUnsignedInt <em>Default Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValuePositiveInt <em>Default Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueAnnotation <em>Default Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueAttachment <em>Default Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueIdentifier <em>Default Value Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueCodeableConcept <em>Default Value Codeable Concept</em>}</li>
@@ -82,6 +83,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedId <em>Fixed Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedUnsignedInt <em>Fixed Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedPositiveInt <em>Fixed Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedAnnotation <em>Fixed Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedAttachment <em>Fixed Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedIdentifier <em>Fixed Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedCodeableConcept <em>Fixed Codeable Concept</em>}</li>
@@ -114,6 +116,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternId <em>Pattern Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternUnsignedInt <em>Pattern Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternPositiveInt <em>Pattern Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternAnnotation <em>Pattern Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternAttachment <em>Pattern Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternIdentifier <em>Pattern Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternCodeableConcept <em>Pattern Codeable Concept</em>}</li>
@@ -146,6 +149,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleId <em>Example Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleUnsignedInt <em>Example Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExamplePositiveInt <em>Example Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleAnnotation <em>Example Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleAttachment <em>Example Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleIdentifier <em>Example Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleCodeableConcept <em>Example Codeable Concept</em>}</li>
@@ -162,6 +166,72 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleContactPoint <em>Example Contact Point</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleTiming <em>Example Timing</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleMeta <em>Example Meta</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueBoolean <em>Min Value Boolean</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueInteger <em>Min Value Integer</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueDecimal <em>Min Value Decimal</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueBase64Binary <em>Min Value Base64 Binary</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueInstant <em>Min Value Instant</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueString <em>Min Value String</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueUri <em>Min Value Uri</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueDate <em>Min Value Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueDateTime <em>Min Value Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueTime <em>Min Value Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueCode <em>Min Value Code</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueOid <em>Min Value Oid</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueUuid <em>Min Value Uuid</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueId <em>Min Value Id</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueUnsignedInt <em>Min Value Unsigned Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValuePositiveInt <em>Min Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueAnnotation <em>Min Value Annotation</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueAttachment <em>Min Value Attachment</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueIdentifier <em>Min Value Identifier</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueCodeableConcept <em>Min Value Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueCoding <em>Min Value Coding</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueQuantity <em>Min Value Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueRange <em>Min Value Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValuePeriod <em>Min Value Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueRatio <em>Min Value Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueReference <em>Min Value Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueSampledData <em>Min Value Sampled Data</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueSignature <em>Min Value Signature</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueHumanName <em>Min Value Human Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueAddress <em>Min Value Address</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueContactPoint <em>Min Value Contact Point</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueTiming <em>Min Value Timing</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueMeta <em>Min Value Meta</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueBoolean <em>Max Value Boolean</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueInteger <em>Max Value Integer</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueDecimal <em>Max Value Decimal</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueBase64Binary <em>Max Value Base64 Binary</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueInstant <em>Max Value Instant</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueString <em>Max Value String</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueUri <em>Max Value Uri</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueDate <em>Max Value Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueDateTime <em>Max Value Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueTime <em>Max Value Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueCode <em>Max Value Code</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueOid <em>Max Value Oid</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueUuid <em>Max Value Uuid</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueId <em>Max Value Id</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueUnsignedInt <em>Max Value Unsigned Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValuePositiveInt <em>Max Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueAnnotation <em>Max Value Annotation</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueAttachment <em>Max Value Attachment</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueIdentifier <em>Max Value Identifier</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueCodeableConcept <em>Max Value Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueCoding <em>Max Value Coding</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueQuantity <em>Max Value Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueRange <em>Max Value Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValuePeriod <em>Max Value Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueRatio <em>Max Value Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueReference <em>Max Value Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueSampledData <em>Max Value Sampled Data</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueSignature <em>Max Value Signature</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueHumanName <em>Max Value Human Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueAddress <em>Max Value Address</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueContactPoint <em>Max Value Contact Point</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueTiming <em>Max Value Timing</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueMeta <em>Max Value Meta</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getConstraint <em>Constraint</em>}</li>
@@ -958,6 +1028,33 @@ public interface ElementDefinition extends Element {
 	 * @generated
 	 */
 	void setDefaultValuePositiveInt(PositiveInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Default Value Annotation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default Value Annotation</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Default Value Annotation</em>' containment reference.
+	 * @see #setDefaultValueAnnotation(Annotation)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_DefaultValueAnnotation()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='defaultValueAnnotation' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Annotation getDefaultValueAnnotation();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getDefaultValueAnnotation <em>Default Value Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default Value Annotation</em>' containment reference.
+	 * @see #getDefaultValueAnnotation()
+	 * @generated
+	 */
+	void setDefaultValueAnnotation(Annotation value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Value Attachment</b></em>' containment reference.
@@ -1850,6 +1947,33 @@ public interface ElementDefinition extends Element {
 	void setFixedPositiveInt(PositiveInt value);
 
 	/**
+	 * Returns the value of the '<em><b>Fixed Annotation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fixed Annotation</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fixed Annotation</em>' containment reference.
+	 * @see #setFixedAnnotation(Annotation)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_FixedAnnotation()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='fixedAnnotation' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Annotation getFixedAnnotation();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getFixedAnnotation <em>Fixed Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Fixed Annotation</em>' containment reference.
+	 * @see #getFixedAnnotation()
+	 * @generated
+	 */
+	void setFixedAnnotation(Annotation value);
+
+	/**
 	 * Returns the value of the '<em><b>Fixed Attachment</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -2712,6 +2836,33 @@ public interface ElementDefinition extends Element {
 	 * @generated
 	 */
 	void setPatternPositiveInt(PositiveInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Pattern Annotation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pattern Annotation</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pattern Annotation</em>' containment reference.
+	 * @see #setPatternAnnotation(Annotation)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_PatternAnnotation()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='patternAnnotation' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Annotation getPatternAnnotation();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getPatternAnnotation <em>Pattern Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pattern Annotation</em>' containment reference.
+	 * @see #getPatternAnnotation()
+	 * @generated
+	 */
+	void setPatternAnnotation(Annotation value);
 
 	/**
 	 * Returns the value of the '<em><b>Pattern Attachment</b></em>' containment reference.
@@ -3578,6 +3729,33 @@ public interface ElementDefinition extends Element {
 	void setExamplePositiveInt(PositiveInt value);
 
 	/**
+	 * Returns the value of the '<em><b>Example Annotation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Example Annotation</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Example Annotation</em>' containment reference.
+	 * @see #setExampleAnnotation(Annotation)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_ExampleAnnotation()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='exampleAnnotation' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Annotation getExampleAnnotation();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getExampleAnnotation <em>Example Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Example Annotation</em>' containment reference.
+	 * @see #getExampleAnnotation()
+	 * @generated
+	 */
+	void setExampleAnnotation(Annotation value);
+
+	/**
 	 * Returns the value of the '<em><b>Example Attachment</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -4008,6 +4186,1788 @@ public interface ElementDefinition extends Element {
 	 * @generated
 	 */
 	void setExampleMeta(Meta value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Boolean</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Boolean</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Boolean</em>' containment reference.
+	 * @see #setMinValueBoolean(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueBoolean()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueBoolean' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getMinValueBoolean();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueBoolean <em>Min Value Boolean</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Boolean</em>' containment reference.
+	 * @see #getMinValueBoolean()
+	 * @generated
+	 */
+	void setMinValueBoolean(org.hl7.fhir.Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Integer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Integer</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Integer</em>' containment reference.
+	 * @see #setMinValueInteger(org.hl7.fhir.Integer)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueInteger()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueInteger' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Integer getMinValueInteger();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueInteger <em>Min Value Integer</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Integer</em>' containment reference.
+	 * @see #getMinValueInteger()
+	 * @generated
+	 */
+	void setMinValueInteger(org.hl7.fhir.Integer value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Decimal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Decimal</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Decimal</em>' containment reference.
+	 * @see #setMinValueDecimal(Decimal)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueDecimal()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueDecimal' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Decimal getMinValueDecimal();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueDecimal <em>Min Value Decimal</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Decimal</em>' containment reference.
+	 * @see #getMinValueDecimal()
+	 * @generated
+	 */
+	void setMinValueDecimal(Decimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Base64 Binary</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Base64 Binary</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Base64 Binary</em>' containment reference.
+	 * @see #setMinValueBase64Binary(Base64Binary)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueBase64Binary()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueBase64Binary' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Base64Binary getMinValueBase64Binary();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueBase64Binary <em>Min Value Base64 Binary</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Base64 Binary</em>' containment reference.
+	 * @see #getMinValueBase64Binary()
+	 * @generated
+	 */
+	void setMinValueBase64Binary(Base64Binary value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Instant</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Instant</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Instant</em>' containment reference.
+	 * @see #setMinValueInstant(Instant)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueInstant()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueInstant' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Instant getMinValueInstant();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueInstant <em>Min Value Instant</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Instant</em>' containment reference.
+	 * @see #getMinValueInstant()
+	 * @generated
+	 */
+	void setMinValueInstant(Instant value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value String</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value String</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value String</em>' containment reference.
+	 * @see #setMinValueString(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueString()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueString' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getMinValueString();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueString <em>Min Value String</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value String</em>' containment reference.
+	 * @see #getMinValueString()
+	 * @generated
+	 */
+	void setMinValueString(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Uri</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Uri</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Uri</em>' containment reference.
+	 * @see #setMinValueUri(Uri)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueUri()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueUri' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Uri getMinValueUri();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueUri <em>Min Value Uri</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Uri</em>' containment reference.
+	 * @see #getMinValueUri()
+	 * @generated
+	 */
+	void setMinValueUri(Uri value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Date</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Date</em>' containment reference.
+	 * @see #setMinValueDate(Date)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueDate()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueDate' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Date getMinValueDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueDate <em>Min Value Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Date</em>' containment reference.
+	 * @see #getMinValueDate()
+	 * @generated
+	 */
+	void setMinValueDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Date Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Date Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Date Time</em>' containment reference.
+	 * @see #setMinValueDateTime(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueDateTime()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueDateTime' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getMinValueDateTime();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueDateTime <em>Min Value Date Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Date Time</em>' containment reference.
+	 * @see #getMinValueDateTime()
+	 * @generated
+	 */
+	void setMinValueDateTime(DateTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Time</em>' containment reference.
+	 * @see #setMinValueTime(Time)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueTime()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueTime' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Time getMinValueTime();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueTime <em>Min Value Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Time</em>' containment reference.
+	 * @see #getMinValueTime()
+	 * @generated
+	 */
+	void setMinValueTime(Time value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Code</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Code</em>' containment reference.
+	 * @see #setMinValueCode(Code)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueCode()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueCode' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Code getMinValueCode();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueCode <em>Min Value Code</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Code</em>' containment reference.
+	 * @see #getMinValueCode()
+	 * @generated
+	 */
+	void setMinValueCode(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Oid</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Oid</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Oid</em>' containment reference.
+	 * @see #setMinValueOid(Oid)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueOid()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueOid' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Oid getMinValueOid();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueOid <em>Min Value Oid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Oid</em>' containment reference.
+	 * @see #getMinValueOid()
+	 * @generated
+	 */
+	void setMinValueOid(Oid value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Uuid</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Uuid</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Uuid</em>' containment reference.
+	 * @see #setMinValueUuid(Uuid)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueUuid()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueUuid' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Uuid getMinValueUuid();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueUuid <em>Min Value Uuid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Uuid</em>' containment reference.
+	 * @see #getMinValueUuid()
+	 * @generated
+	 */
+	void setMinValueUuid(Uuid value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Id</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Id</em>' containment reference.
+	 * @see #setMinValueId(Id)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueId()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueId' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Id getMinValueId();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueId <em>Min Value Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Id</em>' containment reference.
+	 * @see #getMinValueId()
+	 * @generated
+	 */
+	void setMinValueId(Id value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Unsigned Int</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Unsigned Int</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Unsigned Int</em>' containment reference.
+	 * @see #setMinValueUnsignedInt(UnsignedInt)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueUnsignedInt()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueUnsignedInt' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	UnsignedInt getMinValueUnsignedInt();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueUnsignedInt <em>Min Value Unsigned Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Unsigned Int</em>' containment reference.
+	 * @see #getMinValueUnsignedInt()
+	 * @generated
+	 */
+	void setMinValueUnsignedInt(UnsignedInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Positive Int</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Positive Int</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Positive Int</em>' containment reference.
+	 * @see #setMinValuePositiveInt(PositiveInt)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValuePositiveInt()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValuePositiveInt' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	PositiveInt getMinValuePositiveInt();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValuePositiveInt <em>Min Value Positive Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Positive Int</em>' containment reference.
+	 * @see #getMinValuePositiveInt()
+	 * @generated
+	 */
+	void setMinValuePositiveInt(PositiveInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Annotation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Annotation</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Annotation</em>' containment reference.
+	 * @see #setMinValueAnnotation(Annotation)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueAnnotation()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueAnnotation' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Annotation getMinValueAnnotation();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueAnnotation <em>Min Value Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Annotation</em>' containment reference.
+	 * @see #getMinValueAnnotation()
+	 * @generated
+	 */
+	void setMinValueAnnotation(Annotation value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Attachment</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Attachment</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Attachment</em>' containment reference.
+	 * @see #setMinValueAttachment(Attachment)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueAttachment()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueAttachment' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Attachment getMinValueAttachment();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueAttachment <em>Min Value Attachment</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Attachment</em>' containment reference.
+	 * @see #getMinValueAttachment()
+	 * @generated
+	 */
+	void setMinValueAttachment(Attachment value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Identifier</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Identifier</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Identifier</em>' containment reference.
+	 * @see #setMinValueIdentifier(Identifier)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueIdentifier()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueIdentifier' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Identifier getMinValueIdentifier();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueIdentifier <em>Min Value Identifier</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Identifier</em>' containment reference.
+	 * @see #getMinValueIdentifier()
+	 * @generated
+	 */
+	void setMinValueIdentifier(Identifier value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Codeable Concept</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Codeable Concept</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Codeable Concept</em>' containment reference.
+	 * @see #setMinValueCodeableConcept(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueCodeableConcept()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueCodeableConcept' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	CodeableConcept getMinValueCodeableConcept();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueCodeableConcept <em>Min Value Codeable Concept</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Codeable Concept</em>' containment reference.
+	 * @see #getMinValueCodeableConcept()
+	 * @generated
+	 */
+	void setMinValueCodeableConcept(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Coding</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Coding</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Coding</em>' containment reference.
+	 * @see #setMinValueCoding(Coding)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueCoding()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueCoding' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Coding getMinValueCoding();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueCoding <em>Min Value Coding</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Coding</em>' containment reference.
+	 * @see #getMinValueCoding()
+	 * @generated
+	 */
+	void setMinValueCoding(Coding value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Quantity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Quantity</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Quantity</em>' containment reference.
+	 * @see #setMinValueQuantity(Quantity)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueQuantity()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueQuantity' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Quantity getMinValueQuantity();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueQuantity <em>Min Value Quantity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Quantity</em>' containment reference.
+	 * @see #getMinValueQuantity()
+	 * @generated
+	 */
+	void setMinValueQuantity(Quantity value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Range</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Range</em>' containment reference.
+	 * @see #setMinValueRange(Range)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueRange()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueRange' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Range getMinValueRange();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueRange <em>Min Value Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Range</em>' containment reference.
+	 * @see #getMinValueRange()
+	 * @generated
+	 */
+	void setMinValueRange(Range value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Period</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Period</em>' containment reference.
+	 * @see #setMinValuePeriod(Period)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValuePeriod()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValuePeriod' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Period getMinValuePeriod();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValuePeriod <em>Min Value Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Period</em>' containment reference.
+	 * @see #getMinValuePeriod()
+	 * @generated
+	 */
+	void setMinValuePeriod(Period value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Ratio</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Ratio</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Ratio</em>' containment reference.
+	 * @see #setMinValueRatio(Ratio)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueRatio()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueRatio' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Ratio getMinValueRatio();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueRatio <em>Min Value Ratio</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Ratio</em>' containment reference.
+	 * @see #getMinValueRatio()
+	 * @generated
+	 */
+	void setMinValueRatio(Ratio value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Reference</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Reference</em>' containment reference.
+	 * @see #setMinValueReference(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueReference()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueReference' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getMinValueReference();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueReference <em>Min Value Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Reference</em>' containment reference.
+	 * @see #getMinValueReference()
+	 * @generated
+	 */
+	void setMinValueReference(Reference value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Sampled Data</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Sampled Data</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Sampled Data</em>' containment reference.
+	 * @see #setMinValueSampledData(SampledData)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueSampledData()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueSampledData' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	SampledData getMinValueSampledData();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueSampledData <em>Min Value Sampled Data</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Sampled Data</em>' containment reference.
+	 * @see #getMinValueSampledData()
+	 * @generated
+	 */
+	void setMinValueSampledData(SampledData value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Signature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Signature</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Signature</em>' containment reference.
+	 * @see #setMinValueSignature(Signature)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueSignature()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueSignature' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Signature getMinValueSignature();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueSignature <em>Min Value Signature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Signature</em>' containment reference.
+	 * @see #getMinValueSignature()
+	 * @generated
+	 */
+	void setMinValueSignature(Signature value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Human Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Human Name</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Human Name</em>' containment reference.
+	 * @see #setMinValueHumanName(HumanName)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueHumanName()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueHumanName' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	HumanName getMinValueHumanName();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueHumanName <em>Min Value Human Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Human Name</em>' containment reference.
+	 * @see #getMinValueHumanName()
+	 * @generated
+	 */
+	void setMinValueHumanName(HumanName value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Address</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Address</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Address</em>' containment reference.
+	 * @see #setMinValueAddress(Address)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueAddress()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueAddress' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Address getMinValueAddress();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueAddress <em>Min Value Address</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Address</em>' containment reference.
+	 * @see #getMinValueAddress()
+	 * @generated
+	 */
+	void setMinValueAddress(Address value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Contact Point</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Contact Point</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Contact Point</em>' containment reference.
+	 * @see #setMinValueContactPoint(ContactPoint)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueContactPoint()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueContactPoint' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	ContactPoint getMinValueContactPoint();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueContactPoint <em>Min Value Contact Point</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Contact Point</em>' containment reference.
+	 * @see #getMinValueContactPoint()
+	 * @generated
+	 */
+	void setMinValueContactPoint(ContactPoint value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Timing</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Timing</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Timing</em>' containment reference.
+	 * @see #setMinValueTiming(Timing)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueTiming()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueTiming' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Timing getMinValueTiming();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueTiming <em>Min Value Timing</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Timing</em>' containment reference.
+	 * @see #getMinValueTiming()
+	 * @generated
+	 */
+	void setMinValueTiming(Timing value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Value Meta</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Meta</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Meta</em>' containment reference.
+	 * @see #setMinValueMeta(Meta)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueMeta()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueMeta' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Meta getMinValueMeta();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueMeta <em>Min Value Meta</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Meta</em>' containment reference.
+	 * @see #getMinValueMeta()
+	 * @generated
+	 */
+	void setMinValueMeta(Meta value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Boolean</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Boolean</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Boolean</em>' containment reference.
+	 * @see #setMaxValueBoolean(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueBoolean()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueBoolean' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getMaxValueBoolean();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueBoolean <em>Max Value Boolean</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Boolean</em>' containment reference.
+	 * @see #getMaxValueBoolean()
+	 * @generated
+	 */
+	void setMaxValueBoolean(org.hl7.fhir.Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Integer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Integer</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Integer</em>' containment reference.
+	 * @see #setMaxValueInteger(org.hl7.fhir.Integer)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueInteger()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueInteger' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Integer getMaxValueInteger();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueInteger <em>Max Value Integer</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Integer</em>' containment reference.
+	 * @see #getMaxValueInteger()
+	 * @generated
+	 */
+	void setMaxValueInteger(org.hl7.fhir.Integer value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Decimal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Decimal</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Decimal</em>' containment reference.
+	 * @see #setMaxValueDecimal(Decimal)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueDecimal()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueDecimal' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Decimal getMaxValueDecimal();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueDecimal <em>Max Value Decimal</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Decimal</em>' containment reference.
+	 * @see #getMaxValueDecimal()
+	 * @generated
+	 */
+	void setMaxValueDecimal(Decimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Base64 Binary</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Base64 Binary</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Base64 Binary</em>' containment reference.
+	 * @see #setMaxValueBase64Binary(Base64Binary)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueBase64Binary()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueBase64Binary' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Base64Binary getMaxValueBase64Binary();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueBase64Binary <em>Max Value Base64 Binary</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Base64 Binary</em>' containment reference.
+	 * @see #getMaxValueBase64Binary()
+	 * @generated
+	 */
+	void setMaxValueBase64Binary(Base64Binary value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Instant</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Instant</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Instant</em>' containment reference.
+	 * @see #setMaxValueInstant(Instant)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueInstant()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueInstant' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Instant getMaxValueInstant();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueInstant <em>Max Value Instant</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Instant</em>' containment reference.
+	 * @see #getMaxValueInstant()
+	 * @generated
+	 */
+	void setMaxValueInstant(Instant value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value String</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value String</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value String</em>' containment reference.
+	 * @see #setMaxValueString(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueString()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueString' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getMaxValueString();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueString <em>Max Value String</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value String</em>' containment reference.
+	 * @see #getMaxValueString()
+	 * @generated
+	 */
+	void setMaxValueString(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Uri</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Uri</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Uri</em>' containment reference.
+	 * @see #setMaxValueUri(Uri)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueUri()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueUri' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Uri getMaxValueUri();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueUri <em>Max Value Uri</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Uri</em>' containment reference.
+	 * @see #getMaxValueUri()
+	 * @generated
+	 */
+	void setMaxValueUri(Uri value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Date</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Date</em>' containment reference.
+	 * @see #setMaxValueDate(Date)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueDate()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueDate' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Date getMaxValueDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueDate <em>Max Value Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Date</em>' containment reference.
+	 * @see #getMaxValueDate()
+	 * @generated
+	 */
+	void setMaxValueDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Date Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Date Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Date Time</em>' containment reference.
+	 * @see #setMaxValueDateTime(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueDateTime()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueDateTime' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getMaxValueDateTime();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueDateTime <em>Max Value Date Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Date Time</em>' containment reference.
+	 * @see #getMaxValueDateTime()
+	 * @generated
+	 */
+	void setMaxValueDateTime(DateTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Time</em>' containment reference.
+	 * @see #setMaxValueTime(Time)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueTime()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueTime' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Time getMaxValueTime();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueTime <em>Max Value Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Time</em>' containment reference.
+	 * @see #getMaxValueTime()
+	 * @generated
+	 */
+	void setMaxValueTime(Time value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Code</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Code</em>' containment reference.
+	 * @see #setMaxValueCode(Code)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueCode()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueCode' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Code getMaxValueCode();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueCode <em>Max Value Code</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Code</em>' containment reference.
+	 * @see #getMaxValueCode()
+	 * @generated
+	 */
+	void setMaxValueCode(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Oid</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Oid</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Oid</em>' containment reference.
+	 * @see #setMaxValueOid(Oid)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueOid()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueOid' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Oid getMaxValueOid();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueOid <em>Max Value Oid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Oid</em>' containment reference.
+	 * @see #getMaxValueOid()
+	 * @generated
+	 */
+	void setMaxValueOid(Oid value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Uuid</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Uuid</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Uuid</em>' containment reference.
+	 * @see #setMaxValueUuid(Uuid)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueUuid()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueUuid' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Uuid getMaxValueUuid();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueUuid <em>Max Value Uuid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Uuid</em>' containment reference.
+	 * @see #getMaxValueUuid()
+	 * @generated
+	 */
+	void setMaxValueUuid(Uuid value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Id</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Id</em>' containment reference.
+	 * @see #setMaxValueId(Id)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueId()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueId' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Id getMaxValueId();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueId <em>Max Value Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Id</em>' containment reference.
+	 * @see #getMaxValueId()
+	 * @generated
+	 */
+	void setMaxValueId(Id value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Unsigned Int</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Unsigned Int</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Unsigned Int</em>' containment reference.
+	 * @see #setMaxValueUnsignedInt(UnsignedInt)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueUnsignedInt()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueUnsignedInt' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	UnsignedInt getMaxValueUnsignedInt();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueUnsignedInt <em>Max Value Unsigned Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Unsigned Int</em>' containment reference.
+	 * @see #getMaxValueUnsignedInt()
+	 * @generated
+	 */
+	void setMaxValueUnsignedInt(UnsignedInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Positive Int</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Positive Int</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Positive Int</em>' containment reference.
+	 * @see #setMaxValuePositiveInt(PositiveInt)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValuePositiveInt()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValuePositiveInt' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	PositiveInt getMaxValuePositiveInt();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValuePositiveInt <em>Max Value Positive Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Positive Int</em>' containment reference.
+	 * @see #getMaxValuePositiveInt()
+	 * @generated
+	 */
+	void setMaxValuePositiveInt(PositiveInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Annotation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Annotation</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Annotation</em>' containment reference.
+	 * @see #setMaxValueAnnotation(Annotation)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueAnnotation()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueAnnotation' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Annotation getMaxValueAnnotation();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueAnnotation <em>Max Value Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Annotation</em>' containment reference.
+	 * @see #getMaxValueAnnotation()
+	 * @generated
+	 */
+	void setMaxValueAnnotation(Annotation value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Attachment</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Attachment</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Attachment</em>' containment reference.
+	 * @see #setMaxValueAttachment(Attachment)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueAttachment()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueAttachment' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Attachment getMaxValueAttachment();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueAttachment <em>Max Value Attachment</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Attachment</em>' containment reference.
+	 * @see #getMaxValueAttachment()
+	 * @generated
+	 */
+	void setMaxValueAttachment(Attachment value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Identifier</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Identifier</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Identifier</em>' containment reference.
+	 * @see #setMaxValueIdentifier(Identifier)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueIdentifier()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueIdentifier' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Identifier getMaxValueIdentifier();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueIdentifier <em>Max Value Identifier</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Identifier</em>' containment reference.
+	 * @see #getMaxValueIdentifier()
+	 * @generated
+	 */
+	void setMaxValueIdentifier(Identifier value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Codeable Concept</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Codeable Concept</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Codeable Concept</em>' containment reference.
+	 * @see #setMaxValueCodeableConcept(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueCodeableConcept()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueCodeableConcept' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	CodeableConcept getMaxValueCodeableConcept();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueCodeableConcept <em>Max Value Codeable Concept</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Codeable Concept</em>' containment reference.
+	 * @see #getMaxValueCodeableConcept()
+	 * @generated
+	 */
+	void setMaxValueCodeableConcept(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Coding</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Coding</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Coding</em>' containment reference.
+	 * @see #setMaxValueCoding(Coding)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueCoding()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueCoding' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Coding getMaxValueCoding();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueCoding <em>Max Value Coding</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Coding</em>' containment reference.
+	 * @see #getMaxValueCoding()
+	 * @generated
+	 */
+	void setMaxValueCoding(Coding value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Quantity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Quantity</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Quantity</em>' containment reference.
+	 * @see #setMaxValueQuantity(Quantity)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueQuantity()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueQuantity' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Quantity getMaxValueQuantity();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueQuantity <em>Max Value Quantity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Quantity</em>' containment reference.
+	 * @see #getMaxValueQuantity()
+	 * @generated
+	 */
+	void setMaxValueQuantity(Quantity value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Range</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Range</em>' containment reference.
+	 * @see #setMaxValueRange(Range)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueRange()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueRange' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Range getMaxValueRange();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueRange <em>Max Value Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Range</em>' containment reference.
+	 * @see #getMaxValueRange()
+	 * @generated
+	 */
+	void setMaxValueRange(Range value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Period</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Period</em>' containment reference.
+	 * @see #setMaxValuePeriod(Period)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValuePeriod()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValuePeriod' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Period getMaxValuePeriod();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValuePeriod <em>Max Value Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Period</em>' containment reference.
+	 * @see #getMaxValuePeriod()
+	 * @generated
+	 */
+	void setMaxValuePeriod(Period value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Ratio</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Ratio</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Ratio</em>' containment reference.
+	 * @see #setMaxValueRatio(Ratio)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueRatio()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueRatio' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Ratio getMaxValueRatio();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueRatio <em>Max Value Ratio</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Ratio</em>' containment reference.
+	 * @see #getMaxValueRatio()
+	 * @generated
+	 */
+	void setMaxValueRatio(Ratio value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Reference</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Reference</em>' containment reference.
+	 * @see #setMaxValueReference(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueReference()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueReference' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getMaxValueReference();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueReference <em>Max Value Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Reference</em>' containment reference.
+	 * @see #getMaxValueReference()
+	 * @generated
+	 */
+	void setMaxValueReference(Reference value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Sampled Data</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Sampled Data</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Sampled Data</em>' containment reference.
+	 * @see #setMaxValueSampledData(SampledData)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueSampledData()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueSampledData' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	SampledData getMaxValueSampledData();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueSampledData <em>Max Value Sampled Data</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Sampled Data</em>' containment reference.
+	 * @see #getMaxValueSampledData()
+	 * @generated
+	 */
+	void setMaxValueSampledData(SampledData value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Signature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Signature</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Signature</em>' containment reference.
+	 * @see #setMaxValueSignature(Signature)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueSignature()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueSignature' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Signature getMaxValueSignature();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueSignature <em>Max Value Signature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Signature</em>' containment reference.
+	 * @see #getMaxValueSignature()
+	 * @generated
+	 */
+	void setMaxValueSignature(Signature value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Human Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Human Name</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Human Name</em>' containment reference.
+	 * @see #setMaxValueHumanName(HumanName)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueHumanName()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueHumanName' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	HumanName getMaxValueHumanName();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueHumanName <em>Max Value Human Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Human Name</em>' containment reference.
+	 * @see #getMaxValueHumanName()
+	 * @generated
+	 */
+	void setMaxValueHumanName(HumanName value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Address</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Address</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Address</em>' containment reference.
+	 * @see #setMaxValueAddress(Address)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueAddress()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueAddress' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Address getMaxValueAddress();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueAddress <em>Max Value Address</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Address</em>' containment reference.
+	 * @see #getMaxValueAddress()
+	 * @generated
+	 */
+	void setMaxValueAddress(Address value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Contact Point</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Contact Point</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Contact Point</em>' containment reference.
+	 * @see #setMaxValueContactPoint(ContactPoint)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueContactPoint()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueContactPoint' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	ContactPoint getMaxValueContactPoint();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueContactPoint <em>Max Value Contact Point</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Contact Point</em>' containment reference.
+	 * @see #getMaxValueContactPoint()
+	 * @generated
+	 */
+	void setMaxValueContactPoint(ContactPoint value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Timing</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Timing</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Timing</em>' containment reference.
+	 * @see #setMaxValueTiming(Timing)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueTiming()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueTiming' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Timing getMaxValueTiming();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueTiming <em>Max Value Timing</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Timing</em>' containment reference.
+	 * @see #getMaxValueTiming()
+	 * @generated
+	 */
+	void setMaxValueTiming(Timing value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Value Meta</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Meta</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Meta</em>' containment reference.
+	 * @see #setMaxValueMeta(Meta)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueMeta()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueMeta' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Meta getMaxValueMeta();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueMeta <em>Max Value Meta</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Meta</em>' containment reference.
+	 * @see #getMaxValueMeta()
+	 * @generated
+	 */
+	void setMaxValueMeta(Meta value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Length</b></em>' containment reference.

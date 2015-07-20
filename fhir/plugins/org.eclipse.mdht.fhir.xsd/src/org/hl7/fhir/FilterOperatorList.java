@@ -85,7 +85,7 @@ public enum FilterOperatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The specified property of the code equals the provided value.
+	 * The specified property of the code equals the provided value
 	 * <!-- end-model-doc -->
 	 * @see #_
 	 * @model literal="="
@@ -99,7 +99,7 @@ public enum FilterOperatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Includes all concept ids that have a transitive is-a relationship with the concept Id provided as the value, including the provided concept itself.
+	 * Includes all concept ids that have a transitive is-a relationship with the concept Id provided as the value, including the provided concept itself
 	 * <!-- end-model-doc -->
 	 * @see #IS_A
 	 * @model name="isA" literal="is-a"
@@ -113,7 +113,7 @@ public enum FilterOperatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The specified property of the code does not have an is-a relationship with the provided value.
+	 * The specified property of the code does not have an is-a relationship with the provided value
 	 * <!-- end-model-doc -->
 	 * @see #IS_NOT_A
 	 * @model name="isNotA" literal="is-not-a"
@@ -127,7 +127,7 @@ public enum FilterOperatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The specified property of the code  matches the regex specified in the provided value.
+	 * The specified property of the code  matches the regex specified in the provided value
 	 * <!-- end-model-doc -->
 	 * @see #REGEX
 	 * @model name="regex"
@@ -141,7 +141,7 @@ public enum FilterOperatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The specified property of the code is in the set of codes or concepts specified in the provided value (comma separated list).
+	 * The specified property of the code is in the set of codes or concepts specified in the provided value (comma separated list)
 	 * <!-- end-model-doc -->
 	 * @see #IN
 	 * @model name="in"
@@ -155,7 +155,7 @@ public enum FilterOperatorList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The specified property of the code is not in the set of codes or concepts specified in the provided value (comma separated list).
+	 * The specified property of the code is not in the set of codes or concepts specified in the provided value (comma separated list)
 	 * <!-- end-model-doc -->
 	 * @see #NOT_IN
 	 * @model name="notIn" literal="not-in"

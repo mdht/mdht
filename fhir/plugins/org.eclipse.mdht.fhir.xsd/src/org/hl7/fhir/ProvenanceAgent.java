@@ -17,10 +17,8 @@ package org.hl7.fhir;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.ProvenanceAgent#getRole <em>Role</em>}</li>
- *   <li>{@link org.hl7.fhir.ProvenanceAgent#getType <em>Type</em>}</li>
- *   <li>{@link org.hl7.fhir.ProvenanceAgent#getReferenceUri <em>Reference Uri</em>}</li>
- *   <li>{@link org.hl7.fhir.ProvenanceAgent#getReferenceReference <em>Reference Reference</em>}</li>
- *   <li>{@link org.hl7.fhir.ProvenanceAgent#getDisplay <em>Display</em>}</li>
+ *   <li>{@link org.hl7.fhir.ProvenanceAgent#getActor <em>Actor</em>}</li>
+ *   <li>{@link org.hl7.fhir.ProvenanceAgent#getUserId <em>User Id</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getProvenanceAgent()
@@ -55,109 +53,55 @@ public interface ProvenanceAgent extends BackboneElement {
 	void setRole(Coding value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Actor</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The type of participation of the agent.
+	 * The individual, device or organization that participated in the event.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(Coding)
-	 * @see org.hl7.fhir.FhirPackage#getProvenanceAgent_Type()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='type' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Coding getType();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ProvenanceAgent#getType <em>Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' containment reference.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(Coding value);
-
-	/**
-	 * Returns the value of the '<em><b>Reference Uri</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Reference Uri</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reference Uri</em>' containment reference.
-	 * @see #setReferenceUri(Uri)
-	 * @see org.hl7.fhir.FhirPackage#getProvenanceAgent_ReferenceUri()
+	 * @return the value of the '<em>Actor</em>' containment reference.
+	 * @see #setActor(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getProvenanceAgent_Actor()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='referenceUri' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='actor' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Uri getReferenceUri();
+	Reference getActor();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ProvenanceAgent#getReferenceUri <em>Reference Uri</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ProvenanceAgent#getActor <em>Actor</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference Uri</em>' containment reference.
-	 * @see #getReferenceUri()
+	 * @param value the new value of the '<em>Actor</em>' containment reference.
+	 * @see #getActor()
 	 * @generated
 	 */
-	void setReferenceUri(Uri value);
+	void setActor(Reference value);
 
 	/**
-	 * Returns the value of the '<em><b>Reference Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Reference Reference</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reference Reference</em>' containment reference.
-	 * @see #setReferenceReference(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getProvenanceAgent_ReferenceReference()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='referenceReference' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Reference getReferenceReference();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ProvenanceAgent#getReferenceReference <em>Reference Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference Reference</em>' containment reference.
-	 * @see #getReferenceReference()
-	 * @generated
-	 */
-	void setReferenceReference(Reference value);
-
-	/**
-	 * Returns the value of the '<em><b>Display</b></em>' containment reference.
+	 * Returns the value of the '<em><b>User Id</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Human-readable description of the participant.
+	 * The identify of the agent as known by the authorization system.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Display</em>' containment reference.
-	 * @see #setDisplay(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getProvenanceAgent_Display()
+	 * @return the value of the '<em>User Id</em>' containment reference.
+	 * @see #setUserId(Identifier)
+	 * @see org.hl7.fhir.FhirPackage#getProvenanceAgent_UserId()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='display' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='userId' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getDisplay();
+	Identifier getUserId();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ProvenanceAgent#getDisplay <em>Display</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ProvenanceAgent#getUserId <em>User Id</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display</em>' containment reference.
-	 * @see #getDisplay()
+	 * @param value the new value of the '<em>User Id</em>' containment reference.
+	 * @see #getUserId()
 	 * @generated
 	 */
-	void setDisplay(org.hl7.fhir.String value);
+	void setUserId(Identifier value);
 
 } // ProvenanceAgent

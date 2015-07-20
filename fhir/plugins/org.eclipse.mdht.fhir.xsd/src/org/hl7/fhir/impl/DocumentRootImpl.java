@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Account;
 import org.hl7.fhir.AllergyIntolerance;
 import org.hl7.fhir.Appointment;
 import org.hl7.fhir.AppointmentResponse;
@@ -70,6 +71,7 @@ import org.hl7.fhir.ImagingObjectSelection;
 import org.hl7.fhir.ImagingStudy;
 import org.hl7.fhir.Immunization;
 import org.hl7.fhir.ImmunizationRecommendation;
+import org.hl7.fhir.ImplementationGuide;
 import org.hl7.fhir.List;
 import org.hl7.fhir.Location;
 import org.hl7.fhir.Media;
@@ -111,6 +113,9 @@ import org.hl7.fhir.StructureDefinition;
 import org.hl7.fhir.Subscription;
 import org.hl7.fhir.Substance;
 import org.hl7.fhir.Supply;
+import org.hl7.fhir.SupplyDelivery;
+import org.hl7.fhir.SupplyRequest;
+import org.hl7.fhir.TestScript;
 import org.hl7.fhir.ValueSet;
 import org.hl7.fhir.VisionPrescription;
 
@@ -125,6 +130,7 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getAccount <em>Account</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getAllergyIntolerance <em>Allergy Intolerance</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getAppointment <em>Appointment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getAppointmentResponse <em>Appointment Response</em>}</li>
@@ -172,6 +178,7 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getImagingStudy <em>Imaging Study</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getImmunization <em>Immunization</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getImmunizationRecommendation <em>Immunization Recommendation</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getImplementationGuide <em>Implementation Guide</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getList <em>List</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMedia <em>Media</em>}</li>
@@ -213,6 +220,9 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSubscription <em>Subscription</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSubstance <em>Substance</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSupply <em>Supply</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSupplyDelivery <em>Supply Delivery</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSupplyRequest <em>Supply Request</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getTestScript <em>Test Script</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getValueSet <em>Value Set</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getVisionPrescription <em>Vision Prescription</em>}</li>
  * </ul>
@@ -303,6 +313,33 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, FhirPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Account getAccount() {
+		return (Account)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_Account(), true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAccount(Account newAccount, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_Account(), newAccount, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAccount(Account newAccount) {
+		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_Account(), newAccount);
 	}
 
 	/**
@@ -1579,6 +1616,33 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ImplementationGuide getImplementationGuide() {
+		return (ImplementationGuide)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_ImplementationGuide(), true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImplementationGuide(ImplementationGuide newImplementationGuide, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_ImplementationGuide(), newImplementationGuide, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplementationGuide(ImplementationGuide newImplementationGuide) {
+		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_ImplementationGuide(), newImplementationGuide);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List getList() {
 		return (List)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_List(), true);
 	}
@@ -2686,6 +2750,87 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SupplyDelivery getSupplyDelivery() {
+		return (SupplyDelivery)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_SupplyDelivery(), true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSupplyDelivery(SupplyDelivery newSupplyDelivery, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_SupplyDelivery(), newSupplyDelivery, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSupplyDelivery(SupplyDelivery newSupplyDelivery) {
+		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_SupplyDelivery(), newSupplyDelivery);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupplyRequest getSupplyRequest() {
+		return (SupplyRequest)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_SupplyRequest(), true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSupplyRequest(SupplyRequest newSupplyRequest, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_SupplyRequest(), newSupplyRequest, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSupplyRequest(SupplyRequest newSupplyRequest) {
+		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_SupplyRequest(), newSupplyRequest);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TestScript getTestScript() {
+		return (TestScript)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_TestScript(), true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTestScript(TestScript newTestScript, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_TestScript(), newTestScript, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTestScript(TestScript newTestScript) {
+		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_TestScript(), newTestScript);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ValueSet getValueSet() {
 		return (ValueSet)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_ValueSet(), true);
 	}
@@ -2749,6 +2894,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+			case FhirPackage.DOCUMENT_ROOT__ACCOUNT:
+				return basicSetAccount(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__ALLERGY_INTOLERANCE:
 				return basicSetAllergyIntolerance(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__APPOINTMENT:
@@ -2843,6 +2990,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetImmunization(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__IMMUNIZATION_RECOMMENDATION:
 				return basicSetImmunizationRecommendation(null, msgs);
+			case FhirPackage.DOCUMENT_ROOT__IMPLEMENTATION_GUIDE:
+				return basicSetImplementationGuide(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__LIST:
 				return basicSetList(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__LOCATION:
@@ -2925,6 +3074,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetSubstance(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
 				return basicSetSupply(null, msgs);
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
+				return basicSetSupplyDelivery(null, msgs);
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:
+				return basicSetSupplyRequest(null, msgs);
+			case FhirPackage.DOCUMENT_ROOT__TEST_SCRIPT:
+				return basicSetTestScript(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__VALUE_SET:
 				return basicSetValueSet(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__VISION_PRESCRIPTION:
@@ -2950,6 +3105,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				if (coreType) return getXSISchemaLocation();
 				else return getXSISchemaLocation().map();
+			case FhirPackage.DOCUMENT_ROOT__ACCOUNT:
+				return getAccount();
 			case FhirPackage.DOCUMENT_ROOT__ALLERGY_INTOLERANCE:
 				return getAllergyIntolerance();
 			case FhirPackage.DOCUMENT_ROOT__APPOINTMENT:
@@ -3044,6 +3201,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getImmunization();
 			case FhirPackage.DOCUMENT_ROOT__IMMUNIZATION_RECOMMENDATION:
 				return getImmunizationRecommendation();
+			case FhirPackage.DOCUMENT_ROOT__IMPLEMENTATION_GUIDE:
+				return getImplementationGuide();
 			case FhirPackage.DOCUMENT_ROOT__LIST:
 				return getList();
 			case FhirPackage.DOCUMENT_ROOT__LOCATION:
@@ -3126,6 +3285,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getSubstance();
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
 				return getSupply();
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
+				return getSupplyDelivery();
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:
+				return getSupplyRequest();
+			case FhirPackage.DOCUMENT_ROOT__TEST_SCRIPT:
+				return getTestScript();
 			case FhirPackage.DOCUMENT_ROOT__VALUE_SET:
 				return getValueSet();
 			case FhirPackage.DOCUMENT_ROOT__VISION_PRESCRIPTION:
@@ -3150,6 +3315,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return;
 			case FhirPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
+				return;
+			case FhirPackage.DOCUMENT_ROOT__ACCOUNT:
+				setAccount((Account)newValue);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__ALLERGY_INTOLERANCE:
 				setAllergyIntolerance((AllergyIntolerance)newValue);
@@ -3292,6 +3460,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__IMMUNIZATION_RECOMMENDATION:
 				setImmunizationRecommendation((ImmunizationRecommendation)newValue);
 				return;
+			case FhirPackage.DOCUMENT_ROOT__IMPLEMENTATION_GUIDE:
+				setImplementationGuide((ImplementationGuide)newValue);
+				return;
 			case FhirPackage.DOCUMENT_ROOT__LIST:
 				setList((List)newValue);
 				return;
@@ -3415,6 +3586,15 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
 				setSupply((Supply)newValue);
 				return;
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
+				setSupplyDelivery((SupplyDelivery)newValue);
+				return;
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:
+				setSupplyRequest((SupplyRequest)newValue);
+				return;
+			case FhirPackage.DOCUMENT_ROOT__TEST_SCRIPT:
+				setTestScript((TestScript)newValue);
+				return;
 			case FhirPackage.DOCUMENT_ROOT__VALUE_SET:
 				setValueSet((ValueSet)newValue);
 				return;
@@ -3441,6 +3621,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return;
 			case FhirPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				getXSISchemaLocation().clear();
+				return;
+			case FhirPackage.DOCUMENT_ROOT__ACCOUNT:
+				setAccount((Account)null);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__ALLERGY_INTOLERANCE:
 				setAllergyIntolerance((AllergyIntolerance)null);
@@ -3583,6 +3766,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__IMMUNIZATION_RECOMMENDATION:
 				setImmunizationRecommendation((ImmunizationRecommendation)null);
 				return;
+			case FhirPackage.DOCUMENT_ROOT__IMPLEMENTATION_GUIDE:
+				setImplementationGuide((ImplementationGuide)null);
+				return;
 			case FhirPackage.DOCUMENT_ROOT__LIST:
 				setList((List)null);
 				return;
@@ -3706,6 +3892,15 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
 				setSupply((Supply)null);
 				return;
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
+				setSupplyDelivery((SupplyDelivery)null);
+				return;
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:
+				setSupplyRequest((SupplyRequest)null);
+				return;
+			case FhirPackage.DOCUMENT_ROOT__TEST_SCRIPT:
+				setTestScript((TestScript)null);
+				return;
 			case FhirPackage.DOCUMENT_ROOT__VALUE_SET:
 				setValueSet((ValueSet)null);
 				return;
@@ -3730,6 +3925,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
 			case FhirPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+			case FhirPackage.DOCUMENT_ROOT__ACCOUNT:
+				return getAccount() != null;
 			case FhirPackage.DOCUMENT_ROOT__ALLERGY_INTOLERANCE:
 				return getAllergyIntolerance() != null;
 			case FhirPackage.DOCUMENT_ROOT__APPOINTMENT:
@@ -3824,6 +4021,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getImmunization() != null;
 			case FhirPackage.DOCUMENT_ROOT__IMMUNIZATION_RECOMMENDATION:
 				return getImmunizationRecommendation() != null;
+			case FhirPackage.DOCUMENT_ROOT__IMPLEMENTATION_GUIDE:
+				return getImplementationGuide() != null;
 			case FhirPackage.DOCUMENT_ROOT__LIST:
 				return getList() != null;
 			case FhirPackage.DOCUMENT_ROOT__LOCATION:
@@ -3906,6 +4105,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getSubstance() != null;
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
 				return getSupply() != null;
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
+				return getSupplyDelivery() != null;
+			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:
+				return getSupplyRequest() != null;
+			case FhirPackage.DOCUMENT_ROOT__TEST_SCRIPT:
+				return getTestScript() != null;
 			case FhirPackage.DOCUMENT_ROOT__VALUE_SET:
 				return getValueSet() != null;
 			case FhirPackage.DOCUMENT_ROOT__VISION_PRESCRIPTION:

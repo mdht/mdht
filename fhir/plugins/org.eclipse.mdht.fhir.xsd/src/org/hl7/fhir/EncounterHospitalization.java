@@ -20,13 +20,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getPreAdmissionIdentifier <em>Pre Admission Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getOrigin <em>Origin</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getAdmitSource <em>Admit Source</em>}</li>
+ *   <li>{@link org.hl7.fhir.EncounterHospitalization#getAdmittingDiagnosis <em>Admitting Diagnosis</em>}</li>
+ *   <li>{@link org.hl7.fhir.EncounterHospitalization#getReAdmission <em>Re Admission</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getDietPreference <em>Diet Preference</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getSpecialCourtesy <em>Special Courtesy</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getSpecialArrangement <em>Special Arrangement</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getDestination <em>Destination</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getDischargeDisposition <em>Discharge Disposition</em>}</li>
  *   <li>{@link org.hl7.fhir.EncounterHospitalization#getDischargeDiagnosis <em>Discharge Diagnosis</em>}</li>
- *   <li>{@link org.hl7.fhir.EncounterHospitalization#getReAdmission <em>Re Admission</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getEncounterHospitalization()
@@ -113,30 +114,62 @@ public interface EncounterHospitalization extends BackboneElement {
 	void setAdmitSource(CodeableConcept value);
 
 	/**
-	 * Returns the value of the '<em><b>Diet Preference</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Admitting Diagnosis</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Reference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The admitting Diagnosis field is used to record the diagnosis codes as reported by admitting practitioner. This could be different or in addition to the conditions reported as reason-condition(s) for the encounter.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Admitting Diagnosis</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getEncounterHospitalization_AdmittingDiagnosis()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='admittingDiagnosis' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<Reference> getAdmittingDiagnosis();
+
+	/**
+	 * Returns the value of the '<em><b>Re Admission</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Whether this hospitalization is a readmission and why if known.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Re Admission</em>' containment reference.
+	 * @see #setReAdmission(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getEncounterHospitalization_ReAdmission()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='reAdmission' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	CodeableConcept getReAdmission();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.EncounterHospitalization#getReAdmission <em>Re Admission</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Re Admission</em>' containment reference.
+	 * @see #getReAdmission()
+	 * @generated
+	 */
+	void setReAdmission(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Diet Preference</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Diet preferences reported by the patient.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Diet Preference</em>' containment reference.
-	 * @see #setDietPreference(CodeableConcept)
+	 * @return the value of the '<em>Diet Preference</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getEncounterHospitalization_DietPreference()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='dietPreference' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CodeableConcept getDietPreference();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.EncounterHospitalization#getDietPreference <em>Diet Preference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Diet Preference</em>' containment reference.
-	 * @see #getDietPreference()
-	 * @generated
-	 */
-	void setDietPreference(CodeableConcept value);
+	EList<CodeableConcept> getDietPreference();
 
 	/**
 	 * Returns the value of the '<em><b>Special Courtesy</b></em>' containment reference list.
@@ -223,55 +256,19 @@ public interface EncounterHospitalization extends BackboneElement {
 	void setDischargeDisposition(CodeableConcept value);
 
 	/**
-	 * Returns the value of the '<em><b>Discharge Diagnosis</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Discharge Diagnosis</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Reference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Discharge Diagnosis</em>' containment reference.
-	 * @see #setDischargeDiagnosis(Reference)
+	 * @return the value of the '<em>Discharge Diagnosis</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getEncounterHospitalization_DischargeDiagnosis()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='dischargeDiagnosis' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Reference getDischargeDiagnosis();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.EncounterHospitalization#getDischargeDiagnosis <em>Discharge Diagnosis</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Discharge Diagnosis</em>' containment reference.
-	 * @see #getDischargeDiagnosis()
-	 * @generated
-	 */
-	void setDischargeDiagnosis(Reference value);
-
-	/**
-	 * Returns the value of the '<em><b>Re Admission</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Whether this hospitalization is a readmission.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Re Admission</em>' containment reference.
-	 * @see #setReAdmission(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getEncounterHospitalization_ReAdmission()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='reAdmission' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getReAdmission();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.EncounterHospitalization#getReAdmission <em>Re Admission</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Re Admission</em>' containment reference.
-	 * @see #getReAdmission()
-	 * @generated
-	 */
-	void setReAdmission(org.hl7.fhir.Boolean value);
+	EList<Reference> getDischargeDiagnosis();
 
 } // EncounterHospitalization

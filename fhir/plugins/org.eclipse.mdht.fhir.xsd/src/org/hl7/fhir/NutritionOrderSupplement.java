@@ -2,6 +2,7 @@
  */
 package org.hl7.fhir;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +19,7 @@ package org.hl7.fhir;
  * <ul>
  *   <li>{@link org.hl7.fhir.NutritionOrderSupplement#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderSupplement#getProductName <em>Product Name</em>}</li>
- *   <li>{@link org.hl7.fhir.NutritionOrderSupplement#getScheduled <em>Scheduled</em>}</li>
+ *   <li>{@link org.hl7.fhir.NutritionOrderSupplement#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderSupplement#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderSupplement#getInstruction <em>Instruction</em>}</li>
  * </ul>
@@ -81,30 +82,20 @@ public interface NutritionOrderSupplement extends BackboneElement {
 	void setProductName(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Scheduled</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Schedule</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Timing}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The time period and frequency at which the supplement(s) should be given.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Scheduled</em>' containment reference.
-	 * @see #setScheduled(Timing)
-	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderSupplement_Scheduled()
+	 * @return the value of the '<em>Schedule</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderSupplement_Schedule()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='scheduled' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='schedule' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Timing getScheduled();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderSupplement#getScheduled <em>Scheduled</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scheduled</em>' containment reference.
-	 * @see #getScheduled()
-	 * @generated
-	 */
-	void setScheduled(Timing value);
+	EList<Timing> getSchedule();
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' containment reference.

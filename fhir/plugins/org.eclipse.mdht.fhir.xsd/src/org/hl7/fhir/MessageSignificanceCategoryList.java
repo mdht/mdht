@@ -55,7 +55,7 @@ public enum MessageSignificanceCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The message represents/requests a change that should not be processed more than once. E.g. Making a booking for an appointment.
+	 * The message represents/requests a change that should not be processed more than once. E.g. Making a booking for an appointment
 	 * <!-- end-model-doc -->
 	 * @see #CONSEQUENCE
 	 * @model name="Consequence"
@@ -69,7 +69,7 @@ public enum MessageSignificanceCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The message represents a response to query for current information. Retrospective processing is wrong and/or wasteful.
+	 * The message represents a response to query for current information. Retrospective processing is wrong and/or wasteful
 	 * <!-- end-model-doc -->
 	 * @see #CURRENCY
 	 * @model name="Currency"
@@ -83,7 +83,7 @@ public enum MessageSignificanceCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The content is not necessarily intended to be current, and it can be reprocessed, though there may be version issues created by processing old notifications.
+	 * The content is not necessarily intended to be current, and it can be reprocessed, though there may be version issues created by processing old notifications
 	 * <!-- end-model-doc -->
 	 * @see #NOTIFICATION
 	 * @model name="Notification"

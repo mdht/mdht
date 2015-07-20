@@ -71,14 +71,14 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	NARROWER(4, "narrower", "narrower"),
 
 	/**
-	 * The '<em><b>Specialises</b></em>' literal object.
+	 * The '<em><b>Specializes</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SPECIALISES_VALUE
+	 * @see #SPECIALIZES_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SPECIALISES(5, "specialises", "specialises"),
+	SPECIALIZES(5, "specializes", "specializes"),
 
 	/**
 	 * The '<em><b>Inexact</b></em>' literal object.
@@ -115,7 +115,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The definitions of the concepts mean the same thing (including when structural implications of meaning are considered) (i.e. extensionally identical).
+	 * The definitions of the concepts mean the same thing (including when structural implications of meaning are considered) (i.e. extensionally identical)
 	 * <!-- end-model-doc -->
 	 * @see #EQUIVALENT
 	 * @model name="equivalent"
@@ -129,7 +129,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The definitions of the concepts are exactly the same (i.e. only grammatical differences) and structural implications of meaning are identifical or irrelevant (i.e. intensionally identical).
+	 * The definitions of the concepts are exactly the same (i.e. only grammatical differences) and structural implications of meaning are identifical or irrelevant (i.e. intensionally identical)
 	 * <!-- end-model-doc -->
 	 * @see #EQUAL
 	 * @model name="equal"
@@ -143,7 +143,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The target mapping is wider in meaning than the source concept.
+	 * The target mapping is wider in meaning than the source concept
 	 * <!-- end-model-doc -->
 	 * @see #WIDER
 	 * @model name="wider"
@@ -157,7 +157,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The target mapping subsumes the meaning of the source concept (e.g. the source is-a target).
+	 * The target mapping subsumes the meaning of the source concept (e.g. the source is-a target)
 	 * <!-- end-model-doc -->
 	 * @see #SUBSUMES
 	 * @model name="subsumes"
@@ -171,7 +171,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The target mapping is narrower in meaning that the source concept. The sense in which the mapping is narrower SHALL be described in the comments in this case, and applications should be careful when atempting to use these mappings operationally.
+	 * The target mapping is narrower in meaning that the source concept. The sense in which the mapping is narrower SHALL be described in the comments in this case, and applications should be careful when atempting to use these mappings operationally
 	 * <!-- end-model-doc -->
 	 * @see #NARROWER
 	 * @model name="narrower"
@@ -181,25 +181,25 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	public static final int NARROWER_VALUE = 4;
 
 	/**
-	 * The '<em><b>Specialises</b></em>' literal value.
+	 * The '<em><b>Specializes</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The target mapping specialises the meaning of the source concept (e.g. the target is-a source).
+	 * The target mapping specializes the meaning of the source concept (e.g. the target is-a source)
 	 * <!-- end-model-doc -->
-	 * @see #SPECIALISES
-	 * @model name="specialises"
+	 * @see #SPECIALIZES
+	 * @model name="specializes"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPECIALISES_VALUE = 5;
+	public static final int SPECIALIZES_VALUE = 5;
 
 	/**
 	 * The '<em><b>Inexact</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The target mapping overlaps with the source concept, but both source and target cover additional meaning, or the definitions are imprecise and it is uncertain whether they have the same boundaries to their meaning. The sense in which the mapping is narrower SHALL be described in the comments in this case, and applications should be careful when atempting to use these mappings operationally.
+	 * The target mapping overlaps with the source concept, but both source and target cover additional meaning, or the definitions are imprecise and it is uncertain whether they have the same boundaries to their meaning. The sense in which the mapping is narrower SHALL be described in the comments in this case, and applications should be careful when atempting to use these mappings operationally
 	 * <!-- end-model-doc -->
 	 * @see #INEXACT
 	 * @model name="inexact"
@@ -213,7 +213,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * There is no match for this concept in the destination concept system.
+	 * There is no match for this concept in the destination concept system
 	 * <!-- end-model-doc -->
 	 * @see #UNMATCHED
 	 * @model name="unmatched"
@@ -227,7 +227,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This is an explicit assertion that there is no mapping between the source and target concept.
+	 * This is an explicit assertion that there is no mapping between the source and target concept
 	 * <!-- end-model-doc -->
 	 * @see #DISJOINT
 	 * @model name="disjoint"
@@ -249,7 +249,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 			WIDER,
 			SUBSUMES,
 			NARROWER,
-			SPECIALISES,
+			SPECIALIZES,
 			INEXACT,
 			UNMATCHED,
 			DISJOINT,
@@ -314,7 +314,7 @@ public enum ConceptMapEquivalenceList implements Enumerator {
 			case WIDER_VALUE: return WIDER;
 			case SUBSUMES_VALUE: return SUBSUMES;
 			case NARROWER_VALUE: return NARROWER;
-			case SPECIALISES_VALUE: return SPECIALISES;
+			case SPECIALIZES_VALUE: return SPECIALIZES;
 			case INEXACT_VALUE: return INEXACT;
 			case UNMATCHED_VALUE: return UNMATCHED;
 			case DISJOINT_VALUE: return DISJOINT;

@@ -106,7 +106,7 @@ public interface Slot extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * BUSY | FREE | BUSY-UNAVAILABLE | BUSY-TENTATIVE.
+	 * busy | free | busy-unavailable | busy-tentative.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Free Busy Type</em>' containment reference.
 	 * @see #setFreeBusyType(SlotStatus)

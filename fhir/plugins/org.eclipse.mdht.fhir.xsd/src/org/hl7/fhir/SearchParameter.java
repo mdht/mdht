@@ -166,13 +166,13 @@ public interface SearchParameter extends DomainResource {
 	 * The status of this search parameter definition.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(ConformanceResourceStatus)
+	 * @see #setStatus(Code)
 	 * @see org.hl7.fhir.FhirPackage#getSearchParameter_Status()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	ConformanceResourceStatus getStatus();
+	Code getStatus();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.SearchParameter#getStatus <em>Status</em>}' containment reference.
@@ -182,7 +182,7 @@ public interface SearchParameter extends DomainResource {
 	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatus(ConformanceResourceStatus value);
+	void setStatus(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
@@ -270,13 +270,13 @@ public interface SearchParameter extends DomainResource {
 	 * The type of value a search parameter refers to, and how the content is interpreted.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(SearchParamType)
+	 * @see #setType(Code)
 	 * @see org.hl7.fhir.FhirPackage#getSearchParameter_Type()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='type' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	SearchParamType getType();
+	Code getType();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.SearchParameter#getType <em>Type</em>}' containment reference.
@@ -286,7 +286,7 @@ public interface SearchParameter extends DomainResource {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(SearchParamType value);
+	void setType(Code value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.

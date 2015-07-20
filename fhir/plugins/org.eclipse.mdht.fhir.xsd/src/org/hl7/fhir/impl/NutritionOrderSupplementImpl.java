@@ -2,13 +2,20 @@
  */
 package org.hl7.fhir.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
@@ -26,7 +33,7 @@ import org.hl7.fhir.Timing;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderSupplementImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderSupplementImpl#getProductName <em>Product Name</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.NutritionOrderSupplementImpl#getScheduled <em>Scheduled</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.NutritionOrderSupplementImpl#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderSupplementImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderSupplementImpl#getInstruction <em>Instruction</em>}</li>
  * </ul>
@@ -55,14 +62,14 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 	protected org.hl7.fhir.String productName;
 
 	/**
-	 * The cached value of the '{@link #getScheduled() <em>Scheduled</em>}' containment reference.
+	 * The cached value of the '{@link #getSchedule() <em>Schedule</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getScheduled()
+	 * @see #getSchedule()
 	 * @generated
 	 * @ordered
 	 */
-	protected Timing scheduled;
+	protected EList<Timing> schedule;
 
 	/**
 	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference.
@@ -194,42 +201,11 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Timing getScheduled() {
-		return scheduled;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetScheduled(Timing newScheduled, NotificationChain msgs) {
-		Timing oldScheduled = scheduled;
-		scheduled = newScheduled;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED, oldScheduled, newScheduled);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Timing> getSchedule() {
+		if (schedule == null) {
+			schedule = new EObjectContainmentEList<Timing>(Timing.class, this, FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULE);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setScheduled(Timing newScheduled) {
-		if (newScheduled != scheduled) {
-			NotificationChain msgs = null;
-			if (scheduled != null)
-				msgs = ((InternalEObject)scheduled).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED, null, msgs);
-			if (newScheduled != null)
-				msgs = ((InternalEObject)newScheduled).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED, null, msgs);
-			msgs = basicSetScheduled(newScheduled, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED, newScheduled, newScheduled));
+		return schedule;
 	}
 
 	/**
@@ -330,8 +306,8 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 				return basicSetType(null, msgs);
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__PRODUCT_NAME:
 				return basicSetProductName(null, msgs);
-			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED:
-				return basicSetScheduled(null, msgs);
+			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULE:
+				return ((InternalEList<?>)getSchedule()).basicRemove(otherEnd, msgs);
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__QUANTITY:
 				return basicSetQuantity(null, msgs);
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__INSTRUCTION:
@@ -352,8 +328,8 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 				return getType();
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__PRODUCT_NAME:
 				return getProductName();
-			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED:
-				return getScheduled();
+			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULE:
+				return getSchedule();
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__QUANTITY:
 				return getQuantity();
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__INSTRUCTION:
@@ -367,6 +343,7 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -376,8 +353,9 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__PRODUCT_NAME:
 				setProductName((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED:
-				setScheduled((Timing)newValue);
+			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULE:
+				getSchedule().clear();
+				getSchedule().addAll((Collection<? extends Timing>)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__QUANTITY:
 				setQuantity((Quantity)newValue);
@@ -403,8 +381,8 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__PRODUCT_NAME:
 				setProductName((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED:
-				setScheduled((Timing)null);
+			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULE:
+				getSchedule().clear();
 				return;
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__QUANTITY:
 				setQuantity((Quantity)null);
@@ -428,8 +406,8 @@ public class NutritionOrderSupplementImpl extends BackboneElementImpl implements
 				return type != null;
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__PRODUCT_NAME:
 				return productName != null;
-			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULED:
-				return scheduled != null;
+			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__SCHEDULE:
+				return schedule != null && !schedule.isEmpty();
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__QUANTITY:
 				return quantity != null;
 			case FhirPackage.NUTRITION_ORDER_SUPPLEMENT__INSTRUCTION:

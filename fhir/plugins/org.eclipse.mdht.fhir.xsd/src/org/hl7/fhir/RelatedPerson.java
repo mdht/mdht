@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.RelatedPerson#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.RelatedPerson#getTelecom <em>Telecom</em>}</li>
  *   <li>{@link org.hl7.fhir.RelatedPerson#getGender <em>Gender</em>}</li>
+ *   <li>{@link org.hl7.fhir.RelatedPerson#getBirthDate <em>Birth Date</em>}</li>
  *   <li>{@link org.hl7.fhir.RelatedPerson#getAddress <em>Address</em>}</li>
  *   <li>{@link org.hl7.fhir.RelatedPerson#getPhoto <em>Photo</em>}</li>
  *   <li>{@link org.hl7.fhir.RelatedPerson#getPeriod <em>Period</em>}</li>
@@ -152,13 +153,13 @@ public interface RelatedPerson extends DomainResource {
 	 * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gender</em>' containment reference.
-	 * @see #setGender(AdministrativeGender)
+	 * @see #setGender(Code)
 	 * @see org.hl7.fhir.FhirPackage#getRelatedPerson_Gender()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='gender' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	AdministrativeGender getGender();
+	Code getGender();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.RelatedPerson#getGender <em>Gender</em>}' containment reference.
@@ -168,7 +169,33 @@ public interface RelatedPerson extends DomainResource {
 	 * @see #getGender()
 	 * @generated
 	 */
-	void setGender(AdministrativeGender value);
+	void setGender(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Birth Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date on which the related person was born.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Birth Date</em>' containment reference.
+	 * @see #setBirthDate(Date)
+	 * @see org.hl7.fhir.FhirPackage#getRelatedPerson_BirthDate()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='birthDate' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Date getBirthDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.RelatedPerson#getBirthDate <em>Birth Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Birth Date</em>' containment reference.
+	 * @see #getBirthDate()
+	 * @generated
+	 */
+	void setBirthDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Address</b></em>' containment reference.

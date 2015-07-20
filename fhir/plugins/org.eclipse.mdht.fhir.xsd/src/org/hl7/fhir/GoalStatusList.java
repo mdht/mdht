@@ -105,7 +105,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A goal is proposed for this patient.
+	 * A goal is proposed for this patient
 	 * <!-- end-model-doc -->
 	 * @see #PROPOSED
 	 * @model name="proposed"
@@ -119,7 +119,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A goal is planned for this patient.
+	 * A goal is planned for this patient
 	 * <!-- end-model-doc -->
 	 * @see #PLANNED
 	 * @model name="planned"
@@ -133,7 +133,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The goal is being sought but has not yet been reached.  (Also applies if goal was reached in the past but there has been regression and goal is being sought again).
+	 * The goal is being sought but has not yet been reached.  (Also applies if goal was reached in the past but there has been regression and goal is being sought again)
 	 * <!-- end-model-doc -->
 	 * @see #IN_PROGRESS
 	 * @model name="inProgress" literal="in-progress"
@@ -147,7 +147,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The goal has been met and no further action is needed.
+	 * The goal has been met and no further action is needed
 	 * <!-- end-model-doc -->
 	 * @see #ACHIEVED
 	 * @model name="achieved"
@@ -161,7 +161,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The goal has been met, but ongoing activity is needed to sustain the goal objective.
+	 * The goal has been met, but ongoing activity is needed to sustain the goal objective
 	 * <!-- end-model-doc -->
 	 * @see #SUSTAINING
 	 * @model name="sustaining"
@@ -175,7 +175,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The goal is no longer being sought.
+	 * The goal is no longer being sought
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"
@@ -189,7 +189,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A proposed goal was accepted.
+	 * A proposed goal was accepted
 	 * <!-- end-model-doc -->
 	 * @see #ACCEPTED
 	 * @model name="accepted"
@@ -203,7 +203,7 @@ public enum GoalStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A proposed goal was rejected.
+	 * A proposed goal was rejected
 	 * <!-- end-model-doc -->
 	 * @see #REJECTED
 	 * @model name="rejected"

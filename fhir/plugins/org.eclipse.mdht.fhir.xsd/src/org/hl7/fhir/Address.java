@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.Address#getUse <em>Use</em>}</li>
+ *   <li>{@link org.hl7.fhir.Address#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getText <em>Text</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getLine <em>Line</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getCity <em>City</em>}</li>
@@ -58,6 +59,32 @@ public interface Address extends Element {
 	 * @generated
 	 */
 	void setUse(AddressUse value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(AddressType)
+	 * @see org.hl7.fhir.FhirPackage#getAddress_Type()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='type' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	AddressType getType();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Address#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(AddressType value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' containment reference.

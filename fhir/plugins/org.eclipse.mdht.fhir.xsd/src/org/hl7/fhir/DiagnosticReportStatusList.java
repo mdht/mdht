@@ -95,7 +95,7 @@ public enum DiagnosticReportStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The existence of the report is registered, but there is nothing yet available.
+	 * The existence of the report is registered, but there is nothing yet available
 	 * <!-- end-model-doc -->
 	 * @see #REGISTERED
 	 * @model name="registered"
@@ -109,7 +109,7 @@ public enum DiagnosticReportStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This is a partial (e.g. initial, interim or preliminary) report: data in the report may be incomplete or unverified.
+	 * This is a partial (e.g. initial, interim or preliminary) report: data in the report may be incomplete or unverified
 	 * <!-- end-model-doc -->
 	 * @see #PARTIAL
 	 * @model name="partial"
@@ -123,7 +123,7 @@ public enum DiagnosticReportStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The report is complete and verified by an authorized person.
+	 * The report is complete and verified by an authorized person
 	 * <!-- end-model-doc -->
 	 * @see #FINAL
 	 * @model name="final"
@@ -137,7 +137,7 @@ public enum DiagnosticReportStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The report has been modified subsequent to being Final, and is complete and verified by an authorized person.
+	 * The report has been modified subsequent to being Final, and is complete and verified by an authorized person
 	 * <!-- end-model-doc -->
 	 * @see #CORRECTED
 	 * @model name="corrected"
@@ -151,7 +151,7 @@ public enum DiagnosticReportStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The report has been modified subsequent to being Final, and is complete and verified by an authorized person. New content has been added, but existing content hasn't changed.
+	 * The report has been modified subsequent to being Final, and is complete and verified by an authorized person. New content has been added, but existing content hasn't changed
 	 * <!-- end-model-doc -->
 	 * @see #APPENDED
 	 * @model name="appended"
@@ -165,7 +165,7 @@ public enum DiagnosticReportStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The report is unavailable because the measurement was not started or not completed (also sometimes called "aborted").
+	 * The report is unavailable because the measurement was not started or not completed (also sometimes called "aborted")
 	 * <!-- end-model-doc -->
 	 * @see #CANCELLED
 	 * @model name="cancelled"
@@ -179,7 +179,7 @@ public enum DiagnosticReportStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The report has been withdrawn following previous Final release.
+	 * The report has been withdrawn following previous Final release
 	 * <!-- end-model-doc -->
 	 * @see #ENTERED_IN_ERROR
 	 * @model name="enteredInError" literal="entered-in-error"

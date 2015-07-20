@@ -125,7 +125,8 @@ public interface ImagingStudy extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Accession Number.
+	 * Accession Number is an identifier related to some aspect of imaging workflow and data management, and usage may vary across different institutions. 
+	 * See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Accession</em>' containment reference.
 	 * @see #setAccession(Identifier)
@@ -180,7 +181,7 @@ public interface ImagingStudy extends DomainResource {
 
 	/**
 	 * Returns the value of the '<em><b>Modality List</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.ImagingModality}.
+	 * The list contents are of type {@link org.hl7.fhir.Coding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -192,7 +193,7 @@ public interface ImagingStudy extends DomainResource {
 	 *        extendedMetaData="kind='element' name='modalityList' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<ImagingModality> getModalityList();
+	EList<Coding> getModalityList();
 
 	/**
 	 * Returns the value of the '<em><b>Referrer</b></em>' containment reference.
@@ -352,7 +353,7 @@ public interface ImagingStudy extends DomainResource {
 
 	/**
 	 * Returns the value of the '<em><b>Procedure</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.Coding}.
+	 * The list contents are of type {@link org.hl7.fhir.Reference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -364,7 +365,7 @@ public interface ImagingStudy extends DomainResource {
 	 *        extendedMetaData="kind='element' name='procedure' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Coding> getProcedure();
+	EList<Reference> getProcedure();
 
 	/**
 	 * Returns the value of the '<em><b>Interpreter</b></em>' containment reference.

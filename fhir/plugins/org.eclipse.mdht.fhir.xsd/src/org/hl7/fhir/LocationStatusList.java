@@ -55,7 +55,7 @@ public enum LocationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The location is operational.
+	 * The location is operational
 	 * <!-- end-model-doc -->
 	 * @see #ACTIVE
 	 * @model name="active"
@@ -69,7 +69,7 @@ public enum LocationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The location is temporarily closed.
+	 * The location is temporarily closed
 	 * <!-- end-model-doc -->
 	 * @see #SUSPENDED
 	 * @model name="suspended"
@@ -83,7 +83,7 @@ public enum LocationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The location is no longer used.
+	 * The location is no longer used
 	 * <!-- end-model-doc -->
 	 * @see #INACTIVE
 	 * @model name="inactive"

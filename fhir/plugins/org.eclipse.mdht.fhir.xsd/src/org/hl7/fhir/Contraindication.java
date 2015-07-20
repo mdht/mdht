@@ -95,13 +95,13 @@ public interface Contraindication extends DomainResource {
 	 * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Severity</em>' containment reference.
-	 * @see #setSeverity(Code)
+	 * @see #setSeverity(ContraindicationSeverity)
 	 * @see org.hl7.fhir.FhirPackage#getContraindication_Severity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='severity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Code getSeverity();
+	ContraindicationSeverity getSeverity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.Contraindication#getSeverity <em>Severity</em>}' containment reference.
@@ -111,7 +111,7 @@ public interface Contraindication extends DomainResource {
 	 * @see #getSeverity()
 	 * @generated
 	 */
-	void setSeverity(Code value);
+	void setSeverity(ContraindicationSeverity value);
 
 	/**
 	 * Returns the value of the '<em><b>Implicated</b></em>' containment reference list.
@@ -265,7 +265,7 @@ public interface Contraindication extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Indicates an action that has been taken or is committed to to reduce or eliminate the likelihood of the risk identified by the contraindicaiton from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
+	 * Indicates an action that has been taken or is committed to to reduce or eliminate the likelihood of the risk identified by the contraindication from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Mitigation</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getContraindication_Mitigation()

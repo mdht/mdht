@@ -18,10 +18,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Address;
-import org.hl7.fhir.AdministrativeGender;
 import org.hl7.fhir.Attachment;
+import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.ContactPoint;
+import org.hl7.fhir.Date;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.HumanName;
 import org.hl7.fhir.Identifier;
@@ -43,6 +44,7 @@ import org.hl7.fhir.RelatedPerson;
  *   <li>{@link org.hl7.fhir.impl.RelatedPersonImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.RelatedPersonImpl#getTelecom <em>Telecom</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.RelatedPersonImpl#getGender <em>Gender</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.RelatedPersonImpl#getBirthDate <em>Birth Date</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.RelatedPersonImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.RelatedPersonImpl#getPhoto <em>Photo</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.RelatedPersonImpl#getPeriod <em>Period</em>}</li>
@@ -109,7 +111,17 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 	 * @generated
 	 * @ordered
 	 */
-	protected AdministrativeGender gender;
+	protected Code gender;
+
+	/**
+	 * The cached value of the '{@link #getBirthDate() <em>Birth Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBirthDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date birthDate;
 
 	/**
 	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
@@ -318,7 +330,7 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AdministrativeGender getGender() {
+	public Code getGender() {
 		return gender;
 	}
 
@@ -327,8 +339,8 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGender(AdministrativeGender newGender, NotificationChain msgs) {
-		AdministrativeGender oldGender = gender;
+	public NotificationChain basicSetGender(Code newGender, NotificationChain msgs) {
+		Code oldGender = gender;
 		gender = newGender;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RELATED_PERSON__GENDER, oldGender, newGender);
@@ -342,7 +354,7 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGender(AdministrativeGender newGender) {
+	public void setGender(Code newGender) {
 		if (newGender != gender) {
 			NotificationChain msgs = null;
 			if (gender != null)
@@ -354,6 +366,49 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RELATED_PERSON__GENDER, newGender, newGender));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBirthDate(Date newBirthDate, NotificationChain msgs) {
+		Date oldBirthDate = birthDate;
+		birthDate = newBirthDate;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RELATED_PERSON__BIRTH_DATE, oldBirthDate, newBirthDate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBirthDate(Date newBirthDate) {
+		if (newBirthDate != birthDate) {
+			NotificationChain msgs = null;
+			if (birthDate != null)
+				msgs = ((InternalEObject)birthDate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RELATED_PERSON__BIRTH_DATE, null, msgs);
+			if (newBirthDate != null)
+				msgs = ((InternalEObject)newBirthDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RELATED_PERSON__BIRTH_DATE, null, msgs);
+			msgs = basicSetBirthDate(newBirthDate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RELATED_PERSON__BIRTH_DATE, newBirthDate, newBirthDate));
 	}
 
 	/**
@@ -474,6 +529,8 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 				return ((InternalEList<?>)getTelecom()).basicRemove(otherEnd, msgs);
 			case FhirPackage.RELATED_PERSON__GENDER:
 				return basicSetGender(null, msgs);
+			case FhirPackage.RELATED_PERSON__BIRTH_DATE:
+				return basicSetBirthDate(null, msgs);
 			case FhirPackage.RELATED_PERSON__ADDRESS:
 				return basicSetAddress(null, msgs);
 			case FhirPackage.RELATED_PERSON__PHOTO:
@@ -504,6 +561,8 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 				return getTelecom();
 			case FhirPackage.RELATED_PERSON__GENDER:
 				return getGender();
+			case FhirPackage.RELATED_PERSON__BIRTH_DATE:
+				return getBirthDate();
 			case FhirPackage.RELATED_PERSON__ADDRESS:
 				return getAddress();
 			case FhirPackage.RELATED_PERSON__PHOTO:
@@ -541,7 +600,10 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 				getTelecom().addAll((Collection<? extends ContactPoint>)newValue);
 				return;
 			case FhirPackage.RELATED_PERSON__GENDER:
-				setGender((AdministrativeGender)newValue);
+				setGender((Code)newValue);
+				return;
+			case FhirPackage.RELATED_PERSON__BIRTH_DATE:
+				setBirthDate((Date)newValue);
 				return;
 			case FhirPackage.RELATED_PERSON__ADDRESS:
 				setAddress((Address)newValue);
@@ -581,7 +643,10 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 				getTelecom().clear();
 				return;
 			case FhirPackage.RELATED_PERSON__GENDER:
-				setGender((AdministrativeGender)null);
+				setGender((Code)null);
+				return;
+			case FhirPackage.RELATED_PERSON__BIRTH_DATE:
+				setBirthDate((Date)null);
 				return;
 			case FhirPackage.RELATED_PERSON__ADDRESS:
 				setAddress((Address)null);
@@ -616,6 +681,8 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 				return telecom != null && !telecom.isEmpty();
 			case FhirPackage.RELATED_PERSON__GENDER:
 				return gender != null;
+			case FhirPackage.RELATED_PERSON__BIRTH_DATE:
+				return birthDate != null;
 			case FhirPackage.RELATED_PERSON__ADDRESS:
 				return address != null;
 			case FhirPackage.RELATED_PERSON__PHOTO:

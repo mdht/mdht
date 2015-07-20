@@ -55,7 +55,7 @@ public enum AllergyIntoleranceCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Any substance consumed to provide nutritional support for the body.
+	 * Any substance consumed to provide nutritional support for the body
 	 * <!-- end-model-doc -->
 	 * @see #FOOD
 	 * @model name="food"
@@ -69,7 +69,7 @@ public enum AllergyIntoleranceCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Substances administered to achieve a physiological effect.
+	 * Substances administered to achieve a physiological effect
 	 * <!-- end-model-doc -->
 	 * @see #MEDICATION
 	 * @model name="medication"
@@ -83,7 +83,7 @@ public enum AllergyIntoleranceCategoryList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Substances that are encountered in the environment.
+	 * Substances that are encountered in the environment
 	 * <!-- end-model-doc -->
 	 * @see #ENVIRONMENT
 	 * @model name="environment"

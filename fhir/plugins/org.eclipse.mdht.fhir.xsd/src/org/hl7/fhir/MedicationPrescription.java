@@ -27,7 +27,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.MedicationPrescription#getReasonCodeableConcept <em>Reason Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationPrescription#getReasonReference <em>Reason Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationPrescription#getNote <em>Note</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescription#getMedication <em>Medication</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationPrescription#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationPrescription#getMedicationReference <em>Medication Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationPrescription#getDosageInstruction <em>Dosage Instruction</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationPrescription#getDispense <em>Dispense</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationPrescription#getSubstitution <em>Substitution</em>}</li>
@@ -265,30 +266,58 @@ public interface MedicationPrescription extends DomainResource {
 	void setNote(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Medication</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Medication Codeable Concept</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Medication Codeable Concept</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Medication</em>' containment reference.
-	 * @see #setMedication(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescription_Medication()
+	 * @return the value of the '<em>Medication Codeable Concept</em>' containment reference.
+	 * @see #setMedicationCodeableConcept(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescription_MedicationCodeableConcept()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='medication' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='medicationCodeableConcept' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Reference getMedication();
+	CodeableConcept getMedicationCodeableConcept();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescription#getMedication <em>Medication</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescription#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Medication</em>' containment reference.
-	 * @see #getMedication()
+	 * @param value the new value of the '<em>Medication Codeable Concept</em>' containment reference.
+	 * @see #getMedicationCodeableConcept()
 	 * @generated
 	 */
-	void setMedication(Reference value);
+	void setMedicationCodeableConcept(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Medication Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Medication Reference</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Medication Reference</em>' containment reference.
+	 * @see #setMedicationReference(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescription_MedicationReference()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='medicationReference' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getMedicationReference();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescription#getMedicationReference <em>Medication Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Medication Reference</em>' containment reference.
+	 * @see #getMedicationReference()
+	 * @generated
+	 */
+	void setMedicationReference(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>Dosage Instruction</b></em>' containment reference list.

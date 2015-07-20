@@ -34,7 +34,7 @@ public class ObservationRelationshipTypeImpl extends ElementImpl implements Obse
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ObservationRelationshipTypeList VALUE_EDEFAULT = ObservationRelationshipTypeList.HAS_COMPONENT;
+	protected static final ObservationRelationshipTypeList VALUE_EDEFAULT = ObservationRelationshipTypeList.HAS_MEMBER;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.

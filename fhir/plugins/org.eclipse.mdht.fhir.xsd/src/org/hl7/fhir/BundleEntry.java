@@ -17,12 +17,12 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.BundleEntry#getBase <em>Base</em>}</li>
  *   <li>{@link org.hl7.fhir.BundleEntry#getLink <em>Link</em>}</li>
+ *   <li>{@link org.hl7.fhir.BundleEntry#getFullUrl <em>Full Url</em>}</li>
  *   <li>{@link org.hl7.fhir.BundleEntry#getResource <em>Resource</em>}</li>
  *   <li>{@link org.hl7.fhir.BundleEntry#getSearch <em>Search</em>}</li>
- *   <li>{@link org.hl7.fhir.BundleEntry#getTransaction <em>Transaction</em>}</li>
- *   <li>{@link org.hl7.fhir.BundleEntry#getTransactionResponse <em>Transaction Response</em>}</li>
+ *   <li>{@link org.hl7.fhir.BundleEntry#getRequest <em>Request</em>}</li>
+ *   <li>{@link org.hl7.fhir.BundleEntry#getResponse <em>Response</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getBundleEntry()
@@ -30,32 +30,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface BundleEntry extends BackboneElement {
-	/**
-	 * Returns the value of the '<em><b>Base</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The Base URL for the resource, if different to the base URL specified for the bundle as a whole.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Base</em>' containment reference.
-	 * @see #setBase(Uri)
-	 * @see org.hl7.fhir.FhirPackage#getBundleEntry_Base()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='base' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Uri getBase();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.BundleEntry#getBase <em>Base</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base</em>' containment reference.
-	 * @see #getBase()
-	 * @generated
-	 */
-	void setBase(Uri value);
-
 	/**
 	 * Returns the value of the '<em><b>Link</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.BundleLink}.
@@ -71,6 +45,32 @@ public interface BundleEntry extends BackboneElement {
 	 * @generated
 	 */
 	EList<BundleLink> getLink();
+
+	/**
+	 * Returns the value of the '<em><b>Full Url</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The Absolute URL for the resource. This must be provided for all resources. The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Full Url</em>' containment reference.
+	 * @see #setFullUrl(Uri)
+	 * @see org.hl7.fhir.FhirPackage#getBundleEntry_FullUrl()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='fullUrl' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Uri getFullUrl();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.BundleEntry#getFullUrl <em>Full Url</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Full Url</em>' containment reference.
+	 * @see #getFullUrl()
+	 * @generated
+	 */
+	void setFullUrl(Uri value);
 
 	/**
 	 * Returns the value of the '<em><b>Resource</b></em>' containment reference.
@@ -125,55 +125,55 @@ public interface BundleEntry extends BackboneElement {
 	void setSearch(BundleSearch value);
 
 	/**
-	 * Returns the value of the '<em><b>Transaction</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Request</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Additional information about how this entry should be processed as part of a transaction.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Transaction</em>' containment reference.
-	 * @see #setTransaction(BundleTransaction)
-	 * @see org.hl7.fhir.FhirPackage#getBundleEntry_Transaction()
+	 * @return the value of the '<em>Request</em>' containment reference.
+	 * @see #setRequest(BundleRequest)
+	 * @see org.hl7.fhir.FhirPackage#getBundleEntry_Request()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='transaction' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='request' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	BundleTransaction getTransaction();
+	BundleRequest getRequest();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.BundleEntry#getTransaction <em>Transaction</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.BundleEntry#getRequest <em>Request</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transaction</em>' containment reference.
-	 * @see #getTransaction()
+	 * @param value the new value of the '<em>Request</em>' containment reference.
+	 * @see #getRequest()
 	 * @generated
 	 */
-	void setTransaction(BundleTransaction value);
+	void setRequest(BundleRequest value);
 
 	/**
-	 * Returns the value of the '<em><b>Transaction Response</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Response</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Additional information about how this entry should be processed as part of a transaction.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Transaction Response</em>' containment reference.
-	 * @see #setTransactionResponse(BundleTransactionResponse)
-	 * @see org.hl7.fhir.FhirPackage#getBundleEntry_TransactionResponse()
+	 * @return the value of the '<em>Response</em>' containment reference.
+	 * @see #setResponse(BundleResponse)
+	 * @see org.hl7.fhir.FhirPackage#getBundleEntry_Response()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='transactionResponse' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='response' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	BundleTransactionResponse getTransactionResponse();
+	BundleResponse getResponse();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.BundleEntry#getTransactionResponse <em>Transaction Response</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.BundleEntry#getResponse <em>Response</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transaction Response</em>' containment reference.
-	 * @see #getTransactionResponse()
+	 * @param value the new value of the '<em>Response</em>' containment reference.
+	 * @see #getResponse()
 	 * @generated
 	 */
-	void setTransactionResponse(BundleTransactionResponse value);
+	void setResponse(BundleResponse value);
 
 } // BundleEntry

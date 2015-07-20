@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Address;
+import org.hl7.fhir.Annotation;
 import org.hl7.fhir.Attachment;
 import org.hl7.fhir.Base64Binary;
 import org.hl7.fhir.Code;
@@ -94,6 +95,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueId <em>Default Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueUnsignedInt <em>Default Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValuePositiveInt <em>Default Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueAnnotation <em>Default Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueAttachment <em>Default Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueIdentifier <em>Default Value Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueCodeableConcept <em>Default Value Codeable Concept</em>}</li>
@@ -127,6 +129,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedId <em>Fixed Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedUnsignedInt <em>Fixed Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedPositiveInt <em>Fixed Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedAnnotation <em>Fixed Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedAttachment <em>Fixed Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedIdentifier <em>Fixed Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedCodeableConcept <em>Fixed Codeable Concept</em>}</li>
@@ -159,6 +162,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternId <em>Pattern Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternUnsignedInt <em>Pattern Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternPositiveInt <em>Pattern Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternAnnotation <em>Pattern Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternAttachment <em>Pattern Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternIdentifier <em>Pattern Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternCodeableConcept <em>Pattern Codeable Concept</em>}</li>
@@ -191,6 +195,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleId <em>Example Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleUnsignedInt <em>Example Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExamplePositiveInt <em>Example Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleAnnotation <em>Example Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleAttachment <em>Example Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleIdentifier <em>Example Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleCodeableConcept <em>Example Codeable Concept</em>}</li>
@@ -207,6 +212,72 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleContactPoint <em>Example Contact Point</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleTiming <em>Example Timing</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleMeta <em>Example Meta</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueBoolean <em>Min Value Boolean</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueInteger <em>Min Value Integer</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueDecimal <em>Min Value Decimal</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueBase64Binary <em>Min Value Base64 Binary</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueInstant <em>Min Value Instant</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueString <em>Min Value String</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueUri <em>Min Value Uri</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueDate <em>Min Value Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueDateTime <em>Min Value Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueTime <em>Min Value Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueCode <em>Min Value Code</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueOid <em>Min Value Oid</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueUuid <em>Min Value Uuid</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueId <em>Min Value Id</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueUnsignedInt <em>Min Value Unsigned Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValuePositiveInt <em>Min Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueAnnotation <em>Min Value Annotation</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueAttachment <em>Min Value Attachment</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueIdentifier <em>Min Value Identifier</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueCodeableConcept <em>Min Value Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueCoding <em>Min Value Coding</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueQuantity <em>Min Value Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueRange <em>Min Value Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValuePeriod <em>Min Value Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueRatio <em>Min Value Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueReference <em>Min Value Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueSampledData <em>Min Value Sampled Data</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueSignature <em>Min Value Signature</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueHumanName <em>Min Value Human Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueAddress <em>Min Value Address</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueContactPoint <em>Min Value Contact Point</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueTiming <em>Min Value Timing</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueMeta <em>Min Value Meta</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueBoolean <em>Max Value Boolean</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueInteger <em>Max Value Integer</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueDecimal <em>Max Value Decimal</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueBase64Binary <em>Max Value Base64 Binary</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueInstant <em>Max Value Instant</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueString <em>Max Value String</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueUri <em>Max Value Uri</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueDate <em>Max Value Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueDateTime <em>Max Value Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueTime <em>Max Value Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueCode <em>Max Value Code</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueOid <em>Max Value Oid</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueUuid <em>Max Value Uuid</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueId <em>Max Value Id</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueUnsignedInt <em>Max Value Unsigned Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValuePositiveInt <em>Max Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueAnnotation <em>Max Value Annotation</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueAttachment <em>Max Value Attachment</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueIdentifier <em>Max Value Identifier</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueCodeableConcept <em>Max Value Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueCoding <em>Max Value Coding</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueQuantity <em>Max Value Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueRange <em>Max Value Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValuePeriod <em>Max Value Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueRatio <em>Max Value Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueReference <em>Max Value Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueSampledData <em>Max Value Sampled Data</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueSignature <em>Max Value Signature</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueHumanName <em>Max Value Human Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueAddress <em>Max Value Address</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueContactPoint <em>Max Value Contact Point</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueTiming <em>Max Value Timing</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueMeta <em>Max Value Meta</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getConstraint <em>Constraint</em>}</li>
@@ -529,6 +600,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected PositiveInt defaultValuePositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getDefaultValueAnnotation() <em>Default Value Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValueAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Annotation defaultValueAnnotation;
 
 	/**
 	 * The cached value of the '{@link #getDefaultValueAttachment() <em>Default Value Attachment</em>}' containment reference.
@@ -861,6 +942,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	protected PositiveInt fixedPositiveInt;
 
 	/**
+	 * The cached value of the '{@link #getFixedAnnotation() <em>Fixed Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Annotation fixedAnnotation;
+
+	/**
 	 * The cached value of the '{@link #getFixedAttachment() <em>Fixed Attachment</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1179,6 +1270,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected PositiveInt patternPositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getPatternAnnotation() <em>Pattern Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatternAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Annotation patternAnnotation;
 
 	/**
 	 * The cached value of the '{@link #getPatternAttachment() <em>Pattern Attachment</em>}' containment reference.
@@ -1501,6 +1602,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	protected PositiveInt examplePositiveInt;
 
 	/**
+	 * The cached value of the '{@link #getExampleAnnotation() <em>Example Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExampleAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Annotation exampleAnnotation;
+
+	/**
 	 * The cached value of the '{@link #getExampleAttachment() <em>Example Attachment</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1659,6 +1770,666 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected Meta exampleMeta;
+
+	/**
+	 * The cached value of the '{@link #getMinValueBoolean() <em>Min Value Boolean</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueBoolean()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Boolean minValueBoolean;
+
+	/**
+	 * The cached value of the '{@link #getMinValueInteger() <em>Min Value Integer</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueInteger()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Integer minValueInteger;
+
+	/**
+	 * The cached value of the '{@link #getMinValueDecimal() <em>Min Value Decimal</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueDecimal()
+	 * @generated
+	 * @ordered
+	 */
+	protected Decimal minValueDecimal;
+
+	/**
+	 * The cached value of the '{@link #getMinValueBase64Binary() <em>Min Value Base64 Binary</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueBase64Binary()
+	 * @generated
+	 * @ordered
+	 */
+	protected Base64Binary minValueBase64Binary;
+
+	/**
+	 * The cached value of the '{@link #getMinValueInstant() <em>Min Value Instant</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected Instant minValueInstant;
+
+	/**
+	 * The cached value of the '{@link #getMinValueString() <em>Min Value String</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueString()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String minValueString;
+
+	/**
+	 * The cached value of the '{@link #getMinValueUri() <em>Min Value Uri</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueUri()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uri minValueUri;
+
+	/**
+	 * The cached value of the '{@link #getMinValueDate() <em>Min Value Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date minValueDate;
+
+	/**
+	 * The cached value of the '{@link #getMinValueDateTime() <em>Min Value Date Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueDateTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateTime minValueDateTime;
+
+	/**
+	 * The cached value of the '{@link #getMinValueTime() <em>Min Value Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected Time minValueTime;
+
+	/**
+	 * The cached value of the '{@link #getMinValueCode() <em>Min Value Code</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected Code minValueCode;
+
+	/**
+	 * The cached value of the '{@link #getMinValueOid() <em>Min Value Oid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueOid()
+	 * @generated
+	 * @ordered
+	 */
+	protected Oid minValueOid;
+
+	/**
+	 * The cached value of the '{@link #getMinValueUuid() <em>Min Value Uuid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueUuid()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uuid minValueUuid;
+
+	/**
+	 * The cached value of the '{@link #getMinValueId() <em>Min Value Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Id minValueId;
+
+	/**
+	 * The cached value of the '{@link #getMinValueUnsignedInt() <em>Min Value Unsigned Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueUnsignedInt()
+	 * @generated
+	 * @ordered
+	 */
+	protected UnsignedInt minValueUnsignedInt;
+
+	/**
+	 * The cached value of the '{@link #getMinValuePositiveInt() <em>Min Value Positive Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValuePositiveInt()
+	 * @generated
+	 * @ordered
+	 */
+	protected PositiveInt minValuePositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getMinValueAnnotation() <em>Min Value Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Annotation minValueAnnotation;
+
+	/**
+	 * The cached value of the '{@link #getMinValueAttachment() <em>Min Value Attachment</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueAttachment()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attachment minValueAttachment;
+
+	/**
+	 * The cached value of the '{@link #getMinValueIdentifier() <em>Min Value Identifier</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueIdentifier()
+	 * @generated
+	 * @ordered
+	 */
+	protected Identifier minValueIdentifier;
+
+	/**
+	 * The cached value of the '{@link #getMinValueCodeableConcept() <em>Min Value Codeable Concept</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueCodeableConcept()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept minValueCodeableConcept;
+
+	/**
+	 * The cached value of the '{@link #getMinValueCoding() <em>Min Value Coding</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueCoding()
+	 * @generated
+	 * @ordered
+	 */
+	protected Coding minValueCoding;
+
+	/**
+	 * The cached value of the '{@link #getMinValueQuantity() <em>Min Value Quantity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueQuantity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Quantity minValueQuantity;
+
+	/**
+	 * The cached value of the '{@link #getMinValueRange() <em>Min Value Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueRange()
+	 * @generated
+	 * @ordered
+	 */
+	protected Range minValueRange;
+
+	/**
+	 * The cached value of the '{@link #getMinValuePeriod() <em>Min Value Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValuePeriod()
+	 * @generated
+	 * @ordered
+	 */
+	protected Period minValuePeriod;
+
+	/**
+	 * The cached value of the '{@link #getMinValueRatio() <em>Min Value Ratio</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueRatio()
+	 * @generated
+	 * @ordered
+	 */
+	protected Ratio minValueRatio;
+
+	/**
+	 * The cached value of the '{@link #getMinValueReference() <em>Min Value Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueReference()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reference minValueReference;
+
+	/**
+	 * The cached value of the '{@link #getMinValueSampledData() <em>Min Value Sampled Data</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueSampledData()
+	 * @generated
+	 * @ordered
+	 */
+	protected SampledData minValueSampledData;
+
+	/**
+	 * The cached value of the '{@link #getMinValueSignature() <em>Min Value Signature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueSignature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Signature minValueSignature;
+
+	/**
+	 * The cached value of the '{@link #getMinValueHumanName() <em>Min Value Human Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueHumanName()
+	 * @generated
+	 * @ordered
+	 */
+	protected HumanName minValueHumanName;
+
+	/**
+	 * The cached value of the '{@link #getMinValueAddress() <em>Min Value Address</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected Address minValueAddress;
+
+	/**
+	 * The cached value of the '{@link #getMinValueContactPoint() <em>Min Value Contact Point</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueContactPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactPoint minValueContactPoint;
+
+	/**
+	 * The cached value of the '{@link #getMinValueTiming() <em>Min Value Timing</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueTiming()
+	 * @generated
+	 * @ordered
+	 */
+	protected Timing minValueTiming;
+
+	/**
+	 * The cached value of the '{@link #getMinValueMeta() <em>Min Value Meta</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueMeta()
+	 * @generated
+	 * @ordered
+	 */
+	protected Meta minValueMeta;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueBoolean() <em>Max Value Boolean</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueBoolean()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Boolean maxValueBoolean;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueInteger() <em>Max Value Integer</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueInteger()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Integer maxValueInteger;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueDecimal() <em>Max Value Decimal</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueDecimal()
+	 * @generated
+	 * @ordered
+	 */
+	protected Decimal maxValueDecimal;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueBase64Binary() <em>Max Value Base64 Binary</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueBase64Binary()
+	 * @generated
+	 * @ordered
+	 */
+	protected Base64Binary maxValueBase64Binary;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueInstant() <em>Max Value Instant</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected Instant maxValueInstant;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueString() <em>Max Value String</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueString()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String maxValueString;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueUri() <em>Max Value Uri</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueUri()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uri maxValueUri;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueDate() <em>Max Value Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date maxValueDate;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueDateTime() <em>Max Value Date Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueDateTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateTime maxValueDateTime;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueTime() <em>Max Value Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected Time maxValueTime;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueCode() <em>Max Value Code</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected Code maxValueCode;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueOid() <em>Max Value Oid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueOid()
+	 * @generated
+	 * @ordered
+	 */
+	protected Oid maxValueOid;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueUuid() <em>Max Value Uuid</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueUuid()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uuid maxValueUuid;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueId() <em>Max Value Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Id maxValueId;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueUnsignedInt() <em>Max Value Unsigned Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueUnsignedInt()
+	 * @generated
+	 * @ordered
+	 */
+	protected UnsignedInt maxValueUnsignedInt;
+
+	/**
+	 * The cached value of the '{@link #getMaxValuePositiveInt() <em>Max Value Positive Int</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValuePositiveInt()
+	 * @generated
+	 * @ordered
+	 */
+	protected PositiveInt maxValuePositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueAnnotation() <em>Max Value Annotation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Annotation maxValueAnnotation;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueAttachment() <em>Max Value Attachment</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueAttachment()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attachment maxValueAttachment;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueIdentifier() <em>Max Value Identifier</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueIdentifier()
+	 * @generated
+	 * @ordered
+	 */
+	protected Identifier maxValueIdentifier;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueCodeableConcept() <em>Max Value Codeable Concept</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueCodeableConcept()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept maxValueCodeableConcept;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueCoding() <em>Max Value Coding</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueCoding()
+	 * @generated
+	 * @ordered
+	 */
+	protected Coding maxValueCoding;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueQuantity() <em>Max Value Quantity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueQuantity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Quantity maxValueQuantity;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueRange() <em>Max Value Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueRange()
+	 * @generated
+	 * @ordered
+	 */
+	protected Range maxValueRange;
+
+	/**
+	 * The cached value of the '{@link #getMaxValuePeriod() <em>Max Value Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValuePeriod()
+	 * @generated
+	 * @ordered
+	 */
+	protected Period maxValuePeriod;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueRatio() <em>Max Value Ratio</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueRatio()
+	 * @generated
+	 * @ordered
+	 */
+	protected Ratio maxValueRatio;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueReference() <em>Max Value Reference</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueReference()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reference maxValueReference;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueSampledData() <em>Max Value Sampled Data</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueSampledData()
+	 * @generated
+	 * @ordered
+	 */
+	protected SampledData maxValueSampledData;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueSignature() <em>Max Value Signature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueSignature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Signature maxValueSignature;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueHumanName() <em>Max Value Human Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueHumanName()
+	 * @generated
+	 * @ordered
+	 */
+	protected HumanName maxValueHumanName;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueAddress() <em>Max Value Address</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected Address maxValueAddress;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueContactPoint() <em>Max Value Contact Point</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueContactPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactPoint maxValueContactPoint;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueTiming() <em>Max Value Timing</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueTiming()
+	 * @generated
+	 * @ordered
+	 */
+	protected Timing maxValueTiming;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueMeta() <em>Max Value Meta</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueMeta()
+	 * @generated
+	 * @ordered
+	 */
+	protected Meta maxValueMeta;
 
 	/**
 	 * The cached value of the '{@link #getMaxLength() <em>Max Length</em>}' containment reference.
@@ -2966,6 +3737,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT, newDefaultValuePositiveInt, newDefaultValuePositiveInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Annotation getDefaultValueAnnotation() {
+		return defaultValueAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDefaultValueAnnotation(Annotation newDefaultValueAnnotation, NotificationChain msgs) {
+		Annotation oldDefaultValueAnnotation = defaultValueAnnotation;
+		defaultValueAnnotation = newDefaultValueAnnotation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION, oldDefaultValueAnnotation, newDefaultValueAnnotation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultValueAnnotation(Annotation newDefaultValueAnnotation) {
+		if (newDefaultValueAnnotation != defaultValueAnnotation) {
+			NotificationChain msgs = null;
+			if (defaultValueAnnotation != null)
+				msgs = ((InternalEObject)defaultValueAnnotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION, null, msgs);
+			if (newDefaultValueAnnotation != null)
+				msgs = ((InternalEObject)newDefaultValueAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION, null, msgs);
+			msgs = basicSetDefaultValueAnnotation(newDefaultValueAnnotation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION, newDefaultValueAnnotation, newDefaultValueAnnotation));
 	}
 
 	/**
@@ -4392,6 +5206,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Annotation getFixedAnnotation() {
+		return fixedAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFixedAnnotation(Annotation newFixedAnnotation, NotificationChain msgs) {
+		Annotation oldFixedAnnotation = fixedAnnotation;
+		fixedAnnotation = newFixedAnnotation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION, oldFixedAnnotation, newFixedAnnotation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFixedAnnotation(Annotation newFixedAnnotation) {
+		if (newFixedAnnotation != fixedAnnotation) {
+			NotificationChain msgs = null;
+			if (fixedAnnotation != null)
+				msgs = ((InternalEObject)fixedAnnotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION, null, msgs);
+			if (newFixedAnnotation != null)
+				msgs = ((InternalEObject)newFixedAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION, null, msgs);
+			msgs = basicSetFixedAnnotation(newFixedAnnotation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION, newFixedAnnotation, newFixedAnnotation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Attachment getFixedAttachment() {
 		return fixedAttachment;
 	}
@@ -5761,6 +6618,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT, newPatternPositiveInt, newPatternPositiveInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Annotation getPatternAnnotation() {
+		return patternAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPatternAnnotation(Annotation newPatternAnnotation, NotificationChain msgs) {
+		Annotation oldPatternAnnotation = patternAnnotation;
+		patternAnnotation = newPatternAnnotation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION, oldPatternAnnotation, newPatternAnnotation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPatternAnnotation(Annotation newPatternAnnotation) {
+		if (newPatternAnnotation != patternAnnotation) {
+			NotificationChain msgs = null;
+			if (patternAnnotation != null)
+				msgs = ((InternalEObject)patternAnnotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION, null, msgs);
+			if (newPatternAnnotation != null)
+				msgs = ((InternalEObject)newPatternAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION, null, msgs);
+			msgs = basicSetPatternAnnotation(newPatternAnnotation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION, newPatternAnnotation, newPatternAnnotation));
 	}
 
 	/**
@@ -7144,6 +8044,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Annotation getExampleAnnotation() {
+		return exampleAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExampleAnnotation(Annotation newExampleAnnotation, NotificationChain msgs) {
+		Annotation oldExampleAnnotation = exampleAnnotation;
+		exampleAnnotation = newExampleAnnotation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION, oldExampleAnnotation, newExampleAnnotation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExampleAnnotation(Annotation newExampleAnnotation) {
+		if (newExampleAnnotation != exampleAnnotation) {
+			NotificationChain msgs = null;
+			if (exampleAnnotation != null)
+				msgs = ((InternalEObject)exampleAnnotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION, null, msgs);
+			if (newExampleAnnotation != null)
+				msgs = ((InternalEObject)newExampleAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION, null, msgs);
+			msgs = basicSetExampleAnnotation(newExampleAnnotation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION, newExampleAnnotation, newExampleAnnotation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Attachment getExampleAttachment() {
 		return exampleAttachment;
 	}
@@ -7832,6 +8775,2844 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.hl7.fhir.Boolean getMinValueBoolean() {
+		return minValueBoolean;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueBoolean(org.hl7.fhir.Boolean newMinValueBoolean, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldMinValueBoolean = minValueBoolean;
+		minValueBoolean = newMinValueBoolean;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN, oldMinValueBoolean, newMinValueBoolean);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueBoolean(org.hl7.fhir.Boolean newMinValueBoolean) {
+		if (newMinValueBoolean != minValueBoolean) {
+			NotificationChain msgs = null;
+			if (minValueBoolean != null)
+				msgs = ((InternalEObject)minValueBoolean).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN, null, msgs);
+			if (newMinValueBoolean != null)
+				msgs = ((InternalEObject)newMinValueBoolean).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN, null, msgs);
+			msgs = basicSetMinValueBoolean(newMinValueBoolean, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN, newMinValueBoolean, newMinValueBoolean));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.Integer getMinValueInteger() {
+		return minValueInteger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueInteger(org.hl7.fhir.Integer newMinValueInteger, NotificationChain msgs) {
+		org.hl7.fhir.Integer oldMinValueInteger = minValueInteger;
+		minValueInteger = newMinValueInteger;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER, oldMinValueInteger, newMinValueInteger);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueInteger(org.hl7.fhir.Integer newMinValueInteger) {
+		if (newMinValueInteger != minValueInteger) {
+			NotificationChain msgs = null;
+			if (minValueInteger != null)
+				msgs = ((InternalEObject)minValueInteger).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER, null, msgs);
+			if (newMinValueInteger != null)
+				msgs = ((InternalEObject)newMinValueInteger).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER, null, msgs);
+			msgs = basicSetMinValueInteger(newMinValueInteger, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER, newMinValueInteger, newMinValueInteger));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Decimal getMinValueDecimal() {
+		return minValueDecimal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueDecimal(Decimal newMinValueDecimal, NotificationChain msgs) {
+		Decimal oldMinValueDecimal = minValueDecimal;
+		minValueDecimal = newMinValueDecimal;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL, oldMinValueDecimal, newMinValueDecimal);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueDecimal(Decimal newMinValueDecimal) {
+		if (newMinValueDecimal != minValueDecimal) {
+			NotificationChain msgs = null;
+			if (minValueDecimal != null)
+				msgs = ((InternalEObject)minValueDecimal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL, null, msgs);
+			if (newMinValueDecimal != null)
+				msgs = ((InternalEObject)newMinValueDecimal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL, null, msgs);
+			msgs = basicSetMinValueDecimal(newMinValueDecimal, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL, newMinValueDecimal, newMinValueDecimal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Base64Binary getMinValueBase64Binary() {
+		return minValueBase64Binary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueBase64Binary(Base64Binary newMinValueBase64Binary, NotificationChain msgs) {
+		Base64Binary oldMinValueBase64Binary = minValueBase64Binary;
+		minValueBase64Binary = newMinValueBase64Binary;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY, oldMinValueBase64Binary, newMinValueBase64Binary);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueBase64Binary(Base64Binary newMinValueBase64Binary) {
+		if (newMinValueBase64Binary != minValueBase64Binary) {
+			NotificationChain msgs = null;
+			if (minValueBase64Binary != null)
+				msgs = ((InternalEObject)minValueBase64Binary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY, null, msgs);
+			if (newMinValueBase64Binary != null)
+				msgs = ((InternalEObject)newMinValueBase64Binary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY, null, msgs);
+			msgs = basicSetMinValueBase64Binary(newMinValueBase64Binary, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY, newMinValueBase64Binary, newMinValueBase64Binary));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Instant getMinValueInstant() {
+		return minValueInstant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueInstant(Instant newMinValueInstant, NotificationChain msgs) {
+		Instant oldMinValueInstant = minValueInstant;
+		minValueInstant = newMinValueInstant;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT, oldMinValueInstant, newMinValueInstant);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueInstant(Instant newMinValueInstant) {
+		if (newMinValueInstant != minValueInstant) {
+			NotificationChain msgs = null;
+			if (minValueInstant != null)
+				msgs = ((InternalEObject)minValueInstant).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT, null, msgs);
+			if (newMinValueInstant != null)
+				msgs = ((InternalEObject)newMinValueInstant).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT, null, msgs);
+			msgs = basicSetMinValueInstant(newMinValueInstant, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT, newMinValueInstant, newMinValueInstant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getMinValueString() {
+		return minValueString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueString(org.hl7.fhir.String newMinValueString, NotificationChain msgs) {
+		org.hl7.fhir.String oldMinValueString = minValueString;
+		minValueString = newMinValueString;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING, oldMinValueString, newMinValueString);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueString(org.hl7.fhir.String newMinValueString) {
+		if (newMinValueString != minValueString) {
+			NotificationChain msgs = null;
+			if (minValueString != null)
+				msgs = ((InternalEObject)minValueString).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING, null, msgs);
+			if (newMinValueString != null)
+				msgs = ((InternalEObject)newMinValueString).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING, null, msgs);
+			msgs = basicSetMinValueString(newMinValueString, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING, newMinValueString, newMinValueString));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uri getMinValueUri() {
+		return minValueUri;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueUri(Uri newMinValueUri, NotificationChain msgs) {
+		Uri oldMinValueUri = minValueUri;
+		minValueUri = newMinValueUri;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI, oldMinValueUri, newMinValueUri);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueUri(Uri newMinValueUri) {
+		if (newMinValueUri != minValueUri) {
+			NotificationChain msgs = null;
+			if (minValueUri != null)
+				msgs = ((InternalEObject)minValueUri).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI, null, msgs);
+			if (newMinValueUri != null)
+				msgs = ((InternalEObject)newMinValueUri).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI, null, msgs);
+			msgs = basicSetMinValueUri(newMinValueUri, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI, newMinValueUri, newMinValueUri));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getMinValueDate() {
+		return minValueDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueDate(Date newMinValueDate, NotificationChain msgs) {
+		Date oldMinValueDate = minValueDate;
+		minValueDate = newMinValueDate;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE, oldMinValueDate, newMinValueDate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueDate(Date newMinValueDate) {
+		if (newMinValueDate != minValueDate) {
+			NotificationChain msgs = null;
+			if (minValueDate != null)
+				msgs = ((InternalEObject)minValueDate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE, null, msgs);
+			if (newMinValueDate != null)
+				msgs = ((InternalEObject)newMinValueDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE, null, msgs);
+			msgs = basicSetMinValueDate(newMinValueDate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE, newMinValueDate, newMinValueDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateTime getMinValueDateTime() {
+		return minValueDateTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueDateTime(DateTime newMinValueDateTime, NotificationChain msgs) {
+		DateTime oldMinValueDateTime = minValueDateTime;
+		minValueDateTime = newMinValueDateTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME, oldMinValueDateTime, newMinValueDateTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueDateTime(DateTime newMinValueDateTime) {
+		if (newMinValueDateTime != minValueDateTime) {
+			NotificationChain msgs = null;
+			if (minValueDateTime != null)
+				msgs = ((InternalEObject)minValueDateTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME, null, msgs);
+			if (newMinValueDateTime != null)
+				msgs = ((InternalEObject)newMinValueDateTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME, null, msgs);
+			msgs = basicSetMinValueDateTime(newMinValueDateTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME, newMinValueDateTime, newMinValueDateTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Time getMinValueTime() {
+		return minValueTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueTime(Time newMinValueTime, NotificationChain msgs) {
+		Time oldMinValueTime = minValueTime;
+		minValueTime = newMinValueTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME, oldMinValueTime, newMinValueTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueTime(Time newMinValueTime) {
+		if (newMinValueTime != minValueTime) {
+			NotificationChain msgs = null;
+			if (minValueTime != null)
+				msgs = ((InternalEObject)minValueTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME, null, msgs);
+			if (newMinValueTime != null)
+				msgs = ((InternalEObject)newMinValueTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME, null, msgs);
+			msgs = basicSetMinValueTime(newMinValueTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME, newMinValueTime, newMinValueTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Code getMinValueCode() {
+		return minValueCode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueCode(Code newMinValueCode, NotificationChain msgs) {
+		Code oldMinValueCode = minValueCode;
+		minValueCode = newMinValueCode;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE, oldMinValueCode, newMinValueCode);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueCode(Code newMinValueCode) {
+		if (newMinValueCode != minValueCode) {
+			NotificationChain msgs = null;
+			if (minValueCode != null)
+				msgs = ((InternalEObject)minValueCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE, null, msgs);
+			if (newMinValueCode != null)
+				msgs = ((InternalEObject)newMinValueCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE, null, msgs);
+			msgs = basicSetMinValueCode(newMinValueCode, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE, newMinValueCode, newMinValueCode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Oid getMinValueOid() {
+		return minValueOid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueOid(Oid newMinValueOid, NotificationChain msgs) {
+		Oid oldMinValueOid = minValueOid;
+		minValueOid = newMinValueOid;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID, oldMinValueOid, newMinValueOid);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueOid(Oid newMinValueOid) {
+		if (newMinValueOid != minValueOid) {
+			NotificationChain msgs = null;
+			if (minValueOid != null)
+				msgs = ((InternalEObject)minValueOid).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID, null, msgs);
+			if (newMinValueOid != null)
+				msgs = ((InternalEObject)newMinValueOid).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID, null, msgs);
+			msgs = basicSetMinValueOid(newMinValueOid, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID, newMinValueOid, newMinValueOid));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uuid getMinValueUuid() {
+		return minValueUuid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueUuid(Uuid newMinValueUuid, NotificationChain msgs) {
+		Uuid oldMinValueUuid = minValueUuid;
+		minValueUuid = newMinValueUuid;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID, oldMinValueUuid, newMinValueUuid);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueUuid(Uuid newMinValueUuid) {
+		if (newMinValueUuid != minValueUuid) {
+			NotificationChain msgs = null;
+			if (minValueUuid != null)
+				msgs = ((InternalEObject)minValueUuid).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID, null, msgs);
+			if (newMinValueUuid != null)
+				msgs = ((InternalEObject)newMinValueUuid).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID, null, msgs);
+			msgs = basicSetMinValueUuid(newMinValueUuid, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID, newMinValueUuid, newMinValueUuid));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Id getMinValueId() {
+		return minValueId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueId(Id newMinValueId, NotificationChain msgs) {
+		Id oldMinValueId = minValueId;
+		minValueId = newMinValueId;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID, oldMinValueId, newMinValueId);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueId(Id newMinValueId) {
+		if (newMinValueId != minValueId) {
+			NotificationChain msgs = null;
+			if (minValueId != null)
+				msgs = ((InternalEObject)minValueId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID, null, msgs);
+			if (newMinValueId != null)
+				msgs = ((InternalEObject)newMinValueId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID, null, msgs);
+			msgs = basicSetMinValueId(newMinValueId, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID, newMinValueId, newMinValueId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnsignedInt getMinValueUnsignedInt() {
+		return minValueUnsignedInt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueUnsignedInt(UnsignedInt newMinValueUnsignedInt, NotificationChain msgs) {
+		UnsignedInt oldMinValueUnsignedInt = minValueUnsignedInt;
+		minValueUnsignedInt = newMinValueUnsignedInt;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT, oldMinValueUnsignedInt, newMinValueUnsignedInt);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueUnsignedInt(UnsignedInt newMinValueUnsignedInt) {
+		if (newMinValueUnsignedInt != minValueUnsignedInt) {
+			NotificationChain msgs = null;
+			if (minValueUnsignedInt != null)
+				msgs = ((InternalEObject)minValueUnsignedInt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT, null, msgs);
+			if (newMinValueUnsignedInt != null)
+				msgs = ((InternalEObject)newMinValueUnsignedInt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT, null, msgs);
+			msgs = basicSetMinValueUnsignedInt(newMinValueUnsignedInt, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT, newMinValueUnsignedInt, newMinValueUnsignedInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PositiveInt getMinValuePositiveInt() {
+		return minValuePositiveInt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValuePositiveInt(PositiveInt newMinValuePositiveInt, NotificationChain msgs) {
+		PositiveInt oldMinValuePositiveInt = minValuePositiveInt;
+		minValuePositiveInt = newMinValuePositiveInt;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT, oldMinValuePositiveInt, newMinValuePositiveInt);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValuePositiveInt(PositiveInt newMinValuePositiveInt) {
+		if (newMinValuePositiveInt != minValuePositiveInt) {
+			NotificationChain msgs = null;
+			if (minValuePositiveInt != null)
+				msgs = ((InternalEObject)minValuePositiveInt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT, null, msgs);
+			if (newMinValuePositiveInt != null)
+				msgs = ((InternalEObject)newMinValuePositiveInt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT, null, msgs);
+			msgs = basicSetMinValuePositiveInt(newMinValuePositiveInt, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT, newMinValuePositiveInt, newMinValuePositiveInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Annotation getMinValueAnnotation() {
+		return minValueAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueAnnotation(Annotation newMinValueAnnotation, NotificationChain msgs) {
+		Annotation oldMinValueAnnotation = minValueAnnotation;
+		minValueAnnotation = newMinValueAnnotation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION, oldMinValueAnnotation, newMinValueAnnotation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueAnnotation(Annotation newMinValueAnnotation) {
+		if (newMinValueAnnotation != minValueAnnotation) {
+			NotificationChain msgs = null;
+			if (minValueAnnotation != null)
+				msgs = ((InternalEObject)minValueAnnotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION, null, msgs);
+			if (newMinValueAnnotation != null)
+				msgs = ((InternalEObject)newMinValueAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION, null, msgs);
+			msgs = basicSetMinValueAnnotation(newMinValueAnnotation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION, newMinValueAnnotation, newMinValueAnnotation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attachment getMinValueAttachment() {
+		return minValueAttachment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueAttachment(Attachment newMinValueAttachment, NotificationChain msgs) {
+		Attachment oldMinValueAttachment = minValueAttachment;
+		minValueAttachment = newMinValueAttachment;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT, oldMinValueAttachment, newMinValueAttachment);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueAttachment(Attachment newMinValueAttachment) {
+		if (newMinValueAttachment != minValueAttachment) {
+			NotificationChain msgs = null;
+			if (minValueAttachment != null)
+				msgs = ((InternalEObject)minValueAttachment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT, null, msgs);
+			if (newMinValueAttachment != null)
+				msgs = ((InternalEObject)newMinValueAttachment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT, null, msgs);
+			msgs = basicSetMinValueAttachment(newMinValueAttachment, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT, newMinValueAttachment, newMinValueAttachment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Identifier getMinValueIdentifier() {
+		return minValueIdentifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueIdentifier(Identifier newMinValueIdentifier, NotificationChain msgs) {
+		Identifier oldMinValueIdentifier = minValueIdentifier;
+		minValueIdentifier = newMinValueIdentifier;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER, oldMinValueIdentifier, newMinValueIdentifier);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueIdentifier(Identifier newMinValueIdentifier) {
+		if (newMinValueIdentifier != minValueIdentifier) {
+			NotificationChain msgs = null;
+			if (minValueIdentifier != null)
+				msgs = ((InternalEObject)minValueIdentifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER, null, msgs);
+			if (newMinValueIdentifier != null)
+				msgs = ((InternalEObject)newMinValueIdentifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER, null, msgs);
+			msgs = basicSetMinValueIdentifier(newMinValueIdentifier, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER, newMinValueIdentifier, newMinValueIdentifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodeableConcept getMinValueCodeableConcept() {
+		return minValueCodeableConcept;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueCodeableConcept(CodeableConcept newMinValueCodeableConcept, NotificationChain msgs) {
+		CodeableConcept oldMinValueCodeableConcept = minValueCodeableConcept;
+		minValueCodeableConcept = newMinValueCodeableConcept;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT, oldMinValueCodeableConcept, newMinValueCodeableConcept);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueCodeableConcept(CodeableConcept newMinValueCodeableConcept) {
+		if (newMinValueCodeableConcept != minValueCodeableConcept) {
+			NotificationChain msgs = null;
+			if (minValueCodeableConcept != null)
+				msgs = ((InternalEObject)minValueCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT, null, msgs);
+			if (newMinValueCodeableConcept != null)
+				msgs = ((InternalEObject)newMinValueCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT, null, msgs);
+			msgs = basicSetMinValueCodeableConcept(newMinValueCodeableConcept, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT, newMinValueCodeableConcept, newMinValueCodeableConcept));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Coding getMinValueCoding() {
+		return minValueCoding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueCoding(Coding newMinValueCoding, NotificationChain msgs) {
+		Coding oldMinValueCoding = minValueCoding;
+		minValueCoding = newMinValueCoding;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING, oldMinValueCoding, newMinValueCoding);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueCoding(Coding newMinValueCoding) {
+		if (newMinValueCoding != minValueCoding) {
+			NotificationChain msgs = null;
+			if (minValueCoding != null)
+				msgs = ((InternalEObject)minValueCoding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING, null, msgs);
+			if (newMinValueCoding != null)
+				msgs = ((InternalEObject)newMinValueCoding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING, null, msgs);
+			msgs = basicSetMinValueCoding(newMinValueCoding, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING, newMinValueCoding, newMinValueCoding));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quantity getMinValueQuantity() {
+		return minValueQuantity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueQuantity(Quantity newMinValueQuantity, NotificationChain msgs) {
+		Quantity oldMinValueQuantity = minValueQuantity;
+		minValueQuantity = newMinValueQuantity;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY, oldMinValueQuantity, newMinValueQuantity);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueQuantity(Quantity newMinValueQuantity) {
+		if (newMinValueQuantity != minValueQuantity) {
+			NotificationChain msgs = null;
+			if (minValueQuantity != null)
+				msgs = ((InternalEObject)minValueQuantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY, null, msgs);
+			if (newMinValueQuantity != null)
+				msgs = ((InternalEObject)newMinValueQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY, null, msgs);
+			msgs = basicSetMinValueQuantity(newMinValueQuantity, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY, newMinValueQuantity, newMinValueQuantity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Range getMinValueRange() {
+		return minValueRange;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueRange(Range newMinValueRange, NotificationChain msgs) {
+		Range oldMinValueRange = minValueRange;
+		minValueRange = newMinValueRange;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE, oldMinValueRange, newMinValueRange);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueRange(Range newMinValueRange) {
+		if (newMinValueRange != minValueRange) {
+			NotificationChain msgs = null;
+			if (minValueRange != null)
+				msgs = ((InternalEObject)minValueRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE, null, msgs);
+			if (newMinValueRange != null)
+				msgs = ((InternalEObject)newMinValueRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE, null, msgs);
+			msgs = basicSetMinValueRange(newMinValueRange, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE, newMinValueRange, newMinValueRange));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Period getMinValuePeriod() {
+		return minValuePeriod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValuePeriod(Period newMinValuePeriod, NotificationChain msgs) {
+		Period oldMinValuePeriod = minValuePeriod;
+		minValuePeriod = newMinValuePeriod;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD, oldMinValuePeriod, newMinValuePeriod);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValuePeriod(Period newMinValuePeriod) {
+		if (newMinValuePeriod != minValuePeriod) {
+			NotificationChain msgs = null;
+			if (minValuePeriod != null)
+				msgs = ((InternalEObject)minValuePeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD, null, msgs);
+			if (newMinValuePeriod != null)
+				msgs = ((InternalEObject)newMinValuePeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD, null, msgs);
+			msgs = basicSetMinValuePeriod(newMinValuePeriod, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD, newMinValuePeriod, newMinValuePeriod));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Ratio getMinValueRatio() {
+		return minValueRatio;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueRatio(Ratio newMinValueRatio, NotificationChain msgs) {
+		Ratio oldMinValueRatio = minValueRatio;
+		minValueRatio = newMinValueRatio;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO, oldMinValueRatio, newMinValueRatio);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueRatio(Ratio newMinValueRatio) {
+		if (newMinValueRatio != minValueRatio) {
+			NotificationChain msgs = null;
+			if (minValueRatio != null)
+				msgs = ((InternalEObject)minValueRatio).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO, null, msgs);
+			if (newMinValueRatio != null)
+				msgs = ((InternalEObject)newMinValueRatio).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO, null, msgs);
+			msgs = basicSetMinValueRatio(newMinValueRatio, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO, newMinValueRatio, newMinValueRatio));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Reference getMinValueReference() {
+		return minValueReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueReference(Reference newMinValueReference, NotificationChain msgs) {
+		Reference oldMinValueReference = minValueReference;
+		minValueReference = newMinValueReference;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE, oldMinValueReference, newMinValueReference);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueReference(Reference newMinValueReference) {
+		if (newMinValueReference != minValueReference) {
+			NotificationChain msgs = null;
+			if (minValueReference != null)
+				msgs = ((InternalEObject)minValueReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE, null, msgs);
+			if (newMinValueReference != null)
+				msgs = ((InternalEObject)newMinValueReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE, null, msgs);
+			msgs = basicSetMinValueReference(newMinValueReference, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE, newMinValueReference, newMinValueReference));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SampledData getMinValueSampledData() {
+		return minValueSampledData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueSampledData(SampledData newMinValueSampledData, NotificationChain msgs) {
+		SampledData oldMinValueSampledData = minValueSampledData;
+		minValueSampledData = newMinValueSampledData;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA, oldMinValueSampledData, newMinValueSampledData);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueSampledData(SampledData newMinValueSampledData) {
+		if (newMinValueSampledData != minValueSampledData) {
+			NotificationChain msgs = null;
+			if (minValueSampledData != null)
+				msgs = ((InternalEObject)minValueSampledData).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA, null, msgs);
+			if (newMinValueSampledData != null)
+				msgs = ((InternalEObject)newMinValueSampledData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA, null, msgs);
+			msgs = basicSetMinValueSampledData(newMinValueSampledData, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA, newMinValueSampledData, newMinValueSampledData));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Signature getMinValueSignature() {
+		return minValueSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueSignature(Signature newMinValueSignature, NotificationChain msgs) {
+		Signature oldMinValueSignature = minValueSignature;
+		minValueSignature = newMinValueSignature;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE, oldMinValueSignature, newMinValueSignature);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueSignature(Signature newMinValueSignature) {
+		if (newMinValueSignature != minValueSignature) {
+			NotificationChain msgs = null;
+			if (minValueSignature != null)
+				msgs = ((InternalEObject)minValueSignature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE, null, msgs);
+			if (newMinValueSignature != null)
+				msgs = ((InternalEObject)newMinValueSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE, null, msgs);
+			msgs = basicSetMinValueSignature(newMinValueSignature, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE, newMinValueSignature, newMinValueSignature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HumanName getMinValueHumanName() {
+		return minValueHumanName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueHumanName(HumanName newMinValueHumanName, NotificationChain msgs) {
+		HumanName oldMinValueHumanName = minValueHumanName;
+		minValueHumanName = newMinValueHumanName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME, oldMinValueHumanName, newMinValueHumanName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueHumanName(HumanName newMinValueHumanName) {
+		if (newMinValueHumanName != minValueHumanName) {
+			NotificationChain msgs = null;
+			if (minValueHumanName != null)
+				msgs = ((InternalEObject)minValueHumanName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME, null, msgs);
+			if (newMinValueHumanName != null)
+				msgs = ((InternalEObject)newMinValueHumanName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME, null, msgs);
+			msgs = basicSetMinValueHumanName(newMinValueHumanName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME, newMinValueHumanName, newMinValueHumanName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Address getMinValueAddress() {
+		return minValueAddress;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueAddress(Address newMinValueAddress, NotificationChain msgs) {
+		Address oldMinValueAddress = minValueAddress;
+		minValueAddress = newMinValueAddress;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS, oldMinValueAddress, newMinValueAddress);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueAddress(Address newMinValueAddress) {
+		if (newMinValueAddress != minValueAddress) {
+			NotificationChain msgs = null;
+			if (minValueAddress != null)
+				msgs = ((InternalEObject)minValueAddress).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS, null, msgs);
+			if (newMinValueAddress != null)
+				msgs = ((InternalEObject)newMinValueAddress).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS, null, msgs);
+			msgs = basicSetMinValueAddress(newMinValueAddress, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS, newMinValueAddress, newMinValueAddress));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactPoint getMinValueContactPoint() {
+		return minValueContactPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueContactPoint(ContactPoint newMinValueContactPoint, NotificationChain msgs) {
+		ContactPoint oldMinValueContactPoint = minValueContactPoint;
+		minValueContactPoint = newMinValueContactPoint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT, oldMinValueContactPoint, newMinValueContactPoint);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueContactPoint(ContactPoint newMinValueContactPoint) {
+		if (newMinValueContactPoint != minValueContactPoint) {
+			NotificationChain msgs = null;
+			if (minValueContactPoint != null)
+				msgs = ((InternalEObject)minValueContactPoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT, null, msgs);
+			if (newMinValueContactPoint != null)
+				msgs = ((InternalEObject)newMinValueContactPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT, null, msgs);
+			msgs = basicSetMinValueContactPoint(newMinValueContactPoint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT, newMinValueContactPoint, newMinValueContactPoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Timing getMinValueTiming() {
+		return minValueTiming;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueTiming(Timing newMinValueTiming, NotificationChain msgs) {
+		Timing oldMinValueTiming = minValueTiming;
+		minValueTiming = newMinValueTiming;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING, oldMinValueTiming, newMinValueTiming);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueTiming(Timing newMinValueTiming) {
+		if (newMinValueTiming != minValueTiming) {
+			NotificationChain msgs = null;
+			if (minValueTiming != null)
+				msgs = ((InternalEObject)minValueTiming).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING, null, msgs);
+			if (newMinValueTiming != null)
+				msgs = ((InternalEObject)newMinValueTiming).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING, null, msgs);
+			msgs = basicSetMinValueTiming(newMinValueTiming, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING, newMinValueTiming, newMinValueTiming));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Meta getMinValueMeta() {
+		return minValueMeta;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueMeta(Meta newMinValueMeta, NotificationChain msgs) {
+		Meta oldMinValueMeta = minValueMeta;
+		minValueMeta = newMinValueMeta;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META, oldMinValueMeta, newMinValueMeta);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueMeta(Meta newMinValueMeta) {
+		if (newMinValueMeta != minValueMeta) {
+			NotificationChain msgs = null;
+			if (minValueMeta != null)
+				msgs = ((InternalEObject)minValueMeta).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META, null, msgs);
+			if (newMinValueMeta != null)
+				msgs = ((InternalEObject)newMinValueMeta).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META, null, msgs);
+			msgs = basicSetMinValueMeta(newMinValueMeta, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META, newMinValueMeta, newMinValueMeta));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.Boolean getMaxValueBoolean() {
+		return maxValueBoolean;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueBoolean(org.hl7.fhir.Boolean newMaxValueBoolean, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldMaxValueBoolean = maxValueBoolean;
+		maxValueBoolean = newMaxValueBoolean;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN, oldMaxValueBoolean, newMaxValueBoolean);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueBoolean(org.hl7.fhir.Boolean newMaxValueBoolean) {
+		if (newMaxValueBoolean != maxValueBoolean) {
+			NotificationChain msgs = null;
+			if (maxValueBoolean != null)
+				msgs = ((InternalEObject)maxValueBoolean).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN, null, msgs);
+			if (newMaxValueBoolean != null)
+				msgs = ((InternalEObject)newMaxValueBoolean).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN, null, msgs);
+			msgs = basicSetMaxValueBoolean(newMaxValueBoolean, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN, newMaxValueBoolean, newMaxValueBoolean));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.Integer getMaxValueInteger() {
+		return maxValueInteger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueInteger(org.hl7.fhir.Integer newMaxValueInteger, NotificationChain msgs) {
+		org.hl7.fhir.Integer oldMaxValueInteger = maxValueInteger;
+		maxValueInteger = newMaxValueInteger;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER, oldMaxValueInteger, newMaxValueInteger);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueInteger(org.hl7.fhir.Integer newMaxValueInteger) {
+		if (newMaxValueInteger != maxValueInteger) {
+			NotificationChain msgs = null;
+			if (maxValueInteger != null)
+				msgs = ((InternalEObject)maxValueInteger).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER, null, msgs);
+			if (newMaxValueInteger != null)
+				msgs = ((InternalEObject)newMaxValueInteger).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER, null, msgs);
+			msgs = basicSetMaxValueInteger(newMaxValueInteger, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER, newMaxValueInteger, newMaxValueInteger));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Decimal getMaxValueDecimal() {
+		return maxValueDecimal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueDecimal(Decimal newMaxValueDecimal, NotificationChain msgs) {
+		Decimal oldMaxValueDecimal = maxValueDecimal;
+		maxValueDecimal = newMaxValueDecimal;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL, oldMaxValueDecimal, newMaxValueDecimal);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueDecimal(Decimal newMaxValueDecimal) {
+		if (newMaxValueDecimal != maxValueDecimal) {
+			NotificationChain msgs = null;
+			if (maxValueDecimal != null)
+				msgs = ((InternalEObject)maxValueDecimal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL, null, msgs);
+			if (newMaxValueDecimal != null)
+				msgs = ((InternalEObject)newMaxValueDecimal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL, null, msgs);
+			msgs = basicSetMaxValueDecimal(newMaxValueDecimal, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL, newMaxValueDecimal, newMaxValueDecimal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Base64Binary getMaxValueBase64Binary() {
+		return maxValueBase64Binary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueBase64Binary(Base64Binary newMaxValueBase64Binary, NotificationChain msgs) {
+		Base64Binary oldMaxValueBase64Binary = maxValueBase64Binary;
+		maxValueBase64Binary = newMaxValueBase64Binary;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY, oldMaxValueBase64Binary, newMaxValueBase64Binary);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueBase64Binary(Base64Binary newMaxValueBase64Binary) {
+		if (newMaxValueBase64Binary != maxValueBase64Binary) {
+			NotificationChain msgs = null;
+			if (maxValueBase64Binary != null)
+				msgs = ((InternalEObject)maxValueBase64Binary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY, null, msgs);
+			if (newMaxValueBase64Binary != null)
+				msgs = ((InternalEObject)newMaxValueBase64Binary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY, null, msgs);
+			msgs = basicSetMaxValueBase64Binary(newMaxValueBase64Binary, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY, newMaxValueBase64Binary, newMaxValueBase64Binary));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Instant getMaxValueInstant() {
+		return maxValueInstant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueInstant(Instant newMaxValueInstant, NotificationChain msgs) {
+		Instant oldMaxValueInstant = maxValueInstant;
+		maxValueInstant = newMaxValueInstant;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT, oldMaxValueInstant, newMaxValueInstant);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueInstant(Instant newMaxValueInstant) {
+		if (newMaxValueInstant != maxValueInstant) {
+			NotificationChain msgs = null;
+			if (maxValueInstant != null)
+				msgs = ((InternalEObject)maxValueInstant).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT, null, msgs);
+			if (newMaxValueInstant != null)
+				msgs = ((InternalEObject)newMaxValueInstant).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT, null, msgs);
+			msgs = basicSetMaxValueInstant(newMaxValueInstant, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT, newMaxValueInstant, newMaxValueInstant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getMaxValueString() {
+		return maxValueString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueString(org.hl7.fhir.String newMaxValueString, NotificationChain msgs) {
+		org.hl7.fhir.String oldMaxValueString = maxValueString;
+		maxValueString = newMaxValueString;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING, oldMaxValueString, newMaxValueString);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueString(org.hl7.fhir.String newMaxValueString) {
+		if (newMaxValueString != maxValueString) {
+			NotificationChain msgs = null;
+			if (maxValueString != null)
+				msgs = ((InternalEObject)maxValueString).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING, null, msgs);
+			if (newMaxValueString != null)
+				msgs = ((InternalEObject)newMaxValueString).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING, null, msgs);
+			msgs = basicSetMaxValueString(newMaxValueString, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING, newMaxValueString, newMaxValueString));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uri getMaxValueUri() {
+		return maxValueUri;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueUri(Uri newMaxValueUri, NotificationChain msgs) {
+		Uri oldMaxValueUri = maxValueUri;
+		maxValueUri = newMaxValueUri;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI, oldMaxValueUri, newMaxValueUri);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueUri(Uri newMaxValueUri) {
+		if (newMaxValueUri != maxValueUri) {
+			NotificationChain msgs = null;
+			if (maxValueUri != null)
+				msgs = ((InternalEObject)maxValueUri).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI, null, msgs);
+			if (newMaxValueUri != null)
+				msgs = ((InternalEObject)newMaxValueUri).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI, null, msgs);
+			msgs = basicSetMaxValueUri(newMaxValueUri, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI, newMaxValueUri, newMaxValueUri));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getMaxValueDate() {
+		return maxValueDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueDate(Date newMaxValueDate, NotificationChain msgs) {
+		Date oldMaxValueDate = maxValueDate;
+		maxValueDate = newMaxValueDate;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE, oldMaxValueDate, newMaxValueDate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueDate(Date newMaxValueDate) {
+		if (newMaxValueDate != maxValueDate) {
+			NotificationChain msgs = null;
+			if (maxValueDate != null)
+				msgs = ((InternalEObject)maxValueDate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE, null, msgs);
+			if (newMaxValueDate != null)
+				msgs = ((InternalEObject)newMaxValueDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE, null, msgs);
+			msgs = basicSetMaxValueDate(newMaxValueDate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE, newMaxValueDate, newMaxValueDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateTime getMaxValueDateTime() {
+		return maxValueDateTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueDateTime(DateTime newMaxValueDateTime, NotificationChain msgs) {
+		DateTime oldMaxValueDateTime = maxValueDateTime;
+		maxValueDateTime = newMaxValueDateTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME, oldMaxValueDateTime, newMaxValueDateTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueDateTime(DateTime newMaxValueDateTime) {
+		if (newMaxValueDateTime != maxValueDateTime) {
+			NotificationChain msgs = null;
+			if (maxValueDateTime != null)
+				msgs = ((InternalEObject)maxValueDateTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME, null, msgs);
+			if (newMaxValueDateTime != null)
+				msgs = ((InternalEObject)newMaxValueDateTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME, null, msgs);
+			msgs = basicSetMaxValueDateTime(newMaxValueDateTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME, newMaxValueDateTime, newMaxValueDateTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Time getMaxValueTime() {
+		return maxValueTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueTime(Time newMaxValueTime, NotificationChain msgs) {
+		Time oldMaxValueTime = maxValueTime;
+		maxValueTime = newMaxValueTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME, oldMaxValueTime, newMaxValueTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueTime(Time newMaxValueTime) {
+		if (newMaxValueTime != maxValueTime) {
+			NotificationChain msgs = null;
+			if (maxValueTime != null)
+				msgs = ((InternalEObject)maxValueTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME, null, msgs);
+			if (newMaxValueTime != null)
+				msgs = ((InternalEObject)newMaxValueTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME, null, msgs);
+			msgs = basicSetMaxValueTime(newMaxValueTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME, newMaxValueTime, newMaxValueTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Code getMaxValueCode() {
+		return maxValueCode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueCode(Code newMaxValueCode, NotificationChain msgs) {
+		Code oldMaxValueCode = maxValueCode;
+		maxValueCode = newMaxValueCode;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE, oldMaxValueCode, newMaxValueCode);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueCode(Code newMaxValueCode) {
+		if (newMaxValueCode != maxValueCode) {
+			NotificationChain msgs = null;
+			if (maxValueCode != null)
+				msgs = ((InternalEObject)maxValueCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE, null, msgs);
+			if (newMaxValueCode != null)
+				msgs = ((InternalEObject)newMaxValueCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE, null, msgs);
+			msgs = basicSetMaxValueCode(newMaxValueCode, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE, newMaxValueCode, newMaxValueCode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Oid getMaxValueOid() {
+		return maxValueOid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueOid(Oid newMaxValueOid, NotificationChain msgs) {
+		Oid oldMaxValueOid = maxValueOid;
+		maxValueOid = newMaxValueOid;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID, oldMaxValueOid, newMaxValueOid);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueOid(Oid newMaxValueOid) {
+		if (newMaxValueOid != maxValueOid) {
+			NotificationChain msgs = null;
+			if (maxValueOid != null)
+				msgs = ((InternalEObject)maxValueOid).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID, null, msgs);
+			if (newMaxValueOid != null)
+				msgs = ((InternalEObject)newMaxValueOid).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID, null, msgs);
+			msgs = basicSetMaxValueOid(newMaxValueOid, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID, newMaxValueOid, newMaxValueOid));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uuid getMaxValueUuid() {
+		return maxValueUuid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueUuid(Uuid newMaxValueUuid, NotificationChain msgs) {
+		Uuid oldMaxValueUuid = maxValueUuid;
+		maxValueUuid = newMaxValueUuid;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID, oldMaxValueUuid, newMaxValueUuid);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueUuid(Uuid newMaxValueUuid) {
+		if (newMaxValueUuid != maxValueUuid) {
+			NotificationChain msgs = null;
+			if (maxValueUuid != null)
+				msgs = ((InternalEObject)maxValueUuid).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID, null, msgs);
+			if (newMaxValueUuid != null)
+				msgs = ((InternalEObject)newMaxValueUuid).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID, null, msgs);
+			msgs = basicSetMaxValueUuid(newMaxValueUuid, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID, newMaxValueUuid, newMaxValueUuid));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Id getMaxValueId() {
+		return maxValueId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueId(Id newMaxValueId, NotificationChain msgs) {
+		Id oldMaxValueId = maxValueId;
+		maxValueId = newMaxValueId;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID, oldMaxValueId, newMaxValueId);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueId(Id newMaxValueId) {
+		if (newMaxValueId != maxValueId) {
+			NotificationChain msgs = null;
+			if (maxValueId != null)
+				msgs = ((InternalEObject)maxValueId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID, null, msgs);
+			if (newMaxValueId != null)
+				msgs = ((InternalEObject)newMaxValueId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID, null, msgs);
+			msgs = basicSetMaxValueId(newMaxValueId, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID, newMaxValueId, newMaxValueId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnsignedInt getMaxValueUnsignedInt() {
+		return maxValueUnsignedInt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueUnsignedInt(UnsignedInt newMaxValueUnsignedInt, NotificationChain msgs) {
+		UnsignedInt oldMaxValueUnsignedInt = maxValueUnsignedInt;
+		maxValueUnsignedInt = newMaxValueUnsignedInt;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT, oldMaxValueUnsignedInt, newMaxValueUnsignedInt);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueUnsignedInt(UnsignedInt newMaxValueUnsignedInt) {
+		if (newMaxValueUnsignedInt != maxValueUnsignedInt) {
+			NotificationChain msgs = null;
+			if (maxValueUnsignedInt != null)
+				msgs = ((InternalEObject)maxValueUnsignedInt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT, null, msgs);
+			if (newMaxValueUnsignedInt != null)
+				msgs = ((InternalEObject)newMaxValueUnsignedInt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT, null, msgs);
+			msgs = basicSetMaxValueUnsignedInt(newMaxValueUnsignedInt, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT, newMaxValueUnsignedInt, newMaxValueUnsignedInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PositiveInt getMaxValuePositiveInt() {
+		return maxValuePositiveInt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValuePositiveInt(PositiveInt newMaxValuePositiveInt, NotificationChain msgs) {
+		PositiveInt oldMaxValuePositiveInt = maxValuePositiveInt;
+		maxValuePositiveInt = newMaxValuePositiveInt;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT, oldMaxValuePositiveInt, newMaxValuePositiveInt);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValuePositiveInt(PositiveInt newMaxValuePositiveInt) {
+		if (newMaxValuePositiveInt != maxValuePositiveInt) {
+			NotificationChain msgs = null;
+			if (maxValuePositiveInt != null)
+				msgs = ((InternalEObject)maxValuePositiveInt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT, null, msgs);
+			if (newMaxValuePositiveInt != null)
+				msgs = ((InternalEObject)newMaxValuePositiveInt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT, null, msgs);
+			msgs = basicSetMaxValuePositiveInt(newMaxValuePositiveInt, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT, newMaxValuePositiveInt, newMaxValuePositiveInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Annotation getMaxValueAnnotation() {
+		return maxValueAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueAnnotation(Annotation newMaxValueAnnotation, NotificationChain msgs) {
+		Annotation oldMaxValueAnnotation = maxValueAnnotation;
+		maxValueAnnotation = newMaxValueAnnotation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION, oldMaxValueAnnotation, newMaxValueAnnotation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueAnnotation(Annotation newMaxValueAnnotation) {
+		if (newMaxValueAnnotation != maxValueAnnotation) {
+			NotificationChain msgs = null;
+			if (maxValueAnnotation != null)
+				msgs = ((InternalEObject)maxValueAnnotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION, null, msgs);
+			if (newMaxValueAnnotation != null)
+				msgs = ((InternalEObject)newMaxValueAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION, null, msgs);
+			msgs = basicSetMaxValueAnnotation(newMaxValueAnnotation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION, newMaxValueAnnotation, newMaxValueAnnotation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attachment getMaxValueAttachment() {
+		return maxValueAttachment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueAttachment(Attachment newMaxValueAttachment, NotificationChain msgs) {
+		Attachment oldMaxValueAttachment = maxValueAttachment;
+		maxValueAttachment = newMaxValueAttachment;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT, oldMaxValueAttachment, newMaxValueAttachment);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueAttachment(Attachment newMaxValueAttachment) {
+		if (newMaxValueAttachment != maxValueAttachment) {
+			NotificationChain msgs = null;
+			if (maxValueAttachment != null)
+				msgs = ((InternalEObject)maxValueAttachment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT, null, msgs);
+			if (newMaxValueAttachment != null)
+				msgs = ((InternalEObject)newMaxValueAttachment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT, null, msgs);
+			msgs = basicSetMaxValueAttachment(newMaxValueAttachment, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT, newMaxValueAttachment, newMaxValueAttachment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Identifier getMaxValueIdentifier() {
+		return maxValueIdentifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueIdentifier(Identifier newMaxValueIdentifier, NotificationChain msgs) {
+		Identifier oldMaxValueIdentifier = maxValueIdentifier;
+		maxValueIdentifier = newMaxValueIdentifier;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER, oldMaxValueIdentifier, newMaxValueIdentifier);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueIdentifier(Identifier newMaxValueIdentifier) {
+		if (newMaxValueIdentifier != maxValueIdentifier) {
+			NotificationChain msgs = null;
+			if (maxValueIdentifier != null)
+				msgs = ((InternalEObject)maxValueIdentifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER, null, msgs);
+			if (newMaxValueIdentifier != null)
+				msgs = ((InternalEObject)newMaxValueIdentifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER, null, msgs);
+			msgs = basicSetMaxValueIdentifier(newMaxValueIdentifier, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER, newMaxValueIdentifier, newMaxValueIdentifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodeableConcept getMaxValueCodeableConcept() {
+		return maxValueCodeableConcept;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueCodeableConcept(CodeableConcept newMaxValueCodeableConcept, NotificationChain msgs) {
+		CodeableConcept oldMaxValueCodeableConcept = maxValueCodeableConcept;
+		maxValueCodeableConcept = newMaxValueCodeableConcept;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT, oldMaxValueCodeableConcept, newMaxValueCodeableConcept);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueCodeableConcept(CodeableConcept newMaxValueCodeableConcept) {
+		if (newMaxValueCodeableConcept != maxValueCodeableConcept) {
+			NotificationChain msgs = null;
+			if (maxValueCodeableConcept != null)
+				msgs = ((InternalEObject)maxValueCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT, null, msgs);
+			if (newMaxValueCodeableConcept != null)
+				msgs = ((InternalEObject)newMaxValueCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT, null, msgs);
+			msgs = basicSetMaxValueCodeableConcept(newMaxValueCodeableConcept, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT, newMaxValueCodeableConcept, newMaxValueCodeableConcept));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Coding getMaxValueCoding() {
+		return maxValueCoding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueCoding(Coding newMaxValueCoding, NotificationChain msgs) {
+		Coding oldMaxValueCoding = maxValueCoding;
+		maxValueCoding = newMaxValueCoding;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING, oldMaxValueCoding, newMaxValueCoding);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueCoding(Coding newMaxValueCoding) {
+		if (newMaxValueCoding != maxValueCoding) {
+			NotificationChain msgs = null;
+			if (maxValueCoding != null)
+				msgs = ((InternalEObject)maxValueCoding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING, null, msgs);
+			if (newMaxValueCoding != null)
+				msgs = ((InternalEObject)newMaxValueCoding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING, null, msgs);
+			msgs = basicSetMaxValueCoding(newMaxValueCoding, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING, newMaxValueCoding, newMaxValueCoding));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quantity getMaxValueQuantity() {
+		return maxValueQuantity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueQuantity(Quantity newMaxValueQuantity, NotificationChain msgs) {
+		Quantity oldMaxValueQuantity = maxValueQuantity;
+		maxValueQuantity = newMaxValueQuantity;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY, oldMaxValueQuantity, newMaxValueQuantity);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueQuantity(Quantity newMaxValueQuantity) {
+		if (newMaxValueQuantity != maxValueQuantity) {
+			NotificationChain msgs = null;
+			if (maxValueQuantity != null)
+				msgs = ((InternalEObject)maxValueQuantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY, null, msgs);
+			if (newMaxValueQuantity != null)
+				msgs = ((InternalEObject)newMaxValueQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY, null, msgs);
+			msgs = basicSetMaxValueQuantity(newMaxValueQuantity, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY, newMaxValueQuantity, newMaxValueQuantity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Range getMaxValueRange() {
+		return maxValueRange;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueRange(Range newMaxValueRange, NotificationChain msgs) {
+		Range oldMaxValueRange = maxValueRange;
+		maxValueRange = newMaxValueRange;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE, oldMaxValueRange, newMaxValueRange);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueRange(Range newMaxValueRange) {
+		if (newMaxValueRange != maxValueRange) {
+			NotificationChain msgs = null;
+			if (maxValueRange != null)
+				msgs = ((InternalEObject)maxValueRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE, null, msgs);
+			if (newMaxValueRange != null)
+				msgs = ((InternalEObject)newMaxValueRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE, null, msgs);
+			msgs = basicSetMaxValueRange(newMaxValueRange, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE, newMaxValueRange, newMaxValueRange));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Period getMaxValuePeriod() {
+		return maxValuePeriod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValuePeriod(Period newMaxValuePeriod, NotificationChain msgs) {
+		Period oldMaxValuePeriod = maxValuePeriod;
+		maxValuePeriod = newMaxValuePeriod;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD, oldMaxValuePeriod, newMaxValuePeriod);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValuePeriod(Period newMaxValuePeriod) {
+		if (newMaxValuePeriod != maxValuePeriod) {
+			NotificationChain msgs = null;
+			if (maxValuePeriod != null)
+				msgs = ((InternalEObject)maxValuePeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD, null, msgs);
+			if (newMaxValuePeriod != null)
+				msgs = ((InternalEObject)newMaxValuePeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD, null, msgs);
+			msgs = basicSetMaxValuePeriod(newMaxValuePeriod, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD, newMaxValuePeriod, newMaxValuePeriod));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Ratio getMaxValueRatio() {
+		return maxValueRatio;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueRatio(Ratio newMaxValueRatio, NotificationChain msgs) {
+		Ratio oldMaxValueRatio = maxValueRatio;
+		maxValueRatio = newMaxValueRatio;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO, oldMaxValueRatio, newMaxValueRatio);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueRatio(Ratio newMaxValueRatio) {
+		if (newMaxValueRatio != maxValueRatio) {
+			NotificationChain msgs = null;
+			if (maxValueRatio != null)
+				msgs = ((InternalEObject)maxValueRatio).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO, null, msgs);
+			if (newMaxValueRatio != null)
+				msgs = ((InternalEObject)newMaxValueRatio).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO, null, msgs);
+			msgs = basicSetMaxValueRatio(newMaxValueRatio, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO, newMaxValueRatio, newMaxValueRatio));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Reference getMaxValueReference() {
+		return maxValueReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueReference(Reference newMaxValueReference, NotificationChain msgs) {
+		Reference oldMaxValueReference = maxValueReference;
+		maxValueReference = newMaxValueReference;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE, oldMaxValueReference, newMaxValueReference);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueReference(Reference newMaxValueReference) {
+		if (newMaxValueReference != maxValueReference) {
+			NotificationChain msgs = null;
+			if (maxValueReference != null)
+				msgs = ((InternalEObject)maxValueReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE, null, msgs);
+			if (newMaxValueReference != null)
+				msgs = ((InternalEObject)newMaxValueReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE, null, msgs);
+			msgs = basicSetMaxValueReference(newMaxValueReference, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE, newMaxValueReference, newMaxValueReference));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SampledData getMaxValueSampledData() {
+		return maxValueSampledData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueSampledData(SampledData newMaxValueSampledData, NotificationChain msgs) {
+		SampledData oldMaxValueSampledData = maxValueSampledData;
+		maxValueSampledData = newMaxValueSampledData;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA, oldMaxValueSampledData, newMaxValueSampledData);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueSampledData(SampledData newMaxValueSampledData) {
+		if (newMaxValueSampledData != maxValueSampledData) {
+			NotificationChain msgs = null;
+			if (maxValueSampledData != null)
+				msgs = ((InternalEObject)maxValueSampledData).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA, null, msgs);
+			if (newMaxValueSampledData != null)
+				msgs = ((InternalEObject)newMaxValueSampledData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA, null, msgs);
+			msgs = basicSetMaxValueSampledData(newMaxValueSampledData, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA, newMaxValueSampledData, newMaxValueSampledData));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Signature getMaxValueSignature() {
+		return maxValueSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueSignature(Signature newMaxValueSignature, NotificationChain msgs) {
+		Signature oldMaxValueSignature = maxValueSignature;
+		maxValueSignature = newMaxValueSignature;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE, oldMaxValueSignature, newMaxValueSignature);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueSignature(Signature newMaxValueSignature) {
+		if (newMaxValueSignature != maxValueSignature) {
+			NotificationChain msgs = null;
+			if (maxValueSignature != null)
+				msgs = ((InternalEObject)maxValueSignature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE, null, msgs);
+			if (newMaxValueSignature != null)
+				msgs = ((InternalEObject)newMaxValueSignature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE, null, msgs);
+			msgs = basicSetMaxValueSignature(newMaxValueSignature, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE, newMaxValueSignature, newMaxValueSignature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HumanName getMaxValueHumanName() {
+		return maxValueHumanName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueHumanName(HumanName newMaxValueHumanName, NotificationChain msgs) {
+		HumanName oldMaxValueHumanName = maxValueHumanName;
+		maxValueHumanName = newMaxValueHumanName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME, oldMaxValueHumanName, newMaxValueHumanName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueHumanName(HumanName newMaxValueHumanName) {
+		if (newMaxValueHumanName != maxValueHumanName) {
+			NotificationChain msgs = null;
+			if (maxValueHumanName != null)
+				msgs = ((InternalEObject)maxValueHumanName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME, null, msgs);
+			if (newMaxValueHumanName != null)
+				msgs = ((InternalEObject)newMaxValueHumanName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME, null, msgs);
+			msgs = basicSetMaxValueHumanName(newMaxValueHumanName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME, newMaxValueHumanName, newMaxValueHumanName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Address getMaxValueAddress() {
+		return maxValueAddress;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueAddress(Address newMaxValueAddress, NotificationChain msgs) {
+		Address oldMaxValueAddress = maxValueAddress;
+		maxValueAddress = newMaxValueAddress;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS, oldMaxValueAddress, newMaxValueAddress);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueAddress(Address newMaxValueAddress) {
+		if (newMaxValueAddress != maxValueAddress) {
+			NotificationChain msgs = null;
+			if (maxValueAddress != null)
+				msgs = ((InternalEObject)maxValueAddress).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS, null, msgs);
+			if (newMaxValueAddress != null)
+				msgs = ((InternalEObject)newMaxValueAddress).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS, null, msgs);
+			msgs = basicSetMaxValueAddress(newMaxValueAddress, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS, newMaxValueAddress, newMaxValueAddress));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactPoint getMaxValueContactPoint() {
+		return maxValueContactPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueContactPoint(ContactPoint newMaxValueContactPoint, NotificationChain msgs) {
+		ContactPoint oldMaxValueContactPoint = maxValueContactPoint;
+		maxValueContactPoint = newMaxValueContactPoint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT, oldMaxValueContactPoint, newMaxValueContactPoint);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueContactPoint(ContactPoint newMaxValueContactPoint) {
+		if (newMaxValueContactPoint != maxValueContactPoint) {
+			NotificationChain msgs = null;
+			if (maxValueContactPoint != null)
+				msgs = ((InternalEObject)maxValueContactPoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT, null, msgs);
+			if (newMaxValueContactPoint != null)
+				msgs = ((InternalEObject)newMaxValueContactPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT, null, msgs);
+			msgs = basicSetMaxValueContactPoint(newMaxValueContactPoint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT, newMaxValueContactPoint, newMaxValueContactPoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Timing getMaxValueTiming() {
+		return maxValueTiming;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueTiming(Timing newMaxValueTiming, NotificationChain msgs) {
+		Timing oldMaxValueTiming = maxValueTiming;
+		maxValueTiming = newMaxValueTiming;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING, oldMaxValueTiming, newMaxValueTiming);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueTiming(Timing newMaxValueTiming) {
+		if (newMaxValueTiming != maxValueTiming) {
+			NotificationChain msgs = null;
+			if (maxValueTiming != null)
+				msgs = ((InternalEObject)maxValueTiming).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING, null, msgs);
+			if (newMaxValueTiming != null)
+				msgs = ((InternalEObject)newMaxValueTiming).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING, null, msgs);
+			msgs = basicSetMaxValueTiming(newMaxValueTiming, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING, newMaxValueTiming, newMaxValueTiming));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Meta getMaxValueMeta() {
+		return maxValueMeta;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueMeta(Meta newMaxValueMeta, NotificationChain msgs) {
+		Meta oldMaxValueMeta = maxValueMeta;
+		maxValueMeta = newMaxValueMeta;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META, oldMaxValueMeta, newMaxValueMeta);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueMeta(Meta newMaxValueMeta) {
+		if (newMaxValueMeta != maxValueMeta) {
+			NotificationChain msgs = null;
+			if (maxValueMeta != null)
+				msgs = ((InternalEObject)maxValueMeta).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META, null, msgs);
+			if (newMaxValueMeta != null)
+				msgs = ((InternalEObject)newMaxValueMeta).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META, null, msgs);
+			msgs = basicSetMaxValueMeta(newMaxValueMeta, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META, newMaxValueMeta, newMaxValueMeta));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public org.hl7.fhir.Integer getMaxLength() {
 		return maxLength;
 	}
@@ -8148,6 +11929,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetDefaultValueUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				return basicSetDefaultValuePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
+				return basicSetDefaultValueAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
 				return basicSetDefaultValueAttachment(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_IDENTIFIER:
@@ -8214,6 +11997,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetFixedUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				return basicSetFixedPositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
+				return basicSetFixedAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
 				return basicSetFixedAttachment(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_IDENTIFIER:
@@ -8278,6 +12063,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetPatternUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				return basicSetPatternPositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
+				return basicSetPatternAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
 				return basicSetPatternAttachment(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_IDENTIFIER:
@@ -8342,6 +12129,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetExampleUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				return basicSetExamplePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
+				return basicSetExampleAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
 				return basicSetExampleAttachment(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_IDENTIFIER:
@@ -8374,6 +12163,138 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetExampleTiming(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_META:
 				return basicSetExampleMeta(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN:
+				return basicSetMinValueBoolean(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER:
+				return basicSetMinValueInteger(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL:
+				return basicSetMinValueDecimal(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY:
+				return basicSetMinValueBase64Binary(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT:
+				return basicSetMinValueInstant(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING:
+				return basicSetMinValueString(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI:
+				return basicSetMinValueUri(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE:
+				return basicSetMinValueDate(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME:
+				return basicSetMinValueDateTime(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME:
+				return basicSetMinValueTime(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE:
+				return basicSetMinValueCode(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID:
+				return basicSetMinValueOid(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID:
+				return basicSetMinValueUuid(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID:
+				return basicSetMinValueId(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT:
+				return basicSetMinValueUnsignedInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
+				return basicSetMinValuePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
+				return basicSetMinValueAnnotation(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
+				return basicSetMinValueAttachment(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER:
+				return basicSetMinValueIdentifier(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT:
+				return basicSetMinValueCodeableConcept(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING:
+				return basicSetMinValueCoding(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY:
+				return basicSetMinValueQuantity(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE:
+				return basicSetMinValueRange(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD:
+				return basicSetMinValuePeriod(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO:
+				return basicSetMinValueRatio(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE:
+				return basicSetMinValueReference(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA:
+				return basicSetMinValueSampledData(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE:
+				return basicSetMinValueSignature(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME:
+				return basicSetMinValueHumanName(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS:
+				return basicSetMinValueAddress(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT:
+				return basicSetMinValueContactPoint(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING:
+				return basicSetMinValueTiming(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META:
+				return basicSetMinValueMeta(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN:
+				return basicSetMaxValueBoolean(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER:
+				return basicSetMaxValueInteger(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL:
+				return basicSetMaxValueDecimal(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY:
+				return basicSetMaxValueBase64Binary(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT:
+				return basicSetMaxValueInstant(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING:
+				return basicSetMaxValueString(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI:
+				return basicSetMaxValueUri(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE:
+				return basicSetMaxValueDate(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME:
+				return basicSetMaxValueDateTime(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME:
+				return basicSetMaxValueTime(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE:
+				return basicSetMaxValueCode(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID:
+				return basicSetMaxValueOid(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID:
+				return basicSetMaxValueUuid(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID:
+				return basicSetMaxValueId(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT:
+				return basicSetMaxValueUnsignedInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
+				return basicSetMaxValuePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
+				return basicSetMaxValueAnnotation(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:
+				return basicSetMaxValueAttachment(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER:
+				return basicSetMaxValueIdentifier(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT:
+				return basicSetMaxValueCodeableConcept(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING:
+				return basicSetMaxValueCoding(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY:
+				return basicSetMaxValueQuantity(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE:
+				return basicSetMaxValueRange(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD:
+				return basicSetMaxValuePeriod(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO:
+				return basicSetMaxValueRatio(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE:
+				return basicSetMaxValueReference(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA:
+				return basicSetMaxValueSampledData(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE:
+				return basicSetMaxValueSignature(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME:
+				return basicSetMaxValueHumanName(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS:
+				return basicSetMaxValueAddress(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT:
+				return basicSetMaxValueContactPoint(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING:
+				return basicSetMaxValueTiming(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META:
+				return basicSetMaxValueMeta(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MAX_LENGTH:
 				return basicSetMaxLength(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__CONDITION:
@@ -8464,6 +12385,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getDefaultValueUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				return getDefaultValuePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
+				return getDefaultValueAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
 				return getDefaultValueAttachment();
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_IDENTIFIER:
@@ -8530,6 +12453,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getFixedUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				return getFixedPositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
+				return getFixedAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
 				return getFixedAttachment();
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_IDENTIFIER:
@@ -8594,6 +12519,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getPatternUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				return getPatternPositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
+				return getPatternAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
 				return getPatternAttachment();
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_IDENTIFIER:
@@ -8658,6 +12585,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getExampleUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				return getExamplePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
+				return getExampleAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
 				return getExampleAttachment();
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_IDENTIFIER:
@@ -8690,6 +12619,138 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getExampleTiming();
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_META:
 				return getExampleMeta();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN:
+				return getMinValueBoolean();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER:
+				return getMinValueInteger();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL:
+				return getMinValueDecimal();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY:
+				return getMinValueBase64Binary();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT:
+				return getMinValueInstant();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING:
+				return getMinValueString();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI:
+				return getMinValueUri();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE:
+				return getMinValueDate();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME:
+				return getMinValueDateTime();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME:
+				return getMinValueTime();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE:
+				return getMinValueCode();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID:
+				return getMinValueOid();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID:
+				return getMinValueUuid();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID:
+				return getMinValueId();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT:
+				return getMinValueUnsignedInt();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
+				return getMinValuePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
+				return getMinValueAnnotation();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
+				return getMinValueAttachment();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER:
+				return getMinValueIdentifier();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT:
+				return getMinValueCodeableConcept();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING:
+				return getMinValueCoding();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY:
+				return getMinValueQuantity();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE:
+				return getMinValueRange();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD:
+				return getMinValuePeriod();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO:
+				return getMinValueRatio();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE:
+				return getMinValueReference();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA:
+				return getMinValueSampledData();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE:
+				return getMinValueSignature();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME:
+				return getMinValueHumanName();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS:
+				return getMinValueAddress();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT:
+				return getMinValueContactPoint();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING:
+				return getMinValueTiming();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META:
+				return getMinValueMeta();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN:
+				return getMaxValueBoolean();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER:
+				return getMaxValueInteger();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL:
+				return getMaxValueDecimal();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY:
+				return getMaxValueBase64Binary();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT:
+				return getMaxValueInstant();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING:
+				return getMaxValueString();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI:
+				return getMaxValueUri();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE:
+				return getMaxValueDate();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME:
+				return getMaxValueDateTime();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME:
+				return getMaxValueTime();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE:
+				return getMaxValueCode();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID:
+				return getMaxValueOid();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID:
+				return getMaxValueUuid();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID:
+				return getMaxValueId();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT:
+				return getMaxValueUnsignedInt();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
+				return getMaxValuePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
+				return getMaxValueAnnotation();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:
+				return getMaxValueAttachment();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER:
+				return getMaxValueIdentifier();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT:
+				return getMaxValueCodeableConcept();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING:
+				return getMaxValueCoding();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY:
+				return getMaxValueQuantity();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE:
+				return getMaxValueRange();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD:
+				return getMaxValuePeriod();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO:
+				return getMaxValueRatio();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE:
+				return getMaxValueReference();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA:
+				return getMaxValueSampledData();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE:
+				return getMaxValueSignature();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME:
+				return getMaxValueHumanName();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS:
+				return getMaxValueAddress();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT:
+				return getMaxValueContactPoint();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING:
+				return getMaxValueTiming();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META:
+				return getMaxValueMeta();
 			case FhirPackage.ELEMENT_DEFINITION__MAX_LENGTH:
 				return getMaxLength();
 			case FhirPackage.ELEMENT_DEFINITION__CONDITION:
@@ -8816,6 +12877,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				setDefaultValuePositiveInt((PositiveInt)newValue);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
+				setDefaultValueAnnotation((Annotation)newValue);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
 				setDefaultValueAttachment((Attachment)newValue);
 				return;
@@ -8915,6 +12979,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				setFixedPositiveInt((PositiveInt)newValue);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
+				setFixedAnnotation((Annotation)newValue);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
 				setFixedAttachment((Attachment)newValue);
 				return;
@@ -9010,6 +13077,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				setPatternPositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
+				setPatternAnnotation((Annotation)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
 				setPatternAttachment((Attachment)newValue);
@@ -9107,6 +13177,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				setExamplePositiveInt((PositiveInt)newValue);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
+				setExampleAnnotation((Annotation)newValue);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
 				setExampleAttachment((Attachment)newValue);
 				return;
@@ -9154,6 +13227,204 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_META:
 				setExampleMeta((Meta)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN:
+				setMinValueBoolean((org.hl7.fhir.Boolean)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER:
+				setMinValueInteger((org.hl7.fhir.Integer)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL:
+				setMinValueDecimal((Decimal)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY:
+				setMinValueBase64Binary((Base64Binary)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT:
+				setMinValueInstant((Instant)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING:
+				setMinValueString((org.hl7.fhir.String)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI:
+				setMinValueUri((Uri)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE:
+				setMinValueDate((Date)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME:
+				setMinValueDateTime((DateTime)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME:
+				setMinValueTime((Time)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE:
+				setMinValueCode((Code)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID:
+				setMinValueOid((Oid)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID:
+				setMinValueUuid((Uuid)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID:
+				setMinValueId((Id)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT:
+				setMinValueUnsignedInt((UnsignedInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
+				setMinValuePositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
+				setMinValueAnnotation((Annotation)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
+				setMinValueAttachment((Attachment)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER:
+				setMinValueIdentifier((Identifier)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT:
+				setMinValueCodeableConcept((CodeableConcept)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING:
+				setMinValueCoding((Coding)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY:
+				setMinValueQuantity((Quantity)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE:
+				setMinValueRange((Range)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD:
+				setMinValuePeriod((Period)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO:
+				setMinValueRatio((Ratio)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE:
+				setMinValueReference((Reference)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA:
+				setMinValueSampledData((SampledData)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE:
+				setMinValueSignature((Signature)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME:
+				setMinValueHumanName((HumanName)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS:
+				setMinValueAddress((Address)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT:
+				setMinValueContactPoint((ContactPoint)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING:
+				setMinValueTiming((Timing)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META:
+				setMinValueMeta((Meta)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN:
+				setMaxValueBoolean((org.hl7.fhir.Boolean)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER:
+				setMaxValueInteger((org.hl7.fhir.Integer)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL:
+				setMaxValueDecimal((Decimal)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY:
+				setMaxValueBase64Binary((Base64Binary)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT:
+				setMaxValueInstant((Instant)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING:
+				setMaxValueString((org.hl7.fhir.String)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI:
+				setMaxValueUri((Uri)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE:
+				setMaxValueDate((Date)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME:
+				setMaxValueDateTime((DateTime)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME:
+				setMaxValueTime((Time)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE:
+				setMaxValueCode((Code)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID:
+				setMaxValueOid((Oid)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID:
+				setMaxValueUuid((Uuid)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID:
+				setMaxValueId((Id)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT:
+				setMaxValueUnsignedInt((UnsignedInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
+				setMaxValuePositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
+				setMaxValueAnnotation((Annotation)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:
+				setMaxValueAttachment((Attachment)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER:
+				setMaxValueIdentifier((Identifier)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT:
+				setMaxValueCodeableConcept((CodeableConcept)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING:
+				setMaxValueCoding((Coding)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY:
+				setMaxValueQuantity((Quantity)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE:
+				setMaxValueRange((Range)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD:
+				setMaxValuePeriod((Period)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO:
+				setMaxValueRatio((Ratio)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE:
+				setMaxValueReference((Reference)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA:
+				setMaxValueSampledData((SampledData)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE:
+				setMaxValueSignature((Signature)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME:
+				setMaxValueHumanName((HumanName)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS:
+				setMaxValueAddress((Address)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT:
+				setMaxValueContactPoint((ContactPoint)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING:
+				setMaxValueTiming((Timing)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META:
+				setMaxValueMeta((Meta)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_LENGTH:
 				setMaxLength((org.hl7.fhir.Integer)newValue);
@@ -9287,6 +13558,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				setDefaultValuePositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
+				setDefaultValueAnnotation((Annotation)null);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
 				setDefaultValueAttachment((Attachment)null);
 				return;
@@ -9386,6 +13660,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				setFixedPositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
+				setFixedAnnotation((Annotation)null);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
 				setFixedAttachment((Attachment)null);
 				return;
@@ -9481,6 +13758,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				setPatternPositiveInt((PositiveInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
+				setPatternAnnotation((Annotation)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
 				setPatternAttachment((Attachment)null);
@@ -9578,6 +13858,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				setExamplePositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
+				setExampleAnnotation((Annotation)null);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
 				setExampleAttachment((Attachment)null);
 				return;
@@ -9625,6 +13908,204 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_META:
 				setExampleMeta((Meta)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN:
+				setMinValueBoolean((org.hl7.fhir.Boolean)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER:
+				setMinValueInteger((org.hl7.fhir.Integer)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL:
+				setMinValueDecimal((Decimal)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY:
+				setMinValueBase64Binary((Base64Binary)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT:
+				setMinValueInstant((Instant)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING:
+				setMinValueString((org.hl7.fhir.String)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI:
+				setMinValueUri((Uri)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE:
+				setMinValueDate((Date)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME:
+				setMinValueDateTime((DateTime)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME:
+				setMinValueTime((Time)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE:
+				setMinValueCode((Code)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID:
+				setMinValueOid((Oid)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID:
+				setMinValueUuid((Uuid)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID:
+				setMinValueId((Id)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT:
+				setMinValueUnsignedInt((UnsignedInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
+				setMinValuePositiveInt((PositiveInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
+				setMinValueAnnotation((Annotation)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
+				setMinValueAttachment((Attachment)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER:
+				setMinValueIdentifier((Identifier)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT:
+				setMinValueCodeableConcept((CodeableConcept)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING:
+				setMinValueCoding((Coding)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY:
+				setMinValueQuantity((Quantity)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE:
+				setMinValueRange((Range)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD:
+				setMinValuePeriod((Period)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO:
+				setMinValueRatio((Ratio)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE:
+				setMinValueReference((Reference)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA:
+				setMinValueSampledData((SampledData)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE:
+				setMinValueSignature((Signature)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME:
+				setMinValueHumanName((HumanName)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS:
+				setMinValueAddress((Address)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT:
+				setMinValueContactPoint((ContactPoint)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING:
+				setMinValueTiming((Timing)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META:
+				setMinValueMeta((Meta)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN:
+				setMaxValueBoolean((org.hl7.fhir.Boolean)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER:
+				setMaxValueInteger((org.hl7.fhir.Integer)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL:
+				setMaxValueDecimal((Decimal)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY:
+				setMaxValueBase64Binary((Base64Binary)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT:
+				setMaxValueInstant((Instant)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING:
+				setMaxValueString((org.hl7.fhir.String)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI:
+				setMaxValueUri((Uri)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE:
+				setMaxValueDate((Date)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME:
+				setMaxValueDateTime((DateTime)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME:
+				setMaxValueTime((Time)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE:
+				setMaxValueCode((Code)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID:
+				setMaxValueOid((Oid)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID:
+				setMaxValueUuid((Uuid)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID:
+				setMaxValueId((Id)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT:
+				setMaxValueUnsignedInt((UnsignedInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
+				setMaxValuePositiveInt((PositiveInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
+				setMaxValueAnnotation((Annotation)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:
+				setMaxValueAttachment((Attachment)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER:
+				setMaxValueIdentifier((Identifier)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT:
+				setMaxValueCodeableConcept((CodeableConcept)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING:
+				setMaxValueCoding((Coding)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY:
+				setMaxValueQuantity((Quantity)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE:
+				setMaxValueRange((Range)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD:
+				setMaxValuePeriod((Period)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO:
+				setMaxValueRatio((Ratio)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE:
+				setMaxValueReference((Reference)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA:
+				setMaxValueSampledData((SampledData)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE:
+				setMaxValueSignature((Signature)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME:
+				setMaxValueHumanName((HumanName)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS:
+				setMaxValueAddress((Address)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT:
+				setMaxValueContactPoint((ContactPoint)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING:
+				setMaxValueTiming((Timing)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META:
+				setMaxValueMeta((Meta)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_LENGTH:
 				setMaxLength((org.hl7.fhir.Integer)null);
@@ -9724,6 +14205,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return defaultValueUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				return defaultValuePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
+				return defaultValueAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
 				return defaultValueAttachment != null;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_IDENTIFIER:
@@ -9790,6 +14273,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return fixedUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				return fixedPositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
+				return fixedAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
 				return fixedAttachment != null;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_IDENTIFIER:
@@ -9854,6 +14339,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return patternUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				return patternPositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
+				return patternAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
 				return patternAttachment != null;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_IDENTIFIER:
@@ -9918,6 +14405,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return exampleUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				return examplePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
+				return exampleAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
 				return exampleAttachment != null;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_IDENTIFIER:
@@ -9950,6 +14439,138 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return exampleTiming != null;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_META:
 				return exampleMeta != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN:
+				return minValueBoolean != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INTEGER:
+				return minValueInteger != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DECIMAL:
+				return minValueDecimal != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY:
+				return minValueBase64Binary != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_INSTANT:
+				return minValueInstant != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_STRING:
+				return minValueString != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_URI:
+				return minValueUri != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE:
+				return minValueDate != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME:
+				return minValueDateTime != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIME:
+				return minValueTime != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODE:
+				return minValueCode != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_OID:
+				return minValueOid != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UUID:
+				return minValueUuid != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ID:
+				return minValueId != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT:
+				return minValueUnsignedInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
+				return minValuePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
+				return minValueAnnotation != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
+				return minValueAttachment != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER:
+				return minValueIdentifier != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT:
+				return minValueCodeableConcept != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CODING:
+				return minValueCoding != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_QUANTITY:
+				return minValueQuantity != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RANGE:
+				return minValueRange != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_PERIOD:
+				return minValuePeriod != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_RATIO:
+				return minValueRatio != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_REFERENCE:
+				return minValueReference != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA:
+				return minValueSampledData != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE:
+				return minValueSignature != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME:
+				return minValueHumanName != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ADDRESS:
+				return minValueAddress != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT:
+				return minValueContactPoint != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_TIMING:
+				return minValueTiming != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_META:
+				return minValueMeta != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN:
+				return maxValueBoolean != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INTEGER:
+				return maxValueInteger != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DECIMAL:
+				return maxValueDecimal != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY:
+				return maxValueBase64Binary != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_INSTANT:
+				return maxValueInstant != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_STRING:
+				return maxValueString != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_URI:
+				return maxValueUri != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE:
+				return maxValueDate != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME:
+				return maxValueDateTime != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIME:
+				return maxValueTime != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODE:
+				return maxValueCode != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_OID:
+				return maxValueOid != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UUID:
+				return maxValueUuid != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ID:
+				return maxValueId != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT:
+				return maxValueUnsignedInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
+				return maxValuePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
+				return maxValueAnnotation != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:
+				return maxValueAttachment != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER:
+				return maxValueIdentifier != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT:
+				return maxValueCodeableConcept != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CODING:
+				return maxValueCoding != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_QUANTITY:
+				return maxValueQuantity != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RANGE:
+				return maxValueRange != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_PERIOD:
+				return maxValuePeriod != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_RATIO:
+				return maxValueRatio != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_REFERENCE:
+				return maxValueReference != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA:
+				return maxValueSampledData != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE:
+				return maxValueSignature != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME:
+				return maxValueHumanName != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ADDRESS:
+				return maxValueAddress != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT:
+				return maxValueContactPoint != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_TIMING:
+				return maxValueTiming != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_META:
+				return maxValueMeta != null;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_LENGTH:
 				return maxLength != null;
 			case FhirPackage.ELEMENT_DEFINITION__CONDITION:

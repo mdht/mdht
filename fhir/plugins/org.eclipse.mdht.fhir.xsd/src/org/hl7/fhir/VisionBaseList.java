@@ -65,7 +65,7 @@ public enum VisionBaseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * top.
+	 * top
 	 * <!-- end-model-doc -->
 	 * @see #UP
 	 * @model name="up"
@@ -79,7 +79,7 @@ public enum VisionBaseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * bottom.
+	 * bottom
 	 * <!-- end-model-doc -->
 	 * @see #DOWN
 	 * @model name="down"
@@ -93,7 +93,7 @@ public enum VisionBaseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * inner edge.
+	 * inner edge
 	 * <!-- end-model-doc -->
 	 * @see #IN
 	 * @model name="in"
@@ -107,7 +107,7 @@ public enum VisionBaseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * outer edge.
+	 * outer edge
 	 * <!-- end-model-doc -->
 	 * @see #OUT
 	 * @model name="out"

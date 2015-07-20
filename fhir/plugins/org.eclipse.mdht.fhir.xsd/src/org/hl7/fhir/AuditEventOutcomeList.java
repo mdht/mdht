@@ -65,7 +65,7 @@ public enum AuditEventOutcomeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The operation completed successfully (whether with warnings or not).
+	 * The operation completed successfully (whether with warnings or not)
 	 * <!-- end-model-doc -->
 	 * @see #_0
 	 * @model literal="0"
@@ -79,7 +79,7 @@ public enum AuditEventOutcomeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The action was not successful due to some kind of catered for error (often equivalent to an HTTP 400 response).
+	 * The action was not successful due to some kind of catered for error (often equivalent to an HTTP 400 response)
 	 * <!-- end-model-doc -->
 	 * @see #_4
 	 * @model literal="4"
@@ -93,7 +93,7 @@ public enum AuditEventOutcomeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The action was not successful due to some kind of unexpected error (often equivalent to an HTTP 500 response).
+	 * The action was not successful due to some kind of unexpected error (often equivalent to an HTTP 500 response)
 	 * <!-- end-model-doc -->
 	 * @see #_8
 	 * @model literal="8"
@@ -107,7 +107,7 @@ public enum AuditEventOutcomeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An error of such magnitude occurred that the system is not longer available for use (i.e. the system died).
+	 * An error of such magnitude occurred that the system is not longer available for use (i.e. the system died)
 	 * <!-- end-model-doc -->
 	 * @see #_12
 	 * @model literal="12"

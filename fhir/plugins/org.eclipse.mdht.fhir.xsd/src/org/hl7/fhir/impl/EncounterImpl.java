@@ -124,14 +124,14 @@ public class EncounterImpl extends DomainResourceImpl implements Encounter {
 	protected Reference patient;
 
 	/**
-	 * The cached value of the '{@link #getEpisodeOfCare() <em>Episode Of Care</em>}' containment reference.
+	 * The cached value of the '{@link #getEpisodeOfCare() <em>Episode Of Care</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEpisodeOfCare()
 	 * @generated
 	 * @ordered
 	 */
-	protected Reference episodeOfCare;
+	protected EList<Reference> episodeOfCare;
 
 	/**
 	 * The cached value of the '{@link #getIncomingReferralRequest() <em>Incoming Referral Request</em>}' containment reference list.
@@ -442,42 +442,11 @@ public class EncounterImpl extends DomainResourceImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference getEpisodeOfCare() {
+	public EList<Reference> getEpisodeOfCare() {
+		if (episodeOfCare == null) {
+			episodeOfCare = new EObjectContainmentEList<Reference>(Reference.class, this, FhirPackage.ENCOUNTER__EPISODE_OF_CARE);
+		}
 		return episodeOfCare;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEpisodeOfCare(Reference newEpisodeOfCare, NotificationChain msgs) {
-		Reference oldEpisodeOfCare = episodeOfCare;
-		episodeOfCare = newEpisodeOfCare;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER__EPISODE_OF_CARE, oldEpisodeOfCare, newEpisodeOfCare);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEpisodeOfCare(Reference newEpisodeOfCare) {
-		if (newEpisodeOfCare != episodeOfCare) {
-			NotificationChain msgs = null;
-			if (episodeOfCare != null)
-				msgs = ((InternalEObject)episodeOfCare).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER__EPISODE_OF_CARE, null, msgs);
-			if (newEpisodeOfCare != null)
-				msgs = ((InternalEObject)newEpisodeOfCare).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ENCOUNTER__EPISODE_OF_CARE, null, msgs);
-			msgs = basicSetEpisodeOfCare(newEpisodeOfCare, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ENCOUNTER__EPISODE_OF_CARE, newEpisodeOfCare, newEpisodeOfCare));
 	}
 
 	/**
@@ -862,7 +831,7 @@ public class EncounterImpl extends DomainResourceImpl implements Encounter {
 			case FhirPackage.ENCOUNTER__PATIENT:
 				return basicSetPatient(null, msgs);
 			case FhirPackage.ENCOUNTER__EPISODE_OF_CARE:
-				return basicSetEpisodeOfCare(null, msgs);
+				return ((InternalEList<?>)getEpisodeOfCare()).basicRemove(otherEnd, msgs);
 			case FhirPackage.ENCOUNTER__INCOMING_REFERRAL_REQUEST:
 				return ((InternalEList<?>)getIncomingReferralRequest()).basicRemove(otherEnd, msgs);
 			case FhirPackage.ENCOUNTER__PARTICIPANT:
@@ -972,7 +941,8 @@ public class EncounterImpl extends DomainResourceImpl implements Encounter {
 				setPatient((Reference)newValue);
 				return;
 			case FhirPackage.ENCOUNTER__EPISODE_OF_CARE:
-				setEpisodeOfCare((Reference)newValue);
+				getEpisodeOfCare().clear();
+				getEpisodeOfCare().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case FhirPackage.ENCOUNTER__INCOMING_REFERRAL_REQUEST:
 				getIncomingReferralRequest().clear();
@@ -1046,7 +1016,7 @@ public class EncounterImpl extends DomainResourceImpl implements Encounter {
 				setPatient((Reference)null);
 				return;
 			case FhirPackage.ENCOUNTER__EPISODE_OF_CARE:
-				setEpisodeOfCare((Reference)null);
+				getEpisodeOfCare().clear();
 				return;
 			case FhirPackage.ENCOUNTER__INCOMING_REFERRAL_REQUEST:
 				getIncomingReferralRequest().clear();
@@ -1109,7 +1079,7 @@ public class EncounterImpl extends DomainResourceImpl implements Encounter {
 			case FhirPackage.ENCOUNTER__PATIENT:
 				return patient != null;
 			case FhirPackage.ENCOUNTER__EPISODE_OF_CARE:
-				return episodeOfCare != null;
+				return episodeOfCare != null && !episodeOfCare.isEmpty();
 			case FhirPackage.ENCOUNTER__INCOMING_REFERRAL_REQUEST:
 				return incomingReferralRequest != null && !incomingReferralRequest.isEmpty();
 			case FhirPackage.ENCOUNTER__PARTICIPANT:

@@ -45,7 +45,7 @@ public enum VisionEyesList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * right eye.
+	 * Right Eye
 	 * <!-- end-model-doc -->
 	 * @see #RIGHT
 	 * @model name="right"
@@ -59,7 +59,7 @@ public enum VisionEyesList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * left eye.
+	 * Left Eye
 	 * <!-- end-model-doc -->
 	 * @see #LEFT
 	 * @model name="left"

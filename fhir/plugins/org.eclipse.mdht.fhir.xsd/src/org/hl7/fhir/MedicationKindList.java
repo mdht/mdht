@@ -45,7 +45,7 @@ public enum MedicationKindList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The medication is a product.
+	 * The medication is a product
 	 * <!-- end-model-doc -->
 	 * @see #PRODUCT
 	 * @model name="product"
@@ -59,7 +59,7 @@ public enum MedicationKindList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The medication is a package - a contained group of one of more products.
+	 * The medication is a package - a contained group of one of more products
 	 * <!-- end-model-doc -->
 	 * @see #PACKAGE
 	 * @model name="package"

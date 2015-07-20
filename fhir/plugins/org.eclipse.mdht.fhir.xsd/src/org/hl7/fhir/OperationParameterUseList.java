@@ -45,7 +45,7 @@ public enum OperationParameterUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This is an input parameter.
+	 * This is an input parameter
 	 * <!-- end-model-doc -->
 	 * @see #IN
 	 * @model name="in"
@@ -59,7 +59,7 @@ public enum OperationParameterUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This is an output parameter.
+	 * This is an output parameter
 	 * <!-- end-model-doc -->
 	 * @see #OUT
 	 * @model name="out"

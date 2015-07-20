@@ -85,7 +85,7 @@ public interface ValueSetConcept1 extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Additional representations for this concept when used in this value set - other languages, aliases, specialised purposes, used for particular purposes, etc.
+	 * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Designation</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getValueSetConcept1_Designation()

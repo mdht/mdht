@@ -55,7 +55,7 @@ public enum SlicingRulesList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * No additional content is allowed other than that described by the slices in this profile.
+	 * No additional content is allowed other than that described by the slices in this profile
 	 * <!-- end-model-doc -->
 	 * @see #CLOSED
 	 * @model name="closed"
@@ -69,7 +69,7 @@ public enum SlicingRulesList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Additional content is allowed anywhere in the list.
+	 * Additional content is allowed anywhere in the list
 	 * <!-- end-model-doc -->
 	 * @see #OPEN
 	 * @model name="open"
@@ -83,7 +83,7 @@ public enum SlicingRulesList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Additional content is allowed, but only at the end of the list. Note that using this requires that the slices be ordered, which makes it hard to share uses. This should only be done where absolutely required.
+	 * Additional content is allowed, but only at the end of the list. Note that using this requires that the slices be ordered, which makes it hard to share uses. This should only be done where absolutely required
 	 * <!-- end-model-doc -->
 	 * @see #OPEN_AT_END
 	 * @model name="openAtEnd"

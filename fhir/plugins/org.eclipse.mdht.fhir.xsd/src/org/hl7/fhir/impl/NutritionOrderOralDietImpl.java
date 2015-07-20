@@ -33,7 +33,7 @@ import org.hl7.fhir.Timing;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderOralDietImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.NutritionOrderOralDietImpl#getScheduled <em>Scheduled</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.NutritionOrderOralDietImpl#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderOralDietImpl#getNutrient <em>Nutrient</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderOralDietImpl#getTexture <em>Texture</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderOralDietImpl#getFluidConsistencyType <em>Fluid Consistency Type</em>}</li>
@@ -54,14 +54,14 @@ public class NutritionOrderOralDietImpl extends BackboneElementImpl implements N
 	protected EList<CodeableConcept> type;
 
 	/**
-	 * The cached value of the '{@link #getScheduled() <em>Scheduled</em>}' containment reference.
+	 * The cached value of the '{@link #getSchedule() <em>Schedule</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getScheduled()
+	 * @see #getSchedule()
 	 * @generated
 	 * @ordered
 	 */
-	protected Timing scheduled;
+	protected EList<Timing> schedule;
 
 	/**
 	 * The cached value of the '{@link #getNutrient() <em>Nutrient</em>}' containment reference list.
@@ -139,42 +139,11 @@ public class NutritionOrderOralDietImpl extends BackboneElementImpl implements N
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Timing getScheduled() {
-		return scheduled;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetScheduled(Timing newScheduled, NotificationChain msgs) {
-		Timing oldScheduled = scheduled;
-		scheduled = newScheduled;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED, oldScheduled, newScheduled);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Timing> getSchedule() {
+		if (schedule == null) {
+			schedule = new EObjectContainmentEList<Timing>(Timing.class, this, FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULE);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setScheduled(Timing newScheduled) {
-		if (newScheduled != scheduled) {
-			NotificationChain msgs = null;
-			if (scheduled != null)
-				msgs = ((InternalEObject)scheduled).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED, null, msgs);
-			if (newScheduled != null)
-				msgs = ((InternalEObject)newScheduled).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED, null, msgs);
-			msgs = basicSetScheduled(newScheduled, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED, newScheduled, newScheduled));
+		return schedule;
 	}
 
 	/**
@@ -266,8 +235,8 @@ public class NutritionOrderOralDietImpl extends BackboneElementImpl implements N
 		switch (featureID) {
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__TYPE:
 				return ((InternalEList<?>)getType()).basicRemove(otherEnd, msgs);
-			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED:
-				return basicSetScheduled(null, msgs);
+			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULE:
+				return ((InternalEList<?>)getSchedule()).basicRemove(otherEnd, msgs);
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__NUTRIENT:
 				return ((InternalEList<?>)getNutrient()).basicRemove(otherEnd, msgs);
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__TEXTURE:
@@ -290,8 +259,8 @@ public class NutritionOrderOralDietImpl extends BackboneElementImpl implements N
 		switch (featureID) {
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__TYPE:
 				return getType();
-			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED:
-				return getScheduled();
+			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULE:
+				return getSchedule();
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__NUTRIENT:
 				return getNutrient();
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__TEXTURE:
@@ -317,8 +286,9 @@ public class NutritionOrderOralDietImpl extends BackboneElementImpl implements N
 				getType().clear();
 				getType().addAll((Collection<? extends CodeableConcept>)newValue);
 				return;
-			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED:
-				setScheduled((Timing)newValue);
+			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULE:
+				getSchedule().clear();
+				getSchedule().addAll((Collection<? extends Timing>)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__NUTRIENT:
 				getNutrient().clear();
@@ -350,8 +320,8 @@ public class NutritionOrderOralDietImpl extends BackboneElementImpl implements N
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__TYPE:
 				getType().clear();
 				return;
-			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED:
-				setScheduled((Timing)null);
+			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULE:
+				getSchedule().clear();
 				return;
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__NUTRIENT:
 				getNutrient().clear();
@@ -379,8 +349,8 @@ public class NutritionOrderOralDietImpl extends BackboneElementImpl implements N
 		switch (featureID) {
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__TYPE:
 				return type != null && !type.isEmpty();
-			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULED:
-				return scheduled != null;
+			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__SCHEDULE:
+				return schedule != null && !schedule.isEmpty();
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__NUTRIENT:
 				return nutrient != null && !nutrient.isEmpty();
 			case FhirPackage.NUTRITION_ORDER_ORAL_DIET__TEXTURE:

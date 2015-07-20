@@ -27,7 +27,7 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.CodingImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.CodingImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.CodingImpl#getDisplay <em>Display</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.CodingImpl#getPrimary <em>Primary</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.CodingImpl#getUserSelected <em>User Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,14 +74,14 @@ public class CodingImpl extends ElementImpl implements Coding {
 	protected org.hl7.fhir.String display;
 
 	/**
-	 * The cached value of the '{@link #getPrimary() <em>Primary</em>}' containment reference.
+	 * The cached value of the '{@link #getUserSelected() <em>User Selected</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrimary()
+	 * @see #getUserSelected()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.Boolean primary;
+	protected org.hl7.fhir.Boolean userSelected;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,8 +279,8 @@ public class CodingImpl extends ElementImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.Boolean getPrimary() {
-		return primary;
+	public org.hl7.fhir.Boolean getUserSelected() {
+		return userSelected;
 	}
 
 	/**
@@ -288,11 +288,11 @@ public class CodingImpl extends ElementImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPrimary(org.hl7.fhir.Boolean newPrimary, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldPrimary = primary;
-		primary = newPrimary;
+	public NotificationChain basicSetUserSelected(org.hl7.fhir.Boolean newUserSelected, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldUserSelected = userSelected;
+		userSelected = newUserSelected;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CODING__PRIMARY, oldPrimary, newPrimary);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CODING__USER_SELECTED, oldUserSelected, newUserSelected);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -303,18 +303,18 @@ public class CodingImpl extends ElementImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPrimary(org.hl7.fhir.Boolean newPrimary) {
-		if (newPrimary != primary) {
+	public void setUserSelected(org.hl7.fhir.Boolean newUserSelected) {
+		if (newUserSelected != userSelected) {
 			NotificationChain msgs = null;
-			if (primary != null)
-				msgs = ((InternalEObject)primary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CODING__PRIMARY, null, msgs);
-			if (newPrimary != null)
-				msgs = ((InternalEObject)newPrimary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CODING__PRIMARY, null, msgs);
-			msgs = basicSetPrimary(newPrimary, msgs);
+			if (userSelected != null)
+				msgs = ((InternalEObject)userSelected).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CODING__USER_SELECTED, null, msgs);
+			if (newUserSelected != null)
+				msgs = ((InternalEObject)newUserSelected).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CODING__USER_SELECTED, null, msgs);
+			msgs = basicSetUserSelected(newUserSelected, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CODING__PRIMARY, newPrimary, newPrimary));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CODING__USER_SELECTED, newUserSelected, newUserSelected));
 	}
 
 	/**
@@ -333,8 +333,8 @@ public class CodingImpl extends ElementImpl implements Coding {
 				return basicSetCode(null, msgs);
 			case FhirPackage.CODING__DISPLAY:
 				return basicSetDisplay(null, msgs);
-			case FhirPackage.CODING__PRIMARY:
-				return basicSetPrimary(null, msgs);
+			case FhirPackage.CODING__USER_SELECTED:
+				return basicSetUserSelected(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -355,8 +355,8 @@ public class CodingImpl extends ElementImpl implements Coding {
 				return getCode();
 			case FhirPackage.CODING__DISPLAY:
 				return getDisplay();
-			case FhirPackage.CODING__PRIMARY:
-				return getPrimary();
+			case FhirPackage.CODING__USER_SELECTED:
+				return getUserSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -381,8 +381,8 @@ public class CodingImpl extends ElementImpl implements Coding {
 			case FhirPackage.CODING__DISPLAY:
 				setDisplay((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.CODING__PRIMARY:
-				setPrimary((org.hl7.fhir.Boolean)newValue);
+			case FhirPackage.CODING__USER_SELECTED:
+				setUserSelected((org.hl7.fhir.Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -408,8 +408,8 @@ public class CodingImpl extends ElementImpl implements Coding {
 			case FhirPackage.CODING__DISPLAY:
 				setDisplay((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.CODING__PRIMARY:
-				setPrimary((org.hl7.fhir.Boolean)null);
+			case FhirPackage.CODING__USER_SELECTED:
+				setUserSelected((org.hl7.fhir.Boolean)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -431,8 +431,8 @@ public class CodingImpl extends ElementImpl implements Coding {
 				return code != null;
 			case FhirPackage.CODING__DISPLAY:
 				return display != null;
-			case FhirPackage.CODING__PRIMARY:
-				return primary != null;
+			case FhirPackage.CODING__USER_SELECTED:
+				return userSelected != null;
 		}
 		return super.eIsSet(featureID);
 	}

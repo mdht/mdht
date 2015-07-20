@@ -24,6 +24,7 @@ import org.hl7.fhir.ConformanceRest;
 import org.hl7.fhir.ConformanceSecurity;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.RestfulConformanceMode;
+import org.hl7.fhir.TransactionMode;
 import org.hl7.fhir.Uri;
 
 /**
@@ -39,6 +40,7 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getResource <em>Resource</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getInteraction <em>Interaction</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getTransactionMode <em>Transaction Mode</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getDocumentMailbox <em>Document Mailbox</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getCompartment <em>Compartment</em>}</li>
@@ -96,6 +98,16 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 	 * @ordered
 	 */
 	protected EList<ConformanceInteraction1> interaction;
+
+	/**
+	 * The cached value of the '{@link #getTransactionMode() <em>Transaction Mode</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTransactionMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected TransactionMode transactionMode;
 
 	/**
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference list.
@@ -304,6 +316,49 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TransactionMode getTransactionMode() {
+		return transactionMode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTransactionMode(TransactionMode newTransactionMode, NotificationChain msgs) {
+		TransactionMode oldTransactionMode = transactionMode;
+		transactionMode = newTransactionMode;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE, oldTransactionMode, newTransactionMode);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTransactionMode(TransactionMode newTransactionMode) {
+		if (newTransactionMode != transactionMode) {
+			NotificationChain msgs = null;
+			if (transactionMode != null)
+				msgs = ((InternalEObject)transactionMode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE, null, msgs);
+			if (newTransactionMode != null)
+				msgs = ((InternalEObject)newTransactionMode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE, null, msgs);
+			msgs = basicSetTransactionMode(newTransactionMode, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE, newTransactionMode, newTransactionMode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ConformanceOperation> getOperation() {
 		if (operation == null) {
 			operation = new EObjectContainmentEList<ConformanceOperation>(ConformanceOperation.class, this, FhirPackage.CONFORMANCE_REST__OPERATION);
@@ -353,6 +408,8 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 				return ((InternalEList<?>)getResource()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_REST__INTERACTION:
 				return ((InternalEList<?>)getInteraction()).basicRemove(otherEnd, msgs);
+			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
+				return basicSetTransactionMode(null, msgs);
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				return ((InternalEList<?>)getOperation()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_REST__DOCUMENT_MAILBOX:
@@ -381,6 +438,8 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 				return getResource();
 			case FhirPackage.CONFORMANCE_REST__INTERACTION:
 				return getInteraction();
+			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
+				return getTransactionMode();
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				return getOperation();
 			case FhirPackage.CONFORMANCE_REST__DOCUMENT_MAILBOX:
@@ -416,6 +475,9 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 			case FhirPackage.CONFORMANCE_REST__INTERACTION:
 				getInteraction().clear();
 				getInteraction().addAll((Collection<? extends ConformanceInteraction1>)newValue);
+				return;
+			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
+				setTransactionMode((TransactionMode)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				getOperation().clear();
@@ -456,6 +518,9 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 			case FhirPackage.CONFORMANCE_REST__INTERACTION:
 				getInteraction().clear();
 				return;
+			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
+				setTransactionMode((TransactionMode)null);
+				return;
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				getOperation().clear();
 				return;
@@ -487,6 +552,8 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 				return resource != null && !resource.isEmpty();
 			case FhirPackage.CONFORMANCE_REST__INTERACTION:
 				return interaction != null && !interaction.isEmpty();
+			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
+				return transactionMode != null;
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				return operation != null && !operation.isEmpty();
 			case FhirPackage.CONFORMANCE_REST__DOCUMENT_MAILBOX:

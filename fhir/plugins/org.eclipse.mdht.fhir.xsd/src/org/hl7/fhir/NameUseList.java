@@ -95,7 +95,7 @@ public enum NameUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Known as/conventional/the one you normally use.
+	 * Known as/conventional/the one you normally use
 	 * <!-- end-model-doc -->
 	 * @see #USUAL
 	 * @model name="usual"
@@ -137,7 +137,7 @@ public enum NameUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A name that is used to address the person in an informal manner, but is not part of their formal or usual name.
+	 * A name that is used to address the person in an informal manner, but is not part of their formal or usual name
 	 * <!-- end-model-doc -->
 	 * @see #NICKNAME
 	 * @model name="nickname"
@@ -151,7 +151,7 @@ public enum NameUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Anonymous assigned name, alias, or pseudonym (used to protect a person's identity for privacy reasons).
+	 * Anonymous assigned name, alias, or pseudonym (used to protect a person's identity for privacy reasons)
 	 * <!-- end-model-doc -->
 	 * @see #ANONYMOUS
 	 * @model name="anonymous"
@@ -165,7 +165,7 @@ public enum NameUseList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This name is no longer in use (or was never correct, but retained for records).
+	 * This name is no longer in use (or was never correct, but retained for records)
 	 * <!-- end-model-doc -->
 	 * @see #OLD
 	 * @model name="old"

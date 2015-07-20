@@ -71,14 +71,14 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	STOPPED(4, "stopped", "stopped"),
 
 	/**
-	 * The '<em><b>Superceded</b></em>' literal object.
+	 * The '<em><b>Superseded</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SUPERCEDED_VALUE
+	 * @see #SUPERSEDED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SUPERCEDED(5, "superceded", "superceded"),
+	SUPERSEDED(5, "superseded", "superseded"),
 
 	/**
 	 * The '<em><b>Draft</b></em>' literal object.
@@ -161,18 +161,18 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	public static final int STOPPED_VALUE = 4;
 
 	/**
-	 * The '<em><b>Superceded</b></em>' literal value.
+	 * The '<em><b>Superseded</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The prescription was replaced by a newer one, which encompasses all the information in the previous one.
 	 * <!-- end-model-doc -->
-	 * @see #SUPERCEDED
-	 * @model name="superceded"
+	 * @see #SUPERSEDED
+	 * @model name="superseded"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUPERCEDED_VALUE = 5;
+	public static final int SUPERSEDED_VALUE = 5;
 
 	/**
 	 * The '<em><b>Draft</b></em>' literal value.
@@ -201,7 +201,7 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 			COMPLETED,
 			ENTERED_IN_ERROR,
 			STOPPED,
-			SUPERCEDED,
+			SUPERSEDED,
 			DRAFT,
 		};
 
@@ -264,7 +264,7 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 			case COMPLETED_VALUE: return COMPLETED;
 			case ENTERED_IN_ERROR_VALUE: return ENTERED_IN_ERROR;
 			case STOPPED_VALUE: return STOPPED;
-			case SUPERCEDED_VALUE: return SUPERCEDED;
+			case SUPERSEDED_VALUE: return SUPERSEDED;
 			case DRAFT_VALUE: return DRAFT;
 		}
 		return null;

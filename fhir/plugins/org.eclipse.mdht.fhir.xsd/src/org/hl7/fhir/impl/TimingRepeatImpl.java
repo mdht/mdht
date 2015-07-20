@@ -11,9 +11,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hl7.fhir.Decimal;
+import org.hl7.fhir.Duration;
 import org.hl7.fhir.EventTiming;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Period;
+import org.hl7.fhir.Range;
 import org.hl7.fhir.TimingRepeat;
 import org.hl7.fhir.UnitsOfTime;
 
@@ -25,9 +27,12 @@ import org.hl7.fhir.UnitsOfTime;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getBounds <em>Bounds</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getBoundsDuration <em>Bounds Duration</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getBoundsRange <em>Bounds Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getBoundsPeriod <em>Bounds Period</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getCount <em>Count</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getDuration <em>Duration</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getDurationMax <em>Duration Max</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getDurationUnits <em>Duration Units</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getFrequency <em>Frequency</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TimingRepeatImpl#getFrequencyMax <em>Frequency Max</em>}</li>
@@ -41,14 +46,34 @@ import org.hl7.fhir.UnitsOfTime;
  */
 public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	/**
-	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
+	 * The cached value of the '{@link #getBoundsDuration() <em>Bounds Duration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBounds()
+	 * @see #getBoundsDuration()
 	 * @generated
 	 * @ordered
 	 */
-	protected Period bounds;
+	protected Duration boundsDuration;
+
+	/**
+	 * The cached value of the '{@link #getBoundsRange() <em>Bounds Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBoundsRange()
+	 * @generated
+	 * @ordered
+	 */
+	protected Range boundsRange;
+
+	/**
+	 * The cached value of the '{@link #getBoundsPeriod() <em>Bounds Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBoundsPeriod()
+	 * @generated
+	 * @ordered
+	 */
+	protected Period boundsPeriod;
 
 	/**
 	 * The cached value of the '{@link #getCount() <em>Count</em>}' containment reference.
@@ -69,6 +94,16 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	 * @ordered
 	 */
 	protected Decimal duration;
+
+	/**
+	 * The cached value of the '{@link #getDurationMax() <em>Duration Max</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDurationMax()
+	 * @generated
+	 * @ordered
+	 */
+	protected Decimal durationMax;
 
 	/**
 	 * The cached value of the '{@link #getDurationUnits() <em>Duration Units</em>}' containment reference.
@@ -164,8 +199,8 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Period getBounds() {
-		return bounds;
+	public Duration getBoundsDuration() {
+		return boundsDuration;
 	}
 
 	/**
@@ -173,11 +208,11 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBounds(Period newBounds, NotificationChain msgs) {
-		Period oldBounds = bounds;
-		bounds = newBounds;
+	public NotificationChain basicSetBoundsDuration(Duration newBoundsDuration, NotificationChain msgs) {
+		Duration oldBoundsDuration = boundsDuration;
+		boundsDuration = newBoundsDuration;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS, oldBounds, newBounds);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS_DURATION, oldBoundsDuration, newBoundsDuration);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -188,18 +223,104 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBounds(Period newBounds) {
-		if (newBounds != bounds) {
+	public void setBoundsDuration(Duration newBoundsDuration) {
+		if (newBoundsDuration != boundsDuration) {
 			NotificationChain msgs = null;
-			if (bounds != null)
-				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS, null, msgs);
-			if (newBounds != null)
-				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS, null, msgs);
-			msgs = basicSetBounds(newBounds, msgs);
+			if (boundsDuration != null)
+				msgs = ((InternalEObject)boundsDuration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS_DURATION, null, msgs);
+			if (newBoundsDuration != null)
+				msgs = ((InternalEObject)newBoundsDuration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS_DURATION, null, msgs);
+			msgs = basicSetBoundsDuration(newBoundsDuration, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS, newBounds, newBounds));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS_DURATION, newBoundsDuration, newBoundsDuration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Range getBoundsRange() {
+		return boundsRange;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBoundsRange(Range newBoundsRange, NotificationChain msgs) {
+		Range oldBoundsRange = boundsRange;
+		boundsRange = newBoundsRange;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS_RANGE, oldBoundsRange, newBoundsRange);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBoundsRange(Range newBoundsRange) {
+		if (newBoundsRange != boundsRange) {
+			NotificationChain msgs = null;
+			if (boundsRange != null)
+				msgs = ((InternalEObject)boundsRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS_RANGE, null, msgs);
+			if (newBoundsRange != null)
+				msgs = ((InternalEObject)newBoundsRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS_RANGE, null, msgs);
+			msgs = basicSetBoundsRange(newBoundsRange, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS_RANGE, newBoundsRange, newBoundsRange));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Period getBoundsPeriod() {
+		return boundsPeriod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBoundsPeriod(Period newBoundsPeriod, NotificationChain msgs) {
+		Period oldBoundsPeriod = boundsPeriod;
+		boundsPeriod = newBoundsPeriod;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD, oldBoundsPeriod, newBoundsPeriod);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBoundsPeriod(Period newBoundsPeriod) {
+		if (newBoundsPeriod != boundsPeriod) {
+			NotificationChain msgs = null;
+			if (boundsPeriod != null)
+				msgs = ((InternalEObject)boundsPeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD, null, msgs);
+			if (newBoundsPeriod != null)
+				msgs = ((InternalEObject)newBoundsPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD, null, msgs);
+			msgs = basicSetBoundsPeriod(newBoundsPeriod, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD, newBoundsPeriod, newBoundsPeriod));
 	}
 
 	/**
@@ -286,6 +407,49 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__DURATION, newDuration, newDuration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Decimal getDurationMax() {
+		return durationMax;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDurationMax(Decimal newDurationMax, NotificationChain msgs) {
+		Decimal oldDurationMax = durationMax;
+		durationMax = newDurationMax;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__DURATION_MAX, oldDurationMax, newDurationMax);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDurationMax(Decimal newDurationMax) {
+		if (newDurationMax != durationMax) {
+			NotificationChain msgs = null;
+			if (durationMax != null)
+				msgs = ((InternalEObject)durationMax).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__DURATION_MAX, null, msgs);
+			if (newDurationMax != null)
+				msgs = ((InternalEObject)newDurationMax).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TIMING_REPEAT__DURATION_MAX, null, msgs);
+			msgs = basicSetDurationMax(newDurationMax, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.TIMING_REPEAT__DURATION_MAX, newDurationMax, newDurationMax));
 	}
 
 	/**
@@ -597,12 +761,18 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.TIMING_REPEAT__BOUNDS:
-				return basicSetBounds(null, msgs);
+			case FhirPackage.TIMING_REPEAT__BOUNDS_DURATION:
+				return basicSetBoundsDuration(null, msgs);
+			case FhirPackage.TIMING_REPEAT__BOUNDS_RANGE:
+				return basicSetBoundsRange(null, msgs);
+			case FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD:
+				return basicSetBoundsPeriod(null, msgs);
 			case FhirPackage.TIMING_REPEAT__COUNT:
 				return basicSetCount(null, msgs);
 			case FhirPackage.TIMING_REPEAT__DURATION:
 				return basicSetDuration(null, msgs);
+			case FhirPackage.TIMING_REPEAT__DURATION_MAX:
+				return basicSetDurationMax(null, msgs);
 			case FhirPackage.TIMING_REPEAT__DURATION_UNITS:
 				return basicSetDurationUnits(null, msgs);
 			case FhirPackage.TIMING_REPEAT__FREQUENCY:
@@ -629,12 +799,18 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.TIMING_REPEAT__BOUNDS:
-				return getBounds();
+			case FhirPackage.TIMING_REPEAT__BOUNDS_DURATION:
+				return getBoundsDuration();
+			case FhirPackage.TIMING_REPEAT__BOUNDS_RANGE:
+				return getBoundsRange();
+			case FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD:
+				return getBoundsPeriod();
 			case FhirPackage.TIMING_REPEAT__COUNT:
 				return getCount();
 			case FhirPackage.TIMING_REPEAT__DURATION:
 				return getDuration();
+			case FhirPackage.TIMING_REPEAT__DURATION_MAX:
+				return getDurationMax();
 			case FhirPackage.TIMING_REPEAT__DURATION_UNITS:
 				return getDurationUnits();
 			case FhirPackage.TIMING_REPEAT__FREQUENCY:
@@ -661,14 +837,23 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.TIMING_REPEAT__BOUNDS:
-				setBounds((Period)newValue);
+			case FhirPackage.TIMING_REPEAT__BOUNDS_DURATION:
+				setBoundsDuration((Duration)newValue);
+				return;
+			case FhirPackage.TIMING_REPEAT__BOUNDS_RANGE:
+				setBoundsRange((Range)newValue);
+				return;
+			case FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD:
+				setBoundsPeriod((Period)newValue);
 				return;
 			case FhirPackage.TIMING_REPEAT__COUNT:
 				setCount((org.hl7.fhir.Integer)newValue);
 				return;
 			case FhirPackage.TIMING_REPEAT__DURATION:
 				setDuration((Decimal)newValue);
+				return;
+			case FhirPackage.TIMING_REPEAT__DURATION_MAX:
+				setDurationMax((Decimal)newValue);
 				return;
 			case FhirPackage.TIMING_REPEAT__DURATION_UNITS:
 				setDurationUnits((UnitsOfTime)newValue);
@@ -703,14 +888,23 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.TIMING_REPEAT__BOUNDS:
-				setBounds((Period)null);
+			case FhirPackage.TIMING_REPEAT__BOUNDS_DURATION:
+				setBoundsDuration((Duration)null);
+				return;
+			case FhirPackage.TIMING_REPEAT__BOUNDS_RANGE:
+				setBoundsRange((Range)null);
+				return;
+			case FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD:
+				setBoundsPeriod((Period)null);
 				return;
 			case FhirPackage.TIMING_REPEAT__COUNT:
 				setCount((org.hl7.fhir.Integer)null);
 				return;
 			case FhirPackage.TIMING_REPEAT__DURATION:
 				setDuration((Decimal)null);
+				return;
+			case FhirPackage.TIMING_REPEAT__DURATION_MAX:
+				setDurationMax((Decimal)null);
 				return;
 			case FhirPackage.TIMING_REPEAT__DURATION_UNITS:
 				setDurationUnits((UnitsOfTime)null);
@@ -745,12 +939,18 @@ public class TimingRepeatImpl extends ElementImpl implements TimingRepeat {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.TIMING_REPEAT__BOUNDS:
-				return bounds != null;
+			case FhirPackage.TIMING_REPEAT__BOUNDS_DURATION:
+				return boundsDuration != null;
+			case FhirPackage.TIMING_REPEAT__BOUNDS_RANGE:
+				return boundsRange != null;
+			case FhirPackage.TIMING_REPEAT__BOUNDS_PERIOD:
+				return boundsPeriod != null;
 			case FhirPackage.TIMING_REPEAT__COUNT:
 				return count != null;
 			case FhirPackage.TIMING_REPEAT__DURATION:
 				return duration != null;
+			case FhirPackage.TIMING_REPEAT__DURATION_MAX:
+				return durationMax != null;
 			case FhirPackage.TIMING_REPEAT__DURATION_UNITS:
 				return durationUnits != null;
 			case FhirPackage.TIMING_REPEAT__FREQUENCY:

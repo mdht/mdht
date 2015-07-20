@@ -25,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Order#getTarget <em>Target</em>}</li>
  *   <li>{@link org.hl7.fhir.Order#getReasonCodeableConcept <em>Reason Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.Order#getReasonReference <em>Reason Reference</em>}</li>
- *   <li>{@link org.hl7.fhir.Order#getAuthority <em>Authority</em>}</li>
  *   <li>{@link org.hl7.fhir.Order#getWhen <em>When</em>}</li>
  *   <li>{@link org.hl7.fhir.Order#getDetail <em>Detail</em>}</li>
  * </ul>
@@ -208,32 +207,6 @@ public interface Order extends DomainResource {
 	 * @generated
 	 */
 	void setReasonReference(Reference value);
-
-	/**
-	 * Returns the value of the '<em><b>Authority</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * If required by policy.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Authority</em>' containment reference.
-	 * @see #setAuthority(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getOrder_Authority()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='authority' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Reference getAuthority();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Order#getAuthority <em>Authority</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authority</em>' containment reference.
-	 * @see #getAuthority()
-	 * @generated
-	 */
-	void setAuthority(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>When</b></em>' containment reference.

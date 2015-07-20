@@ -65,7 +65,7 @@ public enum CompositionAttestationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The person authenticated the content in their personal capacity.
+	 * The person authenticated the content in their personal capacity
 	 * <!-- end-model-doc -->
 	 * @see #PERSONAL
 	 * @model name="personal"
@@ -79,7 +79,7 @@ public enum CompositionAttestationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The person authenticated the content in their professional capacity.
+	 * The person authenticated the content in their professional capacity
 	 * <!-- end-model-doc -->
 	 * @see #PROFESSIONAL
 	 * @model name="professional"
@@ -93,7 +93,7 @@ public enum CompositionAttestationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The person authenticated the content and accepted legal responsibility for its content.
+	 * The person authenticated the content and accepted legal responsibility for its content
 	 * <!-- end-model-doc -->
 	 * @see #LEGAL
 	 * @model name="legal"
@@ -107,7 +107,7 @@ public enum CompositionAttestationModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The organization authenticated the content as consistent with their policies and procedures.
+	 * The organization authenticated the content as consistent with their policies and procedures
 	 * <!-- end-model-doc -->
 	 * @see #OFFICIAL
 	 * @model name="official"

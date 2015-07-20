@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.DocumentManifest;
 import org.hl7.fhir.DocumentManifestContent;
 import org.hl7.fhir.DocumentManifestRelated;
-import org.hl7.fhir.DocumentReferenceStatus;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Reference;
@@ -141,7 +141,7 @@ public class DocumentManifestImpl extends DomainResourceImpl implements Document
 	 * @generated
 	 * @ordered
 	 */
-	protected DocumentReferenceStatus status;
+	protected Code status;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -448,7 +448,7 @@ public class DocumentManifestImpl extends DomainResourceImpl implements Document
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DocumentReferenceStatus getStatus() {
+	public Code getStatus() {
 		return status;
 	}
 
@@ -457,8 +457,8 @@ public class DocumentManifestImpl extends DomainResourceImpl implements Document
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(DocumentReferenceStatus newStatus, NotificationChain msgs) {
-		DocumentReferenceStatus oldStatus = status;
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DOCUMENT_MANIFEST__STATUS, oldStatus, newStatus);
@@ -472,7 +472,7 @@ public class DocumentManifestImpl extends DomainResourceImpl implements Document
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(DocumentReferenceStatus newStatus) {
+	public void setStatus(Code newStatus) {
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
@@ -662,7 +662,7 @@ public class DocumentManifestImpl extends DomainResourceImpl implements Document
 				setSource((Uri)newValue);
 				return;
 			case FhirPackage.DOCUMENT_MANIFEST__STATUS:
-				setStatus((DocumentReferenceStatus)newValue);
+				setStatus((Code)newValue);
 				return;
 			case FhirPackage.DOCUMENT_MANIFEST__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)newValue);
@@ -712,7 +712,7 @@ public class DocumentManifestImpl extends DomainResourceImpl implements Document
 				setSource((Uri)null);
 				return;
 			case FhirPackage.DOCUMENT_MANIFEST__STATUS:
-				setStatus((DocumentReferenceStatus)null);
+				setStatus((Code)null);
 				return;
 			case FhirPackage.DOCUMENT_MANIFEST__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)null);

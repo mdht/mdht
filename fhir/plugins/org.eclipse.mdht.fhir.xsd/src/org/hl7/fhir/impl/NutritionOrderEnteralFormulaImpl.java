@@ -2,20 +2,26 @@
  */
 package org.hl7.fhir.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
+import org.hl7.fhir.NutritionOrderAdministration;
 import org.hl7.fhir.NutritionOrderEnteralFormula;
 import org.hl7.fhir.Quantity;
-import org.hl7.fhir.Ratio;
-import org.hl7.fhir.Timing;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,33 +31,20 @@ import org.hl7.fhir.Timing;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getAdministrationInstructions <em>Administration Instructions</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getBaseFormulaType <em>Base Formula Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getBaseFormulaProductName <em>Base Formula Product Name</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getScheduled <em>Scheduled</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getAdditiveType <em>Additive Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getAdditiveProductName <em>Additive Product Name</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getCaloricDensity <em>Caloric Density</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getRouteofAdministration <em>Routeof Administration</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getRate <em>Rate</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getRateAdjustment <em>Rate Adjustment</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getAdministration <em>Administration</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getMaxVolumeToDeliver <em>Max Volume To Deliver</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.NutritionOrderEnteralFormulaImpl#getAdministrationInstruction <em>Administration Instruction</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implements NutritionOrderEnteralFormula {
-	/**
-	 * The cached value of the '{@link #getAdministrationInstructions() <em>Administration Instructions</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAdministrationInstructions()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.String administrationInstructions;
-
 	/**
 	 * The cached value of the '{@link #getBaseFormulaType() <em>Base Formula Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -71,16 +64,6 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * @ordered
 	 */
 	protected org.hl7.fhir.String baseFormulaProductName;
-
-	/**
-	 * The cached value of the '{@link #getScheduled() <em>Scheduled</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScheduled()
-	 * @generated
-	 * @ordered
-	 */
-	protected Timing scheduled;
 
 	/**
 	 * The cached value of the '{@link #getAdditiveType() <em>Additive Type</em>}' containment reference.
@@ -123,34 +106,14 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	protected CodeableConcept routeofAdministration;
 
 	/**
-	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference.
+	 * The cached value of the '{@link #getAdministration() <em>Administration</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
+	 * @see #getAdministration()
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
-
-	/**
-	 * The cached value of the '{@link #getRate() <em>Rate</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Ratio rate;
-
-	/**
-	 * The cached value of the '{@link #getRateAdjustment() <em>Rate Adjustment</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateAdjustment()
-	 * @generated
-	 * @ordered
-	 */
-	protected Quantity rateAdjustment;
+	protected EList<NutritionOrderAdministration> administration;
 
 	/**
 	 * The cached value of the '{@link #getMaxVolumeToDeliver() <em>Max Volume To Deliver</em>}' containment reference.
@@ -161,6 +124,16 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * @ordered
 	 */
 	protected Quantity maxVolumeToDeliver;
+
+	/**
+	 * The cached value of the '{@link #getAdministrationInstruction() <em>Administration Instruction</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdministrationInstruction()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String administrationInstruction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,49 +152,6 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	@Override
 	protected EClass eStaticClass() {
 		return FhirPackage.eINSTANCE.getNutritionOrderEnteralFormula();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.String getAdministrationInstructions() {
-		return administrationInstructions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAdministrationInstructions(org.hl7.fhir.String newAdministrationInstructions, NotificationChain msgs) {
-		org.hl7.fhir.String oldAdministrationInstructions = administrationInstructions;
-		administrationInstructions = newAdministrationInstructions;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS, oldAdministrationInstructions, newAdministrationInstructions);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAdministrationInstructions(org.hl7.fhir.String newAdministrationInstructions) {
-		if (newAdministrationInstructions != administrationInstructions) {
-			NotificationChain msgs = null;
-			if (administrationInstructions != null)
-				msgs = ((InternalEObject)administrationInstructions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS, null, msgs);
-			if (newAdministrationInstructions != null)
-				msgs = ((InternalEObject)newAdministrationInstructions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS, null, msgs);
-			msgs = basicSetAdministrationInstructions(newAdministrationInstructions, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS, newAdministrationInstructions, newAdministrationInstructions));
 	}
 
 	/**
@@ -308,49 +238,6 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_PRODUCT_NAME, newBaseFormulaProductName, newBaseFormulaProductName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Timing getScheduled() {
-		return scheduled;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetScheduled(Timing newScheduled, NotificationChain msgs) {
-		Timing oldScheduled = scheduled;
-		scheduled = newScheduled;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED, oldScheduled, newScheduled);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setScheduled(Timing newScheduled) {
-		if (newScheduled != scheduled) {
-			NotificationChain msgs = null;
-			if (scheduled != null)
-				msgs = ((InternalEObject)scheduled).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED, null, msgs);
-			if (newScheduled != null)
-				msgs = ((InternalEObject)newScheduled).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED, null, msgs);
-			msgs = basicSetScheduled(newScheduled, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED, newScheduled, newScheduled));
 	}
 
 	/**
@@ -530,128 +417,11 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
-		return quantity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
-		quantity = newQuantity;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY, oldQuantity, newQuantity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<NutritionOrderAdministration> getAdministration() {
+		if (administration == null) {
+			administration = new EObjectContainmentEList<NutritionOrderAdministration>(NutritionOrderAdministration.class, this, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setQuantity(Quantity newQuantity) {
-		if (newQuantity != quantity) {
-			NotificationChain msgs = null;
-			if (quantity != null)
-				msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY, null, msgs);
-			if (newQuantity != null)
-				msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY, null, msgs);
-			msgs = basicSetQuantity(newQuantity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY, newQuantity, newQuantity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Ratio getRate() {
-		return rate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRate(Ratio newRate, NotificationChain msgs) {
-		Ratio oldRate = rate;
-		rate = newRate;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE, oldRate, newRate);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRate(Ratio newRate) {
-		if (newRate != rate) {
-			NotificationChain msgs = null;
-			if (rate != null)
-				msgs = ((InternalEObject)rate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE, null, msgs);
-			if (newRate != null)
-				msgs = ((InternalEObject)newRate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE, null, msgs);
-			msgs = basicSetRate(newRate, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE, newRate, newRate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Quantity getRateAdjustment() {
-		return rateAdjustment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRateAdjustment(Quantity newRateAdjustment, NotificationChain msgs) {
-		Quantity oldRateAdjustment = rateAdjustment;
-		rateAdjustment = newRateAdjustment;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT, oldRateAdjustment, newRateAdjustment);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRateAdjustment(Quantity newRateAdjustment) {
-		if (newRateAdjustment != rateAdjustment) {
-			NotificationChain msgs = null;
-			if (rateAdjustment != null)
-				msgs = ((InternalEObject)rateAdjustment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT, null, msgs);
-			if (newRateAdjustment != null)
-				msgs = ((InternalEObject)newRateAdjustment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT, null, msgs);
-			msgs = basicSetRateAdjustment(newRateAdjustment, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT, newRateAdjustment, newRateAdjustment));
+		return administration;
 	}
 
 	/**
@@ -702,17 +472,56 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.hl7.fhir.String getAdministrationInstruction() {
+		return administrationInstruction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAdministrationInstruction(org.hl7.fhir.String newAdministrationInstruction, NotificationChain msgs) {
+		org.hl7.fhir.String oldAdministrationInstruction = administrationInstruction;
+		administrationInstruction = newAdministrationInstruction;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION, oldAdministrationInstruction, newAdministrationInstruction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAdministrationInstruction(org.hl7.fhir.String newAdministrationInstruction) {
+		if (newAdministrationInstruction != administrationInstruction) {
+			NotificationChain msgs = null;
+			if (administrationInstruction != null)
+				msgs = ((InternalEObject)administrationInstruction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION, null, msgs);
+			if (newAdministrationInstruction != null)
+				msgs = ((InternalEObject)newAdministrationInstruction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION, null, msgs);
+			msgs = basicSetAdministrationInstruction(newAdministrationInstruction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION, newAdministrationInstruction, newAdministrationInstruction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS:
-				return basicSetAdministrationInstructions(null, msgs);
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_TYPE:
 				return basicSetBaseFormulaType(null, msgs);
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_PRODUCT_NAME:
 				return basicSetBaseFormulaProductName(null, msgs);
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED:
-				return basicSetScheduled(null, msgs);
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_TYPE:
 				return basicSetAdditiveType(null, msgs);
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_PRODUCT_NAME:
@@ -721,14 +530,12 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 				return basicSetCaloricDensity(null, msgs);
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ROUTEOF_ADMINISTRATION:
 				return basicSetRouteofAdministration(null, msgs);
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY:
-				return basicSetQuantity(null, msgs);
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE:
-				return basicSetRate(null, msgs);
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT:
-				return basicSetRateAdjustment(null, msgs);
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION:
+				return ((InternalEList<?>)getAdministration()).basicRemove(otherEnd, msgs);
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER:
 				return basicSetMaxVolumeToDeliver(null, msgs);
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION:
+				return basicSetAdministrationInstruction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -741,14 +548,10 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS:
-				return getAdministrationInstructions();
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_TYPE:
 				return getBaseFormulaType();
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_PRODUCT_NAME:
 				return getBaseFormulaProductName();
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED:
-				return getScheduled();
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_TYPE:
 				return getAdditiveType();
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_PRODUCT_NAME:
@@ -757,14 +560,12 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 				return getCaloricDensity();
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ROUTEOF_ADMINISTRATION:
 				return getRouteofAdministration();
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY:
-				return getQuantity();
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE:
-				return getRate();
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT:
-				return getRateAdjustment();
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION:
+				return getAdministration();
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER:
 				return getMaxVolumeToDeliver();
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION:
+				return getAdministrationInstruction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -774,20 +575,15 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS:
-				setAdministrationInstructions((org.hl7.fhir.String)newValue);
-				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_TYPE:
 				setBaseFormulaType((CodeableConcept)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_PRODUCT_NAME:
 				setBaseFormulaProductName((org.hl7.fhir.String)newValue);
-				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED:
-				setScheduled((Timing)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_TYPE:
 				setAdditiveType((CodeableConcept)newValue);
@@ -801,17 +597,15 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ROUTEOF_ADMINISTRATION:
 				setRouteofAdministration((CodeableConcept)newValue);
 				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY:
-				setQuantity((Quantity)newValue);
-				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE:
-				setRate((Ratio)newValue);
-				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT:
-				setRateAdjustment((Quantity)newValue);
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION:
+				getAdministration().clear();
+				getAdministration().addAll((Collection<? extends NutritionOrderAdministration>)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER:
 				setMaxVolumeToDeliver((Quantity)newValue);
+				return;
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION:
+				setAdministrationInstruction((org.hl7.fhir.String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -825,17 +619,11 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS:
-				setAdministrationInstructions((org.hl7.fhir.String)null);
-				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_TYPE:
 				setBaseFormulaType((CodeableConcept)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_PRODUCT_NAME:
 				setBaseFormulaProductName((org.hl7.fhir.String)null);
-				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED:
-				setScheduled((Timing)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_TYPE:
 				setAdditiveType((CodeableConcept)null);
@@ -849,17 +637,14 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ROUTEOF_ADMINISTRATION:
 				setRouteofAdministration((CodeableConcept)null);
 				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY:
-				setQuantity((Quantity)null);
-				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE:
-				setRate((Ratio)null);
-				return;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT:
-				setRateAdjustment((Quantity)null);
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION:
+				getAdministration().clear();
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER:
 				setMaxVolumeToDeliver((Quantity)null);
+				return;
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION:
+				setAdministrationInstruction((org.hl7.fhir.String)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -873,14 +658,10 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTIONS:
-				return administrationInstructions != null;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_TYPE:
 				return baseFormulaType != null;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__BASE_FORMULA_PRODUCT_NAME:
 				return baseFormulaProductName != null;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__SCHEDULED:
-				return scheduled != null;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_TYPE:
 				return additiveType != null;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADDITIVE_PRODUCT_NAME:
@@ -889,14 +670,12 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 				return caloricDensity != null;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ROUTEOF_ADMINISTRATION:
 				return routeofAdministration != null;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__QUANTITY:
-				return quantity != null;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE:
-				return rate != null;
-			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__RATE_ADJUSTMENT:
-				return rateAdjustment != null;
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION:
+				return administration != null && !administration.isEmpty();
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER:
 				return maxVolumeToDeliver != null;
+			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION:
+				return administrationInstruction != null;
 		}
 		return super.eIsSet(featureID);
 	}

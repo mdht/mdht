@@ -95,7 +95,7 @@ public enum DaysOfWeekList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Monday.
+	 * Monday
 	 * <!-- end-model-doc -->
 	 * @see #MON
 	 * @model name="mon"
@@ -109,7 +109,7 @@ public enum DaysOfWeekList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Tuesday.
+	 * Tuesday
 	 * <!-- end-model-doc -->
 	 * @see #TUE
 	 * @model name="tue"
@@ -123,7 +123,7 @@ public enum DaysOfWeekList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Wednesday.
+	 * Wednesday
 	 * <!-- end-model-doc -->
 	 * @see #WED
 	 * @model name="wed"
@@ -137,7 +137,7 @@ public enum DaysOfWeekList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Thursday.
+	 * Thursday
 	 * <!-- end-model-doc -->
 	 * @see #THU
 	 * @model name="thu"
@@ -151,7 +151,7 @@ public enum DaysOfWeekList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Friday.
+	 * Friday
 	 * <!-- end-model-doc -->
 	 * @see #FRI
 	 * @model name="fri"
@@ -165,7 +165,7 @@ public enum DaysOfWeekList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Saturday.
+	 * Saturday
 	 * <!-- end-model-doc -->
 	 * @see #SAT
 	 * @model name="sat"
@@ -179,7 +179,7 @@ public enum DaysOfWeekList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Sunday.
+	 * Sunday
 	 * <!-- end-model-doc -->
 	 * @see #SUN
 	 * @model name="sun"

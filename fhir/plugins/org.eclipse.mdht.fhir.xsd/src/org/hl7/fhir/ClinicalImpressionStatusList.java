@@ -69,7 +69,7 @@ public enum ClinicalImpressionStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The assessment is done and the results are final.
+	 * The assessment is done and the results are final
 	 * <!-- end-model-doc -->
 	 * @see #COMPLETED
 	 * @model name="completed"
@@ -83,7 +83,7 @@ public enum ClinicalImpressionStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This assessment was never actually done and the record is erroneous (e.g. Wrong patient).
+	 * This assessment was never actually done and the record is erroneous (e.g. Wrong patient)
 	 * <!-- end-model-doc -->
 	 * @see #ENTERED_IN_ERROR
 	 * @model name="enteredInError" literal="entered-in-error"

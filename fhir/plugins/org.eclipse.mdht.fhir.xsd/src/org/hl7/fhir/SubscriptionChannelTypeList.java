@@ -75,7 +75,7 @@ public enum SubscriptionChannelTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The channel is executed by making a post to the URI. If a payload is included, the URL is interpreted as the service base, and an update (PUT) is made.
+	 * The channel is executed by making a post to the URI. If a payload is included, the URL is interpreted as the service base, and an update (PUT) is made
 	 * <!-- end-model-doc -->
 	 * @see #REST_HOOK
 	 * @model name="restHook" literal="rest-hook"
@@ -89,7 +89,7 @@ public enum SubscriptionChannelTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The channel is executed by sending a packet across a web socket connection maintained by the client. The URL identifies the websocket, and the client binds to this URL.
+	 * The channel is executed by sending a packet across a web socket connection maintained by the client. The URL identifies the websocket, and the client binds to this URL
 	 * <!-- end-model-doc -->
 	 * @see #WEBSOCKET
 	 * @model name="websocket"
@@ -103,7 +103,7 @@ public enum SubscriptionChannelTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The channel is executed by sending an email to the email addressed in the URI (which must be a mailto:).
+	 * The channel is executed by sending an email to the email addressed in the URI (which must be a mailto:)
 	 * <!-- end-model-doc -->
 	 * @see #EMAIL
 	 * @model name="email"
@@ -117,7 +117,7 @@ public enum SubscriptionChannelTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The channel is executed by sending an SMS message to the phone number identified in the URL (tel:).
+	 * The channel is executed by sending an SMS message to the phone number identified in the URL (tel:)
 	 * <!-- end-model-doc -->
 	 * @see #SMS
 	 * @model name="sms"
@@ -131,7 +131,7 @@ public enum SubscriptionChannelTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The channel Is executed by sending a message (e.g. a Bundle with a MessageHeader resource etc) to the application identified in the URI.
+	 * The channel Is executed by sending a message (e.g. a Bundle with a MessageHeader resource etc) to the application identified in the URI
 	 * <!-- end-model-doc -->
 	 * @see #MESSAGE
 	 * @model name="message"

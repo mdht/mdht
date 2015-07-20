@@ -65,7 +65,7 @@ public enum AuditEventObjectTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Person.
+	 * Person
 	 * <!-- end-model-doc -->
 	 * @see #_1
 	 * @model literal="1"
@@ -79,7 +79,7 @@ public enum AuditEventObjectTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * System Object.
+	 * System Object
 	 * <!-- end-model-doc -->
 	 * @see #_2
 	 * @model literal="2"
@@ -93,7 +93,7 @@ public enum AuditEventObjectTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Organization.
+	 * Organization
 	 * <!-- end-model-doc -->
 	 * @see #_3
 	 * @model literal="3"
@@ -107,7 +107,7 @@ public enum AuditEventObjectTypeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Other.
+	 * Other
 	 * <!-- end-model-doc -->
 	 * @see #_4
 	 * @model literal="4"

@@ -65,7 +65,7 @@ public enum ParticipationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant has accepted the appointment.
+	 * The participant has accepted the appointment
 	 * <!-- end-model-doc -->
 	 * @see #ACCEPTED
 	 * @model name="accepted"
@@ -79,7 +79,7 @@ public enum ParticipationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant has declined the appointment and will not participate in the appointment.
+	 * The participant has declined the appointment and will not participate in the appointment
 	 * <!-- end-model-doc -->
 	 * @see #DECLINED
 	 * @model name="declined"
@@ -93,7 +93,7 @@ public enum ParticipationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant has  tentatively accepted the appointment. This could be automatically created by a system and requires further processing before it can be accepted. There is no commitment that attendance will occur.
+	 * The participant has  tentatively accepted the appointment. This could be automatically created by a system and requires further processing before it can be accepted. There is no commitment that attendance will occur
 	 * <!-- end-model-doc -->
 	 * @see #TENTATIVE
 	 * @model name="tentative"
@@ -107,7 +107,7 @@ public enum ParticipationStatusList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participant needs to indicate if they accept the appointment by changing this status to one of the other statuses.
+	 * The participant needs to indicate if they accept the appointment by changing this status to one of the other statuses
 	 * <!-- end-model-doc -->
 	 * @see #NEEDS_ACTION
 	 * @model name="needsAction" literal="needs-action"

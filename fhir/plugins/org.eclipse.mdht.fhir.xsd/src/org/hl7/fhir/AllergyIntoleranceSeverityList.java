@@ -55,7 +55,7 @@ public enum AllergyIntoleranceSeverityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Causes mild physiological effects.
+	 * Causes mild physiological effects
 	 * <!-- end-model-doc -->
 	 * @see #MILD
 	 * @model name="mild"
@@ -69,7 +69,7 @@ public enum AllergyIntoleranceSeverityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Causes moderate physiological effects.
+	 * Causes moderate physiological effects
 	 * <!-- end-model-doc -->
 	 * @see #MODERATE
 	 * @model name="moderate"
@@ -83,7 +83,7 @@ public enum AllergyIntoleranceSeverityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Causes severe physiological effects.
+	 * Causes severe physiological effects
 	 * <!-- end-model-doc -->
 	 * @see #SEVERE
 	 * @model name="severe"

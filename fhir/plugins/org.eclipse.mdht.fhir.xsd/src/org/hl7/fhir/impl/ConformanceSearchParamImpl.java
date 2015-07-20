@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.hl7.fhir.Code;
 import org.hl7.fhir.ConformanceSearchParam;
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.SearchParamType;
+import org.hl7.fhir.SearchModifierCode;
 import org.hl7.fhir.Uri;
 
 /**
@@ -36,6 +36,7 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ConformanceSearchParamImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceSearchParamImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceSearchParamImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceSearchParamImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceSearchParamImpl#getChain <em>Chain</em>}</li>
  * </ul>
  *
@@ -70,7 +71,7 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 	 * @generated
 	 * @ordered
 	 */
-	protected SearchParamType type;
+	protected Code type;
 
 	/**
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' containment reference.
@@ -91,6 +92,16 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 	 * @ordered
 	 */
 	protected EList<Code> target;
+
+	/**
+	 * The cached value of the '{@link #getModifier() <em>Modifier</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModifier()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SearchModifierCode> modifier;
 
 	/**
 	 * The cached value of the '{@link #getChain() <em>Chain</em>}' containment reference list.
@@ -212,7 +223,7 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchParamType getType() {
+	public Code getType() {
 		return type;
 	}
 
@@ -221,8 +232,8 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetType(SearchParamType newType, NotificationChain msgs) {
-		SearchParamType oldType = type;
+	public NotificationChain basicSetType(Code newType, NotificationChain msgs) {
+		Code oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE_SEARCH_PARAM__TYPE, oldType, newType);
@@ -236,7 +247,7 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(SearchParamType newType) {
+	public void setType(Code newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
@@ -310,6 +321,18 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SearchModifierCode> getModifier() {
+		if (modifier == null) {
+			modifier = new EObjectContainmentEList<SearchModifierCode>(SearchModifierCode.class, this, FhirPackage.CONFORMANCE_SEARCH_PARAM__MODIFIER);
+		}
+		return modifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<org.hl7.fhir.String> getChain() {
 		if (chain == null) {
 			chain = new EObjectContainmentEList<org.hl7.fhir.String>(org.hl7.fhir.String.class, this, FhirPackage.CONFORMANCE_SEARCH_PARAM__CHAIN);
@@ -335,6 +358,8 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 				return basicSetDocumentation(null, msgs);
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__TARGET:
 				return ((InternalEList<?>)getTarget()).basicRemove(otherEnd, msgs);
+			case FhirPackage.CONFORMANCE_SEARCH_PARAM__MODIFIER:
+				return ((InternalEList<?>)getModifier()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__CHAIN:
 				return ((InternalEList<?>)getChain()).basicRemove(otherEnd, msgs);
 		}
@@ -359,6 +384,8 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 				return getDocumentation();
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__TARGET:
 				return getTarget();
+			case FhirPackage.CONFORMANCE_SEARCH_PARAM__MODIFIER:
+				return getModifier();
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__CHAIN:
 				return getChain();
 		}
@@ -381,7 +408,7 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 				setDefinition((Uri)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__TYPE:
-				setType((SearchParamType)newValue);
+				setType((Code)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__DOCUMENTATION:
 				setDocumentation((org.hl7.fhir.String)newValue);
@@ -389,6 +416,10 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__TARGET:
 				getTarget().clear();
 				getTarget().addAll((Collection<? extends Code>)newValue);
+				return;
+			case FhirPackage.CONFORMANCE_SEARCH_PARAM__MODIFIER:
+				getModifier().clear();
+				getModifier().addAll((Collection<? extends SearchModifierCode>)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__CHAIN:
 				getChain().clear();
@@ -413,13 +444,16 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 				setDefinition((Uri)null);
 				return;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__TYPE:
-				setType((SearchParamType)null);
+				setType((Code)null);
 				return;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__DOCUMENTATION:
 				setDocumentation((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__TARGET:
 				getTarget().clear();
+				return;
+			case FhirPackage.CONFORMANCE_SEARCH_PARAM__MODIFIER:
+				getModifier().clear();
 				return;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__CHAIN:
 				getChain().clear();
@@ -446,6 +480,8 @@ public class ConformanceSearchParamImpl extends BackboneElementImpl implements C
 				return documentation != null;
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__TARGET:
 				return target != null && !target.isEmpty();
+			case FhirPackage.CONFORMANCE_SEARCH_PARAM__MODIFIER:
+				return modifier != null && !modifier.isEmpty();
 			case FhirPackage.CONFORMANCE_SEARCH_PARAM__CHAIN:
 				return chain != null && !chain.isEmpty();
 		}

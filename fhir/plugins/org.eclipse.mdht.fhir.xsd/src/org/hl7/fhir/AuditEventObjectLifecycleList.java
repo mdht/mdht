@@ -175,7 +175,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Origination / Creation.
+	 * Origination / Creation
 	 * <!-- end-model-doc -->
 	 * @see #_1
 	 * @model literal="1"
@@ -189,7 +189,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Import / Copy from original.
+	 * Import / Copy from original
 	 * <!-- end-model-doc -->
 	 * @see #_2
 	 * @model literal="2"
@@ -203,7 +203,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Amendment.
+	 * Amendment
 	 * <!-- end-model-doc -->
 	 * @see #_3
 	 * @model literal="3"
@@ -217,7 +217,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Verification.
+	 * Verification
 	 * <!-- end-model-doc -->
 	 * @see #_4
 	 * @model literal="4"
@@ -231,7 +231,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Translation.
+	 * Translation
 	 * <!-- end-model-doc -->
 	 * @see #_5
 	 * @model literal="5"
@@ -245,7 +245,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Access / Use.
+	 * Access / Use
 	 * <!-- end-model-doc -->
 	 * @see #_6
 	 * @model literal="6"
@@ -259,7 +259,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * De-identification.
+	 * De-identification
 	 * <!-- end-model-doc -->
 	 * @see #_7
 	 * @model literal="7"
@@ -273,7 +273,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Aggregation, summarization, derivation.
+	 * Aggregation, summarization, derivation
 	 * <!-- end-model-doc -->
 	 * @see #_8
 	 * @model literal="8"
@@ -287,7 +287,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Report.
+	 * Report
 	 * <!-- end-model-doc -->
 	 * @see #_9
 	 * @model literal="9"
@@ -301,7 +301,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Export / Copy to target.
+	 * Export / Copy to target
 	 * <!-- end-model-doc -->
 	 * @see #_10
 	 * @model literal="10"
@@ -315,7 +315,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Disclosure.
+	 * Disclosure
 	 * <!-- end-model-doc -->
 	 * @see #_11
 	 * @model literal="11"
@@ -329,7 +329,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Receipt of disclosure.
+	 * Receipt of disclosure
 	 * <!-- end-model-doc -->
 	 * @see #_12
 	 * @model literal="12"
@@ -343,7 +343,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Archiving.
+	 * Archiving
 	 * <!-- end-model-doc -->
 	 * @see #_13
 	 * @model literal="13"
@@ -357,7 +357,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Logical deletion.
+	 * Logical deletion
 	 * <!-- end-model-doc -->
 	 * @see #_14
 	 * @model literal="14"
@@ -371,7 +371,7 @@ public enum AuditEventObjectLifecycleList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Permanent erasure / Physical destruction.
+	 * Permanent erasure / Physical destruction
 	 * <!-- end-model-doc -->
 	 * @see #_15
 	 * @model literal="15"

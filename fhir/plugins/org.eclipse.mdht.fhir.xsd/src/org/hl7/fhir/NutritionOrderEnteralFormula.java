@@ -2,6 +2,7 @@
  */
 package org.hl7.fhir;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,18 +17,15 @@ package org.hl7.fhir;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getAdministrationInstructions <em>Administration Instructions</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getBaseFormulaType <em>Base Formula Type</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getBaseFormulaProductName <em>Base Formula Product Name</em>}</li>
- *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getScheduled <em>Scheduled</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getAdditiveType <em>Additive Type</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getAdditiveProductName <em>Additive Product Name</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getCaloricDensity <em>Caloric Density</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getRouteofAdministration <em>Routeof Administration</em>}</li>
- *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getRate <em>Rate</em>}</li>
- *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getRateAdjustment <em>Rate Adjustment</em>}</li>
+ *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getAdministration <em>Administration</em>}</li>
  *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getMaxVolumeToDeliver <em>Max Volume To Deliver</em>}</li>
+ *   <li>{@link org.hl7.fhir.NutritionOrderEnteralFormula#getAdministrationInstruction <em>Administration Instruction</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula()
@@ -35,32 +33,6 @@ package org.hl7.fhir;
  * @generated
  */
 public interface NutritionOrderEnteralFormula extends BackboneElement {
-	/**
-	 * Returns the value of the '<em><b>Administration Instructions</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Free text formula administration, feeding instructions or additional instructions or information.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Administration Instructions</em>' containment reference.
-	 * @see #setAdministrationInstructions(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_AdministrationInstructions()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='administrationInstructions' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getAdministrationInstructions();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getAdministrationInstructions <em>Administration Instructions</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Administration Instructions</em>' containment reference.
-	 * @see #getAdministrationInstructions()
-	 * @generated
-	 */
-	void setAdministrationInstructions(org.hl7.fhir.String value);
-
 	/**
 	 * Returns the value of the '<em><b>Base Formula Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -112,32 +84,6 @@ public interface NutritionOrderEnteralFormula extends BackboneElement {
 	 * @generated
 	 */
 	void setBaseFormulaProductName(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Scheduled</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The time period and frequency at which the enteral formula should be delivered to the patient.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Scheduled</em>' containment reference.
-	 * @see #setScheduled(Timing)
-	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_Scheduled()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='scheduled' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Timing getScheduled();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getScheduled <em>Scheduled</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scheduled</em>' containment reference.
-	 * @see #getScheduled()
-	 * @generated
-	 */
-	void setScheduled(Timing value);
 
 	/**
 	 * Returns the value of the '<em><b>Additive Type</b></em>' containment reference.
@@ -244,82 +190,20 @@ public interface NutritionOrderEnteralFormula extends BackboneElement {
 	void setRouteofAdministration(CodeableConcept value);
 
 	/**
-	 * Returns the value of the '<em><b>Quantity</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Administration</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.NutritionOrderAdministration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The volume of formula to provide to the patient per the specified administration schedule.
+	 * Formula administration instructions as structured data.  This repeating structure allows for changing the administration rate or volume over time for both bolus and continuous feeding.  An example of this would be an instruction to increase the rate of continuous feeding every 2 hours.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Quantity</em>' containment reference.
-	 * @see #setQuantity(Quantity)
-	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_Quantity()
+	 * @return the value of the '<em>Administration</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_Administration()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='quantity' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='administration' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getQuantity();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getQuantity <em>Quantity</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity</em>' containment reference.
-	 * @see #getQuantity()
-	 * @generated
-	 */
-	void setQuantity(Quantity value);
-
-	/**
-	 * Returns the value of the '<em><b>Rate</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The rate of administration of formula via a feeding pump, e.g., 60 mL per hour, according to the specified schedule.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Rate</em>' containment reference.
-	 * @see #setRate(Ratio)
-	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_Rate()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='rate' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Ratio getRate();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getRate <em>Rate</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rate</em>' containment reference.
-	 * @see #getRate()
-	 * @generated
-	 */
-	void setRate(Ratio value);
-
-	/**
-	 * Returns the value of the '<em><b>Rate Adjustment</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The change in the rate of administration over a given time, e.g. increase by 10 mL/hour every 4 hours.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Rate Adjustment</em>' containment reference.
-	 * @see #setRateAdjustment(Quantity)
-	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_RateAdjustment()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='rateAdjustment' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Quantity getRateAdjustment();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getRateAdjustment <em>Rate Adjustment</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rate Adjustment</em>' containment reference.
-	 * @see #getRateAdjustment()
-	 * @generated
-	 */
-	void setRateAdjustment(Quantity value);
+	EList<NutritionOrderAdministration> getAdministration();
 
 	/**
 	 * Returns the value of the '<em><b>Max Volume To Deliver</b></em>' containment reference.
@@ -346,5 +230,31 @@ public interface NutritionOrderEnteralFormula extends BackboneElement {
 	 * @generated
 	 */
 	void setMaxVolumeToDeliver(Quantity value);
+
+	/**
+	 * Returns the value of the '<em><b>Administration Instruction</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Free text formula administration, feeding instructions or additional instructions or information.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Administration Instruction</em>' containment reference.
+	 * @see #setAdministrationInstruction(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_AdministrationInstruction()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='administrationInstruction' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getAdministrationInstruction();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getAdministrationInstruction <em>Administration Instruction</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Administration Instruction</em>' containment reference.
+	 * @see #getAdministrationInstruction()
+	 * @generated
+	 */
+	void setAdministrationInstruction(org.hl7.fhir.String value);
 
 } // NutritionOrderEnteralFormula

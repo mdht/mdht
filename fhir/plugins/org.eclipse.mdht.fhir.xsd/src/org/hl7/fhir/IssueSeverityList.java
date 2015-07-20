@@ -65,7 +65,7 @@ public enum IssueSeverityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The issue caused the action to fail, and no further checking could be performed.
+	 * The issue caused the action to fail, and no further checking could be performed
 	 * <!-- end-model-doc -->
 	 * @see #FATAL
 	 * @model name="fatal"
@@ -79,7 +79,7 @@ public enum IssueSeverityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The issue is sufficiently important to cause the action to fail.
+	 * The issue is sufficiently important to cause the action to fail
 	 * <!-- end-model-doc -->
 	 * @see #ERROR
 	 * @model name="error"
@@ -93,7 +93,7 @@ public enum IssueSeverityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The issue is not important enough to cause the action to fail, but may cause it to be performed suboptimally or in a way that is not as desired.
+	 * The issue is not important enough to cause the action to fail, but may cause it to be performed suboptimally or in a way that is not as desired
 	 * <!-- end-model-doc -->
 	 * @see #WARNING
 	 * @model name="warning"
@@ -107,7 +107,7 @@ public enum IssueSeverityList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The issue has no relation to the degree of success of the action.
+	 * The issue has no relation to the degree of success of the action
 	 * <!-- end-model-doc -->
 	 * @see #INFORMATION
 	 * @model name="information"

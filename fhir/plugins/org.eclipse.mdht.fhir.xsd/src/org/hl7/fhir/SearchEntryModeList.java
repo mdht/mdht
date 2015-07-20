@@ -38,14 +38,24 @@ public enum SearchEntryModeList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INCLUDE(1, "include", "include");
+	INCLUDE(1, "include", "include"),
+
+	/**
+	 * The '<em><b>Outcome</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OUTCOME_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OUTCOME(2, "outcome", "outcome");
 
 	/**
 	 * The '<em><b>Match</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This resource matched the search specification.
+	 * This resource matched the search specification
 	 * <!-- end-model-doc -->
 	 * @see #MATCH
 	 * @model name="match"
@@ -59,7 +69,7 @@ public enum SearchEntryModeList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This resource is returned because it is referred to from another resource in the search set.
+	 * This resource is returned because it is referred to from another resource in the search set
 	 * <!-- end-model-doc -->
 	 * @see #INCLUDE
 	 * @model name="include"
@@ -67,6 +77,20 @@ public enum SearchEntryModeList implements Enumerator {
 	 * @ordered
 	 */
 	public static final int INCLUDE_VALUE = 1;
+
+	/**
+	 * The '<em><b>Outcome</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * An OperationOutcome that provides additional information about the processing of a search
+	 * <!-- end-model-doc -->
+	 * @see #OUTCOME
+	 * @model name="outcome"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int OUTCOME_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Search Entry Mode List</b></em>' enumerators.
@@ -78,6 +102,7 @@ public enum SearchEntryModeList implements Enumerator {
 		new SearchEntryModeList[] {
 			MATCH,
 			INCLUDE,
+			OUTCOME,
 		};
 
 	/**
@@ -136,6 +161,7 @@ public enum SearchEntryModeList implements Enumerator {
 		switch (value) {
 			case MATCH_VALUE: return MATCH;
 			case INCLUDE_VALUE: return INCLUDE;
+			case OUTCOME_VALUE: return OUTCOME;
 		}
 		return null;
 	}
