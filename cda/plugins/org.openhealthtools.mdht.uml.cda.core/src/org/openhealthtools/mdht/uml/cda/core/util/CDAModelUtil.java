@@ -1801,7 +1801,7 @@ public class CDAModelUtil {
 		// message.append("</ul>");
 
 		boolean appendLogic = false;
-		message.append("<ul>");
+		message.append("<ol>");
 		for (Element element : constraint.getConstrainedElements()) {
 			message.append("<li>");
 			if (appendLogic) {
@@ -1819,7 +1819,7 @@ public class CDAModelUtil {
 			message.append(computeConformanceMessage(element, markup));
 			message.append("</li>");
 		}
-		message.append("</ul>");
+		message.append("</ol>");
 
 		appendConformanceRuleIds(constraint, message, markup);
 
@@ -1972,7 +1972,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
