@@ -411,7 +411,7 @@ public class CDAModelUtil {
 		return result;
 	}
 
-	public static String computeConformanceMessage(Class template, boolean markup) {
+	public static String computeConformanceMessage(Class template, final boolean markup) {
 
 		String templateId = getTemplateId(template);
 		String templateVersion = getTemplateVersion(template);
@@ -430,6 +430,15 @@ public class CDAModelUtil {
 		templateConstraint = templateConstraint.replaceAll("%templateVersion%", (templateVersion != null
 				? templateVersion
 				: ""));
+
+		CDATemplateComputeBuilder cdaTemplater = new CDATemplateComputeBuilder() {
+			@Override
+			public String addMultiplicity() {
+				return multiplicityElementToggle(markup, "templateId", "1..1", "");
+			}
+		};
+		String result = cdaTemplater.setCardinalityAfterElement(cardinalityAfterElement).setRequireMarkup(markup).setRuleIds(
+			ruleIds).setTemplateId(templateId).setTemplateVersion(templateVersion).compute().toString();
 
 		return templateConstraint;
 	}
@@ -516,8 +525,16 @@ public class CDAModelUtil {
 
 	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
 		StringBuffer message = new StringBuffer();
+		message.append(multiplicityElementToggle(
+			markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
+		return message;
+	}
+
+	private static String multiplicityElementToggle(boolean markup, String elementName, String multiplicityRange,
+			String businessName) {
+		StringBuffer message = new StringBuffer();
 		if (!cardinalityAfterElement) {
-			message.append(getMultiplicityRange(property));
+			message.append(multiplicityRange);
 		}
 
 		message.append(" ");
@@ -528,16 +545,15 @@ public class CDAModelUtil {
 		message.append(markup
 				? "</b>"
 				: "");
-		message.append(getBusinessName(property));
+		message.append(businessName);
 		message.append(markup
 				? "</tt>"
 				: "");
 
 		if (cardinalityAfterElement) {
-			message.append(getMultiplicityRange(property));
+			message.append(multiplicityRange);
 		}
-
-		return message;
+		return message.toString();
 	}
 
 	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
@@ -2226,7 +2242,7 @@ public class CDAModelUtil {
 		return elementName;
 	}
 
-	public static String getMultiplicityRange(Property property) {
+	private static String getMultiplicityRange(Property property) {
 
 		StringBuffer message = new StringBuffer();
 		String lower = Integer.toString(property.getLower());
@@ -2237,7 +2253,7 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
-	public static String getMultiplicityText(Property property) {
+	private static String getMultiplicityText(Property property) {
 
 		StringBuffer message = new StringBuffer();
 		if (property.getLower() == 1 && property.getUpper() == 1) {

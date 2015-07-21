@@ -46,8 +46,10 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
@@ -261,7 +263,7 @@ public class TemplateSection extends ValidationSection {
 
 		CLabel multiplicityLabel = getWidgetFactory().createCLabel(composite, "templateId Multiplicity:"); //$NON-NLS-1$
 		multiplicityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
-		multiplicityCombo.setItems(new String[] { "*", "0..1", "1", "1..*" });
+		multiplicityCombo.setItems(new String[] { "1", "1..*" });
 		multiplicityCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				multiplicitySet();
@@ -356,11 +358,43 @@ public class TemplateSection extends ValidationSection {
 
 	private void multiplicitySet() {
 		String selectedTxt = multiplicityCombo.getText();
-		if ("*".equals(selectedTxt)) {
-			multiplicityCombo.setText("0..*");
-		} else if ("1".equals(selectedTxt)) {
+		if ("1".equals(selectedTxt)) {
 			multiplicityCombo.setText("1..1");
 		}
+		// Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
+		Stereotype hl7Template = getValidationStereotype();
+		System.out.println("template is " + hl7Template);
+		if (hl7Template != null) {
+			String templateId = (String) modelElement.getValue(
+				hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+			System.out.println("templid is " + templateId);
+		}
+		String result = getConformanceRuleIds(modelElement);
+		System.out.println("ConformId is " + result);
+		result = getConformanceRuleIds(modelElement, hl7Template);
+		System.out.println("ConformId2 is " + result);
+	}
+
+	private static String getConformanceRuleIds(Element element) {
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		return getConformanceRuleIds(element, validationSupport);
+	}
+
+	private static String getConformanceRuleIds(Element element, Stereotype validationSupport) {
+		StringBuffer ruleIdDisplay = new StringBuffer();
+		if (validationSupport != null) {
+			Validation validation = (Validation) element.getStereotypeApplication(validationSupport);
+			for (String ruleId : validation.getRuleId()) {
+				if (ruleIdDisplay.length() > 0) {
+					ruleIdDisplay.append(", ");
+				}
+				ruleIdDisplay.append(ruleId);
+			}
+		} else {
+			System.out.println("Validationsupport is null");
+		}
+
+		return ruleIdDisplay.toString();
 	}
 
 }
