@@ -4,7 +4,20 @@ BUGS and ISSUES:
 - Property type for TypeChoice
   -- Issue: in FHIR, Reference is a kind of Type -> using Base
 
+- ElementDef nameReference refers to another 'name'
+  -- will this only reference a nested class?  not clear from FHIR spec
+  -- a nameReference may have "child components" that further constraint referenced element structure
+     --- e.g. may subclass the referenced nested class?
+
 --------------------
+
+- Add "Description" column to table editor
+  -- default, first sentence of first comment
+  -- FHIR annotation provider: short 
+  -->> generalize Value column, "Value or Description"
+  
+- Icons (annotation column icon?)
+  -- See http://hl7-fhir.github.io/formats.html#table
 
 - Dynagram
   -- New menu: Expand References (true by default)
@@ -12,20 +25,21 @@ BUGS and ISSUES:
   -- Add to default preferences
 
 - Submit bug on Conformance.rest.interaction
+  -- ISSUE: ValueSet.codeSystem.concept
+     --- 'name' already set to "concept" for node reuse
+     --- ConceptDefinition name in spec diagram
 
 - Import profiles: prompt user to select profile file or folder (all)
   -- filter by file name regex?  e.g. *daf*
 
 - Import filter to include only core spec
-  -- in current build only, base = null
+  -- in current build, base = null
   -- include any constraint profiles referenced by another, e.g. Age
   
 - Use DITA to publish FHIR model as Help plugin
 
 - Constraint paths, need to look ahead to determine if nested class
   -- in current, anything without 'base' is a constraint or extension
-
-- Reuse of SD nested class, e.g. Questionnaire Group is reused (currently duplicated)
 
 - Add XML serialization metadata on import, e.g. ElementDefinition <representation value="xmlAttr"/>
 
@@ -40,9 +54,14 @@ BUGS and ISSUES:
   -- Issue: no id for nested classes, also need id for all properties to enable redefine/subset
      -- use path as Ecore Id, if no FHIR id?
      
-- Import constraints
+- Import ElementDef elements: 
+  -- default, fixed, pattern, example
+  -- minValue, maxValue, maxLength
 
-- Import operations
+- Import constraints
+  -- condition: refers to another Constraint key
+     -- In text: Invariant affects this element
+     -- Research UML Constraint constrainedElement.  Can I have all "affected" properties in constrainedElement list?
 
 - Import value sets, assign binding constraint
   -- first iteration: use existing terminology profile and UI
@@ -53,6 +72,10 @@ BUGS and ISSUES:
 - Extensions
   -- It appears that extension structure is simply a *constraint* on the Extension datatype ???
   -- With context type and context(s)
+
+- Import operations
+
+- Import ElementDef mapping
 
 CHANGES IN SEPT RELEASE
 

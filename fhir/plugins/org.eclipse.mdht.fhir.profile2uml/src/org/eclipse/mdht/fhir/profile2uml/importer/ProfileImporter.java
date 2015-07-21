@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -16,6 +18,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -24,21 +27,30 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.hl7.fhir.ConstraintSeverityList;
 import org.hl7.fhir.ElementDefinition;
+import org.hl7.fhir.ElementDefinitionConstraint;
 import org.hl7.fhir.ElementDefinitionType;
 import org.hl7.fhir.StructureDefinition;
 import org.hl7.fhir.StructureDefinitionKindList;
 import org.hl7.fhir.Uri;
 import org.hl7.fhir.util.FhirResourceFactoryImpl;
+import org.openhealthtools.mdht.uml.validation.Diagnostic;
+import org.openhealthtools.mdht.uml.validation.SeverityKind;
+import org.openhealthtools.mdht.uml.validation.ValidationPackage;
 
 public class ProfileImporter {
 	public static final String MDHT_ANNOTATION_SOURCE = "org.eclipse.mdht";
@@ -58,6 +70,8 @@ public class ProfileImporter {
 	
 	public static final String UML_LIBRARIES_PATH = "org.eclipse.uml2.uml.resources/libraries/";
 	public static final String XML_PRIMITIVE_TYPES_LIBRARY = UML_LIBRARIES_PATH + "XMLPrimitiveTypes.library.uml";
+
+	private String[] constraintLanguages = { "Analysis", "XPath", "OCL" };
 	
 	private IContainer fhirProfileFolder;
 	
@@ -395,6 +409,13 @@ public class ProfileImporter {
 				}
 
 				addComments(profileClass, elementDef);
+
+				// Add profile element constraints
+				for (ElementDefinitionConstraint constraint : elementDef.getConstraint()) {
+					addConstraint(profileClass, constraint);
+				}
+				
+				// don't create a Property
 				continue;
 			}
 			
@@ -419,8 +440,16 @@ public class ProfileImporter {
 			}
 			
 			Classifier propertyType = null;
-			// TODO this does not work for constraint profiles..........
-			if (typeList.isEmpty()) {
+			if (elementDef.getNameReference() != null) {
+				String referencedName = elementDef.getNameReference().getValue();
+				propertyType = findReferencedClass(ownerClass, referencedName);
+				if (propertyType == null) {
+					System.err.println("Cannot find referencedName: " + referencedName + " from: " + path);
+				}
+			}
+			else if (typeList.isEmpty()) {
+				// TODO this does not work for constraint profiles..........
+				
 				// create a new nested class
 				String nestedClassName = getClassName(elementDef);
 				propertyType = (Class) ownerClass.createNestedClassifier(nestedClassName, UMLPackage.eINSTANCE.getClass_());
@@ -458,6 +487,16 @@ public class ProfileImporter {
 			//TODO redefined or subsetted from RM property
 
 			addComments(property, elementDef);
+			
+			// Add constraints
+			for (ElementDefinitionConstraint constraint : elementDef.getConstraint()) {
+				Class context = ownerClass;
+				if (property.getType().getOwner() instanceof Class) {
+					// This is a context element definition for a nested class
+					context = (Class) property.getType();
+				}
+				addConstraint(context, constraint);
+			}
 		}
 		
 		return profileClass;
@@ -471,6 +510,9 @@ public class ProfileImporter {
 		if (elementDef.getDefinition() != null) {
 			Comment comment = umlElement.createOwnedComment();
 			comment.setBody(elementDef.getDefinition().getValue());
+			
+			// assure that definition is first comment, for display in UML tooling
+			umlElement.getOwnedComments().move(0, comment);
 		}
 		if (elementDef.getComments() != null) {
 			Comment comment = umlElement.createOwnedComment();
@@ -498,16 +540,17 @@ public class ProfileImporter {
 		else {
 			String[] path = elementDef.getPath().getValue().split("\\.");
 			name = path[path.length - 1];
-			
-			//TODO toUpperCamelCase
-			StringBuffer camelCaseNameBuffer = new StringBuffer();
-			camelCaseNameBuffer.append(name.substring(0, 1).toUpperCase());
-			camelCaseNameBuffer.append(name.substring(1));
-			name = camelCaseNameBuffer.toString();
 		}
+		
+		//TODO toUpperCamelCase, remove "-" etc.
+		StringBuffer camelCaseNameBuffer = new StringBuffer();
+		camelCaseNameBuffer.append(name.substring(0, 1).toUpperCase());
+		camelCaseNameBuffer.append(name.substring(1));
+		name = camelCaseNameBuffer.toString();
 		
 		return name;
 	}
+	
 	/**
 	 * Determines the property from the last "path" component.
 	 * 
@@ -537,6 +580,54 @@ public class ProfileImporter {
 		}
 		
 		return primitiveType;
+	}
+	
+	/**
+	 * ElementDefinition.referencedName is not guaranteed to be globally unique in a structure, but
+	 * must be unique within a context class.  Start with given context class, then search within owner classes.
+	 * This logic would be a lot simpler if names were globally unique within a StructureDefinition.
+	 * 
+	 * @param context
+	 * @param referencedName
+	 * @return
+	 */
+	private Class findReferencedClass(Class context, String referencedName) {
+		return findReferencedClass(context, referencedName, new HashSet<Classifier>());
+	}
+	
+	private Class findReferencedClass(Class context, String referencedName, Set<Classifier> excluded) {
+		if (excluded.contains(context)) {
+			return null;
+		}
+		excluded.add(context);
+		
+		Class referencedClass = null;
+		if (referencedName.equalsIgnoreCase(context.getName())) {
+			referencedClass = context;
+		}
+		else {
+			for (Classifier nested : context.getNestedClassifiers()) {
+				if (nested instanceof Class) {
+					// use case-insensitive name, class name may have been changed to upper
+					if (nested instanceof Class && referencedName.equalsIgnoreCase(nested.getName())) {
+						referencedClass = (Class) nested;
+						break;
+					}
+					
+					// In some cases, such as ValueSet.compose.include.concept.designation
+					// we need to traverse down into nested-nested classes of a parent to find the target
+					referencedClass = findReferencedClass((Class)nested, referencedName, excluded);
+					if (referencedClass != null) {
+						break;
+					}
+				}
+			}
+		}
+		
+		if (referencedClass == null && context.getOwner() instanceof Class) {
+			referencedClass = findReferencedClass((Class) context.getOwner(), referencedName, excluded);
+		}
+		return referencedClass;
 	}
 	
 //	private boolean isKindOf(Classifier umlClass, String parentName) {
@@ -630,6 +721,64 @@ public class ProfileImporter {
 		
 		property.setLower(lower);
 		property.setUpper(upper);
+	}
+	
+	private void addConstraint(Element umlElement, ElementDefinitionConstraint fhirConstraint) {
+		Constraint umlConstraint = null;
+
+		if (umlElement instanceof Namespace) {
+			umlConstraint = ((Namespace) umlElement).createOwnedRule(null);
+		} else if (umlElement.getOwner() instanceof Namespace) {
+			Namespace ns = (Namespace) umlElement.getOwner();
+			umlConstraint = ns.createOwnedRule(null);
+		}
+		umlConstraint.getConstrainedElements().add(umlElement);
+		
+		if (fhirConstraint.getKey() != null) {
+			umlConstraint.setName(fhirConstraint.getKey().getValue());
+		}
+
+		if (fhirConstraint.getRequirements() != null) {
+			umlConstraint.createOwnedComment().setBody(fhirConstraint.getRequirements().getValue());
+		}
+		
+		OpaqueExpression spec = (OpaqueExpression) umlConstraint.createSpecification(
+				null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		
+//		if (fhirConstraint.getHuman() != null) {
+//			spec.getLanguages().add(constraintLanguages[0]);
+//			spec.getBodies().add(fhirConstraint.getHuman().getValue());
+//		}
+		if (fhirConstraint.getXpath() != null) {
+			spec.getLanguages().add(constraintLanguages[1]);
+			spec.getBodies().add(fhirConstraint.getXpath().getValue());
+		}
+
+		Stereotype diagnosticStereo = umlConstraint.getApplicableStereotype("Validation::Diagnostic");
+		if (diagnosticStereo != null) {
+			EObject instance = umlConstraint.applyStereotype(diagnosticStereo);
+			EStructuralFeature code = instance.eClass().getEStructuralFeature("code");
+			if (code != null) {
+				instance.eUnset(code); // initialize the code to blank
+			}
+			
+			Diagnostic diagnostic = (Diagnostic) EcoreUtil.getObjectByType(
+				umlConstraint.getStereotypeApplications(), ValidationPackage.Literals.DIAGNOSTIC);
+			if (diagnostic != null) {
+				if (fhirConstraint.getSeverity() != null) {
+					if (ConstraintSeverityList.WARNING == fhirConstraint.getSeverity().getValue()) {
+						diagnostic.setSeverity(SeverityKind.WARNING);
+					}
+					else {
+						diagnostic.setSeverity(SeverityKind.ERROR);
+					}
+				}
+
+				if (fhirConstraint.getHuman() != null) {
+					diagnostic.setMessage(fhirConstraint.getHuman().getValue());
+				}
+			}
+		}
 	}
 
 	/*
