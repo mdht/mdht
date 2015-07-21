@@ -541,13 +541,17 @@ public class CDAModelUtil {
 	}
 
 	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
+		return computeAssociationConformanceMessage(property, markup, xrefSource, true);
+	}
+
+	public static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource, boolean appendNestedConformanceRules) {
 
 		Class endType = (property.getType() instanceof Class)
 				? (Class) property.getType()
 				: null;
 
 		if (!isInlineClass(endType) && getTemplateId(property.getClass_()) != null) {
-			return computeTemplateAssociationConformanceMessage(property, markup, xrefSource);
+			return computeTemplateAssociationConformanceMessage(property, markup, xrefSource, appendNestedConformanceRules);
 		}
 
 		StringBuffer message = new StringBuffer();
@@ -600,7 +604,7 @@ public class CDAModelUtil {
 
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
-		if (endType != null) {
+		if (appendNestedConformanceRules && endType != null) {
 
 			if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
 				StringWriter sw = new StringWriter();
@@ -649,6 +653,11 @@ public class CDAModelUtil {
 
 	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
 			Package xrefSource) {
+		return computeTemplateAssociationConformanceMessage(property, markup, xrefSource, true);
+	}
+
+	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
+			Package xrefSource, boolean appendNestedConformanceRules) {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
@@ -694,7 +703,7 @@ public class CDAModelUtil {
 
 		appendConformanceRuleIds(association, message, markup);
 
-		if (property.getType() instanceof Class) {
+		if (appendNestedConformanceRules && property.getType() instanceof Class) {
 			Class inlinedClass = (Class) property.getType();
 
 			if (markup && isInlineClass(inlinedClass)) {
@@ -884,12 +893,16 @@ public class CDAModelUtil {
 	}
 
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
+		return computeConformanceMessage(property, markup, xrefSource, true);
+	}
+
+	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource, boolean appendNestedConformanceRules) {
 
 		if (property.getType() == null) {
 			System.out.println("Property has null type: " + property.getQualifiedName());
 		}
 		if (property.getAssociation() != null && property.isNavigable()) {
-			return computeAssociationConformanceMessage(property, markup, xrefSource);
+			return computeAssociationConformanceMessage(property, markup, xrefSource, appendNestedConformanceRules);
 		}
 
 		StringBuffer message = new StringBuffer();
@@ -1013,7 +1026,7 @@ public class CDAModelUtil {
 
 			}
 
-			if (property.getType() instanceof Class) {
+			if (appendNestedConformanceRules && property.getType() instanceof Class) {
 				if (isInlineClass((Class) property.getType())) {
 
 					if (isPublishSeperately((Class) property.getType())) {
