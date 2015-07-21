@@ -35,6 +35,8 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
@@ -260,16 +262,25 @@ public class TemplateSection extends ValidationSection {
 		CLabel multiplicityLabel = getWidgetFactory().createCLabel(composite, "templateId Multiplicity:"); //$NON-NLS-1$
 		multiplicityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
 		multiplicityCombo.setItems(new String[] { "*", "0..1", "1", "1..*" });
+		multiplicityCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				multiplicitySet();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				multiplicitySet();
+			}
+		});
 
 		data = new FormData();
-		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.VSPACE);
-		multiplicityCombo.setLayoutData(data);
-
-		data = new FormData();
-		data.right = new FormAttachment(multiplicityCombo, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(multiplicityCombo, 0, SWT.CENTER);
+		data.left = new FormAttachment(assigningAuthorityText, 0, SWT.CENTER);
+		data.top = new FormAttachment(assigningAuthorityText, ITabbedPropertyConstants.VSPACE);
 		multiplicityLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(multiplicityLabel, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(multiplicityLabel, 0, SWT.CENTER);
+		multiplicityCombo.setLayoutData(data);
 
 		addValidationControls(composite, 1, 2);
 
@@ -341,6 +352,15 @@ public class TemplateSection extends ValidationSection {
 
 		multiplicityCombo.setText("m");
 
+	}
+
+	private void multiplicitySet() {
+		String selectedTxt = multiplicityCombo.getText();
+		if ("*".equals(selectedTxt)) {
+			multiplicityCombo.setText("0..*");
+		} else if ("1".equals(selectedTxt)) {
+			multiplicityCombo.setText("1..1");
+		}
 	}
 
 }
