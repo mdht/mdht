@@ -23,6 +23,14 @@ public abstract class CDATemplateComputeBuilder {
 
 	private String ruleIds;
 
+	private String multiplicity;
+
+	public static String getMultiplicityRange(String multiplicity) {
+		if (multiplicity == null) // default
+			return "[1..1]";
+		return multiplicity;
+	}
+
 	public CDATemplateComputeBuilder setTemplateVersion(String templateVersion) {
 		this.templateVersion = templateVersion;
 		return this;
@@ -45,6 +53,11 @@ public abstract class CDATemplateComputeBuilder {
 
 	public CDATemplateComputeBuilder setCardinalityAfterElement(Boolean cardinalityAfterElement) {
 		this.cardinalityAfterElement = cardinalityAfterElement;
+		return this;
+	}
+
+	public CDATemplateComputeBuilder setMultiplicity(String multiplicityRange) {
+		this.multiplicity = multiplicityRange;
 		return this;
 	}
 

@@ -431,14 +431,19 @@ public class CDAModelUtil {
 				? templateVersion
 				: ""));
 
+		final String multiplicityRange = CDATemplateComputeBuilder.getMultiplicityRange(getMultiplicityRange(template));
 		CDATemplateComputeBuilder cdaTemplater = new CDATemplateComputeBuilder() {
 			@Override
 			public String addMultiplicity() {
-				return multiplicityElementToggle(markup, "templateId", "1..1", "");
+				return multiplicityElementToggle(markup, "templateId", multiplicityRange, "");
 			}
 		};
 		String result = cdaTemplater.setCardinalityAfterElement(cardinalityAfterElement).setRequireMarkup(markup).setRuleIds(
-			ruleIds).setTemplateId(templateId).setTemplateVersion(templateVersion).compute().toString();
+			ruleIds).setTemplateId(templateId).setTemplateVersion(templateVersion).setMultiplicity(multiplicityRange).compute().toString();
+
+		System.out.println("New multiplicity is " + result);
+
+		int asddasd = 5;// tmpwarn
 
 		return templateConstraint;
 	}
@@ -2005,7 +2010,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
@@ -2278,6 +2283,23 @@ public class CDAModelUtil {
 		}
 
 		return false;
+	}
+
+	private static String getMultiplicityRange(Class template) {
+		String templateId = null;
+		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
+		if (hl7Template != null) {
+			templateId = (String) template.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
+		} else {
+			for (Classifier parent : template.getGenerals()) {
+				templateId = getMultiplicityRange((Class) parent);
+				if (templateId != null) {
+					break;
+				}
+			}
+		}
+
+		return templateId;
 	}
 
 	public static String getTemplateId(Class template) {
