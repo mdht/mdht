@@ -2010,7 +2010,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
@@ -2288,7 +2288,7 @@ public class CDAModelUtil {
 	private static String getMultiplicityRange(Class template) {
 		String templateId = null;
 		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
-		if (hl7Template != null) {
+		if (hl7Template != null && template.hasValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY)) {
 			templateId = (String) template.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
 		} else {
 			for (Classifier parent : template.getGenerals()) {

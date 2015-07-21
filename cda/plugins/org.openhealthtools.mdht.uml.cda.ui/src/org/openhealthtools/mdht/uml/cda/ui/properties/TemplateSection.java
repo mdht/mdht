@@ -365,14 +365,10 @@ public class TemplateSection extends ValidationSection {
 		Stereotype hl7Template = getValidationStereotype();
 		System.out.println("template is " + hl7Template);
 		if (hl7Template != null) {
-			String templateId = (String) modelElement.getValue(
-				hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
-			System.out.println("templid is " + templateId);
+			modelElement.setValue(
+				hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY, multiplicityCombo.getText());
 		}
-		String result = getConformanceRuleIds(modelElement);
-		System.out.println("ConformId is " + result);
-		result = getConformanceRuleIds(modelElement, hl7Template);
-		System.out.println("ConformId2 is " + result);
+
 	}
 
 	private static String getConformanceRuleIds(Element element) {
