@@ -13,6 +13,7 @@ package org.openhealthtools.mdht.uml.cda.core.util;
 
 import org.eclipse.osgi.util.NLS;
 
+@Deprecated
 public class CDAConstraints extends NLS {
 	private static final String BUNDLE_NAME = "org.openhealthtools.mdht.uml.cda.core.util.CDAConstraints"; //$NON-NLS-1$
 

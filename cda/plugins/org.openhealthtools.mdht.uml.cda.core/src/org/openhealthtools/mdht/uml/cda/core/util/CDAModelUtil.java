@@ -383,69 +383,81 @@ public class CDAModelUtil {
 		return (String) umlSwitch.doSwitch(element);
 	}
 
-	private static String getCDATemplateIdConstraint(boolean isTemplateVersionEmpty, boolean markup) {
-		String result = "";
-		if (isTemplateVersionEmpty) {
-			if (cardinalityAfterElement) {
-				result = markup
-						? CDAConstraints.CDATemplateIdConstraintMarkupDiffMultip
-						: CDAConstraints.CDATemplateIdConstraintDiffMultip;
-			} else {
-				result = markup
-						? CDAConstraints.CDATemplateIdConstraintMarkup
-						: CDAConstraints.CDATemplateIdConstraint;
-			}
-
-		} else {
-			if (cardinalityAfterElement) {
-				result = markup
-						? CDAConstraints.CDAVersionTemplateIdConstraintMarkupDiffMultip
-						: CDAConstraints.CDAVersionTemplateIdConstraintDiffMultip;
-			} else {
-				result = markup
-						? CDAConstraints.CDAVersionTemplateIdConstraintMarkup
-						: CDAConstraints.CDAVersionTemplateIdConstraint;
-			}
-		}
-
-		return result;
-	}
+	// private static String getCDATemplateIdConstraint(boolean isTemplateVersionEmpty, boolean markup) {
+	// String result = "";
+	// if (isTemplateVersionEmpty) {
+	// if (cardinalityAfterElement) {
+	// result = markup
+	// ? CDAConstraints.CDATemplateIdConstraintMarkupDiffMultip
+	// : CDAConstraints.CDATemplateIdConstraintDiffMultip;
+	// } else {
+	// result = markup
+	// ? CDAConstraints.CDATemplateIdConstraintMarkup
+	// : CDAConstraints.CDATemplateIdConstraint;
+	// }
+	//
+	// } else {
+	// if (cardinalityAfterElement) {
+	// result = markup
+	// ? CDAConstraints.CDAVersionTemplateIdConstraintMarkupDiffMultip
+	// : CDAConstraints.CDAVersionTemplateIdConstraintDiffMultip;
+	// } else {
+	// result = markup
+	// ? CDAConstraints.CDAVersionTemplateIdConstraintMarkup
+	// : CDAConstraints.CDAVersionTemplateIdConstraint;
+	// }
+	// }
+	//
+	// return result;
+	// }
 
 	public static String computeConformanceMessage(Class template, final boolean markup) {
 
 		String templateId = getTemplateId(template);
 		String templateVersion = getTemplateVersion(template);
-
-		String templateConstraint = getCDATemplateIdConstraint(StringUtils.isEmpty(templateVersion), markup);
-
 		String ruleIds = getConformanceRuleIds(template);
-		templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
-				? templateId
-				: ""));
-		templateConstraint = templateConstraint.replaceAll("\\( %ruleId% \\) ", (ruleIds != null &&
-				!ruleIds.trim().isEmpty()
-				? "( " + ruleIds + " ) "
-				: ""));
+		if (templateId == null)
+			templateId = "";
 
-		templateConstraint = templateConstraint.replaceAll("%templateVersion%", (templateVersion != null
-				? templateVersion
-				: ""));
+		// String templateConstraint = getCDATemplateIdConstraint(StringUtils.isEmpty(templateVersion), markup);
+		//
+		//
+		// templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
+		// ? templateId
+		// : ""));
+		// templateConstraint = templateConstraint.replaceAll("\\( %ruleId% \\) ", (ruleIds != null &&
+		// !ruleIds.trim().isEmpty()
+		// ? "( " + ruleIds + " ) "
+		// : ""));
+		//
+		// templateConstraint = templateConstraint.replaceAll("%templateVersion%", (templateVersion != null
+		// ? templateVersion
+		// : ""));
 
-		final String multiplicityRange = CDATemplateComputeBuilder.getMultiplicityRange(getMultiplicityRange(template));
+		String templateMultiplicity = CDATemplateComputeBuilder.getMultiplicityRange(getMultiplicityRange(template));
+		final String templateIdAsBusinessName = "=\"" + templateId + "\"";
+		final String templateVersionAsBusinessName = "=\"" + templateVersion + "\"";
+		final String multiplicityRange = templateMultiplicity.isEmpty()
+				? ""
+				: " [" + templateMultiplicity + "]";
 		CDATemplateComputeBuilder cdaTemplater = new CDATemplateComputeBuilder() {
 			@Override
-			public String addMultiplicity() {
+			public String addTemplateIdMultiplicity() {
 				return multiplicityElementToggle(markup, "templateId", multiplicityRange, "");
 			}
+
+			@Override
+			public String addRootMultiplicity() {
+				return multiplicityElementToggle(markup, "@root", " [1..1]", templateIdAsBusinessName);
+			}
+
+			@Override
+			public String addTemplateVersion() {
+				return multiplicityElementToggle(markup, "@extension", " [1..1]", templateVersionAsBusinessName);
+			}
 		};
-		String result = cdaTemplater.setCardinalityAfterElement(cardinalityAfterElement).setRequireMarkup(markup).setRuleIds(
-			ruleIds).setTemplateId(templateId).setTemplateVersion(templateVersion).setMultiplicity(multiplicityRange).compute().toString();
-
-		System.out.println("New multiplicity is " + result);
-
-		int asddasd = 5;// tmpwarn
-
-		return templateConstraint;
+		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(templateVersion).setMultiplicity(
+			multiplicityRange).compute().toString();
 	}
 
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
@@ -523,7 +535,7 @@ public class CDAModelUtil {
 	private static String getBusinessName(NamedElement property) {
 		String businessName = NamedElementUtil.getBusinessName(property);
 		if (!property.getName().equals(businessName)) {
-			return (" (" + businessName + ") ");
+			return (" (" + businessName + ")");
 		}
 		return "";
 	}

@@ -189,7 +189,6 @@ public class TemplateSection extends ValidationSection {
 
 						if (stereotype != null) {
 							String value = multiplicityCombo.getText().trim();
-							System.out.println("Setting " + value);
 							modelElement.setValue(
 								stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY, value.length() > 0
 										? value
@@ -368,7 +367,6 @@ public class TemplateSection extends ValidationSection {
 		String multiplicityVal = null;
 		if (stereotype != null) {
 			multiplicityVal = (String) modelElement.getValue(stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
-			System.out.println("Multip val is " + multiplicityVal);
 		}
 
 		multiplicityCombo.setText(CDATemplateComputeBuilder.getMultiplicityRange(multiplicityVal));

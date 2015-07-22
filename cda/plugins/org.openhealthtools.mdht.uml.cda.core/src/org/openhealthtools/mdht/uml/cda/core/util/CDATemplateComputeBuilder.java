@@ -11,25 +11,24 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
 
+import org.apache.commons.lang.StringUtils;
+
 public abstract class CDATemplateComputeBuilder {
 
 	private String templateVersion;
 
 	private boolean markup = false;
 
-	private boolean cardinalityAfterElement = false;
-
-	private String templateId;
-
 	private String ruleIds;
 
 	private String multiplicity;
 
+	private String content;
+
 	public static String getMultiplicityRange(String multiplicity) {
-		System.out.println("getmultiplicity val is " + multiplicity);
 		if (multiplicity == null) // default
 			return "1..1";
-		return multiplicity;
+		return multiplicity.trim();
 	}
 
 	public CDATemplateComputeBuilder setTemplateVersion(String templateVersion) {
@@ -37,13 +36,13 @@ public abstract class CDATemplateComputeBuilder {
 		return this;
 	}
 
-	public CDATemplateComputeBuilder setTemplateId(String templateId) {
-		this.templateId = templateId;
-		return this;
-	}
-
 	public CDATemplateComputeBuilder setRuleIds(String ruleIds) {
-		this.ruleIds = ruleIds;
+		if (ruleIds != null && !ruleIds.trim().isEmpty()) {
+			this.ruleIds = " ( " + ruleIds + " )";
+		} else {
+			this.ruleIds = "";
+		}
+
 		return this;
 	}
 
@@ -52,20 +51,73 @@ public abstract class CDATemplateComputeBuilder {
 		return this;
 	}
 
-	public CDATemplateComputeBuilder setCardinalityAfterElement(Boolean cardinalityAfterElement) {
-		this.cardinalityAfterElement = cardinalityAfterElement;
-		return this;
-	}
-
 	public CDATemplateComputeBuilder setMultiplicity(String multiplicityRange) {
-		this.multiplicity = multiplicityRange;
+		this.multiplicity = multiplicityRange.trim();
 		return this;
 	}
 
 	public CDATemplateComputeBuilder compute() {
+		StringBuilder content = new StringBuilder();
+		content.append(getSeverityContain());
+		content.append(getMultiplicityText());
+		content.append(addTemplateIdMultiplicity());
+		content.append(ruleIds);
+		content.append(" such that it ");
+		if (markup)
+			content.append("<ol><li>");
+		content.append(getSeverityContain());
+		content.append("exactly one");
+		content.append(addRootMultiplicity());
+		if (markup)
+			content.append("</li>");
+		if (!StringUtils.isEmpty(templateVersion)) {
+			if (markup)
+				content.append(" <li>");
+			else
+				content.append(" and ");
+			content.append(getSeverityContain());
+			content.append("exactly one");
+			content.append(addTemplateVersion());
+			if (markup)
+				content.append("</li>");
+		}
+		if (markup)
+			content.append("</ol>");
+		this.content = content.toString();
 		return this;
 	}
 
-	public abstract String addMultiplicity();
+	@Override
+	public String toString() {
+		if (content == null)
+			return super.toString();
+		return content;
+	}
+
+	public abstract String addTemplateIdMultiplicity();
+
+	public abstract String addRootMultiplicity();
+
+	public abstract String addTemplateVersion();
+
+	private String getSeverityContain() {
+		StringBuilder content = new StringBuilder();
+		if (markup)
+			content.append("<b>");
+		content.append("SHALL");
+		if (markup)
+			content.append("</b>");
+		content.append(" contain ");
+		return content.toString();
+	}
+
+	private String getMultiplicityText() {
+		if ("[1..1]".equals(multiplicity))
+			return "exactly one";
+		if ("[1..*]".equals(multiplicity))
+			return "at least one";
+		System.err.println("Used unexpected multiplicity " + multiplicity);
+		return "";
+	}
 
 }
