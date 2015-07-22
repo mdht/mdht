@@ -46,11 +46,10 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDATemplateComputeBuilder;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 /**
@@ -71,6 +70,8 @@ public class TemplateSection extends ValidationSection {
 	private boolean assigningAuthorityModified = false;
 
 	private CCombo multiplicityCombo;
+
+	private boolean templateMultiplicityModified = false;
 
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -128,7 +129,7 @@ public class TemplateSection extends ValidationSection {
 	protected void modifyFields() {
 		super.modifyFields();
 
-		if (!(templateIdModified || templateVersionModified || assigningAuthorityModified)) {
+		if (!(templateIdModified || templateVersionModified || assigningAuthorityModified || templateMultiplicityModified)) {
 			return;
 		}
 
@@ -178,6 +179,19 @@ public class TemplateSection extends ValidationSection {
 							modelElement.setValue(
 								stereotype, ICDAProfileConstants.CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME,
 								value.length() > 0
+										? value
+										: null);
+
+						}
+					} else if (templateMultiplicityModified) {
+						templateMultiplicityModified = false;
+						this.setLabel("Set CDA Template Multiplicity");
+
+						if (stereotype != null) {
+							String value = multiplicityCombo.getText().trim();
+							System.out.println("Setting " + value);
+							modelElement.setValue(
+								stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY, value.length() > 0
 										? value
 										: null);
 
@@ -351,8 +365,13 @@ public class TemplateSection extends ValidationSection {
 			assigningAuthorityText.setEnabled(true);
 			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
+		String multiplicityVal = null;
+		if (stereotype != null) {
+			multiplicityVal = (String) modelElement.getValue(stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
+			System.out.println("Multip val is " + multiplicityVal);
+		}
 
-		multiplicityCombo.setText("m");
+		multiplicityCombo.setText(CDATemplateComputeBuilder.getMultiplicityRange(multiplicityVal));
 
 	}
 
@@ -361,36 +380,9 @@ public class TemplateSection extends ValidationSection {
 		if ("1".equals(selectedTxt)) {
 			multiplicityCombo.setText("1..1");
 		}
-		// Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
-		Stereotype hl7Template = getValidationStereotype();
-		System.out.println("template is " + hl7Template);
-		if (hl7Template != null) {
-			modelElement.setValue(
-				hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY, multiplicityCombo.getText());
-		}
+		templateMultiplicityModified = true;
+		modifyFields();
 
-	}
-
-	private static String getConformanceRuleIds(Element element) {
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
-		return getConformanceRuleIds(element, validationSupport);
-	}
-
-	private static String getConformanceRuleIds(Element element, Stereotype validationSupport) {
-		StringBuffer ruleIdDisplay = new StringBuffer();
-		if (validationSupport != null) {
-			Validation validation = (Validation) element.getStereotypeApplication(validationSupport);
-			for (String ruleId : validation.getRuleId()) {
-				if (ruleIdDisplay.length() > 0) {
-					ruleIdDisplay.append(", ");
-				}
-				ruleIdDisplay.append(ruleId);
-			}
-		} else {
-			System.out.println("Validationsupport is null");
-		}
-
-		return ruleIdDisplay.toString();
 	}
 
 }

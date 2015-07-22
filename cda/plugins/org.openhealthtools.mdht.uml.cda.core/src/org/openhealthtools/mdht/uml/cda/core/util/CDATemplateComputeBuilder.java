@@ -28,7 +28,7 @@ public abstract class CDATemplateComputeBuilder {
 	public static String getMultiplicityRange(String multiplicity) {
 		System.out.println("getmultiplicity val is " + multiplicity);
 		if (multiplicity == null) // default
-			return "[1..1]";
+			return "1..1";
 		return multiplicity;
 	}
 
