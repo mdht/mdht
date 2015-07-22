@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
@@ -498,23 +498,23 @@ public class TransformClassContent extends TransformAbstract {
 	private void appendPropertyComments(PrintWriter writer, Property property) {
 		Association association = property.getAssociation();
 		if (association != null && association.getOwnedComments().size() > 0) {
-			writer.append("<ul>");
+			writer.append("<ol>");
 			for (Comment comment : association.getOwnedComments()) {
 				writer.append("<li><p><lines><i>");
 				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
 				writer.append("</i></lines></p></li>");
 			}
-			writer.append("</ul>");
+			writer.append("</ol>");
 		}
 
 		if (property.getOwnedComments().size() > 0) {
-			writer.append("<ul>");
+			writer.append("<ol>");
 			for (Comment comment : property.getOwnedComments()) {
 				writer.append("<li><p><lines><i>");
 				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
 				writer.append("</i></lines></p></li>");
 			}
-			writer.append("</ul>");
+			writer.append("</ol>");
 		}
 	}
 
@@ -745,7 +745,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#getRangeCount()
 		 */
 		public int getRangeCount() {
@@ -754,7 +754,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#rangesEqual(int, org.eclipse.compare.rangedifferencer.IRangeComparator, int)
 		 */
 		public boolean rangesEqual(int thisIndex, IRangeComparator other, int otherIndex) {
@@ -765,7 +765,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#skipRangeComparison(int, int,
 		 * org.eclipse.compare.rangedifferencer.IRangeComparator)
 		 */
@@ -856,7 +856,7 @@ public class TransformClassContent extends TransformAbstract {
 		writer.println("Change Log from " + CDAModelUtil.getModelPrefix(substitute) + "::" + substitute.getName());
 		writer.println("</p>");
 		writer.println("<p id=\"" + substitute.getName() + "\" >");
-		writer.append("<ul>");
+		writer.append("<ol>");
 
 		StringWriter leftsw = new StringWriter();
 		PrintWriter leftpw = new PrintWriter(leftsw);
@@ -874,7 +874,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		appendChanges(writer, sourceStream, substitueStream);
 
-		writer.append("</ul>");
+		writer.append("</ol>");
 
 		writer.println("</p>");
 
