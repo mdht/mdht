@@ -68,6 +68,7 @@ BUGS and ISSUES:
   
 - Slicing, used in Conformance
   -- property subsetting in UML
+  -- good example: lipid-report-lipidprofile
 
 - Extensions
   -- It appears that extension structure is simply a *constraint* on the Extension datatype ???

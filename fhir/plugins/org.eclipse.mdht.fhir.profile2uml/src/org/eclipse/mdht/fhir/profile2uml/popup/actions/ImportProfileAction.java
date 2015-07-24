@@ -11,17 +11,19 @@
  *******************************************************************************/
 package org.eclipse.mdht.fhir.profile2uml.popup.actions;
 
+import java.util.List;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
+import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -30,12 +32,12 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.mdht.fhir.profile2uml.importer.ProfileImporter;
+import org.eclipse.swt.SWT;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Package;
-
-import org.eclipse.mdht.fhir.profile2uml.importer.ProfileImporter;
 
 public class ImportProfileAction implements IObjectActionDelegate {
 	
@@ -48,25 +50,46 @@ public class ImportProfileAction implements IObjectActionDelegate {
 	
 	private IContainer getProfileFolder() {
 		IContainer profileFolder = null;
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/current");
-		if (resource instanceof IContainer) {
-			profileFolder = (IContainer) resource;
+//		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+//		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/current");
+//		if (resource instanceof IContainer) {
+//			profileFolder = (IContainer) resource;
+//		}
+		
+		IContainer[] containers = WorkspaceResourceDialog.openFolderSelection(activePart.getSite().getShell(), 
+				"Select Profile Folder", "Folder containing reference profiles", false, null, null);
+		if (containers.length > 0) {
+			profileFolder = containers[0];
 		}
 		
 		return profileFolder;
+	}
+	
+	private List<URI> selectProfileFiles() {
+		ResourceDialog dialog = new ResourceDialog(activePart.getSite().getShell(), "Select FHIR Profiles", SWT.OPEN|SWT.MULTI);
+		dialog.open();
+		return dialog.getURIs();
 	}
 	
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
+		// select the profile folder first, then optionally a list of profiles
+		IContainer profileFolder = getProfileFolder();
+		List<URI> profiles = selectProfileFiles();
+		
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlPackage);
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Import FHIR Profiles") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					// Prompt for workspace folder containing CEMs
+					ProfileImporter umlImporter = new ProfileImporter(umlPackage, profileFolder);
+					for (URI profileURI : profiles) {
+						umlImporter.importProfile(profileURI);
+					}
+					
+					/*
 					IContainer profileFolder = getProfileFolder();
 					if (profileFolder != null) {
 						ProfileImporter umlImporter = new ProfileImporter(umlPackage, profileFolder);
@@ -80,6 +103,7 @@ public class ImportProfileAction implements IObjectActionDelegate {
 						
 //						umlImporter.importAllProfiles();
 					}
+					*/
 
 					return Status.OK_STATUS;
 				}

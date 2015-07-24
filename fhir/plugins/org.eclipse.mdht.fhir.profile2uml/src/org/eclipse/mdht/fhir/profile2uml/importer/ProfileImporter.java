@@ -209,26 +209,32 @@ public class ProfileImporter {
 		Class umlClass = (Class) model.getOwnedType(profileName, false, UMLPackage.eINSTANCE.getClass_(), false);
 		
 		if (umlClass == null) {
-			URI uri = URI.createFileURI(profileFile.getLocation().toString());
-			
-			ResourceFactoryImpl resourceFactory = new FhirResourceFactoryImpl();
-			Resource resource = resourceFactory.createResource(uri);
-			try {
-				resource.load(new HashMap<String,String>());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return null;
-			}
+			URI profileURI = URI.createFileURI(profileFile.getLocation().toString());
+			umlClass = importProfile(profileURI);
+		}
+		
+		return umlClass;
+	}
 	
-			TreeIterator<?> iterator = EcoreUtil.getAllContents(Collections.singletonList(resource));
-	
-			while (iterator != null && iterator.hasNext()) {
-				Object child = iterator.next();
-				if (child instanceof StructureDefinition) {
-					umlClass = importProfile((StructureDefinition)child);
-					break;
-				}
+	public Class importProfile(URI profileURI) {
+		Class umlClass = null;
+		ResourceFactoryImpl resourceFactory = new FhirResourceFactoryImpl();
+		Resource resource = resourceFactory.createResource(profileURI);
+		try {
+			resource.load(new HashMap<String,String>());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+
+		TreeIterator<?> iterator = EcoreUtil.getAllContents(Collections.singletonList(resource));
+
+		while (iterator != null && iterator.hasNext()) {
+			Object child = iterator.next();
+			if (child instanceof StructureDefinition) {
+				umlClass = importProfile((StructureDefinition)child);
+				break;
 			}
 		}
 		
