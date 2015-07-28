@@ -16,15 +16,15 @@ package org.openhealthtools.mdht.uml.cda.core.profile;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Text Value</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#getValue <em>Value</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#isIgnoreCase <em>Ignore Case</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#getValue <em>Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#isIgnoreCase <em>Ignore Case</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getTextValue()
  * @model
  * @generated
@@ -37,7 +37,6 @@ public interface TextValue extends PropertyValidation {
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getTextValue_Value()
@@ -54,7 +53,6 @@ public interface TextValue extends PropertyValidation {
 	 * If the meaning of the '<em>Ignore Case</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Ignore Case</em>' attribute.
 	 * @see #setIgnoreCase(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getTextValue_IgnoreCase()
@@ -67,9 +65,7 @@ public interface TextValue extends PropertyValidation {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#isIgnoreCase <em>Ignore Case</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Ignore Case</em>' attribute.
+	 * @param value the new value of the '<em>Ignore Case</em>' attribute.
 	 * @see #isIgnoreCase()
 	 * @generated
 	 */
@@ -79,9 +75,7 @@ public interface TextValue extends PropertyValidation {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.TextValue#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Value</em>' attribute.
+	 * @param value the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()
 	 * @generated
 	 */

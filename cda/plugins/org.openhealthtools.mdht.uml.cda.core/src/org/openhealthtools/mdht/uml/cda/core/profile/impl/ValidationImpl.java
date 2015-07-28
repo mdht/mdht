@@ -32,13 +32,13 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getMessage <em>Message</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getSeverity <em>Severity</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getRuleId <em>Rule Id</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getSeverity <em>Severity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getRuleId <em>Rule Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isMandatory <em>Mandatory</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ValidationImpl extends EObjectImpl implements Validation {
@@ -46,7 +46,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -57,7 +56,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -68,7 +66,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -79,7 +76,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -90,7 +86,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #getRuleId() <em>Rule Id</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getRuleId()
 	 * @generated
 	 * @ordered
@@ -101,7 +96,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -112,7 +106,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -122,7 +115,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ValidationImpl() {
@@ -132,7 +124,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,16 +144,13 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.VALIDATION__MESSAGE:
-				return MESSAGE_EDEFAULT == null
-						? message != null
-						: !MESSAGE_EDEFAULT.equals(message);
+				return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
 			case CDAPackage.VALIDATION__SEVERITY:
 				return severity != SEVERITY_EDEFAULT;
 			case CDAPackage.VALIDATION__RULE_ID:
@@ -207,7 +195,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -218,7 +205,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -243,7 +229,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getMessage() {
@@ -253,7 +238,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<String> getRuleId() {
@@ -266,7 +250,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SeverityKind getSeverity() {
@@ -276,7 +259,6 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isMandatory() {
@@ -286,60 +268,47 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setMandatory(boolean newMandatory) {
 		boolean oldMandatory = mandatory;
 		mandatory = newMandatory;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory, mandatory));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory, mandatory));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__MESSAGE, oldMessage, message));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setSeverity(SeverityKind newSeverity) {
 		SeverityKind oldSeverity = severity;
-		severity = newSeverity == null
-				? SEVERITY_EDEFAULT
-				: newSeverity;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.VALIDATION__SEVERITY, oldSeverity, severity));
-		}
+		severity = newSeverity == null ? SEVERITY_EDEFAULT : newSeverity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__SEVERITY, oldSeverity, severity));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (message: ");
