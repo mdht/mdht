@@ -58,6 +58,7 @@ import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.util.CDASwitch;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -86,10 +87,10 @@ public class InstanceGenerator {
 		@Override
 		public Object caseStrucDocText(StrucDocText object) {
 
-			int numberOfParagraphs = randomGenerator.nextInt(20) + 1;
+			int numberOfParagraphs = randomGenerator.nextInt(4) + 1;
 			StringBuffer sb = new StringBuffer();
 			for (int p = 0; p < numberOfParagraphs; p++) {
-				int numberOfSentences = randomGenerator.nextInt(9) + 2;
+				int numberOfSentences = randomGenerator.nextInt(6) + 2;
 				for (int s = 0; s < numberOfSentences; s++) {
 					int numberOfWords = randomGenerator.nextInt(5) + 5;
 					for (int w = 0; w < numberOfWords; w++) {
@@ -117,6 +118,14 @@ public class InstanceGenerator {
 			SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
 			return sdf.format(cal.getTime());
 
+		}
+
+		@Override
+		public Object caseBL(BL bl) {
+
+			bl.setValue(true);
+
+			return bl;
 		}
 
 		/*
@@ -184,6 +193,7 @@ public class InstanceGenerator {
 			if ((object.getText() != null && object.getText().length() == 0) && object.eContainer() != null) {
 				if (object.eContainer() instanceof Section && object.eContainingFeature().getName().equals("title")) {
 					Section s = (Section) object.eContainer();
+					System.out.println(s.toString());
 					if (s.getCode() != null && s.getCode().getDisplayName() != null) {
 						return object.addText(s.getCode().getDisplayName());
 					}
@@ -326,6 +336,7 @@ public class InstanceGenerator {
 	}
 
 	private static void addObject(EClass eClass, EOperation addOperation, EObject eObject, EObject objectToAdd) {
+
 		for (Method m : eClass.getInstanceClass().getMethods()) {
 			if (addOperation.getName().equals(m.getName())) {
 				try {
@@ -355,6 +366,7 @@ public class InstanceGenerator {
 			HashMap<String, String> shallShouldMayProperties, int level) {
 
 		initEObject(eObject);
+		System.out.println(eObject.eClass().getName() + " ---> " + level);
 
 		if (level < 0 || CDAModelUtil.isCDAModel(umlClass)) {
 			return;
@@ -379,11 +391,21 @@ public class InstanceGenerator {
 						if (cdaProperty != null) {
 							EStructuralFeature cdaFeature = eClass.getEStructuralFeature(cdaProperty.getName());
 							if (cdaFeature instanceof EReference) {
+
+								String ePackageURI = CDAModelUtil.getEcorePackageURI(property.getType());
+								EPackage ePackage = getEPackageForURI(ePackageURI);
+
 								EReference cdaReference = (EReference) cdaFeature;
 								EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
 									cdaReference.getEReferenceType());
-								String ePackageURI = CDAModelUtil.getEcorePackageURI(property.getType());
-								EPackage ePackage = getEPackageForURI(ePackageURI);
+								;
+								if (ePackage != null) {
+									EClassifier eType = ePackage.getEClassifier(UML2Util.getValidJavaIdentifier(property.getType().getName()));
+									if (eType != null) {
+										objectToAdd = ePackage.getEFactoryInstance().create((EClass) eType);
+										initEObject(eObject);
+									}
+								}
 
 								if (ePackage != null) {
 									if (property.getType().getOwner() instanceof Class) {
@@ -404,13 +426,14 @@ public class InstanceGenerator {
 									}
 								}
 
-								HashMap<String, String> inlineshallShouldMayProperties = new HashMap<String, String>();
+								HashMap<String, String> inlineshallShouldMayProperties = createshallShouldMayProperties();
 
 								createvalueSetProperies((Class) property.getType(), inlineshallShouldMayProperties);
 
 								sampleInstanceInitialization(
 									(Class) property.getType(), objectToAdd, inlineshallShouldMayProperties, level - 1);
 								if (cdaReference.isMany()) {
+									System.out.println(property.getQualifiedName() + " --- " + objectToAdd.toString());
 									((EList) eObject.eGet(cdaReference)).add(objectToAdd);
 								} else {
 									eObject.eSet(cdaReference, objectToAdd);
@@ -526,11 +549,11 @@ public class InstanceGenerator {
 									datatypesInit.doSwitch(objectToSet);
 								}
 
-								if (CDAPackage.eINSTANCE.getNsURI().equals(
-									objectToSet.eClass().getEPackage().getNsURI())) {
-									cdaInit.doSwitch(objectToSet);
+								// if (CDAPackage.eINSTANCE.getNsURI().equals(
+								// objectToSet.eClass().getEPackage().getNsURI())) {
+								cdaInit.doSwitch(objectToSet);
 
-								}
+								// }
 
 							} catch (Exception cce) {
 								System.out.println("Unable to set " + eClass.getName() + "." +
@@ -661,9 +684,9 @@ public class InstanceGenerator {
 			if (eClass != null && !eClass.isAbstract()) {
 
 				eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
-				sampleInstanceInitialization(umlClass, eObject, shallShouldMayProperties, levels < 10
+				sampleInstanceInitialization(umlClass, eObject, shallShouldMayProperties, levels < 25
 						? levels
-						: 10);
+						: 25);
 
 			}
 		}
