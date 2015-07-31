@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='org.openhealthtools.mdht.uml.cda.test' version='2.0.0.201507311025' singleton='false'>
+    <update id='org.openhealthtools.mdht.uml.cda.test' range='[0.0.0,2.0.0.201507311025)' severity='0'/>
+    <properties size='4'>
+      <property name='org.eclipse.equinox.p2.name' value='Test'/>
+      <property name='maven-groupId' value='org.openhealthtools.mdht.uml.cda.tests'/>
+      <property name='maven-artifactId' value='org.openhealthtools.mdht.uml.cda.test'/>
+      <property name='maven-version' value='2.0.0-SNAPSHOT'/>
+    </properties>
+    <provides size='4'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.openhealthtools.mdht.uml.cda.test' version='2.0.0.201507311025'/>
+      <provided namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.cda.test' version='2.0.0.201507311025'/>
+      <provided namespace='java.package' name='org.openhealthtools.mdht.uml.cda.operations' version='0.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='9'>
+      <required namespace='osgi.bundle' name='org.junit' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.ecore' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.ecore.xmi' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.cda' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.hl7.datatypes' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.openhealthtools.mdht.uml.hl7.vocab' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ocl.ecore' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.apache.commons.lang' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='org.openhealthtools.mdht.uml.cda.test' version='2.0.0.201507311025'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.test&#xA;Bundle-Version: 2.0.0.201507311025&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>
