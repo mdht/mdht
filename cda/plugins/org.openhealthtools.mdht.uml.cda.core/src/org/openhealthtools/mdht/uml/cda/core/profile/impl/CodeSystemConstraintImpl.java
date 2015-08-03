@@ -31,13 +31,13 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getMessage <em>Message</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getSeverity <em>Severity</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getRuleId <em>Rule Id</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getSeverity <em>Severity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#getRuleId <em>Rule Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl#isMandatory <em>Mandatory</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CodeSystemConstraintImpl extends
@@ -46,7 +46,6 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -57,7 +56,6 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -68,7 +66,6 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -79,7 +76,6 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -90,7 +86,6 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #getRuleId() <em>Rule Id</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getRuleId()
 	 * @generated
 	 * @ordered
@@ -101,7 +96,6 @@ public class CodeSystemConstraintImpl extends
 	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -112,7 +106,6 @@ public class CodeSystemConstraintImpl extends
 	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #isMandatory()
 	 * @generated
 	 * @ordered
@@ -122,7 +115,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected CodeSystemConstraintImpl() {
@@ -132,23 +124,17 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Validation.class) {
 			switch (derivedFeatureID) {
-				case CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE:
-					return CDAPackage.VALIDATION__MESSAGE;
-				case CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY:
-					return CDAPackage.VALIDATION__SEVERITY;
-				case CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID:
-					return CDAPackage.VALIDATION__RULE_ID;
-				case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY:
-					return CDAPackage.VALIDATION__MANDATORY;
-				default:
-					return -1;
+				case CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE: return CDAPackage.VALIDATION__MESSAGE;
+				case CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY: return CDAPackage.VALIDATION__SEVERITY;
+				case CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID: return CDAPackage.VALIDATION__RULE_ID;
+				case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY: return CDAPackage.VALIDATION__MANDATORY;
+				default: return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -157,23 +143,17 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Validation.class) {
 			switch (baseFeatureID) {
-				case CDAPackage.VALIDATION__MESSAGE:
-					return CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE;
-				case CDAPackage.VALIDATION__SEVERITY:
-					return CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY;
-				case CDAPackage.VALIDATION__RULE_ID:
-					return CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID;
-				case CDAPackage.VALIDATION__MANDATORY:
-					return CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY;
-				default:
-					return -1;
+				case CDAPackage.VALIDATION__MESSAGE: return CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE;
+				case CDAPackage.VALIDATION__SEVERITY: return CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY;
+				case CDAPackage.VALIDATION__RULE_ID: return CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID;
+				case CDAPackage.VALIDATION__MANDATORY: return CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY;
+				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -182,7 +162,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,16 +182,13 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE:
-				return MESSAGE_EDEFAULT == null
-						? message != null
-						: !MESSAGE_EDEFAULT.equals(message);
+				return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY:
 				return severity != SEVERITY_EDEFAULT;
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID:
@@ -226,7 +202,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -234,17 +209,17 @@ public class CodeSystemConstraintImpl extends
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE:
-				setMessage((String) newValue);
+				setMessage((String)newValue);
 				return;
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY:
-				setSeverity((SeverityKind) newValue);
+				setSeverity((SeverityKind)newValue);
 				return;
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__RULE_ID:
 				getRuleId().clear();
-				getRuleId().addAll((Collection<? extends String>) newValue);
+				getRuleId().addAll((Collection<? extends String>)newValue);
 				return;
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY:
-				setMandatory((Boolean) newValue);
+				setMandatory((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,7 +228,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -264,7 +238,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -289,7 +262,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getMessage() {
@@ -299,7 +271,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<String> getRuleId() {
@@ -312,7 +283,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SeverityKind getSeverity() {
@@ -322,7 +292,6 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isMandatory() {
@@ -332,61 +301,47 @@ public class CodeSystemConstraintImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setMandatory(boolean newMandatory) {
 		boolean oldMandatory = mandatory;
 		mandatory = newMandatory;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY, oldMandatory, mandatory));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MANDATORY, oldMandatory, mandatory));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE, oldMessage, message));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__MESSAGE, oldMessage, message));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setSeverity(SeverityKind newSeverity) {
 		SeverityKind oldSeverity = severity;
-		severity = newSeverity == null
-				? SEVERITY_EDEFAULT
-				: newSeverity;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY, oldSeverity, severity));
-		}
+		severity = newSeverity == null ? SEVERITY_EDEFAULT : newSeverity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CODE_SYSTEM_CONSTRAINT__SEVERITY, oldSeverity, severity));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (message: ");

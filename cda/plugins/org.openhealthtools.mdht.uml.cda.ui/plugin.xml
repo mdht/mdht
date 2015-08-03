@@ -496,8 +496,17 @@
       <page id="org.openhealthtools.mdht.uml.cda.ui.editors.Page1"
          class="org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferences"
          name="MDHT">
+         <keywordReference id="MDHTPreferences.multiplicity1" />
+         <keywordReference id="MDHTPreferences.multiplicity2" />
+         <keywordReference id="MDHTPreferences.multiplicity3" />
       </page>
    </extension>
+   
+   <extension point="org.eclipse.ui.keywords">
+      <keyword label="multiplicity" id="MDHTPreferences.multiplicity1" />
+      <keyword label="element" id="MDHTPreferences.multiplicity2" />
+      <keyword label="properties" id="MDHTPreferences.multiplicity3" />
+   </extension>    
    
    <extension
       point="org.eclipse.core.runtime.preferences">

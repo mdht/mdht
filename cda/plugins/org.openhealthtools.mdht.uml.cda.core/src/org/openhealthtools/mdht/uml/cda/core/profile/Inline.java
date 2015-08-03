@@ -8,16 +8,16 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Inline</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class <em>Base Class</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter <em>Filter</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately <em>Publish Seperately</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter <em>Filter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately <em>Publish Seperately</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getInline()
  * @model
  * @generated
@@ -30,7 +30,6 @@ public interface Inline extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getInline_Base_Class()
@@ -43,9 +42,7 @@ public interface Inline extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Base Class</em>' reference.
+	 * @param value the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -58,7 +55,6 @@ public interface Inline extends EObject {
 	 * If the meaning of the '<em>Filter</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Filter</em>' attribute.
 	 * @see #setFilter(String)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getInline_Filter()
@@ -71,9 +67,7 @@ public interface Inline extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#getFilter <em>Filter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Filter</em>' attribute.
+	 * @param value the new value of the '<em>Filter</em>' attribute.
 	 * @see #getFilter()
 	 * @generated
 	 */
@@ -86,7 +80,6 @@ public interface Inline extends EObject {
 	 * If the meaning of the '<em>Publish Seperately</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Publish Seperately</em>' attribute.
 	 * @see #setPublishSeperately(boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getInline_PublishSeperately()
@@ -99,9 +92,7 @@ public interface Inline extends EObject {
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Inline#isPublishSeperately <em>Publish Seperately</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Publish Seperately</em>' attribute.
+	 * @param value the new value of the '<em>Publish Seperately</em>' attribute.
 	 * @see #isPublishSeperately()
 	 * @generated
 	 */
