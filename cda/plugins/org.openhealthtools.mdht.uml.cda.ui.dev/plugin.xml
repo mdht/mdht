@@ -28,6 +28,9 @@
             <separator
                   name="transform">
             </separator>
+            <separator
+                  name="rules">
+            </separator>
          </menu>
 		 <visibility>
             <and>
@@ -53,9 +56,57 @@
          
          	<action label="View Conformance Ids"
 				class="org.openhealthtools.mdht.uml.ui.dev.actions.ViewConformanceRuleIdsAction"
-				menubarPath="cdatools/edit" enablesFor="1"
+				menubarPath="cdatools/rules" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.viewConformanceRuleIdsAction">
 			</action>
+          <action
+                class="org.openhealthtools.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAndVersionAction"
+                enablesFor="1"
+                id="org.openhealthtools.mdht.uml.cda.ui.dev.actions.updateConformanceRulesAction"
+                label="%updateConformanceRules.action.label"
+                menubarPath="cdatools/rules">
+          </action>
+          <menu
+                id="updateRulesMenu"
+                label="%updateConformanceRules.menu.label"
+                path="cdatools/rulesSubMenuGroup">
+          </menu>
+          <menu
+                id="prefixMenu"
+                label="%updateIGRulePrefixes.submenu.label"
+                path="cdatools/updateRulesMenu/rulesSubMenuGroup2">
+          </menu>
+          <action
+                class="org.openhealthtools.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAction"
+                enablesFor="1"
+                id="prefix1"
+                label="%updateIGRulePrefixesOption1.label"
+                menubarPath="cdatools/updateRulesMenu/prefixMenu/rulesSubMenuGroup2">
+          </action>
+          <menu
+                id="prefixAndVersionMenu"
+                label="%updateIGRuleAndVersion.submenu.label"
+                path="cdatools/updateRulesMenu/rulesSubMenuGroup2">
+          </menu>
+          <action
+                class="org.openhealthtools.mdht.uml.ui.dev.actions.UpdateIGRulePrefixesAndVersionAction"
+                enablesFor="1"
+                id="prefixAndVersion1"
+                label="%updateIGRuleAndVersionOption1.label"
+                menubarPath="cdatools/updateRulesMenu/prefixAndVersionMenu/rulesSubMenuGroup2">
+          </action>
+          <menu
+                id="addPrefixMenu"
+                label="%addIGRulePrefix.submenu.label"
+                path="cdatools/updateRulesMenu/rulesSubMenuGroup2">
+          </menu>
+          <action
+                class="org.openhealthtools.mdht.uml.ui.dev.actions.AddIGRulePrefixToRulesAction"
+                enablesFor="1"
+                id="addPrefix1"
+                label="%addIGRulePrefixOption1.label"
+                menubarPath="cdatools/updateRulesMenu/addPrefixMenu/rulesSubMenuGroup2">
+          </action>
 			
       </objectContribution>
    </extension>
