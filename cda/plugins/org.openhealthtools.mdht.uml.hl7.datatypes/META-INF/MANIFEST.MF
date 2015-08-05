@@ -2,15 +2,14 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.hl7.datatypes;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.6
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.openhealthtools.mdht.uml.hl7.datatypes,
- org.openhealthtools.mdht.uml.hl7.datatypes.impl,
- org.openhealthtools.mdht.uml.hl7.datatypes.operations,
- org.openhealthtools.mdht.uml.hl7.datatypes.util
+Export-Package: org.openhealthtools.mdht.uml.hl7.datatypes,org.openhea
+ lthtools.mdht.uml.hl7.datatypes.impl,org.openhealthtools.mdht.uml.hl7
+ .datatypes.operations,org.openhealthtools.mdht.uml.hl7.datatypes.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.uml2.types;visibility:=reexport,

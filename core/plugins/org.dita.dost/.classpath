@@ -7,8 +7,6 @@
 	<classpathentry exported="true" kind="lib" path="DITA-OT/plugins/org.dita.pdf2/fop/lib/serializer-2.7.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="DITA-OT/plugins/org.dita.pdf2/fop/lib/xalan-2.7.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="DITA-OT/plugins/org.dita.pdf2/fop/lib/xercesImpl-2.7.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="DITA-OT/plugins/org.dita.pdf2/fop/lib/xml-apis-1.3.04.jar"/>
-	<classpathentry exported="true" kind="lib" path="DITA-OT/plugins/org.dita.pdf2/fop/lib/xml-apis-ext-1.3.04.jar"/>
 	<classpathentry exported="true" kind="lib" path="DITA-OT/plugins/org.dita.pdf2/fop/lib/xmlgraphics-commons-1.4.jar"/>
 	<classpathentry exported="true" kind="lib" path="DITA-OT/plugins/org.dita.pdf2/fop/build/fop.jar"/>
 	<classpathentry exported="true" kind="lib" path="DITA-OT/lib/saxon/saxon9-dom.jar"/>

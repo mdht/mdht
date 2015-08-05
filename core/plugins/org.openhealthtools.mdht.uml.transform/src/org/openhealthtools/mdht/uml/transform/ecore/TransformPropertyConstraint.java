@@ -14,7 +14,7 @@
  *                        - implement terminology constraint dependencies (artf3030)
  *                        - ensure terminology initializer for property constraints (artf3233)
  *                        - support nested datatype subclasses (artf3350)
- *     
+ *     Dan Brown (Ai)     - update constraint override logic
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform.ecore;
@@ -431,6 +431,19 @@ public abstract class TransformPropertyConstraint extends TransformAbstract {
 				String message = "Could not generate constraint for property: " + property.getQualifiedName();
 				Logger.log(Logger.WARNING, message);
 				return null;
+			}
+
+			ValidationSeverityKind propSeverity = getEcoreProfile().getValidationSeverity(
+				property, ValidationStereotypeKind.PROPERTY);
+			ValidationSeverityKind csSeverity = getEcoreProfile().getValidationSeverity(
+				property, ValidationStereotypeKind.CODE_SYSTEM);
+			ValidationSeverityKind vsSeverity = getEcoreProfile().getValidationSeverity(
+				property, ValidationStereotypeKind.VALUE_SET);
+			// if all severities are empty, then it is considered an override for the sake of removal
+			if (propSeverity == null && csSeverity == null && vsSeverity == null) {
+				// except when we are
+				body = new StringBuffer();
+				body.append("true");
 			}
 
 			/*

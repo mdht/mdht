@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.openhealthtools.mdht.cda</groupId>
     <artifactId>plugins</artifactId>
-    <version>2.5.0-SNAPSHOT</version>
+    <version>2.5.6</version>
   </parent>
   <groupId>org.openhealthtools.mdht</groupId>
   <artifactId>org.openhealthtools.mdht.uml.hl7.datatypes</artifactId>
@@ -30,13 +30,13 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${org.apache.maven.version}</version>
+				<version>2.9.1</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
+						<configuration>
+							<additionalparam>${javadoc.opts}</additionalparam>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

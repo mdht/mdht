@@ -181,7 +181,7 @@ public interface Initializer<T extends EObject> {
 		class Impl implements Registry {
 			private final Impl delegate;
 
-			private final Set<String> initializedPackages = new java.util.HashSet<String>();
+			private final Set<EPackage> initializedPackages = new java.util.HashSet<EPackage>();
 
 			private final Map<EClass, List<Initializer<? extends EObject>>> initializers = new java.util.HashMap<EClass, List<Initializer<? extends EObject>>>();
 
@@ -325,10 +325,8 @@ public interface Initializer<T extends EObject> {
 			}
 
 			public Registry initializeEPackage(EPackage epackage, Initializer.Factory factory) {
-				String nsURI = epackage.getNsURI();
-
-				if (initializedPackages.add(nsURI) &&
-						((delegate == null) || !delegate.initializedPackages.contains(nsURI))) {
+				if (initializedPackages.add(epackage) &&
+						((delegate == null) || !delegate.initializedPackages.contains(epackage))) {
 
 					for (EClassifier next : epackage.getEClassifiers()) {
 						if (next instanceof EClass) {

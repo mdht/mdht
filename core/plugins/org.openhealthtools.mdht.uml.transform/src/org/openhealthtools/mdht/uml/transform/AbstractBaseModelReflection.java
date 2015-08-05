@@ -132,6 +132,30 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 		return result;
 	}
 
+	private Property getBasePropertyThroughRedefines(Property property) {
+
+		Property pp = null;
+
+		for (Property p : property.getRedefinedProperties()) {
+			if (isBaseModelElement(property.getClass_(), p) || isDatatypesModelElement(property.getClass_(), p)) {
+				return p;
+			} else {
+				pp = getBasePropertyThroughRedefines(p);
+			}
+		}
+		if (pp == null) {
+			for (Property p : property.getSubsettedProperties()) {
+				if (isBaseModelElement(property.getClass_(), p) || isDatatypesModelElement(property.getClass_(), p)) {
+					return p;
+				} else {
+					pp = getBasePropertyThroughRedefines(p);
+				}
+			}
+		}
+
+		return pp;
+	}
+
 	public Property getBaseProperty(Classifier owner, Property property) {
 		Property result = null;
 
@@ -146,6 +170,9 @@ public abstract class AbstractBaseModelReflection implements IBaseModelReflectio
 			}
 		}
 
+		if (result == null) {
+			result = getBasePropertyThroughRedefines(property);
+		}
 		return result;
 	}
 

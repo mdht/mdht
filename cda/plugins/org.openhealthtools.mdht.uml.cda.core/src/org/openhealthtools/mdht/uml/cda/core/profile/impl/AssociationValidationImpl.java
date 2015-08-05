@@ -27,10 +27,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl#getBase_Association <em>Base Association</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl#getBase_Association <em>Base Association</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class AssociationValidationImpl extends ValidationImpl implements AssociationValidation {
@@ -38,7 +38,6 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	 * The cached value of the '{@link #getBase_Association() <em>Base Association</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getBase_Association()
 	 * @generated
 	 * @ordered
@@ -48,7 +47,6 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected AssociationValidationImpl() {
@@ -58,7 +56,6 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Association basicGetBase_Association() {
@@ -68,16 +65,13 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION:
-				if (resolve) {
-					return getBase_Association();
-				}
+				if (resolve) return getBase_Association();
 				return basicGetBase_Association();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -86,7 +80,6 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,14 +94,13 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION:
-				setBase_Association((Association) newValue);
+				setBase_Association((Association)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -117,7 +109,6 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -128,14 +119,13 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION:
-				setBase_Association((Association) null);
+				setBase_Association((Association)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -144,19 +134,15 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Association getBase_Association() {
 		if (base_Association != null && base_Association.eIsProxy()) {
-			InternalEObject oldBase_Association = (InternalEObject) base_Association;
-			base_Association = (Association) eResolveProxy(oldBase_Association);
+			InternalEObject oldBase_Association = (InternalEObject)base_Association;
+			base_Association = (Association)eResolveProxy(oldBase_Association);
 			if (base_Association != oldBase_Association) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION,
-						oldBase_Association, base_Association));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION, oldBase_Association, base_Association));
 			}
 		}
 		return base_Association;
@@ -165,17 +151,13 @@ public class AssociationValidationImpl extends ValidationImpl implements Associa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBase_Association(Association newBase_Association) {
 		Association oldBase_Association = base_Association;
 		base_Association = newBase_Association;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION, oldBase_Association,
-				base_Association));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSOCIATION_VALIDATION__BASE_ASSOCIATION, oldBase_Association, base_Association));
 	}
 
 } // AssociationValidationImpl

@@ -4,16 +4,18 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added isEntry
  *     Christian W. Damus - discriminate multiple property constraints (artf3185)
  *                        - support nested datatype subclasses (artf3350)
- *     Dan Brown (Audacious Inquiry) - modified XML binding messages based on mandatory property 
+ *     Dan Brown (Audacious Inquiry) - modified XML binding messages based on mandatory property
  *     								 as part of artf3549, artf3577, errata 156 and errata 72
  *     								 - changed output from 'data type CD' to '@xsi:type="CD"' as per errata 177
  *     								 - added message support for errata 384 as per artf3818 No Information Section Fix
+ *     								 - support templateId extension attribute value in generalization and association messages
+ *     Sarp Kaya (NEHTA)
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -61,6 +63,8 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
@@ -101,6 +105,8 @@ public class CDAModelUtil {
 
 	// This message may change in the future to specify certain nullFlavor Types (such as the implementation, NI)
 	private static final String NULLFLAVOR_SECTION_MESSAGE = "If section/@nullFlavor is not present, ";
+
+	public static boolean cardinalityAfterElement = false;
 
 	public static Class getCDAClass(Classifier templateClass) {
 		Class cdaClass = null;
@@ -147,7 +153,7 @@ public class CDAModelUtil {
 
 	/**
 	 * Returns the nearest inherited property with the same name, or null if not found.
-	 * 
+	 *
 	 * @deprecated Use the {@link UMLUtil#getInheritedProperty(Property)} API, instead.
 	 */
 	@Deprecated
@@ -173,7 +179,7 @@ public class CDAModelUtil {
 	/**
 	 * isCDAModel - use get top package to support nested uml packages within CDA model
 	 * primarily used for extensions
-	 * 
+	 *
 	 */
 	public static boolean isCDAModel(Element element) {
 		if (element != null) {
@@ -244,11 +250,10 @@ public class CDAModelUtil {
 			String cdaName = cdaClass == null
 					? null
 					: cdaClass.getName();
-			if (cdaClass != null &&
-					("Act".equals(cdaName) || "Encounter".equals(cdaName) || "Observation".equals(cdaName) ||
-							"ObservationMedia".equals(cdaName) || "Organizer".equals(cdaName) ||
-							"Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
-							"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
+			if (cdaClass != null && ("Act".equals(cdaName) || "Encounter".equals(cdaName) ||
+					"Observation".equals(cdaName) || "ObservationMedia".equals(cdaName) ||
+					"Organizer".equals(cdaName) || "Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
+					"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
 				return true;
 			}
 		}
@@ -315,14 +320,14 @@ public class CDAModelUtil {
 	/**
 	 * Obtains the user-specified validation message recorded in the given stereotype, or else
 	 * {@linkplain #computeConformanceMessage(Element, boolean) computes} a suitable conformance message if none.
-	 * 
+	 *
 	 * @param element
 	 *            an element on which a validation constraint stereotype is defined
 	 * @param validationStereotypeName
 	 *            the stereotype name (may be the abstract {@linkplain ICDAProfileConstants#VALIDATION Validation} stereotype)
-	 * 
+	 *
 	 * @return the most appropriate validation/conformance message
-	 * 
+	 *
 	 * @see #computeConformanceMessage(Element, boolean)
 	 */
 	public static String getValidationMessage(Element element, String validationStereotypeName) {
@@ -377,20 +382,82 @@ public class CDAModelUtil {
 		return (String) umlSwitch.doSwitch(element);
 	}
 
-	public static String computeConformanceMessage(Class template, boolean markup) {
+	// private static String getCDATemplateIdConstraint(boolean isTemplateVersionEmpty, boolean markup) {
+	// String result = "";
+	// if (isTemplateVersionEmpty) {
+	// if (cardinalityAfterElement) {
+	// result = markup
+	// ? CDAConstraints.CDATemplateIdConstraintMarkupDiffMultip
+	// : CDAConstraints.CDATemplateIdConstraintDiffMultip;
+	// } else {
+	// result = markup
+	// ? CDAConstraints.CDATemplateIdConstraintMarkup
+	// : CDAConstraints.CDATemplateIdConstraint;
+	// }
+	//
+	// } else {
+	// if (cardinalityAfterElement) {
+	// result = markup
+	// ? CDAConstraints.CDAVersionTemplateIdConstraintMarkupDiffMultip
+	// : CDAConstraints.CDAVersionTemplateIdConstraintDiffMultip;
+	// } else {
+	// result = markup
+	// ? CDAConstraints.CDAVersionTemplateIdConstraintMarkup
+	// : CDAConstraints.CDAVersionTemplateIdConstraint;
+	// }
+	// }
+	//
+	// return result;
+	// }
 
-		String templateConstraint = markup
-				? CDAConstraints.CDATemplateIdConstraintMarkup
-				: CDAConstraints.CDATemplateIdConstraint;
+	public static String computeConformanceMessage(Class template, final boolean markup) {
+
 		String templateId = getTemplateId(template);
+		String templateVersion = getTemplateVersion(template);
 		String ruleIds = getConformanceRuleIds(template);
-		templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
-				? templateId
-				: ""));
-		templateConstraint = templateConstraint.replaceAll("%ruleId%", (ruleIds != null
-				? ruleIds
-				: ""));
-		return templateConstraint;
+		if (templateId == null) {
+			templateId = "";
+		}
+
+		// String templateConstraint = getCDATemplateIdConstraint(StringUtils.isEmpty(templateVersion), markup);
+		//
+		//
+		// templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
+		// ? templateId
+		// : ""));
+		// templateConstraint = templateConstraint.replaceAll("\\( %ruleId% \\) ", (ruleIds != null &&
+		// !ruleIds.trim().isEmpty()
+		// ? "( " + ruleIds + " ) "
+		// : ""));
+		//
+		// templateConstraint = templateConstraint.replaceAll("%templateVersion%", (templateVersion != null
+		// ? templateVersion
+		// : ""));
+
+		String templateMultiplicity = CDATemplateComputeBuilder.getMultiplicityRange(getMultiplicityRange(template));
+		final String templateIdAsBusinessName = "=\"" + templateId + "\"";
+		final String templateVersionAsBusinessName = "=\"" + templateVersion + "\"";
+		final String multiplicityRange = templateMultiplicity.isEmpty()
+				? ""
+				: " [" + templateMultiplicity + "]";
+		CDATemplateComputeBuilder cdaTemplater = new CDATemplateComputeBuilder() {
+			@Override
+			public String addTemplateIdMultiplicity() {
+				return multiplicityElementToggle(markup, "templateId", multiplicityRange, "");
+			}
+
+			@Override
+			public String addRootMultiplicity() {
+				return multiplicityElementToggle(markup, "@root", " [1..1]", templateIdAsBusinessName);
+			}
+
+			@Override
+			public String addTemplateVersion() {
+				return multiplicityElementToggle(markup, "@extension", " [1..1]", templateVersionAsBusinessName);
+			}
+		};
+		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(
+			templateVersion).setMultiplicity(multiplicityRange).compute().toString();
 	}
 
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
@@ -442,12 +509,20 @@ public class CDAModelUtil {
 				: "");
 
 		String templateId = getTemplateId(general);
+		String templateVersion = getTemplateVersion(general);
+
 		if (templateId != null) {
 			message.append(" template (templateId: ");
 			message.append(markup
 					? "<tt>"
 					: "");
 			message.append(templateId);
+
+			// if there is an extension, add a colon followed by its value
+			if (!StringUtils.isEmpty(templateVersion)) {
+				message.append(":" + templateVersion);
+			}
+
 			message.append(markup
 					? "</tt>"
 					: "");
@@ -460,19 +535,58 @@ public class CDAModelUtil {
 	private static String getBusinessName(NamedElement property) {
 		String businessName = NamedElementUtil.getBusinessName(property);
 		if (!property.getName().equals(businessName)) {
-			return (" (" + businessName + ") ");
+			return (" (" + businessName + ")");
 		}
 		return "";
 	}
 
+	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
+		StringBuffer message = new StringBuffer();
+		message.append(
+			multiplicityElementToggle(markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
+		return message;
+	}
+
+	private static String multiplicityElementToggle(boolean markup, String elementName, String multiplicityRange,
+			String businessName) {
+		StringBuffer message = new StringBuffer();
+		if (!cardinalityAfterElement) {
+			message.append(multiplicityRange);
+		}
+
+		message.append(" ");
+		message.append(markup
+				? "<tt><b>"
+				: "");
+		message.append(elementName);
+		message.append(markup
+				? "</b>"
+				: "");
+		message.append(businessName);
+		message.append(markup
+				? "</tt>"
+				: "");
+
+		if (cardinalityAfterElement) {
+			message.append(multiplicityRange);
+		}
+		return message.toString();
+	}
+
 	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
+		return computeAssociationConformanceMessage(property, markup, xrefSource, true);
+	}
+
+	public static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource,
+			boolean appendNestedConformanceRules) {
 
 		Class endType = (property.getType() instanceof Class)
 				? (Class) property.getType()
 				: null;
 
 		if (!isInlineClass(endType) && getTemplateId(property.getClass_()) != null) {
-			return computeTemplateAssociationConformanceMessage(property, markup, xrefSource);
+			return computeTemplateAssociationConformanceMessage(
+				property, markup, xrefSource, appendNestedConformanceRules);
 		}
 
 		StringBuffer message = new StringBuffer();
@@ -502,22 +616,30 @@ public class CDAModelUtil {
 
 		}
 
-		message.append(getMultiplicityString(property)).append(" ");
-
 		String elementName = getCDAElementName(property);
-		message.append(markup
-				? "<tt><b>"
-				: "");
-		message.append(elementName);
-		message.append(markup
-				? "</b></tt>"
-				: "");
 
-		message.append(getBusinessName(property));
+		// message.append(getMultiplicityString(property)).append(" ");
+		//
+		//
+		//
+		// message.append(markup
+		// ? "<tt><b>"
+		// : "");
+		// message.append(elementName);
+		// message.append(markup
+		// ? "</b>"
+		// : "");
+		// message.append(getBusinessName(property));
+		// message.append(markup
+		// ? "</tt>"
+		// : "");
+
+		message.append(getMultiplicityText(property));
+		message.append(multiplicityElementToggle(property, markup, elementName));
 
 		appendSubsetsNotation(property, message, markup, xrefSource);
 
-		if (endType != null) {
+		if (appendNestedConformanceRules && endType != null) {
 
 			if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
 				StringWriter sw = new StringWriter();
@@ -529,9 +651,12 @@ public class CDAModelUtil {
 
 				appendConformanceRules(pw, endType, (property.getUpper() == 1
 						? "This "
-						: "Such ") + (property.getUpper() == 1
-						? elementName
-						: NameUtilities.pluralize(elementName)) + " ", markup);
+						: "Such ") +
+						(property.getUpper() == 1
+								? elementName
+								: NameUtilities.pluralize(elementName)) +
+						" ",
+					markup);
 				message.append(" " + sw.getBuffer() + " ");
 
 			} else {
@@ -566,6 +691,11 @@ public class CDAModelUtil {
 
 	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
 			Package xrefSource) {
+		return computeTemplateAssociationConformanceMessage(property, markup, xrefSource, true);
+	}
+
+	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
+			Package xrefSource, boolean appendNestedConformanceRules) {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
@@ -607,19 +737,11 @@ public class CDAModelUtil {
 			}
 		}
 
-		message.append(getMultiplicityString(property)).append(" ");
-
-		message.append(markup
-				? "<tt><b>"
-				: "");
-		message.append(elementName);
-		message.append(markup
-				? "</b></tt>"
-				: "");
+		message.append(multiplicityElementToggle(property, markup, elementName));
 
 		appendConformanceRuleIds(association, message, markup);
 
-		if (property.getType() instanceof Class) {
+		if (appendNestedConformanceRules && property.getType() instanceof Class) {
 			Class inlinedClass = (Class) property.getType();
 
 			if (markup && isInlineClass(inlinedClass)) {
@@ -630,9 +752,12 @@ public class CDAModelUtil {
 
 				appendConformanceRules(pw, inlinedClass, (property.getUpper() == 1
 						? "This "
-						: "Such ") + (property.getUpper() == 1
-						? elementName
-						: NameUtilities.pluralize(elementName)) + " ", markup);
+						: "Such ") +
+						(property.getUpper() == 1
+								? elementName
+								: NameUtilities.pluralize(elementName)) +
+						" ",
+					markup);
 				message.append(" " + sw.getBuffer());
 
 			}
@@ -698,9 +823,10 @@ public class CDAModelUtil {
 			message.append("Contains ");
 			message.append(markup
 					? "<tt><b>"
-					: "").append("@typeCode=\"").append(markup
-					? "</b>"
-					: "");
+					: "").append("@typeCode=\"").append(
+						markup
+								? "</b>"
+								: "");
 			message.append(typeCode).append("\" ");
 			message.append(markup
 					? "</tt>"
@@ -720,7 +846,7 @@ public class CDAModelUtil {
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
 		if (endType != null && getCDAClass(endType) != null && !(isInlineClass(endType))
-		/* && !getCDAClass(property.getClass_()).getName().startsWith("Entry") */&&
+		/* && !getCDAClass(property.getClass_()).getName().startsWith("Entry") */ &&
 				!isInlineClass(property.getClass_())) {
 			message.append(markup
 					? "\n<li>"
@@ -747,12 +873,20 @@ public class CDAModelUtil {
 					: "");
 
 			String templateId = getTemplateId(endType);
+			String templateVersion = getTemplateVersion(endType);
+
 			if (templateId != null) {
 				message.append(" (templateId: ");
 				message.append(markup
 						? "<tt>"
 						: "");
 				message.append(templateId);
+
+				// if there is an extension, add a colon followed by its value
+				if (!StringUtils.isEmpty(templateVersion)) {
+					message.append(":" + templateVersion);
+				}
+
 				message.append(markup
 						? "</tt>"
 						: "");
@@ -780,7 +914,8 @@ public class CDAModelUtil {
 			if (eReferenceStereoetype != null) {
 				String nameSpace = (String) cdaBaseProperty.getValue(eReferenceStereoetype, CDAModelUtil.XMLNAMESPACE);
 				if (!StringUtils.isEmpty(nameSpace)) {
-					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(cdaBaseProperty.getNearestPackage());
+					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(
+						cdaBaseProperty.getNearestPackage());
 					Stereotype ePackageStereoetype = topPackage.getApplicableStereotype(CDAModelUtil.EPACKAGE);
 					if (ePackageStereoetype != null) {
 						if (nameSpace.equals(topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
@@ -801,12 +936,17 @@ public class CDAModelUtil {
 	}
 
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
+		return computeConformanceMessage(property, markup, xrefSource, true);
+	}
+
+	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource,
+			boolean appendNestedConformanceRules) {
 
 		if (property.getType() == null) {
 			System.out.println("Property has null type: " + property.getQualifiedName());
 		}
 		if (property.getAssociation() != null && property.isNavigable()) {
-			return computeAssociationConformanceMessage(property, markup, xrefSource);
+			return computeAssociationConformanceMessage(property, markup, xrefSource, appendNestedConformanceRules);
 		}
 
 		StringBuffer message = new StringBuffer();
@@ -833,7 +973,11 @@ public class CDAModelUtil {
 			}
 		}
 
-		message.append(getMultiplicityString(property)).append(" ");
+		message.append(getMultiplicityText(property));
+		if (!cardinalityAfterElement) {
+			message.append(getMultiplicityRange(property));
+		}
+		message.append(" ");
 
 		message.append(markup
 				? "<tt><b>"
@@ -860,6 +1004,10 @@ public class CDAModelUtil {
 		message.append(markup
 				? "</tt>"
 				: "");
+
+		if (cardinalityAfterElement) {
+			message.append(getMultiplicityRange(property));
+		}
 
 		Stereotype nullFlavorSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 			property, ICDAProfileConstants.NULL_FLAVOR);
@@ -899,11 +1047,13 @@ public class CDAModelUtil {
 					textValue, ICDAProfileConstants.VALIDATION_SEVERITY);
 				message.append(" and ").append(markup
 						? "<b>"
-						: "").append(level != null
-						? getValidationKeyword(level.getLiteral())
-						: keyword).append(markup
-						? "</b>"
-						: "").append(" equal \"").append(value).append("\"");
+						: "").append(
+							level != null
+									? getValidationKeyword(level.getLiteral())
+									: keyword).append(
+										markup
+												? "</b>"
+												: "").append(" equal \"").append(value).append("\"");
 			}
 		}
 
@@ -917,22 +1067,23 @@ public class CDAModelUtil {
 
 		if (property.getType() != null) {
 
-			if ((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
+			if ((redefinedProperty == null ||
+					(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
 				message.append(" with " + "@xsi:type=\"");
 				message.append(property.getType().getName());
 				message.append("\"");
 
 			}
 
-			if (property.getType() instanceof Class) {
+			if (appendNestedConformanceRules && property.getType() instanceof Class) {
 				if (isInlineClass((Class) property.getType())) {
 
 					if (isPublishSeperately((Class) property.getType())) {
 
-						String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
-							property, property.getType()))
-								? computeXref(xrefSource, (Classifier) property.getType())
-								: null;
+						String xref = (property.getType() instanceof Classifier &&
+								UMLUtil.isSameProject(property, property.getType()))
+										? computeXref(xrefSource, (Classifier) property.getType())
+										: null;
 						boolean showXref = markup && (xref != null);
 
 						if (showXref) {
@@ -953,8 +1104,6 @@ public class CDAModelUtil {
 						PrintWriter pw = new PrintWriter(sw);
 
 						// appendConformanceRuleIds(association, message, markup);
-
-						Class baseDatatype = CDAModelUtil.getCDADatatype((Classifier) property.getType());
 
 						appendPropertyComments(pw, property, markup);
 
@@ -1298,7 +1447,8 @@ public class CDAModelUtil {
 	}
 
 	private static void appendSubConstraintRules(StringBuffer ruleConstraints, Constraint constraint,
-			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints, boolean markup) {
+			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints,
+			boolean markup) {
 
 		String[] ol;
 		String[] li;
@@ -1583,10 +1733,23 @@ public class CDAModelUtil {
 	}
 
 	public static String computeConformanceMessage(Constraint constraint, boolean markup) {
+
+		LogicalConstraint logicConstraint = CDAProfileUtil.getLogicalConstraint(constraint);
+		if (logicConstraint != null) {
+			return computeLogicalConformanceMessage(constraint, logicConstraint, markup);
+		} else {
+			return computeCustomConformanceMessage(constraint, markup);
+		}
+
+	}
+
+	private static String computeCustomConformanceMessage(Constraint constraint, boolean markup) {
 		StringBuffer message = new StringBuffer();
 		String strucTextBody = null;
 		String analysisBody = null;
 		Map<String, String> langBodyMap = new HashMap<String, String>();
+
+		CDAProfileUtil.getLogicalConstraint(constraint);
 
 		ValueSpecification spec = constraint.getSpecification();
 		if (spec instanceof OpaqueExpression) {
@@ -1687,6 +1850,162 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
+	private static String computeLogicalConformanceMessage(Constraint constraint, LogicalConstraint logicConstraint,
+			boolean markup) {
+		StringBuffer message = new StringBuffer();
+
+		logicConstraint.getMessage();
+
+		String keyword = getValidationKeyword(constraint);
+		if (keyword == null) {
+			keyword = "SHALL";
+		}
+
+		message.append(markup
+				? "<b>"
+				: "");
+		message.append(keyword);
+		message.append(markup
+				? "</b>"
+				: "");
+		message.append(" satisfy the following ");
+
+		// message.append(logicConstraint.getMessage());
+
+		// message.append("<ul>");
+		// for (Comment comment : constraint.getOwnedComments()) {
+		// message.append("<li>");
+		// message.append(fixNonXMLCharacters(comment.getBody()));
+		// message.append("</li>");
+		// }
+		// message.append("</ul>");
+
+		boolean appendLogic = false;
+		message.append("<ul>");
+		for (Element element : constraint.getConstrainedElements()) {
+			message.append("<li>");
+			if (appendLogic) {
+				message.append(markup
+						? "<b>"
+						: " ");
+				message.append(" " + logicConstraint.getOperation() + " ");
+				message.append(markup
+						? "</b>"
+						: " ");
+			} else {
+				appendLogic = true;
+			}
+
+			message.append(computeConformanceMessage(element, markup));
+			message.append("</li>");
+		}
+		message.append("</ul>");
+
+		appendConformanceRuleIds(constraint, message, markup);
+
+		// String strucTextBody = null;
+		// String analysisBody = null;
+		// Map<String, String> langBodyMap = new HashMap<String, String>();
+		//
+		// ValueSpecification spec = constraint.getSpecification();
+		// if (spec instanceof OpaqueExpression) {
+		// for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
+		// String lang = ((OpaqueExpression) spec).getLanguages().get(i);
+		// String body = ((OpaqueExpression) spec).getBodies().get(i);
+		//
+		// if ("StrucText".equals(lang)) {
+		// strucTextBody = body;
+		// } else if ("Analysis".equals(lang)) {
+		// analysisBody = body;
+		// } else {
+		// langBodyMap.put(lang, body);
+		// }
+		// }
+		// }
+		//
+		// String displayBody = null;
+		// if (strucTextBody != null && strucTextBody.trim().length() > 0) {
+		// // TODO if markup, parse strucTextBody and insert DITA markup
+		// displayBody = strucTextBody;
+		// } else if (analysisBody != null && analysisBody.trim().length() > 0) {
+		// if (markup) {
+		// // escape non-dita markup in analysis text
+		// displayBody = escapeMarkupCharacters(analysisBody);
+		// // change severity words to bold text
+		// displayBody = replaceSeverityWithBold(displayBody);
+		// } else {
+		// displayBody = analysisBody;
+		// }
+		// }
+		//
+		// if (!markup) {
+		// message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
+		// }
+		//
+		// if (displayBody == null || !containsSeverityWord(displayBody)) {
+		// String keyword = getValidationKeyword(constraint);
+		// if (keyword == null) {
+		// keyword = "SHALL";
+		// }
+		//
+		// message.append(markup
+		// ? "<b>"
+		// : "");
+		// message.append(keyword);
+		// message.append(markup
+		// ? "</b>"
+		// : "");
+		// message.append(" satisfy: ");
+		// }
+		//
+		// if (displayBody == null) {
+		// message.append(constraint.getName());
+		// } else {
+		// message.append(displayBody);
+		// }
+		// appendConformanceRuleIds(constraint, message, markup);
+		//
+		// // include comment text only in markup output
+		// if (false && markup && constraint.getOwnedComments().size() > 0) {
+		// message.append("<ul>");
+		// for (Comment comment : constraint.getOwnedComments()) {
+		// message.append("<li>");
+		// message.append(fixNonXMLCharacters(comment.getBody()));
+		// message.append("</li>");
+		// }
+		// message.append("</ul>");
+		// }
+		//
+		// // Include other constraint languages, e.g. OCL or XPath
+		// if (false && langBodyMap.size() > 0) {
+		// message.append("<ul>");
+		// for (String lang : langBodyMap.keySet()) {
+		// message.append("<li>");
+		// message.append("<codeblock>[" + lang + "]: ");
+		// message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
+		// message.append("</codeblock>");
+		// message.append("</li>");
+		// }
+		// message.append("</ul>");
+		// }
+		//
+		// if (!markup) {
+		// // remove line feeds
+		// int index;
+		// while ((index = message.indexOf("\r")) >= 0) {
+		// message.deleteCharAt(index);
+		// }
+		// while ((index = message.indexOf("\n")) >= 0) {
+		// message.deleteCharAt(index);
+		// if (message.charAt(index) != ' ') {
+		// message.insert(index, " ");
+		// }
+		// }
+		// }
+
+		return message.toString();
+	}
+
 	private static boolean containsSeverityWord(String text) {
 		return text.indexOf("SHALL") >= 0 || text.indexOf("SHOULD") >= 0 || text.indexOf("MAY") >= 0;
 	}
@@ -1706,9 +2025,9 @@ public class CDAModelUtil {
 	/**
 	 * FindResourcesByNameVisitor searches the resource for resources of a particular name
 	 * You would think there was a method for this already but i could not find it
-	 * 
+	 *
 	 * @author seanmuir
-	 * 
+	 *
 	 */
 	public static class FindResourcesByNameVisitor implements IResourceVisitor {
 
@@ -1733,7 +2052,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
@@ -1749,7 +2068,7 @@ public class CDAModelUtil {
 	public static IProject getElementModelProject(Element element) {
 		try {
 			Package elementPackage = UMLUtil.getTopPackage(element);
-			if (elementPackage.eResource() != null) {
+			if (elementPackage != null && elementPackage.eResource() != null) {
 				FindResourcesByNameVisitor visitor = new FindResourcesByNameVisitor(
 					elementPackage.eResource().getURI().lastSegment());
 
@@ -1757,7 +2076,7 @@ public class CDAModelUtil {
 
 				iw.getRoot().accept(visitor);
 
-				if (!visitor.getResources().isEmpty() && visitor.getResources().size() == 1) {
+				if (!visitor.getResources().isEmpty()) {
 					return visitor.getResources().get(0).getProject();
 				}
 			}
@@ -1779,9 +2098,9 @@ public class CDAModelUtil {
 
 	/**
 	 * computeXref returns the XREF for DITA publication
-	 * 
+	 *
 	 * TODO Refactor and move out of model util
-	 * 
+	 *
 	 * @param source
 	 * @param target
 	 * @return
@@ -1808,7 +2127,7 @@ public class CDAModelUtil {
 
 			targetProject = getModelDocProject(targetProject);
 
-			if (targetProject != null) {
+			if (targetProject != null && sourceProject != null) {
 
 				IPath projectPath = new Path("/dita/classes/" + targetProject.getName());
 
@@ -1871,7 +2190,7 @@ public class CDAModelUtil {
 
 	/**
 	 * getExtensionNamespace returns the name space from a extension package in the CDA model
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */
@@ -1912,7 +2231,7 @@ public class CDAModelUtil {
 			if (cdaSourceClass != null) {
 				// This will never succeed for associations, does not include ActRelationship
 				Property cdaProperty = cdaSourceClass.getOwnedAttribute(
-					null, getCDAClass((Classifier) property.getType()));
+					property.getName(), getCDAClass((Classifier) property.getType()));
 				if (cdaProperty != null && cdaProperty.getName() != null) {
 					String modelPrefix = getExtensionNamespace(cdaProperty.getType());
 					elementName = !StringUtils.isEmpty(modelPrefix)
@@ -1957,12 +2276,13 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else
+			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
 			elementName = "participant";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"AssignedEntity".equals(cdaTargetClass.getName())) {
 			elementName = "performer";
 		}
@@ -1970,7 +2290,18 @@ public class CDAModelUtil {
 		return elementName;
 	}
 
-	public static String getMultiplicityString(Property property) {
+	private static String getMultiplicityRange(Property property) {
+
+		StringBuffer message = new StringBuffer();
+		String lower = Integer.toString(property.getLower());
+		String upper = property.getUpper() == -1
+				? "*"
+				: Integer.toString(property.getUpper());
+		message.append(" [").append(lower).append("..").append(upper).append("]");
+		return message.toString();
+	}
+
+	private static String getMultiplicityText(Property property) {
 
 		StringBuffer message = new StringBuffer();
 		if (property.getLower() == 1 && property.getUpper() == 1) {
@@ -1982,13 +2313,6 @@ public class CDAModelUtil {
 		} else if (property.getLower() == 1 && property.getUpper() == -1) {
 			message.append("at least one");
 		}
-
-		String lower = Integer.toString(property.getLower());
-		String upper = property.getUpper() == -1
-				? "*"
-				: Integer.toString(property.getUpper());
-		message.append(" [").append(lower).append("..").append(upper).append("]");
-
 		return message.toString();
 	}
 
@@ -2002,6 +2326,23 @@ public class CDAModelUtil {
 		}
 
 		return false;
+	}
+
+	private static String getMultiplicityRange(Class template) {
+		String templateId = null;
+		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
+		if (hl7Template != null && template.hasValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY)) {
+			templateId = (String) template.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
+		} else {
+			for (Classifier parent : template.getGenerals()) {
+				templateId = getMultiplicityRange((Class) parent);
+				if (templateId != null) {
+					break;
+				}
+			}
+		}
+
+		return templateId;
 	}
 
 	public static String getTemplateId(Class template) {
@@ -2019,6 +2360,23 @@ public class CDAModelUtil {
 		}
 
 		return templateId;
+	}
+
+	public static String getTemplateVersion(Class template) {
+		String templateVersion = null;
+		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template, ICDAProfileConstants.CDA_TEMPLATE);
+		if (hl7Template != null) {
+			templateVersion = (String) template.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_VERSION);
+		} else {
+			for (Classifier parent : template.getGenerals()) {
+				templateVersion = getTemplateId((Class) parent);
+				if (templateVersion != null) {
+					break;
+				}
+			}
+		}
+
+		return templateVersion;
 	}
 
 	public static String getModelPrefix(Element element) {
@@ -2411,13 +2769,13 @@ public class CDAModelUtil {
 	}
 
 	public static boolean isInlineClass(Class _class) {
+		Inline inline = CDAProfileUtil.getInline(_class);
 
-		if (_class.getOwner() instanceof Class) {
+		if (inline != null) {
 			return true;
 		}
 
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(_class, ICDAProfileConstants.INLINE);
-		if (stereotype != null) {
+		if (_class.getOwner() instanceof Class) {
 			return true;
 		}
 
@@ -2429,6 +2787,43 @@ public class CDAModelUtil {
 
 		return false;
 
+	}
+
+	public static String getInlineFilter(Class inlineClass) {
+
+		Inline inline = CDAProfileUtil.getInline(inlineClass);
+
+		if (inline != null) {
+			return inline.getFilter() != null
+					? inline.getFilter()
+					: "";
+
+		}
+
+		String filter = "";
+		for (Comment comment : inlineClass.getOwnedComments()) {
+			if (comment.getBody().startsWith("INLINE&")) {
+				String[] temp = comment.getBody().split("&");
+				if (temp.length == 2) {
+					filter = String.format("->select(%s)", temp[1]);
+				}
+				break;
+			}
+		}
+
+		if ("".equals(filter)) {
+			// search hierarchy
+			for (Classifier next : inlineClass.getGenerals()) {
+				if (next instanceof Class) {
+					filter = getInlineFilter((Class) next);
+					if (!"".equals(filter)) {
+						break;
+					}
+				}
+			}
+		}
+
+		return filter;
 	}
 
 	public static boolean isPublishSeperately(Class _class) {

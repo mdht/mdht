@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.ui;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.6
 Bundle-ClassPath: .
 Bundle-Activator: org.openhealthtools.mdht.uml.ui.internal.UML2UIPlugin
 Bundle-Vendor: %providerName
@@ -23,7 +23,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.ui.navigator,
  org.eclipse.core.expressions
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.ui.actions,
- org.openhealthtools.mdht.uml.ui.editors
+Export-Package: org.openhealthtools.mdht.uml.ui.actions,org.openhealth
+ tools.mdht.uml.ui.editors
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

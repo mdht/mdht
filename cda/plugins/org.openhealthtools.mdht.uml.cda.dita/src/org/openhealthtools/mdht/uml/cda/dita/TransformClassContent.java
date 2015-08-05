@@ -54,7 +54,9 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Substitution;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.cda.core.profile.LogicalConstraint;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
@@ -254,7 +256,7 @@ public class TransformClassContent extends TransformAbstract {
 		appendExample(writer, umlClass);
 		appendChanges(writer, umlClass);
 
-		writer.println("<p><ph id=\"classformalname\">" + UMLUtil.splitName(umlClass) + "</ph></p>");
+		writer.println("<p><ph id=\"classformalname\">" + TransformAbstract.getPublicationName(umlClass) + "</ph></p>");
 
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		String cdaClassName = cdaClass != null
@@ -292,7 +294,7 @@ public class TransformClassContent extends TransformAbstract {
 							: "";
 
 					writer.append("<xref " + format + "href=\"" + xref + "\">");
-					writer.append(UMLUtil.splitName(subclass));
+					writer.append(TransformAbstract.getPublicationName(subclass));
 					writer.append("</xref>");
 
 					if (iterator.hasNext()) {
@@ -372,11 +374,27 @@ public class TransformClassContent extends TransformAbstract {
 
 		List<Property> allProperties = new ArrayList<Property>(umlClass.getOwnedAttributes());
 		List<Property> allAttributes = new ArrayList<Property>();
+
 		for (Property property : allProperties) {
 			if (CDAModelUtil.isXMLAttribute(property)) {
 				allAttributes.add(property);
 			}
+
+			// Check to see if the property is part of a logical constraint - if so do not create process as a property
+
 		}
+
+		for (Constraint constraint : umlClass.getOwnedRules()) {
+			LogicalConstraint logicConstraint = CDAProfileUtil.getLogicalConstraint(constraint);
+			if (logicConstraint != null) {
+				for (Element constrainedElement : constraint.getConstrainedElements()) {
+					if (constrainedElement instanceof Property) {
+						allProperties.remove(constrainedElement);
+					}
+				}
+			}
+		}
+
 		allProperties.removeAll(allAttributes);
 		Collections.sort(allAttributes, new NamedElementComparator());
 		// XML attributes
@@ -412,7 +430,7 @@ public class TransformClassContent extends TransformAbstract {
 	}
 
 	private void appendExample(PrintWriter writer, Class umlClass) {
-		writer.print("<codeblock id=\"example\"><![CDATA[");
+		writer.print("<codeblock id=\"example\" outputclass=\"language-xml\"><![CDATA[");
 
 		if (instanceGenerator != null) {
 
@@ -441,7 +459,9 @@ public class TransformClassContent extends TransformAbstract {
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(UMLUtil.splitName(umlClass));
+
+		writer.print(TransformAbstract.getPublicationName(umlClass));
+
 		writer.print(" - conformance rules");
 		writer.println("</title>");
 
@@ -613,6 +633,10 @@ public class TransformClassContent extends TransformAbstract {
 
 		if (tableGenerator != null) {
 			String table = tableGenerator.createTable(umlClass);
+			if (table != null && table.length() > 0) {
+				writer.println(table);
+			}
+			table = tableGenerator.createTable2(umlClass);
 			if (table != null && table.length() > 0) {
 				writer.println(table);
 			}

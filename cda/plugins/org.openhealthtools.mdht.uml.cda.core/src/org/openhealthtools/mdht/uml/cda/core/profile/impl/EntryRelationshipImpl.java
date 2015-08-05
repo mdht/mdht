@@ -27,10 +27,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl#getTypeCode <em>Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class EntryRelationshipImpl extends AssociationValidationImpl implements EntryRelationship {
@@ -38,7 +38,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	 * The default value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -49,7 +48,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	 * The cached value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getTypeCode()
 	 * @generated
 	 * @ordered
@@ -59,7 +57,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EntryRelationshipImpl() {
@@ -69,7 +66,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -84,7 +80,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,7 +114,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,7 +124,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,7 +139,6 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EntryRelationshipKind getTypeCode() {
@@ -156,31 +148,23 @@ public class EntryRelationshipImpl extends AssociationValidationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setTypeCode(EntryRelationshipKind newTypeCode) {
 		EntryRelationshipKind oldTypeCode = typeCode;
-		typeCode = newTypeCode == null
-				? TYPE_CODE_EDEFAULT
-				: newTypeCode;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
-		}
+		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__TYPE_CODE, oldTypeCode, typeCode));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (typeCode: ");
