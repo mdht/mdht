@@ -4,12 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
  *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
- *     
+ *     Sarp Kaya (NEHTA)
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
@@ -26,6 +27,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -33,6 +35,8 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
@@ -45,6 +49,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDATemplateComputeBuilder;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 /**
@@ -63,6 +68,10 @@ public class TemplateSection extends ValidationSection {
 	private Text assigningAuthorityText;
 
 	private boolean assigningAuthorityModified = false;
+
+	private CCombo multiplicityCombo;
+
+	private boolean templateMultiplicityModified = false;
 
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -120,7 +129,7 @@ public class TemplateSection extends ValidationSection {
 	protected void modifyFields() {
 		super.modifyFields();
 
-		if (!(templateIdModified || templateVersionModified || assigningAuthorityModified)) {
+		if (!(templateIdModified || templateVersionModified || assigningAuthorityModified || templateMultiplicityModified)) {
 			return;
 		}
 
@@ -170,6 +179,18 @@ public class TemplateSection extends ValidationSection {
 							modelElement.setValue(
 								stereotype, ICDAProfileConstants.CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME,
 								value.length() > 0
+										? value
+										: null);
+
+						}
+					} else if (templateMultiplicityModified) {
+						templateMultiplicityModified = false;
+						this.setLabel("Set CDA Template Multiplicity");
+
+						if (stereotype != null) {
+							String value = multiplicityCombo.getText().trim();
+							modelElement.setValue(
+								stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY, value.length() > 0
 										? value
 										: null);
 
@@ -251,6 +272,31 @@ public class TemplateSection extends ValidationSection {
 		data.top = new FormAttachment(assigningAuthorityText, 0, SWT.CENTER);
 		restoreDefaultsButton.setLayoutData(data);
 
+		// templateId Multiplicity
+
+		CLabel multiplicityLabel = getWidgetFactory().createCLabel(composite, "templateId Multiplicity:"); //$NON-NLS-1$
+		multiplicityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
+		multiplicityCombo.setItems(new String[] { "1", "1..*" });
+		multiplicityCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				multiplicitySet();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				multiplicitySet();
+			}
+		});
+
+		data = new FormData();
+		data.left = new FormAttachment(assigningAuthorityText, 0, SWT.CENTER);
+		data.top = new FormAttachment(assigningAuthorityText, ITabbedPropertyConstants.VSPACE);
+		multiplicityLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(multiplicityLabel, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(multiplicityLabel, 0, SWT.CENTER);
+		multiplicityCombo.setLayoutData(data);
+
 		addValidationControls(composite, 1, 2);
 
 	}
@@ -318,6 +364,22 @@ public class TemplateSection extends ValidationSection {
 			assigningAuthorityText.setEnabled(true);
 			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
+		String multiplicityVal = null;
+		if (stereotype != null) {
+			multiplicityVal = (String) modelElement.getValue(stereotype, ICDAProfileConstants.CDA_TEMPLATE_MULTIPLICITY);
+		}
+
+		multiplicityCombo.setText(CDATemplateComputeBuilder.getMultiplicityRange(multiplicityVal));
+
+	}
+
+	private void multiplicitySet() {
+		String selectedTxt = multiplicityCombo.getText();
+		if ("1".equals(selectedTxt)) {
+			multiplicityCombo.setText("1..1");
+		}
+		templateMultiplicityModified = true;
+		modifyFields();
 
 	}
 

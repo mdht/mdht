@@ -2,7 +2,7 @@
 <feature
       id="org.dita.dost"
       label="%featureName"
-      version="2.5.5"
+      version="2.5.6"
       provider-name="%featureProvider">
 
    <description url="http://mdht.projects.openhealthtools.org">

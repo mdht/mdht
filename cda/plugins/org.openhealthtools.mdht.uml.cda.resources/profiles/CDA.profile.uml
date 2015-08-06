@@ -658,6 +658,10 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2wkIMEx-EeS4r_8vH5A4uw"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_dzsFYDADEeWB8IqcSLZ66A" name="templateMultiplicity">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dzsFYTADEeWB8IqcSLZ66A"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_4AuRwKFKEd6NOYTVzzK9uw" name="ConstraintValidation">
       <generalization xmi:id="_9VbFkKFKEd6NOYTVzzK9uw" general="_e_WLgJmVEd6OiP9GTesZug"/>
