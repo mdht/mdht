@@ -596,7 +596,7 @@ public class CDAModelUtil {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
 
-		String keyword = getValidationKeyword(association);
+		String keyword = getValidationKeywordWithPropertyRange(association, property);
 		if (keyword != null) {
 			message.append(markup
 					? "<b>"
@@ -955,7 +955,7 @@ public class CDAModelUtil {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
 
-		String keyword = getValidationKeyword(property);
+		String keyword = getValidationKeywordWithPropertyRange(property);
 		if (keyword != null) {
 			message.append(markup
 					? "<b>"
@@ -2623,6 +2623,11 @@ public class CDAModelUtil {
 		return severity;
 	}
 
+	public static String getValidationKeywordWithPropertyRange(Property property) {
+		String keyword = getValidationKeyword(property);
+		return addShallNot(keyword, property);
+	}
+
 	public static String getValidationKeyword(Property property) {
 		String severity = getValidationSeverity(property, ICDAProfileConstants.PROPERTY_VALIDATION);
 		if (severity == null) {
@@ -2630,6 +2635,19 @@ public class CDAModelUtil {
 			severity = getValidationSeverity((Element) property);
 		}
 		return getValidationKeyword(severity);
+	}
+
+	public static String getValidationKeywordWithPropertyRange(Element element, Property property) {
+		// use first available validation stereotype
+		String keyword = getValidationKeyword(element);
+		return addShallNot(keyword, property);
+	}
+
+	private static String addShallNot(String keyword, Property property) {
+		if (property.getLower() == 0 && property.getUpper() == 0 && "SHALL".equals(keyword)) {
+			keyword += " NOT";
+		}
+		return keyword;
 	}
 
 	public static String getValidationKeyword(Element element) {
