@@ -16,6 +16,9 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -50,16 +53,18 @@ public class ImportProfileAction implements IObjectActionDelegate {
 	
 	private IContainer getProfileFolder() {
 		IContainer profileFolder = null;
-//		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-//		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/current");
-//		if (resource instanceof IContainer) {
-//			profileFolder = (IContainer) resource;
-//		}
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/current");
+		if (resource instanceof IContainer) {
+			profileFolder = (IContainer) resource;
+		}
 		
-		IContainer[] containers = WorkspaceResourceDialog.openFolderSelection(activePart.getSite().getShell(), 
-				"Select Profile Folder", "Folder containing reference profiles", false, null, null);
-		if (containers.length > 0) {
-			profileFolder = containers[0];
+		if (profileFolder == null) {
+			IContainer[] containers = WorkspaceResourceDialog.openFolderSelection(activePart.getSite().getShell(), 
+					"Select Profile Folder", "Folder containing reference profiles", false, null, null);
+			if (containers.length > 0) {
+				profileFolder = containers[0];
+			}
 		}
 		
 		return profileFolder;
@@ -77,33 +82,32 @@ public class ImportProfileAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		// select the profile folder first, then optionally a list of profiles
 		IContainer profileFolder = getProfileFolder();
-		List<URI> profiles = selectProfileFiles();
+//		List<URI> profiles = selectProfileFiles();
 		
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlPackage);
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Import FHIR Profiles") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					ProfileImporter umlImporter = new ProfileImporter(umlPackage, profileFolder);
-					for (URI profileURI : profiles) {
-						umlImporter.importProfile(profileURI);
-					}
-					
-					/*
-					IContainer profileFolder = getProfileFolder();
 					if (profileFolder != null) {
 						ProfileImporter umlImporter = new ProfileImporter(umlPackage, profileFolder);
+//						for (URI profileURI : profiles) {
+//							umlImporter.importProfile(profileURI);
+//						}
+
+						umlImporter.importProfile("extension-definitions");
+						
 //						umlImporter.importProfile("Observation");
 						umlImporter.importProfile("Condition");
 						umlImporter.importProfile("StructureDefinition");
 						umlImporter.importProfile("Conformance");
 						umlImporter.importProfile("ImplementationGuide");
-//						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
-//						umlImporter.importProfile("observation-hspc-standardlabobs-quantitative-stdqty");
+						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
+						umlImporter.importProfile("observation-hspc-standardlabobs-quantitative-stdqty");
+						umlImporter.importProfile("observation-hspc-heartrate-hspcheartrate");
 						
 //						umlImporter.importAllProfiles();
 					}
-					*/
 
 					return Status.OK_STATUS;
 				}

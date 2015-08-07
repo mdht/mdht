@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.mdht.uml.fhir.TypeChoice;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -35,11 +36,13 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.PrimitiveType;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.util.UMLUtil;
 import org.hl7.fhir.ConstraintSeverityList;
 import org.hl7.fhir.ElementDefinition;
 import org.hl7.fhir.ElementDefinitionConstraint;
@@ -234,7 +237,7 @@ public class ProfileImporter {
 			Object child = iterator.next();
 			if (child instanceof StructureDefinition) {
 				umlClass = importProfile((StructureDefinition)child);
-				break;
+				iterator.prune();
 			}
 		}
 		
@@ -263,10 +266,13 @@ public class ProfileImporter {
 	public Class importProfile(String profileName) {
 		Class umlClass = (Class) referenceModelTypeForName.get(profileName);
 		if (umlClass == null) {
-			IFile profileFile = fhirProfileFolder.getFile(new Path(profileName.toLowerCase() + ".profile.xml"));
+			IFile profileFile = fhirProfileFolder.getFile(new Path(profileName.toLowerCase() + ".xml"));
 			
 			if (profileFile.exists()) {
 				umlClass = importProfile(profileFile);
+			}
+			else if (profileName.indexOf(".profile") == -1) {
+				return importProfile(profileName.toLowerCase() + ".profile");
 			}
 			else {
 				System.err.println("Cannot find Profile: " + profileName);
@@ -278,9 +284,9 @@ public class ProfileImporter {
 	
 	public Class importProfile(StructureDefinition structureDef) {
 		//TODO extensions are not supported in this iteration
-		if (structureDef.getContextType() != null) {
-			return null;
-		}
+//		if (structureDef.getContextType() != null) {
+//			return null;
+//		}
 		
 		//TODO temporary workaround for bug in FHIR build tool
 		if (StructureDefinitionKindList.DATATYPE == structureDef.getKind().getValue()
@@ -300,13 +306,17 @@ public class ProfileImporter {
 		Package kindPackage = model.getNestedPackage(kindPackageName, true, UMLPackage.eINSTANCE.getPackage(), true);
 		
 		String profileClassName = structureDef.getId().getValue();
+		//TODO in UML profile, set ElementDefinition.id
+		
 		boolean isAbstract = structureDef.getAbstract().isValue();
 		Class profileClass = kindPackage.createOwnedClass(profileClassName, isAbstract);
 		
 		setURIAnnotation(profileClass, structureDef.getUrl().getValue());
 		referenceModelTypeForName.put(profileClassName, profileClass);
 		referenceModelTypeForURI.put(structureDef.getUrl().getValue(), profileClass);
+		//TODO in UML profile, set ElementDefinition.uri
 		
+		//TODO apply UML stereotypes for kinds of Comment
 		if (structureDef.getDescription() != null) {
 			Comment description = profileClass.createOwnedComment();
 			description.setBody(structureDef.getDescription().getValue());
@@ -339,62 +349,35 @@ public class ProfileImporter {
 			}
 		}
 		
-		Map<String,Class> nestedClassMap = new HashMap<String,Class>();
+		// the classes defined by element definitions in this structure, profile class and nested classes
+		// key = path, value = UML Element
+		Map<String,Element> elementPathMap = new HashMap<String,Element>();
+		
+		// Set of element paths that are sliced
+		Set<String> slicedElements = new HashSet<String>();
 
+		// the first element definition is always the "profile element" defining the main profile class.
 		boolean isProfileElement = true;
+		
 		for (ElementDefinition elementDef : structureDef.getDifferential().getElement()) {
+			// TODO for now omit slicing elements, causes extra 'extension' property
+			if (elementDef.getSlicing() != null) {
+				slicedElements.add(elementDef.getPath().getValue());
+				continue;
+			}
+			boolean isSliced = slicedElements.contains(elementDef.getPath().getValue());
+			
 			// parse path segments to identify nested classes and property names
 			String path = elementDef.getPath().getValue();
-//			String[] pathSegments = path.split("\\.");
+			String[] pathSegments = path.split("\\.");
 			
-			// Create a typeList, then create a property, and maybe a nested class
-			List<Classifier> typeList = new ArrayList<Classifier>();
-			for (ElementDefinitionType elementDefType : elementDef.getType()) {
-				Classifier typeClass = null;
-				if (!elementDefType.getProfile().isEmpty()) {
-					for (Uri profileURI : elementDefType.getProfile()) {
-						typeClass = importProfileForURI(profileURI.getValue());
-
-						//TODO for now, use only first profile type
-						if (typeClass != null) {
-							break;
-						}
-					}
-				}
-				if (typeClass == null && elementDefType.getCode() != null && elementDefType.getCode().getValue() != null) {
-					String typeCode = elementDefType.getCode().getValue();
-					String[] typeCodes = typeCode.split(",");
-					
-					//TODO clarify interpretation of comma-separated value, e.g. in date.profile.xml
-					for (int i = 0; i < typeCodes.length; i++) {
-						String typeName = typeCodes[i].trim();
-						if ("*".equals(typeName)) {
-							// TODO this should be limited to Open Type list, http://hl7.org/fhir/2015May/datatypes.html#open
-							typeClass = dataTypeClass;
-						}
-						else if (typeName.startsWith("xs:")) {
-							typeClass = getPrimitiveType(typeName);
-						}
-						else {
-							typeClass = importProfile(typeName);
-						}
-						
-						//TODO for now, use only first type from comma-separated list
-						if (typeClass != null) {
-							break;
-						}
-					}
-				}
-				
-				if (typeClass != null) {
-					typeList.add(typeClass);
-				}
-			}
+			// Get the list of element types, then create a property, and maybe a nested class
+			List<Classifier> typeList = getTypeList(elementDef);
 			
 			if (isProfileElement) {
 				// the first ElementDefinition
 				isProfileElement = false;
-				nestedClassMap.put(path, profileClass);
+				elementPathMap.put(path, profileClass);
 				
 				if (elementDef.getName() != null && elementDef.getName().getValue() != null) {
 					profileClass.setName(elementDef.getName().getValue());
@@ -406,7 +389,8 @@ public class ProfileImporter {
 					//TODO Element has type Element, expand check for circular generalization references
 					if (!baseType.equals(profileClass)) {
 						// Add "DataType" abstract superclass for all data types
-						if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindPackageName) && ELEMENT_CLASS_NAME.equals(baseType.getName())) {
+						if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindPackageName) 
+								&& ELEMENT_CLASS_NAME.equals(baseType.getName())) {
 							baseType = dataTypeClass;
 						}
 						
@@ -421,28 +405,66 @@ public class ProfileImporter {
 					addConstraint(profileClass, constraint);
 				}
 				
-				// don't create a Property
+				// don't create a Property for profile element
 				continue;
 			}
 			
 			Class ownerClass = null;
 			if (path.indexOf(".") == -1) {
-				// for type profile definitions, e.g. code.profile.xml
+				// for datatype profile definitions, e.g. code.profile.xml
 				ownerClass = profileClass;
 			}
 			else {
+				String ownerPath = path.substring(0, path.lastIndexOf("."));
+				Element ownerElement = elementPathMap.get(ownerPath);
+
+				if (ownerElement instanceof Class) {
+					ownerClass = (Class) ownerElement;
+				}
+				else if (ownerElement instanceof Property) {
+					// this may be called recursively for multi-segment paths in a constraint profile
+					ownerClass = getOwnerClass(elementDef, elementPathMap, path);
+	
+					// use element type(s) as superclass(es)
+					//TODO if multi-segment path, will this be the correct superclass type?
+					if (ownerClass.getGeneralizations().isEmpty()) {
+						for (Classifier parent : typeList) {
+							ownerClass.createGeneralization(parent);
+						}
+					}
+				}
+				
+				/*
 				String ownerClassPath = path.substring(0, path.lastIndexOf("."));
-				ownerClass = nestedClassMap.get(ownerClassPath);
+				ownerClass = elementClassMap.get(ownerClassPath);
 
 				if (ownerClass == null) {
-					System.err.println("Owner class should never be null: " + ownerClassPath);
-					continue;
+					//TODO recursive, find property for ownerClassPath, create if necessary with a nested type
+					// if owner property does not have nested type, create a nested type extending its current type
 					
-					//TODO for constraint profiles
-					// convert property to a nested class, then add new property to this nested class
-					// use previous property type as the superclass, e.g. CodeableConcept
+					//TODO refactor to pull this out as general method to create a nested class
+					// create a new nested class, use elementDef type as its superclass
+					String nestedClassName = getClassName(elementDef);
+					// TODO what is ownerClass for this nested class?
+					ownerClass = (Class) ownerClass.createNestedClassifier(nestedClassName, UMLPackage.eINSTANCE.getClass_());
+					elementClassMap.put(path, (Class) ownerClass);
 					
+					// TODO use element type(s) as superclass(es)
+					for (Classifier parent : typeList) {
+						ownerClass.createGeneralization(parent);
+					}
 				}
+				*/
+			}
+
+			 // Get inherited property.  If typeList is empty, and inherited not null, 
+			 // add inherited property type to typeList.
+			boolean isProhibitedElement = elementDef.getMax() != null && "0".equals(elementDef.getMax().getValue());
+			String propertyName = getPropertyName(elementDef);
+			Property inheritedProperty = org.openhealthtools.mdht.uml.common.util.UMLUtil.getInheritedProperty(ownerClass, propertyName);
+			if (!isProhibitedElement && typeList.isEmpty() && inheritedProperty != null 
+					&& inheritedProperty.getType() instanceof Classifier) {
+				typeList.add((Classifier)inheritedProperty.getType());
 			}
 			
 			Classifier propertyType = null;
@@ -453,13 +475,11 @@ public class ProfileImporter {
 					System.err.println("Cannot find referencedName: " + referencedName + " from: " + path);
 				}
 			}
-			else if (typeList.isEmpty()) {
-				// TODO this does not work for constraint profiles..........
-				
+			else if (!isProhibitedElement && typeList.isEmpty()) {
 				// create a new nested class
 				String nestedClassName = getClassName(elementDef);
 				propertyType = (Class) ownerClass.createNestedClassifier(nestedClassName, UMLPackage.eINSTANCE.getClass_());
-				nestedClassMap.put(path, (Class) propertyType);
+				elementPathMap.put(path, (Class) propertyType);
 				
 				Class backboneElement = importProfile(BACKBONE_ELEMENT_CLASS_NAME);
 				if (backboneElement != null) {
@@ -482,17 +502,40 @@ public class ProfileImporter {
 					propertyType = baseClass;
 				}
 			}
-
-			String propertyName = getPropertyName(elementDef);
-			Property property = ownerClass.createOwnedAttribute(propertyName, propertyType);
-			assignMultiplicity(property, elementDef);
-			property.setIsOrdered(true);
-			if (isAssociation(property)) {
-				createAssociation(ownerClass, property);
+			
+			// Create the UML Property
+			// if this is an Extension element and 'name' is specified, use as Property name
+			if (elementDef.getName() != null && propertyType != null && isSubclassOf(propertyType, "Extension")) {
+				propertyName = elementDef.getName().getValue();
 			}
-			//TODO redefined or subsetted from RM property
+			Property property = ownerClass.createOwnedAttribute(propertyName, propertyType);
+			elementPathMap.put(path, property);
+			assignMultiplicity(property, elementDef);
+			
+			// skip for prohibited elements in constraint profiles
+			if (!isProhibitedElement) {
+				property.setIsOrdered(true);
+				if (isAssociation(property)) {
+					createAssociation(ownerClass, property);
+				}
+			}
+			
+			//redefined or subsetted from a core resource property
+			if (isSliced) {
+				Property subsettedProperty = org.openhealthtools.mdht.uml.common.util.UMLUtil.getInheritedProperty(property.getClass_(), pathSegments[pathSegments.length - 1]);
+				if (subsettedProperty != null) {
+					property.getSubsettedProperties().add(subsettedProperty);
+				}
+			}
+//			else if (inheritedProperty != null) {
+//				property.getRedefinedProperties().add(inheritedProperty);
+//			}
 
 			addComments(property, elementDef);
+			
+			if (typeList.size() > 1) {
+				addTypeChoice(property, typeList);
+			}
 			
 			// Add constraints
 			for (ElementDefinitionConstraint constraint : elementDef.getConstraint()) {
@@ -556,7 +599,17 @@ public class ProfileImporter {
 		
 		return name;
 	}
-	
+
+	private String getUniqueNestedClassifierName(Class owner, String name) {
+		int seqNo = 1;
+		String uniqueName = name + String.valueOf(seqNo++);
+
+		while (null != owner.getNestedClassifier(uniqueName)) {
+			uniqueName = name + String.valueOf(seqNo++);
+		}
+
+		return uniqueName;
+	}
 	/**
 	 * Determines the property from the last "path" component.
 	 * 
@@ -636,6 +689,90 @@ public class ProfileImporter {
 		return referencedClass;
 	}
 	
+	private List<Classifier> getTypeList(ElementDefinition elementDef) {
+		List<Classifier> typeList = new ArrayList<Classifier>();
+		
+		for (ElementDefinitionType elementDefType : elementDef.getType()) {
+			Classifier typeClass = null;
+			if (!elementDefType.getProfile().isEmpty()) {
+				for (Uri profileURI : elementDefType.getProfile()) {
+					typeClass = importProfileForURI(profileURI.getValue());
+
+					//TODO for now, use only first profile type
+					if (typeClass != null) {
+						break;
+					}
+				}
+			}
+			if (typeClass == null && elementDefType.getCode() != null && elementDefType.getCode().getValue() != null) {
+				String typeCode = elementDefType.getCode().getValue();
+				String[] typeCodes = typeCode.split(",");
+				
+				//TODO clarify interpretation of comma-separated value, e.g. in date.profile.xml
+				for (int i = 0; i < typeCodes.length; i++) {
+					String typeName = typeCodes[i].trim();
+					if ("*".equals(typeName)) {
+						// TODO this should be limited to Open Type list, http://hl7.org/fhir/2015May/datatypes.html#open
+						typeClass = dataTypeClass;
+					}
+					else if (typeName.startsWith("xs:")) {
+						typeClass = getPrimitiveType(typeName);
+					}
+					else {
+						typeClass = importProfile(typeName);
+					}
+					
+					//TODO for now, use only first type from comma-separated list
+					if (typeClass != null) {
+						break;
+					}
+				}
+			}
+			
+			if (typeClass != null) {
+				typeList.add(typeClass);
+			}
+		}
+		return typeList;
+	}
+	
+	private Class getOwnerClass(ElementDefinition elementDef, Map<String,Element> elementPathMap, String path) {
+		Class ownerClass = null;
+		String ownerPath = path.substring(0, path.lastIndexOf("."));
+		Element ownerElement = elementPathMap.get(ownerPath);
+
+		if (ownerElement instanceof Class) {
+			ownerClass = (Class) ownerElement;
+		}
+		else if (ownerElement instanceof Property) {
+			Property ownerProperty = (Property) ownerElement;
+			if (ownerProperty.getType().getOwner() instanceof Class) {
+				ownerClass = (Class) ownerProperty.getType();
+			}
+			else {
+				// replace property type with a new nested class derived from prior type
+				// if owner property does not have nested type, create a nested type extending its current type
+//				String nestedClassName = getClassName(elementDef);
+				Class propertySupertype = (Class) ownerProperty.getType();
+				String nestedClassName =  propertySupertype.getName();
+				nestedClassName = getUniqueNestedClassifierName(ownerProperty.getClass_(), nestedClassName);
+				ownerClass = (Class) ownerProperty.getClass_().createNestedClassifier(nestedClassName, UMLPackage.eINSTANCE.getClass_());
+				ownerClass.createGeneralization(propertySupertype);
+				ownerProperty.setType(ownerClass);
+				
+//				elementPathMap.put(path, (Class) ownerClass);
+			}
+		}
+		else {
+			//TODO test this
+			// may be recursive for multi-segment paths that jump levels of nesting
+			String ownerOwnerClassPath = ownerPath.substring(0, path.lastIndexOf("."));
+			ownerClass =  getOwnerClass(elementDef, elementPathMap, ownerOwnerClassPath);
+		}
+		
+		return ownerClass;
+	}
+	
 //	private boolean isKindOf(Classifier umlClass, String parentName) {
 //		for (Classifier parent : umlClass.allParents()) {
 //			if (parentName.equals(parent.getName())) {
@@ -676,7 +813,7 @@ public class ProfileImporter {
 	private boolean isAssociation(Property property) {
 		if (property.getType() instanceof Classifier 
 				&& (isSubclassOf((Classifier)property.getType(), RESOURCE_CLASS_NAME) 
-						|| property.getType().getOwner() instanceof Class)) {
+						|| isSubclassOf((Classifier)property.getType(), BACKBONE_ELEMENT_CLASS_NAME))) {
 			return true;
 		}
 		
@@ -727,6 +864,14 @@ public class ProfileImporter {
 		
 		property.setLower(lower);
 		property.setUpper(upper);
+	}
+	
+	private void addTypeChoice(Property property, List<Classifier> typeList) {
+		Profile fhirProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getTypeChoice().getEPackage(), property);
+		if (fhirProfile != null) {
+			TypeChoice typeChoice = (TypeChoice) UMLUtil.safeApplyStereotype(property, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getTypeChoice().getName()));
+			typeChoice.getTypes().addAll(typeList);
+		}
 	}
 	
 	private void addConstraint(Element umlElement, ElementDefinitionConstraint fhirConstraint) {
@@ -786,17 +931,5 @@ public class ProfileImporter {
 			}
 		}
 	}
-
-	/*
-	private void addSubsettedProperty(Class cemClass, Property property, String rmPropertyName) {
-		Class rmClass = AMLUtil.referenceModelType(cemClass);
-		if (rmClass != null) {
-			Property rmProperty = rmClass.getOwnedAttribute(rmPropertyName, null);
-			if (rmProperty != null) {
-				property.getSubsettedProperties().add(rmProperty);
-			}
-		}
-	}
-	*/
 	
 }

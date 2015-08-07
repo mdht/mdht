@@ -10,6 +10,25 @@ BUGS and ISSUES:
      --- e.g. may subclass the referenced nested class?
 
 --------------------
+- HSPC Profile bugs:
+  -- stdqty ReferenceRange constraint do not have <type>, missing nested subclass with ReferenceRange constraints
+  
+- use of aggregation contained (UML composition?) in HSPC std lab
+      <type>
+        <code value="Reference"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/hspc-Specimen"/>
+        <aggregation value="contained"/>
+      </type>
+
+--------------------
+- Table Editor
+  -- expand attributes IFF type is a nested class
+  -- add icon overlay for nested class
+
+- Constraint profile
+  -- ElementDef type is optional, not necessarily a new nested type
+     -- If no type, look for redefined/subsetted property and use its type
+     -- e.g. prohibited elements; slicing discriminator element (extension)
 
 - Add "Description" column to table editor
   -- default, first sentence of first comment
@@ -38,16 +57,11 @@ BUGS and ISSUES:
   
 - Use DITA to publish FHIR model as Help plugin
 
-- Constraint paths, need to look ahead to determine if nested class
-  -- in current, anything without 'base' is a constraint or extension
+- 0..0 multiplicity
+  -- do not show as association
+  -- display strike-through font for class attribute
 
 - Add XML serialization metadata on import, e.g. ElementDefinition <representation value="xmlAttr"/>
-
-- Create stereotype
-  -- TypeChoice
-  -- StructureDef URI
-  
-- Add annotation UI, display TypeChoice
 
 - Assign element.id as Ecore Id
   -- create derived model, test re-importing core w/o breaking references
@@ -88,3 +102,4 @@ COMPLETED
 - Abstract mother of all classes: Base
 - Abstract mother of all data types: Type extends Element
 
+- Add annotation UI, display TypeChoice
