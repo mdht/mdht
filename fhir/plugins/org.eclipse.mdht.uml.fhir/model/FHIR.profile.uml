@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Profile xmi:id="_dtdbUDDkEeWn6bT0Ftydnw" name="FHIR" metamodelReference="_kqSDgDDkEeWn6bT0Ftydnw">
+    <packageImport xmi:id="_kqSDgDDkEeWn6bT0Ftydnw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_odDKgDDkEeWn6bT0Ftydnw" name="TypeChoice">
+      <ownedAttribute xmi:id="_vdz3gDDkEeWn6bT0Ftydnw" name="base_Property" association="_vdzQcDDkEeWn6bT0Ftydnw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JMDsYDGrEeWn6bT0Ftydnw" name="types">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyaqoDGrEeWn6bT0Ftydnw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tb_rIDGrEeWn6bT0Ftydnw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_vdzQcDDkEeWn6bT0Ftydnw" name="Property_TypeChoice" memberEnd="_vdzQcTDkEeWn6bT0Ftydnw _vdz3gDDkEeWn6bT0Ftydnw">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_vdzQcTDkEeWn6bT0Ftydnw" name="extension_TypeChoice" type="_odDKgDDkEeWn6bT0Ftydnw" aggregation="composite" association="_vdzQcDDkEeWn6bT0Ftydnw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_GGVKQDDqEeWn6bT0Ftydnw" name="StructureDefinition">
+      <ownedAttribute xmi:id="_LrCI8TDqEeWn6bT0Ftydnw" name="base_Class" association="_LrBh4DDqEeWn6bT0Ftydnw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ns56EDDqEeWn6bT0Ftydnw" name="uri">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yv34QDDqEeWn6bT0Ftydnw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_LrBh4DDqEeWn6bT0Ftydnw" name="Class_StructureDef" memberEnd="_LrCI8DDqEeWn6bT0Ftydnw _LrCI8TDqEeWn6bT0Ftydnw">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_LrCI8DDqEeWn6bT0Ftydnw" name="extension_StructureDef" type="_GGVKQDDqEeWn6bT0Ftydnw" aggregation="composite" association="_LrBh4DDqEeWn6bT0Ftydnw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_ghuhwDbOEeWEXrmTCU6QRg" name="ElementDefinition">
+      <ownedAttribute xmi:id="_6cbwQTbOEeWEXrmTCU6QRg" name="base_Property" association="_6caiIDbOEeWEXrmTCU6QRg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8G_0oDbOEeWEXrmTCU6QRg" name="mustSupport">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__CRS8DbOEeWEXrmTCU6QRg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_6caiIDbOEeWEXrmTCU6QRg" name="Property_ElementDefinition" memberEnd="_6cbwQDbOEeWEXrmTCU6QRg _6cbwQTbOEeWEXrmTCU6QRg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_6cbwQDbOEeWEXrmTCU6QRg" name="extension_ElementDefinition" type="_ghuhwDbOEeWEXrmTCU6QRg" aggregation="composite" association="_6caiIDbOEeWEXrmTCU6QRg"/>
+    </packagedElement>
+    <profileApplication xmi:id="_qHMGMDDmEeWn6bT0Ftydnw">
+      <eAnnotations xmi:id="_qHQXoDDmEeWn6bT0Ftydnw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Profile>
+  <Ecore:EPackage xmi:id="_spQaUDDmEeWn6bT0Ftydnw" base_Package="_dtdbUDDkEeWn6bT0Ftydnw" packageName="fhir" nsPrefix="fhir" nsURI="http://www.eclipse.org/mdht/schema/profile/fhir/1.0.0" basePackage="org.eclipse.mdht.uml" prefix="FHIR"/>
+</xmi:XMI>

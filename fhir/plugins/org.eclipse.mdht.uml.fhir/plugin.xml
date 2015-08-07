@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated FHIR.profile -->
+      <package
+            uri="http://www.eclipse.org/mdht/schema/profile/fhir/1.0.0"
+            class="org.eclipse.mdht.uml.fhir.FHIRPackage"
+            genModel="model/FHIR.profile.genmodel"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            uri="http://www.eclipse.org/mdht/schema/profile/fhir/1.0.0"
+            location="pathmap://MDHT_FHIR/FHIR.profile.uml#_dtdbUDDkEeWn6bT0Ftydnw"/>
+   </extension>
+   
+   <extension
+         id="FhirProfile"
+         name="FHIR Profile"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="MDHT_FHIR"
+            path="model"
+            plugin="org.eclipse.mdht.uml.fhir"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://MDHT_FHIR/"
+            target="model/">
+      </mapping>
+   </extension>
+   
+</plugin>
