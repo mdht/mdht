@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.openhealthtools.mdht.uml.common.notation">
+      <provider profileURI="http://www.eclipse.org/mdht/schema/profile/fhir"
+      		 class="org.eclipse.mdht.uml.fhir.ui.notation.FHIRAnnotationProvider"/>
+   </extension>
+
+</plugin>
