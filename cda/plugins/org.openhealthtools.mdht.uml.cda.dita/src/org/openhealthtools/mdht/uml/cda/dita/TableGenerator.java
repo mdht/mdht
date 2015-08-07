@@ -754,17 +754,22 @@ public class TableGenerator {
 			maxRows = associationSwitch.getContains().size();
 		}
 
-		for (int rowCtr = 0; rowCtr < maxRows; rowCtr++) {
-			String containedBy = "";
-			String contains = "";
-			if (rowCtr < associationSwitch.getContainedBy().size()) {
-				containedBy = getAnXref(topPackage, (Class) associationSwitch.getContainedBy().get(rowCtr));
-			}
-			if (rowCtr < associationSwitch.getContains().size()) {
-				contains = getAnXref(topPackage, (Class) associationSwitch.getContains().get(rowCtr));
+		if (maxRows > 0) {
+			for (int rowCtr = 0; rowCtr < maxRows; rowCtr++) {
+				String containedBy = "";
+				String contains = "";
+				if (rowCtr < associationSwitch.getContainedBy().size()) {
+					containedBy = getAnXref(topPackage, (Class) associationSwitch.getContainedBy().get(rowCtr));
+				}
+				if (rowCtr < associationSwitch.getContains().size()) {
+					contains = getAnXref(topPackage, (Class) associationSwitch.getContains().get(rowCtr));
 
+				}
+				tableBuffer.append("<row><entry>" + containedBy + "</entry><entry>" + contains + "</entry></row>");
 			}
-			tableBuffer.append("<row><entry>" + containedBy + "</entry><entry>" + contains + "</entry></row>");
+		} else {
+			// insert blank row for dita
+			tableBuffer.append("<row><entry> </entry><entry> </entry></row>");
 		}
 
 		tableBuffer.append("</tbody></tgroup></table></p></section>");
