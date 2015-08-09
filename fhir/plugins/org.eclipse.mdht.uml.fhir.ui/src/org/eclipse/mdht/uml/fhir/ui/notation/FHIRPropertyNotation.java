@@ -13,6 +13,7 @@ package org.eclipse.mdht.uml.fhir.ui.notation;
 
 import org.eclipse.mdht.uml.fhir.FHIRPackage;
 import org.eclipse.mdht.uml.fhir.TypeChoice;
+import org.eclipse.mdht.uml.fhir.ValueSetBinding;
 import org.eclipse.mdht.uml.fhir.util.ProfileUtil;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
@@ -151,10 +152,38 @@ public class FHIRPropertyNotation extends PropertyNotationUtil {
 	}
 
 	protected static String getTerminologyAnnotations(Property property) {
-		StringBuffer value = new StringBuffer();
-		//TODO delegate to Terminology profile notation
+		StringBuffer annotation = new StringBuffer();
+		ValueSetBinding binding = (ValueSetBinding) ProfileUtil.getStereotypeApplication(property, FHIRPackage.eINSTANCE.getValueSetBinding());
+		if (binding != null) {
+//			if (binding.getDescription() != null) {
+//				annotation.append(" " + binding.getDescription());
+//			}
+			String valueSetName = "";
+			if (binding.getValueSetReference() != null) {
+				valueSetName = binding.getValueSetReference();
+			}
+			else if (binding.getValueSetUri() != null) {
+				valueSetName = binding.getValueSetUri();
+			}
 
-		return value.toString();
+			valueSetName = valueSetName.substring(valueSetName.lastIndexOf("/") + 1);
+			annotation.append(valueSetName);
+
+			if (binding.getStrength() != null) {
+				//TODO toUpperCamelCase
+				String strength = binding.getStrength().getName();
+				StringBuffer camelCaseNameBuffer = new StringBuffer();
+				camelCaseNameBuffer.append(strength.substring(0, 1).toUpperCase());
+				camelCaseNameBuffer.append(strength.substring(1));
+				strength = camelCaseNameBuffer.toString();
+				
+				annotation.append(" (");
+				annotation.append(strength);
+				annotation.append(")");
+			}
+		}
+
+		return annotation.toString();
 	}
 
 }
