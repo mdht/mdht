@@ -789,12 +789,16 @@ public class ProfileImporter {
 		}
 		else if (ownerElement instanceof Property) {
 			Property ownerProperty = (Property) ownerElement;
-			if (ownerProperty.getType().getOwner() instanceof Class) {
+
+			// If current nested class type is from superclass, create a new derived nested class.
+			if (ownerProperty.getType().getOwner() instanceof Class 
+					&& ownerProperty.getType().getOwner() == ownerProperty.getClass_()) {
 				ownerClass = (Class) ownerProperty.getType();
 			}
 			else {
-				// replace property type with a new nested class derived from prior type
-				// if owner property does not have nested type, create a nested type extending its current type
+				// Replace property type with a new nested class derived from prior type.
+				// If owner property does not have nested type, create a nested type extending its current type.
+				
 //				String nestedClassName = getClassName(elementDef);
 				Class propertySupertype = (Class) ownerProperty.getType();
 				String nestedClassName =  propertySupertype.getName();
