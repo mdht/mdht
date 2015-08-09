@@ -18,6 +18,7 @@
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_vdzQcTDkEeWn6bT0Ftydnw" name="extension_TypeChoice" type="_odDKgDDkEeWn6bT0Ftydnw" aggregation="composite" association="_vdzQcDDkEeWn6bT0Ftydnw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_GGVKQDDqEeWn6bT0Ftydnw" name="StructureDefinition">
+      <generalization xmi:id="_K43KQD3REeW8ybi2TiqE7g" general="_sSmLkD3QEeW8ybi2TiqE7g"/>
       <ownedAttribute xmi:id="_LrCI8TDqEeWn6bT0Ftydnw" name="base_Class" association="_LrBh4DDqEeWn6bT0Ftydnw">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
       </ownedAttribute>
@@ -30,6 +31,7 @@
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_LrCI8DDqEeWn6bT0Ftydnw" name="extension_StructureDef" type="_GGVKQDDqEeWn6bT0Ftydnw" aggregation="composite" association="_LrBh4DDqEeWn6bT0Ftydnw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_ghuhwDbOEeWEXrmTCU6QRg" name="ElementDefinition">
+      <generalization xmi:id="_QRCI0D3REeW8ybi2TiqE7g" general="_sSmLkD3QEeW8ybi2TiqE7g"/>
       <ownedAttribute xmi:id="_6cbwQTbOEeWEXrmTCU6QRg" name="base_Property" association="_6caiIDbOEeWEXrmTCU6QRg">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
       </ownedAttribute>
@@ -41,6 +43,79 @@
     <packagedElement xmi:type="uml:Extension" xmi:id="_6caiIDbOEeWEXrmTCU6QRg" name="Property_ElementDefinition" memberEnd="_6cbwQDbOEeWEXrmTCU6QRg _6cbwQTbOEeWEXrmTCU6QRg">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_6cbwQDbOEeWEXrmTCU6QRg" name="extension_ElementDefinition" type="_ghuhwDbOEeWEXrmTCU6QRg" aggregation="composite" association="_6caiIDbOEeWEXrmTCU6QRg"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_wI49ID3PEeW8ybi2TiqE7g" name="ShortDescription">
+      <ownedAttribute xmi:id="_JN-LMD3QEeW8ybi2TiqE7g" name="base_Comment" association="_JN7u8D3QEeW8ybi2TiqE7g">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Comment"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_0g4RED3PEeW8ybi2TiqE7g" name="Description">
+      <ownedAttribute xmi:id="_LkZQAj3QEeW8ybi2TiqE7g" name="base_Comment" association="_LkZQAD3QEeW8ybi2TiqE7g">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Comment"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_3eLIoD3PEeW8ybi2TiqE7g" name="Definition">
+      <ownedAttribute xmi:id="_N2sCwD3QEeW8ybi2TiqE7g" name="base_Comment" association="_N2rbsD3QEeW8ybi2TiqE7g">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Comment"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_C4MU4D3QEeW8ybi2TiqE7g" name="Requirements">
+      <ownedAttribute xmi:id="_QV0Xoj3QEeW8ybi2TiqE7g" name="base_Comment" association="_QV0XoD3QEeW8ybi2TiqE7g">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Comment"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_Flg2wD3QEeW8ybi2TiqE7g" name="Comments">
+      <ownedAttribute xmi:id="_Siit4j3QEeW8ybi2TiqE7g" name="base_Comment" association="_Siit4D3QEeW8ybi2TiqE7g">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Comment"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_JN7u8D3QEeW8ybi2TiqE7g" name="Comment_ShortDescription" memberEnd="_JN9kID3QEeW8ybi2TiqE7g _JN-LMD3QEeW8ybi2TiqE7g">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_JN9kID3QEeW8ybi2TiqE7g" name="extension_ShortDescription" type="_wI49ID3PEeW8ybi2TiqE7g" aggregation="composite" association="_JN7u8D3QEeW8ybi2TiqE7g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_LkZQAD3QEeW8ybi2TiqE7g" name="Comment_Description" memberEnd="_LkZQAT3QEeW8ybi2TiqE7g _LkZQAj3QEeW8ybi2TiqE7g">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_LkZQAT3QEeW8ybi2TiqE7g" name="extension_Description" type="_0g4RED3PEeW8ybi2TiqE7g" aggregation="composite" association="_LkZQAD3QEeW8ybi2TiqE7g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_N2rbsD3QEeW8ybi2TiqE7g" name="Comment_Definition" memberEnd="_N2rbsT3QEeW8ybi2TiqE7g _N2sCwD3QEeW8ybi2TiqE7g">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_N2rbsT3QEeW8ybi2TiqE7g" name="extension_Definition" type="_3eLIoD3PEeW8ybi2TiqE7g" aggregation="composite" association="_N2rbsD3QEeW8ybi2TiqE7g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_QV0XoD3QEeW8ybi2TiqE7g" name="Comment_Requirements" memberEnd="_QV0XoT3QEeW8ybi2TiqE7g _QV0Xoj3QEeW8ybi2TiqE7g">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_QV0XoT3QEeW8ybi2TiqE7g" name="extension_Requirements" type="_C4MU4D3QEeW8ybi2TiqE7g" aggregation="composite" association="_QV0XoD3QEeW8ybi2TiqE7g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_Siit4D3QEeW8ybi2TiqE7g" name="Comment_Comments" memberEnd="_Siit4T3QEeW8ybi2TiqE7g _Siit4j3QEeW8ybi2TiqE7g">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Siit4T3QEeW8ybi2TiqE7g" name="extension_Comments" type="_Flg2wD3QEeW8ybi2TiqE7g" aggregation="composite" association="_Siit4D3QEeW8ybi2TiqE7g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_sSmLkD3QEeW8ybi2TiqE7g" name="Element" isAbstract="true">
+      <ownedAttribute xmi:id="_xivPgD3QEeW8ybi2TiqE7g" name="id">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0kkBwD3QEeW8ybi2TiqE7g"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_gcVSwD3REeW8ybi2TiqE7g" name="ValueSetBinding">
+      <ownedAttribute xmi:id="_lJFVwj3REeW8ybi2TiqE7g" name="base_Property" association="_lJFVwD3REeW8ybi2TiqE7g">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Egtf8D3SEeW8ybi2TiqE7g" name="strength" type="_n8jtgD3SEeW8ybi2TiqE7g"/>
+      <ownedAttribute xmi:id="_LHQWID3SEeW8ybi2TiqE7g" name="description">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MN4nAD3SEeW8ybi2TiqE7g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_WZccED3SEeW8ybi2TiqE7g" name="valueSetUri">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XlSkID3SEeW8ybi2TiqE7g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f649ID3SEeW8ybi2TiqE7g" name="valueSetReference">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hPDTsD3SEeW8ybi2TiqE7g"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_lJFVwD3REeW8ybi2TiqE7g" name="Property_ValueSetBinding" memberEnd="_lJFVwT3REeW8ybi2TiqE7g _lJFVwj3REeW8ybi2TiqE7g">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_lJFVwT3REeW8ybi2TiqE7g" name="extension_ValueSetBinding" type="_gcVSwD3REeW8ybi2TiqE7g" aggregation="composite" association="_lJFVwD3REeW8ybi2TiqE7g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_n8jtgD3SEeW8ybi2TiqE7g" name="BindingStrengthKind">
+      <ownedLiteral xmi:id="_9PKvgD3SEeW8ybi2TiqE7g" name="required"/>
+      <ownedLiteral xmi:id="_-SZHED3SEeW8ybi2TiqE7g" name="extensible"/>
+      <ownedLiteral xmi:id="__eYZED3SEeW8ybi2TiqE7g" name="preferred"/>
+      <ownedLiteral xmi:id="_AfHdUD3TEeW8ybi2TiqE7g" name="example"/>
+    </packagedElement>
     <profileApplication xmi:id="_qHMGMDDmEeWn6bT0Ftydnw">
       <eAnnotations xmi:id="_qHQXoDDmEeWn6bT0Ftydnw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -49,4 +124,5 @@
     </profileApplication>
   </uml:Profile>
   <Ecore:EPackage xmi:id="_spQaUDDmEeWn6bT0Ftydnw" base_Package="_dtdbUDDkEeWn6bT0Ftydnw" packageName="fhir" nsPrefix="fhir" nsURI="http://www.eclipse.org/mdht/schema/profile/fhir/1.0.0" basePackage="org.eclipse.mdht.uml" prefix="FHIR"/>
+  <Ecore:EAttribute xmi:id="_5iSGsD3VEeW8ybi2TiqE7g" isUnsettable="true" base_Property="_8G_0oDbOEeWEXrmTCU6QRg"/>
 </xmi:XMI>

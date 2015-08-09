@@ -31,13 +31,76 @@ public interface FHIRFactory extends EFactory {
 	TypeChoice createTypeChoice();
 
 	/**
-	 * Returns a new object of class '<em>Structure Def</em>'.
+	 * Returns a new object of class '<em>Structure Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Structure Def</em>'.
+	 * @return a new object of class '<em>Structure Definition</em>'.
 	 * @generated
 	 */
-	StructureDef createStructureDef();
+	StructureDefinition createStructureDefinition();
+
+	/**
+	 * Returns a new object of class '<em>Element Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element Definition</em>'.
+	 * @generated
+	 */
+	ElementDefinition createElementDefinition();
+
+	/**
+	 * Returns a new object of class '<em>Short Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Short Description</em>'.
+	 * @generated
+	 */
+	ShortDescription createShortDescription();
+
+	/**
+	 * Returns a new object of class '<em>Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Description</em>'.
+	 * @generated
+	 */
+	Description createDescription();
+
+	/**
+	 * Returns a new object of class '<em>Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Definition</em>'.
+	 * @generated
+	 */
+	Definition createDefinition();
+
+	/**
+	 * Returns a new object of class '<em>Requirements</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Requirements</em>'.
+	 * @generated
+	 */
+	Requirements createRequirements();
+
+	/**
+	 * Returns a new object of class '<em>Comments</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Comments</em>'.
+	 * @generated
+	 */
+	Comments createComments();
+
+	/**
+	 * Returns a new object of class '<em>Value Set Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Value Set Binding</em>'.
+	 * @generated
+	 */
+	ValueSetBinding createValueSetBinding();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -4,6 +4,7 @@ package org.eclipse.mdht.uml.fhir;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -105,14 +106,60 @@ public interface FHIRPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.StructureDefImpl <em>Structure Def</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl <em>Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.mdht.uml.fhir.impl.StructureDefImpl
-	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getStructureDef()
+	 * @see org.eclipse.mdht.uml.fhir.impl.ElementImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getElement()
 	 * @generated
 	 */
-	int STRUCTURE_DEF = 1;
+	int ELEMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__ID = 0;
+
+	/**
+	 * The number of structural features of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl <em>Structure Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getStructureDefinition()
+	 * @generated
+	 */
+	int STRUCTURE_DEFINITION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__ID = ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -121,35 +168,357 @@ public interface FHIRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEF__BASE_CLASS = 0;
+	int STRUCTURE_DEFINITION__BASE_CLASS = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEF__URL = 1;
+	int STRUCTURE_DEFINITION__URI = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Structure Def</em>' class.
+	 * The number of structural features of the '<em>Structure Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEF_FEATURE_COUNT = 2;
+	int STRUCTURE_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Structure Def</em>' class.
+	 * The number of operations of the '<em>Structure Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEF_OPERATION_COUNT = 0;
+	int STRUCTURE_DEFINITION_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl <em>Element Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getElementDefinition()
+	 * @generated
+	 */
+	int ELEMENT_DEFINITION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__BASE_PROPERTY = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Must Support</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__MUST_SUPPORT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Element Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Element Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.ShortDescriptionImpl <em>Short Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.ShortDescriptionImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getShortDescription()
+	 * @generated
+	 */
+	int SHORT_DESCRIPTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHORT_DESCRIPTION__BASE_COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Short Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHORT_DESCRIPTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Short Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHORT_DESCRIPTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.DescriptionImpl <em>Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.DescriptionImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getDescription()
+	 * @generated
+	 */
+	int DESCRIPTION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION__BASE_COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.DefinitionImpl <em>Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.DefinitionImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getDefinition()
+	 * @generated
+	 */
+	int DEFINITION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION__BASE_COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.RequirementsImpl <em>Requirements</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.RequirementsImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getRequirements()
+	 * @generated
+	 */
+	int REQUIREMENTS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENTS__BASE_COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Requirements</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENTS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Requirements</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENTS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.CommentsImpl <em>Comments</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.CommentsImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getComments()
+	 * @generated
+	 */
+	int COMMENTS = 8;
+
+	/**
+	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTS__BASE_COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Comments</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Comments</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl <em>Value Set Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getValueSetBinding()
+	 * @generated
+	 */
+	int VALUE_SET_BINDING = 9;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_BINDING__BASE_PROPERTY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Strength</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_BINDING__STRENGTH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_BINDING__DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Value Set Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_BINDING__VALUE_SET_URI = 3;
+
+	/**
+	 * The feature id for the '<em><b>Value Set Reference</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_BINDING__VALUE_SET_REFERENCE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Value Set Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_BINDING_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Value Set Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_BINDING_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.BindingStrengthKind <em>Binding Strength Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.BindingStrengthKind
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getBindingStrengthKind()
+	 * @generated
+	 */
+	int BINDING_STRENGTH_KIND = 10;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.TypeChoice <em>Type Choice</em>}'.
@@ -184,36 +553,269 @@ public interface FHIRPackage extends EPackage {
 	EReference getTypeChoice_Types();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.StructureDef <em>Structure Def</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.StructureDefinition <em>Structure Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Structure Def</em>'.
-	 * @see org.eclipse.mdht.uml.fhir.StructureDef
+	 * @return the meta object for class '<em>Structure Definition</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition
 	 * @generated
 	 */
-	EClass getStructureDef();
+	EClass getStructureDefinition();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.StructureDef#getBase_Class <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Class</em>'.
-	 * @see org.eclipse.mdht.uml.fhir.StructureDef#getBase_Class()
-	 * @see #getStructureDef()
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getBase_Class()
+	 * @see #getStructureDefinition()
 	 * @generated
 	 */
-	EReference getStructureDef_Base_Class();
+	EReference getStructureDefinition_Base_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.StructureDef#getUrl <em>Url</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getUri <em>Uri</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Url</em>'.
-	 * @see org.eclipse.mdht.uml.fhir.StructureDef#getUrl()
-	 * @see #getStructureDef()
+	 * @return the meta object for the attribute '<em>Uri</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getUri()
+	 * @see #getStructureDefinition()
 	 * @generated
 	 */
-	EAttribute getStructureDef_Url();
+	EAttribute getStructureDefinition_Uri();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Element
+	 * @generated
+	 */
+	EClass getElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.Element#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Element#getId()
+	 * @see #getElement()
+	 * @generated
+	 */
+	EAttribute getElement_Id();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.ElementDefinition <em>Element Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element Definition</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition
+	 * @generated
+	 */
+	EClass getElementDefinition();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getBase_Property <em>Base Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Property</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getBase_Property()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_Base_Property();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport <em>Must Support</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Must Support</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EAttribute getElementDefinition_MustSupport();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.ShortDescription <em>Short Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Short Description</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ShortDescription
+	 * @generated
+	 */
+	EClass getShortDescription();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.ShortDescription#getBase_Comment <em>Base Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Comment</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ShortDescription#getBase_Comment()
+	 * @see #getShortDescription()
+	 * @generated
+	 */
+	EReference getShortDescription_Base_Comment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Description <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Description</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Description
+	 * @generated
+	 */
+	EClass getDescription();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.Description#getBase_Comment <em>Base Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Comment</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Description#getBase_Comment()
+	 * @see #getDescription()
+	 * @generated
+	 */
+	EReference getDescription_Base_Comment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Definition <em>Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Definition</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Definition
+	 * @generated
+	 */
+	EClass getDefinition();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.Definition#getBase_Comment <em>Base Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Comment</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Definition#getBase_Comment()
+	 * @see #getDefinition()
+	 * @generated
+	 */
+	EReference getDefinition_Base_Comment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Requirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Requirements</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Requirements
+	 * @generated
+	 */
+	EClass getRequirements();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.Requirements#getBase_Comment <em>Base Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Comment</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Requirements#getBase_Comment()
+	 * @see #getRequirements()
+	 * @generated
+	 */
+	EReference getRequirements_Base_Comment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Comments <em>Comments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Comments</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Comments
+	 * @generated
+	 */
+	EClass getComments();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.Comments#getBase_Comment <em>Base Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Comment</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Comments#getBase_Comment()
+	 * @see #getComments()
+	 * @generated
+	 */
+	EReference getComments_Base_Comment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.ValueSetBinding <em>Value Set Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Value Set Binding</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSetBinding
+	 * @generated
+	 */
+	EClass getValueSetBinding();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getBase_Property <em>Base Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Property</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSetBinding#getBase_Property()
+	 * @see #getValueSetBinding()
+	 * @generated
+	 */
+	EReference getValueSetBinding_Base_Property();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getStrength <em>Strength</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Strength</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSetBinding#getStrength()
+	 * @see #getValueSetBinding()
+	 * @generated
+	 */
+	EAttribute getValueSetBinding_Strength();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSetBinding#getDescription()
+	 * @see #getValueSetBinding()
+	 * @generated
+	 */
+	EAttribute getValueSetBinding_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getValueSetUri <em>Value Set Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value Set Uri</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSetBinding#getValueSetUri()
+	 * @see #getValueSetBinding()
+	 * @generated
+	 */
+	EAttribute getValueSetBinding_ValueSetUri();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getValueSetReference <em>Value Set Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value Set Reference</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSetBinding#getValueSetReference()
+	 * @see #getValueSetBinding()
+	 * @generated
+	 */
+	EAttribute getValueSetBinding_ValueSetReference();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.mdht.uml.fhir.BindingStrengthKind <em>Binding Strength Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Binding Strength Kind</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.BindingStrengthKind
+	 * @generated
+	 */
+	EEnum getBindingStrengthKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -265,14 +867,14 @@ public interface FHIRPackage extends EPackage {
 		EReference TYPE_CHOICE__TYPES = eINSTANCE.getTypeChoice_Types();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.StructureDefImpl <em>Structure Def</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl <em>Structure Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.mdht.uml.fhir.impl.StructureDefImpl
-		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getStructureDef()
+		 * @see org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getStructureDefinition()
 		 * @generated
 		 */
-		EClass STRUCTURE_DEF = eINSTANCE.getStructureDef();
+		EClass STRUCTURE_DEFINITION = eINSTANCE.getStructureDefinition();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
@@ -280,15 +882,209 @@ public interface FHIRPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURE_DEF__BASE_CLASS = eINSTANCE.getStructureDef_Base_Class();
+		EReference STRUCTURE_DEFINITION__BASE_CLASS = eINSTANCE.getStructureDefinition_Base_Class();
 
 		/**
-		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STRUCTURE_DEF__URL = eINSTANCE.getStructureDef_Url();
+		EAttribute STRUCTURE_DEFINITION__URI = eINSTANCE.getStructureDefinition_Uri();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl <em>Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.ElementImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getElement()
+		 * @generated
+		 */
+		EClass ELEMENT = eINSTANCE.getElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT__ID = eINSTANCE.getElement_Id();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl <em>Element Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getElementDefinition()
+		 * @generated
+		 */
+		EClass ELEMENT_DEFINITION = eINSTANCE.getElementDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELEMENT_DEFINITION__BASE_PROPERTY = eINSTANCE.getElementDefinition_Base_Property();
+
+		/**
+		 * The meta object literal for the '<em><b>Must Support</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT_DEFINITION__MUST_SUPPORT = eINSTANCE.getElementDefinition_MustSupport();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ShortDescriptionImpl <em>Short Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.ShortDescriptionImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getShortDescription()
+		 * @generated
+		 */
+		EClass SHORT_DESCRIPTION = eINSTANCE.getShortDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Comment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SHORT_DESCRIPTION__BASE_COMMENT = eINSTANCE.getShortDescription_Base_Comment();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.DescriptionImpl <em>Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.DescriptionImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getDescription()
+		 * @generated
+		 */
+		EClass DESCRIPTION = eINSTANCE.getDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Comment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION__BASE_COMMENT = eINSTANCE.getDescription_Base_Comment();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.DefinitionImpl <em>Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.DefinitionImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getDefinition()
+		 * @generated
+		 */
+		EClass DEFINITION = eINSTANCE.getDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Comment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEFINITION__BASE_COMMENT = eINSTANCE.getDefinition_Base_Comment();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.RequirementsImpl <em>Requirements</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.RequirementsImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getRequirements()
+		 * @generated
+		 */
+		EClass REQUIREMENTS = eINSTANCE.getRequirements();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Comment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENTS__BASE_COMMENT = eINSTANCE.getRequirements_Base_Comment();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.CommentsImpl <em>Comments</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.CommentsImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getComments()
+		 * @generated
+		 */
+		EClass COMMENTS = eINSTANCE.getComments();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Comment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMENTS__BASE_COMMENT = eINSTANCE.getComments_Base_Comment();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl <em>Value Set Binding</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getValueSetBinding()
+		 * @generated
+		 */
+		EClass VALUE_SET_BINDING = eINSTANCE.getValueSetBinding();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALUE_SET_BINDING__BASE_PROPERTY = eINSTANCE.getValueSetBinding_Base_Property();
+
+		/**
+		 * The meta object literal for the '<em><b>Strength</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET_BINDING__STRENGTH = eINSTANCE.getValueSetBinding_Strength();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET_BINDING__DESCRIPTION = eINSTANCE.getValueSetBinding_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Set Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET_BINDING__VALUE_SET_URI = eINSTANCE.getValueSetBinding_ValueSetUri();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Set Reference</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET_BINDING__VALUE_SET_REFERENCE = eINSTANCE.getValueSetBinding_ValueSetReference();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.BindingStrengthKind <em>Binding Strength Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.BindingStrengthKind
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getBindingStrengthKind()
+		 * @generated
+		 */
+		EEnum BINDING_STRENGTH_KIND = eINSTANCE.getBindingStrengthKind();
 
 	}
 

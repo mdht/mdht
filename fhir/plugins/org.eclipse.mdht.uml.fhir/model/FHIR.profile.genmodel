@@ -33,16 +33,58 @@
   <foreignModel>FHIR.profile.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="FHIR" basePackage="org.eclipse.mdht.uml"
       disposableProviderFactory="true" ecorePackage="fhir.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="fhir.ecore#//BindingStrengthKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="fhir.ecore#//BindingStrengthKind/required"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="fhir.ecore#//BindingStrengthKind/extensible"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="fhir.ecore#//BindingStrengthKind/preferred"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="fhir.ecore#//BindingStrengthKind/example"/>
+    </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//TypeChoice">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//TypeChoice/base_Property"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//TypeChoice/types"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//StructureDef">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//StructureDefinition">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//StructureDef/base_Class"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//StructureDef/url"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//StructureDefinition/base_Class"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//StructureDefinition/uri"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="fhir.ecore#//Element">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//Element/id"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//ElementDefinition">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//ElementDefinition/base_Property"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ElementDefinition/mustSupport"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//ShortDescription">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//ShortDescription/base_Comment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//Description">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//Description/base_Comment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//Definition">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//Definition/base_Comment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//Requirements">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//Requirements/base_Comment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//Comments">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//Comments/base_Comment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//ValueSetBinding">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//ValueSetBinding/base_Property"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSetBinding/strength"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSetBinding/description"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSetBinding/valueSetUri"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSetBinding/valueSetReference"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

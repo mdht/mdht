@@ -72,8 +72,40 @@ public class FHIRAdapterFactory extends AdapterFactoryImpl {
 				return createTypeChoiceAdapter();
 			}
 			@Override
-			public Adapter caseStructureDef(StructureDef object) {
-				return createStructureDefAdapter();
+			public Adapter caseStructureDefinition(StructureDefinition object) {
+				return createStructureDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
+			}
+			@Override
+			public Adapter caseElementDefinition(ElementDefinition object) {
+				return createElementDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseShortDescription(ShortDescription object) {
+				return createShortDescriptionAdapter();
+			}
+			@Override
+			public Adapter caseDescription(Description object) {
+				return createDescriptionAdapter();
+			}
+			@Override
+			public Adapter caseDefinition(Definition object) {
+				return createDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseRequirements(Requirements object) {
+				return createRequirementsAdapter();
+			}
+			@Override
+			public Adapter caseComments(Comments object) {
+				return createCommentsAdapter();
+			}
+			@Override
+			public Adapter caseValueSetBinding(ValueSetBinding object) {
+				return createValueSetBindingAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -110,16 +142,128 @@ public class FHIRAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.StructureDef <em>Structure Def</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.StructureDefinition <em>Structure Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.mdht.uml.fhir.StructureDef
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition
 	 * @generated
 	 */
-	public Adapter createStructureDefAdapter() {
+	public Adapter createStructureDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.Element
+	 * @generated
+	 */
+	public Adapter createElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.ElementDefinition <em>Element Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition
+	 * @generated
+	 */
+	public Adapter createElementDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.ShortDescription <em>Short Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.ShortDescription
+	 * @generated
+	 */
+	public Adapter createShortDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.Description <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.Description
+	 * @generated
+	 */
+	public Adapter createDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.Definition <em>Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.Definition
+	 * @generated
+	 */
+	public Adapter createDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.Requirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.Requirements
+	 * @generated
+	 */
+	public Adapter createRequirementsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.Comments <em>Comments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.Comments
+	 * @generated
+	 */
+	public Adapter createCommentsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.ValueSetBinding <em>Value Set Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSetBinding
+	 * @generated
+	 */
+	public Adapter createValueSetBindingAdapter() {
 		return null;
 	}
 

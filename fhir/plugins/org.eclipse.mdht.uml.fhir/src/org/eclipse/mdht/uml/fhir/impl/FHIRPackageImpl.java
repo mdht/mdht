@@ -4,16 +4,26 @@ package org.eclipse.mdht.uml.fhir.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.mdht.uml.fhir.BindingStrengthKind;
+import org.eclipse.mdht.uml.fhir.Comments;
+import org.eclipse.mdht.uml.fhir.Definition;
+import org.eclipse.mdht.uml.fhir.Description;
+import org.eclipse.mdht.uml.fhir.Element;
+import org.eclipse.mdht.uml.fhir.ElementDefinition;
 import org.eclipse.mdht.uml.fhir.FHIRFactory;
 import org.eclipse.mdht.uml.fhir.FHIRPackage;
-import org.eclipse.mdht.uml.fhir.StructureDef;
+import org.eclipse.mdht.uml.fhir.Requirements;
+import org.eclipse.mdht.uml.fhir.ShortDescription;
+import org.eclipse.mdht.uml.fhir.StructureDefinition;
 import org.eclipse.mdht.uml.fhir.TypeChoice;
 
+import org.eclipse.mdht.uml.fhir.ValueSetBinding;
 import org.eclipse.uml2.types.TypesPackage;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -36,7 +46,70 @@ public class FHIRPackageImpl extends EPackageImpl implements FHIRPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass structureDefEClass = null;
+	private EClass structureDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass elementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass elementDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass shortDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass descriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass definitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requirementsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass commentsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass valueSetBindingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum bindingStrengthKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -134,8 +207,8 @@ public class FHIRPackageImpl extends EPackageImpl implements FHIRPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStructureDef() {
-		return structureDefEClass;
+	public EClass getStructureDefinition() {
+		return structureDefinitionEClass;
 	}
 
 	/**
@@ -143,8 +216,8 @@ public class FHIRPackageImpl extends EPackageImpl implements FHIRPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructureDef_Base_Class() {
-		return (EReference)structureDefEClass.getEStructuralFeatures().get(0);
+	public EReference getStructureDefinition_Base_Class() {
+		return (EReference)structureDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -152,8 +225,206 @@ public class FHIRPackageImpl extends EPackageImpl implements FHIRPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStructureDef_Url() {
-		return (EAttribute)structureDefEClass.getEStructuralFeatures().get(1);
+	public EAttribute getStructureDefinition_Uri() {
+		return (EAttribute)structureDefinitionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getElement() {
+		return elementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getElement_Id() {
+		return (EAttribute)elementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getElementDefinition() {
+		return elementDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getElementDefinition_Base_Property() {
+		return (EReference)elementDefinitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getElementDefinition_MustSupport() {
+		return (EAttribute)elementDefinitionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getShortDescription() {
+		return shortDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getShortDescription_Base_Comment() {
+		return (EReference)shortDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDescription() {
+		return descriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDescription_Base_Comment() {
+		return (EReference)descriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDefinition() {
+		return definitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDefinition_Base_Comment() {
+		return (EReference)definitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRequirements() {
+		return requirementsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirements_Base_Comment() {
+		return (EReference)requirementsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getComments() {
+		return commentsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComments_Base_Comment() {
+		return (EReference)commentsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getValueSetBinding() {
+		return valueSetBindingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getValueSetBinding_Base_Property() {
+		return (EReference)valueSetBindingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getValueSetBinding_Strength() {
+		return (EAttribute)valueSetBindingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getValueSetBinding_Description() {
+		return (EAttribute)valueSetBindingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getValueSetBinding_ValueSetUri() {
+		return (EAttribute)valueSetBindingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getValueSetBinding_ValueSetReference() {
+		return (EAttribute)valueSetBindingEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getBindingStrengthKind() {
+		return bindingStrengthKindEEnum;
 	}
 
 	/**
@@ -188,9 +459,41 @@ public class FHIRPackageImpl extends EPackageImpl implements FHIRPackage {
 		createEReference(typeChoiceEClass, TYPE_CHOICE__BASE_PROPERTY);
 		createEReference(typeChoiceEClass, TYPE_CHOICE__TYPES);
 
-		structureDefEClass = createEClass(STRUCTURE_DEF);
-		createEReference(structureDefEClass, STRUCTURE_DEF__BASE_CLASS);
-		createEAttribute(structureDefEClass, STRUCTURE_DEF__URL);
+		structureDefinitionEClass = createEClass(STRUCTURE_DEFINITION);
+		createEReference(structureDefinitionEClass, STRUCTURE_DEFINITION__BASE_CLASS);
+		createEAttribute(structureDefinitionEClass, STRUCTURE_DEFINITION__URI);
+
+		elementEClass = createEClass(ELEMENT);
+		createEAttribute(elementEClass, ELEMENT__ID);
+
+		elementDefinitionEClass = createEClass(ELEMENT_DEFINITION);
+		createEReference(elementDefinitionEClass, ELEMENT_DEFINITION__BASE_PROPERTY);
+		createEAttribute(elementDefinitionEClass, ELEMENT_DEFINITION__MUST_SUPPORT);
+
+		shortDescriptionEClass = createEClass(SHORT_DESCRIPTION);
+		createEReference(shortDescriptionEClass, SHORT_DESCRIPTION__BASE_COMMENT);
+
+		descriptionEClass = createEClass(DESCRIPTION);
+		createEReference(descriptionEClass, DESCRIPTION__BASE_COMMENT);
+
+		definitionEClass = createEClass(DEFINITION);
+		createEReference(definitionEClass, DEFINITION__BASE_COMMENT);
+
+		requirementsEClass = createEClass(REQUIREMENTS);
+		createEReference(requirementsEClass, REQUIREMENTS__BASE_COMMENT);
+
+		commentsEClass = createEClass(COMMENTS);
+		createEReference(commentsEClass, COMMENTS__BASE_COMMENT);
+
+		valueSetBindingEClass = createEClass(VALUE_SET_BINDING);
+		createEReference(valueSetBindingEClass, VALUE_SET_BINDING__BASE_PROPERTY);
+		createEAttribute(valueSetBindingEClass, VALUE_SET_BINDING__STRENGTH);
+		createEAttribute(valueSetBindingEClass, VALUE_SET_BINDING__DESCRIPTION);
+		createEAttribute(valueSetBindingEClass, VALUE_SET_BINDING__VALUE_SET_URI);
+		createEAttribute(valueSetBindingEClass, VALUE_SET_BINDING__VALUE_SET_REFERENCE);
+
+		// Create enums
+		bindingStrengthKindEEnum = createEEnum(BINDING_STRENGTH_KIND);
 	}
 
 	/**
@@ -225,15 +528,53 @@ public class FHIRPackageImpl extends EPackageImpl implements FHIRPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		structureDefinitionEClass.getESuperTypes().add(this.getElement());
+		elementDefinitionEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(typeChoiceEClass, TypeChoice.class, "TypeChoice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypeChoice_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, TypeChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTypeChoice_Types(), theUMLPackage.getClassifier(), null, "types", null, 0, -1, TypeChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(structureDefEClass, StructureDef.class, "StructureDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructureDef_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, StructureDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getStructureDef_Url(), theTypesPackage.getString(), "url", null, 0, 1, StructureDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(structureDefinitionEClass, StructureDefinition.class, "StructureDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStructureDefinition_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, StructureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStructureDefinition_Uri(), theTypesPackage.getString(), "uri", null, 0, 1, StructureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getElement_Id(), theTypesPackage.getString(), "id", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(elementDefinitionEClass, ElementDefinition.class, "ElementDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getElementDefinition_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, ElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getElementDefinition_MustSupport(), theTypesPackage.getBoolean(), "mustSupport", null, 0, 1, ElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(shortDescriptionEClass, ShortDescription.class, "ShortDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getShortDescription_Base_Comment(), theUMLPackage.getComment(), null, "base_Comment", null, 1, 1, ShortDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDescription_Base_Comment(), theUMLPackage.getComment(), null, "base_Comment", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDefinition_Base_Comment(), theUMLPackage.getComment(), null, "base_Comment", null, 1, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(requirementsEClass, Requirements.class, "Requirements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRequirements_Base_Comment(), theUMLPackage.getComment(), null, "base_Comment", null, 1, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(commentsEClass, Comments.class, "Comments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComments_Base_Comment(), theUMLPackage.getComment(), null, "base_Comment", null, 1, 1, Comments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(valueSetBindingEClass, ValueSetBinding.class, "ValueSetBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getValueSetBinding_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, ValueSetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetBinding_Strength(), this.getBindingStrengthKind(), "strength", null, 1, 1, ValueSetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetBinding_Description(), theTypesPackage.getString(), "description", null, 0, 1, ValueSetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetBinding_ValueSetUri(), theTypesPackage.getString(), "valueSetUri", null, 0, 1, ValueSetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetBinding_ValueSetReference(), theTypesPackage.getString(), "valueSetReference", null, 0, 1, ValueSetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(bindingStrengthKindEEnum, BindingStrengthKind.class, "BindingStrengthKind");
+		addEEnumLiteral(bindingStrengthKindEEnum, BindingStrengthKind.REQUIRED);
+		addEEnumLiteral(bindingStrengthKindEEnum, BindingStrengthKind.EXTENSIBLE);
+		addEEnumLiteral(bindingStrengthKindEEnum, BindingStrengthKind.PREFERRED);
+		addEEnumLiteral(bindingStrengthKindEEnum, BindingStrengthKind.EXAMPLE);
 
 		// Create resource
 		createResource(eNS_URI);
