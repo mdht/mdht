@@ -22,7 +22,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.mdht.uml.fhir.BindingStrengthKind;
 import org.eclipse.mdht.uml.fhir.TypeChoice;
+import org.eclipse.mdht.uml.fhir.ValueSetBinding;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -45,6 +47,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.hl7.fhir.ConstraintSeverityList;
 import org.hl7.fhir.ElementDefinition;
+import org.hl7.fhir.ElementDefinitionBinding;
 import org.hl7.fhir.ElementDefinitionConstraint;
 import org.hl7.fhir.ElementDefinitionType;
 import org.hl7.fhir.StructureDefinition;
@@ -306,8 +309,6 @@ public class ProfileImporter {
 		Package kindPackage = model.getNestedPackage(kindPackageName, true, UMLPackage.eINSTANCE.getPackage(), true);
 		
 		String profileClassName = structureDef.getId().getValue();
-		//TODO in UML profile, set ElementDefinition.id
-		
 		boolean isAbstract = structureDef.getAbstract().isValue();
 		Class profileClass = kindPackage.createOwnedClass(profileClassName, isAbstract);
 		
@@ -316,14 +317,25 @@ public class ProfileImporter {
 		referenceModelTypeForURI.put(structureDef.getUrl().getValue(), profileClass);
 		//TODO in UML profile, set ElementDefinition.uri
 		
+		Profile fhirProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getTypeChoice().getEPackage(), profileClass);
+		if (fhirProfile != null) {
+			org.eclipse.mdht.uml.fhir.StructureDefinition structureDefStereotype = (org.eclipse.mdht.uml.fhir.StructureDefinition) UMLUtil.safeApplyStereotype(profileClass, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getStructureDefinition().getName()));
+			structureDefStereotype.setUri(structureDef.getUrl().getValue());
+			if (structureDef.getId() != null) {
+				structureDefStereotype.setId(structureDef.getId().getValue());
+			}
+		}
+		
 		//TODO apply UML stereotypes for kinds of Comment
 		if (structureDef.getDescription() != null) {
 			Comment description = profileClass.createOwnedComment();
 			description.setBody(structureDef.getDescription().getValue());
+			UMLUtil.safeApplyStereotype(description, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getDescription().getName()));
 		}
 		if (structureDef.getRequirements() != null) {
 			Comment requirements = profileClass.createOwnedComment();
 			requirements.setBody(structureDef.getRequirements().getValue());
+			UMLUtil.safeApplyStereotype(requirements, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getRequirements().getName()));
 		}
 		
 		// Element has base = Element, check for circular generalization
@@ -512,6 +524,32 @@ public class ProfileImporter {
 			elementPathMap.put(path, property);
 			assignMultiplicity(property, elementDef);
 			
+			if (fhirProfile != null) {
+				org.eclipse.mdht.uml.fhir.ElementDefinition elementDefStereotype = (org.eclipse.mdht.uml.fhir.ElementDefinition) UMLUtil.safeApplyStereotype(property, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getElementDefinition().getName()));
+				if (elementDef.getId() != null) {
+					elementDefStereotype.setId(elementDef.getId());
+				}
+				if (elementDef.getMustSupport() != null) {
+					//TODO stereotype Boolean, not boolean
+//					elementDefStereotype.setMustSupport(elementDef.getMustSupport());
+				}
+				
+				if (elementDef.getBinding() != null) {
+					ElementDefinitionBinding binding = elementDef.getBinding();
+					ValueSetBinding valueSetBinding = (ValueSetBinding) UMLUtil.safeApplyStereotype(property, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getValueSetBinding().getName()));
+					valueSetBinding.setStrength(BindingStrengthKind.get(binding.getStrength().getValue().getLiteral()));
+					if (binding.getDescription() != null) {
+						valueSetBinding.setDescription(binding.getDescription().getValue());
+					}
+					if (binding.getValueSetUri() != null) {
+						valueSetBinding.setValueSetUri(binding.getValueSetUri().getValue());
+					}
+					if (binding.getValueSetReference() != null) {
+						valueSetBinding.setValueSetReference(binding.getValueSetReference().getReference().getValue());
+					}
+				}
+			}
+			
 			// skip for prohibited elements in constraint profiles
 			if (!isProhibitedElement) {
 				property.setIsOrdered(true);
@@ -552,13 +590,16 @@ public class ProfileImporter {
 	}
 	
 	private void addComments(Element umlElement, ElementDefinition elementDef) {
+		Profile fhirProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getTypeChoice().getEPackage(), umlElement);
 		if (elementDef.getShort() != null) {
 			Comment comment = umlElement.createOwnedComment();
 			comment.setBody(elementDef.getShort().getValue());
+			UMLUtil.safeApplyStereotype(comment, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getShortDescription().getName()));
 		}
 		if (elementDef.getDefinition() != null) {
 			Comment comment = umlElement.createOwnedComment();
 			comment.setBody(elementDef.getDefinition().getValue());
+			UMLUtil.safeApplyStereotype(comment, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getDefinition().getName()));
 			
 			// assure that definition is first comment, for display in UML tooling
 			umlElement.getOwnedComments().move(0, comment);
@@ -566,10 +607,12 @@ public class ProfileImporter {
 		if (elementDef.getComments() != null) {
 			Comment comment = umlElement.createOwnedComment();
 			comment.setBody(elementDef.getComments().getValue());
+			UMLUtil.safeApplyStereotype(comment, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getComments().getName()));
 		}
 		if (elementDef.getRequirements() != null) {
 			Comment comment = umlElement.createOwnedComment();
 			comment.setBody(elementDef.getRequirements().getValue());
+			UMLUtil.safeApplyStereotype(comment, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getRequirements().getName()));
 		}
 	}
 
