@@ -45,6 +45,7 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.hl7.fhir.Bundle;
 import org.hl7.fhir.ConstraintSeverityList;
 import org.hl7.fhir.ElementDefinition;
 import org.hl7.fhir.ElementDefinitionBinding;
@@ -91,6 +92,8 @@ public class ProfileImporter {
 	
 	private Map<String,Type> referenceModelTypeForName = new HashMap<String,Type>();
 	private Map<String,Type> referenceModelTypeForURI = new HashMap<String,Type>();
+	
+	private Map<String,StructureDefinition> bundleMap = new HashMap<String,StructureDefinition>();
 	
 	public ProfileImporter(Package model, IContainer cemlFolder) {
 		this.model = model;
@@ -222,6 +225,25 @@ public class ProfileImporter {
 		return umlClass;
 	}
 	
+	public void importBundle(Bundle bundle) {
+		TreeIterator<?> iterator = EcoreUtil.getAllContents(Collections.singletonList(bundle));
+
+		// map all structure definitions in the bundle, to allow forward references
+		while (iterator != null && iterator.hasNext()) {
+			Object child = iterator.next();
+			if (child instanceof StructureDefinition) {
+				bundleMap.put(((StructureDefinition)child).getId().getValue(), ((StructureDefinition)child));
+				iterator.prune();
+			}
+		}
+		
+		// import each structure definition
+		for (StructureDefinition definition : bundleMap.values()) {
+			importProfile(definition);
+		}
+		bundleMap.clear();
+	}
+	
 	public Class importProfile(URI profileURI) {
 		Class umlClass = null;
 		ResourceFactoryImpl resourceFactory = new FhirResourceFactoryImpl();
@@ -238,6 +260,10 @@ public class ProfileImporter {
 
 		while (iterator != null && iterator.hasNext()) {
 			Object child = iterator.next();
+			if (child instanceof Bundle) {
+				importBundle((Bundle)child);
+				iterator.prune();
+			}
 			if (child instanceof StructureDefinition) {
 				umlClass = importProfile((StructureDefinition)child);
 				iterator.prune();
@@ -269,16 +295,22 @@ public class ProfileImporter {
 	public Class importProfile(String profileName) {
 		Class umlClass = (Class) referenceModelTypeForName.get(profileName);
 		if (umlClass == null) {
-			IFile profileFile = fhirProfileFolder.getFile(new Path(profileName.toLowerCase() + ".xml"));
-			
-			if (profileFile.exists()) {
-				umlClass = importProfile(profileFile);
-			}
-			else if (profileName.indexOf(".profile") == -1) {
-				return importProfile(profileName.toLowerCase() + ".profile");
+			StructureDefinition structureDefinition = bundleMap.get(profileName);
+			if (structureDefinition != null) {
+				return importProfile(structureDefinition);
 			}
 			else {
-				System.err.println("Cannot find Profile: " + profileName);
+				IFile profileFile = fhirProfileFolder.getFile(new Path(profileName.toLowerCase() + ".xml"));
+				
+				if (profileFile.exists()) {
+					umlClass = importProfile(profileFile);
+				}
+				else if (profileName.indexOf(".profile") == -1) {
+					return importProfile(profileName.toLowerCase() + ".profile");
+				}
+				else {
+					System.err.println("Cannot find Profile: " + profileName);
+				}
 			}
 		}
 		
@@ -446,6 +478,11 @@ public class ProfileImporter {
 					}
 				}
 				
+				if (ownerClass == null) {
+					System.err.println("Cannot find owner class, structDef: " + structureDef.getId().getValue() + " path: " + elementDef.getPath().getValue());
+					continue;
+				}
+				
 				/*
 				String ownerClassPath = path.substring(0, path.lastIndexOf("."));
 				ownerClass = elementClassMap.get(ownerClassPath);
@@ -473,6 +510,17 @@ public class ProfileImporter {
 			 // add inherited property type to typeList.
 			boolean isProhibitedElement = elementDef.getMax() != null && "0".equals(elementDef.getMax().getValue());
 			String propertyName = getPropertyName(elementDef);
+			
+			//TODO this is a temporary hack until a more general solution is available
+			if ("valueQuantity".equals(propertyName)) {
+				propertyName = "value[x]";
+				Class quantityType = importProfile("Quantity");
+				if (quantityType != null) {
+					typeList.clear();
+					typeList.add(quantityType);
+				}
+			}
+			
 			Property inheritedProperty = org.openhealthtools.mdht.uml.common.util.UMLUtil.getInheritedProperty(ownerClass, propertyName);
 			if (!isProhibitedElement && typeList.isEmpty() && inheritedProperty != null 
 					&& inheritedProperty.getType() instanceof Classifier) {
@@ -645,10 +693,10 @@ public class ProfileImporter {
 
 	private String getUniqueNestedClassifierName(Class owner, String name) {
 		int seqNo = 1;
-		String uniqueName = name + String.valueOf(seqNo++);
+		String uniqueName = name + "-" + seqNo;
 
 		while (null != owner.getNestedClassifier(uniqueName)) {
-			uniqueName = name + String.valueOf(seqNo++);
+			uniqueName = name + "-" + String.valueOf(seqNo++);
 		}
 
 		return uniqueName;
@@ -799,9 +847,11 @@ public class ProfileImporter {
 				// Replace property type with a new nested class derived from prior type.
 				// If owner property does not have nested type, create a nested type extending its current type.
 				
-//				String nestedClassName = getClassName(elementDef);
 				Class propertySupertype = (Class) ownerProperty.getType();
 				String nestedClassName =  propertySupertype.getName();
+//				if (!nestedClassName.endsWith("_Nested")) {
+//					nestedClassName += "_Nested";
+//				}
 				nestedClassName = getUniqueNestedClassifierName(ownerProperty.getClass_(), nestedClassName);
 				ownerClass = (Class) ownerProperty.getClass_().createNestedClassifier(nestedClassName, UMLPackage.eINSTANCE.getClass_());
 				ownerClass.createGeneralization(propertySupertype);
