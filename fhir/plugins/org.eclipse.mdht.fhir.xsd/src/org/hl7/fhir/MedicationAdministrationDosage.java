@@ -9,9 +9,7 @@ package org.hl7.fhir;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.
- * 
- * Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
+ * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.  Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -114,9 +112,7 @@ public interface MedicationAdministrationDosage extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A coded value indicating the method by which the medication was introduced into or onto the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.
-	 * 
-	 * Terminologies used often pre-coordinate this term with the route and or form of administration.
+	 * A coded value indicating the method by which the medication was introduced into or onto the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.  Terminologies used often pre-coordinate this term with the route and or form of administration.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Method</em>' containment reference.
 	 * @see #setMethod(CodeableConcept)
@@ -145,13 +141,13 @@ public interface MedicationAdministrationDosage extends BackboneElement {
 	 * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quantity</em>' containment reference.
-	 * @see #setQuantity(Quantity)
+	 * @see #setQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getMedicationAdministrationDosage_Quantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='quantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getQuantity();
+	SimpleQuantity getQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.MedicationAdministrationDosage#getQuantity <em>Quantity</em>}' containment reference.
@@ -161,7 +157,7 @@ public interface MedicationAdministrationDosage extends BackboneElement {
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	void setQuantity(Quantity value);
+	void setQuantity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Rate</b></em>' containment reference.

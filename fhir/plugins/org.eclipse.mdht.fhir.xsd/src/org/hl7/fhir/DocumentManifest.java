@@ -153,7 +153,7 @@ public interface DocumentManifest extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Identifies who is responsible for adding the information to the document.
+	 * Identifies who is responsible for creating the manifest, and adding  documents to it.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getDocumentManifest_Author()

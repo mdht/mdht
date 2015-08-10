@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -49,14 +49,19 @@
               <xs:documentation xml:lang="en">Identifier for the organization that is used to identify the organization across multiple disparate systems.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A name associated with the organization.</xs:documentation>
+              <xs:documentation xml:lang="en">Whether the organization's record is still in active use.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The kind of organization that this is.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A name associated with the organization.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="telecom" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
@@ -77,11 +82,6 @@
           <xs:element name="contact" type="Organization.Contact" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Contact for the organization for a certain purpose.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Whether the organization's record is still in active use.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

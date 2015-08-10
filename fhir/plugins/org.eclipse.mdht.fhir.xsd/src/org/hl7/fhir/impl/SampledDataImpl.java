@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.Decimal;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.PositiveInt;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.SampledData;
 import org.hl7.fhir.SampledDataDataType;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +45,7 @@ public class SampledDataImpl extends ElementImpl implements SampledData {
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity origin;
+	protected SimpleQuantity origin;
 
 	/**
 	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' containment reference.
@@ -131,7 +131,7 @@ public class SampledDataImpl extends ElementImpl implements SampledData {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getOrigin() {
+	public SimpleQuantity getOrigin() {
 		return origin;
 	}
 
@@ -140,8 +140,8 @@ public class SampledDataImpl extends ElementImpl implements SampledData {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOrigin(Quantity newOrigin, NotificationChain msgs) {
-		Quantity oldOrigin = origin;
+	public NotificationChain basicSetOrigin(SimpleQuantity newOrigin, NotificationChain msgs) {
+		SimpleQuantity oldOrigin = origin;
 		origin = newOrigin;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SAMPLED_DATA__ORIGIN, oldOrigin, newOrigin);
@@ -155,7 +155,7 @@ public class SampledDataImpl extends ElementImpl implements SampledData {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOrigin(Quantity newOrigin) {
+	public void setOrigin(SimpleQuantity newOrigin) {
 		if (newOrigin != origin) {
 			NotificationChain msgs = null;
 			if (origin != null)
@@ -488,7 +488,7 @@ public class SampledDataImpl extends ElementImpl implements SampledData {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FhirPackage.SAMPLED_DATA__ORIGIN:
-				setOrigin((Quantity)newValue);
+				setOrigin((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.SAMPLED_DATA__PERIOD:
 				setPeriod((Decimal)newValue);
@@ -521,7 +521,7 @@ public class SampledDataImpl extends ElementImpl implements SampledData {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FhirPackage.SAMPLED_DATA__ORIGIN:
-				setOrigin((Quantity)null);
+				setOrigin((SimpleQuantity)null);
 				return;
 			case FhirPackage.SAMPLED_DATA__PERIOD:
 				setPeriod((Decimal)null);

@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.MedicationStatementDosage;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Ratio;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.Timing;
 
 /**
@@ -118,7 +118,7 @@ public class MedicationStatementDosageImpl extends BackboneElementImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getRate() <em>Rate</em>}' containment reference.
@@ -465,7 +465,7 @@ public class MedicationStatementDosageImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -474,8 +474,8 @@ public class MedicationStatementDosageImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_STATEMENT_DOSAGE__QUANTITY, oldQuantity, newQuantity);
@@ -489,7 +489,7 @@ public class MedicationStatementDosageImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -683,7 +683,7 @@ public class MedicationStatementDosageImpl extends BackboneElementImpl implement
 				setMethod((CodeableConcept)newValue);
 				return;
 			case FhirPackage.MEDICATION_STATEMENT_DOSAGE__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.MEDICATION_STATEMENT_DOSAGE__RATE:
 				setRate((Ratio)newValue);
@@ -725,7 +725,7 @@ public class MedicationStatementDosageImpl extends BackboneElementImpl implement
 				setMethod((CodeableConcept)null);
 				return;
 			case FhirPackage.MEDICATION_STATEMENT_DOSAGE__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.MEDICATION_STATEMENT_DOSAGE__RATE:
 				setRate((Ratio)null);

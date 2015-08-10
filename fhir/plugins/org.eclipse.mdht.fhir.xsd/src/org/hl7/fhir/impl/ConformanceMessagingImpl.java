@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.ConformanceEndpoint;
 import org.hl7.fhir.ConformanceEvent;
 import org.hl7.fhir.ConformanceMessaging;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.UnsignedInt;
-import org.hl7.fhir.Uri;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +41,14 @@ import org.hl7.fhir.Uri;
  */
 public class ConformanceMessagingImpl extends BackboneElementImpl implements ConformanceMessaging {
 	/**
-	 * The cached value of the '{@link #getEndpoint() <em>Endpoint</em>}' containment reference.
+	 * The cached value of the '{@link #getEndpoint() <em>Endpoint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEndpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected Uri endpoint;
+	protected EList<ConformanceEndpoint> endpoint;
 
 	/**
 	 * The cached value of the '{@link #getReliableCache() <em>Reliable Cache</em>}' containment reference.
@@ -104,42 +104,11 @@ public class ConformanceMessagingImpl extends BackboneElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Uri getEndpoint() {
+	public EList<ConformanceEndpoint> getEndpoint() {
+		if (endpoint == null) {
+			endpoint = new EObjectContainmentEList<ConformanceEndpoint>(ConformanceEndpoint.class, this, FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT);
+		}
 		return endpoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEndpoint(Uri newEndpoint, NotificationChain msgs) {
-		Uri oldEndpoint = endpoint;
-		endpoint = newEndpoint;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT, oldEndpoint, newEndpoint);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEndpoint(Uri newEndpoint) {
-		if (newEndpoint != endpoint) {
-			NotificationChain msgs = null;
-			if (endpoint != null)
-				msgs = ((InternalEObject)endpoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT, null, msgs);
-			if (newEndpoint != null)
-				msgs = ((InternalEObject)newEndpoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT, null, msgs);
-			msgs = basicSetEndpoint(newEndpoint, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT, newEndpoint, newEndpoint));
 	}
 
 	/**
@@ -249,7 +218,7 @@ public class ConformanceMessagingImpl extends BackboneElementImpl implements Con
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT:
-				return basicSetEndpoint(null, msgs);
+				return ((InternalEList<?>)getEndpoint()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_MESSAGING__RELIABLE_CACHE:
 				return basicSetReliableCache(null, msgs);
 			case FhirPackage.CONFORMANCE_MESSAGING__DOCUMENTATION:
@@ -290,7 +259,8 @@ public class ConformanceMessagingImpl extends BackboneElementImpl implements Con
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT:
-				setEndpoint((Uri)newValue);
+				getEndpoint().clear();
+				getEndpoint().addAll((Collection<? extends ConformanceEndpoint>)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_MESSAGING__RELIABLE_CACHE:
 				setReliableCache((UnsignedInt)newValue);
@@ -315,7 +285,7 @@ public class ConformanceMessagingImpl extends BackboneElementImpl implements Con
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT:
-				setEndpoint((Uri)null);
+				getEndpoint().clear();
 				return;
 			case FhirPackage.CONFORMANCE_MESSAGING__RELIABLE_CACHE:
 				setReliableCache((UnsignedInt)null);
@@ -339,7 +309,7 @@ public class ConformanceMessagingImpl extends BackboneElementImpl implements Con
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FhirPackage.CONFORMANCE_MESSAGING__ENDPOINT:
-				return endpoint != null;
+				return endpoint != null && !endpoint.isEmpty();
 			case FhirPackage.CONFORMANCE_MESSAGING__RELIABLE_CACHE:
 				return reliableCache != null;
 			case FhirPackage.CONFORMANCE_MESSAGING__DOCUMENTATION:

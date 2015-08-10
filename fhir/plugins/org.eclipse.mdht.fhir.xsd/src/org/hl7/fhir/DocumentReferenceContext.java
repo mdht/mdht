@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.hl7.fhir.DocumentReferenceContext#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentReferenceContext#getEvent <em>Event</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentReferenceContext#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentReferenceContext#getFacilityType <em>Facility Type</em>}</li>
@@ -30,6 +31,32 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface DocumentReferenceContext extends BackboneElement {
+	/**
+	 * Returns the value of the '<em><b>Encounter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Describes the clinical encounter or type of care that the document content is associated with.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Encounter</em>' containment reference.
+	 * @see #setEncounter(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentReferenceContext_Encounter()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='encounter' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getEncounter();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentReferenceContext#getEncounter <em>Encounter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encounter</em>' containment reference.
+	 * @see #getEncounter()
+	 * @generated
+	 */
+	void setEncounter(Reference value);
+
 	/**
 	 * Returns the value of the '<em><b>Event</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.

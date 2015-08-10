@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -46,7 +46,7 @@
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute url that is used to identify this operation definition when it is referenced in a specification, model, design or an instance (should be globally unique uri).</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -59,6 +59,21 @@
               <xs:documentation xml:lang="en">A free text natural language name identifying the operation.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of the profile.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="kind" minOccurs="1" maxOccurs="1" type="OperationKind">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether this is operation or named query.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This profile was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The name of the individual or organization that published the operation definition.</xs:documentation>
@@ -69,6 +84,11 @@
               <xs:documentation xml:lang="en">Contacts to assist a user in finding and communicating with the publisher.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date that this version of the profile was published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the Operation Definition changes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A free text natural language description of the profile and its use.</xs:documentation>
@@ -77,26 +97,6 @@
           <xs:element name="requirements" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Explains why this operation definition is needed and why it's been constrained as it has.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="code">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the profile.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">This profile was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date that this version of the profile was published.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="kind" minOccurs="1" maxOccurs="1" type="OperationKind">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Whether this is operation or named query.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="idempotent" minOccurs="0" maxOccurs="1" type="boolean">

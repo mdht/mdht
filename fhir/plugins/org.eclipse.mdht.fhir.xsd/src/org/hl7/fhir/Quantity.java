@@ -19,7 +19,7 @@ package org.hl7.fhir;
  * <ul>
  *   <li>{@link org.hl7.fhir.Quantity#getValue <em>Value</em>}</li>
  *   <li>{@link org.hl7.fhir.Quantity#getComparator <em>Comparator</em>}</li>
- *   <li>{@link org.hl7.fhir.Quantity#getUnits <em>Units</em>}</li>
+ *   <li>{@link org.hl7.fhir.Quantity#getUnit <em>Unit</em>}</li>
  *   <li>{@link org.hl7.fhir.Quantity#getSystem <em>System</em>}</li>
  *   <li>{@link org.hl7.fhir.Quantity#getCode <em>Code</em>}</li>
  * </ul>
@@ -82,30 +82,30 @@ public interface Quantity extends Element {
 	void setComparator(QuantityComparator value);
 
 	/**
-	 * Returns the value of the '<em><b>Units</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A human-readable form of the units.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Units</em>' containment reference.
-	 * @see #setUnits(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getQuantity_Units()
+	 * @return the value of the '<em>Unit</em>' containment reference.
+	 * @see #setUnit(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getQuantity_Unit()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='units' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='unit' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getUnits();
+	org.hl7.fhir.String getUnit();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Quantity#getUnits <em>Units</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Quantity#getUnit <em>Unit</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Units</em>' containment reference.
-	 * @see #getUnits()
+	 * @param value the new value of the '<em>Unit</em>' containment reference.
+	 * @see #getUnit()
 	 * @generated
 	 */
-	void setUnits(org.hl7.fhir.String value);
+	void setUnit(org.hl7.fhir.String value);
 
 	/**
 	 * Returns the value of the '<em><b>System</b></em>' containment reference.

@@ -57,7 +57,7 @@ public interface Period extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The end of the period. If the end of the period is missing, it means that the period is ongoing.
+	 * The end of the period. If the end of the period is missing, it means that the period is ongoing. The start mey be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>End</em>' containment reference.
 	 * @see #setEnd(DateTime)

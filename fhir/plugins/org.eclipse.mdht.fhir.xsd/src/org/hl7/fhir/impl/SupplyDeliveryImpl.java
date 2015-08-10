@@ -22,8 +22,8 @@ import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Period;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.SupplyDelivery;
 import org.hl7.fhir.SupplyDeliveryStatus;
 
@@ -99,7 +99,7 @@ public class SupplyDeliveryImpl extends DomainResourceImpl implements SupplyDeli
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getSuppliedItem() <em>Supplied Item</em>}' containment reference.
@@ -357,7 +357,7 @@ public class SupplyDeliveryImpl extends DomainResourceImpl implements SupplyDeli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -366,8 +366,8 @@ public class SupplyDeliveryImpl extends DomainResourceImpl implements SupplyDeli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SUPPLY_DELIVERY__QUANTITY, oldQuantity, newQuantity);
@@ -381,7 +381,7 @@ public class SupplyDeliveryImpl extends DomainResourceImpl implements SupplyDeli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -712,7 +712,7 @@ public class SupplyDeliveryImpl extends DomainResourceImpl implements SupplyDeli
 				setType((CodeableConcept)newValue);
 				return;
 			case FhirPackage.SUPPLY_DELIVERY__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.SUPPLY_DELIVERY__SUPPLIED_ITEM:
 				setSuppliedItem((Reference)newValue);
@@ -758,7 +758,7 @@ public class SupplyDeliveryImpl extends DomainResourceImpl implements SupplyDeli
 				setType((CodeableConcept)null);
 				return;
 			case FhirPackage.SUPPLY_DELIVERY__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.SUPPLY_DELIVERY__SUPPLIED_ITEM:
 				setSuppliedItem((Reference)null);

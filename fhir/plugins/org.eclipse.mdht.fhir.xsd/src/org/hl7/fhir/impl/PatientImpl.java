@@ -43,6 +43,7 @@ import org.hl7.fhir.Reference;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.PatientImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.PatientImpl#getActive <em>Active</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.PatientImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.PatientImpl#getTelecom <em>Telecom</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.PatientImpl#getGender <em>Gender</em>}</li>
@@ -60,7 +61,6 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.PatientImpl#getCareProvider <em>Care Provider</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.PatientImpl#getManagingOrganization <em>Managing Organization</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.PatientImpl#getLink <em>Link</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.PatientImpl#getActive <em>Active</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,6 +75,16 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 	 * @ordered
 	 */
 	protected EList<Identifier> identifier;
+
+	/**
+	 * The cached value of the '{@link #getActive() <em>Active</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActive()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Boolean active;
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference list.
@@ -247,16 +257,6 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 	protected EList<PatientLink> link;
 
 	/**
-	 * The cached value of the '{@link #getActive() <em>Active</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActive()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.Boolean active;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -285,6 +285,49 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 			identifier = new EObjectContainmentEList<Identifier>(Identifier.class, this, FhirPackage.PATIENT__IDENTIFIER);
 		}
 		return identifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.Boolean getActive() {
+		return active;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetActive(org.hl7.fhir.Boolean newActive, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldActive = active;
+		active = newActive;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PATIENT__ACTIVE, oldActive, newActive);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActive(org.hl7.fhir.Boolean newActive) {
+		if (newActive != active) {
+			NotificationChain msgs = null;
+			if (active != null)
+				msgs = ((InternalEObject)active).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PATIENT__ACTIVE, null, msgs);
+			if (newActive != null)
+				msgs = ((InternalEObject)newActive).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PATIENT__ACTIVE, null, msgs);
+			msgs = basicSetActive(newActive, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.PATIENT__ACTIVE, newActive, newActive));
 	}
 
 	/**
@@ -775,54 +818,13 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.Boolean getActive() {
-		return active;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetActive(org.hl7.fhir.Boolean newActive, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldActive = active;
-		active = newActive;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PATIENT__ACTIVE, oldActive, newActive);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setActive(org.hl7.fhir.Boolean newActive) {
-		if (newActive != active) {
-			NotificationChain msgs = null;
-			if (active != null)
-				msgs = ((InternalEObject)active).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PATIENT__ACTIVE, null, msgs);
-			if (newActive != null)
-				msgs = ((InternalEObject)newActive).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PATIENT__ACTIVE, null, msgs);
-			msgs = basicSetActive(newActive, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.PATIENT__ACTIVE, newActive, newActive));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FhirPackage.PATIENT__IDENTIFIER:
 				return ((InternalEList<?>)getIdentifier()).basicRemove(otherEnd, msgs);
+			case FhirPackage.PATIENT__ACTIVE:
+				return basicSetActive(null, msgs);
 			case FhirPackage.PATIENT__NAME:
 				return ((InternalEList<?>)getName()).basicRemove(otherEnd, msgs);
 			case FhirPackage.PATIENT__TELECOM:
@@ -857,8 +859,6 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 				return basicSetManagingOrganization(null, msgs);
 			case FhirPackage.PATIENT__LINK:
 				return ((InternalEList<?>)getLink()).basicRemove(otherEnd, msgs);
-			case FhirPackage.PATIENT__ACTIVE:
-				return basicSetActive(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -873,6 +873,8 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 		switch (featureID) {
 			case FhirPackage.PATIENT__IDENTIFIER:
 				return getIdentifier();
+			case FhirPackage.PATIENT__ACTIVE:
+				return getActive();
 			case FhirPackage.PATIENT__NAME:
 				return getName();
 			case FhirPackage.PATIENT__TELECOM:
@@ -907,8 +909,6 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 				return getManagingOrganization();
 			case FhirPackage.PATIENT__LINK:
 				return getLink();
-			case FhirPackage.PATIENT__ACTIVE:
-				return getActive();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -925,6 +925,9 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 			case FhirPackage.PATIENT__IDENTIFIER:
 				getIdentifier().clear();
 				getIdentifier().addAll((Collection<? extends Identifier>)newValue);
+				return;
+			case FhirPackage.PATIENT__ACTIVE:
+				setActive((org.hl7.fhir.Boolean)newValue);
 				return;
 			case FhirPackage.PATIENT__NAME:
 				getName().clear();
@@ -985,9 +988,6 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 				getLink().clear();
 				getLink().addAll((Collection<? extends PatientLink>)newValue);
 				return;
-			case FhirPackage.PATIENT__ACTIVE:
-				setActive((org.hl7.fhir.Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1002,6 +1002,9 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 		switch (featureID) {
 			case FhirPackage.PATIENT__IDENTIFIER:
 				getIdentifier().clear();
+				return;
+			case FhirPackage.PATIENT__ACTIVE:
+				setActive((org.hl7.fhir.Boolean)null);
 				return;
 			case FhirPackage.PATIENT__NAME:
 				getName().clear();
@@ -1054,9 +1057,6 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 			case FhirPackage.PATIENT__LINK:
 				getLink().clear();
 				return;
-			case FhirPackage.PATIENT__ACTIVE:
-				setActive((org.hl7.fhir.Boolean)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1071,6 +1071,8 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 		switch (featureID) {
 			case FhirPackage.PATIENT__IDENTIFIER:
 				return identifier != null && !identifier.isEmpty();
+			case FhirPackage.PATIENT__ACTIVE:
+				return active != null;
 			case FhirPackage.PATIENT__NAME:
 				return name != null && !name.isEmpty();
 			case FhirPackage.PATIENT__TELECOM:
@@ -1105,8 +1107,6 @@ public class PatientImpl extends DomainResourceImpl implements Patient {
 				return managingOrganization != null;
 			case FhirPackage.PATIENT__LINK:
 				return link != null && !link.isEmpty();
-			case FhirPackage.PATIENT__ACTIVE:
-				return active != null;
 		}
 		return super.eIsSet(featureID);
 	}

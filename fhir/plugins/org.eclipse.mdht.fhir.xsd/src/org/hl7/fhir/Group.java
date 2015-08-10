@@ -34,30 +34,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Group extends DomainResource {
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Identifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A unique business identifier for this group.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Identifier</em>' containment reference.
-	 * @see #setIdentifier(Identifier)
+	 * @return the value of the '<em>Identifier</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getGroup_Identifier()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='identifier' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Identifier getIdentifier();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Group#getIdentifier <em>Identifier</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' containment reference.
-	 * @see #getIdentifier()
-	 * @generated
-	 */
-	void setIdentifier(Identifier value);
+	EList<Identifier> getIdentifier();
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
@@ -207,7 +197,7 @@ public interface Group extends DomainResource {
 
 	/**
 	 * Returns the value of the '<em><b>Member</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.Reference}.
+	 * The list contents are of type {@link org.hl7.fhir.GroupMember}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -219,6 +209,6 @@ public interface Group extends DomainResource {
 	 *        extendedMetaData="kind='element' name='member' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Reference> getMember();
+	EList<GroupMember> getMember();
 
 } // Group

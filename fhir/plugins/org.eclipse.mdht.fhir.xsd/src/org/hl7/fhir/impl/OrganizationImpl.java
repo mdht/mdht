@@ -35,13 +35,13 @@ import org.hl7.fhir.Reference;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getActive <em>Active</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getTelecom <em>Telecom</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getContact <em>Contact</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OrganizationImpl#getActive <em>Active</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +58,14 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 	protected EList<Identifier> identifier;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+	 * The cached value of the '{@link #getActive() <em>Active</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getActive()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String name;
+	protected org.hl7.fhir.Boolean active;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -76,6 +76,16 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 	 * @ordered
 	 */
 	protected CodeableConcept type;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String name;
 
 	/**
 	 * The cached value of the '{@link #getTelecom() <em>Telecom</em>}' containment reference list.
@@ -118,16 +128,6 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 	protected EList<OrganizationContact> contact;
 
 	/**
-	 * The cached value of the '{@link #getActive() <em>Active</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActive()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.Boolean active;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -163,8 +163,8 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getName() {
-		return name;
+	public org.hl7.fhir.Boolean getActive() {
+		return active;
 	}
 
 	/**
@@ -172,11 +172,11 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetName(org.hl7.fhir.String newName, NotificationChain msgs) {
-		org.hl7.fhir.String oldName = name;
-		name = newName;
+	public NotificationChain basicSetActive(org.hl7.fhir.Boolean newActive, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldActive = active;
+		active = newActive;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__NAME, oldName, newName);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__ACTIVE, oldActive, newActive);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -187,18 +187,18 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(org.hl7.fhir.String newName) {
-		if (newName != name) {
+	public void setActive(org.hl7.fhir.Boolean newActive) {
+		if (newActive != active) {
 			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__NAME, null, msgs);
-			msgs = basicSetName(newName, msgs);
+			if (active != null)
+				msgs = ((InternalEObject)active).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__ACTIVE, null, msgs);
+			if (newActive != null)
+				msgs = ((InternalEObject)newActive).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__ACTIVE, null, msgs);
+			msgs = basicSetActive(newActive, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__NAME, newName, newName));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__ACTIVE, newActive, newActive));
 	}
 
 	/**
@@ -242,6 +242,49 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__TYPE, newType, newType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetName(org.hl7.fhir.String newName, NotificationChain msgs) {
+		org.hl7.fhir.String oldName = name;
+		name = newName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__NAME, oldName, newName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(org.hl7.fhir.String newName) {
+		if (newName != name) {
+			NotificationChain msgs = null;
+			if (name != null)
+				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__NAME, null, msgs);
+			if (newName != null)
+				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__NAME, null, msgs);
+			msgs = basicSetName(newName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__NAME, newName, newName));
 	}
 
 	/**
@@ -328,58 +371,17 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.Boolean getActive() {
-		return active;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetActive(org.hl7.fhir.Boolean newActive, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldActive = active;
-		active = newActive;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__ACTIVE, oldActive, newActive);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setActive(org.hl7.fhir.Boolean newActive) {
-		if (newActive != active) {
-			NotificationChain msgs = null;
-			if (active != null)
-				msgs = ((InternalEObject)active).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__ACTIVE, null, msgs);
-			if (newActive != null)
-				msgs = ((InternalEObject)newActive).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ORGANIZATION__ACTIVE, null, msgs);
-			msgs = basicSetActive(newActive, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ORGANIZATION__ACTIVE, newActive, newActive));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FhirPackage.ORGANIZATION__IDENTIFIER:
 				return ((InternalEList<?>)getIdentifier()).basicRemove(otherEnd, msgs);
-			case FhirPackage.ORGANIZATION__NAME:
-				return basicSetName(null, msgs);
+			case FhirPackage.ORGANIZATION__ACTIVE:
+				return basicSetActive(null, msgs);
 			case FhirPackage.ORGANIZATION__TYPE:
 				return basicSetType(null, msgs);
+			case FhirPackage.ORGANIZATION__NAME:
+				return basicSetName(null, msgs);
 			case FhirPackage.ORGANIZATION__TELECOM:
 				return ((InternalEList<?>)getTelecom()).basicRemove(otherEnd, msgs);
 			case FhirPackage.ORGANIZATION__ADDRESS:
@@ -388,8 +390,6 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 				return basicSetPartOf(null, msgs);
 			case FhirPackage.ORGANIZATION__CONTACT:
 				return ((InternalEList<?>)getContact()).basicRemove(otherEnd, msgs);
-			case FhirPackage.ORGANIZATION__ACTIVE:
-				return basicSetActive(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -404,10 +404,12 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 		switch (featureID) {
 			case FhirPackage.ORGANIZATION__IDENTIFIER:
 				return getIdentifier();
-			case FhirPackage.ORGANIZATION__NAME:
-				return getName();
+			case FhirPackage.ORGANIZATION__ACTIVE:
+				return getActive();
 			case FhirPackage.ORGANIZATION__TYPE:
 				return getType();
+			case FhirPackage.ORGANIZATION__NAME:
+				return getName();
 			case FhirPackage.ORGANIZATION__TELECOM:
 				return getTelecom();
 			case FhirPackage.ORGANIZATION__ADDRESS:
@@ -416,8 +418,6 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 				return getPartOf();
 			case FhirPackage.ORGANIZATION__CONTACT:
 				return getContact();
-			case FhirPackage.ORGANIZATION__ACTIVE:
-				return getActive();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -435,11 +435,14 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 				getIdentifier().clear();
 				getIdentifier().addAll((Collection<? extends Identifier>)newValue);
 				return;
-			case FhirPackage.ORGANIZATION__NAME:
-				setName((org.hl7.fhir.String)newValue);
+			case FhirPackage.ORGANIZATION__ACTIVE:
+				setActive((org.hl7.fhir.Boolean)newValue);
 				return;
 			case FhirPackage.ORGANIZATION__TYPE:
 				setType((CodeableConcept)newValue);
+				return;
+			case FhirPackage.ORGANIZATION__NAME:
+				setName((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.ORGANIZATION__TELECOM:
 				getTelecom().clear();
@@ -456,9 +459,6 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 				getContact().clear();
 				getContact().addAll((Collection<? extends OrganizationContact>)newValue);
 				return;
-			case FhirPackage.ORGANIZATION__ACTIVE:
-				setActive((org.hl7.fhir.Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -474,11 +474,14 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 			case FhirPackage.ORGANIZATION__IDENTIFIER:
 				getIdentifier().clear();
 				return;
-			case FhirPackage.ORGANIZATION__NAME:
-				setName((org.hl7.fhir.String)null);
+			case FhirPackage.ORGANIZATION__ACTIVE:
+				setActive((org.hl7.fhir.Boolean)null);
 				return;
 			case FhirPackage.ORGANIZATION__TYPE:
 				setType((CodeableConcept)null);
+				return;
+			case FhirPackage.ORGANIZATION__NAME:
+				setName((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.ORGANIZATION__TELECOM:
 				getTelecom().clear();
@@ -491,9 +494,6 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 				return;
 			case FhirPackage.ORGANIZATION__CONTACT:
 				getContact().clear();
-				return;
-			case FhirPackage.ORGANIZATION__ACTIVE:
-				setActive((org.hl7.fhir.Boolean)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -509,10 +509,12 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 		switch (featureID) {
 			case FhirPackage.ORGANIZATION__IDENTIFIER:
 				return identifier != null && !identifier.isEmpty();
-			case FhirPackage.ORGANIZATION__NAME:
-				return name != null;
+			case FhirPackage.ORGANIZATION__ACTIVE:
+				return active != null;
 			case FhirPackage.ORGANIZATION__TYPE:
 				return type != null;
+			case FhirPackage.ORGANIZATION__NAME:
+				return name != null;
 			case FhirPackage.ORGANIZATION__TELECOM:
 				return telecom != null && !telecom.isEmpty();
 			case FhirPackage.ORGANIZATION__ADDRESS:
@@ -521,8 +523,6 @@ public class OrganizationImpl extends DomainResourceImpl implements Organization
 				return partOf != null;
 			case FhirPackage.ORGANIZATION__CONTACT:
 				return contact != null && !contact.isEmpty();
-			case FhirPackage.ORGANIZATION__ACTIVE:
-				return active != null;
 		}
 		return super.eIsSet(featureID);
 	}

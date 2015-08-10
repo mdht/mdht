@@ -23,8 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.SpecimenCollection#getCollectedPeriod <em>Collected Period</em>}</li>
  *   <li>{@link org.hl7.fhir.SpecimenCollection#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.SpecimenCollection#getMethod <em>Method</em>}</li>
- *   <li>{@link org.hl7.fhir.SpecimenCollection#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.SpecimenCollection#getBodySiteReference <em>Body Site Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.SpecimenCollection#getBodySite <em>Body Site</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getSpecimenCollection()
@@ -136,13 +135,13 @@ public interface SpecimenCollection extends BackboneElement {
 	 * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quantity</em>' containment reference.
-	 * @see #setQuantity(Quantity)
+	 * @see #setQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getSpecimenCollection_Quantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='quantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getQuantity();
+	SimpleQuantity getQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.SpecimenCollection#getQuantity <em>Quantity</em>}' containment reference.
@@ -152,7 +151,7 @@ public interface SpecimenCollection extends BackboneElement {
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	void setQuantity(Quantity value);
+	void setQuantity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Method</b></em>' containment reference.
@@ -181,57 +180,29 @@ public interface SpecimenCollection extends BackboneElement {
 	void setMethod(CodeableConcept value);
 
 	/**
-	 * Returns the value of the '<em><b>Body Site Codeable Concept</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Body Site</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Body Site Codeable Concept</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body Site Codeable Concept</em>' containment reference.
-	 * @see #setBodySiteCodeableConcept(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getSpecimenCollection_BodySiteCodeableConcept()
+	 * <!-- begin-model-doc -->
+	 * Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Body Site</em>' containment reference.
+	 * @see #setBodySite(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getSpecimenCollection_BodySite()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='bodySiteCodeableConcept' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='bodySite' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CodeableConcept getBodySiteCodeableConcept();
+	CodeableConcept getBodySite();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.SpecimenCollection#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.SpecimenCollection#getBodySite <em>Body Site</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body Site Codeable Concept</em>' containment reference.
-	 * @see #getBodySiteCodeableConcept()
+	 * @param value the new value of the '<em>Body Site</em>' containment reference.
+	 * @see #getBodySite()
 	 * @generated
 	 */
-	void setBodySiteCodeableConcept(CodeableConcept value);
-
-	/**
-	 * Returns the value of the '<em><b>Body Site Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Body Site Reference</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body Site Reference</em>' containment reference.
-	 * @see #setBodySiteReference(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getSpecimenCollection_BodySiteReference()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='bodySiteReference' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Reference getBodySiteReference();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.SpecimenCollection#getBodySiteReference <em>Body Site Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body Site Reference</em>' containment reference.
-	 * @see #getBodySiteReference()
-	 * @generated
-	 */
-	void setBodySiteReference(Reference value);
+	void setBodySite(CodeableConcept value);
 
 } // SpecimenCollection

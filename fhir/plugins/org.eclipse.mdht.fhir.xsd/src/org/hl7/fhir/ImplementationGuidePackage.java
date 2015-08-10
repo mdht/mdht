@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.ImplementationGuidePackage#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.ImplementationGuidePackage#getItem <em>Item</em>}</li>
- *   <li>{@link org.hl7.fhir.ImplementationGuidePackage#getPage <em>Page</em>}</li>
+ *   <li>{@link org.hl7.fhir.ImplementationGuidePackage#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.hl7.fhir.ImplementationGuidePackage#getResource <em>Resource</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getImplementationGuidePackage()
@@ -32,7 +32,7 @@ public interface ImplementationGuidePackage extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A human readable name that introduces the item.
+	 * The name for the group, as used in page.package.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' containment reference.
 	 * @see #setName(org.hl7.fhir.String)
@@ -54,35 +54,45 @@ public interface ImplementationGuidePackage extends BackboneElement {
 	void setName(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Item</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.ImplementationGuideItem}.
+	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An item in the set of resources that is a section in the implementation Guide.
+	 * Human readable text describing the package.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Item</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getImplementationGuidePackage_Item()
+	 * @return the value of the '<em>Description</em>' containment reference.
+	 * @see #setDescription(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getImplementationGuidePackage_Description()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='item' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='description' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<ImplementationGuideItem> getItem();
+	org.hl7.fhir.String getDescription();
 
 	/**
-	 * Returns the value of the '<em><b>Page</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.ImplementationGuidePage}.
+	 * Sets the value of the '{@link org.hl7.fhir.ImplementationGuidePackage#getDescription <em>Description</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' containment reference.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Resource</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.ImplementationGuideResource}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An html page that is published with the Implementation Guide, as part of the package.
+	 * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, conformance statements etc) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Page</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getImplementationGuidePackage_Page()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='page' namespace='##targetNamespace'"
+	 * @return the value of the '<em>Resource</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getImplementationGuidePackage_Resource()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='resource' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<ImplementationGuidePage> getPage();
+	EList<ImplementationGuideResource> getResource();
 
 } // ImplementationGuidePackage

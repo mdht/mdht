@@ -59,13 +59,13 @@ public interface MedicationContent extends BackboneElement {
 	 * The amount of the product that is in the package.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Amount</em>' containment reference.
-	 * @see #setAmount(Quantity)
+	 * @see #setAmount(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getMedicationContent_Amount()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='amount' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getAmount();
+	SimpleQuantity getAmount();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.MedicationContent#getAmount <em>Amount</em>}' containment reference.
@@ -75,6 +75,6 @@ public interface MedicationContent extends BackboneElement {
 	 * @see #getAmount()
 	 * @generated
 	 */
-	void setAmount(Quantity value);
+	void setAmount(SimpleQuantity value);
 
 } // MedicationContent

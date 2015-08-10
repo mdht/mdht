@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -61,8 +61,7 @@
           </xs:element>
           <xs:element name="accession" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Accession Number is an identifier related to some aspect of imaging workflow and data management, and usage may vary across different institutions. 
-See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).</xs:documentation>
+              <xs:documentation xml:lang="en">Accession Number is an identifier related to some aspect of imaging workflow and data management, and usage may vary across different institutions.  See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -105,11 +104,6 @@ See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://
               <xs:documentation xml:lang="en">Number of SOP Instances in Study.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="clinicalInformation" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Diagnoses etc provided with request.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="procedure" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Type of procedure performed.</xs:documentation>
@@ -117,7 +111,7 @@ See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://
           </xs:element>
           <xs:element name="interpreter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Who read study and interpreted the images.</xs:documentation>
+              <xs:documentation xml:lang="en">Who read the study and interpreted the images or other content.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
@@ -127,7 +121,7 @@ See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://
           </xs:element>
           <xs:element name="series" type="ImagingStudy.Series" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Each study has one or more series of image instances.</xs:documentation>
+              <xs:documentation xml:lang="en">Each study has one or more series of images or other content.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -183,10 +177,10 @@ See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://
           </xs:element>
           <xs:element name="laterality" minOccurs="0" maxOccurs="1" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Laterality if bodySite is paired anatomic structure and laterality is not pre-coordinated in bodySite code, map from (0020, 0060).</xs:documentation>
+              <xs:documentation xml:lang="en">Laterality if bodySite is paired anatomic structure and laterality is not pre-coordinated in bodySite code.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="dateTime" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:element name="started" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date and time when the series was started.</xs:documentation>
            </xs:annotation>
@@ -209,17 +203,17 @@ See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://
         <xs:sequence>
           <xs:element name="number" minOccurs="0" maxOccurs="1" type="unsignedInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The number of this image in the series.</xs:documentation>
+              <xs:documentation xml:lang="en">The number of instance in the series.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="uid" minOccurs="1" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Formal identifier for this image.</xs:documentation>
+              <xs:documentation xml:lang="en">Formal identifier for this image or other content.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="sopclass" minOccurs="1" maxOccurs="1" type="oid">
+          <xs:element name="sopClass" minOccurs="1" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">DICOM Image type.</xs:documentation>
+              <xs:documentation xml:lang="en">DICOM instance  type.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="string">
@@ -234,7 +228,7 @@ See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://
           </xs:element>
           <xs:element name="content" minOccurs="0" maxOccurs="unbounded" type="Attachment">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Content of the instance or a rendering thereof (e.g., a JPEG of an image, or an XML of a structured report). May be represented by inline encoding, or by a URL reference to a WADO-RS service that makes the instance available. Multiple content attachments may be used for alternate representations of the instance.</xs:documentation>
+              <xs:documentation xml:lang="en">Content of the instance or a rendering thereof (e.g., a JPEG of an image, or an XML of a structured report). May be represented for example by inline encoding; by a URL reference to a WADO-RS service that makes the instance available; or to a FHIR Resource (e.g., Media, Document, etc.). Multiple content attachments may be used for alternate representations of the instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

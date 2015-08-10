@@ -15,6 +15,7 @@ import org.hl7.fhir.ContactPointSystem;
 import org.hl7.fhir.ContactPointUse;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Period;
+import org.hl7.fhir.PositiveInt;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,7 @@ import org.hl7.fhir.Period;
  *   <li>{@link org.hl7.fhir.impl.ContactPointImpl#getSystem <em>System</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ContactPointImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ContactPointImpl#getUse <em>Use</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ContactPointImpl#getRank <em>Rank</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ContactPointImpl#getPeriod <em>Period</em>}</li>
  * </ul>
  *
@@ -62,6 +64,16 @@ public class ContactPointImpl extends ElementImpl implements ContactPoint {
 	 * @ordered
 	 */
 	protected ContactPointUse use;
+
+	/**
+	 * The cached value of the '{@link #getRank() <em>Rank</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRank()
+	 * @generated
+	 * @ordered
+	 */
+	protected PositiveInt rank;
 
 	/**
 	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' containment reference.
@@ -226,6 +238,49 @@ public class ContactPointImpl extends ElementImpl implements ContactPoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PositiveInt getRank() {
+		return rank;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRank(PositiveInt newRank, NotificationChain msgs) {
+		PositiveInt oldRank = rank;
+		rank = newRank;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONTACT_POINT__RANK, oldRank, newRank);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRank(PositiveInt newRank) {
+		if (newRank != rank) {
+			NotificationChain msgs = null;
+			if (rank != null)
+				msgs = ((InternalEObject)rank).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONTACT_POINT__RANK, null, msgs);
+			if (newRank != null)
+				msgs = ((InternalEObject)newRank).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONTACT_POINT__RANK, null, msgs);
+			msgs = basicSetRank(newRank, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONTACT_POINT__RANK, newRank, newRank));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Period getPeriod() {
 		return period;
 	}
@@ -278,6 +333,8 @@ public class ContactPointImpl extends ElementImpl implements ContactPoint {
 				return basicSetValue(null, msgs);
 			case FhirPackage.CONTACT_POINT__USE:
 				return basicSetUse(null, msgs);
+			case FhirPackage.CONTACT_POINT__RANK:
+				return basicSetRank(null, msgs);
 			case FhirPackage.CONTACT_POINT__PERIOD:
 				return basicSetPeriod(null, msgs);
 		}
@@ -298,6 +355,8 @@ public class ContactPointImpl extends ElementImpl implements ContactPoint {
 				return getValue();
 			case FhirPackage.CONTACT_POINT__USE:
 				return getUse();
+			case FhirPackage.CONTACT_POINT__RANK:
+				return getRank();
 			case FhirPackage.CONTACT_POINT__PERIOD:
 				return getPeriod();
 		}
@@ -320,6 +379,9 @@ public class ContactPointImpl extends ElementImpl implements ContactPoint {
 				return;
 			case FhirPackage.CONTACT_POINT__USE:
 				setUse((ContactPointUse)newValue);
+				return;
+			case FhirPackage.CONTACT_POINT__RANK:
+				setRank((PositiveInt)newValue);
 				return;
 			case FhirPackage.CONTACT_POINT__PERIOD:
 				setPeriod((Period)newValue);
@@ -345,6 +407,9 @@ public class ContactPointImpl extends ElementImpl implements ContactPoint {
 			case FhirPackage.CONTACT_POINT__USE:
 				setUse((ContactPointUse)null);
 				return;
+			case FhirPackage.CONTACT_POINT__RANK:
+				setRank((PositiveInt)null);
+				return;
 			case FhirPackage.CONTACT_POINT__PERIOD:
 				setPeriod((Period)null);
 				return;
@@ -366,6 +431,8 @@ public class ContactPointImpl extends ElementImpl implements ContactPoint {
 				return value != null;
 			case FhirPackage.CONTACT_POINT__USE:
 				return use != null;
+			case FhirPackage.CONTACT_POINT__RANK:
+				return rank != null;
 			case FhirPackage.CONTACT_POINT__PERIOD:
 				return period != null;
 		}

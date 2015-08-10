@@ -145,13 +145,13 @@ public interface NutritionOrderEnteralFormula extends BackboneElement {
 	 * The amount of energy (Calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula the provides 24 Calories per fluid ounce or an adult may require an enteral formula that provides 1.5 Calorie/mL.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Caloric Density</em>' containment reference.
-	 * @see #setCaloricDensity(Quantity)
+	 * @see #setCaloricDensity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_CaloricDensity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='caloricDensity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getCaloricDensity();
+	SimpleQuantity getCaloricDensity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getCaloricDensity <em>Caloric Density</em>}' containment reference.
@@ -161,7 +161,7 @@ public interface NutritionOrderEnteralFormula extends BackboneElement {
 	 * @see #getCaloricDensity()
 	 * @generated
 	 */
-	void setCaloricDensity(Quantity value);
+	void setCaloricDensity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Routeof Administration</b></em>' containment reference.
@@ -213,13 +213,13 @@ public interface NutritionOrderEnteralFormula extends BackboneElement {
 	 * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g., 1440 mL over 24 hours.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Volume To Deliver</em>' containment reference.
-	 * @see #setMaxVolumeToDeliver(Quantity)
+	 * @see #setMaxVolumeToDeliver(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getNutritionOrderEnteralFormula_MaxVolumeToDeliver()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='maxVolumeToDeliver' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getMaxVolumeToDeliver();
+	SimpleQuantity getMaxVolumeToDeliver();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.NutritionOrderEnteralFormula#getMaxVolumeToDeliver <em>Max Volume To Deliver</em>}' containment reference.
@@ -229,7 +229,7 @@ public interface NutritionOrderEnteralFormula extends BackboneElement {
 	 * @see #getMaxVolumeToDeliver()
 	 * @generated
 	 */
-	void setMaxVolumeToDeliver(Quantity value);
+	void setMaxVolumeToDeliver(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Administration Instruction</b></em>' containment reference.

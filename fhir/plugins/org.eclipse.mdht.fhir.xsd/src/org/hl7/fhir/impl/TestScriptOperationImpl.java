@@ -40,6 +40,7 @@ import org.hl7.fhir.TestScriptRequestHeader;
  *   <li>{@link org.hl7.fhir.impl.TestScriptOperationImpl#getAccept <em>Accept</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TestScriptOperationImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TestScriptOperationImpl#getDestination <em>Destination</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.TestScriptOperationImpl#getEncodeRequestUrl <em>Encode Request Url</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TestScriptOperationImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TestScriptOperationImpl#getRequestHeader <em>Request Header</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.TestScriptOperationImpl#getResponseId <em>Response Id</em>}</li>
@@ -120,6 +121,16 @@ public class TestScriptOperationImpl extends BackboneElementImpl implements Test
 	 * @ordered
 	 */
 	protected org.hl7.fhir.Integer destination;
+
+	/**
+	 * The cached value of the '{@link #getEncodeRequestUrl() <em>Encode Request Url</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEncodeRequestUrl()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Boolean encodeRequestUrl;
 
 	/**
 	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
@@ -506,6 +517,49 @@ public class TestScriptOperationImpl extends BackboneElementImpl implements Test
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.hl7.fhir.Boolean getEncodeRequestUrl() {
+		return encodeRequestUrl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEncodeRequestUrl(org.hl7.fhir.Boolean newEncodeRequestUrl, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldEncodeRequestUrl = encodeRequestUrl;
+		encodeRequestUrl = newEncodeRequestUrl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL, oldEncodeRequestUrl, newEncodeRequestUrl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEncodeRequestUrl(org.hl7.fhir.Boolean newEncodeRequestUrl) {
+		if (newEncodeRequestUrl != encodeRequestUrl) {
+			NotificationChain msgs = null;
+			if (encodeRequestUrl != null)
+				msgs = ((InternalEObject)encodeRequestUrl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL, null, msgs);
+			if (newEncodeRequestUrl != null)
+				msgs = ((InternalEObject)newEncodeRequestUrl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL, null, msgs);
+			msgs = basicSetEncodeRequestUrl(newEncodeRequestUrl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL, newEncodeRequestUrl, newEncodeRequestUrl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public org.hl7.fhir.String getParams() {
 		return params;
 	}
@@ -750,6 +804,8 @@ public class TestScriptOperationImpl extends BackboneElementImpl implements Test
 				return basicSetContentType(null, msgs);
 			case FhirPackage.TEST_SCRIPT_OPERATION__DESTINATION:
 				return basicSetDestination(null, msgs);
+			case FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL:
+				return basicSetEncodeRequestUrl(null, msgs);
 			case FhirPackage.TEST_SCRIPT_OPERATION__PARAMS:
 				return basicSetParams(null, msgs);
 			case FhirPackage.TEST_SCRIPT_OPERATION__REQUEST_HEADER:
@@ -788,6 +844,8 @@ public class TestScriptOperationImpl extends BackboneElementImpl implements Test
 				return getContentType();
 			case FhirPackage.TEST_SCRIPT_OPERATION__DESTINATION:
 				return getDestination();
+			case FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL:
+				return getEncodeRequestUrl();
 			case FhirPackage.TEST_SCRIPT_OPERATION__PARAMS:
 				return getParams();
 			case FhirPackage.TEST_SCRIPT_OPERATION__REQUEST_HEADER:
@@ -833,6 +891,9 @@ public class TestScriptOperationImpl extends BackboneElementImpl implements Test
 				return;
 			case FhirPackage.TEST_SCRIPT_OPERATION__DESTINATION:
 				setDestination((org.hl7.fhir.Integer)newValue);
+				return;
+			case FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL:
+				setEncodeRequestUrl((org.hl7.fhir.Boolean)newValue);
 				return;
 			case FhirPackage.TEST_SCRIPT_OPERATION__PARAMS:
 				setParams((org.hl7.fhir.String)newValue);
@@ -886,6 +947,9 @@ public class TestScriptOperationImpl extends BackboneElementImpl implements Test
 			case FhirPackage.TEST_SCRIPT_OPERATION__DESTINATION:
 				setDestination((org.hl7.fhir.Integer)null);
 				return;
+			case FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL:
+				setEncodeRequestUrl((org.hl7.fhir.Boolean)null);
+				return;
 			case FhirPackage.TEST_SCRIPT_OPERATION__PARAMS:
 				setParams((org.hl7.fhir.String)null);
 				return;
@@ -930,6 +994,8 @@ public class TestScriptOperationImpl extends BackboneElementImpl implements Test
 				return contentType != null;
 			case FhirPackage.TEST_SCRIPT_OPERATION__DESTINATION:
 				return destination != null;
+			case FhirPackage.TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL:
+				return encodeRequestUrl != null;
 			case FhirPackage.TEST_SCRIPT_OPERATION__PARAMS:
 				return params != null;
 			case FhirPackage.TEST_SCRIPT_OPERATION__REQUEST_HEADER:

@@ -44,7 +44,7 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ImagingStudySeriesImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudySeriesImpl#getBodySite <em>Body Site</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudySeriesImpl#getLaterality <em>Laterality</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ImagingStudySeriesImpl#getDateTime <em>Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ImagingStudySeriesImpl#getStarted <em>Started</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudySeriesImpl#getInstance <em>Instance</em>}</li>
  * </ul>
  *
@@ -142,14 +142,14 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	protected Coding laterality;
 
 	/**
-	 * The cached value of the '{@link #getDateTime() <em>Date Time</em>}' containment reference.
+	 * The cached value of the '{@link #getStarted() <em>Started</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDateTime()
+	 * @see #getStarted()
 	 * @generated
 	 * @ordered
 	 */
-	protected DateTime dateTime;
+	protected DateTime started;
 
 	/**
 	 * The cached value of the '{@link #getInstance() <em>Instance</em>}' containment reference list.
@@ -572,8 +572,8 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DateTime getDateTime() {
-		return dateTime;
+	public DateTime getStarted() {
+		return started;
 	}
 
 	/**
@@ -581,11 +581,11 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDateTime(DateTime newDateTime, NotificationChain msgs) {
-		DateTime oldDateTime = dateTime;
-		dateTime = newDateTime;
+	public NotificationChain basicSetStarted(DateTime newStarted, NotificationChain msgs) {
+		DateTime oldStarted = started;
+		started = newStarted;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME, oldDateTime, newDateTime);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_SERIES__STARTED, oldStarted, newStarted);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -596,18 +596,18 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDateTime(DateTime newDateTime) {
-		if (newDateTime != dateTime) {
+	public void setStarted(DateTime newStarted) {
+		if (newStarted != started) {
 			NotificationChain msgs = null;
-			if (dateTime != null)
-				msgs = ((InternalEObject)dateTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME, null, msgs);
-			if (newDateTime != null)
-				msgs = ((InternalEObject)newDateTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME, null, msgs);
-			msgs = basicSetDateTime(newDateTime, msgs);
+			if (started != null)
+				msgs = ((InternalEObject)started).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_SERIES__STARTED, null, msgs);
+			if (newStarted != null)
+				msgs = ((InternalEObject)newStarted).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_SERIES__STARTED, null, msgs);
+			msgs = basicSetStarted(newStarted, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME, newDateTime, newDateTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_SERIES__STARTED, newStarted, newStarted));
 	}
 
 	/**
@@ -648,8 +648,8 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 				return basicSetBodySite(null, msgs);
 			case FhirPackage.IMAGING_STUDY_SERIES__LATERALITY:
 				return basicSetLaterality(null, msgs);
-			case FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME:
-				return basicSetDateTime(null, msgs);
+			case FhirPackage.IMAGING_STUDY_SERIES__STARTED:
+				return basicSetStarted(null, msgs);
 			case FhirPackage.IMAGING_STUDY_SERIES__INSTANCE:
 				return ((InternalEList<?>)getInstance()).basicRemove(otherEnd, msgs);
 		}
@@ -682,8 +682,8 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 				return getBodySite();
 			case FhirPackage.IMAGING_STUDY_SERIES__LATERALITY:
 				return getLaterality();
-			case FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME:
-				return getDateTime();
+			case FhirPackage.IMAGING_STUDY_SERIES__STARTED:
+				return getStarted();
 			case FhirPackage.IMAGING_STUDY_SERIES__INSTANCE:
 				return getInstance();
 		}
@@ -726,8 +726,8 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 			case FhirPackage.IMAGING_STUDY_SERIES__LATERALITY:
 				setLaterality((Coding)newValue);
 				return;
-			case FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME:
-				setDateTime((DateTime)newValue);
+			case FhirPackage.IMAGING_STUDY_SERIES__STARTED:
+				setStarted((DateTime)newValue);
 				return;
 			case FhirPackage.IMAGING_STUDY_SERIES__INSTANCE:
 				getInstance().clear();
@@ -772,8 +772,8 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 			case FhirPackage.IMAGING_STUDY_SERIES__LATERALITY:
 				setLaterality((Coding)null);
 				return;
-			case FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME:
-				setDateTime((DateTime)null);
+			case FhirPackage.IMAGING_STUDY_SERIES__STARTED:
+				setStarted((DateTime)null);
 				return;
 			case FhirPackage.IMAGING_STUDY_SERIES__INSTANCE:
 				getInstance().clear();
@@ -808,8 +808,8 @@ public class ImagingStudySeriesImpl extends BackboneElementImpl implements Imagi
 				return bodySite != null;
 			case FhirPackage.IMAGING_STUDY_SERIES__LATERALITY:
 				return laterality != null;
-			case FhirPackage.IMAGING_STUDY_SERIES__DATE_TIME:
-				return dateTime != null;
+			case FhirPackage.IMAGING_STUDY_SERIES__STARTED:
+				return started != null;
 			case FhirPackage.IMAGING_STUDY_SERIES__INSTANCE:
 				return instance != null && !instance.isEmpty();
 		}

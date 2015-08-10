@@ -116,7 +116,7 @@ public interface ValueSetCodeSystem extends BackboneElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Concept</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getValueSetCodeSystem_Concept()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='concept' namespace='##targetNamespace'"
 	 * @generated
 	 */

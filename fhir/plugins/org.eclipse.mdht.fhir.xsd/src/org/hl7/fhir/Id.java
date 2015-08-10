@@ -11,6 +11,7 @@ import java.lang.String;
  *
  * <!-- begin-model-doc -->
  * Any combination of letters, numerals, "-" and ".", with a length limit of 64 characters.  (This might be an integer, an unprefixed OID, UUID or any other identifier pattern that meets these constraints.)  Ids are case-insensitive.
+ * RFC 4122
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  * <!-- end-model-doc -->
  *

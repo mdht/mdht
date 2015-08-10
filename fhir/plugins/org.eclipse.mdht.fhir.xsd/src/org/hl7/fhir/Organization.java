@@ -19,13 +19,13 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.Organization#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.hl7.fhir.Organization#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.Organization#getActive <em>Active</em>}</li>
  *   <li>{@link org.hl7.fhir.Organization#getType <em>Type</em>}</li>
+ *   <li>{@link org.hl7.fhir.Organization#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.Organization#getTelecom <em>Telecom</em>}</li>
  *   <li>{@link org.hl7.fhir.Organization#getAddress <em>Address</em>}</li>
  *   <li>{@link org.hl7.fhir.Organization#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link org.hl7.fhir.Organization#getContact <em>Contact</em>}</li>
- *   <li>{@link org.hl7.fhir.Organization#getActive <em>Active</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getOrganization()
@@ -50,30 +50,30 @@ public interface Organization extends DomainResource {
 	EList<Identifier> getIdentifier();
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Active</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A name associated with the organization.
+	 * Whether the organization's record is still in active use.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Name</em>' containment reference.
-	 * @see #setName(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getOrganization_Name()
+	 * @return the value of the '<em>Active</em>' containment reference.
+	 * @see #setActive(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getOrganization_Active()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='name' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='active' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getName();
+	org.hl7.fhir.Boolean getActive();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Organization#getName <em>Name</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Organization#getActive <em>Active</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' containment reference.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Active</em>' containment reference.
+	 * @see #getActive()
 	 * @generated
 	 */
-	void setName(org.hl7.fhir.String value);
+	void setActive(org.hl7.fhir.Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
@@ -100,6 +100,32 @@ public interface Organization extends DomainResource {
 	 * @generated
 	 */
 	void setType(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A name associated with the organization.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Name</em>' containment reference.
+	 * @see #setName(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getOrganization_Name()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='name' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getName();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Organization#getName <em>Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' containment reference.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(org.hl7.fhir.String value);
 
 	/**
 	 * Returns the value of the '<em><b>Telecom</b></em>' containment reference list.
@@ -174,31 +200,5 @@ public interface Organization extends DomainResource {
 	 * @generated
 	 */
 	EList<OrganizationContact> getContact();
-
-	/**
-	 * Returns the value of the '<em><b>Active</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Whether the organization's record is still in active use.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Active</em>' containment reference.
-	 * @see #setActive(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getOrganization_Active()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='active' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getActive();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Organization#getActive <em>Active</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Active</em>' containment reference.
-	 * @see #getActive()
-	 * @generated
-	 */
-	void setActive(org.hl7.fhir.Boolean value);
 
 } // Organization

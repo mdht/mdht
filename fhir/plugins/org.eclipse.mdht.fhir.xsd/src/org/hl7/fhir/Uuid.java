@@ -11,6 +11,7 @@ import java.lang.String;
  *
  * <!-- begin-model-doc -->
  * A UUID, represented as a URI
+ * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  * <!-- end-model-doc -->
  *

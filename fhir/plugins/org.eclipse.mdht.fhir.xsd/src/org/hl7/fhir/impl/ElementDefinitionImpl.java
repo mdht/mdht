@@ -29,6 +29,7 @@ import org.hl7.fhir.Date;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.Decimal;
 import org.hl7.fhir.ElementDefinition;
+import org.hl7.fhir.ElementDefinitionBase;
 import org.hl7.fhir.ElementDefinitionBinding;
 import org.hl7.fhir.ElementDefinitionConstraint;
 import org.hl7.fhir.ElementDefinitionMapping;
@@ -39,6 +40,7 @@ import org.hl7.fhir.HumanName;
 import org.hl7.fhir.Id;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Instant;
+import org.hl7.fhir.Markdown;
 import org.hl7.fhir.Meta;
 import org.hl7.fhir.Oid;
 import org.hl7.fhir.Period;
@@ -77,6 +79,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getAlias <em>Alias</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMin <em>Min</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMax <em>Max</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getBase <em>Base</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getNameReference <em>Name Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueBoolean <em>Default Value Boolean</em>}</li>
@@ -95,6 +98,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueId <em>Default Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueUnsignedInt <em>Default Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValuePositiveInt <em>Default Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueMarkdown <em>Default Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueAnnotation <em>Default Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueAttachment <em>Default Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getDefaultValueIdentifier <em>Default Value Identifier</em>}</li>
@@ -129,6 +133,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedId <em>Fixed Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedUnsignedInt <em>Fixed Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedPositiveInt <em>Fixed Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedMarkdown <em>Fixed Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedAnnotation <em>Fixed Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedAttachment <em>Fixed Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getFixedIdentifier <em>Fixed Identifier</em>}</li>
@@ -162,6 +167,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternId <em>Pattern Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternUnsignedInt <em>Pattern Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternPositiveInt <em>Pattern Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternMarkdown <em>Pattern Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternAnnotation <em>Pattern Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternAttachment <em>Pattern Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getPatternIdentifier <em>Pattern Identifier</em>}</li>
@@ -195,6 +201,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleId <em>Example Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleUnsignedInt <em>Example Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExamplePositiveInt <em>Example Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleMarkdown <em>Example Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleAnnotation <em>Example Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleAttachment <em>Example Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getExampleIdentifier <em>Example Identifier</em>}</li>
@@ -228,6 +235,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueId <em>Min Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueUnsignedInt <em>Min Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValuePositiveInt <em>Min Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueMarkdown <em>Min Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueAnnotation <em>Min Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueAttachment <em>Min Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMinValueIdentifier <em>Min Value Identifier</em>}</li>
@@ -261,6 +269,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueId <em>Max Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueUnsignedInt <em>Max Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValuePositiveInt <em>Max Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueMarkdown <em>Max Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueAnnotation <em>Max Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueAttachment <em>Max Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ElementDefinitionImpl#getMaxValueIdentifier <em>Max Value Identifier</em>}</li>
@@ -369,7 +378,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String definition;
+	protected Markdown definition;
 
 	/**
 	 * The cached value of the '{@link #getComments() <em>Comments</em>}' containment reference.
@@ -379,7 +388,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String comments;
+	protected Markdown comments;
 
 	/**
 	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' containment reference.
@@ -389,7 +398,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String requirements;
+	protected Markdown requirements;
 
 	/**
 	 * The cached value of the '{@link #getAlias() <em>Alias</em>}' containment reference list.
@@ -420,6 +429,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected org.hl7.fhir.String max;
+
+	/**
+	 * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBase()
+	 * @generated
+	 * @ordered
+	 */
+	protected ElementDefinitionBase base;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference list.
@@ -602,6 +621,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	protected PositiveInt defaultValuePositiveInt;
 
 	/**
+	 * The cached value of the '{@link #getDefaultValueMarkdown() <em>Default Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValueMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown defaultValueMarkdown;
+
+	/**
 	 * The cached value of the '{@link #getDefaultValueAnnotation() <em>Default Value Annotation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -779,7 +808,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String meaningWhenMissing;
+	protected Markdown meaningWhenMissing;
 
 	/**
 	 * The cached value of the '{@link #getFixedBoolean() <em>Fixed Boolean</em>}' containment reference.
@@ -940,6 +969,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected PositiveInt fixedPositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getFixedMarkdown() <em>Fixed Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown fixedMarkdown;
 
 	/**
 	 * The cached value of the '{@link #getFixedAnnotation() <em>Fixed Annotation</em>}' containment reference.
@@ -1272,6 +1311,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	protected PositiveInt patternPositiveInt;
 
 	/**
+	 * The cached value of the '{@link #getPatternMarkdown() <em>Pattern Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatternMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown patternMarkdown;
+
+	/**
 	 * The cached value of the '{@link #getPatternAnnotation() <em>Pattern Annotation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1600,6 +1649,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected PositiveInt examplePositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getExampleMarkdown() <em>Example Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExampleMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown exampleMarkdown;
 
 	/**
 	 * The cached value of the '{@link #getExampleAnnotation() <em>Example Annotation</em>}' containment reference.
@@ -1932,6 +1991,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	protected PositiveInt minValuePositiveInt;
 
 	/**
+	 * The cached value of the '{@link #getMinValueMarkdown() <em>Min Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinValueMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown minValueMarkdown;
+
+	/**
 	 * The cached value of the '{@link #getMinValueAnnotation() <em>Min Value Annotation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2260,6 +2329,16 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected PositiveInt maxValuePositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getMaxValueMarkdown() <em>Max Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxValueMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown maxValueMarkdown;
 
 	/**
 	 * The cached value of the '{@link #getMaxValueAnnotation() <em>Max Value Annotation</em>}' containment reference.
@@ -2774,7 +2853,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getDefinition() {
+	public Markdown getDefinition() {
 		return definition;
 	}
 
@@ -2783,8 +2862,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDefinition(org.hl7.fhir.String newDefinition, NotificationChain msgs) {
-		org.hl7.fhir.String oldDefinition = definition;
+	public NotificationChain basicSetDefinition(Markdown newDefinition, NotificationChain msgs) {
+		Markdown oldDefinition = definition;
 		definition = newDefinition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__DEFINITION, oldDefinition, newDefinition);
@@ -2798,7 +2877,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDefinition(org.hl7.fhir.String newDefinition) {
+	public void setDefinition(Markdown newDefinition) {
 		if (newDefinition != definition) {
 			NotificationChain msgs = null;
 			if (definition != null)
@@ -2817,7 +2896,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getComments() {
+	public Markdown getComments() {
 		return comments;
 	}
 
@@ -2826,8 +2905,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComments(org.hl7.fhir.String newComments, NotificationChain msgs) {
-		org.hl7.fhir.String oldComments = comments;
+	public NotificationChain basicSetComments(Markdown newComments, NotificationChain msgs) {
+		Markdown oldComments = comments;
 		comments = newComments;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__COMMENTS, oldComments, newComments);
@@ -2841,7 +2920,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComments(org.hl7.fhir.String newComments) {
+	public void setComments(Markdown newComments) {
 		if (newComments != comments) {
 			NotificationChain msgs = null;
 			if (comments != null)
@@ -2860,7 +2939,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getRequirements() {
+	public Markdown getRequirements() {
 		return requirements;
 	}
 
@@ -2869,8 +2948,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRequirements(org.hl7.fhir.String newRequirements, NotificationChain msgs) {
-		org.hl7.fhir.String oldRequirements = requirements;
+	public NotificationChain basicSetRequirements(Markdown newRequirements, NotificationChain msgs) {
+		Markdown oldRequirements = requirements;
 		requirements = newRequirements;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__REQUIREMENTS, oldRequirements, newRequirements);
@@ -2884,7 +2963,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRequirements(org.hl7.fhir.String newRequirements) {
+	public void setRequirements(Markdown newRequirements) {
 		if (newRequirements != requirements) {
 			NotificationChain msgs = null;
 			if (requirements != null)
@@ -2994,6 +3073,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX, newMax, newMax));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ElementDefinitionBase getBase() {
+		return base;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBase(ElementDefinitionBase newBase, NotificationChain msgs) {
+		ElementDefinitionBase oldBase = base;
+		base = newBase;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__BASE, oldBase, newBase);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBase(ElementDefinitionBase newBase) {
+		if (newBase != base) {
+			NotificationChain msgs = null;
+			if (base != null)
+				msgs = ((InternalEObject)base).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__BASE, null, msgs);
+			if (newBase != null)
+				msgs = ((InternalEObject)newBase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__BASE, null, msgs);
+			msgs = basicSetBase(newBase, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__BASE, newBase, newBase));
 	}
 
 	/**
@@ -3744,6 +3866,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Markdown getDefaultValueMarkdown() {
+		return defaultValueMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDefaultValueMarkdown(Markdown newDefaultValueMarkdown, NotificationChain msgs) {
+		Markdown oldDefaultValueMarkdown = defaultValueMarkdown;
+		defaultValueMarkdown = newDefaultValueMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN, oldDefaultValueMarkdown, newDefaultValueMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultValueMarkdown(Markdown newDefaultValueMarkdown) {
+		if (newDefaultValueMarkdown != defaultValueMarkdown) {
+			NotificationChain msgs = null;
+			if (defaultValueMarkdown != null)
+				msgs = ((InternalEObject)defaultValueMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN, null, msgs);
+			if (newDefaultValueMarkdown != null)
+				msgs = ((InternalEObject)newDefaultValueMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN, null, msgs);
+			msgs = basicSetDefaultValueMarkdown(newDefaultValueMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN, newDefaultValueMarkdown, newDefaultValueMarkdown));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Annotation getDefaultValueAnnotation() {
 		return defaultValueAnnotation;
 	}
@@ -4475,7 +4640,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getMeaningWhenMissing() {
+	public Markdown getMeaningWhenMissing() {
 		return meaningWhenMissing;
 	}
 
@@ -4484,8 +4649,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMeaningWhenMissing(org.hl7.fhir.String newMeaningWhenMissing, NotificationChain msgs) {
-		org.hl7.fhir.String oldMeaningWhenMissing = meaningWhenMissing;
+	public NotificationChain basicSetMeaningWhenMissing(Markdown newMeaningWhenMissing, NotificationChain msgs) {
+		Markdown oldMeaningWhenMissing = meaningWhenMissing;
 		meaningWhenMissing = newMeaningWhenMissing;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MEANING_WHEN_MISSING, oldMeaningWhenMissing, newMeaningWhenMissing);
@@ -4499,7 +4664,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMeaningWhenMissing(org.hl7.fhir.String newMeaningWhenMissing) {
+	public void setMeaningWhenMissing(Markdown newMeaningWhenMissing) {
 		if (newMeaningWhenMissing != meaningWhenMissing) {
 			NotificationChain msgs = null;
 			if (meaningWhenMissing != null)
@@ -5199,6 +5364,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT, newFixedPositiveInt, newFixedPositiveInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Markdown getFixedMarkdown() {
+		return fixedMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFixedMarkdown(Markdown newFixedMarkdown, NotificationChain msgs) {
+		Markdown oldFixedMarkdown = fixedMarkdown;
+		fixedMarkdown = newFixedMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN, oldFixedMarkdown, newFixedMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFixedMarkdown(Markdown newFixedMarkdown) {
+		if (newFixedMarkdown != fixedMarkdown) {
+			NotificationChain msgs = null;
+			if (fixedMarkdown != null)
+				msgs = ((InternalEObject)fixedMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN, null, msgs);
+			if (newFixedMarkdown != null)
+				msgs = ((InternalEObject)newFixedMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN, null, msgs);
+			msgs = basicSetFixedMarkdown(newFixedMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN, newFixedMarkdown, newFixedMarkdown));
 	}
 
 	/**
@@ -6625,6 +6833,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Markdown getPatternMarkdown() {
+		return patternMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPatternMarkdown(Markdown newPatternMarkdown, NotificationChain msgs) {
+		Markdown oldPatternMarkdown = patternMarkdown;
+		patternMarkdown = newPatternMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN, oldPatternMarkdown, newPatternMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPatternMarkdown(Markdown newPatternMarkdown) {
+		if (newPatternMarkdown != patternMarkdown) {
+			NotificationChain msgs = null;
+			if (patternMarkdown != null)
+				msgs = ((InternalEObject)patternMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN, null, msgs);
+			if (newPatternMarkdown != null)
+				msgs = ((InternalEObject)newPatternMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN, null, msgs);
+			msgs = basicSetPatternMarkdown(newPatternMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN, newPatternMarkdown, newPatternMarkdown));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Annotation getPatternAnnotation() {
 		return patternAnnotation;
 	}
@@ -8037,6 +8288,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT, newExamplePositiveInt, newExamplePositiveInt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Markdown getExampleMarkdown() {
+		return exampleMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExampleMarkdown(Markdown newExampleMarkdown, NotificationChain msgs) {
+		Markdown oldExampleMarkdown = exampleMarkdown;
+		exampleMarkdown = newExampleMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN, oldExampleMarkdown, newExampleMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExampleMarkdown(Markdown newExampleMarkdown) {
+		if (newExampleMarkdown != exampleMarkdown) {
+			NotificationChain msgs = null;
+			if (exampleMarkdown != null)
+				msgs = ((InternalEObject)exampleMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN, null, msgs);
+			if (newExampleMarkdown != null)
+				msgs = ((InternalEObject)newExampleMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN, null, msgs);
+			msgs = basicSetExampleMarkdown(newExampleMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN, newExampleMarkdown, newExampleMarkdown));
 	}
 
 	/**
@@ -9463,6 +9757,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Markdown getMinValueMarkdown() {
+		return minValueMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinValueMarkdown(Markdown newMinValueMarkdown, NotificationChain msgs) {
+		Markdown oldMinValueMarkdown = minValueMarkdown;
+		minValueMarkdown = newMinValueMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN, oldMinValueMarkdown, newMinValueMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinValueMarkdown(Markdown newMinValueMarkdown) {
+		if (newMinValueMarkdown != minValueMarkdown) {
+			NotificationChain msgs = null;
+			if (minValueMarkdown != null)
+				msgs = ((InternalEObject)minValueMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN, null, msgs);
+			if (newMinValueMarkdown != null)
+				msgs = ((InternalEObject)newMinValueMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN, null, msgs);
+			msgs = basicSetMinValueMarkdown(newMinValueMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN, newMinValueMarkdown, newMinValueMarkdown));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Annotation getMinValueAnnotation() {
 		return minValueAnnotation;
 	}
@@ -10882,6 +11219,49 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Markdown getMaxValueMarkdown() {
+		return maxValueMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMaxValueMarkdown(Markdown newMaxValueMarkdown, NotificationChain msgs) {
+		Markdown oldMaxValueMarkdown = maxValueMarkdown;
+		maxValueMarkdown = newMaxValueMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN, oldMaxValueMarkdown, newMaxValueMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxValueMarkdown(Markdown newMaxValueMarkdown) {
+		if (newMaxValueMarkdown != maxValueMarkdown) {
+			NotificationChain msgs = null;
+			if (maxValueMarkdown != null)
+				msgs = ((InternalEObject)maxValueMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN, null, msgs);
+			if (newMaxValueMarkdown != null)
+				msgs = ((InternalEObject)newMaxValueMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN, null, msgs);
+			msgs = basicSetMaxValueMarkdown(newMaxValueMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN, newMaxValueMarkdown, newMaxValueMarkdown));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Annotation getMaxValueAnnotation() {
 		return maxValueAnnotation;
 	}
@@ -11893,6 +12273,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetMin(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MAX:
 				return basicSetMax(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__BASE:
+				return basicSetBase(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__TYPE:
 				return ((InternalEList<?>)getType()).basicRemove(otherEnd, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__NAME_REFERENCE:
@@ -11929,6 +12311,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetDefaultValueUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				return basicSetDefaultValuePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN:
+				return basicSetDefaultValueMarkdown(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
 				return basicSetDefaultValueAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
@@ -11997,6 +12381,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetFixedUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				return basicSetFixedPositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN:
+				return basicSetFixedMarkdown(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
 				return basicSetFixedAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
@@ -12063,6 +12449,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetPatternUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				return basicSetPatternPositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN:
+				return basicSetPatternMarkdown(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
 				return basicSetPatternAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
@@ -12129,6 +12517,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetExampleUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				return basicSetExamplePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN:
+				return basicSetExampleMarkdown(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
 				return basicSetExampleAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
@@ -12195,6 +12585,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetMinValueUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
 				return basicSetMinValuePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN:
+				return basicSetMinValueMarkdown(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
 				return basicSetMinValueAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
@@ -12261,6 +12653,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return basicSetMaxValueUnsignedInt(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
 				return basicSetMaxValuePositiveInt(null, msgs);
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN:
+				return basicSetMaxValueMarkdown(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
 				return basicSetMaxValueAnnotation(null, msgs);
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:
@@ -12349,6 +12743,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getMin();
 			case FhirPackage.ELEMENT_DEFINITION__MAX:
 				return getMax();
+			case FhirPackage.ELEMENT_DEFINITION__BASE:
+				return getBase();
 			case FhirPackage.ELEMENT_DEFINITION__TYPE:
 				return getType();
 			case FhirPackage.ELEMENT_DEFINITION__NAME_REFERENCE:
@@ -12385,6 +12781,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getDefaultValueUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				return getDefaultValuePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN:
+				return getDefaultValueMarkdown();
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
 				return getDefaultValueAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
@@ -12453,6 +12851,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getFixedUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				return getFixedPositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN:
+				return getFixedMarkdown();
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
 				return getFixedAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
@@ -12519,6 +12919,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getPatternUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				return getPatternPositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN:
+				return getPatternMarkdown();
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
 				return getPatternAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
@@ -12585,6 +12987,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getExampleUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				return getExamplePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN:
+				return getExampleMarkdown();
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
 				return getExampleAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
@@ -12651,6 +13055,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getMinValueUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
 				return getMinValuePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN:
+				return getMinValueMarkdown();
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
 				return getMinValueAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
@@ -12717,6 +13123,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getMaxValueUnsignedInt();
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
 				return getMaxValuePositiveInt();
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN:
+				return getMaxValueMarkdown();
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
 				return getMaxValueAnnotation();
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:
@@ -12804,13 +13212,13 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				setShort((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__DEFINITION:
-				setDefinition((org.hl7.fhir.String)newValue);
+				setDefinition((Markdown)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__COMMENTS:
-				setComments((org.hl7.fhir.String)newValue);
+				setComments((Markdown)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__REQUIREMENTS:
-				setRequirements((org.hl7.fhir.String)newValue);
+				setRequirements((Markdown)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__ALIAS:
 				getAlias().clear();
@@ -12821,6 +13229,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX:
 				setMax((org.hl7.fhir.String)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__BASE:
+				setBase((ElementDefinitionBase)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__TYPE:
 				getType().clear();
@@ -12877,6 +13288,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				setDefaultValuePositiveInt((PositiveInt)newValue);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN:
+				setDefaultValueMarkdown((Markdown)newValue);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
 				setDefaultValueAnnotation((Annotation)newValue);
 				return;
@@ -12929,7 +13343,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				setDefaultValueMeta((Meta)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MEANING_WHEN_MISSING:
-				setMeaningWhenMissing((org.hl7.fhir.String)newValue);
+				setMeaningWhenMissing((Markdown)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_BOOLEAN:
 				setFixedBoolean((org.hl7.fhir.Boolean)newValue);
@@ -12978,6 +13392,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				setFixedPositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN:
+				setFixedMarkdown((Markdown)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
 				setFixedAnnotation((Annotation)newValue);
@@ -13078,6 +13495,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				setPatternPositiveInt((PositiveInt)newValue);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN:
+				setPatternMarkdown((Markdown)newValue);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
 				setPatternAnnotation((Annotation)newValue);
 				return;
@@ -13176,6 +13596,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				setExamplePositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN:
+				setExampleMarkdown((Markdown)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
 				setExampleAnnotation((Annotation)newValue);
@@ -13276,6 +13699,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
 				setMinValuePositiveInt((PositiveInt)newValue);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN:
+				setMinValueMarkdown((Markdown)newValue);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
 				setMinValueAnnotation((Annotation)newValue);
 				return;
@@ -13374,6 +13800,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
 				setMaxValuePositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN:
+				setMaxValueMarkdown((Markdown)newValue);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
 				setMaxValueAnnotation((Annotation)newValue);
@@ -13487,13 +13916,13 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				setShort((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__DEFINITION:
-				setDefinition((org.hl7.fhir.String)null);
+				setDefinition((Markdown)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__COMMENTS:
-				setComments((org.hl7.fhir.String)null);
+				setComments((Markdown)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__REQUIREMENTS:
-				setRequirements((org.hl7.fhir.String)null);
+				setRequirements((Markdown)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__ALIAS:
 				getAlias().clear();
@@ -13503,6 +13932,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX:
 				setMax((org.hl7.fhir.String)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__BASE:
+				setBase((ElementDefinitionBase)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__TYPE:
 				getType().clear();
@@ -13558,6 +13990,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				setDefaultValuePositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN:
+				setDefaultValueMarkdown((Markdown)null);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
 				setDefaultValueAnnotation((Annotation)null);
 				return;
@@ -13610,7 +14045,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				setDefaultValueMeta((Meta)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MEANING_WHEN_MISSING:
-				setMeaningWhenMissing((org.hl7.fhir.String)null);
+				setMeaningWhenMissing((Markdown)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_BOOLEAN:
 				setFixedBoolean((org.hl7.fhir.Boolean)null);
@@ -13659,6 +14094,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				setFixedPositiveInt((PositiveInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN:
+				setFixedMarkdown((Markdown)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
 				setFixedAnnotation((Annotation)null);
@@ -13759,6 +14197,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				setPatternPositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN:
+				setPatternMarkdown((Markdown)null);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
 				setPatternAnnotation((Annotation)null);
 				return;
@@ -13857,6 +14298,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				setExamplePositiveInt((PositiveInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN:
+				setExampleMarkdown((Markdown)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
 				setExampleAnnotation((Annotation)null);
@@ -13957,6 +14401,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
 				setMinValuePositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN:
+				setMinValueMarkdown((Markdown)null);
+				return;
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
 				setMinValueAnnotation((Annotation)null);
 				return;
@@ -14055,6 +14502,9 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
 				setMaxValuePositiveInt((PositiveInt)null);
+				return;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN:
+				setMaxValueMarkdown((Markdown)null);
 				return;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
 				setMaxValueAnnotation((Annotation)null);
@@ -14169,6 +14619,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return min != null;
 			case FhirPackage.ELEMENT_DEFINITION__MAX:
 				return max != null;
+			case FhirPackage.ELEMENT_DEFINITION__BASE:
+				return base != null;
 			case FhirPackage.ELEMENT_DEFINITION__TYPE:
 				return type != null && !type.isEmpty();
 			case FhirPackage.ELEMENT_DEFINITION__NAME_REFERENCE:
@@ -14205,6 +14657,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return defaultValueUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT:
 				return defaultValuePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN:
+				return defaultValueMarkdown != null;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION:
 				return defaultValueAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT:
@@ -14273,6 +14727,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return fixedUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_POSITIVE_INT:
 				return fixedPositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__FIXED_MARKDOWN:
+				return fixedMarkdown != null;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ANNOTATION:
 				return fixedAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__FIXED_ATTACHMENT:
@@ -14339,6 +14795,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return patternUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_POSITIVE_INT:
 				return patternPositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__PATTERN_MARKDOWN:
+				return patternMarkdown != null;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ANNOTATION:
 				return patternAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__PATTERN_ATTACHMENT:
@@ -14405,6 +14863,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return exampleUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT:
 				return examplePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_MARKDOWN:
+				return exampleMarkdown != null;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ANNOTATION:
 				return exampleAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT:
@@ -14471,6 +14931,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return minValueUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT:
 				return minValuePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN:
+				return minValueMarkdown != null;
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION:
 				return minValueAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT:
@@ -14537,6 +14999,8 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return maxValueUnsignedInt != null;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT:
 				return maxValuePositiveInt != null;
+			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN:
+				return maxValueMarkdown != null;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION:
 				return maxValueAnnotation != null;
 			case FhirPackage.ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT:

@@ -37,7 +37,7 @@ public interface QuestionnaireQuestion extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a [[[QuestionnaireAnswers]]] resource.
+	 * An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a [[[QuestionnaireResponse]]] resource.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Link Id</em>' containment reference.
 	 * @see #setLinkId(org.hl7.fhir.String)
@@ -183,7 +183,7 @@ public interface QuestionnaireQuestion extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Reference to a valueset containing the possible options.
+	 * Reference to a valueset containing the a list of codes representing permitted answers for the question.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Options</em>' containment reference.
 	 * @see #setOptions(Reference)

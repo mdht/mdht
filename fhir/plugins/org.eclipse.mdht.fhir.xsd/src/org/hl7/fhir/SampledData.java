@@ -39,13 +39,13 @@ public interface SampledData extends Element {
 	 * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Origin</em>' containment reference.
-	 * @see #setOrigin(Quantity)
+	 * @see #setOrigin(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getSampledData_Origin()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='origin' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getOrigin();
+	SimpleQuantity getOrigin();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.SampledData#getOrigin <em>Origin</em>}' containment reference.
@@ -55,7 +55,7 @@ public interface SampledData extends Element {
 	 * @see #getOrigin()
 	 * @generated
 	 */
-	void setOrigin(Quantity value);
+	void setOrigin(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Period</b></em>' containment reference.

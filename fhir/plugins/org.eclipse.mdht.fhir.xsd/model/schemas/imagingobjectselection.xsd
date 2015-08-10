@@ -27,18 +27,18 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="ImagingObjectSelection" type="ImagingObjectSelection">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of DICOM SOP Instances of a patient, selected for some application purpose, e.g., quality assurance, teaching, conference, consulting, etc.  Objects selected can be from different studies, but must be of the same patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="ImagingObjectSelection">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of DICOM SOP Instances of a patient, selected for some application purpose, e.g., quality assurance, teaching, conference, consulting, etc.  Objects selected can be from different studies, but must be of the same patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -46,12 +46,12 @@
         <xs:sequence>
           <xs:element name="uid" minOccurs="1" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Instance UID of the DICOM KOS SOP Instances represenetd in this resource.</xs:documentation>
+              <xs:documentation xml:lang="en">Instance UID of the DICOM KOS SOP Instances represented in this resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="patient" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A patient resource reference which is the patient subject of all DICOM SOP Instances in this key object selection.</xs:documentation>
+              <xs:documentation xml:lang="en">A patient resource reference which is the patient subject of all DICOM SOP Instances in this ImagingObjectSelection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="title" minOccurs="1" maxOccurs="1" type="CodeableConcept">
@@ -61,17 +61,17 @@
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Text description of the DICOM SOP instances selected in the key object selection. This should be aligned with the content of the title element, and can provide further explanation of the SOP instances in the selection.</xs:documentation>
+              <xs:documentation xml:lang="en">Text description of the DICOM SOP instances selected in the ImagingObjectSelection. This should be aligned with the content of the title element, and can provide further explanation of the SOP instances in the selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="author" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Author of key object selection. It can be a human authtor or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attached in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.</xs:documentation>
+              <xs:documentation xml:lang="en">Author of ImagingObjectSelection. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attached in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="authoringTime" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Date and time when the key object selection was authored. Note that this is the date and time the DICOM SOP instances in the selection were selected (selection decision making). It is different from the creation date and time of the selection resource.</xs:documentation>
+              <xs:documentation xml:lang="en">Date and time when the selection of the referenced instances were made. It is (typically) diffeent from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="study" type="ImagingObjectSelection.Study" minOccurs="1" maxOccurs="unbounded">
@@ -85,14 +85,14 @@
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Study">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of DICOM SOP Instances of a patient, selected for some application purpose, e.g., quality assurance, teaching, conference, consulting, etc.  Objects selected can be from different studies, but must be of the same patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="uid" minOccurs="1" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Study instance uid of the SOP instances in the selection.</xs:documentation>
+              <xs:documentation xml:lang="en">Study instance UID of the SOP instances in the selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
@@ -100,9 +100,14 @@
               <xs:documentation xml:lang="en">WADO-RS URL to retrieve the study. Note that this URL retrieves all SOP instances of the study, not only those in the selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="imagingStudy" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reference to the Imaging Study in FHIR form.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="series" type="ImagingObjectSelection.Series" minOccurs="1" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Series indetity and locating information of the DICOM SOP instances in the selection.</xs:documentation>
+              <xs:documentation xml:lang="en">Series indentity and locating information of the DICOM SOP instances in the selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -111,19 +116,19 @@
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Series">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of DICOM SOP Instances of a patient, selected for some application purpose, e.g., quality assurance, teaching, conference, consulting, etc.  Objects selected can be from different studies, but must be of the same patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="uid" minOccurs="0" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Series instance uid of the SOP instances in the selection.</xs:documentation>
+              <xs:documentation xml:lang="en">Series instance UID of the SOP instances in the selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">WADO-RS URL to retrieve the series Note that this URL retrieves all SOP instances of the series not only those in the selection.</xs:documentation>
+              <xs:documentation xml:lang="en">WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP instances of the series not only those in the selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instance" type="ImagingObjectSelection.Instance" minOccurs="1" maxOccurs="unbounded">
@@ -137,19 +142,19 @@
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Instance">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of DICOM SOP Instances of a patient, selected for some application purpose, e.g., quality assurance, teaching, conference, consulting, etc.  Objects selected can be from different studies, but must be of the same patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="sopClass" minOccurs="1" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">SOP class uid of the selected instance.</xs:documentation>
+              <xs:documentation xml:lang="en">SOP class UID of the selected instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="uid" minOccurs="1" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">SOP Instance uid of the selected instance.</xs:documentation>
+              <xs:documentation xml:lang="en">SOP Instance UID of the selected instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
@@ -168,7 +173,7 @@
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Frames">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of DICOM SOP Instances of a patient, selected for some application purpose, e.g., quality assurance, teaching, conference, consulting, etc.  Objects selected can be from different studies, but must be of the same patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">

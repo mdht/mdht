@@ -33,7 +33,7 @@ import org.hl7.fhir.UnsignedInt;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyInstanceImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyInstanceImpl#getUid <em>Uid</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ImagingStudyInstanceImpl#getSopclass <em>Sopclass</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ImagingStudyInstanceImpl#getSopClass <em>Sop Class</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyInstanceImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyInstanceImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyInstanceImpl#getContent <em>Content</em>}</li>
@@ -63,14 +63,14 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 	protected Oid uid;
 
 	/**
-	 * The cached value of the '{@link #getSopclass() <em>Sopclass</em>}' containment reference.
+	 * The cached value of the '{@link #getSopClass() <em>Sop Class</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSopclass()
+	 * @see #getSopClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected Oid sopclass;
+	protected Oid sopClass;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -212,8 +212,8 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Oid getSopclass() {
-		return sopclass;
+	public Oid getSopClass() {
+		return sopClass;
 	}
 
 	/**
@@ -221,11 +221,11 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSopclass(Oid newSopclass, NotificationChain msgs) {
-		Oid oldSopclass = sopclass;
-		sopclass = newSopclass;
+	public NotificationChain basicSetSopClass(Oid newSopClass, NotificationChain msgs) {
+		Oid oldSopClass = sopClass;
+		sopClass = newSopClass;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS, oldSopclass, newSopclass);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS, oldSopClass, newSopClass);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -236,18 +236,18 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSopclass(Oid newSopclass) {
-		if (newSopclass != sopclass) {
+	public void setSopClass(Oid newSopClass) {
+		if (newSopClass != sopClass) {
 			NotificationChain msgs = null;
-			if (sopclass != null)
-				msgs = ((InternalEObject)sopclass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS, null, msgs);
-			if (newSopclass != null)
-				msgs = ((InternalEObject)newSopclass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS, null, msgs);
-			msgs = basicSetSopclass(newSopclass, msgs);
+			if (sopClass != null)
+				msgs = ((InternalEObject)sopClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS, null, msgs);
+			if (newSopClass != null)
+				msgs = ((InternalEObject)newSopClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS, null, msgs);
+			msgs = basicSetSopClass(newSopClass, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS, newSopclass, newSopclass));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS, newSopClass, newSopClass));
 	}
 
 	/**
@@ -360,8 +360,8 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 				return basicSetNumber(null, msgs);
 			case FhirPackage.IMAGING_STUDY_INSTANCE__UID:
 				return basicSetUid(null, msgs);
-			case FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS:
-				return basicSetSopclass(null, msgs);
+			case FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS:
+				return basicSetSopClass(null, msgs);
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TYPE:
 				return basicSetType(null, msgs);
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TITLE:
@@ -384,8 +384,8 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 				return getNumber();
 			case FhirPackage.IMAGING_STUDY_INSTANCE__UID:
 				return getUid();
-			case FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS:
-				return getSopclass();
+			case FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS:
+				return getSopClass();
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TYPE:
 				return getType();
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TITLE:
@@ -411,8 +411,8 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 			case FhirPackage.IMAGING_STUDY_INSTANCE__UID:
 				setUid((Oid)newValue);
 				return;
-			case FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS:
-				setSopclass((Oid)newValue);
+			case FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS:
+				setSopClass((Oid)newValue);
 				return;
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TYPE:
 				setType((org.hl7.fhir.String)newValue);
@@ -442,8 +442,8 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 			case FhirPackage.IMAGING_STUDY_INSTANCE__UID:
 				setUid((Oid)null);
 				return;
-			case FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS:
-				setSopclass((Oid)null);
+			case FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS:
+				setSopClass((Oid)null);
 				return;
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TYPE:
 				setType((org.hl7.fhir.String)null);
@@ -470,8 +470,8 @@ public class ImagingStudyInstanceImpl extends BackboneElementImpl implements Ima
 				return number != null;
 			case FhirPackage.IMAGING_STUDY_INSTANCE__UID:
 				return uid != null;
-			case FhirPackage.IMAGING_STUDY_INSTANCE__SOPCLASS:
-				return sopclass != null;
+			case FhirPackage.IMAGING_STUDY_INSTANCE__SOP_CLASS:
+				return sopClass != null;
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TYPE:
 				return type != null;
 			case FhirPackage.IMAGING_STUDY_INSTANCE__TITLE:

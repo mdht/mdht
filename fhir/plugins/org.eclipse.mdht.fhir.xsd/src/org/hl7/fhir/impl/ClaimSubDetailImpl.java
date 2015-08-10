@@ -16,7 +16,7 @@ import org.hl7.fhir.Decimal;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Money;
 import org.hl7.fhir.PositiveInt;
-import org.hl7.fhir.Quantity;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public class ClaimSubDetailImpl extends BackboneElementImpl implements ClaimSubD
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getUnitPrice() <em>Unit Price</em>}' containment reference.
@@ -283,7 +283,7 @@ public class ClaimSubDetailImpl extends BackboneElementImpl implements ClaimSubD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -292,8 +292,8 @@ public class ClaimSubDetailImpl extends BackboneElementImpl implements ClaimSubD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CLAIM_SUB_DETAIL__QUANTITY, oldQuantity, newQuantity);
@@ -307,7 +307,7 @@ public class ClaimSubDetailImpl extends BackboneElementImpl implements ClaimSubD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -614,7 +614,7 @@ public class ClaimSubDetailImpl extends BackboneElementImpl implements ClaimSubD
 				setService((Coding)newValue);
 				return;
 			case FhirPackage.CLAIM_SUB_DETAIL__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.CLAIM_SUB_DETAIL__UNIT_PRICE:
 				setUnitPrice((Money)newValue);
@@ -653,7 +653,7 @@ public class ClaimSubDetailImpl extends BackboneElementImpl implements ClaimSubD
 				setService((Coding)null);
 				return;
 			case FhirPackage.CLAIM_SUB_DETAIL__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.CLAIM_SUB_DETAIL__UNIT_PRICE:
 				setUnitPrice((Money)null);

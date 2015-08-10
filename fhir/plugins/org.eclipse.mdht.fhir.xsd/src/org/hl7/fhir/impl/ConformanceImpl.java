@@ -25,10 +25,12 @@ import org.hl7.fhir.ConformanceImplementation;
 import org.hl7.fhir.ConformanceMessaging;
 import org.hl7.fhir.ConformanceRest;
 import org.hl7.fhir.ConformanceSoftware;
+import org.hl7.fhir.ConformanceStatementKind;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Id;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.UnknownContentCode;
 import org.hl7.fhir.Uri;
 
 /**
@@ -42,14 +44,15 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getExperimental <em>Experimental</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getContact <em>Contact</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getCopyright <em>Copyright</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getExperimental <em>Experimental</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getSoftware <em>Software</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getImplementation <em>Implementation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceImpl#getFhirVersion <em>Fhir Version</em>}</li>
@@ -95,6 +98,26 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	protected org.hl7.fhir.String name;
 
 	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected Code status;
+
+	/**
+	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExperimental()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Boolean experimental;
+
+	/**
 	 * The cached value of the '{@link #getPublisher() <em>Publisher</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,6 +136,16 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * @ordered
 	 */
 	protected EList<ConformanceContact> contact;
+
+	/**
+	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateTime date;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -145,34 +178,14 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	protected org.hl7.fhir.String copyright;
 
 	/**
-	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatus()
+	 * @see #getKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected Code status;
-
-	/**
-	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExperimental()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.Boolean experimental;
-
-	/**
-	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected DateTime date;
+	protected ConformanceStatementKind kind;
 
 	/**
 	 * The cached value of the '{@link #getSoftware() <em>Software</em>}' containment reference.
@@ -212,7 +225,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.Boolean acceptUnknown;
+	protected UnknownContentCode acceptUnknown;
 
 	/**
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' containment reference list.
@@ -417,6 +430,92 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Code getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
+		status = newStatus;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__STATUS, oldStatus, newStatus);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStatus(Code newStatus) {
+		if (newStatus != status) {
+			NotificationChain msgs = null;
+			if (status != null)
+				msgs = ((InternalEObject)status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__STATUS, null, msgs);
+			if (newStatus != null)
+				msgs = ((InternalEObject)newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__STATUS, null, msgs);
+			msgs = basicSetStatus(newStatus, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__STATUS, newStatus, newStatus));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.Boolean getExperimental() {
+		return experimental;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExperimental(org.hl7.fhir.Boolean newExperimental, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldExperimental = experimental;
+		experimental = newExperimental;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__EXPERIMENTAL, oldExperimental, newExperimental);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExperimental(org.hl7.fhir.Boolean newExperimental) {
+		if (newExperimental != experimental) {
+			NotificationChain msgs = null;
+			if (experimental != null)
+				msgs = ((InternalEObject)experimental).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__EXPERIMENTAL, null, msgs);
+			if (newExperimental != null)
+				msgs = ((InternalEObject)newExperimental).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__EXPERIMENTAL, null, msgs);
+			msgs = basicSetExperimental(newExperimental, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__EXPERIMENTAL, newExperimental, newExperimental));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public org.hl7.fhir.String getPublisher() {
 		return publisher;
 	}
@@ -465,6 +564,49 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 			contact = new EObjectContainmentEList<ConformanceContact>(ConformanceContact.class, this, FhirPackage.CONFORMANCE__CONTACT);
 		}
 		return contact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateTime getDate() {
+		return date;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDate(DateTime newDate, NotificationChain msgs) {
+		DateTime oldDate = date;
+		date = newDate;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__DATE, oldDate, newDate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDate(DateTime newDate) {
+		if (newDate != date) {
+			NotificationChain msgs = null;
+			if (date != null)
+				msgs = ((InternalEObject)date).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__DATE, null, msgs);
+			if (newDate != null)
+				msgs = ((InternalEObject)newDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__DATE, null, msgs);
+			msgs = basicSetDate(newDate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__DATE, newDate, newDate));
 	}
 
 	/**
@@ -601,8 +743,8 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Code getStatus() {
-		return status;
+	public ConformanceStatementKind getKind() {
+		return kind;
 	}
 
 	/**
@@ -610,11 +752,11 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
-		Code oldStatus = status;
-		status = newStatus;
+	public NotificationChain basicSetKind(ConformanceStatementKind newKind, NotificationChain msgs) {
+		ConformanceStatementKind oldKind = kind;
+		kind = newKind;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__STATUS, oldStatus, newStatus);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__KIND, oldKind, newKind);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -625,104 +767,18 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(Code newStatus) {
-		if (newStatus != status) {
+	public void setKind(ConformanceStatementKind newKind) {
+		if (newKind != kind) {
 			NotificationChain msgs = null;
-			if (status != null)
-				msgs = ((InternalEObject)status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__STATUS, null, msgs);
-			if (newStatus != null)
-				msgs = ((InternalEObject)newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__STATUS, null, msgs);
-			msgs = basicSetStatus(newStatus, msgs);
+			if (kind != null)
+				msgs = ((InternalEObject)kind).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__KIND, null, msgs);
+			if (newKind != null)
+				msgs = ((InternalEObject)newKind).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__KIND, null, msgs);
+			msgs = basicSetKind(newKind, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__STATUS, newStatus, newStatus));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.Boolean getExperimental() {
-		return experimental;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetExperimental(org.hl7.fhir.Boolean newExperimental, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldExperimental = experimental;
-		experimental = newExperimental;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__EXPERIMENTAL, oldExperimental, newExperimental);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExperimental(org.hl7.fhir.Boolean newExperimental) {
-		if (newExperimental != experimental) {
-			NotificationChain msgs = null;
-			if (experimental != null)
-				msgs = ((InternalEObject)experimental).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__EXPERIMENTAL, null, msgs);
-			if (newExperimental != null)
-				msgs = ((InternalEObject)newExperimental).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__EXPERIMENTAL, null, msgs);
-			msgs = basicSetExperimental(newExperimental, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__EXPERIMENTAL, newExperimental, newExperimental));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DateTime getDate() {
-		return date;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDate(DateTime newDate, NotificationChain msgs) {
-		DateTime oldDate = date;
-		date = newDate;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__DATE, oldDate, newDate);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDate(DateTime newDate) {
-		if (newDate != date) {
-			NotificationChain msgs = null;
-			if (date != null)
-				msgs = ((InternalEObject)date).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__DATE, null, msgs);
-			if (newDate != null)
-				msgs = ((InternalEObject)newDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONFORMANCE__DATE, null, msgs);
-			msgs = basicSetDate(newDate, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__DATE, newDate, newDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__KIND, newKind, newKind));
 	}
 
 	/**
@@ -859,7 +915,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.Boolean getAcceptUnknown() {
+	public UnknownContentCode getAcceptUnknown() {
 		return acceptUnknown;
 	}
 
@@ -868,8 +924,8 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAcceptUnknown(org.hl7.fhir.Boolean newAcceptUnknown, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldAcceptUnknown = acceptUnknown;
+	public NotificationChain basicSetAcceptUnknown(UnknownContentCode newAcceptUnknown, NotificationChain msgs) {
+		UnknownContentCode oldAcceptUnknown = acceptUnknown;
 		acceptUnknown = newAcceptUnknown;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONFORMANCE__ACCEPT_UNKNOWN, oldAcceptUnknown, newAcceptUnknown);
@@ -883,7 +939,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAcceptUnknown(org.hl7.fhir.Boolean newAcceptUnknown) {
+	public void setAcceptUnknown(UnknownContentCode newAcceptUnknown) {
 		if (newAcceptUnknown != acceptUnknown) {
 			NotificationChain msgs = null;
 			if (acceptUnknown != null)
@@ -971,22 +1027,24 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 				return basicSetVersion(null, msgs);
 			case FhirPackage.CONFORMANCE__NAME:
 				return basicSetName(null, msgs);
+			case FhirPackage.CONFORMANCE__STATUS:
+				return basicSetStatus(null, msgs);
+			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
+				return basicSetExperimental(null, msgs);
 			case FhirPackage.CONFORMANCE__PUBLISHER:
 				return basicSetPublisher(null, msgs);
 			case FhirPackage.CONFORMANCE__CONTACT:
 				return ((InternalEList<?>)getContact()).basicRemove(otherEnd, msgs);
+			case FhirPackage.CONFORMANCE__DATE:
+				return basicSetDate(null, msgs);
 			case FhirPackage.CONFORMANCE__DESCRIPTION:
 				return basicSetDescription(null, msgs);
 			case FhirPackage.CONFORMANCE__REQUIREMENTS:
 				return basicSetRequirements(null, msgs);
 			case FhirPackage.CONFORMANCE__COPYRIGHT:
 				return basicSetCopyright(null, msgs);
-			case FhirPackage.CONFORMANCE__STATUS:
-				return basicSetStatus(null, msgs);
-			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
-				return basicSetExperimental(null, msgs);
-			case FhirPackage.CONFORMANCE__DATE:
-				return basicSetDate(null, msgs);
+			case FhirPackage.CONFORMANCE__KIND:
+				return basicSetKind(null, msgs);
 			case FhirPackage.CONFORMANCE__SOFTWARE:
 				return basicSetSoftware(null, msgs);
 			case FhirPackage.CONFORMANCE__IMPLEMENTATION:
@@ -1023,22 +1081,24 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 				return getVersion();
 			case FhirPackage.CONFORMANCE__NAME:
 				return getName();
+			case FhirPackage.CONFORMANCE__STATUS:
+				return getStatus();
+			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
+				return getExperimental();
 			case FhirPackage.CONFORMANCE__PUBLISHER:
 				return getPublisher();
 			case FhirPackage.CONFORMANCE__CONTACT:
 				return getContact();
+			case FhirPackage.CONFORMANCE__DATE:
+				return getDate();
 			case FhirPackage.CONFORMANCE__DESCRIPTION:
 				return getDescription();
 			case FhirPackage.CONFORMANCE__REQUIREMENTS:
 				return getRequirements();
 			case FhirPackage.CONFORMANCE__COPYRIGHT:
 				return getCopyright();
-			case FhirPackage.CONFORMANCE__STATUS:
-				return getStatus();
-			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
-				return getExperimental();
-			case FhirPackage.CONFORMANCE__DATE:
-				return getDate();
+			case FhirPackage.CONFORMANCE__KIND:
+				return getKind();
 			case FhirPackage.CONFORMANCE__SOFTWARE:
 				return getSoftware();
 			case FhirPackage.CONFORMANCE__IMPLEMENTATION:
@@ -1079,12 +1139,21 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 			case FhirPackage.CONFORMANCE__NAME:
 				setName((org.hl7.fhir.String)newValue);
 				return;
+			case FhirPackage.CONFORMANCE__STATUS:
+				setStatus((Code)newValue);
+				return;
+			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
+				setExperimental((org.hl7.fhir.Boolean)newValue);
+				return;
 			case FhirPackage.CONFORMANCE__PUBLISHER:
 				setPublisher((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.CONFORMANCE__CONTACT:
 				getContact().clear();
 				getContact().addAll((Collection<? extends ConformanceContact>)newValue);
+				return;
+			case FhirPackage.CONFORMANCE__DATE:
+				setDate((DateTime)newValue);
 				return;
 			case FhirPackage.CONFORMANCE__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)newValue);
@@ -1095,14 +1164,8 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 			case FhirPackage.CONFORMANCE__COPYRIGHT:
 				setCopyright((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.CONFORMANCE__STATUS:
-				setStatus((Code)newValue);
-				return;
-			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
-				setExperimental((org.hl7.fhir.Boolean)newValue);
-				return;
-			case FhirPackage.CONFORMANCE__DATE:
-				setDate((DateTime)newValue);
+			case FhirPackage.CONFORMANCE__KIND:
+				setKind((ConformanceStatementKind)newValue);
 				return;
 			case FhirPackage.CONFORMANCE__SOFTWARE:
 				setSoftware((ConformanceSoftware)newValue);
@@ -1114,7 +1177,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 				setFhirVersion((Id)newValue);
 				return;
 			case FhirPackage.CONFORMANCE__ACCEPT_UNKNOWN:
-				setAcceptUnknown((org.hl7.fhir.Boolean)newValue);
+				setAcceptUnknown((UnknownContentCode)newValue);
 				return;
 			case FhirPackage.CONFORMANCE__FORMAT:
 				getFormat().clear();
@@ -1157,11 +1220,20 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 			case FhirPackage.CONFORMANCE__NAME:
 				setName((org.hl7.fhir.String)null);
 				return;
+			case FhirPackage.CONFORMANCE__STATUS:
+				setStatus((Code)null);
+				return;
+			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
+				setExperimental((org.hl7.fhir.Boolean)null);
+				return;
 			case FhirPackage.CONFORMANCE__PUBLISHER:
 				setPublisher((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.CONFORMANCE__CONTACT:
 				getContact().clear();
+				return;
+			case FhirPackage.CONFORMANCE__DATE:
+				setDate((DateTime)null);
 				return;
 			case FhirPackage.CONFORMANCE__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)null);
@@ -1172,14 +1244,8 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 			case FhirPackage.CONFORMANCE__COPYRIGHT:
 				setCopyright((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.CONFORMANCE__STATUS:
-				setStatus((Code)null);
-				return;
-			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
-				setExperimental((org.hl7.fhir.Boolean)null);
-				return;
-			case FhirPackage.CONFORMANCE__DATE:
-				setDate((DateTime)null);
+			case FhirPackage.CONFORMANCE__KIND:
+				setKind((ConformanceStatementKind)null);
 				return;
 			case FhirPackage.CONFORMANCE__SOFTWARE:
 				setSoftware((ConformanceSoftware)null);
@@ -1191,7 +1257,7 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 				setFhirVersion((Id)null);
 				return;
 			case FhirPackage.CONFORMANCE__ACCEPT_UNKNOWN:
-				setAcceptUnknown((org.hl7.fhir.Boolean)null);
+				setAcceptUnknown((UnknownContentCode)null);
 				return;
 			case FhirPackage.CONFORMANCE__FORMAT:
 				getFormat().clear();
@@ -1226,22 +1292,24 @@ public class ConformanceImpl extends DomainResourceImpl implements Conformance {
 				return version != null;
 			case FhirPackage.CONFORMANCE__NAME:
 				return name != null;
+			case FhirPackage.CONFORMANCE__STATUS:
+				return status != null;
+			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
+				return experimental != null;
 			case FhirPackage.CONFORMANCE__PUBLISHER:
 				return publisher != null;
 			case FhirPackage.CONFORMANCE__CONTACT:
 				return contact != null && !contact.isEmpty();
+			case FhirPackage.CONFORMANCE__DATE:
+				return date != null;
 			case FhirPackage.CONFORMANCE__DESCRIPTION:
 				return description != null;
 			case FhirPackage.CONFORMANCE__REQUIREMENTS:
 				return requirements != null;
 			case FhirPackage.CONFORMANCE__COPYRIGHT:
 				return copyright != null;
-			case FhirPackage.CONFORMANCE__STATUS:
-				return status != null;
-			case FhirPackage.CONFORMANCE__EXPERIMENTAL:
-				return experimental != null;
-			case FhirPackage.CONFORMANCE__DATE:
-				return date != null;
+			case FhirPackage.CONFORMANCE__KIND:
+				return kind != null;
 			case FhirPackage.CONFORMANCE__SOFTWARE:
 				return software != null;
 			case FhirPackage.CONFORMANCE__IMPLEMENTATION:

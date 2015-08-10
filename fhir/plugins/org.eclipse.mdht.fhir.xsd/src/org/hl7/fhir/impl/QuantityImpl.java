@@ -27,7 +27,7 @@ import org.hl7.fhir.Uri;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.QuantityImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.QuantityImpl#getComparator <em>Comparator</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.QuantityImpl#getUnits <em>Units</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.QuantityImpl#getUnit <em>Unit</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.QuantityImpl#getSystem <em>System</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.QuantityImpl#getCode <em>Code</em>}</li>
  * </ul>
@@ -56,14 +56,14 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 	protected QuantityComparator comparator;
 
 	/**
-	 * The cached value of the '{@link #getUnits() <em>Units</em>}' containment reference.
+	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUnits()
+	 * @see #getUnit()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String units;
+	protected org.hl7.fhir.String unit;
 
 	/**
 	 * The cached value of the '{@link #getSystem() <em>System</em>}' containment reference.
@@ -195,8 +195,8 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getUnits() {
-		return units;
+	public org.hl7.fhir.String getUnit() {
+		return unit;
 	}
 
 	/**
@@ -204,11 +204,11 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUnits(org.hl7.fhir.String newUnits, NotificationChain msgs) {
-		org.hl7.fhir.String oldUnits = units;
-		units = newUnits;
+	public NotificationChain basicSetUnit(org.hl7.fhir.String newUnit, NotificationChain msgs) {
+		org.hl7.fhir.String oldUnit = unit;
+		unit = newUnit;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.QUANTITY__UNITS, oldUnits, newUnits);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.QUANTITY__UNIT, oldUnit, newUnit);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -219,18 +219,18 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUnits(org.hl7.fhir.String newUnits) {
-		if (newUnits != units) {
+	public void setUnit(org.hl7.fhir.String newUnit) {
+		if (newUnit != unit) {
 			NotificationChain msgs = null;
-			if (units != null)
-				msgs = ((InternalEObject)units).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.QUANTITY__UNITS, null, msgs);
-			if (newUnits != null)
-				msgs = ((InternalEObject)newUnits).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.QUANTITY__UNITS, null, msgs);
-			msgs = basicSetUnits(newUnits, msgs);
+			if (unit != null)
+				msgs = ((InternalEObject)unit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.QUANTITY__UNIT, null, msgs);
+			if (newUnit != null)
+				msgs = ((InternalEObject)newUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.QUANTITY__UNIT, null, msgs);
+			msgs = basicSetUnit(newUnit, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.QUANTITY__UNITS, newUnits, newUnits));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.QUANTITY__UNIT, newUnit, newUnit));
 	}
 
 	/**
@@ -331,8 +331,8 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 				return basicSetValue(null, msgs);
 			case FhirPackage.QUANTITY__COMPARATOR:
 				return basicSetComparator(null, msgs);
-			case FhirPackage.QUANTITY__UNITS:
-				return basicSetUnits(null, msgs);
+			case FhirPackage.QUANTITY__UNIT:
+				return basicSetUnit(null, msgs);
 			case FhirPackage.QUANTITY__SYSTEM:
 				return basicSetSystem(null, msgs);
 			case FhirPackage.QUANTITY__CODE:
@@ -353,8 +353,8 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 				return getValue();
 			case FhirPackage.QUANTITY__COMPARATOR:
 				return getComparator();
-			case FhirPackage.QUANTITY__UNITS:
-				return getUnits();
+			case FhirPackage.QUANTITY__UNIT:
+				return getUnit();
 			case FhirPackage.QUANTITY__SYSTEM:
 				return getSystem();
 			case FhirPackage.QUANTITY__CODE:
@@ -377,8 +377,8 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 			case FhirPackage.QUANTITY__COMPARATOR:
 				setComparator((QuantityComparator)newValue);
 				return;
-			case FhirPackage.QUANTITY__UNITS:
-				setUnits((org.hl7.fhir.String)newValue);
+			case FhirPackage.QUANTITY__UNIT:
+				setUnit((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.QUANTITY__SYSTEM:
 				setSystem((Uri)newValue);
@@ -404,8 +404,8 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 			case FhirPackage.QUANTITY__COMPARATOR:
 				setComparator((QuantityComparator)null);
 				return;
-			case FhirPackage.QUANTITY__UNITS:
-				setUnits((org.hl7.fhir.String)null);
+			case FhirPackage.QUANTITY__UNIT:
+				setUnit((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.QUANTITY__SYSTEM:
 				setSystem((Uri)null);
@@ -429,8 +429,8 @@ public class QuantityImpl extends ElementImpl implements Quantity {
 				return value != null;
 			case FhirPackage.QUANTITY__COMPARATOR:
 				return comparator != null;
-			case FhirPackage.QUANTITY__UNITS:
-				return units != null;
+			case FhirPackage.QUANTITY__UNIT:
+				return unit != null;
 			case FhirPackage.QUANTITY__SYSTEM:
 				return system != null;
 			case FhirPackage.QUANTITY__CODE:

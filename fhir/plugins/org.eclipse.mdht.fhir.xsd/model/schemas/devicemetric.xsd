@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -128,6 +128,41 @@ The update period may be different than the measurement repetition time, if the 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="DeviceMetricCalibrationType-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unspecified">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">TODO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="offset">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">TODO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gain">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">TODO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="two-point">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">TODO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DeviceMetricCalibrationType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Describes the type of a metric calibration</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="DeviceMetricCalibrationType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="DeviceMetricColor-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="black">
@@ -218,38 +253,33 @@ The update period may be different than the measurement repetition time, if the 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="DeviceMetricCalibrationType-list">
+  <xs:simpleType name="DeviceMetricOperationalStatus-list">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="unspecified">
+      <xs:enumeration value="on">
         <xs:annotation>
-          <xs:documentation xml:lang="en">TODO</xs:documentation>
+          <xs:documentation xml:lang="en">The DeviceMetric is operating and will generate DeviceObservations</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="offset">
+      <xs:enumeration value="off">
         <xs:annotation>
-          <xs:documentation xml:lang="en">TODO</xs:documentation>
+          <xs:documentation xml:lang="en">The DeviceMetric is not operating</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="gain">
+      <xs:enumeration value="standby">
         <xs:annotation>
-          <xs:documentation xml:lang="en">TODO</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="two-point">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">TODO</xs:documentation>
+          <xs:documentation xml:lang="en">The DeviceMetric is operating, but will not generate any DeviceObservations</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="DeviceMetricCalibrationType">
+  <xs:complexType name="DeviceMetricOperationalStatus">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Describes the type of a metric calibration</xs:documentation>
+      <xs:documentation xml:lang="en">Describes the operational status of the DeviceMetric</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="DeviceMetricCalibrationType-list" use="optional"/>
+        <xs:attribute name="value" type="DeviceMetricOperationalStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -285,36 +315,6 @@ The update period may be different than the measurement repetition time, if the 
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="DeviceMetricCategory-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="DeviceMetricOperationalStatus-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="on">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The DeviceMetric is operating and will generate DeviceObservations</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="off">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The DeviceMetric is not operating</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="standby">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The DeviceMetric is operating, but will not generate any DeviceObservations</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DeviceMetricOperationalStatus">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Describes the operational status of the DeviceMetric</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="DeviceMetricOperationalStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

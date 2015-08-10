@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -44,14 +44,64 @@
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Name of the Test Script.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URL that is used to identify this Test Script. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this Test Script is (or will be) published.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the TestScript. This is an arbitrary value managed by the TestScript author manually.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A free text natural language name identifying the TestScript.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of the TestScript.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This TestScript was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the individual or organization that published the Test Script.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" type="TestScript.Contact" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contacts to assist a user in finding and communicating with the publisher.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date that this version of the TestScript was published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the test cases change.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Description of the Test Script.</xs:documentation>
+              <xs:documentation xml:lang="en">A free text natural language description of the TestScript and its use.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of Test Scripts.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="requirements" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Explains why this Test Script is needed and why it's been constrained as it has.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the Test Script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the details of the constraints and mappings.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="metadata" type="TestScript.Metadata" minOccurs="0" maxOccurs="1">
@@ -92,6 +142,27 @@
           <xs:element name="teardown" type="TestScript.Teardown" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">A series of operations required to clean up after the all the tests are executed (successfully or otherwise).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Contact">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of an individual to contact regarding the Test Script.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="telecom" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details for individual (if a name was provided) or the publisher.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -320,6 +391,11 @@
           <xs:element name="destination" minOccurs="0" maxOccurs="1" type="integer">
             <xs:annotation>
               <xs:documentation xml:lang="en">Which server to perform the operation on.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="encodeRequestUrl" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="params" minOccurs="0" maxOccurs="1" type="string">
@@ -562,6 +638,31 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="ContentType-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="xml">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">XML content-type corresponding to the application/xml+fhir mime-type</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="json">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">JSON content-type corresponding to the application/json+fhir mime-type</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ContentType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The content or mime type.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ContentType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="AssertionDirectionType-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="response">
@@ -584,6 +685,71 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="AssertionDirectionType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AssertionOperatorType-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="equals">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Default value. Equals comparison.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="notEquals">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Not equals comparison.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="in">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value within a known set of values.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="notIn">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value not within a known set of values.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="greaterThan">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value to be greater than a known value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lessThan">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value to be less than a known value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="empty">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value is empty.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="notEmpty">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value is not empty.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="contains">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value string contains a known value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="notContains">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Compare value string does not contain a known value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AssertionOperatorType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The type of operator to use for assertion.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AssertionOperatorType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -659,96 +825,6 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="AssertionResponseTypes-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="AssertionOperatorType-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="equals">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Default value. Equals comparison.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="notEquals">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Not equals comparison.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="in">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value within a known set of values.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="notIn">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value not within a known set of values.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="greaterThan">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value to be greater than a known value.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="lessThan">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value to be less than a known value.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="empty">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value is empty.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="notEmpty">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value is not empty.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="contains">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value string contains a known value.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="notContains">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Compare value string does not contain a known value.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AssertionOperatorType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The type of operator to use for assertion.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="AssertionOperatorType-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="ContentType-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="xml">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">XML content-type corresponding to the application/xml+fhir mime-type</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="json">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">JSON content-type corresponding to the application/json+fhir mime-type</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="ContentType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The content or mime type.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="ContentType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

@@ -33,6 +33,7 @@ import org.hl7.fhir.HumanName;
 import org.hl7.fhir.Id;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Instant;
+import org.hl7.fhir.Markdown;
 import org.hl7.fhir.Meta;
 import org.hl7.fhir.Oid;
 import org.hl7.fhir.ParametersParameter;
@@ -76,6 +77,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueId <em>Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueUnsignedInt <em>Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValuePositiveInt <em>Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueMarkdown <em>Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueAnnotation <em>Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueAttachment <em>Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ParametersParameterImpl#getValueIdentifier <em>Value Identifier</em>}</li>
@@ -269,6 +271,16 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 	 * @ordered
 	 */
 	protected PositiveInt valuePositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getValueMarkdown() <em>Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown valueMarkdown;
 
 	/**
 	 * The cached value of the '{@link #getValueAnnotation() <em>Value Annotation</em>}' containment reference.
@@ -1215,6 +1227,49 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Markdown getValueMarkdown() {
+		return valueMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValueMarkdown(Markdown newValueMarkdown, NotificationChain msgs) {
+		Markdown oldValueMarkdown = valueMarkdown;
+		valueMarkdown = newValueMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN, oldValueMarkdown, newValueMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValueMarkdown(Markdown newValueMarkdown) {
+		if (newValueMarkdown != valueMarkdown) {
+			NotificationChain msgs = null;
+			if (valueMarkdown != null)
+				msgs = ((InternalEObject)valueMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN, null, msgs);
+			if (newValueMarkdown != null)
+				msgs = ((InternalEObject)newValueMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN, null, msgs);
+			msgs = basicSetValueMarkdown(newValueMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN, newValueMarkdown, newValueMarkdown));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Annotation getValueAnnotation() {
 		return valueAnnotation;
 	}
@@ -2038,6 +2093,8 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return basicSetValueUnsignedInt(null, msgs);
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				return basicSetValuePositiveInt(null, msgs);
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN:
+				return basicSetValueMarkdown(null, msgs);
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
 				return basicSetValueAnnotation(null, msgs);
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:
@@ -2122,6 +2179,8 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return getValueUnsignedInt();
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				return getValuePositiveInt();
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN:
+				return getValueMarkdown();
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
 				return getValueAnnotation();
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:
@@ -2223,6 +2282,9 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				setValuePositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN:
+				setValueMarkdown((Markdown)newValue);
 				return;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
 				setValueAnnotation((Annotation)newValue);
@@ -2345,6 +2407,9 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				setValuePositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN:
+				setValueMarkdown((Markdown)null);
+				return;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
 				setValueAnnotation((Annotation)null);
 				return;
@@ -2448,6 +2513,8 @@ public class ParametersParameterImpl extends ElementImpl implements ParametersPa
 				return valueUnsignedInt != null;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_POSITIVE_INT:
 				return valuePositiveInt != null;
+			case FhirPackage.PARAMETERS_PARAMETER__VALUE_MARKDOWN:
+				return valueMarkdown != null;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ANNOTATION:
 				return valueAnnotation != null;
 			case FhirPackage.PARAMETERS_PARAMETER__VALUE_ATTACHMENT:

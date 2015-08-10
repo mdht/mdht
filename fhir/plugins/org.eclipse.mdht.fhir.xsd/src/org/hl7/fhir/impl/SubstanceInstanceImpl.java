@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
-import org.hl7.fhir.Quantity;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.SubstanceInstance;
 
 /**
@@ -60,7 +60,7 @@ public class SubstanceInstanceImpl extends BackboneElementImpl implements Substa
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,7 +172,7 @@ public class SubstanceInstanceImpl extends BackboneElementImpl implements Substa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -181,8 +181,8 @@ public class SubstanceInstanceImpl extends BackboneElementImpl implements Substa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SUBSTANCE_INSTANCE__QUANTITY, oldQuantity, newQuantity);
@@ -196,7 +196,7 @@ public class SubstanceInstanceImpl extends BackboneElementImpl implements Substa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -261,7 +261,7 @@ public class SubstanceInstanceImpl extends BackboneElementImpl implements Substa
 				setExpiry((DateTime)newValue);
 				return;
 			case FhirPackage.SUBSTANCE_INSTANCE__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -282,7 +282,7 @@ public class SubstanceInstanceImpl extends BackboneElementImpl implements Substa
 				setExpiry((DateTime)null);
 				return;
 			case FhirPackage.SUBSTANCE_INSTANCE__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 		}
 		super.eUnset(featureID);

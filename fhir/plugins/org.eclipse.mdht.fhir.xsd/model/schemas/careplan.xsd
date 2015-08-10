@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -232,12 +232,12 @@
               <xs:documentation xml:lang="en">Identifies the food, drug or other product to be consumed or supplied in the activity.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="dailyAmount" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="dailyAmount" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the quantity expected to be consumed in a given day.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the quantity expected to be supplied, addministered or consumed by the subject.</xs:documentation>
            </xs:annotation>
@@ -278,6 +278,51 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="CarePlanStatus-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CarePlanActivityStatus-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="not-started">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Activity is planned but no action has yet been taken</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="scheduled">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Appointment or other booking has occurred but activity has not yet begun</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="in-progress">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Activity has been started but is not yet complete</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="on-hold">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Activity was started but has temporarily ceased with an expectation of resumption at a future time.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The activities have been completed (more or less) as planned</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cancelled">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The activities have been ended prior to completion (perhaps even before they were started)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CarePlanActivityStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Indicates where the activity is at in its overall life cycle</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="CarePlanActivityStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -328,51 +373,6 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="CarePlanActivityCategory-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="CarePlanActivityStatus-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="not-started">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Activity is planned but no action has yet been taken</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="scheduled">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Appointment or other booking has occurred but activity has not yet begun</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="in-progress">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Activity has been started but is not yet complete</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="on-hold">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Activity was started but has temporarily ceased with an expectation of resumption at a future time.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="completed">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The activities have been completed (more or less) as planned</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="cancelled">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The activities have been ended prior to completion (perhaps even before they were started)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="CarePlanActivityStatus">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Indicates where the activity is at in its overall life cycle</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="CarePlanActivityStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

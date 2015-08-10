@@ -20,6 +20,7 @@ package org.hl7.fhir;
  *   <li>{@link org.hl7.fhir.ContactPoint#getSystem <em>System</em>}</li>
  *   <li>{@link org.hl7.fhir.ContactPoint#getValue <em>Value</em>}</li>
  *   <li>{@link org.hl7.fhir.ContactPoint#getUse <em>Use</em>}</li>
+ *   <li>{@link org.hl7.fhir.ContactPoint#getRank <em>Rank</em>}</li>
  *   <li>{@link org.hl7.fhir.ContactPoint#getPeriod <em>Period</em>}</li>
  * </ul>
  *
@@ -105,6 +106,32 @@ public interface ContactPoint extends Element {
 	 * @generated
 	 */
 	void setUse(ContactPointUse value);
+
+	/**
+	 * Returns the value of the '<em><b>Rank</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Rank</em>' containment reference.
+	 * @see #setRank(PositiveInt)
+	 * @see org.hl7.fhir.FhirPackage#getContactPoint_Rank()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='rank' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	PositiveInt getRank();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ContactPoint#getRank <em>Rank</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rank</em>' containment reference.
+	 * @see #getRank()
+	 * @generated
+	 */
+	void setRank(PositiveInt value);
 
 	/**
 	 * Returns the value of the '<em><b>Period</b></em>' containment reference.

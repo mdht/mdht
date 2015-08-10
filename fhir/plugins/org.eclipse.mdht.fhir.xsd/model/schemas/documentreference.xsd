@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -69,12 +69,12 @@
               <xs:documentation xml:lang="en">A categorization for the type of document - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="format" minOccurs="0" maxOccurs="unbounded" type="uri">
+          <xs:element name="format" minOccurs="0" maxOccurs="unbounded" type="Coding">
             <xs:annotation>
               <xs:documentation xml:lang="en">An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="author" minOccurs="1" maxOccurs="unbounded" type="Reference">
+          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies who is responsible for adding the information to the document.</xs:documentation>
            </xs:annotation>
@@ -119,9 +119,9 @@
               <xs:documentation xml:lang="en">Human-readable description of the source document. This is sometimes known as the &quot;title&quot;.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="confidentiality" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="securityLabel" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A set of Security-Tag codes specifying the level of privacy/security of the Document.</xs:documentation>
+              <xs:documentation xml:lang="en">A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security is the security labels of the reference to the document, while DocumentReference.securityLabel is the security labels on the document it refers to.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="content" minOccurs="1" maxOccurs="unbounded" type="Attachment">
@@ -166,6 +166,11 @@
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Describes the clinical encounter or type of care that the document content is associated with.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="event" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act.</xs:documentation>

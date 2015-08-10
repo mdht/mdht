@@ -11,6 +11,7 @@ import java.lang.String;
  *
  * <!-- begin-model-doc -->
  * String of characters used to identify a name or a resource
+ * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
  * If the element is present, it must have either a @value, an @id, or extensions
  * <!-- end-model-doc -->
  *

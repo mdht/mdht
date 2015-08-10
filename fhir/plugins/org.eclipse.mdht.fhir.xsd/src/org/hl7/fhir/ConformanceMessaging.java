@@ -29,30 +29,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ConformanceMessaging extends BackboneElement {
 	/**
-	 * Returns the value of the '<em><b>Endpoint</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Endpoint</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.ConformanceEndpoint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An address to which messages and/or replies are to be sent.
+	 * An endpoint (network accessible address) to which messages and/or replies are to be sent.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Endpoint</em>' containment reference.
-	 * @see #setEndpoint(Uri)
+	 * @return the value of the '<em>Endpoint</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getConformanceMessaging_Endpoint()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='endpoint' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Uri getEndpoint();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ConformanceMessaging#getEndpoint <em>Endpoint</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Endpoint</em>' containment reference.
-	 * @see #getEndpoint()
-	 * @generated
-	 */
-	void setEndpoint(Uri value);
+	EList<ConformanceEndpoint> getEndpoint();
 
 	/**
 	 * Returns the value of the '<em><b>Reliable Cache</b></em>' containment reference.

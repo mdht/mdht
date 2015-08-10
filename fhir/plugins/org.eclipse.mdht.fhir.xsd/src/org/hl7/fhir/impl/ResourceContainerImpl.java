@@ -90,7 +90,7 @@ import org.hl7.fhir.ProcessRequest;
 import org.hl7.fhir.ProcessResponse;
 import org.hl7.fhir.Provenance;
 import org.hl7.fhir.Questionnaire;
-import org.hl7.fhir.QuestionnaireAnswers;
+import org.hl7.fhir.QuestionnaireResponse;
 import org.hl7.fhir.ReferralRequest;
 import org.hl7.fhir.RelatedPerson;
 import org.hl7.fhir.ResourceContainer;
@@ -102,7 +102,6 @@ import org.hl7.fhir.Specimen;
 import org.hl7.fhir.StructureDefinition;
 import org.hl7.fhir.Subscription;
 import org.hl7.fhir.Substance;
-import org.hl7.fhir.Supply;
 import org.hl7.fhir.SupplyDelivery;
 import org.hl7.fhir.SupplyRequest;
 import org.hl7.fhir.TestScript;
@@ -194,7 +193,7 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getProcessResponse <em>Process Response</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getProvenance <em>Provenance</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getQuestionnaire <em>Questionnaire</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getQuestionnaireAnswers <em>Questionnaire Answers</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getQuestionnaireResponse <em>Questionnaire Response</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getReferralRequest <em>Referral Request</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getRelatedPerson <em>Related Person</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getRiskAssessment <em>Risk Assessment</em>}</li>
@@ -205,7 +204,6 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getStructureDefinition <em>Structure Definition</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getSubscription <em>Subscription</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getSubstance <em>Substance</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getSupply <em>Supply</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getSupplyDelivery <em>Supply Delivery</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getSupplyRequest <em>Supply Request</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getTestScript <em>Test Script</em>}</li>
@@ -988,14 +986,14 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	protected Questionnaire questionnaire;
 
 	/**
-	 * The cached value of the '{@link #getQuestionnaireAnswers() <em>Questionnaire Answers</em>}' containment reference.
+	 * The cached value of the '{@link #getQuestionnaireResponse() <em>Questionnaire Response</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQuestionnaireAnswers()
+	 * @see #getQuestionnaireResponse()
 	 * @generated
 	 * @ordered
 	 */
-	protected QuestionnaireAnswers questionnaireAnswers;
+	protected QuestionnaireResponse questionnaireResponse;
 
 	/**
 	 * The cached value of the '{@link #getReferralRequest() <em>Referral Request</em>}' containment reference.
@@ -1096,16 +1094,6 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected Substance substance;
-
-	/**
-	 * The cached value of the '{@link #getSupply() <em>Supply</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupply()
-	 * @generated
-	 * @ordered
-	 */
-	protected Supply supply;
 
 	/**
 	 * The cached value of the '{@link #getSupplyDelivery() <em>Supply Delivery</em>}' containment reference.
@@ -4502,8 +4490,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QuestionnaireAnswers getQuestionnaireAnswers() {
-		return questionnaireAnswers;
+	public QuestionnaireResponse getQuestionnaireResponse() {
+		return questionnaireResponse;
 	}
 
 	/**
@@ -4511,11 +4499,11 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuestionnaireAnswers(QuestionnaireAnswers newQuestionnaireAnswers, NotificationChain msgs) {
-		QuestionnaireAnswers oldQuestionnaireAnswers = questionnaireAnswers;
-		questionnaireAnswers = newQuestionnaireAnswers;
+	public NotificationChain basicSetQuestionnaireResponse(QuestionnaireResponse newQuestionnaireResponse, NotificationChain msgs) {
+		QuestionnaireResponse oldQuestionnaireResponse = questionnaireResponse;
+		questionnaireResponse = newQuestionnaireResponse;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS, oldQuestionnaireAnswers, newQuestionnaireAnswers);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE, oldQuestionnaireResponse, newQuestionnaireResponse);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -4526,18 +4514,18 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuestionnaireAnswers(QuestionnaireAnswers newQuestionnaireAnswers) {
-		if (newQuestionnaireAnswers != questionnaireAnswers) {
+	public void setQuestionnaireResponse(QuestionnaireResponse newQuestionnaireResponse) {
+		if (newQuestionnaireResponse != questionnaireResponse) {
 			NotificationChain msgs = null;
-			if (questionnaireAnswers != null)
-				msgs = ((InternalEObject)questionnaireAnswers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS, null, msgs);
-			if (newQuestionnaireAnswers != null)
-				msgs = ((InternalEObject)newQuestionnaireAnswers).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS, null, msgs);
-			msgs = basicSetQuestionnaireAnswers(newQuestionnaireAnswers, msgs);
+			if (questionnaireResponse != null)
+				msgs = ((InternalEObject)questionnaireResponse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE, null, msgs);
+			if (newQuestionnaireResponse != null)
+				msgs = ((InternalEObject)newQuestionnaireResponse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE, null, msgs);
+			msgs = basicSetQuestionnaireResponse(newQuestionnaireResponse, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS, newQuestionnaireAnswers, newQuestionnaireAnswers));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE, newQuestionnaireResponse, newQuestionnaireResponse));
 	}
 
 	/**
@@ -4975,49 +4963,6 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Supply getSupply() {
-		return supply;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSupply(Supply newSupply, NotificationChain msgs) {
-		Supply oldSupply = supply;
-		supply = newSupply;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__SUPPLY, oldSupply, newSupply);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSupply(Supply newSupply) {
-		if (newSupply != supply) {
-			NotificationChain msgs = null;
-			if (supply != null)
-				msgs = ((InternalEObject)supply).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__SUPPLY, null, msgs);
-			if (newSupply != null)
-				msgs = ((InternalEObject)newSupply).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__SUPPLY, null, msgs);
-			msgs = basicSetSupply(newSupply, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__SUPPLY, newSupply, newSupply));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SupplyDelivery getSupplyDelivery() {
 		return supplyDelivery;
 	}
@@ -5433,8 +5378,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return basicSetProvenance(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE:
 				return basicSetQuestionnaire(null, msgs);
-			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS:
-				return basicSetQuestionnaireAnswers(null, msgs);
+			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE:
+				return basicSetQuestionnaireResponse(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__REFERRAL_REQUEST:
 				return basicSetReferralRequest(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__RELATED_PERSON:
@@ -5455,8 +5400,6 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return basicSetSubscription(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__SUBSTANCE:
 				return basicSetSubstance(null, msgs);
-			case FhirPackage.RESOURCE_CONTAINER__SUPPLY:
-				return basicSetSupply(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_DELIVERY:
 				return basicSetSupplyDelivery(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_REQUEST:
@@ -5635,8 +5578,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return getProvenance();
 			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE:
 				return getQuestionnaire();
-			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS:
-				return getQuestionnaireAnswers();
+			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE:
+				return getQuestionnaireResponse();
 			case FhirPackage.RESOURCE_CONTAINER__REFERRAL_REQUEST:
 				return getReferralRequest();
 			case FhirPackage.RESOURCE_CONTAINER__RELATED_PERSON:
@@ -5657,8 +5600,6 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return getSubscription();
 			case FhirPackage.RESOURCE_CONTAINER__SUBSTANCE:
 				return getSubstance();
-			case FhirPackage.RESOURCE_CONTAINER__SUPPLY:
-				return getSupply();
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_DELIVERY:
 				return getSupplyDelivery();
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_REQUEST:
@@ -5914,8 +5855,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE:
 				setQuestionnaire((Questionnaire)newValue);
 				return;
-			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS:
-				setQuestionnaireAnswers((QuestionnaireAnswers)newValue);
+			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE:
+				setQuestionnaireResponse((QuestionnaireResponse)newValue);
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__REFERRAL_REQUEST:
 				setReferralRequest((ReferralRequest)newValue);
@@ -5946,9 +5887,6 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__SUBSTANCE:
 				setSubstance((Substance)newValue);
-				return;
-			case FhirPackage.RESOURCE_CONTAINER__SUPPLY:
-				setSupply((Supply)newValue);
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_DELIVERY:
 				setSupplyDelivery((SupplyDelivery)newValue);
@@ -6211,8 +6149,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE:
 				setQuestionnaire((Questionnaire)null);
 				return;
-			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS:
-				setQuestionnaireAnswers((QuestionnaireAnswers)null);
+			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE:
+				setQuestionnaireResponse((QuestionnaireResponse)null);
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__REFERRAL_REQUEST:
 				setReferralRequest((ReferralRequest)null);
@@ -6243,9 +6181,6 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__SUBSTANCE:
 				setSubstance((Substance)null);
-				return;
-			case FhirPackage.RESOURCE_CONTAINER__SUPPLY:
-				setSupply((Supply)null);
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_DELIVERY:
 				setSupplyDelivery((SupplyDelivery)null);
@@ -6431,8 +6366,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return provenance != null;
 			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE:
 				return questionnaire != null;
-			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS:
-				return questionnaireAnswers != null;
+			case FhirPackage.RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE:
+				return questionnaireResponse != null;
 			case FhirPackage.RESOURCE_CONTAINER__REFERRAL_REQUEST:
 				return referralRequest != null;
 			case FhirPackage.RESOURCE_CONTAINER__RELATED_PERSON:
@@ -6453,8 +6388,6 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return subscription != null;
 			case FhirPackage.RESOURCE_CONTAINER__SUBSTANCE:
 				return substance != null;
-			case FhirPackage.RESOURCE_CONTAINER__SUPPLY:
-				return supply != null;
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_DELIVERY:
 				return supplyDelivery != null;
 			case FhirPackage.RESOURCE_CONTAINER__SUPPLY_REQUEST:

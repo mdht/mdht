@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -117,7 +117,7 @@
             <xs:element name="collectedDateTime" type="dateTime"/>
             <xs:element name="collectedPeriod" type="Period"/>
           </xs:choice>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.</xs:documentation>
            </xs:annotation>
@@ -127,13 +127,11 @@
               <xs:documentation xml:lang="en">A coded value specifying the technique that is used to perform the procedure.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="bodySite" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="bodySiteCodeableConcept" type="CodeableConcept"/>
-            <xs:element name="bodySiteReference" type="Reference"/>
-          </xs:choice>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -186,12 +184,12 @@
               <xs:documentation xml:lang="en">The type of container associated with the specimen (e.g. slide, aliquot, etc).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="capacity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="capacity" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The capacity (volume or other measure) the container may contain.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="specimenQuantity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="specimenQuantity" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.</xs:documentation>
            </xs:annotation>

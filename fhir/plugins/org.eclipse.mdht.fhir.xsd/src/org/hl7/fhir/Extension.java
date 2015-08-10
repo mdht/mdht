@@ -34,6 +34,7 @@ import java.lang.String;
  *   <li>{@link org.hl7.fhir.Extension#getValueId <em>Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.Extension#getValueUnsignedInt <em>Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.Extension#getValuePositiveInt <em>Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.Extension#getValueMarkdown <em>Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.Extension#getValueAnnotation <em>Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.Extension#getValueAttachment <em>Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.Extension#getValueIdentifier <em>Value Identifier</em>}</li>
@@ -490,6 +491,33 @@ public interface Extension extends Element {
 	 * @generated
 	 */
 	void setValuePositiveInt(PositiveInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value Markdown</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value Markdown</em>' containment reference.
+	 * @see #setValueMarkdown(Markdown)
+	 * @see org.hl7.fhir.FhirPackage#getExtension_ValueMarkdown()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='valueMarkdown' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Markdown getValueMarkdown();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Extension#getValueMarkdown <em>Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Markdown</em>' containment reference.
+	 * @see #getValueMarkdown()
+	 * @generated
+	 */
+	void setValueMarkdown(Markdown value);
 
 	/**
 	 * Returns the value of the '<em><b>Value Annotation</b></em>' containment reference.

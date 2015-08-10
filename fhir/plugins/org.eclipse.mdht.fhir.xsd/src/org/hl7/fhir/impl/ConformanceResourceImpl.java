@@ -44,6 +44,7 @@ import org.hl7.fhir.ResourceVersionPolicy;
  *   <li>{@link org.hl7.fhir.impl.ConformanceResourceImpl#getConditionalUpdate <em>Conditional Update</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceResourceImpl#getConditionalDelete <em>Conditional Delete</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceResourceImpl#getSearchInclude <em>Search Include</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceResourceImpl#getSearchRevInclude <em>Search Rev Include</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceResourceImpl#getSearchParam <em>Search Param</em>}</li>
  * </ul>
  *
@@ -149,6 +150,16 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 	 * @ordered
 	 */
 	protected EList<org.hl7.fhir.String> searchInclude;
+
+	/**
+	 * The cached value of the '{@link #getSearchRevInclude() <em>Search Rev Include</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSearchRevInclude()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<org.hl7.fhir.String> searchRevInclude;
 
 	/**
 	 * The cached value of the '{@link #getSearchParam() <em>Search Param</em>}' containment reference list.
@@ -552,6 +563,18 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<org.hl7.fhir.String> getSearchRevInclude() {
+		if (searchRevInclude == null) {
+			searchRevInclude = new EObjectContainmentEList<org.hl7.fhir.String>(org.hl7.fhir.String.class, this, FhirPackage.CONFORMANCE_RESOURCE__SEARCH_REV_INCLUDE);
+		}
+		return searchRevInclude;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ConformanceSearchParam> getSearchParam() {
 		if (searchParam == null) {
 			searchParam = new EObjectContainmentEList<ConformanceSearchParam>(ConformanceSearchParam.class, this, FhirPackage.CONFORMANCE_RESOURCE__SEARCH_PARAM);
@@ -587,6 +610,8 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 				return basicSetConditionalDelete(null, msgs);
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_INCLUDE:
 				return ((InternalEList<?>)getSearchInclude()).basicRemove(otherEnd, msgs);
+			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_REV_INCLUDE:
+				return ((InternalEList<?>)getSearchRevInclude()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_PARAM:
 				return ((InternalEList<?>)getSearchParam()).basicRemove(otherEnd, msgs);
 		}
@@ -621,6 +646,8 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 				return getConditionalDelete();
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_INCLUDE:
 				return getSearchInclude();
+			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_REV_INCLUDE:
+				return getSearchRevInclude();
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_PARAM:
 				return getSearchParam();
 		}
@@ -668,6 +695,10 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 				getSearchInclude().clear();
 				getSearchInclude().addAll((Collection<? extends org.hl7.fhir.String>)newValue);
 				return;
+			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_REV_INCLUDE:
+				getSearchRevInclude().clear();
+				getSearchRevInclude().addAll((Collection<? extends org.hl7.fhir.String>)newValue);
+				return;
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_PARAM:
 				getSearchParam().clear();
 				getSearchParam().addAll((Collection<? extends ConformanceSearchParam>)newValue);
@@ -714,6 +745,9 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_INCLUDE:
 				getSearchInclude().clear();
 				return;
+			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_REV_INCLUDE:
+				getSearchRevInclude().clear();
+				return;
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_PARAM:
 				getSearchParam().clear();
 				return;
@@ -749,6 +783,8 @@ public class ConformanceResourceImpl extends BackboneElementImpl implements Conf
 				return conditionalDelete != null;
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_INCLUDE:
 				return searchInclude != null && !searchInclude.isEmpty();
+			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_REV_INCLUDE:
+				return searchRevInclude != null && !searchRevInclude.isEmpty();
 			case FhirPackage.CONFORMANCE_RESOURCE__SEARCH_PARAM:
 				return searchParam != null && !searchParam.isEmpty();
 		}

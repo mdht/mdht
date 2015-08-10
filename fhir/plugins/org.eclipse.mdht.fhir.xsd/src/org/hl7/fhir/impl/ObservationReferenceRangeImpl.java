@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.ObservationReferenceRange;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Range;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity low;
+	protected SimpleQuantity low;
 
 	/**
 	 * The cached value of the '{@link #getHigh() <em>High</em>}' containment reference.
@@ -52,7 +52,7 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity high;
+	protected SimpleQuantity high;
 
 	/**
 	 * The cached value of the '{@link #getMeaning() <em>Meaning</em>}' containment reference.
@@ -108,7 +108,7 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getLow() {
+	public SimpleQuantity getLow() {
 		return low;
 	}
 
@@ -117,8 +117,8 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLow(Quantity newLow, NotificationChain msgs) {
-		Quantity oldLow = low;
+	public NotificationChain basicSetLow(SimpleQuantity newLow, NotificationChain msgs) {
+		SimpleQuantity oldLow = low;
 		low = newLow;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION_REFERENCE_RANGE__LOW, oldLow, newLow);
@@ -132,7 +132,7 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLow(Quantity newLow) {
+	public void setLow(SimpleQuantity newLow) {
 		if (newLow != low) {
 			NotificationChain msgs = null;
 			if (low != null)
@@ -151,7 +151,7 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getHigh() {
+	public SimpleQuantity getHigh() {
 		return high;
 	}
 
@@ -160,8 +160,8 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetHigh(Quantity newHigh, NotificationChain msgs) {
-		Quantity oldHigh = high;
+	public NotificationChain basicSetHigh(SimpleQuantity newHigh, NotificationChain msgs) {
+		SimpleQuantity oldHigh = high;
 		high = newHigh;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OBSERVATION_REFERENCE_RANGE__HIGH, oldHigh, newHigh);
@@ -175,7 +175,7 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHigh(Quantity newHigh) {
+	public void setHigh(SimpleQuantity newHigh) {
 		if (newHigh != high) {
 			NotificationChain msgs = null;
 			if (high != null)
@@ -371,10 +371,10 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FhirPackage.OBSERVATION_REFERENCE_RANGE__LOW:
-				setLow((Quantity)newValue);
+				setLow((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.OBSERVATION_REFERENCE_RANGE__HIGH:
-				setHigh((Quantity)newValue);
+				setHigh((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.OBSERVATION_REFERENCE_RANGE__MEANING:
 				setMeaning((CodeableConcept)newValue);
@@ -398,10 +398,10 @@ public class ObservationReferenceRangeImpl extends BackboneElementImpl implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FhirPackage.OBSERVATION_REFERENCE_RANGE__LOW:
-				setLow((Quantity)null);
+				setLow((SimpleQuantity)null);
 				return;
 			case FhirPackage.OBSERVATION_REFERENCE_RANGE__HIGH:
-				setHigh((Quantity)null);
+				setHigh((SimpleQuantity)null);
 				return;
 			case FhirPackage.OBSERVATION_REFERENCE_RANGE__MEANING:
 				setMeaning((CodeableConcept)null);

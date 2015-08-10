@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.GroupCharacteristic;
+import org.hl7.fhir.Period;
 import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Range;
 
@@ -30,6 +31,7 @@ import org.hl7.fhir.Range;
  *   <li>{@link org.hl7.fhir.impl.GroupCharacteristicImpl#getValueQuantity <em>Value Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.GroupCharacteristicImpl#getValueRange <em>Value Range</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.GroupCharacteristicImpl#getExclude <em>Exclude</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.GroupCharacteristicImpl#getPeriod <em>Period</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,6 +96,16 @@ public class GroupCharacteristicImpl extends BackboneElementImpl implements Grou
 	 * @ordered
 	 */
 	protected org.hl7.fhir.Boolean exclude;
+
+	/**
+	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPeriod()
+	 * @generated
+	 * @ordered
+	 */
+	protected Period period;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,6 +389,49 @@ public class GroupCharacteristicImpl extends BackboneElementImpl implements Grou
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Period getPeriod() {
+		return period;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPeriod(Period newPeriod, NotificationChain msgs) {
+		Period oldPeriod = period;
+		period = newPeriod;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.GROUP_CHARACTERISTIC__PERIOD, oldPeriod, newPeriod);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPeriod(Period newPeriod) {
+		if (newPeriod != period) {
+			NotificationChain msgs = null;
+			if (period != null)
+				msgs = ((InternalEObject)period).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.GROUP_CHARACTERISTIC__PERIOD, null, msgs);
+			if (newPeriod != null)
+				msgs = ((InternalEObject)newPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.GROUP_CHARACTERISTIC__PERIOD, null, msgs);
+			msgs = basicSetPeriod(newPeriod, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.GROUP_CHARACTERISTIC__PERIOD, newPeriod, newPeriod));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -392,6 +447,8 @@ public class GroupCharacteristicImpl extends BackboneElementImpl implements Grou
 				return basicSetValueRange(null, msgs);
 			case FhirPackage.GROUP_CHARACTERISTIC__EXCLUDE:
 				return basicSetExclude(null, msgs);
+			case FhirPackage.GROUP_CHARACTERISTIC__PERIOD:
+				return basicSetPeriod(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -416,6 +473,8 @@ public class GroupCharacteristicImpl extends BackboneElementImpl implements Grou
 				return getValueRange();
 			case FhirPackage.GROUP_CHARACTERISTIC__EXCLUDE:
 				return getExclude();
+			case FhirPackage.GROUP_CHARACTERISTIC__PERIOD:
+				return getPeriod();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -445,6 +504,9 @@ public class GroupCharacteristicImpl extends BackboneElementImpl implements Grou
 				return;
 			case FhirPackage.GROUP_CHARACTERISTIC__EXCLUDE:
 				setExclude((org.hl7.fhir.Boolean)newValue);
+				return;
+			case FhirPackage.GROUP_CHARACTERISTIC__PERIOD:
+				setPeriod((Period)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -476,6 +538,9 @@ public class GroupCharacteristicImpl extends BackboneElementImpl implements Grou
 			case FhirPackage.GROUP_CHARACTERISTIC__EXCLUDE:
 				setExclude((org.hl7.fhir.Boolean)null);
 				return;
+			case FhirPackage.GROUP_CHARACTERISTIC__PERIOD:
+				setPeriod((Period)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -500,6 +565,8 @@ public class GroupCharacteristicImpl extends BackboneElementImpl implements Grou
 				return valueRange != null;
 			case FhirPackage.GROUP_CHARACTERISTIC__EXCLUDE:
 				return exclude != null;
+			case FhirPackage.GROUP_CHARACTERISTIC__PERIOD:
+				return period != null;
 		}
 		return super.eIsSet(featureID);
 	}

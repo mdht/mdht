@@ -38,7 +38,17 @@ public enum StructureDefinitionKindList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESOURCE(1, "resource", "resource");
+	RESOURCE(1, "resource", "resource"),
+
+	/**
+	 * The '<em><b>Logical</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LOGICAL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LOGICAL(2, "logical", "logical");
 
 	/**
 	 * The '<em><b>Datatype</b></em>' literal value.
@@ -69,6 +79,20 @@ public enum StructureDefinitionKindList implements Enumerator {
 	public static final int RESOURCE_VALUE = 1;
 
 	/**
+	 * The '<em><b>Logical</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A logical model - a conceptual package of data that will be mapped to resources for implementation
+	 * <!-- end-model-doc -->
+	 * @see #LOGICAL
+	 * @model name="logical"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LOGICAL_VALUE = 2;
+
+	/**
 	 * An array of all the '<em><b>Structure Definition Kind List</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,6 +102,7 @@ public enum StructureDefinitionKindList implements Enumerator {
 		new StructureDefinitionKindList[] {
 			DATATYPE,
 			RESOURCE,
+			LOGICAL,
 		};
 
 	/**
@@ -136,6 +161,7 @@ public enum StructureDefinitionKindList implements Enumerator {
 		switch (value) {
 			case DATATYPE_VALUE: return DATATYPE;
 			case RESOURCE_VALUE: return RESOURCE;
+			case LOGICAL_VALUE: return LOGICAL;
 		}
 		return null;
 	}

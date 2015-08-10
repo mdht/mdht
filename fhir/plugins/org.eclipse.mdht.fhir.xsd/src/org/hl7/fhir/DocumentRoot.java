@@ -100,7 +100,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.hl7.fhir.DocumentRoot#getProcessResponse <em>Process Response</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getProvenance <em>Provenance</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getQuestionnaire <em>Questionnaire</em>}</li>
- *   <li>{@link org.hl7.fhir.DocumentRoot#getQuestionnaireAnswers <em>Questionnaire Answers</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentRoot#getQuestionnaireResponse <em>Questionnaire Response</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getReferralRequest <em>Referral Request</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getRelatedPerson <em>Related Person</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getRiskAssessment <em>Risk Assessment</em>}</li>
@@ -111,7 +111,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.hl7.fhir.DocumentRoot#getStructureDefinition <em>Structure Definition</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getSubscription <em>Subscription</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getSubstance <em>Substance</em>}</li>
- *   <li>{@link org.hl7.fhir.DocumentRoot#getSupply <em>Supply</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getSupplyDelivery <em>Supply Delivery</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getSupplyRequest <em>Supply Request</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getTestScript <em>Test Script</em>}</li>
@@ -572,7 +571,7 @@ public interface DocumentRoot extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.
+	 * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Composition</em>' containment reference.
 	 * @see #setComposition(Composition)
@@ -1326,7 +1325,7 @@ public interface DocumentRoot extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A set of DICOM SOP Instances of a patient, selected for some application purpose, e.g., quality assurance, teaching, conference, consulting, etc.  Objects selected can be from different studies, but must be of the same patient.
+	 * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Imaging Object Selection</em>' containment reference.
 	 * @see #setImagingObjectSelection(ImagingObjectSelection)
@@ -1560,9 +1559,7 @@ public interface DocumentRoot extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.
-	 * 
-	 * Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
+	 * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.  Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Medication Administration</em>' containment reference.
 	 * @see #setMedicationAdministration(MedicationAdministration)
@@ -2208,30 +2205,30 @@ public interface DocumentRoot extends EObject {
 	void setQuestionnaire(Questionnaire value);
 
 	/**
-	 * Returns the value of the '<em><b>Questionnaire Answers</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Questionnaire Response</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Questionnaire Answers</em>' containment reference.
-	 * @see #setQuestionnaireAnswers(QuestionnaireAnswers)
-	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_QuestionnaireAnswers()
+	 * @return the value of the '<em>Questionnaire Response</em>' containment reference.
+	 * @see #setQuestionnaireResponse(QuestionnaireResponse)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_QuestionnaireResponse()
 	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='QuestionnaireAnswers' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='QuestionnaireResponse' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	QuestionnaireAnswers getQuestionnaireAnswers();
+	QuestionnaireResponse getQuestionnaireResponse();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getQuestionnaireAnswers <em>Questionnaire Answers</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getQuestionnaireResponse <em>Questionnaire Response</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Questionnaire Answers</em>' containment reference.
-	 * @see #getQuestionnaireAnswers()
+	 * @param value the new value of the '<em>Questionnaire Response</em>' containment reference.
+	 * @see #getQuestionnaireResponse()
 	 * @generated
 	 */
-	void setQuestionnaireAnswers(QuestionnaireAnswers value);
+	void setQuestionnaireResponse(QuestionnaireResponse value);
 
 	/**
 	 * Returns the value of the '<em><b>Referral Request</b></em>' containment reference.
@@ -2492,32 +2489,6 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	void setSubstance(Substance value);
-
-	/**
-	 * Returns the value of the '<em><b>Supply</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A supply - a  request for something, and provision of what is supplied.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Supply</em>' containment reference.
-	 * @see #setSupply(Supply)
-	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_Supply()
-	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='Supply' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Supply getSupply();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getSupply <em>Supply</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Supply</em>' containment reference.
-	 * @see #getSupply()
-	 * @generated
-	 */
-	void setSupply(Supply value);
 
 	/**
 	 * Returns the value of the '<em><b>Supply Delivery</b></em>' containment reference.

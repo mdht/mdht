@@ -38,6 +38,7 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getSubject <em>Subject</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.FlagImpl#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getAuthor <em>Author</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.FlagImpl#getCode <em>Code</em>}</li>
  * </ul>
@@ -94,6 +95,16 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 	 * @ordered
 	 */
 	protected Reference subject;
+
+	/**
+	 * The cached value of the '{@link #getEncounter() <em>Encounter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEncounter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reference encounter;
 
 	/**
 	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference.
@@ -323,6 +334,49 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Reference getEncounter() {
+		return encounter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEncounter(Reference newEncounter, NotificationChain msgs) {
+		Reference oldEncounter = encounter;
+		encounter = newEncounter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.FLAG__ENCOUNTER, oldEncounter, newEncounter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEncounter(Reference newEncounter) {
+		if (newEncounter != encounter) {
+			NotificationChain msgs = null;
+			if (encounter != null)
+				msgs = ((InternalEObject)encounter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.FLAG__ENCOUNTER, null, msgs);
+			if (newEncounter != null)
+				msgs = ((InternalEObject)newEncounter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.FLAG__ENCOUNTER, null, msgs);
+			msgs = basicSetEncounter(newEncounter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.FLAG__ENCOUNTER, newEncounter, newEncounter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Reference getAuthor() {
 		return author;
 	}
@@ -422,6 +476,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 				return basicSetPeriod(null, msgs);
 			case FhirPackage.FLAG__SUBJECT:
 				return basicSetSubject(null, msgs);
+			case FhirPackage.FLAG__ENCOUNTER:
+				return basicSetEncounter(null, msgs);
 			case FhirPackage.FLAG__AUTHOR:
 				return basicSetAuthor(null, msgs);
 			case FhirPackage.FLAG__CODE:
@@ -448,6 +504,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 				return getPeriod();
 			case FhirPackage.FLAG__SUBJECT:
 				return getSubject();
+			case FhirPackage.FLAG__ENCOUNTER:
+				return getEncounter();
 			case FhirPackage.FLAG__AUTHOR:
 				return getAuthor();
 			case FhirPackage.FLAG__CODE:
@@ -480,6 +538,9 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 				return;
 			case FhirPackage.FLAG__SUBJECT:
 				setSubject((Reference)newValue);
+				return;
+			case FhirPackage.FLAG__ENCOUNTER:
+				setEncounter((Reference)newValue);
 				return;
 			case FhirPackage.FLAG__AUTHOR:
 				setAuthor((Reference)newValue);
@@ -514,6 +575,9 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 			case FhirPackage.FLAG__SUBJECT:
 				setSubject((Reference)null);
 				return;
+			case FhirPackage.FLAG__ENCOUNTER:
+				setEncounter((Reference)null);
+				return;
 			case FhirPackage.FLAG__AUTHOR:
 				setAuthor((Reference)null);
 				return;
@@ -542,6 +606,8 @@ public class FlagImpl extends DomainResourceImpl implements Flag {
 				return period != null;
 			case FhirPackage.FLAG__SUBJECT:
 				return subject != null;
+			case FhirPackage.FLAG__ENCOUNTER:
+				return encounter != null;
 			case FhirPackage.FLAG__AUTHOR:
 				return author != null;
 			case FhirPackage.FLAG__CODE:

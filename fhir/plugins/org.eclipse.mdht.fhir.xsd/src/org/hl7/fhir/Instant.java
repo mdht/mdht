@@ -11,6 +11,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *
  * <!-- begin-model-doc -->
  * An instant in time - known at least to the second
+ * Note: This is intended for precisely observed times, typically system logs etc, and not human-reported times - for them, see date and dateTime below. Time zone is always required
  * If the element is present, it must have either a @value, an @id, or extensions
  * <!-- end-model-doc -->
  *

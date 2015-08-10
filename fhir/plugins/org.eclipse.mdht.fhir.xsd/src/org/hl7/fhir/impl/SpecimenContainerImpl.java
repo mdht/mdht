@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.SpecimenContainer;
 
 /**
@@ -82,7 +82,7 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity capacity;
+	protected SimpleQuantity capacity;
 
 	/**
 	 * The cached value of the '{@link #getSpecimenQuantity() <em>Specimen Quantity</em>}' containment reference.
@@ -92,7 +92,7 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity specimenQuantity;
+	protected SimpleQuantity specimenQuantity;
 
 	/**
 	 * The cached value of the '{@link #getAdditiveCodeableConcept() <em>Additive Codeable Concept</em>}' containment reference.
@@ -236,7 +236,7 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getCapacity() {
+	public SimpleQuantity getCapacity() {
 		return capacity;
 	}
 
@@ -245,8 +245,8 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCapacity(Quantity newCapacity, NotificationChain msgs) {
-		Quantity oldCapacity = capacity;
+	public NotificationChain basicSetCapacity(SimpleQuantity newCapacity, NotificationChain msgs) {
+		SimpleQuantity oldCapacity = capacity;
 		capacity = newCapacity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_CONTAINER__CAPACITY, oldCapacity, newCapacity);
@@ -260,7 +260,7 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCapacity(Quantity newCapacity) {
+	public void setCapacity(SimpleQuantity newCapacity) {
 		if (newCapacity != capacity) {
 			NotificationChain msgs = null;
 			if (capacity != null)
@@ -279,7 +279,7 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getSpecimenQuantity() {
+	public SimpleQuantity getSpecimenQuantity() {
 		return specimenQuantity;
 	}
 
@@ -288,8 +288,8 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSpecimenQuantity(Quantity newSpecimenQuantity, NotificationChain msgs) {
-		Quantity oldSpecimenQuantity = specimenQuantity;
+	public NotificationChain basicSetSpecimenQuantity(SimpleQuantity newSpecimenQuantity, NotificationChain msgs) {
+		SimpleQuantity oldSpecimenQuantity = specimenQuantity;
 		specimenQuantity = newSpecimenQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_CONTAINER__SPECIMEN_QUANTITY, oldSpecimenQuantity, newSpecimenQuantity);
@@ -303,7 +303,7 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpecimenQuantity(Quantity newSpecimenQuantity) {
+	public void setSpecimenQuantity(SimpleQuantity newSpecimenQuantity) {
 		if (newSpecimenQuantity != specimenQuantity) {
 			NotificationChain msgs = null;
 			if (specimenQuantity != null)
@@ -475,10 +475,10 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 				setType((CodeableConcept)newValue);
 				return;
 			case FhirPackage.SPECIMEN_CONTAINER__CAPACITY:
-				setCapacity((Quantity)newValue);
+				setCapacity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.SPECIMEN_CONTAINER__SPECIMEN_QUANTITY:
-				setSpecimenQuantity((Quantity)newValue);
+				setSpecimenQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.SPECIMEN_CONTAINER__ADDITIVE_CODEABLE_CONCEPT:
 				setAdditiveCodeableConcept((CodeableConcept)newValue);
@@ -508,10 +508,10 @@ public class SpecimenContainerImpl extends BackboneElementImpl implements Specim
 				setType((CodeableConcept)null);
 				return;
 			case FhirPackage.SPECIMEN_CONTAINER__CAPACITY:
-				setCapacity((Quantity)null);
+				setCapacity((SimpleQuantity)null);
 				return;
 			case FhirPackage.SPECIMEN_CONTAINER__SPECIMEN_QUANTITY:
-				setSpecimenQuantity((Quantity)null);
+				setSpecimenQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.SPECIMEN_CONTAINER__ADDITIVE_CODEABLE_CONCEPT:
 				setAdditiveCodeableConcept((CodeableConcept)null);

@@ -173,7 +173,7 @@ public interface ConformanceSearchParam extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Chained names supported.
+	 * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from Conformance.rest.resource.searchParam.name on the target resource type.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Chain</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getConformanceSearchParam_Chain()

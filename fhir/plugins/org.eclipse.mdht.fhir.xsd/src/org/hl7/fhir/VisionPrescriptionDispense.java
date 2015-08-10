@@ -332,13 +332,13 @@ public interface VisionPrescriptionDispense extends BackboneElement {
 	 * The recommended maximum wear period for the lens.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Duration</em>' containment reference.
-	 * @see #setDuration(Quantity)
+	 * @see #setDuration(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getVisionPrescriptionDispense_Duration()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='duration' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getDuration();
+	SimpleQuantity getDuration();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.VisionPrescriptionDispense#getDuration <em>Duration</em>}' containment reference.
@@ -348,7 +348,7 @@ public interface VisionPrescriptionDispense extends BackboneElement {
 	 * @see #getDuration()
 	 * @generated
 	 */
-	void setDuration(Quantity value);
+	void setDuration(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Color</b></em>' containment reference.

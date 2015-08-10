@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -263,36 +263,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="SearchEntryMode-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="match">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">This resource matched the search specification</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="include">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">This resource is returned because it is referred to from another resource in the search set</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="outcome">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">An OperationOutcome that provides additional information about the processing of a search</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="SearchEntryMode">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Why an entry is in the result set - whether it's included as a match or because of an _include requirement</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="SearchEntryMode-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="BundleType-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="document">
@@ -350,6 +320,36 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="BundleType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SearchEntryMode-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="match">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">This resource matched the search specification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="include">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">This resource is returned because it is referred to from another resource in the search set</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="outcome">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">An OperationOutcome that provides additional information about the processing of a search</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SearchEntryMode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Why an entry is in the result set - whether it's included as a match or because of an _include requirement</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="SearchEntryMode-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

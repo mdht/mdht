@@ -10,6 +10,7 @@ package org.hl7.fhir;
  *
  * <!-- begin-model-doc -->
  * A stream of bytes
+ * A stream of bytes, base64 encoded
  * If the element is present, it must have either a @value, an @id, or extensions
  * <!-- end-model-doc -->
  *

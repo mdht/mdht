@@ -18,9 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.ImplementationGuideItem;
 import org.hl7.fhir.ImplementationGuidePackage;
-import org.hl7.fhir.ImplementationGuidePage;
+import org.hl7.fhir.ImplementationGuideResource;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,8 +30,8 @@ import org.hl7.fhir.ImplementationGuidePage;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.ImplementationGuidePackageImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ImplementationGuidePackageImpl#getItem <em>Item</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ImplementationGuidePackageImpl#getPage <em>Page</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ImplementationGuidePackageImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ImplementationGuidePackageImpl#getResource <em>Resource</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,24 +48,24 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 	protected org.hl7.fhir.String name;
 
 	/**
-	 * The cached value of the '{@link #getItem() <em>Item</em>}' containment reference list.
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getItem()
+	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ImplementationGuideItem> item;
+	protected org.hl7.fhir.String description;
 
 	/**
-	 * The cached value of the '{@link #getPage() <em>Page</em>}' containment reference list.
+	 * The cached value of the '{@link #getResource() <em>Resource</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPage()
+	 * @see #getResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ImplementationGuidePage> page;
+	protected EList<ImplementationGuideResource> resource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,11 +134,8 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ImplementationGuideItem> getItem() {
-		if (item == null) {
-			item = new EObjectContainmentEList<ImplementationGuideItem>(ImplementationGuideItem.class, this, FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__ITEM);
-		}
-		return item;
+	public org.hl7.fhir.String getDescription() {
+		return description;
 	}
 
 	/**
@@ -147,11 +143,45 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ImplementationGuidePage> getPage() {
-		if (page == null) {
-			page = new EObjectContainmentEList<ImplementationGuidePage>(ImplementationGuidePage.class, this, FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__PAGE);
+	public NotificationChain basicSetDescription(org.hl7.fhir.String newDescription, NotificationChain msgs) {
+		org.hl7.fhir.String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION, oldDescription, newDescription);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return page;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(org.hl7.fhir.String newDescription) {
+		if (newDescription != description) {
+			NotificationChain msgs = null;
+			if (description != null)
+				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION, null, msgs);
+			if (newDescription != null)
+				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION, null, msgs);
+			msgs = basicSetDescription(newDescription, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION, newDescription, newDescription));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ImplementationGuideResource> getResource() {
+		if (resource == null) {
+			resource = new EObjectContainmentEList<ImplementationGuideResource>(ImplementationGuideResource.class, this, FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__RESOURCE);
+		}
+		return resource;
 	}
 
 	/**
@@ -164,10 +194,10 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 		switch (featureID) {
 			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__NAME:
 				return basicSetName(null, msgs);
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__ITEM:
-				return ((InternalEList<?>)getItem()).basicRemove(otherEnd, msgs);
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__PAGE:
-				return ((InternalEList<?>)getPage()).basicRemove(otherEnd, msgs);
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION:
+				return basicSetDescription(null, msgs);
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__RESOURCE:
+				return ((InternalEList<?>)getResource()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -182,10 +212,10 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 		switch (featureID) {
 			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__NAME:
 				return getName();
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__ITEM:
-				return getItem();
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__PAGE:
-				return getPage();
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION:
+				return getDescription();
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__RESOURCE:
+				return getResource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,13 +232,12 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__NAME:
 				setName((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__ITEM:
-				getItem().clear();
-				getItem().addAll((Collection<? extends ImplementationGuideItem>)newValue);
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION:
+				setDescription((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__PAGE:
-				getPage().clear();
-				getPage().addAll((Collection<? extends ImplementationGuidePage>)newValue);
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__RESOURCE:
+				getResource().clear();
+				getResource().addAll((Collection<? extends ImplementationGuideResource>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,11 +254,11 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__NAME:
 				setName((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__ITEM:
-				getItem().clear();
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION:
+				setDescription((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__PAGE:
-				getPage().clear();
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__RESOURCE:
+				getResource().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -245,10 +274,10 @@ public class ImplementationGuidePackageImpl extends BackboneElementImpl implemen
 		switch (featureID) {
 			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__NAME:
 				return name != null;
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__ITEM:
-				return item != null && !item.isEmpty();
-			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__PAGE:
-				return page != null && !page.isEmpty();
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION:
+				return description != null;
+			case FhirPackage.IMPLEMENTATION_GUIDE_PACKAGE__RESOURCE:
+				return resource != null && !resource.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -156,7 +156,7 @@ public interface ValueSetConcept extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Child Concepts (is-a / contains / categorises).
+	 * Child Concepts - a heirarchy of concepts. The nature of the relationships is variable (is-a / contains / categorises) and can only be determined by examining the definitions of the concepts.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Concept</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getValueSetConcept_Concept()

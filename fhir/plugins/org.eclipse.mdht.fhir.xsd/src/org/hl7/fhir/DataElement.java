@@ -22,14 +22,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.DataElement#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.DataElement#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.DataElement#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.DataElement#getUseContext <em>Use Context</em>}</li>
- *   <li>{@link org.hl7.fhir.DataElement#getExperimental <em>Experimental</em>}</li>
  *   <li>{@link org.hl7.fhir.DataElement#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.DataElement#getDate <em>Date</em>}</li>
- *   <li>{@link org.hl7.fhir.DataElement#getCopyright <em>Copyright</em>}</li>
+ *   <li>{@link org.hl7.fhir.DataElement#getExperimental <em>Experimental</em>}</li>
  *   <li>{@link org.hl7.fhir.DataElement#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.DataElement#getContact <em>Contact</em>}</li>
- *   <li>{@link org.hl7.fhir.DataElement#getSpecificity <em>Specificity</em>}</li>
+ *   <li>{@link org.hl7.fhir.DataElement#getDate <em>Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.DataElement#getUseContext <em>Use Context</em>}</li>
+ *   <li>{@link org.hl7.fhir.DataElement#getCopyright <em>Copyright</em>}</li>
+ *   <li>{@link org.hl7.fhir.DataElement#getStringency <em>Stringency</em>}</li>
  *   <li>{@link org.hl7.fhir.DataElement#getMapping <em>Mapping</em>}</li>
  *   <li>{@link org.hl7.fhir.DataElement#getElement <em>Element</em>}</li>
  * </ul>
@@ -44,7 +44,7 @@ public interface DataElement extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute uri that is used to identify this element when it is referenced in a specification, model, design or an instance (should be globally unique URI, and can be urn:uuid: or urn:oid:).
+	 * An absolute URL that is used to identify this data element when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this data element is (or will be) published.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)
@@ -66,30 +66,20 @@ public interface DataElement extends DomainResource {
 	void setUrl(Uri value);
 
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Identifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Formal identifier that is used to identify this data element when it is represented in other formats, or referenced in a specification, model, design or an instance.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Identifier</em>' containment reference.
-	 * @see #setIdentifier(Identifier)
+	 * @return the value of the '<em>Identifier</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getDataElement_Identifier()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='identifier' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Identifier getIdentifier();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getIdentifier <em>Identifier</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' containment reference.
-	 * @see #getIdentifier()
-	 * @generated
-	 */
-	void setIdentifier(Identifier value);
+	EList<Identifier> getIdentifier();
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' containment reference.
@@ -144,48 +134,6 @@ public interface DataElement extends DomainResource {
 	void setName(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of data element definitions.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Use Context</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getDataElement_UseContext()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<CodeableConcept> getUseContext();
-
-	/**
-	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A flag to indicate that this search data elemnt definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Experimental</em>' containment reference.
-	 * @see #setExperimental(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getDataElement_Experimental()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getExperimental();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getExperimental <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Experimental</em>' containment reference.
-	 * @see #getExperimental()
-	 * @generated
-	 */
-	void setExperimental(org.hl7.fhir.Boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,56 +160,30 @@ public interface DataElement extends DomainResource {
 	void setStatus(Code value);
 
 	/**
-	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The date that the status for this business version of the data element became effective.  (I.e. Date the draft was created, date element became active or date element became retired).
+	 * A flag to indicate that this search data elemnt definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' containment reference.
-	 * @see #setDate(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getDataElement_Date()
+	 * @return the value of the '<em>Experimental</em>' containment reference.
+	 * @see #setExperimental(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getDataElement_Experimental()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getDate();
+	org.hl7.fhir.Boolean getExperimental();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getDate <em>Date</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getExperimental <em>Experimental</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' containment reference.
-	 * @see #getDate()
+	 * @param value the new value of the '<em>Experimental</em>' containment reference.
+	 * @see #getExperimental()
 	 * @generated
 	 */
-	void setDate(DateTime value);
-
-	/**
-	 * Returns the value of the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A copyright statement relating to the definition of the data element. Copyright statements are generally legal restrictions on the use and publishing of the details of the definition of the data element.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Copyright</em>' containment reference.
-	 * @see #setCopyright(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getDataElement_Copyright()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='copyright' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getCopyright();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getCopyright <em>Copyright</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Copyright</em>' containment reference.
-	 * @see #getCopyright()
-	 * @generated
-	 */
-	void setCopyright(org.hl7.fhir.String value);
+	void setExperimental(org.hl7.fhir.Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
@@ -306,30 +228,98 @@ public interface DataElement extends DomainResource {
 	EList<DataElementContact> getContact();
 
 	/**
-	 * Returns the value of the '<em><b>Specificity</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date that this version of the Data Element was published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the data element  changes.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Date</em>' containment reference.
+	 * @see #setDate(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getDataElement_Date()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getDate <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date</em>' containment reference.
+	 * @see #getDate()
+	 * @generated
+	 */
+	void setDate(DateTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of data element definitions.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Use Context</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getDataElement_UseContext()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<CodeableConcept> getUseContext();
+
+	/**
+	 * Returns the value of the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A copyright statement relating to the definition of the data element. Copyright statements are generally legal restrictions on the use and publishing of the details of the definition of the data element.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Copyright</em>' containment reference.
+	 * @see #setCopyright(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getDataElement_Copyright()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='copyright' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getCopyright();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getCopyright <em>Copyright</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Copyright</em>' containment reference.
+	 * @see #getCopyright()
+	 * @generated
+	 */
+	void setCopyright(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Stringency</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Identifies how precise the data element is in its definition.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Specificity</em>' containment reference.
-	 * @see #setSpecificity(DataElementSpecificity)
-	 * @see org.hl7.fhir.FhirPackage#getDataElement_Specificity()
+	 * @return the value of the '<em>Stringency</em>' containment reference.
+	 * @see #setStringency(DataElementStringency)
+	 * @see org.hl7.fhir.FhirPackage#getDataElement_Stringency()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='specificity' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='stringency' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DataElementSpecificity getSpecificity();
+	DataElementStringency getStringency();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getSpecificity <em>Specificity</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DataElement#getStringency <em>Stringency</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Specificity</em>' containment reference.
-	 * @see #getSpecificity()
+	 * @param value the new value of the '<em>Stringency</em>' containment reference.
+	 * @see #getStringency()
 	 * @generated
 	 */
-	void setSpecificity(DataElementSpecificity value);
+	void setStringency(DataElementStringency value);
 
 	/**
 	 * Returns the value of the '<em><b>Mapping</b></em>' containment reference list.

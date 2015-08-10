@@ -2,20 +2,13 @@
  */
 package org.hl7.fhir.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hl7.fhir.Code;
 import org.hl7.fhir.Coding;
@@ -36,7 +29,6 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.ConformanceEventImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceEventImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceEventImpl#getMode <em>Mode</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConformanceEventImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceEventImpl#getFocus <em>Focus</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceEventImpl#getRequest <em>Request</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceEventImpl#getResponse <em>Response</em>}</li>
@@ -75,16 +67,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 	 * @ordered
 	 */
 	protected ConformanceEventMode mode;
-
-	/**
-	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProtocol()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Coding> protocol;
 
 	/**
 	 * The cached value of the '{@link #getFocus() <em>Focus</em>}' containment reference.
@@ -279,18 +261,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Coding> getProtocol() {
-		if (protocol == null) {
-			protocol = new EObjectContainmentEList<Coding>(Coding.class, this, FhirPackage.CONFORMANCE_EVENT__PROTOCOL);
-		}
-		return protocol;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Code getFocus() {
 		return focus;
 	}
@@ -472,8 +442,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 				return basicSetCategory(null, msgs);
 			case FhirPackage.CONFORMANCE_EVENT__MODE:
 				return basicSetMode(null, msgs);
-			case FhirPackage.CONFORMANCE_EVENT__PROTOCOL:
-				return ((InternalEList<?>)getProtocol()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_EVENT__FOCUS:
 				return basicSetFocus(null, msgs);
 			case FhirPackage.CONFORMANCE_EVENT__REQUEST:
@@ -500,8 +468,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 				return getCategory();
 			case FhirPackage.CONFORMANCE_EVENT__MODE:
 				return getMode();
-			case FhirPackage.CONFORMANCE_EVENT__PROTOCOL:
-				return getProtocol();
 			case FhirPackage.CONFORMANCE_EVENT__FOCUS:
 				return getFocus();
 			case FhirPackage.CONFORMANCE_EVENT__REQUEST:
@@ -519,7 +485,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -531,10 +496,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 				return;
 			case FhirPackage.CONFORMANCE_EVENT__MODE:
 				setMode((ConformanceEventMode)newValue);
-				return;
-			case FhirPackage.CONFORMANCE_EVENT__PROTOCOL:
-				getProtocol().clear();
-				getProtocol().addAll((Collection<? extends Coding>)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_EVENT__FOCUS:
 				setFocus((Code)newValue);
@@ -569,9 +530,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 			case FhirPackage.CONFORMANCE_EVENT__MODE:
 				setMode((ConformanceEventMode)null);
 				return;
-			case FhirPackage.CONFORMANCE_EVENT__PROTOCOL:
-				getProtocol().clear();
-				return;
 			case FhirPackage.CONFORMANCE_EVENT__FOCUS:
 				setFocus((Code)null);
 				return;
@@ -602,8 +560,6 @@ public class ConformanceEventImpl extends BackboneElementImpl implements Conform
 				return category != null;
 			case FhirPackage.CONFORMANCE_EVENT__MODE:
 				return mode != null;
-			case FhirPackage.CONFORMANCE_EVENT__PROTOCOL:
-				return protocol != null && !protocol.isEmpty();
 			case FhirPackage.CONFORMANCE_EVENT__FOCUS:
 				return focus != null;
 			case FhirPackage.CONFORMANCE_EVENT__REQUEST:

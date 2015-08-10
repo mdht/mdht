@@ -26,8 +26,8 @@ import org.hl7.fhir.Decimal;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Money;
 import org.hl7.fhir.PositiveInt;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,7 +127,7 @@ public class ClaimItemImpl extends BackboneElementImpl implements ClaimItem {
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getUnitPrice() <em>Unit Price</em>}' containment reference.
@@ -480,7 +480,7 @@ public class ClaimItemImpl extends BackboneElementImpl implements ClaimItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -489,8 +489,8 @@ public class ClaimItemImpl extends BackboneElementImpl implements ClaimItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CLAIM_ITEM__QUANTITY, oldQuantity, newQuantity);
@@ -504,7 +504,7 @@ public class ClaimItemImpl extends BackboneElementImpl implements ClaimItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -976,7 +976,7 @@ public class ClaimItemImpl extends BackboneElementImpl implements ClaimItem {
 				setServiceDate((Date)newValue);
 				return;
 			case FhirPackage.CLAIM_ITEM__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.CLAIM_ITEM__UNIT_PRICE:
 				setUnitPrice((Money)newValue);
@@ -1042,7 +1042,7 @@ public class ClaimItemImpl extends BackboneElementImpl implements ClaimItem {
 				setServiceDate((Date)null);
 				return;
 			case FhirPackage.CLAIM_ITEM__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.CLAIM_ITEM__UNIT_PRICE:
 				setUnitPrice((Money)null);

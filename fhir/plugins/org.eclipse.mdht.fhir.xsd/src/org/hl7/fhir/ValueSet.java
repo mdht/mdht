@@ -22,18 +22,18 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ValueSet#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getUseContext <em>Use Context</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getImmutable <em>Immutable</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getPublisher <em>Publisher</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getContact <em>Contact</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getDescription <em>Description</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getRequirements <em>Requirements</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getCopyright <em>Copyright</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getExperimental <em>Experimental</em>}</li>
- *   <li>{@link org.hl7.fhir.ValueSet#getExtensible <em>Extensible</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getContact <em>Contact</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getLockedDate <em>Locked Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getUseContext <em>Use Context</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getImmutable <em>Immutable</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getRequirements <em>Requirements</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getCopyright <em>Copyright</em>}</li>
+ *   <li>{@link org.hl7.fhir.ValueSet#getExtensible <em>Extensible</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getCodeSystem <em>Code System</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getCompose <em>Compose</em>}</li>
  *   <li>{@link org.hl7.fhir.ValueSet#getExpansion <em>Expansion</em>}</li>
@@ -49,7 +49,7 @@ public interface ValueSet extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute uri that is used to identify this value set when it is referenced in a specification, model, design or an instance (should be globally unique URI, and can be urn:uuid: or urn:oid:).
+	 * An absolute URL that is used to identify this value set when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this value set is (or will be) published.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)
@@ -149,46 +149,56 @@ public interface ValueSet extends DomainResource {
 	void setName(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
+	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of value set definitions.
+	 * The status of the value set.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Use Context</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getValueSet_UseContext()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
+	 * @return the value of the '<em>Status</em>' containment reference.
+	 * @see #setStatus(Code)
+	 * @see org.hl7.fhir.FhirPackage#getValueSet_Status()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CodeableConcept> getUseContext();
+	Code getStatus();
 
 	/**
-	 * Returns the value of the '<em><b>Immutable</b></em>' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getStatus <em>Status</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' containment reference.
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * If this is set to 'true', then no new versions of the content logical definition can be created.  Note: Other metadata might still change.
+	 * This valueset was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Immutable</em>' containment reference.
-	 * @see #setImmutable(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getValueSet_Immutable()
+	 * @return the value of the '<em>Experimental</em>' containment reference.
+	 * @see #setExperimental(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getValueSet_Experimental()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='immutable' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.Boolean getImmutable();
+	org.hl7.fhir.Boolean getExperimental();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getImmutable <em>Immutable</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getExperimental <em>Experimental</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Immutable</em>' containment reference.
-	 * @see #getImmutable()
+	 * @param value the new value of the '<em>Experimental</em>' containment reference.
+	 * @see #getExperimental()
 	 * @generated
 	 */
-	void setImmutable(org.hl7.fhir.Boolean value);
+	void setExperimental(org.hl7.fhir.Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
@@ -233,6 +243,58 @@ public interface ValueSet extends DomainResource {
 	EList<ValueSetContact> getContact();
 
 	/**
+	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date that the value set status was last changed. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the implementation guide changes (e.g. the 'content logical definition').
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Date</em>' containment reference.
+	 * @see #setDate(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getValueSet_Date()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getDate <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date</em>' containment reference.
+	 * @see #getDate()
+	 * @generated
+	 */
+	void setDate(DateTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Locked Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If a Locked Date is defined, then the Content Logical Definition must be evaluated using the current version of all referenced code system(s) and value sets as of the Locked Date.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Locked Date</em>' containment reference.
+	 * @see #setLockedDate(Date)
+	 * @see org.hl7.fhir.FhirPackage#getValueSet_LockedDate()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='lockedDate' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Date getLockedDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getLockedDate <em>Locked Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Locked Date</em>' containment reference.
+	 * @see #getLockedDate()
+	 * @generated
+	 */
+	void setLockedDate(Date value);
+
+	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,6 +319,48 @@ public interface ValueSet extends DomainResource {
 	 * @generated
 	 */
 	void setDescription(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of value set definitions.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Use Context</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getValueSet_UseContext()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<CodeableConcept> getUseContext();
+
+	/**
+	 * Returns the value of the '<em><b>Immutable</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this is set to 'true', then no new versions of the content logical definition can be created.  Note: Other metadata might still change.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Immutable</em>' containment reference.
+	 * @see #setImmutable(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getValueSet_Immutable()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='immutable' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getImmutable();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getImmutable <em>Immutable</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Immutable</em>' containment reference.
+	 * @see #getImmutable()
+	 * @generated
+	 */
+	void setImmutable(org.hl7.fhir.Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference.
@@ -311,58 +415,6 @@ public interface ValueSet extends DomainResource {
 	void setCopyright(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The status of the value set.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(Code)
-	 * @see org.hl7.fhir.FhirPackage#getValueSet_Status()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Code getStatus();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getStatus <em>Status</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' containment reference.
-	 * @see #getStatus()
-	 * @generated
-	 */
-	void setStatus(Code value);
-
-	/**
-	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This valueset was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Experimental</em>' containment reference.
-	 * @see #setExperimental(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getValueSet_Experimental()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getExperimental();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getExperimental <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Experimental</em>' containment reference.
-	 * @see #getExperimental()
-	 * @generated
-	 */
-	void setExperimental(org.hl7.fhir.Boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Extensible</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,58 +439,6 @@ public interface ValueSet extends DomainResource {
 	 * @generated
 	 */
 	void setExtensible(org.hl7.fhir.Boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The date that the value set status was last changed.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' containment reference.
-	 * @see #setDate(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getValueSet_Date()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	DateTime getDate();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getDate <em>Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' containment reference.
-	 * @see #getDate()
-	 * @generated
-	 */
-	void setDate(DateTime value);
-
-	/**
-	 * Returns the value of the '<em><b>Locked Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * If a Locked Date is defined, then the Content Logical Definition must be evaluated using the current version of all referenced code system(s) and value sets as of the Locked Date.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Locked Date</em>' containment reference.
-	 * @see #setLockedDate(Date)
-	 * @see org.hl7.fhir.FhirPackage#getValueSet_LockedDate()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='lockedDate' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Date getLockedDate();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ValueSet#getLockedDate <em>Locked Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Locked Date</em>' containment reference.
-	 * @see #getLockedDate()
-	 * @generated
-	 */
-	void setLockedDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Code System</b></em>' containment reference.
@@ -471,7 +471,7 @@ public interface ValueSet extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * When value set includes codes from elsewhere.
+	 * A set of criteria that provide the content logical definition of the value set by including or excluding codes from outside this value set.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Compose</em>' containment reference.
 	 * @see #setCompose(ValueSetCompose)

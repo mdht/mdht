@@ -1048,24 +1048,6 @@ public interface FhirFactory extends EFactory {
 	ConditionalDeleteStatus createConditionalDeleteStatus();
 
 	/**
-	 * Returns a new object of class '<em>Condition Clinical Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition Clinical Status</em>'.
-	 * @generated
-	 */
-	ConditionClinicalStatus createConditionClinicalStatus();
-
-	/**
-	 * Returns a new object of class '<em>Condition Due To</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition Due To</em>'.
-	 * @generated
-	 */
-	ConditionDueTo createConditionDueTo();
-
-	/**
 	 * Returns a new object of class '<em>Condition Evidence</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1075,24 +1057,6 @@ public interface FhirFactory extends EFactory {
 	ConditionEvidence createConditionEvidence();
 
 	/**
-	 * Returns a new object of class '<em>Condition Location</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition Location</em>'.
-	 * @generated
-	 */
-	ConditionLocation createConditionLocation();
-
-	/**
-	 * Returns a new object of class '<em>Condition Occurred Following</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition Occurred Following</em>'.
-	 * @generated
-	 */
-	ConditionOccurredFollowing createConditionOccurredFollowing();
-
-	/**
 	 * Returns a new object of class '<em>Condition Stage</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1100,6 +1064,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	ConditionStage createConditionStage();
+
+	/**
+	 * Returns a new object of class '<em>Condition Verification Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Condition Verification Status</em>'.
+	 * @generated
+	 */
+	ConditionVerificationStatus createConditionVerificationStatus();
 
 	/**
 	 * Returns a new object of class '<em>Conformance</em>'.
@@ -1136,6 +1109,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	ConformanceDocument createConformanceDocument();
+
+	/**
+	 * Returns a new object of class '<em>Conformance Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conformance Endpoint</em>'.
+	 * @generated
+	 */
+	ConformanceEndpoint createConformanceEndpoint();
 
 	/**
 	 * Returns a new object of class '<em>Conformance Event</em>'.
@@ -1253,6 +1235,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	ConformanceSoftware createConformanceSoftware();
+
+	/**
+	 * Returns a new object of class '<em>Conformance Statement Kind</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conformance Statement Kind</em>'.
+	 * @generated
+	 */
+	ConformanceStatementKind createConformanceStatementKind();
 
 	/**
 	 * Returns a new object of class '<em>Constraint Severity</em>'.
@@ -1462,13 +1453,13 @@ public interface FhirFactory extends EFactory {
 	DataElementMapping createDataElementMapping();
 
 	/**
-	 * Returns a new object of class '<em>Data Element Specificity</em>'.
+	 * Returns a new object of class '<em>Data Element Stringency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Element Specificity</em>'.
+	 * @return a new object of class '<em>Data Element Stringency</em>'.
 	 * @generated
 	 */
-	DataElementSpecificity createDataElementSpecificity();
+	DataElementStringency createDataElementStringency();
 
 	/**
 	 * Returns a new object of class '<em>Date</em>'.
@@ -1867,6 +1858,15 @@ public interface FhirFactory extends EFactory {
 	ElementDefinition createElementDefinition();
 
 	/**
+	 * Returns a new object of class '<em>Element Definition Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element Definition Base</em>'.
+	 * @generated
+	 */
+	ElementDefinitionBase createElementDefinitionBase();
+
+	/**
 	 * Returns a new object of class '<em>Element Definition Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2182,6 +2182,15 @@ public interface FhirFactory extends EFactory {
 	GroupCharacteristic createGroupCharacteristic();
 
 	/**
+	 * Returns a new object of class '<em>Group Member</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Group Member</em>'.
+	 * @generated
+	 */
+	GroupMember createGroupMember();
+
+	/**
 	 * Returns a new object of class '<em>Group Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2189,6 +2198,33 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	GroupType createGroupType();
+
+	/**
+	 * Returns a new object of class '<em>Guide Dependency Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Guide Dependency Type</em>'.
+	 * @generated
+	 */
+	GuideDependencyType createGuideDependencyType();
+
+	/**
+	 * Returns a new object of class '<em>Guide Page Kind</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Guide Page Kind</em>'.
+	 * @generated
+	 */
+	GuidePageKind createGuidePageKind();
+
+	/**
+	 * Returns a new object of class '<em>Guide Resource Purpose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Guide Resource Purpose</em>'.
+	 * @generated
+	 */
+	GuideResourcePurpose createGuideResourcePurpose();
 
 	/**
 	 * Returns a new object of class '<em>Healthcare Service</em>'.
@@ -2443,31 +2479,22 @@ public interface FhirFactory extends EFactory {
 	ImplementationGuideContact createImplementationGuideContact();
 
 	/**
-	 * Returns a new object of class '<em>Implementation Guide Default</em>'.
+	 * Returns a new object of class '<em>Implementation Guide Dependency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Implementation Guide Default</em>'.
+	 * @return a new object of class '<em>Implementation Guide Dependency</em>'.
 	 * @generated
 	 */
-	ImplementationGuideDefault createImplementationGuideDefault();
+	ImplementationGuideDependency createImplementationGuideDependency();
 
 	/**
-	 * Returns a new object of class '<em>Implementation Guide Example</em>'.
+	 * Returns a new object of class '<em>Implementation Guide Global</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Implementation Guide Example</em>'.
+	 * @return a new object of class '<em>Implementation Guide Global</em>'.
 	 * @generated
 	 */
-	ImplementationGuideExample createImplementationGuideExample();
-
-	/**
-	 * Returns a new object of class '<em>Implementation Guide Item</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Implementation Guide Item</em>'.
-	 * @generated
-	 */
-	ImplementationGuideItem createImplementationGuideItem();
+	ImplementationGuideGlobal createImplementationGuideGlobal();
 
 	/**
 	 * Returns a new object of class '<em>Implementation Guide Package</em>'.
@@ -2486,6 +2513,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	ImplementationGuidePage createImplementationGuidePage();
+
+	/**
+	 * Returns a new object of class '<em>Implementation Guide Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Implementation Guide Resource</em>'.
+	 * @generated
+	 */
+	ImplementationGuideResource createImplementationGuideResource();
 
 	/**
 	 * Returns a new object of class '<em>Instance Availability</em>'.
@@ -2522,6 +2558,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	IssueSeverity createIssueSeverity();
+
+	/**
+	 * Returns a new object of class '<em>Issue Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Issue Type</em>'.
+	 * @generated
+	 */
+	IssueType createIssueType();
 
 	/**
 	 * Returns a new object of class '<em>Link Type</em>'.
@@ -2603,6 +2648,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	LocationStatus createLocationStatus();
+
+	/**
+	 * Returns a new object of class '<em>Markdown</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Markdown</em>'.
+	 * @generated
+	 */
+	Markdown createMarkdown();
 
 	/**
 	 * Returns a new object of class '<em>Measmnt Principle</em>'.
@@ -3082,15 +3136,6 @@ public interface FhirFactory extends EFactory {
 	ObservationRelationshipType createObservationRelationshipType();
 
 	/**
-	 * Returns a new object of class '<em>Observation Reliability</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Observation Reliability</em>'.
-	 * @generated
-	 */
-	ObservationReliability createObservationReliability();
-
-	/**
 	 * Returns a new object of class '<em>Observation Status</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3233,15 +3278,6 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	OrganizationContact createOrganizationContact();
-
-	/**
-	 * Returns a new object of class '<em>Page Purpose</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Page Purpose</em>'.
-	 * @generated
-	 */
-	PagePurpose createPagePurpose();
 
 	/**
 	 * Returns a new object of class '<em>Parameters</em>'.
@@ -3640,51 +3676,6 @@ public interface FhirFactory extends EFactory {
 	Questionnaire createQuestionnaire();
 
 	/**
-	 * Returns a new object of class '<em>Questionnaire Answers</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Questionnaire Answers</em>'.
-	 * @generated
-	 */
-	QuestionnaireAnswers createQuestionnaireAnswers();
-
-	/**
-	 * Returns a new object of class '<em>Questionnaire Answers Answer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Questionnaire Answers Answer</em>'.
-	 * @generated
-	 */
-	QuestionnaireAnswersAnswer createQuestionnaireAnswersAnswer();
-
-	/**
-	 * Returns a new object of class '<em>Questionnaire Answers Group</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Questionnaire Answers Group</em>'.
-	 * @generated
-	 */
-	QuestionnaireAnswersGroup createQuestionnaireAnswersGroup();
-
-	/**
-	 * Returns a new object of class '<em>Questionnaire Answers Question</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Questionnaire Answers Question</em>'.
-	 * @generated
-	 */
-	QuestionnaireAnswersQuestion createQuestionnaireAnswersQuestion();
-
-	/**
-	 * Returns a new object of class '<em>Questionnaire Answers Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Questionnaire Answers Status</em>'.
-	 * @generated
-	 */
-	QuestionnaireAnswersStatus createQuestionnaireAnswersStatus();
-
-	/**
 	 * Returns a new object of class '<em>Questionnaire Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3701,6 +3692,51 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	QuestionnaireQuestion createQuestionnaireQuestion();
+
+	/**
+	 * Returns a new object of class '<em>Questionnaire Response</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Questionnaire Response</em>'.
+	 * @generated
+	 */
+	QuestionnaireResponse createQuestionnaireResponse();
+
+	/**
+	 * Returns a new object of class '<em>Questionnaire Response Answer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Questionnaire Response Answer</em>'.
+	 * @generated
+	 */
+	QuestionnaireResponseAnswer createQuestionnaireResponseAnswer();
+
+	/**
+	 * Returns a new object of class '<em>Questionnaire Response Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Questionnaire Response Group</em>'.
+	 * @generated
+	 */
+	QuestionnaireResponseGroup createQuestionnaireResponseGroup();
+
+	/**
+	 * Returns a new object of class '<em>Questionnaire Response Question</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Questionnaire Response Question</em>'.
+	 * @generated
+	 */
+	QuestionnaireResponseQuestion createQuestionnaireResponseQuestion();
+
+	/**
+	 * Returns a new object of class '<em>Questionnaire Response Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Questionnaire Response Status</em>'.
+	 * @generated
+	 */
+	QuestionnaireResponseStatus createQuestionnaireResponseStatus();
 
 	/**
 	 * Returns a new object of class '<em>Questionnaire Status</em>'.
@@ -3919,6 +3955,15 @@ public interface FhirFactory extends EFactory {
 	Signature createSignature();
 
 	/**
+	 * Returns a new object of class '<em>Simple Quantity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simple Quantity</em>'.
+	 * @generated
+	 */
+	SimpleQuantity createSimpleQuantity();
+
+	/**
 	 * Returns a new object of class '<em>Slicing Rules</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4108,15 +4153,6 @@ public interface FhirFactory extends EFactory {
 	SubstanceInstance createSubstanceInstance();
 
 	/**
-	 * Returns a new object of class '<em>Supply</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Supply</em>'.
-	 * @generated
-	 */
-	Supply createSupply();
-
-	/**
 	 * Returns a new object of class '<em>Supply Delivery</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4133,24 +4169,6 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	SupplyDeliveryStatus createSupplyDeliveryStatus();
-
-	/**
-	 * Returns a new object of class '<em>Supply Dispense</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Supply Dispense</em>'.
-	 * @generated
-	 */
-	SupplyDispense createSupplyDispense();
-
-	/**
-	 * Returns a new object of class '<em>Supply Dispense Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Supply Dispense Status</em>'.
-	 * @generated
-	 */
-	SupplyDispenseStatus createSupplyDispenseStatus();
 
 	/**
 	 * Returns a new object of class '<em>Supply Request</em>'.
@@ -4178,15 +4196,6 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	SupplyRequestWhen createSupplyRequestWhen();
-
-	/**
-	 * Returns a new object of class '<em>Supply Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Supply Status</em>'.
-	 * @generated
-	 */
-	SupplyStatus createSupplyStatus();
 
 	/**
 	 * Returns a new object of class '<em>System Restful Interaction</em>'.
@@ -4250,6 +4259,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	TestScriptCapabilities createTestScriptCapabilities();
+
+	/**
+	 * Returns a new object of class '<em>Test Script Contact</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Test Script Contact</em>'.
+	 * @generated
+	 */
+	TestScriptContact createTestScriptContact();
 
 	/**
 	 * Returns a new object of class '<em>Test Script Fixture</em>'.
@@ -4385,6 +4403,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	UnitsOfTime createUnitsOfTime();
+
+	/**
+	 * Returns a new object of class '<em>Unknown Content Code</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Unknown Content Code</em>'.
+	 * @generated
+	 */
+	UnknownContentCode createUnknownContentCode();
 
 	/**
 	 * Returns a new object of class '<em>Unsigned Int</em>'.
@@ -4565,6 +4592,15 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	VisionPrescriptionDispense createVisionPrescriptionDispense();
+
+	/**
+	 * Returns a new object of class '<em>XPath Usage Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>XPath Usage Type</em>'.
+	 * @generated
+	 */
+	XPathUsageType createXPathUsageType();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ImagingStudy#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudy#getNumberOfSeries <em>Number Of Series</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudy#getNumberOfInstances <em>Number Of Instances</em>}</li>
- *   <li>{@link org.hl7.fhir.ImagingStudy#getClinicalInformation <em>Clinical Information</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudy#getProcedure <em>Procedure</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudy#getInterpreter <em>Interpreter</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudy#getDescription <em>Description</em>}</li>
@@ -125,8 +124,7 @@ public interface ImagingStudy extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Accession Number is an identifier related to some aspect of imaging workflow and data management, and usage may vary across different institutions. 
-	 * See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).
+	 * Accession Number is an identifier related to some aspect of imaging workflow and data management, and usage may vary across different institutions.  See for instance [IHE Radiology Technical Framework Volume 1 Appendix A](http://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Rev13.0_Vol1_FT_2014-07-30.pdf).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Accession</em>' containment reference.
 	 * @see #setAccession(Identifier)
@@ -326,32 +324,6 @@ public interface ImagingStudy extends DomainResource {
 	void setNumberOfInstances(UnsignedInt value);
 
 	/**
-	 * Returns the value of the '<em><b>Clinical Information</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Diagnoses etc provided with request.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clinical Information</em>' containment reference.
-	 * @see #setClinicalInformation(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getImagingStudy_ClinicalInformation()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='clinicalInformation' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getClinicalInformation();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ImagingStudy#getClinicalInformation <em>Clinical Information</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clinical Information</em>' containment reference.
-	 * @see #getClinicalInformation()
-	 * @generated
-	 */
-	void setClinicalInformation(org.hl7.fhir.String value);
-
-	/**
 	 * Returns the value of the '<em><b>Procedure</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.Reference}.
 	 * <!-- begin-user-doc -->
@@ -372,7 +344,7 @@ public interface ImagingStudy extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Who read study and interpreted the images.
+	 * Who read the study and interpreted the images or other content.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Interpreter</em>' containment reference.
 	 * @see #setInterpreter(Reference)
@@ -425,7 +397,7 @@ public interface ImagingStudy extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each study has one or more series of image instances.
+	 * Each study has one or more series of images or other content.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Series</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getImagingStudy_Series()

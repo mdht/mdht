@@ -17,9 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.CompositionSection;
 import org.hl7.fhir.FhirPackage;
+import org.hl7.fhir.Narrative;
 import org.hl7.fhir.Reference;
 
 /**
@@ -32,7 +34,11 @@ import org.hl7.fhir.Reference;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getMode <em>Mode</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getOrderedBy <em>Ordered By</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getEntry <em>Entry</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getEmptyReason <em>Empty Reason</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.CompositionSectionImpl#getSection <em>Section</em>}</li>
  * </ul>
  *
@@ -60,14 +66,54 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 	protected CodeableConcept code;
 
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContent()
+	 * @see #getText()
 	 * @generated
 	 * @ordered
 	 */
-	protected Reference content;
+	protected Narrative text;
+
+	/**
+	 * The cached value of the '{@link #getMode() <em>Mode</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected Code mode;
+
+	/**
+	 * The cached value of the '{@link #getOrderedBy() <em>Ordered By</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept orderedBy;
+
+	/**
+	 * The cached value of the '{@link #getEntry() <em>Entry</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntry()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Reference> entry;
+
+	/**
+	 * The cached value of the '{@link #getEmptyReason() <em>Empty Reason</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmptyReason()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept emptyReason;
 
 	/**
 	 * The cached value of the '{@link #getSection() <em>Section</em>}' containment reference list.
@@ -189,8 +235,8 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference getContent() {
-		return content;
+	public Narrative getText() {
+		return text;
 	}
 
 	/**
@@ -198,11 +244,11 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetContent(Reference newContent, NotificationChain msgs) {
-		Reference oldContent = content;
-		content = newContent;
+	public NotificationChain basicSetText(Narrative newText, NotificationChain msgs) {
+		Narrative oldText = text;
+		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__CONTENT, oldContent, newContent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__TEXT, oldText, newText);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -213,18 +259,159 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContent(Reference newContent) {
-		if (newContent != content) {
+	public void setText(Narrative newText) {
+		if (newText != text) {
 			NotificationChain msgs = null;
-			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__CONTENT, null, msgs);
-			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__CONTENT, null, msgs);
-			msgs = basicSetContent(newContent, msgs);
+			if (text != null)
+				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__TEXT, null, msgs);
+			if (newText != null)
+				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__TEXT, null, msgs);
+			msgs = basicSetText(newText, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__CONTENT, newContent, newContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__TEXT, newText, newText));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Code getMode() {
+		return mode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMode(Code newMode, NotificationChain msgs) {
+		Code oldMode = mode;
+		mode = newMode;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__MODE, oldMode, newMode);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMode(Code newMode) {
+		if (newMode != mode) {
+			NotificationChain msgs = null;
+			if (mode != null)
+				msgs = ((InternalEObject)mode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__MODE, null, msgs);
+			if (newMode != null)
+				msgs = ((InternalEObject)newMode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__MODE, null, msgs);
+			msgs = basicSetMode(newMode, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__MODE, newMode, newMode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodeableConcept getOrderedBy() {
+		return orderedBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOrderedBy(CodeableConcept newOrderedBy, NotificationChain msgs) {
+		CodeableConcept oldOrderedBy = orderedBy;
+		orderedBy = newOrderedBy;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__ORDERED_BY, oldOrderedBy, newOrderedBy);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrderedBy(CodeableConcept newOrderedBy) {
+		if (newOrderedBy != orderedBy) {
+			NotificationChain msgs = null;
+			if (orderedBy != null)
+				msgs = ((InternalEObject)orderedBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__ORDERED_BY, null, msgs);
+			if (newOrderedBy != null)
+				msgs = ((InternalEObject)newOrderedBy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__ORDERED_BY, null, msgs);
+			msgs = basicSetOrderedBy(newOrderedBy, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__ORDERED_BY, newOrderedBy, newOrderedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Reference> getEntry() {
+		if (entry == null) {
+			entry = new EObjectContainmentEList<Reference>(Reference.class, this, FhirPackage.COMPOSITION_SECTION__ENTRY);
+		}
+		return entry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodeableConcept getEmptyReason() {
+		return emptyReason;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEmptyReason(CodeableConcept newEmptyReason, NotificationChain msgs) {
+		CodeableConcept oldEmptyReason = emptyReason;
+		emptyReason = newEmptyReason;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__EMPTY_REASON, oldEmptyReason, newEmptyReason);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmptyReason(CodeableConcept newEmptyReason) {
+		if (newEmptyReason != emptyReason) {
+			NotificationChain msgs = null;
+			if (emptyReason != null)
+				msgs = ((InternalEObject)emptyReason).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__EMPTY_REASON, null, msgs);
+			if (newEmptyReason != null)
+				msgs = ((InternalEObject)newEmptyReason).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.COMPOSITION_SECTION__EMPTY_REASON, null, msgs);
+			msgs = basicSetEmptyReason(newEmptyReason, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.COMPOSITION_SECTION__EMPTY_REASON, newEmptyReason, newEmptyReason));
 	}
 
 	/**
@@ -251,8 +438,16 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 				return basicSetTitle(null, msgs);
 			case FhirPackage.COMPOSITION_SECTION__CODE:
 				return basicSetCode(null, msgs);
-			case FhirPackage.COMPOSITION_SECTION__CONTENT:
-				return basicSetContent(null, msgs);
+			case FhirPackage.COMPOSITION_SECTION__TEXT:
+				return basicSetText(null, msgs);
+			case FhirPackage.COMPOSITION_SECTION__MODE:
+				return basicSetMode(null, msgs);
+			case FhirPackage.COMPOSITION_SECTION__ORDERED_BY:
+				return basicSetOrderedBy(null, msgs);
+			case FhirPackage.COMPOSITION_SECTION__ENTRY:
+				return ((InternalEList<?>)getEntry()).basicRemove(otherEnd, msgs);
+			case FhirPackage.COMPOSITION_SECTION__EMPTY_REASON:
+				return basicSetEmptyReason(null, msgs);
 			case FhirPackage.COMPOSITION_SECTION__SECTION:
 				return ((InternalEList<?>)getSection()).basicRemove(otherEnd, msgs);
 		}
@@ -271,8 +466,16 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 				return getTitle();
 			case FhirPackage.COMPOSITION_SECTION__CODE:
 				return getCode();
-			case FhirPackage.COMPOSITION_SECTION__CONTENT:
-				return getContent();
+			case FhirPackage.COMPOSITION_SECTION__TEXT:
+				return getText();
+			case FhirPackage.COMPOSITION_SECTION__MODE:
+				return getMode();
+			case FhirPackage.COMPOSITION_SECTION__ORDERED_BY:
+				return getOrderedBy();
+			case FhirPackage.COMPOSITION_SECTION__ENTRY:
+				return getEntry();
+			case FhirPackage.COMPOSITION_SECTION__EMPTY_REASON:
+				return getEmptyReason();
 			case FhirPackage.COMPOSITION_SECTION__SECTION:
 				return getSection();
 		}
@@ -294,8 +497,21 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 			case FhirPackage.COMPOSITION_SECTION__CODE:
 				setCode((CodeableConcept)newValue);
 				return;
-			case FhirPackage.COMPOSITION_SECTION__CONTENT:
-				setContent((Reference)newValue);
+			case FhirPackage.COMPOSITION_SECTION__TEXT:
+				setText((Narrative)newValue);
+				return;
+			case FhirPackage.COMPOSITION_SECTION__MODE:
+				setMode((Code)newValue);
+				return;
+			case FhirPackage.COMPOSITION_SECTION__ORDERED_BY:
+				setOrderedBy((CodeableConcept)newValue);
+				return;
+			case FhirPackage.COMPOSITION_SECTION__ENTRY:
+				getEntry().clear();
+				getEntry().addAll((Collection<? extends Reference>)newValue);
+				return;
+			case FhirPackage.COMPOSITION_SECTION__EMPTY_REASON:
+				setEmptyReason((CodeableConcept)newValue);
 				return;
 			case FhirPackage.COMPOSITION_SECTION__SECTION:
 				getSection().clear();
@@ -319,8 +535,20 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 			case FhirPackage.COMPOSITION_SECTION__CODE:
 				setCode((CodeableConcept)null);
 				return;
-			case FhirPackage.COMPOSITION_SECTION__CONTENT:
-				setContent((Reference)null);
+			case FhirPackage.COMPOSITION_SECTION__TEXT:
+				setText((Narrative)null);
+				return;
+			case FhirPackage.COMPOSITION_SECTION__MODE:
+				setMode((Code)null);
+				return;
+			case FhirPackage.COMPOSITION_SECTION__ORDERED_BY:
+				setOrderedBy((CodeableConcept)null);
+				return;
+			case FhirPackage.COMPOSITION_SECTION__ENTRY:
+				getEntry().clear();
+				return;
+			case FhirPackage.COMPOSITION_SECTION__EMPTY_REASON:
+				setEmptyReason((CodeableConcept)null);
 				return;
 			case FhirPackage.COMPOSITION_SECTION__SECTION:
 				getSection().clear();
@@ -341,8 +569,16 @@ public class CompositionSectionImpl extends BackboneElementImpl implements Compo
 				return title != null;
 			case FhirPackage.COMPOSITION_SECTION__CODE:
 				return code != null;
-			case FhirPackage.COMPOSITION_SECTION__CONTENT:
-				return content != null;
+			case FhirPackage.COMPOSITION_SECTION__TEXT:
+				return text != null;
+			case FhirPackage.COMPOSITION_SECTION__MODE:
+				return mode != null;
+			case FhirPackage.COMPOSITION_SECTION__ORDERED_BY:
+				return orderedBy != null;
+			case FhirPackage.COMPOSITION_SECTION__ENTRY:
+				return entry != null && !entry.isEmpty();
+			case FhirPackage.COMPOSITION_SECTION__EMPTY_REASON:
+				return emptyReason != null;
 			case FhirPackage.COMPOSITION_SECTION__SECTION:
 				return section != null && !section.isEmpty();
 		}

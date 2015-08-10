@@ -22,15 +22,15 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ConceptMap#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMap#getUseContext <em>Use Context</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMap#getPublisher <em>Publisher</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMap#getContact <em>Contact</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMap#getDescription <em>Description</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMap#getRequirements <em>Requirements</em>}</li>
- *   <li>{@link org.hl7.fhir.ConceptMap#getCopyright <em>Copyright</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getExperimental <em>Experimental</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConceptMap#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConceptMap#getContact <em>Contact</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getDate <em>Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConceptMap#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConceptMap#getUseContext <em>Use Context</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConceptMap#getRequirements <em>Requirements</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConceptMap#getCopyright <em>Copyright</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getSourceUri <em>Source Uri</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getSourceReference <em>Source Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.ConceptMap#getTargetUri <em>Target Uri</em>}</li>
@@ -48,7 +48,7 @@ public interface ConceptMap extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute uri that is used to identify this concept map when it is referenced in a specification, model, design or an instance (should be globally unique URI, and can be urn:uuid: or urn:oid:).
+	 * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)
@@ -148,142 +148,6 @@ public interface ConceptMap extends DomainResource {
 	void setName(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of concept maps.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Use Context</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getConceptMap_UseContext()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<CodeableConcept> getUseContext();
-
-	/**
-	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The name of the individual or organization that published the concept map.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Publisher</em>' containment reference.
-	 * @see #setPublisher(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Publisher()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='publisher' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getPublisher();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getPublisher <em>Publisher</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Publisher</em>' containment reference.
-	 * @see #getPublisher()
-	 * @generated
-	 */
-	void setPublisher(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Contact</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.ConceptMapContact}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Contacts to assist a user in finding and communicating with the publisher.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Contact</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Contact()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='contact' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<ConceptMapContact> getContact();
-
-	/**
-	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A free text natural language description of the use of the concept map - reason for definition, conditions of use, etc.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Description</em>' containment reference.
-	 * @see #setDescription(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Description()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='description' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getDescription();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getDescription <em>Description</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' containment reference.
-	 * @see #getDescription()
-	 * @generated
-	 */
-	void setDescription(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Explains why this concept map is needed and why it's been constrained as it has.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Requirements</em>' containment reference.
-	 * @see #setRequirements(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Requirements()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='requirements' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getRequirements();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getRequirements <em>Requirements</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirements</em>' containment reference.
-	 * @see #getRequirements()
-	 * @generated
-	 */
-	void setRequirements(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A copyright statement relating to the concept map and/or its contents.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Copyright</em>' containment reference.
-	 * @see #setCopyright(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Copyright()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='copyright' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getCopyright();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getCopyright <em>Copyright</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Copyright</em>' containment reference.
-	 * @see #getCopyright()
-	 * @generated
-	 */
-	void setCopyright(org.hl7.fhir.String value);
-
-	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -336,11 +200,53 @@ public interface ConceptMap extends DomainResource {
 	void setExperimental(org.hl7.fhir.Boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The name of the individual or organization that published the concept map.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Publisher</em>' containment reference.
+	 * @see #setPublisher(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Publisher()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='publisher' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getPublisher();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getPublisher <em>Publisher</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Publisher</em>' containment reference.
+	 * @see #getPublisher()
+	 * @generated
+	 */
+	void setPublisher(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Contact</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.ConceptMapContact}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Contacts to assist a user in finding and communicating with the publisher.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Contact</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Contact()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='contact' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<ConceptMapContact> getContact();
+
+	/**
 	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The date that the concept map status was last changed.
+	 * The date that this version of the concept map was published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the concept map changes.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Date</em>' containment reference.
 	 * @see #setDate(DateTime)
@@ -360,6 +266,100 @@ public interface ConceptMap extends DomainResource {
 	 * @generated
 	 */
 	void setDate(DateTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A free text natural language description of the use of the concept map - reason for definition, conditions of use, etc.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Description</em>' containment reference.
+	 * @see #setDescription(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Description()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='description' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getDescription();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getDescription <em>Description</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' containment reference.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of concept maps.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Use Context</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getConceptMap_UseContext()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<CodeableConcept> getUseContext();
+
+	/**
+	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Explains why this concept map is needed and why it's been constrained as it has.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Requirements</em>' containment reference.
+	 * @see #setRequirements(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Requirements()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='requirements' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getRequirements();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getRequirements <em>Requirements</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requirements</em>' containment reference.
+	 * @see #getRequirements()
+	 * @generated
+	 */
+	void setRequirements(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A copyright statement relating to the concept map and/or its contents.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Copyright</em>' containment reference.
+	 * @see #setCopyright(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getConceptMap_Copyright()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='copyright' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getCopyright();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ConceptMap#getCopyright <em>Copyright</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Copyright</em>' containment reference.
+	 * @see #getCopyright()
+	 * @generated
+	 */
+	void setCopyright(org.hl7.fhir.String value);
 
 	/**
 	 * Returns the value of the '<em><b>Source Uri</b></em>' containment reference.

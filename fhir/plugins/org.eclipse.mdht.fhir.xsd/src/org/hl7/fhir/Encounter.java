@@ -176,9 +176,7 @@ public interface Encounter extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, issue tracking, association via a common problem.
-	 * 
-	 * The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
+	 * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Episode Of Care</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getEncounter_EpisodeOfCare()
@@ -320,8 +318,7 @@ public interface Encounter extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis.
-	 * The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
+	 * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Indication</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getEncounter_Indication()

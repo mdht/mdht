@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.Coding;
 import org.hl7.fhir.Decimal;
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.Quantity;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.VisionBase;
 import org.hl7.fhir.VisionEyes;
 import org.hl7.fhir.VisionPrescriptionDispense;
@@ -164,7 +164,7 @@ public class VisionPrescriptionDispenseImpl extends BackboneElementImpl implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity duration;
+	protected SimpleQuantity duration;
 
 	/**
 	 * The cached value of the '{@link #getColor() <em>Color</em>}' containment reference.
@@ -693,7 +693,7 @@ public class VisionPrescriptionDispenseImpl extends BackboneElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getDuration() {
+	public SimpleQuantity getDuration() {
 		return duration;
 	}
 
@@ -702,8 +702,8 @@ public class VisionPrescriptionDispenseImpl extends BackboneElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDuration(Quantity newDuration, NotificationChain msgs) {
-		Quantity oldDuration = duration;
+	public NotificationChain basicSetDuration(SimpleQuantity newDuration, NotificationChain msgs) {
+		SimpleQuantity oldDuration = duration;
 		duration = newDuration;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.VISION_PRESCRIPTION_DISPENSE__DURATION, oldDuration, newDuration);
@@ -717,7 +717,7 @@ public class VisionPrescriptionDispenseImpl extends BackboneElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDuration(Quantity newDuration) {
+	public void setDuration(SimpleQuantity newDuration) {
 		if (newDuration != duration) {
 			NotificationChain msgs = null;
 			if (duration != null)
@@ -986,7 +986,7 @@ public class VisionPrescriptionDispenseImpl extends BackboneElementImpl implemen
 				setDiameter((Decimal)newValue);
 				return;
 			case FhirPackage.VISION_PRESCRIPTION_DISPENSE__DURATION:
-				setDuration((Quantity)newValue);
+				setDuration((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.VISION_PRESCRIPTION_DISPENSE__COLOR:
 				setColor((org.hl7.fhir.String)newValue);
@@ -1043,7 +1043,7 @@ public class VisionPrescriptionDispenseImpl extends BackboneElementImpl implemen
 				setDiameter((Decimal)null);
 				return;
 			case FhirPackage.VISION_PRESCRIPTION_DISPENSE__DURATION:
-				setDuration((Quantity)null);
+				setDuration((SimpleQuantity)null);
 				return;
 			case FhirPackage.VISION_PRESCRIPTION_DISPENSE__COLOR:
 				setColor((org.hl7.fhir.String)null);

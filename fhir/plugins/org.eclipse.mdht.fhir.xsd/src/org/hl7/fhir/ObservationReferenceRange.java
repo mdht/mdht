@@ -36,13 +36,13 @@ public interface ObservationReferenceRange extends BackboneElement {
 	 * The value of the low bound of the reference range. If this element is omitted, the low bound of the reference range is assumed to be meaningless. (e.g. reference range is <2.3)  If the low.comparator element is missing, it is assumed to be '>'.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Low</em>' containment reference.
-	 * @see #setLow(Quantity)
+	 * @see #setLow(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getObservationReferenceRange_Low()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='low' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getLow();
+	SimpleQuantity getLow();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ObservationReferenceRange#getLow <em>Low</em>}' containment reference.
@@ -52,7 +52,7 @@ public interface ObservationReferenceRange extends BackboneElement {
 	 * @see #getLow()
 	 * @generated
 	 */
-	void setLow(Quantity value);
+	void setLow(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>High</b></em>' containment reference.
@@ -62,13 +62,13 @@ public interface ObservationReferenceRange extends BackboneElement {
 	 * The value of the high bound of the reference range. If this element is omitted, the high bound of the reference range is assumed to be meaningless. (e.g. reference range is > 5)  If the low.comparator element is missing , it is assumed to be '<'.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>High</em>' containment reference.
-	 * @see #setHigh(Quantity)
+	 * @see #setHigh(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getObservationReferenceRange_High()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='high' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getHigh();
+	SimpleQuantity getHigh();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ObservationReferenceRange#getHigh <em>High</em>}' containment reference.
@@ -78,7 +78,7 @@ public interface ObservationReferenceRange extends BackboneElement {
 	 * @see #getHigh()
 	 * @generated
 	 */
-	void setHigh(Quantity value);
+	void setHigh(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Meaning</b></em>' containment reference.

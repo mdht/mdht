@@ -15,9 +15,9 @@ import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.MedicationDispenseDosageInstruction;
 import org.hl7.fhir.Period;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Range;
 import org.hl7.fhir.Ratio;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.Timing;
 
 /**
@@ -165,7 +165,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity doseQuantity;
+	protected SimpleQuantity doseQuantity;
 
 	/**
 	 * The cached value of the '{@link #getRate() <em>Rate</em>}' containment reference.
@@ -684,7 +684,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getDoseQuantity() {
+	public SimpleQuantity getDoseQuantity() {
 		return doseQuantity;
 	}
 
@@ -693,8 +693,8 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDoseQuantity(Quantity newDoseQuantity, NotificationChain msgs) {
-		Quantity oldDoseQuantity = doseQuantity;
+	public NotificationChain basicSetDoseQuantity(SimpleQuantity newDoseQuantity, NotificationChain msgs) {
+		SimpleQuantity oldDoseQuantity = doseQuantity;
 		doseQuantity = newDoseQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY, oldDoseQuantity, newDoseQuantity);
@@ -708,7 +708,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDoseQuantity(Quantity newDoseQuantity) {
+	public void setDoseQuantity(SimpleQuantity newDoseQuantity) {
 		if (newDoseQuantity != doseQuantity) {
 			NotificationChain msgs = null;
 			if (doseQuantity != null)
@@ -930,7 +930,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 				setDoseRange((Range)newValue);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
-				setDoseQuantity((Quantity)newValue);
+				setDoseQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE:
 				setRate((Ratio)newValue);
@@ -984,7 +984,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 				setDoseRange((Range)null);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
-				setDoseQuantity((Quantity)null);
+				setDoseQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE:
 				setRate((Ratio)null);

@@ -36,6 +36,7 @@ import org.hl7.fhir.Period;
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getLine <em>Line</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getCity <em>City</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.AddressImpl#getDistrict <em>District</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getState <em>State</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.AddressImpl#getCountry <em>Country</em>}</li>
@@ -94,6 +95,16 @@ public class AddressImpl extends ElementImpl implements Address {
 	 * @ordered
 	 */
 	protected org.hl7.fhir.String city;
+
+	/**
+	 * The cached value of the '{@link #getDistrict() <em>District</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDistrict()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String district;
 
 	/**
 	 * The cached value of the '{@link #getState() <em>State</em>}' containment reference.
@@ -343,6 +354,49 @@ public class AddressImpl extends ElementImpl implements Address {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.hl7.fhir.String getDistrict() {
+		return district;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDistrict(org.hl7.fhir.String newDistrict, NotificationChain msgs) {
+		org.hl7.fhir.String oldDistrict = district;
+		district = newDistrict;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.ADDRESS__DISTRICT, oldDistrict, newDistrict);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDistrict(org.hl7.fhir.String newDistrict) {
+		if (newDistrict != district) {
+			NotificationChain msgs = null;
+			if (district != null)
+				msgs = ((InternalEObject)district).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ADDRESS__DISTRICT, null, msgs);
+			if (newDistrict != null)
+				msgs = ((InternalEObject)newDistrict).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.ADDRESS__DISTRICT, null, msgs);
+			msgs = basicSetDistrict(newDistrict, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.ADDRESS__DISTRICT, newDistrict, newDistrict));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public org.hl7.fhir.String getState() {
 		return state;
 	}
@@ -528,6 +582,8 @@ public class AddressImpl extends ElementImpl implements Address {
 				return ((InternalEList<?>)getLine()).basicRemove(otherEnd, msgs);
 			case FhirPackage.ADDRESS__CITY:
 				return basicSetCity(null, msgs);
+			case FhirPackage.ADDRESS__DISTRICT:
+				return basicSetDistrict(null, msgs);
 			case FhirPackage.ADDRESS__STATE:
 				return basicSetState(null, msgs);
 			case FhirPackage.ADDRESS__POSTAL_CODE:
@@ -558,6 +614,8 @@ public class AddressImpl extends ElementImpl implements Address {
 				return getLine();
 			case FhirPackage.ADDRESS__CITY:
 				return getCity();
+			case FhirPackage.ADDRESS__DISTRICT:
+				return getDistrict();
 			case FhirPackage.ADDRESS__STATE:
 				return getState();
 			case FhirPackage.ADDRESS__POSTAL_CODE:
@@ -594,6 +652,9 @@ public class AddressImpl extends ElementImpl implements Address {
 				return;
 			case FhirPackage.ADDRESS__CITY:
 				setCity((org.hl7.fhir.String)newValue);
+				return;
+			case FhirPackage.ADDRESS__DISTRICT:
+				setDistrict((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.ADDRESS__STATE:
 				setState((org.hl7.fhir.String)newValue);
@@ -634,6 +695,9 @@ public class AddressImpl extends ElementImpl implements Address {
 			case FhirPackage.ADDRESS__CITY:
 				setCity((org.hl7.fhir.String)null);
 				return;
+			case FhirPackage.ADDRESS__DISTRICT:
+				setDistrict((org.hl7.fhir.String)null);
+				return;
 			case FhirPackage.ADDRESS__STATE:
 				setState((org.hl7.fhir.String)null);
 				return;
@@ -668,6 +732,8 @@ public class AddressImpl extends ElementImpl implements Address {
 				return line != null && !line.isEmpty();
 			case FhirPackage.ADDRESS__CITY:
 				return city != null;
+			case FhirPackage.ADDRESS__DISTRICT:
+				return district != null;
 			case FhirPackage.ADDRESS__STATE:
 				return state != null;
 			case FhirPackage.ADDRESS__POSTAL_CODE:

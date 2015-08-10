@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.hl7.fhir.ImagingStudyInstance#getNumber <em>Number</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudyInstance#getUid <em>Uid</em>}</li>
- *   <li>{@link org.hl7.fhir.ImagingStudyInstance#getSopclass <em>Sopclass</em>}</li>
+ *   <li>{@link org.hl7.fhir.ImagingStudyInstance#getSopClass <em>Sop Class</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudyInstance#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudyInstance#getTitle <em>Title</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudyInstance#getContent <em>Content</em>}</li>
@@ -35,7 +35,7 @@ public interface ImagingStudyInstance extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The number of this image in the series.
+	 * The number of instance in the series.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Number</em>' containment reference.
 	 * @see #setNumber(UnsignedInt)
@@ -61,7 +61,7 @@ public interface ImagingStudyInstance extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Formal identifier for this image.
+	 * Formal identifier for this image or other content.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Uid</em>' containment reference.
 	 * @see #setUid(Oid)
@@ -83,30 +83,30 @@ public interface ImagingStudyInstance extends BackboneElement {
 	void setUid(Oid value);
 
 	/**
-	 * Returns the value of the '<em><b>Sopclass</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Sop Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * DICOM Image type.
+	 * DICOM instance  type.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sopclass</em>' containment reference.
-	 * @see #setSopclass(Oid)
-	 * @see org.hl7.fhir.FhirPackage#getImagingStudyInstance_Sopclass()
+	 * @return the value of the '<em>Sop Class</em>' containment reference.
+	 * @see #setSopClass(Oid)
+	 * @see org.hl7.fhir.FhirPackage#getImagingStudyInstance_SopClass()
 	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='sopclass' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='sopClass' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Oid getSopclass();
+	Oid getSopClass();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ImagingStudyInstance#getSopclass <em>Sopclass</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ImagingStudyInstance#getSopClass <em>Sop Class</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sopclass</em>' containment reference.
-	 * @see #getSopclass()
+	 * @param value the new value of the '<em>Sop Class</em>' containment reference.
+	 * @see #getSopClass()
 	 * @generated
 	 */
-	void setSopclass(Oid value);
+	void setSopClass(Oid value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
@@ -166,7 +166,7 @@ public interface ImagingStudyInstance extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Content of the instance or a rendering thereof (e.g., a JPEG of an image, or an XML of a structured report). May be represented by inline encoding, or by a URL reference to a WADO-RS service that makes the instance available. Multiple content attachments may be used for alternate representations of the instance.
+	 * Content of the instance or a rendering thereof (e.g., a JPEG of an image, or an XML of a structured report). May be represented for example by inline encoding; by a URL reference to a WADO-RS service that makes the instance available; or to a FHIR Resource (e.g., Media, Document, etc.). Multiple content attachments may be used for alternate representations of the instance.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Content</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getImagingStudyInstance_Content()

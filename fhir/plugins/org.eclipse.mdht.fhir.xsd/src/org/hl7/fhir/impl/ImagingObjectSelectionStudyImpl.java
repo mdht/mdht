@@ -21,6 +21,7 @@ import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.ImagingObjectSelectionSeries;
 import org.hl7.fhir.ImagingObjectSelectionStudy;
 import org.hl7.fhir.Oid;
+import org.hl7.fhir.Reference;
 import org.hl7.fhir.Uri;
 
 /**
@@ -33,6 +34,7 @@ import org.hl7.fhir.Uri;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.ImagingObjectSelectionStudyImpl#getUid <em>Uid</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingObjectSelectionStudyImpl#getUrl <em>Url</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ImagingObjectSelectionStudyImpl#getImagingStudy <em>Imaging Study</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingObjectSelectionStudyImpl#getSeries <em>Series</em>}</li>
  * </ul>
  *
@@ -58,6 +60,16 @@ public class ImagingObjectSelectionStudyImpl extends BackboneElementImpl impleme
 	 * @ordered
 	 */
 	protected Uri url;
+
+	/**
+	 * The cached value of the '{@link #getImagingStudy() <em>Imaging Study</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImagingStudy()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reference imagingStudy;
 
 	/**
 	 * The cached value of the '{@link #getSeries() <em>Series</em>}' containment reference list.
@@ -179,6 +191,49 @@ public class ImagingObjectSelectionStudyImpl extends BackboneElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Reference getImagingStudy() {
+		return imagingStudy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImagingStudy(Reference newImagingStudy, NotificationChain msgs) {
+		Reference oldImagingStudy = imagingStudy;
+		imagingStudy = newImagingStudy;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY, oldImagingStudy, newImagingStudy);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImagingStudy(Reference newImagingStudy) {
+		if (newImagingStudy != imagingStudy) {
+			NotificationChain msgs = null;
+			if (imagingStudy != null)
+				msgs = ((InternalEObject)imagingStudy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY, null, msgs);
+			if (newImagingStudy != null)
+				msgs = ((InternalEObject)newImagingStudy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY, null, msgs);
+			msgs = basicSetImagingStudy(newImagingStudy, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY, newImagingStudy, newImagingStudy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ImagingObjectSelectionSeries> getSeries() {
 		if (series == null) {
 			series = new EObjectContainmentEList<ImagingObjectSelectionSeries>(ImagingObjectSelectionSeries.class, this, FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__SERIES);
@@ -198,6 +253,8 @@ public class ImagingObjectSelectionStudyImpl extends BackboneElementImpl impleme
 				return basicSetUid(null, msgs);
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__URL:
 				return basicSetUrl(null, msgs);
+			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY:
+				return basicSetImagingStudy(null, msgs);
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__SERIES:
 				return ((InternalEList<?>)getSeries()).basicRemove(otherEnd, msgs);
 		}
@@ -216,6 +273,8 @@ public class ImagingObjectSelectionStudyImpl extends BackboneElementImpl impleme
 				return getUid();
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__URL:
 				return getUrl();
+			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY:
+				return getImagingStudy();
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__SERIES:
 				return getSeries();
 		}
@@ -236,6 +295,9 @@ public class ImagingObjectSelectionStudyImpl extends BackboneElementImpl impleme
 				return;
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__URL:
 				setUrl((Uri)newValue);
+				return;
+			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY:
+				setImagingStudy((Reference)newValue);
 				return;
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__SERIES:
 				getSeries().clear();
@@ -259,6 +321,9 @@ public class ImagingObjectSelectionStudyImpl extends BackboneElementImpl impleme
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__URL:
 				setUrl((Uri)null);
 				return;
+			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY:
+				setImagingStudy((Reference)null);
+				return;
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__SERIES:
 				getSeries().clear();
 				return;
@@ -278,6 +343,8 @@ public class ImagingObjectSelectionStudyImpl extends BackboneElementImpl impleme
 				return uid != null;
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__URL:
 				return url != null;
+			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY:
+				return imagingStudy != null;
 			case FhirPackage.IMAGING_OBJECT_SELECTION_STUDY__SERIES:
 				return series != null && !series.isEmpty();
 		}

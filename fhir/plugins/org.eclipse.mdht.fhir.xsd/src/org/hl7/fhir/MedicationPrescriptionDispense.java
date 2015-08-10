@@ -88,9 +88,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Design Comments: This indicates the validity period of a prescription (stale dating the Prescription) 
-	 * It reflects the prescriber perspective for the validity of the prescription. Dispenses must not be made against the prescription outside of this period. The lower-bound of the Dispensing Window signifies the earliest date that the prescription can be filled for the first time. If an upper-bound is not specified then the Prescription is open-ended or will default to a stale-date based on regulations. 
-	 * Rationale: Indicates when the Prescription becomes valid, and when it ceases to be a dispensable Prescription.
+	 * Design Comments: This indicates the validity period of a prescription (stale dating the Prescription)  It reflects the prescriber perspective for the validity of the prescription. Dispenses must not be made against the prescription outside of this period. The lower-bound of the Dispensing Window signifies the earliest date that the prescription can be filled for the first time. If an upper-bound is not specified then the Prescription is open-ended or will default to a stale-date based on regulations.  Rationale: Indicates when the Prescription becomes valid, and when it ceases to be a dispensable Prescription.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Validity Period</em>' containment reference.
 	 * @see #setValidityPeriod(Period)
@@ -116,8 +114,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An integer indicating the number of repeats of the Dispense. 
-	 * UsageNotes: For example, the number of times the prescribed quantity is to be supplied including the initial standard fill.
+	 * An integer indicating the number of repeats of the Dispense.  UsageNotes: For example, the number of times the prescribed quantity is to be supplied including the initial standard fill.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Number Of Repeats Allowed</em>' containment reference.
 	 * @see #setNumberOfRepeatsAllowed(PositiveInt)
@@ -146,13 +143,13 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * The amount that is to be dispensed for one fill.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quantity</em>' containment reference.
-	 * @see #setQuantity(Quantity)
+	 * @see #setQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense_Quantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='quantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getQuantity();
+	SimpleQuantity getQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDispense#getQuantity <em>Quantity</em>}' containment reference.
@@ -162,15 +159,14 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	void setQuantity(Quantity value);
+	void setQuantity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Expected Supply Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last. 
-	 * In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
+	 * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.  In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expected Supply Duration</em>' containment reference.
 	 * @see #setExpectedSupplyDuration(Duration)

@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Annotation;
+import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.DiagnosticOrder;
 import org.hl7.fhir.DiagnosticOrderEvent;
 import org.hl7.fhir.DiagnosticOrderItem;
@@ -38,13 +40,14 @@ import org.hl7.fhir.Reference;
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getOrderer <em>Orderer</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getEncounter <em>Encounter</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getClinicalNotes <em>Clinical Notes</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getReason <em>Reason</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getSupportingInformation <em>Supporting Information</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getSpecimen <em>Specimen</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getItem <em>Item</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderImpl#getNote <em>Note</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,14 +94,14 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 	protected Reference encounter;
 
 	/**
-	 * The cached value of the '{@link #getClinicalNotes() <em>Clinical Notes</em>}' containment reference.
+	 * The cached value of the '{@link #getReason() <em>Reason</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClinicalNotes()
+	 * @see #getReason()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String clinicalNotes;
+	protected EList<CodeableConcept> reason;
 
 	/**
 	 * The cached value of the '{@link #getSupportingInformation() <em>Supporting Information</em>}' containment reference list.
@@ -159,6 +162,16 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 	 * @ordered
 	 */
 	protected EList<DiagnosticOrderItem> item;
+
+	/**
+	 * The cached value of the '{@link #getNote() <em>Note</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNote()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> note;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -325,42 +338,11 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getClinicalNotes() {
-		return clinicalNotes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetClinicalNotes(org.hl7.fhir.String newClinicalNotes, NotificationChain msgs) {
-		org.hl7.fhir.String oldClinicalNotes = clinicalNotes;
-		clinicalNotes = newClinicalNotes;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES, oldClinicalNotes, newClinicalNotes);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<CodeableConcept> getReason() {
+		if (reason == null) {
+			reason = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.DIAGNOSTIC_ORDER__REASON);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClinicalNotes(org.hl7.fhir.String newClinicalNotes) {
-		if (newClinicalNotes != clinicalNotes) {
-			NotificationChain msgs = null;
-			if (clinicalNotes != null)
-				msgs = ((InternalEObject)clinicalNotes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES, null, msgs);
-			if (newClinicalNotes != null)
-				msgs = ((InternalEObject)newClinicalNotes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES, null, msgs);
-			msgs = basicSetClinicalNotes(newClinicalNotes, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES, newClinicalNotes, newClinicalNotes));
+		return reason;
 	}
 
 	/**
@@ -502,6 +484,18 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Annotation> getNote() {
+		if (note == null) {
+			note = new EObjectContainmentEList<Annotation>(Annotation.class, this, FhirPackage.DIAGNOSTIC_ORDER__NOTE);
+		}
+		return note;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -513,8 +507,8 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 				return ((InternalEList<?>)getIdentifier()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DIAGNOSTIC_ORDER__ENCOUNTER:
 				return basicSetEncounter(null, msgs);
-			case FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES:
-				return basicSetClinicalNotes(null, msgs);
+			case FhirPackage.DIAGNOSTIC_ORDER__REASON:
+				return ((InternalEList<?>)getReason()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DIAGNOSTIC_ORDER__SUPPORTING_INFORMATION:
 				return ((InternalEList<?>)getSupportingInformation()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DIAGNOSTIC_ORDER__SPECIMEN:
@@ -527,6 +521,8 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 				return ((InternalEList<?>)getEvent()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DIAGNOSTIC_ORDER__ITEM:
 				return ((InternalEList<?>)getItem()).basicRemove(otherEnd, msgs);
+			case FhirPackage.DIAGNOSTIC_ORDER__NOTE:
+				return ((InternalEList<?>)getNote()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -547,8 +543,8 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 				return getIdentifier();
 			case FhirPackage.DIAGNOSTIC_ORDER__ENCOUNTER:
 				return getEncounter();
-			case FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES:
-				return getClinicalNotes();
+			case FhirPackage.DIAGNOSTIC_ORDER__REASON:
+				return getReason();
 			case FhirPackage.DIAGNOSTIC_ORDER__SUPPORTING_INFORMATION:
 				return getSupportingInformation();
 			case FhirPackage.DIAGNOSTIC_ORDER__SPECIMEN:
@@ -561,6 +557,8 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 				return getEvent();
 			case FhirPackage.DIAGNOSTIC_ORDER__ITEM:
 				return getItem();
+			case FhirPackage.DIAGNOSTIC_ORDER__NOTE:
+				return getNote();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -587,8 +585,9 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 			case FhirPackage.DIAGNOSTIC_ORDER__ENCOUNTER:
 				setEncounter((Reference)newValue);
 				return;
-			case FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES:
-				setClinicalNotes((org.hl7.fhir.String)newValue);
+			case FhirPackage.DIAGNOSTIC_ORDER__REASON:
+				getReason().clear();
+				getReason().addAll((Collection<? extends CodeableConcept>)newValue);
 				return;
 			case FhirPackage.DIAGNOSTIC_ORDER__SUPPORTING_INFORMATION:
 				getSupportingInformation().clear();
@@ -611,6 +610,10 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 			case FhirPackage.DIAGNOSTIC_ORDER__ITEM:
 				getItem().clear();
 				getItem().addAll((Collection<? extends DiagnosticOrderItem>)newValue);
+				return;
+			case FhirPackage.DIAGNOSTIC_ORDER__NOTE:
+				getNote().clear();
+				getNote().addAll((Collection<? extends Annotation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -636,8 +639,8 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 			case FhirPackage.DIAGNOSTIC_ORDER__ENCOUNTER:
 				setEncounter((Reference)null);
 				return;
-			case FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES:
-				setClinicalNotes((org.hl7.fhir.String)null);
+			case FhirPackage.DIAGNOSTIC_ORDER__REASON:
+				getReason().clear();
 				return;
 			case FhirPackage.DIAGNOSTIC_ORDER__SUPPORTING_INFORMATION:
 				getSupportingInformation().clear();
@@ -656,6 +659,9 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 				return;
 			case FhirPackage.DIAGNOSTIC_ORDER__ITEM:
 				getItem().clear();
+				return;
+			case FhirPackage.DIAGNOSTIC_ORDER__NOTE:
+				getNote().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -677,8 +683,8 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 				return identifier != null && !identifier.isEmpty();
 			case FhirPackage.DIAGNOSTIC_ORDER__ENCOUNTER:
 				return encounter != null;
-			case FhirPackage.DIAGNOSTIC_ORDER__CLINICAL_NOTES:
-				return clinicalNotes != null;
+			case FhirPackage.DIAGNOSTIC_ORDER__REASON:
+				return reason != null && !reason.isEmpty();
 			case FhirPackage.DIAGNOSTIC_ORDER__SUPPORTING_INFORMATION:
 				return supportingInformation != null && !supportingInformation.isEmpty();
 			case FhirPackage.DIAGNOSTIC_ORDER__SPECIMEN:
@@ -691,6 +697,8 @@ public class DiagnosticOrderImpl extends DomainResourceImpl implements Diagnosti
 				return event != null && !event.isEmpty();
 			case FhirPackage.DIAGNOSTIC_ORDER__ITEM:
 				return item != null && !item.isEmpty();
+			case FhirPackage.DIAGNOSTIC_ORDER__NOTE:
+				return note != null && !note.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

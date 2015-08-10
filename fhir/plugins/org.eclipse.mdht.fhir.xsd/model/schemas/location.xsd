@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -134,6 +134,31 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="LocationMode-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="instance">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Location resource represents a specific instance of a Location (e.g. Operating Theatre 1A)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="kind">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Location represents a class of Locations (e.g. Any Operating Theatre). Although this class of locations could be constrained within a specific boundary (such as organization, or parent location, address etc)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LocationMode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Indicates whether a resource instance represents a specific location or a class of locations</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="LocationMode-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="LocationStatus-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="active">
@@ -161,31 +186,6 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="LocationStatus-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="LocationMode-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="instance">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The Location resource represents a specific instance of a Location (e.g. Operating Theatre 1A)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="kind">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The Location represents a class of Locations (e.g. Any Operating Theatre). Although this class of locations could be constrained within a specific boundary (such as organization, or parent location, address etc)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="LocationMode">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Indicates whether a resource instance represents a specific location or a class of locations</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="LocationMode-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

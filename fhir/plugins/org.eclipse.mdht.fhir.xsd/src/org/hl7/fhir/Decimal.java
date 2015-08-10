@@ -11,6 +11,7 @@ import java.math.BigDecimal;
  *
  * <!-- begin-model-doc -->
  * A rational number with implicit precision
+ * Do not use a IEEE type floating point type, instead use something that works like a true decimal, with inbuilt precision (e.g. Java BigInteger)
  * If the element is present, it must have either a @value, an @id, or extensions
  * <!-- end-model-doc -->
  *

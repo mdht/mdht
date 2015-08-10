@@ -101,7 +101,7 @@ import org.hl7.fhir.ProcessRequest;
 import org.hl7.fhir.ProcessResponse;
 import org.hl7.fhir.Provenance;
 import org.hl7.fhir.Questionnaire;
-import org.hl7.fhir.QuestionnaireAnswers;
+import org.hl7.fhir.QuestionnaireResponse;
 import org.hl7.fhir.ReferralRequest;
 import org.hl7.fhir.RelatedPerson;
 import org.hl7.fhir.RiskAssessment;
@@ -112,7 +112,6 @@ import org.hl7.fhir.Specimen;
 import org.hl7.fhir.StructureDefinition;
 import org.hl7.fhir.Subscription;
 import org.hl7.fhir.Substance;
-import org.hl7.fhir.Supply;
 import org.hl7.fhir.SupplyDelivery;
 import org.hl7.fhir.SupplyRequest;
 import org.hl7.fhir.TestScript;
@@ -208,7 +207,7 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getProcessResponse <em>Process Response</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getProvenance <em>Provenance</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getQuestionnaire <em>Questionnaire</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getQuestionnaireAnswers <em>Questionnaire Answers</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getQuestionnaireResponse <em>Questionnaire Response</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getReferralRequest <em>Referral Request</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getRelatedPerson <em>Related Person</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getRiskAssessment <em>Risk Assessment</em>}</li>
@@ -219,7 +218,6 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getStructureDefinition <em>Structure Definition</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSubscription <em>Subscription</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSubstance <em>Substance</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSupply <em>Supply</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSupplyDelivery <em>Supply Delivery</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getSupplyRequest <em>Supply Request</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getTestScript <em>Test Script</em>}</li>
@@ -2426,8 +2424,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QuestionnaireAnswers getQuestionnaireAnswers() {
-		return (QuestionnaireAnswers)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_QuestionnaireAnswers(), true);
+	public QuestionnaireResponse getQuestionnaireResponse() {
+		return (QuestionnaireResponse)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_QuestionnaireResponse(), true);
 	}
 
 	/**
@@ -2435,8 +2433,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuestionnaireAnswers(QuestionnaireAnswers newQuestionnaireAnswers, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_QuestionnaireAnswers(), newQuestionnaireAnswers, msgs);
+	public NotificationChain basicSetQuestionnaireResponse(QuestionnaireResponse newQuestionnaireResponse, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_QuestionnaireResponse(), newQuestionnaireResponse, msgs);
 	}
 
 	/**
@@ -2444,8 +2442,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuestionnaireAnswers(QuestionnaireAnswers newQuestionnaireAnswers) {
-		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_QuestionnaireAnswers(), newQuestionnaireAnswers);
+	public void setQuestionnaireResponse(QuestionnaireResponse newQuestionnaireResponse) {
+		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_QuestionnaireResponse(), newQuestionnaireResponse);
 	}
 
 	/**
@@ -2716,33 +2714,6 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 */
 	public void setSubstance(Substance newSubstance) {
 		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_Substance(), newSubstance);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Supply getSupply() {
-		return (Supply)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_Supply(), true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSupply(Supply newSupply, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_Supply(), newSupply, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSupply(Supply newSupply) {
-		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_Supply(), newSupply);
 	}
 
 	/**
@@ -3050,8 +3021,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetProvenance(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE:
 				return basicSetQuestionnaire(null, msgs);
-			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_ANSWERS:
-				return basicSetQuestionnaireAnswers(null, msgs);
+			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_RESPONSE:
+				return basicSetQuestionnaireResponse(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__REFERRAL_REQUEST:
 				return basicSetReferralRequest(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__RELATED_PERSON:
@@ -3072,8 +3043,6 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetSubscription(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__SUBSTANCE:
 				return basicSetSubstance(null, msgs);
-			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
-				return basicSetSupply(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
 				return basicSetSupplyDelivery(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:
@@ -3261,8 +3230,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getProvenance();
 			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE:
 				return getQuestionnaire();
-			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_ANSWERS:
-				return getQuestionnaireAnswers();
+			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_RESPONSE:
+				return getQuestionnaireResponse();
 			case FhirPackage.DOCUMENT_ROOT__REFERRAL_REQUEST:
 				return getReferralRequest();
 			case FhirPackage.DOCUMENT_ROOT__RELATED_PERSON:
@@ -3283,8 +3252,6 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getSubscription();
 			case FhirPackage.DOCUMENT_ROOT__SUBSTANCE:
 				return getSubstance();
-			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
-				return getSupply();
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
 				return getSupplyDelivery();
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:
@@ -3550,8 +3517,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE:
 				setQuestionnaire((Questionnaire)newValue);
 				return;
-			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_ANSWERS:
-				setQuestionnaireAnswers((QuestionnaireAnswers)newValue);
+			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_RESPONSE:
+				setQuestionnaireResponse((QuestionnaireResponse)newValue);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__REFERRAL_REQUEST:
 				setReferralRequest((ReferralRequest)newValue);
@@ -3582,9 +3549,6 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return;
 			case FhirPackage.DOCUMENT_ROOT__SUBSTANCE:
 				setSubstance((Substance)newValue);
-				return;
-			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
-				setSupply((Supply)newValue);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
 				setSupplyDelivery((SupplyDelivery)newValue);
@@ -3856,8 +3820,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE:
 				setQuestionnaire((Questionnaire)null);
 				return;
-			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_ANSWERS:
-				setQuestionnaireAnswers((QuestionnaireAnswers)null);
+			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_RESPONSE:
+				setQuestionnaireResponse((QuestionnaireResponse)null);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__REFERRAL_REQUEST:
 				setReferralRequest((ReferralRequest)null);
@@ -3888,9 +3852,6 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return;
 			case FhirPackage.DOCUMENT_ROOT__SUBSTANCE:
 				setSubstance((Substance)null);
-				return;
-			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
-				setSupply((Supply)null);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
 				setSupplyDelivery((SupplyDelivery)null);
@@ -4081,8 +4042,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getProvenance() != null;
 			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE:
 				return getQuestionnaire() != null;
-			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_ANSWERS:
-				return getQuestionnaireAnswers() != null;
+			case FhirPackage.DOCUMENT_ROOT__QUESTIONNAIRE_RESPONSE:
+				return getQuestionnaireResponse() != null;
 			case FhirPackage.DOCUMENT_ROOT__REFERRAL_REQUEST:
 				return getReferralRequest() != null;
 			case FhirPackage.DOCUMENT_ROOT__RELATED_PERSON:
@@ -4103,8 +4064,6 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getSubscription() != null;
 			case FhirPackage.DOCUMENT_ROOT__SUBSTANCE:
 				return getSubstance() != null;
-			case FhirPackage.DOCUMENT_ROOT__SUPPLY:
-				return getSupply() != null;
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_DELIVERY:
 				return getSupplyDelivery() != null;
 			case FhirPackage.DOCUMENT_ROOT__SUPPLY_REQUEST:

@@ -21,14 +21,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.OperationDefinition#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.OperationDefinition#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.hl7.fhir.OperationDefinition#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.hl7.fhir.OperationDefinition#getExperimental <em>Experimental</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getContact <em>Contact</em>}</li>
+ *   <li>{@link org.hl7.fhir.OperationDefinition#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getRequirements <em>Requirements</em>}</li>
- *   <li>{@link org.hl7.fhir.OperationDefinition#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.OperationDefinition#getExperimental <em>Experimental</em>}</li>
- *   <li>{@link org.hl7.fhir.OperationDefinition#getDate <em>Date</em>}</li>
- *   <li>{@link org.hl7.fhir.OperationDefinition#getKind <em>Kind</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getIdempotent <em>Idempotent</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.OperationDefinition#getNotes <em>Notes</em>}</li>
@@ -49,7 +49,7 @@ public interface OperationDefinition extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute url that is used to identify this operation definition when it is referenced in a specification, model, design or an instance (should be globally unique uri).
+	 * An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)
@@ -123,6 +123,84 @@ public interface OperationDefinition extends DomainResource {
 	void setName(org.hl7.fhir.String value);
 
 	/**
+	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The status of the profile.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Status</em>' containment reference.
+	 * @see #setStatus(Code)
+	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Status()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Code getStatus();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getStatus <em>Status</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' containment reference.
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Kind</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Whether this is operation or named query.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Kind</em>' containment reference.
+	 * @see #setKind(OperationKind)
+	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Kind()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='kind' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	OperationKind getKind();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getKind <em>Kind</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kind</em>' containment reference.
+	 * @see #getKind()
+	 * @generated
+	 */
+	void setKind(OperationKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This profile was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Experimental</em>' containment reference.
+	 * @see #setExperimental(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Experimental()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getExperimental();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getExperimental <em>Experimental</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Experimental</em>' containment reference.
+	 * @see #getExperimental()
+	 * @generated
+	 */
+	void setExperimental(org.hl7.fhir.Boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -163,6 +241,32 @@ public interface OperationDefinition extends DomainResource {
 	 * @generated
 	 */
 	EList<OperationDefinitionContact> getContact();
+
+	/**
+	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date that this version of the profile was published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the Operation Definition changes.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Date</em>' containment reference.
+	 * @see #setDate(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Date()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getDate <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date</em>' containment reference.
+	 * @see #getDate()
+	 * @generated
+	 */
+	void setDate(DateTime value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
@@ -215,110 +319,6 @@ public interface OperationDefinition extends DomainResource {
 	 * @generated
 	 */
 	void setRequirements(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The status of the profile.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(Code)
-	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Status()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Code getStatus();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getStatus <em>Status</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' containment reference.
-	 * @see #getStatus()
-	 * @generated
-	 */
-	void setStatus(Code value);
-
-	/**
-	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This profile was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Experimental</em>' containment reference.
-	 * @see #setExperimental(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Experimental()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getExperimental();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getExperimental <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Experimental</em>' containment reference.
-	 * @see #getExperimental()
-	 * @generated
-	 */
-	void setExperimental(org.hl7.fhir.Boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The date that this version of the profile was published.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' containment reference.
-	 * @see #setDate(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Date()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	DateTime getDate();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getDate <em>Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' containment reference.
-	 * @see #getDate()
-	 * @generated
-	 */
-	void setDate(DateTime value);
-
-	/**
-	 * Returns the value of the '<em><b>Kind</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Whether this is operation or named query.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Kind</em>' containment reference.
-	 * @see #setKind(OperationKind)
-	 * @see org.hl7.fhir.FhirPackage#getOperationDefinition_Kind()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='kind' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	OperationKind getKind();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.OperationDefinition#getKind <em>Kind</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' containment reference.
-	 * @see #getKind()
-	 * @generated
-	 */
-	void setKind(OperationKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Idempotent</b></em>' containment reference.

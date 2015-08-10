@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Questionnaire#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.Questionnaire#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.Questionnaire#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.hl7.fhir.Questionnaire#getSubjectType <em>Subject Type</em>}</li>
  *   <li>{@link org.hl7.fhir.Questionnaire#getGroup <em>Group</em>}</li>
  * </ul>
  *
@@ -167,6 +168,22 @@ public interface Questionnaire extends DomainResource {
 	 * @generated
 	 */
 	EList<ContactPoint> getTelecom();
+
+	/**
+	 * Returns the value of the '<em><b>Subject Type</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Code}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Identifies the types of subjects that can be the subject of the questionnaire.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Subject Type</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getQuestionnaire_SubjectType()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='subjectType' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<Code> getSubjectType();
 
 	/**
 	 * Returns the value of the '<em><b>Group</b></em>' containment reference.

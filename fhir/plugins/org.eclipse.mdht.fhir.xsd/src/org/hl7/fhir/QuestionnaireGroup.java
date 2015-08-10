@@ -37,7 +37,7 @@ public interface QuestionnaireGroup extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a QuestionnaireAnswers resource.
+	 * An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a QuestionnaireResponse resource.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Link Id</em>' containment reference.
 	 * @see #setLinkId(org.hl7.fhir.String)

@@ -48,7 +48,17 @@ public enum AllergyIntoleranceCategoryList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENVIRONMENT(2, "environment", "environment");
+	ENVIRONMENT(2, "environment", "environment"),
+
+	/**
+	 * The '<em><b>Other</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OTHER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OTHER(3, "other", "other");
 
 	/**
 	 * The '<em><b>Food</b></em>' literal value.
@@ -93,6 +103,20 @@ public enum AllergyIntoleranceCategoryList implements Enumerator {
 	public static final int ENVIRONMENT_VALUE = 2;
 
 	/**
+	 * The '<em><b>Other</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Other substances that are not covered by any other category
+	 * <!-- end-model-doc -->
+	 * @see #OTHER
+	 * @model name="other"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int OTHER_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Allergy Intolerance Category List</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,6 +127,7 @@ public enum AllergyIntoleranceCategoryList implements Enumerator {
 			FOOD,
 			MEDICATION,
 			ENVIRONMENT,
+			OTHER,
 		};
 
 	/**
@@ -162,6 +187,7 @@ public enum AllergyIntoleranceCategoryList implements Enumerator {
 			case FOOD_VALUE: return FOOD;
 			case MEDICATION_VALUE: return MEDICATION;
 			case ENVIRONMENT_VALUE: return ENVIRONMENT;
+			case OTHER_VALUE: return OTHER;
 		}
 		return null;
 	}

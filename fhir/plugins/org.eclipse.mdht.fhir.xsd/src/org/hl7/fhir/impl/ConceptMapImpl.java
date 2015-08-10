@@ -40,15 +40,15 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getUseContext <em>Use Context</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getPublisher <em>Publisher</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getContact <em>Contact</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getRequirements <em>Requirements</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getCopyright <em>Copyright</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getExperimental <em>Experimental</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getContact <em>Contact</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getUseContext <em>Use Context</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getRequirements <em>Requirements</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getCopyright <em>Copyright</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getSourceUri <em>Source Uri</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getSourceReference <em>Source Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConceptMapImpl#getTargetUri <em>Target Uri</em>}</li>
@@ -100,14 +100,24 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	protected org.hl7.fhir.String name;
 
 	/**
-	 * The cached value of the '{@link #getUseContext() <em>Use Context</em>}' containment reference list.
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUseContext()
+	 * @see #getStatus()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CodeableConcept> useContext;
+	protected Code status;
+
+	/**
+	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExperimental()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Boolean experimental;
 
 	/**
 	 * The cached value of the '{@link #getPublisher() <em>Publisher</em>}' containment reference.
@@ -130,6 +140,16 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	protected EList<ConceptMapContact> contact;
 
 	/**
+	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateTime date;
+
+	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +158,16 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * @ordered
 	 */
 	protected org.hl7.fhir.String description;
+
+	/**
+	 * The cached value of the '{@link #getUseContext() <em>Use Context</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUseContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CodeableConcept> useContext;
 
 	/**
 	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' containment reference.
@@ -158,36 +188,6 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * @ordered
 	 */
 	protected org.hl7.fhir.String copyright;
-
-	/**
-	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatus()
-	 * @generated
-	 * @ordered
-	 */
-	protected Code status;
-
-	/**
-	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExperimental()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.Boolean experimental;
-
-	/**
-	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected DateTime date;
 
 	/**
 	 * The cached value of the '{@link #getSourceUri() <em>Source Uri</em>}' containment reference.
@@ -435,202 +435,6 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CodeableConcept> getUseContext() {
-		if (useContext == null) {
-			useContext = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.CONCEPT_MAP__USE_CONTEXT);
-		}
-		return useContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.String getPublisher() {
-		return publisher;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPublisher(org.hl7.fhir.String newPublisher, NotificationChain msgs) {
-		org.hl7.fhir.String oldPublisher = publisher;
-		publisher = newPublisher;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__PUBLISHER, oldPublisher, newPublisher);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPublisher(org.hl7.fhir.String newPublisher) {
-		if (newPublisher != publisher) {
-			NotificationChain msgs = null;
-			if (publisher != null)
-				msgs = ((InternalEObject)publisher).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__PUBLISHER, null, msgs);
-			if (newPublisher != null)
-				msgs = ((InternalEObject)newPublisher).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__PUBLISHER, null, msgs);
-			msgs = basicSetPublisher(newPublisher, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__PUBLISHER, newPublisher, newPublisher));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConceptMapContact> getContact() {
-		if (contact == null) {
-			contact = new EObjectContainmentEList<ConceptMapContact>(ConceptMapContact.class, this, FhirPackage.CONCEPT_MAP__CONTACT);
-		}
-		return contact;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.String getDescription() {
-		return description;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDescription(org.hl7.fhir.String newDescription, NotificationChain msgs) {
-		org.hl7.fhir.String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDescription(org.hl7.fhir.String newDescription) {
-		if (newDescription != description) {
-			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__DESCRIPTION, null, msgs);
-			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__DESCRIPTION, newDescription, newDescription));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.String getRequirements() {
-		return requirements;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRequirements(org.hl7.fhir.String newRequirements, NotificationChain msgs) {
-		org.hl7.fhir.String oldRequirements = requirements;
-		requirements = newRequirements;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__REQUIREMENTS, oldRequirements, newRequirements);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRequirements(org.hl7.fhir.String newRequirements) {
-		if (newRequirements != requirements) {
-			NotificationChain msgs = null;
-			if (requirements != null)
-				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__REQUIREMENTS, null, msgs);
-			if (newRequirements != null)
-				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__REQUIREMENTS, null, msgs);
-			msgs = basicSetRequirements(newRequirements, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__REQUIREMENTS, newRequirements, newRequirements));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.String getCopyright() {
-		return copyright;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCopyright(org.hl7.fhir.String newCopyright, NotificationChain msgs) {
-		org.hl7.fhir.String oldCopyright = copyright;
-		copyright = newCopyright;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__COPYRIGHT, oldCopyright, newCopyright);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCopyright(org.hl7.fhir.String newCopyright) {
-		if (newCopyright != copyright) {
-			NotificationChain msgs = null;
-			if (copyright != null)
-				msgs = ((InternalEObject)copyright).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__COPYRIGHT, null, msgs);
-			if (newCopyright != null)
-				msgs = ((InternalEObject)newCopyright).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__COPYRIGHT, null, msgs);
-			msgs = basicSetCopyright(newCopyright, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__COPYRIGHT, newCopyright, newCopyright));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Code getStatus() {
 		return status;
 	}
@@ -717,6 +521,61 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.hl7.fhir.String getPublisher() {
+		return publisher;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPublisher(org.hl7.fhir.String newPublisher, NotificationChain msgs) {
+		org.hl7.fhir.String oldPublisher = publisher;
+		publisher = newPublisher;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__PUBLISHER, oldPublisher, newPublisher);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPublisher(org.hl7.fhir.String newPublisher) {
+		if (newPublisher != publisher) {
+			NotificationChain msgs = null;
+			if (publisher != null)
+				msgs = ((InternalEObject)publisher).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__PUBLISHER, null, msgs);
+			if (newPublisher != null)
+				msgs = ((InternalEObject)newPublisher).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__PUBLISHER, null, msgs);
+			msgs = basicSetPublisher(newPublisher, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__PUBLISHER, newPublisher, newPublisher));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ConceptMapContact> getContact() {
+		if (contact == null) {
+			contact = new EObjectContainmentEList<ConceptMapContact>(ConceptMapContact.class, this, FhirPackage.CONCEPT_MAP__CONTACT);
+		}
+		return contact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DateTime getDate() {
 		return date;
 	}
@@ -753,6 +612,147 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__DATE, newDate, newDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDescription(org.hl7.fhir.String newDescription, NotificationChain msgs) {
+		org.hl7.fhir.String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__DESCRIPTION, oldDescription, newDescription);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(org.hl7.fhir.String newDescription) {
+		if (newDescription != description) {
+			NotificationChain msgs = null;
+			if (description != null)
+				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__DESCRIPTION, null, msgs);
+			if (newDescription != null)
+				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__DESCRIPTION, null, msgs);
+			msgs = basicSetDescription(newDescription, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__DESCRIPTION, newDescription, newDescription));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<CodeableConcept> getUseContext() {
+		if (useContext == null) {
+			useContext = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.CONCEPT_MAP__USE_CONTEXT);
+		}
+		return useContext;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getRequirements() {
+		return requirements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRequirements(org.hl7.fhir.String newRequirements, NotificationChain msgs) {
+		org.hl7.fhir.String oldRequirements = requirements;
+		requirements = newRequirements;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__REQUIREMENTS, oldRequirements, newRequirements);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequirements(org.hl7.fhir.String newRequirements) {
+		if (newRequirements != requirements) {
+			NotificationChain msgs = null;
+			if (requirements != null)
+				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__REQUIREMENTS, null, msgs);
+			if (newRequirements != null)
+				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__REQUIREMENTS, null, msgs);
+			msgs = basicSetRequirements(newRequirements, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__REQUIREMENTS, newRequirements, newRequirements));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getCopyright() {
+		return copyright;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCopyright(org.hl7.fhir.String newCopyright, NotificationChain msgs) {
+		org.hl7.fhir.String oldCopyright = copyright;
+		copyright = newCopyright;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__COPYRIGHT, oldCopyright, newCopyright);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCopyright(org.hl7.fhir.String newCopyright) {
+		if (newCopyright != copyright) {
+			NotificationChain msgs = null;
+			if (copyright != null)
+				msgs = ((InternalEObject)copyright).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__COPYRIGHT, null, msgs);
+			if (newCopyright != null)
+				msgs = ((InternalEObject)newCopyright).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.CONCEPT_MAP__COPYRIGHT, null, msgs);
+			msgs = basicSetCopyright(newCopyright, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.CONCEPT_MAP__COPYRIGHT, newCopyright, newCopyright));
 	}
 
 	/**
@@ -955,24 +955,24 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 				return basicSetVersion(null, msgs);
 			case FhirPackage.CONCEPT_MAP__NAME:
 				return basicSetName(null, msgs);
-			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
-				return ((InternalEList<?>)getUseContext()).basicRemove(otherEnd, msgs);
-			case FhirPackage.CONCEPT_MAP__PUBLISHER:
-				return basicSetPublisher(null, msgs);
-			case FhirPackage.CONCEPT_MAP__CONTACT:
-				return ((InternalEList<?>)getContact()).basicRemove(otherEnd, msgs);
-			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
-				return basicSetDescription(null, msgs);
-			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
-				return basicSetRequirements(null, msgs);
-			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
-				return basicSetCopyright(null, msgs);
 			case FhirPackage.CONCEPT_MAP__STATUS:
 				return basicSetStatus(null, msgs);
 			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
 				return basicSetExperimental(null, msgs);
+			case FhirPackage.CONCEPT_MAP__PUBLISHER:
+				return basicSetPublisher(null, msgs);
+			case FhirPackage.CONCEPT_MAP__CONTACT:
+				return ((InternalEList<?>)getContact()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONCEPT_MAP__DATE:
 				return basicSetDate(null, msgs);
+			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
+				return basicSetDescription(null, msgs);
+			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
+				return ((InternalEList<?>)getUseContext()).basicRemove(otherEnd, msgs);
+			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
+				return basicSetRequirements(null, msgs);
+			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
+				return basicSetCopyright(null, msgs);
 			case FhirPackage.CONCEPT_MAP__SOURCE_URI:
 				return basicSetSourceUri(null, msgs);
 			case FhirPackage.CONCEPT_MAP__SOURCE_REFERENCE:
@@ -1003,24 +1003,24 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 				return getVersion();
 			case FhirPackage.CONCEPT_MAP__NAME:
 				return getName();
-			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
-				return getUseContext();
-			case FhirPackage.CONCEPT_MAP__PUBLISHER:
-				return getPublisher();
-			case FhirPackage.CONCEPT_MAP__CONTACT:
-				return getContact();
-			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
-				return getDescription();
-			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
-				return getRequirements();
-			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
-				return getCopyright();
 			case FhirPackage.CONCEPT_MAP__STATUS:
 				return getStatus();
 			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
 				return getExperimental();
+			case FhirPackage.CONCEPT_MAP__PUBLISHER:
+				return getPublisher();
+			case FhirPackage.CONCEPT_MAP__CONTACT:
+				return getContact();
 			case FhirPackage.CONCEPT_MAP__DATE:
 				return getDate();
+			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
+				return getDescription();
+			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
+				return getUseContext();
+			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
+				return getRequirements();
+			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
+				return getCopyright();
 			case FhirPackage.CONCEPT_MAP__SOURCE_URI:
 				return getSourceUri();
 			case FhirPackage.CONCEPT_MAP__SOURCE_REFERENCE:
@@ -1056,9 +1056,11 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 			case FhirPackage.CONCEPT_MAP__NAME:
 				setName((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
-				getUseContext().clear();
-				getUseContext().addAll((Collection<? extends CodeableConcept>)newValue);
+			case FhirPackage.CONCEPT_MAP__STATUS:
+				setStatus((Code)newValue);
+				return;
+			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
+				setExperimental((org.hl7.fhir.Boolean)newValue);
 				return;
 			case FhirPackage.CONCEPT_MAP__PUBLISHER:
 				setPublisher((org.hl7.fhir.String)newValue);
@@ -1067,23 +1069,21 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 				getContact().clear();
 				getContact().addAll((Collection<? extends ConceptMapContact>)newValue);
 				return;
+			case FhirPackage.CONCEPT_MAP__DATE:
+				setDate((DateTime)newValue);
+				return;
 			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)newValue);
+				return;
+			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
+				getUseContext().clear();
+				getUseContext().addAll((Collection<? extends CodeableConcept>)newValue);
 				return;
 			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
 				setRequirements((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
 				setCopyright((org.hl7.fhir.String)newValue);
-				return;
-			case FhirPackage.CONCEPT_MAP__STATUS:
-				setStatus((Code)newValue);
-				return;
-			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
-				setExperimental((org.hl7.fhir.Boolean)newValue);
-				return;
-			case FhirPackage.CONCEPT_MAP__DATE:
-				setDate((DateTime)newValue);
 				return;
 			case FhirPackage.CONCEPT_MAP__SOURCE_URI:
 				setSourceUri((Uri)newValue);
@@ -1125,8 +1125,11 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 			case FhirPackage.CONCEPT_MAP__NAME:
 				setName((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
-				getUseContext().clear();
+			case FhirPackage.CONCEPT_MAP__STATUS:
+				setStatus((Code)null);
+				return;
+			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
+				setExperimental((org.hl7.fhir.Boolean)null);
 				return;
 			case FhirPackage.CONCEPT_MAP__PUBLISHER:
 				setPublisher((org.hl7.fhir.String)null);
@@ -1134,23 +1137,20 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 			case FhirPackage.CONCEPT_MAP__CONTACT:
 				getContact().clear();
 				return;
+			case FhirPackage.CONCEPT_MAP__DATE:
+				setDate((DateTime)null);
+				return;
 			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)null);
+				return;
+			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
+				getUseContext().clear();
 				return;
 			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
 				setRequirements((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
 				setCopyright((org.hl7.fhir.String)null);
-				return;
-			case FhirPackage.CONCEPT_MAP__STATUS:
-				setStatus((Code)null);
-				return;
-			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
-				setExperimental((org.hl7.fhir.Boolean)null);
-				return;
-			case FhirPackage.CONCEPT_MAP__DATE:
-				setDate((DateTime)null);
 				return;
 			case FhirPackage.CONCEPT_MAP__SOURCE_URI:
 				setSourceUri((Uri)null);
@@ -1187,24 +1187,24 @@ public class ConceptMapImpl extends DomainResourceImpl implements ConceptMap {
 				return version != null;
 			case FhirPackage.CONCEPT_MAP__NAME:
 				return name != null;
-			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
-				return useContext != null && !useContext.isEmpty();
-			case FhirPackage.CONCEPT_MAP__PUBLISHER:
-				return publisher != null;
-			case FhirPackage.CONCEPT_MAP__CONTACT:
-				return contact != null && !contact.isEmpty();
-			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
-				return description != null;
-			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
-				return requirements != null;
-			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
-				return copyright != null;
 			case FhirPackage.CONCEPT_MAP__STATUS:
 				return status != null;
 			case FhirPackage.CONCEPT_MAP__EXPERIMENTAL:
 				return experimental != null;
+			case FhirPackage.CONCEPT_MAP__PUBLISHER:
+				return publisher != null;
+			case FhirPackage.CONCEPT_MAP__CONTACT:
+				return contact != null && !contact.isEmpty();
 			case FhirPackage.CONCEPT_MAP__DATE:
 				return date != null;
+			case FhirPackage.CONCEPT_MAP__DESCRIPTION:
+				return description != null;
+			case FhirPackage.CONCEPT_MAP__USE_CONTEXT:
+				return useContext != null && !useContext.isEmpty();
+			case FhirPackage.CONCEPT_MAP__REQUIREMENTS:
+				return requirements != null;
+			case FhirPackage.CONCEPT_MAP__COPYRIGHT:
+				return copyright != null;
 			case FhirPackage.CONCEPT_MAP__SOURCE_URI:
 				return sourceUri != null;
 			case FhirPackage.CONCEPT_MAP__SOURCE_REFERENCE:

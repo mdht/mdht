@@ -23,8 +23,8 @@ import org.hl7.fhir.CarePlanDetail;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Period;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.Timing;
 
 /**
@@ -205,7 +205,7 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity dailyAmount;
+	protected SimpleQuantity dailyAmount;
 
 	/**
 	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference.
@@ -215,7 +215,7 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getNote() <em>Note</em>}' containment reference.
@@ -791,7 +791,7 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getDailyAmount() {
+	public SimpleQuantity getDailyAmount() {
 		return dailyAmount;
 	}
 
@@ -800,8 +800,8 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDailyAmount(Quantity newDailyAmount, NotificationChain msgs) {
-		Quantity oldDailyAmount = dailyAmount;
+	public NotificationChain basicSetDailyAmount(SimpleQuantity newDailyAmount, NotificationChain msgs) {
+		SimpleQuantity oldDailyAmount = dailyAmount;
 		dailyAmount = newDailyAmount;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CARE_PLAN_DETAIL__DAILY_AMOUNT, oldDailyAmount, newDailyAmount);
@@ -815,7 +815,7 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDailyAmount(Quantity newDailyAmount) {
+	public void setDailyAmount(SimpleQuantity newDailyAmount) {
 		if (newDailyAmount != dailyAmount) {
 			NotificationChain msgs = null;
 			if (dailyAmount != null)
@@ -834,7 +834,7 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -843,8 +843,8 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.CARE_PLAN_DETAIL__QUANTITY, oldQuantity, newQuantity);
@@ -858,7 +858,7 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -1061,10 +1061,10 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 				setProduct((Reference)newValue);
 				return;
 			case FhirPackage.CARE_PLAN_DETAIL__DAILY_AMOUNT:
-				setDailyAmount((Quantity)newValue);
+				setDailyAmount((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.CARE_PLAN_DETAIL__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.CARE_PLAN_DETAIL__NOTE:
 				setNote((org.hl7.fhir.String)newValue);
@@ -1124,10 +1124,10 @@ public class CarePlanDetailImpl extends BackboneElementImpl implements CarePlanD
 				setProduct((Reference)null);
 				return;
 			case FhirPackage.CARE_PLAN_DETAIL__DAILY_AMOUNT:
-				setDailyAmount((Quantity)null);
+				setDailyAmount((SimpleQuantity)null);
 				return;
 			case FhirPackage.CARE_PLAN_DETAIL__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.CARE_PLAN_DETAIL__NOTE:
 				setNote((org.hl7.fhir.String)null);

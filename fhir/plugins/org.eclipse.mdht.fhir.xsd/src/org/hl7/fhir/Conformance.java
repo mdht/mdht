@@ -21,14 +21,15 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Conformance#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.Conformance#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.hl7.fhir.Conformance#getExperimental <em>Experimental</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getContact <em>Contact</em>}</li>
+ *   <li>{@link org.hl7.fhir.Conformance#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getCopyright <em>Copyright</em>}</li>
- *   <li>{@link org.hl7.fhir.Conformance#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.Conformance#getExperimental <em>Experimental</em>}</li>
- *   <li>{@link org.hl7.fhir.Conformance#getDate <em>Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.Conformance#getKind <em>Kind</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getSoftware <em>Software</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getImplementation <em>Implementation</em>}</li>
  *   <li>{@link org.hl7.fhir.Conformance#getFhirVersion <em>Fhir Version</em>}</li>
@@ -50,7 +51,7 @@ public interface Conformance extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute uri that is used to identify this conformance statement when it is referenced in a specification, model, design or an instance (should be globally unique URI, and can be urn:uuid: or urn:oid:).
+	 * An absolute URL that is used to identify this conformance statement when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this conformance statement is (or will be) published.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)
@@ -124,6 +125,58 @@ public interface Conformance extends DomainResource {
 	void setName(org.hl7.fhir.String value);
 
 	/**
+	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The status of this conformance statement.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Status</em>' containment reference.
+	 * @see #setStatus(Code)
+	 * @see org.hl7.fhir.FhirPackage#getConformance_Status()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Code getStatus();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getStatus <em>Status</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' containment reference.
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A flag to indicate that this conformance statement is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Experimental</em>' containment reference.
+	 * @see #setExperimental(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getConformance_Experimental()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getExperimental();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getExperimental <em>Experimental</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Experimental</em>' containment reference.
+	 * @see #getExperimental()
+	 * @generated
+	 */
+	void setExperimental(org.hl7.fhir.Boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,6 +217,32 @@ public interface Conformance extends DomainResource {
 	 * @generated
 	 */
 	EList<ConformanceContact> getContact();
+
+	/**
+	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date  (and optionally time) when the conformance statement was published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the conformance statement changes.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Date</em>' containment reference.
+	 * @see #setDate(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getConformance_Date()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getDate <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date</em>' containment reference.
+	 * @see #getDate()
+	 * @generated
+	 */
+	void setDate(DateTime value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
@@ -244,82 +323,30 @@ public interface Conformance extends DomainResource {
 	void setCopyright(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Kind</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The status of this conformance statement.
+	 * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind not instance of software) or a class of implementation (e.g. a desired purchase).
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(Code)
-	 * @see org.hl7.fhir.FhirPackage#getConformance_Status()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Code getStatus();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getStatus <em>Status</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' containment reference.
-	 * @see #getStatus()
-	 * @generated
-	 */
-	void setStatus(Code value);
-
-	/**
-	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A flag to indicate that this conformance statement is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Experimental</em>' containment reference.
-	 * @see #setExperimental(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getConformance_Experimental()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getExperimental();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getExperimental <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Experimental</em>' containment reference.
-	 * @see #getExperimental()
-	 * @generated
-	 */
-	void setExperimental(org.hl7.fhir.Boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The date  (and optionally time) when the conformance statement was published.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' containment reference.
-	 * @see #setDate(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getConformance_Date()
+	 * @return the value of the '<em>Kind</em>' containment reference.
+	 * @see #setKind(ConformanceStatementKind)
+	 * @see org.hl7.fhir.FhirPackage#getConformance_Kind()
 	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='kind' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getDate();
+	ConformanceStatementKind getKind();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getDate <em>Date</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getKind <em>Kind</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' containment reference.
-	 * @see #getDate()
+	 * @param value the new value of the '<em>Kind</em>' containment reference.
+	 * @see #getKind()
 	 * @generated
 	 */
-	void setDate(DateTime value);
+	void setKind(ConformanceStatementKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Software</b></em>' containment reference.
@@ -404,16 +431,16 @@ public interface Conformance extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A flag that indicates whether the application accepts unknown elements as part of a resource.
+	 * A code that indicates whether the application accepts unknown elements or extensions when reading resources.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Accept Unknown</em>' containment reference.
-	 * @see #setAcceptUnknown(org.hl7.fhir.Boolean)
+	 * @see #setAcceptUnknown(UnknownContentCode)
 	 * @see org.hl7.fhir.FhirPackage#getConformance_AcceptUnknown()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='acceptUnknown' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.Boolean getAcceptUnknown();
+	UnknownContentCode getAcceptUnknown();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.Conformance#getAcceptUnknown <em>Accept Unknown</em>}' containment reference.
@@ -423,7 +450,7 @@ public interface Conformance extends DomainResource {
 	 * @see #getAcceptUnknown()
 	 * @generated
 	 */
-	void setAcceptUnknown(org.hl7.fhir.Boolean value);
+	void setAcceptUnknown(UnknownContentCode value);
 
 	/**
 	 * Returns the value of the '<em><b>Format</b></em>' containment reference list.
@@ -447,7 +474,7 @@ public interface Conformance extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A list of profiles supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources, conformant to a particular profile, and allows its clients to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles]{profiling.html#profile-uses}.
+	 * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles]{profiling.html#profile-uses}.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Profile</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getConformance_Profile()

@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Address#getText <em>Text</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getLine <em>Line</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getCity <em>City</em>}</li>
+ *   <li>{@link org.hl7.fhir.Address#getDistrict <em>District</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getState <em>State</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.hl7.fhir.Address#getCountry <em>Country</em>}</li>
@@ -118,8 +119,7 @@ public interface Address extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This component contains the house number, apartment number, street name, street direction, 
-	 * P.O. Box number, delivery hints, and similar address information.
+	 * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Line</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getAddress_Line()
@@ -154,6 +154,32 @@ public interface Address extends Element {
 	 * @generated
 	 */
 	void setCity(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>District</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The name of the administrative area (county).
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>District</em>' containment reference.
+	 * @see #setDistrict(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getAddress_District()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='district' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getDistrict();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Address#getDistrict <em>District</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>District</em>' containment reference.
+	 * @see #getDistrict()
+	 * @generated
+	 */
+	void setDistrict(org.hl7.fhir.String value);
 
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' containment reference.

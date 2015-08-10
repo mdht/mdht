@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.Patient#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.hl7.fhir.Patient#getActive <em>Active</em>}</li>
  *   <li>{@link org.hl7.fhir.Patient#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.Patient#getTelecom <em>Telecom</em>}</li>
  *   <li>{@link org.hl7.fhir.Patient#getGender <em>Gender</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Patient#getCareProvider <em>Care Provider</em>}</li>
  *   <li>{@link org.hl7.fhir.Patient#getManagingOrganization <em>Managing Organization</em>}</li>
  *   <li>{@link org.hl7.fhir.Patient#getLink <em>Link</em>}</li>
- *   <li>{@link org.hl7.fhir.Patient#getActive <em>Active</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getPatient()
@@ -59,6 +59,32 @@ public interface Patient extends DomainResource {
 	 * @generated
 	 */
 	EList<Identifier> getIdentifier();
+
+	/**
+	 * Returns the value of the '<em><b>Active</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Whether this patient record is in active use.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Active</em>' containment reference.
+	 * @see #setActive(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getPatient_Active()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='active' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getActive();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Patient#getActive <em>Active</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Active</em>' containment reference.
+	 * @see #getActive()
+	 * @generated
+	 */
+	void setActive(org.hl7.fhir.Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' containment reference list.
@@ -425,31 +451,5 @@ public interface Patient extends DomainResource {
 	 * @generated
 	 */
 	EList<PatientLink> getLink();
-
-	/**
-	 * Returns the value of the '<em><b>Active</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Whether this patient record is in active use.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Active</em>' containment reference.
-	 * @see #setActive(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getPatient_Active()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='active' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getActive();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Patient#getActive <em>Active</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Active</em>' containment reference.
-	 * @see #getActive()
-	 * @generated
-	 */
-	void setActive(org.hl7.fhir.Boolean value);
 
 } // Patient

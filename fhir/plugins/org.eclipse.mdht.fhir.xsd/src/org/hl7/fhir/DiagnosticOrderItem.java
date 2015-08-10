@@ -19,8 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.hl7.fhir.DiagnosticOrderItem#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrderItem#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticOrderItem#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticOrderItem#getBodySiteReference <em>Body Site Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticOrderItem#getBodySite <em>Body Site</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrderItem#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrderItem#getEvent <em>Event</em>}</li>
  * </ul>
@@ -73,58 +72,30 @@ public interface DiagnosticOrderItem extends BackboneElement {
 	EList<Reference> getSpecimen();
 
 	/**
-	 * Returns the value of the '<em><b>Body Site Codeable Concept</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Body Site</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Body Site Codeable Concept</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body Site Codeable Concept</em>' containment reference.
-	 * @see #setBodySiteCodeableConcept(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrderItem_BodySiteCodeableConcept()
+	 * <!-- begin-model-doc -->
+	 * Anatomical location where the request test should be performed.  This is the target site.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Body Site</em>' containment reference.
+	 * @see #setBodySite(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrderItem_BodySite()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='bodySiteCodeableConcept' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='bodySite' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CodeableConcept getBodySiteCodeableConcept();
+	CodeableConcept getBodySite();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticOrderItem#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticOrderItem#getBodySite <em>Body Site</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body Site Codeable Concept</em>' containment reference.
-	 * @see #getBodySiteCodeableConcept()
+	 * @param value the new value of the '<em>Body Site</em>' containment reference.
+	 * @see #getBodySite()
 	 * @generated
 	 */
-	void setBodySiteCodeableConcept(CodeableConcept value);
-
-	/**
-	 * Returns the value of the '<em><b>Body Site Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Body Site Reference</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body Site Reference</em>' containment reference.
-	 * @see #setBodySiteReference(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrderItem_BodySiteReference()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='bodySiteReference' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Reference getBodySiteReference();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticOrderItem#getBodySiteReference <em>Body Site Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body Site Reference</em>' containment reference.
-	 * @see #getBodySiteReference()
-	 * @generated
-	 */
-	void setBodySiteReference(Reference value);
+	void setBodySite(CodeableConcept value);
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.

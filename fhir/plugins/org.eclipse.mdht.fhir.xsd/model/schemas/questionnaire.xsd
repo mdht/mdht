@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -74,6 +74,11 @@
               <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="subjectType" minOccurs="0" maxOccurs="unbounded" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies the types of subjects that can be the subject of the questionnaire.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="group" type="Questionnaire.Group" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">A collection of related questions (or further groupings of questions).</xs:documentation>
@@ -92,7 +97,7 @@
         <xs:sequence>
           <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a QuestionnaireAnswers resource.</xs:documentation>
+              <xs:documentation xml:lang="en">An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a QuestionnaireResponse resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
@@ -143,7 +148,7 @@
         <xs:sequence>
           <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a [[[QuestionnaireAnswers]]] resource.</xs:documentation>
+              <xs:documentation xml:lang="en">An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a [[[QuestionnaireResponse]]] resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="concept" minOccurs="0" maxOccurs="unbounded" type="Coding">
@@ -173,7 +178,7 @@
           </xs:element>
           <xs:element name="options" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Reference to a valueset containing the possible options.</xs:documentation>
+              <xs:documentation xml:lang="en">Reference to a valueset containing the a list of codes representing permitted answers for the question.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="group" type="Questionnaire.Group" minOccurs="0" maxOccurs="unbounded">
@@ -249,7 +254,7 @@
       </xs:enumeration>
       <xs:enumeration value="time">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Answer is a time independent of date</xs:documentation>
+          <xs:documentation xml:lang="en">Answer is a time (hour/minute/second) independent of date</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="string">
@@ -259,7 +264,7 @@
       </xs:enumeration>
       <xs:enumeration value="text">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Answer is a long (potentially multi-paragram) free-text entry</xs:documentation>
+          <xs:documentation xml:lang="en">Answer is a long (potentially multi-paragram) free-text entry (still captured as a string)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="url">
@@ -269,12 +274,12 @@
       </xs:enumeration>
       <xs:enumeration value="choice">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Answer is a choice from a list of options</xs:documentation>
+          <xs:documentation xml:lang="en">Answer is a Coding drawn from a list of options</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="open-choice">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Answer is a choice from a list of options or a free-text entry</xs:documentation>
+          <xs:documentation xml:lang="en">Answer is a Coding drawn from a list of options or a free-text entry.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="attachment">
@@ -289,7 +294,7 @@
       </xs:enumeration>
       <xs:enumeration value="quantity">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Answer is a combination of a numeric value and unit</xs:documentation>
+          <xs:documentation xml:lang="en">Answer is a combination of a numeric value and unit, potentially with a comparator (&lt;, &gt;, etc)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>

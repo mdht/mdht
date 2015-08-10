@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ImagingStudySeries#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudySeries#getBodySite <em>Body Site</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudySeries#getLaterality <em>Laterality</em>}</li>
- *   <li>{@link org.hl7.fhir.ImagingStudySeries#getDateTime <em>Date Time</em>}</li>
+ *   <li>{@link org.hl7.fhir.ImagingStudySeries#getStarted <em>Started</em>}</li>
  *   <li>{@link org.hl7.fhir.ImagingStudySeries#getInstance <em>Instance</em>}</li>
  * </ul>
  *
@@ -248,7 +248,7 @@ public interface ImagingStudySeries extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Laterality if bodySite is paired anatomic structure and laterality is not pre-coordinated in bodySite code, map from (0020, 0060).
+	 * Laterality if bodySite is paired anatomic structure and laterality is not pre-coordinated in bodySite code.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Laterality</em>' containment reference.
 	 * @see #setLaterality(Coding)
@@ -270,30 +270,30 @@ public interface ImagingStudySeries extends BackboneElement {
 	void setLaterality(Coding value);
 
 	/**
-	 * Returns the value of the '<em><b>Date Time</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Started</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The date and time when the series was started.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date Time</em>' containment reference.
-	 * @see #setDateTime(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getImagingStudySeries_DateTime()
+	 * @return the value of the '<em>Started</em>' containment reference.
+	 * @see #setStarted(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getImagingStudySeries_Started()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='dateTime' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='started' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getDateTime();
+	DateTime getStarted();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.ImagingStudySeries#getDateTime <em>Date Time</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.ImagingStudySeries#getStarted <em>Started</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date Time</em>' containment reference.
-	 * @see #getDateTime()
+	 * @param value the new value of the '<em>Started</em>' containment reference.
+	 * @see #getStarted()
 	 * @generated
 	 */
-	void setDateTime(DateTime value);
+	void setStarted(DateTime value);
 
 	/**
 	 * Returns the value of the '<em><b>Instance</b></em>' containment reference list.

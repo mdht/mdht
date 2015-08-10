@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.DocumentReference#getDocStatus <em>Doc Status</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentReference#getRelatesTo <em>Relates To</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentReference#getDescription <em>Description</em>}</li>
- *   <li>{@link org.hl7.fhir.DocumentReference#getConfidentiality <em>Confidentiality</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentReference#getSecurityLabel <em>Security Label</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentReference#getContent <em>Content</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentReference#getContext <em>Context</em>}</li>
  * </ul>
@@ -165,7 +165,7 @@ public interface DocumentReference extends DomainResource {
 
 	/**
 	 * Returns the value of the '<em><b>Format</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.Uri}.
+	 * The list contents are of type {@link org.hl7.fhir.Coding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -177,7 +177,7 @@ public interface DocumentReference extends DomainResource {
 	 *        extendedMetaData="kind='element' name='format' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Uri> getFormat();
+	EList<Coding> getFormat();
 
 	/**
 	 * Returns the value of the '<em><b>Author</b></em>' containment reference list.
@@ -189,7 +189,7 @@ public interface DocumentReference extends DomainResource {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getDocumentReference_Author()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='author' namespace='##targetNamespace'"
 	 * @generated
 	 */
@@ -394,20 +394,20 @@ public interface DocumentReference extends DomainResource {
 	void setDescription(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Confidentiality</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Security Label</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A set of Security-Tag codes specifying the level of privacy/security of the Document.
+	 * A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security is the security labels of the reference to the document, while DocumentReference.securityLabel is the security labels on the document it refers to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Confidentiality</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getDocumentReference_Confidentiality()
+	 * @return the value of the '<em>Security Label</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getDocumentReference_SecurityLabel()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='confidentiality' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='securityLabel' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CodeableConcept> getConfidentiality();
+	EList<CodeableConcept> getSecurityLabel();
 
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' containment reference list.

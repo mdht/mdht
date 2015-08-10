@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ConformanceResource#getConditionalUpdate <em>Conditional Update</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceResource#getConditionalDelete <em>Conditional Delete</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceResource#getSearchInclude <em>Search Include</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConformanceResource#getSearchRevInclude <em>Search Rev Include</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceResource#getSearchParam <em>Search Param</em>}</li>
  * </ul>
  *
@@ -66,7 +67,7 @@ public interface ConformanceResource extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A specification of the profile that describes the solution's support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses.
+	 * A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Profile</em>' containment reference.
 	 * @see #setProfile(Reference)
@@ -274,6 +275,22 @@ public interface ConformanceResource extends BackboneElement {
 	 * @generated
 	 */
 	EList<org.hl7.fhir.String> getSearchInclude();
+
+	/**
+	 * Returns the value of the '<em><b>Search Rev Include</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A list of _revinclude (reverse include) values supported by the server.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Search Rev Include</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getConformanceResource_SearchRevInclude()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='searchRevInclude' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<org.hl7.fhir.String> getSearchRevInclude();
 
 	/**
 	 * Returns the value of the '<em><b>Search Param</b></em>' containment reference list.

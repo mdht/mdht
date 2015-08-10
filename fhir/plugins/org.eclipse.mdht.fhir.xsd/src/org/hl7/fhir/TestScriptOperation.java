@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.TestScriptOperation#getAccept <em>Accept</em>}</li>
  *   <li>{@link org.hl7.fhir.TestScriptOperation#getContentType <em>Content Type</em>}</li>
  *   <li>{@link org.hl7.fhir.TestScriptOperation#getDestination <em>Destination</em>}</li>
+ *   <li>{@link org.hl7.fhir.TestScriptOperation#getEncodeRequestUrl <em>Encode Request Url</em>}</li>
  *   <li>{@link org.hl7.fhir.TestScriptOperation#getParams <em>Params</em>}</li>
  *   <li>{@link org.hl7.fhir.TestScriptOperation#getRequestHeader <em>Request Header</em>}</li>
  *   <li>{@link org.hl7.fhir.TestScriptOperation#getResponseId <em>Response Id</em>}</li>
@@ -218,6 +219,32 @@ public interface TestScriptOperation extends BackboneElement {
 	 * @generated
 	 */
 	void setDestination(org.hl7.fhir.Integer value);
+
+	/**
+	 * Returns the value of the '<em><b>Encode Request Url</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Encode Request Url</em>' containment reference.
+	 * @see #setEncodeRequestUrl(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getTestScriptOperation_EncodeRequestUrl()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='encodeRequestUrl' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getEncodeRequestUrl();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.TestScriptOperation#getEncodeRequestUrl <em>Encode Request Url</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encode Request Url</em>' containment reference.
+	 * @see #getEncodeRequestUrl()
+	 * @generated
+	 */
+	void setEncodeRequestUrl(org.hl7.fhir.Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Params</b></em>' containment reference.

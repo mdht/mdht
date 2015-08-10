@@ -21,8 +21,8 @@ import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Period;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.SpecimenCollection;
 
 /**
@@ -39,8 +39,7 @@ import org.hl7.fhir.SpecimenCollection;
  *   <li>{@link org.hl7.fhir.impl.SpecimenCollectionImpl#getCollectedPeriod <em>Collected Period</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SpecimenCollectionImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SpecimenCollectionImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.SpecimenCollectionImpl#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.SpecimenCollectionImpl#getBodySiteReference <em>Body Site Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SpecimenCollectionImpl#getBodySite <em>Body Site</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,7 +93,7 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getMethod() <em>Method</em>}' containment reference.
@@ -107,24 +106,14 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	protected CodeableConcept method;
 
 	/**
-	 * The cached value of the '{@link #getBodySiteCodeableConcept() <em>Body Site Codeable Concept</em>}' containment reference.
+	 * The cached value of the '{@link #getBodySite() <em>Body Site</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBodySiteCodeableConcept()
+	 * @see #getBodySite()
 	 * @generated
 	 * @ordered
 	 */
-	protected CodeableConcept bodySiteCodeableConcept;
-
-	/**
-	 * The cached value of the '{@link #getBodySiteReference() <em>Body Site Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBodySiteReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected Reference bodySiteReference;
+	protected CodeableConcept bodySite;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,7 +280,7 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -300,8 +289,8 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_COLLECTION__QUANTITY, oldQuantity, newQuantity);
@@ -315,7 +304,7 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -377,8 +366,8 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getBodySiteCodeableConcept() {
-		return bodySiteCodeableConcept;
+	public CodeableConcept getBodySite() {
+		return bodySite;
 	}
 
 	/**
@@ -386,11 +375,11 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBodySiteCodeableConcept(CodeableConcept newBodySiteCodeableConcept, NotificationChain msgs) {
-		CodeableConcept oldBodySiteCodeableConcept = bodySiteCodeableConcept;
-		bodySiteCodeableConcept = newBodySiteCodeableConcept;
+	public NotificationChain basicSetBodySite(CodeableConcept newBodySite, NotificationChain msgs) {
+		CodeableConcept oldBodySite = bodySite;
+		bodySite = newBodySite;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT, oldBodySiteCodeableConcept, newBodySiteCodeableConcept);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_COLLECTION__BODY_SITE, oldBodySite, newBodySite);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -401,61 +390,18 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBodySiteCodeableConcept(CodeableConcept newBodySiteCodeableConcept) {
-		if (newBodySiteCodeableConcept != bodySiteCodeableConcept) {
+	public void setBodySite(CodeableConcept newBodySite) {
+		if (newBodySite != bodySite) {
 			NotificationChain msgs = null;
-			if (bodySiteCodeableConcept != null)
-				msgs = ((InternalEObject)bodySiteCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT, null, msgs);
-			if (newBodySiteCodeableConcept != null)
-				msgs = ((InternalEObject)newBodySiteCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT, null, msgs);
-			msgs = basicSetBodySiteCodeableConcept(newBodySiteCodeableConcept, msgs);
+			if (bodySite != null)
+				msgs = ((InternalEObject)bodySite).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SPECIMEN_COLLECTION__BODY_SITE, null, msgs);
+			if (newBodySite != null)
+				msgs = ((InternalEObject)newBodySite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SPECIMEN_COLLECTION__BODY_SITE, null, msgs);
+			msgs = basicSetBodySite(newBodySite, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT, newBodySiteCodeableConcept, newBodySiteCodeableConcept));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Reference getBodySiteReference() {
-		return bodySiteReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBodySiteReference(Reference newBodySiteReference, NotificationChain msgs) {
-		Reference oldBodySiteReference = bodySiteReference;
-		bodySiteReference = newBodySiteReference;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE, oldBodySiteReference, newBodySiteReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBodySiteReference(Reference newBodySiteReference) {
-		if (newBodySiteReference != bodySiteReference) {
-			NotificationChain msgs = null;
-			if (bodySiteReference != null)
-				msgs = ((InternalEObject)bodySiteReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE, null, msgs);
-			if (newBodySiteReference != null)
-				msgs = ((InternalEObject)newBodySiteReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE, null, msgs);
-			msgs = basicSetBodySiteReference(newBodySiteReference, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE, newBodySiteReference, newBodySiteReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SPECIMEN_COLLECTION__BODY_SITE, newBodySite, newBodySite));
 	}
 
 	/**
@@ -478,10 +424,8 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 				return basicSetQuantity(null, msgs);
 			case FhirPackage.SPECIMEN_COLLECTION__METHOD:
 				return basicSetMethod(null, msgs);
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT:
-				return basicSetBodySiteCodeableConcept(null, msgs);
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE:
-				return basicSetBodySiteReference(null, msgs);
+			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE:
+				return basicSetBodySite(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -506,10 +450,8 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 				return getQuantity();
 			case FhirPackage.SPECIMEN_COLLECTION__METHOD:
 				return getMethod();
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT:
-				return getBodySiteCodeableConcept();
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE:
-				return getBodySiteReference();
+			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE:
+				return getBodySite();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -537,16 +479,13 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 				setCollectedPeriod((Period)newValue);
 				return;
 			case FhirPackage.SPECIMEN_COLLECTION__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.SPECIMEN_COLLECTION__METHOD:
 				setMethod((CodeableConcept)newValue);
 				return;
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT:
-				setBodySiteCodeableConcept((CodeableConcept)newValue);
-				return;
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE:
-				setBodySiteReference((Reference)newValue);
+			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE:
+				setBodySite((CodeableConcept)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -573,16 +512,13 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 				setCollectedPeriod((Period)null);
 				return;
 			case FhirPackage.SPECIMEN_COLLECTION__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.SPECIMEN_COLLECTION__METHOD:
 				setMethod((CodeableConcept)null);
 				return;
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT:
-				setBodySiteCodeableConcept((CodeableConcept)null);
-				return;
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE:
-				setBodySiteReference((Reference)null);
+			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE:
+				setBodySite((CodeableConcept)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -608,10 +544,8 @@ public class SpecimenCollectionImpl extends BackboneElementImpl implements Speci
 				return quantity != null;
 			case FhirPackage.SPECIMEN_COLLECTION__METHOD:
 				return method != null;
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT:
-				return bodySiteCodeableConcept != null;
-			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE_REFERENCE:
-				return bodySiteReference != null;
+			case FhirPackage.SPECIMEN_COLLECTION__BODY_SITE:
+				return bodySite != null;
 		}
 		return super.eIsSet(featureID);
 	}

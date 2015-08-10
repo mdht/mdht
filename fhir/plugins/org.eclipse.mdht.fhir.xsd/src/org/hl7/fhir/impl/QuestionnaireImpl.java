@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.hl7.fhir.Code;
 import org.hl7.fhir.ContactPoint;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.FhirPackage;
@@ -39,6 +40,7 @@ import org.hl7.fhir.QuestionnaireStatus;
  *   <li>{@link org.hl7.fhir.impl.QuestionnaireImpl#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.QuestionnaireImpl#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.QuestionnaireImpl#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.QuestionnaireImpl#getSubjectType <em>Subject Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.QuestionnaireImpl#getGroup <em>Group</em>}</li>
  * </ul>
  *
@@ -104,6 +106,16 @@ public class QuestionnaireImpl extends DomainResourceImpl implements Questionnai
 	 * @ordered
 	 */
 	protected EList<ContactPoint> telecom;
+
+	/**
+	 * The cached value of the '{@link #getSubjectType() <em>Subject Type</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubjectType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Code> subjectType;
 
 	/**
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' containment reference.
@@ -335,6 +347,18 @@ public class QuestionnaireImpl extends DomainResourceImpl implements Questionnai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Code> getSubjectType() {
+		if (subjectType == null) {
+			subjectType = new EObjectContainmentEList<Code>(Code.class, this, FhirPackage.QUESTIONNAIRE__SUBJECT_TYPE);
+		}
+		return subjectType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public QuestionnaireGroup getGroup() {
 		return group;
 	}
@@ -393,6 +417,8 @@ public class QuestionnaireImpl extends DomainResourceImpl implements Questionnai
 				return basicSetPublisher(null, msgs);
 			case FhirPackage.QUESTIONNAIRE__TELECOM:
 				return ((InternalEList<?>)getTelecom()).basicRemove(otherEnd, msgs);
+			case FhirPackage.QUESTIONNAIRE__SUBJECT_TYPE:
+				return ((InternalEList<?>)getSubjectType()).basicRemove(otherEnd, msgs);
 			case FhirPackage.QUESTIONNAIRE__GROUP:
 				return basicSetGroup(null, msgs);
 		}
@@ -419,6 +445,8 @@ public class QuestionnaireImpl extends DomainResourceImpl implements Questionnai
 				return getPublisher();
 			case FhirPackage.QUESTIONNAIRE__TELECOM:
 				return getTelecom();
+			case FhirPackage.QUESTIONNAIRE__SUBJECT_TYPE:
+				return getSubjectType();
 			case FhirPackage.QUESTIONNAIRE__GROUP:
 				return getGroup();
 		}
@@ -454,6 +482,10 @@ public class QuestionnaireImpl extends DomainResourceImpl implements Questionnai
 				getTelecom().clear();
 				getTelecom().addAll((Collection<? extends ContactPoint>)newValue);
 				return;
+			case FhirPackage.QUESTIONNAIRE__SUBJECT_TYPE:
+				getSubjectType().clear();
+				getSubjectType().addAll((Collection<? extends Code>)newValue);
+				return;
 			case FhirPackage.QUESTIONNAIRE__GROUP:
 				setGroup((QuestionnaireGroup)newValue);
 				return;
@@ -487,6 +519,9 @@ public class QuestionnaireImpl extends DomainResourceImpl implements Questionnai
 			case FhirPackage.QUESTIONNAIRE__TELECOM:
 				getTelecom().clear();
 				return;
+			case FhirPackage.QUESTIONNAIRE__SUBJECT_TYPE:
+				getSubjectType().clear();
+				return;
 			case FhirPackage.QUESTIONNAIRE__GROUP:
 				setGroup((QuestionnaireGroup)null);
 				return;
@@ -514,6 +549,8 @@ public class QuestionnaireImpl extends DomainResourceImpl implements Questionnai
 				return publisher != null;
 			case FhirPackage.QUESTIONNAIRE__TELECOM:
 				return telecom != null && !telecom.isEmpty();
+			case FhirPackage.QUESTIONNAIRE__SUBJECT_TYPE:
+				return subjectType != null && !subjectType.isEmpty();
 			case FhirPackage.QUESTIONNAIRE__GROUP:
 				return group != null;
 		}

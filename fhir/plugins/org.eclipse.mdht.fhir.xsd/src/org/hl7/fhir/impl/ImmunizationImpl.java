@@ -26,8 +26,8 @@ import org.hl7.fhir.Immunization;
 import org.hl7.fhir.ImmunizationExplanation;
 import org.hl7.fhir.ImmunizationReaction;
 import org.hl7.fhir.ImmunizationVaccinationProtocol;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public class ImmunizationImpl extends DomainResourceImpl implements Immunization
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity doseQuantity;
+	protected SimpleQuantity doseQuantity;
 
 	/**
 	 * The cached value of the '{@link #getExplanation() <em>Explanation</em>}' containment reference.
@@ -889,7 +889,7 @@ public class ImmunizationImpl extends DomainResourceImpl implements Immunization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getDoseQuantity() {
+	public SimpleQuantity getDoseQuantity() {
 		return doseQuantity;
 	}
 
@@ -898,8 +898,8 @@ public class ImmunizationImpl extends DomainResourceImpl implements Immunization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDoseQuantity(Quantity newDoseQuantity, NotificationChain msgs) {
-		Quantity oldDoseQuantity = doseQuantity;
+	public NotificationChain basicSetDoseQuantity(SimpleQuantity newDoseQuantity, NotificationChain msgs) {
+		SimpleQuantity oldDoseQuantity = doseQuantity;
 		doseQuantity = newDoseQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMMUNIZATION__DOSE_QUANTITY, oldDoseQuantity, newDoseQuantity);
@@ -913,7 +913,7 @@ public class ImmunizationImpl extends DomainResourceImpl implements Immunization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDoseQuantity(Quantity newDoseQuantity) {
+	public void setDoseQuantity(SimpleQuantity newDoseQuantity) {
 		if (newDoseQuantity != doseQuantity) {
 			NotificationChain msgs = null;
 			if (doseQuantity != null)
@@ -1150,7 +1150,7 @@ public class ImmunizationImpl extends DomainResourceImpl implements Immunization
 				setRoute((CodeableConcept)newValue);
 				return;
 			case FhirPackage.IMMUNIZATION__DOSE_QUANTITY:
-				setDoseQuantity((Quantity)newValue);
+				setDoseQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.IMMUNIZATION__EXPLANATION:
 				setExplanation((ImmunizationExplanation)newValue);
@@ -1221,7 +1221,7 @@ public class ImmunizationImpl extends DomainResourceImpl implements Immunization
 				setRoute((CodeableConcept)null);
 				return;
 			case FhirPackage.IMMUNIZATION__DOSE_QUANTITY:
-				setDoseQuantity((Quantity)null);
+				setDoseQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.IMMUNIZATION__EXPLANATION:
 				setExplanation((ImmunizationExplanation)null);

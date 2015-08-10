@@ -107,13 +107,13 @@ public interface SpecimenContainer extends BackboneElement {
 	 * The capacity (volume or other measure) the container may contain.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Capacity</em>' containment reference.
-	 * @see #setCapacity(Quantity)
+	 * @see #setCapacity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getSpecimenContainer_Capacity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='capacity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getCapacity();
+	SimpleQuantity getCapacity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.SpecimenContainer#getCapacity <em>Capacity</em>}' containment reference.
@@ -123,7 +123,7 @@ public interface SpecimenContainer extends BackboneElement {
 	 * @see #getCapacity()
 	 * @generated
 	 */
-	void setCapacity(Quantity value);
+	void setCapacity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Specimen Quantity</b></em>' containment reference.
@@ -133,13 +133,13 @@ public interface SpecimenContainer extends BackboneElement {
 	 * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Specimen Quantity</em>' containment reference.
-	 * @see #setSpecimenQuantity(Quantity)
+	 * @see #setSpecimenQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getSpecimenContainer_SpecimenQuantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='specimenQuantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getSpecimenQuantity();
+	SimpleQuantity getSpecimenQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.SpecimenContainer#getSpecimenQuantity <em>Specimen Quantity</em>}' containment reference.
@@ -149,7 +149,7 @@ public interface SpecimenContainer extends BackboneElement {
 	 * @see #getSpecimenQuantity()
 	 * @generated
 	 */
-	void setSpecimenQuantity(Quantity value);
+	void setSpecimenQuantity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Additive Codeable Concept</b></em>' containment reference.

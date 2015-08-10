@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.
+ * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -75,7 +75,7 @@ public interface CompositionEvent extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Full details for the event(s) the composition/documentation consents.
+	 * The description and/or reference of the event(s) being documented. For example, this could be used to document such a colonoscopy or an appendectomy.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Detail</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getCompositionEvent_Detail()

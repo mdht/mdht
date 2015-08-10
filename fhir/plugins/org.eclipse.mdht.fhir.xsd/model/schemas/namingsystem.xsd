@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -44,19 +44,9 @@
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="NamingSystemType">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the purpose for the namingsystem - what kinds of things does it make unique?</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The descriptive name of this particular identifier type or code system.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="date" minOccurs="1" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the system was registered or published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="code">
@@ -64,34 +54,9 @@
               <xs:documentation xml:lang="en">Indicates whether the namingsystem is &quot;ready for use&quot; or not.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="country" minOccurs="0" maxOccurs="1" type="code">
+          <xs:element name="kind" minOccurs="1" maxOccurs="1" type="NamingSystemType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If present, indicates that the identifier or code system is principally intended for use or applies to entities within the specified country.  For example, the country associated with a national code system.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Categorizes a namingsystem for easier search by grouping related namingsystems.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="responsible" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Details about what the namespace identifies including scope, granularity, version labeling, etc.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="uniqueId" type="NamingSystem.UniqueId" minOccurs="1" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates how the system may be identified when referenced in electronic exchange.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the purpose for the namingsystem - what kinds of things does it make unique?</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
@@ -104,9 +69,65 @@
               <xs:documentation xml:lang="en">Contacts to assist a user in finding and communicating with the publisher.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="responsible" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="date" minOccurs="1" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the system was registered or published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the registration changes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Categorizes a namingsystem for easier search by grouping related namingsystems.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Details about what the namespace identifies including scope, granularity, version labeling, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of naming systems.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="uniqueId" type="NamingSystem.UniqueId" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates how the system may be identified when referenced in electronic exchange.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="replacedBy" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">For namingsystems that are retired, indicates the namingsystem that should be used in their place (if any).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NamingSystem.Contact">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a &quot;System&quot; used within the Identifier and Coding data types.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of an individual to contact regarding the naming system.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="telecom" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details for individual (if a name was provided) or the publisher.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -144,57 +165,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="NamingSystem.Contact">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a &quot;System&quot; used within the Identifier and Coding data types.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of an individual to contact regarding the naming system.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="telecom" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details for individual (if a name was provided) or the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="NamingSystemType-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="codesystem">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The namingsystem is used to define concepts and symbols to represent those concepts.  E.g. UCUM, LOINC, NDC code, local lab codes, etc.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="identifier">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The namingsystem is used to manage identifiers (e.g. license numbers, order numbers, etc.)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="root">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The namingsystem is used as the root for other identifiers and namingsystems</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="NamingSystemType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Identifies the purpose of the namingsystem</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="NamingSystemType-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="NamingSystemIdentifierType-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="oid">
@@ -227,6 +197,36 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="NamingSystemIdentifierType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NamingSystemType-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="codesystem">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The namingsystem is used to define concepts and symbols to represent those concepts.  E.g. UCUM, LOINC, NDC code, local lab codes, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="identifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The namingsystem is used to manage identifiers (e.g. license numbers, order numbers, etc.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="root">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The namingsystem is used as the root for other identifiers and namingsystems</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NamingSystemType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Identifies the purpose of the namingsystem</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="NamingSystemType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

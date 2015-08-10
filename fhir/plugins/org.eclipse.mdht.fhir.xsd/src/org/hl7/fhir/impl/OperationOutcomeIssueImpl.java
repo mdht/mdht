@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.IssueSeverity;
+import org.hl7.fhir.IssueType;
 import org.hl7.fhir.OperationOutcomeIssue;
 
 /**
@@ -33,6 +34,7 @@ import org.hl7.fhir.OperationOutcomeIssue;
  *   <li>{@link org.hl7.fhir.impl.OperationOutcomeIssueImpl#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationOutcomeIssueImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationOutcomeIssueImpl#getDetails <em>Details</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OperationOutcomeIssueImpl#getDiagnostics <em>Diagnostics</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationOutcomeIssueImpl#getLocation <em>Location</em>}</li>
  * </ul>
  *
@@ -57,7 +59,7 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * @generated
 	 * @ordered
 	 */
-	protected CodeableConcept code;
+	protected IssueType code;
 
 	/**
 	 * The cached value of the '{@link #getDetails() <em>Details</em>}' containment reference.
@@ -67,7 +69,17 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * @generated
 	 * @ordered
 	 */
-	protected org.hl7.fhir.String details;
+	protected CodeableConcept details;
+
+	/**
+	 * The cached value of the '{@link #getDiagnostics() <em>Diagnostics</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiagnostics()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String diagnostics;
 
 	/**
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' containment reference list.
@@ -146,7 +158,7 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getCode() {
+	public IssueType getCode() {
 		return code;
 	}
 
@@ -155,8 +167,8 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCode(CodeableConcept newCode, NotificationChain msgs) {
-		CodeableConcept oldCode = code;
+	public NotificationChain basicSetCode(IssueType newCode, NotificationChain msgs) {
+		IssueType oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_OUTCOME_ISSUE__CODE, oldCode, newCode);
@@ -170,7 +182,7 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCode(CodeableConcept newCode) {
+	public void setCode(IssueType newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null)
@@ -189,7 +201,7 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getDetails() {
+	public CodeableConcept getDetails() {
 		return details;
 	}
 
@@ -198,8 +210,8 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDetails(org.hl7.fhir.String newDetails, NotificationChain msgs) {
-		org.hl7.fhir.String oldDetails = details;
+	public NotificationChain basicSetDetails(CodeableConcept newDetails, NotificationChain msgs) {
+		CodeableConcept oldDetails = details;
 		details = newDetails;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_OUTCOME_ISSUE__DETAILS, oldDetails, newDetails);
@@ -213,7 +225,7 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDetails(org.hl7.fhir.String newDetails) {
+	public void setDetails(CodeableConcept newDetails) {
 		if (newDetails != details) {
 			NotificationChain msgs = null;
 			if (details != null)
@@ -225,6 +237,49 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_OUTCOME_ISSUE__DETAILS, newDetails, newDetails));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getDiagnostics() {
+		return diagnostics;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDiagnostics(org.hl7.fhir.String newDiagnostics, NotificationChain msgs) {
+		org.hl7.fhir.String oldDiagnostics = diagnostics;
+		diagnostics = newDiagnostics;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS, oldDiagnostics, newDiagnostics);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDiagnostics(org.hl7.fhir.String newDiagnostics) {
+		if (newDiagnostics != diagnostics) {
+			NotificationChain msgs = null;
+			if (diagnostics != null)
+				msgs = ((InternalEObject)diagnostics).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS, null, msgs);
+			if (newDiagnostics != null)
+				msgs = ((InternalEObject)newDiagnostics).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS, null, msgs);
+			msgs = basicSetDiagnostics(newDiagnostics, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS, newDiagnostics, newDiagnostics));
 	}
 
 	/**
@@ -253,6 +308,8 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 				return basicSetCode(null, msgs);
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__DETAILS:
 				return basicSetDetails(null, msgs);
+			case FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS:
+				return basicSetDiagnostics(null, msgs);
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__LOCATION:
 				return ((InternalEList<?>)getLocation()).basicRemove(otherEnd, msgs);
 		}
@@ -273,6 +330,8 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 				return getCode();
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__DETAILS:
 				return getDetails();
+			case FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS:
+				return getDiagnostics();
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__LOCATION:
 				return getLocation();
 		}
@@ -292,10 +351,13 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 				setSeverity((IssueSeverity)newValue);
 				return;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__CODE:
-				setCode((CodeableConcept)newValue);
+				setCode((IssueType)newValue);
 				return;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__DETAILS:
-				setDetails((org.hl7.fhir.String)newValue);
+				setDetails((CodeableConcept)newValue);
+				return;
+			case FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS:
+				setDiagnostics((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__LOCATION:
 				getLocation().clear();
@@ -317,10 +379,13 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 				setSeverity((IssueSeverity)null);
 				return;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__CODE:
-				setCode((CodeableConcept)null);
+				setCode((IssueType)null);
 				return;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__DETAILS:
-				setDetails((org.hl7.fhir.String)null);
+				setDetails((CodeableConcept)null);
+				return;
+			case FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS:
+				setDiagnostics((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__LOCATION:
 				getLocation().clear();
@@ -343,6 +408,8 @@ public class OperationOutcomeIssueImpl extends BackboneElementImpl implements Op
 				return code != null;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__DETAILS:
 				return details != null;
+			case FhirPackage.OPERATION_OUTCOME_ISSUE__DIAGNOSTICS:
+				return diagnostics != null;
 			case FhirPackage.OPERATION_OUTCOME_ISSUE__LOCATION:
 				return location != null && !location.isEmpty();
 		}

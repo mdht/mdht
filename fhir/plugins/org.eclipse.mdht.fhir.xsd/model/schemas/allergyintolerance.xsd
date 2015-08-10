@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -169,91 +169,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="AllergyIntoleranceCertainty-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="unlikely">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">There is a low level of clinical certainty that the reaction was caused by the identified Substance.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="likely">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">There is a high level of clinical certainty that the reaction was caused by the identified Substance.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="confirmed">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">There is a very high level of clinical certainty that the reaction was due to the identified Substance, which may include clinical evidence by testing or rechallenge.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AllergyIntoleranceCertainty">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Statement about the degree of clinical certainty that a Specific Substance was the cause of the Manifestation in an reaction event</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="AllergyIntoleranceCertainty-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="AllergyIntoleranceType-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="immune">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Immune mediated reaction, including allergic reactions and hypersensitivities.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="non-immune">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">A non-immune mediated reaction, which can include pseudoallergic reactions, side effects, intolerances, drug toxicities (eg to Gentamicin), drug-drug interactions, food-drug interactions, and drug-disease interactions.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AllergyIntoleranceType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Identification of the underlying physiological mechanism for a Reaction Risk</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="AllergyIntoleranceType-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="AllergyIntoleranceSeverity-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="mild">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Causes mild physiological effects</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="moderate">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Causes moderate physiological effects</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="severe">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Causes severe physiological effects</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AllergyIntoleranceSeverity">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Clinical assessment of the severity of a reaction event as a whole, potentially considering multiple different manifestations</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="AllergyIntoleranceSeverity-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="AllergyIntoleranceCriticality-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="low">
@@ -284,36 +199,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="AllergyIntoleranceCategory-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="food">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Any substance consumed to provide nutritional support for the body</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="medication">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Substances administered to achieve a physiological effect</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="environment">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Substances that are encountered in the environment</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AllergyIntoleranceCategory">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Category of an identified Substance</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="AllergyIntoleranceCategory-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="AllergyIntoleranceStatus-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="unconfirmed">
@@ -338,7 +223,7 @@
       </xs:enumeration>
       <xs:enumeration value="entered-in-error">
         <xs:annotation>
-          <xs:documentation xml:lang="en">The statement was entered in error and Is not valid</xs:documentation>
+          <xs:documentation xml:lang="en">The statement was entered in error and is not valid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -351,6 +236,126 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="AllergyIntoleranceStatus-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AllergyIntoleranceType-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="immune">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Immune mediated reaction, including allergic reactions and hypersensitivities.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="non-immune">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">A non-immune mediated reaction, which can include pseudoallergic reactions, side effects, intolerances, drug toxicities (eg to Gentamicin), drug-drug interactions, food-drug interactions, and drug-disease interactions.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AllergyIntoleranceType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Identification of the underlying physiological mechanism for a Reaction Risk</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AllergyIntoleranceType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AllergyIntoleranceCategory-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="food">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Any substance consumed to provide nutritional support for the body</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="medication">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Substances administered to achieve a physiological effect</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="environment">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Substances that are encountered in the environment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Other substances that are not covered by any other category</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AllergyIntoleranceCategory">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Category of an identified Substance</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AllergyIntoleranceCategory-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AllergyIntoleranceCertainty-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unlikely">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">There is a low level of clinical certainty that the reaction was caused by the identified Substance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="likely">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">There is a high level of clinical certainty that the reaction was caused by the identified Substance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="confirmed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">There is a very high level of clinical certainty that the reaction was due to the identified Substance, which may include clinical evidence by testing or rechallenge.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AllergyIntoleranceCertainty">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Statement about the degree of clinical certainty that a Specific Substance was the cause of the Manifestation in an reaction event</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AllergyIntoleranceCertainty-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AllergyIntoleranceSeverity-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mild">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Causes mild physiological effects</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="moderate">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Causes moderate physiological effects</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="severe">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Causes severe physiological effects</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AllergyIntoleranceSeverity">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Clinical assessment of the severity of a reaction event as a whole, potentially considering multiple different manifestations</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AllergyIntoleranceSeverity-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

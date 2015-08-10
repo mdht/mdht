@@ -18,7 +18,7 @@ package org.hl7.fhir;
  * <ul>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistoryCondition#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOutcome <em>Outcome</em>}</li>
- *   <li>{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetAge <em>Onset Age</em>}</li>
+ *   <li>{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetQuantity <em>Onset Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetRange <em>Onset Range</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetString <em>Onset String</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistoryCondition#getNote <em>Note</em>}</li>
@@ -82,31 +82,31 @@ public interface FamilyMemberHistoryCondition extends BackboneElement {
 	void setOutcome(CodeableConcept value);
 
 	/**
-	 * Returns the value of the '<em><b>Onset Age</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Onset Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Onset Age</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Onset Quantity</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Onset Age</em>' containment reference.
-	 * @see #setOnsetAge(Age)
-	 * @see org.hl7.fhir.FhirPackage#getFamilyMemberHistoryCondition_OnsetAge()
+	 * @return the value of the '<em>Onset Quantity</em>' containment reference.
+	 * @see #setOnsetQuantity(Age)
+	 * @see org.hl7.fhir.FhirPackage#getFamilyMemberHistoryCondition_OnsetQuantity()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='onsetAge' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='onsetQuantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Age getOnsetAge();
+	Age getOnsetQuantity();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetAge <em>Onset Age</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetQuantity <em>Onset Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Onset Age</em>' containment reference.
-	 * @see #getOnsetAge()
+	 * @param value the new value of the '<em>Onset Quantity</em>' containment reference.
+	 * @see #getOnsetQuantity()
 	 * @generated
 	 */
-	void setOnsetAge(Age value);
+	void setOnsetQuantity(Age value);
 
 	/**
 	 * Returns the value of the '<em><b>Onset Range</b></em>' containment reference.

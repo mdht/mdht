@@ -259,7 +259,7 @@ public enum AnswerFormatList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Answer is a time independent of date
+	 * Answer is a time (hour/minute/second) independent of date
 	 * <!-- end-model-doc -->
 	 * @see #TIME
 	 * @model name="time"
@@ -287,7 +287,7 @@ public enum AnswerFormatList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Answer is a long (potentially multi-paragram) free-text entry
+	 * Answer is a long (potentially multi-paragram) free-text entry (still captured as a string)
 	 * <!-- end-model-doc -->
 	 * @see #TEXT
 	 * @model name="text"
@@ -315,7 +315,7 @@ public enum AnswerFormatList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Answer is a choice from a list of options
+	 * Answer is a Coding drawn from a list of options
 	 * <!-- end-model-doc -->
 	 * @see #CHOICE
 	 * @model name="choice"
@@ -329,7 +329,7 @@ public enum AnswerFormatList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Answer is a choice from a list of options or a free-text entry
+	 * Answer is a Coding drawn from a list of options or a free-text entry.
 	 * <!-- end-model-doc -->
 	 * @see #OPEN_CHOICE
 	 * @model name="openChoice" literal="open-choice"
@@ -371,7 +371,7 @@ public enum AnswerFormatList implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Answer is a combination of a numeric value and unit
+	 * Answer is a combination of a numeric value and unit, potentially with a comparator (<, >, etc)
 	 * <!-- end-model-doc -->
 	 * @see #QUANTITY
 	 * @model name="quantity"

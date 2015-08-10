@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.NutritionOrderNutrient;
-import org.hl7.fhir.Quantity;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public class NutritionOrderNutrientImpl extends BackboneElementImpl implements N
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity amount;
+	protected SimpleQuantity amount;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +117,7 @@ public class NutritionOrderNutrientImpl extends BackboneElementImpl implements N
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getAmount() {
+	public SimpleQuantity getAmount() {
 		return amount;
 	}
 
@@ -126,8 +126,8 @@ public class NutritionOrderNutrientImpl extends BackboneElementImpl implements N
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAmount(Quantity newAmount, NotificationChain msgs) {
-		Quantity oldAmount = amount;
+	public NotificationChain basicSetAmount(SimpleQuantity newAmount, NotificationChain msgs) {
+		SimpleQuantity oldAmount = amount;
 		amount = newAmount;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_NUTRIENT__AMOUNT, oldAmount, newAmount);
@@ -141,7 +141,7 @@ public class NutritionOrderNutrientImpl extends BackboneElementImpl implements N
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAmount(Quantity newAmount) {
+	public void setAmount(SimpleQuantity newAmount) {
 		if (newAmount != amount) {
 			NotificationChain msgs = null;
 			if (amount != null)
@@ -199,7 +199,7 @@ public class NutritionOrderNutrientImpl extends BackboneElementImpl implements N
 				setModifier((CodeableConcept)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_NUTRIENT__AMOUNT:
-				setAmount((Quantity)newValue);
+				setAmount((SimpleQuantity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,7 +217,7 @@ public class NutritionOrderNutrientImpl extends BackboneElementImpl implements N
 				setModifier((CodeableConcept)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_NUTRIENT__AMOUNT:
-				setAmount((Quantity)null);
+				setAmount((SimpleQuantity)null);
 				return;
 		}
 		super.eUnset(featureID);

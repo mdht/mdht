@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.NutritionOrderAdministration;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Ratio;
+import org.hl7.fhir.SimpleQuantity;
 import org.hl7.fhir.Timing;
 
 /**
@@ -51,7 +51,7 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getRateQuantity() <em>Rate Quantity</em>}' containment reference.
@@ -61,7 +61,7 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity rateQuantity;
+	protected SimpleQuantity rateQuantity;
 
 	/**
 	 * The cached value of the '{@link #getRateRatio() <em>Rate Ratio</em>}' containment reference.
@@ -140,7 +140,7 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -149,8 +149,8 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ADMINISTRATION__QUANTITY, oldQuantity, newQuantity);
@@ -164,7 +164,7 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -183,7 +183,7 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getRateQuantity() {
+	public SimpleQuantity getRateQuantity() {
 		return rateQuantity;
 	}
 
@@ -192,8 +192,8 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRateQuantity(Quantity newRateQuantity, NotificationChain msgs) {
-		Quantity oldRateQuantity = rateQuantity;
+	public NotificationChain basicSetRateQuantity(SimpleQuantity newRateQuantity, NotificationChain msgs) {
+		SimpleQuantity oldRateQuantity = rateQuantity;
 		rateQuantity = newRateQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ADMINISTRATION__RATE_QUANTITY, oldRateQuantity, newRateQuantity);
@@ -207,7 +207,7 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRateQuantity(Quantity newRateQuantity) {
+	public void setRateQuantity(SimpleQuantity newRateQuantity) {
 		if (newRateQuantity != rateQuantity) {
 			NotificationChain msgs = null;
 			if (rateQuantity != null)
@@ -316,10 +316,10 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 				setSchedule((Timing)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ADMINISTRATION__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ADMINISTRATION__RATE_QUANTITY:
-				setRateQuantity((Quantity)newValue);
+				setRateQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ADMINISTRATION__RATE_RATIO:
 				setRateRatio((Ratio)newValue);
@@ -340,10 +340,10 @@ public class NutritionOrderAdministrationImpl extends BackboneElementImpl implem
 				setSchedule((Timing)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ADMINISTRATION__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ADMINISTRATION__RATE_QUANTITY:
-				setRateQuantity((Quantity)null);
+				setRateQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ADMINISTRATION__RATE_RATIO:
 				setRateRatio((Ratio)null);

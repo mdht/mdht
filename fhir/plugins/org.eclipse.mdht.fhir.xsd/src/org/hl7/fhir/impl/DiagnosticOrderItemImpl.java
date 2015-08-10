@@ -34,8 +34,7 @@ import org.hl7.fhir.Reference;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderItemImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderItemImpl#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderItemImpl#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderItemImpl#getBodySiteReference <em>Body Site Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderItemImpl#getBodySite <em>Body Site</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderItemImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DiagnosticOrderItemImpl#getEvent <em>Event</em>}</li>
  * </ul>
@@ -64,24 +63,14 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 	protected EList<Reference> specimen;
 
 	/**
-	 * The cached value of the '{@link #getBodySiteCodeableConcept() <em>Body Site Codeable Concept</em>}' containment reference.
+	 * The cached value of the '{@link #getBodySite() <em>Body Site</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBodySiteCodeableConcept()
+	 * @see #getBodySite()
 	 * @generated
 	 * @ordered
 	 */
-	protected CodeableConcept bodySiteCodeableConcept;
-
-	/**
-	 * The cached value of the '{@link #getBodySiteReference() <em>Body Site Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBodySiteReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected Reference bodySiteReference;
+	protected CodeableConcept bodySite;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
@@ -182,8 +171,8 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getBodySiteCodeableConcept() {
-		return bodySiteCodeableConcept;
+	public CodeableConcept getBodySite() {
+		return bodySite;
 	}
 
 	/**
@@ -191,11 +180,11 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBodySiteCodeableConcept(CodeableConcept newBodySiteCodeableConcept, NotificationChain msgs) {
-		CodeableConcept oldBodySiteCodeableConcept = bodySiteCodeableConcept;
-		bodySiteCodeableConcept = newBodySiteCodeableConcept;
+	public NotificationChain basicSetBodySite(CodeableConcept newBodySite, NotificationChain msgs) {
+		CodeableConcept oldBodySite = bodySite;
+		bodySite = newBodySite;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT, oldBodySiteCodeableConcept, newBodySiteCodeableConcept);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE, oldBodySite, newBodySite);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -206,61 +195,18 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBodySiteCodeableConcept(CodeableConcept newBodySiteCodeableConcept) {
-		if (newBodySiteCodeableConcept != bodySiteCodeableConcept) {
+	public void setBodySite(CodeableConcept newBodySite) {
+		if (newBodySite != bodySite) {
 			NotificationChain msgs = null;
-			if (bodySiteCodeableConcept != null)
-				msgs = ((InternalEObject)bodySiteCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT, null, msgs);
-			if (newBodySiteCodeableConcept != null)
-				msgs = ((InternalEObject)newBodySiteCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT, null, msgs);
-			msgs = basicSetBodySiteCodeableConcept(newBodySiteCodeableConcept, msgs);
+			if (bodySite != null)
+				msgs = ((InternalEObject)bodySite).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE, null, msgs);
+			if (newBodySite != null)
+				msgs = ((InternalEObject)newBodySite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE, null, msgs);
+			msgs = basicSetBodySite(newBodySite, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT, newBodySiteCodeableConcept, newBodySiteCodeableConcept));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Reference getBodySiteReference() {
-		return bodySiteReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBodySiteReference(Reference newBodySiteReference, NotificationChain msgs) {
-		Reference oldBodySiteReference = bodySiteReference;
-		bodySiteReference = newBodySiteReference;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE, oldBodySiteReference, newBodySiteReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBodySiteReference(Reference newBodySiteReference) {
-		if (newBodySiteReference != bodySiteReference) {
-			NotificationChain msgs = null;
-			if (bodySiteReference != null)
-				msgs = ((InternalEObject)bodySiteReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE, null, msgs);
-			if (newBodySiteReference != null)
-				msgs = ((InternalEObject)newBodySiteReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE, null, msgs);
-			msgs = basicSetBodySiteReference(newBodySiteReference, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE, newBodySiteReference, newBodySiteReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE, newBodySite, newBodySite));
 	}
 
 	/**
@@ -330,10 +276,8 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 				return basicSetCode(null, msgs);
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__SPECIMEN:
 				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT:
-				return basicSetBodySiteCodeableConcept(null, msgs);
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE:
-				return basicSetBodySiteReference(null, msgs);
+			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE:
+				return basicSetBodySite(null, msgs);
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__STATUS:
 				return basicSetStatus(null, msgs);
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__EVENT:
@@ -354,10 +298,8 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 				return getCode();
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__SPECIMEN:
 				return getSpecimen();
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT:
-				return getBodySiteCodeableConcept();
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE:
-				return getBodySiteReference();
+			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE:
+				return getBodySite();
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__STATUS:
 				return getStatus();
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__EVENT:
@@ -382,11 +324,8 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 				getSpecimen().clear();
 				getSpecimen().addAll((Collection<? extends Reference>)newValue);
 				return;
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT:
-				setBodySiteCodeableConcept((CodeableConcept)newValue);
-				return;
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE:
-				setBodySiteReference((Reference)newValue);
+			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE:
+				setBodySite((CodeableConcept)newValue);
 				return;
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__STATUS:
 				setStatus((DiagnosticOrderStatus)newValue);
@@ -413,11 +352,8 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__SPECIMEN:
 				getSpecimen().clear();
 				return;
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT:
-				setBodySiteCodeableConcept((CodeableConcept)null);
-				return;
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE:
-				setBodySiteReference((Reference)null);
+			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE:
+				setBodySite((CodeableConcept)null);
 				return;
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__STATUS:
 				setStatus((DiagnosticOrderStatus)null);
@@ -441,10 +377,8 @@ public class DiagnosticOrderItemImpl extends BackboneElementImpl implements Diag
 				return code != null;
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__SPECIMEN:
 				return specimen != null && !specimen.isEmpty();
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT:
-				return bodySiteCodeableConcept != null;
-			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE:
-				return bodySiteReference != null;
+			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__BODY_SITE:
+				return bodySite != null;
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__STATUS:
 				return status != null;
 			case FhirPackage.DIAGNOSTIC_ORDER_ITEM__EVENT:

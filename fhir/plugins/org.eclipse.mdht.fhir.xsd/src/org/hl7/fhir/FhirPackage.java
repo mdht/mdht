@@ -68,7 +68,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 417;
+	int RESOURCE = 421;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -132,7 +132,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDomainResource()
 	 * @generated
 	 */
-	int DOMAIN_RESOURCE = 201;
+	int DOMAIN_RESOURCE = 200;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -431,7 +431,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getElement()
 	 * @generated
 	 */
-	int ELEMENT = 203;
+	int ELEMENT = 202;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -653,13 +653,22 @@ public interface FhirPackage extends EPackage {
 	int ADDRESS__CITY = ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>District</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDRESS__DISTRICT = ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>State</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__STATE = ELEMENT_FEATURE_COUNT + 5;
+	int ADDRESS__STATE = ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Postal Code</b></em>' containment reference.
@@ -668,7 +677,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__POSTAL_CODE = ELEMENT_FEATURE_COUNT + 6;
+	int ADDRESS__POSTAL_CODE = ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Country</b></em>' containment reference.
@@ -677,7 +686,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__COUNTRY = ELEMENT_FEATURE_COUNT + 7;
+	int ADDRESS__COUNTRY = ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Period</b></em>' containment reference.
@@ -686,7 +695,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__PERIOD = ELEMENT_FEATURE_COUNT + 8;
+	int ADDRESS__PERIOD = ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Address</em>' class.
@@ -695,7 +704,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 9;
+	int ADDRESS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Address</em>' class.
@@ -879,7 +888,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuantity()
 	 * @generated
 	 */
-	int QUANTITY = 399;
+	int QUANTITY = 403;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -918,13 +927,13 @@ public interface FhirPackage extends EPackage {
 	int QUANTITY__COMPARATOR = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Units</b></em>' containment reference.
+	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUANTITY__UNITS = ELEMENT_FEATURE_COUNT + 2;
+	int QUANTITY__UNIT = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' containment reference.
@@ -1009,13 +1018,13 @@ public interface FhirPackage extends EPackage {
 	int AGE__COMPARATOR = QUANTITY__COMPARATOR;
 
 	/**
-	 * The feature id for the '<em><b>Units</b></em>' containment reference.
+	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGE__UNITS = QUANTITY__UNITS;
+	int AGE__UNIT = QUANTITY__UNIT;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' containment reference.
@@ -10673,13 +10682,49 @@ public interface FhirPackage extends EPackage {
 	int COMPOSITION_SECTION__CODE = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITION_SECTION__CONTENT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int COMPOSITION_SECTION__TEXT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Mode</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITION_SECTION__MODE = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Ordered By</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITION_SECTION__ORDERED_BY = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITION_SECTION__ENTRY = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Empty Reason</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITION_SECTION__EMPTY_REASON = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Section</b></em>' containment reference list.
@@ -10688,7 +10733,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITION_SECTION__SECTION = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+	int COMPOSITION_SECTION__SECTION = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Composition Section</em>' class.
@@ -10697,7 +10742,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITION_SECTION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+	int COMPOSITION_SECTION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Composition Section</em>' class.
@@ -10882,67 +10927,13 @@ public interface FhirPackage extends EPackage {
 	int CONCEPT_MAP__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_MAP__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_MAP__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_MAP__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_MAP__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_MAP__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPT_MAP__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_MAP__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int CONCEPT_MAP__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
@@ -10951,7 +10942,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_MAP__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int CONCEPT_MAP__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_MAP__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_MAP__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' containment reference.
@@ -10960,7 +10969,43 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_MAP__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+	int CONCEPT_MAP__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_MAP__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_MAP__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_MAP__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_MAP__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Source Uri</b></em>' containment reference.
@@ -11545,13 +11590,13 @@ public interface FhirPackage extends EPackage {
 	int CONDITION__ASSERTER = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Date Asserted</b></em>' containment reference.
+	 * The feature id for the '<em><b>Date Recorded</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__DATE_ASSERTED = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int CONDITION__DATE_RECORDED = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -11581,13 +11626,22 @@ public interface FhirPackage extends EPackage {
 	int CONDITION__CLINICAL_STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Verification Status</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__VERIFICATION_STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Severity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__SEVERITY = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+	int CONDITION__SEVERITY = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Onset Date Time</b></em>' containment reference.
@@ -11596,16 +11650,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ONSET_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int CONDITION__ONSET_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Onset Age</b></em>' containment reference.
+	 * The feature id for the '<em><b>Onset Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ONSET_AGE = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int CONDITION__ONSET_QUANTITY = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Onset Period</b></em>' containment reference.
@@ -11614,7 +11668,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ONSET_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int CONDITION__ONSET_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Onset Range</b></em>' containment reference.
@@ -11623,7 +11677,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ONSET_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+	int CONDITION__ONSET_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Onset String</b></em>' containment reference.
@@ -11632,25 +11686,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ONSET_STRING = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int CONDITION__ONSET_STRING = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Abatement Date</b></em>' containment reference.
+	 * The feature id for the '<em><b>Abatement Date Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ABATEMENT_DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+	int CONDITION__ABATEMENT_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>Abatement Age</b></em>' containment reference.
+	 * The feature id for the '<em><b>Abatement Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ABATEMENT_AGE = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+	int CONDITION__ABATEMENT_QUANTITY = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Abatement Boolean</b></em>' containment reference.
@@ -11659,7 +11713,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ABATEMENT_BOOLEAN = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
+	int CONDITION__ABATEMENT_BOOLEAN = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Abatement Period</b></em>' containment reference.
@@ -11668,7 +11722,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ABATEMENT_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
+	int CONDITION__ABATEMENT_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Abatement Range</b></em>' containment reference.
@@ -11677,7 +11731,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ABATEMENT_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
+	int CONDITION__ABATEMENT_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Abatement String</b></em>' containment reference.
@@ -11686,7 +11740,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__ABATEMENT_STRING = DOMAIN_RESOURCE_FEATURE_COUNT + 19;
+	int CONDITION__ABATEMENT_STRING = DOMAIN_RESOURCE_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Stage</b></em>' containment reference.
@@ -11695,7 +11749,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__STAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 20;
+	int CONDITION__STAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Evidence</b></em>' containment reference list.
@@ -11704,34 +11758,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__EVIDENCE = DOMAIN_RESOURCE_FEATURE_COUNT + 21;
+	int CONDITION__EVIDENCE = DOMAIN_RESOURCE_FEATURE_COUNT + 22;
 
 	/**
-	 * The feature id for the '<em><b>Location</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body Site</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__LOCATION = DOMAIN_RESOURCE_FEATURE_COUNT + 22;
-
-	/**
-	 * The feature id for the '<em><b>Due To</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__DUE_TO = DOMAIN_RESOURCE_FEATURE_COUNT + 23;
-
-	/**
-	 * The feature id for the '<em><b>Occurred Following</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__OCCURRED_FOLLOWING = DOMAIN_RESOURCE_FEATURE_COUNT + 24;
+	int CONDITION__BODY_SITE = DOMAIN_RESOURCE_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Notes</b></em>' containment reference.
@@ -11740,7 +11776,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__NOTES = DOMAIN_RESOURCE_FEATURE_COUNT + 25;
+	int CONDITION__NOTES = DOMAIN_RESOURCE_FEATURE_COUNT + 24;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -11749,7 +11785,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 26;
+	int CONDITION_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of operations of the '<em>Condition</em>' class.
@@ -11816,134 +11852,6 @@ public interface FhirPackage extends EPackage {
 	int CONDITIONAL_DELETE_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ConditionClinicalStatusImpl <em>Condition Clinical Status</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ConditionClinicalStatusImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionClinicalStatus()
-	 * @generated
-	 */
-	int CONDITION_CLINICAL_STATUS = 114;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_CLINICAL_STATUS__EXTENSION = ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_CLINICAL_STATUS__ID = ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_CLINICAL_STATUS__VALUE = ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Condition Clinical Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_CLINICAL_STATUS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Condition Clinical Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_CLINICAL_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ConditionDueToImpl <em>Condition Due To</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ConditionDueToImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionDueTo()
-	 * @generated
-	 */
-	int CONDITION_DUE_TO = 115;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_DUE_TO__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_DUE_TO__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_DUE_TO__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_DUE_TO__CODE = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_DUE_TO__TARGET = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Condition Due To</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_DUE_TO_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Condition Due To</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_DUE_TO_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ConditionEvidenceImpl <em>Condition Evidence</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11951,7 +11859,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionEvidence()
 	 * @generated
 	 */
-	int CONDITION_EVIDENCE = 116;
+	int CONDITION_EVIDENCE = 114;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -12017,152 +11925,6 @@ public interface FhirPackage extends EPackage {
 	int CONDITION_EVIDENCE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ConditionLocationImpl <em>Condition Location</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ConditionLocationImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionLocation()
-	 * @generated
-	 */
-	int CONDITION_LOCATION = 117;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_LOCATION__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_LOCATION__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_LOCATION__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Site Codeable Concept</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_LOCATION__SITE_CODEABLE_CONCEPT = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Site Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_LOCATION__SITE_REFERENCE = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Condition Location</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_LOCATION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Condition Location</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_LOCATION_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ConditionOccurredFollowingImpl <em>Condition Occurred Following</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ConditionOccurredFollowingImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionOccurredFollowing()
-	 * @generated
-	 */
-	int CONDITION_OCCURRED_FOLLOWING = 118;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OCCURRED_FOLLOWING__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OCCURRED_FOLLOWING__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OCCURRED_FOLLOWING__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OCCURRED_FOLLOWING__CODE = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OCCURRED_FOLLOWING__TARGET = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Condition Occurred Following</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OCCURRED_FOLLOWING_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Condition Occurred Following</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OCCURRED_FOLLOWING_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ConditionStageImpl <em>Condition Stage</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12170,7 +11932,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionStage()
 	 * @generated
 	 */
-	int CONDITION_STAGE = 119;
+	int CONDITION_STAGE = 115;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -12236,6 +11998,61 @@ public interface FhirPackage extends EPackage {
 	int CONDITION_STAGE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.ConditionVerificationStatusImpl <em>Condition Verification Status</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.ConditionVerificationStatusImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionVerificationStatus()
+	 * @generated
+	 */
+	int CONDITION_VERIFICATION_STATUS = 116;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_VERIFICATION_STATUS__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_VERIFICATION_STATUS__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_VERIFICATION_STATUS__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Condition Verification Status</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_VERIFICATION_STATUS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Condition Verification Status</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_VERIFICATION_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ConformanceImpl <em>Conformance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12243,7 +12060,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformance()
 	 * @generated
 	 */
-	int CONFORMANCE = 120;
+	int CONFORMANCE = 117;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -12345,58 +12162,13 @@ public interface FhirPackage extends EPackage {
 	int CONFORMANCE__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFORMANCE__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFORMANCE__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFORMANCE__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFORMANCE__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFORMANCE__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+	int CONFORMANCE__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
@@ -12405,7 +12177,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int CONFORMANCE__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' containment reference.
@@ -12414,7 +12204,43 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int CONFORMANCE__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE__KIND = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Software</b></em>' containment reference.
@@ -12423,7 +12249,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__SOFTWARE = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int CONFORMANCE__SOFTWARE = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
@@ -12432,7 +12258,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__IMPLEMENTATION = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+	int CONFORMANCE__IMPLEMENTATION = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Fhir Version</b></em>' containment reference.
@@ -12441,7 +12267,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__FHIR_VERSION = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int CONFORMANCE__FHIR_VERSION = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Accept Unknown</b></em>' containment reference.
@@ -12450,7 +12276,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__ACCEPT_UNKNOWN = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+	int CONFORMANCE__ACCEPT_UNKNOWN = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' containment reference list.
@@ -12459,7 +12285,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__FORMAT = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+	int CONFORMANCE__FORMAT = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Profile</b></em>' containment reference list.
@@ -12468,7 +12294,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__PROFILE = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
+	int CONFORMANCE__PROFILE = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Rest</b></em>' containment reference list.
@@ -12477,7 +12303,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__REST = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
+	int CONFORMANCE__REST = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Messaging</b></em>' containment reference list.
@@ -12486,7 +12312,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__MESSAGING = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
+	int CONFORMANCE__MESSAGING = DOMAIN_RESOURCE_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Document</b></em>' containment reference list.
@@ -12495,7 +12321,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE__DOCUMENT = DOMAIN_RESOURCE_FEATURE_COUNT + 19;
+	int CONFORMANCE__DOCUMENT = DOMAIN_RESOURCE_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of structural features of the '<em>Conformance</em>' class.
@@ -12504,7 +12330,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 20;
+	int CONFORMANCE_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 21;
 
 	/**
 	 * The number of operations of the '<em>Conformance</em>' class.
@@ -12523,7 +12349,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceCertificate()
 	 * @generated
 	 */
-	int CONFORMANCE_CERTIFICATE = 121;
+	int CONFORMANCE_CERTIFICATE = 118;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -12596,7 +12422,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceContact()
 	 * @generated
 	 */
-	int CONFORMANCE_CONTACT = 122;
+	int CONFORMANCE_CONTACT = 119;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -12669,7 +12495,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceDocument()
 	 * @generated
 	 */
-	int CONFORMANCE_DOCUMENT = 123;
+	int CONFORMANCE_DOCUMENT = 120;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -12744,6 +12570,79 @@ public interface FhirPackage extends EPackage {
 	int CONFORMANCE_DOCUMENT_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.ConformanceEndpointImpl <em>Conformance Endpoint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.ConformanceEndpointImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceEndpoint()
+	 * @generated
+	 */
+	int CONFORMANCE_ENDPOINT = 121;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_ENDPOINT__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_ENDPOINT__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_ENDPOINT__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Protocol</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_ENDPOINT__PROTOCOL = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_ENDPOINT__ADDRESS = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Conformance Endpoint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_ENDPOINT_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Conformance Endpoint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_ENDPOINT_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ConformanceEventImpl <em>Conformance Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12751,7 +12650,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceEvent()
 	 * @generated
 	 */
-	int CONFORMANCE_EVENT = 124;
+	int CONFORMANCE_EVENT = 122;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -12808,22 +12707,13 @@ public interface FhirPackage extends EPackage {
 	int CONFORMANCE_EVENT__MODE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFORMANCE_EVENT__PROTOCOL = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Focus</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_EVENT__FOCUS = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+	int CONFORMANCE_EVENT__FOCUS = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Request</b></em>' containment reference.
@@ -12832,7 +12722,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_EVENT__REQUEST = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+	int CONFORMANCE_EVENT__REQUEST = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Response</b></em>' containment reference.
@@ -12841,7 +12731,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_EVENT__RESPONSE = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+	int CONFORMANCE_EVENT__RESPONSE = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' containment reference.
@@ -12850,7 +12740,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_EVENT__DOCUMENTATION = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
+	int CONFORMANCE_EVENT__DOCUMENTATION = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Conformance Event</em>' class.
@@ -12859,7 +12749,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_EVENT_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
+	int CONFORMANCE_EVENT_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Conformance Event</em>' class.
@@ -12878,7 +12768,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceEventMode()
 	 * @generated
 	 */
-	int CONFORMANCE_EVENT_MODE = 125;
+	int CONFORMANCE_EVENT_MODE = 123;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -12933,7 +12823,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceImplementation()
 	 * @generated
 	 */
-	int CONFORMANCE_IMPLEMENTATION = 126;
+	int CONFORMANCE_IMPLEMENTATION = 124;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13006,7 +12896,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceInteraction()
 	 * @generated
 	 */
-	int CONFORMANCE_INTERACTION = 127;
+	int CONFORMANCE_INTERACTION = 125;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13079,7 +12969,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceInteraction1()
 	 * @generated
 	 */
-	int CONFORMANCE_INTERACTION1 = 128;
+	int CONFORMANCE_INTERACTION1 = 126;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13152,7 +13042,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceMessaging()
 	 * @generated
 	 */
-	int CONFORMANCE_MESSAGING = 129;
+	int CONFORMANCE_MESSAGING = 127;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13182,7 +13072,7 @@ public interface FhirPackage extends EPackage {
 	int CONFORMANCE_MESSAGING__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Endpoint</b></em>' containment reference.
+	 * The feature id for the '<em><b>Endpoint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -13243,7 +13133,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceOperation()
 	 * @generated
 	 */
-	int CONFORMANCE_OPERATION = 130;
+	int CONFORMANCE_OPERATION = 128;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13316,7 +13206,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceResource()
 	 * @generated
 	 */
-	int CONFORMANCE_RESOURCE = 131;
+	int CONFORMANCE_RESOURCE = 129;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13436,13 +13326,22 @@ public interface FhirPackage extends EPackage {
 	int CONFORMANCE_RESOURCE__SEARCH_INCLUDE = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>Search Rev Include</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_RESOURCE__SEARCH_REV_INCLUDE = BACKBONE_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
 	 * The feature id for the '<em><b>Search Param</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_RESOURCE__SEARCH_PARAM = BACKBONE_ELEMENT_FEATURE_COUNT + 10;
+	int CONFORMANCE_RESOURCE__SEARCH_PARAM = BACKBONE_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Conformance Resource</em>' class.
@@ -13451,7 +13350,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMANCE_RESOURCE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 11;
+	int CONFORMANCE_RESOURCE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>Conformance Resource</em>' class.
@@ -13470,7 +13369,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceResourceStatus()
 	 * @generated
 	 */
-	int CONFORMANCE_RESOURCE_STATUS = 132;
+	int CONFORMANCE_RESOURCE_STATUS = 130;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13525,7 +13424,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceRest()
 	 * @generated
 	 */
-	int CONFORMANCE_REST = 133;
+	int CONFORMANCE_REST = 131;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13661,7 +13560,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceSearchParam()
 	 * @generated
 	 */
-	int CONFORMANCE_SEARCH_PARAM = 134;
+	int CONFORMANCE_SEARCH_PARAM = 132;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13779,7 +13678,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceSecurity()
 	 * @generated
 	 */
-	int CONFORMANCE_SECURITY = 135;
+	int CONFORMANCE_SECURITY = 133;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13870,7 +13769,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceSoftware()
 	 * @generated
 	 */
-	int CONFORMANCE_SOFTWARE = 136;
+	int CONFORMANCE_SOFTWARE = 134;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -13945,6 +13844,61 @@ public interface FhirPackage extends EPackage {
 	int CONFORMANCE_SOFTWARE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.ConformanceStatementKindImpl <em>Conformance Statement Kind</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.ConformanceStatementKindImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceStatementKind()
+	 * @generated
+	 */
+	int CONFORMANCE_STATEMENT_KIND = 135;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_STATEMENT_KIND__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_STATEMENT_KIND__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_STATEMENT_KIND__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Conformance Statement Kind</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_STATEMENT_KIND_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Conformance Statement Kind</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMANCE_STATEMENT_KIND_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ConstraintSeverityImpl <em>Constraint Severity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13952,7 +13906,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConstraintSeverity()
 	 * @generated
 	 */
-	int CONSTRAINT_SEVERITY = 137;
+	int CONSTRAINT_SEVERITY = 136;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14007,7 +13961,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContactPoint()
 	 * @generated
 	 */
-	int CONTACT_POINT = 138;
+	int CONTACT_POINT = 137;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14055,13 +14009,22 @@ public interface FhirPackage extends EPackage {
 	int CONTACT_POINT__USE = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Rank</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_POINT__RANK = ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTACT_POINT__PERIOD = ELEMENT_FEATURE_COUNT + 3;
+	int CONTACT_POINT__PERIOD = ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Contact Point</em>' class.
@@ -14070,7 +14033,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTACT_POINT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
+	int CONTACT_POINT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Contact Point</em>' class.
@@ -14089,7 +14052,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContactPointSystem()
 	 * @generated
 	 */
-	int CONTACT_POINT_SYSTEM = 139;
+	int CONTACT_POINT_SYSTEM = 138;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14144,7 +14107,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContactPointUse()
 	 * @generated
 	 */
-	int CONTACT_POINT_USE = 140;
+	int CONTACT_POINT_USE = 139;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14199,7 +14162,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContentType()
 	 * @generated
 	 */
-	int CONTENT_TYPE = 141;
+	int CONTENT_TYPE = 140;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14254,7 +14217,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContract()
 	 * @generated
 	 */
-	int CONTRACT = 142;
+	int CONTRACT = 141;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -14525,7 +14488,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractActor()
 	 * @generated
 	 */
-	int CONTRACT_ACTOR = 143;
+	int CONTRACT_ACTOR = 142;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14598,7 +14561,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractActor1()
 	 * @generated
 	 */
-	int CONTRACT_ACTOR1 = 144;
+	int CONTRACT_ACTOR1 = 143;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14671,7 +14634,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractFriendly()
 	 * @generated
 	 */
-	int CONTRACT_FRIENDLY = 145;
+	int CONTRACT_FRIENDLY = 144;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14744,7 +14707,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractLegal()
 	 * @generated
 	 */
-	int CONTRACT_LEGAL = 146;
+	int CONTRACT_LEGAL = 145;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14817,7 +14780,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractRule()
 	 * @generated
 	 */
-	int CONTRACT_RULE = 147;
+	int CONTRACT_RULE = 146;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14890,7 +14853,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractSigner()
 	 * @generated
 	 */
-	int CONTRACT_SIGNER = 148;
+	int CONTRACT_SIGNER = 147;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -14972,7 +14935,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractTerm()
 	 * @generated
 	 */
-	int CONTRACT_TERM = 149;
+	int CONTRACT_TERM = 148;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -15135,7 +15098,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractValuedItem()
 	 * @generated
 	 */
-	int CONTRACT_VALUED_ITEM = 150;
+	int CONTRACT_VALUED_ITEM = 149;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -15271,7 +15234,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContractValuedItem1()
 	 * @generated
 	 */
-	int CONTRACT_VALUED_ITEM1 = 151;
+	int CONTRACT_VALUED_ITEM1 = 150;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -15407,7 +15370,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContraindication()
 	 * @generated
 	 */
-	int CONTRAINDICATION = 152;
+	int CONTRAINDICATION = 151;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -15597,7 +15560,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContraindicationMitigation()
 	 * @generated
 	 */
-	int CONTRAINDICATION_MITIGATION = 153;
+	int CONTRAINDICATION_MITIGATION = 152;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -15679,7 +15642,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContraindicationSeverity()
 	 * @generated
 	 */
-	int CONTRAINDICATION_SEVERITY = 154;
+	int CONTRAINDICATION_SEVERITY = 153;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -15734,7 +15697,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCount()
 	 * @generated
 	 */
-	int COUNT = 155;
+	int COUNT = 154;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -15773,13 +15736,13 @@ public interface FhirPackage extends EPackage {
 	int COUNT__COMPARATOR = QUANTITY__COMPARATOR;
 
 	/**
-	 * The feature id for the '<em><b>Units</b></em>' containment reference.
+	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COUNT__UNITS = QUANTITY__UNITS;
+	int COUNT__UNIT = QUANTITY__UNIT;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' containment reference.
@@ -15825,7 +15788,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCoverage()
 	 * @generated
 	 */
-	int COVERAGE = 156;
+	int COVERAGE = 155;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -16051,7 +16014,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElement()
 	 * @generated
 	 */
-	int DATA_ELEMENT = 157;
+	int DATA_ELEMENT = 156;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -16135,7 +16098,7 @@ public interface FhirPackage extends EPackage {
 	int DATA_ELEMENT__URL = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' containment reference.
+	 * The feature id for the '<em><b>Identifier</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -16162,13 +16125,13 @@ public interface FhirPackage extends EPackage {
 	int DATA_ELEMENT__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int DATA_ELEMENT__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
@@ -16180,40 +16143,13 @@ public interface FhirPackage extends EPackage {
 	int DATA_ELEMENT__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ELEMENT__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ELEMENT__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ELEMENT__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int DATA_ELEMENT__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
@@ -16222,16 +16158,43 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int DATA_ELEMENT__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Specificity</b></em>' containment reference.
+	 * The feature id for the '<em><b>Date</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT__SPECIFICITY = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int DATA_ELEMENT__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELEMENT__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELEMENT__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Stringency</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELEMENT__STRINGENCY = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Mapping</b></em>' containment reference list.
@@ -16277,7 +16240,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementContact()
 	 * @generated
 	 */
-	int DATA_ELEMENT_CONTACT = 158;
+	int DATA_ELEMENT_CONTACT = 157;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -16350,7 +16313,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementMapping()
 	 * @generated
 	 */
-	int DATA_ELEMENT_MAPPING = 159;
+	int DATA_ELEMENT_MAPPING = 158;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -16434,14 +16397,14 @@ public interface FhirPackage extends EPackage {
 	int DATA_ELEMENT_MAPPING_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.DataElementSpecificityImpl <em>Data Element Specificity</em>}' class.
+	 * The meta object id for the '{@link org.hl7.fhir.impl.DataElementStringencyImpl <em>Data Element Stringency</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.DataElementSpecificityImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementSpecificity()
+	 * @see org.hl7.fhir.impl.DataElementStringencyImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementStringency()
 	 * @generated
 	 */
-	int DATA_ELEMENT_SPECIFICITY = 160;
+	int DATA_ELEMENT_STRINGENCY = 159;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -16450,7 +16413,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT_SPECIFICITY__EXTENSION = ELEMENT__EXTENSION;
+	int DATA_ELEMENT_STRINGENCY__EXTENSION = ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -16459,7 +16422,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT_SPECIFICITY__ID = ELEMENT__ID;
+	int DATA_ELEMENT_STRINGENCY__ID = ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -16468,25 +16431,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT_SPECIFICITY__VALUE = ELEMENT_FEATURE_COUNT + 0;
+	int DATA_ELEMENT_STRINGENCY__VALUE = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Data Element Specificity</em>' class.
+	 * The number of structural features of the '<em>Data Element Stringency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT_SPECIFICITY_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+	int DATA_ELEMENT_STRINGENCY_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Data Element Specificity</em>' class.
+	 * The number of operations of the '<em>Data Element Stringency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT_SPECIFICITY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+	int DATA_ELEMENT_STRINGENCY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.DateImpl <em>Date</em>}' class.
@@ -16496,7 +16459,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDate()
 	 * @generated
 	 */
-	int DATE = 161;
+	int DATE = 160;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -16551,7 +16514,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDateTime()
 	 * @generated
 	 */
-	int DATE_TIME = 162;
+	int DATE_TIME = 161;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -16606,7 +16569,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDaysOfWeek()
 	 * @generated
 	 */
-	int DAYS_OF_WEEK = 163;
+	int DAYS_OF_WEEK = 162;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -16661,7 +16624,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDecimal()
 	 * @generated
 	 */
-	int DECIMAL = 164;
+	int DECIMAL = 163;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -16716,7 +16679,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDevice()
 	 * @generated
 	 */
-	int DEVICE = 165;
+	int DEVICE = 164;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -16960,7 +16923,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceComponent()
 	 * @generated
 	 */
-	int DEVICE_COMPONENT = 166;
+	int DEVICE_COMPONENT = 165;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -17150,7 +17113,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceComponentProductionSpecification()
 	 * @generated
 	 */
-	int DEVICE_COMPONENT_PRODUCTION_SPECIFICATION = 167;
+	int DEVICE_COMPONENT_PRODUCTION_SPECIFICATION = 166;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17232,7 +17195,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetric()
 	 * @generated
 	 */
-	int DEVICE_METRIC = 168;
+	int DEVICE_METRIC = 167;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -17422,7 +17385,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCalibration()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CALIBRATION = 169;
+	int DEVICE_METRIC_CALIBRATION = 168;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17504,7 +17467,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCalibrationState()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CALIBRATION_STATE = 170;
+	int DEVICE_METRIC_CALIBRATION_STATE = 169;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17559,7 +17522,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCalibrationType()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CALIBRATION_TYPE = 171;
+	int DEVICE_METRIC_CALIBRATION_TYPE = 170;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17614,7 +17577,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCategory()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CATEGORY = 172;
+	int DEVICE_METRIC_CATEGORY = 171;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17669,7 +17632,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricColor()
 	 * @generated
 	 */
-	int DEVICE_METRIC_COLOR = 173;
+	int DEVICE_METRIC_COLOR = 172;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17724,7 +17687,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricOperationalStatus()
 	 * @generated
 	 */
-	int DEVICE_METRIC_OPERATIONAL_STATUS = 174;
+	int DEVICE_METRIC_OPERATIONAL_STATUS = 173;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17779,7 +17742,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceStatus()
 	 * @generated
 	 */
-	int DEVICE_STATUS = 175;
+	int DEVICE_STATUS = 174;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -17834,7 +17797,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseRequest()
 	 * @generated
 	 */
-	int DEVICE_USE_REQUEST = 176;
+	int DEVICE_USE_REQUEST = 175;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -18078,7 +18041,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseRequestPriority()
 	 * @generated
 	 */
-	int DEVICE_USE_REQUEST_PRIORITY = 177;
+	int DEVICE_USE_REQUEST_PRIORITY = 176;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -18133,7 +18096,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseRequestStatus()
 	 * @generated
 	 */
-	int DEVICE_USE_REQUEST_STATUS = 178;
+	int DEVICE_USE_REQUEST_STATUS = 177;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -18188,7 +18151,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseStatement()
 	 * @generated
 	 */
-	int DEVICE_USE_STATEMENT = 179;
+	int DEVICE_USE_STATEMENT = 178;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -18396,7 +18359,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrder()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER = 180;
+	int DIAGNOSTIC_ORDER = 179;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -18507,13 +18470,13 @@ public interface FhirPackage extends EPackage {
 	int DIAGNOSTIC_ORDER__ENCOUNTER = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Clinical Notes</b></em>' containment reference.
+	 * The feature id for the '<em><b>Reason</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_ORDER__CLINICAL_NOTES = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int DIAGNOSTIC_ORDER__REASON = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Supporting Information</b></em>' containment reference list.
@@ -18570,13 +18533,22 @@ public interface FhirPackage extends EPackage {
 	int DIAGNOSTIC_ORDER__ITEM = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_ORDER__NOTE = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+
+	/**
 	 * The number of structural features of the '<em>Diagnostic Order</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_ORDER_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int DIAGNOSTIC_ORDER_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>Diagnostic Order</em>' class.
@@ -18595,7 +18567,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderEvent()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_EVENT = 181;
+	int DIAGNOSTIC_ORDER_EVENT = 180;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -18686,7 +18658,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderItem()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_ITEM = 182;
+	int DIAGNOSTIC_ORDER_ITEM = 181;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -18734,22 +18706,13 @@ public interface FhirPackage extends EPackage {
 	int DIAGNOSTIC_ORDER_ITEM__SPECIMEN = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Body Site Codeable Concept</b></em>' containment reference.
+	 * The feature id for the '<em><b>Body Site</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_ORDER_ITEM__BODY_SITE_CODEABLE_CONCEPT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Body Site Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIAGNOSTIC_ORDER_ITEM__BODY_SITE_REFERENCE = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+	int DIAGNOSTIC_ORDER_ITEM__BODY_SITE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
@@ -18758,7 +18721,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_ORDER_ITEM__STATUS = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+	int DIAGNOSTIC_ORDER_ITEM__STATUS = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Event</b></em>' containment reference list.
@@ -18767,7 +18730,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_ORDER_ITEM__EVENT = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+	int DIAGNOSTIC_ORDER_ITEM__EVENT = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Diagnostic Order Item</em>' class.
@@ -18776,7 +18739,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_ORDER_ITEM_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+	int DIAGNOSTIC_ORDER_ITEM_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Diagnostic Order Item</em>' class.
@@ -18795,7 +18758,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderPriority()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_PRIORITY = 183;
+	int DIAGNOSTIC_ORDER_PRIORITY = 182;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -18850,7 +18813,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderStatus()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_STATUS = 184;
+	int DIAGNOSTIC_ORDER_STATUS = 183;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -18905,7 +18868,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticReport()
 	 * @generated
 	 */
-	int DIAGNOSTIC_REPORT = 185;
+	int DIAGNOSTIC_REPORT = 184;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -18980,13 +18943,13 @@ public interface FhirPackage extends EPackage {
 	int DIAGNOSTIC_REPORT__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Identifier</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_REPORT__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
+	int DIAGNOSTIC_REPORT__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
@@ -18998,13 +18961,22 @@ public interface FhirPackage extends EPackage {
 	int DIAGNOSTIC_REPORT__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Issued</b></em>' containment reference.
+	 * The feature id for the '<em><b>Category</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_REPORT__ISSUED = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
+	int DIAGNOSTIC_REPORT__CATEGORY = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_REPORT__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -19013,16 +18985,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_REPORT__SUBJECT = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Performer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIAGNOSTIC_REPORT__PERFORMER = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int DIAGNOSTIC_REPORT__SUBJECT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
@@ -19034,40 +18997,13 @@ public interface FhirPackage extends EPackage {
 	int DIAGNOSTIC_REPORT__ENCOUNTER = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIAGNOSTIC_REPORT__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Request Detail</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIAGNOSTIC_REPORT__REQUEST_DETAIL = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Service Category</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIAGNOSTIC_REPORT__SERVICE_CATEGORY = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Effective Date Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int DIAGNOSTIC_REPORT__EFFECTIVE_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Effective Period</b></em>' containment reference.
@@ -19076,7 +19012,34 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int DIAGNOSTIC_REPORT__EFFECTIVE_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Issued</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_REPORT__ISSUED = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Performer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_REPORT__PERFORMER = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Request</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_REPORT__REQUEST = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -19167,7 +19130,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticReportImage()
 	 * @generated
 	 */
-	int DIAGNOSTIC_REPORT_IMAGE = 186;
+	int DIAGNOSTIC_REPORT_IMAGE = 185;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -19240,7 +19203,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticReportStatus()
 	 * @generated
 	 */
-	int DIAGNOSTIC_REPORT_STATUS = 187;
+	int DIAGNOSTIC_REPORT_STATUS = 186;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -19295,7 +19258,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDigitalMediaType()
 	 * @generated
 	 */
-	int DIGITAL_MEDIA_TYPE = 188;
+	int DIGITAL_MEDIA_TYPE = 187;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -19350,7 +19313,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDistance()
 	 * @generated
 	 */
-	int DISTANCE = 189;
+	int DISTANCE = 188;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -19389,13 +19352,13 @@ public interface FhirPackage extends EPackage {
 	int DISTANCE__COMPARATOR = QUANTITY__COMPARATOR;
 
 	/**
-	 * The feature id for the '<em><b>Units</b></em>' containment reference.
+	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISTANCE__UNITS = QUANTITY__UNITS;
+	int DISTANCE__UNIT = QUANTITY__UNIT;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' containment reference.
@@ -19441,7 +19404,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentManifest()
 	 * @generated
 	 */
-	int DOCUMENT_MANIFEST = 190;
+	int DOCUMENT_MANIFEST = 189;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -19649,7 +19612,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentManifestContent()
 	 * @generated
 	 */
-	int DOCUMENT_MANIFEST_CONTENT = 191;
+	int DOCUMENT_MANIFEST_CONTENT = 190;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -19722,7 +19685,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentManifestRelated()
 	 * @generated
 	 */
-	int DOCUMENT_MANIFEST_RELATED = 192;
+	int DOCUMENT_MANIFEST_RELATED = 191;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -19795,7 +19758,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentMode()
 	 * @generated
 	 */
-	int DOCUMENT_MODE = 193;
+	int DOCUMENT_MODE = 192;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -19850,7 +19813,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentReference()
 	 * @generated
 	 */
-	int DOCUMENT_REFERENCE = 194;
+	int DOCUMENT_REFERENCE = 193;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -20060,13 +20023,13 @@ public interface FhirPackage extends EPackage {
 	int DOCUMENT_REFERENCE__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Confidentiality</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Security Label</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE__CONFIDENTIALITY = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+	int DOCUMENT_REFERENCE__SECURITY_LABEL = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -20112,7 +20075,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentReferenceContext()
 	 * @generated
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT = 195;
+	int DOCUMENT_REFERENCE_CONTEXT = 194;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -20142,13 +20105,22 @@ public interface FhirPackage extends EPackage {
 	int DOCUMENT_REFERENCE_CONTEXT__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
 
 	/**
+	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_REFERENCE_CONTEXT__ENCOUNTER = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Event</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT__EVENT = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+	int DOCUMENT_REFERENCE_CONTEXT__EVENT = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Period</b></em>' containment reference.
@@ -20157,7 +20129,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT__PERIOD = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+	int DOCUMENT_REFERENCE_CONTEXT__PERIOD = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Facility Type</b></em>' containment reference.
@@ -20166,7 +20138,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT__FACILITY_TYPE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int DOCUMENT_REFERENCE_CONTEXT__FACILITY_TYPE = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Practice Setting</b></em>' containment reference.
@@ -20175,7 +20147,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT__PRACTICE_SETTING = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+	int DOCUMENT_REFERENCE_CONTEXT__PRACTICE_SETTING = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Source Patient Info</b></em>' containment reference.
@@ -20184,7 +20156,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT__SOURCE_PATIENT_INFO = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+	int DOCUMENT_REFERENCE_CONTEXT__SOURCE_PATIENT_INFO = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Related</b></em>' containment reference list.
@@ -20193,7 +20165,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT__RELATED = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+	int DOCUMENT_REFERENCE_CONTEXT__RELATED = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Document Reference Context</em>' class.
@@ -20202,7 +20174,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_REFERENCE_CONTEXT_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+	int DOCUMENT_REFERENCE_CONTEXT_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Document Reference Context</em>' class.
@@ -20221,7 +20193,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentReferenceRelated()
 	 * @generated
 	 */
-	int DOCUMENT_REFERENCE_RELATED = 196;
+	int DOCUMENT_REFERENCE_RELATED = 195;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -20294,7 +20266,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentReferenceRelatesTo()
 	 * @generated
 	 */
-	int DOCUMENT_REFERENCE_RELATES_TO = 197;
+	int DOCUMENT_REFERENCE_RELATES_TO = 196;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -20367,7 +20339,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentReferenceStatus()
 	 * @generated
 	 */
-	int DOCUMENT_REFERENCE_STATUS = 198;
+	int DOCUMENT_REFERENCE_STATUS = 197;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -20422,7 +20394,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentRelationshipType()
 	 * @generated
 	 */
-	int DOCUMENT_RELATIONSHIP_TYPE = 199;
+	int DOCUMENT_RELATIONSHIP_TYPE = 198;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -20477,7 +20449,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentRoot()
 	 * @generated
 	 */
-	int DOCUMENT_ROOT = 200;
+	int DOCUMENT_ROOT = 199;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -21209,13 +21181,13 @@ public interface FhirPackage extends EPackage {
 	int DOCUMENT_ROOT__QUESTIONNAIRE = 80;
 
 	/**
-	 * The feature id for the '<em><b>Questionnaire Answers</b></em>' containment reference.
+	 * The feature id for the '<em><b>Questionnaire Response</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__QUESTIONNAIRE_ANSWERS = 81;
+	int DOCUMENT_ROOT__QUESTIONNAIRE_RESPONSE = 81;
 
 	/**
 	 * The feature id for the '<em><b>Referral Request</b></em>' containment reference.
@@ -21308,22 +21280,13 @@ public interface FhirPackage extends EPackage {
 	int DOCUMENT_ROOT__SUBSTANCE = 91;
 
 	/**
-	 * The feature id for the '<em><b>Supply</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT_ROOT__SUPPLY = 92;
-
-	/**
 	 * The feature id for the '<em><b>Supply Delivery</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__SUPPLY_DELIVERY = 93;
+	int DOCUMENT_ROOT__SUPPLY_DELIVERY = 92;
 
 	/**
 	 * The feature id for the '<em><b>Supply Request</b></em>' containment reference.
@@ -21332,7 +21295,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__SUPPLY_REQUEST = 94;
+	int DOCUMENT_ROOT__SUPPLY_REQUEST = 93;
 
 	/**
 	 * The feature id for the '<em><b>Test Script</b></em>' containment reference.
@@ -21341,7 +21304,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__TEST_SCRIPT = 95;
+	int DOCUMENT_ROOT__TEST_SCRIPT = 94;
 
 	/**
 	 * The feature id for the '<em><b>Value Set</b></em>' containment reference.
@@ -21350,7 +21313,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__VALUE_SET = 96;
+	int DOCUMENT_ROOT__VALUE_SET = 95;
 
 	/**
 	 * The feature id for the '<em><b>Vision Prescription</b></em>' containment reference.
@@ -21359,7 +21322,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__VISION_PRESCRIPTION = 97;
+	int DOCUMENT_ROOT__VISION_PRESCRIPTION = 96;
 
 	/**
 	 * The number of structural features of the '<em>Document Root</em>' class.
@@ -21368,7 +21331,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT_FEATURE_COUNT = 98;
+	int DOCUMENT_ROOT_FEATURE_COUNT = 97;
 
 	/**
 	 * The number of operations of the '<em>Document Root</em>' class.
@@ -21387,7 +21350,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDuration()
 	 * @generated
 	 */
-	int DURATION = 202;
+	int DURATION = 201;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -21426,13 +21389,13 @@ public interface FhirPackage extends EPackage {
 	int DURATION__COMPARATOR = QUANTITY__COMPARATOR;
 
 	/**
-	 * The feature id for the '<em><b>Units</b></em>' containment reference.
+	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION__UNITS = QUANTITY__UNITS;
+	int DURATION__UNIT = QUANTITY__UNIT;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' containment reference.
@@ -21453,13 +21416,22 @@ public interface FhirPackage extends EPackage {
 	int DURATION__CODE = QUANTITY__CODE;
 
 	/**
+	 * The feature id for the '<em><b>Extension1</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION__EXTENSION1 = QUANTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Duration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION_FEATURE_COUNT = QUANTITY_FEATURE_COUNT + 0;
+	int DURATION_FEATURE_COUNT = QUANTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Duration</em>' class.
@@ -21478,7 +21450,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getElementDefinition()
 	 * @generated
 	 */
-	int ELEMENT_DEFINITION = 204;
+	int ELEMENT_DEFINITION = 203;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -21616,13 +21588,22 @@ public interface FhirPackage extends EPackage {
 	int ELEMENT_DEFINITION__MAX = ELEMENT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Base</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__BASE = ELEMENT_FEATURE_COUNT + 13;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__TYPE = ELEMENT_FEATURE_COUNT + 13;
+	int ELEMENT_DEFINITION__TYPE = ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Name Reference</b></em>' containment reference.
@@ -21631,7 +21612,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__NAME_REFERENCE = ELEMENT_FEATURE_COUNT + 14;
+	int ELEMENT_DEFINITION__NAME_REFERENCE = ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Boolean</b></em>' containment reference.
@@ -21640,7 +21621,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_BOOLEAN = ELEMENT_FEATURE_COUNT + 15;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_BOOLEAN = ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Integer</b></em>' containment reference.
@@ -21649,7 +21630,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_INTEGER = ELEMENT_FEATURE_COUNT + 16;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_INTEGER = ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Decimal</b></em>' containment reference.
@@ -21658,7 +21639,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_DECIMAL = ELEMENT_FEATURE_COUNT + 17;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_DECIMAL = ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Base64 Binary</b></em>' containment reference.
@@ -21667,7 +21648,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 18;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Instant</b></em>' containment reference.
@@ -21676,7 +21657,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_INSTANT = ELEMENT_FEATURE_COUNT + 19;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_INSTANT = ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Default Value String</b></em>' containment reference.
@@ -21685,7 +21666,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_STRING = ELEMENT_FEATURE_COUNT + 20;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_STRING = ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Uri</b></em>' containment reference.
@@ -21694,7 +21675,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_URI = ELEMENT_FEATURE_COUNT + 21;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_URI = ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Date</b></em>' containment reference.
@@ -21703,7 +21684,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_DATE = ELEMENT_FEATURE_COUNT + 22;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_DATE = ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Date Time</b></em>' containment reference.
@@ -21712,7 +21693,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_DATE_TIME = ELEMENT_FEATURE_COUNT + 23;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_DATE_TIME = ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Time</b></em>' containment reference.
@@ -21721,7 +21702,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_TIME = ELEMENT_FEATURE_COUNT + 24;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_TIME = ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Code</b></em>' containment reference.
@@ -21730,7 +21711,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_CODE = ELEMENT_FEATURE_COUNT + 25;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_CODE = ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Oid</b></em>' containment reference.
@@ -21739,7 +21720,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_OID = ELEMENT_FEATURE_COUNT + 26;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_OID = ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Uuid</b></em>' containment reference.
@@ -21748,7 +21729,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_UUID = ELEMENT_FEATURE_COUNT + 27;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_UUID = ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Id</b></em>' containment reference.
@@ -21757,7 +21738,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_ID = ELEMENT_FEATURE_COUNT + 28;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_ID = ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Unsigned Int</b></em>' containment reference.
@@ -21766,7 +21747,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 29;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Positive Int</b></em>' containment reference.
@@ -21775,7 +21756,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 30;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 31;
+
+	/**
+	 * The feature id for the '<em><b>Default Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_MARKDOWN = ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Annotation</b></em>' containment reference.
@@ -21784,7 +21774,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 31;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Attachment</b></em>' containment reference.
@@ -21793,7 +21783,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 32;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Identifier</b></em>' containment reference.
@@ -21802,7 +21792,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 33;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Codeable Concept</b></em>' containment reference.
@@ -21811,7 +21801,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 34;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Coding</b></em>' containment reference.
@@ -21820,7 +21810,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_CODING = ELEMENT_FEATURE_COUNT + 35;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_CODING = ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Quantity</b></em>' containment reference.
@@ -21829,7 +21819,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 36;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Range</b></em>' containment reference.
@@ -21838,7 +21828,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_RANGE = ELEMENT_FEATURE_COUNT + 37;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_RANGE = ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Period</b></em>' containment reference.
@@ -21847,7 +21837,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 38;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Ratio</b></em>' containment reference.
@@ -21856,7 +21846,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_RATIO = ELEMENT_FEATURE_COUNT + 39;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_RATIO = ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Reference</b></em>' containment reference.
@@ -21865,7 +21855,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 40;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Sampled Data</b></em>' containment reference.
@@ -21874,7 +21864,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 41;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Signature</b></em>' containment reference.
@@ -21883,7 +21873,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 42;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Human Name</b></em>' containment reference.
@@ -21892,7 +21882,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 43;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Address</b></em>' containment reference.
@@ -21901,7 +21891,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 44;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Contact Point</b></em>' containment reference.
@@ -21910,7 +21900,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 45;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Timing</b></em>' containment reference.
@@ -21919,7 +21909,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_TIMING = ELEMENT_FEATURE_COUNT + 46;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_TIMING = ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Default Value Meta</b></em>' containment reference.
@@ -21928,7 +21918,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__DEFAULT_VALUE_META = ELEMENT_FEATURE_COUNT + 47;
+	int ELEMENT_DEFINITION__DEFAULT_VALUE_META = ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Meaning When Missing</b></em>' containment reference.
@@ -21937,7 +21927,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MEANING_WHEN_MISSING = ELEMENT_FEATURE_COUNT + 48;
+	int ELEMENT_DEFINITION__MEANING_WHEN_MISSING = ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Boolean</b></em>' containment reference.
@@ -21946,7 +21936,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_BOOLEAN = ELEMENT_FEATURE_COUNT + 49;
+	int ELEMENT_DEFINITION__FIXED_BOOLEAN = ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Integer</b></em>' containment reference.
@@ -21955,7 +21945,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_INTEGER = ELEMENT_FEATURE_COUNT + 50;
+	int ELEMENT_DEFINITION__FIXED_INTEGER = ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Decimal</b></em>' containment reference.
@@ -21964,7 +21954,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_DECIMAL = ELEMENT_FEATURE_COUNT + 51;
+	int ELEMENT_DEFINITION__FIXED_DECIMAL = ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Base64 Binary</b></em>' containment reference.
@@ -21973,7 +21963,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 52;
+	int ELEMENT_DEFINITION__FIXED_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Instant</b></em>' containment reference.
@@ -21982,7 +21972,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_INSTANT = ELEMENT_FEATURE_COUNT + 53;
+	int ELEMENT_DEFINITION__FIXED_INSTANT = ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Fixed String</b></em>' containment reference.
@@ -21991,7 +21981,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_STRING = ELEMENT_FEATURE_COUNT + 54;
+	int ELEMENT_DEFINITION__FIXED_STRING = ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Uri</b></em>' containment reference.
@@ -22000,7 +21990,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_URI = ELEMENT_FEATURE_COUNT + 55;
+	int ELEMENT_DEFINITION__FIXED_URI = ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Date</b></em>' containment reference.
@@ -22009,7 +21999,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_DATE = ELEMENT_FEATURE_COUNT + 56;
+	int ELEMENT_DEFINITION__FIXED_DATE = ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Date Time</b></em>' containment reference.
@@ -22018,7 +22008,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_DATE_TIME = ELEMENT_FEATURE_COUNT + 57;
+	int ELEMENT_DEFINITION__FIXED_DATE_TIME = ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Time</b></em>' containment reference.
@@ -22027,7 +22017,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_TIME = ELEMENT_FEATURE_COUNT + 58;
+	int ELEMENT_DEFINITION__FIXED_TIME = ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Code</b></em>' containment reference.
@@ -22036,7 +22026,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_CODE = ELEMENT_FEATURE_COUNT + 59;
+	int ELEMENT_DEFINITION__FIXED_CODE = ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Oid</b></em>' containment reference.
@@ -22045,7 +22035,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_OID = ELEMENT_FEATURE_COUNT + 60;
+	int ELEMENT_DEFINITION__FIXED_OID = ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Uuid</b></em>' containment reference.
@@ -22054,7 +22044,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_UUID = ELEMENT_FEATURE_COUNT + 61;
+	int ELEMENT_DEFINITION__FIXED_UUID = ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Id</b></em>' containment reference.
@@ -22063,7 +22053,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_ID = ELEMENT_FEATURE_COUNT + 62;
+	int ELEMENT_DEFINITION__FIXED_ID = ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Unsigned Int</b></em>' containment reference.
@@ -22072,7 +22062,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 63;
+	int ELEMENT_DEFINITION__FIXED_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Positive Int</b></em>' containment reference.
@@ -22081,7 +22071,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 64;
+	int ELEMENT_DEFINITION__FIXED_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 66;
+
+	/**
+	 * The feature id for the '<em><b>Fixed Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__FIXED_MARKDOWN = ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Annotation</b></em>' containment reference.
@@ -22090,7 +22089,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_ANNOTATION = ELEMENT_FEATURE_COUNT + 65;
+	int ELEMENT_DEFINITION__FIXED_ANNOTATION = ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Attachment</b></em>' containment reference.
@@ -22099,7 +22098,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_ATTACHMENT = ELEMENT_FEATURE_COUNT + 66;
+	int ELEMENT_DEFINITION__FIXED_ATTACHMENT = ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Identifier</b></em>' containment reference.
@@ -22108,7 +22107,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_IDENTIFIER = ELEMENT_FEATURE_COUNT + 67;
+	int ELEMENT_DEFINITION__FIXED_IDENTIFIER = ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Codeable Concept</b></em>' containment reference.
@@ -22117,7 +22116,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 68;
+	int ELEMENT_DEFINITION__FIXED_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Coding</b></em>' containment reference.
@@ -22126,7 +22125,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_CODING = ELEMENT_FEATURE_COUNT + 69;
+	int ELEMENT_DEFINITION__FIXED_CODING = ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Quantity</b></em>' containment reference.
@@ -22135,7 +22134,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_QUANTITY = ELEMENT_FEATURE_COUNT + 70;
+	int ELEMENT_DEFINITION__FIXED_QUANTITY = ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Range</b></em>' containment reference.
@@ -22144,7 +22143,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_RANGE = ELEMENT_FEATURE_COUNT + 71;
+	int ELEMENT_DEFINITION__FIXED_RANGE = ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Period</b></em>' containment reference.
@@ -22153,7 +22152,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_PERIOD = ELEMENT_FEATURE_COUNT + 72;
+	int ELEMENT_DEFINITION__FIXED_PERIOD = ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Ratio</b></em>' containment reference.
@@ -22162,7 +22161,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_RATIO = ELEMENT_FEATURE_COUNT + 73;
+	int ELEMENT_DEFINITION__FIXED_RATIO = ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Reference</b></em>' containment reference.
@@ -22171,7 +22170,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_REFERENCE = ELEMENT_FEATURE_COUNT + 74;
+	int ELEMENT_DEFINITION__FIXED_REFERENCE = ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Sampled Data</b></em>' containment reference.
@@ -22180,7 +22179,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 75;
+	int ELEMENT_DEFINITION__FIXED_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Signature</b></em>' containment reference.
@@ -22189,7 +22188,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_SIGNATURE = ELEMENT_FEATURE_COUNT + 76;
+	int ELEMENT_DEFINITION__FIXED_SIGNATURE = ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Human Name</b></em>' containment reference.
@@ -22198,7 +22197,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 77;
+	int ELEMENT_DEFINITION__FIXED_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 80;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Address</b></em>' containment reference.
@@ -22207,7 +22206,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_ADDRESS = ELEMENT_FEATURE_COUNT + 78;
+	int ELEMENT_DEFINITION__FIXED_ADDRESS = ELEMENT_FEATURE_COUNT + 81;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Contact Point</b></em>' containment reference.
@@ -22216,7 +22215,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 79;
+	int ELEMENT_DEFINITION__FIXED_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 82;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Timing</b></em>' containment reference.
@@ -22225,7 +22224,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_TIMING = ELEMENT_FEATURE_COUNT + 80;
+	int ELEMENT_DEFINITION__FIXED_TIMING = ELEMENT_FEATURE_COUNT + 83;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Meta</b></em>' containment reference.
@@ -22234,7 +22233,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__FIXED_META = ELEMENT_FEATURE_COUNT + 81;
+	int ELEMENT_DEFINITION__FIXED_META = ELEMENT_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Boolean</b></em>' containment reference.
@@ -22243,7 +22242,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_BOOLEAN = ELEMENT_FEATURE_COUNT + 82;
+	int ELEMENT_DEFINITION__PATTERN_BOOLEAN = ELEMENT_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Integer</b></em>' containment reference.
@@ -22252,7 +22251,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_INTEGER = ELEMENT_FEATURE_COUNT + 83;
+	int ELEMENT_DEFINITION__PATTERN_INTEGER = ELEMENT_FEATURE_COUNT + 86;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Decimal</b></em>' containment reference.
@@ -22261,7 +22260,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_DECIMAL = ELEMENT_FEATURE_COUNT + 84;
+	int ELEMENT_DEFINITION__PATTERN_DECIMAL = ELEMENT_FEATURE_COUNT + 87;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Base64 Binary</b></em>' containment reference.
@@ -22270,7 +22269,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 85;
+	int ELEMENT_DEFINITION__PATTERN_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 88;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Instant</b></em>' containment reference.
@@ -22279,7 +22278,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_INSTANT = ELEMENT_FEATURE_COUNT + 86;
+	int ELEMENT_DEFINITION__PATTERN_INSTANT = ELEMENT_FEATURE_COUNT + 89;
 
 	/**
 	 * The feature id for the '<em><b>Pattern String</b></em>' containment reference.
@@ -22288,7 +22287,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_STRING = ELEMENT_FEATURE_COUNT + 87;
+	int ELEMENT_DEFINITION__PATTERN_STRING = ELEMENT_FEATURE_COUNT + 90;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Uri</b></em>' containment reference.
@@ -22297,7 +22296,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_URI = ELEMENT_FEATURE_COUNT + 88;
+	int ELEMENT_DEFINITION__PATTERN_URI = ELEMENT_FEATURE_COUNT + 91;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Date</b></em>' containment reference.
@@ -22306,7 +22305,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_DATE = ELEMENT_FEATURE_COUNT + 89;
+	int ELEMENT_DEFINITION__PATTERN_DATE = ELEMENT_FEATURE_COUNT + 92;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Date Time</b></em>' containment reference.
@@ -22315,7 +22314,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_DATE_TIME = ELEMENT_FEATURE_COUNT + 90;
+	int ELEMENT_DEFINITION__PATTERN_DATE_TIME = ELEMENT_FEATURE_COUNT + 93;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Time</b></em>' containment reference.
@@ -22324,7 +22323,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_TIME = ELEMENT_FEATURE_COUNT + 91;
+	int ELEMENT_DEFINITION__PATTERN_TIME = ELEMENT_FEATURE_COUNT + 94;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Code</b></em>' containment reference.
@@ -22333,7 +22332,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_CODE = ELEMENT_FEATURE_COUNT + 92;
+	int ELEMENT_DEFINITION__PATTERN_CODE = ELEMENT_FEATURE_COUNT + 95;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Oid</b></em>' containment reference.
@@ -22342,7 +22341,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_OID = ELEMENT_FEATURE_COUNT + 93;
+	int ELEMENT_DEFINITION__PATTERN_OID = ELEMENT_FEATURE_COUNT + 96;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Uuid</b></em>' containment reference.
@@ -22351,7 +22350,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_UUID = ELEMENT_FEATURE_COUNT + 94;
+	int ELEMENT_DEFINITION__PATTERN_UUID = ELEMENT_FEATURE_COUNT + 97;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Id</b></em>' containment reference.
@@ -22360,7 +22359,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_ID = ELEMENT_FEATURE_COUNT + 95;
+	int ELEMENT_DEFINITION__PATTERN_ID = ELEMENT_FEATURE_COUNT + 98;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Unsigned Int</b></em>' containment reference.
@@ -22369,7 +22368,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 96;
+	int ELEMENT_DEFINITION__PATTERN_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 99;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Positive Int</b></em>' containment reference.
@@ -22378,7 +22377,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 97;
+	int ELEMENT_DEFINITION__PATTERN_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 100;
+
+	/**
+	 * The feature id for the '<em><b>Pattern Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__PATTERN_MARKDOWN = ELEMENT_FEATURE_COUNT + 101;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Annotation</b></em>' containment reference.
@@ -22387,7 +22395,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_ANNOTATION = ELEMENT_FEATURE_COUNT + 98;
+	int ELEMENT_DEFINITION__PATTERN_ANNOTATION = ELEMENT_FEATURE_COUNT + 102;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Attachment</b></em>' containment reference.
@@ -22396,7 +22404,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_ATTACHMENT = ELEMENT_FEATURE_COUNT + 99;
+	int ELEMENT_DEFINITION__PATTERN_ATTACHMENT = ELEMENT_FEATURE_COUNT + 103;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Identifier</b></em>' containment reference.
@@ -22405,7 +22413,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_IDENTIFIER = ELEMENT_FEATURE_COUNT + 100;
+	int ELEMENT_DEFINITION__PATTERN_IDENTIFIER = ELEMENT_FEATURE_COUNT + 104;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Codeable Concept</b></em>' containment reference.
@@ -22414,7 +22422,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 101;
+	int ELEMENT_DEFINITION__PATTERN_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 105;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Coding</b></em>' containment reference.
@@ -22423,7 +22431,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_CODING = ELEMENT_FEATURE_COUNT + 102;
+	int ELEMENT_DEFINITION__PATTERN_CODING = ELEMENT_FEATURE_COUNT + 106;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Quantity</b></em>' containment reference.
@@ -22432,7 +22440,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_QUANTITY = ELEMENT_FEATURE_COUNT + 103;
+	int ELEMENT_DEFINITION__PATTERN_QUANTITY = ELEMENT_FEATURE_COUNT + 107;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Range</b></em>' containment reference.
@@ -22441,7 +22449,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_RANGE = ELEMENT_FEATURE_COUNT + 104;
+	int ELEMENT_DEFINITION__PATTERN_RANGE = ELEMENT_FEATURE_COUNT + 108;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Period</b></em>' containment reference.
@@ -22450,7 +22458,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_PERIOD = ELEMENT_FEATURE_COUNT + 105;
+	int ELEMENT_DEFINITION__PATTERN_PERIOD = ELEMENT_FEATURE_COUNT + 109;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Ratio</b></em>' containment reference.
@@ -22459,7 +22467,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_RATIO = ELEMENT_FEATURE_COUNT + 106;
+	int ELEMENT_DEFINITION__PATTERN_RATIO = ELEMENT_FEATURE_COUNT + 110;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Reference</b></em>' containment reference.
@@ -22468,7 +22476,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_REFERENCE = ELEMENT_FEATURE_COUNT + 107;
+	int ELEMENT_DEFINITION__PATTERN_REFERENCE = ELEMENT_FEATURE_COUNT + 111;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Sampled Data</b></em>' containment reference.
@@ -22477,7 +22485,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 108;
+	int ELEMENT_DEFINITION__PATTERN_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 112;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Signature</b></em>' containment reference.
@@ -22486,7 +22494,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_SIGNATURE = ELEMENT_FEATURE_COUNT + 109;
+	int ELEMENT_DEFINITION__PATTERN_SIGNATURE = ELEMENT_FEATURE_COUNT + 113;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Human Name</b></em>' containment reference.
@@ -22495,7 +22503,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 110;
+	int ELEMENT_DEFINITION__PATTERN_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 114;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Address</b></em>' containment reference.
@@ -22504,7 +22512,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_ADDRESS = ELEMENT_FEATURE_COUNT + 111;
+	int ELEMENT_DEFINITION__PATTERN_ADDRESS = ELEMENT_FEATURE_COUNT + 115;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Contact Point</b></em>' containment reference.
@@ -22513,7 +22521,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 112;
+	int ELEMENT_DEFINITION__PATTERN_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 116;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Timing</b></em>' containment reference.
@@ -22522,7 +22530,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_TIMING = ELEMENT_FEATURE_COUNT + 113;
+	int ELEMENT_DEFINITION__PATTERN_TIMING = ELEMENT_FEATURE_COUNT + 117;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Meta</b></em>' containment reference.
@@ -22531,7 +22539,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__PATTERN_META = ELEMENT_FEATURE_COUNT + 114;
+	int ELEMENT_DEFINITION__PATTERN_META = ELEMENT_FEATURE_COUNT + 118;
 
 	/**
 	 * The feature id for the '<em><b>Example Boolean</b></em>' containment reference.
@@ -22540,7 +22548,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_BOOLEAN = ELEMENT_FEATURE_COUNT + 115;
+	int ELEMENT_DEFINITION__EXAMPLE_BOOLEAN = ELEMENT_FEATURE_COUNT + 119;
 
 	/**
 	 * The feature id for the '<em><b>Example Integer</b></em>' containment reference.
@@ -22549,7 +22557,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_INTEGER = ELEMENT_FEATURE_COUNT + 116;
+	int ELEMENT_DEFINITION__EXAMPLE_INTEGER = ELEMENT_FEATURE_COUNT + 120;
 
 	/**
 	 * The feature id for the '<em><b>Example Decimal</b></em>' containment reference.
@@ -22558,7 +22566,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_DECIMAL = ELEMENT_FEATURE_COUNT + 117;
+	int ELEMENT_DEFINITION__EXAMPLE_DECIMAL = ELEMENT_FEATURE_COUNT + 121;
 
 	/**
 	 * The feature id for the '<em><b>Example Base64 Binary</b></em>' containment reference.
@@ -22567,7 +22575,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 118;
+	int ELEMENT_DEFINITION__EXAMPLE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 122;
 
 	/**
 	 * The feature id for the '<em><b>Example Instant</b></em>' containment reference.
@@ -22576,7 +22584,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_INSTANT = ELEMENT_FEATURE_COUNT + 119;
+	int ELEMENT_DEFINITION__EXAMPLE_INSTANT = ELEMENT_FEATURE_COUNT + 123;
 
 	/**
 	 * The feature id for the '<em><b>Example String</b></em>' containment reference.
@@ -22585,7 +22593,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_STRING = ELEMENT_FEATURE_COUNT + 120;
+	int ELEMENT_DEFINITION__EXAMPLE_STRING = ELEMENT_FEATURE_COUNT + 124;
 
 	/**
 	 * The feature id for the '<em><b>Example Uri</b></em>' containment reference.
@@ -22594,7 +22602,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_URI = ELEMENT_FEATURE_COUNT + 121;
+	int ELEMENT_DEFINITION__EXAMPLE_URI = ELEMENT_FEATURE_COUNT + 125;
 
 	/**
 	 * The feature id for the '<em><b>Example Date</b></em>' containment reference.
@@ -22603,7 +22611,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_DATE = ELEMENT_FEATURE_COUNT + 122;
+	int ELEMENT_DEFINITION__EXAMPLE_DATE = ELEMENT_FEATURE_COUNT + 126;
 
 	/**
 	 * The feature id for the '<em><b>Example Date Time</b></em>' containment reference.
@@ -22612,7 +22620,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_DATE_TIME = ELEMENT_FEATURE_COUNT + 123;
+	int ELEMENT_DEFINITION__EXAMPLE_DATE_TIME = ELEMENT_FEATURE_COUNT + 127;
 
 	/**
 	 * The feature id for the '<em><b>Example Time</b></em>' containment reference.
@@ -22621,7 +22629,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_TIME = ELEMENT_FEATURE_COUNT + 124;
+	int ELEMENT_DEFINITION__EXAMPLE_TIME = ELEMENT_FEATURE_COUNT + 128;
 
 	/**
 	 * The feature id for the '<em><b>Example Code</b></em>' containment reference.
@@ -22630,7 +22638,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_CODE = ELEMENT_FEATURE_COUNT + 125;
+	int ELEMENT_DEFINITION__EXAMPLE_CODE = ELEMENT_FEATURE_COUNT + 129;
 
 	/**
 	 * The feature id for the '<em><b>Example Oid</b></em>' containment reference.
@@ -22639,7 +22647,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_OID = ELEMENT_FEATURE_COUNT + 126;
+	int ELEMENT_DEFINITION__EXAMPLE_OID = ELEMENT_FEATURE_COUNT + 130;
 
 	/**
 	 * The feature id for the '<em><b>Example Uuid</b></em>' containment reference.
@@ -22648,7 +22656,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_UUID = ELEMENT_FEATURE_COUNT + 127;
+	int ELEMENT_DEFINITION__EXAMPLE_UUID = ELEMENT_FEATURE_COUNT + 131;
 
 	/**
 	 * The feature id for the '<em><b>Example Id</b></em>' containment reference.
@@ -22657,7 +22665,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_ID = ELEMENT_FEATURE_COUNT + 128;
+	int ELEMENT_DEFINITION__EXAMPLE_ID = ELEMENT_FEATURE_COUNT + 132;
 
 	/**
 	 * The feature id for the '<em><b>Example Unsigned Int</b></em>' containment reference.
@@ -22666,7 +22674,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 129;
+	int ELEMENT_DEFINITION__EXAMPLE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 133;
 
 	/**
 	 * The feature id for the '<em><b>Example Positive Int</b></em>' containment reference.
@@ -22675,7 +22683,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 130;
+	int ELEMENT_DEFINITION__EXAMPLE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 134;
+
+	/**
+	 * The feature id for the '<em><b>Example Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__EXAMPLE_MARKDOWN = ELEMENT_FEATURE_COUNT + 135;
 
 	/**
 	 * The feature id for the '<em><b>Example Annotation</b></em>' containment reference.
@@ -22684,7 +22701,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_ANNOTATION = ELEMENT_FEATURE_COUNT + 131;
+	int ELEMENT_DEFINITION__EXAMPLE_ANNOTATION = ELEMENT_FEATURE_COUNT + 136;
 
 	/**
 	 * The feature id for the '<em><b>Example Attachment</b></em>' containment reference.
@@ -22693,7 +22710,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 132;
+	int ELEMENT_DEFINITION__EXAMPLE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 137;
 
 	/**
 	 * The feature id for the '<em><b>Example Identifier</b></em>' containment reference.
@@ -22702,7 +22719,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 133;
+	int ELEMENT_DEFINITION__EXAMPLE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 138;
 
 	/**
 	 * The feature id for the '<em><b>Example Codeable Concept</b></em>' containment reference.
@@ -22711,7 +22728,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 134;
+	int ELEMENT_DEFINITION__EXAMPLE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 139;
 
 	/**
 	 * The feature id for the '<em><b>Example Coding</b></em>' containment reference.
@@ -22720,7 +22737,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_CODING = ELEMENT_FEATURE_COUNT + 135;
+	int ELEMENT_DEFINITION__EXAMPLE_CODING = ELEMENT_FEATURE_COUNT + 140;
 
 	/**
 	 * The feature id for the '<em><b>Example Quantity</b></em>' containment reference.
@@ -22729,7 +22746,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_QUANTITY = ELEMENT_FEATURE_COUNT + 136;
+	int ELEMENT_DEFINITION__EXAMPLE_QUANTITY = ELEMENT_FEATURE_COUNT + 141;
 
 	/**
 	 * The feature id for the '<em><b>Example Range</b></em>' containment reference.
@@ -22738,7 +22755,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_RANGE = ELEMENT_FEATURE_COUNT + 137;
+	int ELEMENT_DEFINITION__EXAMPLE_RANGE = ELEMENT_FEATURE_COUNT + 142;
 
 	/**
 	 * The feature id for the '<em><b>Example Period</b></em>' containment reference.
@@ -22747,7 +22764,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_PERIOD = ELEMENT_FEATURE_COUNT + 138;
+	int ELEMENT_DEFINITION__EXAMPLE_PERIOD = ELEMENT_FEATURE_COUNT + 143;
 
 	/**
 	 * The feature id for the '<em><b>Example Ratio</b></em>' containment reference.
@@ -22756,7 +22773,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_RATIO = ELEMENT_FEATURE_COUNT + 139;
+	int ELEMENT_DEFINITION__EXAMPLE_RATIO = ELEMENT_FEATURE_COUNT + 144;
 
 	/**
 	 * The feature id for the '<em><b>Example Reference</b></em>' containment reference.
@@ -22765,7 +22782,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_REFERENCE = ELEMENT_FEATURE_COUNT + 140;
+	int ELEMENT_DEFINITION__EXAMPLE_REFERENCE = ELEMENT_FEATURE_COUNT + 145;
 
 	/**
 	 * The feature id for the '<em><b>Example Sampled Data</b></em>' containment reference.
@@ -22774,7 +22791,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 141;
+	int ELEMENT_DEFINITION__EXAMPLE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 146;
 
 	/**
 	 * The feature id for the '<em><b>Example Signature</b></em>' containment reference.
@@ -22783,7 +22800,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_SIGNATURE = ELEMENT_FEATURE_COUNT + 142;
+	int ELEMENT_DEFINITION__EXAMPLE_SIGNATURE = ELEMENT_FEATURE_COUNT + 147;
 
 	/**
 	 * The feature id for the '<em><b>Example Human Name</b></em>' containment reference.
@@ -22792,7 +22809,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 143;
+	int ELEMENT_DEFINITION__EXAMPLE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 148;
 
 	/**
 	 * The feature id for the '<em><b>Example Address</b></em>' containment reference.
@@ -22801,7 +22818,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_ADDRESS = ELEMENT_FEATURE_COUNT + 144;
+	int ELEMENT_DEFINITION__EXAMPLE_ADDRESS = ELEMENT_FEATURE_COUNT + 149;
 
 	/**
 	 * The feature id for the '<em><b>Example Contact Point</b></em>' containment reference.
@@ -22810,7 +22827,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 145;
+	int ELEMENT_DEFINITION__EXAMPLE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 150;
 
 	/**
 	 * The feature id for the '<em><b>Example Timing</b></em>' containment reference.
@@ -22819,7 +22836,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_TIMING = ELEMENT_FEATURE_COUNT + 146;
+	int ELEMENT_DEFINITION__EXAMPLE_TIMING = ELEMENT_FEATURE_COUNT + 151;
 
 	/**
 	 * The feature id for the '<em><b>Example Meta</b></em>' containment reference.
@@ -22828,7 +22845,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__EXAMPLE_META = ELEMENT_FEATURE_COUNT + 147;
+	int ELEMENT_DEFINITION__EXAMPLE_META = ELEMENT_FEATURE_COUNT + 152;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Boolean</b></em>' containment reference.
@@ -22837,7 +22854,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN = ELEMENT_FEATURE_COUNT + 148;
+	int ELEMENT_DEFINITION__MIN_VALUE_BOOLEAN = ELEMENT_FEATURE_COUNT + 153;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Integer</b></em>' containment reference.
@@ -22846,7 +22863,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_INTEGER = ELEMENT_FEATURE_COUNT + 149;
+	int ELEMENT_DEFINITION__MIN_VALUE_INTEGER = ELEMENT_FEATURE_COUNT + 154;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Decimal</b></em>' containment reference.
@@ -22855,7 +22872,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_DECIMAL = ELEMENT_FEATURE_COUNT + 150;
+	int ELEMENT_DEFINITION__MIN_VALUE_DECIMAL = ELEMENT_FEATURE_COUNT + 155;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Base64 Binary</b></em>' containment reference.
@@ -22864,7 +22881,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 151;
+	int ELEMENT_DEFINITION__MIN_VALUE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 156;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Instant</b></em>' containment reference.
@@ -22873,7 +22890,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_INSTANT = ELEMENT_FEATURE_COUNT + 152;
+	int ELEMENT_DEFINITION__MIN_VALUE_INSTANT = ELEMENT_FEATURE_COUNT + 157;
 
 	/**
 	 * The feature id for the '<em><b>Min Value String</b></em>' containment reference.
@@ -22882,7 +22899,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_STRING = ELEMENT_FEATURE_COUNT + 153;
+	int ELEMENT_DEFINITION__MIN_VALUE_STRING = ELEMENT_FEATURE_COUNT + 158;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Uri</b></em>' containment reference.
@@ -22891,7 +22908,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_URI = ELEMENT_FEATURE_COUNT + 154;
+	int ELEMENT_DEFINITION__MIN_VALUE_URI = ELEMENT_FEATURE_COUNT + 159;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Date</b></em>' containment reference.
@@ -22900,7 +22917,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_DATE = ELEMENT_FEATURE_COUNT + 155;
+	int ELEMENT_DEFINITION__MIN_VALUE_DATE = ELEMENT_FEATURE_COUNT + 160;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Date Time</b></em>' containment reference.
@@ -22909,7 +22926,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME = ELEMENT_FEATURE_COUNT + 156;
+	int ELEMENT_DEFINITION__MIN_VALUE_DATE_TIME = ELEMENT_FEATURE_COUNT + 161;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Time</b></em>' containment reference.
@@ -22918,7 +22935,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_TIME = ELEMENT_FEATURE_COUNT + 157;
+	int ELEMENT_DEFINITION__MIN_VALUE_TIME = ELEMENT_FEATURE_COUNT + 162;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Code</b></em>' containment reference.
@@ -22927,7 +22944,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_CODE = ELEMENT_FEATURE_COUNT + 158;
+	int ELEMENT_DEFINITION__MIN_VALUE_CODE = ELEMENT_FEATURE_COUNT + 163;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Oid</b></em>' containment reference.
@@ -22936,7 +22953,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_OID = ELEMENT_FEATURE_COUNT + 159;
+	int ELEMENT_DEFINITION__MIN_VALUE_OID = ELEMENT_FEATURE_COUNT + 164;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Uuid</b></em>' containment reference.
@@ -22945,7 +22962,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_UUID = ELEMENT_FEATURE_COUNT + 160;
+	int ELEMENT_DEFINITION__MIN_VALUE_UUID = ELEMENT_FEATURE_COUNT + 165;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Id</b></em>' containment reference.
@@ -22954,7 +22971,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_ID = ELEMENT_FEATURE_COUNT + 161;
+	int ELEMENT_DEFINITION__MIN_VALUE_ID = ELEMENT_FEATURE_COUNT + 166;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Unsigned Int</b></em>' containment reference.
@@ -22963,7 +22980,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 162;
+	int ELEMENT_DEFINITION__MIN_VALUE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 167;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Positive Int</b></em>' containment reference.
@@ -22972,7 +22989,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 163;
+	int ELEMENT_DEFINITION__MIN_VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 168;
+
+	/**
+	 * The feature id for the '<em><b>Min Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__MIN_VALUE_MARKDOWN = ELEMENT_FEATURE_COUNT + 169;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Annotation</b></em>' containment reference.
@@ -22981,7 +23007,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 164;
+	int ELEMENT_DEFINITION__MIN_VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 170;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Attachment</b></em>' containment reference.
@@ -22990,7 +23016,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 165;
+	int ELEMENT_DEFINITION__MIN_VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 171;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Identifier</b></em>' containment reference.
@@ -22999,7 +23025,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 166;
+	int ELEMENT_DEFINITION__MIN_VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 172;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Codeable Concept</b></em>' containment reference.
@@ -23008,7 +23034,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 167;
+	int ELEMENT_DEFINITION__MIN_VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 173;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Coding</b></em>' containment reference.
@@ -23017,7 +23043,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_CODING = ELEMENT_FEATURE_COUNT + 168;
+	int ELEMENT_DEFINITION__MIN_VALUE_CODING = ELEMENT_FEATURE_COUNT + 174;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Quantity</b></em>' containment reference.
@@ -23026,7 +23052,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 169;
+	int ELEMENT_DEFINITION__MIN_VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 175;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Range</b></em>' containment reference.
@@ -23035,7 +23061,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_RANGE = ELEMENT_FEATURE_COUNT + 170;
+	int ELEMENT_DEFINITION__MIN_VALUE_RANGE = ELEMENT_FEATURE_COUNT + 176;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Period</b></em>' containment reference.
@@ -23044,7 +23070,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 171;
+	int ELEMENT_DEFINITION__MIN_VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 177;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Ratio</b></em>' containment reference.
@@ -23053,7 +23079,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_RATIO = ELEMENT_FEATURE_COUNT + 172;
+	int ELEMENT_DEFINITION__MIN_VALUE_RATIO = ELEMENT_FEATURE_COUNT + 178;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Reference</b></em>' containment reference.
@@ -23062,7 +23088,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 173;
+	int ELEMENT_DEFINITION__MIN_VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 179;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Sampled Data</b></em>' containment reference.
@@ -23071,7 +23097,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 174;
+	int ELEMENT_DEFINITION__MIN_VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 180;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Signature</b></em>' containment reference.
@@ -23080,7 +23106,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 175;
+	int ELEMENT_DEFINITION__MIN_VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 181;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Human Name</b></em>' containment reference.
@@ -23089,7 +23115,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 176;
+	int ELEMENT_DEFINITION__MIN_VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 182;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Address</b></em>' containment reference.
@@ -23098,7 +23124,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 177;
+	int ELEMENT_DEFINITION__MIN_VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 183;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Contact Point</b></em>' containment reference.
@@ -23107,7 +23133,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 178;
+	int ELEMENT_DEFINITION__MIN_VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 184;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Timing</b></em>' containment reference.
@@ -23116,7 +23142,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_TIMING = ELEMENT_FEATURE_COUNT + 179;
+	int ELEMENT_DEFINITION__MIN_VALUE_TIMING = ELEMENT_FEATURE_COUNT + 185;
 
 	/**
 	 * The feature id for the '<em><b>Min Value Meta</b></em>' containment reference.
@@ -23125,7 +23151,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MIN_VALUE_META = ELEMENT_FEATURE_COUNT + 180;
+	int ELEMENT_DEFINITION__MIN_VALUE_META = ELEMENT_FEATURE_COUNT + 186;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Boolean</b></em>' containment reference.
@@ -23134,7 +23160,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN = ELEMENT_FEATURE_COUNT + 181;
+	int ELEMENT_DEFINITION__MAX_VALUE_BOOLEAN = ELEMENT_FEATURE_COUNT + 187;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Integer</b></em>' containment reference.
@@ -23143,7 +23169,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_INTEGER = ELEMENT_FEATURE_COUNT + 182;
+	int ELEMENT_DEFINITION__MAX_VALUE_INTEGER = ELEMENT_FEATURE_COUNT + 188;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Decimal</b></em>' containment reference.
@@ -23152,7 +23178,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_DECIMAL = ELEMENT_FEATURE_COUNT + 183;
+	int ELEMENT_DEFINITION__MAX_VALUE_DECIMAL = ELEMENT_FEATURE_COUNT + 189;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Base64 Binary</b></em>' containment reference.
@@ -23161,7 +23187,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 184;
+	int ELEMENT_DEFINITION__MAX_VALUE_BASE64_BINARY = ELEMENT_FEATURE_COUNT + 190;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Instant</b></em>' containment reference.
@@ -23170,7 +23196,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_INSTANT = ELEMENT_FEATURE_COUNT + 185;
+	int ELEMENT_DEFINITION__MAX_VALUE_INSTANT = ELEMENT_FEATURE_COUNT + 191;
 
 	/**
 	 * The feature id for the '<em><b>Max Value String</b></em>' containment reference.
@@ -23179,7 +23205,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_STRING = ELEMENT_FEATURE_COUNT + 186;
+	int ELEMENT_DEFINITION__MAX_VALUE_STRING = ELEMENT_FEATURE_COUNT + 192;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Uri</b></em>' containment reference.
@@ -23188,7 +23214,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_URI = ELEMENT_FEATURE_COUNT + 187;
+	int ELEMENT_DEFINITION__MAX_VALUE_URI = ELEMENT_FEATURE_COUNT + 193;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Date</b></em>' containment reference.
@@ -23197,7 +23223,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_DATE = ELEMENT_FEATURE_COUNT + 188;
+	int ELEMENT_DEFINITION__MAX_VALUE_DATE = ELEMENT_FEATURE_COUNT + 194;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Date Time</b></em>' containment reference.
@@ -23206,7 +23232,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME = ELEMENT_FEATURE_COUNT + 189;
+	int ELEMENT_DEFINITION__MAX_VALUE_DATE_TIME = ELEMENT_FEATURE_COUNT + 195;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Time</b></em>' containment reference.
@@ -23215,7 +23241,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_TIME = ELEMENT_FEATURE_COUNT + 190;
+	int ELEMENT_DEFINITION__MAX_VALUE_TIME = ELEMENT_FEATURE_COUNT + 196;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Code</b></em>' containment reference.
@@ -23224,7 +23250,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_CODE = ELEMENT_FEATURE_COUNT + 191;
+	int ELEMENT_DEFINITION__MAX_VALUE_CODE = ELEMENT_FEATURE_COUNT + 197;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Oid</b></em>' containment reference.
@@ -23233,7 +23259,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_OID = ELEMENT_FEATURE_COUNT + 192;
+	int ELEMENT_DEFINITION__MAX_VALUE_OID = ELEMENT_FEATURE_COUNT + 198;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Uuid</b></em>' containment reference.
@@ -23242,7 +23268,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_UUID = ELEMENT_FEATURE_COUNT + 193;
+	int ELEMENT_DEFINITION__MAX_VALUE_UUID = ELEMENT_FEATURE_COUNT + 199;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Id</b></em>' containment reference.
@@ -23251,7 +23277,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_ID = ELEMENT_FEATURE_COUNT + 194;
+	int ELEMENT_DEFINITION__MAX_VALUE_ID = ELEMENT_FEATURE_COUNT + 200;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Unsigned Int</b></em>' containment reference.
@@ -23260,7 +23286,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 195;
+	int ELEMENT_DEFINITION__MAX_VALUE_UNSIGNED_INT = ELEMENT_FEATURE_COUNT + 201;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Positive Int</b></em>' containment reference.
@@ -23269,7 +23295,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 196;
+	int ELEMENT_DEFINITION__MAX_VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 202;
+
+	/**
+	 * The feature id for the '<em><b>Max Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__MAX_VALUE_MARKDOWN = ELEMENT_FEATURE_COUNT + 203;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Annotation</b></em>' containment reference.
@@ -23278,7 +23313,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 197;
+	int ELEMENT_DEFINITION__MAX_VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 204;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Attachment</b></em>' containment reference.
@@ -23287,7 +23322,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 198;
+	int ELEMENT_DEFINITION__MAX_VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 205;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Identifier</b></em>' containment reference.
@@ -23296,7 +23331,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 199;
+	int ELEMENT_DEFINITION__MAX_VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 206;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Codeable Concept</b></em>' containment reference.
@@ -23305,7 +23340,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 200;
+	int ELEMENT_DEFINITION__MAX_VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 207;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Coding</b></em>' containment reference.
@@ -23314,7 +23349,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_CODING = ELEMENT_FEATURE_COUNT + 201;
+	int ELEMENT_DEFINITION__MAX_VALUE_CODING = ELEMENT_FEATURE_COUNT + 208;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Quantity</b></em>' containment reference.
@@ -23323,7 +23358,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 202;
+	int ELEMENT_DEFINITION__MAX_VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 209;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Range</b></em>' containment reference.
@@ -23332,7 +23367,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_RANGE = ELEMENT_FEATURE_COUNT + 203;
+	int ELEMENT_DEFINITION__MAX_VALUE_RANGE = ELEMENT_FEATURE_COUNT + 210;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Period</b></em>' containment reference.
@@ -23341,7 +23376,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 204;
+	int ELEMENT_DEFINITION__MAX_VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 211;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Ratio</b></em>' containment reference.
@@ -23350,7 +23385,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_RATIO = ELEMENT_FEATURE_COUNT + 205;
+	int ELEMENT_DEFINITION__MAX_VALUE_RATIO = ELEMENT_FEATURE_COUNT + 212;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Reference</b></em>' containment reference.
@@ -23359,7 +23394,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 206;
+	int ELEMENT_DEFINITION__MAX_VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 213;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Sampled Data</b></em>' containment reference.
@@ -23368,7 +23403,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 207;
+	int ELEMENT_DEFINITION__MAX_VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 214;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Signature</b></em>' containment reference.
@@ -23377,7 +23412,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 208;
+	int ELEMENT_DEFINITION__MAX_VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 215;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Human Name</b></em>' containment reference.
@@ -23386,7 +23421,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 209;
+	int ELEMENT_DEFINITION__MAX_VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 216;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Address</b></em>' containment reference.
@@ -23395,7 +23430,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 210;
+	int ELEMENT_DEFINITION__MAX_VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 217;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Contact Point</b></em>' containment reference.
@@ -23404,7 +23439,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 211;
+	int ELEMENT_DEFINITION__MAX_VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 218;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Timing</b></em>' containment reference.
@@ -23413,7 +23448,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_TIMING = ELEMENT_FEATURE_COUNT + 212;
+	int ELEMENT_DEFINITION__MAX_VALUE_TIMING = ELEMENT_FEATURE_COUNT + 219;
 
 	/**
 	 * The feature id for the '<em><b>Max Value Meta</b></em>' containment reference.
@@ -23422,7 +23457,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_VALUE_META = ELEMENT_FEATURE_COUNT + 213;
+	int ELEMENT_DEFINITION__MAX_VALUE_META = ELEMENT_FEATURE_COUNT + 220;
 
 	/**
 	 * The feature id for the '<em><b>Max Length</b></em>' containment reference.
@@ -23431,7 +23466,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAX_LENGTH = ELEMENT_FEATURE_COUNT + 214;
+	int ELEMENT_DEFINITION__MAX_LENGTH = ELEMENT_FEATURE_COUNT + 221;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference list.
@@ -23440,7 +23475,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__CONDITION = ELEMENT_FEATURE_COUNT + 215;
+	int ELEMENT_DEFINITION__CONDITION = ELEMENT_FEATURE_COUNT + 222;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -23449,7 +23484,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__CONSTRAINT = ELEMENT_FEATURE_COUNT + 216;
+	int ELEMENT_DEFINITION__CONSTRAINT = ELEMENT_FEATURE_COUNT + 223;
 
 	/**
 	 * The feature id for the '<em><b>Must Support</b></em>' containment reference.
@@ -23458,7 +23493,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MUST_SUPPORT = ELEMENT_FEATURE_COUNT + 217;
+	int ELEMENT_DEFINITION__MUST_SUPPORT = ELEMENT_FEATURE_COUNT + 224;
 
 	/**
 	 * The feature id for the '<em><b>Is Modifier</b></em>' containment reference.
@@ -23467,7 +23502,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__IS_MODIFIER = ELEMENT_FEATURE_COUNT + 218;
+	int ELEMENT_DEFINITION__IS_MODIFIER = ELEMENT_FEATURE_COUNT + 225;
 
 	/**
 	 * The feature id for the '<em><b>Is Summary</b></em>' containment reference.
@@ -23476,7 +23511,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__IS_SUMMARY = ELEMENT_FEATURE_COUNT + 219;
+	int ELEMENT_DEFINITION__IS_SUMMARY = ELEMENT_FEATURE_COUNT + 226;
 
 	/**
 	 * The feature id for the '<em><b>Binding</b></em>' containment reference.
@@ -23485,7 +23520,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__BINDING = ELEMENT_FEATURE_COUNT + 220;
+	int ELEMENT_DEFINITION__BINDING = ELEMENT_FEATURE_COUNT + 227;
 
 	/**
 	 * The feature id for the '<em><b>Mapping</b></em>' containment reference list.
@@ -23494,7 +23529,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MAPPING = ELEMENT_FEATURE_COUNT + 221;
+	int ELEMENT_DEFINITION__MAPPING = ELEMENT_FEATURE_COUNT + 228;
 
 	/**
 	 * The number of structural features of the '<em>Element Definition</em>' class.
@@ -23503,7 +23538,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 222;
+	int ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 229;
 
 	/**
 	 * The number of operations of the '<em>Element Definition</em>' class.
@@ -23513,6 +23548,79 @@ public interface FhirPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT_DEFINITION_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.ElementDefinitionBaseImpl <em>Element Definition Base</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.ElementDefinitionBaseImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getElementDefinitionBase()
+	 * @generated
+	 */
+	int ELEMENT_DEFINITION_BASE = 204;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_BASE__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_BASE__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_BASE__PATH = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_BASE__MIN = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_BASE__MAX = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Element Definition Base</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_BASE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Element Definition Base</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION_BASE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ElementDefinitionBindingImpl <em>Element Definition Binding</em>}' class.
@@ -26302,13 +26410,22 @@ public interface FhirPackage extends EPackage {
 	int EXTENSION__VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 15;
 
 	/**
+	 * The feature id for the '<em><b>Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION__VALUE_MARKDOWN = ELEMENT_FEATURE_COUNT + 16;
+
+	/**
 	 * The feature id for the '<em><b>Value Annotation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 16;
+	int EXTENSION__VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Value Attachment</b></em>' containment reference.
@@ -26317,7 +26434,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 17;
+	int EXTENSION__VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Value Identifier</b></em>' containment reference.
@@ -26326,7 +26443,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 18;
+	int EXTENSION__VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Value Codeable Concept</b></em>' containment reference.
@@ -26335,7 +26452,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 19;
+	int EXTENSION__VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Value Coding</b></em>' containment reference.
@@ -26344,7 +26461,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_CODING = ELEMENT_FEATURE_COUNT + 20;
+	int EXTENSION__VALUE_CODING = ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Value Quantity</b></em>' containment reference.
@@ -26353,7 +26470,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 21;
+	int EXTENSION__VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Value Range</b></em>' containment reference.
@@ -26362,7 +26479,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_RANGE = ELEMENT_FEATURE_COUNT + 22;
+	int EXTENSION__VALUE_RANGE = ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Value Period</b></em>' containment reference.
@@ -26371,7 +26488,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 23;
+	int EXTENSION__VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Value Ratio</b></em>' containment reference.
@@ -26380,7 +26497,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_RATIO = ELEMENT_FEATURE_COUNT + 24;
+	int EXTENSION__VALUE_RATIO = ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Value Reference</b></em>' containment reference.
@@ -26389,7 +26506,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 25;
+	int EXTENSION__VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Value Sampled Data</b></em>' containment reference.
@@ -26398,7 +26515,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 26;
+	int EXTENSION__VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Value Signature</b></em>' containment reference.
@@ -26407,7 +26524,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 27;
+	int EXTENSION__VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Value Human Name</b></em>' containment reference.
@@ -26416,7 +26533,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 28;
+	int EXTENSION__VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Value Address</b></em>' containment reference.
@@ -26425,7 +26542,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 29;
+	int EXTENSION__VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Value Contact Point</b></em>' containment reference.
@@ -26434,7 +26551,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 30;
+	int EXTENSION__VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Value Timing</b></em>' containment reference.
@@ -26443,7 +26560,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_TIMING = ELEMENT_FEATURE_COUNT + 31;
+	int EXTENSION__VALUE_TIMING = ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Value Meta</b></em>' containment reference.
@@ -26452,7 +26569,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__VALUE_META = ELEMENT_FEATURE_COUNT + 32;
+	int EXTENSION__VALUE_META = ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -26461,7 +26578,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__URL = ELEMENT_FEATURE_COUNT + 33;
+	int EXTENSION__URL = ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The number of structural features of the '<em>Extension</em>' class.
@@ -26470,7 +26587,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 34;
+	int EXTENSION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The number of operations of the '<em>Extension</em>' class.
@@ -26700,13 +26817,13 @@ public interface FhirPackage extends EPackage {
 	int FAMILY_MEMBER_HISTORY__BORN_STRING = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Age Age</b></em>' containment reference.
+	 * The feature id for the '<em><b>Age Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FAMILY_MEMBER_HISTORY__AGE_AGE = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int FAMILY_MEMBER_HISTORY__AGE_QUANTITY = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Age Range</b></em>' containment reference.
@@ -26736,13 +26853,13 @@ public interface FhirPackage extends EPackage {
 	int FAMILY_MEMBER_HISTORY__DECEASED_BOOLEAN = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
-	 * The feature id for the '<em><b>Deceased Age</b></em>' containment reference.
+	 * The feature id for the '<em><b>Deceased Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FAMILY_MEMBER_HISTORY__DECEASED_AGE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int FAMILY_MEMBER_HISTORY__DECEASED_QUANTITY = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Deceased Range</b></em>' containment reference.
@@ -26863,13 +26980,13 @@ public interface FhirPackage extends EPackage {
 	int FAMILY_MEMBER_HISTORY_CONDITION__OUTCOME = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Onset Age</b></em>' containment reference.
+	 * The feature id for the '<em><b>Onset Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FAMILY_MEMBER_HISTORY_CONDITION__ONSET_AGE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int FAMILY_MEMBER_HISTORY_CONDITION__ONSET_QUANTITY = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Onset Range</b></em>' containment reference.
@@ -27099,13 +27216,22 @@ public interface FhirPackage extends EPackage {
 	int FLAG__SUBJECT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAG__ENCOUNTER = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLAG__AUTHOR = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+	int FLAG__AUTHOR = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -27114,7 +27240,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLAG__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+	int FLAG__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Flag</em>' class.
@@ -27123,7 +27249,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLAG_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+	int FLAG_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Flag</em>' class.
@@ -27599,7 +27725,7 @@ public interface FhirPackage extends EPackage {
 	int GROUP__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' containment reference.
+	 * The feature id for the '<em><b>Identifier</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -27780,13 +27906,22 @@ public interface FhirPackage extends EPackage {
 	int GROUP_CHARACTERISTIC__EXCLUDE = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_CHARACTERISTIC__PERIOD = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Group Characteristic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_CHARACTERISTIC_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+	int GROUP_CHARACTERISTIC_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Group Characteristic</em>' class.
@@ -27798,6 +27933,88 @@ public interface FhirPackage extends EPackage {
 	int GROUP_CHARACTERISTIC_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.GroupMemberImpl <em>Group Member</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.GroupMemberImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGroupMember()
+	 * @generated
+	 */
+	int GROUP_MEMBER = 240;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER__ENTITY = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER__PERIOD = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Inactive</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER__INACTIVE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Group Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Group Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_MEMBER_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.GroupTypeImpl <em>Group Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -27805,7 +28022,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGroupType()
 	 * @generated
 	 */
-	int GROUP_TYPE = 240;
+	int GROUP_TYPE = 241;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -27853,6 +28070,171 @@ public interface FhirPackage extends EPackage {
 	int GROUP_TYPE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.GuideDependencyTypeImpl <em>Guide Dependency Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.GuideDependencyTypeImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuideDependencyType()
+	 * @generated
+	 */
+	int GUIDE_DEPENDENCY_TYPE = 242;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_DEPENDENCY_TYPE__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_DEPENDENCY_TYPE__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_DEPENDENCY_TYPE__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Guide Dependency Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_DEPENDENCY_TYPE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Guide Dependency Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_DEPENDENCY_TYPE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.GuidePageKindImpl <em>Guide Page Kind</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.GuidePageKindImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuidePageKind()
+	 * @generated
+	 */
+	int GUIDE_PAGE_KIND = 243;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_PAGE_KIND__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_PAGE_KIND__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_PAGE_KIND__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Guide Page Kind</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_PAGE_KIND_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Guide Page Kind</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_PAGE_KIND_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.GuideResourcePurposeImpl <em>Guide Resource Purpose</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.GuideResourcePurposeImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuideResourcePurpose()
+	 * @generated
+	 */
+	int GUIDE_RESOURCE_PURPOSE = 244;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_RESOURCE_PURPOSE__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_RESOURCE_PURPOSE__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_RESOURCE_PURPOSE__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Guide Resource Purpose</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_RESOURCE_PURPOSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Guide Resource Purpose</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_RESOURCE_PURPOSE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.HealthcareServiceImpl <em>Healthcare Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -27860,7 +28242,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHealthcareService()
 	 * @generated
 	 */
-	int HEALTHCARE_SERVICE = 241;
+	int HEALTHCARE_SERVICE = 245;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -28158,7 +28540,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHealthcareServiceAvailableTime()
 	 * @generated
 	 */
-	int HEALTHCARE_SERVICE_AVAILABLE_TIME = 242;
+	int HEALTHCARE_SERVICE_AVAILABLE_TIME = 246;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28249,7 +28631,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHealthcareServiceNotAvailable()
 	 * @generated
 	 */
-	int HEALTHCARE_SERVICE_NOT_AVAILABLE = 243;
+	int HEALTHCARE_SERVICE_NOT_AVAILABLE = 247;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28322,7 +28704,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHealthcareServiceServiceType()
 	 * @generated
 	 */
-	int HEALTHCARE_SERVICE_SERVICE_TYPE = 244;
+	int HEALTHCARE_SERVICE_SERVICE_TYPE = 248;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28395,7 +28777,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHTTPVerb()
 	 * @generated
 	 */
-	int HTTP_VERB = 245;
+	int HTTP_VERB = 249;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28450,7 +28832,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHumanName()
 	 * @generated
 	 */
-	int HUMAN_NAME = 246;
+	int HUMAN_NAME = 250;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28559,7 +28941,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getId()
 	 * @generated
 	 */
-	int ID = 247;
+	int ID = 251;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28614,7 +28996,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdentifier()
 	 * @generated
 	 */
-	int IDENTIFIER = 248;
+	int IDENTIFIER = 252;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28714,7 +29096,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdentifierUse()
 	 * @generated
 	 */
-	int IDENTIFIER_USE = 249;
+	int IDENTIFIER_USE = 253;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28769,7 +29151,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdentityAssuranceLevel()
 	 * @generated
 	 */
-	int IDENTITY_ASSURANCE_LEVEL = 250;
+	int IDENTITY_ASSURANCE_LEVEL = 254;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -28824,7 +29206,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingObjectSelection()
 	 * @generated
 	 */
-	int IMAGING_OBJECT_SELECTION = 251;
+	int IMAGING_OBJECT_SELECTION = 255;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -28987,7 +29369,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingObjectSelectionFrames()
 	 * @generated
 	 */
-	int IMAGING_OBJECT_SELECTION_FRAMES = 252;
+	int IMAGING_OBJECT_SELECTION_FRAMES = 256;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -29060,7 +29442,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingObjectSelectionInstance()
 	 * @generated
 	 */
-	int IMAGING_OBJECT_SELECTION_INSTANCE = 253;
+	int IMAGING_OBJECT_SELECTION_INSTANCE = 257;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -29151,7 +29533,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingObjectSelectionSeries()
 	 * @generated
 	 */
-	int IMAGING_OBJECT_SELECTION_SERIES = 254;
+	int IMAGING_OBJECT_SELECTION_SERIES = 258;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -29233,7 +29615,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingObjectSelectionStudy()
 	 * @generated
 	 */
-	int IMAGING_OBJECT_SELECTION_STUDY = 255;
+	int IMAGING_OBJECT_SELECTION_STUDY = 259;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -29281,13 +29663,22 @@ public interface FhirPackage extends EPackage {
 	int IMAGING_OBJECT_SELECTION_STUDY__URL = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Imaging Study</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGING_OBJECT_SELECTION_STUDY__IMAGING_STUDY = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Series</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_OBJECT_SELECTION_STUDY__SERIES = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int IMAGING_OBJECT_SELECTION_STUDY__SERIES = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Imaging Object Selection Study</em>' class.
@@ -29296,7 +29687,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_OBJECT_SELECTION_STUDY_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+	int IMAGING_OBJECT_SELECTION_STUDY_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Imaging Object Selection Study</em>' class.
@@ -29315,7 +29706,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingStudy()
 	 * @generated
 	 */
-	int IMAGING_STUDY = 256;
+	int IMAGING_STUDY = 260;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -29498,22 +29889,13 @@ public interface FhirPackage extends EPackage {
 	int IMAGING_STUDY__NUMBER_OF_INSTANCES = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Clinical Information</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGING_STUDY__CLINICAL_INFORMATION = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
-
-	/**
 	 * The feature id for the '<em><b>Procedure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_STUDY__PROCEDURE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int IMAGING_STUDY__PROCEDURE = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Interpreter</b></em>' containment reference.
@@ -29522,7 +29904,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_STUDY__INTERPRETER = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+	int IMAGING_STUDY__INTERPRETER = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -29531,7 +29913,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_STUDY__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+	int IMAGING_STUDY__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Series</b></em>' containment reference list.
@@ -29540,7 +29922,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_STUDY__SERIES = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
+	int IMAGING_STUDY__SERIES = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Imaging Study</em>' class.
@@ -29549,7 +29931,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_STUDY_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
+	int IMAGING_STUDY_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of operations of the '<em>Imaging Study</em>' class.
@@ -29568,7 +29950,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingStudyInstance()
 	 * @generated
 	 */
-	int IMAGING_STUDY_INSTANCE = 257;
+	int IMAGING_STUDY_INSTANCE = 261;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -29616,13 +29998,13 @@ public interface FhirPackage extends EPackage {
 	int IMAGING_STUDY_INSTANCE__UID = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Sopclass</b></em>' containment reference.
+	 * The feature id for the '<em><b>Sop Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_STUDY_INSTANCE__SOPCLASS = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int IMAGING_STUDY_INSTANCE__SOP_CLASS = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -29677,7 +30059,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImagingStudySeries()
 	 * @generated
 	 */
-	int IMAGING_STUDY_SERIES = 258;
+	int IMAGING_STUDY_SERIES = 262;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -29788,13 +30170,13 @@ public interface FhirPackage extends EPackage {
 	int IMAGING_STUDY_SERIES__LATERALITY = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Date Time</b></em>' containment reference.
+	 * The feature id for the '<em><b>Started</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGING_STUDY_SERIES__DATE_TIME = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
+	int IMAGING_STUDY_SERIES__STARTED = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Instance</b></em>' containment reference list.
@@ -29831,7 +30213,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunization()
 	 * @generated
 	 */
-	int IMMUNIZATION = 259;
+	int IMMUNIZATION = 263;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -30102,7 +30484,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunizationExplanation()
 	 * @generated
 	 */
-	int IMMUNIZATION_EXPLANATION = 260;
+	int IMMUNIZATION_EXPLANATION = 264;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -30175,7 +30557,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunizationReaction()
 	 * @generated
 	 */
-	int IMMUNIZATION_REACTION = 261;
+	int IMMUNIZATION_REACTION = 265;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -30257,7 +30639,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunizationRecommendation()
 	 * @generated
 	 */
-	int IMMUNIZATION_RECOMMENDATION = 262;
+	int IMMUNIZATION_RECOMMENDATION = 266;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -30384,7 +30766,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunizationRecommendationDateCriterion()
 	 * @generated
 	 */
-	int IMMUNIZATION_RECOMMENDATION_DATE_CRITERION = 263;
+	int IMMUNIZATION_RECOMMENDATION_DATE_CRITERION = 267;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -30457,7 +30839,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunizationRecommendationProtocol()
 	 * @generated
 	 */
-	int IMMUNIZATION_RECOMMENDATION_PROTOCOL = 264;
+	int IMMUNIZATION_RECOMMENDATION_PROTOCOL = 268;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -30548,7 +30930,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunizationRecommendationRecommendation()
 	 * @generated
 	 */
-	int IMMUNIZATION_RECOMMENDATION_RECOMMENDATION = 265;
+	int IMMUNIZATION_RECOMMENDATION_RECOMMENDATION = 269;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -30675,7 +31057,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImmunizationVaccinationProtocol()
 	 * @generated
 	 */
-	int IMMUNIZATION_VACCINATION_PROTOCOL = 266;
+	int IMMUNIZATION_VACCINATION_PROTOCOL = 270;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -30802,7 +31184,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuide()
 	 * @generated
 	 */
-	int IMPLEMENTATION_GUIDE = 267;
+	int IMPLEMENTATION_GUIDE = 271;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -30904,67 +31286,13 @@ public interface FhirPackage extends EPackage {
 	int IMPLEMENTATION_GUIDE__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int IMPLEMENTATION_GUIDE__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
@@ -30973,7 +31301,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int IMPLEMENTATION_GUIDE__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' containment reference.
@@ -30982,7 +31328,34 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int IMPLEMENTATION_GUIDE__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Fhir Version</b></em>' containment reference.
@@ -30991,16 +31364,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE__FHIR_VERSION = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+	int IMPLEMENTATION_GUIDE__FHIR_VERSION = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Page</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Dependency</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE__PAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int IMPLEMENTATION_GUIDE__DEPENDENCY = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' containment reference list.
@@ -31009,16 +31382,34 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE__PACKAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+	int IMPLEMENTATION_GUIDE__PACKAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
-	 * The feature id for the '<em><b>Default</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Global</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE__DEFAULT = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+	int IMPLEMENTATION_GUIDE__GLOBAL = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Binary</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE__BINARY = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Page</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE__PAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of structural features of the '<em>Implementation Guide</em>' class.
@@ -31027,7 +31418,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
+	int IMPLEMENTATION_GUIDE_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of operations of the '<em>Implementation Guide</em>' class.
@@ -31046,7 +31437,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuideContact()
 	 * @generated
 	 */
-	int IMPLEMENTATION_GUIDE_CONTACT = 268;
+	int IMPLEMENTATION_GUIDE_CONTACT = 272;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31112,14 +31503,14 @@ public interface FhirPackage extends EPackage {
 	int IMPLEMENTATION_GUIDE_CONTACT_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ImplementationGuideDefaultImpl <em>Implementation Guide Default</em>}' class.
+	 * The meta object id for the '{@link org.hl7.fhir.impl.ImplementationGuideDependencyImpl <em>Implementation Guide Dependency</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ImplementationGuideDefaultImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuideDefault()
+	 * @see org.hl7.fhir.impl.ImplementationGuideDependencyImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuideDependency()
 	 * @generated
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT = 269;
+	int IMPLEMENTATION_GUIDE_DEPENDENCY = 273;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31128,7 +31519,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+	int IMPLEMENTATION_GUIDE_DEPENDENCY__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -31137,7 +31528,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT__ID = BACKBONE_ELEMENT__ID;
+	int IMPLEMENTATION_GUIDE_DEPENDENCY__ID = BACKBONE_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
@@ -31146,7 +31537,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+	int IMPLEMENTATION_GUIDE_DEPENDENCY__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -31155,7 +31546,80 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT__TYPE = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+	int IMPLEMENTATION_GUIDE_DEPENDENCY__TYPE = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Uri</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_DEPENDENCY__URI = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Implementation Guide Dependency</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_DEPENDENCY_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Implementation Guide Dependency</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_DEPENDENCY_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.ImplementationGuideGlobalImpl <em>Implementation Guide Global</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.ImplementationGuideGlobalImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuideGlobal()
+	 * @generated
+	 */
+	int IMPLEMENTATION_GUIDE_GLOBAL = 274;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_GLOBAL__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_GLOBAL__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_GLOBAL__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_GLOBAL__TYPE = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Profile</b></em>' containment reference.
@@ -31164,189 +31628,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT__PROFILE = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+	int IMPLEMENTATION_GUIDE_GLOBAL__PROFILE = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Implementation Guide Default</em>' class.
+	 * The number of structural features of the '<em>Implementation Guide Global</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int IMPLEMENTATION_GUIDE_GLOBAL_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Implementation Guide Default</em>' class.
+	 * The number of operations of the '<em>Implementation Guide Global</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_DEFAULT_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ImplementationGuideExampleImpl <em>Implementation Guide Example</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ImplementationGuideExampleImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuideExample()
-	 * @generated
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE = 270;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE__NAME = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE__TARGET = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE__DESCRIPTION = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Implementation Guide Example</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Implementation Guide Example</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_EXAMPLE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ImplementationGuideItemImpl <em>Implementation Guide Item</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ImplementationGuideItemImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuideItem()
-	 * @generated
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM = 271;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM__NAME = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM__CONTENT = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Example</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM__EXAMPLE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Implementation Guide Item</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Implementation Guide Item</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLEMENTATION_GUIDE_ITEM_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+	int IMPLEMENTATION_GUIDE_GLOBAL_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ImplementationGuidePackageImpl <em>Implementation Guide Package</em>}' class.
@@ -31356,7 +31656,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuidePackage()
 	 * @generated
 	 */
-	int IMPLEMENTATION_GUIDE_PACKAGE = 272;
+	int IMPLEMENTATION_GUIDE_PACKAGE = 275;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31395,22 +31695,22 @@ public interface FhirPackage extends EPackage {
 	int IMPLEMENTATION_GUIDE_PACKAGE__NAME = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Item</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_PACKAGE__ITEM = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+	int IMPLEMENTATION_GUIDE_PACKAGE__DESCRIPTION = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Page</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Resource</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_PACKAGE__PAGE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int IMPLEMENTATION_GUIDE_PACKAGE__RESOURCE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Implementation Guide Package</em>' class.
@@ -31438,7 +31738,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuidePage()
 	 * @generated
 	 */
-	int IMPLEMENTATION_GUIDE_PAGE = 273;
+	int IMPLEMENTATION_GUIDE_PAGE = 276;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31477,13 +31777,58 @@ public interface FhirPackage extends EPackage {
 	int IMPLEMENTATION_GUIDE_PAGE__SOURCE = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_PAGE__PURPOSE = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+	int IMPLEMENTATION_GUIDE_PAGE__NAME = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_PAGE__KIND = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_PAGE__TYPE = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Package</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_PAGE__PACKAGE = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Format</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_PAGE__FORMAT = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Page</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_PAGE__PAGE = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Implementation Guide Page</em>' class.
@@ -31492,7 +31837,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_GUIDE_PAGE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+	int IMPLEMENTATION_GUIDE_PAGE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Implementation Guide Page</em>' class.
@@ -31504,6 +31849,124 @@ public interface FhirPackage extends EPackage {
 	int IMPLEMENTATION_GUIDE_PAGE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.ImplementationGuideResourceImpl <em>Implementation Guide Resource</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.ImplementationGuideResourceImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getImplementationGuideResource()
+	 * @generated
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE = 277;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__PURPOSE = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__NAME = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__DESCRIPTION = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Acronym</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__ACRONYM = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Source Uri</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__SOURCE_URI = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Source Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__SOURCE_REFERENCE = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Example For</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE__EXAMPLE_FOR = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>Implementation Guide Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of operations of the '<em>Implementation Guide Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_GUIDE_RESOURCE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.InstanceAvailabilityImpl <em>Instance Availability</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31511,7 +31974,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getInstanceAvailability()
 	 * @generated
 	 */
-	int INSTANCE_AVAILABILITY = 274;
+	int INSTANCE_AVAILABILITY = 278;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31566,7 +32029,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getInstant()
 	 * @generated
 	 */
-	int INSTANT = 275;
+	int INSTANT = 279;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31621,7 +32084,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 276;
+	int INTEGER = 280;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31676,7 +32139,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIssueSeverity()
 	 * @generated
 	 */
-	int ISSUE_SEVERITY = 277;
+	int ISSUE_SEVERITY = 281;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31724,6 +32187,61 @@ public interface FhirPackage extends EPackage {
 	int ISSUE_SEVERITY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.IssueTypeImpl <em>Issue Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.IssueTypeImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIssueType()
+	 * @generated
+	 */
+	int ISSUE_TYPE = 282;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE_TYPE__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE_TYPE__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE_TYPE__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Issue Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE_TYPE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Issue Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE_TYPE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.LinkTypeImpl <em>Link Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31731,7 +32249,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLinkType()
 	 * @generated
 	 */
-	int LINK_TYPE = 278;
+	int LINK_TYPE = 283;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -31786,7 +32304,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getList()
 	 * @generated
 	 */
-	int LIST = 279;
+	int LIST = 284;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -32003,7 +32521,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getListEntry()
 	 * @generated
 	 */
-	int LIST_ENTRY = 280;
+	int LIST_ENTRY = 285;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -32094,7 +32612,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getListMode()
 	 * @generated
 	 */
-	int LIST_MODE = 281;
+	int LIST_MODE = 286;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -32149,7 +32667,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getListStatus()
 	 * @generated
 	 */
-	int LIST_STATUS = 282;
+	int LIST_STATUS = 287;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -32204,7 +32722,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocation()
 	 * @generated
 	 */
-	int LOCATION = 283;
+	int LOCATION = 288;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -32412,7 +32930,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocationMode()
 	 * @generated
 	 */
-	int LOCATION_MODE = 284;
+	int LOCATION_MODE = 289;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -32467,7 +32985,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocationPosition()
 	 * @generated
 	 */
-	int LOCATION_POSITION = 285;
+	int LOCATION_POSITION = 290;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -32549,7 +33067,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocationStatus()
 	 * @generated
 	 */
-	int LOCATION_STATUS = 286;
+	int LOCATION_STATUS = 291;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -32597,6 +33115,61 @@ public interface FhirPackage extends EPackage {
 	int LOCATION_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.MarkdownImpl <em>Markdown</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.MarkdownImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMarkdown()
+	 * @generated
+	 */
+	int MARKDOWN = 292;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKDOWN__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKDOWN__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKDOWN__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Markdown</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKDOWN_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Markdown</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKDOWN_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.MeasmntPrincipleImpl <em>Measmnt Principle</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -32604,7 +33177,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMeasmntPrinciple()
 	 * @generated
 	 */
-	int MEASMNT_PRINCIPLE = 287;
+	int MEASMNT_PRINCIPLE = 293;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -32659,7 +33232,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedia()
 	 * @generated
 	 */
-	int MEDIA = 288;
+	int MEDIA = 294;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -32867,7 +33440,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedication()
 	 * @generated
 	 */
-	int MEDICATION = 289;
+	int MEDICATION = 295;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -33030,7 +33603,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationAdministration()
 	 * @generated
 	 */
-	int MEDICATION_ADMINISTRATION = 290;
+	int MEDICATION_ADMINISTRATION = 296;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -33274,7 +33847,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationAdministrationDosage()
 	 * @generated
 	 */
-	int MEDICATION_ADMINISTRATION_DOSAGE = 291;
+	int MEDICATION_ADMINISTRATION_DOSAGE = 297;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -33383,7 +33956,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationAdministrationStatus()
 	 * @generated
 	 */
-	int MEDICATION_ADMINISTRATION_STATUS = 292;
+	int MEDICATION_ADMINISTRATION_STATUS = 298;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -33438,7 +34011,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationBatch()
 	 * @generated
 	 */
-	int MEDICATION_BATCH = 293;
+	int MEDICATION_BATCH = 299;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -33511,7 +34084,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationContent()
 	 * @generated
 	 */
-	int MEDICATION_CONTENT = 294;
+	int MEDICATION_CONTENT = 300;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -33584,7 +34157,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationDispense()
 	 * @generated
 	 */
-	int MEDICATION_DISPENSE = 295;
+	int MEDICATION_DISPENSE = 301;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -33837,7 +34410,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationDispenseDosageInstruction()
 	 * @generated
 	 */
-	int MEDICATION_DISPENSE_DOSAGE_INSTRUCTION = 296;
+	int MEDICATION_DISPENSE_DOSAGE_INSTRUCTION = 302;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34018,7 +34591,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationDispenseStatus()
 	 * @generated
 	 */
-	int MEDICATION_DISPENSE_STATUS = 297;
+	int MEDICATION_DISPENSE_STATUS = 303;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34073,7 +34646,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationDispenseSubstitution()
 	 * @generated
 	 */
-	int MEDICATION_DISPENSE_SUBSTITUTION = 298;
+	int MEDICATION_DISPENSE_SUBSTITUTION = 304;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34155,7 +34728,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationIngredient()
 	 * @generated
 	 */
-	int MEDICATION_INGREDIENT = 299;
+	int MEDICATION_INGREDIENT = 305;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34228,7 +34801,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationKind()
 	 * @generated
 	 */
-	int MEDICATION_KIND = 300;
+	int MEDICATION_KIND = 306;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34283,7 +34856,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPackage()
 	 * @generated
 	 */
-	int MEDICATION_PACKAGE = 301;
+	int MEDICATION_PACKAGE = 307;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34356,7 +34929,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPrescription()
 	 * @generated
 	 */
-	int MEDICATION_PRESCRIPTION = 302;
+	int MEDICATION_PRESCRIPTION = 308;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -34582,7 +35155,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPrescriptionDispense()
 	 * @generated
 	 */
-	int MEDICATION_PRESCRIPTION_DISPENSE = 303;
+	int MEDICATION_PRESCRIPTION_DISPENSE = 309;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34691,7 +35264,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPrescriptionDosageInstruction()
 	 * @generated
 	 */
-	int MEDICATION_PRESCRIPTION_DOSAGE_INSTRUCTION = 304;
+	int MEDICATION_PRESCRIPTION_DOSAGE_INSTRUCTION = 310;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34872,7 +35445,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPrescriptionStatus()
 	 * @generated
 	 */
-	int MEDICATION_PRESCRIPTION_STATUS = 305;
+	int MEDICATION_PRESCRIPTION_STATUS = 311;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -34927,7 +35500,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPrescriptionSubstitution()
 	 * @generated
 	 */
-	int MEDICATION_PRESCRIPTION_SUBSTITUTION = 306;
+	int MEDICATION_PRESCRIPTION_SUBSTITUTION = 312;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -35000,7 +35573,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationProduct()
 	 * @generated
 	 */
-	int MEDICATION_PRODUCT = 307;
+	int MEDICATION_PRODUCT = 313;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -35082,7 +35655,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationStatement()
 	 * @generated
 	 */
-	int MEDICATION_STATEMENT = 308;
+	int MEDICATION_STATEMENT = 314;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -35317,7 +35890,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationStatementDosage()
 	 * @generated
 	 */
-	int MEDICATION_STATEMENT_DOSAGE = 309;
+	int MEDICATION_STATEMENT_DOSAGE = 315;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -35462,7 +36035,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationStatementStatus()
 	 * @generated
 	 */
-	int MEDICATION_STATEMENT_STATUS = 310;
+	int MEDICATION_STATEMENT_STATUS = 316;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -35517,7 +36090,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMessageHeader()
 	 * @generated
 	 */
-	int MESSAGE_HEADER = 311;
+	int MESSAGE_HEADER = 317;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -35725,7 +36298,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMessageHeaderDestination()
 	 * @generated
 	 */
-	int MESSAGE_HEADER_DESTINATION = 312;
+	int MESSAGE_HEADER_DESTINATION = 318;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -35807,7 +36380,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMessageHeaderResponse()
 	 * @generated
 	 */
-	int MESSAGE_HEADER_RESPONSE = 313;
+	int MESSAGE_HEADER_RESPONSE = 319;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -35889,7 +36462,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMessageHeaderSource()
 	 * @generated
 	 */
-	int MESSAGE_HEADER_SOURCE = 314;
+	int MESSAGE_HEADER_SOURCE = 320;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -35989,7 +36562,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMessageSignificanceCategory()
 	 * @generated
 	 */
-	int MESSAGE_SIGNIFICANCE_CATEGORY = 315;
+	int MESSAGE_SIGNIFICANCE_CATEGORY = 321;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36044,7 +36617,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMeta()
 	 * @generated
 	 */
-	int META = 316;
+	int META = 322;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36135,7 +36708,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMoney()
 	 * @generated
 	 */
-	int MONEY = 317;
+	int MONEY = 323;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36174,13 +36747,13 @@ public interface FhirPackage extends EPackage {
 	int MONEY__COMPARATOR = QUANTITY__COMPARATOR;
 
 	/**
-	 * The feature id for the '<em><b>Units</b></em>' containment reference.
+	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONEY__UNITS = QUANTITY__UNITS;
+	int MONEY__UNIT = QUANTITY__UNIT;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' containment reference.
@@ -36226,7 +36799,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNameUse()
 	 * @generated
 	 */
-	int NAME_USE = 318;
+	int NAME_USE = 324;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36281,7 +36854,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystem()
 	 * @generated
 	 */
-	int NAMING_SYSTEM = 319;
+	int NAMING_SYSTEM = 325;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -36356,31 +36929,13 @@ public interface FhirPackage extends EPackage {
 	int NAMING_SYSTEM__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMING_SYSTEM__TYPE = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMING_SYSTEM__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMING_SYSTEM__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
+	int NAMING_SYSTEM__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
@@ -36389,61 +36944,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMING_SYSTEM__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+	int NAMING_SYSTEM__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Country</b></em>' containment reference.
+	 * The feature id for the '<em><b>Kind</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMING_SYSTEM__COUNTRY = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Category</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMING_SYSTEM__CATEGORY = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Responsible</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMING_SYSTEM__RESPONSIBLE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMING_SYSTEM__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Usage</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMING_SYSTEM__USAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Unique Id</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMING_SYSTEM__UNIQUE_ID = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int NAMING_SYSTEM__KIND = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
@@ -36452,7 +36962,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMING_SYSTEM__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int NAMING_SYSTEM__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
@@ -36461,7 +36971,70 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMING_SYSTEM__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int NAMING_SYSTEM__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Responsible</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMING_SYSTEM__RESPONSIBLE = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMING_SYSTEM__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMING_SYSTEM__TYPE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMING_SYSTEM__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMING_SYSTEM__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Usage</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMING_SYSTEM__USAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Unique Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMING_SYSTEM__UNIQUE_ID = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Replaced By</b></em>' containment reference.
@@ -36498,7 +37071,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemContact()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_CONTACT = 320;
+	int NAMING_SYSTEM_CONTACT = 326;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36571,7 +37144,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemIdentifierType()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_IDENTIFIER_TYPE = 321;
+	int NAMING_SYSTEM_IDENTIFIER_TYPE = 327;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36626,7 +37199,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemType()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_TYPE = 322;
+	int NAMING_SYSTEM_TYPE = 328;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36681,7 +37254,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemUniqueId()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_UNIQUE_ID = 323;
+	int NAMING_SYSTEM_UNIQUE_ID = 329;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36772,7 +37345,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNarrative()
 	 * @generated
 	 */
-	int NARRATIVE = 324;
+	int NARRATIVE = 330;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36836,7 +37409,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNarrativeStatus()
 	 * @generated
 	 */
-	int NARRATIVE_STATUS = 325;
+	int NARRATIVE_STATUS = 331;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36891,7 +37464,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNoteType()
 	 * @generated
 	 */
-	int NOTE_TYPE = 326;
+	int NOTE_TYPE = 332;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -36946,7 +37519,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrder()
 	 * @generated
 	 */
-	int NUTRITION_ORDER = 327;
+	int NUTRITION_ORDER = 333;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -37154,7 +37727,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderAdministration()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_ADMINISTRATION = 328;
+	int NUTRITION_ORDER_ADMINISTRATION = 334;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -37245,7 +37818,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderEnteralFormula()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_ENTERAL_FORMULA = 329;
+	int NUTRITION_ORDER_ENTERAL_FORMULA = 335;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -37381,7 +37954,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderNutrient()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_NUTRIENT = 330;
+	int NUTRITION_ORDER_NUTRIENT = 336;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -37454,7 +38027,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderOralDiet()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_ORAL_DIET = 331;
+	int NUTRITION_ORDER_ORAL_DIET = 337;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -37563,7 +38136,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderStatus()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_STATUS = 332;
+	int NUTRITION_ORDER_STATUS = 338;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -37618,7 +38191,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderSupplement()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_SUPPLEMENT = 333;
+	int NUTRITION_ORDER_SUPPLEMENT = 339;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -37718,7 +38291,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderTexture()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_TEXTURE = 334;
+	int NUTRITION_ORDER_TEXTURE = 340;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -37791,7 +38364,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservation()
 	 * @generated
 	 */
-	int OBSERVATION = 335;
+	int OBSERVATION = 341;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -37866,166 +38439,13 @@ public interface FhirPackage extends EPackage {
 	int OBSERVATION__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Identifier</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Category</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__CATEGORY = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Quantity</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_QUANTITY = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Value Codeable Concept</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_CODEABLE_CONCEPT = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Value String</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_STRING = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Value Range</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Value Ratio</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_RATIO = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Value Sampled Data</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_SAMPLED_DATA = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Value Attachment</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_ATTACHMENT = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Value Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Value Date Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Value Period</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__VALUE_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Data Absent Reason</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__DATA_ABSENT_REASON = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Interpretation</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__INTERPRETATION = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Comments</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__COMMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Effective Date Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__EFFECTIVE_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
-
-	/**
-	 * The feature id for the '<em><b>Effective Period</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__EFFECTIVE_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
-
-	/**
-	 * The feature id for the '<em><b>Issued</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__ISSUED = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
+	int OBSERVATION__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
@@ -38034,52 +38454,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
+	int OBSERVATION__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Reliability</b></em>' containment reference.
+	 * The feature id for the '<em><b>Category</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__RELIABILITY = DOMAIN_RESOURCE_FEATURE_COUNT + 19;
+	int OBSERVATION__CATEGORY = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Body Site Codeable Concept</b></em>' containment reference.
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__BODY_SITE_CODEABLE_CONCEPT = DOMAIN_RESOURCE_FEATURE_COUNT + 20;
-
-	/**
-	 * The feature id for the '<em><b>Body Site Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__BODY_SITE_REFERENCE = DOMAIN_RESOURCE_FEATURE_COUNT + 21;
-
-	/**
-	 * The feature id for the '<em><b>Method</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__METHOD = DOMAIN_RESOURCE_FEATURE_COUNT + 22;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 23;
+	int OBSERVATION__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -38088,7 +38481,187 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__SUBJECT = DOMAIN_RESOURCE_FEATURE_COUNT + 24;
+	int OBSERVATION__SUBJECT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__ENCOUNTER = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Effective Date Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__EFFECTIVE_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Effective Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__EFFECTIVE_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Issued</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__ISSUED = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__PERFORMER = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Value Quantity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_QUANTITY = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Value Codeable Concept</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_CODEABLE_CONCEPT = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Value String</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_STRING = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Value Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Value Ratio</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_RATIO = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Value Sampled Data</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_SAMPLED_DATA = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Value Attachment</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_ATTACHMENT = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Value Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Value Date Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Value Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__VALUE_PERIOD = DOMAIN_RESOURCE_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Data Absent Reason</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__DATA_ABSENT_REASON = DOMAIN_RESOURCE_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Interpretation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__INTERPRETATION = DOMAIN_RESOURCE_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Comments</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__COMMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Body Site</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__BODY_SITE = DOMAIN_RESOURCE_FEATURE_COUNT + 23;
+
+	/**
+	 * The feature id for the '<em><b>Method</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__METHOD = DOMAIN_RESOURCE_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference.
@@ -38100,31 +38673,13 @@ public interface FhirPackage extends EPackage {
 	int OBSERVATION__SPECIMEN = DOMAIN_RESOURCE_FEATURE_COUNT + 25;
 
 	/**
-	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__PERFORMER = DOMAIN_RESOURCE_FEATURE_COUNT + 26;
-
-	/**
 	 * The feature id for the '<em><b>Device</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__DEVICE = DOMAIN_RESOURCE_FEATURE_COUNT + 27;
-
-	/**
-	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION__ENCOUNTER = DOMAIN_RESOURCE_FEATURE_COUNT + 28;
+	int OBSERVATION__DEVICE = DOMAIN_RESOURCE_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Reference Range</b></em>' containment reference list.
@@ -38133,7 +38688,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__REFERENCE_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 29;
+	int OBSERVATION__REFERENCE_RANGE = DOMAIN_RESOURCE_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Related</b></em>' containment reference list.
@@ -38142,7 +38697,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__RELATED = DOMAIN_RESOURCE_FEATURE_COUNT + 30;
+	int OBSERVATION__RELATED = DOMAIN_RESOURCE_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -38151,7 +38706,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION__COMPONENT = DOMAIN_RESOURCE_FEATURE_COUNT + 31;
+	int OBSERVATION__COMPONENT = DOMAIN_RESOURCE_FEATURE_COUNT + 29;
 
 	/**
 	 * The number of structural features of the '<em>Observation</em>' class.
@@ -38160,7 +38715,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 32;
+	int OBSERVATION_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 30;
 
 	/**
 	 * The number of operations of the '<em>Observation</em>' class.
@@ -38179,7 +38734,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationComponent()
 	 * @generated
 	 */
-	int OBSERVATION_COMPONENT = 336;
+	int OBSERVATION_COMPONENT = 342;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -38351,7 +38906,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationReferenceRange()
 	 * @generated
 	 */
-	int OBSERVATION_REFERENCE_RANGE = 337;
+	int OBSERVATION_REFERENCE_RANGE = 343;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -38451,7 +39006,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationRelated()
 	 * @generated
 	 */
-	int OBSERVATION_RELATED = 338;
+	int OBSERVATION_RELATED = 344;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -38524,7 +39079,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationRelationshipType()
 	 * @generated
 	 */
-	int OBSERVATION_RELATIONSHIP_TYPE = 339;
+	int OBSERVATION_RELATIONSHIP_TYPE = 345;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -38572,61 +39127,6 @@ public interface FhirPackage extends EPackage {
 	int OBSERVATION_RELATIONSHIP_TYPE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.ObservationReliabilityImpl <em>Observation Reliability</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.ObservationReliabilityImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationReliability()
-	 * @generated
-	 */
-	int OBSERVATION_RELIABILITY = 340;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION_RELIABILITY__EXTENSION = ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION_RELIABILITY__ID = ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION_RELIABILITY__VALUE = ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Observation Reliability</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION_RELIABILITY_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Observation Reliability</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVATION_RELIABILITY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ObservationStatusImpl <em>Observation Status</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38634,7 +39134,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationStatus()
 	 * @generated
 	 */
-	int OBSERVATION_STATUS = 341;
+	int OBSERVATION_STATUS = 346;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -38689,7 +39189,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOid()
 	 * @generated
 	 */
-	int OID = 342;
+	int OID = 347;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -38744,7 +39244,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationDefinition()
 	 * @generated
 	 */
-	int OPERATION_DEFINITION = 343;
+	int OPERATION_DEFINITION = 348;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -38846,67 +39346,13 @@ public interface FhirPackage extends EPackage {
 	int OPERATION_DEFINITION__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_DEFINITION__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_DEFINITION__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_DEFINITION__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_DEFINITION__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_DEFINITION__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_DEFINITION__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_DEFINITION__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int OPERATION_DEFINITION__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' containment reference.
@@ -38915,7 +39361,61 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_DEFINITION__KIND = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int OPERATION_DEFINITION__KIND = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Idempotent</b></em>' containment reference.
@@ -39015,7 +39515,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationDefinitionBinding()
 	 * @generated
 	 */
-	int OPERATION_DEFINITION_BINDING = 344;
+	int OPERATION_DEFINITION_BINDING = 349;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -39097,7 +39597,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationDefinitionContact()
 	 * @generated
 	 */
-	int OPERATION_DEFINITION_CONTACT = 345;
+	int OPERATION_DEFINITION_CONTACT = 350;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -39170,7 +39670,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationDefinitionParameter()
 	 * @generated
 	 */
-	int OPERATION_DEFINITION_PARAMETER = 346;
+	int OPERATION_DEFINITION_PARAMETER = 351;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -39306,7 +39806,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationKind()
 	 * @generated
 	 */
-	int OPERATION_KIND = 347;
+	int OPERATION_KIND = 352;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -39361,7 +39861,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationOutcome()
 	 * @generated
 	 */
-	int OPERATION_OUTCOME = 348;
+	int OPERATION_OUTCOME = 353;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -39470,7 +39970,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationOutcomeIssue()
 	 * @generated
 	 */
-	int OPERATION_OUTCOME_ISSUE = 349;
+	int OPERATION_OUTCOME_ISSUE = 354;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -39527,13 +40027,22 @@ public interface FhirPackage extends EPackage {
 	int OPERATION_OUTCOME_ISSUE__DETAILS = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_OUTCOME_ISSUE__DIAGNOSTICS = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Location</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_OUTCOME_ISSUE__LOCATION = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+	int OPERATION_OUTCOME_ISSUE__LOCATION = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Operation Outcome Issue</em>' class.
@@ -39542,7 +40051,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_OUTCOME_ISSUE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+	int OPERATION_OUTCOME_ISSUE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Operation Outcome Issue</em>' class.
@@ -39561,7 +40070,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationParameterUse()
 	 * @generated
 	 */
-	int OPERATION_PARAMETER_USE = 350;
+	int OPERATION_PARAMETER_USE = 355;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -39616,7 +40125,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrder()
 	 * @generated
 	 */
-	int ORDER = 351;
+	int ORDER = 356;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -39797,7 +40306,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrderResponse()
 	 * @generated
 	 */
-	int ORDER_RESPONSE = 352;
+	int ORDER_RESPONSE = 357;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -39960,7 +40469,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrderStatus()
 	 * @generated
 	 */
-	int ORDER_STATUS = 353;
+	int ORDER_STATUS = 358;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -40015,7 +40524,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrderWhen()
 	 * @generated
 	 */
-	int ORDER_WHEN = 354;
+	int ORDER_WHEN = 359;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -40088,7 +40597,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrganization()
 	 * @generated
 	 */
-	int ORGANIZATION = 355;
+	int ORGANIZATION = 360;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -40172,13 +40681,13 @@ public interface FhirPackage extends EPackage {
 	int ORGANIZATION__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Active</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
+	int ORGANIZATION__ACTIVE = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -40190,13 +40699,22 @@ public interface FhirPackage extends EPackage {
 	int ORGANIZATION__TYPE = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__TELECOM = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+	int ORGANIZATION__TELECOM = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' containment reference list.
@@ -40205,7 +40723,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__ADDRESS = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int ORGANIZATION__ADDRESS = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' containment reference.
@@ -40214,7 +40732,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__PART_OF = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+	int ORGANIZATION__PART_OF = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
@@ -40223,16 +40741,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Active</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORGANIZATION__ACTIVE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+	int ORGANIZATION__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Organization</em>' class.
@@ -40260,7 +40769,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrganizationContact()
 	 * @generated
 	 */
-	int ORGANIZATION_CONTACT = 356;
+	int ORGANIZATION_CONTACT = 361;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -40344,61 +40853,6 @@ public interface FhirPackage extends EPackage {
 	int ORGANIZATION_CONTACT_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.PagePurposeImpl <em>Page Purpose</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.PagePurposeImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPagePurpose()
-	 * @generated
-	 */
-	int PAGE_PURPOSE = 357;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE_PURPOSE__EXTENSION = ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE_PURPOSE__ID = ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE_PURPOSE__VALUE = ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Page Purpose</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE_PURPOSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Page Purpose</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE_PURPOSE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.ParametersImpl <em>Parameters</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40406,7 +40860,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParameters()
 	 * @generated
 	 */
-	int PARAMETERS = 358;
+	int PARAMETERS = 362;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -40479,7 +40933,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParametersParameter()
 	 * @generated
 	 */
-	int PARAMETERS_PARAMETER = 359;
+	int PARAMETERS_PARAMETER = 363;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -40653,13 +41107,22 @@ public interface FhirPackage extends EPackage {
 	int PARAMETERS_PARAMETER__VALUE_POSITIVE_INT = ELEMENT_FEATURE_COUNT + 16;
 
 	/**
+	 * The feature id for the '<em><b>Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERS_PARAMETER__VALUE_MARKDOWN = ELEMENT_FEATURE_COUNT + 17;
+
+	/**
 	 * The feature id for the '<em><b>Value Annotation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 17;
+	int PARAMETERS_PARAMETER__VALUE_ANNOTATION = ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Value Attachment</b></em>' containment reference.
@@ -40668,7 +41131,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 18;
+	int PARAMETERS_PARAMETER__VALUE_ATTACHMENT = ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Value Identifier</b></em>' containment reference.
@@ -40677,7 +41140,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 19;
+	int PARAMETERS_PARAMETER__VALUE_IDENTIFIER = ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Value Codeable Concept</b></em>' containment reference.
@@ -40686,7 +41149,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 20;
+	int PARAMETERS_PARAMETER__VALUE_CODEABLE_CONCEPT = ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Value Coding</b></em>' containment reference.
@@ -40695,7 +41158,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_CODING = ELEMENT_FEATURE_COUNT + 21;
+	int PARAMETERS_PARAMETER__VALUE_CODING = ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Value Quantity</b></em>' containment reference.
@@ -40704,7 +41167,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 22;
+	int PARAMETERS_PARAMETER__VALUE_QUANTITY = ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Value Range</b></em>' containment reference.
@@ -40713,7 +41176,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_RANGE = ELEMENT_FEATURE_COUNT + 23;
+	int PARAMETERS_PARAMETER__VALUE_RANGE = ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Value Period</b></em>' containment reference.
@@ -40722,7 +41185,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 24;
+	int PARAMETERS_PARAMETER__VALUE_PERIOD = ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Value Ratio</b></em>' containment reference.
@@ -40731,7 +41194,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_RATIO = ELEMENT_FEATURE_COUNT + 25;
+	int PARAMETERS_PARAMETER__VALUE_RATIO = ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Value Reference</b></em>' containment reference.
@@ -40740,7 +41203,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 26;
+	int PARAMETERS_PARAMETER__VALUE_REFERENCE = ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Value Sampled Data</b></em>' containment reference.
@@ -40749,7 +41212,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 27;
+	int PARAMETERS_PARAMETER__VALUE_SAMPLED_DATA = ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Value Signature</b></em>' containment reference.
@@ -40758,7 +41221,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 28;
+	int PARAMETERS_PARAMETER__VALUE_SIGNATURE = ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Value Human Name</b></em>' containment reference.
@@ -40767,7 +41230,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 29;
+	int PARAMETERS_PARAMETER__VALUE_HUMAN_NAME = ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Value Address</b></em>' containment reference.
@@ -40776,7 +41239,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 30;
+	int PARAMETERS_PARAMETER__VALUE_ADDRESS = ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Value Contact Point</b></em>' containment reference.
@@ -40785,7 +41248,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 31;
+	int PARAMETERS_PARAMETER__VALUE_CONTACT_POINT = ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Value Timing</b></em>' containment reference.
@@ -40794,7 +41257,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_TIMING = ELEMENT_FEATURE_COUNT + 32;
+	int PARAMETERS_PARAMETER__VALUE_TIMING = ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Value Meta</b></em>' containment reference.
@@ -40803,7 +41266,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__VALUE_META = ELEMENT_FEATURE_COUNT + 33;
+	int PARAMETERS_PARAMETER__VALUE_META = ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Resource</b></em>' containment reference.
@@ -40812,7 +41275,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__RESOURCE = ELEMENT_FEATURE_COUNT + 34;
+	int PARAMETERS_PARAMETER__RESOURCE = ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Part</b></em>' containment reference list.
@@ -40821,7 +41284,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER__PART = ELEMENT_FEATURE_COUNT + 35;
+	int PARAMETERS_PARAMETER__PART = ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The number of structural features of the '<em>Parameters Parameter</em>' class.
@@ -40830,7 +41293,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERS_PARAMETER_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 36;
+	int PARAMETERS_PARAMETER_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The number of operations of the '<em>Parameters Parameter</em>' class.
@@ -40849,7 +41312,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipantRequired()
 	 * @generated
 	 */
-	int PARTICIPANT_REQUIRED = 360;
+	int PARTICIPANT_REQUIRED = 364;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -40904,7 +41367,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipantStatus()
 	 * @generated
 	 */
-	int PARTICIPANT_STATUS = 361;
+	int PARTICIPANT_STATUS = 365;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -40959,7 +41422,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipationStatus()
 	 * @generated
 	 */
-	int PARTICIPATION_STATUS = 362;
+	int PARTICIPATION_STATUS = 366;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -41014,7 +41477,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPatient()
 	 * @generated
 	 */
-	int PATIENT = 363;
+	int PATIENT = 367;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -41098,13 +41561,22 @@ public interface FhirPackage extends EPackage {
 	int PATIENT__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Active</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATIENT__ACTIVE = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
+	int PATIENT__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -41113,7 +41585,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__TELECOM = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
+	int PATIENT__TELECOM = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Gender</b></em>' containment reference.
@@ -41122,7 +41594,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__GENDER = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+	int PATIENT__GENDER = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Birth Date</b></em>' containment reference.
@@ -41131,7 +41603,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__BIRTH_DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int PATIENT__BIRTH_DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Deceased Boolean</b></em>' containment reference.
@@ -41140,7 +41612,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__DECEASED_BOOLEAN = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+	int PATIENT__DECEASED_BOOLEAN = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Deceased Date Time</b></em>' containment reference.
@@ -41149,7 +41621,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__DECEASED_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+	int PATIENT__DECEASED_DATE_TIME = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' containment reference list.
@@ -41158,7 +41630,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__ADDRESS = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+	int PATIENT__ADDRESS = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Marital Status</b></em>' containment reference.
@@ -41167,7 +41639,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__MARITAL_STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+	int PATIENT__MARITAL_STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Multiple Birth Boolean</b></em>' containment reference.
@@ -41176,7 +41648,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__MULTIPLE_BIRTH_BOOLEAN = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int PATIENT__MULTIPLE_BIRTH_BOOLEAN = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Multiple Birth Integer</b></em>' containment reference.
@@ -41185,7 +41657,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__MULTIPLE_BIRTH_INTEGER = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int PATIENT__MULTIPLE_BIRTH_INTEGER = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Photo</b></em>' containment reference list.
@@ -41194,7 +41666,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__PHOTO = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int PATIENT__PHOTO = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
@@ -41203,7 +41675,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+	int PATIENT__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Animal</b></em>' containment reference.
@@ -41212,7 +41684,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__ANIMAL = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int PATIENT__ANIMAL = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Communication</b></em>' containment reference list.
@@ -41221,7 +41693,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__COMMUNICATION = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+	int PATIENT__COMMUNICATION = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Care Provider</b></em>' containment reference list.
@@ -41230,7 +41702,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__CARE_PROVIDER = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+	int PATIENT__CARE_PROVIDER = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Managing Organization</b></em>' containment reference.
@@ -41239,7 +41711,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__MANAGING_ORGANIZATION = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
+	int PATIENT__MANAGING_ORGANIZATION = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Link</b></em>' containment reference list.
@@ -41248,16 +41720,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__LINK = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
-
-	/**
-	 * The feature id for the '<em><b>Active</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATIENT__ACTIVE = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
+	int PATIENT__LINK = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>Patient</em>' class.
@@ -41285,7 +41748,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPatientAnimal()
 	 * @generated
 	 */
-	int PATIENT_ANIMAL = 364;
+	int PATIENT_ANIMAL = 368;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -41367,7 +41830,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPatientCommunication()
 	 * @generated
 	 */
-	int PATIENT_COMMUNICATION = 365;
+	int PATIENT_COMMUNICATION = 369;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -41440,7 +41903,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPatientContact()
 	 * @generated
 	 */
-	int PATIENT_CONTACT = 366;
+	int PATIENT_CONTACT = 370;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -41558,7 +42021,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPatientLink()
 	 * @generated
 	 */
-	int PATIENT_LINK = 367;
+	int PATIENT_LINK = 371;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -41631,7 +42094,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPaymentNotice()
 	 * @generated
 	 */
-	int PAYMENT_NOTICE = 368;
+	int PAYMENT_NOTICE = 372;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -41821,7 +42284,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPaymentReconciliation()
 	 * @generated
 	 */
-	int PAYMENT_RECONCILIATION = 369;
+	int PAYMENT_RECONCILIATION = 373;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -42056,7 +42519,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPaymentReconciliationDetail()
 	 * @generated
 	 */
-	int PAYMENT_RECONCILIATION_DETAIL = 370;
+	int PAYMENT_RECONCILIATION_DETAIL = 374;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -42174,7 +42637,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPaymentReconciliationNote()
 	 * @generated
 	 */
-	int PAYMENT_RECONCILIATION_NOTE = 371;
+	int PAYMENT_RECONCILIATION_NOTE = 375;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -42247,7 +42710,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPeriod()
 	 * @generated
 	 */
-	int PERIOD = 372;
+	int PERIOD = 376;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -42311,7 +42774,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPerson()
 	 * @generated
 	 */
-	int PERSON = 373;
+	int PERSON = 377;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -42501,7 +42964,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPersonLink()
 	 * @generated
 	 */
-	int PERSON_LINK = 374;
+	int PERSON_LINK = 378;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -42574,7 +43037,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPositiveInt()
 	 * @generated
 	 */
-	int POSITIVE_INT = 375;
+	int POSITIVE_INT = 379;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -42629,7 +43092,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPractitioner()
 	 * @generated
 	 */
-	int PRACTITIONER = 376;
+	int PRACTITIONER = 380;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -42819,7 +43282,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPractitionerPractitionerRole()
 	 * @generated
 	 */
-	int PRACTITIONER_PRACTITIONER_ROLE = 377;
+	int PRACTITIONER_PRACTITIONER_ROLE = 381;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -42928,7 +43391,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPractitionerQualification()
 	 * @generated
 	 */
-	int PRACTITIONER_QUALIFICATION = 378;
+	int PRACTITIONER_QUALIFICATION = 382;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -43019,7 +43482,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedure()
 	 * @generated
 	 */
-	int PROCEDURE = 379;
+	int PROCEDURE = 383;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -43299,7 +43762,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureBodySite()
 	 * @generated
 	 */
-	int PROCEDURE_BODY_SITE = 380;
+	int PROCEDURE_BODY_SITE = 384;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -43372,7 +43835,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureDevice()
 	 * @generated
 	 */
-	int PROCEDURE_DEVICE = 381;
+	int PROCEDURE_DEVICE = 385;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -43445,7 +43908,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedurePerformer()
 	 * @generated
 	 */
-	int PROCEDURE_PERFORMER = 382;
+	int PROCEDURE_PERFORMER = 386;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -43518,7 +43981,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRelatedItem()
 	 * @generated
 	 */
-	int PROCEDURE_RELATED_ITEM = 383;
+	int PROCEDURE_RELATED_ITEM = 387;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -43591,7 +44054,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRelationshipType()
 	 * @generated
 	 */
-	int PROCEDURE_RELATIONSHIP_TYPE = 384;
+	int PROCEDURE_RELATIONSHIP_TYPE = 388;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -43646,7 +44109,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequest()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST = 385;
+	int PROCEDURE_REQUEST = 389;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -43899,7 +44362,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequestBodySite()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST_BODY_SITE = 386;
+	int PROCEDURE_REQUEST_BODY_SITE = 390;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -43972,7 +44435,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequestPriority()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST_PRIORITY = 387;
+	int PROCEDURE_REQUEST_PRIORITY = 391;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -44027,7 +44490,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequestStatus()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST_STATUS = 388;
+	int PROCEDURE_REQUEST_STATUS = 392;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -44082,7 +44545,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureStatus()
 	 * @generated
 	 */
-	int PROCEDURE_STATUS = 389;
+	int PROCEDURE_STATUS = 393;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -44137,7 +44600,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcessRequest()
 	 * @generated
 	 */
-	int PROCESS_REQUEST = 390;
+	int PROCESS_REQUEST = 394;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -44381,7 +44844,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcessRequestItem()
 	 * @generated
 	 */
-	int PROCESS_REQUEST_ITEM = 391;
+	int PROCESS_REQUEST_ITEM = 395;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -44445,7 +44908,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcessResponse()
 	 * @generated
 	 */
-	int PROCESS_RESPONSE = 392;
+	int PROCESS_RESPONSE = 396;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -44662,7 +45125,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcessResponseNotes()
 	 * @generated
 	 */
-	int PROCESS_RESPONSE_NOTES = 393;
+	int PROCESS_RESPONSE_NOTES = 397;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -44735,7 +45198,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPropertyRepresentation()
 	 * @generated
 	 */
-	int PROPERTY_REPRESENTATION = 394;
+	int PROPERTY_REPRESENTATION = 398;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -44790,7 +45253,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProvenance()
 	 * @generated
 	 */
-	int PROVENANCE = 395;
+	int PROVENANCE = 399;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -44980,7 +45443,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProvenanceAgent()
 	 * @generated
 	 */
-	int PROVENANCE_AGENT = 396;
+	int PROVENANCE_AGENT = 400;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -45062,7 +45525,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProvenanceEntity()
 	 * @generated
 	 */
-	int PROVENANCE_ENTITY = 397;
+	int PROVENANCE_ENTITY = 401;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -45162,7 +45625,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProvenanceEntityRole()
 	 * @generated
 	 */
-	int PROVENANCE_ENTITY_ROLE = 398;
+	int PROVENANCE_ENTITY_ROLE = 402;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -45217,7 +45680,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuantityComparator()
 	 * @generated
 	 */
-	int QUANTITY_COMPARATOR = 400;
+	int QUANTITY_COMPARATOR = 404;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -45272,7 +45735,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaire()
 	 * @generated
 	 */
-	int QUESTIONNAIRE = 401;
+	int QUESTIONNAIRE = 405;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -45401,13 +45864,22 @@ public interface FhirPackage extends EPackage {
 	int QUESTIONNAIRE__TELECOM = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Subject Type</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE__SUBJECT_TYPE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Group</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTIONNAIRE__GROUP = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+	int QUESTIONNAIRE__GROUP = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Questionnaire</em>' class.
@@ -45416,7 +45888,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTIONNAIRE_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+	int QUESTIONNAIRE_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Questionnaire</em>' class.
@@ -45428,614 +45900,6 @@ public interface FhirPackage extends EPackage {
 	int QUESTIONNAIRE_OPERATION_COUNT = DOMAIN_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireAnswersImpl <em>Questionnaire Answers</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.QuestionnaireAnswersImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireAnswers()
-	 * @generated
-	 */
-	int QUESTIONNAIRE_ANSWERS = 402;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__ID = DOMAIN_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Meta</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__META = DOMAIN_RESOURCE__META;
-
-	/**
-	 * The feature id for the '<em><b>Implicit Rules</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__IMPLICIT_RULES = DOMAIN_RESOURCE__IMPLICIT_RULES;
-
-	/**
-	 * The feature id for the '<em><b>Language</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__LANGUAGE = DOMAIN_RESOURCE__LANGUAGE;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__TEXT = DOMAIN_RESOURCE__TEXT;
-
-	/**
-	 * The feature id for the '<em><b>Contained</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__CONTAINED = DOMAIN_RESOURCE__CONTAINED;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__EXTENSION = DOMAIN_RESOURCE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Questionnaire</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__QUESTIONNAIRE = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__SUBJECT = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Author</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__AUTHOR = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Authored</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__AUTHORED = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__SOURCE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__ENCOUNTER = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Group</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS__GROUP = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
-	 * The number of structural features of the '<em>Questionnaire Answers</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
-
-	/**
-	 * The number of operations of the '<em>Questionnaire Answers</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_OPERATION_COUNT = DOMAIN_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireAnswersAnswerImpl <em>Questionnaire Answers Answer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.QuestionnaireAnswersAnswerImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER = 403;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Value Boolean</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_BOOLEAN = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Value Decimal</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_DECIMAL = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Integer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_INTEGER = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Value Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_DATE = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Value Date Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_DATE_TIME = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Value Instant</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_INSTANT = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Value Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_TIME = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Value String</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_STRING = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Value Uri</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_URI = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Value Attachment</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_ATTACHMENT = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Value Coding</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_CODING = BACKBONE_ELEMENT_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Value Quantity</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_QUANTITY = BACKBONE_ELEMENT_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Value Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER__VALUE_REFERENCE = BACKBONE_ELEMENT_FEATURE_COUNT + 12;
-
-	/**
-	 * The number of structural features of the '<em>Questionnaire Answers Answer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 13;
-
-	/**
-	 * The number of operations of the '<em>Questionnaire Answers Answer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_ANSWER_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireAnswersGroupImpl <em>Questionnaire Answers Group</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.QuestionnaireAnswersGroupImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireAnswersGroup()
-	 * @generated
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP = 404;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Link Id</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__LINK_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__TITLE = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__TEXT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__SUBJECT = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Group</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__GROUP = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Question</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP__QUESTION = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Questionnaire Answers Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>Questionnaire Answers Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_GROUP_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireAnswersQuestionImpl <em>Questionnaire Answers Question</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.QuestionnaireAnswersQuestionImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireAnswersQuestion()
-	 * @generated
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION = 405;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Link Id</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION__LINK_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION__TEXT = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Answer</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION__ANSWER = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Group</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION__GROUP = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Questionnaire Answers Question</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Questionnaire Answers Question</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_QUESTION_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireAnswersStatusImpl <em>Questionnaire Answers Status</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.QuestionnaireAnswersStatusImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireAnswersStatus()
-	 * @generated
-	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS = 406;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS__EXTENSION = ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS__ID = ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS__VALUE = ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Questionnaire Answers Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Questionnaire Answers Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireGroupImpl <em>Questionnaire Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46043,7 +45907,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireGroup()
 	 * @generated
 	 */
-	int QUESTIONNAIRE_GROUP = 407;
+	int QUESTIONNAIRE_GROUP = 406;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -46170,7 +46034,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireQuestion()
 	 * @generated
 	 */
-	int QUESTIONNAIRE_QUESTION = 408;
+	int QUESTIONNAIRE_QUESTION = 407;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -46290,6 +46154,614 @@ public interface FhirPackage extends EPackage {
 	int QUESTIONNAIRE_QUESTION_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireResponseImpl <em>Questionnaire Response</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.QuestionnaireResponseImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireResponse()
+	 * @generated
+	 */
+	int QUESTIONNAIRE_RESPONSE = 408;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__ID = DOMAIN_RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Meta</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__META = DOMAIN_RESOURCE__META;
+
+	/**
+	 * The feature id for the '<em><b>Implicit Rules</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__IMPLICIT_RULES = DOMAIN_RESOURCE__IMPLICIT_RULES;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__LANGUAGE = DOMAIN_RESOURCE__LANGUAGE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__TEXT = DOMAIN_RESOURCE__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Contained</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__CONTAINED = DOMAIN_RESOURCE__CONTAINED;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__EXTENSION = DOMAIN_RESOURCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Questionnaire</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__QUESTIONNAIRE = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__SUBJECT = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__AUTHOR = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Authored</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__AUTHORED = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__SOURCE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__ENCOUNTER = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Group</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE__GROUP = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The number of structural features of the '<em>Questionnaire Response</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The number of operations of the '<em>Questionnaire Response</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_OPERATION_COUNT = DOMAIN_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireResponseAnswerImpl <em>Questionnaire Response Answer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.QuestionnaireResponseAnswerImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER = 409;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Value Boolean</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_BOOLEAN = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value Decimal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_DECIMAL = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Value Integer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_INTEGER = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Value Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_DATE = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Value Date Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_DATE_TIME = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Value Instant</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_INSTANT = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Value Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_TIME = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Value String</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_STRING = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Value Uri</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_URI = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Value Attachment</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_ATTACHMENT = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Value Coding</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_CODING = BACKBONE_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Value Quantity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_QUANTITY = BACKBONE_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Value Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__VALUE_REFERENCE = BACKBONE_ELEMENT_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Group</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER__GROUP = BACKBONE_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
+	 * The number of structural features of the '<em>Questionnaire Response Answer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
+	 * The number of operations of the '<em>Questionnaire Response Answer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_ANSWER_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireResponseGroupImpl <em>Questionnaire Response Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.QuestionnaireResponseGroupImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireResponseGroup()
+	 * @generated
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP = 410;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Link Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__LINK_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__TITLE = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__TEXT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__SUBJECT = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Group</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__GROUP = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Question</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP__QUESTION = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Questionnaire Response Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Questionnaire Response Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_GROUP_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireResponseQuestionImpl <em>Questionnaire Response Question</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.QuestionnaireResponseQuestionImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireResponseQuestion()
+	 * @generated
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION = 411;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Link Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION__LINK_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION__TEXT = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION__ANSWER = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Questionnaire Response Question</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Questionnaire Response Question</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_QUESTION_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireResponseStatusImpl <em>Questionnaire Response Status</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.QuestionnaireResponseStatusImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireResponseStatus()
+	 * @generated
+	 */
+	int QUESTIONNAIRE_RESPONSE_STATUS = 412;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_STATUS__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_STATUS__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_STATUS__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Questionnaire Response Status</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_STATUS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Questionnaire Response Status</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_RESPONSE_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.QuestionnaireStatusImpl <em>Questionnaire Status</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46297,7 +46769,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireStatus()
 	 * @generated
 	 */
-	int QUESTIONNAIRE_STATUS = 409;
+	int QUESTIONNAIRE_STATUS = 413;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -46352,7 +46824,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRange()
 	 * @generated
 	 */
-	int RANGE = 410;
+	int RANGE = 414;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -46416,7 +46888,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRatio()
 	 * @generated
 	 */
-	int RATIO = 411;
+	int RATIO = 415;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -46480,7 +46952,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getReference()
 	 * @generated
 	 */
-	int REFERENCE = 412;
+	int REFERENCE = 416;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -46544,7 +47016,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getReferralRequest()
 	 * @generated
 	 */
-	int REFERRAL_REQUEST = 413;
+	int REFERRAL_REQUEST = 417;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -46779,7 +47251,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getReferralStatus()
 	 * @generated
 	 */
-	int REFERRAL_STATUS = 414;
+	int REFERRAL_STATUS = 418;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -46834,7 +47306,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRelatedPerson()
 	 * @generated
 	 */
-	int RELATED_PERSON = 415;
+	int RELATED_PERSON = 419;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -47024,7 +47496,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRemittanceOutcome()
 	 * @generated
 	 */
-	int REMITTANCE_OUTCOME = 416;
+	int REMITTANCE_OUTCOME = 420;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -47079,7 +47551,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResourceContainer()
 	 * @generated
 	 */
-	int RESOURCE_CONTAINER = 418;
+	int RESOURCE_CONTAINER = 422;
 
 	/**
 	 * The feature id for the '<em><b>Account</b></em>' containment reference.
@@ -47775,13 +48247,13 @@ public interface FhirPackage extends EPackage {
 	int RESOURCE_CONTAINER__QUESTIONNAIRE = 76;
 
 	/**
-	 * The feature id for the '<em><b>Questionnaire Answers</b></em>' containment reference.
+	 * The feature id for the '<em><b>Questionnaire Response</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER__QUESTIONNAIRE_ANSWERS = 77;
+	int RESOURCE_CONTAINER__QUESTIONNAIRE_RESPONSE = 77;
 
 	/**
 	 * The feature id for the '<em><b>Referral Request</b></em>' containment reference.
@@ -47874,22 +48346,13 @@ public interface FhirPackage extends EPackage {
 	int RESOURCE_CONTAINER__SUBSTANCE = 87;
 
 	/**
-	 * The feature id for the '<em><b>Supply</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_CONTAINER__SUPPLY = 88;
-
-	/**
 	 * The feature id for the '<em><b>Supply Delivery</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER__SUPPLY_DELIVERY = 89;
+	int RESOURCE_CONTAINER__SUPPLY_DELIVERY = 88;
 
 	/**
 	 * The feature id for the '<em><b>Supply Request</b></em>' containment reference.
@@ -47898,7 +48361,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER__SUPPLY_REQUEST = 90;
+	int RESOURCE_CONTAINER__SUPPLY_REQUEST = 89;
 
 	/**
 	 * The feature id for the '<em><b>Test Script</b></em>' containment reference.
@@ -47907,7 +48370,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER__TEST_SCRIPT = 91;
+	int RESOURCE_CONTAINER__TEST_SCRIPT = 90;
 
 	/**
 	 * The feature id for the '<em><b>Value Set</b></em>' containment reference.
@@ -47916,7 +48379,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER__VALUE_SET = 92;
+	int RESOURCE_CONTAINER__VALUE_SET = 91;
 
 	/**
 	 * The feature id for the '<em><b>Vision Prescription</b></em>' containment reference.
@@ -47925,7 +48388,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER__VISION_PRESCRIPTION = 93;
+	int RESOURCE_CONTAINER__VISION_PRESCRIPTION = 92;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference.
@@ -47934,7 +48397,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER__PARAMETERS = 94;
+	int RESOURCE_CONTAINER__PARAMETERS = 93;
 
 	/**
 	 * The number of structural features of the '<em>Resource Container</em>' class.
@@ -47943,7 +48406,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTAINER_FEATURE_COUNT = 95;
+	int RESOURCE_CONTAINER_FEATURE_COUNT = 94;
 
 	/**
 	 * The number of operations of the '<em>Resource Container</em>' class.
@@ -47962,7 +48425,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResourceVersionPolicy()
 	 * @generated
 	 */
-	int RESOURCE_VERSION_POLICY = 419;
+	int RESOURCE_VERSION_POLICY = 423;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48017,7 +48480,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResponseType()
 	 * @generated
 	 */
-	int RESPONSE_TYPE = 420;
+	int RESPONSE_TYPE = 424;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48072,7 +48535,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRestfulConformanceMode()
 	 * @generated
 	 */
-	int RESTFUL_CONFORMANCE_MODE = 421;
+	int RESTFUL_CONFORMANCE_MODE = 425;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48127,7 +48590,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRiskAssessment()
 	 * @generated
 	 */
-	int RISK_ASSESSMENT = 422;
+	int RISK_ASSESSMENT = 426;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -48308,7 +48771,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRiskAssessmentPrediction()
 	 * @generated
 	 */
-	int RISK_ASSESSMENT_PREDICTION = 423;
+	int RISK_ASSESSMENT_PREDICTION = 427;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48435,7 +48898,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSampledData()
 	 * @generated
 	 */
-	int SAMPLED_DATA = 424;
+	int SAMPLED_DATA = 428;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48544,7 +49007,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSampledDataDataType()
 	 * @generated
 	 */
-	int SAMPLED_DATA_DATA_TYPE = 425;
+	int SAMPLED_DATA_DATA_TYPE = 429;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48599,7 +49062,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSchedule()
 	 * @generated
 	 */
-	int SCHEDULE = 426;
+	int SCHEDULE = 430;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -48744,7 +49207,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchEntryMode()
 	 * @generated
 	 */
-	int SEARCH_ENTRY_MODE = 427;
+	int SEARCH_ENTRY_MODE = 431;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48799,7 +49262,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchModifierCode()
 	 * @generated
 	 */
-	int SEARCH_MODIFIER_CODE = 428;
+	int SEARCH_MODIFIER_CODE = 432;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -48854,7 +49317,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchParameter()
 	 * @generated
 	 */
-	int SEARCH_PARAMETER = 429;
+	int SEARCH_PARAMETER = 433;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -48947,40 +49410,13 @@ public interface FhirPackage extends EPackage {
 	int SEARCH_PARAMETER__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_PARAMETER__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_PARAMETER__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_PARAMETER__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+	int SEARCH_PARAMETER__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
@@ -48989,7 +49425,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+	int SEARCH_PARAMETER__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_PARAMETER__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_PARAMETER__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' containment reference.
@@ -48998,7 +49452,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+	int SEARCH_PARAMETER__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_PARAMETER__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_PARAMETER__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -49007,7 +49479,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__BASE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+	int SEARCH_PARAMETER__BASE = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -49016,7 +49488,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__TYPE = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int SEARCH_PARAMETER__TYPE = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -49025,7 +49497,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int SEARCH_PARAMETER__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Xpath</b></em>' containment reference.
@@ -49034,7 +49506,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__XPATH = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int SEARCH_PARAMETER__XPATH = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Xpath Usage</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_PARAMETER__XPATH_USAGE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' containment reference list.
@@ -49043,7 +49524,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER__TARGET = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+	int SEARCH_PARAMETER__TARGET = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Search Parameter</em>' class.
@@ -49052,7 +49533,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_PARAMETER_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int SEARCH_PARAMETER_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of operations of the '<em>Search Parameter</em>' class.
@@ -49071,7 +49552,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchParameterContact()
 	 * @generated
 	 */
-	int SEARCH_PARAMETER_CONTACT = 430;
+	int SEARCH_PARAMETER_CONTACT = 434;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -49144,7 +49625,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchParamType()
 	 * @generated
 	 */
-	int SEARCH_PARAM_TYPE = 431;
+	int SEARCH_PARAM_TYPE = 435;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -49199,7 +49680,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSignature()
 	 * @generated
 	 */
-	int SIGNATURE = 432;
+	int SIGNATURE = 436;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -49292,6 +49773,106 @@ public interface FhirPackage extends EPackage {
 	int SIGNATURE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.SimpleQuantityImpl <em>Simple Quantity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.SimpleQuantityImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSimpleQuantity()
+	 * @generated
+	 */
+	int SIMPLE_QUANTITY = 437;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__EXTENSION = QUANTITY__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__ID = QUANTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__VALUE = QUANTITY__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Comparator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__COMPARATOR = QUANTITY__COMPARATOR;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__UNIT = QUANTITY__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>System</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__SYSTEM = QUANTITY__SYSTEM;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__CODE = QUANTITY__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Extension1</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY__EXTENSION1 = QUANTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Simple Quantity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY_FEATURE_COUNT = QUANTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Simple Quantity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_QUANTITY_OPERATION_COUNT = QUANTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.SlicingRulesImpl <em>Slicing Rules</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49299,7 +49880,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSlicingRules()
 	 * @generated
 	 */
-	int SLICING_RULES = 433;
+	int SLICING_RULES = 438;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -49354,7 +49935,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 434;
+	int SLOT = 439;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -49526,7 +50107,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSlotStatus()
 	 * @generated
 	 */
-	int SLOT_STATUS = 435;
+	int SLOT_STATUS = 440;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -49581,7 +50162,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSpecimen()
 	 * @generated
 	 */
-	int SPECIMEN = 436;
+	int SPECIMEN = 441;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -49762,7 +50343,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSpecimenCollection()
 	 * @generated
 	 */
-	int SPECIMEN_COLLECTION = 437;
+	int SPECIMEN_COLLECTION = 442;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -49846,22 +50427,13 @@ public interface FhirPackage extends EPackage {
 	int SPECIMEN_COLLECTION__METHOD = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Body Site Codeable Concept</b></em>' containment reference.
+	 * The feature id for the '<em><b>Body Site</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_COLLECTION__BODY_SITE_CODEABLE_CONCEPT = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Body Site Reference</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIMEN_COLLECTION__BODY_SITE_REFERENCE = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
+	int SPECIMEN_COLLECTION__BODY_SITE = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Specimen Collection</em>' class.
@@ -49870,7 +50442,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_COLLECTION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
+	int SPECIMEN_COLLECTION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Specimen Collection</em>' class.
@@ -49889,7 +50461,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSpecimenContainer()
 	 * @generated
 	 */
-	int SPECIMEN_CONTAINER = 438;
+	int SPECIMEN_CONTAINER = 443;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50007,7 +50579,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSpecimenTreatment()
 	 * @generated
 	 */
-	int SPECIMEN_TREATMENT = 439;
+	int SPECIMEN_TREATMENT = 444;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50089,7 +50661,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 440;
+	int STRING = 445;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50144,7 +50716,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinition()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION = 441;
+	int STRUCTURE_DEFINITION = 446;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -50255,76 +50827,13 @@ public interface FhirPackage extends EPackage {
 	int STRUCTURE_DEFINITION__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_DEFINITION__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Display</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEFINITION__DISPLAY = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_DEFINITION__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_DEFINITION__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_DEFINITION__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_DEFINITION__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_DEFINITION__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_DEFINITION__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+	int STRUCTURE_DEFINITION__DISPLAY = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' containment reference.
@@ -50333,7 +50842,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEFINITION__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+	int STRUCTURE_DEFINITION__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
@@ -50342,7 +50851,25 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEFINITION__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+	int STRUCTURE_DEFINITION__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' containment reference.
@@ -50351,7 +50878,52 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEFINITION__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+	int STRUCTURE_DEFINITION__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__CODE = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Fhir Version</b></em>' containment reference.
@@ -50469,7 +51041,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinitionContact()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION_CONTACT = 442;
+	int STRUCTURE_DEFINITION_CONTACT = 447;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50542,7 +51114,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinitionDifferential()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION_DIFFERENTIAL = 443;
+	int STRUCTURE_DEFINITION_DIFFERENTIAL = 448;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50606,7 +51178,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinitionKind()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION_KIND = 444;
+	int STRUCTURE_DEFINITION_KIND = 449;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50661,7 +51233,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinitionMapping()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION_MAPPING = 445;
+	int STRUCTURE_DEFINITION_MAPPING = 450;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50752,7 +51324,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinitionSnapshot()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION_SNAPSHOT = 446;
+	int STRUCTURE_DEFINITION_SNAPSHOT = 451;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -50816,7 +51388,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscription()
 	 * @generated
 	 */
-	int SUBSCRIPTION = 447;
+	int SUBSCRIPTION = 452;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -50988,7 +51560,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscriptionChannel()
 	 * @generated
 	 */
-	int SUBSCRIPTION_CHANNEL = 448;
+	int SUBSCRIPTION_CHANNEL = 453;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -51079,7 +51651,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscriptionChannelType()
 	 * @generated
 	 */
-	int SUBSCRIPTION_CHANNEL_TYPE = 449;
+	int SUBSCRIPTION_CHANNEL_TYPE = 454;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -51134,7 +51706,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscriptionStatus()
 	 * @generated
 	 */
-	int SUBSCRIPTION_STATUS = 450;
+	int SUBSCRIPTION_STATUS = 455;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -51189,7 +51761,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubstance()
 	 * @generated
 	 */
-	int SUBSTANCE = 451;
+	int SUBSTANCE = 456;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -51334,7 +51906,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubstanceIngredient()
 	 * @generated
 	 */
-	int SUBSTANCE_INGREDIENT = 452;
+	int SUBSTANCE_INGREDIENT = 457;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -51407,7 +51979,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubstanceInstance()
 	 * @generated
 	 */
-	int SUBSTANCE_INSTANCE = 453;
+	int SUBSTANCE_INSTANCE = 458;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -51482,160 +52054,6 @@ public interface FhirPackage extends EPackage {
 	int SUBSTANCE_INSTANCE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.SupplyImpl <em>Supply</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.SupplyImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupply()
-	 * @generated
-	 */
-	int SUPPLY = 454;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__ID = DOMAIN_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Meta</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__META = DOMAIN_RESOURCE__META;
-
-	/**
-	 * The feature id for the '<em><b>Implicit Rules</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__IMPLICIT_RULES = DOMAIN_RESOURCE__IMPLICIT_RULES;
-
-	/**
-	 * The feature id for the '<em><b>Language</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__LANGUAGE = DOMAIN_RESOURCE__LANGUAGE;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__TEXT = DOMAIN_RESOURCE__TEXT;
-
-	/**
-	 * The feature id for the '<em><b>Contained</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__CONTAINED = DOMAIN_RESOURCE__CONTAINED;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__EXTENSION = DOMAIN_RESOURCE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__KIND = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__IDENTIFIER = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Ordered Item</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__ORDERED_ITEM = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Patient</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__PATIENT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Dispense</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY__DISPENSE = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Supply</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>Supply</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_OPERATION_COUNT = DOMAIN_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.SupplyDeliveryImpl <em>Supply Delivery</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51643,7 +52061,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDelivery()
 	 * @generated
 	 */
-	int SUPPLY_DELIVERY = 455;
+	int SUPPLY_DELIVERY = 459;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -51842,7 +52260,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDeliveryStatus()
 	 * @generated
 	 */
-	int SUPPLY_DELIVERY_STATUS = 456;
+	int SUPPLY_DELIVERY_STATUS = 460;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -51890,206 +52308,6 @@ public interface FhirPackage extends EPackage {
 	int SUPPLY_DELIVERY_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.SupplyDispenseImpl <em>Supply Dispense</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.SupplyDispenseImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDispense()
-	 * @generated
-	 */
-	int SUPPLY_DISPENSE = 457;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__ID = BACKBONE_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__IDENTIFIER = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__STATUS = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__TYPE = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Quantity</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__QUANTITY = BACKBONE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Supplied Item</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__SUPPLIED_ITEM = BACKBONE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Supplier</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__SUPPLIER = BACKBONE_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>When Prepared</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__WHEN_PREPARED = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>When Handed Over</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__WHEN_HANDED_OVER = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Destination</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__DESTINATION = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Receiver</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE__RECEIVER = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
-
-	/**
-	 * The number of structural features of the '<em>Supply Dispense</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 10;
-
-	/**
-	 * The number of operations of the '<em>Supply Dispense</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.SupplyDispenseStatusImpl <em>Supply Dispense Status</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.SupplyDispenseStatusImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDispenseStatus()
-	 * @generated
-	 */
-	int SUPPLY_DISPENSE_STATUS = 458;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE_STATUS__EXTENSION = ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE_STATUS__ID = ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE_STATUS__VALUE = ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Supply Dispense Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE_STATUS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Supply Dispense Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_DISPENSE_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.SupplyRequestImpl <em>Supply Request</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52097,7 +52315,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyRequest()
 	 * @generated
 	 */
-	int SUPPLY_REQUEST = 459;
+	int SUPPLY_REQUEST = 461;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -52296,7 +52514,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyRequestStatus()
 	 * @generated
 	 */
-	int SUPPLY_REQUEST_STATUS = 460;
+	int SUPPLY_REQUEST_STATUS = 462;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -52351,7 +52569,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyRequestWhen()
 	 * @generated
 	 */
-	int SUPPLY_REQUEST_WHEN = 461;
+	int SUPPLY_REQUEST_WHEN = 463;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -52417,61 +52635,6 @@ public interface FhirPackage extends EPackage {
 	int SUPPLY_REQUEST_WHEN_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.impl.SupplyStatusImpl <em>Supply Status</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.impl.SupplyStatusImpl
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyStatus()
-	 * @generated
-	 */
-	int SUPPLY_STATUS = 462;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_STATUS__EXTENSION = ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_STATUS__ID = ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_STATUS__VALUE = ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Supply Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_STATUS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Supply Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPLY_STATUS_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.SystemRestfulInteractionImpl <em>System Restful Interaction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52479,7 +52642,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSystemRestfulInteraction()
 	 * @generated
 	 */
-	int SYSTEM_RESTFUL_INTERACTION = 463;
+	int SYSTEM_RESTFUL_INTERACTION = 464;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -52534,7 +52697,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScript()
 	 * @generated
 	 */
-	int TEST_SCRIPT = 464;
+	int TEST_SCRIPT = 465;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -52609,13 +52772,76 @@ public interface FhirPackage extends EPackage {
 	int TEST_SCRIPT__MODIFIER_EXTENSION = DOMAIN_RESOURCE__MODIFIER_EXTENSION;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__URL = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__VERSION = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 0;
+	int TEST_SCRIPT__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__PUBLISHER = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -52624,7 +52850,34 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 1;
+	int TEST_SCRIPT__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Metadata</b></em>' containment reference.
@@ -52633,7 +52886,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__METADATA = DOMAIN_RESOURCE_FEATURE_COUNT + 2;
+	int TEST_SCRIPT__METADATA = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Multiserver</b></em>' containment reference.
@@ -52642,7 +52895,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__MULTISERVER = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
+	int TEST_SCRIPT__MULTISERVER = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Fixture</b></em>' containment reference list.
@@ -52651,7 +52904,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__FIXTURE = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int TEST_SCRIPT__FIXTURE = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Profile</b></em>' containment reference list.
@@ -52660,7 +52913,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__PROFILE = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+	int TEST_SCRIPT__PROFILE = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Variable</b></em>' containment reference list.
@@ -52669,7 +52922,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__VARIABLE = DOMAIN_RESOURCE_FEATURE_COUNT + 6;
+	int TEST_SCRIPT__VARIABLE = DOMAIN_RESOURCE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Setup</b></em>' containment reference.
@@ -52678,7 +52931,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__SETUP = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
+	int TEST_SCRIPT__SETUP = DOMAIN_RESOURCE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Test</b></em>' containment reference list.
@@ -52687,7 +52940,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__TEST = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
+	int TEST_SCRIPT__TEST = DOMAIN_RESOURCE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Teardown</b></em>' containment reference.
@@ -52696,7 +52949,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT__TEARDOWN = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+	int TEST_SCRIPT__TEARDOWN = DOMAIN_RESOURCE_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>Test Script</em>' class.
@@ -52705,7 +52958,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+	int TEST_SCRIPT_FEATURE_COUNT = DOMAIN_RESOURCE_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of operations of the '<em>Test Script</em>' class.
@@ -52724,7 +52977,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptAction()
 	 * @generated
 	 */
-	int TEST_SCRIPT_ACTION = 465;
+	int TEST_SCRIPT_ACTION = 466;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -52797,7 +53050,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptAction1()
 	 * @generated
 	 */
-	int TEST_SCRIPT_ACTION1 = 466;
+	int TEST_SCRIPT_ACTION1 = 467;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -52870,7 +53123,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptAction2()
 	 * @generated
 	 */
-	int TEST_SCRIPT_ACTION2 = 467;
+	int TEST_SCRIPT_ACTION2 = 468;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -52934,7 +53187,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptAssert()
 	 * @generated
 	 */
-	int TEST_SCRIPT_ASSERT = 468;
+	int TEST_SCRIPT_ASSERT = 469;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53151,7 +53404,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptCapabilities()
 	 * @generated
 	 */
-	int TEST_SCRIPT_CAPABILITIES = 469;
+	int TEST_SCRIPT_CAPABILITIES = 470;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53253,6 +53506,79 @@ public interface FhirPackage extends EPackage {
 	int TEST_SCRIPT_CAPABILITIES_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.TestScriptContactImpl <em>Test Script Contact</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.TestScriptContactImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptContact()
+	 * @generated
+	 */
+	int TEST_SCRIPT_CONTACT = 471;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_CONTACT__EXTENSION = BACKBONE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_CONTACT__ID = BACKBONE_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Modifier Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_CONTACT__MODIFIER_EXTENSION = BACKBONE_ELEMENT__MODIFIER_EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_CONTACT__NAME = BACKBONE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_CONTACT__TELECOM = BACKBONE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Test Script Contact</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_CONTACT_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Test Script Contact</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_CONTACT_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.TestScriptFixtureImpl <em>Test Script Fixture</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53260,7 +53586,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptFixture()
 	 * @generated
 	 */
-	int TEST_SCRIPT_FIXTURE = 470;
+	int TEST_SCRIPT_FIXTURE = 472;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53342,7 +53668,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptLink()
 	 * @generated
 	 */
-	int TEST_SCRIPT_LINK = 471;
+	int TEST_SCRIPT_LINK = 473;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53415,7 +53741,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptMetadata()
 	 * @generated
 	 */
-	int TEST_SCRIPT_METADATA = 472;
+	int TEST_SCRIPT_METADATA = 474;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53488,7 +53814,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptOperation()
 	 * @generated
 	 */
-	int TEST_SCRIPT_OPERATION = 473;
+	int TEST_SCRIPT_OPERATION = 475;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53581,13 +53907,22 @@ public interface FhirPackage extends EPackage {
 	int TEST_SCRIPT_OPERATION__DESTINATION = BACKBONE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Encode Request Url</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SCRIPT_OPERATION__ENCODE_REQUEST_URL = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The feature id for the '<em><b>Params</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_OPERATION__PARAMS = BACKBONE_ELEMENT_FEATURE_COUNT + 7;
+	int TEST_SCRIPT_OPERATION__PARAMS = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Request Header</b></em>' containment reference list.
@@ -53596,7 +53931,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_OPERATION__REQUEST_HEADER = BACKBONE_ELEMENT_FEATURE_COUNT + 8;
+	int TEST_SCRIPT_OPERATION__REQUEST_HEADER = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Response Id</b></em>' containment reference.
@@ -53605,7 +53940,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_OPERATION__RESPONSE_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 9;
+	int TEST_SCRIPT_OPERATION__RESPONSE_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Source Id</b></em>' containment reference.
@@ -53614,7 +53949,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_OPERATION__SOURCE_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 10;
+	int TEST_SCRIPT_OPERATION__SOURCE_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Target Id</b></em>' containment reference.
@@ -53623,7 +53958,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_OPERATION__TARGET_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 11;
+	int TEST_SCRIPT_OPERATION__TARGET_ID = BACKBONE_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' containment reference.
@@ -53632,7 +53967,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_OPERATION__URL = BACKBONE_ELEMENT_FEATURE_COUNT + 12;
+	int TEST_SCRIPT_OPERATION__URL = BACKBONE_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Test Script Operation</em>' class.
@@ -53641,7 +53976,7 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SCRIPT_OPERATION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 13;
+	int TEST_SCRIPT_OPERATION_FEATURE_COUNT = BACKBONE_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of operations of the '<em>Test Script Operation</em>' class.
@@ -53660,7 +53995,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptRequestHeader()
 	 * @generated
 	 */
-	int TEST_SCRIPT_REQUEST_HEADER = 474;
+	int TEST_SCRIPT_REQUEST_HEADER = 476;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53733,7 +54068,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptSetup()
 	 * @generated
 	 */
-	int TEST_SCRIPT_SETUP = 475;
+	int TEST_SCRIPT_SETUP = 477;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53806,7 +54141,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptTeardown()
 	 * @generated
 	 */
-	int TEST_SCRIPT_TEARDOWN = 476;
+	int TEST_SCRIPT_TEARDOWN = 478;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53870,7 +54205,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptTest()
 	 * @generated
 	 */
-	int TEST_SCRIPT_TEST = 477;
+	int TEST_SCRIPT_TEST = 479;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -53961,7 +54296,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTestScriptVariable()
 	 * @generated
 	 */
-	int TEST_SCRIPT_VARIABLE = 478;
+	int TEST_SCRIPT_VARIABLE = 480;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54052,7 +54387,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTime()
 	 * @generated
 	 */
-	int TIME = 479;
+	int TIME = 481;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54107,7 +54442,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTiming()
 	 * @generated
 	 */
-	int TIMING = 480;
+	int TIMING = 482;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54180,7 +54515,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTimingRepeat()
 	 * @generated
 	 */
-	int TIMING_REPEAT = 481;
+	int TIMING_REPEAT = 483;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54201,13 +54536,13 @@ public interface FhirPackage extends EPackage {
 	int TIMING_REPEAT__ID = ELEMENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Bounds Duration</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bounds Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMING_REPEAT__BOUNDS_DURATION = ELEMENT_FEATURE_COUNT + 0;
+	int TIMING_REPEAT__BOUNDS_QUANTITY = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Bounds Range</b></em>' containment reference.
@@ -54343,7 +54678,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTransactionMode()
 	 * @generated
 	 */
-	int TRANSACTION_MODE = 482;
+	int TRANSACTION_MODE = 484;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54398,7 +54733,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTypeRestfulInteraction()
 	 * @generated
 	 */
-	int TYPE_RESTFUL_INTERACTION = 483;
+	int TYPE_RESTFUL_INTERACTION = 485;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54453,7 +54788,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnitsOfTime()
 	 * @generated
 	 */
-	int UNITS_OF_TIME = 484;
+	int UNITS_OF_TIME = 486;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54501,6 +54836,61 @@ public interface FhirPackage extends EPackage {
 	int UNITS_OF_TIME_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.UnknownContentCodeImpl <em>Unknown Content Code</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.UnknownContentCodeImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnknownContentCode()
+	 * @generated
+	 */
+	int UNKNOWN_CONTENT_CODE = 487;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNKNOWN_CONTENT_CODE__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNKNOWN_CONTENT_CODE__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNKNOWN_CONTENT_CODE__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Unknown Content Code</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNKNOWN_CONTENT_CODE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Unknown Content Code</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNKNOWN_CONTENT_CODE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.impl.UnsignedIntImpl <em>Unsigned Int</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -54508,7 +54898,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnsignedInt()
 	 * @generated
 	 */
-	int UNSIGNED_INT = 485;
+	int UNSIGNED_INT = 488;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54563,7 +54953,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUri()
 	 * @generated
 	 */
-	int URI = 486;
+	int URI = 489;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54618,7 +55008,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUse()
 	 * @generated
 	 */
-	int USE = 487;
+	int USE = 490;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54673,7 +55063,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUuid()
 	 * @generated
 	 */
-	int UUID = 488;
+	int UUID = 491;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -54728,7 +55118,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSet()
 	 * @generated
 	 */
-	int VALUE_SET = 489;
+	int VALUE_SET = 492;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -54839,22 +55229,22 @@ public interface FhirPackage extends EPackage {
 	int VALUE_SET__NAME = DOMAIN_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Status</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
+	int VALUE_SET__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Immutable</b></em>' containment reference.
+	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET__IMMUTABLE = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
+	int VALUE_SET__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Publisher</b></em>' containment reference.
@@ -54875,67 +55265,13 @@ public interface FhirPackage extends EPackage {
 	int VALUE_SET__CONTACT = DOMAIN_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET__STATUS = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Experimental</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET__EXPERIMENTAL = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Extensible</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SET__EXTENSIBLE = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
-
-	/**
 	 * The feature id for the '<em><b>Date</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+	int VALUE_SET__DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Locked Date</b></em>' containment reference.
@@ -54944,7 +55280,61 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET__LOCKED_DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
+	int VALUE_SET__LOCKED_DATE = DOMAIN_RESOURCE_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__DESCRIPTION = DOMAIN_RESOURCE_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Use Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__USE_CONTEXT = DOMAIN_RESOURCE_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Immutable</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__IMMUTABLE = DOMAIN_RESOURCE_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__REQUIREMENTS = DOMAIN_RESOURCE_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Copyright</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__COPYRIGHT = DOMAIN_RESOURCE_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Extensible</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__EXTENSIBLE = DOMAIN_RESOURCE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Code System</b></em>' containment reference.
@@ -54999,7 +55389,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetCodeSystem()
 	 * @generated
 	 */
-	int VALUE_SET_CODE_SYSTEM = 490;
+	int VALUE_SET_CODE_SYSTEM = 493;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55090,7 +55480,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetCompose()
 	 * @generated
 	 */
-	int VALUE_SET_COMPOSE = 491;
+	int VALUE_SET_COMPOSE = 494;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55172,7 +55562,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetConcept()
 	 * @generated
 	 */
-	int VALUE_SET_CONCEPT = 492;
+	int VALUE_SET_CONCEPT = 495;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55281,7 +55671,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetConcept1()
 	 * @generated
 	 */
-	int VALUE_SET_CONCEPT1 = 493;
+	int VALUE_SET_CONCEPT1 = 496;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55363,7 +55753,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetContact()
 	 * @generated
 	 */
-	int VALUE_SET_CONTACT = 494;
+	int VALUE_SET_CONTACT = 497;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55436,7 +55826,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetContains()
 	 * @generated
 	 */
-	int VALUE_SET_CONTAINS = 495;
+	int VALUE_SET_CONTAINS = 498;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55545,7 +55935,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetDesignation()
 	 * @generated
 	 */
-	int VALUE_SET_DESIGNATION = 496;
+	int VALUE_SET_DESIGNATION = 499;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55627,7 +56017,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetExpansion()
 	 * @generated
 	 */
-	int VALUE_SET_EXPANSION = 497;
+	int VALUE_SET_EXPANSION = 500;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55736,7 +56126,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetFilter()
 	 * @generated
 	 */
-	int VALUE_SET_FILTER = 498;
+	int VALUE_SET_FILTER = 501;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55818,7 +56208,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetInclude()
 	 * @generated
 	 */
-	int VALUE_SET_INCLUDE = 499;
+	int VALUE_SET_INCLUDE = 502;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -55909,7 +56299,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getValueSetParameter()
 	 * @generated
 	 */
-	int VALUE_SET_PARAMETER = 500;
+	int VALUE_SET_PARAMETER = 503;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -56027,7 +56417,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionBase()
 	 * @generated
 	 */
-	int VISION_BASE = 501;
+	int VISION_BASE = 504;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -56082,7 +56472,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionEyes()
 	 * @generated
 	 */
-	int VISION_EYES = 502;
+	int VISION_EYES = 505;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -56137,7 +56527,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionPrescription()
 	 * @generated
 	 */
-	int VISION_PRESCRIPTION = 503;
+	int VISION_PRESCRIPTION = 506;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -56309,7 +56699,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionPrescriptionDispense()
 	 * @generated
 	 */
-	int VISION_PRESCRIPTION_DISPENSE = 504;
+	int VISION_PRESCRIPTION_DISPENSE = 507;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -56492,6 +56882,61 @@ public interface FhirPackage extends EPackage {
 	int VISION_PRESCRIPTION_DISPENSE_OPERATION_COUNT = BACKBONE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.hl7.fhir.impl.XPathUsageTypeImpl <em>XPath Usage Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.impl.XPathUsageTypeImpl
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getXPathUsageType()
+	 * @generated
+	 */
+	int XPATH_USAGE_TYPE = 508;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XPATH_USAGE_TYPE__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XPATH_USAGE_TYPE__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XPATH_USAGE_TYPE__VALUE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>XPath Usage Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XPATH_USAGE_TYPE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>XPath Usage Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XPATH_USAGE_TYPE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AccountStatusList <em>Account Status List</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56499,7 +56944,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAccountStatusList()
 	 * @generated
 	 */
-	int ACCOUNT_STATUS_LIST = 505;
+	int ACCOUNT_STATUS_LIST = 509;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ActionListList <em>Action List List</em>}' enum.
@@ -56509,7 +56954,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getActionListList()
 	 * @generated
 	 */
-	int ACTION_LIST_LIST = 506;
+	int ACTION_LIST_LIST = 510;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AddressTypeList <em>Address Type List</em>}' enum.
@@ -56519,7 +56964,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAddressTypeList()
 	 * @generated
 	 */
-	int ADDRESS_TYPE_LIST = 507;
+	int ADDRESS_TYPE_LIST = 511;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AddressUseList <em>Address Use List</em>}' enum.
@@ -56529,7 +56974,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAddressUseList()
 	 * @generated
 	 */
-	int ADDRESS_USE_LIST = 508;
+	int ADDRESS_USE_LIST = 512;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AdministrativeGenderList <em>Administrative Gender List</em>}' enum.
@@ -56539,7 +56984,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAdministrativeGenderList()
 	 * @generated
 	 */
-	int ADMINISTRATIVE_GENDER_LIST = 509;
+	int ADMINISTRATIVE_GENDER_LIST = 513;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AgeUnitsList <em>Age Units List</em>}' enum.
@@ -56549,7 +56994,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAgeUnitsList()
 	 * @generated
 	 */
-	int AGE_UNITS_LIST = 510;
+	int AGE_UNITS_LIST = 514;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AggregationModeList <em>Aggregation Mode List</em>}' enum.
@@ -56559,7 +57004,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAggregationModeList()
 	 * @generated
 	 */
-	int AGGREGATION_MODE_LIST = 511;
+	int AGGREGATION_MODE_LIST = 515;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AllergyIntoleranceCategoryList <em>Allergy Intolerance Category List</em>}' enum.
@@ -56569,7 +57014,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceCategoryList()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_CATEGORY_LIST = 512;
+	int ALLERGY_INTOLERANCE_CATEGORY_LIST = 516;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AllergyIntoleranceCertaintyList <em>Allergy Intolerance Certainty List</em>}' enum.
@@ -56579,7 +57024,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceCertaintyList()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_CERTAINTY_LIST = 513;
+	int ALLERGY_INTOLERANCE_CERTAINTY_LIST = 517;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AllergyIntoleranceCriticalityList <em>Allergy Intolerance Criticality List</em>}' enum.
@@ -56589,7 +57034,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceCriticalityList()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_CRITICALITY_LIST = 514;
+	int ALLERGY_INTOLERANCE_CRITICALITY_LIST = 518;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AllergyIntoleranceSeverityList <em>Allergy Intolerance Severity List</em>}' enum.
@@ -56599,7 +57044,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceSeverityList()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_SEVERITY_LIST = 515;
+	int ALLERGY_INTOLERANCE_SEVERITY_LIST = 519;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AllergyIntoleranceStatusList <em>Allergy Intolerance Status List</em>}' enum.
@@ -56609,7 +57054,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceStatusList()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_STATUS_LIST = 516;
+	int ALLERGY_INTOLERANCE_STATUS_LIST = 520;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AllergyIntoleranceTypeList <em>Allergy Intolerance Type List</em>}' enum.
@@ -56619,7 +57064,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceTypeList()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_TYPE_LIST = 517;
+	int ALLERGY_INTOLERANCE_TYPE_LIST = 521;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AnswerFormatList <em>Answer Format List</em>}' enum.
@@ -56629,7 +57074,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAnswerFormatList()
 	 * @generated
 	 */
-	int ANSWER_FORMAT_LIST = 518;
+	int ANSWER_FORMAT_LIST = 522;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AppointmentStatusList <em>Appointment Status List</em>}' enum.
@@ -56639,7 +57084,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAppointmentStatusList()
 	 * @generated
 	 */
-	int APPOINTMENT_STATUS_LIST = 519;
+	int APPOINTMENT_STATUS_LIST = 523;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AssertionDirectionTypeList <em>Assertion Direction Type List</em>}' enum.
@@ -56649,7 +57094,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAssertionDirectionTypeList()
 	 * @generated
 	 */
-	int ASSERTION_DIRECTION_TYPE_LIST = 520;
+	int ASSERTION_DIRECTION_TYPE_LIST = 524;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AssertionOperatorTypeList <em>Assertion Operator Type List</em>}' enum.
@@ -56659,7 +57104,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAssertionOperatorTypeList()
 	 * @generated
 	 */
-	int ASSERTION_OPERATOR_TYPE_LIST = 521;
+	int ASSERTION_OPERATOR_TYPE_LIST = 525;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AssertionResponseTypesList <em>Assertion Response Types List</em>}' enum.
@@ -56669,7 +57114,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAssertionResponseTypesList()
 	 * @generated
 	 */
-	int ASSERTION_RESPONSE_TYPES_LIST = 522;
+	int ASSERTION_RESPONSE_TYPES_LIST = 526;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AuditEventActionList <em>Audit Event Action List</em>}' enum.
@@ -56679,7 +57124,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventActionList()
 	 * @generated
 	 */
-	int AUDIT_EVENT_ACTION_LIST = 523;
+	int AUDIT_EVENT_ACTION_LIST = 527;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AuditEventObjectLifecycleList <em>Audit Event Object Lifecycle List</em>}' enum.
@@ -56689,7 +57134,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventObjectLifecycleList()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OBJECT_LIFECYCLE_LIST = 524;
+	int AUDIT_EVENT_OBJECT_LIFECYCLE_LIST = 528;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AuditEventObjectRoleList <em>Audit Event Object Role List</em>}' enum.
@@ -56699,7 +57144,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventObjectRoleList()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OBJECT_ROLE_LIST = 525;
+	int AUDIT_EVENT_OBJECT_ROLE_LIST = 529;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AuditEventObjectTypeList <em>Audit Event Object Type List</em>}' enum.
@@ -56709,7 +57154,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventObjectTypeList()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OBJECT_TYPE_LIST = 526;
+	int AUDIT_EVENT_OBJECT_TYPE_LIST = 530;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AuditEventOutcomeList <em>Audit Event Outcome List</em>}' enum.
@@ -56719,7 +57164,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventOutcomeList()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OUTCOME_LIST = 527;
+	int AUDIT_EVENT_OUTCOME_LIST = 531;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.AuditEventParticipantNetworkTypeList <em>Audit Event Participant Network Type List</em>}' enum.
@@ -56729,7 +57174,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventParticipantNetworkTypeList()
 	 * @generated
 	 */
-	int AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE_LIST = 528;
+	int AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE_LIST = 532;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.BindingStrengthList <em>Binding Strength List</em>}' enum.
@@ -56739,7 +57184,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getBindingStrengthList()
 	 * @generated
 	 */
-	int BINDING_STRENGTH_LIST = 529;
+	int BINDING_STRENGTH_LIST = 533;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.BundleTypeList <em>Bundle Type List</em>}' enum.
@@ -56749,7 +57194,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getBundleTypeList()
 	 * @generated
 	 */
-	int BUNDLE_TYPE_LIST = 530;
+	int BUNDLE_TYPE_LIST = 534;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.CarePlanActivityCategoryList <em>Care Plan Activity Category List</em>}' enum.
@@ -56759,7 +57204,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCarePlanActivityCategoryList()
 	 * @generated
 	 */
-	int CARE_PLAN_ACTIVITY_CATEGORY_LIST = 531;
+	int CARE_PLAN_ACTIVITY_CATEGORY_LIST = 535;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.CarePlanActivityStatusList <em>Care Plan Activity Status List</em>}' enum.
@@ -56769,7 +57214,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCarePlanActivityStatusList()
 	 * @generated
 	 */
-	int CARE_PLAN_ACTIVITY_STATUS_LIST = 532;
+	int CARE_PLAN_ACTIVITY_STATUS_LIST = 536;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.CarePlanStatusList <em>Care Plan Status List</em>}' enum.
@@ -56779,7 +57224,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCarePlanStatusList()
 	 * @generated
 	 */
-	int CARE_PLAN_STATUS_LIST = 533;
+	int CARE_PLAN_STATUS_LIST = 537;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ClaimTypeList <em>Claim Type List</em>}' enum.
@@ -56789,7 +57234,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getClaimTypeList()
 	 * @generated
 	 */
-	int CLAIM_TYPE_LIST = 534;
+	int CLAIM_TYPE_LIST = 538;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ClinicalImpressionStatusList <em>Clinical Impression Status List</em>}' enum.
@@ -56799,7 +57244,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getClinicalImpressionStatusList()
 	 * @generated
 	 */
-	int CLINICAL_IMPRESSION_STATUS_LIST = 535;
+	int CLINICAL_IMPRESSION_STATUS_LIST = 539;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.CommunicationRequestStatusList <em>Communication Request Status List</em>}' enum.
@@ -56809,7 +57254,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCommunicationRequestStatusList()
 	 * @generated
 	 */
-	int COMMUNICATION_REQUEST_STATUS_LIST = 536;
+	int COMMUNICATION_REQUEST_STATUS_LIST = 540;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.CommunicationStatusList <em>Communication Status List</em>}' enum.
@@ -56819,7 +57264,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCommunicationStatusList()
 	 * @generated
 	 */
-	int COMMUNICATION_STATUS_LIST = 537;
+	int COMMUNICATION_STATUS_LIST = 541;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.CompositionAttestationModeList <em>Composition Attestation Mode List</em>}' enum.
@@ -56829,7 +57274,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCompositionAttestationModeList()
 	 * @generated
 	 */
-	int COMPOSITION_ATTESTATION_MODE_LIST = 538;
+	int COMPOSITION_ATTESTATION_MODE_LIST = 542;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.CompositionStatusList <em>Composition Status List</em>}' enum.
@@ -56839,7 +57284,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCompositionStatusList()
 	 * @generated
 	 */
-	int COMPOSITION_STATUS_LIST = 539;
+	int COMPOSITION_STATUS_LIST = 543;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ConceptMapEquivalenceList <em>Concept Map Equivalence List</em>}' enum.
@@ -56849,7 +57294,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConceptMapEquivalenceList()
 	 * @generated
 	 */
-	int CONCEPT_MAP_EQUIVALENCE_LIST = 540;
+	int CONCEPT_MAP_EQUIVALENCE_LIST = 544;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ConditionalDeleteStatusList <em>Conditional Delete Status List</em>}' enum.
@@ -56859,17 +57304,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionalDeleteStatusList()
 	 * @generated
 	 */
-	int CONDITIONAL_DELETE_STATUS_LIST = 541;
+	int CONDITIONAL_DELETE_STATUS_LIST = 545;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.ConditionClinicalStatusList <em>Condition Clinical Status List</em>}' enum.
+	 * The meta object id for the '{@link org.hl7.fhir.ConditionVerificationStatusList <em>Condition Verification Status List</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.ConditionClinicalStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionClinicalStatusList()
+	 * @see org.hl7.fhir.ConditionVerificationStatusList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionVerificationStatusList()
 	 * @generated
 	 */
-	int CONDITION_CLINICAL_STATUS_LIST = 542;
+	int CONDITION_VERIFICATION_STATUS_LIST = 546;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ConformanceEventModeList <em>Conformance Event Mode List</em>}' enum.
@@ -56879,7 +57324,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceEventModeList()
 	 * @generated
 	 */
-	int CONFORMANCE_EVENT_MODE_LIST = 543;
+	int CONFORMANCE_EVENT_MODE_LIST = 547;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ConformanceResourceStatusList <em>Conformance Resource Status List</em>}' enum.
@@ -56889,7 +57334,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceResourceStatusList()
 	 * @generated
 	 */
-	int CONFORMANCE_RESOURCE_STATUS_LIST = 544;
+	int CONFORMANCE_RESOURCE_STATUS_LIST = 548;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.ConformanceStatementKindList <em>Conformance Statement Kind List</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.ConformanceStatementKindList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceStatementKindList()
+	 * @generated
+	 */
+	int CONFORMANCE_STATEMENT_KIND_LIST = 549;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ConstraintSeverityList <em>Constraint Severity List</em>}' enum.
@@ -56899,7 +57354,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConstraintSeverityList()
 	 * @generated
 	 */
-	int CONSTRAINT_SEVERITY_LIST = 545;
+	int CONSTRAINT_SEVERITY_LIST = 550;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ContactPointSystemList <em>Contact Point System List</em>}' enum.
@@ -56909,7 +57364,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContactPointSystemList()
 	 * @generated
 	 */
-	int CONTACT_POINT_SYSTEM_LIST = 546;
+	int CONTACT_POINT_SYSTEM_LIST = 551;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ContactPointUseList <em>Contact Point Use List</em>}' enum.
@@ -56919,7 +57374,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContactPointUseList()
 	 * @generated
 	 */
-	int CONTACT_POINT_USE_LIST = 547;
+	int CONTACT_POINT_USE_LIST = 552;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ContentTypeList <em>Content Type List</em>}' enum.
@@ -56929,7 +57384,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContentTypeList()
 	 * @generated
 	 */
-	int CONTENT_TYPE_LIST = 548;
+	int CONTENT_TYPE_LIST = 553;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ContraindicationSeverityList <em>Contraindication Severity List</em>}' enum.
@@ -56939,17 +57394,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContraindicationSeverityList()
 	 * @generated
 	 */
-	int CONTRAINDICATION_SEVERITY_LIST = 549;
+	int CONTRAINDICATION_SEVERITY_LIST = 554;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.DataElementSpecificityList <em>Data Element Specificity List</em>}' enum.
+	 * The meta object id for the '{@link org.hl7.fhir.DataElementStringencyList <em>Data Element Stringency List</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.DataElementSpecificityList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementSpecificityList()
+	 * @see org.hl7.fhir.DataElementStringencyList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementStringencyList()
 	 * @generated
 	 */
-	int DATA_ELEMENT_SPECIFICITY_LIST = 550;
+	int DATA_ELEMENT_STRINGENCY_LIST = 555;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DaysOfWeekList <em>Days Of Week List</em>}' enum.
@@ -56959,7 +57414,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDaysOfWeekList()
 	 * @generated
 	 */
-	int DAYS_OF_WEEK_LIST = 551;
+	int DAYS_OF_WEEK_LIST = 556;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceMetricCalibrationStateList <em>Device Metric Calibration State List</em>}' enum.
@@ -56969,7 +57424,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCalibrationStateList()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CALIBRATION_STATE_LIST = 552;
+	int DEVICE_METRIC_CALIBRATION_STATE_LIST = 557;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceMetricCalibrationTypeList <em>Device Metric Calibration Type List</em>}' enum.
@@ -56979,7 +57434,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCalibrationTypeList()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CALIBRATION_TYPE_LIST = 553;
+	int DEVICE_METRIC_CALIBRATION_TYPE_LIST = 558;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceMetricCategoryList <em>Device Metric Category List</em>}' enum.
@@ -56989,7 +57444,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCategoryList()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CATEGORY_LIST = 554;
+	int DEVICE_METRIC_CATEGORY_LIST = 559;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceMetricColorList <em>Device Metric Color List</em>}' enum.
@@ -56999,7 +57454,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricColorList()
 	 * @generated
 	 */
-	int DEVICE_METRIC_COLOR_LIST = 555;
+	int DEVICE_METRIC_COLOR_LIST = 560;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceMetricOperationalStatusList <em>Device Metric Operational Status List</em>}' enum.
@@ -57009,7 +57464,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricOperationalStatusList()
 	 * @generated
 	 */
-	int DEVICE_METRIC_OPERATIONAL_STATUS_LIST = 556;
+	int DEVICE_METRIC_OPERATIONAL_STATUS_LIST = 561;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceStatusList <em>Device Status List</em>}' enum.
@@ -57019,7 +57474,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceStatusList()
 	 * @generated
 	 */
-	int DEVICE_STATUS_LIST = 557;
+	int DEVICE_STATUS_LIST = 562;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceUseRequestPriorityList <em>Device Use Request Priority List</em>}' enum.
@@ -57029,7 +57484,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseRequestPriorityList()
 	 * @generated
 	 */
-	int DEVICE_USE_REQUEST_PRIORITY_LIST = 558;
+	int DEVICE_USE_REQUEST_PRIORITY_LIST = 563;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DeviceUseRequestStatusList <em>Device Use Request Status List</em>}' enum.
@@ -57039,7 +57494,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseRequestStatusList()
 	 * @generated
 	 */
-	int DEVICE_USE_REQUEST_STATUS_LIST = 559;
+	int DEVICE_USE_REQUEST_STATUS_LIST = 564;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DiagnosticOrderPriorityList <em>Diagnostic Order Priority List</em>}' enum.
@@ -57049,7 +57504,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderPriorityList()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_PRIORITY_LIST = 560;
+	int DIAGNOSTIC_ORDER_PRIORITY_LIST = 565;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DiagnosticOrderStatusList <em>Diagnostic Order Status List</em>}' enum.
@@ -57059,7 +57514,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderStatusList()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_STATUS_LIST = 561;
+	int DIAGNOSTIC_ORDER_STATUS_LIST = 566;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DiagnosticReportStatusList <em>Diagnostic Report Status List</em>}' enum.
@@ -57069,7 +57524,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticReportStatusList()
 	 * @generated
 	 */
-	int DIAGNOSTIC_REPORT_STATUS_LIST = 562;
+	int DIAGNOSTIC_REPORT_STATUS_LIST = 567;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DigitalMediaTypeList <em>Digital Media Type List</em>}' enum.
@@ -57079,7 +57534,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDigitalMediaTypeList()
 	 * @generated
 	 */
-	int DIGITAL_MEDIA_TYPE_LIST = 563;
+	int DIGITAL_MEDIA_TYPE_LIST = 568;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DocumentModeList <em>Document Mode List</em>}' enum.
@@ -57089,7 +57544,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentModeList()
 	 * @generated
 	 */
-	int DOCUMENT_MODE_LIST = 564;
+	int DOCUMENT_MODE_LIST = 569;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DocumentReferenceStatusList <em>Document Reference Status List</em>}' enum.
@@ -57099,7 +57554,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentReferenceStatusList()
 	 * @generated
 	 */
-	int DOCUMENT_REFERENCE_STATUS_LIST = 565;
+	int DOCUMENT_REFERENCE_STATUS_LIST = 570;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.DocumentRelationshipTypeList <em>Document Relationship Type List</em>}' enum.
@@ -57109,7 +57564,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentRelationshipTypeList()
 	 * @generated
 	 */
-	int DOCUMENT_RELATIONSHIP_TYPE_LIST = 566;
+	int DOCUMENT_RELATIONSHIP_TYPE_LIST = 571;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.EncounterClassList <em>Encounter Class List</em>}' enum.
@@ -57119,7 +57574,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEncounterClassList()
 	 * @generated
 	 */
-	int ENCOUNTER_CLASS_LIST = 567;
+	int ENCOUNTER_CLASS_LIST = 572;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.EncounterLocationStatusList <em>Encounter Location Status List</em>}' enum.
@@ -57129,7 +57584,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEncounterLocationStatusList()
 	 * @generated
 	 */
-	int ENCOUNTER_LOCATION_STATUS_LIST = 568;
+	int ENCOUNTER_LOCATION_STATUS_LIST = 573;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.EncounterStateList <em>Encounter State List</em>}' enum.
@@ -57139,7 +57594,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEncounterStateList()
 	 * @generated
 	 */
-	int ENCOUNTER_STATE_LIST = 569;
+	int ENCOUNTER_STATE_LIST = 574;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.EpisodeOfCareStatusList <em>Episode Of Care Status List</em>}' enum.
@@ -57149,7 +57604,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEpisodeOfCareStatusList()
 	 * @generated
 	 */
-	int EPISODE_OF_CARE_STATUS_LIST = 570;
+	int EPISODE_OF_CARE_STATUS_LIST = 575;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.EventTimingList <em>Event Timing List</em>}' enum.
@@ -57159,7 +57614,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEventTimingList()
 	 * @generated
 	 */
-	int EVENT_TIMING_LIST = 571;
+	int EVENT_TIMING_LIST = 576;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ExtensionContextList <em>Extension Context List</em>}' enum.
@@ -57169,7 +57624,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getExtensionContextList()
 	 * @generated
 	 */
-	int EXTENSION_CONTEXT_LIST = 572;
+	int EXTENSION_CONTEXT_LIST = 577;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.FilterOperatorList <em>Filter Operator List</em>}' enum.
@@ -57179,7 +57634,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getFilterOperatorList()
 	 * @generated
 	 */
-	int FILTER_OPERATOR_LIST = 573;
+	int FILTER_OPERATOR_LIST = 578;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.FlagStatusList <em>Flag Status List</em>}' enum.
@@ -57189,7 +57644,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getFlagStatusList()
 	 * @generated
 	 */
-	int FLAG_STATUS_LIST = 574;
+	int FLAG_STATUS_LIST = 579;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.GoalStatusList <em>Goal Status List</em>}' enum.
@@ -57199,7 +57654,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGoalStatusList()
 	 * @generated
 	 */
-	int GOAL_STATUS_LIST = 575;
+	int GOAL_STATUS_LIST = 580;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.GroupTypeList <em>Group Type List</em>}' enum.
@@ -57209,7 +57664,37 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGroupTypeList()
 	 * @generated
 	 */
-	int GROUP_TYPE_LIST = 576;
+	int GROUP_TYPE_LIST = 581;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.GuideDependencyTypeList <em>Guide Dependency Type List</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.GuideDependencyTypeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuideDependencyTypeList()
+	 * @generated
+	 */
+	int GUIDE_DEPENDENCY_TYPE_LIST = 582;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.GuidePageKindList <em>Guide Page Kind List</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.GuidePageKindList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuidePageKindList()
+	 * @generated
+	 */
+	int GUIDE_PAGE_KIND_LIST = 583;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.GuideResourcePurposeList <em>Guide Resource Purpose List</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.GuideResourcePurposeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuideResourcePurposeList()
+	 * @generated
+	 */
+	int GUIDE_RESOURCE_PURPOSE_LIST = 584;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.HTTPVerbList <em>HTTP Verb List</em>}' enum.
@@ -57219,7 +57704,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHTTPVerbList()
 	 * @generated
 	 */
-	int HTTP_VERB_LIST = 577;
+	int HTTP_VERB_LIST = 585;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.IdentifierUseList <em>Identifier Use List</em>}' enum.
@@ -57229,7 +57714,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdentifierUseList()
 	 * @generated
 	 */
-	int IDENTIFIER_USE_LIST = 578;
+	int IDENTIFIER_USE_LIST = 586;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.IdentityAssuranceLevelList <em>Identity Assurance Level List</em>}' enum.
@@ -57239,7 +57724,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdentityAssuranceLevelList()
 	 * @generated
 	 */
-	int IDENTITY_ASSURANCE_LEVEL_LIST = 579;
+	int IDENTITY_ASSURANCE_LEVEL_LIST = 587;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.InstanceAvailabilityList <em>Instance Availability List</em>}' enum.
@@ -57249,7 +57734,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getInstanceAvailabilityList()
 	 * @generated
 	 */
-	int INSTANCE_AVAILABILITY_LIST = 580;
+	int INSTANCE_AVAILABILITY_LIST = 588;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.IssueSeverityList <em>Issue Severity List</em>}' enum.
@@ -57259,7 +57744,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIssueSeverityList()
 	 * @generated
 	 */
-	int ISSUE_SEVERITY_LIST = 581;
+	int ISSUE_SEVERITY_LIST = 589;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.IssueTypeList <em>Issue Type List</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.IssueTypeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIssueTypeList()
+	 * @generated
+	 */
+	int ISSUE_TYPE_LIST = 590;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.LinkTypeList <em>Link Type List</em>}' enum.
@@ -57269,7 +57764,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLinkTypeList()
 	 * @generated
 	 */
-	int LINK_TYPE_LIST = 582;
+	int LINK_TYPE_LIST = 591;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ListModeList <em>List Mode List</em>}' enum.
@@ -57279,7 +57774,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getListModeList()
 	 * @generated
 	 */
-	int LIST_MODE_LIST = 583;
+	int LIST_MODE_LIST = 592;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ListStatusList <em>List Status List</em>}' enum.
@@ -57289,7 +57784,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getListStatusList()
 	 * @generated
 	 */
-	int LIST_STATUS_LIST = 584;
+	int LIST_STATUS_LIST = 593;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.LocationModeList <em>Location Mode List</em>}' enum.
@@ -57299,7 +57794,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocationModeList()
 	 * @generated
 	 */
-	int LOCATION_MODE_LIST = 585;
+	int LOCATION_MODE_LIST = 594;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.LocationStatusList <em>Location Status List</em>}' enum.
@@ -57309,7 +57804,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocationStatusList()
 	 * @generated
 	 */
-	int LOCATION_STATUS_LIST = 586;
+	int LOCATION_STATUS_LIST = 595;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.MeasmntPrincipleList <em>Measmnt Principle List</em>}' enum.
@@ -57319,7 +57814,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMeasmntPrincipleList()
 	 * @generated
 	 */
-	int MEASMNT_PRINCIPLE_LIST = 587;
+	int MEASMNT_PRINCIPLE_LIST = 596;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.MedicationAdministrationStatusList <em>Medication Administration Status List</em>}' enum.
@@ -57329,7 +57824,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationAdministrationStatusList()
 	 * @generated
 	 */
-	int MEDICATION_ADMINISTRATION_STATUS_LIST = 588;
+	int MEDICATION_ADMINISTRATION_STATUS_LIST = 597;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.MedicationDispenseStatusList <em>Medication Dispense Status List</em>}' enum.
@@ -57339,7 +57834,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationDispenseStatusList()
 	 * @generated
 	 */
-	int MEDICATION_DISPENSE_STATUS_LIST = 589;
+	int MEDICATION_DISPENSE_STATUS_LIST = 598;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.MedicationKindList <em>Medication Kind List</em>}' enum.
@@ -57349,7 +57844,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationKindList()
 	 * @generated
 	 */
-	int MEDICATION_KIND_LIST = 590;
+	int MEDICATION_KIND_LIST = 599;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.MedicationPrescriptionStatusList <em>Medication Prescription Status List</em>}' enum.
@@ -57359,7 +57854,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPrescriptionStatusList()
 	 * @generated
 	 */
-	int MEDICATION_PRESCRIPTION_STATUS_LIST = 591;
+	int MEDICATION_PRESCRIPTION_STATUS_LIST = 600;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.MedicationStatementStatusList <em>Medication Statement Status List</em>}' enum.
@@ -57369,7 +57864,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationStatementStatusList()
 	 * @generated
 	 */
-	int MEDICATION_STATEMENT_STATUS_LIST = 592;
+	int MEDICATION_STATEMENT_STATUS_LIST = 601;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.MessageSignificanceCategoryList <em>Message Significance Category List</em>}' enum.
@@ -57379,7 +57874,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMessageSignificanceCategoryList()
 	 * @generated
 	 */
-	int MESSAGE_SIGNIFICANCE_CATEGORY_LIST = 593;
+	int MESSAGE_SIGNIFICANCE_CATEGORY_LIST = 602;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.NameUseList <em>Name Use List</em>}' enum.
@@ -57389,7 +57884,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNameUseList()
 	 * @generated
 	 */
-	int NAME_USE_LIST = 594;
+	int NAME_USE_LIST = 603;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.NamingSystemIdentifierTypeList <em>Naming System Identifier Type List</em>}' enum.
@@ -57399,7 +57894,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemIdentifierTypeList()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_IDENTIFIER_TYPE_LIST = 595;
+	int NAMING_SYSTEM_IDENTIFIER_TYPE_LIST = 604;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.NamingSystemTypeList <em>Naming System Type List</em>}' enum.
@@ -57409,7 +57904,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemTypeList()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_TYPE_LIST = 596;
+	int NAMING_SYSTEM_TYPE_LIST = 605;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.NarrativeStatusList <em>Narrative Status List</em>}' enum.
@@ -57419,7 +57914,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNarrativeStatusList()
 	 * @generated
 	 */
-	int NARRATIVE_STATUS_LIST = 597;
+	int NARRATIVE_STATUS_LIST = 606;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.NoteTypeList <em>Note Type List</em>}' enum.
@@ -57429,7 +57924,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNoteTypeList()
 	 * @generated
 	 */
-	int NOTE_TYPE_LIST = 598;
+	int NOTE_TYPE_LIST = 607;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.NutritionOrderStatusList <em>Nutrition Order Status List</em>}' enum.
@@ -57439,7 +57934,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderStatusList()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_STATUS_LIST = 599;
+	int NUTRITION_ORDER_STATUS_LIST = 608;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ObservationRelationshipTypeList <em>Observation Relationship Type List</em>}' enum.
@@ -57449,17 +57944,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationRelationshipTypeList()
 	 * @generated
 	 */
-	int OBSERVATION_RELATIONSHIP_TYPE_LIST = 600;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.ObservationReliabilityList <em>Observation Reliability List</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.ObservationReliabilityList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationReliabilityList()
-	 * @generated
-	 */
-	int OBSERVATION_RELIABILITY_LIST = 601;
+	int OBSERVATION_RELATIONSHIP_TYPE_LIST = 609;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ObservationStatusList <em>Observation Status List</em>}' enum.
@@ -57469,7 +57954,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationStatusList()
 	 * @generated
 	 */
-	int OBSERVATION_STATUS_LIST = 602;
+	int OBSERVATION_STATUS_LIST = 610;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.OperationKindList <em>Operation Kind List</em>}' enum.
@@ -57479,7 +57964,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationKindList()
 	 * @generated
 	 */
-	int OPERATION_KIND_LIST = 603;
+	int OPERATION_KIND_LIST = 611;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.OperationParameterUseList <em>Operation Parameter Use List</em>}' enum.
@@ -57489,7 +57974,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationParameterUseList()
 	 * @generated
 	 */
-	int OPERATION_PARAMETER_USE_LIST = 604;
+	int OPERATION_PARAMETER_USE_LIST = 612;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.OrderStatusList <em>Order Status List</em>}' enum.
@@ -57499,17 +57984,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrderStatusList()
 	 * @generated
 	 */
-	int ORDER_STATUS_LIST = 605;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.PagePurposeList <em>Page Purpose List</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.PagePurposeList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPagePurposeList()
-	 * @generated
-	 */
-	int PAGE_PURPOSE_LIST = 606;
+	int ORDER_STATUS_LIST = 613;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ParticipantRequiredList <em>Participant Required List</em>}' enum.
@@ -57519,7 +57994,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipantRequiredList()
 	 * @generated
 	 */
-	int PARTICIPANT_REQUIRED_LIST = 607;
+	int PARTICIPANT_REQUIRED_LIST = 614;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ParticipantStatusList <em>Participant Status List</em>}' enum.
@@ -57529,7 +58004,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipantStatusList()
 	 * @generated
 	 */
-	int PARTICIPANT_STATUS_LIST = 608;
+	int PARTICIPANT_STATUS_LIST = 615;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ParticipationStatusList <em>Participation Status List</em>}' enum.
@@ -57539,7 +58014,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipationStatusList()
 	 * @generated
 	 */
-	int PARTICIPATION_STATUS_LIST = 609;
+	int PARTICIPATION_STATUS_LIST = 616;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ProcedureRelationshipTypeList <em>Procedure Relationship Type List</em>}' enum.
@@ -57549,7 +58024,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRelationshipTypeList()
 	 * @generated
 	 */
-	int PROCEDURE_RELATIONSHIP_TYPE_LIST = 610;
+	int PROCEDURE_RELATIONSHIP_TYPE_LIST = 617;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ProcedureRequestPriorityList <em>Procedure Request Priority List</em>}' enum.
@@ -57559,7 +58034,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequestPriorityList()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST_PRIORITY_LIST = 611;
+	int PROCEDURE_REQUEST_PRIORITY_LIST = 618;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ProcedureRequestStatusList <em>Procedure Request Status List</em>}' enum.
@@ -57569,7 +58044,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequestStatusList()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST_STATUS_LIST = 612;
+	int PROCEDURE_REQUEST_STATUS_LIST = 619;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ProcedureStatusList <em>Procedure Status List</em>}' enum.
@@ -57579,7 +58054,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureStatusList()
 	 * @generated
 	 */
-	int PROCEDURE_STATUS_LIST = 613;
+	int PROCEDURE_STATUS_LIST = 620;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.PropertyRepresentationList <em>Property Representation List</em>}' enum.
@@ -57589,7 +58064,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPropertyRepresentationList()
 	 * @generated
 	 */
-	int PROPERTY_REPRESENTATION_LIST = 614;
+	int PROPERTY_REPRESENTATION_LIST = 621;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ProvenanceEntityRoleList <em>Provenance Entity Role List</em>}' enum.
@@ -57599,7 +58074,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProvenanceEntityRoleList()
 	 * @generated
 	 */
-	int PROVENANCE_ENTITY_ROLE_LIST = 615;
+	int PROVENANCE_ENTITY_ROLE_LIST = 622;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.QuantityComparatorList <em>Quantity Comparator List</em>}' enum.
@@ -57609,17 +58084,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuantityComparatorList()
 	 * @generated
 	 */
-	int QUANTITY_COMPARATOR_LIST = 616;
+	int QUANTITY_COMPARATOR_LIST = 623;
 
 	/**
-	 * The meta object id for the '{@link org.hl7.fhir.QuestionnaireAnswersStatusList <em>Questionnaire Answers Status List</em>}' enum.
+	 * The meta object id for the '{@link org.hl7.fhir.QuestionnaireResponseStatusList <em>Questionnaire Response Status List</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.QuestionnaireAnswersStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireAnswersStatusList()
+	 * @see org.hl7.fhir.QuestionnaireResponseStatusList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireResponseStatusList()
 	 * @generated
 	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS_LIST = 617;
+	int QUESTIONNAIRE_RESPONSE_STATUS_LIST = 624;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.QuestionnaireStatusList <em>Questionnaire Status List</em>}' enum.
@@ -57629,7 +58104,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireStatusList()
 	 * @generated
 	 */
-	int QUESTIONNAIRE_STATUS_LIST = 618;
+	int QUESTIONNAIRE_STATUS_LIST = 625;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ReferralStatusList <em>Referral Status List</em>}' enum.
@@ -57639,7 +58114,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getReferralStatusList()
 	 * @generated
 	 */
-	int REFERRAL_STATUS_LIST = 619;
+	int REFERRAL_STATUS_LIST = 626;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.RemittanceOutcomeList <em>Remittance Outcome List</em>}' enum.
@@ -57649,7 +58124,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRemittanceOutcomeList()
 	 * @generated
 	 */
-	int REMITTANCE_OUTCOME_LIST = 620;
+	int REMITTANCE_OUTCOME_LIST = 627;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ResourceVersionPolicyList <em>Resource Version Policy List</em>}' enum.
@@ -57659,7 +58134,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResourceVersionPolicyList()
 	 * @generated
 	 */
-	int RESOURCE_VERSION_POLICY_LIST = 621;
+	int RESOURCE_VERSION_POLICY_LIST = 628;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.ResponseTypeList <em>Response Type List</em>}' enum.
@@ -57669,7 +58144,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResponseTypeList()
 	 * @generated
 	 */
-	int RESPONSE_TYPE_LIST = 622;
+	int RESPONSE_TYPE_LIST = 629;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.RestfulConformanceModeList <em>Restful Conformance Mode List</em>}' enum.
@@ -57679,7 +58154,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRestfulConformanceModeList()
 	 * @generated
 	 */
-	int RESTFUL_CONFORMANCE_MODE_LIST = 623;
+	int RESTFUL_CONFORMANCE_MODE_LIST = 630;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SearchEntryModeList <em>Search Entry Mode List</em>}' enum.
@@ -57689,7 +58164,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchEntryModeList()
 	 * @generated
 	 */
-	int SEARCH_ENTRY_MODE_LIST = 624;
+	int SEARCH_ENTRY_MODE_LIST = 631;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SearchModifierCodeList <em>Search Modifier Code List</em>}' enum.
@@ -57699,7 +58174,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchModifierCodeList()
 	 * @generated
 	 */
-	int SEARCH_MODIFIER_CODE_LIST = 625;
+	int SEARCH_MODIFIER_CODE_LIST = 632;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SearchParamTypeList <em>Search Param Type List</em>}' enum.
@@ -57709,7 +58184,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchParamTypeList()
 	 * @generated
 	 */
-	int SEARCH_PARAM_TYPE_LIST = 626;
+	int SEARCH_PARAM_TYPE_LIST = 633;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SlicingRulesList <em>Slicing Rules List</em>}' enum.
@@ -57719,7 +58194,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSlicingRulesList()
 	 * @generated
 	 */
-	int SLICING_RULES_LIST = 627;
+	int SLICING_RULES_LIST = 634;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SlotStatusList <em>Slot Status List</em>}' enum.
@@ -57729,7 +58204,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSlotStatusList()
 	 * @generated
 	 */
-	int SLOT_STATUS_LIST = 628;
+	int SLOT_STATUS_LIST = 635;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.StructureDefinitionKindList <em>Structure Definition Kind List</em>}' enum.
@@ -57739,7 +58214,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinitionKindList()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION_KIND_LIST = 629;
+	int STRUCTURE_DEFINITION_KIND_LIST = 636;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SubscriptionChannelTypeList <em>Subscription Channel Type List</em>}' enum.
@@ -57749,7 +58224,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscriptionChannelTypeList()
 	 * @generated
 	 */
-	int SUBSCRIPTION_CHANNEL_TYPE_LIST = 630;
+	int SUBSCRIPTION_CHANNEL_TYPE_LIST = 637;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SubscriptionStatusList <em>Subscription Status List</em>}' enum.
@@ -57759,7 +58234,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscriptionStatusList()
 	 * @generated
 	 */
-	int SUBSCRIPTION_STATUS_LIST = 631;
+	int SUBSCRIPTION_STATUS_LIST = 638;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SupplyDeliveryStatusList <em>Supply Delivery Status List</em>}' enum.
@@ -57769,17 +58244,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDeliveryStatusList()
 	 * @generated
 	 */
-	int SUPPLY_DELIVERY_STATUS_LIST = 632;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.SupplyDispenseStatusList <em>Supply Dispense Status List</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.SupplyDispenseStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDispenseStatusList()
-	 * @generated
-	 */
-	int SUPPLY_DISPENSE_STATUS_LIST = 633;
+	int SUPPLY_DELIVERY_STATUS_LIST = 639;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SupplyRequestStatusList <em>Supply Request Status List</em>}' enum.
@@ -57789,17 +58254,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyRequestStatusList()
 	 * @generated
 	 */
-	int SUPPLY_REQUEST_STATUS_LIST = 634;
-
-	/**
-	 * The meta object id for the '{@link org.hl7.fhir.SupplyStatusList <em>Supply Status List</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.SupplyStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyStatusList()
-	 * @generated
-	 */
-	int SUPPLY_STATUS_LIST = 635;
+	int SUPPLY_REQUEST_STATUS_LIST = 640;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.SystemRestfulInteractionList <em>System Restful Interaction List</em>}' enum.
@@ -57809,7 +58264,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSystemRestfulInteractionList()
 	 * @generated
 	 */
-	int SYSTEM_RESTFUL_INTERACTION_LIST = 636;
+	int SYSTEM_RESTFUL_INTERACTION_LIST = 641;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.TransactionModeList <em>Transaction Mode List</em>}' enum.
@@ -57819,7 +58274,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTransactionModeList()
 	 * @generated
 	 */
-	int TRANSACTION_MODE_LIST = 637;
+	int TRANSACTION_MODE_LIST = 642;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.TypeRestfulInteractionList <em>Type Restful Interaction List</em>}' enum.
@@ -57829,7 +58284,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTypeRestfulInteractionList()
 	 * @generated
 	 */
-	int TYPE_RESTFUL_INTERACTION_LIST = 638;
+	int TYPE_RESTFUL_INTERACTION_LIST = 643;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.UnitsOfTimeList <em>Units Of Time List</em>}' enum.
@@ -57839,7 +58294,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnitsOfTimeList()
 	 * @generated
 	 */
-	int UNITS_OF_TIME_LIST = 639;
+	int UNITS_OF_TIME_LIST = 644;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.UnknownContentCodeList <em>Unknown Content Code List</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.UnknownContentCodeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnknownContentCodeList()
+	 * @generated
+	 */
+	int UNKNOWN_CONTENT_CODE_LIST = 645;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.UseList <em>Use List</em>}' enum.
@@ -57849,7 +58314,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUseList()
 	 * @generated
 	 */
-	int USE_LIST = 640;
+	int USE_LIST = 646;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.VisionBaseList <em>Vision Base List</em>}' enum.
@@ -57859,7 +58324,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionBaseList()
 	 * @generated
 	 */
-	int VISION_BASE_LIST = 641;
+	int VISION_BASE_LIST = 647;
 
 	/**
 	 * The meta object id for the '{@link org.hl7.fhir.VisionEyesList <em>Vision Eyes List</em>}' enum.
@@ -57869,7 +58334,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionEyesList()
 	 * @generated
 	 */
-	int VISION_EYES_LIST = 642;
+	int VISION_EYES_LIST = 648;
+
+	/**
+	 * The meta object id for the '{@link org.hl7.fhir.XPathUsageTypeList <em>XPath Usage Type List</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.XPathUsageTypeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getXPathUsageTypeList()
+	 * @generated
+	 */
+	int XPATH_USAGE_TYPE_LIST = 649;
 
 	/**
 	 * The meta object id for the '<em>Account Status List Object</em>' data type.
@@ -57879,7 +58354,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAccountStatusListObject()
 	 * @generated
 	 */
-	int ACCOUNT_STATUS_LIST_OBJECT = 643;
+	int ACCOUNT_STATUS_LIST_OBJECT = 650;
 
 	/**
 	 * The meta object id for the '<em>Action List List Object</em>' data type.
@@ -57889,7 +58364,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getActionListListObject()
 	 * @generated
 	 */
-	int ACTION_LIST_LIST_OBJECT = 644;
+	int ACTION_LIST_LIST_OBJECT = 651;
 
 	/**
 	 * The meta object id for the '<em>Address Type List Object</em>' data type.
@@ -57899,7 +58374,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAddressTypeListObject()
 	 * @generated
 	 */
-	int ADDRESS_TYPE_LIST_OBJECT = 645;
+	int ADDRESS_TYPE_LIST_OBJECT = 652;
 
 	/**
 	 * The meta object id for the '<em>Address Use List Object</em>' data type.
@@ -57909,7 +58384,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAddressUseListObject()
 	 * @generated
 	 */
-	int ADDRESS_USE_LIST_OBJECT = 646;
+	int ADDRESS_USE_LIST_OBJECT = 653;
 
 	/**
 	 * The meta object id for the '<em>Administrative Gender List Object</em>' data type.
@@ -57919,7 +58394,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAdministrativeGenderListObject()
 	 * @generated
 	 */
-	int ADMINISTRATIVE_GENDER_LIST_OBJECT = 647;
+	int ADMINISTRATIVE_GENDER_LIST_OBJECT = 654;
 
 	/**
 	 * The meta object id for the '<em>Age Units List Object</em>' data type.
@@ -57929,7 +58404,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAgeUnitsListObject()
 	 * @generated
 	 */
-	int AGE_UNITS_LIST_OBJECT = 648;
+	int AGE_UNITS_LIST_OBJECT = 655;
 
 	/**
 	 * The meta object id for the '<em>Aggregation Mode List Object</em>' data type.
@@ -57939,7 +58414,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAggregationModeListObject()
 	 * @generated
 	 */
-	int AGGREGATION_MODE_LIST_OBJECT = 649;
+	int AGGREGATION_MODE_LIST_OBJECT = 656;
 
 	/**
 	 * The meta object id for the '<em>Allergy Intolerance Category List Object</em>' data type.
@@ -57949,7 +58424,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceCategoryListObject()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_CATEGORY_LIST_OBJECT = 650;
+	int ALLERGY_INTOLERANCE_CATEGORY_LIST_OBJECT = 657;
 
 	/**
 	 * The meta object id for the '<em>Allergy Intolerance Certainty List Object</em>' data type.
@@ -57959,7 +58434,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceCertaintyListObject()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_CERTAINTY_LIST_OBJECT = 651;
+	int ALLERGY_INTOLERANCE_CERTAINTY_LIST_OBJECT = 658;
 
 	/**
 	 * The meta object id for the '<em>Allergy Intolerance Criticality List Object</em>' data type.
@@ -57969,7 +58444,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceCriticalityListObject()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_CRITICALITY_LIST_OBJECT = 652;
+	int ALLERGY_INTOLERANCE_CRITICALITY_LIST_OBJECT = 659;
 
 	/**
 	 * The meta object id for the '<em>Allergy Intolerance Severity List Object</em>' data type.
@@ -57979,7 +58454,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceSeverityListObject()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_SEVERITY_LIST_OBJECT = 653;
+	int ALLERGY_INTOLERANCE_SEVERITY_LIST_OBJECT = 660;
 
 	/**
 	 * The meta object id for the '<em>Allergy Intolerance Status List Object</em>' data type.
@@ -57989,7 +58464,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceStatusListObject()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_STATUS_LIST_OBJECT = 654;
+	int ALLERGY_INTOLERANCE_STATUS_LIST_OBJECT = 661;
 
 	/**
 	 * The meta object id for the '<em>Allergy Intolerance Type List Object</em>' data type.
@@ -57999,7 +58474,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAllergyIntoleranceTypeListObject()
 	 * @generated
 	 */
-	int ALLERGY_INTOLERANCE_TYPE_LIST_OBJECT = 655;
+	int ALLERGY_INTOLERANCE_TYPE_LIST_OBJECT = 662;
 
 	/**
 	 * The meta object id for the '<em>Answer Format List Object</em>' data type.
@@ -58009,7 +58484,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAnswerFormatListObject()
 	 * @generated
 	 */
-	int ANSWER_FORMAT_LIST_OBJECT = 656;
+	int ANSWER_FORMAT_LIST_OBJECT = 663;
 
 	/**
 	 * The meta object id for the '<em>Appointment Status List Object</em>' data type.
@@ -58019,7 +58494,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAppointmentStatusListObject()
 	 * @generated
 	 */
-	int APPOINTMENT_STATUS_LIST_OBJECT = 657;
+	int APPOINTMENT_STATUS_LIST_OBJECT = 664;
 
 	/**
 	 * The meta object id for the '<em>Assertion Direction Type List Object</em>' data type.
@@ -58029,7 +58504,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAssertionDirectionTypeListObject()
 	 * @generated
 	 */
-	int ASSERTION_DIRECTION_TYPE_LIST_OBJECT = 658;
+	int ASSERTION_DIRECTION_TYPE_LIST_OBJECT = 665;
 
 	/**
 	 * The meta object id for the '<em>Assertion Operator Type List Object</em>' data type.
@@ -58039,7 +58514,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAssertionOperatorTypeListObject()
 	 * @generated
 	 */
-	int ASSERTION_OPERATOR_TYPE_LIST_OBJECT = 659;
+	int ASSERTION_OPERATOR_TYPE_LIST_OBJECT = 666;
 
 	/**
 	 * The meta object id for the '<em>Assertion Response Types List Object</em>' data type.
@@ -58049,7 +58524,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAssertionResponseTypesListObject()
 	 * @generated
 	 */
-	int ASSERTION_RESPONSE_TYPES_LIST_OBJECT = 660;
+	int ASSERTION_RESPONSE_TYPES_LIST_OBJECT = 667;
 
 	/**
 	 * The meta object id for the '<em>Audit Event Action List Object</em>' data type.
@@ -58059,7 +58534,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventActionListObject()
 	 * @generated
 	 */
-	int AUDIT_EVENT_ACTION_LIST_OBJECT = 661;
+	int AUDIT_EVENT_ACTION_LIST_OBJECT = 668;
 
 	/**
 	 * The meta object id for the '<em>Audit Event Object Lifecycle List Object</em>' data type.
@@ -58069,7 +58544,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventObjectLifecycleListObject()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OBJECT_LIFECYCLE_LIST_OBJECT = 662;
+	int AUDIT_EVENT_OBJECT_LIFECYCLE_LIST_OBJECT = 669;
 
 	/**
 	 * The meta object id for the '<em>Audit Event Object Role List Object</em>' data type.
@@ -58079,7 +58554,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventObjectRoleListObject()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OBJECT_ROLE_LIST_OBJECT = 663;
+	int AUDIT_EVENT_OBJECT_ROLE_LIST_OBJECT = 670;
 
 	/**
 	 * The meta object id for the '<em>Audit Event Object Type List Object</em>' data type.
@@ -58089,7 +58564,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventObjectTypeListObject()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OBJECT_TYPE_LIST_OBJECT = 664;
+	int AUDIT_EVENT_OBJECT_TYPE_LIST_OBJECT = 671;
 
 	/**
 	 * The meta object id for the '<em>Audit Event Outcome List Object</em>' data type.
@@ -58099,7 +58574,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventOutcomeListObject()
 	 * @generated
 	 */
-	int AUDIT_EVENT_OUTCOME_LIST_OBJECT = 665;
+	int AUDIT_EVENT_OUTCOME_LIST_OBJECT = 672;
 
 	/**
 	 * The meta object id for the '<em>Audit Event Participant Network Type List Object</em>' data type.
@@ -58109,7 +58584,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getAuditEventParticipantNetworkTypeListObject()
 	 * @generated
 	 */
-	int AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE_LIST_OBJECT = 666;
+	int AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE_LIST_OBJECT = 673;
 
 	/**
 	 * The meta object id for the '<em>Base64 Binary Primitive</em>' data type.
@@ -58118,7 +58593,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getBase64BinaryPrimitive()
 	 * @generated
 	 */
-	int BASE64_BINARY_PRIMITIVE = 667;
+	int BASE64_BINARY_PRIMITIVE = 674;
 
 	/**
 	 * The meta object id for the '<em>Binding Strength List Object</em>' data type.
@@ -58128,7 +58603,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getBindingStrengthListObject()
 	 * @generated
 	 */
-	int BINDING_STRENGTH_LIST_OBJECT = 668;
+	int BINDING_STRENGTH_LIST_OBJECT = 675;
 
 	/**
 	 * The meta object id for the '<em>Boolean Primitive</em>' data type.
@@ -58137,7 +58612,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getBooleanPrimitive()
 	 * @generated
 	 */
-	int BOOLEAN_PRIMITIVE = 669;
+	int BOOLEAN_PRIMITIVE = 676;
 
 	/**
 	 * The meta object id for the '<em>Boolean Primitive Object</em>' data type.
@@ -58147,7 +58622,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getBooleanPrimitiveObject()
 	 * @generated
 	 */
-	int BOOLEAN_PRIMITIVE_OBJECT = 670;
+	int BOOLEAN_PRIMITIVE_OBJECT = 677;
 
 	/**
 	 * The meta object id for the '<em>Bundle Type List Object</em>' data type.
@@ -58157,7 +58632,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getBundleTypeListObject()
 	 * @generated
 	 */
-	int BUNDLE_TYPE_LIST_OBJECT = 671;
+	int BUNDLE_TYPE_LIST_OBJECT = 678;
 
 	/**
 	 * The meta object id for the '<em>Care Plan Activity Category List Object</em>' data type.
@@ -58167,7 +58642,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCarePlanActivityCategoryListObject()
 	 * @generated
 	 */
-	int CARE_PLAN_ACTIVITY_CATEGORY_LIST_OBJECT = 672;
+	int CARE_PLAN_ACTIVITY_CATEGORY_LIST_OBJECT = 679;
 
 	/**
 	 * The meta object id for the '<em>Care Plan Activity Status List Object</em>' data type.
@@ -58177,7 +58652,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCarePlanActivityStatusListObject()
 	 * @generated
 	 */
-	int CARE_PLAN_ACTIVITY_STATUS_LIST_OBJECT = 673;
+	int CARE_PLAN_ACTIVITY_STATUS_LIST_OBJECT = 680;
 
 	/**
 	 * The meta object id for the '<em>Care Plan Status List Object</em>' data type.
@@ -58187,7 +58662,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCarePlanStatusListObject()
 	 * @generated
 	 */
-	int CARE_PLAN_STATUS_LIST_OBJECT = 674;
+	int CARE_PLAN_STATUS_LIST_OBJECT = 681;
 
 	/**
 	 * The meta object id for the '<em>Claim Type List Object</em>' data type.
@@ -58197,7 +58672,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getClaimTypeListObject()
 	 * @generated
 	 */
-	int CLAIM_TYPE_LIST_OBJECT = 675;
+	int CLAIM_TYPE_LIST_OBJECT = 682;
 
 	/**
 	 * The meta object id for the '<em>Clinical Impression Status List Object</em>' data type.
@@ -58207,7 +58682,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getClinicalImpressionStatusListObject()
 	 * @generated
 	 */
-	int CLINICAL_IMPRESSION_STATUS_LIST_OBJECT = 676;
+	int CLINICAL_IMPRESSION_STATUS_LIST_OBJECT = 683;
 
 	/**
 	 * The meta object id for the '<em>Code Primitive</em>' data type.
@@ -58217,7 +58692,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCodePrimitive()
 	 * @generated
 	 */
-	int CODE_PRIMITIVE = 677;
+	int CODE_PRIMITIVE = 684;
 
 	/**
 	 * The meta object id for the '<em>Communication Request Status List Object</em>' data type.
@@ -58227,7 +58702,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCommunicationRequestStatusListObject()
 	 * @generated
 	 */
-	int COMMUNICATION_REQUEST_STATUS_LIST_OBJECT = 678;
+	int COMMUNICATION_REQUEST_STATUS_LIST_OBJECT = 685;
 
 	/**
 	 * The meta object id for the '<em>Communication Status List Object</em>' data type.
@@ -58237,7 +58712,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCommunicationStatusListObject()
 	 * @generated
 	 */
-	int COMMUNICATION_STATUS_LIST_OBJECT = 679;
+	int COMMUNICATION_STATUS_LIST_OBJECT = 686;
 
 	/**
 	 * The meta object id for the '<em>Composition Attestation Mode List Object</em>' data type.
@@ -58247,7 +58722,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCompositionAttestationModeListObject()
 	 * @generated
 	 */
-	int COMPOSITION_ATTESTATION_MODE_LIST_OBJECT = 680;
+	int COMPOSITION_ATTESTATION_MODE_LIST_OBJECT = 687;
 
 	/**
 	 * The meta object id for the '<em>Composition Status List Object</em>' data type.
@@ -58257,7 +58732,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getCompositionStatusListObject()
 	 * @generated
 	 */
-	int COMPOSITION_STATUS_LIST_OBJECT = 681;
+	int COMPOSITION_STATUS_LIST_OBJECT = 688;
 
 	/**
 	 * The meta object id for the '<em>Concept Map Equivalence List Object</em>' data type.
@@ -58267,7 +58742,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConceptMapEquivalenceListObject()
 	 * @generated
 	 */
-	int CONCEPT_MAP_EQUIVALENCE_LIST_OBJECT = 682;
+	int CONCEPT_MAP_EQUIVALENCE_LIST_OBJECT = 689;
 
 	/**
 	 * The meta object id for the '<em>Conditional Delete Status List Object</em>' data type.
@@ -58277,17 +58752,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionalDeleteStatusListObject()
 	 * @generated
 	 */
-	int CONDITIONAL_DELETE_STATUS_LIST_OBJECT = 683;
+	int CONDITIONAL_DELETE_STATUS_LIST_OBJECT = 690;
 
 	/**
-	 * The meta object id for the '<em>Condition Clinical Status List Object</em>' data type.
+	 * The meta object id for the '<em>Condition Verification Status List Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.ConditionClinicalStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionClinicalStatusListObject()
+	 * @see org.hl7.fhir.ConditionVerificationStatusList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConditionVerificationStatusListObject()
 	 * @generated
 	 */
-	int CONDITION_CLINICAL_STATUS_LIST_OBJECT = 684;
+	int CONDITION_VERIFICATION_STATUS_LIST_OBJECT = 691;
 
 	/**
 	 * The meta object id for the '<em>Conformance Event Mode List Object</em>' data type.
@@ -58297,7 +58772,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceEventModeListObject()
 	 * @generated
 	 */
-	int CONFORMANCE_EVENT_MODE_LIST_OBJECT = 685;
+	int CONFORMANCE_EVENT_MODE_LIST_OBJECT = 692;
 
 	/**
 	 * The meta object id for the '<em>Conformance Resource Status List Object</em>' data type.
@@ -58307,7 +58782,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceResourceStatusListObject()
 	 * @generated
 	 */
-	int CONFORMANCE_RESOURCE_STATUS_LIST_OBJECT = 686;
+	int CONFORMANCE_RESOURCE_STATUS_LIST_OBJECT = 693;
+
+	/**
+	 * The meta object id for the '<em>Conformance Statement Kind List Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.ConformanceStatementKindList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConformanceStatementKindListObject()
+	 * @generated
+	 */
+	int CONFORMANCE_STATEMENT_KIND_LIST_OBJECT = 694;
 
 	/**
 	 * The meta object id for the '<em>Constraint Severity List Object</em>' data type.
@@ -58317,7 +58802,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getConstraintSeverityListObject()
 	 * @generated
 	 */
-	int CONSTRAINT_SEVERITY_LIST_OBJECT = 687;
+	int CONSTRAINT_SEVERITY_LIST_OBJECT = 695;
 
 	/**
 	 * The meta object id for the '<em>Contact Point System List Object</em>' data type.
@@ -58327,7 +58812,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContactPointSystemListObject()
 	 * @generated
 	 */
-	int CONTACT_POINT_SYSTEM_LIST_OBJECT = 688;
+	int CONTACT_POINT_SYSTEM_LIST_OBJECT = 696;
 
 	/**
 	 * The meta object id for the '<em>Contact Point Use List Object</em>' data type.
@@ -58337,7 +58822,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContactPointUseListObject()
 	 * @generated
 	 */
-	int CONTACT_POINT_USE_LIST_OBJECT = 689;
+	int CONTACT_POINT_USE_LIST_OBJECT = 697;
 
 	/**
 	 * The meta object id for the '<em>Content Type List Object</em>' data type.
@@ -58347,7 +58832,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContentTypeListObject()
 	 * @generated
 	 */
-	int CONTENT_TYPE_LIST_OBJECT = 690;
+	int CONTENT_TYPE_LIST_OBJECT = 698;
 
 	/**
 	 * The meta object id for the '<em>Contraindication Severity List Object</em>' data type.
@@ -58357,17 +58842,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getContraindicationSeverityListObject()
 	 * @generated
 	 */
-	int CONTRAINDICATION_SEVERITY_LIST_OBJECT = 691;
+	int CONTRAINDICATION_SEVERITY_LIST_OBJECT = 699;
 
 	/**
-	 * The meta object id for the '<em>Data Element Specificity List Object</em>' data type.
+	 * The meta object id for the '<em>Data Element Stringency List Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.DataElementSpecificityList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementSpecificityListObject()
+	 * @see org.hl7.fhir.DataElementStringencyList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDataElementStringencyListObject()
 	 * @generated
 	 */
-	int DATA_ELEMENT_SPECIFICITY_LIST_OBJECT = 692;
+	int DATA_ELEMENT_STRINGENCY_LIST_OBJECT = 700;
 
 	/**
 	 * The meta object id for the '<em>Date Primitive</em>' data type.
@@ -58377,7 +58862,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDatePrimitive()
 	 * @generated
 	 */
-	int DATE_PRIMITIVE = 693;
+	int DATE_PRIMITIVE = 701;
 
 	/**
 	 * The meta object id for the '<em>Date Primitive Base</em>' data type.
@@ -58387,7 +58872,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDatePrimitiveBase()
 	 * @generated
 	 */
-	int DATE_PRIMITIVE_BASE = 694;
+	int DATE_PRIMITIVE_BASE = 702;
 
 	/**
 	 * The meta object id for the '<em>Date Time Primitive</em>' data type.
@@ -58397,7 +58882,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDateTimePrimitive()
 	 * @generated
 	 */
-	int DATE_TIME_PRIMITIVE = 695;
+	int DATE_TIME_PRIMITIVE = 703;
 
 	/**
 	 * The meta object id for the '<em>Date Time Primitive Base</em>' data type.
@@ -58407,7 +58892,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDateTimePrimitiveBase()
 	 * @generated
 	 */
-	int DATE_TIME_PRIMITIVE_BASE = 696;
+	int DATE_TIME_PRIMITIVE_BASE = 704;
 
 	/**
 	 * The meta object id for the '<em>Days Of Week List Object</em>' data type.
@@ -58417,7 +58902,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDaysOfWeekListObject()
 	 * @generated
 	 */
-	int DAYS_OF_WEEK_LIST_OBJECT = 697;
+	int DAYS_OF_WEEK_LIST_OBJECT = 705;
 
 	/**
 	 * The meta object id for the '<em>Decimal Primitive</em>' data type.
@@ -58427,7 +58912,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDecimalPrimitive()
 	 * @generated
 	 */
-	int DECIMAL_PRIMITIVE = 698;
+	int DECIMAL_PRIMITIVE = 706;
 
 	/**
 	 * The meta object id for the '<em>Device Metric Calibration State List Object</em>' data type.
@@ -58437,7 +58922,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCalibrationStateListObject()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CALIBRATION_STATE_LIST_OBJECT = 699;
+	int DEVICE_METRIC_CALIBRATION_STATE_LIST_OBJECT = 707;
 
 	/**
 	 * The meta object id for the '<em>Device Metric Calibration Type List Object</em>' data type.
@@ -58447,7 +58932,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCalibrationTypeListObject()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CALIBRATION_TYPE_LIST_OBJECT = 700;
+	int DEVICE_METRIC_CALIBRATION_TYPE_LIST_OBJECT = 708;
 
 	/**
 	 * The meta object id for the '<em>Device Metric Category List Object</em>' data type.
@@ -58457,7 +58942,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricCategoryListObject()
 	 * @generated
 	 */
-	int DEVICE_METRIC_CATEGORY_LIST_OBJECT = 701;
+	int DEVICE_METRIC_CATEGORY_LIST_OBJECT = 709;
 
 	/**
 	 * The meta object id for the '<em>Device Metric Color List Object</em>' data type.
@@ -58467,7 +58952,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricColorListObject()
 	 * @generated
 	 */
-	int DEVICE_METRIC_COLOR_LIST_OBJECT = 702;
+	int DEVICE_METRIC_COLOR_LIST_OBJECT = 710;
 
 	/**
 	 * The meta object id for the '<em>Device Metric Operational Status List Object</em>' data type.
@@ -58477,7 +58962,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceMetricOperationalStatusListObject()
 	 * @generated
 	 */
-	int DEVICE_METRIC_OPERATIONAL_STATUS_LIST_OBJECT = 703;
+	int DEVICE_METRIC_OPERATIONAL_STATUS_LIST_OBJECT = 711;
 
 	/**
 	 * The meta object id for the '<em>Device Status List Object</em>' data type.
@@ -58487,7 +58972,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceStatusListObject()
 	 * @generated
 	 */
-	int DEVICE_STATUS_LIST_OBJECT = 704;
+	int DEVICE_STATUS_LIST_OBJECT = 712;
 
 	/**
 	 * The meta object id for the '<em>Device Use Request Priority List Object</em>' data type.
@@ -58497,7 +58982,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseRequestPriorityListObject()
 	 * @generated
 	 */
-	int DEVICE_USE_REQUEST_PRIORITY_LIST_OBJECT = 705;
+	int DEVICE_USE_REQUEST_PRIORITY_LIST_OBJECT = 713;
 
 	/**
 	 * The meta object id for the '<em>Device Use Request Status List Object</em>' data type.
@@ -58507,7 +58992,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDeviceUseRequestStatusListObject()
 	 * @generated
 	 */
-	int DEVICE_USE_REQUEST_STATUS_LIST_OBJECT = 706;
+	int DEVICE_USE_REQUEST_STATUS_LIST_OBJECT = 714;
 
 	/**
 	 * The meta object id for the '<em>Diagnostic Order Priority List Object</em>' data type.
@@ -58517,7 +59002,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderPriorityListObject()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_PRIORITY_LIST_OBJECT = 707;
+	int DIAGNOSTIC_ORDER_PRIORITY_LIST_OBJECT = 715;
 
 	/**
 	 * The meta object id for the '<em>Diagnostic Order Status List Object</em>' data type.
@@ -58527,7 +59012,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticOrderStatusListObject()
 	 * @generated
 	 */
-	int DIAGNOSTIC_ORDER_STATUS_LIST_OBJECT = 708;
+	int DIAGNOSTIC_ORDER_STATUS_LIST_OBJECT = 716;
 
 	/**
 	 * The meta object id for the '<em>Diagnostic Report Status List Object</em>' data type.
@@ -58537,7 +59022,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDiagnosticReportStatusListObject()
 	 * @generated
 	 */
-	int DIAGNOSTIC_REPORT_STATUS_LIST_OBJECT = 709;
+	int DIAGNOSTIC_REPORT_STATUS_LIST_OBJECT = 717;
 
 	/**
 	 * The meta object id for the '<em>Digital Media Type List Object</em>' data type.
@@ -58547,7 +59032,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDigitalMediaTypeListObject()
 	 * @generated
 	 */
-	int DIGITAL_MEDIA_TYPE_LIST_OBJECT = 710;
+	int DIGITAL_MEDIA_TYPE_LIST_OBJECT = 718;
 
 	/**
 	 * The meta object id for the '<em>Document Mode List Object</em>' data type.
@@ -58557,7 +59042,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentModeListObject()
 	 * @generated
 	 */
-	int DOCUMENT_MODE_LIST_OBJECT = 711;
+	int DOCUMENT_MODE_LIST_OBJECT = 719;
 
 	/**
 	 * The meta object id for the '<em>Document Reference Status List Object</em>' data type.
@@ -58567,7 +59052,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentReferenceStatusListObject()
 	 * @generated
 	 */
-	int DOCUMENT_REFERENCE_STATUS_LIST_OBJECT = 712;
+	int DOCUMENT_REFERENCE_STATUS_LIST_OBJECT = 720;
 
 	/**
 	 * The meta object id for the '<em>Document Relationship Type List Object</em>' data type.
@@ -58577,7 +59062,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getDocumentRelationshipTypeListObject()
 	 * @generated
 	 */
-	int DOCUMENT_RELATIONSHIP_TYPE_LIST_OBJECT = 713;
+	int DOCUMENT_RELATIONSHIP_TYPE_LIST_OBJECT = 721;
 
 	/**
 	 * The meta object id for the '<em>Encounter Class List Object</em>' data type.
@@ -58587,7 +59072,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEncounterClassListObject()
 	 * @generated
 	 */
-	int ENCOUNTER_CLASS_LIST_OBJECT = 714;
+	int ENCOUNTER_CLASS_LIST_OBJECT = 722;
 
 	/**
 	 * The meta object id for the '<em>Encounter Location Status List Object</em>' data type.
@@ -58597,7 +59082,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEncounterLocationStatusListObject()
 	 * @generated
 	 */
-	int ENCOUNTER_LOCATION_STATUS_LIST_OBJECT = 715;
+	int ENCOUNTER_LOCATION_STATUS_LIST_OBJECT = 723;
 
 	/**
 	 * The meta object id for the '<em>Encounter State List Object</em>' data type.
@@ -58607,7 +59092,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEncounterStateListObject()
 	 * @generated
 	 */
-	int ENCOUNTER_STATE_LIST_OBJECT = 716;
+	int ENCOUNTER_STATE_LIST_OBJECT = 724;
 
 	/**
 	 * The meta object id for the '<em>Episode Of Care Status List Object</em>' data type.
@@ -58617,7 +59102,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEpisodeOfCareStatusListObject()
 	 * @generated
 	 */
-	int EPISODE_OF_CARE_STATUS_LIST_OBJECT = 717;
+	int EPISODE_OF_CARE_STATUS_LIST_OBJECT = 725;
 
 	/**
 	 * The meta object id for the '<em>Event Timing List Object</em>' data type.
@@ -58627,7 +59112,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getEventTimingListObject()
 	 * @generated
 	 */
-	int EVENT_TIMING_LIST_OBJECT = 718;
+	int EVENT_TIMING_LIST_OBJECT = 726;
 
 	/**
 	 * The meta object id for the '<em>Extension Context List Object</em>' data type.
@@ -58637,7 +59122,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getExtensionContextListObject()
 	 * @generated
 	 */
-	int EXTENSION_CONTEXT_LIST_OBJECT = 719;
+	int EXTENSION_CONTEXT_LIST_OBJECT = 727;
 
 	/**
 	 * The meta object id for the '<em>Filter Operator List Object</em>' data type.
@@ -58647,7 +59132,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getFilterOperatorListObject()
 	 * @generated
 	 */
-	int FILTER_OPERATOR_LIST_OBJECT = 720;
+	int FILTER_OPERATOR_LIST_OBJECT = 728;
 
 	/**
 	 * The meta object id for the '<em>Flag Status List Object</em>' data type.
@@ -58657,7 +59142,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getFlagStatusListObject()
 	 * @generated
 	 */
-	int FLAG_STATUS_LIST_OBJECT = 721;
+	int FLAG_STATUS_LIST_OBJECT = 729;
 
 	/**
 	 * The meta object id for the '<em>Goal Status List Object</em>' data type.
@@ -58667,7 +59152,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGoalStatusListObject()
 	 * @generated
 	 */
-	int GOAL_STATUS_LIST_OBJECT = 722;
+	int GOAL_STATUS_LIST_OBJECT = 730;
 
 	/**
 	 * The meta object id for the '<em>Group Type List Object</em>' data type.
@@ -58677,7 +59162,37 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGroupTypeListObject()
 	 * @generated
 	 */
-	int GROUP_TYPE_LIST_OBJECT = 723;
+	int GROUP_TYPE_LIST_OBJECT = 731;
+
+	/**
+	 * The meta object id for the '<em>Guide Dependency Type List Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.GuideDependencyTypeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuideDependencyTypeListObject()
+	 * @generated
+	 */
+	int GUIDE_DEPENDENCY_TYPE_LIST_OBJECT = 732;
+
+	/**
+	 * The meta object id for the '<em>Guide Page Kind List Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.GuidePageKindList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuidePageKindListObject()
+	 * @generated
+	 */
+	int GUIDE_PAGE_KIND_LIST_OBJECT = 733;
+
+	/**
+	 * The meta object id for the '<em>Guide Resource Purpose List Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.GuideResourcePurposeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getGuideResourcePurposeListObject()
+	 * @generated
+	 */
+	int GUIDE_RESOURCE_PURPOSE_LIST_OBJECT = 734;
 
 	/**
 	 * The meta object id for the '<em>HTTP Verb List Object</em>' data type.
@@ -58687,7 +59202,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getHTTPVerbListObject()
 	 * @generated
 	 */
-	int HTTP_VERB_LIST_OBJECT = 724;
+	int HTTP_VERB_LIST_OBJECT = 735;
 
 	/**
 	 * The meta object id for the '<em>Identifier Use List Object</em>' data type.
@@ -58697,7 +59212,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdentifierUseListObject()
 	 * @generated
 	 */
-	int IDENTIFIER_USE_LIST_OBJECT = 725;
+	int IDENTIFIER_USE_LIST_OBJECT = 736;
 
 	/**
 	 * The meta object id for the '<em>Identity Assurance Level List Object</em>' data type.
@@ -58707,7 +59222,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdentityAssuranceLevelListObject()
 	 * @generated
 	 */
-	int IDENTITY_ASSURANCE_LEVEL_LIST_OBJECT = 726;
+	int IDENTITY_ASSURANCE_LEVEL_LIST_OBJECT = 737;
 
 	/**
 	 * The meta object id for the '<em>Id Primitive</em>' data type.
@@ -58717,7 +59232,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIdPrimitive()
 	 * @generated
 	 */
-	int ID_PRIMITIVE = 727;
+	int ID_PRIMITIVE = 738;
 
 	/**
 	 * The meta object id for the '<em>Instance Availability List Object</em>' data type.
@@ -58727,7 +59242,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getInstanceAvailabilityListObject()
 	 * @generated
 	 */
-	int INSTANCE_AVAILABILITY_LIST_OBJECT = 728;
+	int INSTANCE_AVAILABILITY_LIST_OBJECT = 739;
 
 	/**
 	 * The meta object id for the '<em>Instant Primitive</em>' data type.
@@ -58737,7 +59252,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getInstantPrimitive()
 	 * @generated
 	 */
-	int INSTANT_PRIMITIVE = 729;
+	int INSTANT_PRIMITIVE = 740;
 
 	/**
 	 * The meta object id for the '<em>Integer Primitive</em>' data type.
@@ -58746,7 +59261,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIntegerPrimitive()
 	 * @generated
 	 */
-	int INTEGER_PRIMITIVE = 730;
+	int INTEGER_PRIMITIVE = 741;
 
 	/**
 	 * The meta object id for the '<em>Integer Primitive Object</em>' data type.
@@ -58756,7 +59271,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIntegerPrimitiveObject()
 	 * @generated
 	 */
-	int INTEGER_PRIMITIVE_OBJECT = 731;
+	int INTEGER_PRIMITIVE_OBJECT = 742;
 
 	/**
 	 * The meta object id for the '<em>Issue Severity List Object</em>' data type.
@@ -58766,7 +59281,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIssueSeverityListObject()
 	 * @generated
 	 */
-	int ISSUE_SEVERITY_LIST_OBJECT = 732;
+	int ISSUE_SEVERITY_LIST_OBJECT = 743;
+
+	/**
+	 * The meta object id for the '<em>Issue Type List Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.IssueTypeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getIssueTypeListObject()
+	 * @generated
+	 */
+	int ISSUE_TYPE_LIST_OBJECT = 744;
 
 	/**
 	 * The meta object id for the '<em>Link Type List Object</em>' data type.
@@ -58776,7 +59301,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLinkTypeListObject()
 	 * @generated
 	 */
-	int LINK_TYPE_LIST_OBJECT = 733;
+	int LINK_TYPE_LIST_OBJECT = 745;
 
 	/**
 	 * The meta object id for the '<em>List Mode List Object</em>' data type.
@@ -58786,7 +59311,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getListModeListObject()
 	 * @generated
 	 */
-	int LIST_MODE_LIST_OBJECT = 734;
+	int LIST_MODE_LIST_OBJECT = 746;
 
 	/**
 	 * The meta object id for the '<em>List Status List Object</em>' data type.
@@ -58796,7 +59321,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getListStatusListObject()
 	 * @generated
 	 */
-	int LIST_STATUS_LIST_OBJECT = 735;
+	int LIST_STATUS_LIST_OBJECT = 747;
 
 	/**
 	 * The meta object id for the '<em>Location Mode List Object</em>' data type.
@@ -58806,7 +59331,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocationModeListObject()
 	 * @generated
 	 */
-	int LOCATION_MODE_LIST_OBJECT = 736;
+	int LOCATION_MODE_LIST_OBJECT = 748;
 
 	/**
 	 * The meta object id for the '<em>Location Status List Object</em>' data type.
@@ -58816,7 +59341,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getLocationStatusListObject()
 	 * @generated
 	 */
-	int LOCATION_STATUS_LIST_OBJECT = 737;
+	int LOCATION_STATUS_LIST_OBJECT = 749;
+
+	/**
+	 * The meta object id for the '<em>Markdown Primitive</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMarkdownPrimitive()
+	 * @generated
+	 */
+	int MARKDOWN_PRIMITIVE = 750;
 
 	/**
 	 * The meta object id for the '<em>Measmnt Principle List Object</em>' data type.
@@ -58826,7 +59361,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMeasmntPrincipleListObject()
 	 * @generated
 	 */
-	int MEASMNT_PRINCIPLE_LIST_OBJECT = 738;
+	int MEASMNT_PRINCIPLE_LIST_OBJECT = 751;
 
 	/**
 	 * The meta object id for the '<em>Medication Administration Status List Object</em>' data type.
@@ -58836,7 +59371,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationAdministrationStatusListObject()
 	 * @generated
 	 */
-	int MEDICATION_ADMINISTRATION_STATUS_LIST_OBJECT = 739;
+	int MEDICATION_ADMINISTRATION_STATUS_LIST_OBJECT = 752;
 
 	/**
 	 * The meta object id for the '<em>Medication Dispense Status List Object</em>' data type.
@@ -58846,7 +59381,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationDispenseStatusListObject()
 	 * @generated
 	 */
-	int MEDICATION_DISPENSE_STATUS_LIST_OBJECT = 740;
+	int MEDICATION_DISPENSE_STATUS_LIST_OBJECT = 753;
 
 	/**
 	 * The meta object id for the '<em>Medication Kind List Object</em>' data type.
@@ -58856,7 +59391,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationKindListObject()
 	 * @generated
 	 */
-	int MEDICATION_KIND_LIST_OBJECT = 741;
+	int MEDICATION_KIND_LIST_OBJECT = 754;
 
 	/**
 	 * The meta object id for the '<em>Medication Prescription Status List Object</em>' data type.
@@ -58866,7 +59401,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationPrescriptionStatusListObject()
 	 * @generated
 	 */
-	int MEDICATION_PRESCRIPTION_STATUS_LIST_OBJECT = 742;
+	int MEDICATION_PRESCRIPTION_STATUS_LIST_OBJECT = 755;
 
 	/**
 	 * The meta object id for the '<em>Medication Statement Status List Object</em>' data type.
@@ -58876,7 +59411,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMedicationStatementStatusListObject()
 	 * @generated
 	 */
-	int MEDICATION_STATEMENT_STATUS_LIST_OBJECT = 743;
+	int MEDICATION_STATEMENT_STATUS_LIST_OBJECT = 756;
 
 	/**
 	 * The meta object id for the '<em>Message Significance Category List Object</em>' data type.
@@ -58886,7 +59421,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getMessageSignificanceCategoryListObject()
 	 * @generated
 	 */
-	int MESSAGE_SIGNIFICANCE_CATEGORY_LIST_OBJECT = 744;
+	int MESSAGE_SIGNIFICANCE_CATEGORY_LIST_OBJECT = 757;
 
 	/**
 	 * The meta object id for the '<em>Name Use List Object</em>' data type.
@@ -58896,7 +59431,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNameUseListObject()
 	 * @generated
 	 */
-	int NAME_USE_LIST_OBJECT = 745;
+	int NAME_USE_LIST_OBJECT = 758;
 
 	/**
 	 * The meta object id for the '<em>Naming System Identifier Type List Object</em>' data type.
@@ -58906,7 +59441,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemIdentifierTypeListObject()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_IDENTIFIER_TYPE_LIST_OBJECT = 746;
+	int NAMING_SYSTEM_IDENTIFIER_TYPE_LIST_OBJECT = 759;
 
 	/**
 	 * The meta object id for the '<em>Naming System Type List Object</em>' data type.
@@ -58916,7 +59451,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNamingSystemTypeListObject()
 	 * @generated
 	 */
-	int NAMING_SYSTEM_TYPE_LIST_OBJECT = 747;
+	int NAMING_SYSTEM_TYPE_LIST_OBJECT = 760;
 
 	/**
 	 * The meta object id for the '<em>Narrative Status List Object</em>' data type.
@@ -58926,7 +59461,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNarrativeStatusListObject()
 	 * @generated
 	 */
-	int NARRATIVE_STATUS_LIST_OBJECT = 748;
+	int NARRATIVE_STATUS_LIST_OBJECT = 761;
 
 	/**
 	 * The meta object id for the '<em>Note Type List Object</em>' data type.
@@ -58936,7 +59471,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNoteTypeListObject()
 	 * @generated
 	 */
-	int NOTE_TYPE_LIST_OBJECT = 749;
+	int NOTE_TYPE_LIST_OBJECT = 762;
 
 	/**
 	 * The meta object id for the '<em>Nutrition Order Status List Object</em>' data type.
@@ -58946,7 +59481,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getNutritionOrderStatusListObject()
 	 * @generated
 	 */
-	int NUTRITION_ORDER_STATUS_LIST_OBJECT = 750;
+	int NUTRITION_ORDER_STATUS_LIST_OBJECT = 763;
 
 	/**
 	 * The meta object id for the '<em>Observation Relationship Type List Object</em>' data type.
@@ -58956,17 +59491,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationRelationshipTypeListObject()
 	 * @generated
 	 */
-	int OBSERVATION_RELATIONSHIP_TYPE_LIST_OBJECT = 751;
-
-	/**
-	 * The meta object id for the '<em>Observation Reliability List Object</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.ObservationReliabilityList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationReliabilityListObject()
-	 * @generated
-	 */
-	int OBSERVATION_RELIABILITY_LIST_OBJECT = 752;
+	int OBSERVATION_RELATIONSHIP_TYPE_LIST_OBJECT = 764;
 
 	/**
 	 * The meta object id for the '<em>Observation Status List Object</em>' data type.
@@ -58976,7 +59501,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getObservationStatusListObject()
 	 * @generated
 	 */
-	int OBSERVATION_STATUS_LIST_OBJECT = 753;
+	int OBSERVATION_STATUS_LIST_OBJECT = 765;
 
 	/**
 	 * The meta object id for the '<em>Oid Primitive</em>' data type.
@@ -58986,7 +59511,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOidPrimitive()
 	 * @generated
 	 */
-	int OID_PRIMITIVE = 754;
+	int OID_PRIMITIVE = 766;
 
 	/**
 	 * The meta object id for the '<em>Operation Kind List Object</em>' data type.
@@ -58996,7 +59521,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationKindListObject()
 	 * @generated
 	 */
-	int OPERATION_KIND_LIST_OBJECT = 755;
+	int OPERATION_KIND_LIST_OBJECT = 767;
 
 	/**
 	 * The meta object id for the '<em>Operation Parameter Use List Object</em>' data type.
@@ -59006,7 +59531,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOperationParameterUseListObject()
 	 * @generated
 	 */
-	int OPERATION_PARAMETER_USE_LIST_OBJECT = 756;
+	int OPERATION_PARAMETER_USE_LIST_OBJECT = 768;
 
 	/**
 	 * The meta object id for the '<em>Order Status List Object</em>' data type.
@@ -59016,17 +59541,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getOrderStatusListObject()
 	 * @generated
 	 */
-	int ORDER_STATUS_LIST_OBJECT = 757;
-
-	/**
-	 * The meta object id for the '<em>Page Purpose List Object</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.PagePurposeList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPagePurposeListObject()
-	 * @generated
-	 */
-	int PAGE_PURPOSE_LIST_OBJECT = 758;
+	int ORDER_STATUS_LIST_OBJECT = 769;
 
 	/**
 	 * The meta object id for the '<em>Participant Required List Object</em>' data type.
@@ -59036,7 +59551,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipantRequiredListObject()
 	 * @generated
 	 */
-	int PARTICIPANT_REQUIRED_LIST_OBJECT = 759;
+	int PARTICIPANT_REQUIRED_LIST_OBJECT = 770;
 
 	/**
 	 * The meta object id for the '<em>Participant Status List Object</em>' data type.
@@ -59046,7 +59561,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipantStatusListObject()
 	 * @generated
 	 */
-	int PARTICIPANT_STATUS_LIST_OBJECT = 760;
+	int PARTICIPANT_STATUS_LIST_OBJECT = 771;
 
 	/**
 	 * The meta object id for the '<em>Participation Status List Object</em>' data type.
@@ -59056,7 +59571,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getParticipationStatusListObject()
 	 * @generated
 	 */
-	int PARTICIPATION_STATUS_LIST_OBJECT = 761;
+	int PARTICIPATION_STATUS_LIST_OBJECT = 772;
 
 	/**
 	 * The meta object id for the '<em>Positive Int Primitive</em>' data type.
@@ -59066,7 +59581,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPositiveIntPrimitive()
 	 * @generated
 	 */
-	int POSITIVE_INT_PRIMITIVE = 762;
+	int POSITIVE_INT_PRIMITIVE = 773;
 
 	/**
 	 * The meta object id for the '<em>Procedure Relationship Type List Object</em>' data type.
@@ -59076,7 +59591,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRelationshipTypeListObject()
 	 * @generated
 	 */
-	int PROCEDURE_RELATIONSHIP_TYPE_LIST_OBJECT = 763;
+	int PROCEDURE_RELATIONSHIP_TYPE_LIST_OBJECT = 774;
 
 	/**
 	 * The meta object id for the '<em>Procedure Request Priority List Object</em>' data type.
@@ -59086,7 +59601,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequestPriorityListObject()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST_PRIORITY_LIST_OBJECT = 764;
+	int PROCEDURE_REQUEST_PRIORITY_LIST_OBJECT = 775;
 
 	/**
 	 * The meta object id for the '<em>Procedure Request Status List Object</em>' data type.
@@ -59096,7 +59611,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureRequestStatusListObject()
 	 * @generated
 	 */
-	int PROCEDURE_REQUEST_STATUS_LIST_OBJECT = 765;
+	int PROCEDURE_REQUEST_STATUS_LIST_OBJECT = 776;
 
 	/**
 	 * The meta object id for the '<em>Procedure Status List Object</em>' data type.
@@ -59106,7 +59621,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProcedureStatusListObject()
 	 * @generated
 	 */
-	int PROCEDURE_STATUS_LIST_OBJECT = 766;
+	int PROCEDURE_STATUS_LIST_OBJECT = 777;
 
 	/**
 	 * The meta object id for the '<em>Property Representation List Object</em>' data type.
@@ -59116,7 +59631,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getPropertyRepresentationListObject()
 	 * @generated
 	 */
-	int PROPERTY_REPRESENTATION_LIST_OBJECT = 767;
+	int PROPERTY_REPRESENTATION_LIST_OBJECT = 778;
 
 	/**
 	 * The meta object id for the '<em>Provenance Entity Role List Object</em>' data type.
@@ -59126,7 +59641,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getProvenanceEntityRoleListObject()
 	 * @generated
 	 */
-	int PROVENANCE_ENTITY_ROLE_LIST_OBJECT = 768;
+	int PROVENANCE_ENTITY_ROLE_LIST_OBJECT = 779;
 
 	/**
 	 * The meta object id for the '<em>Quantity Comparator List Object</em>' data type.
@@ -59136,17 +59651,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuantityComparatorListObject()
 	 * @generated
 	 */
-	int QUANTITY_COMPARATOR_LIST_OBJECT = 769;
+	int QUANTITY_COMPARATOR_LIST_OBJECT = 780;
 
 	/**
-	 * The meta object id for the '<em>Questionnaire Answers Status List Object</em>' data type.
+	 * The meta object id for the '<em>Questionnaire Response Status List Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.QuestionnaireAnswersStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireAnswersStatusListObject()
+	 * @see org.hl7.fhir.QuestionnaireResponseStatusList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireResponseStatusListObject()
 	 * @generated
 	 */
-	int QUESTIONNAIRE_ANSWERS_STATUS_LIST_OBJECT = 770;
+	int QUESTIONNAIRE_RESPONSE_STATUS_LIST_OBJECT = 781;
 
 	/**
 	 * The meta object id for the '<em>Questionnaire Status List Object</em>' data type.
@@ -59156,7 +59671,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getQuestionnaireStatusListObject()
 	 * @generated
 	 */
-	int QUESTIONNAIRE_STATUS_LIST_OBJECT = 771;
+	int QUESTIONNAIRE_STATUS_LIST_OBJECT = 782;
 
 	/**
 	 * The meta object id for the '<em>Referral Status List Object</em>' data type.
@@ -59166,7 +59681,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getReferralStatusListObject()
 	 * @generated
 	 */
-	int REFERRAL_STATUS_LIST_OBJECT = 772;
+	int REFERRAL_STATUS_LIST_OBJECT = 783;
 
 	/**
 	 * The meta object id for the '<em>Remittance Outcome List Object</em>' data type.
@@ -59176,7 +59691,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRemittanceOutcomeListObject()
 	 * @generated
 	 */
-	int REMITTANCE_OUTCOME_LIST_OBJECT = 773;
+	int REMITTANCE_OUTCOME_LIST_OBJECT = 784;
 
 	/**
 	 * The meta object id for the '<em>Resource Version Policy List Object</em>' data type.
@@ -59186,7 +59701,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResourceVersionPolicyListObject()
 	 * @generated
 	 */
-	int RESOURCE_VERSION_POLICY_LIST_OBJECT = 774;
+	int RESOURCE_VERSION_POLICY_LIST_OBJECT = 785;
 
 	/**
 	 * The meta object id for the '<em>Response Type List Object</em>' data type.
@@ -59196,7 +59711,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getResponseTypeListObject()
 	 * @generated
 	 */
-	int RESPONSE_TYPE_LIST_OBJECT = 775;
+	int RESPONSE_TYPE_LIST_OBJECT = 786;
 
 	/**
 	 * The meta object id for the '<em>Restful Conformance Mode List Object</em>' data type.
@@ -59206,7 +59721,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getRestfulConformanceModeListObject()
 	 * @generated
 	 */
-	int RESTFUL_CONFORMANCE_MODE_LIST_OBJECT = 776;
+	int RESTFUL_CONFORMANCE_MODE_LIST_OBJECT = 787;
 
 	/**
 	 * The meta object id for the '<em>Sampled Data Data Type Primitive</em>' data type.
@@ -59216,7 +59731,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSampledDataDataTypePrimitive()
 	 * @generated
 	 */
-	int SAMPLED_DATA_DATA_TYPE_PRIMITIVE = 777;
+	int SAMPLED_DATA_DATA_TYPE_PRIMITIVE = 788;
 
 	/**
 	 * The meta object id for the '<em>Search Entry Mode List Object</em>' data type.
@@ -59226,7 +59741,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchEntryModeListObject()
 	 * @generated
 	 */
-	int SEARCH_ENTRY_MODE_LIST_OBJECT = 778;
+	int SEARCH_ENTRY_MODE_LIST_OBJECT = 789;
 
 	/**
 	 * The meta object id for the '<em>Search Modifier Code List Object</em>' data type.
@@ -59236,7 +59751,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchModifierCodeListObject()
 	 * @generated
 	 */
-	int SEARCH_MODIFIER_CODE_LIST_OBJECT = 779;
+	int SEARCH_MODIFIER_CODE_LIST_OBJECT = 790;
 
 	/**
 	 * The meta object id for the '<em>Search Param Type List Object</em>' data type.
@@ -59246,7 +59761,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSearchParamTypeListObject()
 	 * @generated
 	 */
-	int SEARCH_PARAM_TYPE_LIST_OBJECT = 780;
+	int SEARCH_PARAM_TYPE_LIST_OBJECT = 791;
 
 	/**
 	 * The meta object id for the '<em>Slicing Rules List Object</em>' data type.
@@ -59256,7 +59771,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSlicingRulesListObject()
 	 * @generated
 	 */
-	int SLICING_RULES_LIST_OBJECT = 781;
+	int SLICING_RULES_LIST_OBJECT = 792;
 
 	/**
 	 * The meta object id for the '<em>Slot Status List Object</em>' data type.
@@ -59266,7 +59781,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSlotStatusListObject()
 	 * @generated
 	 */
-	int SLOT_STATUS_LIST_OBJECT = 782;
+	int SLOT_STATUS_LIST_OBJECT = 793;
 
 	/**
 	 * The meta object id for the '<em>String Primitive</em>' data type.
@@ -59276,7 +59791,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStringPrimitive()
 	 * @generated
 	 */
-	int STRING_PRIMITIVE = 783;
+	int STRING_PRIMITIVE = 794;
 
 	/**
 	 * The meta object id for the '<em>Structure Definition Kind List Object</em>' data type.
@@ -59286,7 +59801,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getStructureDefinitionKindListObject()
 	 * @generated
 	 */
-	int STRUCTURE_DEFINITION_KIND_LIST_OBJECT = 784;
+	int STRUCTURE_DEFINITION_KIND_LIST_OBJECT = 795;
 
 	/**
 	 * The meta object id for the '<em>Subscription Channel Type List Object</em>' data type.
@@ -59296,7 +59811,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscriptionChannelTypeListObject()
 	 * @generated
 	 */
-	int SUBSCRIPTION_CHANNEL_TYPE_LIST_OBJECT = 785;
+	int SUBSCRIPTION_CHANNEL_TYPE_LIST_OBJECT = 796;
 
 	/**
 	 * The meta object id for the '<em>Subscription Status List Object</em>' data type.
@@ -59306,7 +59821,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSubscriptionStatusListObject()
 	 * @generated
 	 */
-	int SUBSCRIPTION_STATUS_LIST_OBJECT = 786;
+	int SUBSCRIPTION_STATUS_LIST_OBJECT = 797;
 
 	/**
 	 * The meta object id for the '<em>Supply Delivery Status List Object</em>' data type.
@@ -59316,17 +59831,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDeliveryStatusListObject()
 	 * @generated
 	 */
-	int SUPPLY_DELIVERY_STATUS_LIST_OBJECT = 787;
-
-	/**
-	 * The meta object id for the '<em>Supply Dispense Status List Object</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.SupplyDispenseStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyDispenseStatusListObject()
-	 * @generated
-	 */
-	int SUPPLY_DISPENSE_STATUS_LIST_OBJECT = 788;
+	int SUPPLY_DELIVERY_STATUS_LIST_OBJECT = 798;
 
 	/**
 	 * The meta object id for the '<em>Supply Request Status List Object</em>' data type.
@@ -59336,17 +59841,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyRequestStatusListObject()
 	 * @generated
 	 */
-	int SUPPLY_REQUEST_STATUS_LIST_OBJECT = 789;
-
-	/**
-	 * The meta object id for the '<em>Supply Status List Object</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.hl7.fhir.SupplyStatusList
-	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSupplyStatusListObject()
-	 * @generated
-	 */
-	int SUPPLY_STATUS_LIST_OBJECT = 790;
+	int SUPPLY_REQUEST_STATUS_LIST_OBJECT = 799;
 
 	/**
 	 * The meta object id for the '<em>System Restful Interaction List Object</em>' data type.
@@ -59356,7 +59851,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getSystemRestfulInteractionListObject()
 	 * @generated
 	 */
-	int SYSTEM_RESTFUL_INTERACTION_LIST_OBJECT = 791;
+	int SYSTEM_RESTFUL_INTERACTION_LIST_OBJECT = 800;
 
 	/**
 	 * The meta object id for the '<em>Time Primitive</em>' data type.
@@ -59366,7 +59861,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTimePrimitive()
 	 * @generated
 	 */
-	int TIME_PRIMITIVE = 792;
+	int TIME_PRIMITIVE = 801;
 
 	/**
 	 * The meta object id for the '<em>Transaction Mode List Object</em>' data type.
@@ -59376,7 +59871,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTransactionModeListObject()
 	 * @generated
 	 */
-	int TRANSACTION_MODE_LIST_OBJECT = 793;
+	int TRANSACTION_MODE_LIST_OBJECT = 802;
 
 	/**
 	 * The meta object id for the '<em>Type Restful Interaction List Object</em>' data type.
@@ -59386,7 +59881,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getTypeRestfulInteractionListObject()
 	 * @generated
 	 */
-	int TYPE_RESTFUL_INTERACTION_LIST_OBJECT = 794;
+	int TYPE_RESTFUL_INTERACTION_LIST_OBJECT = 803;
 
 	/**
 	 * The meta object id for the '<em>Units Of Time List Object</em>' data type.
@@ -59396,7 +59891,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnitsOfTimeListObject()
 	 * @generated
 	 */
-	int UNITS_OF_TIME_LIST_OBJECT = 795;
+	int UNITS_OF_TIME_LIST_OBJECT = 804;
+
+	/**
+	 * The meta object id for the '<em>Unknown Content Code List Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.UnknownContentCodeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnknownContentCodeListObject()
+	 * @generated
+	 */
+	int UNKNOWN_CONTENT_CODE_LIST_OBJECT = 805;
 
 	/**
 	 * The meta object id for the '<em>Unsigned Int Primitive</em>' data type.
@@ -59406,7 +59911,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUnsignedIntPrimitive()
 	 * @generated
 	 */
-	int UNSIGNED_INT_PRIMITIVE = 796;
+	int UNSIGNED_INT_PRIMITIVE = 806;
 
 	/**
 	 * The meta object id for the '<em>Uri Primitive</em>' data type.
@@ -59416,7 +59921,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUriPrimitive()
 	 * @generated
 	 */
-	int URI_PRIMITIVE = 797;
+	int URI_PRIMITIVE = 807;
 
 	/**
 	 * The meta object id for the '<em>Use List Object</em>' data type.
@@ -59426,7 +59931,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUseListObject()
 	 * @generated
 	 */
-	int USE_LIST_OBJECT = 798;
+	int USE_LIST_OBJECT = 808;
 
 	/**
 	 * The meta object id for the '<em>Uuid Primitive</em>' data type.
@@ -59436,7 +59941,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getUuidPrimitive()
 	 * @generated
 	 */
-	int UUID_PRIMITIVE = 799;
+	int UUID_PRIMITIVE = 809;
 
 	/**
 	 * The meta object id for the '<em>Vision Base List Object</em>' data type.
@@ -59446,7 +59951,7 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionBaseListObject()
 	 * @generated
 	 */
-	int VISION_BASE_LIST_OBJECT = 800;
+	int VISION_BASE_LIST_OBJECT = 810;
 
 	/**
 	 * The meta object id for the '<em>Vision Eyes List Object</em>' data type.
@@ -59456,7 +59961,17 @@ public interface FhirPackage extends EPackage {
 	 * @see org.hl7.fhir.impl.FhirPackageImpl#getVisionEyesListObject()
 	 * @generated
 	 */
-	int VISION_EYES_LIST_OBJECT = 801;
+	int VISION_EYES_LIST_OBJECT = 811;
+
+	/**
+	 * The meta object id for the '<em>XPath Usage Type List Object</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.hl7.fhir.XPathUsageTypeList
+	 * @see org.hl7.fhir.impl.FhirPackageImpl#getXPathUsageTypeListObject()
+	 * @generated
+	 */
+	int XPATH_USAGE_TYPE_LIST_OBJECT = 812;
 
 
 	/**
@@ -59696,6 +60211,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAddress_City();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Address#getDistrict <em>District</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>District</em>'.
+	 * @see org.hl7.fhir.Address#getDistrict()
+	 * @see #getAddress()
+	 * @generated
+	 */
+	EReference getAddress_District();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Address#getState <em>State</em>}'.
@@ -65713,15 +66239,59 @@ public interface FhirPackage extends EPackage {
 	EReference getCompositionSection_Code();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.CompositionSection#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.CompositionSection#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Content</em>'.
-	 * @see org.hl7.fhir.CompositionSection#getContent()
+	 * @return the meta object for the containment reference '<em>Text</em>'.
+	 * @see org.hl7.fhir.CompositionSection#getText()
 	 * @see #getCompositionSection()
 	 * @generated
 	 */
-	EReference getCompositionSection_Content();
+	EReference getCompositionSection_Text();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.CompositionSection#getMode <em>Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Mode</em>'.
+	 * @see org.hl7.fhir.CompositionSection#getMode()
+	 * @see #getCompositionSection()
+	 * @generated
+	 */
+	EReference getCompositionSection_Mode();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.CompositionSection#getOrderedBy <em>Ordered By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Ordered By</em>'.
+	 * @see org.hl7.fhir.CompositionSection#getOrderedBy()
+	 * @see #getCompositionSection()
+	 * @generated
+	 */
+	EReference getCompositionSection_OrderedBy();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.CompositionSection#getEntry <em>Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Entry</em>'.
+	 * @see org.hl7.fhir.CompositionSection#getEntry()
+	 * @see #getCompositionSection()
+	 * @generated
+	 */
+	EReference getCompositionSection_Entry();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.CompositionSection#getEmptyReason <em>Empty Reason</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Empty Reason</em>'.
+	 * @see org.hl7.fhir.CompositionSection#getEmptyReason()
+	 * @see #getCompositionSection()
+	 * @generated
+	 */
+	EReference getCompositionSection_EmptyReason();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.CompositionSection#getSection <em>Section</em>}'.
@@ -65810,15 +66380,26 @@ public interface FhirPackage extends EPackage {
 	EReference getConceptMap_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ConceptMap#getUseContext <em>Use Context</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
-	 * @see org.hl7.fhir.ConceptMap#getUseContext()
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.ConceptMap#getStatus()
 	 * @see #getConceptMap()
 	 * @generated
 	 */
-	EReference getConceptMap_UseContext();
+	EReference getConceptMap_Status();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getExperimental <em>Experimental</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.ConceptMap#getExperimental()
+	 * @see #getConceptMap()
+	 * @generated
+	 */
+	EReference getConceptMap_Experimental();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getPublisher <em>Publisher</em>}'.
@@ -65843,6 +66424,17 @@ public interface FhirPackage extends EPackage {
 	EReference getConceptMap_Contact();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.ConceptMap#getDate()
+	 * @see #getConceptMap()
+	 * @generated
+	 */
+	EReference getConceptMap_Date();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65852,6 +66444,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConceptMap_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ConceptMap#getUseContext <em>Use Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
+	 * @see org.hl7.fhir.ConceptMap#getUseContext()
+	 * @see #getConceptMap()
+	 * @generated
+	 */
+	EReference getConceptMap_UseContext();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getRequirements <em>Requirements</em>}'.
@@ -65874,39 +66477,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConceptMap_Copyright();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.ConceptMap#getStatus()
-	 * @see #getConceptMap()
-	 * @generated
-	 */
-	EReference getConceptMap_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getExperimental <em>Experimental</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Experimental</em>'.
-	 * @see org.hl7.fhir.ConceptMap#getExperimental()
-	 * @see #getConceptMap()
-	 * @generated
-	 */
-	EReference getConceptMap_Experimental();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.ConceptMap#getDate()
-	 * @see #getConceptMap()
-	 * @generated
-	 */
-	EReference getConceptMap_Date();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConceptMap#getSourceUri <em>Source Uri</em>}'.
@@ -66233,15 +66803,15 @@ public interface FhirPackage extends EPackage {
 	EReference getCondition_Asserter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getDateAsserted <em>Date Asserted</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getDateRecorded <em>Date Recorded</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date Asserted</em>'.
-	 * @see org.hl7.fhir.Condition#getDateAsserted()
+	 * @return the meta object for the containment reference '<em>Date Recorded</em>'.
+	 * @see org.hl7.fhir.Condition#getDateRecorded()
 	 * @see #getCondition()
 	 * @generated
 	 */
-	EReference getCondition_DateAsserted();
+	EReference getCondition_DateRecorded();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getCode <em>Code</em>}'.
@@ -66277,6 +66847,17 @@ public interface FhirPackage extends EPackage {
 	EReference getCondition_ClinicalStatus();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getVerificationStatus <em>Verification Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Verification Status</em>'.
+	 * @see org.hl7.fhir.Condition#getVerificationStatus()
+	 * @see #getCondition()
+	 * @generated
+	 */
+	EReference getCondition_VerificationStatus();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getSeverity <em>Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66299,15 +66880,15 @@ public interface FhirPackage extends EPackage {
 	EReference getCondition_OnsetDateTime();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getOnsetAge <em>Onset Age</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getOnsetQuantity <em>Onset Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Onset Age</em>'.
-	 * @see org.hl7.fhir.Condition#getOnsetAge()
+	 * @return the meta object for the containment reference '<em>Onset Quantity</em>'.
+	 * @see org.hl7.fhir.Condition#getOnsetQuantity()
 	 * @see #getCondition()
 	 * @generated
 	 */
-	EReference getCondition_OnsetAge();
+	EReference getCondition_OnsetQuantity();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getOnsetPeriod <em>Onset Period</em>}'.
@@ -66343,26 +66924,26 @@ public interface FhirPackage extends EPackage {
 	EReference getCondition_OnsetString();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getAbatementDate <em>Abatement Date</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getAbatementDateTime <em>Abatement Date Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Abatement Date</em>'.
-	 * @see org.hl7.fhir.Condition#getAbatementDate()
+	 * @return the meta object for the containment reference '<em>Abatement Date Time</em>'.
+	 * @see org.hl7.fhir.Condition#getAbatementDateTime()
 	 * @see #getCondition()
 	 * @generated
 	 */
-	EReference getCondition_AbatementDate();
+	EReference getCondition_AbatementDateTime();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getAbatementAge <em>Abatement Age</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getAbatementQuantity <em>Abatement Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Abatement Age</em>'.
-	 * @see org.hl7.fhir.Condition#getAbatementAge()
+	 * @return the meta object for the containment reference '<em>Abatement Quantity</em>'.
+	 * @see org.hl7.fhir.Condition#getAbatementQuantity()
 	 * @see #getCondition()
 	 * @generated
 	 */
-	EReference getCondition_AbatementAge();
+	EReference getCondition_AbatementQuantity();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getAbatementBoolean <em>Abatement Boolean</em>}'.
@@ -66431,37 +67012,15 @@ public interface FhirPackage extends EPackage {
 	EReference getCondition_Evidence();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Condition#getLocation <em>Location</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Condition#getBodySite <em>Body Site</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Location</em>'.
-	 * @see org.hl7.fhir.Condition#getLocation()
+	 * @return the meta object for the containment reference list '<em>Body Site</em>'.
+	 * @see org.hl7.fhir.Condition#getBodySite()
 	 * @see #getCondition()
 	 * @generated
 	 */
-	EReference getCondition_Location();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Condition#getDueTo <em>Due To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Due To</em>'.
-	 * @see org.hl7.fhir.Condition#getDueTo()
-	 * @see #getCondition()
-	 * @generated
-	 */
-	EReference getCondition_DueTo();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Condition#getOccurredFollowing <em>Occurred Following</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Occurred Following</em>'.
-	 * @see org.hl7.fhir.Condition#getOccurredFollowing()
-	 * @see #getCondition()
-	 * @generated
-	 */
-	EReference getCondition_OccurredFollowing();
+	EReference getCondition_BodySite();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Condition#getNotes <em>Notes</em>}'.
@@ -66496,59 +67055,6 @@ public interface FhirPackage extends EPackage {
 	EAttribute getConditionalDeleteStatus_Value();
 
 	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ConditionClinicalStatus <em>Condition Clinical Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Condition Clinical Status</em>'.
-	 * @see org.hl7.fhir.ConditionClinicalStatus
-	 * @generated
-	 */
-	EClass getConditionClinicalStatus();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.hl7.fhir.ConditionClinicalStatus#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.hl7.fhir.ConditionClinicalStatus#getValue()
-	 * @see #getConditionClinicalStatus()
-	 * @generated
-	 */
-	EAttribute getConditionClinicalStatus_Value();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ConditionDueTo <em>Condition Due To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Condition Due To</em>'.
-	 * @see org.hl7.fhir.ConditionDueTo
-	 * @generated
-	 */
-	EClass getConditionDueTo();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConditionDueTo#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Code</em>'.
-	 * @see org.hl7.fhir.ConditionDueTo#getCode()
-	 * @see #getConditionDueTo()
-	 * @generated
-	 */
-	EReference getConditionDueTo_Code();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConditionDueTo#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Target</em>'.
-	 * @see org.hl7.fhir.ConditionDueTo#getTarget()
-	 * @see #getConditionDueTo()
-	 * @generated
-	 */
-	EReference getConditionDueTo_Target();
-
-	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ConditionEvidence <em>Condition Evidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66581,70 +67087,6 @@ public interface FhirPackage extends EPackage {
 	EReference getConditionEvidence_Detail();
 
 	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ConditionLocation <em>Condition Location</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Condition Location</em>'.
-	 * @see org.hl7.fhir.ConditionLocation
-	 * @generated
-	 */
-	EClass getConditionLocation();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConditionLocation#getSiteCodeableConcept <em>Site Codeable Concept</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Site Codeable Concept</em>'.
-	 * @see org.hl7.fhir.ConditionLocation#getSiteCodeableConcept()
-	 * @see #getConditionLocation()
-	 * @generated
-	 */
-	EReference getConditionLocation_SiteCodeableConcept();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConditionLocation#getSiteReference <em>Site Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Site Reference</em>'.
-	 * @see org.hl7.fhir.ConditionLocation#getSiteReference()
-	 * @see #getConditionLocation()
-	 * @generated
-	 */
-	EReference getConditionLocation_SiteReference();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ConditionOccurredFollowing <em>Condition Occurred Following</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Condition Occurred Following</em>'.
-	 * @see org.hl7.fhir.ConditionOccurredFollowing
-	 * @generated
-	 */
-	EClass getConditionOccurredFollowing();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConditionOccurredFollowing#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Code</em>'.
-	 * @see org.hl7.fhir.ConditionOccurredFollowing#getCode()
-	 * @see #getConditionOccurredFollowing()
-	 * @generated
-	 */
-	EReference getConditionOccurredFollowing_Code();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConditionOccurredFollowing#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Target</em>'.
-	 * @see org.hl7.fhir.ConditionOccurredFollowing#getTarget()
-	 * @see #getConditionOccurredFollowing()
-	 * @generated
-	 */
-	EReference getConditionOccurredFollowing_Target();
-
-	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ConditionStage <em>Condition Stage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66675,6 +67117,27 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConditionStage_Assessment();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.ConditionVerificationStatus <em>Condition Verification Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Condition Verification Status</em>'.
+	 * @see org.hl7.fhir.ConditionVerificationStatus
+	 * @generated
+	 */
+	EClass getConditionVerificationStatus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.ConditionVerificationStatus#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.ConditionVerificationStatus#getValue()
+	 * @see #getConditionVerificationStatus()
+	 * @generated
+	 */
+	EAttribute getConditionVerificationStatus_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.Conformance <em>Conformance</em>}'.
@@ -66720,6 +67183,28 @@ public interface FhirPackage extends EPackage {
 	EReference getConformance_Name();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.Conformance#getStatus()
+	 * @see #getConformance()
+	 * @generated
+	 */
+	EReference getConformance_Status();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getExperimental <em>Experimental</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.Conformance#getExperimental()
+	 * @see #getConformance()
+	 * @generated
+	 */
+	EReference getConformance_Experimental();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getPublisher <em>Publisher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66740,6 +67225,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConformance_Contact();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.Conformance#getDate()
+	 * @see #getConformance()
+	 * @generated
+	 */
+	EReference getConformance_Date();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getDescription <em>Description</em>}'.
@@ -66775,37 +67271,15 @@ public interface FhirPackage extends EPackage {
 	EReference getConformance_Copyright();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getStatus <em>Status</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.Conformance#getStatus()
+	 * @return the meta object for the containment reference '<em>Kind</em>'.
+	 * @see org.hl7.fhir.Conformance#getKind()
 	 * @see #getConformance()
 	 * @generated
 	 */
-	EReference getConformance_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getExperimental <em>Experimental</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Experimental</em>'.
-	 * @see org.hl7.fhir.Conformance#getExperimental()
-	 * @see #getConformance()
-	 * @generated
-	 */
-	EReference getConformance_Experimental();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.Conformance#getDate()
-	 * @see #getConformance()
-	 * @generated
-	 */
-	EReference getConformance_Date();
+	EReference getConformance_Kind();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Conformance#getSoftware <em>Software</em>}'.
@@ -67014,6 +67488,38 @@ public interface FhirPackage extends EPackage {
 	EReference getConformanceDocument_Profile();
 
 	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.ConformanceEndpoint <em>Conformance Endpoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conformance Endpoint</em>'.
+	 * @see org.hl7.fhir.ConformanceEndpoint
+	 * @generated
+	 */
+	EClass getConformanceEndpoint();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConformanceEndpoint#getProtocol <em>Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Protocol</em>'.
+	 * @see org.hl7.fhir.ConformanceEndpoint#getProtocol()
+	 * @see #getConformanceEndpoint()
+	 * @generated
+	 */
+	EReference getConformanceEndpoint_Protocol();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConformanceEndpoint#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Address</em>'.
+	 * @see org.hl7.fhir.ConformanceEndpoint#getAddress()
+	 * @see #getConformanceEndpoint()
+	 * @generated
+	 */
+	EReference getConformanceEndpoint_Address();
+
+	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ConformanceEvent <em>Conformance Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67055,17 +67561,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConformanceEvent_Mode();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ConformanceEvent#getProtocol <em>Protocol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Protocol</em>'.
-	 * @see org.hl7.fhir.ConformanceEvent#getProtocol()
-	 * @see #getConformanceEvent()
-	 * @generated
-	 */
-	EReference getConformanceEvent_Protocol();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConformanceEvent#getFocus <em>Focus</em>}'.
@@ -67239,10 +67734,10 @@ public interface FhirPackage extends EPackage {
 	EClass getConformanceMessaging();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ConformanceMessaging#getEndpoint <em>Endpoint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ConformanceMessaging#getEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Endpoint</em>'.
+	 * @return the meta object for the containment reference list '<em>Endpoint</em>'.
 	 * @see org.hl7.fhir.ConformanceMessaging#getEndpoint()
 	 * @see #getConformanceMessaging()
 	 * @generated
@@ -67433,6 +67928,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConformanceResource_SearchInclude();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ConformanceResource#getSearchRevInclude <em>Search Rev Include</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Search Rev Include</em>'.
+	 * @see org.hl7.fhir.ConformanceResource#getSearchRevInclude()
+	 * @see #getConformanceResource()
+	 * @generated
+	 */
+	EReference getConformanceResource_SearchRevInclude();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ConformanceResource#getSearchParam <em>Search Param</em>}'.
@@ -67760,6 +68266,27 @@ public interface FhirPackage extends EPackage {
 	EReference getConformanceSoftware_ReleaseDate();
 
 	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.ConformanceStatementKind <em>Conformance Statement Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conformance Statement Kind</em>'.
+	 * @see org.hl7.fhir.ConformanceStatementKind
+	 * @generated
+	 */
+	EClass getConformanceStatementKind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.ConformanceStatementKind#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.ConformanceStatementKind#getValue()
+	 * @see #getConformanceStatementKind()
+	 * @generated
+	 */
+	EAttribute getConformanceStatementKind_Value();
+
+	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ConstraintSeverity <em>Constraint Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67822,6 +68349,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContactPoint_Use();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ContactPoint#getRank <em>Rank</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Rank</em>'.
+	 * @see org.hl7.fhir.ContactPoint#getRank()
+	 * @see #getContactPoint()
+	 * @generated
+	 */
+	EReference getContactPoint_Rank();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ContactPoint#getPeriod <em>Period</em>}'.
@@ -69059,10 +69597,10 @@ public interface FhirPackage extends EPackage {
 	EReference getDataElement_Url();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getIdentifier <em>Identifier</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DataElement#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Identifier</em>'.
+	 * @return the meta object for the containment reference list '<em>Identifier</em>'.
 	 * @see org.hl7.fhir.DataElement#getIdentifier()
 	 * @see #getDataElement()
 	 * @generated
@@ -69092,28 +69630,6 @@ public interface FhirPackage extends EPackage {
 	EReference getDataElement_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DataElement#getUseContext <em>Use Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
-	 * @see org.hl7.fhir.DataElement#getUseContext()
-	 * @see #getDataElement()
-	 * @generated
-	 */
-	EReference getDataElement_UseContext();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getExperimental <em>Experimental</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Experimental</em>'.
-	 * @see org.hl7.fhir.DataElement#getExperimental()
-	 * @see #getDataElement()
-	 * @generated
-	 */
-	EReference getDataElement_Experimental();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69125,26 +69641,15 @@ public interface FhirPackage extends EPackage {
 	EReference getDataElement_Status();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getDate <em>Date</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getExperimental <em>Experimental</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.DataElement#getDate()
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.DataElement#getExperimental()
 	 * @see #getDataElement()
 	 * @generated
 	 */
-	EReference getDataElement_Date();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getCopyright <em>Copyright</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Copyright</em>'.
-	 * @see org.hl7.fhir.DataElement#getCopyright()
-	 * @see #getDataElement()
-	 * @generated
-	 */
-	EReference getDataElement_Copyright();
+	EReference getDataElement_Experimental();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getPublisher <em>Publisher</em>}'.
@@ -69169,15 +69674,48 @@ public interface FhirPackage extends EPackage {
 	EReference getDataElement_Contact();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getSpecificity <em>Specificity</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getDate <em>Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Specificity</em>'.
-	 * @see org.hl7.fhir.DataElement#getSpecificity()
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.DataElement#getDate()
 	 * @see #getDataElement()
 	 * @generated
 	 */
-	EReference getDataElement_Specificity();
+	EReference getDataElement_Date();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DataElement#getUseContext <em>Use Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
+	 * @see org.hl7.fhir.DataElement#getUseContext()
+	 * @see #getDataElement()
+	 * @generated
+	 */
+	EReference getDataElement_UseContext();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getCopyright <em>Copyright</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Copyright</em>'.
+	 * @see org.hl7.fhir.DataElement#getCopyright()
+	 * @see #getDataElement()
+	 * @generated
+	 */
+	EReference getDataElement_Copyright();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DataElement#getStringency <em>Stringency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Stringency</em>'.
+	 * @see org.hl7.fhir.DataElement#getStringency()
+	 * @see #getDataElement()
+	 * @generated
+	 */
+	EReference getDataElement_Stringency();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DataElement#getMapping <em>Mapping</em>}'.
@@ -69288,25 +69826,25 @@ public interface FhirPackage extends EPackage {
 	EReference getDataElementMapping_Comments();
 
 	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.DataElementSpecificity <em>Data Element Specificity</em>}'.
+	 * Returns the meta object for class '{@link org.hl7.fhir.DataElementStringency <em>Data Element Stringency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Element Specificity</em>'.
-	 * @see org.hl7.fhir.DataElementSpecificity
+	 * @return the meta object for class '<em>Data Element Stringency</em>'.
+	 * @see org.hl7.fhir.DataElementStringency
 	 * @generated
 	 */
-	EClass getDataElementSpecificity();
+	EClass getDataElementStringency();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.hl7.fhir.DataElementSpecificity#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.DataElementStringency#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.hl7.fhir.DataElementSpecificity#getValue()
-	 * @see #getDataElementSpecificity()
+	 * @see org.hl7.fhir.DataElementStringency#getValue()
+	 * @see #getDataElementStringency()
 	 * @generated
 	 */
-	EAttribute getDataElementSpecificity_Value();
+	EAttribute getDataElementStringency_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.Date <em>Date</em>}'.
@@ -70455,15 +70993,15 @@ public interface FhirPackage extends EPackage {
 	EReference getDiagnosticOrder_Encounter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticOrder#getClinicalNotes <em>Clinical Notes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticOrder#getReason <em>Reason</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Clinical Notes</em>'.
-	 * @see org.hl7.fhir.DiagnosticOrder#getClinicalNotes()
+	 * @return the meta object for the containment reference list '<em>Reason</em>'.
+	 * @see org.hl7.fhir.DiagnosticOrder#getReason()
 	 * @see #getDiagnosticOrder()
 	 * @generated
 	 */
-	EReference getDiagnosticOrder_ClinicalNotes();
+	EReference getDiagnosticOrder_Reason();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticOrder#getSupportingInformation <em>Supporting Information</em>}'.
@@ -70530,6 +71068,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiagnosticOrder_Item();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticOrder#getNote <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Note</em>'.
+	 * @see org.hl7.fhir.DiagnosticOrder#getNote()
+	 * @see #getDiagnosticOrder()
+	 * @generated
+	 */
+	EReference getDiagnosticOrder_Note();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.DiagnosticOrderEvent <em>Diagnostic Order Event</em>}'.
@@ -70618,26 +71167,15 @@ public interface FhirPackage extends EPackage {
 	EReference getDiagnosticOrderItem_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticOrderItem#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticOrderItem#getBodySite <em>Body Site</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body Site Codeable Concept</em>'.
-	 * @see org.hl7.fhir.DiagnosticOrderItem#getBodySiteCodeableConcept()
+	 * @return the meta object for the containment reference '<em>Body Site</em>'.
+	 * @see org.hl7.fhir.DiagnosticOrderItem#getBodySite()
 	 * @see #getDiagnosticOrderItem()
 	 * @generated
 	 */
-	EReference getDiagnosticOrderItem_BodySiteCodeableConcept();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticOrderItem#getBodySiteReference <em>Body Site Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body Site Reference</em>'.
-	 * @see org.hl7.fhir.DiagnosticOrderItem#getBodySiteReference()
-	 * @see #getDiagnosticOrderItem()
-	 * @generated
-	 */
-	EReference getDiagnosticOrderItem_BodySiteReference();
+	EReference getDiagnosticOrderItem_BodySite();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticOrderItem#getStatus <em>Status</em>}'.
@@ -70714,15 +71252,15 @@ public interface FhirPackage extends EPackage {
 	EClass getDiagnosticReport();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticReport#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Code</em>'.
-	 * @see org.hl7.fhir.DiagnosticReport#getCode()
+	 * @return the meta object for the containment reference list '<em>Identifier</em>'.
+	 * @see org.hl7.fhir.DiagnosticReport#getIdentifier()
 	 * @see #getDiagnosticReport()
 	 * @generated
 	 */
-	EReference getDiagnosticReport_Code();
+	EReference getDiagnosticReport_Identifier();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getStatus <em>Status</em>}'.
@@ -70736,15 +71274,26 @@ public interface FhirPackage extends EPackage {
 	EReference getDiagnosticReport_Status();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getCategory <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Issued</em>'.
-	 * @see org.hl7.fhir.DiagnosticReport#getIssued()
+	 * @return the meta object for the containment reference '<em>Category</em>'.
+	 * @see org.hl7.fhir.DiagnosticReport#getCategory()
 	 * @see #getDiagnosticReport()
 	 * @generated
 	 */
-	EReference getDiagnosticReport_Issued();
+	EReference getDiagnosticReport_Category();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Code</em>'.
+	 * @see org.hl7.fhir.DiagnosticReport#getCode()
+	 * @see #getDiagnosticReport()
+	 * @generated
+	 */
+	EReference getDiagnosticReport_Code();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getSubject <em>Subject</em>}'.
@@ -70758,17 +71307,6 @@ public interface FhirPackage extends EPackage {
 	EReference getDiagnosticReport_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getPerformer <em>Performer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Performer</em>'.
-	 * @see org.hl7.fhir.DiagnosticReport#getPerformer()
-	 * @see #getDiagnosticReport()
-	 * @generated
-	 */
-	EReference getDiagnosticReport_Performer();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getEncounter <em>Encounter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70778,39 +71316,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiagnosticReport_Encounter();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticReport#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Identifier</em>'.
-	 * @see org.hl7.fhir.DiagnosticReport#getIdentifier()
-	 * @see #getDiagnosticReport()
-	 * @generated
-	 */
-	EReference getDiagnosticReport_Identifier();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticReport#getRequestDetail <em>Request Detail</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Request Detail</em>'.
-	 * @see org.hl7.fhir.DiagnosticReport#getRequestDetail()
-	 * @see #getDiagnosticReport()
-	 * @generated
-	 */
-	EReference getDiagnosticReport_RequestDetail();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getServiceCategory <em>Service Category</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Service Category</em>'.
-	 * @see org.hl7.fhir.DiagnosticReport#getServiceCategory()
-	 * @see #getDiagnosticReport()
-	 * @generated
-	 */
-	EReference getDiagnosticReport_ServiceCategory();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getEffectiveDateTime <em>Effective Date Time</em>}'.
@@ -70833,6 +71338,39 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiagnosticReport_EffectivePeriod();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Issued</em>'.
+	 * @see org.hl7.fhir.DiagnosticReport#getIssued()
+	 * @see #getDiagnosticReport()
+	 * @generated
+	 */
+	EReference getDiagnosticReport_Issued();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DiagnosticReport#getPerformer <em>Performer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Performer</em>'.
+	 * @see org.hl7.fhir.DiagnosticReport#getPerformer()
+	 * @see #getDiagnosticReport()
+	 * @generated
+	 */
+	EReference getDiagnosticReport_Performer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticReport#getRequest <em>Request</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Request</em>'.
+	 * @see org.hl7.fhir.DiagnosticReport#getRequest()
+	 * @see #getDiagnosticReport()
+	 * @generated
+	 */
+	EReference getDiagnosticReport_Request();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DiagnosticReport#getSpecimen <em>Specimen</em>}'.
@@ -71398,15 +71936,15 @@ public interface FhirPackage extends EPackage {
 	EReference getDocumentReference_Description();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DocumentReference#getConfidentiality <em>Confidentiality</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DocumentReference#getSecurityLabel <em>Security Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Confidentiality</em>'.
-	 * @see org.hl7.fhir.DocumentReference#getConfidentiality()
+	 * @return the meta object for the containment reference list '<em>Security Label</em>'.
+	 * @see org.hl7.fhir.DocumentReference#getSecurityLabel()
 	 * @see #getDocumentReference()
 	 * @generated
 	 */
-	EReference getDocumentReference_Confidentiality();
+	EReference getDocumentReference_SecurityLabel();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DocumentReference#getContent <em>Content</em>}'.
@@ -71439,6 +71977,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDocumentReferenceContext();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DocumentReferenceContext#getEncounter <em>Encounter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Encounter</em>'.
+	 * @see org.hl7.fhir.DocumentReferenceContext#getEncounter()
+	 * @see #getDocumentReferenceContext()
+	 * @generated
+	 */
+	EReference getDocumentReferenceContext_Encounter();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.DocumentReferenceContext#getEvent <em>Event</em>}'.
@@ -72514,15 +73063,15 @@ public interface FhirPackage extends EPackage {
 	EReference getDocumentRoot_Questionnaire();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DocumentRoot#getQuestionnaireAnswers <em>Questionnaire Answers</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DocumentRoot#getQuestionnaireResponse <em>Questionnaire Response</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Questionnaire Answers</em>'.
-	 * @see org.hl7.fhir.DocumentRoot#getQuestionnaireAnswers()
+	 * @return the meta object for the containment reference '<em>Questionnaire Response</em>'.
+	 * @see org.hl7.fhir.DocumentRoot#getQuestionnaireResponse()
 	 * @see #getDocumentRoot()
 	 * @generated
 	 */
-	EReference getDocumentRoot_QuestionnaireAnswers();
+	EReference getDocumentRoot_QuestionnaireResponse();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DocumentRoot#getReferralRequest <em>Referral Request</em>}'.
@@ -72633,17 +73182,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDocumentRoot_Substance();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DocumentRoot#getSupply <em>Supply</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Supply</em>'.
-	 * @see org.hl7.fhir.DocumentRoot#getSupply()
-	 * @see #getDocumentRoot()
-	 * @generated
-	 */
-	EReference getDocumentRoot_Supply();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.DocumentRoot#getSupplyDelivery <em>Supply Delivery</em>}'.
@@ -72763,6 +73301,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDuration();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Duration#getExtension1 <em>Extension1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Extension1</em>'.
+	 * @see org.hl7.fhir.Duration#getExtension1()
+	 * @see #getDuration()
+	 * @generated
+	 */
+	EReference getDuration_Extension1();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.Element <em>Element</em>}'.
@@ -72948,6 +73497,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getElementDefinition_Max();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getBase <em>Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Base</em>'.
+	 * @see org.hl7.fhir.ElementDefinition#getBase()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_Base();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ElementDefinition#getType <em>Type</em>}'.
@@ -73146,6 +73706,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getElementDefinition_DefaultValuePositiveInt();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getDefaultValueMarkdown <em>Default Value Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Default Value Markdown</em>'.
+	 * @see org.hl7.fhir.ElementDefinition#getDefaultValueMarkdown()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_DefaultValueMarkdown();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getDefaultValueAnnotation <em>Default Value Annotation</em>}'.
@@ -73522,6 +74093,17 @@ public interface FhirPackage extends EPackage {
 	EReference getElementDefinition_FixedPositiveInt();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getFixedMarkdown <em>Fixed Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Fixed Markdown</em>'.
+	 * @see org.hl7.fhir.ElementDefinition#getFixedMarkdown()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_FixedMarkdown();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getFixedAnnotation <em>Fixed Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73883,6 +74465,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getElementDefinition_PatternPositiveInt();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getPatternMarkdown <em>Pattern Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Pattern Markdown</em>'.
+	 * @see org.hl7.fhir.ElementDefinition#getPatternMarkdown()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_PatternMarkdown();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getPatternAnnotation <em>Pattern Annotation</em>}'.
@@ -74248,6 +74841,17 @@ public interface FhirPackage extends EPackage {
 	EReference getElementDefinition_ExamplePositiveInt();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getExampleMarkdown <em>Example Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Example Markdown</em>'.
+	 * @see org.hl7.fhir.ElementDefinition#getExampleMarkdown()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_ExampleMarkdown();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getExampleAnnotation <em>Example Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74609,6 +75213,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getElementDefinition_MinValuePositiveInt();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getMinValueMarkdown <em>Min Value Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Min Value Markdown</em>'.
+	 * @see org.hl7.fhir.ElementDefinition#getMinValueMarkdown()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_MinValueMarkdown();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getMinValueAnnotation <em>Min Value Annotation</em>}'.
@@ -74974,6 +75589,17 @@ public interface FhirPackage extends EPackage {
 	EReference getElementDefinition_MaxValuePositiveInt();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getMaxValueMarkdown <em>Max Value Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Max Value Markdown</em>'.
+	 * @see org.hl7.fhir.ElementDefinition#getMaxValueMarkdown()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_MaxValueMarkdown();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinition#getMaxValueAnnotation <em>Max Value Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75247,6 +75873,49 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getElementDefinition_Mapping();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.ElementDefinitionBase <em>Element Definition Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element Definition Base</em>'.
+	 * @see org.hl7.fhir.ElementDefinitionBase
+	 * @generated
+	 */
+	EClass getElementDefinitionBase();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinitionBase#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Path</em>'.
+	 * @see org.hl7.fhir.ElementDefinitionBase#getPath()
+	 * @see #getElementDefinitionBase()
+	 * @generated
+	 */
+	EReference getElementDefinitionBase_Path();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinitionBase#getMin <em>Min</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Min</em>'.
+	 * @see org.hl7.fhir.ElementDefinitionBase#getMin()
+	 * @see #getElementDefinitionBase()
+	 * @generated
+	 */
+	EReference getElementDefinitionBase_Min();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ElementDefinitionBase#getMax <em>Max</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Max</em>'.
+	 * @see org.hl7.fhir.ElementDefinitionBase#getMax()
+	 * @see #getElementDefinitionBase()
+	 * @generated
+	 */
+	EReference getElementDefinitionBase_Max();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ElementDefinitionBinding <em>Element Definition Binding</em>}'.
@@ -77040,6 +77709,17 @@ public interface FhirPackage extends EPackage {
 	EReference getExtension_ValuePositiveInt();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Extension#getValueMarkdown <em>Value Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Markdown</em>'.
+	 * @see org.hl7.fhir.Extension#getValueMarkdown()
+	 * @see #getExtension()
+	 * @generated
+	 */
+	EReference getExtension_ValueMarkdown();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Extension#getValueAnnotation <em>Value Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -77368,15 +78048,15 @@ public interface FhirPackage extends EPackage {
 	EReference getFamilyMemberHistory_BornString();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistory#getAgeAge <em>Age Age</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistory#getAgeQuantity <em>Age Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Age Age</em>'.
-	 * @see org.hl7.fhir.FamilyMemberHistory#getAgeAge()
+	 * @return the meta object for the containment reference '<em>Age Quantity</em>'.
+	 * @see org.hl7.fhir.FamilyMemberHistory#getAgeQuantity()
 	 * @see #getFamilyMemberHistory()
 	 * @generated
 	 */
-	EReference getFamilyMemberHistory_AgeAge();
+	EReference getFamilyMemberHistory_AgeQuantity();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistory#getAgeRange <em>Age Range</em>}'.
@@ -77412,15 +78092,15 @@ public interface FhirPackage extends EPackage {
 	EReference getFamilyMemberHistory_DeceasedBoolean();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedAge <em>Deceased Age</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedQuantity <em>Deceased Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Deceased Age</em>'.
-	 * @see org.hl7.fhir.FamilyMemberHistory#getDeceasedAge()
+	 * @return the meta object for the containment reference '<em>Deceased Quantity</em>'.
+	 * @see org.hl7.fhir.FamilyMemberHistory#getDeceasedQuantity()
 	 * @see #getFamilyMemberHistory()
 	 * @generated
 	 */
-	EReference getFamilyMemberHistory_DeceasedAge();
+	EReference getFamilyMemberHistory_DeceasedQuantity();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedRange <em>Deceased Range</em>}'.
@@ -77510,15 +78190,15 @@ public interface FhirPackage extends EPackage {
 	EReference getFamilyMemberHistoryCondition_Outcome();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetAge <em>Onset Age</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetQuantity <em>Onset Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Onset Age</em>'.
-	 * @see org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetAge()
+	 * @return the meta object for the containment reference '<em>Onset Quantity</em>'.
+	 * @see org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetQuantity()
 	 * @see #getFamilyMemberHistoryCondition()
 	 * @generated
 	 */
-	EReference getFamilyMemberHistoryCondition_OnsetAge();
+	EReference getFamilyMemberHistoryCondition_OnsetQuantity();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.FamilyMemberHistoryCondition#getOnsetRange <em>Onset Range</em>}'.
@@ -77638,6 +78318,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFlag_Subject();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Flag#getEncounter <em>Encounter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Encounter</em>'.
+	 * @see org.hl7.fhir.Flag#getEncounter()
+	 * @see #getFlag()
+	 * @generated
+	 */
+	EReference getFlag_Encounter();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Flag#getAuthor <em>Author</em>}'.
@@ -77877,10 +78568,10 @@ public interface FhirPackage extends EPackage {
 	EClass getGroup();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Group#getIdentifier <em>Identifier</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Group#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Identifier</em>'.
+	 * @return the meta object for the containment reference list '<em>Identifier</em>'.
 	 * @see org.hl7.fhir.Group#getIdentifier()
 	 * @see #getGroup()
 	 * @generated
@@ -78041,6 +78732,60 @@ public interface FhirPackage extends EPackage {
 	EReference getGroupCharacteristic_Exclude();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.GroupCharacteristic#getPeriod <em>Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Period</em>'.
+	 * @see org.hl7.fhir.GroupCharacteristic#getPeriod()
+	 * @see #getGroupCharacteristic()
+	 * @generated
+	 */
+	EReference getGroupCharacteristic_Period();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.GroupMember <em>Group Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Group Member</em>'.
+	 * @see org.hl7.fhir.GroupMember
+	 * @generated
+	 */
+	EClass getGroupMember();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.GroupMember#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Entity</em>'.
+	 * @see org.hl7.fhir.GroupMember#getEntity()
+	 * @see #getGroupMember()
+	 * @generated
+	 */
+	EReference getGroupMember_Entity();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.GroupMember#getPeriod <em>Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Period</em>'.
+	 * @see org.hl7.fhir.GroupMember#getPeriod()
+	 * @see #getGroupMember()
+	 * @generated
+	 */
+	EReference getGroupMember_Period();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.GroupMember#getInactive <em>Inactive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Inactive</em>'.
+	 * @see org.hl7.fhir.GroupMember#getInactive()
+	 * @see #getGroupMember()
+	 * @generated
+	 */
+	EReference getGroupMember_Inactive();
+
+	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.GroupType <em>Group Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78060,6 +78805,69 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGroupType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.GuideDependencyType <em>Guide Dependency Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Guide Dependency Type</em>'.
+	 * @see org.hl7.fhir.GuideDependencyType
+	 * @generated
+	 */
+	EClass getGuideDependencyType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.GuideDependencyType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.GuideDependencyType#getValue()
+	 * @see #getGuideDependencyType()
+	 * @generated
+	 */
+	EAttribute getGuideDependencyType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.GuidePageKind <em>Guide Page Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Guide Page Kind</em>'.
+	 * @see org.hl7.fhir.GuidePageKind
+	 * @generated
+	 */
+	EClass getGuidePageKind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.GuidePageKind#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.GuidePageKind#getValue()
+	 * @see #getGuidePageKind()
+	 * @generated
+	 */
+	EAttribute getGuidePageKind_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.GuideResourcePurpose <em>Guide Resource Purpose</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Guide Resource Purpose</em>'.
+	 * @see org.hl7.fhir.GuideResourcePurpose
+	 * @generated
+	 */
+	EClass getGuideResourcePurpose();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.GuideResourcePurpose#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.GuideResourcePurpose#getValue()
+	 * @see #getGuideResourcePurpose()
+	 * @generated
+	 */
+	EAttribute getGuideResourcePurpose_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.HealthcareService <em>Healthcare Service</em>}'.
@@ -78927,6 +79735,17 @@ public interface FhirPackage extends EPackage {
 	EReference getImagingObjectSelectionStudy_Url();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImagingObjectSelectionStudy#getImagingStudy <em>Imaging Study</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Imaging Study</em>'.
+	 * @see org.hl7.fhir.ImagingObjectSelectionStudy#getImagingStudy()
+	 * @see #getImagingObjectSelectionStudy()
+	 * @generated
+	 */
+	EReference getImagingObjectSelectionStudy_ImagingStudy();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImagingObjectSelectionStudy#getSeries <em>Series</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79080,17 +79899,6 @@ public interface FhirPackage extends EPackage {
 	EReference getImagingStudy_NumberOfInstances();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImagingStudy#getClinicalInformation <em>Clinical Information</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Clinical Information</em>'.
-	 * @see org.hl7.fhir.ImagingStudy#getClinicalInformation()
-	 * @see #getImagingStudy()
-	 * @generated
-	 */
-	EReference getImagingStudy_ClinicalInformation();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImagingStudy#getProcedure <em>Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79167,15 +79975,15 @@ public interface FhirPackage extends EPackage {
 	EReference getImagingStudyInstance_Uid();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImagingStudyInstance#getSopclass <em>Sopclass</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImagingStudyInstance#getSopClass <em>Sop Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Sopclass</em>'.
-	 * @see org.hl7.fhir.ImagingStudyInstance#getSopclass()
+	 * @return the meta object for the containment reference '<em>Sop Class</em>'.
+	 * @see org.hl7.fhir.ImagingStudyInstance#getSopClass()
 	 * @see #getImagingStudyInstance()
 	 * @generated
 	 */
-	EReference getImagingStudyInstance_Sopclass();
+	EReference getImagingStudyInstance_SopClass();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImagingStudyInstance#getType <em>Type</em>}'.
@@ -79320,15 +80128,15 @@ public interface FhirPackage extends EPackage {
 	EReference getImagingStudySeries_Laterality();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImagingStudySeries#getDateTime <em>Date Time</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImagingStudySeries#getStarted <em>Started</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date Time</em>'.
-	 * @see org.hl7.fhir.ImagingStudySeries#getDateTime()
+	 * @return the meta object for the containment reference '<em>Started</em>'.
+	 * @see org.hl7.fhir.ImagingStudySeries#getStarted()
 	 * @see #getImagingStudySeries()
 	 * @generated
 	 */
-	EReference getImagingStudySeries_DateTime();
+	EReference getImagingStudySeries_Started();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImagingStudySeries#getInstance <em>Instance</em>}'.
@@ -80004,15 +80812,26 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuide_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getUseContext <em>Use Context</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
-	 * @see org.hl7.fhir.ImplementationGuide#getUseContext()
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getStatus()
 	 * @see #getImplementationGuide()
 	 * @generated
 	 */
-	EReference getImplementationGuide_UseContext();
+	EReference getImplementationGuide_Status();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getExperimental <em>Experimental</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getExperimental()
+	 * @see #getImplementationGuide()
+	 * @generated
+	 */
+	EReference getImplementationGuide_Experimental();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getPublisher <em>Publisher</em>}'.
@@ -80037,6 +80856,17 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuide_Contact();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getDate()
+	 * @see #getImplementationGuide()
+	 * @generated
+	 */
+	EReference getImplementationGuide_Date();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80046,6 +80876,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getImplementationGuide_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getUseContext <em>Use Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getUseContext()
+	 * @see #getImplementationGuide()
+	 * @generated
+	 */
+	EReference getImplementationGuide_UseContext();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getCopyright <em>Copyright</em>}'.
@@ -80059,50 +80900,6 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuide_Copyright();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getCode <em>Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Code</em>'.
-	 * @see org.hl7.fhir.ImplementationGuide#getCode()
-	 * @see #getImplementationGuide()
-	 * @generated
-	 */
-	EReference getImplementationGuide_Code();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.ImplementationGuide#getStatus()
-	 * @see #getImplementationGuide()
-	 * @generated
-	 */
-	EReference getImplementationGuide_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getExperimental <em>Experimental</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Experimental</em>'.
-	 * @see org.hl7.fhir.ImplementationGuide#getExperimental()
-	 * @see #getImplementationGuide()
-	 * @generated
-	 */
-	EReference getImplementationGuide_Experimental();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.ImplementationGuide#getDate()
-	 * @see #getImplementationGuide()
-	 * @generated
-	 */
-	EReference getImplementationGuide_Date();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getFhirVersion <em>Fhir Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80114,15 +80911,15 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuide_FhirVersion();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getPage <em>Page</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getDependency <em>Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Page</em>'.
-	 * @see org.hl7.fhir.ImplementationGuide#getPage()
+	 * @return the meta object for the containment reference list '<em>Dependency</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getDependency()
 	 * @see #getImplementationGuide()
 	 * @generated
 	 */
-	EReference getImplementationGuide_Page();
+	EReference getImplementationGuide_Dependency();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getPackage <em>Package</em>}'.
@@ -80136,15 +80933,37 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuide_Package();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getDefault <em>Default</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getGlobal <em>Global</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Default</em>'.
-	 * @see org.hl7.fhir.ImplementationGuide#getDefault()
+	 * @return the meta object for the containment reference list '<em>Global</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getGlobal()
 	 * @see #getImplementationGuide()
 	 * @generated
 	 */
-	EReference getImplementationGuide_Default();
+	EReference getImplementationGuide_Global();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuide#getBinary <em>Binary</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Binary</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getBinary()
+	 * @see #getImplementationGuide()
+	 * @generated
+	 */
+	EReference getImplementationGuide_Binary();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuide#getPage <em>Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Page</em>'.
+	 * @see org.hl7.fhir.ImplementationGuide#getPage()
+	 * @see #getImplementationGuide()
+	 * @generated
+	 */
+	EReference getImplementationGuide_Page();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuideContact <em>Implementation Guide Contact</em>}'.
@@ -80179,122 +80998,68 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuideContact_Telecom();
 
 	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuideDefault <em>Implementation Guide Default</em>}'.
+	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuideDependency <em>Implementation Guide Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Implementation Guide Default</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideDefault
+	 * @return the meta object for class '<em>Implementation Guide Dependency</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideDependency
 	 * @generated
 	 */
-	EClass getImplementationGuideDefault();
+	EClass getImplementationGuideDependency();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideDefault#getType <em>Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideDependency#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Type</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideDefault#getType()
-	 * @see #getImplementationGuideDefault()
+	 * @see org.hl7.fhir.ImplementationGuideDependency#getType()
+	 * @see #getImplementationGuideDependency()
 	 * @generated
 	 */
-	EReference getImplementationGuideDefault_Type();
+	EReference getImplementationGuideDependency_Type();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideDefault#getProfile <em>Profile</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideDependency#getUri <em>Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Uri</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideDependency#getUri()
+	 * @see #getImplementationGuideDependency()
+	 * @generated
+	 */
+	EReference getImplementationGuideDependency_Uri();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuideGlobal <em>Implementation Guide Global</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Implementation Guide Global</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideGlobal
+	 * @generated
+	 */
+	EClass getImplementationGuideGlobal();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideGlobal#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideGlobal#getType()
+	 * @see #getImplementationGuideGlobal()
+	 * @generated
+	 */
+	EReference getImplementationGuideGlobal_Type();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideGlobal#getProfile <em>Profile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Profile</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideDefault#getProfile()
-	 * @see #getImplementationGuideDefault()
+	 * @see org.hl7.fhir.ImplementationGuideGlobal#getProfile()
+	 * @see #getImplementationGuideGlobal()
 	 * @generated
 	 */
-	EReference getImplementationGuideDefault_Profile();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuideExample <em>Implementation Guide Example</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Implementation Guide Example</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideExample
-	 * @generated
-	 */
-	EClass getImplementationGuideExample();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideExample#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Name</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideExample#getName()
-	 * @see #getImplementationGuideExample()
-	 * @generated
-	 */
-	EReference getImplementationGuideExample_Name();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideExample#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Target</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideExample#getTarget()
-	 * @see #getImplementationGuideExample()
-	 * @generated
-	 */
-	EReference getImplementationGuideExample_Target();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideExample#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Description</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideExample#getDescription()
-	 * @see #getImplementationGuideExample()
-	 * @generated
-	 */
-	EReference getImplementationGuideExample_Description();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuideItem <em>Implementation Guide Item</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Implementation Guide Item</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideItem
-	 * @generated
-	 */
-	EClass getImplementationGuideItem();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideItem#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Name</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideItem#getName()
-	 * @see #getImplementationGuideItem()
-	 * @generated
-	 */
-	EReference getImplementationGuideItem_Name();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideItem#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Content</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideItem#getContent()
-	 * @see #getImplementationGuideItem()
-	 * @generated
-	 */
-	EReference getImplementationGuideItem_Content();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuideItem#getExample <em>Example</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Example</em>'.
-	 * @see org.hl7.fhir.ImplementationGuideItem#getExample()
-	 * @see #getImplementationGuideItem()
-	 * @generated
-	 */
-	EReference getImplementationGuideItem_Example();
+	EReference getImplementationGuideGlobal_Profile();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuidePackage <em>Implementation Guide Package</em>}'.
@@ -80318,26 +81083,26 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuidePackage_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuidePackage#getItem <em>Item</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuidePackage#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Item</em>'.
-	 * @see org.hl7.fhir.ImplementationGuidePackage#getItem()
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePackage#getDescription()
 	 * @see #getImplementationGuidePackage()
 	 * @generated
 	 */
-	EReference getImplementationGuidePackage_Item();
+	EReference getImplementationGuidePackage_Description();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuidePackage#getPage <em>Page</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuidePackage#getResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Page</em>'.
-	 * @see org.hl7.fhir.ImplementationGuidePackage#getPage()
+	 * @return the meta object for the containment reference list '<em>Resource</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePackage#getResource()
 	 * @see #getImplementationGuidePackage()
 	 * @generated
 	 */
-	EReference getImplementationGuidePackage_Page();
+	EReference getImplementationGuidePackage_Resource();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuidePage <em>Implementation Guide Page</em>}'.
@@ -80361,15 +81126,157 @@ public interface FhirPackage extends EPackage {
 	EReference getImplementationGuidePage_Source();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuidePage#getPurpose <em>Purpose</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuidePage#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Purpose</em>'.
-	 * @see org.hl7.fhir.ImplementationGuidePage#getPurpose()
+	 * @return the meta object for the containment reference '<em>Name</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePage#getName()
 	 * @see #getImplementationGuidePage()
 	 * @generated
 	 */
-	EReference getImplementationGuidePage_Purpose();
+	EReference getImplementationGuidePage_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuidePage#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Kind</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePage#getKind()
+	 * @see #getImplementationGuidePage()
+	 * @generated
+	 */
+	EReference getImplementationGuidePage_Kind();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuidePage#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Type</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePage#getType()
+	 * @see #getImplementationGuidePage()
+	 * @generated
+	 */
+	EReference getImplementationGuidePage_Type();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuidePage#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Package</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePage#getPackage()
+	 * @see #getImplementationGuidePage()
+	 * @generated
+	 */
+	EReference getImplementationGuidePage_Package();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuidePage#getFormat <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Format</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePage#getFormat()
+	 * @see #getImplementationGuidePage()
+	 * @generated
+	 */
+	EReference getImplementationGuidePage_Format();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ImplementationGuidePage#getPage <em>Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Page</em>'.
+	 * @see org.hl7.fhir.ImplementationGuidePage#getPage()
+	 * @see #getImplementationGuidePage()
+	 * @generated
+	 */
+	EReference getImplementationGuidePage_Page();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.ImplementationGuideResource <em>Implementation Guide Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Implementation Guide Resource</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource
+	 * @generated
+	 */
+	EClass getImplementationGuideResource();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideResource#getPurpose <em>Purpose</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Purpose</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource#getPurpose()
+	 * @see #getImplementationGuideResource()
+	 * @generated
+	 */
+	EReference getImplementationGuideResource_Purpose();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideResource#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Name</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource#getName()
+	 * @see #getImplementationGuideResource()
+	 * @generated
+	 */
+	EReference getImplementationGuideResource_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideResource#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource#getDescription()
+	 * @see #getImplementationGuideResource()
+	 * @generated
+	 */
+	EReference getImplementationGuideResource_Description();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideResource#getAcronym <em>Acronym</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Acronym</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource#getAcronym()
+	 * @see #getImplementationGuideResource()
+	 * @generated
+	 */
+	EReference getImplementationGuideResource_Acronym();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideResource#getSourceUri <em>Source Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Source Uri</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource#getSourceUri()
+	 * @see #getImplementationGuideResource()
+	 * @generated
+	 */
+	EReference getImplementationGuideResource_SourceUri();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideResource#getSourceReference <em>Source Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Source Reference</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource#getSourceReference()
+	 * @see #getImplementationGuideResource()
+	 * @generated
+	 */
+	EReference getImplementationGuideResource_SourceReference();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ImplementationGuideResource#getExampleFor <em>Example For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Example For</em>'.
+	 * @see org.hl7.fhir.ImplementationGuideResource#getExampleFor()
+	 * @see #getImplementationGuideResource()
+	 * @generated
+	 */
+	EReference getImplementationGuideResource_ExampleFor();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.InstanceAvailability <em>Instance Availability</em>}'.
@@ -80454,6 +81361,27 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIssueSeverity_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.IssueType <em>Issue Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Issue Type</em>'.
+	 * @see org.hl7.fhir.IssueType
+	 * @generated
+	 */
+	EClass getIssueType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.IssueType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.IssueType#getValue()
+	 * @see #getIssueType()
+	 * @generated
+	 */
+	EAttribute getIssueType_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.LinkType <em>Link Type</em>}'.
@@ -80951,6 +81879,27 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLocationStatus_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.Markdown <em>Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Markdown</em>'.
+	 * @see org.hl7.fhir.Markdown
+	 * @generated
+	 */
+	EClass getMarkdown();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.Markdown#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.Markdown#getValue()
+	 * @see #getMarkdown()
+	 * @generated
+	 */
+	EAttribute getMarkdown_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.MeasmntPrinciple <em>Measmnt Principle</em>}'.
@@ -83296,17 +84245,6 @@ public interface FhirPackage extends EPackage {
 	EClass getNamingSystem();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Type</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getType()
-	 * @see #getNamingSystem()
-	 * @generated
-	 */
-	EReference getNamingSystem_Type();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83316,17 +84254,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNamingSystem_Name();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getDate()
-	 * @see #getNamingSystem()
-	 * @generated
-	 */
-	EReference getNamingSystem_Date();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getStatus <em>Status</em>}'.
@@ -83340,70 +84267,15 @@ public interface FhirPackage extends EPackage {
 	EReference getNamingSystem_Status();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getCountry <em>Country</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Country</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getCountry()
+	 * @return the meta object for the containment reference '<em>Kind</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getKind()
 	 * @see #getNamingSystem()
 	 * @generated
 	 */
-	EReference getNamingSystem_Country();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getCategory <em>Category</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Category</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getCategory()
-	 * @see #getNamingSystem()
-	 * @generated
-	 */
-	EReference getNamingSystem_Category();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getResponsible <em>Responsible</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Responsible</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getResponsible()
-	 * @see #getNamingSystem()
-	 * @generated
-	 */
-	EReference getNamingSystem_Responsible();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Description</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getDescription()
-	 * @see #getNamingSystem()
-	 * @generated
-	 */
-	EReference getNamingSystem_Description();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getUsage <em>Usage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Usage</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getUsage()
-	 * @see #getNamingSystem()
-	 * @generated
-	 */
-	EReference getNamingSystem_Usage();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.NamingSystem#getUniqueId <em>Unique Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Unique Id</em>'.
-	 * @see org.hl7.fhir.NamingSystem#getUniqueId()
-	 * @see #getNamingSystem()
-	 * @generated
-	 */
-	EReference getNamingSystem_UniqueId();
+	EReference getNamingSystem_Kind();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getPublisher <em>Publisher</em>}'.
@@ -83426,6 +84298,83 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNamingSystem_Contact();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getResponsible <em>Responsible</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Responsible</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getResponsible()
+	 * @see #getNamingSystem()
+	 * @generated
+	 */
+	EReference getNamingSystem_Responsible();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getDate()
+	 * @see #getNamingSystem()
+	 * @generated
+	 */
+	EReference getNamingSystem_Date();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getType()
+	 * @see #getNamingSystem()
+	 * @generated
+	 */
+	EReference getNamingSystem_Type();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Description</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getDescription()
+	 * @see #getNamingSystem()
+	 * @generated
+	 */
+	EReference getNamingSystem_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.NamingSystem#getUseContext <em>Use Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getUseContext()
+	 * @see #getNamingSystem()
+	 * @generated
+	 */
+	EReference getNamingSystem_UseContext();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getUsage <em>Usage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Usage</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getUsage()
+	 * @see #getNamingSystem()
+	 * @generated
+	 */
+	EReference getNamingSystem_Usage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.NamingSystem#getUniqueId <em>Unique Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Unique Id</em>'.
+	 * @see org.hl7.fhir.NamingSystem#getUniqueId()
+	 * @see #getNamingSystem()
+	 * @generated
+	 */
+	EReference getNamingSystem_UniqueId();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.NamingSystem#getReplacedBy <em>Replaced By</em>}'.
@@ -84182,15 +85131,26 @@ public interface FhirPackage extends EPackage {
 	EClass getObservation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getCode <em>Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Observation#getIdentifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Code</em>'.
-	 * @see org.hl7.fhir.Observation#getCode()
+	 * @return the meta object for the containment reference list '<em>Identifier</em>'.
+	 * @see org.hl7.fhir.Observation#getIdentifier()
 	 * @see #getObservation()
 	 * @generated
 	 */
-	EReference getObservation_Code();
+	EReference getObservation_Identifier();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.Observation#getStatus()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_Status();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getCategory <em>Category</em>}'.
@@ -84202,6 +85162,83 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getObservation_Category();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getCode <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Code</em>'.
+	 * @see org.hl7.fhir.Observation#getCode()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_Code();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getSubject <em>Subject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Subject</em>'.
+	 * @see org.hl7.fhir.Observation#getSubject()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_Subject();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getEncounter <em>Encounter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Encounter</em>'.
+	 * @see org.hl7.fhir.Observation#getEncounter()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_Encounter();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getEffectiveDateTime <em>Effective Date Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Effective Date Time</em>'.
+	 * @see org.hl7.fhir.Observation#getEffectiveDateTime()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_EffectiveDateTime();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getEffectivePeriod <em>Effective Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Effective Period</em>'.
+	 * @see org.hl7.fhir.Observation#getEffectivePeriod()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_EffectivePeriod();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getIssued <em>Issued</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Issued</em>'.
+	 * @see org.hl7.fhir.Observation#getIssued()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_Issued();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Observation#getPerformer <em>Performer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Performer</em>'.
+	 * @see org.hl7.fhir.Observation#getPerformer()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EReference getObservation_Performer();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getValueQuantity <em>Value Quantity</em>}'.
@@ -84347,81 +85384,15 @@ public interface FhirPackage extends EPackage {
 	EReference getObservation_Comments();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getEffectiveDateTime <em>Effective Date Time</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getBodySite <em>Body Site</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Effective Date Time</em>'.
-	 * @see org.hl7.fhir.Observation#getEffectiveDateTime()
+	 * @return the meta object for the containment reference '<em>Body Site</em>'.
+	 * @see org.hl7.fhir.Observation#getBodySite()
 	 * @see #getObservation()
 	 * @generated
 	 */
-	EReference getObservation_EffectiveDateTime();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getEffectivePeriod <em>Effective Period</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Effective Period</em>'.
-	 * @see org.hl7.fhir.Observation#getEffectivePeriod()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_EffectivePeriod();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getIssued <em>Issued</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Issued</em>'.
-	 * @see org.hl7.fhir.Observation#getIssued()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_Issued();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.Observation#getStatus()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getReliability <em>Reliability</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Reliability</em>'.
-	 * @see org.hl7.fhir.Observation#getReliability()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_Reliability();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body Site Codeable Concept</em>'.
-	 * @see org.hl7.fhir.Observation#getBodySiteCodeableConcept()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_BodySiteCodeableConcept();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getBodySiteReference <em>Body Site Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body Site Reference</em>'.
-	 * @see org.hl7.fhir.Observation#getBodySiteReference()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_BodySiteReference();
+	EReference getObservation_BodySite();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getMethod <em>Method</em>}'.
@@ -84435,28 +85406,6 @@ public interface FhirPackage extends EPackage {
 	EReference getObservation_Method();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Observation#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Identifier</em>'.
-	 * @see org.hl7.fhir.Observation#getIdentifier()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_Identifier();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getSubject <em>Subject</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Subject</em>'.
-	 * @see org.hl7.fhir.Observation#getSubject()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_Subject();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getSpecimen <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84468,17 +85417,6 @@ public interface FhirPackage extends EPackage {
 	EReference getObservation_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Observation#getPerformer <em>Performer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.hl7.fhir.Observation#getPerformer()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_Performer();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getDevice <em>Device</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84488,17 +85426,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getObservation_Device();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Observation#getEncounter <em>Encounter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Encounter</em>'.
-	 * @see org.hl7.fhir.Observation#getEncounter()
-	 * @see #getObservation()
-	 * @generated
-	 */
-	EReference getObservation_Encounter();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Observation#getReferenceRange <em>Reference Range</em>}'.
@@ -84805,27 +85732,6 @@ public interface FhirPackage extends EPackage {
 	EAttribute getObservationRelationshipType_Value();
 
 	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.ObservationReliability <em>Observation Reliability</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Observation Reliability</em>'.
-	 * @see org.hl7.fhir.ObservationReliability
-	 * @generated
-	 */
-	EClass getObservationReliability();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.hl7.fhir.ObservationReliability#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.hl7.fhir.ObservationReliability#getValue()
-	 * @see #getObservationReliability()
-	 * @generated
-	 */
-	EAttribute getObservationReliability_Value();
-
-	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.ObservationStatus <em>Observation Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84911,6 +85817,39 @@ public interface FhirPackage extends EPackage {
 	EReference getOperationDefinition_Name();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.OperationDefinition#getStatus()
+	 * @see #getOperationDefinition()
+	 * @generated
+	 */
+	EReference getOperationDefinition_Status();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Kind</em>'.
+	 * @see org.hl7.fhir.OperationDefinition#getKind()
+	 * @see #getOperationDefinition()
+	 * @generated
+	 */
+	EReference getOperationDefinition_Kind();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getExperimental <em>Experimental</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.OperationDefinition#getExperimental()
+	 * @see #getOperationDefinition()
+	 * @generated
+	 */
+	EReference getOperationDefinition_Experimental();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getPublisher <em>Publisher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84933,6 +85872,17 @@ public interface FhirPackage extends EPackage {
 	EReference getOperationDefinition_Contact();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.OperationDefinition#getDate()
+	 * @see #getOperationDefinition()
+	 * @generated
+	 */
+	EReference getOperationDefinition_Date();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84953,50 +85903,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOperationDefinition_Requirements();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.OperationDefinition#getStatus()
-	 * @see #getOperationDefinition()
-	 * @generated
-	 */
-	EReference getOperationDefinition_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getExperimental <em>Experimental</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Experimental</em>'.
-	 * @see org.hl7.fhir.OperationDefinition#getExperimental()
-	 * @see #getOperationDefinition()
-	 * @generated
-	 */
-	EReference getOperationDefinition_Experimental();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.OperationDefinition#getDate()
-	 * @see #getOperationDefinition()
-	 * @generated
-	 */
-	EReference getOperationDefinition_Date();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getKind <em>Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Kind</em>'.
-	 * @see org.hl7.fhir.OperationDefinition#getKind()
-	 * @see #getOperationDefinition()
-	 * @generated
-	 */
-	EReference getOperationDefinition_Kind();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationDefinition#getIdempotent <em>Idempotent</em>}'.
@@ -85356,6 +86262,17 @@ public interface FhirPackage extends EPackage {
 	EReference getOperationOutcomeIssue_Details();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.OperationOutcomeIssue#getDiagnostics <em>Diagnostics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Diagnostics</em>'.
+	 * @see org.hl7.fhir.OperationOutcomeIssue#getDiagnostics()
+	 * @see #getOperationOutcomeIssue()
+	 * @generated
+	 */
+	EReference getOperationOutcomeIssue_Diagnostics();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.OperationOutcomeIssue#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85658,15 +86575,15 @@ public interface FhirPackage extends EPackage {
 	EReference getOrganization_Identifier();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Organization#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Organization#getActive <em>Active</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Name</em>'.
-	 * @see org.hl7.fhir.Organization#getName()
+	 * @return the meta object for the containment reference '<em>Active</em>'.
+	 * @see org.hl7.fhir.Organization#getActive()
 	 * @see #getOrganization()
 	 * @generated
 	 */
-	EReference getOrganization_Name();
+	EReference getOrganization_Active();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Organization#getType <em>Type</em>}'.
@@ -85678,6 +86595,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOrganization_Type();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Organization#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Name</em>'.
+	 * @see org.hl7.fhir.Organization#getName()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EReference getOrganization_Name();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Organization#getTelecom <em>Telecom</em>}'.
@@ -85722,17 +86650,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOrganization_Contact();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Organization#getActive <em>Active</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Active</em>'.
-	 * @see org.hl7.fhir.Organization#getActive()
-	 * @see #getOrganization()
-	 * @generated
-	 */
-	EReference getOrganization_Active();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.OrganizationContact <em>Organization Contact</em>}'.
@@ -85787,27 +86704,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOrganizationContact_Address();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.PagePurpose <em>Page Purpose</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Page Purpose</em>'.
-	 * @see org.hl7.fhir.PagePurpose
-	 * @generated
-	 */
-	EClass getPagePurpose();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.hl7.fhir.PagePurpose#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.hl7.fhir.PagePurpose#getValue()
-	 * @see #getPagePurpose()
-	 * @generated
-	 */
-	EAttribute getPagePurpose_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.Parameters <em>Parameters</em>}'.
@@ -86026,6 +86922,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getParametersParameter_ValuePositiveInt();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ParametersParameter#getValueMarkdown <em>Value Markdown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Markdown</em>'.
+	 * @see org.hl7.fhir.ParametersParameter#getValueMarkdown()
+	 * @see #getParametersParameter()
+	 * @generated
+	 */
+	EReference getParametersParameter_ValueMarkdown();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ParametersParameter#getValueAnnotation <em>Value Annotation</em>}'.
@@ -86321,6 +87228,17 @@ public interface FhirPackage extends EPackage {
 	EReference getPatient_Identifier();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Patient#getActive <em>Active</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Active</em>'.
+	 * @see org.hl7.fhir.Patient#getActive()
+	 * @see #getPatient()
+	 * @generated
+	 */
+	EReference getPatient_Active();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Patient#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86506,17 +87424,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPatient_Link();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Patient#getActive <em>Active</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Active</em>'.
-	 * @see org.hl7.fhir.Patient#getActive()
-	 * @see #getPatient()
-	 * @generated
-	 */
-	EReference getPatient_Active();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.PatientAnimal <em>Patient Animal</em>}'.
@@ -88947,15 +89854,15 @@ public interface FhirPackage extends EPackage {
 	EReference getQuantity_Comparator();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Quantity#getUnits <em>Units</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Quantity#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Units</em>'.
-	 * @see org.hl7.fhir.Quantity#getUnits()
+	 * @return the meta object for the containment reference '<em>Unit</em>'.
+	 * @see org.hl7.fhir.Quantity#getUnit()
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	EReference getQuantity_Units();
+	EReference getQuantity_Unit();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Quantity#getSystem <em>System</em>}'.
@@ -89077,6 +89984,17 @@ public interface FhirPackage extends EPackage {
 	EReference getQuestionnaire_Telecom();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Questionnaire#getSubjectType <em>Subject Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Subject Type</em>'.
+	 * @see org.hl7.fhir.Questionnaire#getSubjectType()
+	 * @see #getQuestionnaire()
+	 * @generated
+	 */
+	EReference getQuestionnaire_SubjectType();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Questionnaire#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89086,419 +90004,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getQuestionnaire_Group();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireAnswers <em>Questionnaire Answers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Questionnaire Answers</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers
-	 * @generated
-	 */
-	EClass getQuestionnaireAnswers();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Identifier</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getIdentifier()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Identifier();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getQuestionnaire <em>Questionnaire</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Questionnaire</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getQuestionnaire()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Questionnaire();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getStatus()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getSubject <em>Subject</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Subject</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getSubject()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Subject();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getAuthor <em>Author</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Author</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getAuthor()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Author();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getAuthored <em>Authored</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Authored</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getAuthored()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Authored();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Source</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getSource()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Source();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getEncounter <em>Encounter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Encounter</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getEncounter()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Encounter();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswers#getGroup <em>Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Group</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswers#getGroup()
-	 * @see #getQuestionnaireAnswers()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswers_Group();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireAnswersAnswer <em>Questionnaire Answers Answer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Questionnaire Answers Answer</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer
-	 * @generated
-	 */
-	EClass getQuestionnaireAnswersAnswer();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueBoolean <em>Value Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Boolean</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueBoolean()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueBoolean();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueDecimal <em>Value Decimal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Decimal</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueDecimal()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueDecimal();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueInteger <em>Value Integer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Integer</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueInteger()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueInteger();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueDate <em>Value Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Date</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueDate()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueDate();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueDateTime <em>Value Date Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Date Time</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueDateTime()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueDateTime();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueInstant <em>Value Instant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Instant</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueInstant()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueInstant();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueTime <em>Value Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Time</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueTime()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueTime();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueString <em>Value String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value String</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueString()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueString();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueUri <em>Value Uri</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Uri</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueUri()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueUri();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueAttachment <em>Value Attachment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Attachment</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueAttachment()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueAttachment();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueCoding <em>Value Coding</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Coding</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueCoding()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueCoding();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueQuantity <em>Value Quantity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Quantity</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueQuantity()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueQuantity();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersAnswer#getValueReference <em>Value Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value Reference</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersAnswer#getValueReference()
-	 * @see #getQuestionnaireAnswersAnswer()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersAnswer_ValueReference();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireAnswersGroup <em>Questionnaire Answers Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Questionnaire Answers Group</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersGroup
-	 * @generated
-	 */
-	EClass getQuestionnaireAnswersGroup();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersGroup#getLinkId <em>Link Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Link Id</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersGroup#getLinkId()
-	 * @see #getQuestionnaireAnswersGroup()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersGroup_LinkId();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersGroup#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Title</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersGroup#getTitle()
-	 * @see #getQuestionnaireAnswersGroup()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersGroup_Title();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersGroup#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Text</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersGroup#getText()
-	 * @see #getQuestionnaireAnswersGroup()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersGroup_Text();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersGroup#getSubject <em>Subject</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Subject</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersGroup#getSubject()
-	 * @see #getQuestionnaireAnswersGroup()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersGroup_Subject();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireAnswersGroup#getGroup <em>Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Group</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersGroup#getGroup()
-	 * @see #getQuestionnaireAnswersGroup()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersGroup_Group();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireAnswersGroup#getQuestion <em>Question</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Question</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersGroup#getQuestion()
-	 * @see #getQuestionnaireAnswersGroup()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersGroup_Question();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireAnswersQuestion <em>Questionnaire Answers Question</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Questionnaire Answers Question</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersQuestion
-	 * @generated
-	 */
-	EClass getQuestionnaireAnswersQuestion();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersQuestion#getLinkId <em>Link Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Link Id</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersQuestion#getLinkId()
-	 * @see #getQuestionnaireAnswersQuestion()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersQuestion_LinkId();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireAnswersQuestion#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Text</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersQuestion#getText()
-	 * @see #getQuestionnaireAnswersQuestion()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersQuestion_Text();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireAnswersQuestion#getAnswer <em>Answer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Answer</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersQuestion#getAnswer()
-	 * @see #getQuestionnaireAnswersQuestion()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersQuestion_Answer();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireAnswersQuestion#getGroup <em>Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Group</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersQuestion#getGroup()
-	 * @see #getQuestionnaireAnswersQuestion()
-	 * @generated
-	 */
-	EReference getQuestionnaireAnswersQuestion_Group();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireAnswersStatus <em>Questionnaire Answers Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Questionnaire Answers Status</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersStatus
-	 * @generated
-	 */
-	EClass getQuestionnaireAnswersStatus();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.hl7.fhir.QuestionnaireAnswersStatus#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersStatus#getValue()
-	 * @see #getQuestionnaireAnswersStatus()
-	 * @generated
-	 */
-	EAttribute getQuestionnaireAnswersStatus_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireGroup <em>Questionnaire Group</em>}'.
@@ -89695,6 +90200,419 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getQuestionnaireQuestion_Group();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireResponse <em>Questionnaire Response</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Questionnaire Response</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse
+	 * @generated
+	 */
+	EClass getQuestionnaireResponse();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getIdentifier <em>Identifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Identifier</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getIdentifier()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Identifier();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getQuestionnaire <em>Questionnaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Questionnaire</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getQuestionnaire()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Questionnaire();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getStatus()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Status();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getSubject <em>Subject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Subject</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getSubject()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Subject();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getAuthor <em>Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Author</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getAuthor()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Author();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getAuthored <em>Authored</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Authored</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getAuthored()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Authored();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Source</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getSource()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Source();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getEncounter <em>Encounter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Encounter</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getEncounter()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Encounter();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponse#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Group</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponse#getGroup()
+	 * @see #getQuestionnaireResponse()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponse_Group();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireResponseAnswer <em>Questionnaire Response Answer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Questionnaire Response Answer</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer
+	 * @generated
+	 */
+	EClass getQuestionnaireResponseAnswer();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueBoolean <em>Value Boolean</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Boolean</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueBoolean()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueBoolean();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueDecimal <em>Value Decimal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Decimal</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueDecimal()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueDecimal();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueInteger <em>Value Integer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Integer</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueInteger()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueInteger();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueDate <em>Value Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Date</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueDate()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueDate();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueDateTime <em>Value Date Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Date Time</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueDateTime()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueDateTime();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueInstant <em>Value Instant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Instant</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueInstant()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueInstant();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueTime <em>Value Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Time</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueTime()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueTime();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueString <em>Value String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value String</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueString()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueString();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueUri <em>Value Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Uri</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueUri()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueUri();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueAttachment <em>Value Attachment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Attachment</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueAttachment()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueAttachment();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueCoding <em>Value Coding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Coding</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueCoding()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueCoding();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueQuantity <em>Value Quantity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Quantity</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueQuantity()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueQuantity();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getValueReference <em>Value Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Reference</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getValueReference()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_ValueReference();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireResponseAnswer#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Group</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseAnswer#getGroup()
+	 * @see #getQuestionnaireResponseAnswer()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseAnswer_Group();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireResponseGroup <em>Questionnaire Response Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Questionnaire Response Group</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseGroup
+	 * @generated
+	 */
+	EClass getQuestionnaireResponseGroup();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseGroup#getLinkId <em>Link Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Link Id</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseGroup#getLinkId()
+	 * @see #getQuestionnaireResponseGroup()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseGroup_LinkId();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseGroup#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Title</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseGroup#getTitle()
+	 * @see #getQuestionnaireResponseGroup()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseGroup_Title();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseGroup#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Text</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseGroup#getText()
+	 * @see #getQuestionnaireResponseGroup()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseGroup_Text();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseGroup#getSubject <em>Subject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Subject</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseGroup#getSubject()
+	 * @see #getQuestionnaireResponseGroup()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseGroup_Subject();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireResponseGroup#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Group</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseGroup#getGroup()
+	 * @see #getQuestionnaireResponseGroup()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseGroup_Group();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireResponseGroup#getQuestion <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Question</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseGroup#getQuestion()
+	 * @see #getQuestionnaireResponseGroup()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseGroup_Question();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireResponseQuestion <em>Questionnaire Response Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Questionnaire Response Question</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseQuestion
+	 * @generated
+	 */
+	EClass getQuestionnaireResponseQuestion();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseQuestion#getLinkId <em>Link Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Link Id</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseQuestion#getLinkId()
+	 * @see #getQuestionnaireResponseQuestion()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseQuestion_LinkId();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.QuestionnaireResponseQuestion#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Text</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseQuestion#getText()
+	 * @see #getQuestionnaireResponseQuestion()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseQuestion_Text();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.QuestionnaireResponseQuestion#getAnswer <em>Answer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Answer</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseQuestion#getAnswer()
+	 * @see #getQuestionnaireResponseQuestion()
+	 * @generated
+	 */
+	EReference getQuestionnaireResponseQuestion_Answer();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireResponseStatus <em>Questionnaire Response Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Questionnaire Response Status</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseStatus
+	 * @generated
+	 */
+	EClass getQuestionnaireResponseStatus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.QuestionnaireResponseStatus#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseStatus#getValue()
+	 * @see #getQuestionnaireResponseStatus()
+	 * @generated
+	 */
+	EAttribute getQuestionnaireResponseStatus_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.QuestionnaireStatus <em>Questionnaire Status</em>}'.
@@ -91062,15 +91980,15 @@ public interface FhirPackage extends EPackage {
 	EReference getResourceContainer_Questionnaire();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ResourceContainer#getQuestionnaireAnswers <em>Questionnaire Answers</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ResourceContainer#getQuestionnaireResponse <em>Questionnaire Response</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Questionnaire Answers</em>'.
-	 * @see org.hl7.fhir.ResourceContainer#getQuestionnaireAnswers()
+	 * @return the meta object for the containment reference '<em>Questionnaire Response</em>'.
+	 * @see org.hl7.fhir.ResourceContainer#getQuestionnaireResponse()
 	 * @see #getResourceContainer()
 	 * @generated
 	 */
-	EReference getResourceContainer_QuestionnaireAnswers();
+	EReference getResourceContainer_QuestionnaireResponse();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ResourceContainer#getReferralRequest <em>Referral Request</em>}'.
@@ -91181,17 +92099,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResourceContainer_Substance();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ResourceContainer#getSupply <em>Supply</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Supply</em>'.
-	 * @see org.hl7.fhir.ResourceContainer#getSupply()
-	 * @see #getResourceContainer()
-	 * @generated
-	 */
-	EReference getResourceContainer_Supply();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ResourceContainer#getSupplyDelivery <em>Supply Delivery</em>}'.
@@ -91777,39 +92684,6 @@ public interface FhirPackage extends EPackage {
 	EReference getSearchParameter_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getPublisher <em>Publisher</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Publisher</em>'.
-	 * @see org.hl7.fhir.SearchParameter#getPublisher()
-	 * @see #getSearchParameter()
-	 * @generated
-	 */
-	EReference getSearchParameter_Publisher();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.SearchParameter#getContact <em>Contact</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Contact</em>'.
-	 * @see org.hl7.fhir.SearchParameter#getContact()
-	 * @see #getSearchParameter()
-	 * @generated
-	 */
-	EReference getSearchParameter_Contact();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getRequirements <em>Requirements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Requirements</em>'.
-	 * @see org.hl7.fhir.SearchParameter#getRequirements()
-	 * @see #getSearchParameter()
-	 * @generated
-	 */
-	EReference getSearchParameter_Requirements();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91832,6 +92706,28 @@ public interface FhirPackage extends EPackage {
 	EReference getSearchParameter_Experimental();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getPublisher <em>Publisher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Publisher</em>'.
+	 * @see org.hl7.fhir.SearchParameter#getPublisher()
+	 * @see #getSearchParameter()
+	 * @generated
+	 */
+	EReference getSearchParameter_Publisher();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.SearchParameter#getContact <em>Contact</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contact</em>'.
+	 * @see org.hl7.fhir.SearchParameter#getContact()
+	 * @see #getSearchParameter()
+	 * @generated
+	 */
+	EReference getSearchParameter_Contact();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getDate <em>Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91841,6 +92737,28 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSearchParameter_Date();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getRequirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Requirements</em>'.
+	 * @see org.hl7.fhir.SearchParameter#getRequirements()
+	 * @see #getSearchParameter()
+	 * @generated
+	 */
+	EReference getSearchParameter_Requirements();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getCode <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Code</em>'.
+	 * @see org.hl7.fhir.SearchParameter#getCode()
+	 * @see #getSearchParameter()
+	 * @generated
+	 */
+	EReference getSearchParameter_Code();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getBase <em>Base</em>}'.
@@ -91885,6 +92803,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSearchParameter_Xpath();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SearchParameter#getXpathUsage <em>Xpath Usage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Xpath Usage</em>'.
+	 * @see org.hl7.fhir.SearchParameter#getXpathUsage()
+	 * @see #getSearchParameter()
+	 * @generated
+	 */
+	EReference getSearchParameter_XpathUsage();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.SearchParameter#getTarget <em>Target</em>}'.
@@ -92025,6 +92954,27 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSignature_Blob();
+
+	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.SimpleQuantity <em>Simple Quantity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Simple Quantity</em>'.
+	 * @see org.hl7.fhir.SimpleQuantity
+	 * @generated
+	 */
+	EClass getSimpleQuantity();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.SimpleQuantity#getExtension1 <em>Extension1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Extension1</em>'.
+	 * @see org.hl7.fhir.SimpleQuantity#getExtension1()
+	 * @see #getSimpleQuantity()
+	 * @generated
+	 */
+	EReference getSimpleQuantity_Extension1();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.SlicingRules <em>Slicing Rules</em>}'.
@@ -92352,26 +93302,15 @@ public interface FhirPackage extends EPackage {
 	EReference getSpecimenCollection_Method();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SpecimenCollection#getBodySiteCodeableConcept <em>Body Site Codeable Concept</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SpecimenCollection#getBodySite <em>Body Site</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body Site Codeable Concept</em>'.
-	 * @see org.hl7.fhir.SpecimenCollection#getBodySiteCodeableConcept()
+	 * @return the meta object for the containment reference '<em>Body Site</em>'.
+	 * @see org.hl7.fhir.SpecimenCollection#getBodySite()
 	 * @see #getSpecimenCollection()
 	 * @generated
 	 */
-	EReference getSpecimenCollection_BodySiteCodeableConcept();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SpecimenCollection#getBodySiteReference <em>Body Site Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body Site Reference</em>'.
-	 * @see org.hl7.fhir.SpecimenCollection#getBodySiteReference()
-	 * @see #getSpecimenCollection()
-	 * @generated
-	 */
-	EReference getSpecimenCollection_BodySiteReference();
+	EReference getSpecimenCollection_BodySite();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.SpecimenContainer <em>Specimen Container</em>}'.
@@ -92579,17 +93518,6 @@ public interface FhirPackage extends EPackage {
 	EReference getStructureDefinition_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.StructureDefinition#getUseContext <em>Use Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
-	 * @see org.hl7.fhir.StructureDefinition#getUseContext()
-	 * @see #getStructureDefinition()
-	 * @generated
-	 */
-	EReference getStructureDefinition_UseContext();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getDisplay <em>Display</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92599,6 +93527,28 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructureDefinition_Display();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.StructureDefinition#getStatus()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EReference getStructureDefinition_Status();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getExperimental <em>Experimental</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.StructureDefinition#getExperimental()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EReference getStructureDefinition_Experimental();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getPublisher <em>Publisher</em>}'.
@@ -92623,6 +93573,17 @@ public interface FhirPackage extends EPackage {
 	EReference getStructureDefinition_Contact();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.StructureDefinition#getDate()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EReference getStructureDefinition_Date();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92632,6 +93593,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructureDefinition_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.StructureDefinition#getUseContext <em>Use Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
+	 * @see org.hl7.fhir.StructureDefinition#getUseContext()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EReference getStructureDefinition_UseContext();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getRequirements <em>Requirements</em>}'.
@@ -92665,39 +93637,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructureDefinition_Code();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.StructureDefinition#getStatus()
-	 * @see #getStructureDefinition()
-	 * @generated
-	 */
-	EReference getStructureDefinition_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getExperimental <em>Experimental</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Experimental</em>'.
-	 * @see org.hl7.fhir.StructureDefinition#getExperimental()
-	 * @see #getStructureDefinition()
-	 * @generated
-	 */
-	EReference getStructureDefinition_Experimental();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.StructureDefinition#getDate()
-	 * @see #getStructureDefinition()
-	 * @generated
-	 */
-	EReference getStructureDefinition_Date();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.StructureDefinition#getFhirVersion <em>Fhir Version</em>}'.
@@ -93293,82 +94232,6 @@ public interface FhirPackage extends EPackage {
 	EReference getSubstanceInstance_Quantity();
 
 	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.Supply <em>Supply</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Supply</em>'.
-	 * @see org.hl7.fhir.Supply
-	 * @generated
-	 */
-	EClass getSupply();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Supply#getKind <em>Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Kind</em>'.
-	 * @see org.hl7.fhir.Supply#getKind()
-	 * @see #getSupply()
-	 * @generated
-	 */
-	EReference getSupply_Kind();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Supply#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Identifier</em>'.
-	 * @see org.hl7.fhir.Supply#getIdentifier()
-	 * @see #getSupply()
-	 * @generated
-	 */
-	EReference getSupply_Identifier();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Supply#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.Supply#getStatus()
-	 * @see #getSupply()
-	 * @generated
-	 */
-	EReference getSupply_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Supply#getOrderedItem <em>Ordered Item</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Ordered Item</em>'.
-	 * @see org.hl7.fhir.Supply#getOrderedItem()
-	 * @see #getSupply()
-	 * @generated
-	 */
-	EReference getSupply_OrderedItem();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.Supply#getPatient <em>Patient</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Patient</em>'.
-	 * @see org.hl7.fhir.Supply#getPatient()
-	 * @see #getSupply()
-	 * @generated
-	 */
-	EReference getSupply_Patient();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.Supply#getDispense <em>Dispense</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dispense</em>'.
-	 * @see org.hl7.fhir.Supply#getDispense()
-	 * @see #getSupply()
-	 * @generated
-	 */
-	EReference getSupply_Dispense();
-
-	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.SupplyDelivery <em>Supply Delivery</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93519,147 +94382,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSupplyDeliveryStatus_Value();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.SupplyDispense <em>Supply Dispense</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Supply Dispense</em>'.
-	 * @see org.hl7.fhir.SupplyDispense
-	 * @generated
-	 */
-	EClass getSupplyDispense();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Identifier</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getIdentifier()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_Identifier();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getStatus()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Type</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getType()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_Type();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getQuantity <em>Quantity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Quantity</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getQuantity()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_Quantity();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getSuppliedItem <em>Supplied Item</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Supplied Item</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getSuppliedItem()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_SuppliedItem();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getSupplier <em>Supplier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Supplier</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getSupplier()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_Supplier();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getWhenPrepared <em>When Prepared</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>When Prepared</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getWhenPrepared()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_WhenPrepared();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getWhenHandedOver <em>When Handed Over</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>When Handed Over</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getWhenHandedOver()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_WhenHandedOver();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.SupplyDispense#getDestination <em>Destination</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Destination</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getDestination()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_Destination();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.SupplyDispense#getReceiver <em>Receiver</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Receiver</em>'.
-	 * @see org.hl7.fhir.SupplyDispense#getReceiver()
-	 * @see #getSupplyDispense()
-	 * @generated
-	 */
-	EReference getSupplyDispense_Receiver();
-
-	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.SupplyDispenseStatus <em>Supply Dispense Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Supply Dispense Status</em>'.
-	 * @see org.hl7.fhir.SupplyDispenseStatus
-	 * @generated
-	 */
-	EClass getSupplyDispenseStatus();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.hl7.fhir.SupplyDispenseStatus#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.hl7.fhir.SupplyDispenseStatus#getValue()
-	 * @see #getSupplyDispenseStatus()
-	 * @generated
-	 */
-	EAttribute getSupplyDispenseStatus_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.SupplyRequest <em>Supply Request</em>}'.
@@ -93846,27 +94568,6 @@ public interface FhirPackage extends EPackage {
 	EReference getSupplyRequestWhen_Schedule();
 
 	/**
-	 * Returns the meta object for class '{@link org.hl7.fhir.SupplyStatus <em>Supply Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Supply Status</em>'.
-	 * @see org.hl7.fhir.SupplyStatus
-	 * @generated
-	 */
-	EClass getSupplyStatus();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.hl7.fhir.SupplyStatus#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.hl7.fhir.SupplyStatus#getValue()
-	 * @see #getSupplyStatus()
-	 * @generated
-	 */
-	EAttribute getSupplyStatus_Value();
-
-	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.SystemRestfulInteraction <em>System Restful Interaction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93898,6 +94599,28 @@ public interface FhirPackage extends EPackage {
 	EClass getTestScript();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Url</em>'.
+	 * @see org.hl7.fhir.TestScript#getUrl()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Url();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Version</em>'.
+	 * @see org.hl7.fhir.TestScript#getVersion()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Version();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93909,6 +94632,61 @@ public interface FhirPackage extends EPackage {
 	EReference getTestScript_Name();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.TestScript#getStatus()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Status();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getExperimental <em>Experimental</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.TestScript#getExperimental()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Experimental();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getPublisher <em>Publisher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Publisher</em>'.
+	 * @see org.hl7.fhir.TestScript#getPublisher()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Publisher();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.TestScript#getContact <em>Contact</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contact</em>'.
+	 * @see org.hl7.fhir.TestScript#getContact()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Contact();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.TestScript#getDate()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Date();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93918,6 +94696,39 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTestScript_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.TestScript#getUseContext <em>Use Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
+	 * @see org.hl7.fhir.TestScript#getUseContext()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_UseContext();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getRequirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Requirements</em>'.
+	 * @see org.hl7.fhir.TestScript#getRequirements()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Requirements();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getCopyright <em>Copyright</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Copyright</em>'.
+	 * @see org.hl7.fhir.TestScript#getCopyright()
+	 * @see #getTestScript()
+	 * @generated
+	 */
+	EReference getTestScript_Copyright();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScript#getMetadata <em>Metadata</em>}'.
@@ -94377,6 +95188,38 @@ public interface FhirPackage extends EPackage {
 	EReference getTestScriptCapabilities_Conformance();
 
 	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.TestScriptContact <em>Test Script Contact</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Test Script Contact</em>'.
+	 * @see org.hl7.fhir.TestScriptContact
+	 * @generated
+	 */
+	EClass getTestScriptContact();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScriptContact#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Name</em>'.
+	 * @see org.hl7.fhir.TestScriptContact#getName()
+	 * @see #getTestScriptContact()
+	 * @generated
+	 */
+	EReference getTestScriptContact_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.TestScriptContact#getTelecom <em>Telecom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
+	 * @see org.hl7.fhir.TestScriptContact#getTelecom()
+	 * @see #getTestScriptContact()
+	 * @generated
+	 */
+	EReference getTestScriptContact_Telecom();
+
+	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.TestScriptFixture <em>Test Script Fixture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94569,6 +95412,17 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTestScriptOperation_Destination();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScriptOperation#getEncodeRequestUrl <em>Encode Request Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Encode Request Url</em>'.
+	 * @see org.hl7.fhir.TestScriptOperation#getEncodeRequestUrl()
+	 * @see #getTestScriptOperation()
+	 * @generated
+	 */
+	EReference getTestScriptOperation_EncodeRequestUrl();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TestScriptOperation#getParams <em>Params</em>}'.
@@ -94904,15 +95758,15 @@ public interface FhirPackage extends EPackage {
 	EClass getTimingRepeat();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TimingRepeat#getBoundsDuration <em>Bounds Duration</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TimingRepeat#getBoundsQuantity <em>Bounds Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Bounds Duration</em>'.
-	 * @see org.hl7.fhir.TimingRepeat#getBoundsDuration()
+	 * @return the meta object for the containment reference '<em>Bounds Quantity</em>'.
+	 * @see org.hl7.fhir.TimingRepeat#getBoundsQuantity()
 	 * @see #getTimingRepeat()
 	 * @generated
 	 */
-	EReference getTimingRepeat_BoundsDuration();
+	EReference getTimingRepeat_BoundsQuantity();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.TimingRepeat#getBoundsRange <em>Bounds Range</em>}'.
@@ -95110,6 +95964,27 @@ public interface FhirPackage extends EPackage {
 	EAttribute getUnitsOfTime_Value();
 
 	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.UnknownContentCode <em>Unknown Content Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unknown Content Code</em>'.
+	 * @see org.hl7.fhir.UnknownContentCode
+	 * @generated
+	 */
+	EClass getUnknownContentCode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.UnknownContentCode#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.UnknownContentCode#getValue()
+	 * @see #getUnknownContentCode()
+	 * @generated
+	 */
+	EAttribute getUnknownContentCode_Value();
+
+	/**
 	 * Returns the meta object for class '{@link org.hl7.fhir.UnsignedInt <em>Unsigned Int</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95248,26 +96123,26 @@ public interface FhirPackage extends EPackage {
 	EReference getValueSet_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ValueSet#getUseContext <em>Use Context</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
-	 * @see org.hl7.fhir.ValueSet#getUseContext()
+	 * @return the meta object for the containment reference '<em>Status</em>'.
+	 * @see org.hl7.fhir.ValueSet#getStatus()
 	 * @see #getValueSet()
 	 * @generated
 	 */
-	EReference getValueSet_UseContext();
+	EReference getValueSet_Status();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getImmutable <em>Immutable</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getExperimental <em>Experimental</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Immutable</em>'.
-	 * @see org.hl7.fhir.ValueSet#getImmutable()
+	 * @return the meta object for the containment reference '<em>Experimental</em>'.
+	 * @see org.hl7.fhir.ValueSet#getExperimental()
 	 * @see #getValueSet()
 	 * @generated
 	 */
-	EReference getValueSet_Immutable();
+	EReference getValueSet_Experimental();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getPublisher <em>Publisher</em>}'.
@@ -95292,6 +96167,28 @@ public interface FhirPackage extends EPackage {
 	EReference getValueSet_Contact();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Date</em>'.
+	 * @see org.hl7.fhir.ValueSet#getDate()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EReference getValueSet_Date();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getLockedDate <em>Locked Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Locked Date</em>'.
+	 * @see org.hl7.fhir.ValueSet#getLockedDate()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EReference getValueSet_LockedDate();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95301,6 +96198,28 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getValueSet_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.hl7.fhir.ValueSet#getUseContext <em>Use Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Use Context</em>'.
+	 * @see org.hl7.fhir.ValueSet#getUseContext()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EReference getValueSet_UseContext();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getImmutable <em>Immutable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Immutable</em>'.
+	 * @see org.hl7.fhir.ValueSet#getImmutable()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EReference getValueSet_Immutable();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getRequirements <em>Requirements</em>}'.
@@ -95325,28 +96244,6 @@ public interface FhirPackage extends EPackage {
 	EReference getValueSet_Copyright();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Status</em>'.
-	 * @see org.hl7.fhir.ValueSet#getStatus()
-	 * @see #getValueSet()
-	 * @generated
-	 */
-	EReference getValueSet_Status();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getExperimental <em>Experimental</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Experimental</em>'.
-	 * @see org.hl7.fhir.ValueSet#getExperimental()
-	 * @see #getValueSet()
-	 * @generated
-	 */
-	EReference getValueSet_Experimental();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getExtensible <em>Extensible</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95356,28 +96253,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getValueSet_Extensible();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Date</em>'.
-	 * @see org.hl7.fhir.ValueSet#getDate()
-	 * @see #getValueSet()
-	 * @generated
-	 */
-	EReference getValueSet_Date();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getLockedDate <em>Locked Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Locked Date</em>'.
-	 * @see org.hl7.fhir.ValueSet#getLockedDate()
-	 * @see #getValueSet()
-	 * @generated
-	 */
-	EReference getValueSet_LockedDate();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.hl7.fhir.ValueSet#getCodeSystem <em>Code System</em>}'.
@@ -96355,6 +97230,27 @@ public interface FhirPackage extends EPackage {
 	EReference getVisionPrescriptionDispense_Notes();
 
 	/**
+	 * Returns the meta object for class '{@link org.hl7.fhir.XPathUsageType <em>XPath Usage Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>XPath Usage Type</em>'.
+	 * @see org.hl7.fhir.XPathUsageType
+	 * @generated
+	 */
+	EClass getXPathUsageType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.hl7.fhir.XPathUsageType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.hl7.fhir.XPathUsageType#getValue()
+	 * @see #getXPathUsageType()
+	 * @generated
+	 */
+	EAttribute getXPathUsageType_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.AccountStatusList <em>Account Status List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96725,14 +97621,14 @@ public interface FhirPackage extends EPackage {
 	EEnum getConditionalDeleteStatusList();
 
 	/**
-	 * Returns the meta object for enum '{@link org.hl7.fhir.ConditionClinicalStatusList <em>Condition Clinical Status List</em>}'.
+	 * Returns the meta object for enum '{@link org.hl7.fhir.ConditionVerificationStatusList <em>Condition Verification Status List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Condition Clinical Status List</em>'.
-	 * @see org.hl7.fhir.ConditionClinicalStatusList
+	 * @return the meta object for enum '<em>Condition Verification Status List</em>'.
+	 * @see org.hl7.fhir.ConditionVerificationStatusList
 	 * @generated
 	 */
-	EEnum getConditionClinicalStatusList();
+	EEnum getConditionVerificationStatusList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.ConformanceEventModeList <em>Conformance Event Mode List</em>}'.
@@ -96753,6 +97649,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getConformanceResourceStatusList();
+
+	/**
+	 * Returns the meta object for enum '{@link org.hl7.fhir.ConformanceStatementKindList <em>Conformance Statement Kind List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Conformance Statement Kind List</em>'.
+	 * @see org.hl7.fhir.ConformanceStatementKindList
+	 * @generated
+	 */
+	EEnum getConformanceStatementKindList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.ConstraintSeverityList <em>Constraint Severity List</em>}'.
@@ -96805,14 +97711,14 @@ public interface FhirPackage extends EPackage {
 	EEnum getContraindicationSeverityList();
 
 	/**
-	 * Returns the meta object for enum '{@link org.hl7.fhir.DataElementSpecificityList <em>Data Element Specificity List</em>}'.
+	 * Returns the meta object for enum '{@link org.hl7.fhir.DataElementStringencyList <em>Data Element Stringency List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Data Element Specificity List</em>'.
-	 * @see org.hl7.fhir.DataElementSpecificityList
+	 * @return the meta object for enum '<em>Data Element Stringency List</em>'.
+	 * @see org.hl7.fhir.DataElementStringencyList
 	 * @generated
 	 */
-	EEnum getDataElementSpecificityList();
+	EEnum getDataElementStringencyList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.DaysOfWeekList <em>Days Of Week List</em>}'.
@@ -97075,6 +97981,36 @@ public interface FhirPackage extends EPackage {
 	EEnum getGroupTypeList();
 
 	/**
+	 * Returns the meta object for enum '{@link org.hl7.fhir.GuideDependencyTypeList <em>Guide Dependency Type List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Guide Dependency Type List</em>'.
+	 * @see org.hl7.fhir.GuideDependencyTypeList
+	 * @generated
+	 */
+	EEnum getGuideDependencyTypeList();
+
+	/**
+	 * Returns the meta object for enum '{@link org.hl7.fhir.GuidePageKindList <em>Guide Page Kind List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Guide Page Kind List</em>'.
+	 * @see org.hl7.fhir.GuidePageKindList
+	 * @generated
+	 */
+	EEnum getGuidePageKindList();
+
+	/**
+	 * Returns the meta object for enum '{@link org.hl7.fhir.GuideResourcePurposeList <em>Guide Resource Purpose List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Guide Resource Purpose List</em>'.
+	 * @see org.hl7.fhir.GuideResourcePurposeList
+	 * @generated
+	 */
+	EEnum getGuideResourcePurposeList();
+
+	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.HTTPVerbList <em>HTTP Verb List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97123,6 +98059,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getIssueSeverityList();
+
+	/**
+	 * Returns the meta object for enum '{@link org.hl7.fhir.IssueTypeList <em>Issue Type List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Issue Type List</em>'.
+	 * @see org.hl7.fhir.IssueTypeList
+	 * @generated
+	 */
+	EEnum getIssueTypeList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.LinkTypeList <em>Link Type List</em>}'.
@@ -97315,16 +98261,6 @@ public interface FhirPackage extends EPackage {
 	EEnum getObservationRelationshipTypeList();
 
 	/**
-	 * Returns the meta object for enum '{@link org.hl7.fhir.ObservationReliabilityList <em>Observation Reliability List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Observation Reliability List</em>'.
-	 * @see org.hl7.fhir.ObservationReliabilityList
-	 * @generated
-	 */
-	EEnum getObservationReliabilityList();
-
-	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.ObservationStatusList <em>Observation Status List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97363,16 +98299,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getOrderStatusList();
-
-	/**
-	 * Returns the meta object for enum '{@link org.hl7.fhir.PagePurposeList <em>Page Purpose List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Page Purpose List</em>'.
-	 * @see org.hl7.fhir.PagePurposeList
-	 * @generated
-	 */
-	EEnum getPagePurposeList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.ParticipantRequiredList <em>Participant Required List</em>}'.
@@ -97475,14 +98401,14 @@ public interface FhirPackage extends EPackage {
 	EEnum getQuantityComparatorList();
 
 	/**
-	 * Returns the meta object for enum '{@link org.hl7.fhir.QuestionnaireAnswersStatusList <em>Questionnaire Answers Status List</em>}'.
+	 * Returns the meta object for enum '{@link org.hl7.fhir.QuestionnaireResponseStatusList <em>Questionnaire Response Status List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Questionnaire Answers Status List</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersStatusList
+	 * @return the meta object for enum '<em>Questionnaire Response Status List</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseStatusList
 	 * @generated
 	 */
-	EEnum getQuestionnaireAnswersStatusList();
+	EEnum getQuestionnaireResponseStatusList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.QuestionnaireStatusList <em>Questionnaire Status List</em>}'.
@@ -97635,16 +98561,6 @@ public interface FhirPackage extends EPackage {
 	EEnum getSupplyDeliveryStatusList();
 
 	/**
-	 * Returns the meta object for enum '{@link org.hl7.fhir.SupplyDispenseStatusList <em>Supply Dispense Status List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Supply Dispense Status List</em>'.
-	 * @see org.hl7.fhir.SupplyDispenseStatusList
-	 * @generated
-	 */
-	EEnum getSupplyDispenseStatusList();
-
-	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.SupplyRequestStatusList <em>Supply Request Status List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97653,16 +98569,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getSupplyRequestStatusList();
-
-	/**
-	 * Returns the meta object for enum '{@link org.hl7.fhir.SupplyStatusList <em>Supply Status List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Supply Status List</em>'.
-	 * @see org.hl7.fhir.SupplyStatusList
-	 * @generated
-	 */
-	EEnum getSupplyStatusList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.SystemRestfulInteractionList <em>System Restful Interaction List</em>}'.
@@ -97705,6 +98611,16 @@ public interface FhirPackage extends EPackage {
 	EEnum getUnitsOfTimeList();
 
 	/**
+	 * Returns the meta object for enum '{@link org.hl7.fhir.UnknownContentCodeList <em>Unknown Content Code List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Unknown Content Code List</em>'.
+	 * @see org.hl7.fhir.UnknownContentCodeList
+	 * @generated
+	 */
+	EEnum getUnknownContentCodeList();
+
+	/**
 	 * Returns the meta object for enum '{@link org.hl7.fhir.UseList <em>Use List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97733,6 +98649,16 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getVisionEyesList();
+
+	/**
+	 * Returns the meta object for enum '{@link org.hl7.fhir.XPathUsageTypeList <em>XPath Usage Type List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>XPath Usage Type List</em>'.
+	 * @see org.hl7.fhir.XPathUsageTypeList
+	 * @generated
+	 */
+	EEnum getXPathUsageTypeList();
 
 	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.AccountStatusList <em>Account Status List Object</em>}'.
@@ -98225,16 +99151,16 @@ public interface FhirPackage extends EPackage {
 	EDataType getConditionalDeleteStatusListObject();
 
 	/**
-	 * Returns the meta object for data type '{@link org.hl7.fhir.ConditionClinicalStatusList <em>Condition Clinical Status List Object</em>}'.
+	 * Returns the meta object for data type '{@link org.hl7.fhir.ConditionVerificationStatusList <em>Condition Verification Status List Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Condition Clinical Status List Object</em>'.
-	 * @see org.hl7.fhir.ConditionClinicalStatusList
-	 * @model instanceClass="org.hl7.fhir.ConditionClinicalStatusList"
-	 *        extendedMetaData="name='ConditionClinicalStatus-list:Object' baseType='ConditionClinicalStatus-list'"
+	 * @return the meta object for data type '<em>Condition Verification Status List Object</em>'.
+	 * @see org.hl7.fhir.ConditionVerificationStatusList
+	 * @model instanceClass="org.hl7.fhir.ConditionVerificationStatusList"
+	 *        extendedMetaData="name='ConditionVerificationStatus-list:Object' baseType='ConditionVerificationStatus-list'"
 	 * @generated
 	 */
-	EDataType getConditionClinicalStatusListObject();
+	EDataType getConditionVerificationStatusListObject();
 
 	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.ConformanceEventModeList <em>Conformance Event Mode List Object</em>}'.
@@ -98259,6 +99185,18 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getConformanceResourceStatusListObject();
+
+	/**
+	 * Returns the meta object for data type '{@link org.hl7.fhir.ConformanceStatementKindList <em>Conformance Statement Kind List Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Conformance Statement Kind List Object</em>'.
+	 * @see org.hl7.fhir.ConformanceStatementKindList
+	 * @model instanceClass="org.hl7.fhir.ConformanceStatementKindList"
+	 *        extendedMetaData="name='ConformanceStatementKind-list:Object' baseType='ConformanceStatementKind-list'"
+	 * @generated
+	 */
+	EDataType getConformanceStatementKindListObject();
 
 	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.ConstraintSeverityList <em>Constraint Severity List Object</em>}'.
@@ -98321,16 +99259,16 @@ public interface FhirPackage extends EPackage {
 	EDataType getContraindicationSeverityListObject();
 
 	/**
-	 * Returns the meta object for data type '{@link org.hl7.fhir.DataElementSpecificityList <em>Data Element Specificity List Object</em>}'.
+	 * Returns the meta object for data type '{@link org.hl7.fhir.DataElementStringencyList <em>Data Element Stringency List Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Data Element Specificity List Object</em>'.
-	 * @see org.hl7.fhir.DataElementSpecificityList
-	 * @model instanceClass="org.hl7.fhir.DataElementSpecificityList"
-	 *        extendedMetaData="name='DataElementSpecificity-list:Object' baseType='DataElementSpecificity-list'"
+	 * @return the meta object for data type '<em>Data Element Stringency List Object</em>'.
+	 * @see org.hl7.fhir.DataElementStringencyList
+	 * @model instanceClass="org.hl7.fhir.DataElementStringencyList"
+	 *        extendedMetaData="name='DataElementStringency-list:Object' baseType='DataElementStringency-list'"
 	 * @generated
 	 */
-	EDataType getDataElementSpecificityListObject();
+	EDataType getDataElementStringencyListObject();
 
 	/**
 	 * Returns the meta object for data type '{@link javax.xml.datatype.XMLGregorianCalendar <em>Date Primitive</em>}'.
@@ -98705,6 +99643,42 @@ public interface FhirPackage extends EPackage {
 	EDataType getGroupTypeListObject();
 
 	/**
+	 * Returns the meta object for data type '{@link org.hl7.fhir.GuideDependencyTypeList <em>Guide Dependency Type List Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Guide Dependency Type List Object</em>'.
+	 * @see org.hl7.fhir.GuideDependencyTypeList
+	 * @model instanceClass="org.hl7.fhir.GuideDependencyTypeList"
+	 *        extendedMetaData="name='GuideDependencyType-list:Object' baseType='GuideDependencyType-list'"
+	 * @generated
+	 */
+	EDataType getGuideDependencyTypeListObject();
+
+	/**
+	 * Returns the meta object for data type '{@link org.hl7.fhir.GuidePageKindList <em>Guide Page Kind List Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Guide Page Kind List Object</em>'.
+	 * @see org.hl7.fhir.GuidePageKindList
+	 * @model instanceClass="org.hl7.fhir.GuidePageKindList"
+	 *        extendedMetaData="name='GuidePageKind-list:Object' baseType='GuidePageKind-list'"
+	 * @generated
+	 */
+	EDataType getGuidePageKindListObject();
+
+	/**
+	 * Returns the meta object for data type '{@link org.hl7.fhir.GuideResourcePurposeList <em>Guide Resource Purpose List Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Guide Resource Purpose List Object</em>'.
+	 * @see org.hl7.fhir.GuideResourcePurposeList
+	 * @model instanceClass="org.hl7.fhir.GuideResourcePurposeList"
+	 *        extendedMetaData="name='GuideResourcePurpose-list:Object' baseType='GuideResourcePurpose-list'"
+	 * @generated
+	 */
+	EDataType getGuideResourcePurposeListObject();
+
+	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.HTTPVerbList <em>HTTP Verb List Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98812,6 +99786,18 @@ public interface FhirPackage extends EPackage {
 	EDataType getIssueSeverityListObject();
 
 	/**
+	 * Returns the meta object for data type '{@link org.hl7.fhir.IssueTypeList <em>Issue Type List Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Issue Type List Object</em>'.
+	 * @see org.hl7.fhir.IssueTypeList
+	 * @model instanceClass="org.hl7.fhir.IssueTypeList"
+	 *        extendedMetaData="name='IssueType-list:Object' baseType='IssueType-list'"
+	 * @generated
+	 */
+	EDataType getIssueTypeListObject();
+
+	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.LinkTypeList <em>Link Type List Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98870,6 +99856,18 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getLocationStatusListObject();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>Markdown Primitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Markdown Primitive</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 *        extendedMetaData="name='markdown-primitive' baseType='http://www.eclipse.org/emf/2003/XMLType#string' minLength='1'"
+	 * @generated
+	 */
+	EDataType getMarkdownPrimitive();
 
 	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.MeasmntPrincipleList <em>Measmnt Principle List Object</em>}'.
@@ -99040,18 +100038,6 @@ public interface FhirPackage extends EPackage {
 	EDataType getObservationRelationshipTypeListObject();
 
 	/**
-	 * Returns the meta object for data type '{@link org.hl7.fhir.ObservationReliabilityList <em>Observation Reliability List Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Observation Reliability List Object</em>'.
-	 * @see org.hl7.fhir.ObservationReliabilityList
-	 * @model instanceClass="org.hl7.fhir.ObservationReliabilityList"
-	 *        extendedMetaData="name='ObservationReliability-list:Object' baseType='ObservationReliability-list'"
-	 * @generated
-	 */
-	EDataType getObservationReliabilityListObject();
-
-	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.ObservationStatusList <em>Observation Status List Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99110,18 +100096,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getOrderStatusListObject();
-
-	/**
-	 * Returns the meta object for data type '{@link org.hl7.fhir.PagePurposeList <em>Page Purpose List Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Page Purpose List Object</em>'.
-	 * @see org.hl7.fhir.PagePurposeList
-	 * @model instanceClass="org.hl7.fhir.PagePurposeList"
-	 *        extendedMetaData="name='PagePurpose-list:Object' baseType='PagePurpose-list'"
-	 * @generated
-	 */
-	EDataType getPagePurposeListObject();
 
 	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.ParticipantRequiredList <em>Participant Required List Object</em>}'.
@@ -99256,16 +100230,16 @@ public interface FhirPackage extends EPackage {
 	EDataType getQuantityComparatorListObject();
 
 	/**
-	 * Returns the meta object for data type '{@link org.hl7.fhir.QuestionnaireAnswersStatusList <em>Questionnaire Answers Status List Object</em>}'.
+	 * Returns the meta object for data type '{@link org.hl7.fhir.QuestionnaireResponseStatusList <em>Questionnaire Response Status List Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Questionnaire Answers Status List Object</em>'.
-	 * @see org.hl7.fhir.QuestionnaireAnswersStatusList
-	 * @model instanceClass="org.hl7.fhir.QuestionnaireAnswersStatusList"
-	 *        extendedMetaData="name='QuestionnaireAnswersStatus-list:Object' baseType='QuestionnaireAnswersStatus-list'"
+	 * @return the meta object for data type '<em>Questionnaire Response Status List Object</em>'.
+	 * @see org.hl7.fhir.QuestionnaireResponseStatusList
+	 * @model instanceClass="org.hl7.fhir.QuestionnaireResponseStatusList"
+	 *        extendedMetaData="name='QuestionnaireResponseStatus-list:Object' baseType='QuestionnaireResponseStatus-list'"
 	 * @generated
 	 */
-	EDataType getQuestionnaireAnswersStatusListObject();
+	EDataType getQuestionnaireResponseStatusListObject();
 
 	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.QuestionnaireStatusList <em>Questionnaire Status List Object</em>}'.
@@ -99472,18 +100446,6 @@ public interface FhirPackage extends EPackage {
 	EDataType getSupplyDeliveryStatusListObject();
 
 	/**
-	 * Returns the meta object for data type '{@link org.hl7.fhir.SupplyDispenseStatusList <em>Supply Dispense Status List Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Supply Dispense Status List Object</em>'.
-	 * @see org.hl7.fhir.SupplyDispenseStatusList
-	 * @model instanceClass="org.hl7.fhir.SupplyDispenseStatusList"
-	 *        extendedMetaData="name='SupplyDispenseStatus-list:Object' baseType='SupplyDispenseStatus-list'"
-	 * @generated
-	 */
-	EDataType getSupplyDispenseStatusListObject();
-
-	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.SupplyRequestStatusList <em>Supply Request Status List Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99494,18 +100456,6 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getSupplyRequestStatusListObject();
-
-	/**
-	 * Returns the meta object for data type '{@link org.hl7.fhir.SupplyStatusList <em>Supply Status List Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Supply Status List Object</em>'.
-	 * @see org.hl7.fhir.SupplyStatusList
-	 * @model instanceClass="org.hl7.fhir.SupplyStatusList"
-	 *        extendedMetaData="name='SupplyStatus-list:Object' baseType='SupplyStatus-list'"
-	 * @generated
-	 */
-	EDataType getSupplyStatusListObject();
 
 	/**
 	 * Returns the meta object for data type '{@link org.hl7.fhir.SystemRestfulInteractionList <em>System Restful Interaction List Object</em>}'.
@@ -99566,6 +100516,18 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getUnitsOfTimeListObject();
+
+	/**
+	 * Returns the meta object for data type '{@link org.hl7.fhir.UnknownContentCodeList <em>Unknown Content Code List Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Unknown Content Code List Object</em>'.
+	 * @see org.hl7.fhir.UnknownContentCodeList
+	 * @model instanceClass="org.hl7.fhir.UnknownContentCodeList"
+	 *        extendedMetaData="name='UnknownContentCode-list:Object' baseType='UnknownContentCode-list'"
+	 * @generated
+	 */
+	EDataType getUnknownContentCodeListObject();
 
 	/**
 	 * Returns the meta object for data type '{@link java.math.BigInteger <em>Unsigned Int Primitive</em>}'.
@@ -99638,6 +100600,18 @@ public interface FhirPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getVisionEyesListObject();
+
+	/**
+	 * Returns the meta object for data type '{@link org.hl7.fhir.XPathUsageTypeList <em>XPath Usage Type List Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>XPath Usage Type List Object</em>'.
+	 * @see org.hl7.fhir.XPathUsageTypeList
+	 * @model instanceClass="org.hl7.fhir.XPathUsageTypeList"
+	 *        extendedMetaData="name='XPathUsageType-list:Object' baseType='XPathUsageType-list'"
+	 * @generated
+	 */
+	EDataType getXPathUsageTypeListObject();
 
 	/**
 	 * Returns the factory that creates the instances of the model.

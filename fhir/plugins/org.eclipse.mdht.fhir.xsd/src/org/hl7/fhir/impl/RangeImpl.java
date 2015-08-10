@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Range;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity low;
+	protected SimpleQuantity low;
 
 	/**
 	 * The cached value of the '{@link #getHigh() <em>High</em>}' containment reference.
@@ -47,7 +47,7 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity high;
+	protected SimpleQuantity high;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getLow() {
+	public SimpleQuantity getLow() {
 		return low;
 	}
 
@@ -82,8 +82,8 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLow(Quantity newLow, NotificationChain msgs) {
-		Quantity oldLow = low;
+	public NotificationChain basicSetLow(SimpleQuantity newLow, NotificationChain msgs) {
+		SimpleQuantity oldLow = low;
 		low = newLow;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RANGE__LOW, oldLow, newLow);
@@ -97,7 +97,7 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLow(Quantity newLow) {
+	public void setLow(SimpleQuantity newLow) {
 		if (newLow != low) {
 			NotificationChain msgs = null;
 			if (low != null)
@@ -116,7 +116,7 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getHigh() {
+	public SimpleQuantity getHigh() {
 		return high;
 	}
 
@@ -125,8 +125,8 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetHigh(Quantity newHigh, NotificationChain msgs) {
-		Quantity oldHigh = high;
+	public NotificationChain basicSetHigh(SimpleQuantity newHigh, NotificationChain msgs) {
+		SimpleQuantity oldHigh = high;
 		high = newHigh;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RANGE__HIGH, oldHigh, newHigh);
@@ -140,7 +140,7 @@ public class RangeImpl extends ElementImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHigh(Quantity newHigh) {
+	public void setHigh(SimpleQuantity newHigh) {
 		if (newHigh != high) {
 			NotificationChain msgs = null;
 			if (high != null)
@@ -195,10 +195,10 @@ public class RangeImpl extends ElementImpl implements Range {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FhirPackage.RANGE__LOW:
-				setLow((Quantity)newValue);
+				setLow((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.RANGE__HIGH:
-				setHigh((Quantity)newValue);
+				setHigh((SimpleQuantity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,10 +213,10 @@ public class RangeImpl extends ElementImpl implements Range {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FhirPackage.RANGE__LOW:
-				setLow((Quantity)null);
+				setLow((SimpleQuantity)null);
 				return;
 			case FhirPackage.RANGE__HIGH:
-				setHigh((Quantity)null);
+				setHigh((SimpleQuantity)null);
 				return;
 		}
 		super.eUnset(featureID);

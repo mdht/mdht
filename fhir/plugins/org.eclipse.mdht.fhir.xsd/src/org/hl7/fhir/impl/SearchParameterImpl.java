@@ -23,6 +23,7 @@ import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.SearchParameter;
 import org.hl7.fhir.SearchParameterContact;
 import org.hl7.fhir.Uri;
+import org.hl7.fhir.XPathUsageType;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,16 +35,18 @@ import org.hl7.fhir.Uri;
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getPublisher <em>Publisher</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getContact <em>Contact</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getExperimental <em>Experimental</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getContact <em>Contact</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getRequirements <em>Requirements</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getBase <em>Base</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getXpath <em>Xpath</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getXpathUsage <em>Xpath Usage</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SearchParameterImpl#getTarget <em>Target</em>}</li>
  * </ul>
  *
@@ -71,36 +74,6 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	protected org.hl7.fhir.String name;
 
 	/**
-	 * The cached value of the '{@link #getPublisher() <em>Publisher</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublisher()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.String publisher;
-
-	/**
-	 * The cached value of the '{@link #getContact() <em>Contact</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContact()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SearchParameterContact> contact;
-
-	/**
-	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirements()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.String requirements;
-
-	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,6 +94,26 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	protected org.hl7.fhir.Boolean experimental;
 
 	/**
+	 * The cached value of the '{@link #getPublisher() <em>Publisher</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPublisher()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String publisher;
+
+	/**
+	 * The cached value of the '{@link #getContact() <em>Contact</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContact()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SearchParameterContact> contact;
+
+	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +122,26 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * @ordered
 	 */
 	protected DateTime date;
+
+	/**
+	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirements()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.String requirements;
+
+	/**
+	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected Code code;
 
 	/**
 	 * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
@@ -169,6 +182,16 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * @ordered
 	 */
 	protected org.hl7.fhir.String xpath;
+
+	/**
+	 * The cached value of the '{@link #getXpathUsage() <em>Xpath Usage</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getXpathUsage()
+	 * @generated
+	 * @ordered
+	 */
+	protected XPathUsageType xpathUsage;
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference list.
@@ -290,104 +313,6 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getPublisher() {
-		return publisher;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPublisher(org.hl7.fhir.String newPublisher, NotificationChain msgs) {
-		org.hl7.fhir.String oldPublisher = publisher;
-		publisher = newPublisher;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__PUBLISHER, oldPublisher, newPublisher);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPublisher(org.hl7.fhir.String newPublisher) {
-		if (newPublisher != publisher) {
-			NotificationChain msgs = null;
-			if (publisher != null)
-				msgs = ((InternalEObject)publisher).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__PUBLISHER, null, msgs);
-			if (newPublisher != null)
-				msgs = ((InternalEObject)newPublisher).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__PUBLISHER, null, msgs);
-			msgs = basicSetPublisher(newPublisher, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__PUBLISHER, newPublisher, newPublisher));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<SearchParameterContact> getContact() {
-		if (contact == null) {
-			contact = new EObjectContainmentEList<SearchParameterContact>(SearchParameterContact.class, this, FhirPackage.SEARCH_PARAMETER__CONTACT);
-		}
-		return contact;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.String getRequirements() {
-		return requirements;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRequirements(org.hl7.fhir.String newRequirements, NotificationChain msgs) {
-		org.hl7.fhir.String oldRequirements = requirements;
-		requirements = newRequirements;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, oldRequirements, newRequirements);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRequirements(org.hl7.fhir.String newRequirements) {
-		if (newRequirements != requirements) {
-			NotificationChain msgs = null;
-			if (requirements != null)
-				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, null, msgs);
-			if (newRequirements != null)
-				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, null, msgs);
-			msgs = basicSetRequirements(newRequirements, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, newRequirements, newRequirements));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Code getStatus() {
 		return status;
 	}
@@ -474,6 +399,61 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.hl7.fhir.String getPublisher() {
+		return publisher;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPublisher(org.hl7.fhir.String newPublisher, NotificationChain msgs) {
+		org.hl7.fhir.String oldPublisher = publisher;
+		publisher = newPublisher;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__PUBLISHER, oldPublisher, newPublisher);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPublisher(org.hl7.fhir.String newPublisher) {
+		if (newPublisher != publisher) {
+			NotificationChain msgs = null;
+			if (publisher != null)
+				msgs = ((InternalEObject)publisher).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__PUBLISHER, null, msgs);
+			if (newPublisher != null)
+				msgs = ((InternalEObject)newPublisher).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__PUBLISHER, null, msgs);
+			msgs = basicSetPublisher(newPublisher, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__PUBLISHER, newPublisher, newPublisher));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SearchParameterContact> getContact() {
+		if (contact == null) {
+			contact = new EObjectContainmentEList<SearchParameterContact>(SearchParameterContact.class, this, FhirPackage.SEARCH_PARAMETER__CONTACT);
+		}
+		return contact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DateTime getDate() {
 		return date;
 	}
@@ -510,6 +490,92 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__DATE, newDate, newDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.String getRequirements() {
+		return requirements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRequirements(org.hl7.fhir.String newRequirements, NotificationChain msgs) {
+		org.hl7.fhir.String oldRequirements = requirements;
+		requirements = newRequirements;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, oldRequirements, newRequirements);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequirements(org.hl7.fhir.String newRequirements) {
+		if (newRequirements != requirements) {
+			NotificationChain msgs = null;
+			if (requirements != null)
+				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, null, msgs);
+			if (newRequirements != null)
+				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, null, msgs);
+			msgs = basicSetRequirements(newRequirements, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__REQUIREMENTS, newRequirements, newRequirements));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Code getCode() {
+		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCode(Code newCode, NotificationChain msgs) {
+		Code oldCode = code;
+		code = newCode;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__CODE, oldCode, newCode);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCode(Code newCode) {
+		if (newCode != code) {
+			NotificationChain msgs = null;
+			if (code != null)
+				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__CODE, null, msgs);
+			if (newCode != null)
+				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__CODE, null, msgs);
+			msgs = basicSetCode(newCode, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__CODE, newCode, newCode));
 	}
 
 	/**
@@ -689,6 +755,49 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public XPathUsageType getXpathUsage() {
+		return xpathUsage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetXpathUsage(XPathUsageType newXpathUsage, NotificationChain msgs) {
+		XPathUsageType oldXpathUsage = xpathUsage;
+		xpathUsage = newXpathUsage;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__XPATH_USAGE, oldXpathUsage, newXpathUsage);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setXpathUsage(XPathUsageType newXpathUsage) {
+		if (newXpathUsage != xpathUsage) {
+			NotificationChain msgs = null;
+			if (xpathUsage != null)
+				msgs = ((InternalEObject)xpathUsage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__XPATH_USAGE, null, msgs);
+			if (newXpathUsage != null)
+				msgs = ((InternalEObject)newXpathUsage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SEARCH_PARAMETER__XPATH_USAGE, null, msgs);
+			msgs = basicSetXpathUsage(newXpathUsage, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SEARCH_PARAMETER__XPATH_USAGE, newXpathUsage, newXpathUsage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Code> getTarget() {
 		if (target == null) {
 			target = new EObjectContainmentEList<Code>(Code.class, this, FhirPackage.SEARCH_PARAMETER__TARGET);
@@ -708,18 +817,20 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return basicSetUrl(null, msgs);
 			case FhirPackage.SEARCH_PARAMETER__NAME:
 				return basicSetName(null, msgs);
-			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
-				return basicSetPublisher(null, msgs);
-			case FhirPackage.SEARCH_PARAMETER__CONTACT:
-				return ((InternalEList<?>)getContact()).basicRemove(otherEnd, msgs);
-			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
-				return basicSetRequirements(null, msgs);
 			case FhirPackage.SEARCH_PARAMETER__STATUS:
 				return basicSetStatus(null, msgs);
 			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
 				return basicSetExperimental(null, msgs);
+			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
+				return basicSetPublisher(null, msgs);
+			case FhirPackage.SEARCH_PARAMETER__CONTACT:
+				return ((InternalEList<?>)getContact()).basicRemove(otherEnd, msgs);
 			case FhirPackage.SEARCH_PARAMETER__DATE:
 				return basicSetDate(null, msgs);
+			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
+				return basicSetRequirements(null, msgs);
+			case FhirPackage.SEARCH_PARAMETER__CODE:
+				return basicSetCode(null, msgs);
 			case FhirPackage.SEARCH_PARAMETER__BASE:
 				return basicSetBase(null, msgs);
 			case FhirPackage.SEARCH_PARAMETER__TYPE:
@@ -728,6 +839,8 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return basicSetDescription(null, msgs);
 			case FhirPackage.SEARCH_PARAMETER__XPATH:
 				return basicSetXpath(null, msgs);
+			case FhirPackage.SEARCH_PARAMETER__XPATH_USAGE:
+				return basicSetXpathUsage(null, msgs);
 			case FhirPackage.SEARCH_PARAMETER__TARGET:
 				return ((InternalEList<?>)getTarget()).basicRemove(otherEnd, msgs);
 		}
@@ -746,18 +859,20 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return getUrl();
 			case FhirPackage.SEARCH_PARAMETER__NAME:
 				return getName();
-			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
-				return getPublisher();
-			case FhirPackage.SEARCH_PARAMETER__CONTACT:
-				return getContact();
-			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
-				return getRequirements();
 			case FhirPackage.SEARCH_PARAMETER__STATUS:
 				return getStatus();
 			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
 				return getExperimental();
+			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
+				return getPublisher();
+			case FhirPackage.SEARCH_PARAMETER__CONTACT:
+				return getContact();
 			case FhirPackage.SEARCH_PARAMETER__DATE:
 				return getDate();
+			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
+				return getRequirements();
+			case FhirPackage.SEARCH_PARAMETER__CODE:
+				return getCode();
 			case FhirPackage.SEARCH_PARAMETER__BASE:
 				return getBase();
 			case FhirPackage.SEARCH_PARAMETER__TYPE:
@@ -766,6 +881,8 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return getDescription();
 			case FhirPackage.SEARCH_PARAMETER__XPATH:
 				return getXpath();
+			case FhirPackage.SEARCH_PARAMETER__XPATH_USAGE:
+				return getXpathUsage();
 			case FhirPackage.SEARCH_PARAMETER__TARGET:
 				return getTarget();
 		}
@@ -787,6 +904,12 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 			case FhirPackage.SEARCH_PARAMETER__NAME:
 				setName((org.hl7.fhir.String)newValue);
 				return;
+			case FhirPackage.SEARCH_PARAMETER__STATUS:
+				setStatus((Code)newValue);
+				return;
+			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
+				setExperimental((org.hl7.fhir.Boolean)newValue);
+				return;
 			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
 				setPublisher((org.hl7.fhir.String)newValue);
 				return;
@@ -794,17 +917,14 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				getContact().clear();
 				getContact().addAll((Collection<? extends SearchParameterContact>)newValue);
 				return;
+			case FhirPackage.SEARCH_PARAMETER__DATE:
+				setDate((DateTime)newValue);
+				return;
 			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
 				setRequirements((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.SEARCH_PARAMETER__STATUS:
-				setStatus((Code)newValue);
-				return;
-			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
-				setExperimental((org.hl7.fhir.Boolean)newValue);
-				return;
-			case FhirPackage.SEARCH_PARAMETER__DATE:
-				setDate((DateTime)newValue);
+			case FhirPackage.SEARCH_PARAMETER__CODE:
+				setCode((Code)newValue);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__BASE:
 				setBase((Code)newValue);
@@ -817,6 +937,9 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return;
 			case FhirPackage.SEARCH_PARAMETER__XPATH:
 				setXpath((org.hl7.fhir.String)newValue);
+				return;
+			case FhirPackage.SEARCH_PARAMETER__XPATH_USAGE:
+				setXpathUsage((XPathUsageType)newValue);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__TARGET:
 				getTarget().clear();
@@ -840,23 +963,26 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 			case FhirPackage.SEARCH_PARAMETER__NAME:
 				setName((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
-				setPublisher((org.hl7.fhir.String)null);
-				return;
-			case FhirPackage.SEARCH_PARAMETER__CONTACT:
-				getContact().clear();
-				return;
-			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
-				setRequirements((org.hl7.fhir.String)null);
-				return;
 			case FhirPackage.SEARCH_PARAMETER__STATUS:
 				setStatus((Code)null);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
 				setExperimental((org.hl7.fhir.Boolean)null);
 				return;
+			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
+				setPublisher((org.hl7.fhir.String)null);
+				return;
+			case FhirPackage.SEARCH_PARAMETER__CONTACT:
+				getContact().clear();
+				return;
 			case FhirPackage.SEARCH_PARAMETER__DATE:
 				setDate((DateTime)null);
+				return;
+			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
+				setRequirements((org.hl7.fhir.String)null);
+				return;
+			case FhirPackage.SEARCH_PARAMETER__CODE:
+				setCode((Code)null);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__BASE:
 				setBase((Code)null);
@@ -869,6 +995,9 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return;
 			case FhirPackage.SEARCH_PARAMETER__XPATH:
 				setXpath((org.hl7.fhir.String)null);
+				return;
+			case FhirPackage.SEARCH_PARAMETER__XPATH_USAGE:
+				setXpathUsage((XPathUsageType)null);
 				return;
 			case FhirPackage.SEARCH_PARAMETER__TARGET:
 				getTarget().clear();
@@ -889,18 +1018,20 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return url != null;
 			case FhirPackage.SEARCH_PARAMETER__NAME:
 				return name != null;
-			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
-				return publisher != null;
-			case FhirPackage.SEARCH_PARAMETER__CONTACT:
-				return contact != null && !contact.isEmpty();
-			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
-				return requirements != null;
 			case FhirPackage.SEARCH_PARAMETER__STATUS:
 				return status != null;
 			case FhirPackage.SEARCH_PARAMETER__EXPERIMENTAL:
 				return experimental != null;
+			case FhirPackage.SEARCH_PARAMETER__PUBLISHER:
+				return publisher != null;
+			case FhirPackage.SEARCH_PARAMETER__CONTACT:
+				return contact != null && !contact.isEmpty();
 			case FhirPackage.SEARCH_PARAMETER__DATE:
 				return date != null;
+			case FhirPackage.SEARCH_PARAMETER__REQUIREMENTS:
+				return requirements != null;
+			case FhirPackage.SEARCH_PARAMETER__CODE:
+				return code != null;
 			case FhirPackage.SEARCH_PARAMETER__BASE:
 				return base != null;
 			case FhirPackage.SEARCH_PARAMETER__TYPE:
@@ -909,6 +1040,8 @@ public class SearchParameterImpl extends DomainResourceImpl implements SearchPar
 				return description != null;
 			case FhirPackage.SEARCH_PARAMETER__XPATH:
 				return xpath != null;
+			case FhirPackage.SEARCH_PARAMETER__XPATH_USAGE:
+				return xpathUsage != null;
 			case FhirPackage.SEARCH_PARAMETER__TARGET:
 				return target != null && !target.isEmpty();
 		}

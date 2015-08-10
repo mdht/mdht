@@ -22,17 +22,17 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.StructureDefinition#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.StructureDefinition#getUseContext <em>Use Context</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getDisplay <em>Display</em>}</li>
+ *   <li>{@link org.hl7.fhir.StructureDefinition#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.hl7.fhir.StructureDefinition#getExperimental <em>Experimental</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getContact <em>Contact</em>}</li>
+ *   <li>{@link org.hl7.fhir.StructureDefinition#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.hl7.fhir.StructureDefinition#getUseContext <em>Use Context</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getCopyright <em>Copyright</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getCode <em>Code</em>}</li>
- *   <li>{@link org.hl7.fhir.StructureDefinition#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.StructureDefinition#getExperimental <em>Experimental</em>}</li>
- *   <li>{@link org.hl7.fhir.StructureDefinition#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getFhirVersion <em>Fhir Version</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getMapping <em>Mapping</em>}</li>
  *   <li>{@link org.hl7.fhir.StructureDefinition#getKind <em>Kind</em>}</li>
@@ -55,7 +55,7 @@ public interface StructureDefinition extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An absolute URL at which this StructureDefinition is (or will be) published, and which is used to reference this StructureDefinition in extension urls and meta.profile in operational FHIR systems.
+	 * An absolute URL that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Url</em>' containment reference.
 	 * @see #setUrl(Uri)
@@ -145,22 +145,6 @@ public interface StructureDefinition extends DomainResource {
 	void setName(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of structure definitions.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Use Context</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_UseContext()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<CodeableConcept> getUseContext();
-
-	/**
 	 * Returns the value of the '<em><b>Display</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -185,6 +169,58 @@ public interface StructureDefinition extends DomainResource {
 	 * @generated
 	 */
 	void setDisplay(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The status of the StructureDefinition.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Status</em>' containment reference.
+	 * @see #setStatus(Code)
+	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_Status()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Code getStatus();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.StructureDefinition#getStatus <em>Status</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' containment reference.
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This StructureDefinition was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Experimental</em>' containment reference.
+	 * @see #setExperimental(org.hl7.fhir.Boolean)
+	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_Experimental()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.Boolean getExperimental();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.StructureDefinition#getExperimental <em>Experimental</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Experimental</em>' containment reference.
+	 * @see #getExperimental()
+	 * @generated
+	 */
+	void setExperimental(org.hl7.fhir.Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
@@ -229,6 +265,32 @@ public interface StructureDefinition extends DomainResource {
 	EList<StructureDefinitionContact> getContact();
 
 	/**
+	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date that this version of the StructureDefinition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the structure definition changes.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Date</em>' containment reference.
+	 * @see #setDate(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_Date()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.StructureDefinition#getDate <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date</em>' containment reference.
+	 * @see #getDate()
+	 * @generated
+	 */
+	void setDate(DateTime value);
+
+	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,6 +315,22 @@ public interface StructureDefinition extends DomainResource {
 	 * @generated
 	 */
 	void setDescription(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of structure definitions.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Use Context</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_UseContext()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<CodeableConcept> getUseContext();
 
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference.
@@ -321,84 +399,6 @@ public interface StructureDefinition extends DomainResource {
 	 * @generated
 	 */
 	EList<Coding> getCode();
-
-	/**
-	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The status of the StructureDefinition.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Status</em>' containment reference.
-	 * @see #setStatus(Code)
-	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_Status()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='status' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Code getStatus();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.StructureDefinition#getStatus <em>Status</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' containment reference.
-	 * @see #getStatus()
-	 * @generated
-	 */
-	void setStatus(Code value);
-
-	/**
-	 * Returns the value of the '<em><b>Experimental</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This StructureDefinition was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Experimental</em>' containment reference.
-	 * @see #setExperimental(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_Experimental()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='experimental' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.Boolean getExperimental();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.StructureDefinition#getExperimental <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Experimental</em>' containment reference.
-	 * @see #getExperimental()
-	 * @generated
-	 */
-	void setExperimental(org.hl7.fhir.Boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The date that this version of the StructureDefinition was published.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' containment reference.
-	 * @see #setDate(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getStructureDefinition_Date()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	DateTime getDate();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.StructureDefinition#getDate <em>Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' containment reference.
-	 * @see #getDate()
-	 * @generated
-	 */
-	void setDate(DateTime value);
 
 	/**
 	 * Returns the value of the '<em><b>Fhir Version</b></em>' containment reference.

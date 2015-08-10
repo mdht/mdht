@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -71,7 +71,7 @@
           </xs:element>
           <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies who is responsible for adding the information to the document.</xs:documentation>
+              <xs:documentation xml:lang="en">Identifies who is responsible for creating the manifest, and adding  documents to it.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="created" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -117,7 +117,7 @@
         <xs:sequence>
           <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The list of DocumentReference or Media Resources, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed.</xs:documentation>
+              <xs:documentation xml:lang="en">The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed.</xs:documentation>
             </xs:annotation>
             <xs:element name="pAttachment" type="Attachment"/>
             <xs:element name="pReference" type="Reference"/>

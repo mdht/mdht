@@ -25,8 +25,8 @@ import org.hl7.fhir.MedicationDispense;
 import org.hl7.fhir.MedicationDispenseDosageInstruction;
 import org.hl7.fhir.MedicationDispenseStatus;
 import org.hl7.fhir.MedicationDispenseSubstitution;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,7 +126,7 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getDaysSupply() <em>Days Supply</em>}' containment reference.
@@ -136,7 +136,7 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity daysSupply;
+	protected SimpleQuantity daysSupply;
 
 	/**
 	 * The cached value of the '{@link #getMedicationCodeableConcept() <em>Medication Codeable Concept</em>}' containment reference.
@@ -479,7 +479,7 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -488,8 +488,8 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE__QUANTITY, oldQuantity, newQuantity);
@@ -503,7 +503,7 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -522,7 +522,7 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getDaysSupply() {
+	public SimpleQuantity getDaysSupply() {
 		return daysSupply;
 	}
 
@@ -531,8 +531,8 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDaysSupply(Quantity newDaysSupply, NotificationChain msgs) {
-		Quantity oldDaysSupply = daysSupply;
+	public NotificationChain basicSetDaysSupply(SimpleQuantity newDaysSupply, NotificationChain msgs) {
+		SimpleQuantity oldDaysSupply = daysSupply;
 		daysSupply = newDaysSupply;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE__DAYS_SUPPLY, oldDaysSupply, newDaysSupply);
@@ -546,7 +546,7 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDaysSupply(Quantity newDaysSupply) {
+	public void setDaysSupply(SimpleQuantity newDaysSupply) {
 		if (newDaysSupply != daysSupply) {
 			NotificationChain msgs = null;
 			if (daysSupply != null)
@@ -1006,10 +1006,10 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 				setType((CodeableConcept)newValue);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE__DAYS_SUPPLY:
-				setDaysSupply((Quantity)newValue);
+				setDaysSupply((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
 				setMedicationCodeableConcept((CodeableConcept)newValue);
@@ -1071,10 +1071,10 @@ public class MedicationDispenseImpl extends DomainResourceImpl implements Medica
 				setType((CodeableConcept)null);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE__DAYS_SUPPLY:
-				setDaysSupply((Quantity)null);
+				setDaysSupply((SimpleQuantity)null);
 				return;
 			case FhirPackage.MEDICATION_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
 				setMedicationCodeableConcept((CodeableConcept)null);

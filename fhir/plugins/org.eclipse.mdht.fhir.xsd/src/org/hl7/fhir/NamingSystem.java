@@ -18,18 +18,18 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.NamingSystem#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.NamingSystem#getName <em>Name</em>}</li>
- *   <li>{@link org.hl7.fhir.NamingSystem#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.NamingSystem#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.NamingSystem#getCountry <em>Country</em>}</li>
- *   <li>{@link org.hl7.fhir.NamingSystem#getCategory <em>Category</em>}</li>
- *   <li>{@link org.hl7.fhir.NamingSystem#getResponsible <em>Responsible</em>}</li>
- *   <li>{@link org.hl7.fhir.NamingSystem#getDescription <em>Description</em>}</li>
- *   <li>{@link org.hl7.fhir.NamingSystem#getUsage <em>Usage</em>}</li>
- *   <li>{@link org.hl7.fhir.NamingSystem#getUniqueId <em>Unique Id</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getKind <em>Kind</em>}</li>
  *   <li>{@link org.hl7.fhir.NamingSystem#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.NamingSystem#getContact <em>Contact</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getResponsible <em>Responsible</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getDate <em>Date</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getType <em>Type</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getUseContext <em>Use Context</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getUsage <em>Usage</em>}</li>
+ *   <li>{@link org.hl7.fhir.NamingSystem#getUniqueId <em>Unique Id</em>}</li>
  *   <li>{@link org.hl7.fhir.NamingSystem#getReplacedBy <em>Replaced By</em>}</li>
  * </ul>
  *
@@ -38,32 +38,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface NamingSystem extends DomainResource {
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Indicates the purpose for the namingsystem - what kinds of things does it make unique?
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(NamingSystemType)
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Type()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='type' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	NamingSystemType getType();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getType <em>Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' containment reference.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(NamingSystemType value);
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -89,32 +63,6 @@ public interface NamingSystem extends DomainResource {
 	 * @generated
 	 */
 	void setName(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The date  (and optionally time) when the system was registered or published.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' containment reference.
-	 * @see #setDate(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Date()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	DateTime getDate();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getDate <em>Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' containment reference.
-	 * @see #getDate()
-	 * @generated
-	 */
-	void setDate(DateTime value);
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
@@ -143,150 +91,30 @@ public interface NamingSystem extends DomainResource {
 	void setStatus(Code value);
 
 	/**
-	 * Returns the value of the '<em><b>Country</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Kind</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * If present, indicates that the identifier or code system is principally intended for use or applies to entities within the specified country.  For example, the country associated with a national code system.
+	 * Indicates the purpose for the namingsystem - what kinds of things does it make unique?
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Country</em>' containment reference.
-	 * @see #setCountry(Code)
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Country()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='country' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Code getCountry();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getCountry <em>Country</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Country</em>' containment reference.
-	 * @see #getCountry()
-	 * @generated
-	 */
-	void setCountry(Code value);
-
-	/**
-	 * Returns the value of the '<em><b>Category</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Categorizes a namingsystem for easier search by grouping related namingsystems.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Category</em>' containment reference.
-	 * @see #setCategory(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Category()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='category' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	CodeableConcept getCategory();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getCategory <em>Category</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Category</em>' containment reference.
-	 * @see #getCategory()
-	 * @generated
-	 */
-	void setCategory(CodeableConcept value);
-
-	/**
-	 * Returns the value of the '<em><b>Responsible</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Responsible</em>' containment reference.
-	 * @see #setResponsible(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Responsible()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='responsible' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getResponsible();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getResponsible <em>Responsible</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Responsible</em>' containment reference.
-	 * @see #getResponsible()
-	 * @generated
-	 */
-	void setResponsible(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Details about what the namespace identifies including scope, granularity, version labeling, etc.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Description</em>' containment reference.
-	 * @see #setDescription(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Description()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='description' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getDescription();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getDescription <em>Description</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' containment reference.
-	 * @see #getDescription()
-	 * @generated
-	 */
-	void setDescription(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Usage</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Usage</em>' containment reference.
-	 * @see #setUsage(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Usage()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='usage' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getUsage();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getUsage <em>Usage</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Usage</em>' containment reference.
-	 * @see #getUsage()
-	 * @generated
-	 */
-	void setUsage(org.hl7.fhir.String value);
-
-	/**
-	 * Returns the value of the '<em><b>Unique Id</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.NamingSystemUniqueId}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Indicates how the system may be identified when referenced in electronic exchange.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Unique Id</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_UniqueId()
+	 * @return the value of the '<em>Kind</em>' containment reference.
+	 * @see #setKind(NamingSystemType)
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Kind()
 	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='uniqueId' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='kind' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<NamingSystemUniqueId> getUniqueId();
+	NamingSystemType getKind();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getKind <em>Kind</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kind</em>' containment reference.
+	 * @see #getKind()
+	 * @generated
+	 */
+	void setKind(NamingSystemType value);
 
 	/**
 	 * Returns the value of the '<em><b>Publisher</b></em>' containment reference.
@@ -329,6 +157,168 @@ public interface NamingSystem extends DomainResource {
 	 * @generated
 	 */
 	EList<NamingSystemContact> getContact();
+
+	/**
+	 * Returns the value of the '<em><b>Responsible</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Responsible</em>' containment reference.
+	 * @see #setResponsible(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Responsible()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='responsible' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getResponsible();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getResponsible <em>Responsible</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Responsible</em>' containment reference.
+	 * @see #getResponsible()
+	 * @generated
+	 */
+	void setResponsible(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date  (and optionally time) when the system was registered or published. The date must change when the business version changes, if it does, and it must change if the status code changes. in addition, it should change when the substantiative content of the registration changes.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Date</em>' containment reference.
+	 * @see #setDate(DateTime)
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Date()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='date' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	DateTime getDate();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getDate <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date</em>' containment reference.
+	 * @see #getDate()
+	 * @generated
+	 */
+	void setDate(DateTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Categorizes a namingsystem for easier search by grouping related namingsystems.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Type()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='type' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	CodeableConcept getType();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Details about what the namespace identifies including scope, granularity, version labeling, etc.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Description</em>' containment reference.
+	 * @see #setDescription(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Description()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='description' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getDescription();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getDescription <em>Description</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' containment reference.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Context</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of naming systems.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Use Context</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_UseContext()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='useContext' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<CodeableConcept> getUseContext();
+
+	/**
+	 * Returns the value of the '<em><b>Usage</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Usage</em>' containment reference.
+	 * @see #setUsage(org.hl7.fhir.String)
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_Usage()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='usage' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	org.hl7.fhir.String getUsage();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.NamingSystem#getUsage <em>Usage</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Usage</em>' containment reference.
+	 * @see #getUsage()
+	 * @generated
+	 */
+	void setUsage(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Unique Id</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.NamingSystemUniqueId}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Indicates how the system may be identified when referenced in electronic exchange.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Unique Id</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getNamingSystem_UniqueId()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='uniqueId' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<NamingSystemUniqueId> getUniqueId();
 
 	/**
 	 * Returns the value of the '<em><b>Replaced By</b></em>' containment reference.

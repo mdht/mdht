@@ -17,7 +17,7 @@ package org.hl7.fhir;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.TimingRepeat#getBoundsDuration <em>Bounds Duration</em>}</li>
+ *   <li>{@link org.hl7.fhir.TimingRepeat#getBoundsQuantity <em>Bounds Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getBoundsRange <em>Bounds Range</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getBoundsPeriod <em>Bounds Period</em>}</li>
  *   <li>{@link org.hl7.fhir.TimingRepeat#getCount <em>Count</em>}</li>
@@ -38,31 +38,31 @@ package org.hl7.fhir;
  */
 public interface TimingRepeat extends Element {
 	/**
-	 * Returns the value of the '<em><b>Bounds Duration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Bounds Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Bounds Duration</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Bounds Quantity</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bounds Duration</em>' containment reference.
-	 * @see #setBoundsDuration(Duration)
-	 * @see org.hl7.fhir.FhirPackage#getTimingRepeat_BoundsDuration()
+	 * @return the value of the '<em>Bounds Quantity</em>' containment reference.
+	 * @see #setBoundsQuantity(Duration)
+	 * @see org.hl7.fhir.FhirPackage#getTimingRepeat_BoundsQuantity()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='boundsDuration' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='boundsQuantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Duration getBoundsDuration();
+	Duration getBoundsQuantity();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.TimingRepeat#getBoundsDuration <em>Bounds Duration</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.TimingRepeat#getBoundsQuantity <em>Bounds Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bounds Duration</em>' containment reference.
-	 * @see #getBoundsDuration()
+	 * @param value the new value of the '<em>Bounds Quantity</em>' containment reference.
+	 * @see #getBoundsQuantity()
 	 * @generated
 	 */
-	void setBoundsDuration(Duration value);
+	void setBoundsQuantity(Duration value);
 
 	/**
 	 * Returns the value of the '<em><b>Bounds Range</b></em>' containment reference.
@@ -253,8 +253,7 @@ public interface TimingRepeat extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period 
-	 * 						or period range.
+	 * If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Frequency Max</em>' containment reference.
 	 * @see #setFrequencyMax(org.hl7.fhir.Integer)

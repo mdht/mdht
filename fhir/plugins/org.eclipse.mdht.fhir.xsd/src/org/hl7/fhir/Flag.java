@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Flag#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getSubject <em>Subject</em>}</li>
+ *   <li>{@link org.hl7.fhir.Flag#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getAuthor <em>Author</em>}</li>
  *   <li>{@link org.hl7.fhir.Flag#getCode <em>Code</em>}</li>
  * </ul>
@@ -151,6 +152,32 @@ public interface Flag extends DomainResource {
 	 * @generated
 	 */
 	void setSubject(Reference value);
+
+	/**
+	 * Returns the value of the '<em><b>Encounter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This alert is only relevant during the encounter.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Encounter</em>' containment reference.
+	 * @see #setEncounter(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getFlag_Encounter()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='encounter' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getEncounter();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.Flag#getEncounter <em>Encounter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encounter</em>' containment reference.
+	 * @see #getEncounter()
+	 * @generated
+	 */
+	void setEncounter(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>Author</b></em>' containment reference.

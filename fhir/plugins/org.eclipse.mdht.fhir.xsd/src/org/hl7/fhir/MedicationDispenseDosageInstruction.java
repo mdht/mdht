@@ -281,9 +281,7 @@ public interface MedicationDispenseDosageInstruction extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A coded value indicating the method by which the medication is introduced into or onto the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.
-	 * 
-	 * Terminologies used often pre-coordinate this term with the route and or form of administration.
+	 * A coded value indicating the method by which the medication is introduced into or onto the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.  Terminologies used often pre-coordinate this term with the route and or form of administration.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Method</em>' containment reference.
 	 * @see #setMethod(CodeableConcept)
@@ -340,13 +338,13 @@ public interface MedicationDispenseDosageInstruction extends BackboneElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dose Quantity</em>' containment reference.
-	 * @see #setDoseQuantity(Quantity)
+	 * @see #setDoseQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getMedicationDispenseDosageInstruction_DoseQuantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='doseQuantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getDoseQuantity();
+	SimpleQuantity getDoseQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.MedicationDispenseDosageInstruction#getDoseQuantity <em>Dose Quantity</em>}' containment reference.
@@ -356,7 +354,7 @@ public interface MedicationDispenseDosageInstruction extends BackboneElement {
 	 * @see #getDoseQuantity()
 	 * @generated
 	 */
-	void setDoseQuantity(Quantity value);
+	void setDoseQuantity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Rate</b></em>' containment reference.

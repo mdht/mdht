@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -333,7 +333,7 @@
               <xs:documentation xml:lang="en">The date when the enclosed suite of services were performed or completed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The number of repetitions of a service or product.</xs:documentation>
            </xs:annotation>
@@ -414,7 +414,7 @@
               <xs:documentation xml:lang="en">If a grouping item then 'GROUP' otherwise it is a node therefore a code to indicate the Professional Service or Product supplied.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The number of repetitions of a service or product.</xs:documentation>
            </xs:annotation>
@@ -475,7 +475,7 @@
               <xs:documentation xml:lang="en">The fee for an addittional service or product or charge.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The number of repetitions of a service or product.</xs:documentation>
            </xs:annotation>
@@ -561,6 +561,41 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="Use-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="complete">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The treatment is complete and this represents a Claim for the services.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="proposed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The treatment is proposed and this represents a Pre-authorization for the services.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="exploratory">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The treatment is proposed and this represents a Pre-determination for the services.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">A locally defined or otherwise resolved status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Use">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Complete, proposed, exploratory, other</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="Use-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="ClaimType-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="institutional">
@@ -598,41 +633,6 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="ClaimType-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="Use-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="complete">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The treatment is complete and this represents a Claim for the services.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="proposed">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The treatment is proposed and this represents a Pre-authorization for the services.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="exploratory">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The treatment is proposed and this represents a Pre-determination for the services.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="other">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">A locally defined or otherwise resolved status.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="Use">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Complete, proposed, exploratory, other</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="Use-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

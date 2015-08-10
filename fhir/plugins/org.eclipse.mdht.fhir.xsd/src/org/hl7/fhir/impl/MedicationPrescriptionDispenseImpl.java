@@ -16,8 +16,8 @@ import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.MedicationPrescriptionDispense;
 import org.hl7.fhir.Period;
 import org.hl7.fhir.PositiveInt;
-import org.hl7.fhir.Quantity;
 import org.hl7.fhir.Reference;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,7 +86,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity quantity;
+	protected SimpleQuantity quantity;
 
 	/**
 	 * The cached value of the '{@link #getExpectedSupplyDuration() <em>Expected Supply Duration</em>}' containment reference.
@@ -294,7 +294,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getQuantity() {
+	public SimpleQuantity getQuantity() {
 		return quantity;
 	}
 
@@ -303,8 +303,8 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
-		Quantity oldQuantity = quantity;
+	public NotificationChain basicSetQuantity(SimpleQuantity newQuantity, NotificationChain msgs) {
+		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY, oldQuantity, newQuantity);
@@ -318,7 +318,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuantity(Quantity newQuantity) {
+	public void setQuantity(SimpleQuantity newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
@@ -444,7 +444,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 				setNumberOfRepeatsAllowed((PositiveInt)newValue);
 				return;
 			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY:
-				setQuantity((Quantity)newValue);
+				setQuantity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION:
 				setExpectedSupplyDuration((Duration)newValue);
@@ -474,7 +474,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 				setNumberOfRepeatsAllowed((PositiveInt)null);
 				return;
 			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY:
-				setQuantity((Quantity)null);
+				setQuantity((SimpleQuantity)null);
 				return;
 			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION:
 				setExpectedSupplyDuration((Duration)null);

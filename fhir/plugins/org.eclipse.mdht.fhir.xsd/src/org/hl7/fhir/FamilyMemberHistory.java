@@ -27,11 +27,11 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getBornPeriod <em>Born Period</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getBornDate <em>Born Date</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getBornString <em>Born String</em>}</li>
- *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getAgeAge <em>Age Age</em>}</li>
+ *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getAgeQuantity <em>Age Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getAgeRange <em>Age Range</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getAgeString <em>Age String</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedBoolean <em>Deceased Boolean</em>}</li>
- *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedAge <em>Deceased Age</em>}</li>
+ *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedQuantity <em>Deceased Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedRange <em>Deceased Range</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedDate <em>Deceased Date</em>}</li>
  *   <li>{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedString <em>Deceased String</em>}</li>
@@ -272,31 +272,31 @@ public interface FamilyMemberHistory extends DomainResource {
 	void setBornString(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Age Age</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Age Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Age Age</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Age Quantity</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Age Age</em>' containment reference.
-	 * @see #setAgeAge(Age)
-	 * @see org.hl7.fhir.FhirPackage#getFamilyMemberHistory_AgeAge()
+	 * @return the value of the '<em>Age Quantity</em>' containment reference.
+	 * @see #setAgeQuantity(Age)
+	 * @see org.hl7.fhir.FhirPackage#getFamilyMemberHistory_AgeQuantity()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='ageAge' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='ageQuantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Age getAgeAge();
+	Age getAgeQuantity();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.FamilyMemberHistory#getAgeAge <em>Age Age</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.FamilyMemberHistory#getAgeQuantity <em>Age Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Age Age</em>' containment reference.
-	 * @see #getAgeAge()
+	 * @param value the new value of the '<em>Age Quantity</em>' containment reference.
+	 * @see #getAgeQuantity()
 	 * @generated
 	 */
-	void setAgeAge(Age value);
+	void setAgeQuantity(Age value);
 
 	/**
 	 * Returns the value of the '<em><b>Age Range</b></em>' containment reference.
@@ -380,31 +380,31 @@ public interface FamilyMemberHistory extends DomainResource {
 	void setDeceasedBoolean(org.hl7.fhir.Boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Deceased Age</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Deceased Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Deceased Age</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Deceased Quantity</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deceased Age</em>' containment reference.
-	 * @see #setDeceasedAge(Age)
-	 * @see org.hl7.fhir.FhirPackage#getFamilyMemberHistory_DeceasedAge()
+	 * @return the value of the '<em>Deceased Quantity</em>' containment reference.
+	 * @see #setDeceasedQuantity(Age)
+	 * @see org.hl7.fhir.FhirPackage#getFamilyMemberHistory_DeceasedQuantity()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='deceasedAge' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='deceasedQuantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Age getDeceasedAge();
+	Age getDeceasedQuantity();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedAge <em>Deceased Age</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.FamilyMemberHistory#getDeceasedQuantity <em>Deceased Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deceased Age</em>' containment reference.
-	 * @see #getDeceasedAge()
+	 * @param value the new value of the '<em>Deceased Quantity</em>' containment reference.
+	 * @see #getDeceasedQuantity()
 	 * @generated
 	 */
-	void setDeceasedAge(Age value);
+	void setDeceasedQuantity(Age value);
 
 	/**
 	 * Returns the value of the '<em><b>Deceased Range</b></em>' containment reference.

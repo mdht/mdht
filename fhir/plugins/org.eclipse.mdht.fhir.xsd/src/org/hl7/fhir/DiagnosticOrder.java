@@ -22,13 +22,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getOrderer <em>Orderer</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getEncounter <em>Encounter</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticOrder#getClinicalNotes <em>Clinical Notes</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticOrder#getReason <em>Reason</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getSupportingInformation <em>Supporting Information</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getSpecimen <em>Specimen</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getStatus <em>Status</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getEvent <em>Event</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticOrder#getItem <em>Item</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticOrder#getNote <em>Note</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getDiagnosticOrder()
@@ -94,7 +95,7 @@ public interface DiagnosticOrder extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Identifiers assigned to this order by the orderer and/or  the receiver and/or order fulfiller.
+	 * Identifiers assigned to this order instance by the orderer and/or  the receiver and/or order fulfiller.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Identifier</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrder_Identifier()
@@ -131,30 +132,20 @@ public interface DiagnosticOrder extends DomainResource {
 	void setEncounter(Reference value);
 
 	/**
-	 * Returns the value of the '<em><b>Clinical Notes</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Reason</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An explanation or justification for why this diagnostic investigation is being requested.
+	 * An explanation or justification for why this diagnostic investigation is being requested.   This is often for billing purposes.  May relate to the resources referred to in supportingInformation.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clinical Notes</em>' containment reference.
-	 * @see #setClinicalNotes(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrder_ClinicalNotes()
+	 * @return the value of the '<em>Reason</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrder_Reason()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='clinicalNotes' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='reason' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getClinicalNotes();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticOrder#getClinicalNotes <em>Clinical Notes</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clinical Notes</em>' containment reference.
-	 * @see #getClinicalNotes()
-	 * @generated
-	 */
-	void setClinicalNotes(org.hl7.fhir.String value);
+	EList<CodeableConcept> getReason();
 
 	/**
 	 * Returns the value of the '<em><b>Supporting Information</b></em>' containment reference list.
@@ -162,7 +153,7 @@ public interface DiagnosticOrder extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Additional clinical information about the patient or specimen that may influence test interpretations.
+	 * Additional clinical information about the patient or specimen that may influence test interpretations.  This includes observations explicitly requested by the producer(filler) to provide context or supporting information needed to complete the order.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Supporting Information</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrder_SupportingInformation()
@@ -271,5 +262,21 @@ public interface DiagnosticOrder extends DomainResource {
 	 * @generated
 	 */
 	EList<DiagnosticOrderItem> getItem();
+
+	/**
+	 * Returns the value of the '<em><b>Note</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Annotation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Any other notes associated with this patient or specimen or order (e.g. "patient hates needles").
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Note</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticOrder_Note()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='note' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<Annotation> getNote();
 
 } // DiagnosticOrder

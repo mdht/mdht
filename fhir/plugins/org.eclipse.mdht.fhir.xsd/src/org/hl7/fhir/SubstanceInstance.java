@@ -86,13 +86,13 @@ public interface SubstanceInstance extends BackboneElement {
 	 * The amount of the substance.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quantity</em>' containment reference.
-	 * @see #setQuantity(Quantity)
+	 * @see #setQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getSubstanceInstance_Quantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='quantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getQuantity();
+	SimpleQuantity getQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.SubstanceInstance#getQuantity <em>Quantity</em>}' containment reference.
@@ -102,6 +102,6 @@ public interface SubstanceInstance extends BackboneElement {
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	void setQuantity(Quantity value);
+	void setQuantity(SimpleQuantity value);
 
 } // SubstanceInstance

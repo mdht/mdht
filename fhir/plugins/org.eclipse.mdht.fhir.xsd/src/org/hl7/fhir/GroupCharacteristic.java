@@ -22,6 +22,7 @@ package org.hl7.fhir;
  *   <li>{@link org.hl7.fhir.GroupCharacteristic#getValueQuantity <em>Value Quantity</em>}</li>
  *   <li>{@link org.hl7.fhir.GroupCharacteristic#getValueRange <em>Value Range</em>}</li>
  *   <li>{@link org.hl7.fhir.GroupCharacteristic#getExclude <em>Exclude</em>}</li>
+ *   <li>{@link org.hl7.fhir.GroupCharacteristic#getPeriod <em>Period</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getGroupCharacteristic()
@@ -188,5 +189,31 @@ public interface GroupCharacteristic extends BackboneElement {
 	 * @generated
 	 */
 	void setExclude(org.hl7.fhir.Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Period</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The period over which the characteristic is tested. E.g. the patient had an operation during the month of June.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Period</em>' containment reference.
+	 * @see #setPeriod(Period)
+	 * @see org.hl7.fhir.FhirPackage#getGroupCharacteristic_Period()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='period' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Period getPeriod();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.GroupCharacteristic#getPeriod <em>Period</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Period</em>' containment reference.
+	 * @see #getPeriod()
+	 * @generated
+	 */
+	void setPeriod(Period value);
 
 } // GroupCharacteristic

@@ -10,6 +10,7 @@ package org.hl7.fhir;
  *
  * <!-- begin-model-doc -->
  * A whole number
+ * 32 bit number; for values larger than this, use decimal
  * If the element is present, it must have either a @value, an @id, or extensions
  * <!-- end-model-doc -->
  *

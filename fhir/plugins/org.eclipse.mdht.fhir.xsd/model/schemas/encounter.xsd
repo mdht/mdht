@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -76,9 +76,7 @@
           </xs:element>
           <xs:element name="episodeOfCare" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, issue tracking, association via a common problem.
-
-The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).</xs:documentation>
+              <xs:documentation xml:lang="en">Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="incomingReferralRequest" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -113,8 +111,7 @@ The association is recorded on the encounter as these are typically created afte
           </xs:element>
           <xs:element name="indication" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis.
-The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.</xs:documentation>
+              <xs:documentation xml:lang="en">Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="priority" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -285,36 +282,6 @@ The indication will typically be a Condition (with other resources referenced in
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="EncounterLocationStatus-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="planned">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The patient is planned to be moved to this location at some point in the future</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="present">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The patient is currently at this location, or was between the period specified</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="reserved">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">This location is held empty for this patient</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="EncounterLocationStatus">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The status of the location</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="EncounterLocationStatus-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="EncounterClass-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="inpatient">
@@ -372,6 +339,36 @@ The indication will typically be a Condition (with other resources referenced in
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="EncounterClass-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EncounterLocationStatus-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="planned">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The patient is planned to be moved to this location at some point in the future</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="present">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The patient is currently at this location, or was between the period specified</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="reserved">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">This location is held empty for this patient</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EncounterLocationStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The status of the location</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="EncounterLocationStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

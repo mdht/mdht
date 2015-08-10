@@ -49,7 +49,6 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyImpl#getNumberOfSeries <em>Number Of Series</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyImpl#getNumberOfInstances <em>Number Of Instances</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ImagingStudyImpl#getClinicalInformation <em>Clinical Information</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyImpl#getProcedure <em>Procedure</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyImpl#getInterpreter <em>Interpreter</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ImagingStudyImpl#getDescription <em>Description</em>}</li>
@@ -178,16 +177,6 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 	 * @ordered
 	 */
 	protected UnsignedInt numberOfInstances;
-
-	/**
-	 * The cached value of the '{@link #getClinicalInformation() <em>Clinical Information</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClinicalInformation()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.String clinicalInformation;
 
 	/**
 	 * The cached value of the '{@link #getProcedure() <em>Procedure</em>}' containment reference list.
@@ -676,49 +665,6 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.hl7.fhir.String getClinicalInformation() {
-		return clinicalInformation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetClinicalInformation(org.hl7.fhir.String newClinicalInformation, NotificationChain msgs) {
-		org.hl7.fhir.String oldClinicalInformation = clinicalInformation;
-		clinicalInformation = newClinicalInformation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION, oldClinicalInformation, newClinicalInformation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClinicalInformation(org.hl7.fhir.String newClinicalInformation) {
-		if (newClinicalInformation != clinicalInformation) {
-			NotificationChain msgs = null;
-			if (clinicalInformation != null)
-				msgs = ((InternalEObject)clinicalInformation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION, null, msgs);
-			if (newClinicalInformation != null)
-				msgs = ((InternalEObject)newClinicalInformation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION, null, msgs);
-			msgs = basicSetClinicalInformation(newClinicalInformation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION, newClinicalInformation, newClinicalInformation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Reference> getProcedure() {
 		if (procedure == null) {
 			procedure = new EObjectContainmentEList<Reference>(Reference.class, this, FhirPackage.IMAGING_STUDY__PROCEDURE);
@@ -856,8 +802,6 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 				return basicSetNumberOfSeries(null, msgs);
 			case FhirPackage.IMAGING_STUDY__NUMBER_OF_INSTANCES:
 				return basicSetNumberOfInstances(null, msgs);
-			case FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION:
-				return basicSetClinicalInformation(null, msgs);
 			case FhirPackage.IMAGING_STUDY__PROCEDURE:
 				return ((InternalEList<?>)getProcedure()).basicRemove(otherEnd, msgs);
 			case FhirPackage.IMAGING_STUDY__INTERPRETER:
@@ -902,8 +846,6 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 				return getNumberOfSeries();
 			case FhirPackage.IMAGING_STUDY__NUMBER_OF_INSTANCES:
 				return getNumberOfInstances();
-			case FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION:
-				return getClinicalInformation();
 			case FhirPackage.IMAGING_STUDY__PROCEDURE:
 				return getProcedure();
 			case FhirPackage.IMAGING_STUDY__INTERPRETER:
@@ -963,9 +905,6 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 				return;
 			case FhirPackage.IMAGING_STUDY__NUMBER_OF_INSTANCES:
 				setNumberOfInstances((UnsignedInt)newValue);
-				return;
-			case FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION:
-				setClinicalInformation((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.IMAGING_STUDY__PROCEDURE:
 				getProcedure().clear();
@@ -1029,9 +968,6 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 			case FhirPackage.IMAGING_STUDY__NUMBER_OF_INSTANCES:
 				setNumberOfInstances((UnsignedInt)null);
 				return;
-			case FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION:
-				setClinicalInformation((org.hl7.fhir.String)null);
-				return;
 			case FhirPackage.IMAGING_STUDY__PROCEDURE:
 				getProcedure().clear();
 				return;
@@ -1080,8 +1016,6 @@ public class ImagingStudyImpl extends DomainResourceImpl implements ImagingStudy
 				return numberOfSeries != null;
 			case FhirPackage.IMAGING_STUDY__NUMBER_OF_INSTANCES:
 				return numberOfInstances != null;
-			case FhirPackage.IMAGING_STUDY__CLINICAL_INFORMATION:
-				return clinicalInformation != null;
 			case FhirPackage.IMAGING_STUDY__PROCEDURE:
 				return procedure != null && !procedure.isEmpty();
 			case FhirPackage.IMAGING_STUDY__INTERPRETER:

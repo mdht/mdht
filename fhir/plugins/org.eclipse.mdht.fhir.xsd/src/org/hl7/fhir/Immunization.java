@@ -432,13 +432,13 @@ public interface Immunization extends DomainResource {
 	 * The quantity of vaccine product that was administered.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Dose Quantity</em>' containment reference.
-	 * @see #setDoseQuantity(Quantity)
+	 * @see #setDoseQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getImmunization_DoseQuantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='doseQuantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getDoseQuantity();
+	SimpleQuantity getDoseQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.Immunization#getDoseQuantity <em>Dose Quantity</em>}' containment reference.
@@ -448,7 +448,7 @@ public interface Immunization extends DomainResource {
 	 * @see #getDoseQuantity()
 	 * @generated
 	 */
-	void setDoseQuantity(Quantity value);
+	void setDoseQuantity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Explanation</b></em>' containment reference.

@@ -18,17 +18,17 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getRequestDetail <em>Request Detail</em>}</li>
- *   <li>{@link org.hl7.fhir.DiagnosticReport#getServiceCategory <em>Service Category</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getCategory <em>Category</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getSubject <em>Subject</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getEncounter <em>Encounter</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getEffectiveDateTime <em>Effective Date Time</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getEffectivePeriod <em>Effective Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getPerformer <em>Performer</em>}</li>
+ *   <li>{@link org.hl7.fhir.DiagnosticReport#getRequest <em>Request</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getSpecimen <em>Specimen</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getResult <em>Result</em>}</li>
  *   <li>{@link org.hl7.fhir.DiagnosticReport#getImagingStudy <em>Imaging Study</em>}</li>
@@ -44,30 +44,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DiagnosticReport extends DomainResource {
 	/**
-	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Identifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A code or name that describes this diagnostic report.
+	 * The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Code</em>' containment reference.
-	 * @see #setCode(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Code()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='code' namespace='##targetNamespace'"
+	 * @return the value of the '<em>Identifier</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Identifier()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='identifier' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CodeableConcept getCode();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' containment reference.
-	 * @see #getCode()
-	 * @generated
-	 */
-	void setCode(CodeableConcept value);
+	EList<Identifier> getIdentifier();
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
@@ -96,30 +86,56 @@ public interface DiagnosticReport extends DomainResource {
 	void setStatus(DiagnosticReportStatus value);
 
 	/**
-	 * Returns the value of the '<em><b>Issued</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Category</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The date and time that this version of the report was released from the source diagnostic service.
+	 * A code that classifies the dlinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Issued</em>' containment reference.
-	 * @see #setIssued(Instant)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Issued()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='issued' namespace='##targetNamespace'"
+	 * @return the value of the '<em>Category</em>' containment reference.
+	 * @see #setCategory(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Category()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='category' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Instant getIssued();
+	CodeableConcept getCategory();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getCategory <em>Category</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Issued</em>' containment reference.
-	 * @see #getIssued()
+	 * @param value the new value of the '<em>Category</em>' containment reference.
+	 * @see #getCategory()
 	 * @generated
 	 */
-	void setIssued(Instant value);
+	void setCategory(CodeableConcept value);
+
+	/**
+	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A code or name that describes this diagnostic report.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Code</em>' containment reference.
+	 * @see #setCode(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Code()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='code' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	CodeableConcept getCode();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getCode <em>Code</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Code</em>' containment reference.
+	 * @see #getCode()
+	 * @generated
+	 */
+	void setCode(CodeableConcept value);
 
 	/**
 	 * Returns the value of the '<em><b>Subject</b></em>' containment reference.
@@ -148,32 +164,6 @@ public interface DiagnosticReport extends DomainResource {
 	void setSubject(Reference value);
 
 	/**
-	 * Returns the value of the '<em><b>Performer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The diagnostic service that is responsible for issuing the report.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Performer</em>' containment reference.
-	 * @see #setPerformer(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Performer()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='performer' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Reference getPerformer();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getPerformer <em>Performer</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Performer</em>' containment reference.
-	 * @see #getPerformer()
-	 * @generated
-	 */
-	void setPerformer(Reference value);
-
-	/**
 	 * Returns the value of the '<em><b>Encounter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,64 +188,6 @@ public interface DiagnosticReport extends DomainResource {
 	 * @generated
 	 */
 	void setEncounter(Reference value);
-
-	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.Identifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Identifier</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Identifier()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='identifier' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<Identifier> getIdentifier();
-
-	/**
-	 * Returns the value of the '<em><b>Request Detail</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.Reference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Details concerning a test requested.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Request Detail</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_RequestDetail()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='requestDetail' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<Reference> getRequestDetail();
-
-	/**
-	 * Returns the value of the '<em><b>Service Category</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The section of the diagnostic service that performs the examination e.g. biochemistry, hematology, MRI.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Service Category</em>' containment reference.
-	 * @see #setServiceCategory(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_ServiceCategory()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='serviceCategory' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	CodeableConcept getServiceCategory();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getServiceCategory <em>Service Category</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Service Category</em>' containment reference.
-	 * @see #getServiceCategory()
-	 * @generated
-	 */
-	void setServiceCategory(CodeableConcept value);
 
 	/**
 	 * Returns the value of the '<em><b>Effective Date Time</b></em>' containment reference.
@@ -310,6 +242,74 @@ public interface DiagnosticReport extends DomainResource {
 	 * @generated
 	 */
 	void setEffectivePeriod(Period value);
+
+	/**
+	 * Returns the value of the '<em><b>Issued</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The date and time that this version of the report was released from the source diagnostic service.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Issued</em>' containment reference.
+	 * @see #setIssued(Instant)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Issued()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='issued' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Instant getIssued();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getIssued <em>Issued</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Issued</em>' containment reference.
+	 * @see #getIssued()
+	 * @generated
+	 */
+	void setIssued(Instant value);
+
+	/**
+	 * Returns the value of the '<em><b>Performer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The diagnostic service that is responsible for issuing the report.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Performer</em>' containment reference.
+	 * @see #setPerformer(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Performer()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='performer' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getPerformer();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.DiagnosticReport#getPerformer <em>Performer</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Performer</em>' containment reference.
+	 * @see #getPerformer()
+	 * @generated
+	 */
+	void setPerformer(Reference value);
+
+	/**
+	 * Returns the value of the '<em><b>Request</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Reference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Details concerning a test requested.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Request</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Request()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='request' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<Reference> getRequest();
 
 	/**
 	 * Returns the value of the '<em><b>Specimen</b></em>' containment reference list.

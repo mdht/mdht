@@ -38,14 +38,14 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getExperimental <em>Experimental</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getPublisher <em>Publisher</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getContact <em>Contact</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getDate <em>Date</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getRequirements <em>Requirements</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getExperimental <em>Experimental</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getDate <em>Date</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getIdempotent <em>Idempotent</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.OperationDefinitionImpl#getNotes <em>Notes</em>}</li>
@@ -90,6 +90,36 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	protected org.hl7.fhir.String name;
 
 	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected Code status;
+
+	/**
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected OperationKind kind;
+
+	/**
+	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExperimental()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.hl7.fhir.Boolean experimental;
+
+	/**
 	 * The cached value of the '{@link #getPublisher() <em>Publisher</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +140,16 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	protected EList<OperationDefinitionContact> contact;
 
 	/**
+	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateTime date;
+
+	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,46 +168,6 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	 * @ordered
 	 */
 	protected org.hl7.fhir.String requirements;
-
-	/**
-	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatus()
-	 * @generated
-	 * @ordered
-	 */
-	protected Code status;
-
-	/**
-	 * The cached value of the '{@link #getExperimental() <em>Experimental</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExperimental()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.Boolean experimental;
-
-	/**
-	 * The cached value of the '{@link #getDate() <em>Date</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected DateTime date;
-
-	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected OperationKind kind;
 
 	/**
 	 * The cached value of the '{@link #getIdempotent() <em>Idempotent</em>}' containment reference.
@@ -402,6 +402,135 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Code getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
+		Code oldStatus = status;
+		status = newStatus;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__STATUS, oldStatus, newStatus);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStatus(Code newStatus) {
+		if (newStatus != status) {
+			NotificationChain msgs = null;
+			if (status != null)
+				msgs = ((InternalEObject)status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__STATUS, null, msgs);
+			if (newStatus != null)
+				msgs = ((InternalEObject)newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__STATUS, null, msgs);
+			msgs = basicSetStatus(newStatus, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__STATUS, newStatus, newStatus));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationKind getKind() {
+		return kind;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetKind(OperationKind newKind, NotificationChain msgs) {
+		OperationKind oldKind = kind;
+		kind = newKind;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__KIND, oldKind, newKind);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setKind(OperationKind newKind) {
+		if (newKind != kind) {
+			NotificationChain msgs = null;
+			if (kind != null)
+				msgs = ((InternalEObject)kind).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__KIND, null, msgs);
+			if (newKind != null)
+				msgs = ((InternalEObject)newKind).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__KIND, null, msgs);
+			msgs = basicSetKind(newKind, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__KIND, newKind, newKind));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.hl7.fhir.Boolean getExperimental() {
+		return experimental;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExperimental(org.hl7.fhir.Boolean newExperimental, NotificationChain msgs) {
+		org.hl7.fhir.Boolean oldExperimental = experimental;
+		experimental = newExperimental;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, oldExperimental, newExperimental);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExperimental(org.hl7.fhir.Boolean newExperimental) {
+		if (newExperimental != experimental) {
+			NotificationChain msgs = null;
+			if (experimental != null)
+				msgs = ((InternalEObject)experimental).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, null, msgs);
+			if (newExperimental != null)
+				msgs = ((InternalEObject)newExperimental).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, null, msgs);
+			msgs = basicSetExperimental(newExperimental, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, newExperimental, newExperimental));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public org.hl7.fhir.String getPublisher() {
 		return publisher;
 	}
@@ -450,6 +579,49 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 			contact = new EObjectContainmentEList<OperationDefinitionContact>(OperationDefinitionContact.class, this, FhirPackage.OPERATION_DEFINITION__CONTACT);
 		}
 		return contact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateTime getDate() {
+		return date;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDate(DateTime newDate, NotificationChain msgs) {
+		DateTime oldDate = date;
+		date = newDate;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__DATE, oldDate, newDate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDate(DateTime newDate) {
+		if (newDate != date) {
+			NotificationChain msgs = null;
+			if (date != null)
+				msgs = ((InternalEObject)date).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__DATE, null, msgs);
+			if (newDate != null)
+				msgs = ((InternalEObject)newDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__DATE, null, msgs);
+			msgs = basicSetDate(newDate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__DATE, newDate, newDate));
 	}
 
 	/**
@@ -536,178 +708,6 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__REQUIREMENTS, newRequirements, newRequirements));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Code getStatus() {
-		return status;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStatus(Code newStatus, NotificationChain msgs) {
-		Code oldStatus = status;
-		status = newStatus;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__STATUS, oldStatus, newStatus);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatus(Code newStatus) {
-		if (newStatus != status) {
-			NotificationChain msgs = null;
-			if (status != null)
-				msgs = ((InternalEObject)status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__STATUS, null, msgs);
-			if (newStatus != null)
-				msgs = ((InternalEObject)newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__STATUS, null, msgs);
-			msgs = basicSetStatus(newStatus, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__STATUS, newStatus, newStatus));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.Boolean getExperimental() {
-		return experimental;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetExperimental(org.hl7.fhir.Boolean newExperimental, NotificationChain msgs) {
-		org.hl7.fhir.Boolean oldExperimental = experimental;
-		experimental = newExperimental;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, oldExperimental, newExperimental);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExperimental(org.hl7.fhir.Boolean newExperimental) {
-		if (newExperimental != experimental) {
-			NotificationChain msgs = null;
-			if (experimental != null)
-				msgs = ((InternalEObject)experimental).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, null, msgs);
-			if (newExperimental != null)
-				msgs = ((InternalEObject)newExperimental).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, null, msgs);
-			msgs = basicSetExperimental(newExperimental, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL, newExperimental, newExperimental));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DateTime getDate() {
-		return date;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDate(DateTime newDate, NotificationChain msgs) {
-		DateTime oldDate = date;
-		date = newDate;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__DATE, oldDate, newDate);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDate(DateTime newDate) {
-		if (newDate != date) {
-			NotificationChain msgs = null;
-			if (date != null)
-				msgs = ((InternalEObject)date).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__DATE, null, msgs);
-			if (newDate != null)
-				msgs = ((InternalEObject)newDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__DATE, null, msgs);
-			msgs = basicSetDate(newDate, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__DATE, newDate, newDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationKind getKind() {
-		return kind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetKind(OperationKind newKind, NotificationChain msgs) {
-		OperationKind oldKind = kind;
-		kind = newKind;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__KIND, oldKind, newKind);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setKind(OperationKind newKind) {
-		if (newKind != kind) {
-			NotificationChain msgs = null;
-			if (kind != null)
-				msgs = ((InternalEObject)kind).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__KIND, null, msgs);
-			if (newKind != null)
-				msgs = ((InternalEObject)newKind).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.OPERATION_DEFINITION__KIND, null, msgs);
-			msgs = basicSetKind(newKind, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.OPERATION_DEFINITION__KIND, newKind, newKind));
 	}
 
 	/**
@@ -1006,22 +1006,22 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 				return basicSetVersion(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION__NAME:
 				return basicSetName(null, msgs);
+			case FhirPackage.OPERATION_DEFINITION__STATUS:
+				return basicSetStatus(null, msgs);
+			case FhirPackage.OPERATION_DEFINITION__KIND:
+				return basicSetKind(null, msgs);
+			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
+				return basicSetExperimental(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION__PUBLISHER:
 				return basicSetPublisher(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION__CONTACT:
 				return ((InternalEList<?>)getContact()).basicRemove(otherEnd, msgs);
+			case FhirPackage.OPERATION_DEFINITION__DATE:
+				return basicSetDate(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION__DESCRIPTION:
 				return basicSetDescription(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION__REQUIREMENTS:
 				return basicSetRequirements(null, msgs);
-			case FhirPackage.OPERATION_DEFINITION__STATUS:
-				return basicSetStatus(null, msgs);
-			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
-				return basicSetExperimental(null, msgs);
-			case FhirPackage.OPERATION_DEFINITION__DATE:
-				return basicSetDate(null, msgs);
-			case FhirPackage.OPERATION_DEFINITION__KIND:
-				return basicSetKind(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION__IDEMPOTENT:
 				return basicSetIdempotent(null, msgs);
 			case FhirPackage.OPERATION_DEFINITION__CODE:
@@ -1056,22 +1056,22 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 				return getVersion();
 			case FhirPackage.OPERATION_DEFINITION__NAME:
 				return getName();
+			case FhirPackage.OPERATION_DEFINITION__STATUS:
+				return getStatus();
+			case FhirPackage.OPERATION_DEFINITION__KIND:
+				return getKind();
+			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
+				return getExperimental();
 			case FhirPackage.OPERATION_DEFINITION__PUBLISHER:
 				return getPublisher();
 			case FhirPackage.OPERATION_DEFINITION__CONTACT:
 				return getContact();
+			case FhirPackage.OPERATION_DEFINITION__DATE:
+				return getDate();
 			case FhirPackage.OPERATION_DEFINITION__DESCRIPTION:
 				return getDescription();
 			case FhirPackage.OPERATION_DEFINITION__REQUIREMENTS:
 				return getRequirements();
-			case FhirPackage.OPERATION_DEFINITION__STATUS:
-				return getStatus();
-			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
-				return getExperimental();
-			case FhirPackage.OPERATION_DEFINITION__DATE:
-				return getDate();
-			case FhirPackage.OPERATION_DEFINITION__KIND:
-				return getKind();
 			case FhirPackage.OPERATION_DEFINITION__IDEMPOTENT:
 				return getIdempotent();
 			case FhirPackage.OPERATION_DEFINITION__CODE:
@@ -1110,6 +1110,15 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 			case FhirPackage.OPERATION_DEFINITION__NAME:
 				setName((org.hl7.fhir.String)newValue);
 				return;
+			case FhirPackage.OPERATION_DEFINITION__STATUS:
+				setStatus((Code)newValue);
+				return;
+			case FhirPackage.OPERATION_DEFINITION__KIND:
+				setKind((OperationKind)newValue);
+				return;
+			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
+				setExperimental((org.hl7.fhir.Boolean)newValue);
+				return;
 			case FhirPackage.OPERATION_DEFINITION__PUBLISHER:
 				setPublisher((org.hl7.fhir.String)newValue);
 				return;
@@ -1117,23 +1126,14 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 				getContact().clear();
 				getContact().addAll((Collection<? extends OperationDefinitionContact>)newValue);
 				return;
+			case FhirPackage.OPERATION_DEFINITION__DATE:
+				setDate((DateTime)newValue);
+				return;
 			case FhirPackage.OPERATION_DEFINITION__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__REQUIREMENTS:
 				setRequirements((org.hl7.fhir.String)newValue);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__STATUS:
-				setStatus((Code)newValue);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
-				setExperimental((org.hl7.fhir.Boolean)newValue);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__DATE:
-				setDate((DateTime)newValue);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__KIND:
-				setKind((OperationKind)newValue);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__IDEMPOTENT:
 				setIdempotent((org.hl7.fhir.Boolean)newValue);
@@ -1182,29 +1182,29 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 			case FhirPackage.OPERATION_DEFINITION__NAME:
 				setName((org.hl7.fhir.String)null);
 				return;
+			case FhirPackage.OPERATION_DEFINITION__STATUS:
+				setStatus((Code)null);
+				return;
+			case FhirPackage.OPERATION_DEFINITION__KIND:
+				setKind((OperationKind)null);
+				return;
+			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
+				setExperimental((org.hl7.fhir.Boolean)null);
+				return;
 			case FhirPackage.OPERATION_DEFINITION__PUBLISHER:
 				setPublisher((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__CONTACT:
 				getContact().clear();
 				return;
+			case FhirPackage.OPERATION_DEFINITION__DATE:
+				setDate((DateTime)null);
+				return;
 			case FhirPackage.OPERATION_DEFINITION__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__REQUIREMENTS:
 				setRequirements((org.hl7.fhir.String)null);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__STATUS:
-				setStatus((Code)null);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
-				setExperimental((org.hl7.fhir.Boolean)null);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__DATE:
-				setDate((DateTime)null);
-				return;
-			case FhirPackage.OPERATION_DEFINITION__KIND:
-				setKind((OperationKind)null);
 				return;
 			case FhirPackage.OPERATION_DEFINITION__IDEMPOTENT:
 				setIdempotent((org.hl7.fhir.Boolean)null);
@@ -1248,22 +1248,22 @@ public class OperationDefinitionImpl extends DomainResourceImpl implements Opera
 				return version != null;
 			case FhirPackage.OPERATION_DEFINITION__NAME:
 				return name != null;
+			case FhirPackage.OPERATION_DEFINITION__STATUS:
+				return status != null;
+			case FhirPackage.OPERATION_DEFINITION__KIND:
+				return kind != null;
+			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
+				return experimental != null;
 			case FhirPackage.OPERATION_DEFINITION__PUBLISHER:
 				return publisher != null;
 			case FhirPackage.OPERATION_DEFINITION__CONTACT:
 				return contact != null && !contact.isEmpty();
+			case FhirPackage.OPERATION_DEFINITION__DATE:
+				return date != null;
 			case FhirPackage.OPERATION_DEFINITION__DESCRIPTION:
 				return description != null;
 			case FhirPackage.OPERATION_DEFINITION__REQUIREMENTS:
 				return requirements != null;
-			case FhirPackage.OPERATION_DEFINITION__STATUS:
-				return status != null;
-			case FhirPackage.OPERATION_DEFINITION__EXPERIMENTAL:
-				return experimental != null;
-			case FhirPackage.OPERATION_DEFINITION__DATE:
-				return date != null;
-			case FhirPackage.OPERATION_DEFINITION__KIND:
-				return kind != null;
 			case FhirPackage.OPERATION_DEFINITION__IDEMPOTENT:
 				return idempotent != null;
 			case FhirPackage.OPERATION_DEFINITION__CODE:

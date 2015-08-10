@@ -398,13 +398,13 @@ public interface CarePlanDetail extends BackboneElement {
 	 * Identifies the quantity expected to be consumed in a given day.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Daily Amount</em>' containment reference.
-	 * @see #setDailyAmount(Quantity)
+	 * @see #setDailyAmount(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getCarePlanDetail_DailyAmount()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='dailyAmount' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getDailyAmount();
+	SimpleQuantity getDailyAmount();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.CarePlanDetail#getDailyAmount <em>Daily Amount</em>}' containment reference.
@@ -414,7 +414,7 @@ public interface CarePlanDetail extends BackboneElement {
 	 * @see #getDailyAmount()
 	 * @generated
 	 */
-	void setDailyAmount(Quantity value);
+	void setDailyAmount(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' containment reference.
@@ -424,13 +424,13 @@ public interface CarePlanDetail extends BackboneElement {
 	 * Identifies the quantity expected to be supplied, addministered or consumed by the subject.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quantity</em>' containment reference.
-	 * @see #setQuantity(Quantity)
+	 * @see #setQuantity(SimpleQuantity)
 	 * @see org.hl7.fhir.FhirPackage#getCarePlanDetail_Quantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='quantity' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Quantity getQuantity();
+	SimpleQuantity getQuantity();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.CarePlanDetail#getQuantity <em>Quantity</em>}' containment reference.
@@ -440,7 +440,7 @@ public interface CarePlanDetail extends BackboneElement {
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	void setQuantity(Quantity value);
+	void setQuantity(SimpleQuantity value);
 
 	/**
 	 * Returns the value of the '<em><b>Note</b></em>' containment reference.

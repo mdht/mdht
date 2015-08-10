@@ -29,6 +29,7 @@ import org.hl7.fhir.HumanName;
 import org.hl7.fhir.Id;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Instant;
+import org.hl7.fhir.Markdown;
 import org.hl7.fhir.Meta;
 import org.hl7.fhir.Oid;
 import org.hl7.fhir.Period;
@@ -69,6 +70,7 @@ import org.hl7.fhir.Uuid;
  *   <li>{@link org.hl7.fhir.impl.ExtensionImpl#getValueId <em>Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ExtensionImpl#getValueUnsignedInt <em>Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ExtensionImpl#getValuePositiveInt <em>Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ExtensionImpl#getValueMarkdown <em>Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ExtensionImpl#getValueAnnotation <em>Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ExtensionImpl#getValueAttachment <em>Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ExtensionImpl#getValueIdentifier <em>Value Identifier</em>}</li>
@@ -251,6 +253,16 @@ public class ExtensionImpl extends ElementImpl implements Extension {
 	 * @ordered
 	 */
 	protected PositiveInt valuePositiveInt;
+
+	/**
+	 * The cached value of the '{@link #getValueMarkdown() <em>Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueMarkdown()
+	 * @generated
+	 * @ordered
+	 */
+	protected Markdown valueMarkdown;
 
 	/**
 	 * The cached value of the '{@link #getValueAnnotation() <em>Value Annotation</em>}' containment reference.
@@ -1154,6 +1166,49 @@ public class ExtensionImpl extends ElementImpl implements Extension {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Markdown getValueMarkdown() {
+		return valueMarkdown;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValueMarkdown(Markdown newValueMarkdown, NotificationChain msgs) {
+		Markdown oldValueMarkdown = valueMarkdown;
+		valueMarkdown = newValueMarkdown;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.EXTENSION__VALUE_MARKDOWN, oldValueMarkdown, newValueMarkdown);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValueMarkdown(Markdown newValueMarkdown) {
+		if (newValueMarkdown != valueMarkdown) {
+			NotificationChain msgs = null;
+			if (valueMarkdown != null)
+				msgs = ((InternalEObject)valueMarkdown).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.EXTENSION__VALUE_MARKDOWN, null, msgs);
+			if (newValueMarkdown != null)
+				msgs = ((InternalEObject)newValueMarkdown).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.EXTENSION__VALUE_MARKDOWN, null, msgs);
+			msgs = basicSetValueMarkdown(newValueMarkdown, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.EXTENSION__VALUE_MARKDOWN, newValueMarkdown, newValueMarkdown));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Annotation getValueAnnotation() {
 		return valueAnnotation;
 	}
@@ -1941,6 +1996,8 @@ public class ExtensionImpl extends ElementImpl implements Extension {
 				return basicSetValueUnsignedInt(null, msgs);
 			case FhirPackage.EXTENSION__VALUE_POSITIVE_INT:
 				return basicSetValuePositiveInt(null, msgs);
+			case FhirPackage.EXTENSION__VALUE_MARKDOWN:
+				return basicSetValueMarkdown(null, msgs);
 			case FhirPackage.EXTENSION__VALUE_ANNOTATION:
 				return basicSetValueAnnotation(null, msgs);
 			case FhirPackage.EXTENSION__VALUE_ATTACHMENT:
@@ -2019,6 +2076,8 @@ public class ExtensionImpl extends ElementImpl implements Extension {
 				return getValueUnsignedInt();
 			case FhirPackage.EXTENSION__VALUE_POSITIVE_INT:
 				return getValuePositiveInt();
+			case FhirPackage.EXTENSION__VALUE_MARKDOWN:
+				return getValueMarkdown();
 			case FhirPackage.EXTENSION__VALUE_ANNOTATION:
 				return getValueAnnotation();
 			case FhirPackage.EXTENSION__VALUE_ATTACHMENT:
@@ -2114,6 +2173,9 @@ public class ExtensionImpl extends ElementImpl implements Extension {
 				return;
 			case FhirPackage.EXTENSION__VALUE_POSITIVE_INT:
 				setValuePositiveInt((PositiveInt)newValue);
+				return;
+			case FhirPackage.EXTENSION__VALUE_MARKDOWN:
+				setValueMarkdown((Markdown)newValue);
 				return;
 			case FhirPackage.EXTENSION__VALUE_ANNOTATION:
 				setValueAnnotation((Annotation)newValue);
@@ -2229,6 +2291,9 @@ public class ExtensionImpl extends ElementImpl implements Extension {
 			case FhirPackage.EXTENSION__VALUE_POSITIVE_INT:
 				setValuePositiveInt((PositiveInt)null);
 				return;
+			case FhirPackage.EXTENSION__VALUE_MARKDOWN:
+				setValueMarkdown((Markdown)null);
+				return;
 			case FhirPackage.EXTENSION__VALUE_ANNOTATION:
 				setValueAnnotation((Annotation)null);
 				return;
@@ -2327,6 +2392,8 @@ public class ExtensionImpl extends ElementImpl implements Extension {
 				return valueUnsignedInt != null;
 			case FhirPackage.EXTENSION__VALUE_POSITIVE_INT:
 				return valuePositiveInt != null;
+			case FhirPackage.EXTENSION__VALUE_MARKDOWN:
+				return valueMarkdown != null;
 			case FhirPackage.EXTENSION__VALUE_ANNOTATION:
 				return valueAnnotation != null;
 			case FhirPackage.EXTENSION__VALUE_ATTACHMENT:

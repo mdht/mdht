@@ -31,6 +31,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getAlias <em>Alias</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMin <em>Min</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMax <em>Max</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getBase <em>Base</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getNameReference <em>Name Reference</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueBoolean <em>Default Value Boolean</em>}</li>
@@ -49,6 +50,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueId <em>Default Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueUnsignedInt <em>Default Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValuePositiveInt <em>Default Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueMarkdown <em>Default Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueAnnotation <em>Default Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueAttachment <em>Default Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getDefaultValueIdentifier <em>Default Value Identifier</em>}</li>
@@ -83,6 +85,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedId <em>Fixed Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedUnsignedInt <em>Fixed Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedPositiveInt <em>Fixed Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedMarkdown <em>Fixed Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedAnnotation <em>Fixed Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedAttachment <em>Fixed Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getFixedIdentifier <em>Fixed Identifier</em>}</li>
@@ -116,6 +119,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternId <em>Pattern Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternUnsignedInt <em>Pattern Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternPositiveInt <em>Pattern Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternMarkdown <em>Pattern Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternAnnotation <em>Pattern Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternAttachment <em>Pattern Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getPatternIdentifier <em>Pattern Identifier</em>}</li>
@@ -149,6 +153,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleId <em>Example Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleUnsignedInt <em>Example Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExamplePositiveInt <em>Example Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleMarkdown <em>Example Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleAnnotation <em>Example Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleAttachment <em>Example Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getExampleIdentifier <em>Example Identifier</em>}</li>
@@ -182,6 +187,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueId <em>Min Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueUnsignedInt <em>Min Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValuePositiveInt <em>Min Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueMarkdown <em>Min Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueAnnotation <em>Min Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueAttachment <em>Min Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMinValueIdentifier <em>Min Value Identifier</em>}</li>
@@ -215,6 +221,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueId <em>Max Value Id</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueUnsignedInt <em>Max Value Unsigned Int</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValuePositiveInt <em>Max Value Positive Int</em>}</li>
+ *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueMarkdown <em>Max Value Markdown</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueAnnotation <em>Max Value Annotation</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueAttachment <em>Max Value Attachment</em>}</li>
  *   <li>{@link org.hl7.fhir.ElementDefinition#getMaxValueIdentifier <em>Max Value Identifier</em>}</li>
@@ -362,7 +369,7 @@ public interface ElementDefinition extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Indicates that the element is sliced into a set of alternative definitions (there are multiple definitions on a single element in the base resource). The set of slices is any elements that come after this in the element sequence that have the same path, until a shorter path occurs (the shorter path terminates the set).
+	 * Indicates that the element is sliced into a set of alternative definitions (i.e. in a structure definition, there are multiple different constraints on a single element in the base resource). The set of slices is any elements that come after this in the element sequence that have the same path, until a shorter path occurs (the shorter path terminates the set).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Slicing</em>' containment reference.
 	 * @see #setSlicing(ElementDefinitionSlicing)
@@ -417,13 +424,13 @@ public interface ElementDefinition extends Element {
 	 * Provides a complete explanation of the meaning of the data element for human readability.  For the case of elements derived from existing elements (e.g. constraints), the definition SHALL be consistent with the base definition, but convey the meaning of the element in the particular context of use of the resource.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Definition</em>' containment reference.
-	 * @see #setDefinition(org.hl7.fhir.String)
+	 * @see #setDefinition(Markdown)
 	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_Definition()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='definition' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getDefinition();
+	Markdown getDefinition();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getDefinition <em>Definition</em>}' containment reference.
@@ -433,7 +440,7 @@ public interface ElementDefinition extends Element {
 	 * @see #getDefinition()
 	 * @generated
 	 */
-	void setDefinition(org.hl7.fhir.String value);
+	void setDefinition(Markdown value);
 
 	/**
 	 * Returns the value of the '<em><b>Comments</b></em>' containment reference.
@@ -443,13 +450,13 @@ public interface ElementDefinition extends Element {
 	 * Explanatory notes and implementation guidance about the data element, including notes about how to use the data properly, exceptions to proper use, etc.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Comments</em>' containment reference.
-	 * @see #setComments(org.hl7.fhir.String)
+	 * @see #setComments(Markdown)
 	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_Comments()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='comments' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getComments();
+	Markdown getComments();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getComments <em>Comments</em>}' containment reference.
@@ -459,7 +466,7 @@ public interface ElementDefinition extends Element {
 	 * @see #getComments()
 	 * @generated
 	 */
-	void setComments(org.hl7.fhir.String value);
+	void setComments(Markdown value);
 
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference.
@@ -469,13 +476,13 @@ public interface ElementDefinition extends Element {
 	 * This element is for traceability of why the element was created and why the constraints exist as they do. This may be used to point to source materials or specifications that drove the structure of this element.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Requirements</em>' containment reference.
-	 * @see #setRequirements(org.hl7.fhir.String)
+	 * @see #setRequirements(Markdown)
 	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_Requirements()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='requirements' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getRequirements();
+	Markdown getRequirements();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getRequirements <em>Requirements</em>}' containment reference.
@@ -485,7 +492,7 @@ public interface ElementDefinition extends Element {
 	 * @see #getRequirements()
 	 * @generated
 	 */
-	void setRequirements(org.hl7.fhir.String value);
+	void setRequirements(Markdown value);
 
 	/**
 	 * Returns the value of the '<em><b>Alias</b></em>' containment reference list.
@@ -554,6 +561,32 @@ public interface ElementDefinition extends Element {
 	 * @generated
 	 */
 	void setMax(org.hl7.fhir.String value);
+
+	/**
+	 * Returns the value of the '<em><b>Base</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Information about the base definition of the element, provided to make it unncessary for tools to trace the derviation of the element through the derived and related profiles. This information is only provided where the element definition represents a constraint on another element definition, and must be present if there is a base element definition.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Base</em>' containment reference.
+	 * @see #setBase(ElementDefinitionBase)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_Base()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='base' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	ElementDefinitionBase getBase();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getBase <em>Base</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base</em>' containment reference.
+	 * @see #getBase()
+	 * @generated
+	 */
+	void setBase(ElementDefinitionBase value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference list.
@@ -1030,6 +1063,33 @@ public interface ElementDefinition extends Element {
 	void setDefaultValuePositiveInt(PositiveInt value);
 
 	/**
+	 * Returns the value of the '<em><b>Default Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default Value Markdown</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Default Value Markdown</em>' containment reference.
+	 * @see #setDefaultValueMarkdown(Markdown)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_DefaultValueMarkdown()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='defaultValueMarkdown' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Markdown getDefaultValueMarkdown();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getDefaultValueMarkdown <em>Default Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default Value Markdown</em>' containment reference.
+	 * @see #getDefaultValueMarkdown()
+	 * @generated
+	 */
+	void setDefaultValueMarkdown(Markdown value);
+
+	/**
 	 * Returns the value of the '<em><b>Default Value Annotation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -1496,13 +1556,13 @@ public interface ElementDefinition extends Element {
 	 * The Implicit meaning that is to be understood when this element is missing.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Meaning When Missing</em>' containment reference.
-	 * @see #setMeaningWhenMissing(org.hl7.fhir.String)
+	 * @see #setMeaningWhenMissing(Markdown)
 	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MeaningWhenMissing()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='meaningWhenMissing' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	org.hl7.fhir.String getMeaningWhenMissing();
+	Markdown getMeaningWhenMissing();
 
 	/**
 	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMeaningWhenMissing <em>Meaning When Missing</em>}' containment reference.
@@ -1512,7 +1572,7 @@ public interface ElementDefinition extends Element {
 	 * @see #getMeaningWhenMissing()
 	 * @generated
 	 */
-	void setMeaningWhenMissing(org.hl7.fhir.String value);
+	void setMeaningWhenMissing(Markdown value);
 
 	/**
 	 * Returns the value of the '<em><b>Fixed Boolean</b></em>' containment reference.
@@ -1945,6 +2005,33 @@ public interface ElementDefinition extends Element {
 	 * @generated
 	 */
 	void setFixedPositiveInt(PositiveInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Fixed Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fixed Markdown</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fixed Markdown</em>' containment reference.
+	 * @see #setFixedMarkdown(Markdown)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_FixedMarkdown()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='fixedMarkdown' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Markdown getFixedMarkdown();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getFixedMarkdown <em>Fixed Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Fixed Markdown</em>' containment reference.
+	 * @see #getFixedMarkdown()
+	 * @generated
+	 */
+	void setFixedMarkdown(Markdown value);
 
 	/**
 	 * Returns the value of the '<em><b>Fixed Annotation</b></em>' containment reference.
@@ -2838,6 +2925,33 @@ public interface ElementDefinition extends Element {
 	void setPatternPositiveInt(PositiveInt value);
 
 	/**
+	 * Returns the value of the '<em><b>Pattern Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pattern Markdown</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pattern Markdown</em>' containment reference.
+	 * @see #setPatternMarkdown(Markdown)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_PatternMarkdown()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='patternMarkdown' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Markdown getPatternMarkdown();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getPatternMarkdown <em>Pattern Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pattern Markdown</em>' containment reference.
+	 * @see #getPatternMarkdown()
+	 * @generated
+	 */
+	void setPatternMarkdown(Markdown value);
+
+	/**
 	 * Returns the value of the '<em><b>Pattern Annotation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -3727,6 +3841,33 @@ public interface ElementDefinition extends Element {
 	 * @generated
 	 */
 	void setExamplePositiveInt(PositiveInt value);
+
+	/**
+	 * Returns the value of the '<em><b>Example Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Example Markdown</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Example Markdown</em>' containment reference.
+	 * @see #setExampleMarkdown(Markdown)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_ExampleMarkdown()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='exampleMarkdown' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Markdown getExampleMarkdown();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getExampleMarkdown <em>Example Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Example Markdown</em>' containment reference.
+	 * @see #getExampleMarkdown()
+	 * @generated
+	 */
+	void setExampleMarkdown(Markdown value);
 
 	/**
 	 * Returns the value of the '<em><b>Example Annotation</b></em>' containment reference.
@@ -4620,6 +4761,33 @@ public interface ElementDefinition extends Element {
 	void setMinValuePositiveInt(PositiveInt value);
 
 	/**
+	 * Returns the value of the '<em><b>Min Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Value Markdown</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Value Markdown</em>' containment reference.
+	 * @see #setMinValueMarkdown(Markdown)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MinValueMarkdown()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='minValueMarkdown' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Markdown getMinValueMarkdown();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMinValueMarkdown <em>Min Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Value Markdown</em>' containment reference.
+	 * @see #getMinValueMarkdown()
+	 * @generated
+	 */
+	void setMinValueMarkdown(Markdown value);
+
+	/**
 	 * Returns the value of the '<em><b>Min Value Annotation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -5511,6 +5679,33 @@ public interface ElementDefinition extends Element {
 	void setMaxValuePositiveInt(PositiveInt value);
 
 	/**
+	 * Returns the value of the '<em><b>Max Value Markdown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Value Markdown</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Value Markdown</em>' containment reference.
+	 * @see #setMaxValueMarkdown(Markdown)
+	 * @see org.hl7.fhir.FhirPackage#getElementDefinition_MaxValueMarkdown()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='maxValueMarkdown' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Markdown getMaxValueMarkdown();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.ElementDefinition#getMaxValueMarkdown <em>Max Value Markdown</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Value Markdown</em>' containment reference.
+	 * @see #getMaxValueMarkdown()
+	 * @generated
+	 */
+	void setMaxValueMarkdown(Markdown value);
+
+	/**
 	 * Returns the value of the '<em><b>Max Value Annotation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -6032,7 +6227,7 @@ public interface ElementDefinition extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * If true, conformant resource authors SHALL be capable of providing a value for the element and resource consumers SHALL be capable of extracting and doing something useful with the data element.  If false, the element may be ignored and not supported.
+	 * If true, implementations that produce or consume resources SHALL provide "support" for the element in some meaningful way.  If false, the element may be ignored and not supported.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Must Support</em>' containment reference.
 	 * @see #setMustSupport(org.hl7.fhir.Boolean)

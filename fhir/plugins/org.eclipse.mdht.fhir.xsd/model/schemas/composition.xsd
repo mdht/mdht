@@ -27,18 +27,18 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jul 20, 2015 14:38+0000 for FHIR v0.5.0 
+  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Composition" type="Composition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.</xs:documentation>
+      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Composition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.</xs:documentation>
+      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -64,7 +64,7 @@
               <xs:documentation xml:lang="en">A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="title" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Official human-readable label for the composition.</xs:documentation>
            </xs:annotation>
@@ -120,7 +120,7 @@
   </xs:complexType>
   <xs:complexType name="Composition.Attester">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.</xs:documentation>
+      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -146,7 +146,7 @@
   </xs:complexType>
   <xs:complexType name="Composition.Event">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.</xs:documentation>
+      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -163,7 +163,7 @@
           </xs:element>
           <xs:element name="detail" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Full details for the event(s) the composition/documentation consents.</xs:documentation>
+              <xs:documentation xml:lang="en">The description and/or reference of the event(s) being documented. For example, this could be used to document such a colonoscopy or an appendectomy.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -172,7 +172,7 @@
   </xs:complexType>
   <xs:complexType name="Composition.Section">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.</xs:documentation>
+      <xs:documentation xml:lang="en">A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -187,9 +187,29 @@
               <xs:documentation xml:lang="en">A code identifying the kind of content contained within the section. This must be consistent with the section title.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="content" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="text" minOccurs="0" maxOccurs="1" type="Narrative">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The content (narrative and data entries) associated with the section.</xs:documentation>
+              <xs:documentation xml:lang="en">A human-readable narrative that contains the attested content of the section, used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="mode" minOccurs="0" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="orderedBy" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">What order applies to the items in the section entries.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="entry" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to the actual resource from which the narrative in the section is derived.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="emptyReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If the section is empty, why the list is empty. An empty section typically has some text explaining the empty reason.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="section" type="Composition.Section" minOccurs="0" maxOccurs="unbounded">
@@ -213,14 +233,9 @@
           <xs:documentation xml:lang="en">This version of the composition is complete and verified by an appropriate person and no further work is planned. Any subsequent updates would be on a new version of the composition.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="appended">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The composition or document has been modified subsequent to being released as &quot;final&quot;, and is complete and verified by an authorized person. The modifications added new information to the composition or document, but did not revise existing content</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="amended">
         <xs:annotation>
-          <xs:documentation xml:lang="en">The composition or document has been modified subsequent to being released as &quot;final&quot;, and is complete and verified by an authorized person</xs:documentation>
+          <xs:documentation xml:lang="en">The composition content or the referenced resources have been modified (edited or added to) subsequent to being released as &quot;final&quot; and the composition is complete and verified by an authorized person</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="entered-in-error">

@@ -41,16 +41,6 @@ public enum CompositionStatusList implements Enumerator {
 	FINAL(1, "final", "final"),
 
 	/**
-	 * The '<em><b>Appended</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #APPENDED_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	APPENDED(2, "appended", "appended"),
-
-	/**
 	 * The '<em><b>Amended</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,7 +48,7 @@ public enum CompositionStatusList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AMENDED(3, "amended", "amended"),
+	AMENDED(2, "amended", "amended"),
 
 	/**
 	 * The '<em><b>Entered In Error</b></em>' literal object.
@@ -68,7 +58,7 @@ public enum CompositionStatusList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENTERED_IN_ERROR(4, "enteredInError", "entered-in-error");
+	ENTERED_IN_ERROR(3, "enteredInError", "entered-in-error");
 
 	/**
 	 * The '<em><b>Preliminary</b></em>' literal value.
@@ -99,32 +89,18 @@ public enum CompositionStatusList implements Enumerator {
 	public static final int FINAL_VALUE = 1;
 
 	/**
-	 * The '<em><b>Appended</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The composition or document has been modified subsequent to being released as "final", and is complete and verified by an authorized person. The modifications added new information to the composition or document, but did not revise existing content
-	 * <!-- end-model-doc -->
-	 * @see #APPENDED
-	 * @model name="appended"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int APPENDED_VALUE = 2;
-
-	/**
 	 * The '<em><b>Amended</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The composition or document has been modified subsequent to being released as "final", and is complete and verified by an authorized person
+	 * The composition content or the referenced resources have been modified (edited or added to) subsequent to being released as "final" and the composition is complete and verified by an authorized person
 	 * <!-- end-model-doc -->
 	 * @see #AMENDED
 	 * @model name="amended"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AMENDED_VALUE = 3;
+	public static final int AMENDED_VALUE = 2;
 
 	/**
 	 * The '<em><b>Entered In Error</b></em>' literal value.
@@ -138,7 +114,7 @@ public enum CompositionStatusList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ENTERED_IN_ERROR_VALUE = 4;
+	public static final int ENTERED_IN_ERROR_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Composition Status List</b></em>' enumerators.
@@ -150,7 +126,6 @@ public enum CompositionStatusList implements Enumerator {
 		new CompositionStatusList[] {
 			PRELIMINARY,
 			FINAL,
-			APPENDED,
 			AMENDED,
 			ENTERED_IN_ERROR,
 		};
@@ -211,7 +186,6 @@ public enum CompositionStatusList implements Enumerator {
 		switch (value) {
 			case PRELIMINARY_VALUE: return PRELIMINARY;
 			case FINAL_VALUE: return FINAL;
-			case APPENDED_VALUE: return APPENDED;
 			case AMENDED_VALUE: return AMENDED;
 			case ENTERED_IN_ERROR_VALUE: return ENTERED_IN_ERROR;
 		}

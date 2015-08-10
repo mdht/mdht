@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.hl7.fhir.Attachment;
 import org.hl7.fhir.Code;
 import org.hl7.fhir.CodeableConcept;
+import org.hl7.fhir.Coding;
 import org.hl7.fhir.DateTime;
 import org.hl7.fhir.DocumentReference;
 import org.hl7.fhir.DocumentReferenceContext;
@@ -28,7 +29,6 @@ import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.Identifier;
 import org.hl7.fhir.Instant;
 import org.hl7.fhir.Reference;
-import org.hl7.fhir.Uri;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.DocumentReferenceImpl#getDocStatus <em>Doc Status</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentReferenceImpl#getRelatesTo <em>Relates To</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentReferenceImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DocumentReferenceImpl#getConfidentiality <em>Confidentiality</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentReferenceImpl#getSecurityLabel <em>Security Label</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentReferenceImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentReferenceImpl#getContext <em>Context</em>}</li>
  * </ul>
@@ -119,7 +119,7 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Uri> format;
+	protected EList<Coding> format;
 
 	/**
 	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
@@ -212,14 +212,14 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 	protected org.hl7.fhir.String description;
 
 	/**
-	 * The cached value of the '{@link #getConfidentiality() <em>Confidentiality</em>}' containment reference list.
+	 * The cached value of the '{@link #getSecurityLabel() <em>Security Label</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConfidentiality()
+	 * @see #getSecurityLabel()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CodeableConcept> confidentiality;
+	protected EList<CodeableConcept> securityLabel;
 
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
@@ -449,9 +449,9 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Uri> getFormat() {
+	public EList<Coding> getFormat() {
 		if (format == null) {
-			format = new EObjectContainmentEList<Uri>(Uri.class, this, FhirPackage.DOCUMENT_REFERENCE__FORMAT);
+			format = new EObjectContainmentEList<Coding>(Coding.class, this, FhirPackage.DOCUMENT_REFERENCE__FORMAT);
 		}
 		return format;
 	}
@@ -786,11 +786,11 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CodeableConcept> getConfidentiality() {
-		if (confidentiality == null) {
-			confidentiality = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.DOCUMENT_REFERENCE__CONFIDENTIALITY);
+	public EList<CodeableConcept> getSecurityLabel() {
+		if (securityLabel == null) {
+			securityLabel = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.DOCUMENT_REFERENCE__SECURITY_LABEL);
 		}
-		return confidentiality;
+		return securityLabel;
 	}
 
 	/**
@@ -886,8 +886,8 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 				return ((InternalEList<?>)getRelatesTo()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DOCUMENT_REFERENCE__DESCRIPTION:
 				return basicSetDescription(null, msgs);
-			case FhirPackage.DOCUMENT_REFERENCE__CONFIDENTIALITY:
-				return ((InternalEList<?>)getConfidentiality()).basicRemove(otherEnd, msgs);
+			case FhirPackage.DOCUMENT_REFERENCE__SECURITY_LABEL:
+				return ((InternalEList<?>)getSecurityLabel()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DOCUMENT_REFERENCE__CONTENT:
 				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
 			case FhirPackage.DOCUMENT_REFERENCE__CONTEXT:
@@ -934,8 +934,8 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 				return getRelatesTo();
 			case FhirPackage.DOCUMENT_REFERENCE__DESCRIPTION:
 				return getDescription();
-			case FhirPackage.DOCUMENT_REFERENCE__CONFIDENTIALITY:
-				return getConfidentiality();
+			case FhirPackage.DOCUMENT_REFERENCE__SECURITY_LABEL:
+				return getSecurityLabel();
 			case FhirPackage.DOCUMENT_REFERENCE__CONTENT:
 				return getContent();
 			case FhirPackage.DOCUMENT_REFERENCE__CONTEXT:
@@ -971,7 +971,7 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 				return;
 			case FhirPackage.DOCUMENT_REFERENCE__FORMAT:
 				getFormat().clear();
-				getFormat().addAll((Collection<? extends Uri>)newValue);
+				getFormat().addAll((Collection<? extends Coding>)newValue);
 				return;
 			case FhirPackage.DOCUMENT_REFERENCE__AUTHOR:
 				getAuthor().clear();
@@ -1002,9 +1002,9 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 			case FhirPackage.DOCUMENT_REFERENCE__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.DOCUMENT_REFERENCE__CONFIDENTIALITY:
-				getConfidentiality().clear();
-				getConfidentiality().addAll((Collection<? extends CodeableConcept>)newValue);
+			case FhirPackage.DOCUMENT_REFERENCE__SECURITY_LABEL:
+				getSecurityLabel().clear();
+				getSecurityLabel().addAll((Collection<? extends CodeableConcept>)newValue);
 				return;
 			case FhirPackage.DOCUMENT_REFERENCE__CONTENT:
 				getContent().clear();
@@ -1070,8 +1070,8 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 			case FhirPackage.DOCUMENT_REFERENCE__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.DOCUMENT_REFERENCE__CONFIDENTIALITY:
-				getConfidentiality().clear();
+			case FhirPackage.DOCUMENT_REFERENCE__SECURITY_LABEL:
+				getSecurityLabel().clear();
 				return;
 			case FhirPackage.DOCUMENT_REFERENCE__CONTENT:
 				getContent().clear();
@@ -1121,8 +1121,8 @@ public class DocumentReferenceImpl extends DomainResourceImpl implements Documen
 				return relatesTo != null && !relatesTo.isEmpty();
 			case FhirPackage.DOCUMENT_REFERENCE__DESCRIPTION:
 				return description != null;
-			case FhirPackage.DOCUMENT_REFERENCE__CONFIDENTIALITY:
-				return confidentiality != null && !confidentiality.isEmpty();
+			case FhirPackage.DOCUMENT_REFERENCE__SECURITY_LABEL:
+				return securityLabel != null && !securityLabel.isEmpty();
 			case FhirPackage.DOCUMENT_REFERENCE__CONTENT:
 				return content != null && !content.isEmpty();
 			case FhirPackage.DOCUMENT_REFERENCE__CONTEXT:

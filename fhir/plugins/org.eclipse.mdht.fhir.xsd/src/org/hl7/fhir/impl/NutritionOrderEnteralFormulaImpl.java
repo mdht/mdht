@@ -21,7 +21,7 @@ import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.NutritionOrderAdministration;
 import org.hl7.fhir.NutritionOrderEnteralFormula;
-import org.hl7.fhir.Quantity;
+import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,7 +93,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity caloricDensity;
+	protected SimpleQuantity caloricDensity;
 
 	/**
 	 * The cached value of the '{@link #getRouteofAdministration() <em>Routeof Administration</em>}' containment reference.
@@ -123,7 +123,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected Quantity maxVolumeToDeliver;
+	protected SimpleQuantity maxVolumeToDeliver;
 
 	/**
 	 * The cached value of the '{@link #getAdministrationInstruction() <em>Administration Instruction</em>}' containment reference.
@@ -331,7 +331,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getCaloricDensity() {
+	public SimpleQuantity getCaloricDensity() {
 		return caloricDensity;
 	}
 
@@ -340,8 +340,8 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCaloricDensity(Quantity newCaloricDensity, NotificationChain msgs) {
-		Quantity oldCaloricDensity = caloricDensity;
+	public NotificationChain basicSetCaloricDensity(SimpleQuantity newCaloricDensity, NotificationChain msgs) {
+		SimpleQuantity oldCaloricDensity = caloricDensity;
 		caloricDensity = newCaloricDensity;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__CALORIC_DENSITY, oldCaloricDensity, newCaloricDensity);
@@ -355,7 +355,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCaloricDensity(Quantity newCaloricDensity) {
+	public void setCaloricDensity(SimpleQuantity newCaloricDensity) {
 		if (newCaloricDensity != caloricDensity) {
 			NotificationChain msgs = null;
 			if (caloricDensity != null)
@@ -429,7 +429,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Quantity getMaxVolumeToDeliver() {
+	public SimpleQuantity getMaxVolumeToDeliver() {
 		return maxVolumeToDeliver;
 	}
 
@@ -438,8 +438,8 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMaxVolumeToDeliver(Quantity newMaxVolumeToDeliver, NotificationChain msgs) {
-		Quantity oldMaxVolumeToDeliver = maxVolumeToDeliver;
+	public NotificationChain basicSetMaxVolumeToDeliver(SimpleQuantity newMaxVolumeToDeliver, NotificationChain msgs) {
+		SimpleQuantity oldMaxVolumeToDeliver = maxVolumeToDeliver;
 		maxVolumeToDeliver = newMaxVolumeToDeliver;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER, oldMaxVolumeToDeliver, newMaxVolumeToDeliver);
@@ -453,7 +453,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMaxVolumeToDeliver(Quantity newMaxVolumeToDeliver) {
+	public void setMaxVolumeToDeliver(SimpleQuantity newMaxVolumeToDeliver) {
 		if (newMaxVolumeToDeliver != maxVolumeToDeliver) {
 			NotificationChain msgs = null;
 			if (maxVolumeToDeliver != null)
@@ -592,7 +592,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 				setAdditiveProductName((org.hl7.fhir.String)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__CALORIC_DENSITY:
-				setCaloricDensity((Quantity)newValue);
+				setCaloricDensity((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ROUTEOF_ADMINISTRATION:
 				setRouteofAdministration((CodeableConcept)newValue);
@@ -602,7 +602,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 				getAdministration().addAll((Collection<? extends NutritionOrderAdministration>)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER:
-				setMaxVolumeToDeliver((Quantity)newValue);
+				setMaxVolumeToDeliver((SimpleQuantity)newValue);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION:
 				setAdministrationInstruction((org.hl7.fhir.String)newValue);
@@ -632,7 +632,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 				setAdditiveProductName((org.hl7.fhir.String)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__CALORIC_DENSITY:
-				setCaloricDensity((Quantity)null);
+				setCaloricDensity((SimpleQuantity)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ROUTEOF_ADMINISTRATION:
 				setRouteofAdministration((CodeableConcept)null);
@@ -641,7 +641,7 @@ public class NutritionOrderEnteralFormulaImpl extends BackboneElementImpl implem
 				getAdministration().clear();
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__MAX_VOLUME_TO_DELIVER:
-				setMaxVolumeToDeliver((Quantity)null);
+				setMaxVolumeToDeliver((SimpleQuantity)null);
 				return;
 			case FhirPackage.NUTRITION_ORDER_ENTERAL_FORMULA__ADMINISTRATION_INSTRUCTION:
 				setAdministrationInstruction((org.hl7.fhir.String)null);

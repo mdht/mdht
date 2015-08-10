@@ -2,7 +2,6 @@
  */
 package org.hl7.fhir;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ConformanceEvent#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceEvent#getCategory <em>Category</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceEvent#getMode <em>Mode</em>}</li>
- *   <li>{@link org.hl7.fhir.ConformanceEvent#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceEvent#getFocus <em>Focus</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceEvent#getRequest <em>Request</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceEvent#getResponse <em>Response</em>}</li>
@@ -109,22 +107,6 @@ public interface ConformanceEvent extends BackboneElement {
 	 * @generated
 	 */
 	void setMode(ConformanceEventMode value);
-
-	/**
-	 * Returns the value of the '<em><b>Protocol</b></em>' containment reference list.
-	 * The list contents are of type {@link org.hl7.fhir.Coding}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A list of the messaging transport protocol(s) identifiers, supported by this endpoint.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Protocol</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getConformanceEvent_Protocol()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='protocol' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	EList<Coding> getProtocol();
 
 	/**
 	 * Returns the value of the '<em><b>Focus</b></em>' containment reference.
