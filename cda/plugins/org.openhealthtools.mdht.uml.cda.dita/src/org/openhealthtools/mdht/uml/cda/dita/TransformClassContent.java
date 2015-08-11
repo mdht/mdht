@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
@@ -61,6 +61,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
+import org.openhealthtools.mdht.uml.common.util.PropertyComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformClassContent extends TransformAbstract {
@@ -405,6 +406,7 @@ public class TransformClassContent extends TransformAbstract {
 			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
 			writer.println("</li>");
 		}
+		Collections.sort(allProperties, new PropertyComparator());
 		// XML elements
 		for (Property property : allProperties) {
 			hasRules = true;
@@ -745,7 +747,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#getRangeCount()
 		 */
 		public int getRangeCount() {
@@ -754,7 +756,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#rangesEqual(int, org.eclipse.compare.rangedifferencer.IRangeComparator, int)
 		 */
 		public boolean rangesEqual(int thisIndex, IRangeComparator other, int otherIndex) {
@@ -765,7 +767,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#skipRangeComparison(int, int,
 		 * org.eclipse.compare.rangedifferencer.IRangeComparator)
 		 */
