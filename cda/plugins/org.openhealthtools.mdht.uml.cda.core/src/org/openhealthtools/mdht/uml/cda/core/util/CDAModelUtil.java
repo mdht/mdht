@@ -1874,9 +1874,9 @@ public class CDAModelUtil {
 		// message.append("</ul>");
 
 		boolean appendLogic = false;
-		message.append("<ul>");
+		message.append(OL[0]);
 		for (Element element : constraint.getConstrainedElements()) {
-			message.append("<li>");
+			message.append(LI[0]);
 			if (appendLogic) {
 				message.append(markup
 						? "<b>"
@@ -1890,9 +1890,9 @@ public class CDAModelUtil {
 			}
 
 			message.append(computeConformanceMessage(element, markup));
-			message.append("</li>");
+			message.append(LI[1]);
 		}
-		message.append("</ul>");
+		message.append(OL[1]);
 
 		appendConformanceRuleIds(constraint, message, markup);
 
