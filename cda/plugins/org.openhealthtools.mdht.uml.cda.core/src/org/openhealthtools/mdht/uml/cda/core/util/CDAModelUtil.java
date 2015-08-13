@@ -21,8 +21,6 @@
 package org.openhealthtools.mdht.uml.cda.core.util;
 
 import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -250,10 +248,11 @@ public class CDAModelUtil {
 			String cdaName = cdaClass == null
 					? null
 					: cdaClass.getName();
-			if (cdaClass != null && ("Act".equals(cdaName) || "Encounter".equals(cdaName) ||
-					"Observation".equals(cdaName) || "ObservationMedia".equals(cdaName) ||
-					"Organizer".equals(cdaName) || "Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
-					"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
+			if (cdaClass != null &&
+					("Act".equals(cdaName) || "Encounter".equals(cdaName) || "Observation".equals(cdaName) ||
+							"ObservationMedia".equals(cdaName) || "Organizer".equals(cdaName) ||
+							"Procedure".equals(cdaName) || "RegionOfInterest".equals(cdaName) ||
+							"SubstanceAdministration".equals(cdaName) || "Supply".equals(cdaName))) {
 				return true;
 			}
 		}
@@ -456,8 +455,8 @@ public class CDAModelUtil {
 				return multiplicityElementToggle(markup, "@extension", " [1..1]", templateVersionAsBusinessName);
 			}
 		};
-		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(
-			templateVersion).setMultiplicity(multiplicityRange).compute().toString();
+		return cdaTemplater.setRequireMarkup(markup).setRuleIds(ruleIds).setTemplateVersion(templateVersion).setMultiplicity(
+			multiplicityRange).compute().toString();
 	}
 
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
@@ -542,8 +541,8 @@ public class CDAModelUtil {
 
 	private static StringBuffer multiplicityElementToggle(Property property, boolean markup, String elementName) {
 		StringBuffer message = new StringBuffer();
-		message.append(
-			multiplicityElementToggle(markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
+		message.append(multiplicityElementToggle(
+			markup, elementName, getMultiplicityRange(property), getBusinessName(property)));
 		return message;
 	}
 
@@ -596,7 +595,7 @@ public class CDAModelUtil {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
 
-		String keyword = getValidationKeyword(association);
+		String keyword = getValidationKeywordWithPropertyRange(association, property);
 		if (keyword != null) {
 			message.append(markup
 					? "<b>"
@@ -642,22 +641,18 @@ public class CDAModelUtil {
 		if (appendNestedConformanceRules && endType != null) {
 
 			if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
-				StringWriter sw = new StringWriter();
-				PrintWriter pw = new PrintWriter(sw);
+				StringBuilder sb = new StringBuilder();
 
 				appendConformanceRuleIds(association, message, markup);
 
-				appendPropertyComments(pw, property, markup);
+				appendPropertyComments(sb, property, markup);
 
-				appendConformanceRules(pw, endType, (property.getUpper() == 1
+				appendConformanceRules(sb, endType, (property.getUpper() == 1
 						? "This "
-						: "Such ") +
-						(property.getUpper() == 1
-								? elementName
-								: NameUtilities.pluralize(elementName)) +
-						" ",
-					markup);
-				message.append(" " + sw.getBuffer() + " ");
+						: "Such ") + (property.getUpper() == 1
+						? elementName
+						: NameUtilities.pluralize(elementName)) + " ", markup);
+				message.append(" " + sb + " ");
 
 			} else {
 
@@ -745,20 +740,16 @@ public class CDAModelUtil {
 			Class inlinedClass = (Class) property.getType();
 
 			if (markup && isInlineClass(inlinedClass)) {
-				StringWriter sw = new StringWriter();
-				PrintWriter pw = new PrintWriter(sw);
+				StringBuilder sb = new StringBuilder();
 
-				appendPropertyComments(pw, property, markup);
+				appendPropertyComments(sb, property, markup);
 
-				appendConformanceRules(pw, inlinedClass, (property.getUpper() == 1
+				appendConformanceRules(sb, inlinedClass, (property.getUpper() == 1
 						? "This "
-						: "Such ") +
-						(property.getUpper() == 1
-								? elementName
-								: NameUtilities.pluralize(elementName)) +
-						" ",
-					markup);
-				message.append(" " + sw.getBuffer());
+						: "Such ") + (property.getUpper() == 1
+						? elementName
+						: NameUtilities.pluralize(elementName)) + " ", markup);
+				message.append(" " + sb);
 
 			}
 		}
@@ -823,10 +814,9 @@ public class CDAModelUtil {
 			message.append("Contains ");
 			message.append(markup
 					? "<tt><b>"
-					: "").append("@typeCode=\"").append(
-						markup
-								? "</b>"
-								: "");
+					: "").append("@typeCode=\"").append(markup
+					? "</b>"
+					: "");
 			message.append(typeCode).append("\" ");
 			message.append(markup
 					? "</tt>"
@@ -846,7 +836,7 @@ public class CDAModelUtil {
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
 		if (endType != null && getCDAClass(endType) != null && !(isInlineClass(endType))
-		/* && !getCDAClass(property.getClass_()).getName().startsWith("Entry") */ &&
+		/* && !getCDAClass(property.getClass_()).getName().startsWith("Entry") */&&
 				!isInlineClass(property.getClass_())) {
 			message.append(markup
 					? "\n<li>"
@@ -914,8 +904,7 @@ public class CDAModelUtil {
 			if (eReferenceStereoetype != null) {
 				String nameSpace = (String) cdaBaseProperty.getValue(eReferenceStereoetype, CDAModelUtil.XMLNAMESPACE);
 				if (!StringUtils.isEmpty(nameSpace)) {
-					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(
-						cdaBaseProperty.getNearestPackage());
+					Package topPackage = org.openhealthtools.mdht.uml.common.util.UMLUtil.getTopPackage(cdaBaseProperty.getNearestPackage());
 					Stereotype ePackageStereoetype = topPackage.getApplicableStereotype(CDAModelUtil.EPACKAGE);
 					if (ePackageStereoetype != null) {
 						if (nameSpace.equals(topPackage.getValue(ePackageStereoetype, CDAModelUtil.NSURI))) {
@@ -955,7 +944,7 @@ public class CDAModelUtil {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
 
-		String keyword = getValidationKeyword(property);
+		String keyword = getValidationKeywordWithPropertyRange(property);
 		if (keyword != null) {
 			message.append(markup
 					? "<b>"
@@ -1047,13 +1036,11 @@ public class CDAModelUtil {
 					textValue, ICDAProfileConstants.VALIDATION_SEVERITY);
 				message.append(" and ").append(markup
 						? "<b>"
-						: "").append(
-							level != null
-									? getValidationKeyword(level.getLiteral())
-									: keyword).append(
-										markup
-												? "</b>"
-												: "").append(" equal \"").append(value).append("\"");
+						: "").append(level != null
+						? getValidationKeyword(level.getLiteral())
+						: keyword).append(markup
+						? "</b>"
+						: "").append(" equal \"").append(value).append("\"");
 			}
 		}
 
@@ -1067,8 +1054,7 @@ public class CDAModelUtil {
 
 		if (property.getType() != null) {
 
-			if ((redefinedProperty == null ||
-					(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
+			if ((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
 				message.append(" with " + "@xsi:type=\"");
 				message.append(property.getType().getName());
 				message.append("\"");
@@ -1080,10 +1066,10 @@ public class CDAModelUtil {
 
 					if (isPublishSeperately((Class) property.getType())) {
 
-						String xref = (property.getType() instanceof Classifier &&
-								UMLUtil.isSameProject(property, property.getType()))
-										? computeXref(xrefSource, (Classifier) property.getType())
-										: null;
+						String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
+							property, property.getType()))
+								? computeXref(xrefSource, (Classifier) property.getType())
+								: null;
 						boolean showXref = markup && (xref != null);
 
 						if (showXref) {
@@ -1100,15 +1086,12 @@ public class CDAModelUtil {
 						}
 
 					} else {
-						StringWriter sw = new StringWriter();
-						PrintWriter pw = new PrintWriter(sw);
+						StringBuilder sb = new StringBuilder();
 
-						// appendConformanceRuleIds(association, message, markup);
+						appendPropertyComments(sb, property, markup);
 
-						appendPropertyComments(pw, property, markup);
-
-						appendConformanceRules(pw, (Class) property.getType(), "", markup);
-						message.append(" " + sw.getBuffer() + " ");
+						appendConformanceRules(sb, (Class) property.getType(), "", markup);
+						message.append(" " + sb + " ");
 					}
 
 				}
@@ -1253,20 +1236,16 @@ public class CDAModelUtil {
 
 	private static final String[] NOLI = { "", " " };
 
-	static private void appendConformanceRules(PrintWriter writer, Class umlClass, String prefix, boolean markup) {
+	static private void appendConformanceRules(StringBuilder appendB, Class umlClass, String prefix, boolean markup) {
 
-		String[] ol;
-		String[] li;
+		String[] ol = markup
+				? OL
+				: NOOL;
+		String[] li = markup
+				? LI
+				: NOLI;
 
-		if (markup) {
-			ol = OL;
-			li = LI;
-		} else {
-			ol = NOOL;
-			li = NOLI;
-		}
-
-		writer.print(ol[0]);
+		StringBuilder sb = new StringBuilder();
 
 		boolean hasRules = false;
 
@@ -1277,7 +1256,7 @@ public class CDAModelUtil {
 					String message = CDAModelUtil.computeConformanceMessage(generalization, true);
 					if (message.length() > 0) {
 						hasRules = true;
-						writer.print(li[0] + prefix + message + li[1]);
+						sb.append(li[0] + prefix + message + li[1]);
 					}
 				}
 			}
@@ -1326,40 +1305,58 @@ public class CDAModelUtil {
 		// Collections.sort(allAttributes, new NamedElementComparator());
 		// XML attributes
 		for (Property property : propertyList.getAttributes()) {
-			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property) &&
-					!CDAModelUtil.isDatatypeModel(property)) {
-				hasRules = true;
-				writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
-				appendPropertyComments(writer, property, markup);
-				appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints, markup);
-				writer.print(li[1]);
-			}
+			hasRules = hasRules |
+					appendPropertyList(
+						umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
+						subConstraintMap);
 		}
 		// XML elements
 		for (Property property : propertyList.getAssociationEnds()) {
-			if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property) &&
-					!CDAModelUtil.isDatatypeModel(property)) {
-				hasRules = true;
-				writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
-				appendPropertyComments(writer, property, markup);
-				appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints, markup);
-				writer.print(li[1]);
-			}
+			hasRules = hasRules |
+					appendPropertyList(
+						umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
+						subConstraintMap);
 		}
 
 		for (Constraint constraint : unprocessedConstraints) {
 			hasRules = true;
-			writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(constraint, markup) + li[1]);
+			sb.append(li[0] + prefix + CDAModelUtil.computeConformanceMessage(constraint, markup) + li[1]);
 		}
 
-		if (!hasRules) {
-			writer.print(li[0] + li[1]);
+		if (hasRules) {
+			appendB.append(ol[0]);
+			appendB.append(sb);
+			appendB.append(ol[1]);
 		}
-
-		writer.print(ol[1]);
 	}
 
-	private static void appendPropertyComments(PrintWriter writer, Property property, boolean markup) {
+	private static boolean appendPropertyList(Element umlClass, Property property, boolean markup, String[] ol,
+			StringBuilder sb, String prefix, String[] li, Map<String, List<Constraint>> constraintMap,
+			List<Constraint> unprocessedConstraints, Map<Constraint, List<Constraint>> subConstraintMap) {
+		boolean result = false;
+		if (!CDAModelUtil.isCDAModel(umlClass) && !CDAModelUtil.isCDAModel(property) &&
+				!CDAModelUtil.isDatatypeModel(property)) {
+			result = true;
+			String ccm = CDAModelUtil.computeConformanceMessage(property, markup);
+			boolean order = ccm.trim().endsWith(ol[1]);
+			if (order) {
+				int olIndex = ccm.lastIndexOf(ol[1]);
+				ccm = ccm.substring(0, olIndex);
+			}
+			sb.append(li[0] + prefix + ccm);
+			appendPropertyComments(sb, property, markup);
+
+			appendPropertyRules(sb, property, constraintMap, subConstraintMap, unprocessedConstraints, markup, !order);
+
+			if (order)
+				sb.append(ol[1]);
+
+			sb.append(li[1]);
+		}
+		return result;
+	}
+
+	private static void appendPropertyComments(StringBuilder sb, Property property, boolean markup) {
 
 		if (markup) {
 		} else {
@@ -1371,43 +1368,40 @@ public class CDAModelUtil {
 
 		if (association != null && association.getOwnedComments().size() > 0) {
 			if (markup) {
-				writer.append("<p><lines><i>");
+				sb.append("<p><lines><i>");
 			}
 			for (Comment comment : association.getOwnedComments()) {
-				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
+				sb.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
 			}
 			if (markup) {
-				writer.append("</i></lines></p>");
+				sb.append("</i></lines></p>");
 			}
 		}
 
 		if (property.getOwnedComments().size() > 0) {
 			if (markup) {
-				writer.append("<p><lines><i>");
+				sb.append("<p><lines><i>");
 			}
 			for (Comment comment : property.getOwnedComments()) {
-				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
+				sb.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
 			}
 			if (markup) {
-				writer.append("</i></lines></p>");
+				sb.append("</i></lines></p>");
 			}
 		}
 	}
 
-	private static void appendPropertyRules(PrintWriter writer, Property property,
+	private static void appendPropertyRules(StringBuilder sb, Property property,
 			Map<String, List<Constraint>> constraintMap, Map<Constraint, List<Constraint>> subConstraintMap,
-			List<Constraint> unprocessedConstraints, boolean markup) {
+			List<Constraint> unprocessedConstraints, boolean markup, boolean newOrder) {
 
-		String[] ol;
-		String[] li;
+		String[] ol = markup && newOrder
+				? OL
+				: NOOL;
+		String[] li = markup
+				? LI
+				: NOLI;
 
-		if (markup) {
-			ol = OL;
-			li = LI;
-		} else {
-			ol = NOOL;
-			li = NOLI;
-		}
 		// association typeCode and property type
 		String assocConstraints = "";
 		if (property.getAssociation() != null) {
@@ -1439,16 +1433,15 @@ public class CDAModelUtil {
 			// writer.append(", such that ");
 			// writer.append(property.upperBound()==1 ? "it" : "each");
 
-			writer.append(ol[0]);
-			writer.append(assocConstraints);
-			writer.append(ruleConstraints);
-			writer.append(ol[1]);
+			sb.append(ol[0]);
+			sb.append(assocConstraints);
+			sb.append(ruleConstraints);
+			sb.append(ol[1]);
 		}
 	}
 
 	private static void appendSubConstraintRules(StringBuffer ruleConstraints, Constraint constraint,
-			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints,
-			boolean markup) {
+			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints, boolean markup) {
 
 		String[] ol;
 		String[] li;
@@ -1881,9 +1874,9 @@ public class CDAModelUtil {
 		// message.append("</ul>");
 
 		boolean appendLogic = false;
-		message.append("<ul>");
+		message.append(OL[0]);
 		for (Element element : constraint.getConstrainedElements()) {
-			message.append("<li>");
+			message.append(LI[0]);
 			if (appendLogic) {
 				message.append(markup
 						? "<b>"
@@ -1897,9 +1890,9 @@ public class CDAModelUtil {
 			}
 
 			message.append(computeConformanceMessage(element, markup));
-			message.append("</li>");
+			message.append(LI[1]);
 		}
-		message.append("</ul>");
+		message.append(OL[1]);
 
 		appendConformanceRuleIds(constraint, message, markup);
 
@@ -2276,8 +2269,7 @@ public class CDAModelUtil {
 			elementName = "entry";
 		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else
-			if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
 		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && cdaTargetClass != null &&
 				"ParticipantRole".equals(cdaTargetClass.getName())) {
@@ -2623,6 +2615,11 @@ public class CDAModelUtil {
 		return severity;
 	}
 
+	public static String getValidationKeywordWithPropertyRange(Property property) {
+		String keyword = getValidationKeyword(property);
+		return addShallNot(keyword, property);
+	}
+
 	public static String getValidationKeyword(Property property) {
 		String severity = getValidationSeverity(property, ICDAProfileConstants.PROPERTY_VALIDATION);
 		if (severity == null) {
@@ -2630,6 +2627,19 @@ public class CDAModelUtil {
 			severity = getValidationSeverity((Element) property);
 		}
 		return getValidationKeyword(severity);
+	}
+
+	public static String getValidationKeywordWithPropertyRange(Element element, Property property) {
+		// use first available validation stereotype
+		String keyword = getValidationKeyword(element);
+		return addShallNot(keyword, property);
+	}
+
+	private static String addShallNot(String keyword, Property property) {
+		if (property.getLower() == 0 && property.getUpper() == 0 && "SHALL".equals(keyword)) {
+			keyword += " NOT";
+		}
+		return keyword;
 	}
 
 	public static String getValidationKeyword(Element element) {
