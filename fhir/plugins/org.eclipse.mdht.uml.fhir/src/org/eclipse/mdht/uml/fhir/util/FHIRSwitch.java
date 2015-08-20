@@ -85,6 +85,12 @@ public class FHIRSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FHIRPackage.EXTENSION: {
+				Extension extension = (Extension)theEObject;
+				T result = caseExtension(extension);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FHIRPackage.ELEMENT_DEFINITION: {
 				ElementDefinition elementDefinition = (ElementDefinition)theEObject;
 				T result = caseElementDefinition(elementDefinition);
@@ -174,6 +180,21 @@ public class FHIRSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseElement(Element object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extension</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extension</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtension(Extension object) {
 		return null;
 	}
 

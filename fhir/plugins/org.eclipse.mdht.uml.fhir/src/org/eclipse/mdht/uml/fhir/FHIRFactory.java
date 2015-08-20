@@ -40,6 +40,15 @@ public interface FHIRFactory extends EFactory {
 	StructureDefinition createStructureDefinition();
 
 	/**
+	 * Returns a new object of class '<em>Extension</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Extension</em>'.
+	 * @generated
+	 */
+	Extension createExtension();
+
+	/**
 	 * Returns a new object of class '<em>Element Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

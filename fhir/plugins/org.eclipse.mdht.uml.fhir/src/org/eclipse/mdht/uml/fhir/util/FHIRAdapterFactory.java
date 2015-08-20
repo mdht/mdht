@@ -80,6 +80,10 @@ public class FHIRAdapterFactory extends AdapterFactoryImpl {
 				return createElementAdapter();
 			}
 			@Override
+			public Adapter caseExtension(Extension object) {
+				return createExtensionAdapter();
+			}
+			@Override
 			public Adapter caseElementDefinition(ElementDefinition object) {
 				return createElementDefinitionAdapter();
 			}
@@ -166,6 +170,20 @@ public class FHIRAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.mdht.uml.fhir.Extension <em>Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.mdht.uml.fhir.Extension
+	 * @generated
+	 */
+	public Adapter createExtensionAdapter() {
 		return null;
 	}
 

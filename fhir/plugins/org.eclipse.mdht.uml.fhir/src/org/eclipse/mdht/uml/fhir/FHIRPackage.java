@@ -180,13 +180,67 @@ public interface FHIRPackage extends EPackage {
 	int STRUCTURE_DEFINITION__URI = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__NAME = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Display</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__DISPLAY = ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Fhir Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__FHIR_VERSION = ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Context Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__CONTEXT_TYPE = ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__CONTEXT = ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__EXTENSION = ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Structure Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+	int STRUCTURE_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Structure Definition</em>' class.
@@ -198,6 +252,61 @@ public interface FHIRPackage extends EPackage {
 	int STRUCTURE_DEFINITION_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.ExtensionImpl <em>Extension</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.ExtensionImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getExtension()
+	 * @generated
+	 */
+	int EXTENSION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION__URL = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION__VALUE_STRING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Value Integer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION__VALUE_INTEGER = 2;
+
+	/**
+	 * The number of structural features of the '<em>Extension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Extension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl <em>Element Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,7 +314,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getElementDefinition()
 	 * @generated
 	 */
-	int ELEMENT_DEFINITION = 3;
+	int ELEMENT_DEFINITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -226,13 +335,58 @@ public interface FHIRPackage extends EPackage {
 	int ELEMENT_DEFINITION__BASE_PROPERTY = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__NAME = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__LABEL = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Must Support</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__MUST_SUPPORT = ELEMENT_FEATURE_COUNT + 1;
+	int ELEMENT_DEFINITION__MUST_SUPPORT = ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__EXTENSION = ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Modifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__IS_MODIFIER = ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Is Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__IS_SUMMARY = ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Element Definition</em>' class.
@@ -241,7 +395,7 @@ public interface FHIRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+	int ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Element Definition</em>' class.
@@ -260,7 +414,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getShortDescription()
 	 * @generated
 	 */
-	int SHORT_DESCRIPTION = 4;
+	int SHORT_DESCRIPTION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
@@ -297,7 +451,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getDescription()
 	 * @generated
 	 */
-	int DESCRIPTION = 5;
+	int DESCRIPTION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
@@ -334,7 +488,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getDefinition()
 	 * @generated
 	 */
-	int DEFINITION = 6;
+	int DEFINITION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
@@ -371,7 +525,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getRequirements()
 	 * @generated
 	 */
-	int REQUIREMENTS = 7;
+	int REQUIREMENTS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
@@ -408,7 +562,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getComments()
 	 * @generated
 	 */
-	int COMMENTS = 8;
+	int COMMENTS = 9;
 
 	/**
 	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
@@ -445,7 +599,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getValueSetBinding()
 	 * @generated
 	 */
-	int VALUE_SET_BINDING = 9;
+	int VALUE_SET_BINDING = 10;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -518,7 +672,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getBindingStrengthKind()
 	 * @generated
 	 */
-	int BINDING_STRENGTH_KIND = 10;
+	int BINDING_STRENGTH_KIND = 11;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.TypeChoice <em>Type Choice</em>}'.
@@ -585,6 +739,72 @@ public interface FHIRPackage extends EPackage {
 	EAttribute getStructureDefinition_Uri();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getName()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EAttribute getStructureDefinition_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getDisplay <em>Display</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Display</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getDisplay()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EAttribute getStructureDefinition_Display();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getFhirVersion <em>Fhir Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fhir Version</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getFhirVersion()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EAttribute getStructureDefinition_FhirVersion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getContextType <em>Context Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Context Type</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getContextType()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EAttribute getStructureDefinition_ContextType();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getContexts <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Context</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getContexts()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EAttribute getStructureDefinition_Context();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getExtensions <em>Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Extension</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getExtensions()
+	 * @see #getStructureDefinition()
+	 * @generated
+	 */
+	EReference getStructureDefinition_Extension();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -604,6 +824,49 @@ public interface FHIRPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getElement_Id();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Extension <em>Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Extension</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Extension
+	 * @generated
+	 */
+	EClass getExtension();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.Extension#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Extension#getUrl()
+	 * @see #getExtension()
+	 * @generated
+	 */
+	EAttribute getExtension_Url();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.Extension#getValueString <em>Value String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value String</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Extension#getValueString()
+	 * @see #getExtension()
+	 * @generated
+	 */
+	EAttribute getExtension_ValueString();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.Extension#getValueInteger <em>Value Integer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value Integer</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Extension#getValueInteger()
+	 * @see #getExtension()
+	 * @generated
+	 */
+	EAttribute getExtension_ValueInteger();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.ElementDefinition <em>Element Definition</em>}'.
@@ -627,15 +890,70 @@ public interface FHIRPackage extends EPackage {
 	EReference getElementDefinition_Base_Property();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport <em>Must Support</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getName()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EAttribute getElementDefinition_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getLabel()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EAttribute getElementDefinition_Label();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getMustSupport <em>Must Support</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Must Support</em>'.
-	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport()
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getMustSupport()
 	 * @see #getElementDefinition()
 	 * @generated
 	 */
 	EAttribute getElementDefinition_MustSupport();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getExtensions <em>Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Extension</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getExtensions()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EReference getElementDefinition_Extension();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsModifier <em>Is Modifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Modifier</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getIsModifier()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EAttribute getElementDefinition_IsModifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsSummary <em>Is Summary</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Summary</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getIsSummary()
+	 * @see #getElementDefinition()
+	 * @generated
+	 */
+	EAttribute getElementDefinition_IsSummary();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.ShortDescription <em>Short Description</em>}'.
@@ -893,6 +1211,54 @@ public interface FHIRPackage extends EPackage {
 		EAttribute STRUCTURE_DEFINITION__URI = eINSTANCE.getStructureDefinition_Uri();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURE_DEFINITION__NAME = eINSTANCE.getStructureDefinition_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Display</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURE_DEFINITION__DISPLAY = eINSTANCE.getStructureDefinition_Display();
+
+		/**
+		 * The meta object literal for the '<em><b>Fhir Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURE_DEFINITION__FHIR_VERSION = eINSTANCE.getStructureDefinition_FhirVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURE_DEFINITION__CONTEXT_TYPE = eINSTANCE.getStructureDefinition_ContextType();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURE_DEFINITION__CONTEXT = eINSTANCE.getStructureDefinition_Context();
+
+		/**
+		 * The meta object literal for the '<em><b>Extension</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURE_DEFINITION__EXTENSION = eINSTANCE.getStructureDefinition_Extension();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl <em>Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -909,6 +1275,40 @@ public interface FHIRPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ELEMENT__ID = eINSTANCE.getElement_Id();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ExtensionImpl <em>Extension</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.ExtensionImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getExtension()
+		 * @generated
+		 */
+		EClass EXTENSION = eINSTANCE.getExtension();
+
+		/**
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTENSION__URL = eINSTANCE.getExtension_Url();
+
+		/**
+		 * The meta object literal for the '<em><b>Value String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTENSION__VALUE_STRING = eINSTANCE.getExtension_ValueString();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Integer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTENSION__VALUE_INTEGER = eINSTANCE.getExtension_ValueInteger();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl <em>Element Definition</em>}' class.
@@ -929,12 +1329,52 @@ public interface FHIRPackage extends EPackage {
 		EReference ELEMENT_DEFINITION__BASE_PROPERTY = eINSTANCE.getElementDefinition_Base_Property();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT_DEFINITION__NAME = eINSTANCE.getElementDefinition_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT_DEFINITION__LABEL = eINSTANCE.getElementDefinition_Label();
+
+		/**
 		 * The meta object literal for the '<em><b>Must Support</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ELEMENT_DEFINITION__MUST_SUPPORT = eINSTANCE.getElementDefinition_MustSupport();
+
+		/**
+		 * The meta object literal for the '<em><b>Extension</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELEMENT_DEFINITION__EXTENSION = eINSTANCE.getElementDefinition_Extension();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Modifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT_DEFINITION__IS_MODIFIER = eINSTANCE.getElementDefinition_IsModifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Summary</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT_DEFINITION__IS_SUMMARY = eINSTANCE.getElementDefinition_IsSummary();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ShortDescriptionImpl <em>Short Description</em>}' class.

@@ -26,6 +26,31 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yv34QDDqEeWn6bT0Ftydnw"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_UYybwEEbEeWmu5xZhyCitA" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UYybwUEbEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_U40NQEUZEeWmu5xZhyCitA" name="display">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U40NQUUZEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_BoxXUEXGEeWmu5xZhyCitA" name="fhirVersion">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BoxXUUXGEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zG6QYEXFEeWmu5xZhyCitA" name="contextType">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zG6QYUXFEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zZhqYEXFEeWmu5xZhyCitA" name="context">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zZhqYUXFEeWmu5xZhyCitA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4dxnYEXFEeWmu5xZhyCitA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Gg8AIEXGEeWmu5xZhyCitA" name="extension" type="_oBXCQEVXEeWmu5xZhyCitA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gg8AIUXGEeWmu5xZhyCitA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gg8AIkXGEeWmu5xZhyCitA" value="*"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_LrBh4DDqEeWn6bT0Ftydnw" name="Class_StructureDef" memberEnd="_LrCI8DDqEeWn6bT0Ftydnw _LrCI8TDqEeWn6bT0Ftydnw">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_LrCI8DDqEeWn6bT0Ftydnw" name="extension_StructureDef" type="_GGVKQDDqEeWn6bT0Ftydnw" aggregation="composite" association="_LrBh4DDqEeWn6bT0Ftydnw"/>
@@ -35,9 +60,29 @@
       <ownedAttribute xmi:id="_6cbwQTbOEeWEXrmTCU6QRg" name="base_Property" association="_6caiIDbOEeWEXrmTCU6QRg">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_JVMLcEEbEeWmu5xZhyCitA" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lj_lUEEbEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_WR3D0EUZEeWmu5xZhyCitA" name="label">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WR3D0UUZEeWmu5xZhyCitA"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_8G_0oDbOEeWEXrmTCU6QRg" name="mustSupport">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__CRS8DbOEeWEXrmTCU6QRg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_C8TlwEVYEeWmu5xZhyCitA" name="extension" type="_oBXCQEVXEeWmu5xZhyCitA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_C8TlwUVYEeWmu5xZhyCitA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_C8TlwkVYEeWmu5xZhyCitA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_vBebQEalEeWmu5xZhyCitA" name="isModifier">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vBebQUalEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_vTQHwEalEeWmu5xZhyCitA" name="isSummary">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vTQHwUalEeWmu5xZhyCitA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_6caiIDbOEeWEXrmTCU6QRg" name="Property_ElementDefinition" memberEnd="_6cbwQDbOEeWEXrmTCU6QRg _6cbwQTbOEeWEXrmTCU6QRg">
@@ -116,6 +161,20 @@
       <ownedLiteral xmi:id="__eYZED3SEeW8ybi2TiqE7g" name="preferred"/>
       <ownedLiteral xmi:id="_AfHdUD3TEeW8ybi2TiqE7g" name="example"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oBXCQEVXEeWmu5xZhyCitA" name="Extension">
+      <ownedAttribute xmi:id="_sngG8EVXEeWmu5xZhyCitA" name="url">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sngG8UVXEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_su-A4EVXEeWmu5xZhyCitA" name="valueString">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_su-A4UVXEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_0ismcEVYEeWmu5xZhyCitA" name="valueInteger">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0ismcUVYEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qHMGMDDmEeWn6bT0Ftydnw">
       <eAnnotations xmi:id="_qHQXoDDmEeWn6bT0Ftydnw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -124,5 +183,4 @@
     </profileApplication>
   </uml:Profile>
   <Ecore:EPackage xmi:id="_spQaUDDmEeWn6bT0Ftydnw" base_Package="_dtdbUDDkEeWn6bT0Ftydnw" packageName="fhir" nsPrefix="fhir" nsURI="http://www.eclipse.org/mdht/schema/profile/fhir/1.0.0" basePackage="org.eclipse.mdht.uml" prefix="FHIR"/>
-  <Ecore:EAttribute xmi:id="_5iSGsD3VEeW8ybi2TiqE7g" isUnsettable="true" base_Property="_8G_0oDbOEeWEXrmTCU6QRg"/>
 </xmi:XMI>

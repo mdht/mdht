@@ -2,6 +2,7 @@
  */
 package org.eclipse.mdht.uml.fhir;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -14,7 +15,12 @@ import org.eclipse.uml2.uml.Property;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getBase_Property <em>Base Property</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport <em>Must Support</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getMustSupport <em>Must Support</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsModifier <em>Is Modifier</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsSummary <em>Is Summary</em>}</li>
  * </ul>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition()
@@ -49,6 +55,58 @@ public interface ElementDefinition extends Element {
 	void setBase_Property(Property value);
 
 	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_Name()
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Label</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Label</em>' attribute.
+	 * @see #setLabel(String)
+	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_Label()
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @generated
+	 */
+	String getLabel();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getLabel <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label</em>' attribute.
+	 * @see #getLabel()
+	 * @generated
+	 */
+	void setLabel(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Must Support</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -57,48 +115,89 @@ public interface ElementDefinition extends Element {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Must Support</em>' attribute.
-	 * @see #isSetMustSupport()
-	 * @see #unsetMustSupport()
-	 * @see #setMustSupport(boolean)
+	 * @see #setMustSupport(Boolean)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_MustSupport()
-	 * @model unsettable="true" dataType="org.eclipse.uml2.types.Boolean" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	boolean isMustSupport();
+	Boolean getMustSupport();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport <em>Must Support</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getMustSupport <em>Must Support</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Must Support</em>' attribute.
-	 * @see #isSetMustSupport()
-	 * @see #unsetMustSupport()
-	 * @see #isMustSupport()
+	 * @see #getMustSupport()
 	 * @generated
 	 */
-	void setMustSupport(boolean value);
+	void setMustSupport(Boolean value);
 
 	/**
-	 * Unsets the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport <em>Must Support</em>}' attribute.
+	 * Returns the value of the '<em><b>Extension</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.mdht.uml.fhir.Extension}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extension</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #isSetMustSupport()
-	 * @see #isMustSupport()
-	 * @see #setMustSupport(boolean)
+	 * @return the value of the '<em>Extension</em>' reference list.
+	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_Extension()
+	 * @model ordered="false"
 	 * @generated
 	 */
-	void unsetMustSupport();
+	EList<Extension> getExtensions();
 
 	/**
-	 * Returns whether the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#isMustSupport <em>Must Support</em>}' attribute is set.
+	 * Returns the value of the '<em><b>Is Modifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Modifier</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Must Support</em>' attribute is set.
-	 * @see #unsetMustSupport()
-	 * @see #isMustSupport()
-	 * @see #setMustSupport(boolean)
+	 * @return the value of the '<em>Is Modifier</em>' attribute.
+	 * @see #setIsModifier(Boolean)
+	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_IsModifier()
+	 * @model ordered="false"
 	 * @generated
 	 */
-	boolean isSetMustSupport();
+	Boolean getIsModifier();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsModifier <em>Is Modifier</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Modifier</em>' attribute.
+	 * @see #getIsModifier()
+	 * @generated
+	 */
+	void setIsModifier(Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Summary</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Summary</em>' attribute.
+	 * @see #setIsSummary(Boolean)
+	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_IsSummary()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	Boolean getIsSummary();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsSummary <em>Is Summary</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Summary</em>' attribute.
+	 * @see #getIsSummary()
+	 * @generated
+	 */
+	void setIsSummary(Boolean value);
 
 } // ElementDefinition

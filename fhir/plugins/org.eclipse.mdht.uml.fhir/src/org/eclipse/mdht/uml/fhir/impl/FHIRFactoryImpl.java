@@ -59,6 +59,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 		switch (eClass.getClassifierID()) {
 			case FHIRPackage.TYPE_CHOICE: return createTypeChoice();
 			case FHIRPackage.STRUCTURE_DEFINITION: return createStructureDefinition();
+			case FHIRPackage.EXTENSION: return createExtension();
 			case FHIRPackage.ELEMENT_DEFINITION: return createElementDefinition();
 			case FHIRPackage.SHORT_DESCRIPTION: return createShortDescription();
 			case FHIRPackage.DESCRIPTION: return createDescription();
@@ -119,6 +120,16 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	public StructureDefinition createStructureDefinition() {
 		StructureDefinitionImpl structureDefinition = new StructureDefinitionImpl();
 		return structureDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Extension createExtension() {
+		ExtensionImpl extension = new ExtensionImpl();
+		return extension;
 	}
 
 	/**
