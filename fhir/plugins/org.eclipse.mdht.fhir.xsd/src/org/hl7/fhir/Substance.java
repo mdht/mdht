@@ -19,7 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.Substance#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.hl7.fhir.Substance#getType <em>Type</em>}</li>
+ *   <li>{@link org.hl7.fhir.Substance#getCategory <em>Category</em>}</li>
+ *   <li>{@link org.hl7.fhir.Substance#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.Substance#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.Substance#getInstance <em>Instance</em>}</li>
  *   <li>{@link org.hl7.fhir.Substance#getIngredient <em>Ingredient</em>}</li>
@@ -47,30 +48,46 @@ public interface Substance extends DomainResource {
 	EList<Identifier> getIdentifier();
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Category</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A code that classifies the the general type of substance.  This is used  for searching, sorting and display purposes.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Category</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getSubstance_Category()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='category' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<CodeableConcept> getCategory();
+
+	/**
+	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A code (or set of codes) that identify this substance.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getSubstance_Type()
+	 * @return the value of the '<em>Code</em>' containment reference.
+	 * @see #setCode(CodeableConcept)
+	 * @see org.hl7.fhir.FhirPackage#getSubstance_Code()
 	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='type' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='code' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CodeableConcept getType();
+	CodeableConcept getCode();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Substance#getType <em>Type</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Substance#getCode <em>Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' containment reference.
-	 * @see #getType()
+	 * @param value the new value of the '<em>Code</em>' containment reference.
+	 * @see #getCode()
 	 * @generated
 	 */
-	void setType(CodeableConcept value);
+	void setCode(CodeableConcept value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.

@@ -198,30 +198,20 @@ public interface RelatedPerson extends DomainResource {
 	void setBirthDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Address</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Address</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.Address}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Address where the related person can be contacted or visited.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Address</em>' containment reference.
-	 * @see #setAddress(Address)
+	 * @return the value of the '<em>Address</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getRelatedPerson_Address()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='address' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Address getAddress();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.RelatedPerson#getAddress <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Address</em>' containment reference.
-	 * @see #getAddress()
-	 * @generated
-	 */
-	void setAddress(Address value);
+	EList<Address> getAddress();
 
 	/**
 	 * Returns the value of the '<em><b>Photo</b></em>' containment reference list.

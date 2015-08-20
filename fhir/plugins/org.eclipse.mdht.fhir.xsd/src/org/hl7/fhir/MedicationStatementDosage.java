@@ -17,14 +17,15 @@ package org.hl7.fhir;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getText <em>Text</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getSchedule <em>Schedule</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getTiming <em>Timing</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getAsNeededBoolean <em>As Needed Boolean</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getAsNeededCodeableConcept <em>As Needed Codeable Concept</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getSite <em>Site</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getRoute <em>Route</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getMethod <em>Method</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getRate <em>Rate</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getRateRatio <em>Rate Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getRateRange <em>Rate Range</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationStatementDosage#getMaxDosePerPeriod <em>Max Dose Per Period</em>}</li>
  * </ul>
  *
@@ -60,30 +61,30 @@ public interface MedicationStatementDosage extends BackboneElement {
 	void setText(org.hl7.fhir.String value);
 
 	/**
-	 * Returns the value of the '<em><b>Schedule</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Timing</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  "Every  8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:";  "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Schedule</em>' containment reference.
-	 * @see #setSchedule(Timing)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationStatementDosage_Schedule()
+	 * @return the value of the '<em>Timing</em>' containment reference.
+	 * @see #setTiming(Timing)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationStatementDosage_Timing()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='schedule' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='timing' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Timing getSchedule();
+	Timing getTiming();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatementDosage#getSchedule <em>Schedule</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatementDosage#getTiming <em>Timing</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schedule</em>' containment reference.
-	 * @see #getSchedule()
+	 * @param value the new value of the '<em>Timing</em>' containment reference.
+	 * @see #getTiming()
 	 * @generated
 	 */
-	void setSchedule(Timing value);
+	void setTiming(Timing value);
 
 	/**
 	 * Returns the value of the '<em><b>As Needed Boolean</b></em>' containment reference.
@@ -244,30 +245,58 @@ public interface MedicationStatementDosage extends BackboneElement {
 	void setQuantity(SimpleQuantity value);
 
 	/**
-	 * Returns the value of the '<em><b>Rate</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Rate Ratio</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Ratio</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Rate</em>' containment reference.
-	 * @see #setRate(Ratio)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationStatementDosage_Rate()
+	 * @return the value of the '<em>Rate Ratio</em>' containment reference.
+	 * @see #setRateRatio(Ratio)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationStatementDosage_RateRatio()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='rate' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='rateRatio' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Ratio getRate();
+	Ratio getRateRatio();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatementDosage#getRate <em>Rate</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatementDosage#getRateRatio <em>Rate Ratio</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rate</em>' containment reference.
-	 * @see #getRate()
+	 * @param value the new value of the '<em>Rate Ratio</em>' containment reference.
+	 * @see #getRateRatio()
 	 * @generated
 	 */
-	void setRate(Ratio value);
+	void setRateRatio(Ratio value);
+
+	/**
+	 * Returns the value of the '<em><b>Rate Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Range</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rate Range</em>' containment reference.
+	 * @see #setRateRange(Range)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationStatementDosage_RateRange()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='rateRange' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Range getRateRange();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationStatementDosage#getRateRange <em>Rate Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rate Range</em>' containment reference.
+	 * @see #getRateRange()
+	 * @generated
+	 */
+	void setRateRange(Range value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Dose Per Period</b></em>' containment reference.

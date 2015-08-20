@@ -324,36 +324,6 @@
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AgeUnits" eSuperTypes="#//Element">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="AgeUnits"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//AgeUnitsList"
-        unsettable="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="attribute"/>
-        <details key="name" value="value"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AgeUnitsList">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="AgeUnits-list"/>
-    </eAnnotations>
-    <eLiterals name="min"/>
-    <eLiterals name="h" value="1"/>
-    <eLiterals name="d" value="2"/>
-    <eLiterals name="wk" value="3"/>
-    <eLiterals name="mo" value="4"/>
-    <eLiterals name="a" value="5"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="AgeUnitsListObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="AgeUnits-list:Object"/>
-      <details key="baseType" value="AgeUnits-list"/>
-    </eAnnotations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationMode" eSuperTypes="#//Element">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationMode"/>
@@ -6376,6 +6346,14 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="searchParam" upperBound="-1"
+        eType="#//ConformanceSearchParam" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="searchParam"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
         eType="#//ConformanceOperation" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -10184,12 +10162,12 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationPrescription"
-        upperBound="-2" eType="#//MedicationPrescription" volatile="true" transient="true"
-        derived="true" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationOrder" upperBound="-2"
+        eType="#//MedicationOrder" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="MedicationPrescription"/>
+        <details key="name" value="MedicationOrder"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -12866,11 +12844,11 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingReferralRequest"
-        upperBound="-1" eType="#//Reference" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingReferral" upperBound="-1"
+        eType="#//Reference" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="incomingReferralRequest"/>
+        <details key="name" value="incomingReferral"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -12882,11 +12860,11 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fulfills" eType="#//Reference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appointment" eType="#//Reference"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="fulfills"/>
+        <details key="name" value="appointment"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -13501,14 +13479,6 @@
       <details key="name" value="EpisodeOfCare.CareTeam"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//Reference"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="member"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="#//CodeableConcept"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -13522,6 +13492,14 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="period"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//Reference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="member"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -14743,6 +14721,7 @@
     <eLiterals name="directory" value="4"/>
     <eLiterals name="dictionary" value="5"/>
     <eLiterals name="toc" value="6"/>
+    <eLiterals name="resource" value="7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GuidePageKindListObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -17274,14 +17253,6 @@
       <details key="name" value="Medication"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//String"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="name"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="code" eType="#//CodeableConcept"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -17510,11 +17481,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -17757,27 +17736,11 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduleDateTime" eType="#//DateTime"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" eType="#//Timing"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="scheduleDateTime"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulePeriod" eType="#//Period"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="schedulePeriod"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduleTiming" eType="#//Timing"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="scheduleTiming"/>
+        <details key="name" value="timing"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -17837,11 +17800,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -17962,31 +17933,9 @@
       <details key="baseType" value="MedicationKind-list"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPackage" eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrder" eSuperTypes="#//DomainResource">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="Medication.Package"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//CodeableConcept"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="container"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-        eType="#//MedicationContent" containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="content"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescription" eSuperTypes="#//DomainResource">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription"/>
+      <details key="name" value="MedicationOrder"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" upperBound="-1"
@@ -18005,11 +17954,27 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="status" eType="#//MedicationPrescriptionStatus"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="status" eType="#//MedicationOrderStatus"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="status"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dateEnded" eType="#//DateTime"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="dateEnded"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reasonEnded" eType="#//CodeableConcept"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="reasonEnded"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -18078,14 +18043,14 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dosageInstruction" upperBound="-1"
-        eType="#//MedicationPrescriptionDosageInstruction" containment="true" resolveProxies="false">
+        eType="#//MedicationOrderDosageInstruction" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="dosageInstruction"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dispense" eType="#//MedicationPrescriptionDispense"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dispense" eType="#//MedicationOrderDispense"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -18093,7 +18058,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="substitution" eType="#//MedicationPrescriptionSubstitution"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="substitution" eType="#//MedicationOrderSubstitution"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -18101,10 +18066,18 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="priorPrescription" eType="#//Reference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="priorPrescription"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionDispense" eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderDispense" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription.Dispense"/>
+      <details key="name" value="MedicationOrder.Dispense"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="medicationCodeableConcept"
@@ -18156,10 +18129,9 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionDosageInstruction"
-      eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderDosageInstruction" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription.DosageInstruction"/>
+      <details key="name" value="MedicationOrder.DosageInstruction"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//String"
@@ -18178,27 +18150,11 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduledDateTime" eType="#//DateTime"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" eType="#//Timing"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="scheduledDateTime"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduledPeriod" eType="#//Period"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="scheduledPeriod"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduledTiming" eType="#//Timing"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="scheduledTiming"/>
+        <details key="name" value="timing"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -18258,11 +18214,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -18275,12 +18239,12 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionStatus" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderStatus" eSuperTypes="#//Element">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescriptionStatus"/>
+      <details key="name" value="MedicationOrderStatus"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//MedicationPrescriptionStatusList"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//MedicationOrderStatusList"
         unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
@@ -18288,29 +18252,27 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MedicationPrescriptionStatusList">
+  <eClassifiers xsi:type="ecore:EEnum" name="MedicationOrderStatusList">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescriptionStatus-list"/>
+      <details key="name" value="MedicationOrderStatus-list"/>
     </eAnnotations>
     <eLiterals name="active"/>
     <eLiterals name="onHold" value="1" literal="on-hold"/>
     <eLiterals name="completed" value="2"/>
     <eLiterals name="enteredInError" value="3" literal="entered-in-error"/>
     <eLiterals name="stopped" value="4"/>
-    <eLiterals name="superseded" value="5"/>
-    <eLiterals name="draft" value="6"/>
+    <eLiterals name="draft" value="5"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="MedicationPrescriptionStatusListObject"
+  <eClassifiers xsi:type="ecore:EDataType" name="MedicationOrderStatusListObject"
       instanceClassName="org.eclipse.emf.common.util.Enumerator">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescriptionStatus-list:Object"/>
-      <details key="baseType" value="MedicationPrescriptionStatus-list"/>
+      <details key="name" value="MedicationOrderStatus-list:Object"/>
+      <details key="baseType" value="MedicationOrderStatus-list"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionSubstitution"
-      eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderSubstitution" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription.Substitution"/>
+      <details key="name" value="MedicationOrder.Substitution"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CodeableConcept"
@@ -18326,6 +18288,28 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="reason"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationPackage" eSuperTypes="#//BackboneElement">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Medication.Package"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//CodeableConcept"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="container"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//MedicationContent" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="content"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -18373,8 +18357,8 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="patient" eType="#//Reference"
-        containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patient" lowerBound="1"
+        eType="#//Reference" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="patient"/>
@@ -18499,11 +18483,11 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" eType="#//Timing"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" eType="#//Timing"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="schedule"/>
+        <details key="name" value="timing"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -18555,11 +18539,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -24080,8 +24072,8 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="address" eType="#//Address"
-        containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
+        eType="#//Address" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="address"/>
@@ -24614,11 +24606,11 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationPrescription"
-        eType="#//MedicationPrescription" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationOrder" eType="#//MedicationOrder"
+        containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="MedicationPrescription"/>
+        <details key="name" value="MedicationOrder"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -26470,11 +26462,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CodeableConcept"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" upperBound="-1"
+        eType="#//CodeableConcept" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="category"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="code" lowerBound="1" eType="#//CodeableConcept"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="type"/>
+        <details key="name" value="code"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>

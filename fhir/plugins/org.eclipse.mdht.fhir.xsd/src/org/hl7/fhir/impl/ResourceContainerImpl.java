@@ -67,7 +67,7 @@ import org.hl7.fhir.Media;
 import org.hl7.fhir.Medication;
 import org.hl7.fhir.MedicationAdministration;
 import org.hl7.fhir.MedicationDispense;
-import org.hl7.fhir.MedicationPrescription;
+import org.hl7.fhir.MedicationOrder;
 import org.hl7.fhir.MedicationStatement;
 import org.hl7.fhir.MessageHeader;
 import org.hl7.fhir.NamingSystem;
@@ -171,7 +171,7 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getMedication <em>Medication</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getMedicationAdministration <em>Medication Administration</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getMedicationDispense <em>Medication Dispense</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getMedicationPrescription <em>Medication Prescription</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getMedicationOrder <em>Medication Order</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getMedicationStatement <em>Medication Statement</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getMessageHeader <em>Message Header</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ResourceContainerImpl#getNamingSystem <em>Naming System</em>}</li>
@@ -766,14 +766,14 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	protected MedicationDispense medicationDispense;
 
 	/**
-	 * The cached value of the '{@link #getMedicationPrescription() <em>Medication Prescription</em>}' containment reference.
+	 * The cached value of the '{@link #getMedicationOrder() <em>Medication Order</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMedicationPrescription()
+	 * @see #getMedicationOrder()
 	 * @generated
 	 * @ordered
 	 */
-	protected MedicationPrescription medicationPrescription;
+	protected MedicationOrder medicationOrder;
 
 	/**
 	 * The cached value of the '{@link #getMedicationStatement() <em>Medication Statement</em>}' containment reference.
@@ -3544,8 +3544,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MedicationPrescription getMedicationPrescription() {
-		return medicationPrescription;
+	public MedicationOrder getMedicationOrder() {
+		return medicationOrder;
 	}
 
 	/**
@@ -3553,11 +3553,11 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMedicationPrescription(MedicationPrescription newMedicationPrescription, NotificationChain msgs) {
-		MedicationPrescription oldMedicationPrescription = medicationPrescription;
-		medicationPrescription = newMedicationPrescription;
+	public NotificationChain basicSetMedicationOrder(MedicationOrder newMedicationOrder, NotificationChain msgs) {
+		MedicationOrder oldMedicationOrder = medicationOrder;
+		medicationOrder = newMedicationOrder;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION, oldMedicationPrescription, newMedicationPrescription);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER, oldMedicationOrder, newMedicationOrder);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -3568,18 +3568,18 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMedicationPrescription(MedicationPrescription newMedicationPrescription) {
-		if (newMedicationPrescription != medicationPrescription) {
+	public void setMedicationOrder(MedicationOrder newMedicationOrder) {
+		if (newMedicationOrder != medicationOrder) {
 			NotificationChain msgs = null;
-			if (medicationPrescription != null)
-				msgs = ((InternalEObject)medicationPrescription).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION, null, msgs);
-			if (newMedicationPrescription != null)
-				msgs = ((InternalEObject)newMedicationPrescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION, null, msgs);
-			msgs = basicSetMedicationPrescription(newMedicationPrescription, msgs);
+			if (medicationOrder != null)
+				msgs = ((InternalEObject)medicationOrder).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER, null, msgs);
+			if (newMedicationOrder != null)
+				msgs = ((InternalEObject)newMedicationOrder).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER, null, msgs);
+			msgs = basicSetMedicationOrder(newMedicationOrder, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION, newMedicationPrescription, newMedicationPrescription));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER, newMedicationOrder, newMedicationOrder));
 	}
 
 	/**
@@ -5334,8 +5334,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return basicSetMedicationAdministration(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_DISPENSE:
 				return basicSetMedicationDispense(null, msgs);
-			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION:
-				return basicSetMedicationPrescription(null, msgs);
+			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER:
+				return basicSetMedicationOrder(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_STATEMENT:
 				return basicSetMedicationStatement(null, msgs);
 			case FhirPackage.RESOURCE_CONTAINER__MESSAGE_HEADER:
@@ -5534,8 +5534,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return getMedicationAdministration();
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_DISPENSE:
 				return getMedicationDispense();
-			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION:
-				return getMedicationPrescription();
+			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER:
+				return getMedicationOrder();
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_STATEMENT:
 				return getMedicationStatement();
 			case FhirPackage.RESOURCE_CONTAINER__MESSAGE_HEADER:
@@ -5789,8 +5789,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_DISPENSE:
 				setMedicationDispense((MedicationDispense)newValue);
 				return;
-			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION:
-				setMedicationPrescription((MedicationPrescription)newValue);
+			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER:
+				setMedicationOrder((MedicationOrder)newValue);
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_STATEMENT:
 				setMedicationStatement((MedicationStatement)newValue);
@@ -6083,8 +6083,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_DISPENSE:
 				setMedicationDispense((MedicationDispense)null);
 				return;
-			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION:
-				setMedicationPrescription((MedicationPrescription)null);
+			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER:
+				setMedicationOrder((MedicationOrder)null);
 				return;
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_STATEMENT:
 				setMedicationStatement((MedicationStatement)null);
@@ -6322,8 +6322,8 @@ public class ResourceContainerImpl extends MinimalEObjectImpl.Container implemen
 				return medicationAdministration != null;
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_DISPENSE:
 				return medicationDispense != null;
-			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_PRESCRIPTION:
-				return medicationPrescription != null;
+			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_ORDER:
+				return medicationOrder != null;
 			case FhirPackage.RESOURCE_CONTAINER__MEDICATION_STATEMENT:
 				return medicationStatement != null;
 			case FhirPackage.RESOURCE_CONTAINER__MESSAGE_HEADER:

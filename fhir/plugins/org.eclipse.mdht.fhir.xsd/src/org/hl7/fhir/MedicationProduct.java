@@ -32,7 +32,7 @@ public interface MedicationProduct extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Describes the form of the item.  Powder; tables; carton.
+	 * Describes the form of the item.  Powder; tablets; carton.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Form</em>' containment reference.
 	 * @see #setForm(CodeableConcept)

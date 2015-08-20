@@ -77,7 +77,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.hl7.fhir.DocumentRoot#getMedication <em>Medication</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getMedicationAdministration <em>Medication Administration</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getMedicationDispense <em>Medication Dispense</em>}</li>
- *   <li>{@link org.hl7.fhir.DocumentRoot#getMedicationPrescription <em>Medication Prescription</em>}</li>
+ *   <li>{@link org.hl7.fhir.DocumentRoot#getMedicationOrder <em>Medication Order</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getMedicationStatement <em>Medication Statement</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getMessageHeader <em>Message Header</em>}</li>
  *   <li>{@link org.hl7.fhir.DocumentRoot#getNamingSystem <em>Naming System</em>}</li>
@@ -1325,7 +1325,7 @@ public interface DocumentRoot extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.
+	 * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance ("cine" video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Imaging Object Selection</em>' containment reference.
 	 * @see #setImagingObjectSelection(ImagingObjectSelection)
@@ -1607,30 +1607,30 @@ public interface DocumentRoot extends EObject {
 	void setMedicationDispense(MedicationDispense value);
 
 	/**
-	 * Returns the value of the '<em><b>Medication Prescription</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Medication Order</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An order for both supply of the medication and the instructions for administration of the medicine to a patient.
+	 * An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationOrder" rather than "MedicationPrescription" to generalize the use across inpatient and outpatient settings as well as for care plans, etc.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Medication Prescription</em>' containment reference.
-	 * @see #setMedicationPrescription(MedicationPrescription)
-	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_MedicationPrescription()
+	 * @return the value of the '<em>Medication Order</em>' containment reference.
+	 * @see #setMedicationOrder(MedicationOrder)
+	 * @see org.hl7.fhir.FhirPackage#getDocumentRoot_MedicationOrder()
 	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='MedicationPrescription' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='MedicationOrder' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	MedicationPrescription getMedicationPrescription();
+	MedicationOrder getMedicationOrder();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getMedicationPrescription <em>Medication Prescription</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.DocumentRoot#getMedicationOrder <em>Medication Order</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Medication Prescription</em>' containment reference.
-	 * @see #getMedicationPrescription()
+	 * @param value the new value of the '<em>Medication Order</em>' containment reference.
+	 * @see #getMedicationOrder()
 	 * @generated
 	 */
-	void setMedicationPrescription(MedicationPrescription value);
+	void setMedicationOrder(MedicationOrder value);
 
 	/**
 	 * Returns the value of the '<em><b>Medication Statement</b></em>' containment reference.

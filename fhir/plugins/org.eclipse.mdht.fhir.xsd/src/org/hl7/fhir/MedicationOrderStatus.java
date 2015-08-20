@@ -5,7 +5,7 @@ package org.hl7.fhir;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Medication Prescription Status</b></em>'.
+ * A representation of the model object '<em><b>Medication Order Status</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -17,17 +17,17 @@ package org.hl7.fhir;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionStatus#getValue <em>Value</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderStatus#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionStatus()
- * @model extendedMetaData="name='MedicationPrescriptionStatus' kind='elementOnly'"
+ * @see org.hl7.fhir.FhirPackage#getMedicationOrderStatus()
+ * @model extendedMetaData="name='MedicationOrderStatus' kind='elementOnly'"
  * @generated
  */
-public interface MedicationPrescriptionStatus extends Element {
+public interface MedicationOrderStatus extends Element {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.hl7.fhir.MedicationPrescriptionStatusList}.
+	 * The literals are from the enumeration {@link org.hl7.fhir.MedicationOrderStatusList}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -35,51 +35,51 @@ public interface MedicationPrescriptionStatus extends Element {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see org.hl7.fhir.MedicationPrescriptionStatusList
+	 * @see org.hl7.fhir.MedicationOrderStatusList
 	 * @see #isSetValue()
 	 * @see #unsetValue()
-	 * @see #setValue(MedicationPrescriptionStatusList)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionStatus_Value()
+	 * @see #setValue(MedicationOrderStatusList)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderStatus_Value()
 	 * @model unsettable="true"
 	 *        extendedMetaData="kind='attribute' name='value'"
 	 * @generated
 	 */
-	MedicationPrescriptionStatusList getValue();
+	MedicationOrderStatusList getValue();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionStatus#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderStatus#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see org.hl7.fhir.MedicationPrescriptionStatusList
+	 * @see org.hl7.fhir.MedicationOrderStatusList
 	 * @see #isSetValue()
 	 * @see #unsetValue()
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(MedicationPrescriptionStatusList value);
+	void setValue(MedicationOrderStatusList value);
 
 	/**
-	 * Unsets the value of the '{@link org.hl7.fhir.MedicationPrescriptionStatus#getValue <em>Value</em>}' attribute.
+	 * Unsets the value of the '{@link org.hl7.fhir.MedicationOrderStatus#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetValue()
 	 * @see #getValue()
-	 * @see #setValue(MedicationPrescriptionStatusList)
+	 * @see #setValue(MedicationOrderStatusList)
 	 * @generated
 	 */
 	void unsetValue();
 
 	/**
-	 * Returns whether the value of the '{@link org.hl7.fhir.MedicationPrescriptionStatus#getValue <em>Value</em>}' attribute is set.
+	 * Returns whether the value of the '{@link org.hl7.fhir.MedicationOrderStatus#getValue <em>Value</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Value</em>' attribute is set.
 	 * @see #unsetValue()
 	 * @see #getValue()
-	 * @see #setValue(MedicationPrescriptionStatusList)
+	 * @see #setValue(MedicationOrderStatusList)
 	 * @generated
 	 */
 	boolean isSetValue();
 
-} // MedicationPrescriptionStatus
+} // MedicationOrderStatus

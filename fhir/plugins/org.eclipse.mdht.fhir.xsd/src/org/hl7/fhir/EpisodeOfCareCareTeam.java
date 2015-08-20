@@ -17,9 +17,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.EpisodeOfCareCareTeam#getMember <em>Member</em>}</li>
  *   <li>{@link org.hl7.fhir.EpisodeOfCareCareTeam#getRole <em>Role</em>}</li>
  *   <li>{@link org.hl7.fhir.EpisodeOfCareCareTeam#getPeriod <em>Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.EpisodeOfCareCareTeam#getMember <em>Member</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getEpisodeOfCareCareTeam()
@@ -27,32 +27,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface EpisodeOfCareCareTeam extends BackboneElement {
-	/**
-	 * Returns the value of the '<em><b>Member</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The practitioner (or Organization) within the team.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Member</em>' containment reference.
-	 * @see #setMember(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getEpisodeOfCareCareTeam_Member()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='member' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Reference getMember();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.EpisodeOfCareCareTeam#getMember <em>Member</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Member</em>' containment reference.
-	 * @see #getMember()
-	 * @generated
-	 */
-	void setMember(Reference value);
-
 	/**
 	 * Returns the value of the '<em><b>Role</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.CodeableConcept}.
@@ -94,5 +68,31 @@ public interface EpisodeOfCareCareTeam extends BackboneElement {
 	 * @generated
 	 */
 	void setPeriod(Period value);
+
+	/**
+	 * Returns the value of the '<em><b>Member</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The practitioner (or Organization) within the team.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Member</em>' containment reference.
+	 * @see #setMember(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getEpisodeOfCareCareTeam_Member()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='member' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Reference getMember();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.EpisodeOfCareCareTeam#getMember <em>Member</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Member</em>' containment reference.
+	 * @see #getMember()
+	 * @generated
+	 */
+	void setMember(Reference value);
 
 } // EpisodeOfCareCareTeam

@@ -5,38 +5,37 @@ package org.hl7.fhir;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Medication Prescription Dosage Instruction</b></em>'.
+ * A representation of the model object '<em><b>Medication Order Dosage Instruction</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An order for both supply of the medication and the instructions for administration of the medicine to a patient.
+ * An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationOrder" rather than "MedicationPrescription" to generalize the use across inpatient and outpatient settings as well as for care plans, etc.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getText <em>Text</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getAdditionalInstructions <em>Additional Instructions</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getScheduledDateTime <em>Scheduled Date Time</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getScheduledPeriod <em>Scheduled Period</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getScheduledTiming <em>Scheduled Timing</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getAsNeededBoolean <em>As Needed Boolean</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getAsNeededCodeableConcept <em>As Needed Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getSite <em>Site</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getRoute <em>Route</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getMethod <em>Method</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getDoseRange <em>Dose Range</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getDoseQuantity <em>Dose Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getRate <em>Rate</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getMaxDosePerPeriod <em>Max Dose Per Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getText <em>Text</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getAdditionalInstructions <em>Additional Instructions</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getTiming <em>Timing</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getAsNeededBoolean <em>As Needed Boolean</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getAsNeededCodeableConcept <em>As Needed Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getSite <em>Site</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getRoute <em>Route</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getMethod <em>Method</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getDoseRange <em>Dose Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getDoseQuantity <em>Dose Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getRateRatio <em>Rate Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getRateRange <em>Rate Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDosageInstruction#getMaxDosePerPeriod <em>Max Dose Per Period</em>}</li>
  * </ul>
  *
- * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction()
- * @model extendedMetaData="name='MedicationPrescription.DosageInstruction' kind='elementOnly'"
+ * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction()
+ * @model extendedMetaData="name='MedicationOrder.DosageInstruction' kind='elementOnly'"
  * @generated
  */
-public interface MedicationPrescriptionDosageInstruction extends BackboneElement {
+public interface MedicationOrderDosageInstruction extends BackboneElement {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -46,7 +45,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Text</em>' containment reference.
 	 * @see #setText(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_Text()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_Text()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='text' namespace='##targetNamespace'"
 	 * @generated
@@ -54,7 +53,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	org.hl7.fhir.String getText();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getText <em>Text</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getText <em>Text</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Text</em>' containment reference.
@@ -72,7 +71,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Additional Instructions</em>' containment reference.
 	 * @see #setAdditionalInstructions(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_AdditionalInstructions()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_AdditionalInstructions()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='additionalInstructions' namespace='##targetNamespace'"
 	 * @generated
@@ -80,7 +79,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	CodeableConcept getAdditionalInstructions();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getAdditionalInstructions <em>Additional Instructions</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getAdditionalInstructions <em>Additional Instructions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Additional Instructions</em>' containment reference.
@@ -90,85 +89,30 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	void setAdditionalInstructions(CodeableConcept value);
 
 	/**
-	 * Returns the value of the '<em><b>Scheduled Date Time</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Timing</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Scheduled Date Time</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scheduled Date Time</em>' containment reference.
-	 * @see #setScheduledDateTime(DateTime)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_ScheduledDateTime()
+	 * <!-- begin-model-doc -->
+	 * The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  "Every  8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:";  "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Timing</em>' containment reference.
+	 * @see #setTiming(Timing)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_Timing()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='scheduledDateTime' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='timing' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	DateTime getScheduledDateTime();
+	Timing getTiming();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getScheduledDateTime <em>Scheduled Date Time</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getTiming <em>Timing</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scheduled Date Time</em>' containment reference.
-	 * @see #getScheduledDateTime()
+	 * @param value the new value of the '<em>Timing</em>' containment reference.
+	 * @see #getTiming()
 	 * @generated
 	 */
-	void setScheduledDateTime(DateTime value);
-
-	/**
-	 * Returns the value of the '<em><b>Scheduled Period</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Scheduled Period</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scheduled Period</em>' containment reference.
-	 * @see #setScheduledPeriod(Period)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_ScheduledPeriod()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='scheduledPeriod' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Period getScheduledPeriod();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getScheduledPeriod <em>Scheduled Period</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scheduled Period</em>' containment reference.
-	 * @see #getScheduledPeriod()
-	 * @generated
-	 */
-	void setScheduledPeriod(Period value);
-
-	/**
-	 * Returns the value of the '<em><b>Scheduled Timing</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Scheduled Timing</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scheduled Timing</em>' containment reference.
-	 * @see #setScheduledTiming(Timing)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_ScheduledTiming()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='scheduledTiming' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	Timing getScheduledTiming();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getScheduledTiming <em>Scheduled Timing</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scheduled Timing</em>' containment reference.
-	 * @see #getScheduledTiming()
-	 * @generated
-	 */
-	void setScheduledTiming(Timing value);
+	void setTiming(Timing value);
 
 	/**
 	 * Returns the value of the '<em><b>As Needed Boolean</b></em>' containment reference.
@@ -180,7 +124,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>As Needed Boolean</em>' containment reference.
 	 * @see #setAsNeededBoolean(org.hl7.fhir.Boolean)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_AsNeededBoolean()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_AsNeededBoolean()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='asNeededBoolean' namespace='##targetNamespace'"
 	 * @generated
@@ -188,7 +132,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	org.hl7.fhir.Boolean getAsNeededBoolean();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getAsNeededBoolean <em>As Needed Boolean</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getAsNeededBoolean <em>As Needed Boolean</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>As Needed Boolean</em>' containment reference.
@@ -207,7 +151,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>As Needed Codeable Concept</em>' containment reference.
 	 * @see #setAsNeededCodeableConcept(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_AsNeededCodeableConcept()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_AsNeededCodeableConcept()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='asNeededCodeableConcept' namespace='##targetNamespace'"
 	 * @generated
@@ -215,7 +159,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	CodeableConcept getAsNeededCodeableConcept();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getAsNeededCodeableConcept <em>As Needed Codeable Concept</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getAsNeededCodeableConcept <em>As Needed Codeable Concept</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>As Needed Codeable Concept</em>' containment reference.
@@ -233,7 +177,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Site</em>' containment reference.
 	 * @see #setSite(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_Site()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_Site()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='site' namespace='##targetNamespace'"
 	 * @generated
@@ -241,7 +185,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	CodeableConcept getSite();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getSite <em>Site</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getSite <em>Site</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Site</em>' containment reference.
@@ -259,7 +203,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Route</em>' containment reference.
 	 * @see #setRoute(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_Route()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_Route()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='route' namespace='##targetNamespace'"
 	 * @generated
@@ -267,7 +211,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	CodeableConcept getRoute();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getRoute <em>Route</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getRoute <em>Route</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Route</em>' containment reference.
@@ -285,7 +229,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Method</em>' containment reference.
 	 * @see #setMethod(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_Method()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_Method()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='method' namespace='##targetNamespace'"
 	 * @generated
@@ -293,7 +237,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	CodeableConcept getMethod();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getMethod <em>Method</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getMethod <em>Method</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Method</em>' containment reference.
@@ -312,7 +256,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dose Range</em>' containment reference.
 	 * @see #setDoseRange(Range)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_DoseRange()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_DoseRange()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='doseRange' namespace='##targetNamespace'"
 	 * @generated
@@ -320,7 +264,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	Range getDoseRange();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getDoseRange <em>Dose Range</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getDoseRange <em>Dose Range</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dose Range</em>' containment reference.
@@ -339,7 +283,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dose Quantity</em>' containment reference.
 	 * @see #setDoseQuantity(SimpleQuantity)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_DoseQuantity()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_DoseQuantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='doseQuantity' namespace='##targetNamespace'"
 	 * @generated
@@ -347,7 +291,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	SimpleQuantity getDoseQuantity();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getDoseQuantity <em>Dose Quantity</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getDoseQuantity <em>Dose Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dose Quantity</em>' containment reference.
@@ -357,30 +301,58 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	void setDoseQuantity(SimpleQuantity value);
 
 	/**
-	 * Returns the value of the '<em><b>Rate</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Rate Ratio</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Ratio</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Rate</em>' containment reference.
-	 * @see #setRate(Ratio)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_Rate()
+	 * @return the value of the '<em>Rate Ratio</em>' containment reference.
+	 * @see #setRateRatio(Ratio)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_RateRatio()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='rate' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='rateRatio' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Ratio getRate();
+	Ratio getRateRatio();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getRate <em>Rate</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getRateRatio <em>Rate Ratio</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rate</em>' containment reference.
-	 * @see #getRate()
+	 * @param value the new value of the '<em>Rate Ratio</em>' containment reference.
+	 * @see #getRateRatio()
 	 * @generated
 	 */
-	void setRate(Ratio value);
+	void setRateRatio(Ratio value);
+
+	/**
+	 * Returns the value of the '<em><b>Rate Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Range</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rate Range</em>' containment reference.
+	 * @see #setRateRange(Range)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_RateRange()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='rateRange' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Range getRateRange();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getRateRange <em>Rate Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rate Range</em>' containment reference.
+	 * @see #getRateRange()
+	 * @generated
+	 */
+	void setRateRange(Range value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Dose Per Period</b></em>' containment reference.
@@ -391,7 +363,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Dose Per Period</em>' containment reference.
 	 * @see #setMaxDosePerPeriod(Ratio)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDosageInstruction_MaxDosePerPeriod()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDosageInstruction_MaxDosePerPeriod()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='maxDosePerPeriod' namespace='##targetNamespace'"
 	 * @generated
@@ -399,7 +371,7 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	Ratio getMaxDosePerPeriod();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction#getMaxDosePerPeriod <em>Max Dose Per Period</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDosageInstruction#getMaxDosePerPeriod <em>Max Dose Per Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Max Dose Per Period</em>' containment reference.
@@ -408,4 +380,4 @@ public interface MedicationPrescriptionDosageInstruction extends BackboneElement
 	 */
 	void setMaxDosePerPeriod(Ratio value);
 
-} // MedicationPrescriptionDosageInstruction
+} // MedicationOrderDosageInstruction

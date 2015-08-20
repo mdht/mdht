@@ -27,7 +27,12 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
+  Generated on Thu, Aug 20, 2015 14:13+0000 for FHIR v0.5.0 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -79,17 +84,17 @@
               <xs:documentation xml:lang="en">Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="incomingReferralRequest" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="incomingReferral" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The referral request that this encounter satisfies (incoming referral).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="participant" type="Encounter.Participant" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The main practitioner responsible for providing the service.</xs:documentation>
+              <xs:documentation xml:lang="en">The list of people responsible for providing the service.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="fulfills" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="appointment" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The appointment that scheduled this encounter.</xs:documentation>
            </xs:annotation>

@@ -94,15 +94,6 @@ public interface FhirFactory extends EFactory {
 	Age createAge();
 
 	/**
-	 * Returns a new object of class '<em>Age Units</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Age Units</em>'.
-	 * @generated
-	 */
-	AgeUnits createAgeUnits();
-
-	/**
 	 * Returns a new object of class '<em>Aggregation Mode</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2785,6 +2776,51 @@ public interface FhirFactory extends EFactory {
 	MedicationKind createMedicationKind();
 
 	/**
+	 * Returns a new object of class '<em>Medication Order</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Order</em>'.
+	 * @generated
+	 */
+	MedicationOrder createMedicationOrder();
+
+	/**
+	 * Returns a new object of class '<em>Medication Order Dispense</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Order Dispense</em>'.
+	 * @generated
+	 */
+	MedicationOrderDispense createMedicationOrderDispense();
+
+	/**
+	 * Returns a new object of class '<em>Medication Order Dosage Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Order Dosage Instruction</em>'.
+	 * @generated
+	 */
+	MedicationOrderDosageInstruction createMedicationOrderDosageInstruction();
+
+	/**
+	 * Returns a new object of class '<em>Medication Order Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Order Status</em>'.
+	 * @generated
+	 */
+	MedicationOrderStatus createMedicationOrderStatus();
+
+	/**
+	 * Returns a new object of class '<em>Medication Order Substitution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Order Substitution</em>'.
+	 * @generated
+	 */
+	MedicationOrderSubstitution createMedicationOrderSubstitution();
+
+	/**
 	 * Returns a new object of class '<em>Medication Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2792,51 +2828,6 @@ public interface FhirFactory extends EFactory {
 	 * @generated
 	 */
 	MedicationPackage createMedicationPackage();
-
-	/**
-	 * Returns a new object of class '<em>Medication Prescription</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Medication Prescription</em>'.
-	 * @generated
-	 */
-	MedicationPrescription createMedicationPrescription();
-
-	/**
-	 * Returns a new object of class '<em>Medication Prescription Dispense</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Medication Prescription Dispense</em>'.
-	 * @generated
-	 */
-	MedicationPrescriptionDispense createMedicationPrescriptionDispense();
-
-	/**
-	 * Returns a new object of class '<em>Medication Prescription Dosage Instruction</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Medication Prescription Dosage Instruction</em>'.
-	 * @generated
-	 */
-	MedicationPrescriptionDosageInstruction createMedicationPrescriptionDosageInstruction();
-
-	/**
-	 * Returns a new object of class '<em>Medication Prescription Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Medication Prescription Status</em>'.
-	 * @generated
-	 */
-	MedicationPrescriptionStatus createMedicationPrescriptionStatus();
-
-	/**
-	 * Returns a new object of class '<em>Medication Prescription Substitution</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Medication Prescription Substitution</em>'.
-	 * @generated
-	 */
-	MedicationPrescriptionSubstitution createMedicationPrescriptionSubstitution();
 
 	/**
 	 * Returns a new object of class '<em>Medication Product</em>'.

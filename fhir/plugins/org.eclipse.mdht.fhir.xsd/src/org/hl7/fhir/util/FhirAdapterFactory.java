@@ -17,7 +17,6 @@ import org.hl7.fhir.AddressType;
 import org.hl7.fhir.AddressUse;
 import org.hl7.fhir.AdministrativeGender;
 import org.hl7.fhir.Age;
-import org.hl7.fhir.AgeUnits;
 import org.hl7.fhir.AggregationMode;
 import org.hl7.fhir.AllergyIntolerance;
 import org.hl7.fhir.AllergyIntoleranceCategory;
@@ -315,12 +314,12 @@ import org.hl7.fhir.MedicationDispenseStatus;
 import org.hl7.fhir.MedicationDispenseSubstitution;
 import org.hl7.fhir.MedicationIngredient;
 import org.hl7.fhir.MedicationKind;
+import org.hl7.fhir.MedicationOrder;
+import org.hl7.fhir.MedicationOrderDispense;
+import org.hl7.fhir.MedicationOrderDosageInstruction;
+import org.hl7.fhir.MedicationOrderStatus;
+import org.hl7.fhir.MedicationOrderSubstitution;
 import org.hl7.fhir.MedicationPackage;
-import org.hl7.fhir.MedicationPrescription;
-import org.hl7.fhir.MedicationPrescriptionDispense;
-import org.hl7.fhir.MedicationPrescriptionDosageInstruction;
-import org.hl7.fhir.MedicationPrescriptionStatus;
-import org.hl7.fhir.MedicationPrescriptionSubstitution;
 import org.hl7.fhir.MedicationProduct;
 import org.hl7.fhir.MedicationStatement;
 import org.hl7.fhir.MedicationStatementDosage;
@@ -604,10 +603,6 @@ public class FhirAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAge(Age object) {
 				return createAgeAdapter();
-			}
-			@Override
-			public Adapter caseAgeUnits(AgeUnits object) {
-				return createAgeUnitsAdapter();
 			}
 			@Override
 			public Adapter caseAggregationMode(AggregationMode object) {
@@ -1802,28 +1797,28 @@ public class FhirAdapterFactory extends AdapterFactoryImpl {
 				return createMedicationKindAdapter();
 			}
 			@Override
+			public Adapter caseMedicationOrder(MedicationOrder object) {
+				return createMedicationOrderAdapter();
+			}
+			@Override
+			public Adapter caseMedicationOrderDispense(MedicationOrderDispense object) {
+				return createMedicationOrderDispenseAdapter();
+			}
+			@Override
+			public Adapter caseMedicationOrderDosageInstruction(MedicationOrderDosageInstruction object) {
+				return createMedicationOrderDosageInstructionAdapter();
+			}
+			@Override
+			public Adapter caseMedicationOrderStatus(MedicationOrderStatus object) {
+				return createMedicationOrderStatusAdapter();
+			}
+			@Override
+			public Adapter caseMedicationOrderSubstitution(MedicationOrderSubstitution object) {
+				return createMedicationOrderSubstitutionAdapter();
+			}
+			@Override
 			public Adapter caseMedicationPackage(MedicationPackage object) {
 				return createMedicationPackageAdapter();
-			}
-			@Override
-			public Adapter caseMedicationPrescription(MedicationPrescription object) {
-				return createMedicationPrescriptionAdapter();
-			}
-			@Override
-			public Adapter caseMedicationPrescriptionDispense(MedicationPrescriptionDispense object) {
-				return createMedicationPrescriptionDispenseAdapter();
-			}
-			@Override
-			public Adapter caseMedicationPrescriptionDosageInstruction(MedicationPrescriptionDosageInstruction object) {
-				return createMedicationPrescriptionDosageInstructionAdapter();
-			}
-			@Override
-			public Adapter caseMedicationPrescriptionStatus(MedicationPrescriptionStatus object) {
-				return createMedicationPrescriptionStatusAdapter();
-			}
-			@Override
-			public Adapter caseMedicationPrescriptionSubstitution(MedicationPrescriptionSubstitution object) {
-				return createMedicationPrescriptionSubstitutionAdapter();
 			}
 			@Override
 			public Adapter caseMedicationProduct(MedicationProduct object) {
@@ -2738,20 +2733,6 @@ public class FhirAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAgeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.AgeUnits <em>Age Units</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.hl7.fhir.AgeUnits
-	 * @generated
-	 */
-	public Adapter createAgeUnitsAdapter() {
 		return null;
 	}
 
@@ -6928,6 +6909,76 @@ public class FhirAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationOrder <em>Medication Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.hl7.fhir.MedicationOrder
+	 * @generated
+	 */
+	public Adapter createMedicationOrderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationOrderDispense <em>Medication Order Dispense</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.hl7.fhir.MedicationOrderDispense
+	 * @generated
+	 */
+	public Adapter createMedicationOrderDispenseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationOrderDosageInstruction <em>Medication Order Dosage Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.hl7.fhir.MedicationOrderDosageInstruction
+	 * @generated
+	 */
+	public Adapter createMedicationOrderDosageInstructionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationOrderStatus <em>Medication Order Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.hl7.fhir.MedicationOrderStatus
+	 * @generated
+	 */
+	public Adapter createMedicationOrderStatusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationOrderSubstitution <em>Medication Order Substitution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.hl7.fhir.MedicationOrderSubstitution
+	 * @generated
+	 */
+	public Adapter createMedicationOrderSubstitutionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationPackage <em>Medication Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -6938,76 +6989,6 @@ public class FhirAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMedicationPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationPrescription <em>Medication Prescription</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.hl7.fhir.MedicationPrescription
-	 * @generated
-	 */
-	public Adapter createMedicationPrescriptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationPrescriptionDispense <em>Medication Prescription Dispense</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.hl7.fhir.MedicationPrescriptionDispense
-	 * @generated
-	 */
-	public Adapter createMedicationPrescriptionDispenseAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationPrescriptionDosageInstruction <em>Medication Prescription Dosage Instruction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.hl7.fhir.MedicationPrescriptionDosageInstruction
-	 * @generated
-	 */
-	public Adapter createMedicationPrescriptionDosageInstructionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationPrescriptionStatus <em>Medication Prescription Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.hl7.fhir.MedicationPrescriptionStatus
-	 * @generated
-	 */
-	public Adapter createMedicationPrescriptionStatusAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.hl7.fhir.MedicationPrescriptionSubstitution <em>Medication Prescription Substitution</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.hl7.fhir.MedicationPrescriptionSubstitution
-	 * @generated
-	 */
-	public Adapter createMedicationPrescriptionSubstitutionAdapter() {
 		return null;
 	}
 

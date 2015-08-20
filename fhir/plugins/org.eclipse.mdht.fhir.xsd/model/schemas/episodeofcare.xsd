@@ -27,7 +27,12 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
+  Generated on Thu, Aug 20, 2015 14:13+0000 for FHIR v0.5.0 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -131,11 +136,6 @@
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="member" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The practitioner (or Organization) within the team.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="role" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The role that this team member is taking within this episode of care.</xs:documentation>
@@ -144,6 +144,11 @@
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">The period of time that this practitioner is performing some role within the episode of care.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="member" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The practitioner (or Organization) within the team.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

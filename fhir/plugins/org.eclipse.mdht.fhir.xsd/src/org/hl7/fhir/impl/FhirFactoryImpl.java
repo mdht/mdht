@@ -34,8 +34,6 @@ import org.hl7.fhir.AddressUseList;
 import org.hl7.fhir.AdministrativeGender;
 import org.hl7.fhir.AdministrativeGenderList;
 import org.hl7.fhir.Age;
-import org.hl7.fhir.AgeUnits;
-import org.hl7.fhir.AgeUnitsList;
 import org.hl7.fhir.AggregationMode;
 import org.hl7.fhir.AggregationModeList;
 import org.hl7.fhir.AllergyIntolerance;
@@ -419,13 +417,13 @@ import org.hl7.fhir.MedicationDispenseSubstitution;
 import org.hl7.fhir.MedicationIngredient;
 import org.hl7.fhir.MedicationKind;
 import org.hl7.fhir.MedicationKindList;
+import org.hl7.fhir.MedicationOrder;
+import org.hl7.fhir.MedicationOrderDispense;
+import org.hl7.fhir.MedicationOrderDosageInstruction;
+import org.hl7.fhir.MedicationOrderStatus;
+import org.hl7.fhir.MedicationOrderStatusList;
+import org.hl7.fhir.MedicationOrderSubstitution;
 import org.hl7.fhir.MedicationPackage;
-import org.hl7.fhir.MedicationPrescription;
-import org.hl7.fhir.MedicationPrescriptionDispense;
-import org.hl7.fhir.MedicationPrescriptionDosageInstruction;
-import org.hl7.fhir.MedicationPrescriptionStatus;
-import org.hl7.fhir.MedicationPrescriptionStatusList;
-import org.hl7.fhir.MedicationPrescriptionSubstitution;
 import org.hl7.fhir.MedicationProduct;
 import org.hl7.fhir.MedicationStatement;
 import org.hl7.fhir.MedicationStatementDosage;
@@ -723,7 +721,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 			case FhirPackage.ADDRESS_USE: return createAddressUse();
 			case FhirPackage.ADMINISTRATIVE_GENDER: return createAdministrativeGender();
 			case FhirPackage.AGE: return createAge();
-			case FhirPackage.AGE_UNITS: return createAgeUnits();
 			case FhirPackage.AGGREGATION_MODE: return createAggregationMode();
 			case FhirPackage.ALLERGY_INTOLERANCE: return createAllergyIntolerance();
 			case FhirPackage.ALLERGY_INTOLERANCE_CATEGORY: return createAllergyIntoleranceCategory();
@@ -1022,12 +1019,12 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 			case FhirPackage.MEDICATION_DISPENSE_SUBSTITUTION: return createMedicationDispenseSubstitution();
 			case FhirPackage.MEDICATION_INGREDIENT: return createMedicationIngredient();
 			case FhirPackage.MEDICATION_KIND: return createMedicationKind();
+			case FhirPackage.MEDICATION_ORDER: return createMedicationOrder();
+			case FhirPackage.MEDICATION_ORDER_DISPENSE: return createMedicationOrderDispense();
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION: return createMedicationOrderDosageInstruction();
+			case FhirPackage.MEDICATION_ORDER_STATUS: return createMedicationOrderStatus();
+			case FhirPackage.MEDICATION_ORDER_SUBSTITUTION: return createMedicationOrderSubstitution();
 			case FhirPackage.MEDICATION_PACKAGE: return createMedicationPackage();
-			case FhirPackage.MEDICATION_PRESCRIPTION: return createMedicationPrescription();
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE: return createMedicationPrescriptionDispense();
-			case FhirPackage.MEDICATION_PRESCRIPTION_DOSAGE_INSTRUCTION: return createMedicationPrescriptionDosageInstruction();
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS: return createMedicationPrescriptionStatus();
-			case FhirPackage.MEDICATION_PRESCRIPTION_SUBSTITUTION: return createMedicationPrescriptionSubstitution();
 			case FhirPackage.MEDICATION_PRODUCT: return createMedicationProduct();
 			case FhirPackage.MEDICATION_STATEMENT: return createMedicationStatement();
 			case FhirPackage.MEDICATION_STATEMENT_DOSAGE: return createMedicationStatementDosage();
@@ -1247,8 +1244,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return createAddressUseListFromString(eDataType, initialValue);
 			case FhirPackage.ADMINISTRATIVE_GENDER_LIST:
 				return createAdministrativeGenderListFromString(eDataType, initialValue);
-			case FhirPackage.AGE_UNITS_LIST:
-				return createAgeUnitsListFromString(eDataType, initialValue);
 			case FhirPackage.AGGREGATION_MODE_LIST:
 				return createAggregationModeListFromString(eDataType, initialValue);
 			case FhirPackage.ALLERGY_INTOLERANCE_CATEGORY_LIST:
@@ -1419,8 +1414,8 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return createMedicationDispenseStatusListFromString(eDataType, initialValue);
 			case FhirPackage.MEDICATION_KIND_LIST:
 				return createMedicationKindListFromString(eDataType, initialValue);
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS_LIST:
-				return createMedicationPrescriptionStatusListFromString(eDataType, initialValue);
+			case FhirPackage.MEDICATION_ORDER_STATUS_LIST:
+				return createMedicationOrderStatusListFromString(eDataType, initialValue);
 			case FhirPackage.MEDICATION_STATEMENT_STATUS_LIST:
 				return createMedicationStatementStatusListFromString(eDataType, initialValue);
 			case FhirPackage.MESSAGE_SIGNIFICANCE_CATEGORY_LIST:
@@ -1529,8 +1524,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return createAddressUseListObjectFromString(eDataType, initialValue);
 			case FhirPackage.ADMINISTRATIVE_GENDER_LIST_OBJECT:
 				return createAdministrativeGenderListObjectFromString(eDataType, initialValue);
-			case FhirPackage.AGE_UNITS_LIST_OBJECT:
-				return createAgeUnitsListObjectFromString(eDataType, initialValue);
 			case FhirPackage.AGGREGATION_MODE_LIST_OBJECT:
 				return createAggregationModeListObjectFromString(eDataType, initialValue);
 			case FhirPackage.ALLERGY_INTOLERANCE_CATEGORY_LIST_OBJECT:
@@ -1729,8 +1722,8 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return createMedicationDispenseStatusListObjectFromString(eDataType, initialValue);
 			case FhirPackage.MEDICATION_KIND_LIST_OBJECT:
 				return createMedicationKindListObjectFromString(eDataType, initialValue);
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS_LIST_OBJECT:
-				return createMedicationPrescriptionStatusListObjectFromString(eDataType, initialValue);
+			case FhirPackage.MEDICATION_ORDER_STATUS_LIST_OBJECT:
+				return createMedicationOrderStatusListObjectFromString(eDataType, initialValue);
 			case FhirPackage.MEDICATION_STATEMENT_STATUS_LIST_OBJECT:
 				return createMedicationStatementStatusListObjectFromString(eDataType, initialValue);
 			case FhirPackage.MESSAGE_SIGNIFICANCE_CATEGORY_LIST_OBJECT:
@@ -1868,8 +1861,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return convertAddressUseListToString(eDataType, instanceValue);
 			case FhirPackage.ADMINISTRATIVE_GENDER_LIST:
 				return convertAdministrativeGenderListToString(eDataType, instanceValue);
-			case FhirPackage.AGE_UNITS_LIST:
-				return convertAgeUnitsListToString(eDataType, instanceValue);
 			case FhirPackage.AGGREGATION_MODE_LIST:
 				return convertAggregationModeListToString(eDataType, instanceValue);
 			case FhirPackage.ALLERGY_INTOLERANCE_CATEGORY_LIST:
@@ -2040,8 +2031,8 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return convertMedicationDispenseStatusListToString(eDataType, instanceValue);
 			case FhirPackage.MEDICATION_KIND_LIST:
 				return convertMedicationKindListToString(eDataType, instanceValue);
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS_LIST:
-				return convertMedicationPrescriptionStatusListToString(eDataType, instanceValue);
+			case FhirPackage.MEDICATION_ORDER_STATUS_LIST:
+				return convertMedicationOrderStatusListToString(eDataType, instanceValue);
 			case FhirPackage.MEDICATION_STATEMENT_STATUS_LIST:
 				return convertMedicationStatementStatusListToString(eDataType, instanceValue);
 			case FhirPackage.MESSAGE_SIGNIFICANCE_CATEGORY_LIST:
@@ -2150,8 +2141,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return convertAddressUseListObjectToString(eDataType, instanceValue);
 			case FhirPackage.ADMINISTRATIVE_GENDER_LIST_OBJECT:
 				return convertAdministrativeGenderListObjectToString(eDataType, instanceValue);
-			case FhirPackage.AGE_UNITS_LIST_OBJECT:
-				return convertAgeUnitsListObjectToString(eDataType, instanceValue);
 			case FhirPackage.AGGREGATION_MODE_LIST_OBJECT:
 				return convertAggregationModeListObjectToString(eDataType, instanceValue);
 			case FhirPackage.ALLERGY_INTOLERANCE_CATEGORY_LIST_OBJECT:
@@ -2350,8 +2339,8 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 				return convertMedicationDispenseStatusListObjectToString(eDataType, instanceValue);
 			case FhirPackage.MEDICATION_KIND_LIST_OBJECT:
 				return convertMedicationKindListObjectToString(eDataType, instanceValue);
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS_LIST_OBJECT:
-				return convertMedicationPrescriptionStatusListObjectToString(eDataType, instanceValue);
+			case FhirPackage.MEDICATION_ORDER_STATUS_LIST_OBJECT:
+				return convertMedicationOrderStatusListObjectToString(eDataType, instanceValue);
 			case FhirPackage.MEDICATION_STATEMENT_STATUS_LIST_OBJECT:
 				return convertMedicationStatementStatusListObjectToString(eDataType, instanceValue);
 			case FhirPackage.MESSAGE_SIGNIFICANCE_CATEGORY_LIST_OBJECT:
@@ -2549,16 +2538,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	public Age createAge() {
 		AgeImpl age = new AgeImpl();
 		return age;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AgeUnits createAgeUnits() {
-		AgeUnitsImpl ageUnits = new AgeUnitsImpl();
-		return ageUnits;
 	}
 
 	/**
@@ -5546,59 +5525,59 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MedicationOrder createMedicationOrder() {
+		MedicationOrderImpl medicationOrder = new MedicationOrderImpl();
+		return medicationOrder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationOrderDispense createMedicationOrderDispense() {
+		MedicationOrderDispenseImpl medicationOrderDispense = new MedicationOrderDispenseImpl();
+		return medicationOrderDispense;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationOrderDosageInstruction createMedicationOrderDosageInstruction() {
+		MedicationOrderDosageInstructionImpl medicationOrderDosageInstruction = new MedicationOrderDosageInstructionImpl();
+		return medicationOrderDosageInstruction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationOrderStatus createMedicationOrderStatus() {
+		MedicationOrderStatusImpl medicationOrderStatus = new MedicationOrderStatusImpl();
+		return medicationOrderStatus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationOrderSubstitution createMedicationOrderSubstitution() {
+		MedicationOrderSubstitutionImpl medicationOrderSubstitution = new MedicationOrderSubstitutionImpl();
+		return medicationOrderSubstitution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MedicationPackage createMedicationPackage() {
 		MedicationPackageImpl medicationPackage = new MedicationPackageImpl();
 		return medicationPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MedicationPrescription createMedicationPrescription() {
-		MedicationPrescriptionImpl medicationPrescription = new MedicationPrescriptionImpl();
-		return medicationPrescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MedicationPrescriptionDispense createMedicationPrescriptionDispense() {
-		MedicationPrescriptionDispenseImpl medicationPrescriptionDispense = new MedicationPrescriptionDispenseImpl();
-		return medicationPrescriptionDispense;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MedicationPrescriptionDosageInstruction createMedicationPrescriptionDosageInstruction() {
-		MedicationPrescriptionDosageInstructionImpl medicationPrescriptionDosageInstruction = new MedicationPrescriptionDosageInstructionImpl();
-		return medicationPrescriptionDosageInstruction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MedicationPrescriptionStatus createMedicationPrescriptionStatus() {
-		MedicationPrescriptionStatusImpl medicationPrescriptionStatus = new MedicationPrescriptionStatusImpl();
-		return medicationPrescriptionStatus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MedicationPrescriptionSubstitution createMedicationPrescriptionSubstitution() {
-		MedicationPrescriptionSubstitutionImpl medicationPrescriptionSubstitution = new MedicationPrescriptionSubstitutionImpl();
-		return medicationPrescriptionSubstitution;
 	}
 
 	/**
@@ -7666,26 +7645,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AgeUnitsList createAgeUnitsListFromString(EDataType eDataType, String initialValue) {
-		AgeUnitsList result = AgeUnitsList.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertAgeUnitsListToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AggregationModeList createAggregationModeListFromString(EDataType eDataType, String initialValue) {
 		AggregationModeList result = AggregationModeList.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -9386,8 +9345,8 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MedicationPrescriptionStatusList createMedicationPrescriptionStatusListFromString(EDataType eDataType, String initialValue) {
-		MedicationPrescriptionStatusList result = MedicationPrescriptionStatusList.get(initialValue);
+	public MedicationOrderStatusList createMedicationOrderStatusListFromString(EDataType eDataType, String initialValue) {
+		MedicationOrderStatusList result = MedicationOrderStatusList.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -9397,7 +9356,7 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertMedicationPrescriptionStatusListToString(EDataType eDataType, Object instanceValue) {
+	public String convertMedicationOrderStatusListToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -10469,24 +10428,6 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	 */
 	public String convertAdministrativeGenderListObjectToString(EDataType eDataType, Object instanceValue) {
 		return convertAdministrativeGenderListToString(FhirPackage.eINSTANCE.getAdministrativeGenderList(), instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AgeUnitsList createAgeUnitsListObjectFromString(EDataType eDataType, String initialValue) {
-		return createAgeUnitsListFromString(FhirPackage.eINSTANCE.getAgeUnitsList(), initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertAgeUnitsListObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertAgeUnitsListToString(FhirPackage.eINSTANCE.getAgeUnitsList(), instanceValue);
 	}
 
 	/**
@@ -12414,8 +12355,8 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MedicationPrescriptionStatusList createMedicationPrescriptionStatusListObjectFromString(EDataType eDataType, String initialValue) {
-		return createMedicationPrescriptionStatusListFromString(FhirPackage.eINSTANCE.getMedicationPrescriptionStatusList(), initialValue);
+	public MedicationOrderStatusList createMedicationOrderStatusListObjectFromString(EDataType eDataType, String initialValue) {
+		return createMedicationOrderStatusListFromString(FhirPackage.eINSTANCE.getMedicationOrderStatusList(), initialValue);
 	}
 
 	/**
@@ -12423,8 +12364,8 @@ public class FhirFactoryImpl extends EFactoryImpl implements FhirFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertMedicationPrescriptionStatusListObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertMedicationPrescriptionStatusListToString(FhirPackage.eINSTANCE.getMedicationPrescriptionStatusList(), instanceValue);
+	public String convertMedicationOrderStatusListObjectToString(EDataType eDataType, Object instanceValue) {
+		return convertMedicationOrderStatusListToString(FhirPackage.eINSTANCE.getMedicationOrderStatusList(), instanceValue);
 	}
 
 	/**

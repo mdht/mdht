@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.MedicationDispenseDosageInstruction;
+import org.hl7.fhir.MedicationOrderDosageInstruction;
 import org.hl7.fhir.Range;
 import org.hl7.fhir.Ratio;
 import org.hl7.fhir.SimpleQuantity;
@@ -20,30 +20,30 @@ import org.hl7.fhir.Timing;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Medication Dispense Dosage Instruction</b></em>'.
+ * An implementation of the model object '<em><b>Medication Order Dosage Instruction</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getText <em>Text</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getAdditionalInstructions <em>Additional Instructions</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getTiming <em>Timing</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getAsNeededBoolean <em>As Needed Boolean</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getAsNeededCodeableConcept <em>As Needed Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getSite <em>Site</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getRoute <em>Route</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getDoseRange <em>Dose Range</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getDoseQuantity <em>Dose Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getRateRatio <em>Rate Ratio</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getRateRange <em>Rate Range</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationDispenseDosageInstructionImpl#getMaxDosePerPeriod <em>Max Dose Per Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getAdditionalInstructions <em>Additional Instructions</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getTiming <em>Timing</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getAsNeededBoolean <em>As Needed Boolean</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getAsNeededCodeableConcept <em>As Needed Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getSite <em>Site</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getRoute <em>Route</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getDoseRange <em>Dose Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getDoseQuantity <em>Dose Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getRateRatio <em>Rate Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getRateRange <em>Rate Range</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDosageInstructionImpl#getMaxDosePerPeriod <em>Max Dose Per Period</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl implements MedicationDispenseDosageInstruction {
+public class MedicationOrderDosageInstructionImpl extends BackboneElementImpl implements MedicationOrderDosageInstruction {
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -179,7 +179,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MedicationDispenseDosageInstructionImpl() {
+	protected MedicationOrderDosageInstructionImpl() {
 		super();
 	}
 
@@ -190,7 +190,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FhirPackage.eINSTANCE.getMedicationDispenseDosageInstruction();
+		return FhirPackage.eINSTANCE.getMedicationOrderDosageInstruction();
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		org.hl7.fhir.String oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, oldText, newText);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT, oldText, newText);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -226,14 +226,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newText != text) {
 			NotificationChain msgs = null;
 			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, null, msgs);
+				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT, null, msgs);
 			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, null, msgs);
+				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT, null, msgs);
 			msgs = basicSetText(newText, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT, newText, newText));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT, newText, newText));
 	}
 
 	/**
@@ -254,7 +254,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		CodeableConcept oldAdditionalInstructions = additionalInstructions;
 		additionalInstructions = newAdditionalInstructions;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, oldAdditionalInstructions, newAdditionalInstructions);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, oldAdditionalInstructions, newAdditionalInstructions);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -269,14 +269,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newAdditionalInstructions != additionalInstructions) {
 			NotificationChain msgs = null;
 			if (additionalInstructions != null)
-				msgs = ((InternalEObject)additionalInstructions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, null, msgs);
+				msgs = ((InternalEObject)additionalInstructions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, null, msgs);
 			if (newAdditionalInstructions != null)
-				msgs = ((InternalEObject)newAdditionalInstructions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, null, msgs);
+				msgs = ((InternalEObject)newAdditionalInstructions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, null, msgs);
 			msgs = basicSetAdditionalInstructions(newAdditionalInstructions, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, newAdditionalInstructions, newAdditionalInstructions));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS, newAdditionalInstructions, newAdditionalInstructions));
 	}
 
 	/**
@@ -297,7 +297,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		Timing oldTiming = timing;
 		timing = newTiming;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING, oldTiming, newTiming);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING, oldTiming, newTiming);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -312,14 +312,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newTiming != timing) {
 			NotificationChain msgs = null;
 			if (timing != null)
-				msgs = ((InternalEObject)timing).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING, null, msgs);
+				msgs = ((InternalEObject)timing).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING, null, msgs);
 			if (newTiming != null)
-				msgs = ((InternalEObject)newTiming).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING, null, msgs);
+				msgs = ((InternalEObject)newTiming).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING, null, msgs);
 			msgs = basicSetTiming(newTiming, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING, newTiming, newTiming));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING, newTiming, newTiming));
 	}
 
 	/**
@@ -340,7 +340,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		org.hl7.fhir.Boolean oldAsNeededBoolean = asNeededBoolean;
 		asNeededBoolean = newAsNeededBoolean;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, oldAsNeededBoolean, newAsNeededBoolean);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, oldAsNeededBoolean, newAsNeededBoolean);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -355,14 +355,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newAsNeededBoolean != asNeededBoolean) {
 			NotificationChain msgs = null;
 			if (asNeededBoolean != null)
-				msgs = ((InternalEObject)asNeededBoolean).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, null, msgs);
+				msgs = ((InternalEObject)asNeededBoolean).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, null, msgs);
 			if (newAsNeededBoolean != null)
-				msgs = ((InternalEObject)newAsNeededBoolean).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, null, msgs);
+				msgs = ((InternalEObject)newAsNeededBoolean).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, null, msgs);
 			msgs = basicSetAsNeededBoolean(newAsNeededBoolean, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, newAsNeededBoolean, newAsNeededBoolean));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN, newAsNeededBoolean, newAsNeededBoolean));
 	}
 
 	/**
@@ -383,7 +383,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		CodeableConcept oldAsNeededCodeableConcept = asNeededCodeableConcept;
 		asNeededCodeableConcept = newAsNeededCodeableConcept;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, oldAsNeededCodeableConcept, newAsNeededCodeableConcept);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, oldAsNeededCodeableConcept, newAsNeededCodeableConcept);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -398,14 +398,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newAsNeededCodeableConcept != asNeededCodeableConcept) {
 			NotificationChain msgs = null;
 			if (asNeededCodeableConcept != null)
-				msgs = ((InternalEObject)asNeededCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, null, msgs);
+				msgs = ((InternalEObject)asNeededCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, null, msgs);
 			if (newAsNeededCodeableConcept != null)
-				msgs = ((InternalEObject)newAsNeededCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, null, msgs);
+				msgs = ((InternalEObject)newAsNeededCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, null, msgs);
 			msgs = basicSetAsNeededCodeableConcept(newAsNeededCodeableConcept, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, newAsNeededCodeableConcept, newAsNeededCodeableConcept));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT, newAsNeededCodeableConcept, newAsNeededCodeableConcept));
 	}
 
 	/**
@@ -426,7 +426,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		CodeableConcept oldSite = site;
 		site = newSite;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE, oldSite, newSite);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE, oldSite, newSite);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -441,14 +441,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newSite != site) {
 			NotificationChain msgs = null;
 			if (site != null)
-				msgs = ((InternalEObject)site).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE, null, msgs);
+				msgs = ((InternalEObject)site).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE, null, msgs);
 			if (newSite != null)
-				msgs = ((InternalEObject)newSite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE, null, msgs);
+				msgs = ((InternalEObject)newSite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE, null, msgs);
 			msgs = basicSetSite(newSite, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE, newSite, newSite));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE, newSite, newSite));
 	}
 
 	/**
@@ -469,7 +469,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		CodeableConcept oldRoute = route;
 		route = newRoute;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE, oldRoute, newRoute);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE, oldRoute, newRoute);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -484,14 +484,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newRoute != route) {
 			NotificationChain msgs = null;
 			if (route != null)
-				msgs = ((InternalEObject)route).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE, null, msgs);
+				msgs = ((InternalEObject)route).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE, null, msgs);
 			if (newRoute != null)
-				msgs = ((InternalEObject)newRoute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE, null, msgs);
+				msgs = ((InternalEObject)newRoute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE, null, msgs);
 			msgs = basicSetRoute(newRoute, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE, newRoute, newRoute));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE, newRoute, newRoute));
 	}
 
 	/**
@@ -512,7 +512,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		CodeableConcept oldMethod = method;
 		method = newMethod;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD, oldMethod, newMethod);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD, oldMethod, newMethod);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -527,14 +527,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newMethod != method) {
 			NotificationChain msgs = null;
 			if (method != null)
-				msgs = ((InternalEObject)method).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD, null, msgs);
+				msgs = ((InternalEObject)method).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD, null, msgs);
 			if (newMethod != null)
-				msgs = ((InternalEObject)newMethod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD, null, msgs);
+				msgs = ((InternalEObject)newMethod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD, null, msgs);
 			msgs = basicSetMethod(newMethod, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD, newMethod, newMethod));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD, newMethod, newMethod));
 	}
 
 	/**
@@ -555,7 +555,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		Range oldDoseRange = doseRange;
 		doseRange = newDoseRange;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE, oldDoseRange, newDoseRange);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE, oldDoseRange, newDoseRange);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -570,14 +570,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newDoseRange != doseRange) {
 			NotificationChain msgs = null;
 			if (doseRange != null)
-				msgs = ((InternalEObject)doseRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE, null, msgs);
+				msgs = ((InternalEObject)doseRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE, null, msgs);
 			if (newDoseRange != null)
-				msgs = ((InternalEObject)newDoseRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE, null, msgs);
+				msgs = ((InternalEObject)newDoseRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE, null, msgs);
 			msgs = basicSetDoseRange(newDoseRange, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE, newDoseRange, newDoseRange));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE, newDoseRange, newDoseRange));
 	}
 
 	/**
@@ -598,7 +598,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		SimpleQuantity oldDoseQuantity = doseQuantity;
 		doseQuantity = newDoseQuantity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY, oldDoseQuantity, newDoseQuantity);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY, oldDoseQuantity, newDoseQuantity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -613,14 +613,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newDoseQuantity != doseQuantity) {
 			NotificationChain msgs = null;
 			if (doseQuantity != null)
-				msgs = ((InternalEObject)doseQuantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject)doseQuantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY, null, msgs);
 			if (newDoseQuantity != null)
-				msgs = ((InternalEObject)newDoseQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY, null, msgs);
+				msgs = ((InternalEObject)newDoseQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY, null, msgs);
 			msgs = basicSetDoseQuantity(newDoseQuantity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY, newDoseQuantity, newDoseQuantity));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY, newDoseQuantity, newDoseQuantity));
 	}
 
 	/**
@@ -641,7 +641,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		Ratio oldRateRatio = rateRatio;
 		rateRatio = newRateRatio;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO, oldRateRatio, newRateRatio);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO, oldRateRatio, newRateRatio);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -656,14 +656,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newRateRatio != rateRatio) {
 			NotificationChain msgs = null;
 			if (rateRatio != null)
-				msgs = ((InternalEObject)rateRatio).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO, null, msgs);
+				msgs = ((InternalEObject)rateRatio).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO, null, msgs);
 			if (newRateRatio != null)
-				msgs = ((InternalEObject)newRateRatio).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO, null, msgs);
+				msgs = ((InternalEObject)newRateRatio).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO, null, msgs);
 			msgs = basicSetRateRatio(newRateRatio, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO, newRateRatio, newRateRatio));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO, newRateRatio, newRateRatio));
 	}
 
 	/**
@@ -684,7 +684,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		Range oldRateRange = rateRange;
 		rateRange = newRateRange;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE, oldRateRange, newRateRange);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE, oldRateRange, newRateRange);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -699,14 +699,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newRateRange != rateRange) {
 			NotificationChain msgs = null;
 			if (rateRange != null)
-				msgs = ((InternalEObject)rateRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE, null, msgs);
+				msgs = ((InternalEObject)rateRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE, null, msgs);
 			if (newRateRange != null)
-				msgs = ((InternalEObject)newRateRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE, null, msgs);
+				msgs = ((InternalEObject)newRateRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE, null, msgs);
 			msgs = basicSetRateRange(newRateRange, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE, newRateRange, newRateRange));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE, newRateRange, newRateRange));
 	}
 
 	/**
@@ -727,7 +727,7 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		Ratio oldMaxDosePerPeriod = maxDosePerPeriod;
 		maxDosePerPeriod = newMaxDosePerPeriod;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, oldMaxDosePerPeriod, newMaxDosePerPeriod);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, oldMaxDosePerPeriod, newMaxDosePerPeriod);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -742,14 +742,14 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 		if (newMaxDosePerPeriod != maxDosePerPeriod) {
 			NotificationChain msgs = null;
 			if (maxDosePerPeriod != null)
-				msgs = ((InternalEObject)maxDosePerPeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, null, msgs);
+				msgs = ((InternalEObject)maxDosePerPeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, null, msgs);
 			if (newMaxDosePerPeriod != null)
-				msgs = ((InternalEObject)newMaxDosePerPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, null, msgs);
+				msgs = ((InternalEObject)newMaxDosePerPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, null, msgs);
 			msgs = basicSetMaxDosePerPeriod(newMaxDosePerPeriod, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, newMaxDosePerPeriod, newMaxDosePerPeriod));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD, newMaxDosePerPeriod, newMaxDosePerPeriod));
 	}
 
 	/**
@@ -760,31 +760,31 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT:
 				return basicSetText(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				return basicSetAdditionalInstructions(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING:
 				return basicSetTiming(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
 				return basicSetAsNeededBoolean(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
 				return basicSetAsNeededCodeableConcept(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE:
 				return basicSetSite(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE:
 				return basicSetRoute(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD:
 				return basicSetMethod(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE:
 				return basicSetDoseRange(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
 				return basicSetDoseQuantity(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO:
 				return basicSetRateRatio(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE:
 				return basicSetRateRange(null, msgs);
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
 				return basicSetMaxDosePerPeriod(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -798,31 +798,31 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT:
 				return getText();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				return getAdditionalInstructions();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING:
 				return getTiming();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
 				return getAsNeededBoolean();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
 				return getAsNeededCodeableConcept();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE:
 				return getSite();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE:
 				return getRoute();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD:
 				return getMethod();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE:
 				return getDoseRange();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
 				return getDoseQuantity();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO:
 				return getRateRatio();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE:
 				return getRateRange();
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
 				return getMaxDosePerPeriod();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -836,43 +836,43 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT:
 				setText((org.hl7.fhir.String)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				setAdditionalInstructions((CodeableConcept)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING:
 				setTiming((Timing)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
 				setAsNeededBoolean((org.hl7.fhir.Boolean)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
 				setAsNeededCodeableConcept((CodeableConcept)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE:
 				setSite((CodeableConcept)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE:
 				setRoute((CodeableConcept)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD:
 				setMethod((CodeableConcept)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE:
 				setDoseRange((Range)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
 				setDoseQuantity((SimpleQuantity)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO:
 				setRateRatio((Ratio)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE:
 				setRateRange((Range)newValue);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
 				setMaxDosePerPeriod((Ratio)newValue);
 				return;
 		}
@@ -887,43 +887,43 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT:
 				setText((org.hl7.fhir.String)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				setAdditionalInstructions((CodeableConcept)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING:
 				setTiming((Timing)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
 				setAsNeededBoolean((org.hl7.fhir.Boolean)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
 				setAsNeededCodeableConcept((CodeableConcept)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE:
 				setSite((CodeableConcept)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE:
 				setRoute((CodeableConcept)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD:
 				setMethod((CodeableConcept)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE:
 				setDoseRange((Range)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
 				setDoseQuantity((SimpleQuantity)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO:
 				setRateRatio((Ratio)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE:
 				setRateRange((Range)null);
 				return;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
 				setMaxDosePerPeriod((Ratio)null);
 				return;
 		}
@@ -938,34 +938,34 @@ public class MedicationDispenseDosageInstructionImpl extends BackboneElementImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TEXT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TEXT:
 				return text != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ADDITIONAL_INSTRUCTIONS:
 				return additionalInstructions != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__TIMING:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__TIMING:
 				return timing != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_BOOLEAN:
 				return asNeededBoolean != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__AS_NEEDED_CODEABLE_CONCEPT:
 				return asNeededCodeableConcept != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__SITE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__SITE:
 				return site != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__ROUTE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__ROUTE:
 				return route != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__METHOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__METHOD:
 				return method != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_RANGE:
 				return doseRange != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__DOSE_QUANTITY:
 				return doseQuantity != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RATIO:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RATIO:
 				return rateRatio != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__RATE_RANGE:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__RATE_RANGE:
 				return rateRange != null;
-			case FhirPackage.MEDICATION_DISPENSE_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION__MAX_DOSE_PER_PERIOD:
 				return maxDosePerPeriod != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MedicationDispenseDosageInstructionImpl
+} //MedicationOrderDosageInstructionImpl

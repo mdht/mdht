@@ -21,6 +21,7 @@ import org.hl7.fhir.ConformanceInteraction1;
 import org.hl7.fhir.ConformanceOperation;
 import org.hl7.fhir.ConformanceResource;
 import org.hl7.fhir.ConformanceRest;
+import org.hl7.fhir.ConformanceSearchParam;
 import org.hl7.fhir.ConformanceSecurity;
 import org.hl7.fhir.FhirPackage;
 import org.hl7.fhir.RestfulConformanceMode;
@@ -41,6 +42,7 @@ import org.hl7.fhir.Uri;
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getResource <em>Resource</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getInteraction <em>Interaction</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getTransactionMode <em>Transaction Mode</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getSearchParam <em>Search Param</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getDocumentMailbox <em>Document Mailbox</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.ConformanceRestImpl#getCompartment <em>Compartment</em>}</li>
@@ -108,6 +110,16 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 	 * @ordered
 	 */
 	protected TransactionMode transactionMode;
+
+	/**
+	 * The cached value of the '{@link #getSearchParam() <em>Search Param</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSearchParam()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConformanceSearchParam> searchParam;
 
 	/**
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference list.
@@ -359,6 +371,18 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ConformanceSearchParam> getSearchParam() {
+		if (searchParam == null) {
+			searchParam = new EObjectContainmentEList<ConformanceSearchParam>(ConformanceSearchParam.class, this, FhirPackage.CONFORMANCE_REST__SEARCH_PARAM);
+		}
+		return searchParam;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ConformanceOperation> getOperation() {
 		if (operation == null) {
 			operation = new EObjectContainmentEList<ConformanceOperation>(ConformanceOperation.class, this, FhirPackage.CONFORMANCE_REST__OPERATION);
@@ -410,6 +434,8 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 				return ((InternalEList<?>)getInteraction()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
 				return basicSetTransactionMode(null, msgs);
+			case FhirPackage.CONFORMANCE_REST__SEARCH_PARAM:
+				return ((InternalEList<?>)getSearchParam()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				return ((InternalEList<?>)getOperation()).basicRemove(otherEnd, msgs);
 			case FhirPackage.CONFORMANCE_REST__DOCUMENT_MAILBOX:
@@ -440,6 +466,8 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 				return getInteraction();
 			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
 				return getTransactionMode();
+			case FhirPackage.CONFORMANCE_REST__SEARCH_PARAM:
+				return getSearchParam();
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				return getOperation();
 			case FhirPackage.CONFORMANCE_REST__DOCUMENT_MAILBOX:
@@ -478,6 +506,10 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 				return;
 			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
 				setTransactionMode((TransactionMode)newValue);
+				return;
+			case FhirPackage.CONFORMANCE_REST__SEARCH_PARAM:
+				getSearchParam().clear();
+				getSearchParam().addAll((Collection<? extends ConformanceSearchParam>)newValue);
 				return;
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				getOperation().clear();
@@ -521,6 +553,9 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
 				setTransactionMode((TransactionMode)null);
 				return;
+			case FhirPackage.CONFORMANCE_REST__SEARCH_PARAM:
+				getSearchParam().clear();
+				return;
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				getOperation().clear();
 				return;
@@ -554,6 +589,8 @@ public class ConformanceRestImpl extends BackboneElementImpl implements Conforma
 				return interaction != null && !interaction.isEmpty();
 			case FhirPackage.CONFORMANCE_REST__TRANSACTION_MODE:
 				return transactionMode != null;
+			case FhirPackage.CONFORMANCE_REST__SEARCH_PARAM:
+				return searchParam != null && !searchParam.isEmpty();
 			case FhirPackage.CONFORMANCE_REST__OPERATION:
 				return operation != null && !operation.isEmpty();
 			case FhirPackage.CONFORMANCE_REST__DOCUMENT_MAILBOX:

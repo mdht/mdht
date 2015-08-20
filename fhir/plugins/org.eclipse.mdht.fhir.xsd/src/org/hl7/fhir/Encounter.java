@@ -25,9 +25,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.Encounter#getType <em>Type</em>}</li>
  *   <li>{@link org.hl7.fhir.Encounter#getPatient <em>Patient</em>}</li>
  *   <li>{@link org.hl7.fhir.Encounter#getEpisodeOfCare <em>Episode Of Care</em>}</li>
- *   <li>{@link org.hl7.fhir.Encounter#getIncomingReferralRequest <em>Incoming Referral Request</em>}</li>
+ *   <li>{@link org.hl7.fhir.Encounter#getIncomingReferral <em>Incoming Referral</em>}</li>
  *   <li>{@link org.hl7.fhir.Encounter#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.hl7.fhir.Encounter#getFulfills <em>Fulfills</em>}</li>
+ *   <li>{@link org.hl7.fhir.Encounter#getAppointment <em>Appointment</em>}</li>
  *   <li>{@link org.hl7.fhir.Encounter#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.hl7.fhir.Encounter#getLength <em>Length</em>}</li>
  *   <li>{@link org.hl7.fhir.Encounter#getReason <em>Reason</em>}</li>
@@ -187,20 +187,20 @@ public interface Encounter extends DomainResource {
 	EList<Reference> getEpisodeOfCare();
 
 	/**
-	 * Returns the value of the '<em><b>Incoming Referral Request</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Incoming Referral</b></em>' containment reference list.
 	 * The list contents are of type {@link org.hl7.fhir.Reference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The referral request that this encounter satisfies (incoming referral).
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Incoming Referral Request</em>' containment reference list.
-	 * @see org.hl7.fhir.FhirPackage#getEncounter_IncomingReferralRequest()
+	 * @return the value of the '<em>Incoming Referral</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getEncounter_IncomingReferral()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='incomingReferralRequest' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='incomingReferral' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Reference> getIncomingReferralRequest();
+	EList<Reference> getIncomingReferral();
 
 	/**
 	 * Returns the value of the '<em><b>Participant</b></em>' containment reference list.
@@ -208,7 +208,7 @@ public interface Encounter extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The main practitioner responsible for providing the service.
+	 * The list of people responsible for providing the service.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Participant</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getEncounter_Participant()
@@ -219,30 +219,30 @@ public interface Encounter extends DomainResource {
 	EList<EncounterParticipant> getParticipant();
 
 	/**
-	 * Returns the value of the '<em><b>Fulfills</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Appointment</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The appointment that scheduled this encounter.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Fulfills</em>' containment reference.
-	 * @see #setFulfills(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getEncounter_Fulfills()
+	 * @return the value of the '<em>Appointment</em>' containment reference.
+	 * @see #setAppointment(Reference)
+	 * @see org.hl7.fhir.FhirPackage#getEncounter_Appointment()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='fulfills' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='appointment' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Reference getFulfills();
+	Reference getAppointment();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Encounter#getFulfills <em>Fulfills</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.Encounter#getAppointment <em>Appointment</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fulfills</em>' containment reference.
-	 * @see #getFulfills()
+	 * @param value the new value of the '<em>Appointment</em>' containment reference.
+	 * @see #getAppointment()
 	 * @generated
 	 */
-	void setFulfills(Reference value);
+	void setAppointment(Reference value);
 
 	/**
 	 * Returns the value of the '<em><b>Period</b></em>' containment reference.

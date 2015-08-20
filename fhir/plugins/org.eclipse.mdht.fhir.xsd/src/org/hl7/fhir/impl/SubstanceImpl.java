@@ -33,7 +33,8 @@ import org.hl7.fhir.SubstanceInstance;
  * </p>
  * <ul>
  *   <li>{@link org.hl7.fhir.impl.SubstanceImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.SubstanceImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SubstanceImpl#getCategory <em>Category</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.SubstanceImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SubstanceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SubstanceImpl#getInstance <em>Instance</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.SubstanceImpl#getIngredient <em>Ingredient</em>}</li>
@@ -53,14 +54,24 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 	protected EList<Identifier> identifier;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+	 * The cached value of the '{@link #getCategory() <em>Category</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getCategory()
 	 * @generated
 	 * @ordered
 	 */
-	protected CodeableConcept type;
+	protected EList<CodeableConcept> category;
+
+	/**
+	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected CodeableConcept code;
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -128,8 +139,11 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeableConcept getType() {
-		return type;
+	public EList<CodeableConcept> getCategory() {
+		if (category == null) {
+			category = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FhirPackage.SUBSTANCE__CATEGORY);
+		}
+		return category;
 	}
 
 	/**
@@ -137,11 +151,20 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetType(CodeableConcept newType, NotificationChain msgs) {
-		CodeableConcept oldType = type;
-		type = newType;
+	public CodeableConcept getCode() {
+		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCode(CodeableConcept newCode, NotificationChain msgs) {
+		CodeableConcept oldCode = code;
+		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SUBSTANCE__TYPE, oldType, newType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.SUBSTANCE__CODE, oldCode, newCode);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -152,18 +175,18 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(CodeableConcept newType) {
-		if (newType != type) {
+	public void setCode(CodeableConcept newCode) {
+		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SUBSTANCE__TYPE, null, msgs);
-			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SUBSTANCE__TYPE, null, msgs);
-			msgs = basicSetType(newType, msgs);
+			if (code != null)
+				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SUBSTANCE__CODE, null, msgs);
+			if (newCode != null)
+				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.SUBSTANCE__CODE, null, msgs);
+			msgs = basicSetCode(newCode, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SUBSTANCE__TYPE, newType, newType));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.SUBSTANCE__CODE, newCode, newCode));
 	}
 
 	/**
@@ -243,8 +266,10 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 		switch (featureID) {
 			case FhirPackage.SUBSTANCE__IDENTIFIER:
 				return ((InternalEList<?>)getIdentifier()).basicRemove(otherEnd, msgs);
-			case FhirPackage.SUBSTANCE__TYPE:
-				return basicSetType(null, msgs);
+			case FhirPackage.SUBSTANCE__CATEGORY:
+				return ((InternalEList<?>)getCategory()).basicRemove(otherEnd, msgs);
+			case FhirPackage.SUBSTANCE__CODE:
+				return basicSetCode(null, msgs);
 			case FhirPackage.SUBSTANCE__DESCRIPTION:
 				return basicSetDescription(null, msgs);
 			case FhirPackage.SUBSTANCE__INSTANCE:
@@ -265,8 +290,10 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 		switch (featureID) {
 			case FhirPackage.SUBSTANCE__IDENTIFIER:
 				return getIdentifier();
-			case FhirPackage.SUBSTANCE__TYPE:
-				return getType();
+			case FhirPackage.SUBSTANCE__CATEGORY:
+				return getCategory();
+			case FhirPackage.SUBSTANCE__CODE:
+				return getCode();
 			case FhirPackage.SUBSTANCE__DESCRIPTION:
 				return getDescription();
 			case FhirPackage.SUBSTANCE__INSTANCE:
@@ -290,8 +317,12 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 				getIdentifier().clear();
 				getIdentifier().addAll((Collection<? extends Identifier>)newValue);
 				return;
-			case FhirPackage.SUBSTANCE__TYPE:
-				setType((CodeableConcept)newValue);
+			case FhirPackage.SUBSTANCE__CATEGORY:
+				getCategory().clear();
+				getCategory().addAll((Collection<? extends CodeableConcept>)newValue);
+				return;
+			case FhirPackage.SUBSTANCE__CODE:
+				setCode((CodeableConcept)newValue);
 				return;
 			case FhirPackage.SUBSTANCE__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)newValue);
@@ -319,8 +350,11 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 			case FhirPackage.SUBSTANCE__IDENTIFIER:
 				getIdentifier().clear();
 				return;
-			case FhirPackage.SUBSTANCE__TYPE:
-				setType((CodeableConcept)null);
+			case FhirPackage.SUBSTANCE__CATEGORY:
+				getCategory().clear();
+				return;
+			case FhirPackage.SUBSTANCE__CODE:
+				setCode((CodeableConcept)null);
 				return;
 			case FhirPackage.SUBSTANCE__DESCRIPTION:
 				setDescription((org.hl7.fhir.String)null);
@@ -345,8 +379,10 @@ public class SubstanceImpl extends DomainResourceImpl implements Substance {
 		switch (featureID) {
 			case FhirPackage.SUBSTANCE__IDENTIFIER:
 				return identifier != null && !identifier.isEmpty();
-			case FhirPackage.SUBSTANCE__TYPE:
-				return type != null;
+			case FhirPackage.SUBSTANCE__CATEGORY:
+				return category != null && !category.isEmpty();
+			case FhirPackage.SUBSTANCE__CODE:
+				return code != null;
 			case FhirPackage.SUBSTANCE__DESCRIPTION:
 				return description != null;
 			case FhirPackage.SUBSTANCE__INSTANCE:

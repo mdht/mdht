@@ -88,7 +88,17 @@ public enum GuidePageKindList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TOC(6, "toc", "toc");
+	TOC(6, "toc", "toc"),
+
+	/**
+	 * The '<em><b>Resource</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RESOURCE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	RESOURCE(7, "resource", "resource");
 
 	/**
 	 * The '<em><b>Page</b></em>' literal value.
@@ -189,6 +199,20 @@ public enum GuidePageKindList implements Enumerator {
 	public static final int TOC_VALUE = 6;
 
 	/**
+	 * The '<em><b>Resource</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This is a page that represents a presented resource. This is typically used for generated conformance resource presentations
+	 * <!-- end-model-doc -->
+	 * @see #RESOURCE
+	 * @model name="resource"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int RESOURCE_VALUE = 7;
+
+	/**
 	 * An array of all the '<em><b>Guide Page Kind List</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,6 +227,7 @@ public enum GuidePageKindList implements Enumerator {
 			DIRECTORY,
 			DICTIONARY,
 			TOC,
+			RESOURCE,
 		};
 
 	/**
@@ -266,6 +291,7 @@ public enum GuidePageKindList implements Enumerator {
 			case DIRECTORY_VALUE: return DIRECTORY;
 			case DICTIONARY_VALUE: return DICTIONARY;
 			case TOC_VALUE: return TOC;
+			case RESOURCE_VALUE: return RESOURCE;
 		}
 		return null;
 	}

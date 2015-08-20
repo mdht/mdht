@@ -124,14 +124,14 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 	protected Date birthDate;
 
 	/**
-	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
 	 */
-	protected Address address;
+	protected EList<Address> address;
 
 	/**
 	 * The cached value of the '{@link #getPhoto() <em>Photo</em>}' containment reference list.
@@ -416,42 +416,11 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Address getAddress() {
+	public EList<Address> getAddress() {
+		if (address == null) {
+			address = new EObjectContainmentEList<Address>(Address.class, this, FhirPackage.RELATED_PERSON__ADDRESS);
+		}
 		return address;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAddress(Address newAddress, NotificationChain msgs) {
-		Address oldAddress = address;
-		address = newAddress;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.RELATED_PERSON__ADDRESS, oldAddress, newAddress);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAddress(Address newAddress) {
-		if (newAddress != address) {
-			NotificationChain msgs = null;
-			if (address != null)
-				msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RELATED_PERSON__ADDRESS, null, msgs);
-			if (newAddress != null)
-				msgs = ((InternalEObject)newAddress).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.RELATED_PERSON__ADDRESS, null, msgs);
-			msgs = basicSetAddress(newAddress, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.RELATED_PERSON__ADDRESS, newAddress, newAddress));
 	}
 
 	/**
@@ -532,7 +501,7 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 			case FhirPackage.RELATED_PERSON__BIRTH_DATE:
 				return basicSetBirthDate(null, msgs);
 			case FhirPackage.RELATED_PERSON__ADDRESS:
-				return basicSetAddress(null, msgs);
+				return ((InternalEList<?>)getAddress()).basicRemove(otherEnd, msgs);
 			case FhirPackage.RELATED_PERSON__PHOTO:
 				return ((InternalEList<?>)getPhoto()).basicRemove(otherEnd, msgs);
 			case FhirPackage.RELATED_PERSON__PERIOD:
@@ -606,7 +575,8 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 				setBirthDate((Date)newValue);
 				return;
 			case FhirPackage.RELATED_PERSON__ADDRESS:
-				setAddress((Address)newValue);
+				getAddress().clear();
+				getAddress().addAll((Collection<? extends Address>)newValue);
 				return;
 			case FhirPackage.RELATED_PERSON__PHOTO:
 				getPhoto().clear();
@@ -649,7 +619,7 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 				setBirthDate((Date)null);
 				return;
 			case FhirPackage.RELATED_PERSON__ADDRESS:
-				setAddress((Address)null);
+				getAddress().clear();
 				return;
 			case FhirPackage.RELATED_PERSON__PHOTO:
 				getPhoto().clear();
@@ -684,7 +654,7 @@ public class RelatedPersonImpl extends DomainResourceImpl implements RelatedPers
 			case FhirPackage.RELATED_PERSON__BIRTH_DATE:
 				return birthDate != null;
 			case FhirPackage.RELATED_PERSON__ADDRESS:
-				return address != null;
+				return address != null && !address.isEmpty();
 			case FhirPackage.RELATED_PERSON__PHOTO:
 				return photo != null && !photo.isEmpty();
 			case FhirPackage.RELATED_PERSON__PERIOD:

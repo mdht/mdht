@@ -67,7 +67,7 @@ public interface ConformanceResource extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses.
+	 * A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses}.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Profile</em>' containment reference.
 	 * @see #setProfile(Reference)

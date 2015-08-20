@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.hl7.fhir.ConformanceRest#getResource <em>Resource</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getInteraction <em>Interaction</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getTransactionMode <em>Transaction Mode</em>}</li>
+ *   <li>{@link org.hl7.fhir.ConformanceRest#getSearchParam <em>Search Param</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getDocumentMailbox <em>Document Mailbox</em>}</li>
  *   <li>{@link org.hl7.fhir.ConformanceRest#getCompartment <em>Compartment</em>}</li>
@@ -168,6 +169,22 @@ public interface ConformanceRest extends BackboneElement {
 	 * @generated
 	 */
 	void setTransactionMode(TransactionMode value);
+
+	/**
+	 * Returns the value of the '<em><b>Search Param</b></em>' containment reference list.
+	 * The list contents are of type {@link org.hl7.fhir.ConformanceSearchParam}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Search Param</em>' containment reference list.
+	 * @see org.hl7.fhir.FhirPackage#getConformanceRest_SearchParam()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='searchParam' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<ConformanceSearchParam> getSearchParam();
 
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' containment reference list.

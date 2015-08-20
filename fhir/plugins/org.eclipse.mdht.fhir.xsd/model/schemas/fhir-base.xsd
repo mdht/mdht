@@ -27,7 +27,12 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
+  Generated on Thu, Aug 20, 2015 14:13+0000 for FHIR v0.5.0 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
@@ -376,7 +381,7 @@
       <xs:element ref="Medication"/>
       <xs:element ref="MedicationAdministration"/>
       <xs:element ref="MedicationDispense"/>
-      <xs:element ref="MedicationPrescription"/>
+      <xs:element ref="MedicationOrder"/>
       <xs:element ref="MedicationStatement"/>
       <xs:element ref="MessageHeader"/>
       <xs:element ref="NamingSystem"/>
@@ -1917,7 +1922,7 @@
           </xs:element>
           <xs:element name="short" type="string" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A concise definition that  is shown in the generated XML format that summarizes profiles (used throughout the specification).</xs:documentation>
+              <xs:documentation xml:lang="en">A concise description of what this element means (e.g. for use in auto-generated summaries).</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="definition" type="markdown" minOccurs="0" maxOccurs="1">
@@ -1967,7 +1972,7 @@
           </xs:element>
         <xs:choice minOccurs="0" maxOccurs="1">
            <xs:annotation>
-             <xs:documentation xml:lang="en">The value that should be used if there is no value stated in the instance.</xs:documentation>
+             <xs:documentation xml:lang="en">The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false').</xs:documentation>
            </xs:annotation>
            <xs:element name="defaultValueBoolean" type="boolean"/>
            <xs:element name="defaultValueInteger" type="integer"/>
@@ -2006,7 +2011,7 @@
          </xs:choice>
           <xs:element name="meaningWhenMissing" type="markdown" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Implicit meaning that is to be understood when this element is missing.</xs:documentation>
+              <xs:documentation xml:lang="en">The Implicit meaning that is to be understood when this element is missing (e.g. 'when this element is missing, the period is ongoing'.</xs:documentation>
             </xs:annotation>
           </xs:element>
         <xs:choice minOccurs="0" maxOccurs="1">
@@ -2745,51 +2750,6 @@
     <xs:complexContent>
        <xs:extension base="Element">
          <xs:attribute name="value" type="ConformanceResourceStatus-list" use="optional"/>
-       </xs:extension>
-     </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="AgeUnits-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="min">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Minute</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="h">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Hour</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="d">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Day</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="wk">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Week</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="mo">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Month</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="a">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Year</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AgeUnits">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-       <xs:extension base="Element">
-         <xs:attribute name="value" type="AgeUnits-list" use="optional"/>
        </xs:extension>
      </xs:complexContent>
   </xs:complexType>

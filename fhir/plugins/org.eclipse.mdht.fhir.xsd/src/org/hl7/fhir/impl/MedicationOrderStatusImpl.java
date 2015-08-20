@@ -9,23 +9,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.MedicationPrescriptionStatus;
-import org.hl7.fhir.MedicationPrescriptionStatusList;
+import org.hl7.fhir.MedicationOrderStatus;
+import org.hl7.fhir.MedicationOrderStatusList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Medication Prescription Status</b></em>'.
+ * An implementation of the model object '<em><b>Medication Order Status</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionStatusImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderStatusImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MedicationPrescriptionStatusImpl extends ElementImpl implements MedicationPrescriptionStatus {
+public class MedicationOrderStatusImpl extends ElementImpl implements MedicationOrderStatus {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MedicationPrescriptionStatusList VALUE_EDEFAULT = MedicationPrescriptionStatusList.ACTIVE;
+	protected static final MedicationOrderStatusList VALUE_EDEFAULT = MedicationOrderStatusList.ACTIVE;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -44,7 +44,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	 * @generated
 	 * @ordered
 	 */
-	protected MedicationPrescriptionStatusList value = VALUE_EDEFAULT;
+	protected MedicationOrderStatusList value = VALUE_EDEFAULT;
 
 	/**
 	 * This is true if the Value attribute has been set.
@@ -60,7 +60,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MedicationPrescriptionStatusImpl() {
+	protected MedicationOrderStatusImpl() {
 		super();
 	}
 
@@ -71,7 +71,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FhirPackage.eINSTANCE.getMedicationPrescriptionStatus();
+		return FhirPackage.eINSTANCE.getMedicationOrderStatus();
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MedicationPrescriptionStatusList getValue() {
+	public MedicationOrderStatusList getValue() {
 		return value;
 	}
 
@@ -88,13 +88,13 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(MedicationPrescriptionStatusList newValue) {
-		MedicationPrescriptionStatusList oldValue = value;
+	public void setValue(MedicationOrderStatusList newValue) {
+		MedicationOrderStatusList oldValue = value;
 		value = newValue == null ? VALUE_EDEFAULT : newValue;
 		boolean oldValueESet = valueESet;
 		valueESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_STATUS__VALUE, oldValue, value, !oldValueESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_STATUS__VALUE, oldValue, value, !oldValueESet));
 	}
 
 	/**
@@ -103,12 +103,12 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	 * @generated
 	 */
 	public void unsetValue() {
-		MedicationPrescriptionStatusList oldValue = value;
+		MedicationOrderStatusList oldValue = value;
 		boolean oldValueESet = valueESet;
 		value = VALUE_EDEFAULT;
 		valueESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FhirPackage.MEDICATION_PRESCRIPTION_STATUS__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FhirPackage.MEDICATION_ORDER_STATUS__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
 	}
 
 	/**
@@ -128,7 +128,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS__VALUE:
+			case FhirPackage.MEDICATION_ORDER_STATUS__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -142,8 +142,8 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS__VALUE:
-				setValue((MedicationPrescriptionStatusList)newValue);
+			case FhirPackage.MEDICATION_ORDER_STATUS__VALUE:
+				setValue((MedicationOrderStatusList)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,7 +157,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS__VALUE:
+			case FhirPackage.MEDICATION_ORDER_STATUS__VALUE:
 				unsetValue();
 				return;
 		}
@@ -172,7 +172,7 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS__VALUE:
+			case FhirPackage.MEDICATION_ORDER_STATUS__VALUE:
 				return isSetValue();
 		}
 		return super.eIsSet(featureID);
@@ -194,4 +194,4 @@ public class MedicationPrescriptionStatusImpl extends ElementImpl implements Med
 		return result.toString();
 	}
 
-} //MedicationPrescriptionStatusImpl
+} //MedicationOrderStatusImpl

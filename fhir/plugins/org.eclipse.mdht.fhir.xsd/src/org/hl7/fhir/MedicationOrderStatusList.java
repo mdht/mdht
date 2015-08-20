@@ -12,14 +12,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Medication Prescription Status List</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Medication Order Status List</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionStatusList()
- * @model extendedMetaData="name='MedicationPrescriptionStatus-list'"
+ * @see org.hl7.fhir.FhirPackage#getMedicationOrderStatusList()
+ * @model extendedMetaData="name='MedicationOrderStatus-list'"
  * @generated
  */
-public enum MedicationPrescriptionStatusList implements Enumerator {
+public enum MedicationOrderStatusList implements Enumerator {
 	/**
 	 * The '<em><b>Active</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -71,16 +71,6 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	STOPPED(4, "stopped", "stopped"),
 
 	/**
-	 * The '<em><b>Superseded</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUPERSEDED_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SUPERSEDED(5, "superseded", "superseded"),
-
-	/**
 	 * The '<em><b>Draft</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,7 +78,7 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DRAFT(6, "draft", "draft");
+	DRAFT(5, "draft", "draft");
 
 	/**
 	 * The '<em><b>Active</b></em>' literal value.
@@ -161,20 +151,6 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	public static final int STOPPED_VALUE = 4;
 
 	/**
-	 * The '<em><b>Superseded</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The prescription was replaced by a newer one, which encompasses all the information in the previous one.
-	 * <!-- end-model-doc -->
-	 * @see #SUPERSEDED
-	 * @model name="superseded"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SUPERSEDED_VALUE = 5;
-
-	/**
 	 * The '<em><b>Draft</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,44 +162,43 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DRAFT_VALUE = 6;
+	public static final int DRAFT_VALUE = 5;
 
 	/**
-	 * An array of all the '<em><b>Medication Prescription Status List</b></em>' enumerators.
+	 * An array of all the '<em><b>Medication Order Status List</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final MedicationPrescriptionStatusList[] VALUES_ARRAY =
-		new MedicationPrescriptionStatusList[] {
+	private static final MedicationOrderStatusList[] VALUES_ARRAY =
+		new MedicationOrderStatusList[] {
 			ACTIVE,
 			ON_HOLD,
 			COMPLETED,
 			ENTERED_IN_ERROR,
 			STOPPED,
-			SUPERSEDED,
 			DRAFT,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Medication Prescription Status List</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Medication Order Status List</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<MedicationPrescriptionStatusList> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<MedicationOrderStatusList> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Medication Prescription Status List</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Medication Order Status List</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static MedicationPrescriptionStatusList get(String literal) {
+	public static MedicationOrderStatusList get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			MedicationPrescriptionStatusList result = VALUES_ARRAY[i];
+			MedicationOrderStatusList result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -232,16 +207,16 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Medication Prescription Status List</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Medication Order Status List</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static MedicationPrescriptionStatusList getByName(String name) {
+	public static MedicationOrderStatusList getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			MedicationPrescriptionStatusList result = VALUES_ARRAY[i];
+			MedicationOrderStatusList result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -250,21 +225,20 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Medication Prescription Status List</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Medication Order Status List</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static MedicationPrescriptionStatusList get(int value) {
+	public static MedicationOrderStatusList get(int value) {
 		switch (value) {
 			case ACTIVE_VALUE: return ACTIVE;
 			case ON_HOLD_VALUE: return ON_HOLD;
 			case COMPLETED_VALUE: return COMPLETED;
 			case ENTERED_IN_ERROR_VALUE: return ENTERED_IN_ERROR;
 			case STOPPED_VALUE: return STOPPED;
-			case SUPERSEDED_VALUE: return SUPERSEDED;
 			case DRAFT_VALUE: return DRAFT;
 		}
 		return null;
@@ -297,7 +271,7 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private MedicationPrescriptionStatusList(int value, String name, String literal) {
+	private MedicationOrderStatusList(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -341,4 +315,4 @@ public enum MedicationPrescriptionStatusList implements Enumerator {
 		return literal;
 	}
 	
-} //MedicationPrescriptionStatusList
+} //MedicationOrderStatusList

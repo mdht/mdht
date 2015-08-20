@@ -15,7 +15,6 @@ import org.hl7.fhir.AddressType;
 import org.hl7.fhir.AddressUse;
 import org.hl7.fhir.AdministrativeGender;
 import org.hl7.fhir.Age;
-import org.hl7.fhir.AgeUnits;
 import org.hl7.fhir.AggregationMode;
 import org.hl7.fhir.AllergyIntolerance;
 import org.hl7.fhir.AllergyIntoleranceCategory;
@@ -313,12 +312,12 @@ import org.hl7.fhir.MedicationDispenseStatus;
 import org.hl7.fhir.MedicationDispenseSubstitution;
 import org.hl7.fhir.MedicationIngredient;
 import org.hl7.fhir.MedicationKind;
+import org.hl7.fhir.MedicationOrder;
+import org.hl7.fhir.MedicationOrderDispense;
+import org.hl7.fhir.MedicationOrderDosageInstruction;
+import org.hl7.fhir.MedicationOrderStatus;
+import org.hl7.fhir.MedicationOrderSubstitution;
 import org.hl7.fhir.MedicationPackage;
-import org.hl7.fhir.MedicationPrescription;
-import org.hl7.fhir.MedicationPrescriptionDispense;
-import org.hl7.fhir.MedicationPrescriptionDosageInstruction;
-import org.hl7.fhir.MedicationPrescriptionStatus;
-import org.hl7.fhir.MedicationPrescriptionSubstitution;
 import org.hl7.fhir.MedicationProduct;
 import org.hl7.fhir.MedicationStatement;
 import org.hl7.fhir.MedicationStatementDosage;
@@ -627,13 +626,6 @@ public class FhirSwitch<T> extends Switch<T> {
 				T result = caseAge(age);
 				if (result == null) result = caseQuantity(age);
 				if (result == null) result = caseElement(age);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FhirPackage.AGE_UNITS: {
-				AgeUnits ageUnits = (AgeUnits)theEObject;
-				T result = caseAgeUnits(ageUnits);
-				if (result == null) result = caseElement(ageUnits);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2903,50 +2895,50 @@ public class FhirSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FhirPackage.MEDICATION_ORDER: {
+				MedicationOrder medicationOrder = (MedicationOrder)theEObject;
+				T result = caseMedicationOrder(medicationOrder);
+				if (result == null) result = caseDomainResource(medicationOrder);
+				if (result == null) result = caseResource(medicationOrder);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FhirPackage.MEDICATION_ORDER_DISPENSE: {
+				MedicationOrderDispense medicationOrderDispense = (MedicationOrderDispense)theEObject;
+				T result = caseMedicationOrderDispense(medicationOrderDispense);
+				if (result == null) result = caseBackboneElement(medicationOrderDispense);
+				if (result == null) result = caseElement(medicationOrderDispense);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FhirPackage.MEDICATION_ORDER_DOSAGE_INSTRUCTION: {
+				MedicationOrderDosageInstruction medicationOrderDosageInstruction = (MedicationOrderDosageInstruction)theEObject;
+				T result = caseMedicationOrderDosageInstruction(medicationOrderDosageInstruction);
+				if (result == null) result = caseBackboneElement(medicationOrderDosageInstruction);
+				if (result == null) result = caseElement(medicationOrderDosageInstruction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FhirPackage.MEDICATION_ORDER_STATUS: {
+				MedicationOrderStatus medicationOrderStatus = (MedicationOrderStatus)theEObject;
+				T result = caseMedicationOrderStatus(medicationOrderStatus);
+				if (result == null) result = caseElement(medicationOrderStatus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FhirPackage.MEDICATION_ORDER_SUBSTITUTION: {
+				MedicationOrderSubstitution medicationOrderSubstitution = (MedicationOrderSubstitution)theEObject;
+				T result = caseMedicationOrderSubstitution(medicationOrderSubstitution);
+				if (result == null) result = caseBackboneElement(medicationOrderSubstitution);
+				if (result == null) result = caseElement(medicationOrderSubstitution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FhirPackage.MEDICATION_PACKAGE: {
 				MedicationPackage medicationPackage = (MedicationPackage)theEObject;
 				T result = caseMedicationPackage(medicationPackage);
 				if (result == null) result = caseBackboneElement(medicationPackage);
 				if (result == null) result = caseElement(medicationPackage);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FhirPackage.MEDICATION_PRESCRIPTION: {
-				MedicationPrescription medicationPrescription = (MedicationPrescription)theEObject;
-				T result = caseMedicationPrescription(medicationPrescription);
-				if (result == null) result = caseDomainResource(medicationPrescription);
-				if (result == null) result = caseResource(medicationPrescription);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE: {
-				MedicationPrescriptionDispense medicationPrescriptionDispense = (MedicationPrescriptionDispense)theEObject;
-				T result = caseMedicationPrescriptionDispense(medicationPrescriptionDispense);
-				if (result == null) result = caseBackboneElement(medicationPrescriptionDispense);
-				if (result == null) result = caseElement(medicationPrescriptionDispense);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FhirPackage.MEDICATION_PRESCRIPTION_DOSAGE_INSTRUCTION: {
-				MedicationPrescriptionDosageInstruction medicationPrescriptionDosageInstruction = (MedicationPrescriptionDosageInstruction)theEObject;
-				T result = caseMedicationPrescriptionDosageInstruction(medicationPrescriptionDosageInstruction);
-				if (result == null) result = caseBackboneElement(medicationPrescriptionDosageInstruction);
-				if (result == null) result = caseElement(medicationPrescriptionDosageInstruction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FhirPackage.MEDICATION_PRESCRIPTION_STATUS: {
-				MedicationPrescriptionStatus medicationPrescriptionStatus = (MedicationPrescriptionStatus)theEObject;
-				T result = caseMedicationPrescriptionStatus(medicationPrescriptionStatus);
-				if (result == null) result = caseElement(medicationPrescriptionStatus);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FhirPackage.MEDICATION_PRESCRIPTION_SUBSTITUTION: {
-				MedicationPrescriptionSubstitution medicationPrescriptionSubstitution = (MedicationPrescriptionSubstitution)theEObject;
-				T result = caseMedicationPrescriptionSubstitution(medicationPrescriptionSubstitution);
-				if (result == null) result = caseBackboneElement(medicationPrescriptionSubstitution);
-				if (result == null) result = caseElement(medicationPrescriptionSubstitution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -4565,21 +4557,6 @@ public class FhirSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAge(Age object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Age Units</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Age Units</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAgeUnits(AgeUnits object) {
 		return null;
 	}
 
@@ -9054,6 +9031,81 @@ public class FhirSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Order</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Order</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationOrder(MedicationOrder object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Order Dispense</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Order Dispense</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationOrderDispense(MedicationOrderDispense object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Order Dosage Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Order Dosage Instruction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationOrderDosageInstruction(MedicationOrderDosageInstruction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Order Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Order Status</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationOrderStatus(MedicationOrderStatus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Order Substitution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Order Substitution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationOrderSubstitution(MedicationOrderSubstitution object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Medication Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -9065,81 +9117,6 @@ public class FhirSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMedicationPackage(MedicationPackage object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Prescription</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Prescription</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationPrescription(MedicationPrescription object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Prescription Dispense</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Prescription Dispense</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationPrescriptionDispense(MedicationPrescriptionDispense object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Prescription Dosage Instruction</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Prescription Dosage Instruction</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationPrescriptionDosageInstruction(MedicationPrescriptionDosageInstruction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Prescription Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Prescription Status</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationPrescriptionStatus(MedicationPrescriptionStatus object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Prescription Substitution</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Prescription Substitution</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationPrescriptionSubstitution(MedicationPrescriptionSubstitution object) {
 		return null;
 	}
 

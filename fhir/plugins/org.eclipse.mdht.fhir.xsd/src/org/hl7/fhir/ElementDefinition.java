@@ -395,7 +395,7 @@ public interface ElementDefinition extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A concise definition that  is shown in the generated XML format that summarizes profiles (used throughout the specification).
+	 * A concise description of what this element means (e.g. for use in auto-generated summaries).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Short</em>' containment reference.
 	 * @see #setShort(org.hl7.fhir.String)
@@ -1553,7 +1553,7 @@ public interface ElementDefinition extends Element {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The Implicit meaning that is to be understood when this element is missing.
+	 * The Implicit meaning that is to be understood when this element is missing (e.g. 'when this element is missing, the period is ongoing'.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Meaning When Missing</em>' containment reference.
 	 * @see #setMeaningWhenMissing(Markdown)

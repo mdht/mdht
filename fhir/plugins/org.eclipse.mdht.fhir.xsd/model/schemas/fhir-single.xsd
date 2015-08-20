@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
+  Generated on Thu, Aug 20, 2015 14:13+0000 for FHIR v0.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.5.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -376,7 +376,7 @@
       <xs:element ref="Medication"/>
       <xs:element ref="MedicationAdministration"/>
       <xs:element ref="MedicationDispense"/>
-      <xs:element ref="MedicationPrescription"/>
+      <xs:element ref="MedicationOrder"/>
       <xs:element ref="MedicationStatement"/>
       <xs:element ref="MessageHeader"/>
       <xs:element ref="NamingSystem"/>
@@ -1917,7 +1917,7 @@
           </xs:element>
           <xs:element name="short" type="string" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A concise definition that  is shown in the generated XML format that summarizes profiles (used throughout the specification).</xs:documentation>
+              <xs:documentation xml:lang="en">A concise description of what this element means (e.g. for use in auto-generated summaries).</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="definition" type="markdown" minOccurs="0" maxOccurs="1">
@@ -1967,7 +1967,7 @@
           </xs:element>
         <xs:choice minOccurs="0" maxOccurs="1">
            <xs:annotation>
-             <xs:documentation xml:lang="en">The value that should be used if there is no value stated in the instance.</xs:documentation>
+             <xs:documentation xml:lang="en">The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false').</xs:documentation>
            </xs:annotation>
            <xs:element name="defaultValueBoolean" type="boolean"/>
            <xs:element name="defaultValueInteger" type="integer"/>
@@ -2006,7 +2006,7 @@
          </xs:choice>
           <xs:element name="meaningWhenMissing" type="markdown" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Implicit meaning that is to be understood when this element is missing.</xs:documentation>
+              <xs:documentation xml:lang="en">The Implicit meaning that is to be understood when this element is missing (e.g. 'when this element is missing, the period is ongoing'.</xs:documentation>
             </xs:annotation>
           </xs:element>
         <xs:choice minOccurs="0" maxOccurs="1">
@@ -2745,51 +2745,6 @@
     <xs:complexContent>
        <xs:extension base="Element">
          <xs:attribute name="value" type="ConformanceResourceStatus-list" use="optional"/>
-       </xs:extension>
-     </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="AgeUnits-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="min">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Minute</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="h">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Hour</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="d">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Day</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="wk">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Week</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="mo">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Month</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="a">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Year</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AgeUnits">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-       <xs:extension base="Element">
-         <xs:attribute name="value" type="AgeUnits-list" use="optional"/>
        </xs:extension>
      </xs:complexContent>
   </xs:complexType>
@@ -7745,6 +7700,11 @@
               <xs:documentation xml:lang="en">A code that indicates how transactions are supported.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="searchParam" type="Conformance.SearchParam" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="operation" type="Conformance.Operation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Definition of an operation or a named query and with its parameters and their meaning and type.</xs:documentation>
@@ -7830,7 +7790,7 @@
           </xs:element>
           <xs:element name="profile" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses.</xs:documentation>
+              <xs:documentation xml:lang="en">A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses}.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="interaction" type="Conformance.Interaction" minOccurs="1" maxOccurs="unbounded">
@@ -9417,7 +9377,7 @@
           </xs:element>
           <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The resource may be found in a literal location (i.e. GPS coordinates), a logical place (i.e. &quot;in/with the patient&quot;), or a coded location.</xs:documentation>
+              <xs:documentation xml:lang="en">The place where the device can be found.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
@@ -10494,7 +10454,7 @@ The update period may be different than the measurement repetition time, if the 
           </xs:element>
           <xs:element name="request" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Details concerning a test requested.</xs:documentation>
+              <xs:documentation xml:lang="en">Details concerning a test or procedure requested.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="specimen" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -11120,17 +11080,17 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as govt reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="incomingReferralRequest" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="incomingReferral" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The referral request that this encounter satisfies (incoming referral).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="participant" type="Encounter.Participant" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The main practitioner responsible for providing the service.</xs:documentation>
+              <xs:documentation xml:lang="en">The list of people responsible for providing the service.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="fulfills" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="appointment" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The appointment that scheduled this encounter.</xs:documentation>
            </xs:annotation>
@@ -11692,11 +11652,6 @@ The update period may be different than the measurement repetition time, if the 
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="member" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The practitioner (or Organization) within the team.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="role" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The role that this team member is taking within this episode of care.</xs:documentation>
@@ -11705,6 +11660,11 @@ The update period may be different than the measurement repetition time, if the 
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">The period of time that this practitioner is performing some role within the episode of care.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="member" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The practitioner (or Organization) within the team.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -12587,12 +12547,12 @@ The update period may be different than the measurement repetition time, if the 
   </xs:complexType>
   <xs:element name="ImagingObjectSelection" type="ImagingObjectSelection">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="ImagingObjectSelection">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -12639,7 +12599,7 @@ The update period may be different than the measurement repetition time, if the 
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Study">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -12670,7 +12630,7 @@ The update period may be different than the measurement repetition time, if the 
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Series">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -12696,7 +12656,7 @@ The update period may be different than the measurement repetition time, if the 
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Instance">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -12727,7 +12687,7 @@ The update period may be different than the measurement repetition time, if the 
   </xs:complexType>
   <xs:complexType name="ImagingObjectSelection.Frames">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
+      <xs:documentation xml:lang="en">A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -13717,6 +13677,11 @@ The update period may be different than the measurement repetition time, if the 
           <xs:documentation xml:lang="en">This is a generated page that contains the table of contents</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="resource">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">This is a page that represents a presented resource. This is typically used for generated conformance resource presentations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="GuidePageKind">
@@ -14181,19 +14146,14 @@ The update period may be different than the measurement repetition time, if the 
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The common/commercial name of the medication absent information such as strength, form, etc.  E.g. Acetaminophen, Tylenol 3, etc.  The fully coordinated name is communicated as the display of Medication.code.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code (or set of codes) that identify this medication.   Usage note: This could be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT code, etc. It could also be a local formulary code, optionally with translations to the standard drug codes.</xs:documentation>
+              <xs:documentation xml:lang="en">A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="isBrand" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Set to true if the item is attributable to a specific manufacturer (even if we don't know who that is).</xs:documentation>
+              <xs:documentation xml:lang="en">Set to true if the item is attributable to a specific manufacturer.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="manufacturer" minOccurs="0" maxOccurs="1" type="Reference">
@@ -14229,7 +14189,7 @@ The update period may be different than the measurement repetition time, if the 
         <xs:sequence>
           <xs:element name="form" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Describes the form of the item.  Powder; tables; carton.</xs:documentation>
+              <xs:documentation xml:lang="en">Describes the form of the item.  Powder; tablets; carton.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="ingredient" type="Medication.Ingredient" minOccurs="0" maxOccurs="unbounded">
@@ -14478,11 +14438,13 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rate" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the speed with which the medication was introduced into the patient. Typically the rate for an infusion e.g. 200ml in 2 hours.  May also be expressed as a rate per unit of time such as 100ml per hour - the duration is then not specified, or is specified in the quantity.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="rateRatio" type="Ratio"/>
+            <xs:element name="rateRange" type="Range"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -14643,14 +14605,11 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">Additional instructions such as &quot;Swallow with plenty of water&quot; which may or may not be coded.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="timing" minOccurs="0" maxOccurs="1" type="Timing">
             <xs:annotation>
               <xs:documentation xml:lang="en">The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="scheduleDateTime" type="dateTime"/>
-            <xs:element name="schedulePeriod" type="Period"/>
-            <xs:element name="scheduleTiming" type="Timing"/>
-          </xs:choice>
+           </xs:annotation>
+          </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">If set to true or if specified as a CodeableConcept, indicates that the medication is only taken when needed within the specified schedule rather than at every scheduled dose.  If a CodeableConcept is present, it indicates the pre-condition for taking the Medication.</xs:documentation>
@@ -14680,11 +14639,13 @@ The update period may be different than the measurement repetition time, if the 
             <xs:element name="doseRange" type="Range"/>
             <xs:element name="doseQuantity" type="SimpleQuantity"/>
           </xs:choice>
-          <xs:element name="rate" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="rateRatio" type="Ratio"/>
+            <xs:element name="rateRange" type="Range"/>
+          </xs:choice>
           <xs:element name="maxDosePerPeriod" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
               <xs:documentation xml:lang="en">The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time,  e.g. 1000mg in 24 hours.</xs:documentation>
@@ -14760,14 +14721,14 @@ The update period may be different than the measurement repetition time, if the 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="MedicationPrescription" type="MedicationPrescription">
+  <xs:element name="MedicationOrder" type="MedicationOrder">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medicine to a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="MedicationPrescription">
+  <xs:complexType name="MedicationOrder">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medicine to a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -14783,9 +14744,19 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">The date (and perhaps time) when the prescription was written.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="MedicationPrescriptionStatus">
+          <xs:element name="status" minOccurs="0" maxOccurs="1" type="MedicationOrderStatus">
             <xs:annotation>
               <xs:documentation xml:lang="en">A code specifying the state of the order.  Generally this will be active or completed state.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="dateEnded" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date (and perhaps time) when the prescription was stopped.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reasonEnded" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The reason why the prescription was stopped, if it was.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
@@ -14822,28 +14793,33 @@ The update period may be different than the measurement repetition time, if the 
             <xs:element name="medicationCodeableConcept" type="CodeableConcept"/>
             <xs:element name="medicationReference" type="Reference"/>
           </xs:choice>
-          <xs:element name="dosageInstruction" type="MedicationPrescription.DosageInstruction" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="dosageInstruction" type="MedicationOrder.DosageInstruction" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates how the medication is to be used by the patient.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="dispense" type="MedicationPrescription.Dispense" minOccurs="0" maxOccurs="1">
+          <xs:element name="dispense" type="MedicationOrder.Dispense" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Deals with details of the dispense part of the order.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="substitution" type="MedicationPrescription.Substitution" minOccurs="0" maxOccurs="1">
+          <xs:element name="substitution" type="MedicationOrder.Substitution" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates whether or not substitution can or should be part of the dispense. In some cases substitution must happen, in other cases substitution must not happen, and in others it does not matter. This block explains the prescriber's intent. If nothing is specified substitution may be done.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="priorPrescription" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A link to a resource representing an earlier order or prescription that this order supersedes.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MedicationPrescription.DosageInstruction">
+  <xs:complexType name="MedicationOrder.DosageInstruction">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medicine to a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -14858,14 +14834,11 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">Additional instructions such as &quot;Swallow with plenty of water&quot; which may or may not be coded.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="timing" minOccurs="0" maxOccurs="1" type="Timing">
             <xs:annotation>
               <xs:documentation xml:lang="en">The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="scheduledDateTime" type="dateTime"/>
-            <xs:element name="scheduledPeriod" type="Period"/>
-            <xs:element name="scheduledTiming" type="Timing"/>
-          </xs:choice>
+           </xs:annotation>
+          </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">If set to true or if specified as a CodeableConcept, indicates that the medication is only taken when needed within the specified schedule rather than at every scheduled dose.  If a CodeableConcept is present, it indicates the pre-condition for taking the Medication.</xs:documentation>
@@ -14895,11 +14868,13 @@ The update period may be different than the measurement repetition time, if the 
             <xs:element name="doseRange" type="Range"/>
             <xs:element name="doseQuantity" type="SimpleQuantity"/>
           </xs:choice>
-          <xs:element name="rate" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="rateRatio" type="Ratio"/>
+            <xs:element name="rateRange" type="Range"/>
+          </xs:choice>
           <xs:element name="maxDosePerPeriod" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
               <xs:documentation xml:lang="en">The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time. E.g. 1000mg in 24 hours.</xs:documentation>
@@ -14909,9 +14884,9 @@ The update period may be different than the measurement repetition time, if the 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MedicationPrescription.Dispense">
+  <xs:complexType name="MedicationOrder.Dispense">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medicine to a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -14947,9 +14922,9 @@ The update period may be different than the measurement repetition time, if the 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MedicationPrescription.Substitution">
+  <xs:complexType name="MedicationOrder.Substitution">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medicine to a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -14968,7 +14943,7 @@ The update period may be different than the measurement repetition time, if the 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="MedicationPrescriptionStatus-list">
+  <xs:simpleType name="MedicationOrderStatus-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="active">
         <xs:annotation>
@@ -14995,11 +14970,6 @@ The update period may be different than the measurement repetition time, if the 
           <xs:documentation xml:lang="en">Actions implied by the prescription have been permanently halted, before all of them occurred.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="superseded">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">The prescription was replaced by a newer one, which encompasses all the information in the previous one.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="draft">
         <xs:annotation>
           <xs:documentation xml:lang="en">The prescription is not yet 'actionable', i.e. it is a work in progress, required sign-off, need to be run through decision support.</xs:documentation>
@@ -15007,14 +14977,14 @@ The update period may be different than the measurement repetition time, if the 
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="MedicationPrescriptionStatus">
+  <xs:complexType name="MedicationOrderStatus">
     <xs:annotation>
       <xs:documentation xml:lang="en">A code specifying the state of the prescribing event. Describes the lifecycle of the prescription.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="MedicationPrescriptionStatus-list" use="optional"/>
+        <xs:attribute name="value" type="MedicationOrderStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -15036,7 +15006,7 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">External identifier - FHIR will generate its own internal IDs (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="patient" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The person or animal who is /was taking the medication.</xs:documentation>
            </xs:annotation>
@@ -15113,7 +15083,7 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">Free text dosage instructions can be used for cases where the instructions are too complex to code. When coded instructions are present, the free text instructions may still be present for display to humans taking or administering the medication.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="schedule" minOccurs="0" maxOccurs="1" type="Timing">
+          <xs:element name="timing" minOccurs="0" maxOccurs="1" type="Timing">
             <xs:annotation>
               <xs:documentation xml:lang="en">The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;.</xs:documentation>
            </xs:annotation>
@@ -15145,11 +15115,13 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">The amount of therapeutic or other substance given at one administration event.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rate" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="rateRatio" type="Ratio"/>
+            <xs:element name="rateRange" type="Range"/>
+          </xs:choice>
           <xs:element name="maxDosePerPeriod" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
               <xs:documentation xml:lang="en">The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time. E.g. 1000mg in 24 hours.</xs:documentation>
@@ -16056,12 +16028,12 @@ The update period may be different than the measurement repetition time, if the 
         <xs:sequence>
           <xs:element name="low" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The value of the low bound of the reference range. If this element is omitted, the low bound of the reference range is assumed to be meaningless. (e.g. reference range is &lt;2.3)  If the low.comparator element is missing, it is assumed to be '&gt;'.</xs:documentation>
+              <xs:documentation xml:lang="en">The value of the low bound of the reference range. If this element is omitted, the low bound of the reference range is assumed to be meaningless. (e.g. reference range is &lt;2.3) .</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="high" minOccurs="0" maxOccurs="1" type="SimpleQuantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The value of the high bound of the reference range. If this element is omitted, the high bound of the reference range is assumed to be meaningless. (e.g. reference range is &gt; 5)  If the low.comparator element is missing , it is assumed to be '&lt;'.</xs:documentation>
+              <xs:documentation xml:lang="en">The value of the high bound of the reference range. If this element is omitted, the high bound of the reference range is assumed to be meaningless. (e.g. reference range is &gt; 5) .</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="meaning" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -19318,7 +19290,7 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">The date on which the related person was born.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="address" minOccurs="0" maxOccurs="1" type="Address">
+          <xs:element name="address" minOccurs="0" maxOccurs="unbounded" type="Address">
             <xs:annotation>
               <xs:documentation xml:lang="en">Address where the related person can be contacted or visited.</xs:documentation>
            </xs:annotation>
@@ -20373,7 +20345,12 @@ The update period may be different than the measurement repetition time, if the 
               <xs:documentation xml:lang="en">Unique identifier for the substance.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code that classifies the the general type of substance.  This is used  for searching, sorting and display purposes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">A code (or set of codes) that identify this substance.</xs:documentation>
            </xs:annotation>

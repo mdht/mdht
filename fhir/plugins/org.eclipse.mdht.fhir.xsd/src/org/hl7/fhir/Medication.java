@@ -17,7 +17,6 @@ package org.hl7.fhir;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.Medication#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.Medication#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.Medication#getIsBrand <em>Is Brand</em>}</li>
  *   <li>{@link org.hl7.fhir.Medication#getManufacturer <em>Manufacturer</em>}</li>
@@ -32,37 +31,11 @@ package org.hl7.fhir;
  */
 public interface Medication extends DomainResource {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The common/commercial name of the medication absent information such as strength, form, etc.  E.g. Acetaminophen, Tylenol 3, etc.  The fully coordinated name is communicated as the display of Medication.code.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Name</em>' containment reference.
-	 * @see #setName(org.hl7.fhir.String)
-	 * @see org.hl7.fhir.FhirPackage#getMedication_Name()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='name' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	org.hl7.fhir.String getName();
-
-	/**
-	 * Sets the value of the '{@link org.hl7.fhir.Medication#getName <em>Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' containment reference.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(org.hl7.fhir.String value);
-
-	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A code (or set of codes) that identify this medication.   Usage note: This could be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT code, etc. It could also be a local formulary code, optionally with translations to the standard drug codes.
+	 * A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Code</em>' containment reference.
 	 * @see #setCode(CodeableConcept)
@@ -88,7 +61,7 @@ public interface Medication extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Set to true if the item is attributable to a specific manufacturer (even if we don't know who that is).
+	 * Set to true if the item is attributable to a specific manufacturer.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Brand</em>' containment reference.
 	 * @see #setIsBrand(org.hl7.fhir.Boolean)

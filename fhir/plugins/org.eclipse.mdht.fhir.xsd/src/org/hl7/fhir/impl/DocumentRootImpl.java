@@ -78,7 +78,7 @@ import org.hl7.fhir.Media;
 import org.hl7.fhir.Medication;
 import org.hl7.fhir.MedicationAdministration;
 import org.hl7.fhir.MedicationDispense;
-import org.hl7.fhir.MedicationPrescription;
+import org.hl7.fhir.MedicationOrder;
 import org.hl7.fhir.MedicationStatement;
 import org.hl7.fhir.MessageHeader;
 import org.hl7.fhir.NamingSystem;
@@ -184,7 +184,7 @@ import org.hl7.fhir.VisionPrescription;
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMedication <em>Medication</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMedicationAdministration <em>Medication Administration</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMedicationDispense <em>Medication Dispense</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMedicationPrescription <em>Medication Prescription</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMedicationOrder <em>Medication Order</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMedicationStatement <em>Medication Statement</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getMessageHeader <em>Message Header</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.DocumentRootImpl#getNamingSystem <em>Naming System</em>}</li>
@@ -1803,8 +1803,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MedicationPrescription getMedicationPrescription() {
-		return (MedicationPrescription)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_MedicationPrescription(), true);
+	public MedicationOrder getMedicationOrder() {
+		return (MedicationOrder)getMixed().get(FhirPackage.eINSTANCE.getDocumentRoot_MedicationOrder(), true);
 	}
 
 	/**
@@ -1812,8 +1812,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMedicationPrescription(MedicationPrescription newMedicationPrescription, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_MedicationPrescription(), newMedicationPrescription, msgs);
+	public NotificationChain basicSetMedicationOrder(MedicationOrder newMedicationOrder, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FhirPackage.eINSTANCE.getDocumentRoot_MedicationOrder(), newMedicationOrder, msgs);
 	}
 
 	/**
@@ -1821,8 +1821,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMedicationPrescription(MedicationPrescription newMedicationPrescription) {
-		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_MedicationPrescription(), newMedicationPrescription);
+	public void setMedicationOrder(MedicationOrder newMedicationOrder) {
+		((FeatureMap.Internal)getMixed()).set(FhirPackage.eINSTANCE.getDocumentRoot_MedicationOrder(), newMedicationOrder);
 	}
 
 	/**
@@ -2975,8 +2975,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetMedicationAdministration(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_DISPENSE:
 				return basicSetMedicationDispense(null, msgs);
-			case FhirPackage.DOCUMENT_ROOT__MEDICATION_PRESCRIPTION:
-				return basicSetMedicationPrescription(null, msgs);
+			case FhirPackage.DOCUMENT_ROOT__MEDICATION_ORDER:
+				return basicSetMedicationOrder(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_STATEMENT:
 				return basicSetMedicationStatement(null, msgs);
 			case FhirPackage.DOCUMENT_ROOT__MESSAGE_HEADER:
@@ -3184,8 +3184,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getMedicationAdministration();
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_DISPENSE:
 				return getMedicationDispense();
-			case FhirPackage.DOCUMENT_ROOT__MEDICATION_PRESCRIPTION:
-				return getMedicationPrescription();
+			case FhirPackage.DOCUMENT_ROOT__MEDICATION_ORDER:
+				return getMedicationOrder();
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_STATEMENT:
 				return getMedicationStatement();
 			case FhirPackage.DOCUMENT_ROOT__MESSAGE_HEADER:
@@ -3448,8 +3448,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_DISPENSE:
 				setMedicationDispense((MedicationDispense)newValue);
 				return;
-			case FhirPackage.DOCUMENT_ROOT__MEDICATION_PRESCRIPTION:
-				setMedicationPrescription((MedicationPrescription)newValue);
+			case FhirPackage.DOCUMENT_ROOT__MEDICATION_ORDER:
+				setMedicationOrder((MedicationOrder)newValue);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_STATEMENT:
 				setMedicationStatement((MedicationStatement)newValue);
@@ -3751,8 +3751,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_DISPENSE:
 				setMedicationDispense((MedicationDispense)null);
 				return;
-			case FhirPackage.DOCUMENT_ROOT__MEDICATION_PRESCRIPTION:
-				setMedicationPrescription((MedicationPrescription)null);
+			case FhirPackage.DOCUMENT_ROOT__MEDICATION_ORDER:
+				setMedicationOrder((MedicationOrder)null);
 				return;
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_STATEMENT:
 				setMedicationStatement((MedicationStatement)null);
@@ -3996,8 +3996,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getMedicationAdministration() != null;
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_DISPENSE:
 				return getMedicationDispense() != null;
-			case FhirPackage.DOCUMENT_ROOT__MEDICATION_PRESCRIPTION:
-				return getMedicationPrescription() != null;
+			case FhirPackage.DOCUMENT_ROOT__MEDICATION_ORDER:
+				return getMedicationOrder() != null;
 			case FhirPackage.DOCUMENT_ROOT__MEDICATION_STATEMENT:
 				return getMedicationStatement() != null;
 			case FhirPackage.DOCUMENT_ROOT__MESSAGE_HEADER:

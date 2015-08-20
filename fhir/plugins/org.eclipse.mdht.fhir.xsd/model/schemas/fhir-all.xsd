@@ -26,7 +26,7 @@ Copyright (c) 2011+, HL7, Inc
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 
- Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0
+ Generated on Thu, Aug 20, 2015 14:13+0000 for FHIR v0.5.0
 -->
 <xs:schema xmlns="http://hl7.org/fhir" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.5.0">
   <xs:include schemaLocation="account.xsd"/>
@@ -84,7 +84,7 @@ Copyright (c) 2011+, HL7, Inc
   <xs:include schemaLocation="medication.xsd"/>
   <xs:include schemaLocation="medicationadministration.xsd"/>
   <xs:include schemaLocation="medicationdispense.xsd"/>
-  <xs:include schemaLocation="medicationprescription.xsd"/>
+  <xs:include schemaLocation="medicationorder.xsd"/>
   <xs:include schemaLocation="medicationstatement.xsd"/>
   <xs:include schemaLocation="messageheader.xsd"/>
   <xs:include schemaLocation="namingsystem.xsd"/>

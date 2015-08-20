@@ -338,7 +338,7 @@ public interface Device extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The resource may be found in a literal location (i.e. GPS coordinates), a logical place (i.e. "in/with the patient"), or a coded location.
+	 * The place where the device can be found.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Location</em>' containment reference.
 	 * @see #setLocation(Reference)

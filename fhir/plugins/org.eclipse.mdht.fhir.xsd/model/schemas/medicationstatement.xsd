@@ -27,7 +27,12 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
+  Generated on Thu, Aug 20, 2015 14:13+0000 for FHIR v0.5.0 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -49,7 +54,7 @@
               <xs:documentation xml:lang="en">External identifier - FHIR will generate its own internal IDs (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="patient" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The person or animal who is /was taking the medication.</xs:documentation>
            </xs:annotation>
@@ -126,7 +131,7 @@
               <xs:documentation xml:lang="en">Free text dosage instructions can be used for cases where the instructions are too complex to code. When coded instructions are present, the free text instructions may still be present for display to humans taking or administering the medication.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="schedule" minOccurs="0" maxOccurs="1" type="Timing">
+          <xs:element name="timing" minOccurs="0" maxOccurs="1" type="Timing">
             <xs:annotation>
               <xs:documentation xml:lang="en">The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;.</xs:documentation>
            </xs:annotation>
@@ -158,11 +163,13 @@
               <xs:documentation xml:lang="en">The amount of therapeutic or other substance given at one administration event.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rate" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="rateRatio" type="Ratio"/>
+            <xs:element name="rateRange" type="Range"/>
+          </xs:choice>
           <xs:element name="maxDosePerPeriod" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
               <xs:documentation xml:lang="en">The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time. E.g. 1000mg in 24 hours.</xs:documentation>

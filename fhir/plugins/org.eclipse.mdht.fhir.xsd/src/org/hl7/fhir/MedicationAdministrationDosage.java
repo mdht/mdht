@@ -21,7 +21,8 @@ package org.hl7.fhir;
  *   <li>{@link org.hl7.fhir.MedicationAdministrationDosage#getRoute <em>Route</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationAdministrationDosage#getMethod <em>Method</em>}</li>
  *   <li>{@link org.hl7.fhir.MedicationAdministrationDosage#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationAdministrationDosage#getRate <em>Rate</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationAdministrationDosage#getRateRatio <em>Rate Ratio</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationAdministrationDosage#getRateRange <em>Rate Range</em>}</li>
  * </ul>
  *
  * @see org.hl7.fhir.FhirPackage#getMedicationAdministrationDosage()
@@ -160,29 +161,57 @@ public interface MedicationAdministrationDosage extends BackboneElement {
 	void setQuantity(SimpleQuantity value);
 
 	/**
-	 * Returns the value of the '<em><b>Rate</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Rate Ratio</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Ratio</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Identifies the speed with which the medication was introduced into the patient. Typically the rate for an infusion e.g. 200ml in 2 hours.  May also be expressed as a rate per unit of time such as 100ml per hour - the duration is then not specified, or is specified in the quantity.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Rate</em>' containment reference.
-	 * @see #setRate(Ratio)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationAdministrationDosage_Rate()
+	 * @return the value of the '<em>Rate Ratio</em>' containment reference.
+	 * @see #setRateRatio(Ratio)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationAdministrationDosage_RateRatio()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='rate' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='rateRatio' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	Ratio getRate();
+	Ratio getRateRatio();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationAdministrationDosage#getRate <em>Rate</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationAdministrationDosage#getRateRatio <em>Rate Ratio</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rate</em>' containment reference.
-	 * @see #getRate()
+	 * @param value the new value of the '<em>Rate Ratio</em>' containment reference.
+	 * @see #getRateRatio()
 	 * @generated
 	 */
-	void setRate(Ratio value);
+	void setRateRatio(Ratio value);
+
+	/**
+	 * Returns the value of the '<em><b>Rate Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Range</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rate Range</em>' containment reference.
+	 * @see #setRateRange(Range)
+	 * @see org.hl7.fhir.FhirPackage#getMedicationAdministrationDosage_RateRange()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='rateRange' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Range getRateRange();
+
+	/**
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationAdministrationDosage#getRateRange <em>Rate Range</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rate Range</em>' containment reference.
+	 * @see #getRateRange()
+	 * @generated
+	 */
+	void setRateRange(Range value);
 
 } // MedicationAdministrationDosage

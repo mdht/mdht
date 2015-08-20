@@ -31,24 +31,14 @@ import org.hl7.fhir.Reference;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.EpisodeOfCareCareTeamImpl#getMember <em>Member</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EpisodeOfCareCareTeamImpl#getRole <em>Role</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.EpisodeOfCareCareTeamImpl#getPeriod <em>Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.EpisodeOfCareCareTeamImpl#getMember <em>Member</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements EpisodeOfCareCareTeam {
-	/**
-	 * The cached value of the '{@link #getMember() <em>Member</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMember()
-	 * @generated
-	 * @ordered
-	 */
-	protected Reference member;
-
 	/**
 	 * The cached value of the '{@link #getRole() <em>Role</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -70,6 +60,16 @@ public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements Ep
 	protected Period period;
 
 	/**
+	 * The cached value of the '{@link #getMember() <em>Member</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMember()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reference member;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -86,49 +86,6 @@ public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements Ep
 	@Override
 	protected EClass eStaticClass() {
 		return FhirPackage.eINSTANCE.getEpisodeOfCareCareTeam();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Reference getMember() {
-		return member;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetMember(Reference newMember, NotificationChain msgs) {
-		Reference oldMember = member;
-		member = newMember;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, oldMember, newMember);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMember(Reference newMember) {
-		if (newMember != member) {
-			NotificationChain msgs = null;
-			if (member != null)
-				msgs = ((InternalEObject)member).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, null, msgs);
-			if (newMember != null)
-				msgs = ((InternalEObject)newMember).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, null, msgs);
-			msgs = basicSetMember(newMember, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, newMember, newMember));
 	}
 
 	/**
@@ -191,15 +148,58 @@ public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements Ep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Reference getMember() {
+		return member;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMember(Reference newMember, NotificationChain msgs) {
+		Reference oldMember = member;
+		member = newMember;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, oldMember, newMember);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMember(Reference newMember) {
+		if (newMember != member) {
+			NotificationChain msgs = null;
+			if (member != null)
+				msgs = ((InternalEObject)member).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, null, msgs);
+			if (newMember != null)
+				msgs = ((InternalEObject)newMember).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, null, msgs);
+			msgs = basicSetMember(newMember, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER, newMember, newMember));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
-				return basicSetMember(null, msgs);
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__ROLE:
 				return ((InternalEList<?>)getRole()).basicRemove(otherEnd, msgs);
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__PERIOD:
 				return basicSetPeriod(null, msgs);
+			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
+				return basicSetMember(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -212,12 +212,12 @@ public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements Ep
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
-				return getMember();
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__ROLE:
 				return getRole();
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__PERIOD:
 				return getPeriod();
+			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
+				return getMember();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,15 +231,15 @@ public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements Ep
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
-				setMember((Reference)newValue);
-				return;
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__ROLE:
 				getRole().clear();
 				getRole().addAll((Collection<? extends CodeableConcept>)newValue);
 				return;
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__PERIOD:
 				setPeriod((Period)newValue);
+				return;
+			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
+				setMember((Reference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,14 +253,14 @@ public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements Ep
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
-				setMember((Reference)null);
-				return;
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__ROLE:
 				getRole().clear();
 				return;
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__PERIOD:
 				setPeriod((Period)null);
+				return;
+			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
+				setMember((Reference)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -274,12 +274,12 @@ public class EpisodeOfCareCareTeamImpl extends BackboneElementImpl implements Ep
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
-				return member != null;
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__ROLE:
 				return role != null && !role.isEmpty();
 			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__PERIOD:
 				return period != null;
+			case FhirPackage.EPISODE_OF_CARE_CARE_TEAM__MEMBER:
+				return member != null;
 		}
 		return super.eIsSet(featureID);
 	}

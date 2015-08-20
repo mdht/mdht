@@ -5,30 +5,30 @@ package org.hl7.fhir;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Medication Prescription Dispense</b></em>'.
+ * A representation of the model object '<em><b>Medication Order Dispense</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An order for both supply of the medication and the instructions for administration of the medicine to a patient.
+ * An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationOrder" rather than "MedicationPrescription" to generalize the use across inpatient and outpatient settings as well as for care plans, etc.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDispense#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDispense#getMedicationReference <em>Medication Reference</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDispense#getValidityPeriod <em>Validity Period</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDispense#getNumberOfRepeatsAllowed <em>Number Of Repeats Allowed</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDispense#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.MedicationPrescriptionDispense#getExpectedSupplyDuration <em>Expected Supply Duration</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDispense#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDispense#getMedicationReference <em>Medication Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDispense#getValidityPeriod <em>Validity Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDispense#getNumberOfRepeatsAllowed <em>Number Of Repeats Allowed</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDispense#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.MedicationOrderDispense#getExpectedSupplyDuration <em>Expected Supply Duration</em>}</li>
  * </ul>
  *
- * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense()
- * @model extendedMetaData="name='MedicationPrescription.Dispense' kind='elementOnly'"
+ * @see org.hl7.fhir.FhirPackage#getMedicationOrderDispense()
+ * @model extendedMetaData="name='MedicationOrder.Dispense' kind='elementOnly'"
  * @generated
  */
-public interface MedicationPrescriptionDispense extends BackboneElement {
+public interface MedicationOrderDispense extends BackboneElement {
 	/**
 	 * Returns the value of the '<em><b>Medication Codeable Concept</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Medication Codeable Concept</em>' containment reference.
 	 * @see #setMedicationCodeableConcept(CodeableConcept)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense_MedicationCodeableConcept()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDispense_MedicationCodeableConcept()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='medicationCodeableConcept' namespace='##targetNamespace'"
 	 * @generated
@@ -47,7 +47,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	CodeableConcept getMedicationCodeableConcept();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDispense#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDispense#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Medication Codeable Concept</em>' containment reference.
@@ -66,7 +66,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Medication Reference</em>' containment reference.
 	 * @see #setMedicationReference(Reference)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense_MedicationReference()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDispense_MedicationReference()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='medicationReference' namespace='##targetNamespace'"
 	 * @generated
@@ -74,7 +74,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	Reference getMedicationReference();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDispense#getMedicationReference <em>Medication Reference</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDispense#getMedicationReference <em>Medication Reference</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Medication Reference</em>' containment reference.
@@ -92,7 +92,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Validity Period</em>' containment reference.
 	 * @see #setValidityPeriod(Period)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense_ValidityPeriod()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDispense_ValidityPeriod()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='validityPeriod' namespace='##targetNamespace'"
 	 * @generated
@@ -100,7 +100,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	Period getValidityPeriod();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDispense#getValidityPeriod <em>Validity Period</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDispense#getValidityPeriod <em>Validity Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Validity Period</em>' containment reference.
@@ -118,7 +118,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Number Of Repeats Allowed</em>' containment reference.
 	 * @see #setNumberOfRepeatsAllowed(PositiveInt)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense_NumberOfRepeatsAllowed()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDispense_NumberOfRepeatsAllowed()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='numberOfRepeatsAllowed' namespace='##targetNamespace'"
 	 * @generated
@@ -126,7 +126,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	PositiveInt getNumberOfRepeatsAllowed();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDispense#getNumberOfRepeatsAllowed <em>Number Of Repeats Allowed</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDispense#getNumberOfRepeatsAllowed <em>Number Of Repeats Allowed</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Number Of Repeats Allowed</em>' containment reference.
@@ -144,7 +144,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quantity</em>' containment reference.
 	 * @see #setQuantity(SimpleQuantity)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense_Quantity()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDispense_Quantity()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='quantity' namespace='##targetNamespace'"
 	 * @generated
@@ -152,7 +152,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	SimpleQuantity getQuantity();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDispense#getQuantity <em>Quantity</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDispense#getQuantity <em>Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Quantity</em>' containment reference.
@@ -170,7 +170,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expected Supply Duration</em>' containment reference.
 	 * @see #setExpectedSupplyDuration(Duration)
-	 * @see org.hl7.fhir.FhirPackage#getMedicationPrescriptionDispense_ExpectedSupplyDuration()
+	 * @see org.hl7.fhir.FhirPackage#getMedicationOrderDispense_ExpectedSupplyDuration()
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='expectedSupplyDuration' namespace='##targetNamespace'"
 	 * @generated
@@ -178,7 +178,7 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	Duration getExpectedSupplyDuration();
 
 	/**
-	 * Sets the value of the '{@link org.hl7.fhir.MedicationPrescriptionDispense#getExpectedSupplyDuration <em>Expected Supply Duration</em>}' containment reference.
+	 * Sets the value of the '{@link org.hl7.fhir.MedicationOrderDispense#getExpectedSupplyDuration <em>Expected Supply Duration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Expected Supply Duration</em>' containment reference.
@@ -187,4 +187,4 @@ public interface MedicationPrescriptionDispense extends BackboneElement {
 	 */
 	void setExpectedSupplyDuration(Duration value);
 
-} // MedicationPrescriptionDispense
+} // MedicationOrderDispense

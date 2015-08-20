@@ -33,7 +33,7 @@ public interface ObservationReferenceRange extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The value of the low bound of the reference range. If this element is omitted, the low bound of the reference range is assumed to be meaningless. (e.g. reference range is <2.3)  If the low.comparator element is missing, it is assumed to be '>'.
+	 * The value of the low bound of the reference range. If this element is omitted, the low bound of the reference range is assumed to be meaningless. (e.g. reference range is <2.3) .
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Low</em>' containment reference.
 	 * @see #setLow(SimpleQuantity)
@@ -59,7 +59,7 @@ public interface ObservationReferenceRange extends BackboneElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The value of the high bound of the reference range. If this element is omitted, the high bound of the reference range is assumed to be meaningless. (e.g. reference range is > 5)  If the low.comparator element is missing , it is assumed to be '<'.
+	 * The value of the high bound of the reference range. If this element is omitted, the high bound of the reference range is assumed to be meaningless. (e.g. reference range is > 5) .
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>High</em>' containment reference.
 	 * @see #setHigh(SimpleQuantity)

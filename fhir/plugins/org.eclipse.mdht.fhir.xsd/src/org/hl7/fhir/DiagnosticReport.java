@@ -301,7 +301,7 @@ public interface DiagnosticReport extends DomainResource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Details concerning a test requested.
+	 * Details concerning a test or procedure requested.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Request</em>' containment reference list.
 	 * @see org.hl7.fhir.FhirPackage#getDiagnosticReport_Request()

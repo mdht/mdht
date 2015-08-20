@@ -27,7 +27,12 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 10, 2015 00:10+0000 for FHIR v0.5.0 
+  Generated on Thu, Aug 20, 2015 14:13+0000 for FHIR v0.5.0 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
   <xs:include schemaLocation="fhir-base.xsd"/>
@@ -258,6 +263,11 @@
               <xs:documentation xml:lang="en">A code that indicates how transactions are supported.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="searchParam" type="Conformance.SearchParam" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="operation" type="Conformance.Operation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Definition of an operation or a named query and with its parameters and their meaning and type.</xs:documentation>
@@ -343,7 +353,7 @@
           </xs:element>
           <xs:element name="profile" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses.</xs:documentation>
+              <xs:documentation xml:lang="en">A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses}.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="interaction" type="Conformance.Interaction" minOccurs="1" maxOccurs="unbounded">

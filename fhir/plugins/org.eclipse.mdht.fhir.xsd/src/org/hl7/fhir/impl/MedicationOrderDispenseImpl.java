@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hl7.fhir.CodeableConcept;
 import org.hl7.fhir.Duration;
 import org.hl7.fhir.FhirPackage;
-import org.hl7.fhir.MedicationPrescriptionDispense;
+import org.hl7.fhir.MedicationOrderDispense;
 import org.hl7.fhir.Period;
 import org.hl7.fhir.PositiveInt;
 import org.hl7.fhir.Reference;
@@ -21,23 +21,23 @@ import org.hl7.fhir.SimpleQuantity;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Medication Prescription Dispense</b></em>'.
+ * An implementation of the model object '<em><b>Medication Order Dispense</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionDispenseImpl#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionDispenseImpl#getMedicationReference <em>Medication Reference</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionDispenseImpl#getValidityPeriod <em>Validity Period</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionDispenseImpl#getNumberOfRepeatsAllowed <em>Number Of Repeats Allowed</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionDispenseImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.hl7.fhir.impl.MedicationPrescriptionDispenseImpl#getExpectedSupplyDuration <em>Expected Supply Duration</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDispenseImpl#getMedicationCodeableConcept <em>Medication Codeable Concept</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDispenseImpl#getMedicationReference <em>Medication Reference</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDispenseImpl#getValidityPeriod <em>Validity Period</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDispenseImpl#getNumberOfRepeatsAllowed <em>Number Of Repeats Allowed</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDispenseImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.hl7.fhir.impl.MedicationOrderDispenseImpl#getExpectedSupplyDuration <em>Expected Supply Duration</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl implements MedicationPrescriptionDispense {
+public class MedicationOrderDispenseImpl extends BackboneElementImpl implements MedicationOrderDispense {
 	/**
 	 * The cached value of the '{@link #getMedicationCodeableConcept() <em>Medication Codeable Concept</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -103,7 +103,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MedicationPrescriptionDispenseImpl() {
+	protected MedicationOrderDispenseImpl() {
 		super();
 	}
 
@@ -114,7 +114,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FhirPackage.eINSTANCE.getMedicationPrescriptionDispense();
+		return FhirPackage.eINSTANCE.getMedicationOrderDispense();
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		CodeableConcept oldMedicationCodeableConcept = medicationCodeableConcept;
 		medicationCodeableConcept = newMedicationCodeableConcept;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT, oldMedicationCodeableConcept, newMedicationCodeableConcept);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT, oldMedicationCodeableConcept, newMedicationCodeableConcept);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -150,14 +150,14 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		if (newMedicationCodeableConcept != medicationCodeableConcept) {
 			NotificationChain msgs = null;
 			if (medicationCodeableConcept != null)
-				msgs = ((InternalEObject)medicationCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT, null, msgs);
+				msgs = ((InternalEObject)medicationCodeableConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT, null, msgs);
 			if (newMedicationCodeableConcept != null)
-				msgs = ((InternalEObject)newMedicationCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT, null, msgs);
+				msgs = ((InternalEObject)newMedicationCodeableConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT, null, msgs);
 			msgs = basicSetMedicationCodeableConcept(newMedicationCodeableConcept, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT, newMedicationCodeableConcept, newMedicationCodeableConcept));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT, newMedicationCodeableConcept, newMedicationCodeableConcept));
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		Reference oldMedicationReference = medicationReference;
 		medicationReference = newMedicationReference;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE, oldMedicationReference, newMedicationReference);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE, oldMedicationReference, newMedicationReference);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -193,14 +193,14 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		if (newMedicationReference != medicationReference) {
 			NotificationChain msgs = null;
 			if (medicationReference != null)
-				msgs = ((InternalEObject)medicationReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)medicationReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE, null, msgs);
 			if (newMedicationReference != null)
-				msgs = ((InternalEObject)newMedicationReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)newMedicationReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE, null, msgs);
 			msgs = basicSetMedicationReference(newMedicationReference, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE, newMedicationReference, newMedicationReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE, newMedicationReference, newMedicationReference));
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		Period oldValidityPeriod = validityPeriod;
 		validityPeriod = newValidityPeriod;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD, oldValidityPeriod, newValidityPeriod);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD, oldValidityPeriod, newValidityPeriod);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -236,14 +236,14 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		if (newValidityPeriod != validityPeriod) {
 			NotificationChain msgs = null;
 			if (validityPeriod != null)
-				msgs = ((InternalEObject)validityPeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD, null, msgs);
+				msgs = ((InternalEObject)validityPeriod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD, null, msgs);
 			if (newValidityPeriod != null)
-				msgs = ((InternalEObject)newValidityPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD, null, msgs);
+				msgs = ((InternalEObject)newValidityPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD, null, msgs);
 			msgs = basicSetValidityPeriod(newValidityPeriod, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD, newValidityPeriod, newValidityPeriod));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD, newValidityPeriod, newValidityPeriod));
 	}
 
 	/**
@@ -264,7 +264,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		PositiveInt oldNumberOfRepeatsAllowed = numberOfRepeatsAllowed;
 		numberOfRepeatsAllowed = newNumberOfRepeatsAllowed;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, oldNumberOfRepeatsAllowed, newNumberOfRepeatsAllowed);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, oldNumberOfRepeatsAllowed, newNumberOfRepeatsAllowed);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -279,14 +279,14 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		if (newNumberOfRepeatsAllowed != numberOfRepeatsAllowed) {
 			NotificationChain msgs = null;
 			if (numberOfRepeatsAllowed != null)
-				msgs = ((InternalEObject)numberOfRepeatsAllowed).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, null, msgs);
+				msgs = ((InternalEObject)numberOfRepeatsAllowed).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, null, msgs);
 			if (newNumberOfRepeatsAllowed != null)
-				msgs = ((InternalEObject)newNumberOfRepeatsAllowed).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, null, msgs);
+				msgs = ((InternalEObject)newNumberOfRepeatsAllowed).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, null, msgs);
 			msgs = basicSetNumberOfRepeatsAllowed(newNumberOfRepeatsAllowed, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, newNumberOfRepeatsAllowed, newNumberOfRepeatsAllowed));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED, newNumberOfRepeatsAllowed, newNumberOfRepeatsAllowed));
 	}
 
 	/**
@@ -307,7 +307,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		SimpleQuantity oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY, oldQuantity, newQuantity);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY, oldQuantity, newQuantity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -322,14 +322,14 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
 			if (quantity != null)
-				msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY, null, msgs);
+				msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY, null, msgs);
 			if (newQuantity != null)
-				msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY, null, msgs);
+				msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY, null, msgs);
 			msgs = basicSetQuantity(newQuantity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY, newQuantity, newQuantity));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY, newQuantity, newQuantity));
 	}
 
 	/**
@@ -350,7 +350,7 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		Duration oldExpectedSupplyDuration = expectedSupplyDuration;
 		expectedSupplyDuration = newExpectedSupplyDuration;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION, oldExpectedSupplyDuration, newExpectedSupplyDuration);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION, oldExpectedSupplyDuration, newExpectedSupplyDuration);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -365,14 +365,14 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 		if (newExpectedSupplyDuration != expectedSupplyDuration) {
 			NotificationChain msgs = null;
 			if (expectedSupplyDuration != null)
-				msgs = ((InternalEObject)expectedSupplyDuration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION, null, msgs);
+				msgs = ((InternalEObject)expectedSupplyDuration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION, null, msgs);
 			if (newExpectedSupplyDuration != null)
-				msgs = ((InternalEObject)newExpectedSupplyDuration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION, null, msgs);
+				msgs = ((InternalEObject)newExpectedSupplyDuration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION, null, msgs);
 			msgs = basicSetExpectedSupplyDuration(newExpectedSupplyDuration, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION, newExpectedSupplyDuration, newExpectedSupplyDuration));
+			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION, newExpectedSupplyDuration, newExpectedSupplyDuration));
 	}
 
 	/**
@@ -383,17 +383,17 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
 				return basicSetMedicationCodeableConcept(null, msgs);
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE:
 				return basicSetMedicationReference(null, msgs);
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD:
 				return basicSetValidityPeriod(null, msgs);
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
 				return basicSetNumberOfRepeatsAllowed(null, msgs);
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY:
 				return basicSetQuantity(null, msgs);
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION:
 				return basicSetExpectedSupplyDuration(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -407,17 +407,17 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
 				return getMedicationCodeableConcept();
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE:
 				return getMedicationReference();
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD:
 				return getValidityPeriod();
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
 				return getNumberOfRepeatsAllowed();
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY:
 				return getQuantity();
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION:
 				return getExpectedSupplyDuration();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -431,22 +431,22 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
 				setMedicationCodeableConcept((CodeableConcept)newValue);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE:
 				setMedicationReference((Reference)newValue);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD:
 				setValidityPeriod((Period)newValue);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
 				setNumberOfRepeatsAllowed((PositiveInt)newValue);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY:
 				setQuantity((SimpleQuantity)newValue);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION:
 				setExpectedSupplyDuration((Duration)newValue);
 				return;
 		}
@@ -461,22 +461,22 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
 				setMedicationCodeableConcept((CodeableConcept)null);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE:
 				setMedicationReference((Reference)null);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD:
 				setValidityPeriod((Period)null);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
 				setNumberOfRepeatsAllowed((PositiveInt)null);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY:
 				setQuantity((SimpleQuantity)null);
 				return;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION:
 				setExpectedSupplyDuration((Duration)null);
 				return;
 		}
@@ -491,20 +491,20 @@ public class MedicationPrescriptionDispenseImpl extends BackboneElementImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_CODEABLE_CONCEPT:
 				return medicationCodeableConcept != null;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__MEDICATION_REFERENCE:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__MEDICATION_REFERENCE:
 				return medicationReference != null;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__VALIDITY_PERIOD:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__VALIDITY_PERIOD:
 				return validityPeriod != null;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__NUMBER_OF_REPEATS_ALLOWED:
 				return numberOfRepeatsAllowed != null;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__QUANTITY:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__QUANTITY:
 				return quantity != null;
-			case FhirPackage.MEDICATION_PRESCRIPTION_DISPENSE__EXPECTED_SUPPLY_DURATION:
+			case FhirPackage.MEDICATION_ORDER_DISPENSE__EXPECTED_SUPPLY_DURATION:
 				return expectedSupplyDuration != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MedicationPrescriptionDispenseImpl
+} //MedicationOrderDispenseImpl

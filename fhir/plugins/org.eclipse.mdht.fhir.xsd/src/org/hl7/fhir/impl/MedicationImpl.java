@@ -26,7 +26,6 @@ import org.hl7.fhir.Reference;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hl7.fhir.impl.MedicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationImpl#getIsBrand <em>Is Brand</em>}</li>
  *   <li>{@link org.hl7.fhir.impl.MedicationImpl#getManufacturer <em>Manufacturer</em>}</li>
@@ -38,16 +37,6 @@ import org.hl7.fhir.Reference;
  * @generated
  */
 public class MedicationImpl extends DomainResourceImpl implements Medication {
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected org.hl7.fhir.String name;
-
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -125,49 +114,6 @@ public class MedicationImpl extends DomainResourceImpl implements Medication {
 	@Override
 	protected EClass eStaticClass() {
 		return FhirPackage.eINSTANCE.getMedication();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.hl7.fhir.String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetName(org.hl7.fhir.String newName, NotificationChain msgs) {
-		org.hl7.fhir.String oldName = name;
-		name = newName;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION__NAME, oldName, newName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(org.hl7.fhir.String newName) {
-		if (newName != name) {
-			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FhirPackage.MEDICATION__NAME, null, msgs);
-			msgs = basicSetName(newName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FhirPackage.MEDICATION__NAME, newName, newName));
 	}
 
 	/**
@@ -436,8 +382,6 @@ public class MedicationImpl extends DomainResourceImpl implements Medication {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION__NAME:
-				return basicSetName(null, msgs);
 			case FhirPackage.MEDICATION__CODE:
 				return basicSetCode(null, msgs);
 			case FhirPackage.MEDICATION__IS_BRAND:
@@ -462,8 +406,6 @@ public class MedicationImpl extends DomainResourceImpl implements Medication {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION__NAME:
-				return getName();
 			case FhirPackage.MEDICATION__CODE:
 				return getCode();
 			case FhirPackage.MEDICATION__IS_BRAND:
@@ -488,9 +430,6 @@ public class MedicationImpl extends DomainResourceImpl implements Medication {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION__NAME:
-				setName((org.hl7.fhir.String)newValue);
-				return;
 			case FhirPackage.MEDICATION__CODE:
 				setCode((CodeableConcept)newValue);
 				return;
@@ -521,9 +460,6 @@ public class MedicationImpl extends DomainResourceImpl implements Medication {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION__NAME:
-				setName((org.hl7.fhir.String)null);
-				return;
 			case FhirPackage.MEDICATION__CODE:
 				setCode((CodeableConcept)null);
 				return;
@@ -554,8 +490,6 @@ public class MedicationImpl extends DomainResourceImpl implements Medication {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FhirPackage.MEDICATION__NAME:
-				return name != null;
 			case FhirPackage.MEDICATION__CODE:
 				return code != null;
 			case FhirPackage.MEDICATION__IS_BRAND:

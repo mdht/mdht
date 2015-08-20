@@ -476,63 +476,6 @@
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AgeUnits" eSuperTypes="#//Element">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&#xA;If the element is present, it must have either a @value, an @id, or extensions"/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="AgeUnits"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//AgeUnitsList"
-        unsettable="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="attribute"/>
-        <details key="name" value="value"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AgeUnitsList">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="AgeUnits-list"/>
-    </eAnnotations>
-    <eLiterals name="min">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Minute"/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="h" value="1">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Hour"/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="d" value="2">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Day"/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="wk" value="3">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Week"/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="mo" value="4">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Month"/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="a" value="5">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Year"/>
-      </eAnnotations>
-    </eLiterals>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="AgeUnitsListObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="AgeUnits-list:Object"/>
-      <details key="baseType" value="AgeUnits-list"/>
-    </eAnnotations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationMode" eSuperTypes="#//Element">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="How resource references can be aggregated&#xA;If the element is present, it must have either a @value, an @id, or extensions"/>
@@ -9080,7 +9023,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="profile" eType="#//Reference"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses."/>
+        <details key="documentation" value="A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles]{profiling.html#profile-uses}."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -9313,6 +9256,17 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="transactionMode"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="searchParam" upperBound="-1"
+        eType="#//ConformanceSearchParam" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="searchParam"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -11513,7 +11467,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Reference"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The resource may be found in a literal location (i.e. GPS coordinates), a logical place (i.e. &quot;in/with the patient&quot;), or a coded location."/>
+        <details key="documentation" value="The place where the device can be found."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -13110,7 +13064,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="request" upperBound="-1"
         eType="#//Reference" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Details concerning a test requested."/>
+        <details key="documentation" value="Details concerning a test or procedure requested."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -14576,7 +14530,7 @@
         upperBound="-2" eType="#//ImagingObjectSelection" volatile="true" transient="true"
         derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
+        <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -14703,15 +14657,15 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationPrescription"
-        upperBound="-2" eType="#//MedicationPrescription" volatile="true" transient="true"
-        derived="true" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationOrder" upperBound="-2"
+        eType="#//MedicationOrder" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medicine to a patient."/>
+        <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="MedicationPrescription"/>
+        <details key="name" value="MedicationOrder"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -15344,7 +15298,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="short" eType="#//String"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A concise definition that  is shown in the generated XML format that summarizes profiles (used throughout the specification)."/>
+        <details key="documentation" value="A concise description of what this element means (e.g. for use in auto-generated summaries)."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -15726,7 +15680,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="meaningWhenMissing" eType="#//Markdown"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The Implicit meaning that is to be understood when this element is missing."/>
+        <details key="documentation" value="The Implicit meaning that is to be understood when this element is missing (e.g. 'when this element is missing, the period is ongoing'."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -17763,21 +17717,21 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingReferralRequest"
-        upperBound="-1" eType="#//Reference" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingReferral" upperBound="-1"
+        eType="#//Reference" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The referral request that this encounter satisfies (incoming referral)."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="incomingReferralRequest"/>
+        <details key="name" value="incomingReferral"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="participant" upperBound="-1"
         eType="#//EncounterParticipant" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The main practitioner responsible for providing the service."/>
+        <details key="documentation" value="The list of people responsible for providing the service."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -17785,14 +17739,14 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fulfills" eType="#//Reference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appointment" eType="#//Reference"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The appointment that scheduled this encounter."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="fulfills"/>
+        <details key="name" value="appointment"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -18689,17 +18643,6 @@
       <details key="name" value="EpisodeOfCare.CareTeam"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//Reference"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The practitioner (or Organization) within the team."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="member"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="#//CodeableConcept"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -18719,6 +18662,17 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="period"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//Reference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The practitioner (or Organization) within the team."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="member"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -20392,6 +20346,11 @@
         <details key="documentation" value="This is a generated page that contains the table of contents"/>
       </eAnnotations>
     </eLiterals>
+    <eLiterals name="resource" value="7">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is a page that represents a presented resource. This is typically used for generated conformance resource presentations"/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GuidePageKindListObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -21150,7 +21109,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImagingObjectSelection" eSuperTypes="#//DomainResource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.&#xA;If the element is present, it must have either a @value, an @id, or extensions"/>
+      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.&#xA;If the element is present, it must have either a @value, an @id, or extensions"/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImagingObjectSelection"/>
@@ -21236,7 +21195,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImagingObjectSelectionFrames" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
+      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImagingObjectSelection.Frames"/>
@@ -21267,7 +21226,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImagingObjectSelectionInstance" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
+      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImagingObjectSelection.Instance"/>
@@ -21320,7 +21279,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImagingObjectSelectionSeries" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
+      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImagingObjectSelection.Series"/>
@@ -21363,7 +21322,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImagingObjectSelectionStudy" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
+      <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImagingObjectSelection.Study"/>
@@ -24080,21 +24039,10 @@
       <details key="name" value="Medication"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//String"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The common/commercial name of the medication absent information such as strength, form, etc.  E.g. Acetaminophen, Tylenol 3, etc.  The fully coordinated name is communicated as the display of Medication.code."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="name"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="code" eType="#//CodeableConcept"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A code (or set of codes) that identify this medication.   Usage note: This could be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT code, etc. It could also be a local formulary code, optionally with translations to the standard drug codes."/>
+        <details key="documentation" value="A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -24105,7 +24053,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="isBrand" eType="#//Boolean"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Set to true if the item is attributable to a specific manufacturer (even if we don't know who that is)."/>
+        <details key="documentation" value="Set to true if the item is attributable to a specific manufacturer."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -24394,14 +24342,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Identifies the speed with which the medication was introduced into the patient. Typically the rate for an infusion e.g. 200ml in 2 hours.  May also be expressed as a rate per unit of time such as 100ml per hour - the duration is then not specified, or is specified in the quantity."/>
-      </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -24742,27 +24695,14 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduleDateTime" eType="#//DateTime"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" eType="#//Timing"
         containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="scheduleDateTime"/>
-        <details key="namespace" value="##targetNamespace"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;."/>
       </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulePeriod" eType="#//Period"
-        containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="schedulePeriod"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduleTiming" eType="#//Timing"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="scheduleTiming"/>
+        <details key="name" value="timing"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -24831,14 +24771,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours."/>
-      </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -25017,43 +24962,12 @@
       <details key="baseType" value="MedicationKind-list"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPackage" eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrder" eSuperTypes="#//DomainResource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Primarily used for identification and definition of Medication, but also covers ingredients and packaging."/>
+      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc.&#xA;If the element is present, it must have either a @value, an @id, or extensions"/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="Medication.Package"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//CodeableConcept"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The kind of container that this package comes as."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="container"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-        eType="#//MedicationContent" containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A set of components that go to make up the described item."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="content"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescription" eSuperTypes="#//DomainResource">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medicine to a patient.&#xA;If the element is present, it must have either a @value, an @id, or extensions"/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription"/>
+      <details key="name" value="MedicationOrder"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" upperBound="-1"
@@ -25078,7 +24992,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="status" eType="#//MedicationPrescriptionStatus"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="status" eType="#//MedicationOrderStatus"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A code specifying the state of the order.  Generally this will be active or completed state."/>
@@ -25086,6 +25000,28 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="status"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dateEnded" eType="#//DateTime"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The date (and perhaps time) when the prescription was stopped."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="dateEnded"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reasonEnded" eType="#//CodeableConcept"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reason why the prescription was stopped, if it was."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="reasonEnded"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -25166,7 +25102,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dosageInstruction" upperBound="-1"
-        eType="#//MedicationPrescriptionDosageInstruction" containment="true" resolveProxies="false">
+        eType="#//MedicationOrderDosageInstruction" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Indicates how the medication is to be used by the patient."/>
       </eAnnotations>
@@ -25176,7 +25112,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dispense" eType="#//MedicationPrescriptionDispense"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dispense" eType="#//MedicationOrderDispense"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Deals with details of the dispense part of the order."/>
@@ -25187,7 +25123,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="substitution" eType="#//MedicationPrescriptionSubstitution"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="substitution" eType="#//MedicationOrderSubstitution"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Indicates whether or not substitution can or should be part of the dispense. In some cases substitution must happen, in other cases substitution must not happen, and in others it does not matter. This block explains the prescriber's intent. If nothing is specified substitution may be done."/>
@@ -25198,13 +25134,24 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="priorPrescription" eType="#//Reference"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A link to a resource representing an earlier order or prescription that this order supersedes."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="priorPrescription"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionDispense" eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderDispense" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medicine to a patient."/>
+      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription.Dispense"/>
+      <details key="name" value="MedicationOrder.Dispense"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="medicationCodeableConcept"
@@ -25268,13 +25215,12 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionDosageInstruction"
-      eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderDosageInstruction" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medicine to a patient."/>
+      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription.DosageInstruction"/>
+      <details key="name" value="MedicationOrder.DosageInstruction"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//String"
@@ -25299,27 +25245,14 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduledDateTime" eType="#//DateTime"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" eType="#//Timing"
         containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="scheduledDateTime"/>
-        <details key="namespace" value="##targetNamespace"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;."/>
       </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduledPeriod" eType="#//Period"
-        containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="scheduledPeriod"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduledTiming" eType="#//Timing"
-        containment="true" resolveProxies="false">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="scheduledTiming"/>
+        <details key="name" value="timing"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -25388,14 +25321,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours."/>
-      </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -25411,15 +25349,15 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionStatus" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderStatus" eSuperTypes="#//Element">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A code specifying the state of the prescribing event. Describes the lifecycle of the prescription.&#xA;If the element is present, it must have either a @value, an @id, or extensions"/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescriptionStatus"/>
+      <details key="name" value="MedicationOrderStatus"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//MedicationPrescriptionStatusList"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//MedicationOrderStatusList"
         unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
@@ -25427,9 +25365,9 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MedicationPrescriptionStatusList">
+  <eClassifiers xsi:type="ecore:EEnum" name="MedicationOrderStatusList">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescriptionStatus-list"/>
+      <details key="name" value="MedicationOrderStatus-list"/>
     </eAnnotations>
     <eLiterals name="active">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -25456,31 +25394,25 @@
         <details key="documentation" value="Actions implied by the prescription have been permanently halted, before all of them occurred."/>
       </eAnnotations>
     </eLiterals>
-    <eLiterals name="superseded" value="5">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The prescription was replaced by a newer one, which encompasses all the information in the previous one."/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="draft" value="6">
+    <eLiterals name="draft" value="5">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The prescription is not yet 'actionable', i.e. it is a work in progress, required sign-off, need to be run through decision support."/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="MedicationPrescriptionStatusListObject"
+  <eClassifiers xsi:type="ecore:EDataType" name="MedicationOrderStatusListObject"
       instanceClassName="org.eclipse.emf.common.util.Enumerator">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescriptionStatus-list:Object"/>
-      <details key="baseType" value="MedicationPrescriptionStatus-list"/>
+      <details key="name" value="MedicationOrderStatus-list:Object"/>
+      <details key="baseType" value="MedicationOrderStatus-list"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MedicationPrescriptionSubstitution"
-      eSuperTypes="#//BackboneElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationOrderSubstitution" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medicine to a patient."/>
+      <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="MedicationPrescription.Substitution"/>
+      <details key="name" value="MedicationOrder.Substitution"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CodeableConcept"
@@ -25506,6 +25438,37 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MedicationPackage" eSuperTypes="#//BackboneElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Primarily used for identification and definition of Medication, but also covers ingredients and packaging."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Medication.Package"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//CodeableConcept"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of container that this package comes as."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="container"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//MedicationContent" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A set of components that go to make up the described item."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="content"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MedicationProduct" eSuperTypes="#//BackboneElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Primarily used for identification and definition of Medication, but also covers ingredients and packaging."/>
@@ -25517,7 +25480,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="form" eType="#//CodeableConcept"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Describes the form of the item.  Powder; tables; carton."/>
+        <details key="documentation" value="Describes the form of the item.  Powder; tablets; carton."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -25567,8 +25530,8 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="patient" eType="#//Reference"
-        containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patient" lowerBound="1"
+        eType="#//Reference" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The person or animal who is /was taking the medication."/>
       </eAnnotations>
@@ -25723,14 +25686,14 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" eType="#//Timing"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" eType="#//Timing"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="schedule"/>
+        <details key="name" value="timing"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -25794,14 +25757,19 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//Ratio"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRatio" eType="#//Ratio"
         containment="true" resolveProxies="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours."/>
-      </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="rate"/>
+        <details key="name" value="rateRatio"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rateRange" eType="#//Range"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rateRange"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -27770,7 +27738,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="low" eType="#//SimpleQuantity"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The value of the low bound of the reference range. If this element is omitted, the low bound of the reference range is assumed to be meaningless. (e.g. reference range is &lt;2.3)  If the low.comparator element is missing, it is assumed to be '>'."/>
+        <details key="documentation" value="The value of the low bound of the reference range. If this element is omitted, the low bound of the reference range is assumed to be meaningless. (e.g. reference range is &lt;2.3) ."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -27781,7 +27749,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="high" eType="#//SimpleQuantity"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The value of the high bound of the reference range. If this element is omitted, the high bound of the reference range is assumed to be meaningless. (e.g. reference range is > 5)  If the low.comparator element is missing , it is assumed to be '&lt;'."/>
+        <details key="documentation" value="The value of the high bound of the reference range. If this element is omitted, the high bound of the reference range is assumed to be meaningless. (e.g. reference range is > 5) ."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -33427,8 +33395,8 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="address" eType="#//Address"
-        containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
+        eType="#//Address" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Address where the related person can be contacted or visited."/>
       </eAnnotations>
@@ -34043,7 +34011,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imagingObjectSelection"
         eType="#//ImagingObjectSelection" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (“cine” video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
+        <details key="documentation" value="A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -34161,14 +34129,14 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationPrescription"
-        eType="#//MedicationPrescription" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="medicationOrder" eType="#//MedicationOrder"
+        containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medicine to a patient."/>
+        <details key="documentation" value="An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called &quot;MedicationOrder&quot; rather than &quot;MedicationPrescription&quot; to generalize the use across inpatient and outpatient settings as well as for care plans, etc."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="MedicationPrescription"/>
+        <details key="name" value="MedicationOrder"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -36788,14 +36756,25 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CodeableConcept"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" upperBound="-1"
+        eType="#//CodeableConcept" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A code that classifies the the general type of substance.  This is used  for searching, sorting and display purposes."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="category"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="code" lowerBound="1" eType="#//CodeableConcept"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A code (or set of codes) that identify this substance."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
-        <details key="name" value="type"/>
+        <details key="name" value="code"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>

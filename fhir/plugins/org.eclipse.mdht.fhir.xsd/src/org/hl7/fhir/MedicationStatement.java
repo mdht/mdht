@@ -66,7 +66,7 @@ public interface MedicationStatement extends DomainResource {
 	 * @return the value of the '<em>Patient</em>' containment reference.
 	 * @see #setPatient(Reference)
 	 * @see org.hl7.fhir.FhirPackage#getMedicationStatement_Patient()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='patient' namespace='##targetNamespace'"
 	 * @generated
 	 */
