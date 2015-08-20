@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.mdht.fhir.profile2uml;singleton:=true
+Bundle-SymbolicName: org.eclipse.mdht.uml.fhir.transform;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: org.eclipse.mdht.fhir.profile2uml.Activator
+Bundle-Activator: org.eclipse.mdht.uml.fhir.transform.Activator
 Bundle-Vendor: %pluginProvider
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,

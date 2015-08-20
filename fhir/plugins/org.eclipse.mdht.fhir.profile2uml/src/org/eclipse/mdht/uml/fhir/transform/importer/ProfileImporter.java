@@ -1,4 +1,4 @@
-package org.eclipse.mdht.fhir.profile2uml.importer;
+package org.eclipse.mdht.uml.fhir.transform.importer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -334,26 +334,25 @@ public class ProfileImporter {
 			return profileClass;
 		}
 		
-		//TODO temporary workaround for bug in FHIR build tool
-		if (StructureDefinitionKindList.DATATYPE == structureDef.getKind().getValue()
-				&& structureDef.getBase() != null && "http://hl7.org/fhir/StructureDefinition/Element".equals(structureDef.getBase().getValue())) {
-			structureDef.setBase(null);
-		}
+//		if (StructureDefinitionKindList.DATATYPE == structureDef.getKind().getValue()
+//				&& structureDef.getBase() != null && "http://hl7.org/fhir/StructureDefinition/Element".equals(structureDef.getBase().getValue())) {
+//			structureDef.setBase(null);
+//		}
 
 		String kindName = structureDef.getKind().getValue().getName();
 		// Primitive types have unique representation and "known by magic" from reading specification.
 		PrimitiveType primitiveType = null;
-		PrimitiveType constrainedType = null;
+		PrimitiveType constrainedPrimitiveType = null;
 		if ("datatype".equals(kindName)) {
 			primitiveType = getPrimitiveType(structureDef.getName().getValue());
 			if (structureDef.getConstrainedType() != null) {
 				// e.g. code, id, oid
-				constrainedType = getPrimitiveType(structureDef.getConstrainedType().getValue());
+				constrainedPrimitiveType = getPrimitiveType(structureDef.getConstrainedType().getValue());
 			}
 		}
 		
 		String kindPackageName = kindName;
-		if (primitiveType == null && constrainedType == null && structureDef.getBase() != null) {
+		if (primitiveType == null && constrainedPrimitiveType == null && structureDef.getConstrainedType() != null) {
 			if (structureDef.getContextType() != null) {
 				kindPackageName = "extension";
 			}
@@ -398,7 +397,7 @@ public class ProfileImporter {
 			}
 		}
 		
-		//TODO apply UML stereotypes for kinds of Comment
+		// Apply UML stereotypes for kinds of Comment
 		if (structureDef.getDescription() != null) {
 			Comment description = profileClass.createOwnedComment();
 			description.setBody(structureDef.getDescription().getValue());
@@ -414,11 +413,7 @@ public class ProfileImporter {
 		if (primitiveType != null) {
 			profileClass.createGeneralization(dataTypeClass);
 		}
-		else if (structureDef.getBase() != null
-				&& !structureDef.getUrl().getValue().equals(structureDef.getBase().getValue())) {
-			// Element has base = Element, check for circular generalization
-			//TODO does this occur anymore, after various fixes to the resource and datatype profiles????
-			
+		else if (structureDef.getBase() != null) {
 			String base = structureDef.getBase().getValue();
 			Class baseProfileClass = null;
 			if (base.startsWith("http://")) {
@@ -429,7 +424,7 @@ public class ProfileImporter {
 			}
 			
 			// Add "DataType" abstract superclass for all data types
-			if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindPackageName) && baseProfileClass != null 
+			if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindName) 
 					&& ELEMENT_CLASS_NAME.equals(baseProfileClass.getName())) {
 				baseProfileClass = dataTypeClass;
 			}

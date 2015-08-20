@@ -9,7 +9,7 @@
  *     David A Carlson (Clinical Cloud Solutions, LLC) - initial API and implementation
  *
  *******************************************************************************/
-package org.eclipse.mdht.fhir.profile2uml.popup.actions;
+package org.eclipse.mdht.uml.fhir.transform.popup.actions;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.mdht.fhir.profile2uml.importer.ProfileImporter;
+import org.eclipse.mdht.uml.fhir.transform.importer.ProfileImporter;
 import org.eclipse.swt.SWT;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;

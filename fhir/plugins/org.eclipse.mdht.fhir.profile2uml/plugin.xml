@@ -18,7 +18,7 @@
          </menu>
          <action
                label="Import Profile to UML"
-               class="org.eclipse.mdht.fhir.profile2uml.popup.actions.ImportProfileAction"
+               class="org.eclipse.mdht.uml.fhir.transform.popup.actions.ImportProfileAction"
                menubarPath="org.eclipse.mdht.fhir.profile2uml.menu1/group1"
                enablesFor="1"
                id="org.eclipse.mdht.fhir.profile2uml.newAction">

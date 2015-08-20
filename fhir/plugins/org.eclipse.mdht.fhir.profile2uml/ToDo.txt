@@ -24,6 +24,20 @@ BUGS and ISSUES:
       </type>
 
 --------------------
+PROJECT MANAGEMENT
+
+- Add feature project
+- Configure Maven build
+
+--------------------
+Model Mapping
+
+- Test small XSD import, mapping
+
+
+
+
+--------------------
 - Table Editor
   -- expand attributes IFF type is a nested class
   -- add icon overlay for nested class
@@ -56,8 +70,8 @@ BUGS and ISSUES:
 - Use DITA to publish FHIR model as Help plugin
 
 - 0..0 multiplicity
-  -- do not show as association
   -- display strike-through font for class attribute
+  -- strike-through font in dynagram
 
 - Add XML serialization metadata on import, e.g. ElementDefinition <representation value="xmlAttr"/>
 
