@@ -11,11 +11,15 @@
  *******************************************************************************/
 package org.eclipse.mdht.uml.fhir.ui.notation;
 
+import org.eclipse.mdht.uml.fhir.BindingStrengthKind;
+import org.eclipse.mdht.uml.fhir.ElementDefinition;
 import org.eclipse.mdht.uml.fhir.FHIRPackage;
 import org.eclipse.mdht.uml.fhir.TypeChoice;
 import org.eclipse.mdht.uml.fhir.ValueSetBinding;
 import org.eclipse.mdht.uml.fhir.util.ProfileUtil;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
@@ -28,6 +32,12 @@ import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
  */
 public class FHIRPropertyNotation extends PropertyNotationUtil {
 
+	public static final String FLAG_MODIFYING_ELEMENT = "?!";
+	public static final String FLAG_MUST_BE_SUPPORTED = "S";
+	public static final String FLAG_SUMMARY_SET = "Σ";
+	public static final String FLAG_INVARIANT = "I";
+	public static final String FLAG_CANNOT_HAVE_EXTENSIONS = "NE";
+	
 	/**
 	 * return the custom label of the property, given UML2 specification and a
 	 * custom style.
@@ -84,31 +94,33 @@ public class FHIRPropertyNotation extends PropertyNotationUtil {
 		boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 		StringBuffer annotations = new StringBuffer();
 
+		String flags = getFlags(property);
+		if (flags.length() > 0) {
+			annotations.append(flags);
+		}
+		
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			// property modifiers
 			String modifiers = PropertyNotationUtil.getModifiersAsString(property, multiLine);
 			if (!modifiers.equals("")) {
+				annotations.append(annotations.length() > 0 ? " ": "");
 				annotations.append(modifiers);
-			}
-		}
-
-		if ((style & INotationConstants.DISP_VOCABULARY) != 0) {
-			String termMetadata = getTerminologyAnnotations(property);
-			if (termMetadata.length() > 0) {
-				if (annotations.length() > 0) {
-					annotations.append(", ");
-				}
-				annotations.append(termMetadata);
 			}
 		}
 
 		if ((style & INotationConstants.DISP_TYPE_CHOICE) != 0) {
 			String typeChoice = getPropertyTypeChoice(property);
 			if (typeChoice.length() > 0) {
-				if (annotations.length() > 0) {
-					annotations.append(", ");
-				}
+				annotations.append(annotations.length() > 0 ? " ": "");
 				annotations.append(typeChoice);
+			}
+		}
+
+		if ((style & INotationConstants.DISP_VOCABULARY) != 0) {
+			String termMetadata = getTerminologyAnnotations(property);
+			if (termMetadata.length() > 0) {
+				annotations.append(annotations.length() > 0 ? " ": "");
+				annotations.append(termMetadata);
 			}
 		}
 
@@ -128,6 +140,41 @@ public class FHIRPropertyNotation extends PropertyNotationUtil {
 		}
 
 		return buffer.toString().trim();
+	}
+
+	protected static String getFlags(Property property) {
+		StringBuffer label = new StringBuffer();
+		ElementDefinition elementDef = (ElementDefinition) ProfileUtil.getStereotypeApplication(property, FHIRPackage.eINSTANCE.getElementDefinition());
+		if (elementDef != null) {
+			if (Boolean.TRUE == elementDef.getIsModifier()) {
+				label.append(FLAG_MODIFYING_ELEMENT);
+			}
+			if (Boolean.TRUE == elementDef.getMustSupport()) {
+				label.append(label.length() > 0 ? " ": "");
+				label.append(FLAG_MUST_BE_SUPPORTED);
+			}
+			if (Boolean.TRUE == elementDef.getIsSummary()) {
+				label.append(label.length() > 0 ? " ": "");
+				label.append(FLAG_SUMMARY_SET);
+			}
+//			if (hasInvariant(property)) {
+//				label.append(label.length() > 0 ? " ": "");
+//				label.append(FLAG_INVARIANT);
+//			}
+		}
+		
+		return label.toString();
+	}
+	
+	private static boolean hasInvariant(Property property) {
+		for (Constraint constraint : property.getClass_().getOwnedRules()) {
+			for (Element element : constraint.getConstrainedElements()) {
+				if (property.equals(element)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 	
 	protected static String getPropertyTypeChoice(Property property) {
@@ -158,7 +205,7 @@ public class FHIRPropertyNotation extends PropertyNotationUtil {
 //			if (binding.getDescription() != null) {
 //				annotation.append(" " + binding.getDescription());
 //			}
-			String valueSetName = "";
+			String valueSetName = null;
 			if (binding.getValueSetReference() != null) {
 				valueSetName = binding.getValueSetReference();
 			}
@@ -166,20 +213,38 @@ public class FHIRPropertyNotation extends PropertyNotationUtil {
 				valueSetName = binding.getValueSetUri();
 			}
 
+			if (valueSetName != null) {
 			valueSetName = valueSetName.substring(valueSetName.lastIndexOf("/") + 1);
+			annotation.append(" [");
 			annotation.append(valueSetName);
+			annotation.append("]");
+			}
 
 			if (binding.getStrength() != null) {
 				//TODO toUpperCamelCase
-				String strength = binding.getStrength().getName();
-				StringBuffer camelCaseNameBuffer = new StringBuffer();
-				camelCaseNameBuffer.append(strength.substring(0, 1).toUpperCase());
-				camelCaseNameBuffer.append(strength.substring(1));
-				strength = camelCaseNameBuffer.toString();
+				BindingStrengthKind bindingStrength = binding.getStrength();
+//				String strengthName = binding.getStrength().getName();
+//				StringBuffer camelCaseNameBuffer = new StringBuffer();
+//				camelCaseNameBuffer.append(strengthName.substring(0, 1).toUpperCase());
+//				camelCaseNameBuffer.append(strengthName.substring(1));
+//				strengthName = camelCaseNameBuffer.toString();
+//				
+//				annotation.append(" (");
+//				annotation.append(strengthName);
+//				annotation.append(")");
 				
-				annotation.append(" (");
-				annotation.append(strength);
-				annotation.append(")");
+				if (BindingStrengthKind.EXAMPLE == bindingStrength) {
+					annotation.append("?");
+				}
+				else if (BindingStrengthKind.PREFERRED == bindingStrength) {
+					annotation.append("#");
+				}
+				else if (BindingStrengthKind.REQUIRED == bindingStrength) {
+					annotation.append("!");
+				}
+				else if (BindingStrengthKind.EXTENSIBLE == bindingStrength) {
+					annotation.append("+");
+				}
 			}
 		}
 

@@ -1,6 +1,9 @@
 Importing core model:
 
 BUGS and ISSUES:
+- Slicing property name must be unique
+  -- e.g. LipidProfile.result -> derive property name as lowerCamelCase from type name (extension name)
+
 - Property type for TypeChoice
   -- Issue: in FHIR, Reference is a kind of Type -> using Base
 
@@ -25,12 +28,12 @@ BUGS and ISSUES:
   -- expand attributes IFF type is a nested class
   -- add icon overlay for nested class
 
-- Constraint profile
-  -- ElementDef type is optional, not necessarily a new nested type
-     -- If no type, look for redefined/subsetted property and use its type
-     -- e.g. prohibited elements; slicing discriminator element (extension)
+- Dynagram
+  -- BUG: not showing Patient.Link.other, non-composite association from nested class.
+  -- If nested class, display all inherited, but not from base resource
+     --- how to determine if a class is base resource (from reference model)?
 
-- Add "Description" column to table editor
+***- Add "Description" column to table editor
   -- default, first sentence of first comment
   -- FHIR annotation provider: short 
   -->> generalize Value column, "Value or Description"
@@ -42,11 +45,6 @@ BUGS and ISSUES:
   -- New menu: Expand References (true by default)
      --- use to collapse Resource associations
   -- Add to default preferences
-
-- Submit bug on Conformance.rest.interaction
-  -- ISSUE: ValueSet.codeSystem.concept
-     --- 'name' already set to "concept" for node reuse
-     --- ConceptDefinition name in spec diagram
 
 - Import profiles: prompt user to select profile file or folder (all)
   -- filter by file name regex?  e.g. *daf*
@@ -63,7 +61,7 @@ BUGS and ISSUES:
 
 - Add XML serialization metadata on import, e.g. ElementDefinition <representation value="xmlAttr"/>
 
-- Assign element.id as Ecore Id
+***- Assign element.id as Ecore Id
   -- create derived model, test re-importing core w/o breaking references
   -- Issue: no id for nested classes, also need id for all properties to enable redefine/subset
      -- use path as Ecore Id, if no FHIR id?
@@ -77,16 +75,15 @@ BUGS and ISSUES:
      -- In text: Invariant affects this element
      -- Research UML Constraint constrainedElement.  Can I have all "affected" properties in constrainedElement list?
 
-- Import value sets, assign binding constraint
-  -- first iteration: use existing terminology profile and UI
-  
 - Slicing, used in Conformance
   -- property subsetting in UML
   -- good example: lipid-report-lipidprofile
 
-- Extensions
-  -- It appears that extension structure is simply a *constraint* on the Extension datatype ???
-  -- With context type and context(s)
+- Import StructureDefintion and ElementDefinition extensions
+
+- Extension
+  -- contextType and context(s)
+  -- test extensions embedded within extensions, e.g. adverseevent-qicore-cause, or condition-dueTo
 
 - Import operations
 
@@ -97,9 +94,28 @@ CHANGES IN SEPT RELEASE
 - Change StructureDefinition.type, add StructureDefinition.constrainedType
 http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemEdit&tracker_id=677&tracker_item_id=6079
 
+---------------------------------------------------
 COMPLETED
 
 - Abstract mother of all classes: Base
 - Abstract mother of all data types: Type extends Element
 
 - Add annotation UI, display TypeChoice
+
+- Constraint profile
+  -- ElementDef type is optional, not necessarily a new nested type
+     -- If no type, look for redefined/subsetted property and use its type
+     -- e.g. prohibited elements; slicing discriminator element (extension)
+     
+- Submit bug on Conformance.rest.interaction
+  -- ISSUE: ValueSet.codeSystem.concept
+     --- 'name' already set to "concept" for node reuse
+     --- ConceptDefinition name in spec diagram
+     
+- Import value sets, assign binding constraint
+  -- first iteration: use existing terminology profile and UI
+  
+- Constraint classes for boolean, code, date, dateTime, decimal, etc.
+     
+- Duplicate constraint and extension classes: date; many extensions, e.g. procedurerequest-qicore-appropriatenessScore
+     

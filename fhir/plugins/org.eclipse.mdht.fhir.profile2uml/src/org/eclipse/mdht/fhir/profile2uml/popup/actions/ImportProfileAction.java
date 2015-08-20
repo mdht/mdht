@@ -97,16 +97,18 @@ public class ImportProfileAction implements IObjectActionDelegate {
 
 						umlImporter.importProfile("extension-definitions");
 						
-//						umlImporter.importProfile("Observation");
-						umlImporter.importProfile("Condition");
-						umlImporter.importProfile("StructureDefinition");
-						umlImporter.importProfile("Conformance");
-						umlImporter.importProfile("ImplementationGuide");
-						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
-						umlImporter.importProfile("observation-hspc-standardlabobs-quantitative-stdqty");
-						umlImporter.importProfile("observation-hspc-heartrate-hspcheartrate");
+//						umlImporter.importProfile("Condition");
+//						umlImporter.importProfile("StructureDefinition");
+//						umlImporter.importProfile("Conformance");
+//						umlImporter.importProfile("ImplementationGuide");
+//						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
+//						umlImporter.importProfile("observation-hspc-standardlabobs-quantitative-stdqty");
+//						umlImporter.importProfile("observation-hspc-heartrate-hspcheartrate");
+//
+//						umlImporter.importProfile("lipid-report-lipidprofile");
 						
-//						umlImporter.importAllProfiles();
+						
+						umlImporter.importAllProfiles();
 					}
 
 					return Status.OK_STATUS;
