@@ -91,6 +91,8 @@ public interface ICDAProfileConstants {
 
 	public static final String INLINE = "Inline";
 
+	public static final String CONSTRAINT_DITA_ENABLED = "enabledDitaForConstraints";
+
 	/*
 	 * Vocab Specification Stereotype and Properties
 	 */
