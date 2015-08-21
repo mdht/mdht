@@ -668,6 +668,11 @@ memberEnd->forAll(type.oclIsKindOf(uml::Class) and not type.name.oclIsUndefined(
       <ownedAttribute xmi:id="_EsNF4qFLEd6NOYTVzzK9uw" name="base_Constraint" association="_EsNF4KFLEd6NOYTVzzK9uw">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Constraint"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_u62mcEfEEeWYV-g8qtdu_w" name="enabledDitaForConstraints">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u62mcUfEEeWYV-g8qtdu_w"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_u62mckfEEeWYV-g8qtdu_w"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_EsNF4KFLEd6NOYTVzzK9uw" name="Constraint_ConstraintValidation" memberEnd="_EsNF4aFLEd6NOYTVzzK9uw _EsNF4qFLEd6NOYTVzzK9uw">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_EsNF4aFLEd6NOYTVzzK9uw" name="extension_ConstraintValidation" type="_4AuRwKFKEd6NOYTVzzK9uw" aggregation="composite" association="_EsNF4KFLEd6NOYTVzzK9uw"/>
