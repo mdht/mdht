@@ -379,6 +379,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		constraintValidationEClass = createEClass(CONSTRAINT_VALIDATION);
 		createEReference(constraintValidationEClass, CONSTRAINT_VALIDATION__BASE_CONSTRAINT);
+		createEAttribute(constraintValidationEClass, CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS);
 
 		conformsToEClass = createEClass(CONFORMS_TO);
 		createEReference(conformsToEClass, CONFORMS_TO__BASE_GENERALIZATION);
@@ -678,6 +679,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EReference getConstraintValidation_Base_Constraint() {
 		return (EReference)constraintValidationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstraintValidation_EnabledDitaForConstraints() {
+		return (EAttribute)constraintValidationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1138,6 +1148,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		initEClass(constraintValidationEClass, ConstraintValidation.class, "ConstraintValidation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraintValidation_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint", null, 1, 1, ConstraintValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConstraintValidation_EnabledDitaForConstraints(), theTypesPackage.getBoolean(), "enabledDitaForConstraints", "false", 0, 1, ConstraintValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(conformsToEClass, ConformsTo.class, "ConformsTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConformsTo_Base_Generalization(), theUMLPackage.getGeneralization(), null, "base_Generalization", null, 1, 1, ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
