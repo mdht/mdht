@@ -61,6 +61,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
+import org.openhealthtools.mdht.uml.common.util.PropertyComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformClassContent extends TransformAbstract {
@@ -405,6 +406,7 @@ public class TransformClassContent extends TransformAbstract {
 			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
 			writer.println("</li>");
 		}
+		Collections.sort(allProperties, new PropertyComparator());
 		// XML elements
 		for (Property property : allProperties) {
 			hasRules = true;
