@@ -528,10 +528,6 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
-	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
-		return computeAssociationConformanceMessage(property, markup, xrefSource, true);
-	}
-
 	public static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource,
 			boolean appendNestedConformanceRules) {
 
@@ -622,11 +618,6 @@ public class CDAModelUtil {
 		}
 
 		return message.toString();
-	}
-
-	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
-			Package xrefSource) {
-		return computeTemplateAssociationConformanceMessage(property, markup, xrefSource, true);
 	}
 
 	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
