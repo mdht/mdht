@@ -1619,30 +1619,6 @@ public class CDAModelUtil {
 		}
 		appendConformanceRuleIds(constraint, message, markup);
 
-		// include comment text only in markup output
-		if (false && markup && constraint.getOwnedComments().size() > 0) {
-			message.append("<ul>");
-			for (Comment comment : constraint.getOwnedComments()) {
-				message.append("<li>");
-				message.append(fixNonXMLCharacters(comment.getBody()));
-				message.append("</li>");
-			}
-			message.append("</ul>");
-		}
-
-		// Include other constraint languages, e.g. OCL or XPath
-		if (false && langBodyMap.size() > 0) {
-			message.append("<ul>");
-			for (String lang : langBodyMap.keySet()) {
-				message.append("<li>");
-				message.append("<codeblock>[" + lang + "]: ");
-				message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
-				message.append("</codeblock>");
-				message.append("</li>");
-			}
-			message.append("</ul>");
-		}
-
 		if (!markup) {
 			// remove line feeds
 			int index;
@@ -1752,7 +1728,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
