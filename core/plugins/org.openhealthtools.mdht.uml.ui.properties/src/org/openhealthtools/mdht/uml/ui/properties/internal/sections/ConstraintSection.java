@@ -214,7 +214,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 								stereotype = CDAProfileUtil.applyCDAStereotype(
 									constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 							}
-							oESpec.setValue(
+							constraint.setValue(
 								stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
 								ditaEnableButton.getSelection());
 						}
@@ -340,9 +340,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -469,6 +469,17 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			languageCombo.setEnabled(true);
 			bodyText.setEnabled(true);
 		}
+		Boolean selection = false;
+		try {
+			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+			selection = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+		} catch (IllegalArgumentException e) { /* Swallow this */
+		}
+		selection = selection == null
+				? false
+				: selection;
+		ditaEnableButton.setSelection(selection);
 
 	}
 
