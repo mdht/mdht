@@ -58,7 +58,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
-import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
@@ -708,17 +707,10 @@ public class CDAModelUtil {
 		Association association = property.getAssociation();
 		Package xrefSource = UMLUtil.getTopPackage(property);
 
-		ActRelationship actRelationship = CDAProfileUtil.getActRelationship(association);
-		if (actRelationship != null) {
-
-		}
-
 		EntryRelationship entryRelationship = CDAProfileUtil.getEntryRelationship(association);
-		EntryRelationshipKind typeCode = null;
-
-		if (entryRelationship != null) {
-			typeCode = entryRelationship.getTypeCode();
-		}
+		EntryRelationshipKind typeCode = entryRelationship != null
+				? entryRelationship.getTypeCode()
+				: null;
 
 		Class endType = (property.getType() instanceof Class)
 				? (Class) property.getType()
@@ -1213,10 +1205,6 @@ public class CDAModelUtil {
 	}
 
 	private static void appendPropertyComments(StringBuilder sb, Property property, boolean markup) {
-
-		if (markup) {
-		} else {
-		}
 
 		// INLINE
 
@@ -2336,8 +2324,6 @@ public class CDAModelUtil {
 			} else if (value instanceof Enumerator) {
 				severity = ((Enumerator) value).getName();
 			}
-
-			// return (severity != null) ? severity : SEVERITY_ERROR;
 		}
 
 		return severity;
