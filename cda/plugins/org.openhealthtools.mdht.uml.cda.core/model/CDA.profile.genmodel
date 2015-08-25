@@ -127,6 +127,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ConstraintValidation">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ConstraintValidation/base_Constraint"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConstraintValidation/enabledDitaForConstraints"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ConformsTo">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

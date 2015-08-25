@@ -413,6 +413,14 @@ public interface CDAPackage extends EPackage {
 		EReference CONSTRAINT_VALIDATION__BASE_CONSTRAINT = eINSTANCE.getConstraintValidation_Base_Constraint();
 
 		/**
+		 * The meta object literal for the '<em><b>Enabled Dita For Constraints</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS = eINSTANCE.getConstraintValidation_EnabledDitaForConstraints();
+
+		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl <em>Conforms To</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1585,13 +1593,22 @@ public interface CDAPackage extends EPackage {
 	int CONSTRAINT_VALIDATION__BASE_CONSTRAINT = VALIDATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Enabled Dita For Constraints</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS = VALIDATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Constraint Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_VALIDATION_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 1;
+	int CONSTRAINT_VALIDATION_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl <em>Conforms To</em>}' class.
@@ -2150,6 +2167,15 @@ public interface CDAPackage extends EPackage {
 	int LOGICAL_CONSTRAINT__BASE_CONSTRAINT = CONSTRAINT_VALIDATION__BASE_CONSTRAINT;
 
 	/**
+	 * The feature id for the '<em><b>Enabled Dita For Constraints</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONSTRAINT__ENABLED_DITA_FOR_CONSTRAINTS = CONSTRAINT_VALIDATION__ENABLED_DITA_FOR_CONSTRAINTS;
+
+	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2598,6 +2624,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConstraintValidation_Base_Constraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#isEnabledDitaForConstraints <em>Enabled Dita For Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enabled Dita For Constraints</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation#isEnabledDitaForConstraints()
+	 * @see #getConstraintValidation()
+	 * @generated
+	 */
+	EAttribute getConstraintValidation_EnabledDitaForConstraints();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Entry <em>Entry</em>}'.
