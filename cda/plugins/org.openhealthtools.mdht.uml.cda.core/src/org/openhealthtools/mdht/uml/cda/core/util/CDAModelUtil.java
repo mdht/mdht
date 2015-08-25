@@ -58,7 +58,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
-import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Inline;
@@ -381,34 +380,6 @@ public class CDAModelUtil {
 		return (String) umlSwitch.doSwitch(element);
 	}
 
-	// private static String getCDATemplateIdConstraint(boolean isTemplateVersionEmpty, boolean markup) {
-	// String result = "";
-	// if (isTemplateVersionEmpty) {
-	// if (cardinalityAfterElement) {
-	// result = markup
-	// ? CDAConstraints.CDATemplateIdConstraintMarkupDiffMultip
-	// : CDAConstraints.CDATemplateIdConstraintDiffMultip;
-	// } else {
-	// result = markup
-	// ? CDAConstraints.CDATemplateIdConstraintMarkup
-	// : CDAConstraints.CDATemplateIdConstraint;
-	// }
-	//
-	// } else {
-	// if (cardinalityAfterElement) {
-	// result = markup
-	// ? CDAConstraints.CDAVersionTemplateIdConstraintMarkupDiffMultip
-	// : CDAConstraints.CDAVersionTemplateIdConstraintDiffMultip;
-	// } else {
-	// result = markup
-	// ? CDAConstraints.CDAVersionTemplateIdConstraintMarkup
-	// : CDAConstraints.CDAVersionTemplateIdConstraint;
-	// }
-	// }
-	//
-	// return result;
-	// }
-
 	public static String computeConformanceMessage(Class template, final boolean markup) {
 
 		String templateId = getTemplateId(template);
@@ -417,21 +388,6 @@ public class CDAModelUtil {
 		if (templateId == null) {
 			templateId = "";
 		}
-
-		// String templateConstraint = getCDATemplateIdConstraint(StringUtils.isEmpty(templateVersion), markup);
-		//
-		//
-		// templateConstraint = templateConstraint.replaceAll("%templateId%", (templateId != null
-		// ? templateId
-		// : ""));
-		// templateConstraint = templateConstraint.replaceAll("\\( %ruleId% \\) ", (ruleIds != null &&
-		// !ruleIds.trim().isEmpty()
-		// ? "( " + ruleIds + " ) "
-		// : ""));
-		//
-		// templateConstraint = templateConstraint.replaceAll("%templateVersion%", (templateVersion != null
-		// ? templateVersion
-		// : ""));
 
 		String templateMultiplicity = CDATemplateComputeBuilder.getMultiplicityRange(getMultiplicityRange(template));
 		final String templateIdAsBusinessName = "=\"" + templateId + "\"";
@@ -572,10 +528,6 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
-	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
-		return computeAssociationConformanceMessage(property, markup, xrefSource, true);
-	}
-
 	public static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource,
 			boolean appendNestedConformanceRules) {
 
@@ -616,22 +568,6 @@ public class CDAModelUtil {
 		}
 
 		String elementName = getCDAElementName(property);
-
-		// message.append(getMultiplicityString(property)).append(" ");
-		//
-		//
-		//
-		// message.append(markup
-		// ? "<tt><b>"
-		// : "");
-		// message.append(elementName);
-		// message.append(markup
-		// ? "</b>"
-		// : "");
-		// message.append(getBusinessName(property));
-		// message.append(markup
-		// ? "</tt>"
-		// : "");
 
 		message.append(getMultiplicityText(property));
 		message.append(multiplicityElementToggle(property, markup, elementName));
@@ -685,11 +621,6 @@ public class CDAModelUtil {
 	}
 
 	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
-			Package xrefSource) {
-		return computeTemplateAssociationConformanceMessage(property, markup, xrefSource, true);
-	}
-
-	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup,
 			Package xrefSource, boolean appendNestedConformanceRules) {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
@@ -705,13 +636,10 @@ public class CDAModelUtil {
 		for (Property p : association.getMemberEnds()) {
 			// note: if it is eventually decided that we only want the exception to apply to SHALLs/ERRORs
 			// as opposed to all severities, add the commented out code -db
-			// String curSeverity = getValidationKeyword(association);
-			// if (curSeverity != null && curSeverity.equals("SHALL")) {
 			if ((p.getName() != null && !p.getName().isEmpty()) && (p.getOwner() != null && p.getType() != null) &&
 					(isSection((Class) p.getOwner()) && isClinicalStatement(p.getType()) || isEntry(p.getType()))) {
 				message.append(NULLFLAVOR_SECTION_MESSAGE);
 			}
-			// }
 		}
 
 		String keyword = getValidationKeyword(association);
@@ -770,36 +698,10 @@ public class CDAModelUtil {
 		Association association = property.getAssociation();
 		Package xrefSource = UMLUtil.getTopPackage(property);
 
-		ActRelationship actRelationship = CDAProfileUtil.getActRelationship(association);
-		if (actRelationship != null) {
-
-		}
-
 		EntryRelationship entryRelationship = CDAProfileUtil.getEntryRelationship(association);
-
-		// Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
-		// Stereotype entryRelationshipStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-		// association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
-
-		EntryRelationshipKind typeCode = null;
-
-		// String typeCodeDisplay = null;
-		if (entryRelationship != null) {
-			typeCode = entryRelationship.getTypeCode(); // getLiteralValue(association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE);
-			// Enumeration profileEnum = (Enumeration) entryStereotype.getProfile().getOwnedType(
-			// ICDAProfileConstants.ENTRY_KIND);
-			// typeCodeDisplay = getLiteralValueLabel(
-			// association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE, profileEnum);
-		}
-		// else if (entryRelationshipStereotype != null) {
-		// typeCode = getLiteralValue(
-		// association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
-		// Enumeration profileEnum = (Enumeration) entryRelationshipStereotype.getProfile().getOwnedType(
-		// ICDAProfileConstants.ENTRY_RELATIONSHIP_KIND);
-		// typeCodeDisplay = getLiteralValueLabel(
-		// association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE,
-		// profileEnum);
-		// }
+		EntryRelationshipKind typeCode = entryRelationship != null
+				? entryRelationship.getTypeCode()
+				: null;
 
 		Class endType = (property.getType() instanceof Class)
 				? (Class) property.getType()
@@ -809,8 +711,6 @@ public class CDAModelUtil {
 			message.append(markup
 					? "\n<li>"
 					: " ");
-			// message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
-			// message.append(" contain ");
 			message.append("Contains ");
 			message.append(markup
 					? "<tt><b>"
@@ -835,14 +735,11 @@ public class CDAModelUtil {
 		}
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
-		if (endType != null && getCDAClass(endType) != null && !(isInlineClass(endType))
-		/* && !getCDAClass(property.getClass_()).getName().startsWith("Entry") */&&
+		if (endType != null && getCDAClass(endType) != null && !(isInlineClass(endType)) &&
 				!isInlineClass(property.getClass_())) {
 			message.append(markup
 					? "\n<li>"
 					: " ");
-			// message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
-			// message.append(" contain exactly one [1..1] ");
 			message.append("Contains exactly one [1..1] ");
 
 			String prefix = !UMLUtil.isSameModel(xrefSource, endType)
@@ -1097,54 +994,7 @@ public class CDAModelUtil {
 				}
 
 			}
-			// else {
-			// message.append(property.getType().getName());
-			// }
 		}
-
-		// if (property.getType() != null &&
-		// (redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
-		// message.append(" with " + "@xsi:type=\"");
-		//
-		// String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
-		// property, property.getType()))
-		// ? computeXref(xrefSource, (Classifier) property.getType())
-		// : null;
-		// boolean showXref = markup && (xref != null);
-		//
-		// if (showXref) {
-		// String format = showXref && xref.endsWith(".html")
-		// ? "format=\"html\" "
-		// : "";
-		// message.append(showXref
-		// ? "<xref " + format + "href=\"" + xref + "\">"
-		// : "");
-		// message.append(UMLUtil.splitName(property.getType()));
-		// message.append(showXref
-		// ? "</xref>"
-		// : "");
-		// } else {
-		// message.append(property.getType().getName());
-		// }
-		// message.append("\"");
-		// }
-
-		// if (markup && isInlineClass(endType) && !isPublishSeperately(endType)) {
-		// StringWriter sw = new StringWriter();
-		// PrintWriter pw = new PrintWriter(sw);
-		//
-		// appendConformanceRuleIds(association, message, markup);
-		//
-		// appendPropertyComments(pw, property, markup);
-		//
-		// appendConformanceRules(pw, endType, String.format(" %s%s%s ", (property.getUpper() == 1
-		// ? "This "
-		// : "Such "), elementName, (property.getUpper() == 1
-		// ? ""
-		// : "s")), markup);
-		// message.append(" " + sw.getBuffer() + " ");
-		//
-		// }
 
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
 		if (isHL7VocabAttribute(property)) {
@@ -1158,8 +1008,6 @@ public class CDAModelUtil {
 			appendConformanceRuleIds(property, message, markup);
 		}
 
-		// Stereotype conceptDomainConstraint = CDAProfileUtil.getAppliedCDAStereotype(
-		// property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 		Stereotype codeSystemConstraint = TermProfileUtil.getAppliedStereotype(
 			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 		Stereotype valueSetConstraint = TermProfileUtil.getAppliedStereotype(
@@ -1294,15 +1142,6 @@ public class CDAModelUtil {
 
 		PropertyList propertyList = new PropertyList(umlClass, CDAModelUtil.isInlineClass(umlClass));
 
-		// List<Property> allProperties = new ArrayList<Property>(umlClass.getOwnedAttributes());
-		// List<Property> allAttributes = new ArrayList<Property>();
-		// for (Property property : allProperties) {
-		// if (CDAModelUtil.isXMLAttribute(property)) {
-		// allAttributes.add(property);
-		// }
-		// }
-		// allProperties.removeAll(allAttributes);
-		// Collections.sort(allAttributes, new NamedElementComparator());
 		// XML attributes
 		for (Property property : propertyList.getAttributes()) {
 			hasRules = hasRules |
@@ -1358,10 +1197,6 @@ public class CDAModelUtil {
 
 	private static void appendPropertyComments(StringBuilder sb, Property property, boolean markup) {
 
-		if (markup) {
-		} else {
-		}
-
 		// INLINE
 
 		Association association = property.getAssociation();
@@ -1415,24 +1250,11 @@ public class CDAModelUtil {
 				unprocessedConstraints.remove(constraint);
 				ruleConstraints.append(li[0] + CDAModelUtil.computeConformanceMessage(constraint, true));
 				appendSubConstraintRules(ruleConstraints, constraint, subConstraintMap, unprocessedConstraints, markup);
-
-				// List<Constraint> subConstraints = subConstraintMap.get(constraint);
-				// if (subConstraints != null && subConstraints.size() > 0) {
-				// ruleConstraints.append(OL[0]);
-				// for (Constraint subConstraint : subConstraints) {
-				// unprocessedConstraints.remove(subConstraint);
-				// ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(subConstraint, true) + "</li>");
-				// }
-				// ruleConstraints.append("</ol>");
-				// }
 				ruleConstraints.append(li[1]);
 			}
 		}
 
 		if (assocConstraints.length() > 0 || ruleConstraints.length() > 0) {
-			// writer.append(", such that ");
-			// writer.append(property.upperBound()==1 ? "it" : "each");
-
 			sb.append(ol[0]);
 			sb.append(assocConstraints);
 			sb.append(ruleConstraints);
@@ -1621,11 +1443,6 @@ public class CDAModelUtil {
 			message.append(markup
 					? "</tt>"
 					: "");
-
-			// message.append(" ").append(binding.getName().toUpperCase());
-			// if (version != null) {
-			// message.append(" ").append(version);
-			// }
 			message.append(")");
 		}
 
@@ -1802,30 +1619,6 @@ public class CDAModelUtil {
 		}
 		appendConformanceRuleIds(constraint, message, markup);
 
-		// include comment text only in markup output
-		if (false && markup && constraint.getOwnedComments().size() > 0) {
-			message.append("<ul>");
-			for (Comment comment : constraint.getOwnedComments()) {
-				message.append("<li>");
-				message.append(fixNonXMLCharacters(comment.getBody()));
-				message.append("</li>");
-			}
-			message.append("</ul>");
-		}
-
-		// Include other constraint languages, e.g. OCL or XPath
-		if (false && langBodyMap.size() > 0) {
-			message.append("<ul>");
-			for (String lang : langBodyMap.keySet()) {
-				message.append("<li>");
-				message.append("<codeblock>[" + lang + "]: ");
-				message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
-				message.append("</codeblock>");
-				message.append("</li>");
-			}
-			message.append("</ul>");
-		}
-
 		if (!markup) {
 			// remove line feeds
 			int index;
@@ -1863,16 +1656,6 @@ public class CDAModelUtil {
 				: "");
 		message.append(" satisfy the following ");
 
-		// message.append(logicConstraint.getMessage());
-
-		// message.append("<ul>");
-		// for (Comment comment : constraint.getOwnedComments()) {
-		// message.append("<li>");
-		// message.append(fixNonXMLCharacters(comment.getBody()));
-		// message.append("</li>");
-		// }
-		// message.append("</ul>");
-
 		boolean appendLogic = false;
 		message.append(OL[0]);
 		for (Element element : constraint.getConstrainedElements()) {
@@ -1895,106 +1678,6 @@ public class CDAModelUtil {
 		message.append(OL[1]);
 
 		appendConformanceRuleIds(constraint, message, markup);
-
-		// String strucTextBody = null;
-		// String analysisBody = null;
-		// Map<String, String> langBodyMap = new HashMap<String, String>();
-		//
-		// ValueSpecification spec = constraint.getSpecification();
-		// if (spec instanceof OpaqueExpression) {
-		// for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
-		// String lang = ((OpaqueExpression) spec).getLanguages().get(i);
-		// String body = ((OpaqueExpression) spec).getBodies().get(i);
-		//
-		// if ("StrucText".equals(lang)) {
-		// strucTextBody = body;
-		// } else if ("Analysis".equals(lang)) {
-		// analysisBody = body;
-		// } else {
-		// langBodyMap.put(lang, body);
-		// }
-		// }
-		// }
-		//
-		// String displayBody = null;
-		// if (strucTextBody != null && strucTextBody.trim().length() > 0) {
-		// // TODO if markup, parse strucTextBody and insert DITA markup
-		// displayBody = strucTextBody;
-		// } else if (analysisBody != null && analysisBody.trim().length() > 0) {
-		// if (markup) {
-		// // escape non-dita markup in analysis text
-		// displayBody = escapeMarkupCharacters(analysisBody);
-		// // change severity words to bold text
-		// displayBody = replaceSeverityWithBold(displayBody);
-		// } else {
-		// displayBody = analysisBody;
-		// }
-		// }
-		//
-		// if (!markup) {
-		// message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
-		// }
-		//
-		// if (displayBody == null || !containsSeverityWord(displayBody)) {
-		// String keyword = getValidationKeyword(constraint);
-		// if (keyword == null) {
-		// keyword = "SHALL";
-		// }
-		//
-		// message.append(markup
-		// ? "<b>"
-		// : "");
-		// message.append(keyword);
-		// message.append(markup
-		// ? "</b>"
-		// : "");
-		// message.append(" satisfy: ");
-		// }
-		//
-		// if (displayBody == null) {
-		// message.append(constraint.getName());
-		// } else {
-		// message.append(displayBody);
-		// }
-		// appendConformanceRuleIds(constraint, message, markup);
-		//
-		// // include comment text only in markup output
-		// if (false && markup && constraint.getOwnedComments().size() > 0) {
-		// message.append("<ul>");
-		// for (Comment comment : constraint.getOwnedComments()) {
-		// message.append("<li>");
-		// message.append(fixNonXMLCharacters(comment.getBody()));
-		// message.append("</li>");
-		// }
-		// message.append("</ul>");
-		// }
-		//
-		// // Include other constraint languages, e.g. OCL or XPath
-		// if (false && langBodyMap.size() > 0) {
-		// message.append("<ul>");
-		// for (String lang : langBodyMap.keySet()) {
-		// message.append("<li>");
-		// message.append("<codeblock>[" + lang + "]: ");
-		// message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
-		// message.append("</codeblock>");
-		// message.append("</li>");
-		// }
-		// message.append("</ul>");
-		// }
-		//
-		// if (!markup) {
-		// // remove line feeds
-		// int index;
-		// while ((index = message.indexOf("\r")) >= 0) {
-		// message.deleteCharAt(index);
-		// }
-		// while ((index = message.indexOf("\n")) >= 0) {
-		// message.deleteCharAt(index);
-		// if (message.charAt(index) != ' ') {
-		// message.insert(index, " ");
-		// }
-		// }
-		// }
 
 		return message.toString();
 	}
@@ -2045,7 +1728,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
@@ -2608,8 +2291,6 @@ public class CDAModelUtil {
 			} else if (value instanceof Enumerator) {
 				severity = ((Enumerator) value).getName();
 			}
-
-			// return (severity != null) ? severity : SEVERITY_ERROR;
 		}
 
 		return severity;
@@ -2673,16 +2354,6 @@ public class CDAModelUtil {
 			constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE, message);
 		}
 	}
-
-	// public static void setValidationRuleId(Element constrainedElement, String ruleId) {
-	// Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(
-	// constrainedElement, ICDAProfileConstants.VALIDATION);
-	// if (validationSupport != null) {
-	// List<String> ruleIds = new ArrayList<String>();
-	// ruleIds.add(ruleId);
-	// constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_RULE_ID, ruleIds);
-	// }
-	// }
 
 	protected static String getLiteralValue(Element element, Stereotype stereotype, String propertyName) {
 		Object value = element.getValue(stereotype, propertyName);
