@@ -151,7 +151,7 @@ public class CDAModelUtil {
 
 	/**
 	 * Returns the nearest inherited property with the same name, or null if not found.
-	 *
+	 * 
 	 * @deprecated Use the {@link UMLUtil#getInheritedProperty(Property)} API, instead.
 	 */
 	@Deprecated
@@ -177,7 +177,7 @@ public class CDAModelUtil {
 	/**
 	 * isCDAModel - use get top package to support nested uml packages within CDA model
 	 * primarily used for extensions
-	 *
+	 * 
 	 */
 	public static boolean isCDAModel(Element element) {
 		if (element != null) {
@@ -319,14 +319,14 @@ public class CDAModelUtil {
 	/**
 	 * Obtains the user-specified validation message recorded in the given stereotype, or else
 	 * {@linkplain #computeConformanceMessage(Element, boolean) computes} a suitable conformance message if none.
-	 *
+	 * 
 	 * @param element
 	 *            an element on which a validation constraint stereotype is defined
 	 * @param validationStereotypeName
 	 *            the stereotype name (may be the abstract {@linkplain ICDAProfileConstants#VALIDATION Validation} stereotype)
-	 *
+	 * 
 	 * @return the most appropriate validation/conformance message
-	 *
+	 * 
 	 * @see #computeConformanceMessage(Element, boolean)
 	 */
 	public static String getValidationMessage(Element element, String validationStereotypeName) {
@@ -2018,9 +2018,9 @@ public class CDAModelUtil {
 	/**
 	 * FindResourcesByNameVisitor searches the resource for resources of a particular name
 	 * You would think there was a method for this already but i could not find it
-	 *
+	 * 
 	 * @author seanmuir
-	 *
+	 * 
 	 */
 	public static class FindResourcesByNameVisitor implements IResourceVisitor {
 
@@ -2045,7 +2045,7 @@ public class CDAModelUtil {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.core.resources.IResourceVisitor#visit(org.eclipse.core.resources.IResource)
 		 */
 		public boolean visit(IResource arg0) throws CoreException {
@@ -2091,9 +2091,9 @@ public class CDAModelUtil {
 
 	/**
 	 * computeXref returns the XREF for DITA publication
-	 *
+	 * 
 	 * TODO Refactor and move out of model util
-	 *
+	 * 
 	 * @param source
 	 * @param target
 	 * @return
@@ -2183,7 +2183,7 @@ public class CDAModelUtil {
 
 	/**
 	 * getExtensionNamespace returns the name space from a extension package in the CDA model
-	 *
+	 * 
 	 * @param type
 	 * @return
 	 */
@@ -2217,20 +2217,55 @@ public class CDAModelUtil {
 		return null;
 	}
 
+	/**
+	 * getCDAElementName - Returns the CDA Element name as a string
+	 * 
+	 * @TODO Refactor to use org.openhealthtools.mdht.uml.transform.ecore.TransformAbstract.getInitialProperty(Property)
+	 * 
+	 *       Currently walk the redefines to see if we can match the CDA property using the name and type
+	 *       If none found - for backwards compatibility we look for a property in the base class with a matching type which is potential error prone
+	 *       If none still - leverage the getassociation
+	 * 
+	 * @param property
+	 * @return
+	 */
 	public static String getCDAElementName(Property property) {
 		String elementName = null;
+
 		if (property.getType() instanceof Class) {
 			Class cdaSourceClass = getCDAClass(property.getClass_());
 			if (cdaSourceClass != null) {
-				// This will never succeed for associations, does not include ActRelationship
-				Property cdaProperty = cdaSourceClass.getOwnedAttribute(
-					property.getName(), getCDAClass((Classifier) property.getType()));
-				if (cdaProperty != null && cdaProperty.getName() != null) {
-					String modelPrefix = getExtensionNamespace(cdaProperty.getType());
-					elementName = !StringUtils.isEmpty(modelPrefix)
-							? modelPrefix + ":" + cdaProperty.getName()
-							: cdaProperty.getName();
+
+				for (Property redefinedProperty : property.getRedefinedProperties()) {
+					// This will never succeed for associations, does not include ActRelationship
+
+					if (redefinedProperty.getType() != null) {
+
+						Property cdaProperty = cdaSourceClass.getOwnedAttribute(
+							redefinedProperty.getName(), getCDAClass((Classifier) redefinedProperty.getType()));
+						if (cdaProperty != null && cdaProperty.getName() != null) {
+							String modelPrefix = getExtensionNamespace(cdaProperty.getType());
+							elementName = !StringUtils.isEmpty(modelPrefix)
+									? modelPrefix + ":" + cdaProperty.getName()
+									: cdaProperty.getName();
+							break;
+						}
+					}
+
 				}
+
+				if (elementName == null) {
+					Property cdaProperty = cdaSourceClass.getOwnedAttribute(
+						null, getCDAClass((Classifier) property.getType()));
+					if (cdaProperty != null && cdaProperty.getName() != null) {
+						String modelPrefix = getExtensionNamespace(cdaProperty.getType());
+						elementName = !StringUtils.isEmpty(modelPrefix)
+								? modelPrefix + ":" + cdaProperty.getName()
+								: cdaProperty.getName();
+					}
+
+				}
+
 			}
 		}
 
