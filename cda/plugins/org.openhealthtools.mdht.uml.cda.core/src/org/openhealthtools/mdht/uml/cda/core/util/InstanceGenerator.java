@@ -193,7 +193,7 @@ public class InstanceGenerator {
 			if ((object.getText() != null && object.getText().length() == 0) && object.eContainer() != null) {
 				if (object.eContainer() instanceof Section && object.eContainingFeature().getName().equals("title")) {
 					Section s = (Section) object.eContainer();
-					System.out.println(s.toString());
+
 					if (s.getCode() != null && s.getCode().getDisplayName() != null) {
 						return object.addText(s.getCode().getDisplayName());
 					}
@@ -366,7 +366,6 @@ public class InstanceGenerator {
 			HashMap<String, String> shallShouldMayProperties, int level) {
 
 		initEObject(eObject);
-		System.out.println(eObject.eClass().getName() + " ---> " + level);
 
 		if (level < 0 || CDAModelUtil.isCDAModel(umlClass)) {
 			return;
@@ -433,7 +432,6 @@ public class InstanceGenerator {
 								sampleInstanceInitialization(
 									(Class) property.getType(), objectToAdd, inlineshallShouldMayProperties, level - 1);
 								if (cdaReference.isMany()) {
-									System.out.println(property.getQualifiedName() + " --- " + objectToAdd.toString());
 									((EList) eObject.eGet(cdaReference)).add(objectToAdd);
 								} else {
 									eObject.eSet(cdaReference, objectToAdd);
