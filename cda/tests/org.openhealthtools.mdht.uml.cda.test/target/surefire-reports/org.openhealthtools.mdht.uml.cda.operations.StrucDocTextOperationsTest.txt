@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperationsTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.632 sec <<< FAILURE!
+org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperationsTest.testAddTextNull()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.IllegalArgumentException: text is null
+	at org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations.addText(StrucDocTextOperations.java:56)
+	at org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperationsTest.testAddTextNull(StrucDocTextOperationsTest.java:52)
+
