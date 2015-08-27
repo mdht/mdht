@@ -294,6 +294,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		data.top = new FormAttachment(languageCombo, 0, SWT.CENTER);
 		ditaEnableButton.setLayoutData(data);
 		ditaEnableButton.setEnabled(true);
+		ditaEnableButton.setVisible(false);
 		ditaEnableButton.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				ditaModified = true;
@@ -340,9 +341,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 *
+	 * 
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -469,18 +470,23 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			languageCombo.setEnabled(true);
 			bodyText.setEnabled(true);
 		}
-		Boolean selection = false;
-		try {
-			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-			selection = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
-		} catch (IllegalArgumentException e) { /* Swallow this */
-		}
-		selection = selection == null
-				? false
-				: selection;
-		ditaEnableButton.setSelection(selection);
 
+		if ("Analysis".equals(languageCombo.getText())) {
+			Boolean selection = false;
+			try {
+				Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+					constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+				selection = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+			} catch (IllegalArgumentException e) { /* Swallow this */
+			}
+			selection = selection == null
+					? false
+					: selection;
+			ditaEnableButton.setSelection(selection);
+			ditaEnableButton.setVisible(true);
+		} else {
+			ditaEnableButton.setVisible(false);
+		}
 	}
 
 	/**
