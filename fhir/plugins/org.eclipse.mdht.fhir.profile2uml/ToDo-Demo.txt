@@ -1,0 +1,12 @@
+Features for FHA Demo
+--------------------------------------
+
+- Display short description in table
+
+- Dynagram option to collapse shared associations by default
+  -- New menu: Expand References (true by default)
+     --- use to collapse Resource associations
+  -- Add to default preferences
+  
+- Improve UI for importing profiles
+

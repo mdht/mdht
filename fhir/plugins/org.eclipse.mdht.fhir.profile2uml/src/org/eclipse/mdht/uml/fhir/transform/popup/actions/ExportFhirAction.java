@@ -11,7 +11,8 @@
  *******************************************************************************/
 package org.eclipse.mdht.uml.fhir.transform.popup.actions;
 
-import java.util.List;
+import java.io.IOException;
+import java.util.HashMap;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -24,10 +25,10 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
@@ -35,33 +36,34 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.mdht.uml.fhir.transform.importer.ProfileImporter;
-import org.eclipse.swt.SWT;
+import org.eclipse.mdht.uml.fhir.transform.ModelExporter;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Class;
+import org.hl7.fhir.StructureDefinition;
+import org.hl7.fhir.util.FhirResourceFactoryImpl;
 
-public class ImportProfileAction implements IObjectActionDelegate {
+public class ExportFhirAction implements IObjectActionDelegate {
 	
 	protected IWorkbenchPart activePart;
-	private Package umlPackage;
+	private Class umlClass;
 
-	public ImportProfileAction() {
+	public ExportFhirAction() {
 		super();
 	}
 	
 	private IContainer getProfileFolder() {
 		IContainer profileFolder = null;
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/current");
+		IResource resource = workspace.getRoot().findMember("FHIR-DSTU2/generated");
 		if (resource instanceof IContainer) {
 			profileFolder = (IContainer) resource;
 		}
 		
 		if (profileFolder == null) {
 			IContainer[] containers = WorkspaceResourceDialog.openFolderSelection(activePart.getSite().getShell(), 
-					"Select Profile Folder", "Folder containing reference profiles", false, null, null);
+					"Select Profile Folder", "Folder for generated profiles", false, null, null);
 			if (containers.length > 0) {
 				profileFolder = containers[0];
 			}
@@ -70,45 +72,35 @@ public class ImportProfileAction implements IObjectActionDelegate {
 		return profileFolder;
 	}
 	
-	private List<URI> selectProfileFiles() {
-		ResourceDialog dialog = new ResourceDialog(activePart.getSite().getShell(), "Select FHIR Profiles", SWT.OPEN|SWT.MULTI);
-		dialog.open();
-		return dialog.getURIs();
-	}
-	
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		// select the profile folder first, then optionally a list of profiles
 		IContainer profileFolder = getProfileFolder();
-//		List<URI> profiles = selectProfileFiles();
 		
 		try {
-			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlPackage);
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Import FHIR Profiles") {
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlClass);
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Export FHIR Profiles") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (profileFolder != null) {
-						ProfileImporter umlImporter = new ProfileImporter(umlPackage, profileFolder);
-//						for (URI profileURI : profiles) {
-//							umlImporter.importProfile(profileURI);
-//						}
+						ModelExporter umlExporter = new ModelExporter();
+						StructureDefinition structureDef = umlExporter.createStrucureDefinition(umlClass);
 
-						umlImporter.importProfile("extension-definitions");
+						String structureId = structureDef.getId().getValue();
+						URI resourceURI = URI.createFileURI(profileFolder.getLocation() + "/" + structureId + ".xml");
 						
-//						umlImporter.importProfile("Condition");
-//						umlImporter.importProfile("StructureDefinition");
-//						umlImporter.importProfile("Conformance");
-//						umlImporter.importProfile("ImplementationGuide");
-//						umlImporter.importProfile("observation-daf-results-dafresultobsquantity");
-//						umlImporter.importProfile("observation-hspc-standardlabobs-quantitative-stdqty");
-//						umlImporter.importProfile("observation-hspc-heartrate-hspcheartrate");
-//
-//						umlImporter.importProfile("lipid-report-lipidprofile");
-						
-						
-						umlImporter.importAllProfiles();
+						FhirResourceFactoryImpl fhirResourceFactory = new FhirResourceFactoryImpl();
+						Resource resource = fhirResourceFactory.createResource(resourceURI);
+						resource.getContents().add(structureDef);
+						try {
+							resource.save(new HashMap<String,String>());
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+						return Status.OK_STATUS;
 					}
 
 					return Status.OK_STATUS;
@@ -128,7 +120,7 @@ public class ImportProfileAction implements IObjectActionDelegate {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-
+	
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
@@ -140,19 +132,19 @@ public class ImportProfileAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		umlPackage = null;
+		umlClass = null;
 
 		if (((IStructuredSelection) selection).size() == 1) {
 			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
 				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
-			if (selected instanceof Package) {
-				umlPackage = (Package) selected;
+			if (selected instanceof Class) {
+				umlClass = (Class) selected;
 			}
 		}
 
-		action.setEnabled(umlPackage != null);
+		action.setEnabled(umlClass != null);
 	}
 
 }

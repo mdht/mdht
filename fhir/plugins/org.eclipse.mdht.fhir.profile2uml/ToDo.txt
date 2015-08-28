@@ -32,7 +32,7 @@ PROJECT MANAGEMENT
 --------------------
 Model Mapping
 
-- Test small XSD import, mapping
+- Include support for FHIR mapping, as subset of more general mapping metamodel
 
 
 
@@ -79,7 +79,9 @@ Model Mapping
   -- create derived model, test re-importing core w/o breaking references
   -- Issue: no id for nested classes, also need id for all properties to enable redefine/subset
      -- use path as Ecore Id, if no FHIR id?
-     
+    
+- Import all *required* value sets (use expansion)
+
 - Import ElementDef elements: 
   -- default, fixed, pattern, example
   -- minValue, maxValue, maxLength
@@ -93,7 +95,7 @@ Model Mapping
   -- property subsetting in UML
   -- good example: lipid-report-lipidprofile
 
-- Import StructureDefintion and ElementDefinition extensions
+- Import extensions for StructureDefintion and ElementDefinition
 
 - Extension
   -- contextType and context(s)

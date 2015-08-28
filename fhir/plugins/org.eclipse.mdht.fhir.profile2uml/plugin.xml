@@ -5,23 +5,43 @@
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
-            id="org.eclipse.mdht.fhir.profile2uml.contribution1"
+            id="org.eclipse.mdht.uml.fhir.transform.contribution1"
             objectClass="org.eclipse.uml2.uml.Package"
             adaptable="true">
          <menu
                label="FHIR"
                path="additions"
-               id="org.eclipse.mdht.fhir.profile2uml.menu1">
+               id="org.eclipse.mdht.uml.fhir.transform.menu1">
             <separator
                   name="group1">
             </separator>
          </menu>
          <action
                label="Import Profile to UML"
-               class="org.eclipse.mdht.uml.fhir.transform.popup.actions.ImportProfileAction"
-               menubarPath="org.eclipse.mdht.fhir.profile2uml.menu1/group1"
+               class="org.eclipse.mdht.uml.fhir.transform.popup.actions.ImportFhirAction"
+               menubarPath="org.eclipse.mdht.uml.fhir.transform.menu1/group1"
                enablesFor="1"
                id="org.eclipse.mdht.fhir.profile2uml.newAction">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="org.eclipse.mdht.uml.fhir.transform.contribution2"
+            objectClass="org.eclipse.uml2.uml.Class"
+            adaptable="true">
+         <menu
+               label="FHIR"
+               path="additions"
+               id="org.eclipse.mdht.uml.fhir.transform.menu2">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Expoert to FHIR Profile"
+               class="org.eclipse.mdht.uml.fhir.transform.popup.actions.ExportFhirAction"
+               menubarPath="org.eclipse.mdht.uml.fhir.transform.menu2/group1"
+               enablesFor="1"
+               id="org.eclipse.mdht.uml.fhir.transform.newAction">
          </action>
       </objectContribution>
    </extension>

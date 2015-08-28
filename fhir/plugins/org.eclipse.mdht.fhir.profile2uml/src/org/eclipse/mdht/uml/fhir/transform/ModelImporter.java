@@ -1,4 +1,4 @@
-package org.eclipse.mdht.uml.fhir.transform.importer;
+package org.eclipse.mdht.uml.fhir.transform;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,7 +16,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -32,7 +31,8 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
@@ -46,6 +46,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.hl7.fhir.Bundle;
 import org.hl7.fhir.ConstraintSeverityList;
+import org.hl7.fhir.DomainResource;
 import org.hl7.fhir.ElementDefinition;
 import org.hl7.fhir.ElementDefinitionBinding;
 import org.hl7.fhir.ElementDefinitionConstraint;
@@ -54,34 +55,21 @@ import org.hl7.fhir.Extension;
 import org.hl7.fhir.StructureDefinition;
 import org.hl7.fhir.StructureDefinitionKindList;
 import org.hl7.fhir.Uri;
+import org.hl7.fhir.ValueSet;
+import org.hl7.fhir.ValueSetConcept;
+import org.hl7.fhir.ValueSetContains;
 import org.hl7.fhir.util.FhirResourceFactoryImpl;
 import org.openhealthtools.mdht.uml.validation.Diagnostic;
 import org.openhealthtools.mdht.uml.validation.SeverityKind;
 import org.openhealthtools.mdht.uml.validation.ValidationPackage;
 
-public class ProfileImporter {
-	public static final String MDHT_ANNOTATION_SOURCE = "org.eclipse.mdht";
-	public static final String URI_ANNOTATION = "fhir.uri";
-
-	public static final String MDHT_URI_BASE = "http://eclipse.org/mdht/fhir/StructureDefinition/";
-	
-	// Create non-spec class for Base, abstract parent for Element and Resource, using MDHT_URI_BASE
-	public static final String BASE_CLASS_NAME = "Base";
-
-	// Create non-spec class DataType, abstract parent for all 'type' StructureDefinitions, using MDHT_URI_BASE
-	public static final String DATATYPE_CLASS_NAME = "DataType";
-
-	public static final String ELEMENT_CLASS_NAME = "Element";
-	public static final String BACKBONE_ELEMENT_CLASS_NAME = "BackboneElement";
-	public static final String RESOURCE_CLASS_NAME = "Resource";
-	
-	public static final String EXTENSION_EXPLICIT_TYPE_NAME = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name";
-	public static final String EXTENSION_FMM = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm";
-	
-	public static final String UML_LIBRARIES_PATH = "org.eclipse.uml2.uml.resources/libraries/";
-	public static final String XML_PRIMITIVE_TYPES_LIBRARY = UML_LIBRARIES_PATH + "XMLPrimitiveTypes.library.uml";
-
+public class ModelImporter implements ModelConstants {
 	private String[] constraintLanguages = { "Analysis", "XPath", "OCL" };
+	
+	private ModelIndexer modelIndexer = new ModelIndexer();
+	
+	// key = id, value = DomainResource
+	private Map<String,DomainResource> bundleMap = new HashMap<String,DomainResource>();
 	
 	private IContainer fhirProfileFolder;
 	
@@ -92,18 +80,15 @@ public class ProfileImporter {
 	private Class dataTypeClass;
 	private Class elementClass;
 	private Class resourceClass;
-	
-	private Map<String,Class> referenceModelTypeForName = new HashMap<String,Class>();
-	private Map<String,Class> referenceModelTypeForURI = new HashMap<String,Class>();
-	
-	private Map<String,StructureDefinition> bundleMap = new HashMap<String,StructureDefinition>();
-	
-	public ProfileImporter(Package model, IContainer cemlFolder) {
-		this.model = model;
-		this.fhirProfileFolder = cemlFolder;
 
+	public ModelImporter(Package model, IContainer fhirFolder) {
+		this.model = model;
+		this.fhirProfileFolder = fhirFolder;
+
+		modelIndexer.indexMembers(model);
+		
 		initializeLibraries(model);
-		catalogMembers(model);
+		initValueSets(model);
 		initAbstractTypes(model);
 	}
 	
@@ -140,18 +125,26 @@ public class ProfileImporter {
 		 * - create abstract type: DataType, add extends Element
 		 */
 
-		baseClass = (Class) referenceModelTypeForURI.get(MDHT_URI_BASE + BASE_CLASS_NAME);
+		Profile fhirUmlProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getTypeChoice().getEPackage(), umlPackage);
+		
+		baseClass = modelIndexer.getStructureDefinitionForURI(MDHT_STRUCTURE_URI_BASE + BASE_CLASS_NAME);
 		if (baseClass == null) {
 			baseClass = umlPackage.createOwnedClass(BASE_CLASS_NAME, true);
-			setURIAnnotation(baseClass, MDHT_URI_BASE + BASE_CLASS_NAME);
+			if (fhirUmlProfile != null) {
+				org.eclipse.mdht.uml.fhir.StructureDefinition structureDefStereotype = (org.eclipse.mdht.uml.fhir.StructureDefinition) UMLUtil.safeApplyStereotype(baseClass, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getStructureDefinition().getName()));
+				structureDefStereotype.setUri(MDHT_STRUCTURE_URI_BASE + BASE_CLASS_NAME);
+			}
 		}
-		dataTypeClass = (Class) referenceModelTypeForURI.get(MDHT_URI_BASE + DATATYPE_CLASS_NAME);
+		dataTypeClass = modelIndexer.getStructureDefinitionForURI(MDHT_STRUCTURE_URI_BASE + DATATYPE_CLASS_NAME);
 		if (dataTypeClass == null) {
 			dataTypeClass = umlPackage.createOwnedClass(DATATYPE_CLASS_NAME, true);
-			setURIAnnotation(dataTypeClass, MDHT_URI_BASE + DATATYPE_CLASS_NAME);
+			if (fhirUmlProfile != null) {
+				org.eclipse.mdht.uml.fhir.StructureDefinition structureDefStereotype = (org.eclipse.mdht.uml.fhir.StructureDefinition) UMLUtil.safeApplyStereotype(dataTypeClass, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getStructureDefinition().getName()));
+				structureDefStereotype.setUri(MDHT_STRUCTURE_URI_BASE + DATATYPE_CLASS_NAME);
+			}
 		}
-		elementClass = importProfile(ELEMENT_CLASS_NAME);
-		resourceClass = importProfile(RESOURCE_CLASS_NAME);
+		elementClass = importStructureDefinition(ELEMENT_CLASS_NAME);
+		resourceClass = importStructureDefinition(RESOURCE_CLASS_NAME);
 		
 		if (elementClass != null && elementClass.getGeneralizations().isEmpty()) {
 			elementClass.createGeneralization(baseClass);
@@ -167,48 +160,25 @@ public class ProfileImporter {
 		}
 	}
 	
-	private void catalogMembers(Package umlPackage) {
-		for (NamedElement member : umlPackage.getMembers()) {
-			// includes unnamed Associations
-			if (member instanceof Class && member.getName() != null) {
-				referenceModelTypeForName.put(member.getName(), (Class)member);
-
-				String uri = getURIAnnotation(member);
-				if (uri != null) {
-					referenceModelTypeForURI.put(uri, (Class)member);
-				}
-			}
-			else if (member instanceof Package) {
-				catalogMembers((Package)member);
-			}
+	private void initValueSets(Package umlPackage) {
+		if (modelIndexer.getValueSetForURI(FHIR_VALUESET_URI_BASE + VALUESET_ID_RESOURCE_TYPES) == null) {
+			importResource(URI.createURI(TERMINOLOGY_SERVER + "ValueSet/" + VALUESET_ID_RESOURCE_TYPES + "?_format=xml"));
+			importResource(URI.createURI(TERMINOLOGY_SERVER + "ValueSet/" + VALUESET_ID_DATA_TYPES + "?_format=xml"));
+			importResource(URI.createURI(TERMINOLOGY_SERVER + "ValueSet/" + VALUESET_ID_DEFINED_TYPES + "/$expand" + "?_format=xml"));
 		}
 	}
 	
-	private String getURIAnnotation(Element element) {
-		String uri = null;
-		EAnnotation annotation = element.getEAnnotation(MDHT_ANNOTATION_SOURCE);
-		if (annotation != null) {
-			uri = annotation.getDetails().get(URI_ANNOTATION);
-		}
-		
-		return uri;
-	}
-	
-	private void setURIAnnotation(Element element, String uri) {
-		EAnnotation annotation = element.createEAnnotation(MDHT_ANNOTATION_SOURCE);
-		annotation.getDetails().put(URI_ANNOTATION, uri);
-	}
-
-	public void importAllProfiles() {
+	public void importAllFiles() {
 		try {
 			for (IResource resource : fhirProfileFolder.members()) {
 				if (resource instanceof IFile) {
 					String fileExt = ((IFile)resource).getFileExtension();
+					// skip file names that contain 'example'
 					if (((IFile)resource).toString().contains("example")) {
 						continue;
 					}
 					if ("xml".equals(fileExt)) {
-						importProfile((IFile)resource);
+						importResource((IFile)resource);
 					}
 				}
 			}
@@ -218,42 +188,25 @@ public class ProfileImporter {
 		}
 	}
 
-	public Class importProfile(IFile profileFile) {
+	public Classifier importResource(IFile profileFile) {
 		String profileName = profileFile.getName();
 		profileName = profileName.substring(0, profileName.lastIndexOf("."));
-		Class umlClass = (Class) model.getOwnedType(profileName, false, UMLPackage.eINSTANCE.getClass_(), false);
 		
-		if (umlClass == null) {
+		//TODO does not search nested packages.  Should search by definition id or uri (via indexed map)
+		Classifier classifier = (Classifier) model.getOwnedType(profileName, false, UMLPackage.eINSTANCE.getClassifier(), false);
+		
+		if (classifier == null) {
 			URI profileURI = URI.createFileURI(profileFile.getLocation().toString());
-			umlClass = importProfile(profileURI);
+			classifier = importResource(profileURI);
 		}
 		
-		return umlClass;
+		return classifier;
 	}
 	
-	public void importBundle(Bundle bundle) {
-		TreeIterator<?> iterator = EcoreUtil.getAllContents(Collections.singletonList(bundle));
-
-		// map all structure definitions in the bundle, to allow forward references
-		while (iterator != null && iterator.hasNext()) {
-			Object child = iterator.next();
-			if (child instanceof StructureDefinition) {
-				bundleMap.put(((StructureDefinition)child).getId().getValue(), ((StructureDefinition)child));
-				iterator.prune();
-			}
-		}
-		
-		// import each structure definition
-		for (StructureDefinition definition : bundleMap.values()) {
-			importProfile(definition);
-		}
-		bundleMap.clear();
-	}
-	
-	public Class importProfile(URI profileURI) {
-		Class umlClass = null;
+	public Classifier importResource(URI resourceURI) {
+		Classifier umlClassifier = null;
 		ResourceFactoryImpl resourceFactory = new FhirResourceFactoryImpl();
-		Resource resource = resourceFactory.createResource(profileURI);
+		Resource resource = resourceFactory.createResource(resourceURI);
 		try {
 			resource.load(new HashMap<String,String>());
 		} catch (IOException e) {
@@ -271,16 +224,98 @@ public class ProfileImporter {
 				iterator.prune();
 			}
 			if (child instanceof StructureDefinition) {
-				umlClass = importProfile((StructureDefinition)child);
+				umlClassifier = importStructureDefinition((StructureDefinition)child);
+				iterator.prune();
+			}
+			else if (child instanceof ValueSet) {
+				umlClassifier = importValueSet((ValueSet)child);
 				iterator.prune();
 			}
 		}
 		
-		return umlClass;
+		return umlClassifier;
+	}
+
+	public void importBundle(Bundle bundle) {
+		TreeIterator<?> iterator = EcoreUtil.getAllContents(Collections.singletonList(bundle));
+
+		// map all resources in the bundle, to allow forward references
+		while (iterator != null && iterator.hasNext()) {
+			Object child = iterator.next();
+			if (child instanceof DomainResource) {
+				if (((DomainResource)child).getId() != null) {
+					bundleMap.put(((DomainResource)child).getId().getValue(), ((DomainResource)child));
+				}
+				else {
+					System.err.println("Bundle entry missing id, URL=" + ((DomainResource)child));
+				}
+				iterator.prune();
+			}
+		}
+		
+		// import each structure definition
+		for (DomainResource resource : bundleMap.values()) {
+			if (resource instanceof StructureDefinition)
+			importStructureDefinition((StructureDefinition)resource);
+		}
+		bundleMap.clear();
+	}
+	
+	public Enumeration importValueSet(ValueSet valueSet) {
+		String valueSetUrl = valueSet.getUrl().getValue();
+		Enumeration valueSetEnum = modelIndexer.getValueSetForURI(valueSetUrl);
+		if (valueSetEnum != null) {
+			return valueSetEnum;
+		}
+
+		String packageName = PACKAGE_NAME_VALUESETS;
+		Package valueSetPkg = model.getNestedPackage(packageName, true, UMLPackage.eINSTANCE.getPackage(), true);
+		
+		String valueSetName = valueSet.getName().getValue();
+		valueSetEnum = valueSetPkg.createOwnedEnumeration(valueSetName);
+
+		Profile fhirUmlProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getValueSet().getEPackage(), valueSetEnum);
+		org.eclipse.mdht.uml.fhir.ValueSet valueSetStereotype = null;
+		if (fhirUmlProfile != null) {
+			valueSetStereotype = (org.eclipse.mdht.uml.fhir.ValueSet) UMLUtil.safeApplyStereotype(valueSetEnum, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getValueSet().getName()));
+			valueSetStereotype.setUri(valueSet.getUrl().getValue());
+			if (valueSet.getId() != null) {
+				valueSetStereotype.setId(valueSet.getId().getValue());
+			}
+			if (valueSet.getName() != null) {
+				valueSetStereotype.setName(valueSet.getName().getValue());
+			}
+			if (valueSet.getVersion() != null) {
+				valueSetStereotype.setVersion(valueSet.getVersion().getValue());
+			}
+			if (valueSet.getPublisher() != null) {
+				valueSetStereotype.setPublisher(valueSet.getPublisher().getValue());
+			}
+		}
+
+		if (valueSet.getExpansion() != null) {
+			for (ValueSetContains contains : valueSet.getExpansion().getContains()) {
+				valueSetEnum.createOwnedLiteral(contains.getCode().getValue());
+			}
+		}
+		else if (valueSet.getCodeSystem() != null) {
+			for (ValueSetConcept concept : valueSet.getCodeSystem().getConcept()) {
+				EnumerationLiteral literal = valueSetEnum.createOwnedLiteral(concept.getCode().getValue());
+				if (concept.getDefinition() != null) {
+					literal.createOwnedComment().setBody(concept.getDefinition().getValue());
+				}
+			}
+		}
+		
+		if (valueSetStereotype != null) {
+			modelIndexer.addElement(valueSetStereotype);
+		}
+		
+		return valueSetEnum;
 	}
 
 	public Class importProfileForURI(String profileURI) {
-		Class umlClass = (Class) referenceModelTypeForURI.get(profileURI);
+		Class umlClass = modelIndexer.getStructureDefinitionForURI(profileURI);
 		if (umlClass == null) {
 			/*
 			 * TODO not all URIs can be resolved to a file this way, e.g. 
@@ -292,88 +327,86 @@ public class ProfileImporter {
 			 * During import, keep list of pending profiles.
 			 */
 			String profileName = profileURI.substring(profileURI.lastIndexOf("/") + 1);
-			umlClass = importProfile(profileName);
+			umlClass = importStructureDefinition(profileName);
 		}
 		
 		return umlClass;
 	}
 	
-	public Class importProfile(String profileName) {
-		Class umlClass = (Class) referenceModelTypeForName.get(profileName);
+	public Class importStructureDefinition(String profileName) {
+		Class umlClass = modelIndexer.getStructureDefinitionForName(profileName);
 		if (umlClass == null) {
 			// this is for a few profiles that have error, using String instead of string.
-			umlClass = (Class) referenceModelTypeForName.get(profileName.toLowerCase());
+			umlClass = modelIndexer.getStructureDefinitionForName(profileName.toLowerCase());
 		}
 
 		if (umlClass == null) {
-			StructureDefinition structureDefinition = bundleMap.get(profileName);
-			if (structureDefinition != null) {
-				return importProfile(structureDefinition);
+			// look in the indexed bundle(s)
+			DomainResource resource = bundleMap.get(profileName);
+			if (resource instanceof StructureDefinition) {
+				umlClass = importStructureDefinition((StructureDefinition)resource);
 			}
 			else {
-				IFile profileFile = fhirProfileFolder.getFile(new Path(profileName.toLowerCase() + ".xml"));
+				Classifier importedResource = null;
 				
+				// look for a file
+				IFile profileFile = fhirProfileFolder.getFile(new Path(profileName.toLowerCase() + ".xml"));
 				if (profileFile.exists()) {
-					umlClass = importProfile(profileFile);
-				}
-				else if (profileName.indexOf(".profile") == -1) {
-					return importProfile(profileName.toLowerCase() + ".profile");
+					importedResource = importResource(profileFile);
 				}
 				else {
-					System.err.println("Cannot find Profile: " + profileName);
+					profileFile = fhirProfileFolder.getFile(new Path(profileName.toLowerCase() + ".profile.xml"));
+					if (profileFile.exists()) {
+						importedResource = importResource(profileFile);
+					}
+				}
+
+				if (importedResource instanceof Class) {
+					umlClass = (Class) importedResource;
 				}
 			}
+		}
+		
+		if (umlClass == null) {
+			System.err.println("Cannot find Profile: " + profileName);
 		}
 		
 		return umlClass;
 	}
 	
-	public Class importProfile(StructureDefinition structureDef) {
-		Class profileClass = referenceModelTypeForURI.get(structureDef.getUrl().getValue());
+	public Class importStructureDefinition(StructureDefinition structureDef) {
+		Class profileClass = modelIndexer.getStructureDefinitionForURI(structureDef.getUrl().getValue());
 		if (profileClass != null) {
 			return profileClass;
 		}
-		
-//		if (StructureDefinitionKindList.DATATYPE == structureDef.getKind().getValue()
-//				&& structureDef.getBase() != null && "http://hl7.org/fhir/StructureDefinition/Element".equals(structureDef.getBase().getValue())) {
-//			structureDef.setBase(null);
-//		}
 
-		String kindName = structureDef.getKind().getValue().getName();
-		// Primitive types have unique representation and "known by magic" from reading specification.
 		PrimitiveType primitiveType = null;
-		PrimitiveType constrainedPrimitiveType = null;
-		if ("datatype".equals(kindName)) {
-			primitiveType = getPrimitiveType(structureDef.getName().getValue());
-			if (structureDef.getConstrainedType() != null) {
-				// e.g. code, id, oid
-				constrainedPrimitiveType = getPrimitiveType(structureDef.getConstrainedType().getValue());
+		String packageName = PACKAGE_NAME_PROFILES;
+		StructureDefinitionKindList structureKind = structureDef.getKind().getValue();
+		if (structureDef.getContextType() != null) {
+			packageName = PACKAGE_NAME_EXTENSIONS;
+		}
+		else if (StructureDefinitionKindList.DATATYPE == structureKind) {
+			if (modelIndexer.isDataType(structureDef.getName().getValue())) {
+				packageName = PACKAGE_NAME_DATATYPES;
+				primitiveType = getPrimitiveType(structureDef.getName().getValue());
 			}
 		}
-		
-		String kindPackageName = kindName;
-		if (primitiveType == null && constrainedPrimitiveType == null && structureDef.getConstrainedType() != null) {
-			if (structureDef.getContextType() != null) {
-				kindPackageName = "extension";
-			}
-			else {
-				kindPackageName = "constraint";
+		else if (StructureDefinitionKindList.RESOURCE == structureKind) {
+			if (modelIndexer.isResourceType(structureDef.getName().getValue())) {
+				packageName = PACKAGE_NAME_RESOURCES;
 			}
 		}
-		Package kindPackage = model.getNestedPackage(kindPackageName, true, UMLPackage.eINSTANCE.getPackage(), true);
+
+		Package kindPackage = model.getNestedPackage(packageName, true, UMLPackage.eINSTANCE.getPackage(), true);
 		
 		String profileClassName = structureDef.getId().getValue();
 		boolean isAbstract = structureDef.getAbstract().isValue();
 		profileClass = kindPackage.createOwnedClass(profileClassName, isAbstract);
 		
-		setURIAnnotation(profileClass, structureDef.getUrl().getValue());
-		referenceModelTypeForName.put(profileClassName, profileClass);
-		referenceModelTypeForURI.put(structureDef.getUrl().getValue(), profileClass);
-		//TODO in UML profile, set ElementDefinition.uri
-		
-		Profile fhirProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getTypeChoice().getEPackage(), profileClass);
-		if (fhirProfile != null) {
-			org.eclipse.mdht.uml.fhir.StructureDefinition structureDefStereotype = (org.eclipse.mdht.uml.fhir.StructureDefinition) UMLUtil.safeApplyStereotype(profileClass, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getStructureDefinition().getName()));
+		Profile fhirUmlProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getTypeChoice().getEPackage(), profileClass);
+		if (fhirUmlProfile != null) {
+			org.eclipse.mdht.uml.fhir.StructureDefinition structureDefStereotype = (org.eclipse.mdht.uml.fhir.StructureDefinition) UMLUtil.safeApplyStereotype(profileClass, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getStructureDefinition().getName()));
 			structureDefStereotype.setUri(structureDef.getUrl().getValue());
 			if (structureDef.getId() != null) {
 				structureDefStereotype.setId(structureDef.getId().getValue());
@@ -387,6 +420,9 @@ public class ProfileImporter {
 			if (structureDef.getVersion() != null) {
 				structureDefStereotype.setFhirVersion(structureDef.getVersion().getValue());
 			}
+			if (structureDef.getPublisher() != null) {
+				structureDefStereotype.setPublisher(structureDef.getPublisher().getValue());
+			}
 			if (structureDef.getContextType() != null) {
 				structureDefStereotype.setContextType(structureDef.getContextType().getValue().getName());
 			}
@@ -395,18 +431,20 @@ public class ProfileImporter {
 					structureDefStereotype.getContexts().add(fhirString.getValue());
 				}
 			}
+			
+			modelIndexer.addElement(structureDefStereotype);
 		}
 		
 		// Apply UML stereotypes for kinds of Comment
 		if (structureDef.getDescription() != null) {
 			Comment description = profileClass.createOwnedComment();
 			description.setBody(structureDef.getDescription().getValue());
-			UMLUtil.safeApplyStereotype(description, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getDescription().getName()));
+			UMLUtil.safeApplyStereotype(description, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getDescription().getName()));
 		}
 		if (structureDef.getRequirements() != null) {
 			Comment requirements = profileClass.createOwnedComment();
 			requirements.setBody(structureDef.getRequirements().getValue());
-			UMLUtil.safeApplyStereotype(requirements, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getRequirements().getName()));
+			UMLUtil.safeApplyStereotype(requirements, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getRequirements().getName()));
 		}
 		
 		// Primitive types have unique representation and "known by magic" from reading specification.
@@ -420,11 +458,11 @@ public class ProfileImporter {
 				baseProfileClass = importProfileForURI(base);
 			}
 			else {
-				baseProfileClass = importProfile(base);
+				baseProfileClass = importStructureDefinition(base);
 			}
 			
 			// Add "DataType" abstract superclass for all data types
-			if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindName) 
+			if (StructureDefinitionKindList.DATATYPE == structureKind
 					&& ELEMENT_CLASS_NAME.equals(baseProfileClass.getName())) {
 				baseProfileClass = dataTypeClass;
 			}
@@ -478,10 +516,11 @@ public class ProfileImporter {
 				// create generalization only if not created from 'base' profile
 				if (profileClass.getGeneralizations().isEmpty() && typeList.size() == 1) {
 					Classifier baseType = typeList.get(0);
+					
 					//TODO Element has type Element, expand check for circular generalization references
 					if (!baseType.equals(profileClass)) {
 						// Add "DataType" abstract superclass for all data types
-						if (StructureDefinitionKindList.DATATYPE.getLiteral().equals(kindPackageName) 
+						if (StructureDefinitionKindList.DATATYPE == structureKind
 								&& ELEMENT_CLASS_NAME.equals(baseType.getName())) {
 							baseType = dataTypeClass;
 						}
@@ -502,37 +541,29 @@ public class ProfileImporter {
 			}
 			
 			Class ownerClass = null;
-			if (path.indexOf(".") == -1) {
-				//TODO does this still occur???
-				
-				// for datatype profile definitions, e.g. code.profile.xml
-				ownerClass = profileClass;
-			}
-			else {
-				String ownerPath = path.substring(0, path.lastIndexOf("."));
-				Element ownerElement = elementPathMap.get(ownerPath);
+			String ownerPath = path.substring(0, path.lastIndexOf("."));
+			Element ownerElement = elementPathMap.get(ownerPath);
 
-				if (ownerElement instanceof Class) {
-					ownerClass = (Class) ownerElement;
-				}
-				else if (ownerElement instanceof Property && ((Property)ownerElement).getType() != null) {
-					// Test for null type required for a mis-formed profile, sub-path elements on a prohibited parent, multiplicity 0..0
-					// this may be called recursively for multi-segment paths in a constraint profile
-					ownerClass = getOwnerClass(elementDef, elementPathMap, path);
-	
-					// use element type(s) as superclass(es)
-					//TODO if multi-segment path, will this be the correct superclass type?
-					if (ownerClass.getGeneralizations().isEmpty()) {
-						for (Classifier parent : typeList) {
-							ownerClass.createGeneralization(parent);
-						}
+			if (ownerElement instanceof Class) {
+				ownerClass = (Class) ownerElement;
+			}
+			else if (ownerElement instanceof Property && ((Property)ownerElement).getType() != null) {
+				// Test for null type required for a mis-formed profile, sub-path elements on a prohibited parent, multiplicity 0..0
+				// this may be called recursively for multi-segment paths in a constraint profile
+				ownerClass = getOwnerClass(elementDef, elementPathMap, path);
+
+				// use element type(s) as superclass(es)
+				//TODO if multi-segment path, will this be the correct superclass type?
+				if (ownerClass.getGeneralizations().isEmpty()) {
+					for (Classifier parent : typeList) {
+						ownerClass.createGeneralization(parent);
 					}
 				}
-				
-				if (ownerClass == null) {
-					System.err.println("Cannot find owner class, structDef: " + structureDef.getId().getValue() + " path: " + elementDef.getPath().getValue());
-					continue;
-				}
+			}
+			
+			if (ownerClass == null) {
+				System.err.println("Cannot find owner class, structDef: " + structureDef.getId().getValue() + " path: " + elementDef.getPath().getValue());
+				continue;
 			}
 
 			 // Get inherited property.  If typeList is empty, and inherited not null, 
@@ -543,7 +574,7 @@ public class ProfileImporter {
 			//TODO this is a temporary hack until a more general solution is available
 			if ("valueQuantity".equals(propertyName)) {
 				propertyName = "value[x]";
-				Class quantityType = importProfile("Quantity");
+				Class quantityType = importStructureDefinition("Quantity");
 				if (quantityType != null) {
 					typeList.clear();
 					typeList.add(quantityType);
@@ -574,7 +605,7 @@ public class ProfileImporter {
 				propertyType = (Class) ownerClass.createNestedClassifier(nestedClassName, UMLPackage.eINSTANCE.getClass_());
 				elementPathMap.put(path, (Class) propertyType);
 				
-				Class backboneElement = importProfile(BACKBONE_ELEMENT_CLASS_NAME);
+				Class backboneElement = importStructureDefinition(BACKBONE_ELEMENT_CLASS_NAME);
 				if (backboneElement != null) {
 					propertyType.createGeneralization(backboneElement);
 				}
@@ -605,8 +636,8 @@ public class ProfileImporter {
 			elementPathMap.put(path, property);
 			assignMultiplicity(property, elementDef);
 			
-			if (fhirProfile != null) {
-				org.eclipse.mdht.uml.fhir.ElementDefinition elementDefStereotype = (org.eclipse.mdht.uml.fhir.ElementDefinition) UMLUtil.safeApplyStereotype(property, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getElementDefinition().getName()));
+			if (fhirUmlProfile != null) {
+				org.eclipse.mdht.uml.fhir.ElementDefinition elementDefStereotype = (org.eclipse.mdht.uml.fhir.ElementDefinition) UMLUtil.safeApplyStereotype(property, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getElementDefinition().getName()));
 				if (elementDef.getId() != null) {
 					elementDefStereotype.setId(elementDef.getId());
 				}
@@ -638,7 +669,7 @@ public class ProfileImporter {
 				
 				if (elementDef.getBinding() != null) {
 					ElementDefinitionBinding binding = elementDef.getBinding();
-					ValueSetBinding valueSetBinding = (ValueSetBinding) UMLUtil.safeApplyStereotype(property, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getValueSetBinding().getName()));
+					ValueSetBinding valueSetBinding = (ValueSetBinding) UMLUtil.safeApplyStereotype(property, fhirUmlProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getValueSetBinding().getName()));
 					valueSetBinding.setStrength(BindingStrengthKind.get(binding.getStrength().getValue().getLiteral()));
 					if (binding.getDescription() != null) {
 						valueSetBinding.setDescription(binding.getDescription().getValue());
@@ -772,7 +803,7 @@ public class ProfileImporter {
 	private String getPropertyName(ElementDefinition elementDef) {
 		String[] path = elementDef.getPath().getValue().split("\\.");
 		if (path.length == 1) {
-			// type profiles have a simple path, e.g. 'value'
+			// datatype profiles have a simple path, e.g. 'value'
 			return path[0];
 		}
 		else {
@@ -813,66 +844,6 @@ public class ProfileImporter {
 		return (PrimitiveType) xmlPrimitiveTypes.getOwnedType(typeName, true, UMLPackage.eINSTANCE.getPrimitiveType(), false);
 	}
 	
-	
-	/**
-	 * ElementDefinition.referencedName is not guaranteed to be globally unique in a structure, but
-	 * must be unique within a context class.  Start with given context class, then search within owner classes.
-	 * This logic would be a lot simpler if names were globally unique within a StructureDefinition.
-	 * 
-	 * @param context
-	 * @param referencedName
-	 * @return
-	 */
-	private Class findReferencedClass(Class context, String referencedName) {
-		return findReferencedClass(context, referencedName, new HashSet<Classifier>());
-	}
-	
-	private Class findReferencedClass(Class context, String referencedName, Set<Classifier> excluded) {
-		if (excluded.contains(context)) {
-			return null;
-		}
-		excluded.add(context);
-		
-		Class referencedClass = null;
-		if (referencedName.equalsIgnoreCase(context.getName())) {
-			referencedClass = context;
-		}
-		else {
-			for (Classifier nested : context.getNestedClassifiers()) {
-				if (nested instanceof Class) {
-					String nestedReferenceName = nested.getName();
-					
-					// The FHIR name attribute may be different than UML class name
-					Profile fhirProfile = UMLUtil.getProfile(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getStructureDefinition().getEPackage(), nested);
-					if (fhirProfile != null) {
-						org.eclipse.mdht.uml.fhir.StructureDefinition structureDefStereotype = (org.eclipse.mdht.uml.fhir.StructureDefinition) UMLUtil.safeApplyStereotype(nested, fhirProfile.getOwnedStereotype(org.eclipse.mdht.uml.fhir.FHIRPackage.eINSTANCE.getStructureDefinition().getName()));
-						if (structureDefStereotype != null && structureDefStereotype.getName() != null) {
-							nestedReferenceName = structureDefStereotype.getName();
-						}
-					}
-					
-					// use case-insensitive name, class name may have been changed to upper
-					if (nested instanceof Class && referencedName.equalsIgnoreCase(nestedReferenceName)) {
-						referencedClass = (Class) nested;
-						break;
-					}
-					
-					// In some cases, such as ValueSet.compose.include.concept.designation
-					// we need to traverse down into nested-nested classes of a parent to find the target
-					referencedClass = findReferencedClass((Class)nested, referencedName, excluded);
-					if (referencedClass != null) {
-						break;
-					}
-				}
-			}
-		}
-		
-		if (referencedClass == null && context.getOwner() instanceof Class) {
-			referencedClass = findReferencedClass((Class) context.getOwner(), referencedName, excluded);
-		}
-		return referencedClass;
-	}
-	
 	private List<Classifier> getTypeList(ElementDefinition elementDef) {
 		List<Classifier> typeList = new ArrayList<Classifier>();
 		
@@ -889,27 +860,13 @@ public class ProfileImporter {
 				}
 			}
 			if (typeClass == null && elementDefType.getCode() != null && elementDefType.getCode().getValue() != null) {
-				String typeCode = elementDefType.getCode().getValue();
-				String[] typeCodes = typeCode.split(",");
-				
-				//TODO clarify interpretation of comma-separated value, e.g. in date.profile.xml
-				for (int i = 0; i < typeCodes.length; i++) {
-					String typeName = typeCodes[i].trim();
-					if ("*".equals(typeName)) {
-						// TODO this should be limited to Open Type list, http://hl7.org/fhir/2015May/datatypes.html#open
-						typeClass = dataTypeClass;
-					}
-					else if (typeName.startsWith("xs:")) {
-						typeClass = getPrimitiveType(typeName);
-					}
-					else {
-						typeClass = importProfile(typeName);
-					}
-					
-					//TODO for now, use only first type from comma-separated list
-					if (typeClass != null) {
-						break;
-					}
+				String typeName = elementDefType.getCode().getValue();
+				if ("*".equals(typeName)) {
+					// TODO this should be limited to Open Type list, http://hl7.org/fhir/2015May/datatypes.html#open
+					typeClass = dataTypeClass;
+				}
+				else {
+					typeClass = importStructureDefinition(typeName);
 				}
 			}
 			
@@ -962,15 +919,6 @@ public class ProfileImporter {
 		
 		return ownerClass;
 	}
-	
-//	private boolean isKindOf(Classifier umlClass, String parentName) {
-//		for (Classifier parent : umlClass.allParents()) {
-//			if (parentName.equals(parent.getName())) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
 
 	private boolean allSubclassOf(List<Classifier> typeList, String parentName) {
 		for (Classifier classifier : typeList) {
