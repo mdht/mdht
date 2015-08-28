@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.mdht.uml.fhir.Extension;
 import org.eclipse.mdht.uml.fhir.FHIRPackage;
 import org.eclipse.mdht.uml.fhir.StructureDefinition;
 
@@ -32,7 +30,7 @@ import org.eclipse.mdht.uml.fhir.StructureDefinition;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getFhirVersion <em>Fhir Version</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getContextType <em>Context Type</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getContexts <em>Context</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getPublisher <em>Publisher</em>}</li>
  * </ul>
  *
  * @generated
@@ -159,14 +157,24 @@ public class StructureDefinitionImpl extends ElementImpl implements StructureDef
 	protected EList<String> contexts;
 
 	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' reference list.
+	 * The default value of the '{@link #getPublisher() <em>Publisher</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
+	 * @see #getPublisher()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Extension> extensions;
+	protected static final String PUBLISHER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPublisher() <em>Publisher</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPublisher()
+	 * @generated
+	 * @ordered
+	 */
+	protected String publisher = PUBLISHER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -347,11 +355,20 @@ public class StructureDefinitionImpl extends ElementImpl implements StructureDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectResolvingEList<Extension>(Extension.class, this, FHIRPackage.STRUCTURE_DEFINITION__EXTENSION);
-		}
-		return extensions;
+	public String getPublisher() {
+		return publisher;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPublisher(String newPublisher) {
+		String oldPublisher = publisher;
+		publisher = newPublisher;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FHIRPackage.STRUCTURE_DEFINITION__PUBLISHER, oldPublisher, publisher));
 	}
 
 	/**
@@ -377,8 +394,8 @@ public class StructureDefinitionImpl extends ElementImpl implements StructureDef
 				return getContextType();
 			case FHIRPackage.STRUCTURE_DEFINITION__CONTEXT:
 				return getContexts();
-			case FHIRPackage.STRUCTURE_DEFINITION__EXTENSION:
-				return getExtensions();
+			case FHIRPackage.STRUCTURE_DEFINITION__PUBLISHER:
+				return getPublisher();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -414,9 +431,8 @@ public class StructureDefinitionImpl extends ElementImpl implements StructureDef
 				getContexts().clear();
 				getContexts().addAll((Collection<? extends String>)newValue);
 				return;
-			case FHIRPackage.STRUCTURE_DEFINITION__EXTENSION:
-				getExtensions().clear();
-				getExtensions().addAll((Collection<? extends Extension>)newValue);
+			case FHIRPackage.STRUCTURE_DEFINITION__PUBLISHER:
+				setPublisher((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,8 +467,8 @@ public class StructureDefinitionImpl extends ElementImpl implements StructureDef
 			case FHIRPackage.STRUCTURE_DEFINITION__CONTEXT:
 				getContexts().clear();
 				return;
-			case FHIRPackage.STRUCTURE_DEFINITION__EXTENSION:
-				getExtensions().clear();
+			case FHIRPackage.STRUCTURE_DEFINITION__PUBLISHER:
+				setPublisher(PUBLISHER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -480,8 +496,8 @@ public class StructureDefinitionImpl extends ElementImpl implements StructureDef
 				return CONTEXT_TYPE_EDEFAULT == null ? contextType != null : !CONTEXT_TYPE_EDEFAULT.equals(contextType);
 			case FHIRPackage.STRUCTURE_DEFINITION__CONTEXT:
 				return contexts != null && !contexts.isEmpty();
-			case FHIRPackage.STRUCTURE_DEFINITION__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
+			case FHIRPackage.STRUCTURE_DEFINITION__PUBLISHER:
+				return PUBLISHER_EDEFAULT == null ? publisher != null : !PUBLISHER_EDEFAULT.equals(publisher);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -508,6 +524,8 @@ public class StructureDefinitionImpl extends ElementImpl implements StructureDef
 		result.append(contextType);
 		result.append(", context: ");
 		result.append(contexts);
+		result.append(", publisher: ");
+		result.append(publisher);
 		result.append(')');
 		return result.toString();
 	}

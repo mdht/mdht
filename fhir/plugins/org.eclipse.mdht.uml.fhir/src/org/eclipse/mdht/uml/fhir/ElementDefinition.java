@@ -2,7 +2,6 @@
  */
 package org.eclipse.mdht.uml.fhir;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -18,7 +17,6 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getLabel <em>Label</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getMustSupport <em>Must Support</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getExtensions <em>Extension</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsModifier <em>Is Modifier</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsSummary <em>Is Summary</em>}</li>
  * </ul>
@@ -131,22 +129,6 @@ public interface ElementDefinition extends Element {
 	 * @generated
 	 */
 	void setMustSupport(Boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Extension</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.mdht.uml.fhir.Extension}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Extension</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Extension</em>' reference list.
-	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_Extension()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	EList<Extension> getExtensions();
 
 	/**
 	 * Returns the value of the '<em><b>Is Modifier</b></em>' attribute.

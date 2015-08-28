@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getFhirVersion <em>Fhir Version</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getContextType <em>Context Type</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getContexts <em>Context</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getPublisher <em>Publisher</em>}</li>
  * </ul>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getStructureDefinition()
@@ -202,19 +202,29 @@ public interface StructureDefinition extends Element {
 	EList<String> getContexts();
 
 	/**
-	 * Returns the value of the '<em><b>Extension</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.mdht.uml.fhir.Extension}.
+	 * Returns the value of the '<em><b>Publisher</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Extension</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Publisher</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Extension</em>' reference list.
-	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getStructureDefinition_Extension()
-	 * @model ordered="false"
+	 * @return the value of the '<em>Publisher</em>' attribute.
+	 * @see #setPublisher(String)
+	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getStructureDefinition_Publisher()
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
-	EList<Extension> getExtensions();
+	String getPublisher();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getPublisher <em>Publisher</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Publisher</em>' attribute.
+	 * @see #getPublisher()
+	 * @generated
+	 */
+	void setPublisher(String value);
 
 } // StructureDefinition

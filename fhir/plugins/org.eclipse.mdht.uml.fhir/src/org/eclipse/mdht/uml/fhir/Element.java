@@ -2,6 +2,7 @@
  */
 package org.eclipse.mdht.uml.fhir;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.Element#getId <em>Id</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.Element#getExtensions <em>Extension</em>}</li>
  * </ul>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElement()
@@ -46,5 +48,21 @@ public interface Element extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Extension</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.mdht.uml.fhir.Extension}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extension</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extension</em>' reference list.
+	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElement_Extension()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Extension> getExtensions();
 
 } // Element

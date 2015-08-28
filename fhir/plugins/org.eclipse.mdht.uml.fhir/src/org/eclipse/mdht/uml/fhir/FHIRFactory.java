@@ -112,6 +112,15 @@ public interface FHIRFactory extends EFactory {
 	ValueSetBinding createValueSetBinding();
 
 	/**
+	 * Returns a new object of class '<em>Value Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Value Set</em>'.
+	 * @generated
+	 */
+	ValueSet createValueSet();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

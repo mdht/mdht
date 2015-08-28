@@ -47,9 +47,9 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zZhqYUXFEeWmu5xZhyCitA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4dxnYEXFEeWmu5xZhyCitA" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Gg8AIEXGEeWmu5xZhyCitA" name="extension" type="_oBXCQEVXEeWmu5xZhyCitA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gg8AIUXGEeWmu5xZhyCitA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gg8AIkXGEeWmu5xZhyCitA" value="*"/>
+      <ownedAttribute xmi:id="_GCaEUE0JEeWmu5xZhyCitA" name="publisher">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GCaEUU0JEeWmu5xZhyCitA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_LrBh4DDqEeWn6bT0Ftydnw" name="Class_StructureDef" memberEnd="_LrCI8DDqEeWn6bT0Ftydnw _LrCI8TDqEeWn6bT0Ftydnw">
@@ -71,10 +71,6 @@
       <ownedAttribute xmi:id="_8G_0oDbOEeWEXrmTCU6QRg" name="mustSupport">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__CRS8DbOEeWEXrmTCU6QRg"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_C8TlwEVYEeWmu5xZhyCitA" name="extension" type="_oBXCQEVXEeWmu5xZhyCitA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_C8TlwUVYEeWmu5xZhyCitA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_C8TlwkVYEeWmu5xZhyCitA" value="*"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_vBebQEalEeWmu5xZhyCitA" name="isModifier">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
@@ -133,6 +129,10 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0kkBwD3QEeW8ybi2TiqE7g"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_Gg8AIEXGEeWmu5xZhyCitA" name="extension" type="_oBXCQEVXEeWmu5xZhyCitA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gg8AIUXGEeWmu5xZhyCitA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gg8AIkXGEeWmu5xZhyCitA" value="*"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_gcVSwD3REeW8ybi2TiqE7g" name="ValueSetBinding">
       <ownedAttribute xmi:id="_lJFVwj3REeW8ybi2TiqE7g" name="base_Property" association="_lJFVwD3REeW8ybi2TiqE7g">
@@ -174,6 +174,31 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0ismcUVYEeWmu5xZhyCitA"/>
       </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_XnZagE0IEeWmu5xZhyCitA" name="ValueSet">
+      <generalization xmi:id="_eKdpcE0JEeWmu5xZhyCitA" general="_sSmLkD3QEeW8ybi2TiqE7g"/>
+      <ownedAttribute xmi:id="_dCd8EE0IEeWmu5xZhyCitA" name="base_Enumeration" association="_dCcG4E0IEeWmu5xZhyCitA">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Enumeration"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fbj6YE0IEeWmu5xZhyCitA" name="uri">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fbj6YU0IEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_psO48E0IEeWmu5xZhyCitA" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_psO48U0IEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_T5X0IE0JEeWmu5xZhyCitA" name="publisher">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T5X0IU0JEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uqxkoE0KEeWmu5xZhyCitA" name="version">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uqxkoU0KEeWmu5xZhyCitA"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_dCcG4E0IEeWmu5xZhyCitA" name="Enumeration_ValueSet" memberEnd="_dCdVAE0IEeWmu5xZhyCitA _dCd8EE0IEeWmu5xZhyCitA">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_dCdVAE0IEeWmu5xZhyCitA" name="extension_ValueSet" type="_XnZagE0IEeWmu5xZhyCitA" aggregation="composite" association="_dCcG4E0IEeWmu5xZhyCitA"/>
     </packagedElement>
     <profileApplication xmi:id="_qHMGMDDmEeWn6bT0Ftydnw">
       <eAnnotations xmi:id="_qHQXoDDmEeWn6bT0Ftydnw" source="http://www.eclipse.org/uml2/2.0.0/UML">

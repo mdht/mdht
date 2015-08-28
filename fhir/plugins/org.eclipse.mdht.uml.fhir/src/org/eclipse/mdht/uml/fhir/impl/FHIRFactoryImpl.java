@@ -67,6 +67,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 			case FHIRPackage.REQUIREMENTS: return createRequirements();
 			case FHIRPackage.COMMENTS: return createComments();
 			case FHIRPackage.VALUE_SET_BINDING: return createValueSetBinding();
+			case FHIRPackage.VALUE_SET: return createValueSet();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -200,6 +201,16 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	public ValueSetBinding createValueSetBinding() {
 		ValueSetBindingImpl valueSetBinding = new ValueSetBindingImpl();
 		return valueSetBinding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ValueSet createValueSet() {
+		ValueSetImpl valueSet = new ValueSetImpl();
+		return valueSet;
 	}
 
 	/**

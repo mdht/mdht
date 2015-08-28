@@ -125,13 +125,22 @@ public interface FHIRPackage extends EPackage {
 	int ELEMENT__ID = 0;
 
 	/**
+	 * The feature id for the '<em><b>Extension</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__EXTENSION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_FEATURE_COUNT = 1;
+	int ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class.
@@ -160,6 +169,15 @@ public interface FHIRPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURE_DEFINITION__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DEFINITION__EXTENSION = ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -225,13 +243,13 @@ public interface FHIRPackage extends EPackage {
 	int STRUCTURE_DEFINITION__CONTEXT = ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' reference list.
+	 * The feature id for the '<em><b>Publisher</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_DEFINITION__EXTENSION = ELEMENT_FEATURE_COUNT + 7;
+	int STRUCTURE_DEFINITION__PUBLISHER = ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Structure Definition</em>' class.
@@ -326,6 +344,15 @@ public interface FHIRPackage extends EPackage {
 	int ELEMENT_DEFINITION__ID = ELEMENT__ID;
 
 	/**
+	 * The feature id for the '<em><b>Extension</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_DEFINITION__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -362,22 +389,13 @@ public interface FHIRPackage extends EPackage {
 	int ELEMENT_DEFINITION__MUST_SUPPORT = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT_DEFINITION__EXTENSION = ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Is Modifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__IS_MODIFIER = ELEMENT_FEATURE_COUNT + 5;
+	int ELEMENT_DEFINITION__IS_MODIFIER = ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Summary</b></em>' attribute.
@@ -386,7 +404,7 @@ public interface FHIRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION__IS_SUMMARY = ELEMENT_FEATURE_COUNT + 6;
+	int ELEMENT_DEFINITION__IS_SUMMARY = ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Element Definition</em>' class.
@@ -395,7 +413,7 @@ public interface FHIRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 7;
+	int ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Element Definition</em>' class.
@@ -665,6 +683,97 @@ public interface FHIRPackage extends EPackage {
 	int VALUE_SET_BINDING_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.impl.ValueSetImpl <em>Value Set</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.mdht.uml.fhir.impl.ValueSetImpl
+	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getValueSet()
+	 * @generated
+	 */
+	int VALUE_SET = 11;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__EXTENSION = ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Base Enumeration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__BASE_ENUMERATION = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__URI = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__NAME = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Publisher</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__PUBLISHER = ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET__VERSION = ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Value Set</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Value Set</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.mdht.uml.fhir.BindingStrengthKind <em>Binding Strength Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -672,7 +781,7 @@ public interface FHIRPackage extends EPackage {
 	 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getBindingStrengthKind()
 	 * @generated
 	 */
-	int BINDING_STRENGTH_KIND = 11;
+	int BINDING_STRENGTH_KIND = 12;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.TypeChoice <em>Type Choice</em>}'.
@@ -794,15 +903,15 @@ public interface FHIRPackage extends EPackage {
 	EAttribute getStructureDefinition_Context();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getExtensions <em>Extension</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getPublisher <em>Publisher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Extension</em>'.
-	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getExtensions()
+	 * @return the meta object for the attribute '<em>Publisher</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.StructureDefinition#getPublisher()
 	 * @see #getStructureDefinition()
 	 * @generated
 	 */
-	EReference getStructureDefinition_Extension();
+	EAttribute getStructureDefinition_Publisher();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Element <em>Element</em>}'.
@@ -824,6 +933,17 @@ public interface FHIRPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getElement_Id();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.mdht.uml.fhir.Element#getExtensions <em>Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Extension</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.Element#getExtensions()
+	 * @see #getElement()
+	 * @generated
+	 */
+	EReference getElement_Extension();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.Extension <em>Extension</em>}'.
@@ -921,17 +1041,6 @@ public interface FHIRPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getElementDefinition_MustSupport();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getExtensions <em>Extension</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Extension</em>'.
-	 * @see org.eclipse.mdht.uml.fhir.ElementDefinition#getExtensions()
-	 * @see #getElementDefinition()
-	 * @generated
-	 */
-	EReference getElementDefinition_Extension();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getIsModifier <em>Is Modifier</em>}'.
@@ -1126,6 +1235,71 @@ public interface FHIRPackage extends EPackage {
 	EAttribute getValueSetBinding_ValueSetReference();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.fhir.ValueSet <em>Value Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Value Set</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSet
+	 * @generated
+	 */
+	EClass getValueSet();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.mdht.uml.fhir.ValueSet#getBase_Enumeration <em>Base Enumeration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Enumeration</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSet#getBase_Enumeration()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EReference getValueSet_Base_Enumeration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSet#getUri <em>Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSet#getUri()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EAttribute getValueSet_Uri();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSet#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSet#getName()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EAttribute getValueSet_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSet#getPublisher <em>Publisher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Publisher</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSet#getPublisher()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EAttribute getValueSet_Publisher();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.mdht.uml.fhir.ValueSet#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see org.eclipse.mdht.uml.fhir.ValueSet#getVersion()
+	 * @see #getValueSet()
+	 * @generated
+	 */
+	EAttribute getValueSet_Version();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.mdht.uml.fhir.BindingStrengthKind <em>Binding Strength Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1251,12 +1425,12 @@ public interface FHIRPackage extends EPackage {
 		EAttribute STRUCTURE_DEFINITION__CONTEXT = eINSTANCE.getStructureDefinition_Context();
 
 		/**
-		 * The meta object literal for the '<em><b>Extension</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Publisher</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURE_DEFINITION__EXTENSION = eINSTANCE.getStructureDefinition_Extension();
+		EAttribute STRUCTURE_DEFINITION__PUBLISHER = eINSTANCE.getStructureDefinition_Publisher();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl <em>Element</em>}' class.
@@ -1275,6 +1449,14 @@ public interface FHIRPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ELEMENT__ID = eINSTANCE.getElement_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Extension</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELEMENT__EXTENSION = eINSTANCE.getElement_Extension();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ExtensionImpl <em>Extension</em>}' class.
@@ -1351,14 +1533,6 @@ public interface FHIRPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ELEMENT_DEFINITION__MUST_SUPPORT = eINSTANCE.getElementDefinition_MustSupport();
-
-		/**
-		 * The meta object literal for the '<em><b>Extension</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT_DEFINITION__EXTENSION = eINSTANCE.getElementDefinition_Extension();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Modifier</b></em>' attribute feature.
@@ -1515,6 +1689,56 @@ public interface FHIRPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALUE_SET_BINDING__VALUE_SET_REFERENCE = eINSTANCE.getValueSetBinding_ValueSetReference();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.impl.ValueSetImpl <em>Value Set</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.mdht.uml.fhir.impl.ValueSetImpl
+		 * @see org.eclipse.mdht.uml.fhir.impl.FHIRPackageImpl#getValueSet()
+		 * @generated
+		 */
+		EClass VALUE_SET = eINSTANCE.getValueSet();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Enumeration</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALUE_SET__BASE_ENUMERATION = eINSTANCE.getValueSet_Base_Enumeration();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET__URI = eINSTANCE.getValueSet_Uri();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET__NAME = eINSTANCE.getValueSet_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Publisher</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET__PUBLISHER = eINSTANCE.getValueSet_Publisher();
+
+		/**
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SET__VERSION = eINSTANCE.getValueSet_Version();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.mdht.uml.fhir.BindingStrengthKind <em>Binding Strength Kind</em>}' enum.

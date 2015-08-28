@@ -54,11 +54,12 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//StructureDefinition/fhirVersion"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//StructureDefinition/contextType"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//StructureDefinition/context"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//StructureDefinition/extension"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//StructureDefinition/publisher"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="fhir.ecore#//Element">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//Element/id"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//Element/extension"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//Extension">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//Extension/url"/>
@@ -71,8 +72,6 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ElementDefinition/name"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ElementDefinition/label"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ElementDefinition/mustSupport"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//ElementDefinition/extension"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ElementDefinition/isModifier"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ElementDefinition/isSummary"/>
     </genClasses>
@@ -103,6 +102,14 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSetBinding/description"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSetBinding/valueSetUri"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSetBinding/valueSetReference"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="fhir.ecore#//ValueSet">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fhir.ecore#//ValueSet/base_Enumeration"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSet/uri"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSet/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSet/publisher"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute fhir.ecore#//ValueSet/version"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

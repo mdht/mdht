@@ -2,14 +2,18 @@
  */
 package org.eclipse.mdht.uml.fhir.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.mdht.uml.fhir.Element;
+import org.eclipse.mdht.uml.fhir.Extension;
 import org.eclipse.mdht.uml.fhir.FHIRPackage;
 
 /**
@@ -21,6 +25,7 @@ import org.eclipse.mdht.uml.fhir.FHIRPackage;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl#getExtensions <em>Extension</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +50,16 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtensions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Extension> extensions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +106,25 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Extension> getExtensions() {
+		if (extensions == null) {
+			extensions = new EObjectResolvingEList<Extension>(Extension.class, this, FHIRPackage.ELEMENT__EXTENSION);
+		}
+		return extensions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FHIRPackage.ELEMENT__ID:
 				return getId();
+			case FHIRPackage.ELEMENT__EXTENSION:
+				return getExtensions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,11 +134,16 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FHIRPackage.ELEMENT__ID:
 				setId((String)newValue);
+				return;
+			case FHIRPackage.ELEMENT__EXTENSION:
+				getExtensions().clear();
+				getExtensions().addAll((Collection<? extends Extension>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +160,9 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 			case FHIRPackage.ELEMENT__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case FHIRPackage.ELEMENT__EXTENSION:
+				getExtensions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +177,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case FHIRPackage.ELEMENT__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case FHIRPackage.ELEMENT__EXTENSION:
+				return extensions != null && !extensions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

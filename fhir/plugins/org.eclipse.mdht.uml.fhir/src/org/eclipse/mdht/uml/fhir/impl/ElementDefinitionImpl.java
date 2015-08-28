@@ -2,18 +2,12 @@
  */
 package org.eclipse.mdht.uml.fhir.impl;
 
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.mdht.uml.fhir.ElementDefinition;
-import org.eclipse.mdht.uml.fhir.Extension;
 import org.eclipse.mdht.uml.fhir.FHIRPackage;
 
 import org.eclipse.uml2.uml.Property;
@@ -30,7 +24,6 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getMustSupport <em>Must Support</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getExtensions <em>Extension</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getIsModifier <em>Is Modifier</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getIsSummary <em>Is Summary</em>}</li>
  * </ul>
@@ -107,16 +100,6 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * @ordered
 	 */
 	protected Boolean mustSupport = MUST_SUPPORT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Extension> extensions;
 
 	/**
 	 * The default value of the '{@link #getIsModifier() <em>Is Modifier</em>}' attribute.
@@ -283,18 +266,6 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectResolvingEList<Extension>(Extension.class, this, FHIRPackage.ELEMENT_DEFINITION__EXTENSION);
-		}
-		return extensions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Boolean getIsModifier() {
 		return isModifier;
 	}
@@ -349,8 +320,6 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return getLabel();
 			case FHIRPackage.ELEMENT_DEFINITION__MUST_SUPPORT:
 				return getMustSupport();
-			case FHIRPackage.ELEMENT_DEFINITION__EXTENSION:
-				return getExtensions();
 			case FHIRPackage.ELEMENT_DEFINITION__IS_MODIFIER:
 				return getIsModifier();
 			case FHIRPackage.ELEMENT_DEFINITION__IS_SUMMARY:
@@ -379,10 +348,6 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return;
 			case FHIRPackage.ELEMENT_DEFINITION__MUST_SUPPORT:
 				setMustSupport((Boolean)newValue);
-				return;
-			case FHIRPackage.ELEMENT_DEFINITION__EXTENSION:
-				getExtensions().clear();
-				getExtensions().addAll((Collection<? extends Extension>)newValue);
 				return;
 			case FHIRPackage.ELEMENT_DEFINITION__IS_MODIFIER:
 				setIsModifier((Boolean)newValue);
@@ -414,9 +379,6 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 			case FHIRPackage.ELEMENT_DEFINITION__MUST_SUPPORT:
 				setMustSupport(MUST_SUPPORT_EDEFAULT);
 				return;
-			case FHIRPackage.ELEMENT_DEFINITION__EXTENSION:
-				getExtensions().clear();
-				return;
 			case FHIRPackage.ELEMENT_DEFINITION__IS_MODIFIER:
 				setIsModifier(IS_MODIFIER_EDEFAULT);
 				return;
@@ -443,8 +405,6 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case FHIRPackage.ELEMENT_DEFINITION__MUST_SUPPORT:
 				return MUST_SUPPORT_EDEFAULT == null ? mustSupport != null : !MUST_SUPPORT_EDEFAULT.equals(mustSupport);
-			case FHIRPackage.ELEMENT_DEFINITION__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
 			case FHIRPackage.ELEMENT_DEFINITION__IS_MODIFIER:
 				return IS_MODIFIER_EDEFAULT == null ? isModifier != null : !IS_MODIFIER_EDEFAULT.equals(isModifier);
 			case FHIRPackage.ELEMENT_DEFINITION__IS_SUMMARY:
