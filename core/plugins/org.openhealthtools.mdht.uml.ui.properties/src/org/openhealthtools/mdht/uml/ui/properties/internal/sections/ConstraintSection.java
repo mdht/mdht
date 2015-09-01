@@ -16,14 +16,20 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -78,7 +84,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	public Constraint constraint;
 
-	protected String[] languages = { "Analysis", "OCL", "Java", "XPath", "StrucText" };
+	// protected String[] languages = { "Analysis", "OCL", "Java", "XPath", "StrucText" };
 
 	public CCombo languageCombo;
 
@@ -171,7 +177,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 					if (languageIndex == -1) {
 						languageIndex = 0; // default to Analysis
 					}
-					String language = languages[languageIndex];
+					String language = languages.get(languageIndex);
 					String body = bodyText.getText().trim();
 
 					ValueSpecification spec = constraint.getSpecification();
@@ -234,9 +240,42 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		}
 	}
 
+	ArrayList<String> languages = new ArrayList<String>();
+
+	ArrayList<ConstraintEditor> contributors = new ArrayList<ConstraintEditor>();
+
+	private void loadUIExtensions() throws CoreException {
+
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor");
+		IExtension[] extensions = ep.getExtensions();
+
+		for (int i = 0; i < extensions.length; i++) {
+			IExtension ext = extensions[i];
+			IConfigurationElement[] ce = ext.getConfigurationElements();
+			for (int j = 0; j < ce.length; j++) {
+				languages.add(ce[j].getAttribute("language"));
+
+				Object obj = ce[j].createExecutableExtension("component");
+				contributors.add((ConstraintEditor) obj);
+			}
+		}
+
+		// for (ConstraintEditor ce : contributors) {
+		// languages.add(ce.getLanguage());
+		//
+		// }
+	}
+
 	@Override
 	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+
+		try {
+			loadUIExtensions();
+		} catch (CoreException e1) {
+
+		}
 
 		Shell shell = new Shell();
 
@@ -252,7 +291,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 		/* ---- language combo ---- */
 		languageCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
-		languageCombo.setItems(languages);
+		languageCombo.setItems(languages.toArray(new String[1]));
 		languageCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				refresh();
@@ -307,8 +346,17 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			}
 		});
 
-		/* ---- body text ---- */
+		/*
+		 * ---- body text ----
+		 *
+		 *
+		 */
 		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
+
+		for (ConstraintEditor ce : contributors) {
+			ce.setText(bodyText);
+		}
+
 		CLabel bodyLabel = getWidgetFactory().createCLabel(composite, "Body:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
@@ -341,9 +389,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -388,14 +436,14 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 				: currentIndex;
 
 		if (spec != null) {
-			final List<String> knownLangs = Arrays.asList(languages);
+			// final List<String> knownLangs = Arrays.asList(languages);
 			final List<String> specLangs = spec.getLanguages();
 			final List<String> specBodies = spec.getBodies();
 
 			if (!specLangs.contains(currentLanguage)) {
 				for (int i = 0; (i < specBodies.size()) && (i < specLangs.size()); i++) {
-					if (!UML2Util.isEmpty(specBodies.get(i)) && knownLangs.contains(specLangs.get(i))) {
-						languageIndex = knownLangs.indexOf(specLangs.get(i));
+					if (!UML2Util.isEmpty(specBodies.get(i)) && languages.contains(specLangs.get(i))) {
+						languageIndex = languages.indexOf(specLangs.get(i));
 						break;
 					}
 				}
@@ -418,19 +466,19 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			languageIndex = 0; // default to the first language for which we have a body, else Analysis
 
 			if (spec != null) {
-				final List<String> knownLangs = Arrays.asList(languages);
+				// final List<String> knownLangs = Arrays.asList(languages);
 				final List<String> specLangs = spec.getLanguages();
 				final List<String> specBodies = spec.getBodies();
 				for (int i = 0; (i < specBodies.size()) && (i < specLangs.size()); i++) {
-					if (!UML2Util.isEmpty(specBodies.get(i)) && knownLangs.contains(specLangs.get(i))) {
-						languageIndex = knownLangs.indexOf(specLangs.get(i));
+					if (!UML2Util.isEmpty(specBodies.get(i)) && languages.contains(specLangs.get(i))) {
+						languageIndex = languages.indexOf(specLangs.get(i));
 						body = specBodies.get(i);
 						break;
 					}
 				}
 			}
 		}
-		language = languages[languageIndex];
+		language = languages.get(languageIndex);
 
 		StringBuilder languagesList = new StringBuilder();
 
