@@ -180,7 +180,7 @@
     <extension
           point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-             component="org.openhealthtools.mdht.uml.ui.properties.TextEditor"
+          component="org.openhealthtools.mdht.uml.cda.dita.internal.TextEditor"
              language="Analysis">
        </editor>
     </extension>
@@ -188,7 +188,7 @@
       <extension
           point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-             component="org.openhealthtools.mdht.uml.ui.properties.TextEditor"
+          component="org.openhealthtools.mdht.uml.cda.dita.internal.TextEditor"
              language="OCL">
        </editor>
     </extension>
@@ -197,7 +197,7 @@
         <extension
           point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-             component="org.openhealthtools.mdht.uml.ui.properties.TextEditor"
+          component="org.openhealthtools.mdht.uml.cda.dita.internal.TextEditor"
              language="Java">
        </editor>
     </extension>
@@ -205,7 +205,7 @@
         <extension
           point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-             component="org.openhealthtools.mdht.uml.ui.properties.TextEditor"
+          component="org.openhealthtools.mdht.uml.cda.dita.internal.TextEditor"
              language="XPath">
        </editor>
     </extension>
@@ -213,7 +213,7 @@
          <extension
           point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
        <editor
-             component="org.openhealthtools.mdht.uml.ui.properties.TextEditor"
+          component="org.openhealthtools.mdht.uml.cda.dita.internal.TextEditor"
              language="StrucText">
        </editor>
     </extension>

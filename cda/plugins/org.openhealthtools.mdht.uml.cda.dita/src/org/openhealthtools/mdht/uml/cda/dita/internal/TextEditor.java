@@ -1,4 +1,4 @@
-package org.openhealthtools.mdht.uml.ui.properties;
+package org.openhealthtools.mdht.uml.cda.dita.internal;
 
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
