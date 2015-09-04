@@ -12,13 +12,14 @@
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.uml2.uml.Constraint;
 
 /**
  * @author seanmuir
  *
  */
 public interface ConstraintEditor {
-
 	void setText(Text text);
 
+	void setConstraint(Constraint constraint);
 }

@@ -17,7 +17,9 @@
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -73,6 +75,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.ui.properties.internal.UmlUiEditor;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
@@ -99,6 +102,10 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 	protected Text bodyText;
 
 	public boolean bodyModified = false;
+
+	private List<String> languages = new ArrayList<String>();
+
+	private Map<String, ConstraintEditor> contributors = new LinkedHashMap<>(); // Better to keep the order
 
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -240,10 +247,6 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		}
 	}
 
-	ArrayList<String> languages = new ArrayList<String>();
-
-	ArrayList<ConstraintEditor> contributors = new ArrayList<ConstraintEditor>();
-
 	private void loadUIExtensions() throws CoreException {
 
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
@@ -254,10 +257,15 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			IExtension ext = extensions[i];
 			IConfigurationElement[] ce = ext.getConfigurationElements();
 			for (int j = 0; j < ce.length; j++) {
-				languages.add(ce[j].getAttribute("language"));
-
-				Object obj = ce[j].createExecutableExtension("component");
-				contributors.add((ConstraintEditor) obj);
+				String language = ce[j].getAttribute("language");
+				ConstraintEditor newContributor = (ConstraintEditor) ce[j].createExecutableExtension("component");
+				ConstraintEditor previousContributor = contributors.get(language);
+				// Check if the previous one is not locally implemented one
+				if (!(previousContributor instanceof UmlUiEditor)) {
+					if (previousContributor == null)
+						languages.add(language);
+					contributors.put(language, newContributor);
+				}
 			}
 		}
 
@@ -348,12 +356,10 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 		/*
 		 * ---- body text ----
-		 *
-		 *
 		 */
 		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
 
-		for (ConstraintEditor ce : contributors) {
+		for (ConstraintEditor ce : contributors.values()) {
 			ce.setText(bodyText);
 		}
 
@@ -389,9 +395,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 *
+	 * 
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -455,6 +461,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	@Override
 	public void refresh() {
+		for (ConstraintEditor ce : contributors.values()) {
+			ce.setConstraint(constraint);
+		}
 		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression)
 				? (OpaqueExpression) constraint.getSpecification()
 				: null;
