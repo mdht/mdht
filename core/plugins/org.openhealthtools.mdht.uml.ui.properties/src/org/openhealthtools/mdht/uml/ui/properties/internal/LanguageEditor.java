@@ -5,11 +5,15 @@ import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Text;
-import org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor;
+import org.eclipse.uml2.uml.Constraint;
 
-public class LanguageEditor implements ConstraintEditor {
+public class LanguageEditor extends UmlUiEditor {
 
-	Text text;
+	private Text text;
+
+	private Constraint constraint;
+
+	private boolean checkDita = false;
 
 	public LanguageEditor() {
 		// TODO Auto-generated constructor stub
@@ -27,17 +31,28 @@ public class LanguageEditor implements ConstraintEditor {
 			public void focusLost(FocusEvent e) {
 				Text t = (Text) e.widget;
 				System.out.println("LE: " + t.getText() + " check for valid ");
-
+				checkDita = true;
 			}
 		});
 		this.text.addModifyListener(new ModifyListener() {
 
 			public void modifyText(ModifyEvent e) {
-				System.out.println("LE: We modified the analysis Text" + e.toString());
-
+				if (checkDita) {
+					System.out.println("LE: We modified the analysis Text" + e.toString());
+					checkDita = false;
+				}
 			}
 		});
 
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
+	 */
+	public void setConstraint(Constraint constraint) {
+		this.constraint = constraint;
 	}
 
 }
