@@ -585,6 +585,10 @@ public class TransformClassContent extends TransformAbstract {
 		String pathFolder = "classes";
 		IPath filePath = transformerOptions.getOutputPath().append(pathFolder).addTrailingSeparator().append(
 			"generated").addTrailingSeparator().append("_" + normalizedClassName).addFileExtension("dita");
+		return writeClassToFile(umlClass, filePath);
+	}
+
+	public Object writeClassToFile(Class umlClass, IPath filePath) {
 		File file = filePath.toFile();
 		PrintWriter writer = null;
 
@@ -747,7 +751,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#getRangeCount()
 		 */
 		public int getRangeCount() {
@@ -756,7 +760,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#rangesEqual(int, org.eclipse.compare.rangedifferencer.IRangeComparator, int)
 		 */
 		public boolean rangesEqual(int thisIndex, IRangeComparator other, int otherIndex) {
@@ -767,7 +771,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 *
+		 * 
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#skipRangeComparison(int, int,
 		 * org.eclipse.compare.rangedifferencer.IRangeComparator)
 		 */
