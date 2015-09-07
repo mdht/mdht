@@ -95,6 +95,10 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	private boolean ditaModified = false;
 
+	private Button closeErrorTextButton;
+
+	private Text errorText;
+
 	private Button ditaEnableButton;
 
 	private CLabel currentLanguagesLabel;
@@ -230,6 +234,12 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 							constraint.setValue(
 								stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
 								ditaEnableButton.getSelection());
+
+							// Also don't show errors if they are visible
+							if (!ditaEnableButton.getSelection()) {
+								errorText.setVisible(false);
+								closeErrorTextButton.setVisible(false);
+							}
 						}
 					} else {
 						return Status.CANCEL_STATUS;
@@ -381,6 +391,42 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		data.top = new FormAttachment(languageCombo, 0, SWT.BOTTOM);
 		data.height = charHeight * 4;
 		bodyText.setLayoutData(data);
+
+		errorText = getWidgetFactory().createText(composite, "Error message here", SWT.V_SCROLL | SWT.WRAP);
+		data = new FormData();
+		data.left = new FormAttachment(bodyLabel, 0);
+		// if I set the width AND right, then I get proper wrapping for long text... whatever.
+		data.width = 300;
+		data.right = new FormAttachment(85, 0);
+		// if I set the top AND height, then I get vertical scroll within the tab page
+		data.top = new FormAttachment(bodyText, 0, SWT.BOTTOM);
+		data.height = charHeight * 2;
+		errorText.setLayoutData(data);
+		errorText.setEnabled(false);
+		errorText.setVisible(false);
+
+		/* ---- Error close button ---- */
+		closeErrorTextButton = getWidgetFactory().createButton(composite, "Close DITA Error", SWT.PUSH);
+		data = new FormData();
+		data.left = new FormAttachment(errorText, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(errorText, 0, SWT.CENTER);
+		closeErrorTextButton.setLayoutData(data);
+		closeErrorTextButton.setEnabled(true);
+		closeErrorTextButton.setVisible(false);
+		closeErrorTextButton.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				closeErrorTextButton.setVisible(false);
+				errorText.setVisible(false);
+			}
+		});
+
+		for (ConstraintEditor ce : contributors.values()) {
+			ce.setCloseErrorText(closeErrorTextButton);
+			ce.setErrorText(errorText);
+		}
 
 	}
 

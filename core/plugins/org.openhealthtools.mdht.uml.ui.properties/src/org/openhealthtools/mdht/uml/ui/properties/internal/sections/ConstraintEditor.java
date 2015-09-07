@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.uml.Constraint;
 
@@ -22,4 +23,8 @@ public interface ConstraintEditor {
 	void setText(Text text);
 
 	void setConstraint(Constraint constraint);
+
+	void setErrorText(Text errorText);
+
+	void setCloseErrorText(Button closeErrorTextButton);
 }
