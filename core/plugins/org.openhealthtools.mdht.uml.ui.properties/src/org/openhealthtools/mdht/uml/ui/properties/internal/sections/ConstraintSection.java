@@ -262,8 +262,11 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 				ConstraintEditor previousContributor = contributors.get(language);
 				// Check if the previous one is not locally implemented one
 				if (!(previousContributor instanceof UmlUiEditor)) {
-					if (previousContributor == null)
+					if (previousContributor == null) {
 						languages.add(language);
+						contributors.put(language, newContributor);
+					} // Don't do anything when previous is not locally implemented one
+				} else {
 					contributors.put(language, newContributor);
 				}
 			}
@@ -395,9 +398,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")

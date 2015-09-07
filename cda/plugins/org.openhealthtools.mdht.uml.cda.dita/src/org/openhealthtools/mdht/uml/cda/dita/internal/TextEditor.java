@@ -1,5 +1,6 @@
 package org.openhealthtools.mdht.uml.cda.dita.internal;
 
+import org.dita.dost.util.DitaUtil;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
@@ -39,8 +40,9 @@ public class TextEditor implements ConstraintEditor {
 
 			public void modifyText(ModifyEvent e) {
 				if (checkDita) {
-					generateTempDita();
 					checkDita = false;
+					IPath tmpFile = generateTempDita();
+					DitaUtil.validate(tmpFile);
 				}
 			}
 		});

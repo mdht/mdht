@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir - initial API and implementation
- *    
- *     
+ *
+ *
  * $Id$
  *******************************************************************************/
 package org.dita.dost.util;
@@ -27,8 +27,13 @@ import java.util.Map;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
@@ -43,6 +48,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
@@ -65,6 +71,67 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 public class DitaUtil {
+
+	public static void validate(IPath ditaFile) {
+		try {
+			validateXSD(ditaFile);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	// private void anotherValidateXSD(IPath tmpFileInWorkspaceDir) throws Exception {
+	// URL schemaFile = new URL(
+	// "http://docs.oasis-open.org/dita/v1.2/cd04/DITA1.2-xsds/xsd1.2-url/technicalContent/xsd/topic.xsd");
+	// SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+	// Schema schema = schemaFactory.newSchema(schemaFile);
+	// Validator validator = schema.newValidator();
+	//
+	// Source xmlFile = new StreamSource(tmpFileInWorkspaceDir.toFile());
+	// validator.validate(xmlFile);
+	// System.out.println(xmlFile.getSystemId() + " is valid");
+	//
+	// }
+
+	private static void validateXSD(IPath tmpFileInWorkspaceDir) throws Exception {
+
+		// Get the XSD file
+		Bundle bundle = Platform.getBundle("org.dita.dost");
+		Path ditaSchemadirPath = new Path("DITA-OT/schema/technicalContent/xsd/topic.xsd");
+		URL ditaXSD = FileLocator.toFileURL(FileLocator.find(bundle, ditaSchemadirPath, null));
+
+		// Create DBF and ignore DTD
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		dbf.setValidating(false);
+		dbf.setNamespaceAware(true);
+		dbf.setFeature("http://xml.org/sax/features/namespaces", false);
+		dbf.setFeature("http://xml.org/sax/features/validation", false);
+		dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+		dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+		DocumentBuilder parser = dbf.newDocumentBuilder();
+		Document document = parser.parse(tmpFileInWorkspaceDir.toFile());
+
+		// // create a SchemaFactory capable of understanding WXS schemas
+		// SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		//
+		// // load a WXS schema, represented by a Schema instance
+		// Source schemaFile = new StreamSource(new File(ditaXSD.toURI()));
+		// Schema schema = factory.newSchema(schemaFile);
+		//
+		// // create a Validator instance, which can be used to validate an instance document
+		// Validator validator = schema.newValidator();
+
+		URL schemaFile = new URL(
+			"http://docs.oasis-open.org/dita/v1.2/cd04/DITA1.2-xsds/xsd1.2-url/technicalContent/xsd/topic.xsd");
+		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema schema = schemaFactory.newSchema(schemaFile);
+		Validator validator = schema.newValidator();
+
+		// validate the DOM tree
+		DOMSource dom = new DOMSource(document);
+		validator.validate(dom);
+	}
 
 	public static ILaunch publish(IFile ditaMapFile, String antTargets) throws IOException, CoreException,
 			URISyntaxException {

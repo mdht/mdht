@@ -15,10 +15,6 @@ public class LanguageEditor extends UmlUiEditor {
 
 	private boolean checkDita = false;
 
-	public LanguageEditor() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public void setText(Text text) {
 		this.text = text;
 		this.text.addFocusListener(new FocusListener() {
@@ -29,8 +25,8 @@ public class LanguageEditor extends UmlUiEditor {
 			}
 
 			public void focusLost(FocusEvent e) {
-				Text t = (Text) e.widget;
-				System.out.println("LE: " + t.getText() + " check for valid ");
+				// Text t = (Text) e.widget;
+				// System.out.println("LE: " + t.getText() + " check for valid ");
 				checkDita = true;
 			}
 		});
@@ -38,8 +34,8 @@ public class LanguageEditor extends UmlUiEditor {
 
 			public void modifyText(ModifyEvent e) {
 				if (checkDita) {
-					System.out.println("LE: We modified the analysis Text" + e.toString());
 					checkDita = false;
+					// Do further process with constraint here
 				}
 			}
 		});
@@ -48,7 +44,7 @@ public class LanguageEditor extends UmlUiEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	public void setConstraint(Constraint constraint) {
