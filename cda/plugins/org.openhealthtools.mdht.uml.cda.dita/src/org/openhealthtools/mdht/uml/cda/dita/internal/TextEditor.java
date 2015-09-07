@@ -53,7 +53,11 @@ public class TextEditor implements ConstraintEditor {
 				if (checkDita && ditaEnabled) {
 					checkDita = false;
 					IPath tmpFile = generateTempDita();
-					DitaUtil.validate(tmpFile);
+					try {
+						DitaUtil.validate(tmpFile);
+					} catch (Exception exception) {
+						// Add UI here
+					}
 				}
 			}
 		});
@@ -61,7 +65,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	public void setConstraint(Constraint constraint) {

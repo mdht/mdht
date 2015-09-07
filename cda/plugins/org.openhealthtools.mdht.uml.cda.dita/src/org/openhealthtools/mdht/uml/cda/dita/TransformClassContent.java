@@ -737,12 +737,12 @@ public class TransformClassContent extends TransformAbstract {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));
 			String line;
-			ArrayList ar = new ArrayList();
+			ArrayList<String> ar = new ArrayList<>();
 			while ((line = br.readLine()) != null) {
 				ar.add(line);
 			}
 			// It is the responsibility of the caller to close the stream
-			fLines = (String[]) ar.toArray(new String[ar.size()]);
+			fLines = ar.toArray(new String[ar.size()]);
 		}
 
 		String getLine(int ix) {
@@ -751,7 +751,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#getRangeCount()
 		 */
 		public int getRangeCount() {
@@ -760,7 +760,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#rangesEqual(int, org.eclipse.compare.rangedifferencer.IRangeComparator, int)
 		 */
 		public boolean rangesEqual(int thisIndex, IRangeComparator other, int otherIndex) {
@@ -771,7 +771,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#skipRangeComparison(int, int,
 		 * org.eclipse.compare.rangedifferencer.IRangeComparator)
 		 */
