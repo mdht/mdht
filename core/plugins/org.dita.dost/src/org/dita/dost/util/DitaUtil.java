@@ -30,7 +30,9 @@ import java.util.jar.Manifest;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
@@ -103,11 +105,11 @@ public class DitaUtil {
 
 		// Create DBF and ignore DTD
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		dbf.setValidating(false);
+		// dbf.setValidating(false);
 		dbf.setNamespaceAware(true);
-		dbf.setFeature("http://xml.org/sax/features/namespaces", false);
-		dbf.setFeature("http://xml.org/sax/features/validation", false);
-		dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+		// dbf.setFeature("http://xml.org/sax/features/namespaces", false);
+		// dbf.setFeature("http://xml.org/sax/features/validation", false);
+		// dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
 		dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
 		DocumentBuilder parser = dbf.newDocumentBuilder();
 		Document document = parser.parse(tmpFileInWorkspaceDir.toFile());
@@ -115,17 +117,18 @@ public class DitaUtil {
 		// // create a SchemaFactory capable of understanding WXS schemas
 		// SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		//
+		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		// // load a WXS schema, represented by a Schema instance
-		// Source schemaFile = new StreamSource(new File(ditaXSD.toURI()));
-		// Schema schema = factory.newSchema(schemaFile);
+		Source schemaFile = new StreamSource(new File(ditaXSD.toURI()));
+		Schema schema = schemaFactory.newSchema(schemaFile);
 		//
 		// // create a Validator instance, which can be used to validate an instance document
 		// Validator validator = schema.newValidator();
 
-		URL schemaFile = new URL(
-			"http://docs.oasis-open.org/dita/v1.2/cd04/DITA1.2-xsds/xsd1.2-url/technicalContent/xsd/topic.xsd");
-		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		Schema schema = schemaFactory.newSchema(schemaFile);
+		// URL schemaFile = new URL(
+		// "http://docs.oasis-open.org/dita/v1.2/cd04/DITA1.2-xsds/xsd1.2-url/technicalContent/xsd/topic.xsd");
+		//
+		// Schema schema = schemaFactory.newSchema(schemaFile);
 		Validator validator = schema.newValidator();
 
 		// validate the DOM tree
