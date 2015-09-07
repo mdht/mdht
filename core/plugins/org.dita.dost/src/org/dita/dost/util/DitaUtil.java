@@ -30,6 +30,7 @@ import java.util.jar.Manifest;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamSource;
@@ -42,6 +43,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.xerces.util.XMLCatalogResolver;
 import org.eclipse.ant.internal.launching.launchConfigurations.AntHomeClasspathEntry;
 import org.eclipse.ant.internal.launching.launchConfigurations.ContributedClasspathEntriesEntry;
 import org.eclipse.ant.launching.IAntLaunchConstants;
@@ -71,19 +73,12 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 public class DitaUtil {
 
-	public static void validate(IPath ditaFile) {
-		try {
-			validateXSD(ditaFile);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	private static void validateXSD(IPath tmpFileInWorkspaceDir) throws Exception {
+	public static void validate(IPath tmpFileInWorkspaceDir) throws IOException, ParserConfigurationException,
+			SAXException, URISyntaxException {
 
 		// Get the XSD file
 		Bundle bundle = Platform.getBundle("org.dita.dost");
@@ -98,22 +93,19 @@ public class DitaUtil {
 		Document document = parser.parse(tmpFileInWorkspaceDir.toFile());
 
 		// create a SchemaFactory capable of understanding WXS schemas
-
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+
+		// Use catalog
+		Path ditaCatalogPath = new Path("DITA-OT/schema/catalog.xml");
+		URL ditaCatalog = FileLocator.toFileURL(FileLocator.find(bundle, ditaCatalogPath, null));
+		XMLCatalogResolver resolver = new XMLCatalogResolver(new String[] { ditaCatalog.getFile() });
+		schemaFactory.setResourceResolver(resolver);
+
 		// load a WXS schema, represented by a Schema instance
 		Source schemaFile = new StreamSource(new File(ditaXSD.toURI()));
 		Schema schema = schemaFactory.newSchema(schemaFile);
-		//
-		// // create a Validator instance, which can be used to validate an instance document
-		// Validator validator = schema.newValidator();
-
-		// URL schemaFile = new URL(
-		// "http://docs.oasis-open.org/dita/v1.2/cd04/DITA1.2-xsds/xsd1.2-url/technicalContent/xsd/topic.xsd");
-		//
-		// Schema schema = schemaFactory.newSchema(schemaFile);
 		Validator validator = schema.newValidator();
 
-		// validate the DOM tree
 		DOMSource dom = new DOMSource(document);
 		validator.validate(dom);
 	}
