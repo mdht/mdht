@@ -11,6 +11,9 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformerOptions;
 import org.openhealthtools.mdht.uml.cda.dita.TransformClassContent;
 import org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor;
@@ -39,7 +42,15 @@ public class TextEditor implements ConstraintEditor {
 		this.text.addModifyListener(new ModifyListener() {
 
 			public void modifyText(ModifyEvent e) {
-				if (checkDita) {
+				Boolean ditaEnabled = false;
+				try {
+					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+						constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+					ditaEnabled = (Boolean) constraint.getValue(
+						stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+				} catch (IllegalArgumentException ex) { /* Swallow this */
+				}
+				if (checkDita && ditaEnabled) {
 					checkDita = false;
 					IPath tmpFile = generateTempDita();
 					DitaUtil.validate(tmpFile);
@@ -50,7 +61,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	public void setConstraint(Constraint constraint) {
