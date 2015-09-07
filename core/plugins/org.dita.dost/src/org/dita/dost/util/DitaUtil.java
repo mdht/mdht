@@ -83,19 +83,6 @@ public class DitaUtil {
 		}
 	}
 
-	// private void anotherValidateXSD(IPath tmpFileInWorkspaceDir) throws Exception {
-	// URL schemaFile = new URL(
-	// "http://docs.oasis-open.org/dita/v1.2/cd04/DITA1.2-xsds/xsd1.2-url/technicalContent/xsd/topic.xsd");
-	// SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-	// Schema schema = schemaFactory.newSchema(schemaFile);
-	// Validator validator = schema.newValidator();
-	//
-	// Source xmlFile = new StreamSource(tmpFileInWorkspaceDir.toFile());
-	// validator.validate(xmlFile);
-	// System.out.println(xmlFile.getSystemId() + " is valid");
-	//
-	// }
-
 	private static void validateXSD(IPath tmpFileInWorkspaceDir) throws Exception {
 
 		// Get the XSD file
@@ -105,20 +92,15 @@ public class DitaUtil {
 
 		// Create DBF and ignore DTD
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		// dbf.setValidating(false);
 		dbf.setNamespaceAware(true);
-		// dbf.setFeature("http://xml.org/sax/features/namespaces", false);
-		// dbf.setFeature("http://xml.org/sax/features/validation", false);
-		// dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
 		dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
 		DocumentBuilder parser = dbf.newDocumentBuilder();
 		Document document = parser.parse(tmpFileInWorkspaceDir.toFile());
 
-		// // create a SchemaFactory capable of understanding WXS schemas
-		// SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		//
+		// create a SchemaFactory capable of understanding WXS schemas
+
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		// // load a WXS schema, represented by a Schema instance
+		// load a WXS schema, represented by a Schema instance
 		Source schemaFile = new StreamSource(new File(ditaXSD.toURI()));
 		Schema schema = schemaFactory.newSchema(schemaFile);
 		//
