@@ -4,13 +4,14 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
  *                        - use UML binding for OCL to check constraints, and handle query constraints (artf3317)
  *                        - implement handling of live validation roll-back (artf3318)
- *                        
+ *     Sarp Kaya (NEHTA) - DITA Mode
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -48,6 +49,7 @@ import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
@@ -60,8 +62,11 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
@@ -78,6 +83,10 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 	public CCombo languageCombo;
 
 	private boolean languageModified = false;
+
+	private boolean ditaModified = false;
+
+	private Button ditaEnableButton;
 
 	private CLabel currentLanguagesLabel;
 
@@ -144,7 +153,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 	}
 
 	public void modifyFields() {
-		if (!(bodyModified || languageModified)) {
+		if (!(bodyModified || languageModified || ditaModified)) {
 			return;
 		}
 
@@ -165,19 +174,19 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 					String language = languages[languageIndex];
 					String body = bodyText.getText().trim();
 
-					if (bodyModified) {
-						bodyModified = false;
-						this.setLabel("Set Constraint Body");
+					ValueSpecification spec = constraint.getSpecification();
+					if (spec == null) {
+						spec = constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+					}
+					if (spec instanceof OpaqueExpression) {
+						OpaqueExpression oESpec = (OpaqueExpression) spec;
+						if (bodyModified) {
+							bodyModified = false;
+							this.setLabel("Set Constraint Body");
 
-						ValueSpecification spec = constraint.getSpecification();
-						if (spec == null) {
-							spec = constraint.createSpecification(
-								null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
-						}
-						if (spec instanceof OpaqueExpression) {
 							int specIndex = -1;
-							for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
-								String lang = ((OpaqueExpression) spec).getLanguages().get(i);
+							for (int i = 0; i < oESpec.getLanguages().size(); i++) {
+								String lang = oESpec.getLanguages().get(i);
 								if (language.equals(lang)) {
 									specIndex = i;
 								}
@@ -185,16 +194,29 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 							if (specIndex >= 0) {
 								if (body.length() == 0) {
 									// remove language and body from specification
-									((OpaqueExpression) spec).getLanguages().remove(specIndex);
-									((OpaqueExpression) spec).getBodies().remove(specIndex);
+									oESpec.getLanguages().remove(specIndex);
+									oESpec.getBodies().remove(specIndex);
 								} else {
-									((OpaqueExpression) spec).getBodies().set(specIndex, body);
+									oESpec.getBodies().set(specIndex, body);
 								}
 							} else if (body.length() > 0) {
 								// create new specification entry
-								((OpaqueExpression) spec).getLanguages().add(language);
-								((OpaqueExpression) spec).getBodies().add(body);
+								oESpec.getLanguages().add(language);
+								oESpec.getBodies().add(body);
 							}
+						}
+						if (ditaModified) {
+							ditaModified = false;
+							Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+								constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+
+							if (stereotype == null) {
+								stereotype = CDAProfileUtil.applyCDAStereotype(
+									constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+							}
+							constraint.setValue(
+								stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
+								ditaEnableButton.getSelection());
 						}
 					} else {
 						return Status.CANCEL_STATUS;
@@ -261,9 +283,29 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		currentLanguagesLabel = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(assignedLabel, 0);
-		data.right = new FormAttachment(100, 0);
+		// data.right = new FormAttachment(10, 0);
 		data.top = new FormAttachment(languageCombo, 0, SWT.CENTER);
 		currentLanguagesLabel.setLayoutData(data);
+
+		/* ---- Dita Enable checkbox ---- */
+		ditaEnableButton = getWidgetFactory().createButton(composite, "Enable DITA", SWT.CHECK);
+		data = new FormData();
+		data.left = new FormAttachment(currentLanguagesLabel, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(languageCombo, 0, SWT.CENTER);
+		ditaEnableButton.setLayoutData(data);
+		ditaEnableButton.setEnabled(true);
+		ditaEnableButton.setVisible(false);
+		ditaEnableButton.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				ditaModified = true;
+				modifyFields();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				ditaModified = true;
+				modifyFields();
+			}
+		});
 
 		/* ---- body text ---- */
 		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
@@ -429,11 +471,27 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			bodyText.setEnabled(true);
 		}
 
+		if ("Analysis".equals(languageCombo.getText())) {
+			Boolean selection = false;
+			try {
+				Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+					constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+				selection = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+			} catch (IllegalArgumentException e) { /* Swallow this */
+			}
+			selection = selection == null
+					? false
+					: selection;
+			ditaEnableButton.setSelection(selection);
+			ditaEnableButton.setVisible(true);
+		} else {
+			ditaEnableButton.setVisible(false);
+		}
 	}
 
 	/**
 	 * Update if necessary, upon receiving the model event.
-	 * 
+	 *
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * @param notification

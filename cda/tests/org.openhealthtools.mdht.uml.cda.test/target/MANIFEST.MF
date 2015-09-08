@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Export-Package: org.openhealthtools.mdht.uml.cda.operations
+Require-Bundle: org.junit,org.eclipse.core.runtime,org.eclipse.emf.eco
+ re;visibility:=reexport,org.eclipse.emf.ecore.xmi;visibility:=reexpor
+ t,org.openhealthtools.mdht.uml.cda;visibility:=reexport,org.openhealt
+ htools.mdht.uml.hl7.datatypes;visibility:=reexport,org.openhealthtool
+ s.mdht.uml.hl7.vocab;visibility:=reexport,org.eclipse.ocl.ecore;visib
+ ility:=reexport,org.apache.commons.lang;visibility:=reexport
+Bundle-Version: 2.0.0.201508252249
+Bundle-Name: Test
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.test
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+
