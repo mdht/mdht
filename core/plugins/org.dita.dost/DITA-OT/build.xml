@@ -56,7 +56,7 @@
       ant all -f build_demo.xml</echo>
   </target>
 
-  <property name='dita.plugin.org.dita.troff.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.eclipsecontent.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.eclipsehelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.dita11.dir' location='${dita.dir}/plugins/org.dita.specialization.dita11'/><property name='dita.plugin.org.dita.xhtml.dir' location='${dita.dir}'/><property name='dita.plugin.org.openhealthtools.mdht.cda.dir' location='${dita.dir}/plugins/org.openhealthtools.mdht.cda'/><property name='dita.plugin.org.dita.odt.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.pdf2.dir' location='${dita.dir}/plugins/org.dita.pdf2'/><property name='dita.plugin.org.dita.specialization.dita132.dir' location='${dita.dir}/plugins/org.dita.specialization.dita132'/><property name='dita.plugin.com.sophos.tocjs.dir' location='${dita.dir}/plugins/com.sophos.tocjs'/><property name='dita.plugin.org.dita.wordrtf.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.docbook.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.h2d.dir' location='${dita.dir}/plugins/h2d'/><property name='dita.plugin.org.dita.specialization.eclipsemap.dir' location='${dita.dir}/plugins/org.dita.specialization.eclipsemap'/><property name='dita.plugin.org.dita.base.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.htmlhelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.legacypdf.dir' location='${dita.dir}/plugins/legacypdf'/><property name='dita.plugin.org.dita.pdf.dir' location='${dita.dir}/plugins/org.dita.pdf'/><property name='dita.plugin.org.dita.javahelp.dir' location='${dita.dir}'/>
+  <property name='dita.plugin.org.dita.troff.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.eclipsecontent.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.eclipsehelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.dita11.dir' location='${dita.dir}/plugins/org.dita.specialization.dita11'/><property name='dita.plugin.org.dita.xhtml.dir' location='${dita.dir}'/><property name='dita.plugin.org.openhealthtools.mdht.cda.dir' location='${dita.dir}/plugins/org.openhealthtools.mdht.cda'/><property name='dita.plugin.org.dita.odt.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.pdf2.dir' location='${dita.dir}/plugins/org.dita.pdf2'/><property name='dita.plugin.org.dita.specialization.dita132.dir' location='${dita.dir}/plugins/org.dita.specialization.dita132'/><property name='dita.plugin.com.sophos.tocjs.dir' location='${dita.dir}/plugins/com.sophos.tocjs'/><property name='dita.plugin.org.dita.wordrtf.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.docbook.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.h2d.dir' location='${dita.dir}/plugins/h2d'/><property name='dita.plugin.org.dita.specialization.eclipsemap.dir' location='${dita.dir}/plugins/org.dita.specialization.eclipsemap'/><property name='dita.plugin.org.dita.htmlhelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.base.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.legacypdf.dir' location='${dita.dir}/plugins/legacypdf'/><property name='dita.plugin.org.dita.pdf.dir' location='${dita.dir}/plugins/org.dita.pdf'/><property name='dita.plugin.org.dita.javahelp.dir' location='${dita.dir}'/>
   <!-- 
   This file is part of the DITA Open Toolkit project hosted on
   Sourceforge.net. See the accompanying license.txt file for
@@ -422,15 +422,15 @@
   See the accompanying license.txt file for applicable licenses.
 -->
   
-<import file="plugins/org.dita.base/build_init.xml"></import>
-  
-<import file="plugins/org.dita.base/build_preprocess.xml"></import>
+<import file="plugins/org.dita.htmlhelp/build_dita2htmlhelp.xml"></import>
 <!--
   This file is part of the DITA Open Toolkit project.
   See the accompanying license.txt file for applicable licenses.
 -->
   
-<import file="plugins/org.dita.htmlhelp/build_dita2htmlhelp.xml"></import>
+<import file="plugins/org.dita.base/build_init.xml"></import>
+  
+<import file="plugins/org.dita.base/build_preprocess.xml"></import>
 <!--
   This file is part of the DITA Open Toolkit project.
   See the accompanying license.txt file for applicable licenses.

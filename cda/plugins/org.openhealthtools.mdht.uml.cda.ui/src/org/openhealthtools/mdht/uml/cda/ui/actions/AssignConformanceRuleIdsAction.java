@@ -38,6 +38,7 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
@@ -79,10 +80,11 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 					return association;
 				}
 
-				// public Object caseClass(Class umlClass) {
-				// setRuleId(umlClass);
-				// return umlClass;
-				// }
+				@Override
+				public Object caseClass(Class umlClass) {
+					setRuleId(umlClass);
+					return umlClass;
+				}
 
 				@Override
 				public Object caseConstraint(Constraint constraint) {
@@ -234,6 +236,22 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 	 */
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		activePart = targetPart;
+	}
+
+	private void setRuleId(Class umlClass) {
+		List<Stereotype> appliedStereotypes = CDAProfileUtil.getAppliedStereotypes(
+			umlClass, ICDAProfileConstants.VALIDATION);
+
+		for (Stereotype stereotype : appliedStereotypes) {
+			Object value = umlClass.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
+			if (value == null || (value instanceof List && ((List) value).isEmpty())) {
+				String ruleId = rulePrefix + ++lastId;
+				List<String> ruleIds = new ArrayList<String>();
+				ruleIds.add(ruleId);
+				umlClass.setValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID, ruleIds);
+			}
+		}
+
 	}
 
 	private void setRuleId(Element element) {

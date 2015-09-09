@@ -16,7 +16,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.util;
 
-import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Writer;
@@ -86,6 +85,7 @@ import org.openhealthtools.mdht.emf.runtime.util.Initializer;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Component2;
@@ -523,7 +523,7 @@ public class CDAUtil {
 			DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
 			root.setClinicalDocument(clinicalDocument);
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
-			root.getXSISchemaLocation().put(CDAPackage.eNS_URI, "CDA.xsd");
+			root.getXSISchemaLocation().put(CDAPackage.eNS_URI, SCHEMA_NAME);
 			resource.getContents().add(root);
 		} else {
 			DocumentRoot root = (DocumentRoot) clinicalDocument.eContainer();
@@ -643,7 +643,7 @@ public class CDAUtil {
 
 		((EMap<String, String>) documentRootInstance.eGet(xmlnsPrefixMap)).put("", CDAPackage.eNS_URI);
 
-		((EMap<String, String>) documentRootInstance.eGet(xsiSchemaLocation)).put(CDAPackage.eNS_URI, "CDA.xsd");
+		((EMap<String, String>) documentRootInstance.eGet(xsiSchemaLocation)).put(CDAPackage.eNS_URI, SCHEMA_NAME);
 
 		((List) documentRootInstance.eGet(snippetReference)).add(cdaSnippet);
 
@@ -716,18 +716,95 @@ public class CDAUtil {
 		}
 	}
 
+	/**
+	 * @author seanmuir
+	 *
+	 */
+	public static interface SchemaLoader {
+
+		Schema getSchema();
+
+	};
+
+	/**
+	 * @author seanmuir
+	 *
+	 */
+	public static class ClassPathSchemaLoader implements SchemaLoader {
+
+		Schema schema = null;
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.openhealthtools.mdht.uml.cda.util.CDAUtil.SchemaLoader#getSchema()
+		 */
+		@Override
+		public Schema getSchema() {
+			if (schema == null) {
+				try {
+					String schemaLocation = System.getProperty(SCHEMA_LOCATION_PROPERTY);
+					if (schemaLocation == null) {
+						schemaLocation = CDAPlugin.INSTANCE.getString(SCHEMA_PROPERTY);
+					}
+					if (schemaLocation == null) {
+						schemaLocation = SCHEMA_NAME;
+					}
+
+					// Look for the schema location using class path
+					URL url = CDAUtil.class.getClassLoader().getResource(schemaLocation);
+					if (url == null) {
+						// If null, prefix with "../" to account when running within eclipse environment, the class path does not include
+						// the root directory of the project - just the bin and selected folders
+						url = CDAUtil.class.getClassLoader().getResource("../" + schemaLocation);
+					}
+
+					SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+					if (url == null) {
+						throw new RuntimeException("Unable to load CDA Schema " + schemaLocation);
+					}
+					schema = factory.newSchema(new StreamSource(url.toExternalForm()));
+				} catch (SAXException e) {
+					e.printStackTrace();
+				}
+			}
+			return schema;
+		}
+	};
+
+	public static String SCHEMA_LOCATION_PROPERTY = "org.mdht.cda.schema";
+
+	public static String SCHEMA_LOADER = "org.mdht.cda.schemaloader";
+
+	public static String SCHEMA_NAME = "infrastructure/cda/CDA_SDTC.xsd";
+
+	private static String SCHEMA_PROPERTY = "cdaSchema";
+
+	private static SchemaLoader schemaLoader = null;
+
+	private static SchemaLoader getScheamLoader() {
+
+		if (schemaLoader == null) {
+			String schemaLoaderProperty = System.getProperty(SCHEMA_LOADER);
+			if (schemaLoaderProperty == null) {
+				schemaLoader = new ClassPathSchemaLoader();
+			} else {
+				try {
+					Class<?> classDefinition = Class.forName(schemaLoaderProperty);
+					schemaLoader = (SchemaLoader) classDefinition.newInstance();
+				} catch (Exception e) {
+					System.err.println("Unable to create schema loader " + schemaLoaderProperty + " using default");
+				} finally {
+					schemaLoader = new ClassPathSchemaLoader();
+				}
+			}
+		}
+		return schemaLoader;
+	}
+
 	public static void performSchemaValidation(Document document, ValidationHandler handler) {
 		try {
-			// URL url = CDAUtil.class.getResource("/samples/CDA.xsd");
-			URL url = CDAUtil.class.getResource("/samples/C32_CDA.xsd");
-			if (url == null) {
-				// url = new File("../org.openhealthtools.mdht.uml.cda/samples/CDA.xsd").toURI().toURL();
-				url = new File("../org.openhealthtools.mdht.uml.cda/samples/C32_CDA.xsd").toURI().toURL();
-			}
-
-			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-			Schema schema = factory.newSchema(new StreamSource(url.toExternalForm()));
-
+			Schema schema = getScheamLoader().getSchema(); // factory.newSchema(new StreamSource(url.toExternalForm()));
 			Validator validator = schema.newValidator();
 			validator.setErrorHandler(new SchemaValidationHandler(handler));
 			validator.validate(new DOMSource(document));

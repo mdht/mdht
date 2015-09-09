@@ -1498,6 +1498,13 @@ public class UMLUtil {
 			}
 		}
 
+		if (property.getRedefinedProperties().size() == 1) {
+			return property.getRedefinedProperties().get(0);
+		}
+
+		if (property.getSubsettedProperties().size() == 1) {
+			return property.getSubsettedProperties().get(0);
+		}
 		return null;
 	}
 

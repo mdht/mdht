@@ -10,18 +10,17 @@
  *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
  *                        - support local datatype subclasses (artf3350)
  *     Rama Ramakrishnan  - Getting the correct qualified anme for multiple level inline nested clasees (artf3410)
- *     Dan Brown (Audacious Inquiry) - Implement fix for artf3818 : Errata 384 Incorporate No Information Section Fixes                 
+ *     Dan Brown (Audacious Inquiry) - implement fix for artf3818 : Errata 384 Incorporate No Information Section Fixes
+ *     								 - support overriding associations for the sake of removal
  *
  * $Id$
  */
 package org.openhealthtools.mdht.uml.transform.ecore;
 
-import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.getInlineFilter;
-import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.isInlineClass;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -30,6 +29,7 @@ import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.RedefinableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
@@ -103,9 +103,10 @@ public abstract class TransformAssociation extends TransformAbstract {
 
 		// if we still don't have a template ID and we're a nested class (which will get tossed away),
 		// then the nearest non-nested parent
-		if (!getEcoreProfile().isPrimaryEClass(constraintTarget) && isInlineClass(constraintTarget)) {
+		if (!getEcoreProfile().isPrimaryEClass(constraintTarget) &&
+				TransformInlinedProperties.isInlineClassLocal(constraintTarget)) {
 			for (Classifier next : constraintTarget.allParents()) {
-				if ((next instanceof Class) && !isInlineClass((Class) next)) {
+				if ((next instanceof Class) && !TransformInlinedProperties.isInlineClassLocal((Class) next)) {
 					constraintTarget = (Class) next;
 					break;
 				}
@@ -152,9 +153,9 @@ public abstract class TransformAssociation extends TransformAbstract {
 				return null;
 			}
 
-			final String selector = !isInlineClass(targetClass)
+			final String selector = !TransformInlinedProperties.isInlineClassLocal(targetClass)
 					? null
-					: getInlineFilter(targetClass);
+					: TransformInlinedProperties.getInlineFilterLocal(targetClass);
 
 			//
 			// The only associations that can have a 0 lower bound are those that implement
@@ -256,17 +257,10 @@ public abstract class TransformAssociation extends TransformAbstract {
 
 		ValidationSeverityKind severity = getEcoreProfile().getValidationSeverity(
 			association, ValidationStereotypeKind.ANY);
+		String constraintName = createConstraintName(sourceProperty);
+		String validationMessage = getEcoreProfile().getValidationMessage(association, ValidationStereotypeKind.ANY);
 		if (severity != null) {
-			String constraintName = createConstraintName(sourceProperty);
-			Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
-			constraint.getConstrainedElements().add(sourceClass);
-
-			OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(
-				null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
-			expression.getLanguages().add("OCL");
-			expression.getBodies().add(constraintBody.toString());
-
-			String validationMessage = getEcoreProfile().getValidationMessage(association, ValidationStereotypeKind.ANY);
+			setupConstraint(sourceClass, constraintName, constraintBody, false);
 			if (severity == ValidationSeverityKind.INFO) {
 				addValidationInfo(sourceClass, constraintName, validationMessage);
 			} else if (severity == ValidationSeverityKind.WARNING) {
@@ -274,6 +268,22 @@ public abstract class TransformAssociation extends TransformAbstract {
 			} else {
 				addValidationError(sourceClass, constraintName, validationMessage);
 			}
+		} else {
+			// association severity is empty
+			EList<RedefinableElement> elements = sourceProperty.getRedefinedElements();
+			// System.out.println("Attempting to add association override removal: " + constraintName +
+			// System.lineSeparator() + "elements: " + elements);
+			if (elements != null && !elements.isEmpty()) {
+				// association severity is empty and it redefines something
+				setupConstraint(sourceClass, constraintName, constraintBody, true);
+				// System.out.println("Adding association override removal:");
+				// System.out.printf(
+				// "%s, %s, %s, %s", sourceClass, constraintName, validationMessage, System.lineSeparator());
+				addValidationError(sourceClass, constraintName, validationMessage);
+			}
+			// else {
+			// System.out.println("!Did NOT add " + constraintName + " since it does not redefine anything");
+			// }
 		}
 
 		// create "getter" operation (only if not producing a domain interface)
@@ -382,5 +392,18 @@ public abstract class TransformAssociation extends TransformAbstract {
 	 */
 	protected String addPrefix(Class baseSourceClass) {
 		return "self.";
+	}
+
+	private static void setupConstraint(Class sourceClass, String constraintName, StringBuilder constraintBody,
+			boolean isRemovalOverride) {
+		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
+		constraint.getConstrainedElements().add(sourceClass);
+
+		OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(
+			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		expression.getLanguages().add("OCL");
+		expression.getBodies().add(isRemovalOverride
+				? "true"
+				: constraintBody.toString());
 	}
 }

@@ -36,6 +36,11 @@
  
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+       
+         <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.InlineSection"
+             id="property.section.cda.InlineSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.InlineFilter"/>
              
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ActRelationshipSection" 
@@ -89,11 +94,16 @@
              id="property.section.cda.TemplateSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
              
+             
+             
           <propertySection tab="property.tab.CDAPropertySection"
              class="org.openhealthtools.mdht.uml.cda.ui.properties.ConformanceRuleSection"
              id="property.section.cda.ConformanceRuleSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
              
+    
+ 
+ 
       </propertySections>
    </extension> 
  
@@ -188,10 +198,26 @@
                  class="org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction"
                  enablesFor="+"
                  id="org.openhealthtools.mdht.uml.cda.ui.addRemoveNatureAction"
-                 label="Add/Remove CDA Builder"
+                 label="%addRemoveNatureAction.label"
                  menubarPath="additions">
            </action>
         </objectContribution>
+        
+        
+        <objectContribution
+              adaptable="true"
+              id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
+              nameFilter="*.doc"
+              objectClass="org.eclipse.core.resources.IProject">
+           <action
+                 class="org.openhealthtools.mdht.uml.cda.ui.actions.ImportDitaReferences"
+                 enablesFor="1"
+                 id="org.openhealthtools.mdht.uml.cda.ui.importDitaReferences"
+                 label="%importDitaReferences.label"
+                 menubarPath="additions">
+           </action>
+        </objectContribution>
+        
 	</extension>
 	
 	<extension point="org.eclipse.ui.commands">
@@ -444,31 +470,47 @@
    </extension>
    
    
- 
    <extension
-         point="org.eclipse.ui.editors">
+      point="org.eclipse.ui.editors">
       <editor
-            class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            extensions="xml"
-            icon="icons/analyzer/sample.gif"
-            id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
-            name="CDA Analyzer">
+         class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
+         contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+         extensions="xml"
+         icon="icons/analyzer/sample.gif"
+         id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer"
+         name="CDA Analyzer">
       </editor>
       
-         <editor
-            class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            extensions="xml"
-            icon="icons/analyzer/sample.gif"
-            id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
-            name="CDA Metrics">
+      <editor
+         class="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
+         contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+         extensions="xml"
+         icon="icons/analyzer/sample.gif"
+         id="org.openhealthtools.mdht.uml.cda.ui.editors.CDAAnalyzer2"
+         name="CDA Metrics">
       </editor>
-      
-      
    </extension>
- 
- 
- 
+   
+   <extension
+      point = "org.eclipse.ui.preferencePages">
+      <page id="org.openhealthtools.mdht.uml.cda.ui.editors.Page1"
+         class="org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferences"
+         name="MDHT">
+         <keywordReference id="MDHTPreferences.multiplicity1" />
+         <keywordReference id="MDHTPreferences.multiplicity2" />
+         <keywordReference id="MDHTPreferences.multiplicity3" />
+      </page>
+   </extension>
+   
+   <extension point="org.eclipse.ui.keywords">
+      <keyword label="multiplicity" id="MDHTPreferences.multiplicity1" />
+      <keyword label="element" id="MDHTPreferences.multiplicity2" />
+      <keyword label="properties" id="MDHTPreferences.multiplicity3" />
+   </extension>    
+   
+   <extension
+      point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.openhealthtools.mdht.uml.cda.ui.editors.MDHTPreferenceInitializer"/>
+   </extension>
             
 </plugin>

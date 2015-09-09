@@ -4,19 +4,47 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openhealthtools.mdht</groupId>
 	<artifactId>root</artifactId>
-	<version>${build_version}</version>
+	<version>2.5.9-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<build_version>2.5.0-SNAPSHOT</build_version>
-		<tycho-version>0.19.0</tycho-version>
+		<build_version>2.5.4-SNAPSHOT</build_version>
+		<tycho-version>0.22.0</tycho-version>
+		<org.apache.maven.version>2.4</org.apache.maven.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<release_url>http://52.26.42.198:8081/nexus/content/repositories/releases</release_url>
+		<snapshot_url>http://52.26.42.198:8081/nexus/content/repositories/snapshots</snapshot_url>
+		<repository_id>remote.nexus</repository_id>
 	</properties>
+	
+	<repositories>
+		<repository>
+			<id>kepler</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/kepler</url>
+		</repository>
+	</repositories>
 
+	<distributionManagement>
+		<repository>
+			<id>${repository_id}</id>
+			<name>mdht-releases</name>
+			<url>${release_url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>${repository_id}</id>
+			<name>mdht-snapshots</name>
+			<url>${snapshot_url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 	<modules>
 		<module>core/plugins</module>
 		<module>core/features</module>
 		<module>cda/plugins</module>
+                <module>cda/tests</module>
 		<module>cda/features</module>
+		<module>releng/sites</module>
 	</modules>
 	<profiles>
 		<profile>

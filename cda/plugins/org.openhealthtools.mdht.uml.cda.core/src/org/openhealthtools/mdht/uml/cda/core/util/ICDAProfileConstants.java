@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -91,6 +91,8 @@ public interface ICDAProfileConstants {
 
 	public static final String INLINE = "Inline";
 
+	public static final String CONSTRAINT_DITA_ENABLED = "enabledDitaForConstraints";
+
 	/*
 	 * Vocab Specification Stereotype and Properties
 	 */
@@ -136,6 +138,8 @@ public interface ICDAProfileConstants {
 	public static final String CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME = "assigningAuthorityName";
 
 	public static final String CDA_TEMPLATE_CONTEXT_DEPENDENT = "contextDependent";
+
+	public static final String CDA_TEMPLATE_MULTIPLICITY = "templateMultiplicity";
 
 	/*
 	 * ConformsTo Stereotype

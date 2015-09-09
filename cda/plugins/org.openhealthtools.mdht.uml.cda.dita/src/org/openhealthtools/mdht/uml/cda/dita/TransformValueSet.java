@@ -28,7 +28,6 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
@@ -76,7 +75,7 @@ public class TransformValueSet extends TransformAbstract {
 		if (!umlEnumeration.getOwnedLiterals().isEmpty()) {
 
 			if (transformerOptions.isIncludeUsageNotes()) {
-				writer.println("<table><tgroup cols=\"4\">");
+				writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"4\">");
 				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col3\" colwidth=\"1*\"/>");
@@ -85,7 +84,7 @@ public class TransformValueSet extends TransformAbstract {
 				writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry><entry>Usage Note</entry>");
 				writer.println("</row></thead><tbody>");
 			} else {
-				writer.println("<table><tgroup cols=\"3\">");
+				writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"3\">");
 				writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
 				writer.println("<colspec colname=\"col3\" colwidth=\"2*\"/>");
@@ -132,7 +131,7 @@ public class TransformValueSet extends TransformAbstract {
 	}
 
 	private static void appendDefinition(PrintWriter writer, Enumeration umlEnumeration) {
-		writer.println("<table><tgroup cols=\"2\">");
+		writer.println("<table frame=\"all\" rowsep=\"1\" colsep=\"1\"><tgroup cols=\"2\">");
 		writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
 		writer.println("<colspec colname=\"col2\" colwidth=\"4*\"/>");
 		writer.println("<tbody>");
@@ -203,7 +202,7 @@ public class TransformValueSet extends TransformAbstract {
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"classId\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(UMLUtil.splitName(umlEnumeration));
+		writer.print(TransformAbstract.getPublicationName(umlEnumeration));
 		writer.println("</title>");
 
 		ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);

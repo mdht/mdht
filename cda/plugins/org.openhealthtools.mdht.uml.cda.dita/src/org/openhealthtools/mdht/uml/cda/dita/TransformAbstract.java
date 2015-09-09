@@ -13,9 +13,13 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
  * Abstract base class for model transformations.
@@ -41,13 +45,24 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	}
 
 	public static String normalizeCodeName(String name) {
-		String result = "";
-		String[] parts = name.split(" ");
+		String[] parts = name.trim().replaceAll(" +", " ").split(" ");
+		StringBuilder result = new StringBuilder();
 		for (String part : parts) {
-			result += part.substring(0, 1).toUpperCase() + part.substring(1);
+			result.append(part.substring(0, 1).toUpperCase());
+			result.append(part.substring(1));
 		}
-		result = UML2Util.getValidJavaIdentifier(result);
-		return result;
+		return UML2Util.getValidJavaIdentifier(result.toString());
 	}
 
+	public static String getPublicationName(NamedElement namedElement) {
+		if (namedElement != null) {
+			String businessName = NamedElementUtil.getBusinessName(namedElement);
+			if (!StringUtils.isEmpty(businessName) && businessName.compareTo(namedElement.getName()) == 0) {
+				return UMLUtil.splitName(namedElement);
+			} else {
+				return businessName;
+			}
+		}
+		return "";
+	}
 }

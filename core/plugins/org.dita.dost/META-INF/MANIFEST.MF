@@ -2,11 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DITAOT
 Bundle-SymbolicName: org.dita.dost;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.9.qualifier
 Bundle-Activator: org.dita.dost.internal.Activator
 Bundle-Vendor: DITAOT
 Require-Bundle: org.eclipse.core.runtime,
- org.apache.xerces,
  org.apache.xml.resolver,
  org.apache.xml.serializer,
  org.eclipse.core.runtime,
@@ -46,7 +45,5 @@ Bundle-ClassPath: .,
  DITA-OT/plugins/org.dita.pdf2/fop/lib/serializer-2.7.0.jar,
  DITA-OT/plugins/org.dita.pdf2/fop/lib/xalan-2.7.0.jar,
  DITA-OT/plugins/org.dita.pdf2/fop/lib/xercesImpl-2.7.1.jar,
- DITA-OT/plugins/org.dita.pdf2/fop/lib/xml-apis-1.3.04.jar,
- DITA-OT/plugins/org.dita.pdf2/fop/lib/xml-apis-ext-1.3.04.jar,
  DITA-OT/plugins/org.dita.pdf2/fop/lib/xmlgraphics-commons-1.4.jar
 Export-Package: org.dita.dost.util
