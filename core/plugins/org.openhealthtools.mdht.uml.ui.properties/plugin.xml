@@ -15,6 +15,7 @@
 -->
 
 <plugin>
+   <extension-point id="ConstraintEditor" name="org.openhealthtools.uml.ui" schema="schema/ConstraintEditor.exsd"/>
 
     <extension point="org.eclipse.core.runtime.adapters">
       <factory
@@ -175,6 +176,47 @@
 		    	<input type="java.lang.Object"/>
 		 </propertySection>
       </propertySections>
-   </extension> 
+   </extension>
+    <extension
+          point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
+       <editor
+          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+             language="Analysis">
+       </editor>
+    </extension>
+    
+      <extension
+          point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
+       <editor
+          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+             language="OCL">
+       </editor>
+    </extension>
+    
+     
+        <extension
+          point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
+       <editor
+          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+             language="Java">
+       </editor>
+    </extension>
+    
+        <extension
+          point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
+       <editor
+          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+             language="XPath">
+       </editor>
+    </extension>
+    
+         <extension
+          point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
+       <editor
+          component="org.openhealthtools.mdht.uml.ui.properties.internal.LanguageEditor"
+             language="StrucText">
+       </editor>
+    </extension>
  
+ <!-- , "OCL", "Java", "XPath", "StrucText" -->
 </plugin>
