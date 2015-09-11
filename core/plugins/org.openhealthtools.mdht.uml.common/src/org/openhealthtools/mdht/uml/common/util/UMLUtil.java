@@ -1379,7 +1379,7 @@ public class UMLUtil {
 	 */
 	public static String splitName(NamedElement element) {
 		String modelName = element.getName();
-		if (modelName!=null && modelName.indexOf(' ') > 0) {
+		if (modelName != null && modelName.indexOf(' ') > 0) {
 			return modelName;
 		}
 
