@@ -82,6 +82,7 @@ import org.openhealthtools.mdht.uml.common.internal.Logger;
 /**
  * 
  * @version $Id: $
+ * 
  */
 public class UMLUtil {
 
