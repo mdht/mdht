@@ -97,7 +97,7 @@ public class LogicalSubclassHandler extends SubclassHandler {
 		if (selectionArray != null) {
 			Constraint logicalConstraint = UMLFactory.eINSTANCE.createConstraint();
 
-			String constraintName = "LogicalConstriant" + logicalOperator.getLiteral();
+			String constraintName = "LogicalConstraint" + logicalOperator.getLiteral();
 			int a = 0;
 			while (subclass.getOwnedRule(constraintName + (a == 0
 					? ""
