@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for "business name" values
  *     Christian W. Damus - Handle element wrappers (artf3238)
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
@@ -58,7 +58,7 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPr
 
 /**
  * The general properties section for NamedElement.
- * 
+ *
  * $Id: $
  */
 public class NamedElementSection extends WrapperAwareModelerPropertySection {
@@ -70,6 +70,8 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 	private TabbedPropertySheetPage tabbedPropertySheetPage;
 
 	protected NamedElement namedElement;
+
+	protected NamedElement businessNameElement;
 
 	private Text localNameText;
 
@@ -118,6 +120,99 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		}
 
 		try {
+
+			TransactionalEditingDomain editingDomainBusinessName = TransactionUtil.getEditingDomain(businessNameElement);
+
+			IUndoableOperation businessNameOp = new AbstractEMFOperation(editingDomainBusinessName, "tempBiz") {
+
+				URI propertiesURI = null;
+
+				String properties = null;
+
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+
+					if (!(businessNameModified)) {
+						return Status.CANCEL_STATUS;
+					}
+
+					propertiesURI = UMLUtil.getPropertiesURI(businessNameElement.eResource());
+					properties = UMLUtil.readProperties(propertiesURI);
+
+					if (businessNameModified) {
+						this.setLabel("Set Business Name");
+						String oldPropertyKey = NamedElementUtil.getLabelPropertyKey(businessNameElement);
+						Map<String, String> parsedProperties = properties != null
+								? UMLUtil.parseProperties(properties)
+								: new LinkedHashMap<String, String>();
+						String oldProperty = parsedProperties.remove(oldPropertyKey);
+
+						businessNameElement.setName(businessNameText.getText());
+
+						// if (oldProperty != null) {
+						// String newPropertyKey = NamedElementUtil.getLabelPropertyKey(businessNameElement);
+						// parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
+						//
+						// UMLUtil.writeProperties(propertiesURI, parsedProperties);
+						// }
+					}
+
+					return Status.OK_STATUS;
+				}
+
+				@Override
+				protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+					IStatus result = super.doUndo(monitor, info);
+
+					if (result.isOK()) {
+						URIConverter uriConverter = getEditingDomain().getResourceSet().getURIConverter();
+
+						if (uriConverter.exists(propertiesURI, null)) {
+
+							if (properties == null) {
+								properties = UMLUtil.readProperties(propertiesURI);
+
+								try {
+									uriConverter.delete(propertiesURI, null);
+								} catch (IOException ioe) {
+									return Status.CANCEL_STATUS;
+								}
+							} else {
+								Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
+								properties = UMLUtil.readProperties(propertiesURI);
+								UMLUtil.writeProperties(propertiesURI, parsedProperties);
+							}
+						}
+
+						if (!businessNameText.isDisposed()) {
+							refreshBusinessNameText();
+						}
+					}
+
+					return result;
+				}
+
+				@Override
+				protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+					IStatus result = super.doRedo(monitor, info);
+
+					if (result.isOK()) {
+
+						if (properties != null) {
+							Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
+							properties = UMLUtil.readProperties(propertiesURI);
+							UMLUtil.writeProperties(propertiesURI, parsedProperties);
+						}
+
+						if (!businessNameText.isDisposed()) {
+							refreshBusinessNameText();
+						}
+					}
+
+					return result;
+				}
+			};
+
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
@@ -222,6 +317,8 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 				}
 			};
 
+			execute(businessNameOp);
+
 			execute(operation);
 
 		} catch (Exception e) {
@@ -307,12 +404,14 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		}
 		Assert.isTrue(element instanceof NamedElement);
 		this.namedElement = (NamedElement) element;
+		this.businessNameElement = namedElement;
 	}
 
 	@Override
 	public void dispose() {
 		super.dispose();
 		namedElement = null;
+		businessNameElement = null;
 	}
 
 	protected void refreshBusinessNameText() {
