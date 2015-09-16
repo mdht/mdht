@@ -16,14 +16,22 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -67,6 +75,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.ui.properties.internal.UmlUiEditor;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
@@ -78,13 +87,17 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	public Constraint constraint;
 
-	protected String[] languages = { "Analysis", "OCL", "Java", "XPath", "StrucText" };
+	// protected String[] languages = { "Analysis", "OCL", "Java", "XPath", "StrucText" };
 
 	public CCombo languageCombo;
 
 	private boolean languageModified = false;
 
 	private boolean ditaModified = false;
+
+	private Button closeErrorTextButton;
+
+	private Text errorText;
 
 	private Button ditaEnableButton;
 
@@ -93,6 +106,10 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 	protected Text bodyText;
 
 	public boolean bodyModified = false;
+
+	private List<String> languages = new ArrayList<String>();
+
+	private Map<String, ConstraintEditor> contributors = new LinkedHashMap<>(); // Better to keep the order
 
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -171,7 +188,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 					if (languageIndex == -1) {
 						languageIndex = 0; // default to Analysis
 					}
-					String language = languages[languageIndex];
+					String language = languages.get(languageIndex);
 					String body = bodyText.getText().trim();
 
 					ValueSpecification spec = constraint.getSpecification();
@@ -217,6 +234,12 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 							constraint.setValue(
 								stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
 								ditaEnableButton.getSelection());
+
+							// Also don't show errors if they are visible
+							if (!ditaEnableButton.getSelection()) {
+								errorText.setVisible(false);
+								closeErrorTextButton.setVisible(false);
+							}
 						}
 					} else {
 						return Status.CANCEL_STATUS;
@@ -234,9 +257,46 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		}
 	}
 
+	private void loadUIExtensions() throws CoreException {
+
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint ep = reg.getExtensionPoint("org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor");
+		IExtension[] extensions = ep.getExtensions();
+
+		for (int i = 0; i < extensions.length; i++) {
+			IExtension ext = extensions[i];
+			IConfigurationElement[] ce = ext.getConfigurationElements();
+			for (int j = 0; j < ce.length; j++) {
+				String language = ce[j].getAttribute("language");
+				ConstraintEditor newContributor = (ConstraintEditor) ce[j].createExecutableExtension("component");
+				ConstraintEditor previousContributor = contributors.get(language);
+				// Check if the previous one is not locally implemented one
+				if (!(previousContributor instanceof UmlUiEditor)) {
+					if (previousContributor == null) {
+						languages.add(language);
+						contributors.put(language, newContributor);
+					} // Don't do anything when previous is not locally implemented one
+				} else {
+					contributors.put(language, newContributor);
+				}
+			}
+		}
+
+		// for (ConstraintEditor ce : contributors) {
+		// languages.add(ce.getLanguage());
+		//
+		// }
+	}
+
 	@Override
 	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+
+		try {
+			loadUIExtensions();
+		} catch (CoreException e1) {
+
+		}
 
 		Shell shell = new Shell();
 
@@ -252,7 +312,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 		/* ---- language combo ---- */
 		languageCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
-		languageCombo.setItems(languages);
+		languageCombo.setItems(languages.toArray(new String[1]));
 		languageCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				refresh();
@@ -307,8 +367,15 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			}
 		});
 
-		/* ---- body text ---- */
+		/*
+		 * ---- body text ----
+		 */
 		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
+
+		for (ConstraintEditor ce : contributors.values()) {
+			ce.setText(bodyText);
+		}
+
 		CLabel bodyLabel = getWidgetFactory().createCLabel(composite, "Body:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
@@ -324,6 +391,42 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		data.top = new FormAttachment(languageCombo, 0, SWT.BOTTOM);
 		data.height = charHeight * 4;
 		bodyText.setLayoutData(data);
+
+		errorText = getWidgetFactory().createText(composite, "Error message here", SWT.V_SCROLL | SWT.WRAP);
+		data = new FormData();
+		data.left = new FormAttachment(bodyLabel, 0);
+		// if I set the width AND right, then I get proper wrapping for long text... whatever.
+		data.width = 300;
+		data.right = new FormAttachment(85, 0);
+		// if I set the top AND height, then I get vertical scroll within the tab page
+		data.top = new FormAttachment(bodyText, 0, SWT.BOTTOM);
+		data.height = charHeight * 2;
+		errorText.setLayoutData(data);
+		errorText.setEnabled(false);
+		errorText.setVisible(false);
+
+		/* ---- Error close button ---- */
+		closeErrorTextButton = getWidgetFactory().createButton(composite, "Close DITA Error", SWT.PUSH);
+		data = new FormData();
+		data.left = new FormAttachment(errorText, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(errorText, 0, SWT.CENTER);
+		closeErrorTextButton.setLayoutData(data);
+		closeErrorTextButton.setEnabled(true);
+		closeErrorTextButton.setVisible(false);
+		closeErrorTextButton.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				closeErrorTextButton.setVisible(false);
+				errorText.setVisible(false);
+			}
+		});
+
+		for (ConstraintEditor ce : contributors.values()) {
+			ce.setCloseErrorText(closeErrorTextButton);
+			ce.setErrorText(errorText);
+		}
 
 	}
 
@@ -341,9 +444,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -388,14 +491,14 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 				: currentIndex;
 
 		if (spec != null) {
-			final List<String> knownLangs = Arrays.asList(languages);
+			// final List<String> knownLangs = Arrays.asList(languages);
 			final List<String> specLangs = spec.getLanguages();
 			final List<String> specBodies = spec.getBodies();
 
 			if (!specLangs.contains(currentLanguage)) {
 				for (int i = 0; (i < specBodies.size()) && (i < specLangs.size()); i++) {
-					if (!UML2Util.isEmpty(specBodies.get(i)) && knownLangs.contains(specLangs.get(i))) {
-						languageIndex = knownLangs.indexOf(specLangs.get(i));
+					if (!UML2Util.isEmpty(specBodies.get(i)) && languages.contains(specLangs.get(i))) {
+						languageIndex = languages.indexOf(specLangs.get(i));
 						break;
 					}
 				}
@@ -407,6 +510,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	@Override
 	public void refresh() {
+		for (ConstraintEditor ce : contributors.values()) {
+			ce.setConstraint(constraint);
+		}
 		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression)
 				? (OpaqueExpression) constraint.getSpecification()
 				: null;
@@ -418,19 +524,19 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			languageIndex = 0; // default to the first language for which we have a body, else Analysis
 
 			if (spec != null) {
-				final List<String> knownLangs = Arrays.asList(languages);
+				// final List<String> knownLangs = Arrays.asList(languages);
 				final List<String> specLangs = spec.getLanguages();
 				final List<String> specBodies = spec.getBodies();
 				for (int i = 0; (i < specBodies.size()) && (i < specLangs.size()); i++) {
-					if (!UML2Util.isEmpty(specBodies.get(i)) && knownLangs.contains(specLangs.get(i))) {
-						languageIndex = knownLangs.indexOf(specLangs.get(i));
+					if (!UML2Util.isEmpty(specBodies.get(i)) && languages.contains(specLangs.get(i))) {
+						languageIndex = languages.indexOf(specLangs.get(i));
 						body = specBodies.get(i);
 						break;
 					}
 				}
 			}
 		}
-		language = languages[languageIndex];
+		language = languages.get(languageIndex);
 
 		StringBuilder languagesList = new StringBuilder();
 

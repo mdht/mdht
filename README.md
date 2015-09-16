@@ -36,4 +36,4 @@ Subscribe to and participate in the [Developer Discussion](https://mdht.projects
 
 ### Skype channel
 
-Join the MDHT Skype chat either [this button](skype:?chat&blob=fqmJjcwlVU6QHxfFiD8Bu6ojt4WMAmonZBzUSnGkP_76mwt480a4AA4CGKavGAwAv2xtGwF7rkNbY5QoIeM) - or if that doesn't work, add **seanmuir.va** (Sean Muir) as a Skype contact and ask for an invite to the FHIR channel.
+Join the MDHT Skype chat either by using skype:?chat&blob=fqmJjcwlVU6QHxfFiD8Bu6ojt4WMAmonZBzUSnGkP_76mwt480a4AA4CGKavGAwAv2xtGwF7rkNbY5QoIeM (paste as link into browser) - or if that doesn't work, add **seanmuir.va** (Sean Muir) as a Skype contact and ask for an invite to the FHIR channel.

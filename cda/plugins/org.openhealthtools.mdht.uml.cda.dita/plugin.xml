@@ -21,5 +21,12 @@
             class="org.openhealthtools.mdht.uml.cda.dita.internal.preferences.PreferenceInitializer">
       </initializer>
    </extension>
+   <extension
+         point="org.openhealthtools.mdht.uml.ui.properties.ConstraintEditor">
+      <editor
+            component="org.openhealthtools.mdht.uml.cda.dita.internal.TextEditor"
+            language="Analysis">
+      </editor>
+   </extension>
    
 </plugin>
