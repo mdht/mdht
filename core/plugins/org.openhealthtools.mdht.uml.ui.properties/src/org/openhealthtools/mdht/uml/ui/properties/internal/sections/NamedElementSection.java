@@ -71,8 +71,6 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 
 	protected NamedElement namedElement;
 
-	protected NamedElement businessNameElement;
-
 	private Text localNameText;
 
 	private boolean localNameModified = false;
@@ -121,98 +119,6 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 
 		try {
 
-			TransactionalEditingDomain editingDomainBusinessName = TransactionUtil.getEditingDomain(businessNameElement);
-
-			IUndoableOperation businessNameOp = new AbstractEMFOperation(editingDomainBusinessName, "tempBiz") {
-
-				URI propertiesURI = null;
-
-				String properties = null;
-
-				@Override
-				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-
-					if (!(businessNameModified)) {
-						return Status.CANCEL_STATUS;
-					}
-
-					propertiesURI = UMLUtil.getPropertiesURI(businessNameElement.eResource());
-					properties = UMLUtil.readProperties(propertiesURI);
-
-					if (businessNameModified) {
-						this.setLabel("Set Business Name");
-						String oldPropertyKey = NamedElementUtil.getLabelPropertyKey(businessNameElement);
-						Map<String, String> parsedProperties = properties != null
-								? UMLUtil.parseProperties(properties)
-								: new LinkedHashMap<String, String>();
-						String oldProperty = parsedProperties.remove(oldPropertyKey);
-
-						businessNameElement.setName(businessNameText.getText());
-
-						// if (oldProperty != null) {
-						// String newPropertyKey = NamedElementUtil.getLabelPropertyKey(businessNameElement);
-						// parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
-						//
-						// UMLUtil.writeProperties(propertiesURI, parsedProperties);
-						// }
-					}
-
-					return Status.OK_STATUS;
-				}
-
-				@Override
-				protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					IStatus result = super.doUndo(monitor, info);
-
-					if (result.isOK()) {
-						URIConverter uriConverter = getEditingDomain().getResourceSet().getURIConverter();
-
-						if (uriConverter.exists(propertiesURI, null)) {
-
-							if (properties == null) {
-								properties = UMLUtil.readProperties(propertiesURI);
-
-								try {
-									uriConverter.delete(propertiesURI, null);
-								} catch (IOException ioe) {
-									return Status.CANCEL_STATUS;
-								}
-							} else {
-								Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
-								properties = UMLUtil.readProperties(propertiesURI);
-								UMLUtil.writeProperties(propertiesURI, parsedProperties);
-							}
-						}
-
-						if (!businessNameText.isDisposed()) {
-							refreshBusinessNameText();
-						}
-					}
-
-					return result;
-				}
-
-				@Override
-				protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					IStatus result = super.doRedo(monitor, info);
-
-					if (result.isOK()) {
-
-						if (properties != null) {
-							Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
-							properties = UMLUtil.readProperties(propertiesURI);
-							UMLUtil.writeProperties(propertiesURI, parsedProperties);
-						}
-
-						if (!businessNameText.isDisposed()) {
-							refreshBusinessNameText();
-						}
-					}
-
-					return result;
-				}
-			};
-
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
@@ -251,11 +157,22 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 						}
 
 						refreshBusinessNameText();
+
+						if (!NamedElementUtil.setElementName(namedElement, localNameText.getText())) {
+							return Status.CANCEL_STATUS;
+						}
 					} else if (businessNameModified) {
 						businessNameModified = false;
 						this.setLabel("Set Business Name");
 
+						namedElement.setName(businessNameText.getText());
+
 						if (!NamedElementUtil.setBusinessName(namedElement, businessNameText.getText())) {
+							refreshBusinessNameText();
+							return Status.CANCEL_STATUS;
+						}
+
+						if (!NamedElementUtil.setElementName(namedElement, localNameText.getText())) {
 							refreshBusinessNameText();
 							return Status.CANCEL_STATUS;
 						}
@@ -317,8 +234,6 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 				}
 			};
 
-			execute(businessNameOp);
-
 			execute(operation);
 
 		} catch (Exception e) {
@@ -379,9 +294,9 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 	/*
 	 * Override super implementation to allow for objects that are not
 	 * IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
@@ -404,14 +319,12 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		}
 		Assert.isTrue(element instanceof NamedElement);
 		this.namedElement = (NamedElement) element;
-		this.businessNameElement = namedElement;
 	}
 
 	@Override
 	public void dispose() {
 		super.dispose();
 		namedElement = null;
-		businessNameElement = null;
 	}
 
 	protected void refreshBusinessNameText() {
@@ -436,7 +349,7 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		localNameText.removeKeyListener(keyListener);
 		localNameText.removeFocusListener(focusListener);
 		if (namedElement.getName() != null) {
-			localNameText.setText(namedElement.getName());
+			localNameText.setText(NamedElementUtil.getElementName(namedElement));
 		} else {
 			localNameText.setText("");
 		}
@@ -451,5 +364,4 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 		// TODO there should be a better way to force tabbed page label update
 		tabbedPropertySheetPage.labelProviderChanged(new LabelProviderChangedEvent(new LabelProvider()));
 	}
-
 }
