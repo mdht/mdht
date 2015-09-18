@@ -510,13 +510,13 @@ public class TransformClassContent extends TransformAbstract {
 		}
 
 		if (property.getOwnedComments().size() > 0) {
-			writer.append("<ol>");
+			writer.append("<ul>");
 			for (Comment comment : property.getOwnedComments()) {
 				writer.append("<li><p><lines><i>");
 				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
 				writer.append("</i></lines></p></li>");
 			}
-			writer.append("</ol>");
+			writer.append("</ul>");
 		}
 	}
 
