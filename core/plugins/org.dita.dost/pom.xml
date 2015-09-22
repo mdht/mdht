@@ -9,6 +9,14 @@
   <groupId>org.openhealthtools.mdht</groupId>
   <artifactId>org.dita.dost</artifactId>
   <packaging>eclipse-plugin</packaging>
+  
+  <dependencies>
+  <dependency>
+   <groupId>org.eclipse.jdt.core</groupId>
+  <artifactId>org.eclipse.jdt.core</artifactId>
+  <version>3.8.3</version>
+  </dependency>
+  </dependencies>
 	<build>
 		<plugins>
 			<plugin>

@@ -19,9 +19,9 @@
 	
 	<repositories>
 		<repository>
-			<id>kepler</id>
+			<id>juno</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/kepler</url>
+			<url>http://download.eclipse.org/releases/juno</url>
 		</repository>
 	</repositories>
 
@@ -51,9 +51,9 @@
 			<id>mdht_build</id>
 			<repositories>
 				<repository>
-					<id>kepler</id>
+					<id>juno</id>
 					<layout>p2</layout>
-					<url>http://download.eclipse.org/releases/kepler</url>
+					<url>http://download.eclipse.org/releases/juno</url>
 				</repository>
 			</repositories>
 			<build>
@@ -65,11 +65,13 @@
 						<extensions>true</extensions>
 					</plugin>
 
+					 
 					<plugin>
 						<groupId>org.eclipse.tycho</groupId>
 						<artifactId>target-platform-configuration</artifactId>
 						<version>${tycho-version}</version>
 						<configuration>
+							<pomDependencies>consider</pomDependencies>
 							<environments>
 								<environment>
 									<os>linux</os>
@@ -102,17 +104,7 @@
 								<optionalDependencies>ignore</optionalDependencies>
 							</dependency-resolution>
 
-							<filters>
-								<filter>
-									<type>eclipse-plugin</type>
-									<id>org.eclipse.jdt.core</id>
-									<restrictTo>
-										<!-- this is the version for Kepler SR1, have to adapt for other 
-											release trains/service releases -->
-										<version>3.9.1.v20130905-0837</version>
-									</restrictTo>
-								</filter>
-							</filters>
+						 
 
 						</configuration>
 					</plugin>

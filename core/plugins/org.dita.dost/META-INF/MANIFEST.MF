@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.dita.dost;singleton:=true
 Bundle-Version: 2.5.9.qualifier
 Bundle-Activator: org.dita.dost.internal.Activator
 Bundle-Vendor: DITAOT
-Require-Bundle: org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.jdt.core;bundle-version="3.8.3",
+ org.eclipse.core.runtime,
  org.apache.xml.resolver,
  org.apache.xml.serializer,
  org.eclipse.core.runtime,
