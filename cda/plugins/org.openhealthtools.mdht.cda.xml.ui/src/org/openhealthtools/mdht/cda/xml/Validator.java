@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *     
+ *
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.cda.xml;
@@ -201,10 +201,13 @@ public class Validator extends AbstractNestedValidator {
 
 		DocumentClassDialog docClassDialog = new DocumentClassDialog();
 		String documentClassQName = docClassDialog.selectDocumentClass();
-		if (docClassDialog.isWorkspaceMode()) {
-			validateWorkspaceMode(activeProject, uri, validationsPath, documentClassQName, valreport);
-		} else {
-			validatePluginMode(activeProject, uri, validationsPath, documentClassQName, valreport);
+
+		if (!DocumentClassDialog.CANCELLED.equals(documentClassQName)) {
+			if (docClassDialog.isWorkspaceMode()) {
+				validateWorkspaceMode(activeProject, uri, validationsPath, documentClassQName, valreport);
+			} else {
+				validatePluginMode(activeProject, uri, validationsPath, documentClassQName, valreport);
+			}
 		}
 		return valreport;
 	}
@@ -289,7 +292,8 @@ public class Validator extends AbstractNestedValidator {
 
 		try {
 			ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
-			ILaunchConfigurationType type = manager.getLaunchConfigurationType(IJavaLaunchConfigurationConstants.ID_JAVA_APPLICATION);
+			ILaunchConfigurationType type = manager.getLaunchConfigurationType(
+				IJavaLaunchConfigurationConstants.ID_JAVA_APPLICATION);
 			ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, "ValidateCDA");
 			workingCopy.setAttribute(
 				IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME,
