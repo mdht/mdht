@@ -196,6 +196,20 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 		return dependencyItemProvider;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory#createUsageAdapter()
+	 */
+	@Override
+	public Adapter createUsageAdapter() {
+		if (usageItemProvider == null) {
+			usageItemProvider = new UsageExtItemProvider(this);
+		}
+
+		return usageItemProvider;
+	}
+
 	@Override
 	public Adapter createElementImportAdapter() {
 		if (elementImportItemProvider == null) {

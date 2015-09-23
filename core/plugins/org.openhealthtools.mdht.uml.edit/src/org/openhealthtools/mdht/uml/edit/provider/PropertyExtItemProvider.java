@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2011 David A Carlson and others.
+ * Copyright (c) 2006, 2015 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,6 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
  *
- * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
 
@@ -60,6 +59,7 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
+import org.openhealthtools.mdht.uml.common.notation.IExtendedNotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
@@ -72,7 +72,6 @@ import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperati
 
 /**
  *
- * @version $Id: $
  */
 public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers.PropertyItemProvider
 		implements ITableItemLabelProvider, ITableItemFontProvider, IItemStyledLabelProvider, ICellModifier {
@@ -252,7 +251,9 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 					// must pass property (rather than type) so that correct notation provider is selected
 					INotationProvider notationProvider = NotationRegistry.INSTANCE.getNotationProvider(property);
-					if (notationProvider != null) {
+					if (notationProvider instanceof IExtendedNotationProvider) {
+						image = ((IExtendedNotationProvider) notationProvider).getElementTypeImage(type);
+					} else if (notationProvider != null) {
 						image = notationProvider.getElementImage(type);
 					}
 
@@ -265,12 +266,13 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 					}
 					return image;
 				}
+				break;
 			case IUMLTableProperties.ANNOTATION_INDEX: {
 				return NotationUtil.getAnnotationImage(property);
 			}
-			default:
-				return null;
 		}
+
+		return null;
 	}
 
 	@Override
@@ -302,11 +304,16 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 				return NotationUtil.getAnnotation(property);
 			}
 			case IUMLTableProperties.DEFAULT_VALUE_INDEX:
+				String text = null;
 				if (property.getDefaultValue() != null) {
-					return property.getDefaultValue().stringValue();
-				} else {
-					return "";
+					text = property.getDefaultValue().stringValue();
 				}
+				if (text == null) {
+					text = NotationUtil.getShortDescription(property);
+				}
+				return (text == null)
+						? ""
+						: text;
 			default:
 				return null;
 		}
