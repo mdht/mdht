@@ -421,7 +421,7 @@ public class TransformCDAPropertyConstraint extends TransformPropertyTerminology
 			Constraint result = null;
 
 			/*
-			 * add OCL constraint if severity level is set else assume it is an override and add a constriant that will not fire
+			 * add OCL constraint if severity level is set else assume it is an override and add a constraint that will not fire
 			 */
 			ValidationSeverityKind severity = getEcoreProfile().getValidationSeverity(
 				property, ValidationStereotypeKind.PROPERTY);

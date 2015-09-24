@@ -1591,7 +1591,14 @@ public class CDAModelUtil {
 			// TODO if markup, parse strucTextBody and insert DITA markup
 			displayBody = strucTextBody;
 		} else if (analysisBody != null && analysisBody.trim().length() > 0) {
-			if (markup) {
+			Boolean ditaEnabled = false;
+			try {
+				Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+					constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+				ditaEnabled = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+			} catch (IllegalArgumentException e) { /* Swallow this */
+			}
+			if (markup && !ditaEnabled) {
 				// escape non-dita markup in analysis text
 				displayBody = escapeMarkupCharacters(analysisBody);
 				// change severity words to bold text

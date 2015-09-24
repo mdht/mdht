@@ -585,6 +585,10 @@ public class TransformClassContent extends TransformAbstract {
 		String pathFolder = "classes";
 		IPath filePath = transformerOptions.getOutputPath().append(pathFolder).addTrailingSeparator().append(
 			"generated").addTrailingSeparator().append("_" + normalizedClassName).addFileExtension("dita");
+		return writeClassToFile(umlClass, filePath);
+	}
+
+	public Object writeClassToFile(Class umlClass, IPath filePath) {
 		File file = filePath.toFile();
 		PrintWriter writer = null;
 
@@ -733,12 +737,12 @@ public class TransformClassContent extends TransformAbstract {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));
 			String line;
-			ArrayList ar = new ArrayList();
+			ArrayList<String> ar = new ArrayList<>();
 			while ((line = br.readLine()) != null) {
 				ar.add(line);
 			}
 			// It is the responsibility of the caller to close the stream
-			fLines = (String[]) ar.toArray(new String[ar.size()]);
+			fLines = ar.toArray(new String[ar.size()]);
 		}
 
 		String getLine(int ix) {
