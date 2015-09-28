@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2006, 2011 CEA LIST, IBM Corporation, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Yann TANGUY (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *  Kenn Hussey - added utilities to get, remove, and set "business name"
- *  
+ *
  *****************************************************************************/
 package org.openhealthtools.mdht.uml.common.util;
 
@@ -38,7 +38,7 @@ public class NamedElementUtil extends UMLUtil {
 
 	/**
 	 * A helper method to calculate the max depth of an element
-	 * 
+	 *
 	 * @param the
 	 *            named element
 	 * @return the maximum depth found in qualified name
@@ -60,7 +60,7 @@ public class NamedElementUtil extends UMLUtil {
 	/**
 	 * Give the visibility of the {@link NamedElement} as a string, as defined
 	 * in the UML2 standard.
-	 * 
+	 *
 	 * @return A String representing the visibility of the {@link NamedElement}.
 	 *         Possible values:
 	 *         <ul>
@@ -92,7 +92,7 @@ public class NamedElementUtil extends UMLUtil {
 
 	/**
 	 * Returns a (model) properties file key for the specified named element.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return A property key for the named element.
@@ -109,7 +109,7 @@ public class NamedElementUtil extends UMLUtil {
 
 	/**
 	 * Returns the property value for the specified named element, using the given key prefix.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return The property value, or null if none exists.
@@ -135,7 +135,7 @@ public class NamedElementUtil extends UMLUtil {
 	/**
 	 * Sets the property value for the specified named element, and given key prefix,
 	 * to the given string value.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @param businessName
@@ -162,7 +162,7 @@ public class NamedElementUtil extends UMLUtil {
 	/**
 	 * Removes the property value that is currently set for the specified named
 	 * element, if any.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return The value that was set for the element (if one
@@ -190,7 +190,7 @@ public class NamedElementUtil extends UMLUtil {
 
 	/**
 	 * Returns a (model) properties file key for the specified named element with 'label' prefix.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return A label property key for the named element.
@@ -207,7 +207,7 @@ public class NamedElementUtil extends UMLUtil {
 	 * if none exists. The "business name" of a named element corresponds to the
 	 * (potentially localized) label that is stored in a properties file and
 	 * returned for the element by {@link NamedElement#getLabel()}.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return The "business name" for the element (if one exists); otherwise,
@@ -221,9 +221,27 @@ public class NamedElementUtil extends UMLUtil {
 	}
 
 	/**
+	 * Returns the "name" for the specified named element, or the name
+	 * if none exists. The "business name" of a named element corresponds to the
+	 * (potentially localized) label that is stored in a properties file and
+	 * returned for the element by {@link NamedElement#getLabel()}.
+	 *
+	 * @param namedElement
+	 *            The named element.
+	 * @return The "name" for the element (if one exists); otherwise,
+	 *         the name of the element.
+	 */
+	public static String getElementName(NamedElement namedElement) {
+		String value = getPropertyValue(namedElement, "name");
+		return (value == null)
+				? namedElement.getName()
+				: value;
+	}
+
+	/**
 	 * Removes the "business name" that is currently set for the specified named
 	 * element, if any.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @return The "business name" that was set for the element (if one
@@ -234,9 +252,23 @@ public class NamedElementUtil extends UMLUtil {
 	}
 
 	/**
+	 * Sets the "name" for the specified named element to the given
+	 * string.
+	 *
+	 * @param namedElement
+	 *            The named element.
+	 * @param businessName
+	 *            The new "name" for the element.
+	 * @return Whether the "name" was successfully set.
+	 */
+	public static boolean setElementName(NamedElement namedElement, String name) {
+		return setPropertyValue(namedElement, "name", name);
+	}
+
+	/**
 	 * Sets the "business name" for the specified named element to the given
 	 * string.
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element.
 	 * @param businessName
