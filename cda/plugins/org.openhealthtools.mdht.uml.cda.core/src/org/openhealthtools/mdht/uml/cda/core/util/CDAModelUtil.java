@@ -949,51 +949,12 @@ public class CDAModelUtil {
 				? null
 				: redefinedProperties.get(0);
 
-		if (property.getType() != null) {
+		if (property.getType() != null &&
+				((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
+			message.append(" with " + "@xsi:type=\"");
+			message.append(property.getType().getName());
+			message.append("\"");
 
-			if ((redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
-				message.append(" with " + "@xsi:type=\"");
-				message.append(property.getType().getName());
-				message.append("\"");
-
-			}
-
-			if (appendNestedConformanceRules && property.getType() instanceof Class) {
-				if (isInlineClass((Class) property.getType())) {
-
-					if (isPublishSeperately((Class) property.getType())) {
-
-						String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
-							property, property.getType()))
-								? computeXref(xrefSource, (Classifier) property.getType())
-								: null;
-						boolean showXref = markup && (xref != null);
-
-						if (showXref) {
-							String format = showXref && xref.endsWith(".html")
-									? "format=\"html\" "
-									: "";
-							message.append(showXref
-									? "<xref " + format + "href=\"" + xref + "\">"
-									: "");
-							message.append(UMLUtil.splitName(property.getType()));
-							message.append(showXref
-									? "</xref>"
-									: "");
-						}
-
-					} else {
-						StringBuilder sb = new StringBuilder();
-
-						appendPropertyComments(sb, property, markup);
-
-						appendConformanceRules(sb, (Class) property.getType(), "", markup);
-						message.append(" " + sb + " ");
-					}
-
-				}
-
-			}
 		}
 
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
@@ -1035,6 +996,43 @@ public class CDAModelUtil {
 		} else {
 			// rule IDs for the terminology constraint
 			appendTerminologyConformanceRuleIds(property, message, markup);
+		}
+
+		if (property.getType() != null && appendNestedConformanceRules && property.getType() instanceof Class) {
+			if (isInlineClass((Class) property.getType())) {
+
+				if (isPublishSeperately((Class) property.getType())) {
+
+					String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
+						property, property.getType()))
+							? computeXref(xrefSource, (Classifier) property.getType())
+							: null;
+					boolean showXref = markup && (xref != null);
+
+					if (showXref) {
+						String format = showXref && xref.endsWith(".html")
+								? "format=\"html\" "
+								: "";
+						message.append(showXref
+								? "<xref " + format + "href=\"" + xref + "\">"
+								: "");
+						message.append(UMLUtil.splitName(property.getType()));
+						message.append(showXref
+								? "</xref>"
+								: "");
+					}
+
+				} else {
+					StringBuilder sb = new StringBuilder();
+
+					appendPropertyComments(sb, property, markup);
+
+					appendConformanceRules(sb, (Class) property.getType(), "", markup);
+					message.append(" " + sb + " ");
+				}
+
+			}
+
 		}
 
 		return message.toString();
