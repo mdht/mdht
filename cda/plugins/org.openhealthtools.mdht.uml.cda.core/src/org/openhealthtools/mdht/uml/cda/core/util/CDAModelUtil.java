@@ -1178,13 +1178,18 @@ public class CDAModelUtil {
 			result = true;
 			String ccm = CDAModelUtil.computeConformanceMessage(property, markup);
 			boolean order = ccm.trim().endsWith(ol[1]);
+			boolean currentlyItem = false;
 			if (order) {
 				int olIndex = ccm.lastIndexOf(ol[1]);
 				ccm = ccm.substring(0, olIndex);
+				currentlyItem = ccm.trim().endsWith(li[1]);
 			}
 			sb.append(li[0] + prefix + ccm);
+			if (currentlyItem)
+				sb.append(li[0]);
 			appendPropertyComments(sb, property, markup);
-
+			if (currentlyItem)
+				sb.append(li[1]);
 			appendPropertyRules(sb, property, constraintMap, subConstraintMap, unprocessedConstraints, markup, !order);
 
 			if (order)
