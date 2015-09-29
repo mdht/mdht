@@ -571,7 +571,7 @@ public class CDAModelUtil {
 		message.append(getMultiplicityText(property));
 		message.append(multiplicityElementToggle(property, markup, elementName));
 
-		appendSubsetsNotation(property, message, markup, xrefSource);
+		// appendSubsetsNotation(property, message, markup, xrefSource);
 
 		if (appendNestedConformanceRules && endType != null) {
 
@@ -958,52 +958,12 @@ public class CDAModelUtil {
 				? null
 				: redefinedProperties.get(0);
 
-		if (property.getType() != null) {
+		if (property.getType() != null && ((redefinedProperty == null ||
+				(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType()))))) {
+			message.append(" with " + "@xsi:type=\"");
+			message.append(property.getType().getName());
+			message.append("\"");
 
-			if ((redefinedProperty == null ||
-					(!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
-				message.append(" with " + "@xsi:type=\"");
-				message.append(property.getType().getName());
-				message.append("\"");
-
-			}
-
-			if (appendNestedConformanceRules && property.getType() instanceof Class) {
-				if (isInlineClass((Class) property.getType())) {
-
-					if (isPublishSeperately((Class) property.getType())) {
-
-						String xref = (property.getType() instanceof Classifier &&
-								UMLUtil.isSameProject(property, property.getType()))
-										? computeXref(xrefSource, (Classifier) property.getType())
-										: null;
-						boolean showXref = markup && (xref != null);
-
-						if (showXref) {
-							String format = showXref && xref.endsWith(".html")
-									? "format=\"html\" "
-									: "";
-							message.append(showXref
-									? "<xref " + format + "href=\"" + xref + "\">"
-									: "");
-							message.append(UMLUtil.splitName(property.getType()));
-							message.append(showXref
-									? "</xref>"
-									: "");
-						}
-
-					} else {
-						StringBuilder sb = new StringBuilder();
-
-						appendPropertyComments(sb, property, markup);
-
-						appendConformanceRules(sb, (Class) property.getType(), "", markup);
-						message.append(" " + sb + " ");
-					}
-
-				}
-
-			}
 		}
 
 		// for vocab properties, put rule ID at end, use terminology constraint if specified
@@ -1045,6 +1005,43 @@ public class CDAModelUtil {
 		} else {
 			// rule IDs for the terminology constraint
 			appendTerminologyConformanceRuleIds(property, message, markup);
+		}
+
+		if (property.getType() != null && appendNestedConformanceRules && property.getType() instanceof Class) {
+			if (isInlineClass((Class) property.getType())) {
+
+				if (isPublishSeperately((Class) property.getType())) {
+
+					String xref = (property.getType() instanceof Classifier &&
+							UMLUtil.isSameProject(property, property.getType()))
+									? computeXref(xrefSource, (Classifier) property.getType())
+									: null;
+					boolean showXref = markup && (xref != null);
+
+					if (showXref) {
+						String format = showXref && xref.endsWith(".html")
+								? "format=\"html\" "
+								: "";
+						message.append(showXref
+								? "<xref " + format + "href=\"" + xref + "\">"
+								: "");
+						message.append(UMLUtil.splitName(property.getType()));
+						message.append(showXref
+								? "</xref>"
+								: "");
+					}
+
+				} else {
+					StringBuilder sb = new StringBuilder();
+
+					appendPropertyComments(sb, property, markup);
+
+					appendConformanceRules(sb, (Class) property.getType(), "", markup);
+					message.append(" " + sb + " ");
+				}
+
+			}
+
 		}
 
 		return message.toString();
@@ -1111,7 +1108,7 @@ public class CDAModelUtil {
 			for (Generalization generalization : umlClass.getGeneralizations()) {
 				Classifier general = generalization.getGeneral();
 				if (!RIMModelUtil.isRIMModel(general) && !CDAModelUtil.isCDAModel(general)) {
-					String message = CDAModelUtil.computeConformanceMessage(generalization, true);
+					String message = CDAModelUtil.computeConformanceMessage(generalization, markup);
 					if (message.length() > 0) {
 						hasRules = true;
 						sb.append(li[0] + prefix + message + li[1]);
@@ -1186,17 +1183,25 @@ public class CDAModelUtil {
 			result = true;
 			String ccm = CDAModelUtil.computeConformanceMessage(property, markup);
 			boolean order = ccm.trim().endsWith(ol[1]);
+			boolean currentlyItem = false;
 			if (order) {
 				int olIndex = ccm.lastIndexOf(ol[1]);
 				ccm = ccm.substring(0, olIndex);
+				currentlyItem = ccm.trim().endsWith(li[1]);
 			}
 			sb.append(li[0] + prefix + ccm);
+			if (currentlyItem) {
+				sb.append(li[0]);
+			}
 			appendPropertyComments(sb, property, markup);
-
+			if (currentlyItem) {
+				sb.append(li[1]);
+			}
 			appendPropertyRules(sb, property, constraintMap, subConstraintMap, unprocessedConstraints, markup, !order);
 
-			if (order)
+			if (order) {
 				sb.append(ol[1]);
+			}
 
 			sb.append(li[1]);
 		}
@@ -1248,7 +1253,7 @@ public class CDAModelUtil {
 		// association typeCode and property type
 		String assocConstraints = "";
 		if (property.getAssociation() != null) {
-			assocConstraints = CDAModelUtil.computeAssociationConstraints(property, true);
+			assocConstraints = CDAModelUtil.computeAssociationConstraints(property, markup);
 		}
 
 		StringBuffer ruleConstraints = new StringBuffer();
@@ -1256,7 +1261,7 @@ public class CDAModelUtil {
 		if (rules != null && !rules.isEmpty()) {
 			for (Constraint constraint : rules) {
 				unprocessedConstraints.remove(constraint);
-				ruleConstraints.append(li[0] + CDAModelUtil.computeConformanceMessage(constraint, true));
+				ruleConstraints.append(li[0] + CDAModelUtil.computeConformanceMessage(constraint, markup));
 				appendSubConstraintRules(ruleConstraints, constraint, subConstraintMap, unprocessedConstraints, markup);
 				ruleConstraints.append(li[1]);
 			}
@@ -1290,7 +1295,7 @@ public class CDAModelUtil {
 			ruleConstraints.append(ol[0]);
 			for (Constraint subConstraint : subConstraints) {
 				unprocessedConstraints.remove(subConstraint);
-				ruleConstraints.append(li[0] + CDAModelUtil.computeConformanceMessage(subConstraint, true));
+				ruleConstraints.append(li[0] + CDAModelUtil.computeConformanceMessage(subConstraint, markup));
 				appendSubConstraintRules(
 					ruleConstraints, subConstraint, subConstraintMap, unprocessedConstraints, markup);
 				ruleConstraints.append(li[1]);

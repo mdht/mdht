@@ -184,6 +184,13 @@ public abstract class TransformAbstract extends AbstractTransform {
 						"->exists(element | element.isNullFlavorUndefined()))" + " implies (" + body + ")";
 			}
 		}
+		if (property.getUpper() == 0 && property.getLower() == 0) {
+			if (baseProperty.upperBound() == 1) {
+				nullFlavorBody = selfName + ".oclIsUndefined()";
+			} else {
+				nullFlavorBody = selfName + "->isEmpty()";
+			}
+		}
 
 		// Add nullFlavor checks for the enclosing parent (if necessary)
 		// This check will be relaxed further if the parent attribute is Mandatory, in which case the check is not required.

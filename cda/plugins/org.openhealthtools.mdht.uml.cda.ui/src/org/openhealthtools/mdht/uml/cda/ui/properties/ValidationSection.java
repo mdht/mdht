@@ -148,7 +148,8 @@ public abstract class ValidationSection extends ResettableModelerPropertySection
 						if (severityKind != null) {
 							if (severityCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
-								modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, null);
+								// modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, null);
+								modelElement.unapplyStereotype(stereotype);
 							} else {
 								EnumerationLiteral literal = severityKind.getOwnedLiterals().get(
 									severityCombo.getSelectionIndex() - 1);
