@@ -185,6 +185,19 @@ public class NotationUtil {
 		return types;
 	}
 
+	public static String getShortDescription(Element element) {
+		String text = null;
+
+		if (element != null) {
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(element);
+			if (provider instanceof IExtendedNotationProvider) {
+				text = ((IExtendedNotationProvider) provider).getShortDescription(element);
+			}
+		}
+
+		return text;
+	}
+
 	/*
 	 * public static AdapterFactory getAdapterFactory(Element element) {
 	 * if (element != null) {
