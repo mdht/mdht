@@ -1,14 +1,15 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2015 David A Carlson and others.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
- *
+ *     
+ * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
 
@@ -24,21 +25,13 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.edit.command.ChildrenToCopyProvider;
-import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.provider.ComposedImage;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.IItemStyledLabelProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -46,8 +39,8 @@ import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.AggregationKind;
-import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
@@ -59,22 +52,21 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
-import org.openhealthtools.mdht.uml.common.notation.IExtendedNotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
-import org.openhealthtools.mdht.uml.edit.command.CommandWrapperWithChildrenToCopy;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- *
+ * 
+ * @version $Id: $
  */
-public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers.PropertyItemProvider
-		implements ITableItemLabelProvider, ITableItemFontProvider, IItemStyledLabelProvider, ICellModifier {
+public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers.PropertyItemProvider implements
+		ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -85,7 +77,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -109,13 +101,13 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 		AdapterFactory adapterFactory = getAdapterFactory();
 		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
 				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
-						? NamedElementUtil.getBusinessName(namedElement)
-						: namedElement.getName();
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#getText(java.lang.Object)
 	 */
 	@Override
@@ -150,7 +142,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 	/**
 	 * Display a multiplicity string of the format [lower..upper], unless
 	 * both lower and upper are == 1.
-	 *
+	 * 
 	 * @param multElement
 	 * @return
 	 */
@@ -175,31 +167,18 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection<Object> getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		Property property = (Property) object;
-		List<Object> children = new ArrayList<Object>();
+		List<Element> children = new ArrayList<Element>();
 		// if (XSDProfileHelper.isNestedGroup(property)) {
 		// children.addAll(TypeOperations.getOwnedAttributes(property.getType()));
 		// }
 
 		children.addAll(property.getOwnedComments());
-
-		// expand children to include attributes if type is a nested class
-		final EReference propertyTypeRef = UMLPackage.Literals.TYPED_ELEMENT__TYPE;
-		if (property.getType() instanceof Class && property.getType().getOwner() instanceof Class) {
-			Class propertyType = (Class) property.getType();
-			for (Property nestedProperty : propertyType.getOwnedAttributes()) {
-				children.add(wrap(property, propertyTypeRef, nestedProperty, Notification.NO_INDEX));
-			}
-			for (Object next : propertyType.getGeneralizations()) {
-				children.add(wrap(propertyType, propertyTypeRef, next, Notification.NO_INDEX));
-			}
-		}
-
 		children.addAll(property.getClientDependencies());
 
 		return children;
@@ -219,7 +198,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
 	@Override
@@ -251,9 +230,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 					// must pass property (rather than type) so that correct notation provider is selected
 					INotationProvider notationProvider = NotationRegistry.INSTANCE.getNotationProvider(property);
-					if (notationProvider instanceof IExtendedNotationProvider) {
-						image = ((IExtendedNotationProvider) notationProvider).getElementTypeImage(type);
-					} else if (notationProvider != null) {
+					if (notationProvider != null) {
 						image = notationProvider.getElementImage(type);
 					}
 
@@ -266,13 +243,12 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 					}
 					return image;
 				}
-				break;
 			case IUMLTableProperties.ANNOTATION_INDEX: {
 				return NotationUtil.getAnnotationImage(property);
 			}
+			default:
+				return null;
 		}
-
-		return null;
 	}
 
 	@Override
@@ -304,57 +280,19 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 				return NotationUtil.getAnnotation(property);
 			}
 			case IUMLTableProperties.DEFAULT_VALUE_INDEX:
-				String text = null;
 				if (property.getDefaultValue() != null) {
-					text = property.getDefaultValue().stringValue();
-				}
-				if (text == null) {
-					text = NotationUtil.getShortDescription(property);
-				}
-				return (text == null)
-						? ""
-						: text;
-			default:
-				return null;
-		}
-	}
-
-	/**
-	 * This implements {@link IItemFontProvider#getFont IItemFontProvider.getFont} by returning null;
-	 */
-	@Override
-	public Object getFont(Object object) {
-		// use default viewer font
-		return null;
-	}
-
-	/**
-	 * This implements {@link ITableItemFontProvider#getFont ITableItemFontProvider.getFont} by returning null;
-	 */
-	@Override
-	public Object getFont(Object object, int columnIndex) {
-		Property property = (Property) object;
-
-		switch (columnIndex) {
-			case IUMLTableProperties.NAME_INDEX:
-				if (property.upperBound() == 0) {
-					return BOLD_ITALIC_FONT;
+					return property.getDefaultValue().stringValue();
+				} else {
+					return "";
 				}
 			default:
 				return null;
 		}
-	}
-
-	@Override
-	public Object getStyledText(Object object) {
-		StyledString.Style strikeoutStyle = StyledString.Style.newBuilder().setStrikedout(true).toStyle();
-		return new StyledString(getText(object), strikeoutStyle);
-
 	}
 
 	/**
 	 * Display a multiplicity string of the format "lower..upper".
-	 *
+	 * 
 	 * @param multElement
 	 * @return
 	 */
@@ -375,7 +313,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -399,7 +337,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -427,7 +365,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
@@ -541,16 +479,4 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 		}
 	}
 
-	@Override
-	protected Command wrapCommand(Command command, Object object, java.lang.Class<? extends Command> commandClass,
-			CommandParameter commandParameter, CommandParameter oldCommandParameter) {
-
-		Command result = super.wrapCommand(command, object, commandClass, commandParameter, oldCommandParameter);
-
-		if ((result != command) && (command instanceof ChildrenToCopyProvider)) {
-			result = new CommandWrapperWithChildrenToCopy(result, (ChildrenToCopyProvider) command);
-		}
-
-		return result;
-	}
 }
