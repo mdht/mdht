@@ -34,7 +34,6 @@ public class TextEditor implements ConstraintEditor {
 
 	private boolean checkDita = false;
 
-	@Override
 	public void setText(Text text) {
 		this.text = text;
 		this.text.addFocusListener(new FocusListener() {
@@ -54,80 +53,6 @@ public class TextEditor implements ConstraintEditor {
 				handleChange();
 			}
 		});
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
-	 */
-	@Override
-	public void setErrorText(Text errorText) {
-		this.errorText = errorText;
-
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
-	 */
-	@Override
-	public void setCloseErrorText(Button closeErrorTextButton) {
-		this.closeErrorTextButton = closeErrorTextButton;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setStereotype(boolean)
-	 */
-	@Override
-	public void setStereotype(boolean selection) {
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-			constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-
-		if (stereotype == null) {
-			stereotype = CDAProfileUtil.applyCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-		}
-		constraint.setValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED, selection);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
-	 */
-	public void setConstraint(Constraint constraint) {
-		boolean firstRun = this.constraint == null && constraint != null;
-		this.constraint = constraint;
-		this.checkDita = true;
-		if (firstRun) {
-			runHandleChange();
-		} else {
-			handleChange();
-		}
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#getSelection()
-	 */
-	@Override
-	public boolean getSelection() {
-		Boolean selection = false;
-
-		try {
-			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-			selection = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
-		} catch (IllegalArgumentException e) { /* Swallow this */
-		}
-		selection = selection == null
-				? false
-				: selection;
-		return selection;
 	}
 
 	private boolean isDitaEnabled() {
@@ -182,6 +107,22 @@ public class TextEditor implements ConstraintEditor {
 		closeErrorTextButton.setVisible(true);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
+	 */
+	public void setConstraint(Constraint constraint) {
+		boolean firstRun = this.constraint == null && constraint != null;
+		this.constraint = constraint;
+		this.checkDita = true;
+		if (firstRun) {
+			runHandleChange();
+		} else {
+			handleChange();
+		}
+	}
+
 	private IPath generateTempDita() {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IPath tmpFileInWorkspaceDir = workspace.getRoot().getLocation().append("tmp").append(
@@ -197,6 +138,27 @@ public class TextEditor implements ConstraintEditor {
 
 		transformer.writeClassToFile((Class) constraint.getContext(), tmpFileInWorkspaceDir);
 		return tmpFileInWorkspaceDir;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
+	 */
+	@Override
+	public void setErrorText(Text errorText) {
+		this.errorText = errorText;
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
+	 */
+	@Override
+	public void setCloseErrorText(Button closeErrorTextButton) {
+		this.closeErrorTextButton = closeErrorTextButton;
 	}
 
 }
