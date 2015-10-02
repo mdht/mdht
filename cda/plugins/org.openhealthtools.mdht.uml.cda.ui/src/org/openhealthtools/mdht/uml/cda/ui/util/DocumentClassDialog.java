@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - fixed NPE on cancel button (artf3367)
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
@@ -28,9 +28,11 @@ import org.eclipse.uml2.uml.Type;
 
 /**
  * @author dcarlson
- * 
+ *
  */
 public class DocumentClassDialog {
+
+	public static String CANCELLED = "CANCELLED";
 
 	boolean workspaceMode = true;
 
@@ -106,11 +108,13 @@ public class DocumentClassDialog {
 				dialog.setContentProvider(contentProvider);
 				dialog.setInput(qnames);
 				dialog.setTitle("CDA Document Types");
-				dialog.setMessage("Select document type for validation, or CANCEL to discover from template ID");
-
+				dialog.setMessage(
+					"Select document type for validation or just Select OK to continue;  \nHit Cancel to Skip CDA Validation");
 				dialog.open();
 				Object[] results = dialog.getResult();
-				if ((results != null) && (results.length > 0)) {
+				if (dialog.getReturnCode() == org.eclipse.jface.window.Window.CANCEL) {
+					documentClassQName = CANCELLED;
+				} else if ((results != null) && (results.length > 0)) {
 					documentClassQName = results[0].toString();
 				}
 			}
