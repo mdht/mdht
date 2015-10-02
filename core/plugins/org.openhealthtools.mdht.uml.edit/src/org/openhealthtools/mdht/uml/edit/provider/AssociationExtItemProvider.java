@@ -4,13 +4,13 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
  *     Christian W. Damus - fix re-ordering of properties and constraints
  *                        - ensure correct structure of pasted association copies (artf3287)
- *
+ *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
@@ -57,7 +57,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
 import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
-import org.openhealthtools.mdht.uml.common.notation.IExtendedNotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
@@ -70,11 +69,11 @@ import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- *
+ * 
  * @version $Id: $
  */
-public class AssociationExtItemProvider extends AssociationItemProvider
-		implements ITableItemLabelProvider, ICellModifier {
+public class AssociationExtItemProvider extends AssociationItemProvider implements ITableItemLabelProvider,
+		ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -103,8 +102,8 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		AdapterFactory adapterFactory = getAdapterFactory();
 		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
 				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
-						? NamedElementUtil.getBusinessName(namedElement)
-						: namedElement.getName();
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
 	@Override
@@ -162,7 +161,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
@@ -242,9 +241,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 
 					// must pass property (rather than type) so that correct notation provider is selected
 					INotationProvider notationProvider = NotationRegistry.INSTANCE.getNotationProvider(navigableEnd);
-					if (notationProvider instanceof IExtendedNotationProvider) {
-						image = ((IExtendedNotationProvider) notationProvider).getElementTypeImage(endType);
-					} else if (notationProvider != null) {
+					if (notationProvider != null) {
 						image = notationProvider.getElementImage(endType);
 					}
 
@@ -300,14 +297,6 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 				}
 				return annotation;
 			}
-			case IUMLTableProperties.DEFAULT_VALUE_INDEX:
-				String text = null;
-				if (navigableEnd != null) {
-					text = NotationUtil.getShortDescription(navigableEnd);
-				}
-				return (text == null)
-						? ""
-						: text;
 			default:
 				return null;
 		}
@@ -315,7 +304,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -333,7 +322,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -355,7 +344,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

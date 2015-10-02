@@ -54,24 +54,9 @@ public interface IExtendedNotationProvider extends INotationProvider {
 	// public AdapterFactory getAdapterFactory(Element element);
 
 	/**
-	 * Returns description for a model element.
-	 */
-	public String getDescription(Element element);
-
-	/**
-	 * Returns a short version of description for a model element.
-	 */
-	public String getShortDescription(Element element);
-
-	/**
 	 * Returns a short version of annotations for a model element.
 	 */
 	public String getShortAnnotation(Element element);
-
-	/**
-	 * Returns an image for the model element type (e.g. property type), or null.
-	 */
-	public Object getElementTypeImage(Element element);
 
 	/**
 	 * Returns a list of types allowed for the given property.
