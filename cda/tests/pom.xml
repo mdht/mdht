@@ -11,7 +11,7 @@
 	<parent>
 		<groupId>org.openhealthtools.mdht</groupId>
 		<artifactId>root</artifactId>
-		<version>2.5.11-SNAPSHOT</version>
+		<version>2.5.9-SNAPSHOT</version>
 		<relativePath>../../</relativePath>
 	</parent>	
 	<profiles>
