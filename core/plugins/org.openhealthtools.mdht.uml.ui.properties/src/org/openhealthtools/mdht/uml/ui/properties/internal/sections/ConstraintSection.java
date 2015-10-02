@@ -70,8 +70,11 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.ui.properties.internal.UmlUiEditor;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment;
@@ -221,7 +224,16 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 						}
 						if (ditaModified) {
 							ditaModified = false;
-							contributors.get(language).setStereotype(ditaEnableButton.getSelection());
+							Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+								constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+
+							if (stereotype == null) {
+								stereotype = CDAProfileUtil.applyCDAStereotype(
+									constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+							}
+							constraint.setValue(
+								stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
+								ditaEnableButton.getSelection());
 
 							// Also don't show errors if they are visible
 							if (!ditaEnableButton.getSelection()) {
@@ -360,6 +372,10 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		 */
 		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
 
+		for (ConstraintEditor ce : contributors.values()) {
+			ce.setText(bodyText);
+		}
+
 		CLabel bodyLabel = getWidgetFactory().createCLabel(composite, "Body:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
@@ -408,7 +424,6 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		});
 
 		for (ConstraintEditor ce : contributors.values()) {
-			ce.setText(bodyText);
 			ce.setCloseErrorText(closeErrorTextButton);
 			ce.setErrorText(errorText);
 		}
@@ -563,7 +578,17 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		}
 
 		if ("Analysis".equals(languageCombo.getText())) {
-			ditaEnableButton.setSelection(contributors.get(language).getSelection());
+			Boolean selection = false;
+			try {
+				Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+					constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+				selection = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+			} catch (IllegalArgumentException e) { /* Swallow this */
+			}
+			selection = selection == null
+					? false
+					: selection;
+			ditaEnableButton.setSelection(selection);
 			ditaEnableButton.setVisible(true);
 		} else {
 			ditaEnableButton.setVisible(false);
