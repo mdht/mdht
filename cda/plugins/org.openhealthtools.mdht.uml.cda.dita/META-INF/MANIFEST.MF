@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.dita;singleton:=true
-Bundle-Version: 2.5.9.qualifier
+Bundle-Version: 2.5.11.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.cda.core,
  org.openhealthtools.mdht.uml.term.core,
  org.eclipse.compare,
- org.openhealthtools.mdht.uml.ui.properties;bundle-version="2.5.9",
+ org.openhealthtools.mdht.uml.ui.properties;bundle-version="2.5.11",
  org.eclipse.swt;bundle-version="3.102.1"
 Export-Package: org.openhealthtools.mdht.uml.cda.dita
 Import-Package: org.apache.commons.io;version="2.0.1",
