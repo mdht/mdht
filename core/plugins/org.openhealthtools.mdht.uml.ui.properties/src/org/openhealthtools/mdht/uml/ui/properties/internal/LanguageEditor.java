@@ -74,4 +74,26 @@ public class LanguageEditor extends UmlUiEditor {
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setStereotype(boolean)
+	 */
+	@Override
+	public void setStereotype(boolean selection) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#getSelection()
+	 */
+	@Override
+	public boolean getSelection() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
