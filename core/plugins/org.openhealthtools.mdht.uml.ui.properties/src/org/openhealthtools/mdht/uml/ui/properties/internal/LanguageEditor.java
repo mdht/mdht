@@ -45,7 +45,7 @@ public class LanguageEditor extends UmlUiEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	public void setConstraint(Constraint constraint) {
@@ -54,7 +54,7 @@ public class LanguageEditor extends UmlUiEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
 	 */
 	@Override
@@ -65,13 +65,35 @@ public class LanguageEditor extends UmlUiEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
 	 */
 	@Override
 	public void setCloseErrorText(Button closeErrorTextButton) {
 		// TODO Auto-generated method stub
 
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setStereotype(boolean)
+	 */
+	@Override
+	public void setStereotype(boolean selection) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#getSelection()
+	 */
+	@Override
+	public boolean getSelection() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

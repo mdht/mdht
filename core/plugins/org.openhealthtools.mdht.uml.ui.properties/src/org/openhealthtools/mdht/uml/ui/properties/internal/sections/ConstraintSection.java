@@ -166,8 +166,6 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		}
 	}
 
-	private static String T1 = "ConstraintValidation";
-
 	public void modifyFields() {
 		if (!(bodyModified || languageModified || ditaModified)) {
 			return;
@@ -221,6 +219,16 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 								oESpec.getBodies().add(body);
 							}
 						}
+						if (ditaModified) {
+							ditaModified = false;
+							contributors.get(language).setStereotype(ditaEnableButton.getSelection());
+
+							// Also don't show errors if they are visible
+							if (!ditaEnableButton.getSelection()) {
+								errorText.setVisible(false);
+								closeErrorTextButton.setVisible(false);
+							}
+						}
 					} else {
 						return Status.CANCEL_STATUS;
 					}
@@ -261,6 +269,11 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 				}
 			}
 		}
+
+		// for (ConstraintEditor ce : contributors) {
+		// languages.add(ce.getLanguage());
+		//
+		// }
 	}
 
 	@Override
@@ -347,10 +360,6 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		 */
 		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
 
-		for (ConstraintEditor ce : contributors.values()) {
-			ce.setText(bodyText);
-		}
-
 		CLabel bodyLabel = getWidgetFactory().createCLabel(composite, "Body:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
@@ -399,6 +408,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		});
 
 		for (ConstraintEditor ce : contributors.values()) {
+			ce.setText(bodyText);
 			ce.setCloseErrorText(closeErrorTextButton);
 			ce.setErrorText(errorText);
 		}
@@ -552,6 +562,12 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			bodyText.setEnabled(true);
 		}
 
+		if ("Analysis".equals(languageCombo.getText())) {
+			ditaEnableButton.setSelection(contributors.get(language).getSelection());
+			ditaEnableButton.setVisible(true);
+		} else {
+			ditaEnableButton.setVisible(false);
+		}
 	}
 
 	/**
