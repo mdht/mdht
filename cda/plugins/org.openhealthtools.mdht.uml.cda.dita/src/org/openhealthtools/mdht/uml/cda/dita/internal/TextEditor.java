@@ -15,9 +15,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformerOptions;
 import org.openhealthtools.mdht.uml.cda.dita.TransformClassContent;
 import org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor;
@@ -56,14 +53,15 @@ public class TextEditor implements ConstraintEditor {
 	}
 
 	private boolean isDitaEnabled() {
-		Boolean ditaEnabled = false;
-		try {
-			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-			ditaEnabled = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
-		} catch (IllegalArgumentException ex) { /* Swallow this */
-		}
-		return ditaEnabled;
+		return true;
+		// Boolean ditaEnabled = false;
+		// try {
+		// Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+		// constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+		// ditaEnabled = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
+		// } catch (IllegalArgumentException ex) { /* Swallow this */
+		// }
+		// return ditaEnabled;
 	}
 
 	private void handleChange() {
@@ -109,7 +107,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	public void setConstraint(Constraint constraint) {
@@ -142,7 +140,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
 	 */
 	@Override
@@ -153,7 +151,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
 	 */
 	@Override

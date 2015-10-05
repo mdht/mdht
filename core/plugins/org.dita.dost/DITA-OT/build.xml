@@ -30,7 +30,7 @@
     <dita-ot-fail id="DOTA001F">
       <condition>
         <and>
-          <not><equals arg1="${transtype}" arg2="troff" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="eclipsecontent" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="xhtml" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="eclipsehelp" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="odt" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="pdf2" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="tocjs" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="wordrtf" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="docbook" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="htmlhelp" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="legacypdf" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="pdf" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="javahelp" casesensitive="false"/></not>
+          <not><equals arg1="${transtype}" arg2="xhtml" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="htmlhelp" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="tocjs" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="eclipsehelp" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="troff" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="eclipsecontent" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="legacypdf" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="javahelp" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="wordrtf" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="odt" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="pdf" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="pdf2" casesensitive="false"/></not><not><equals arg1="${transtype}" arg2="docbook" casesensitive="false"/></not>
         </and>
       </condition>
       <param name="1" value="${transtype}"></param>
@@ -56,7 +56,7 @@
       ant all -f build_demo.xml</echo>
   </target>
 
-  <property name='dita.plugin.org.dita.troff.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.eclipsecontent.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.eclipsehelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.dita11.dir' location='${dita.dir}/plugins/org.dita.specialization.dita11'/><property name='dita.plugin.org.dita.xhtml.dir' location='${dita.dir}'/><property name='dita.plugin.org.openhealthtools.mdht.cda.dir' location='${dita.dir}/plugins/org.openhealthtools.mdht.cda'/><property name='dita.plugin.org.dita.odt.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.pdf2.dir' location='${dita.dir}/plugins/org.dita.pdf2'/><property name='dita.plugin.org.dita.specialization.dita132.dir' location='${dita.dir}/plugins/org.dita.specialization.dita132'/><property name='dita.plugin.com.sophos.tocjs.dir' location='${dita.dir}/plugins/com.sophos.tocjs'/><property name='dita.plugin.org.dita.wordrtf.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.docbook.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.h2d.dir' location='${dita.dir}/plugins/h2d'/><property name='dita.plugin.org.dita.specialization.eclipsemap.dir' location='${dita.dir}/plugins/org.dita.specialization.eclipsemap'/><property name='dita.plugin.org.dita.htmlhelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.base.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.legacypdf.dir' location='${dita.dir}/plugins/legacypdf'/><property name='dita.plugin.org.dita.pdf.dir' location='${dita.dir}/plugins/org.dita.pdf'/><property name='dita.plugin.org.dita.javahelp.dir' location='${dita.dir}'/>
+  <property name='dita.plugin.org.dita.htmlhelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.base.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.h2d.dir' location='${dita.dir}/plugins/h2d'/><property name='dita.plugin.com.sophos.tocjs.dir' location='${dita.dir}/plugins/com.sophos.tocjs'/><property name='dita.plugin.org.dita.eclipsehelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.dita11.dir' location='${dita.dir}/plugins/org.dita.specialization.dita11'/><property name='dita.plugin.org.dita.troff.dir' location='${dita.dir}'/><property name='dita.plugin.org.openhealthtools.mdht.cda.dir' location='${dita.dir}/plugins/org.openhealthtools.mdht.cda'/><property name='dita.plugin.org.dita.eclipsecontent.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.legacypdf.dir' location='${dita.dir}/plugins/legacypdf'/><property name='dita.plugin.org.dita.javahelp.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.eclipsemap.dir' location='${dita.dir}/plugins/org.dita.specialization.eclipsemap'/><property name='dita.plugin.org.dita.wordrtf.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.xhtml.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.odt.dir' location='${dita.dir}'/><property name='dita.plugin.org.dita.specialization.dita132.dir' location='${dita.dir}/plugins/org.dita.specialization.dita132'/><property name='dita.plugin.org.dita.pdf.dir' location='${dita.dir}/plugins/org.dita.pdf'/><property name='dita.plugin.org.dita.pdf2.dir' location='${dita.dir}/plugins/org.dita.pdf2'/><property name='dita.plugin.org.dita.docbook.dir' location='${dita.dir}'/>
   <!-- 
   This file is part of the DITA Open Toolkit project hosted on
   Sourceforge.net. See the accompanying license.txt file for
@@ -179,14 +179,6 @@
       </xslt>
   </target>
 
-<!-- This file is part of the DITA Open Toolkit project hosted on 
-    Sourceforge.net. See the accompanying license.txt file for 
-    applicable licenses.--><!--
-    | (C) Copyright IBM Corporation 2006. All Rights Reserved.
-    *-->
-  
-  <!--property name="dita.eclipse.plugin" value="no"/-->
-    
 <!-- This file is part of the DITA Open Toolkit project hosted on 
     Sourceforge.net. See the accompanying license.txt file for 
     applicable licenses.--><!-- (c) Copyright IBM Corp. 2006 All Rights Reserved. -->
@@ -367,20 +359,16 @@
             </xslt>
         </target>
         
+    <!-- This file is part of the DITA Open Toolkit project hosted on 
+    Sourceforge.net. See the accompanying license.txt file for 
+    applicable licenses.--><!--
+    | (C) Copyright IBM Corporation 2006. All Rights Reserved.
+    *-->
+  
+  <!--property name="dita.eclipse.plugin" value="no"/-->
     
+
   <!--
-  This file is part of the DITA Open Toolkit project.
-  See the accompanying license.txt file for applicable licenses.
--->
-  
-<import file="plugins/org.dita.troff/build_dita2troff.xml"></import>
-<!--
-  This file is part of the DITA Open Toolkit project.
-  See the accompanying license.txt file for applicable licenses.
--->
-  
-<import file="plugins/org.dita.eclipsecontent/build_dita2eclipsecontent.xml"></import>
-<!--
   This file is part of the DITA Open Toolkit project.
   See the accompanying license.txt file for applicable licenses.
 -->
@@ -388,35 +376,6 @@
 <import file="plugins/org.dita.xhtml/build_general.xml"></import>
   
 <import file="plugins/org.dita.xhtml/build_dita2xhtml.xml"></import>
-<!--
-  This file is part of the DITA Open Toolkit project.
-  See the accompanying license.txt file for applicable licenses.
--->
-  
-<import file="plugins/org.dita.eclipsehelp/build_dita2eclipsehelp.xml"></import>
-<!--
-  This file is part of the DITA Open Toolkit project.
-  See the accompanying license.txt file for applicable licenses.
--->
-  
-<import file="plugins/org.dita.odt/build_dita2odt.xml"></import>
-
-
-  
-<import file="plugins/org.dita.pdf2/build.xml"></import>
-
-<!--
-  This file is part of the DITA Open Toolkit project.
-  See the accompanying license.txt file for applicable licenses.
--->
-  
-<import file="plugins/org.dita.wordrtf/build_dita2wordrtf.xml"></import>
-<!--
-  This file is part of the DITA Open Toolkit project.
-  See the accompanying license.txt file for applicable licenses.
--->
-  
-<import file="plugins/org.dita.docbook/build_dita2docbook.xml"></import>
 <!--
   This file is part of the DITA Open Toolkit project.
   See the accompanying license.txt file for applicable licenses.
@@ -436,7 +395,48 @@
   See the accompanying license.txt file for applicable licenses.
 -->
   
+<import file="plugins/org.dita.eclipsehelp/build_dita2eclipsehelp.xml"></import>
+<!--
+  This file is part of the DITA Open Toolkit project.
+  See the accompanying license.txt file for applicable licenses.
+-->
+  
+<import file="plugins/org.dita.troff/build_dita2troff.xml"></import>
+<!--
+  This file is part of the DITA Open Toolkit project.
+  See the accompanying license.txt file for applicable licenses.
+-->
+  
+<import file="plugins/org.dita.eclipsecontent/build_dita2eclipsecontent.xml"></import>
+<!--
+  This file is part of the DITA Open Toolkit project.
+  See the accompanying license.txt file for applicable licenses.
+-->
+  
 <import file="plugins/org.dita.javahelp/build_dita2javahelp.xml"></import>
+<!--
+  This file is part of the DITA Open Toolkit project.
+  See the accompanying license.txt file for applicable licenses.
+-->
+  
+<import file="plugins/org.dita.wordrtf/build_dita2wordrtf.xml"></import>
+<!--
+  This file is part of the DITA Open Toolkit project.
+  See the accompanying license.txt file for applicable licenses.
+-->
+  
+<import file="plugins/org.dita.odt/build_dita2odt.xml"></import>
+
+
+  
+<import file="plugins/org.dita.pdf2/build.xml"></import>
+
+<!--
+  This file is part of the DITA Open Toolkit project.
+  See the accompanying license.txt file for applicable licenses.
+-->
+  
+<import file="plugins/org.dita.docbook/build_dita2docbook.xml"></import>
 
   
   <target name="help">

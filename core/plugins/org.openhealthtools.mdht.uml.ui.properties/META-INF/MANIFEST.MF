@@ -15,8 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.edit,
  org.openhealthtools.mdht.uml.common.ui,
  org.openhealthtools.mdht.uml.ui.navigator,
- org.openhealthtools.mdht.uml.validation,
- org.openhealthtools.mdht.uml.cda.core
+ org.openhealthtools.mdht.uml.validation
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.ui.properties.filters,org
  .openhealthtools.mdht.uml.ui.properties.internal.sections,org.openhea

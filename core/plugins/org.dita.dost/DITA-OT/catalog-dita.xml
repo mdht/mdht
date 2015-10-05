@@ -4,7 +4,7 @@
 		licenses.
 	--><!-- (c) Copyright IBM Corp. 2004, 2005 All Rights Reserved. --><catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"><!-- Catalog for DITA -->
 
-  <rewriteURI uriStartString='plugin:org.dita.troff:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.eclipsecontent:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.eclipsehelp:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.specialization.dita11:' rewritePrefix='plugins/org.dita.specialization.dita11/'/><rewriteURI uriStartString='plugin:org.dita.xhtml:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.openhealthtools.mdht.cda:' rewritePrefix='plugins/org.openhealthtools.mdht.cda/'/><rewriteURI uriStartString='plugin:org.dita.odt:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.pdf2:' rewritePrefix='plugins/org.dita.pdf2/'/><rewriteURI uriStartString='plugin:org.dita.specialization.dita132:' rewritePrefix='plugins/org.dita.specialization.dita132/'/><rewriteURI uriStartString='plugin:com.sophos.tocjs:' rewritePrefix='plugins/com.sophos.tocjs/'/><rewriteURI uriStartString='plugin:org.dita.wordrtf:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.docbook:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.specialization.h2d:' rewritePrefix='plugins/h2d/'/><rewriteURI uriStartString='plugin:org.dita.specialization.eclipsemap:' rewritePrefix='plugins/org.dita.specialization.eclipsemap/'/><rewriteURI uriStartString='plugin:org.dita.htmlhelp:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.base:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.legacypdf:' rewritePrefix='plugins/legacypdf/'/><rewriteURI uriStartString='plugin:org.dita.pdf:' rewritePrefix='plugins/org.dita.pdf/'/><rewriteURI uriStartString='plugin:org.dita.javahelp:' rewritePrefix='./'/>
+  <rewriteURI uriStartString='plugin:org.dita.htmlhelp:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.base:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.specialization.h2d:' rewritePrefix='plugins/h2d/'/><rewriteURI uriStartString='plugin:com.sophos.tocjs:' rewritePrefix='plugins/com.sophos.tocjs/'/><rewriteURI uriStartString='plugin:org.dita.eclipsehelp:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.specialization.dita11:' rewritePrefix='plugins/org.dita.specialization.dita11/'/><rewriteURI uriStartString='plugin:org.dita.troff:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.openhealthtools.mdht.cda:' rewritePrefix='plugins/org.openhealthtools.mdht.cda/'/><rewriteURI uriStartString='plugin:org.dita.eclipsecontent:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.legacypdf:' rewritePrefix='plugins/legacypdf/'/><rewriteURI uriStartString='plugin:org.dita.javahelp:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.specialization.eclipsemap:' rewritePrefix='plugins/org.dita.specialization.eclipsemap/'/><rewriteURI uriStartString='plugin:org.dita.wordrtf:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.xhtml:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.odt:' rewritePrefix='./'/><rewriteURI uriStartString='plugin:org.dita.specialization.dita132:' rewritePrefix='plugins/org.dita.specialization.dita132/'/><rewriteURI uriStartString='plugin:org.dita.pdf:' rewritePrefix='plugins/org.dita.pdf/'/><rewriteURI uriStartString='plugin:org.dita.pdf2:' rewritePrefix='plugins/org.dita.pdf2/'/><rewriteURI uriStartString='plugin:org.dita.docbook:' rewritePrefix='./'/>
 
     <!-- DITA 1.2 DTD -->
     
@@ -1283,7 +1283,26 @@
   <system systemId="http://java.sun.com/dtd/properties.dtd" uri="dtd/properties.dtd"></system>
 
    
-   <!--             (C) Copyright OASIS Open 2005, 2008.              --><!--             (C) Copyright IBM Corporation 2001, 2004.         --><!--             All Rights Reserved.                              -->
+   <!-- This file is part of the DITA Open Toolkit project hosted on 
+  Sourceforge.net. See the accompanying license.txt file for 
+  applicable licenses.--><!--
+    | (C) Copyright IBM Corporation 2006. All Rights Reserved.
+    *-->
+  
+  
+<public publicId="-//W3C//DTD XHTML 1.0 Strict//EN" xml:base="plugins/h2d/dtd/" uri="xhtml1-strict.dtd"/>
+    
+<public publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" xml:base="plugins/h2d/dtd/" uri="xhtml1-transitional.dtd"/>
+    
+<public publicId="-//W3C//DTD XHTML 1.0 Frameset//EN" xml:base="plugins/h2d/dtd/" uri="xhtml1-frameset.dtd"/>
+    
+<public publicId="-//W3C//ENTITIES Latin 1 for XHTML//EN" xml:base="plugins/h2d/dtd/" uri="xhtml-lat1.ent"/>
+    
+<public publicId="-//W3C//ENTITIES Symbols for XHTML//EN" xml:base="plugins/h2d/dtd/" uri="xhtml-symbol.ent"/>
+    
+<public publicId="-//W3C//ENTITIES Special for XHTML//EN" xml:base="plugins/h2d/dtd/" uri="xhtml-special.ent"/>
+  
+<!--             (C) Copyright OASIS Open 2005, 2008.              --><!--             (C) Copyright IBM Corporation 2001, 2004.         --><!--             All Rights Reserved.                              -->
 
 
 	<!-- Catalog for Dita DTDs -->
@@ -1455,6 +1474,21 @@
 	
 <system systemId="urn:oasis:names:tc:dita:xsd:xml.xsd:1.1" xml:base="plugins/org.dita.specialization.dita11/schema/" uri="xml.xsd"/>
 
+<!-- This file is part of the DITA Open Toolkit project hosted on 
+  Sourceforge.net. See the accompanying license.txt file for 
+  applicable licenses.--><!--
+    | (C) Copyright IBM Corporation 2006. All Rights Reserved.
+    *-->
+  
+  
+<public publicId="-//IBM//DTD DITA Eclipse Map Collection//EN" xml:base="plugins/org.dita.specialization.eclipsemap/dtd/" uri="eclipsemap.dtd"/>
+      
+  
+<public publicId="-//IBM//ELEMENTS DITA Eclipse Map Collection//EN" xml:base="plugins/org.dita.specialization.eclipsemap/dtd/" uri="plugin.mod"/>
+  
+  
+<public publicId="-//IBM//ENTITIES DITA Eclipse Map Collection//EN" xml:base="plugins/org.dita.specialization.eclipsemap/dtd/" uri="plugin.ent"/>
+  
 <!-- (c) Copyright IBM Corp. 2004, 2008 All Rights Reserved. -->
     
     <!-- DITA DTDs -->
@@ -1530,39 +1564,5 @@
 <public publicId="-//IBM//ELEMENTS DITA Metadata//EN" xml:base="plugins/org.dita.specialization.dita132/dtd/" uri="meta_xml.mod"/>
     
 <public publicId="-//IBM//ELEMENTS DITA CALS Tables//EN" xml:base="plugins/org.dita.specialization.dita132/dtd/" uri="tbl_xml.mod"/>
-<!-- This file is part of the DITA Open Toolkit project hosted on 
-  Sourceforge.net. See the accompanying license.txt file for 
-  applicable licenses.--><!--
-    | (C) Copyright IBM Corporation 2006. All Rights Reserved.
-    *-->
-  
-  
-<public publicId="-//W3C//DTD XHTML 1.0 Strict//EN" xml:base="plugins/h2d/dtd/" uri="xhtml1-strict.dtd"/>
-    
-<public publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" xml:base="plugins/h2d/dtd/" uri="xhtml1-transitional.dtd"/>
-    
-<public publicId="-//W3C//DTD XHTML 1.0 Frameset//EN" xml:base="plugins/h2d/dtd/" uri="xhtml1-frameset.dtd"/>
-    
-<public publicId="-//W3C//ENTITIES Latin 1 for XHTML//EN" xml:base="plugins/h2d/dtd/" uri="xhtml-lat1.ent"/>
-    
-<public publicId="-//W3C//ENTITIES Symbols for XHTML//EN" xml:base="plugins/h2d/dtd/" uri="xhtml-symbol.ent"/>
-    
-<public publicId="-//W3C//ENTITIES Special for XHTML//EN" xml:base="plugins/h2d/dtd/" uri="xhtml-special.ent"/>
-  
-<!-- This file is part of the DITA Open Toolkit project hosted on 
-  Sourceforge.net. See the accompanying license.txt file for 
-  applicable licenses.--><!--
-    | (C) Copyright IBM Corporation 2006. All Rights Reserved.
-    *-->
-  
-  
-<public publicId="-//IBM//DTD DITA Eclipse Map Collection//EN" xml:base="plugins/org.dita.specialization.eclipsemap/dtd/" uri="eclipsemap.dtd"/>
-      
-  
-<public publicId="-//IBM//ELEMENTS DITA Eclipse Map Collection//EN" xml:base="plugins/org.dita.specialization.eclipsemap/dtd/" uri="plugin.mod"/>
-  
-  
-<public publicId="-//IBM//ENTITIES DITA Eclipse Map Collection//EN" xml:base="plugins/org.dita.specialization.eclipsemap/dtd/" uri="plugin.ent"/>
-  
 
 </catalog>
