@@ -70,11 +70,8 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
-import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.ui.properties.internal.UmlUiEditor;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment;
@@ -228,17 +225,6 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 							ditaModified = false;
 							contributors.get(language).setDitaEnabled(ditaEnableButton.getSelection());
 
-							// Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							// constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-							//
-							// if (stereotype == null) {
-							// stereotype = CDAProfileUtil.applyCDAStereotype(
-							// constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-							// }
-							// constraint.setValue(
-							// stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
-							// ditaEnableButton.getSelection());
-
 							// Also don't show errors if they are visible
 							if (!ditaEnableButton.getSelection()) {
 								errorText.setVisible(false);
@@ -354,6 +340,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		ditaEnableButton.setLayoutData(data);
 		ditaEnableButton.setEnabled(true);
 		ditaEnableButton.setVisible(false);
+
 		ditaEnableButton.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				ditaModified = true;
@@ -443,9 +430,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
@@ -576,17 +563,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 			bodyText.setEnabled(true);
 		}
 		if ("Analysis".equals(languageCombo.getText())) {
-			Boolean selection = false;
-			try {
-				Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-					constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-				selection = (Boolean) constraint.getValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED);
-			} catch (IllegalArgumentException e) { /* Swallow this */
-			}
-			selection = selection == null
-					? false
-					: selection;
-			ditaEnableButton.setSelection(selection);
+			ditaEnableButton.setSelection(contributors.get(language).isDitaEnabled());
 			ditaEnableButton.setVisible(true);
 		} else {
 			ditaEnableButton.setVisible(false);

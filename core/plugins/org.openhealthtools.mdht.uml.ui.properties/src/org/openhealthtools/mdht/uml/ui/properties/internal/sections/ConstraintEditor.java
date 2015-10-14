@@ -29,4 +29,9 @@ public interface ConstraintEditor {
 	void setCloseErrorText(Button closeErrorTextButton);
 
 	void setDitaEnabled(boolean isEnabled);
+
+	/*
+	 * retrun the value of DITA enabled plugin
+	 */
+	boolean isDitaEnabled();
 }
