@@ -226,16 +226,18 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 						}
 						if (ditaModified) {
 							ditaModified = false;
-							Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-								constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+							contributors.get(language).setDitaEnabled(ditaEnableButton.getSelection());
 
-							if (stereotype == null) {
-								stereotype = CDAProfileUtil.applyCDAStereotype(
-									constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-							}
-							constraint.setValue(
-								stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
-								ditaEnableButton.getSelection());
+							// Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+							// constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+							//
+							// if (stereotype == null) {
+							// stereotype = CDAProfileUtil.applyCDAStereotype(
+							// constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+							// }
+							// constraint.setValue(
+							// stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED,
+							// ditaEnableButton.getSelection());
 
 							// Also don't show errors if they are visible
 							if (!ditaEnableButton.getSelection()) {
@@ -441,9 +443,9 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
-	 *
+	 * 
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")

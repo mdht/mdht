@@ -66,6 +66,18 @@ public class TextEditor implements ConstraintEditor {
 		return ditaEnabled;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setDitaEnabled(boolean)
+	 */
+	@Override
+	public void setDitaEnabled(boolean isEnabled) {
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+		constraint.setValue(stereotype, ICDAProfileConstants.CONSTRAINT_DITA_ENABLED, isEnabled);
+	}
+
 	private void handleChange() {
 		if (checkDita && isDitaEnabled()) {
 			runHandleChange();
@@ -109,7 +121,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	public void setConstraint(Constraint constraint) {
@@ -142,7 +154,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
 	 */
 	@Override
@@ -153,7 +165,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
 	 */
 	@Override
