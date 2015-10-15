@@ -1,9 +1,5 @@
 package org.openhealthtools.mdht.uml.cda.dita.internal;
 
-import java.io.IOException;
-
-import org.apache.commons.io.FileUtils;
-import org.dita.dost.util.DitaUtil;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
@@ -71,25 +67,25 @@ public class TextEditor implements ConstraintEditor {
 	}
 
 	private void runHandleChange() {
-		checkDita = false;
-		IPath tmpFile = generateTempDita();
-		boolean errorOccured = false;
-		try {
-			DitaUtil.validate(tmpFile);
-		} catch (Exception exception) {
-			// Add UI here
-			showError(exception.toString());
-			errorOccured = true;
-		} finally {
-			hideError(errorOccured);
-		}
-
-		// Delete the temporary folder
-		try {
-			FileUtils.deleteDirectory(tmpFile.toFile().getParentFile());
-		} catch (IOException ioEx) {
-			ioEx.printStackTrace();
-		}
+		// checkDita = false;
+		// IPath tmpFile = generateTempDita();
+		// boolean errorOccured = false;
+		// try {
+		// DitaUtil.validate(tmpFile);
+		// } catch (Exception exception) {
+		// // Add UI here
+		// showError(exception.toString());
+		// errorOccured = true;
+		// } finally {
+		// hideError(errorOccured);
+		// }
+		//
+		// // Delete the temporary folder
+		// try {
+		// FileUtils.deleteDirectory(tmpFile.toFile().getParentFile());
+		// } catch (IOException ioEx) {
+		// ioEx.printStackTrace();
+		// }
 	}
 
 	private void hideError(boolean errorOccured) {
@@ -107,7 +103,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setConstraint(org.eclipse.uml2.uml.Constraint)
 	 */
 	public void setConstraint(Constraint constraint) {
@@ -140,7 +136,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setErrorText(org.eclipse.swt.widgets.Text)
 	 */
 	@Override
@@ -151,7 +147,7 @@ public class TextEditor implements ConstraintEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintEditor#setCloseErrorText(org.eclipse.swt.widgets.Button)
 	 */
 	@Override
