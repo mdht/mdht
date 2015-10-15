@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
@@ -39,6 +39,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.eclipse.uml2.uml.util.UMLUtil.ProfileApplicationHelper;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
@@ -65,6 +66,8 @@ import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class TableGenerator {
+
+	ProfileApplicationHelper asdf;
 
 	private Map<String, EPackage> packageURIMap = new HashMap<String, EPackage>();
 
@@ -668,7 +671,7 @@ public class TableGenerator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseAssociation(org.eclipse.uml2.uml.Association)
 		 */
 		@Override
